@@ -36,11 +36,6 @@ namespace EC2
 {
 namespace Model
 {
-  /**
-   * <p>Contains the output of DescribeBundleTasks.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasksResult">AWS
-   * API Reference</a></p>
-   */
   class AWS_EC2_API DescribeBundleTasksResponse
   {
   public:
@@ -50,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Information about one or more bundle tasks.</p>
+     * <p>Information about the bundle tasks.</p>
      */
     inline const Aws::Vector<BundleTask>& GetBundleTasks() const{ return m_bundleTasks; }
 
     /**
-     * <p>Information about one or more bundle tasks.</p>
+     * <p>Information about the bundle tasks.</p>
      */
     inline void SetBundleTasks(const Aws::Vector<BundleTask>& value) { m_bundleTasks = value; }
 
     /**
-     * <p>Information about one or more bundle tasks.</p>
+     * <p>Information about the bundle tasks.</p>
      */
     inline void SetBundleTasks(Aws::Vector<BundleTask>&& value) { m_bundleTasks = std::move(value); }
 
     /**
-     * <p>Information about one or more bundle tasks.</p>
+     * <p>Information about the bundle tasks.</p>
      */
     inline DescribeBundleTasksResponse& WithBundleTasks(const Aws::Vector<BundleTask>& value) { SetBundleTasks(value); return *this;}
 
     /**
-     * <p>Information about one or more bundle tasks.</p>
+     * <p>Information about the bundle tasks.</p>
      */
     inline DescribeBundleTasksResponse& WithBundleTasks(Aws::Vector<BundleTask>&& value) { SetBundleTasks(std::move(value)); return *this;}
 
     /**
-     * <p>Information about one or more bundle tasks.</p>
+     * <p>Information about the bundle tasks.</p>
      */
     inline DescribeBundleTasksResponse& AddBundleTasks(const BundleTask& value) { m_bundleTasks.push_back(value); return *this; }
 
     /**
-     * <p>Information about one or more bundle tasks.</p>
+     * <p>Information about the bundle tasks.</p>
      */
     inline DescribeBundleTasksResponse& AddBundleTasks(BundleTask&& value) { m_bundleTasks.push_back(std::move(value)); return *this; }
 

@@ -49,112 +49,112 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
-     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
-     * <li> <p> <code>region-name</code> - The name of the region (for example,
+     * <p>The filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint of the
+     * region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> <li>
+     * <p> <code>region-name</code> - The name of the region (for example,
      * <code>us-east-1</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
-     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
-     * <li> <p> <code>region-name</code> - The name of the region (for example,
+     * <p>The filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint of the
+     * region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> <li>
+     * <p> <code>region-name</code> - The name of the region (for example,
      * <code>us-east-1</code>).</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
-     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
-     * <li> <p> <code>region-name</code> - The name of the region (for example,
+     * <p>The filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint of the
+     * region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> <li>
+     * <p> <code>region-name</code> - The name of the region (for example,
      * <code>us-east-1</code>).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
-     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
-     * <li> <p> <code>region-name</code> - The name of the region (for example,
+     * <p>The filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint of the
+     * region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> <li>
+     * <p> <code>region-name</code> - The name of the region (for example,
      * <code>us-east-1</code>).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
-     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
-     * <li> <p> <code>region-name</code> - The name of the region (for example,
+     * <p>The filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint of the
+     * region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> <li>
+     * <p> <code>region-name</code> - The name of the region (for example,
      * <code>us-east-1</code>).</p> </li> </ul>
      */
     inline DescribeRegionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
-     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
-     * <li> <p> <code>region-name</code> - The name of the region (for example,
+     * <p>The filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint of the
+     * region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> <li>
+     * <p> <code>region-name</code> - The name of the region (for example,
      * <code>us-east-1</code>).</p> </li> </ul>
      */
     inline DescribeRegionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
-     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
-     * <li> <p> <code>region-name</code> - The name of the region (for example,
+     * <p>The filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint of the
+     * region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> <li>
+     * <p> <code>region-name</code> - The name of the region (for example,
      * <code>us-east-1</code>).</p> </li> </ul>
      */
     inline DescribeRegionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
-     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
-     * <li> <p> <code>region-name</code> - The name of the region (for example,
+     * <p>The filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint of the
+     * region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> <li>
+     * <p> <code>region-name</code> - The name of the region (for example,
      * <code>us-east-1</code>).</p> </li> </ul>
      */
     inline DescribeRegionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The names of one or more regions.</p>
+     * <p>The names of the regions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegionNames() const{ return m_regionNames; }
 
     /**
-     * <p>The names of one or more regions.</p>
+     * <p>The names of the regions.</p>
      */
     inline bool RegionNamesHasBeenSet() const { return m_regionNamesHasBeenSet; }
 
     /**
-     * <p>The names of one or more regions.</p>
+     * <p>The names of the regions.</p>
      */
     inline void SetRegionNames(const Aws::Vector<Aws::String>& value) { m_regionNamesHasBeenSet = true; m_regionNames = value; }
 
     /**
-     * <p>The names of one or more regions.</p>
+     * <p>The names of the regions.</p>
      */
     inline void SetRegionNames(Aws::Vector<Aws::String>&& value) { m_regionNamesHasBeenSet = true; m_regionNames = std::move(value); }
 
     /**
-     * <p>The names of one or more regions.</p>
+     * <p>The names of the regions.</p>
      */
     inline DescribeRegionsRequest& WithRegionNames(const Aws::Vector<Aws::String>& value) { SetRegionNames(value); return *this;}
 
     /**
-     * <p>The names of one or more regions.</p>
+     * <p>The names of the regions.</p>
      */
     inline DescribeRegionsRequest& WithRegionNames(Aws::Vector<Aws::String>&& value) { SetRegionNames(std::move(value)); return *this;}
 
     /**
-     * <p>The names of one or more regions.</p>
+     * <p>The names of the regions.</p>
      */
     inline DescribeRegionsRequest& AddRegionNames(const Aws::String& value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(value); return *this; }
 
     /**
-     * <p>The names of one or more regions.</p>
+     * <p>The names of the regions.</p>
      */
     inline DescribeRegionsRequest& AddRegionNames(Aws::String&& value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of one or more regions.</p>
+     * <p>The names of the regions.</p>
      */
     inline DescribeRegionsRequest& AddRegionNames(const char* value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(value); return *this; }
 

@@ -71,11 +71,6 @@ setup_install()
 install (FILES ${AWS_ROUTE53DOMAINS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/route53domains)
 install (FILES ${AWS_ROUTE53DOMAINS_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/route53domains/model)
 
-if(PLATFORM_WINDOWS AND MSVC)
-    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
-    install (FILES ${NUGET_FILES} DESTINATION nuget)
-endif()
-
 do_packaging()
 
 

@@ -44,6 +44,8 @@ VpcEndpoint::VpcEndpoint() :
     m_groupsHasBeenSet(false),
     m_privateDnsEnabled(false),
     m_privateDnsEnabledHasBeenSet(false),
+    m_requesterManaged(false),
+    m_requesterManagedHasBeenSet(false),
     m_networkInterfaceIdsHasBeenSet(false),
     m_dnsEntriesHasBeenSet(false),
     m_creationTimestampHasBeenSet(false)
@@ -64,6 +66,8 @@ VpcEndpoint::VpcEndpoint(const XmlNode& xmlNode) :
     m_groupsHasBeenSet(false),
     m_privateDnsEnabled(false),
     m_privateDnsEnabledHasBeenSet(false),
+    m_requesterManaged(false),
+    m_requesterManagedHasBeenSet(false),
     m_networkInterfaceIdsHasBeenSet(false),
     m_dnsEntriesHasBeenSet(false),
     m_creationTimestampHasBeenSet(false)
@@ -154,6 +158,12 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     {
       m_privateDnsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(privateDnsEnabledNode.GetText().c_str()).c_str());
       m_privateDnsEnabledHasBeenSet = true;
+    }
+    XmlNode requesterManagedNode = resultNode.FirstChild("requesterManaged");
+    if(!requesterManagedNode.IsNull())
+    {
+      m_requesterManaged = StringUtils::ConvertToBool(StringUtils::Trim(requesterManagedNode.GetText().c_str()).c_str());
+      m_requesterManagedHasBeenSet = true;
     }
     XmlNode networkInterfaceIdsNode = resultNode.FirstChild("networkInterfaceIdSet");
     if(!networkInterfaceIdsNode.IsNull())
@@ -256,6 +266,11 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".PrivateDnsEnabled=" << std::boolalpha << m_privateDnsEnabled << "&";
   }
 
+  if(m_requesterManagedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RequesterManaged=" << std::boolalpha << m_requesterManaged << "&";
+  }
+
   if(m_networkInterfaceIdsHasBeenSet)
   {
       unsigned networkInterfaceIdsIdx = 1;
@@ -338,6 +353,10 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_privateDnsEnabledHasBeenSet)
   {
       oStream << location << ".PrivateDnsEnabled=" << std::boolalpha << m_privateDnsEnabled << "&";
+  }
+  if(m_requesterManagedHasBeenSet)
+  {
+      oStream << location << ".RequesterManaged=" << std::boolalpha << m_requesterManaged << "&";
   }
   if(m_networkInterfaceIdsHasBeenSet)
   {

@@ -36,11 +36,6 @@ namespace EC2
 {
 namespace Model
 {
-  /**
-   * <p>Contains the output of DescribeImages.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImagesResult">AWS
-   * API Reference</a></p>
-   */
   class AWS_EC2_API DescribeImagesResponse
   {
   public:
@@ -50,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Information about one or more images.</p>
+     * <p>Information about the images.</p>
      */
     inline const Aws::Vector<Image>& GetImages() const{ return m_images; }
 
     /**
-     * <p>Information about one or more images.</p>
+     * <p>Information about the images.</p>
      */
     inline void SetImages(const Aws::Vector<Image>& value) { m_images = value; }
 
     /**
-     * <p>Information about one or more images.</p>
+     * <p>Information about the images.</p>
      */
     inline void SetImages(Aws::Vector<Image>&& value) { m_images = std::move(value); }
 
     /**
-     * <p>Information about one or more images.</p>
+     * <p>Information about the images.</p>
      */
     inline DescribeImagesResponse& WithImages(const Aws::Vector<Image>& value) { SetImages(value); return *this;}
 
     /**
-     * <p>Information about one or more images.</p>
+     * <p>Information about the images.</p>
      */
     inline DescribeImagesResponse& WithImages(Aws::Vector<Image>&& value) { SetImages(std::move(value)); return *this;}
 
     /**
-     * <p>Information about one or more images.</p>
+     * <p>Information about the images.</p>
      */
     inline DescribeImagesResponse& AddImages(const Image& value) { m_images.push_back(value); return *this; }
 
     /**
-     * <p>Information about one or more images.</p>
+     * <p>Information about the images.</p>
      */
     inline DescribeImagesResponse& AddImages(Image&& value) { m_images.push_back(std::move(value)); return *this; }
 

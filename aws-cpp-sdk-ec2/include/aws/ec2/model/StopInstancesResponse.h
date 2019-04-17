@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Information about one or more stopped instances.</p>
+     * <p>Information about the stopped instances.</p>
      */
     inline const Aws::Vector<InstanceStateChange>& GetStoppingInstances() const{ return m_stoppingInstances; }
 
     /**
-     * <p>Information about one or more stopped instances.</p>
+     * <p>Information about the stopped instances.</p>
      */
     inline void SetStoppingInstances(const Aws::Vector<InstanceStateChange>& value) { m_stoppingInstances = value; }
 
     /**
-     * <p>Information about one or more stopped instances.</p>
+     * <p>Information about the stopped instances.</p>
      */
     inline void SetStoppingInstances(Aws::Vector<InstanceStateChange>&& value) { m_stoppingInstances = std::move(value); }
 
     /**
-     * <p>Information about one or more stopped instances.</p>
+     * <p>Information about the stopped instances.</p>
      */
     inline StopInstancesResponse& WithStoppingInstances(const Aws::Vector<InstanceStateChange>& value) { SetStoppingInstances(value); return *this;}
 
     /**
-     * <p>Information about one or more stopped instances.</p>
+     * <p>Information about the stopped instances.</p>
      */
     inline StopInstancesResponse& WithStoppingInstances(Aws::Vector<InstanceStateChange>&& value) { SetStoppingInstances(std::move(value)); return *this;}
 
     /**
-     * <p>Information about one or more stopped instances.</p>
+     * <p>Information about the stopped instances.</p>
      */
     inline StopInstancesResponse& AddStoppingInstances(const InstanceStateChange& value) { m_stoppingInstances.push_back(value); return *this; }
 
     /**
-     * <p>Information about one or more stopped instances.</p>
+     * <p>Information about the stopped instances.</p>
      */
     inline StopInstancesResponse& AddStoppingInstances(InstanceStateChange&& value) { m_stoppingInstances.push_back(std::move(value)); return *this; }
 

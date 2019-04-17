@@ -352,6 +352,31 @@ namespace Model
      */
     inline ServiceDetail& WithAcceptanceRequired(bool value) { SetAcceptanceRequired(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the service manages it's VPC Endpoints. Management of the
+     * service VPC Endpoints using the VPC Endpoint API is restricted.</p>
+     */
+    inline bool GetManagesVpcEndpoints() const{ return m_managesVpcEndpoints; }
+
+    /**
+     * <p>Indicates whether the service manages it's VPC Endpoints. Management of the
+     * service VPC Endpoints using the VPC Endpoint API is restricted.</p>
+     */
+    inline bool ManagesVpcEndpointsHasBeenSet() const { return m_managesVpcEndpointsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the service manages it's VPC Endpoints. Management of the
+     * service VPC Endpoints using the VPC Endpoint API is restricted.</p>
+     */
+    inline void SetManagesVpcEndpoints(bool value) { m_managesVpcEndpointsHasBeenSet = true; m_managesVpcEndpoints = value; }
+
+    /**
+     * <p>Indicates whether the service manages it's VPC Endpoints. Management of the
+     * service VPC Endpoints using the VPC Endpoint API is restricted.</p>
+     */
+    inline ServiceDetail& WithManagesVpcEndpoints(bool value) { SetManagesVpcEndpoints(value); return *this;}
+
   private:
 
     Aws::String m_serviceName;
@@ -377,6 +402,9 @@ namespace Model
 
     bool m_acceptanceRequired;
     bool m_acceptanceRequiredHasBeenSet;
+
+    bool m_managesVpcEndpoints;
+    bool m_managesVpcEndpointsHasBeenSet;
   };
 
 } // namespace Model

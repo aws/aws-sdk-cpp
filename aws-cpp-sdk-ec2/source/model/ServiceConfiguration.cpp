@@ -39,6 +39,8 @@ ServiceConfiguration::ServiceConfiguration() :
     m_availabilityZonesHasBeenSet(false),
     m_acceptanceRequired(false),
     m_acceptanceRequiredHasBeenSet(false),
+    m_managesVpcEndpoints(false),
+    m_managesVpcEndpointsHasBeenSet(false),
     m_networkLoadBalancerArnsHasBeenSet(false),
     m_baseEndpointDnsNamesHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false)
@@ -54,6 +56,8 @@ ServiceConfiguration::ServiceConfiguration(const XmlNode& xmlNode) :
     m_availabilityZonesHasBeenSet(false),
     m_acceptanceRequired(false),
     m_acceptanceRequiredHasBeenSet(false),
+    m_managesVpcEndpoints(false),
+    m_managesVpcEndpointsHasBeenSet(false),
     m_networkLoadBalancerArnsHasBeenSet(false),
     m_baseEndpointDnsNamesHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false)
@@ -114,6 +118,12 @@ ServiceConfiguration& ServiceConfiguration::operator =(const XmlNode& xmlNode)
     {
       m_acceptanceRequired = StringUtils::ConvertToBool(StringUtils::Trim(acceptanceRequiredNode.GetText().c_str()).c_str());
       m_acceptanceRequiredHasBeenSet = true;
+    }
+    XmlNode managesVpcEndpointsNode = resultNode.FirstChild("managesVpcEndpoints");
+    if(!managesVpcEndpointsNode.IsNull())
+    {
+      m_managesVpcEndpoints = StringUtils::ConvertToBool(StringUtils::Trim(managesVpcEndpointsNode.GetText().c_str()).c_str());
+      m_managesVpcEndpointsHasBeenSet = true;
     }
     XmlNode networkLoadBalancerArnsNode = resultNode.FirstChild("networkLoadBalancerArnSet");
     if(!networkLoadBalancerArnsNode.IsNull())
@@ -192,6 +202,11 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << index << locationValue << ".AcceptanceRequired=" << std::boolalpha << m_acceptanceRequired << "&";
   }
 
+  if(m_managesVpcEndpointsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ManagesVpcEndpoints=" << std::boolalpha << m_managesVpcEndpoints << "&";
+  }
+
   if(m_networkLoadBalancerArnsHasBeenSet)
   {
       unsigned networkLoadBalancerArnsIdx = 1;
@@ -252,6 +267,10 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
   if(m_acceptanceRequiredHasBeenSet)
   {
       oStream << location << ".AcceptanceRequired=" << std::boolalpha << m_acceptanceRequired << "&";
+  }
+  if(m_managesVpcEndpointsHasBeenSet)
+  {
+      oStream << location << ".ManagesVpcEndpoints=" << std::boolalpha << m_managesVpcEndpoints << "&";
   }
   if(m_networkLoadBalancerArnsHasBeenSet)
   {

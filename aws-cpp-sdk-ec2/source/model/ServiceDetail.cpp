@@ -40,7 +40,9 @@ ServiceDetail::ServiceDetail() :
     m_vpcEndpointPolicySupported(false),
     m_vpcEndpointPolicySupportedHasBeenSet(false),
     m_acceptanceRequired(false),
-    m_acceptanceRequiredHasBeenSet(false)
+    m_acceptanceRequiredHasBeenSet(false),
+    m_managesVpcEndpoints(false),
+    m_managesVpcEndpointsHasBeenSet(false)
 {
 }
 
@@ -54,7 +56,9 @@ ServiceDetail::ServiceDetail(const XmlNode& xmlNode) :
     m_vpcEndpointPolicySupported(false),
     m_vpcEndpointPolicySupportedHasBeenSet(false),
     m_acceptanceRequired(false),
-    m_acceptanceRequiredHasBeenSet(false)
+    m_acceptanceRequiredHasBeenSet(false),
+    m_managesVpcEndpoints(false),
+    m_managesVpcEndpointsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -131,6 +135,12 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
       m_acceptanceRequired = StringUtils::ConvertToBool(StringUtils::Trim(acceptanceRequiredNode.GetText().c_str()).c_str());
       m_acceptanceRequiredHasBeenSet = true;
     }
+    XmlNode managesVpcEndpointsNode = resultNode.FirstChild("managesVpcEndpoints");
+    if(!managesVpcEndpointsNode.IsNull())
+    {
+      m_managesVpcEndpoints = StringUtils::ConvertToBool(StringUtils::Trim(managesVpcEndpointsNode.GetText().c_str()).c_str());
+      m_managesVpcEndpointsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -192,6 +202,11 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".AcceptanceRequired=" << std::boolalpha << m_acceptanceRequired << "&";
   }
 
+  if(m_managesVpcEndpointsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ManagesVpcEndpoints=" << std::boolalpha << m_managesVpcEndpoints << "&";
+  }
+
 }
 
 void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -241,6 +256,10 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_acceptanceRequiredHasBeenSet)
   {
       oStream << location << ".AcceptanceRequired=" << std::boolalpha << m_acceptanceRequired << "&";
+  }
+  if(m_managesVpcEndpointsHasBeenSet)
+  {
+      oStream << location << ".ManagesVpcEndpoints=" << std::boolalpha << m_managesVpcEndpoints << "&";
   }
 }
 

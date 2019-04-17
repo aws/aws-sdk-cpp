@@ -49,8 +49,8 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity
-     * setting for an instance running on a Dedicated Host (<code>default</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity setting
+     * for an instance running on a Dedicated Host (<code>default</code> |
      * <code>host</code>).</p> </li> <li> <p> <code>architecture</code> - The instance
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
      * <code>availability-zone</code> - The Availability Zone of the instance.</p>
@@ -221,8 +221,8 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity
-     * setting for an instance running on a Dedicated Host (<code>default</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity setting
+     * for an instance running on a Dedicated Host (<code>default</code> |
      * <code>host</code>).</p> </li> <li> <p> <code>architecture</code> - The instance
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
      * <code>availability-zone</code> - The Availability Zone of the instance.</p>
@@ -393,8 +393,8 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity
-     * setting for an instance running on a Dedicated Host (<code>default</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity setting
+     * for an instance running on a Dedicated Host (<code>default</code> |
      * <code>host</code>).</p> </li> <li> <p> <code>architecture</code> - The instance
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
      * <code>availability-zone</code> - The Availability Zone of the instance.</p>
@@ -565,8 +565,8 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity
-     * setting for an instance running on a Dedicated Host (<code>default</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity setting
+     * for an instance running on a Dedicated Host (<code>default</code> |
      * <code>host</code>).</p> </li> <li> <p> <code>architecture</code> - The instance
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
      * <code>availability-zone</code> - The Availability Zone of the instance.</p>
@@ -737,8 +737,8 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity
-     * setting for an instance running on a Dedicated Host (<code>default</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity setting
+     * for an instance running on a Dedicated Host (<code>default</code> |
      * <code>host</code>).</p> </li> <li> <p> <code>architecture</code> - The instance
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
      * <code>availability-zone</code> - The Availability Zone of the instance.</p>
@@ -909,8 +909,8 @@ namespace Model
     inline DescribeInstancesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity
-     * setting for an instance running on a Dedicated Host (<code>default</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity setting
+     * for an instance running on a Dedicated Host (<code>default</code> |
      * <code>host</code>).</p> </li> <li> <p> <code>architecture</code> - The instance
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
      * <code>availability-zone</code> - The Availability Zone of the instance.</p>
@@ -1081,8 +1081,8 @@ namespace Model
     inline DescribeInstancesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity
-     * setting for an instance running on a Dedicated Host (<code>default</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity setting
+     * for an instance running on a Dedicated Host (<code>default</code> |
      * <code>host</code>).</p> </li> <li> <p> <code>architecture</code> - The instance
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
      * <code>availability-zone</code> - The Availability Zone of the instance.</p>
@@ -1253,8 +1253,8 @@ namespace Model
     inline DescribeInstancesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity
-     * setting for an instance running on a Dedicated Host (<code>default</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity setting
+     * for an instance running on a Dedicated Host (<code>default</code> |
      * <code>host</code>).</p> </li> <li> <p> <code>architecture</code> - The instance
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
      * <code>availability-zone</code> - The Availability Zone of the instance.</p>
@@ -1426,47 +1426,47 @@ namespace Model
 
 
     /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
      */
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
 
     /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
      */
     inline DescribeInstancesRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
      */
     inline DescribeInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
      */
     inline DescribeInstancesRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
      */
     inline DescribeInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
      */
     inline DescribeInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 

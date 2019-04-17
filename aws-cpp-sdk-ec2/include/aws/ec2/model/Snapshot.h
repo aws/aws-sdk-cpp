@@ -608,65 +608,65 @@ namespace Model
 
     /**
      * <p> Value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console. </p>
+     * <code>self</code> | <code>all</code> | <code>aws-marketplace</code> |
+     * <code>microsoft</code>) of snapshot owners. Not to be confused with the
+     * user-configured AWS account alias, which is set from the IAM console. </p>
      */
     inline const Aws::String& GetOwnerAlias() const{ return m_ownerAlias; }
 
     /**
      * <p> Value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console. </p>
+     * <code>self</code> | <code>all</code> | <code>aws-marketplace</code> |
+     * <code>microsoft</code>) of snapshot owners. Not to be confused with the
+     * user-configured AWS account alias, which is set from the IAM console. </p>
      */
     inline bool OwnerAliasHasBeenSet() const { return m_ownerAliasHasBeenSet; }
 
     /**
      * <p> Value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console. </p>
+     * <code>self</code> | <code>all</code> | <code>aws-marketplace</code> |
+     * <code>microsoft</code>) of snapshot owners. Not to be confused with the
+     * user-configured AWS account alias, which is set from the IAM console. </p>
      */
     inline void SetOwnerAlias(const Aws::String& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = value; }
 
     /**
      * <p> Value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console. </p>
+     * <code>self</code> | <code>all</code> | <code>aws-marketplace</code> |
+     * <code>microsoft</code>) of snapshot owners. Not to be confused with the
+     * user-configured AWS account alias, which is set from the IAM console. </p>
      */
     inline void SetOwnerAlias(Aws::String&& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = std::move(value); }
 
     /**
      * <p> Value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console. </p>
+     * <code>self</code> | <code>all</code> | <code>aws-marketplace</code> |
+     * <code>microsoft</code>) of snapshot owners. Not to be confused with the
+     * user-configured AWS account alias, which is set from the IAM console. </p>
      */
     inline void SetOwnerAlias(const char* value) { m_ownerAliasHasBeenSet = true; m_ownerAlias.assign(value); }
 
     /**
      * <p> Value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console. </p>
+     * <code>self</code> | <code>all</code> | <code>aws-marketplace</code> |
+     * <code>microsoft</code>) of snapshot owners. Not to be confused with the
+     * user-configured AWS account alias, which is set from the IAM console. </p>
      */
     inline Snapshot& WithOwnerAlias(const Aws::String& value) { SetOwnerAlias(value); return *this;}
 
     /**
      * <p> Value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console. </p>
+     * <code>self</code> | <code>all</code> | <code>aws-marketplace</code> |
+     * <code>microsoft</code>) of snapshot owners. Not to be confused with the
+     * user-configured AWS account alias, which is set from the IAM console. </p>
      */
     inline Snapshot& WithOwnerAlias(Aws::String&& value) { SetOwnerAlias(std::move(value)); return *this;}
 
     /**
      * <p> Value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console. </p>
+     * <code>self</code> | <code>all</code> | <code>aws-marketplace</code> |
+     * <code>microsoft</code>) of snapshot owners. Not to be confused with the
+     * user-configured AWS account alias, which is set from the IAM console. </p>
      */
     inline Snapshot& WithOwnerAlias(const char* value) { SetOwnerAlias(value); return *this;}
 

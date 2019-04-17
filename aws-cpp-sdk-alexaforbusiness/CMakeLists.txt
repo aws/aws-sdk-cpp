@@ -71,11 +71,6 @@ setup_install()
 install (FILES ${AWS_ALEXAFORBUSINESS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/alexaforbusiness)
 install (FILES ${AWS_ALEXAFORBUSINESS_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/alexaforbusiness/model)
 
-if(PLATFORM_WINDOWS AND MSVC)
-    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
-    install (FILES ${NUGET_FILES} DESTINATION nuget)
-endif()
-
 do_packaging()
 
 

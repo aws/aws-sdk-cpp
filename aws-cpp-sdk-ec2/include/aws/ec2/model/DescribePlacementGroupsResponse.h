@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>One or more placement groups.</p>
+     * <p>Information about the placement groups.</p>
      */
     inline const Aws::Vector<PlacementGroup>& GetPlacementGroups() const{ return m_placementGroups; }
 
     /**
-     * <p>One or more placement groups.</p>
+     * <p>Information about the placement groups.</p>
      */
     inline void SetPlacementGroups(const Aws::Vector<PlacementGroup>& value) { m_placementGroups = value; }
 
     /**
-     * <p>One or more placement groups.</p>
+     * <p>Information about the placement groups.</p>
      */
     inline void SetPlacementGroups(Aws::Vector<PlacementGroup>&& value) { m_placementGroups = std::move(value); }
 
     /**
-     * <p>One or more placement groups.</p>
+     * <p>Information about the placement groups.</p>
      */
     inline DescribePlacementGroupsResponse& WithPlacementGroups(const Aws::Vector<PlacementGroup>& value) { SetPlacementGroups(value); return *this;}
 
     /**
-     * <p>One or more placement groups.</p>
+     * <p>Information about the placement groups.</p>
      */
     inline DescribePlacementGroupsResponse& WithPlacementGroups(Aws::Vector<PlacementGroup>&& value) { SetPlacementGroups(std::move(value)); return *this;}
 
     /**
-     * <p>One or more placement groups.</p>
+     * <p>Information about the placement groups.</p>
      */
     inline DescribePlacementGroupsResponse& AddPlacementGroups(const PlacementGroup& value) { m_placementGroups.push_back(value); return *this; }
 
     /**
-     * <p>One or more placement groups.</p>
+     * <p>Information about the placement groups.</p>
      */
     inline DescribePlacementGroupsResponse& AddPlacementGroups(PlacementGroup&& value) { m_placementGroups.push_back(std::move(value)); return *this; }
 

@@ -233,50 +233,50 @@ namespace Model
 
 
     /**
-     * <p>One or more sets of IP permissions. Can be used to specify multiple rules in
-     * a single command.</p>
+     * <p>The sets of IP permissions. Can be used to specify multiple rules in a single
+     * command.</p>
      */
     inline const Aws::Vector<IpPermission>& GetIpPermissions() const{ return m_ipPermissions; }
 
     /**
-     * <p>One or more sets of IP permissions. Can be used to specify multiple rules in
-     * a single command.</p>
+     * <p>The sets of IP permissions. Can be used to specify multiple rules in a single
+     * command.</p>
      */
     inline bool IpPermissionsHasBeenSet() const { return m_ipPermissionsHasBeenSet; }
 
     /**
-     * <p>One or more sets of IP permissions. Can be used to specify multiple rules in
-     * a single command.</p>
+     * <p>The sets of IP permissions. Can be used to specify multiple rules in a single
+     * command.</p>
      */
     inline void SetIpPermissions(const Aws::Vector<IpPermission>& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
 
     /**
-     * <p>One or more sets of IP permissions. Can be used to specify multiple rules in
-     * a single command.</p>
+     * <p>The sets of IP permissions. Can be used to specify multiple rules in a single
+     * command.</p>
      */
     inline void SetIpPermissions(Aws::Vector<IpPermission>&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = std::move(value); }
 
     /**
-     * <p>One or more sets of IP permissions. Can be used to specify multiple rules in
-     * a single command.</p>
+     * <p>The sets of IP permissions. Can be used to specify multiple rules in a single
+     * command.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithIpPermissions(const Aws::Vector<IpPermission>& value) { SetIpPermissions(value); return *this;}
 
     /**
-     * <p>One or more sets of IP permissions. Can be used to specify multiple rules in
-     * a single command.</p>
+     * <p>The sets of IP permissions. Can be used to specify multiple rules in a single
+     * command.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithIpPermissions(Aws::Vector<IpPermission>&& value) { SetIpPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>One or more sets of IP permissions. Can be used to specify multiple rules in
-     * a single command.</p>
+     * <p>The sets of IP permissions. Can be used to specify multiple rules in a single
+     * command.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& AddIpPermissions(const IpPermission& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(value); return *this; }
 
     /**
-     * <p>One or more sets of IP permissions. Can be used to specify multiple rules in
-     * a single command.</p>
+     * <p>The sets of IP permissions. Can be used to specify multiple rules in a single
+     * command.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(std::move(value)); return *this; }
 

@@ -37,11 +37,6 @@ namespace EC2
 {
 namespace Model
 {
-  /**
-   * <p>Contains the output of DescribeVolumeStatus.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatusResult">AWS
-   * API Reference</a></p>
-   */
   class AWS_EC2_API DescribeVolumeStatusResponse
   {
   public:
@@ -94,37 +89,37 @@ namespace Model
 
 
     /**
-     * <p>A list of volumes.</p>
+     * <p>Information about the status of the volumes.</p>
      */
     inline const Aws::Vector<VolumeStatusItem>& GetVolumeStatuses() const{ return m_volumeStatuses; }
 
     /**
-     * <p>A list of volumes.</p>
+     * <p>Information about the status of the volumes.</p>
      */
     inline void SetVolumeStatuses(const Aws::Vector<VolumeStatusItem>& value) { m_volumeStatuses = value; }
 
     /**
-     * <p>A list of volumes.</p>
+     * <p>Information about the status of the volumes.</p>
      */
     inline void SetVolumeStatuses(Aws::Vector<VolumeStatusItem>&& value) { m_volumeStatuses = std::move(value); }
 
     /**
-     * <p>A list of volumes.</p>
+     * <p>Information about the status of the volumes.</p>
      */
     inline DescribeVolumeStatusResponse& WithVolumeStatuses(const Aws::Vector<VolumeStatusItem>& value) { SetVolumeStatuses(value); return *this;}
 
     /**
-     * <p>A list of volumes.</p>
+     * <p>Information about the status of the volumes.</p>
      */
     inline DescribeVolumeStatusResponse& WithVolumeStatuses(Aws::Vector<VolumeStatusItem>&& value) { SetVolumeStatuses(std::move(value)); return *this;}
 
     /**
-     * <p>A list of volumes.</p>
+     * <p>Information about the status of the volumes.</p>
      */
     inline DescribeVolumeStatusResponse& AddVolumeStatuses(const VolumeStatusItem& value) { m_volumeStatuses.push_back(value); return *this; }
 
     /**
-     * <p>A list of volumes.</p>
+     * <p>Information about the status of the volumes.</p>
      */
     inline DescribeVolumeStatusResponse& AddVolumeStatuses(VolumeStatusItem&& value) { m_volumeStatuses.push_back(std::move(value)); return *this; }
 

@@ -29,10 +29,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeVolumeStatus.</p><p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatusRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeVolumeStatusRequest : public EC2Request
   {
@@ -53,14 +49,14 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>action.code</code> - The action
-     * code for the event (for example, <code>enable-volume-io</code>).</p> </li> <li>
-     * <p> <code>action.description</code> - A description of the action.</p> </li>
-     * <li> <p> <code>action.event-id</code> - The event ID associated with the
-     * action.</p> </li> <li> <p> <code>availability-zone</code> - The Availability
-     * Zone of the instance.</p> </li> <li> <p> <code>event.description</code> - A
-     * description of the event.</p> </li> <li> <p> <code>event.event-id</code> - The
-     * event ID.</p> </li> <li> <p> <code>event.event-type</code> - The event type (for
+     * <p>The filters.</p> <ul> <li> <p> <code>action.code</code> - The action code for
+     * the event (for example, <code>enable-volume-io</code>).</p> </li> <li> <p>
+     * <code>action.description</code> - A description of the action.</p> </li> <li>
+     * <p> <code>action.event-id</code> - The event ID associated with the action.</p>
+     * </li> <li> <p> <code>availability-zone</code> - The Availability Zone of the
+     * instance.</p> </li> <li> <p> <code>event.description</code> - A description of
+     * the event.</p> </li> <li> <p> <code>event.event-id</code> - The event ID.</p>
+     * </li> <li> <p> <code>event.event-type</code> - The event type (for
      * <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for
      * <code>io-performance</code>: <code>io-performance:degraded</code> |
      * <code>io-performance:severely-degraded</code> |
@@ -81,14 +77,14 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>action.code</code> - The action
-     * code for the event (for example, <code>enable-volume-io</code>).</p> </li> <li>
-     * <p> <code>action.description</code> - A description of the action.</p> </li>
-     * <li> <p> <code>action.event-id</code> - The event ID associated with the
-     * action.</p> </li> <li> <p> <code>availability-zone</code> - The Availability
-     * Zone of the instance.</p> </li> <li> <p> <code>event.description</code> - A
-     * description of the event.</p> </li> <li> <p> <code>event.event-id</code> - The
-     * event ID.</p> </li> <li> <p> <code>event.event-type</code> - The event type (for
+     * <p>The filters.</p> <ul> <li> <p> <code>action.code</code> - The action code for
+     * the event (for example, <code>enable-volume-io</code>).</p> </li> <li> <p>
+     * <code>action.description</code> - A description of the action.</p> </li> <li>
+     * <p> <code>action.event-id</code> - The event ID associated with the action.</p>
+     * </li> <li> <p> <code>availability-zone</code> - The Availability Zone of the
+     * instance.</p> </li> <li> <p> <code>event.description</code> - A description of
+     * the event.</p> </li> <li> <p> <code>event.event-id</code> - The event ID.</p>
+     * </li> <li> <p> <code>event.event-type</code> - The event type (for
      * <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for
      * <code>io-performance</code>: <code>io-performance:degraded</code> |
      * <code>io-performance:severely-degraded</code> |
@@ -109,14 +105,14 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>action.code</code> - The action
-     * code for the event (for example, <code>enable-volume-io</code>).</p> </li> <li>
-     * <p> <code>action.description</code> - A description of the action.</p> </li>
-     * <li> <p> <code>action.event-id</code> - The event ID associated with the
-     * action.</p> </li> <li> <p> <code>availability-zone</code> - The Availability
-     * Zone of the instance.</p> </li> <li> <p> <code>event.description</code> - A
-     * description of the event.</p> </li> <li> <p> <code>event.event-id</code> - The
-     * event ID.</p> </li> <li> <p> <code>event.event-type</code> - The event type (for
+     * <p>The filters.</p> <ul> <li> <p> <code>action.code</code> - The action code for
+     * the event (for example, <code>enable-volume-io</code>).</p> </li> <li> <p>
+     * <code>action.description</code> - A description of the action.</p> </li> <li>
+     * <p> <code>action.event-id</code> - The event ID associated with the action.</p>
+     * </li> <li> <p> <code>availability-zone</code> - The Availability Zone of the
+     * instance.</p> </li> <li> <p> <code>event.description</code> - A description of
+     * the event.</p> </li> <li> <p> <code>event.event-id</code> - The event ID.</p>
+     * </li> <li> <p> <code>event.event-type</code> - The event type (for
      * <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for
      * <code>io-performance</code>: <code>io-performance:degraded</code> |
      * <code>io-performance:severely-degraded</code> |
@@ -137,14 +133,14 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>action.code</code> - The action
-     * code for the event (for example, <code>enable-volume-io</code>).</p> </li> <li>
-     * <p> <code>action.description</code> - A description of the action.</p> </li>
-     * <li> <p> <code>action.event-id</code> - The event ID associated with the
-     * action.</p> </li> <li> <p> <code>availability-zone</code> - The Availability
-     * Zone of the instance.</p> </li> <li> <p> <code>event.description</code> - A
-     * description of the event.</p> </li> <li> <p> <code>event.event-id</code> - The
-     * event ID.</p> </li> <li> <p> <code>event.event-type</code> - The event type (for
+     * <p>The filters.</p> <ul> <li> <p> <code>action.code</code> - The action code for
+     * the event (for example, <code>enable-volume-io</code>).</p> </li> <li> <p>
+     * <code>action.description</code> - A description of the action.</p> </li> <li>
+     * <p> <code>action.event-id</code> - The event ID associated with the action.</p>
+     * </li> <li> <p> <code>availability-zone</code> - The Availability Zone of the
+     * instance.</p> </li> <li> <p> <code>event.description</code> - A description of
+     * the event.</p> </li> <li> <p> <code>event.event-id</code> - The event ID.</p>
+     * </li> <li> <p> <code>event.event-type</code> - The event type (for
      * <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for
      * <code>io-performance</code>: <code>io-performance:degraded</code> |
      * <code>io-performance:severely-degraded</code> |
@@ -165,14 +161,14 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>action.code</code> - The action
-     * code for the event (for example, <code>enable-volume-io</code>).</p> </li> <li>
-     * <p> <code>action.description</code> - A description of the action.</p> </li>
-     * <li> <p> <code>action.event-id</code> - The event ID associated with the
-     * action.</p> </li> <li> <p> <code>availability-zone</code> - The Availability
-     * Zone of the instance.</p> </li> <li> <p> <code>event.description</code> - A
-     * description of the event.</p> </li> <li> <p> <code>event.event-id</code> - The
-     * event ID.</p> </li> <li> <p> <code>event.event-type</code> - The event type (for
+     * <p>The filters.</p> <ul> <li> <p> <code>action.code</code> - The action code for
+     * the event (for example, <code>enable-volume-io</code>).</p> </li> <li> <p>
+     * <code>action.description</code> - A description of the action.</p> </li> <li>
+     * <p> <code>action.event-id</code> - The event ID associated with the action.</p>
+     * </li> <li> <p> <code>availability-zone</code> - The Availability Zone of the
+     * instance.</p> </li> <li> <p> <code>event.description</code> - A description of
+     * the event.</p> </li> <li> <p> <code>event.event-id</code> - The event ID.</p>
+     * </li> <li> <p> <code>event.event-type</code> - The event type (for
      * <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for
      * <code>io-performance</code>: <code>io-performance:degraded</code> |
      * <code>io-performance:severely-degraded</code> |
@@ -193,14 +189,14 @@ namespace Model
     inline DescribeVolumeStatusRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>action.code</code> - The action
-     * code for the event (for example, <code>enable-volume-io</code>).</p> </li> <li>
-     * <p> <code>action.description</code> - A description of the action.</p> </li>
-     * <li> <p> <code>action.event-id</code> - The event ID associated with the
-     * action.</p> </li> <li> <p> <code>availability-zone</code> - The Availability
-     * Zone of the instance.</p> </li> <li> <p> <code>event.description</code> - A
-     * description of the event.</p> </li> <li> <p> <code>event.event-id</code> - The
-     * event ID.</p> </li> <li> <p> <code>event.event-type</code> - The event type (for
+     * <p>The filters.</p> <ul> <li> <p> <code>action.code</code> - The action code for
+     * the event (for example, <code>enable-volume-io</code>).</p> </li> <li> <p>
+     * <code>action.description</code> - A description of the action.</p> </li> <li>
+     * <p> <code>action.event-id</code> - The event ID associated with the action.</p>
+     * </li> <li> <p> <code>availability-zone</code> - The Availability Zone of the
+     * instance.</p> </li> <li> <p> <code>event.description</code> - A description of
+     * the event.</p> </li> <li> <p> <code>event.event-id</code> - The event ID.</p>
+     * </li> <li> <p> <code>event.event-type</code> - The event type (for
      * <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for
      * <code>io-performance</code>: <code>io-performance:degraded</code> |
      * <code>io-performance:severely-degraded</code> |
@@ -221,14 +217,14 @@ namespace Model
     inline DescribeVolumeStatusRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>action.code</code> - The action
-     * code for the event (for example, <code>enable-volume-io</code>).</p> </li> <li>
-     * <p> <code>action.description</code> - A description of the action.</p> </li>
-     * <li> <p> <code>action.event-id</code> - The event ID associated with the
-     * action.</p> </li> <li> <p> <code>availability-zone</code> - The Availability
-     * Zone of the instance.</p> </li> <li> <p> <code>event.description</code> - A
-     * description of the event.</p> </li> <li> <p> <code>event.event-id</code> - The
-     * event ID.</p> </li> <li> <p> <code>event.event-type</code> - The event type (for
+     * <p>The filters.</p> <ul> <li> <p> <code>action.code</code> - The action code for
+     * the event (for example, <code>enable-volume-io</code>).</p> </li> <li> <p>
+     * <code>action.description</code> - A description of the action.</p> </li> <li>
+     * <p> <code>action.event-id</code> - The event ID associated with the action.</p>
+     * </li> <li> <p> <code>availability-zone</code> - The Availability Zone of the
+     * instance.</p> </li> <li> <p> <code>event.description</code> - A description of
+     * the event.</p> </li> <li> <p> <code>event.event-id</code> - The event ID.</p>
+     * </li> <li> <p> <code>event.event-type</code> - The event type (for
      * <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for
      * <code>io-performance</code>: <code>io-performance:degraded</code> |
      * <code>io-performance:severely-degraded</code> |
@@ -249,14 +245,14 @@ namespace Model
     inline DescribeVolumeStatusRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>action.code</code> - The action
-     * code for the event (for example, <code>enable-volume-io</code>).</p> </li> <li>
-     * <p> <code>action.description</code> - A description of the action.</p> </li>
-     * <li> <p> <code>action.event-id</code> - The event ID associated with the
-     * action.</p> </li> <li> <p> <code>availability-zone</code> - The Availability
-     * Zone of the instance.</p> </li> <li> <p> <code>event.description</code> - A
-     * description of the event.</p> </li> <li> <p> <code>event.event-id</code> - The
-     * event ID.</p> </li> <li> <p> <code>event.event-type</code> - The event type (for
+     * <p>The filters.</p> <ul> <li> <p> <code>action.code</code> - The action code for
+     * the event (for example, <code>enable-volume-io</code>).</p> </li> <li> <p>
+     * <code>action.description</code> - A description of the action.</p> </li> <li>
+     * <p> <code>action.event-id</code> - The event ID associated with the action.</p>
+     * </li> <li> <p> <code>availability-zone</code> - The Availability Zone of the
+     * instance.</p> </li> <li> <p> <code>event.description</code> - A description of
+     * the event.</p> </li> <li> <p> <code>event.event-id</code> - The event ID.</p>
+     * </li> <li> <p> <code>event.event-type</code> - The event type (for
      * <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for
      * <code>io-performance</code>: <code>io-performance:degraded</code> |
      * <code>io-performance:severely-degraded</code> |
@@ -408,47 +404,47 @@ namespace Model
 
 
     /**
-     * <p>One or more volume IDs.</p> <p>Default: Describes all your volumes.</p>
+     * <p>The IDs of the volumes.</p> <p>Default: Describes all your volumes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVolumeIds() const{ return m_volumeIds; }
 
     /**
-     * <p>One or more volume IDs.</p> <p>Default: Describes all your volumes.</p>
+     * <p>The IDs of the volumes.</p> <p>Default: Describes all your volumes.</p>
      */
     inline bool VolumeIdsHasBeenSet() const { return m_volumeIdsHasBeenSet; }
 
     /**
-     * <p>One or more volume IDs.</p> <p>Default: Describes all your volumes.</p>
+     * <p>The IDs of the volumes.</p> <p>Default: Describes all your volumes.</p>
      */
     inline void SetVolumeIds(const Aws::Vector<Aws::String>& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = value; }
 
     /**
-     * <p>One or more volume IDs.</p> <p>Default: Describes all your volumes.</p>
+     * <p>The IDs of the volumes.</p> <p>Default: Describes all your volumes.</p>
      */
     inline void SetVolumeIds(Aws::Vector<Aws::String>&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = std::move(value); }
 
     /**
-     * <p>One or more volume IDs.</p> <p>Default: Describes all your volumes.</p>
+     * <p>The IDs of the volumes.</p> <p>Default: Describes all your volumes.</p>
      */
     inline DescribeVolumeStatusRequest& WithVolumeIds(const Aws::Vector<Aws::String>& value) { SetVolumeIds(value); return *this;}
 
     /**
-     * <p>One or more volume IDs.</p> <p>Default: Describes all your volumes.</p>
+     * <p>The IDs of the volumes.</p> <p>Default: Describes all your volumes.</p>
      */
     inline DescribeVolumeStatusRequest& WithVolumeIds(Aws::Vector<Aws::String>&& value) { SetVolumeIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more volume IDs.</p> <p>Default: Describes all your volumes.</p>
+     * <p>The IDs of the volumes.</p> <p>Default: Describes all your volumes.</p>
      */
     inline DescribeVolumeStatusRequest& AddVolumeIds(const Aws::String& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more volume IDs.</p> <p>Default: Describes all your volumes.</p>
+     * <p>The IDs of the volumes.</p> <p>Default: Describes all your volumes.</p>
      */
     inline DescribeVolumeStatusRequest& AddVolumeIds(Aws::String&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more volume IDs.</p> <p>Default: Describes all your volumes.</p>
+     * <p>The IDs of the volumes.</p> <p>Default: Describes all your volumes.</p>
      */
     inline DescribeVolumeStatusRequest& AddVolumeIds(const char* value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
 

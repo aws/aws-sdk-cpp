@@ -156,54 +156,54 @@ namespace Model
 
 
     /**
-     * <p>One or more instances.</p>
+     * <p>The instances.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstances() const{ return m_instances; }
 
     /**
-     * <p>One or more instances.</p>
+     * <p>The instances.</p>
      */
     inline bool InstancesHasBeenSet() const { return m_instancesHasBeenSet; }
 
     /**
-     * <p>One or more instances.</p>
+     * <p>The instances.</p>
      */
     inline void SetInstances(const Aws::Vector<Aws::String>& value) { m_instancesHasBeenSet = true; m_instances = value; }
 
     /**
-     * <p>One or more instances.</p>
+     * <p>The instances.</p>
      */
     inline void SetInstances(Aws::Vector<Aws::String>&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
 
     /**
-     * <p>One or more instances.</p>
+     * <p>The instances.</p>
      */
     inline ReportInstanceStatusRequest& WithInstances(const Aws::Vector<Aws::String>& value) { SetInstances(value); return *this;}
 
     /**
-     * <p>One or more instances.</p>
+     * <p>The instances.</p>
      */
     inline ReportInstanceStatusRequest& WithInstances(Aws::Vector<Aws::String>&& value) { SetInstances(std::move(value)); return *this;}
 
     /**
-     * <p>One or more instances.</p>
+     * <p>The instances.</p>
      */
     inline ReportInstanceStatusRequest& AddInstances(const Aws::String& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
 
     /**
-     * <p>One or more instances.</p>
+     * <p>The instances.</p>
      */
     inline ReportInstanceStatusRequest& AddInstances(Aws::String&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more instances.</p>
+     * <p>The instances.</p>
      */
     inline ReportInstanceStatusRequest& AddInstances(const char* value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
 
 
     /**
-     * <p>One or more reason codes that describe the health state of your instance.</p>
-     * <ul> <li> <p> <code>instance-stuck-in-state</code>: My instance is stuck in a
+     * <p>The reason codes that describe the health state of your instance.</p> <ul>
+     * <li> <p> <code>instance-stuck-in-state</code>: My instance is stuck in a
      * state.</p> </li> <li> <p> <code>unresponsive</code>: My instance is
      * unresponsive.</p> </li> <li> <p> <code>not-accepting-credentials</code>: My
      * instance is not accepting my credentials.</p> </li> <li> <p>
@@ -221,8 +221,8 @@ namespace Model
     inline const Aws::Vector<ReportInstanceReasonCodes>& GetReasonCodes() const{ return m_reasonCodes; }
 
     /**
-     * <p>One or more reason codes that describe the health state of your instance.</p>
-     * <ul> <li> <p> <code>instance-stuck-in-state</code>: My instance is stuck in a
+     * <p>The reason codes that describe the health state of your instance.</p> <ul>
+     * <li> <p> <code>instance-stuck-in-state</code>: My instance is stuck in a
      * state.</p> </li> <li> <p> <code>unresponsive</code>: My instance is
      * unresponsive.</p> </li> <li> <p> <code>not-accepting-credentials</code>: My
      * instance is not accepting my credentials.</p> </li> <li> <p>
@@ -240,8 +240,8 @@ namespace Model
     inline bool ReasonCodesHasBeenSet() const { return m_reasonCodesHasBeenSet; }
 
     /**
-     * <p>One or more reason codes that describe the health state of your instance.</p>
-     * <ul> <li> <p> <code>instance-stuck-in-state</code>: My instance is stuck in a
+     * <p>The reason codes that describe the health state of your instance.</p> <ul>
+     * <li> <p> <code>instance-stuck-in-state</code>: My instance is stuck in a
      * state.</p> </li> <li> <p> <code>unresponsive</code>: My instance is
      * unresponsive.</p> </li> <li> <p> <code>not-accepting-credentials</code>: My
      * instance is not accepting my credentials.</p> </li> <li> <p>
@@ -259,8 +259,8 @@ namespace Model
     inline void SetReasonCodes(const Aws::Vector<ReportInstanceReasonCodes>& value) { m_reasonCodesHasBeenSet = true; m_reasonCodes = value; }
 
     /**
-     * <p>One or more reason codes that describe the health state of your instance.</p>
-     * <ul> <li> <p> <code>instance-stuck-in-state</code>: My instance is stuck in a
+     * <p>The reason codes that describe the health state of your instance.</p> <ul>
+     * <li> <p> <code>instance-stuck-in-state</code>: My instance is stuck in a
      * state.</p> </li> <li> <p> <code>unresponsive</code>: My instance is
      * unresponsive.</p> </li> <li> <p> <code>not-accepting-credentials</code>: My
      * instance is not accepting my credentials.</p> </li> <li> <p>
@@ -278,8 +278,8 @@ namespace Model
     inline void SetReasonCodes(Aws::Vector<ReportInstanceReasonCodes>&& value) { m_reasonCodesHasBeenSet = true; m_reasonCodes = std::move(value); }
 
     /**
-     * <p>One or more reason codes that describe the health state of your instance.</p>
-     * <ul> <li> <p> <code>instance-stuck-in-state</code>: My instance is stuck in a
+     * <p>The reason codes that describe the health state of your instance.</p> <ul>
+     * <li> <p> <code>instance-stuck-in-state</code>: My instance is stuck in a
      * state.</p> </li> <li> <p> <code>unresponsive</code>: My instance is
      * unresponsive.</p> </li> <li> <p> <code>not-accepting-credentials</code>: My
      * instance is not accepting my credentials.</p> </li> <li> <p>
@@ -297,8 +297,8 @@ namespace Model
     inline ReportInstanceStatusRequest& WithReasonCodes(const Aws::Vector<ReportInstanceReasonCodes>& value) { SetReasonCodes(value); return *this;}
 
     /**
-     * <p>One or more reason codes that describe the health state of your instance.</p>
-     * <ul> <li> <p> <code>instance-stuck-in-state</code>: My instance is stuck in a
+     * <p>The reason codes that describe the health state of your instance.</p> <ul>
+     * <li> <p> <code>instance-stuck-in-state</code>: My instance is stuck in a
      * state.</p> </li> <li> <p> <code>unresponsive</code>: My instance is
      * unresponsive.</p> </li> <li> <p> <code>not-accepting-credentials</code>: My
      * instance is not accepting my credentials.</p> </li> <li> <p>
@@ -316,8 +316,8 @@ namespace Model
     inline ReportInstanceStatusRequest& WithReasonCodes(Aws::Vector<ReportInstanceReasonCodes>&& value) { SetReasonCodes(std::move(value)); return *this;}
 
     /**
-     * <p>One or more reason codes that describe the health state of your instance.</p>
-     * <ul> <li> <p> <code>instance-stuck-in-state</code>: My instance is stuck in a
+     * <p>The reason codes that describe the health state of your instance.</p> <ul>
+     * <li> <p> <code>instance-stuck-in-state</code>: My instance is stuck in a
      * state.</p> </li> <li> <p> <code>unresponsive</code>: My instance is
      * unresponsive.</p> </li> <li> <p> <code>not-accepting-credentials</code>: My
      * instance is not accepting my credentials.</p> </li> <li> <p>
@@ -335,8 +335,8 @@ namespace Model
     inline ReportInstanceStatusRequest& AddReasonCodes(const ReportInstanceReasonCodes& value) { m_reasonCodesHasBeenSet = true; m_reasonCodes.push_back(value); return *this; }
 
     /**
-     * <p>One or more reason codes that describe the health state of your instance.</p>
-     * <ul> <li> <p> <code>instance-stuck-in-state</code>: My instance is stuck in a
+     * <p>The reason codes that describe the health state of your instance.</p> <ul>
+     * <li> <p> <code>instance-stuck-in-state</code>: My instance is stuck in a
      * state.</p> </li> <li> <p> <code>unresponsive</code>: My instance is
      * unresponsive.</p> </li> <li> <p> <code>not-accepting-credentials</code>: My
      * instance is not accepting my credentials.</p> </li> <li> <p>

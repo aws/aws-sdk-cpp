@@ -93,42 +93,42 @@ namespace Model
 
 
     /**
-     * <p>One or more values for the account attribute.</p>
+     * <p>The values for the account attribute.</p>
      */
     inline const Aws::Vector<AccountAttributeValue>& GetAttributeValues() const{ return m_attributeValues; }
 
     /**
-     * <p>One or more values for the account attribute.</p>
+     * <p>The values for the account attribute.</p>
      */
     inline bool AttributeValuesHasBeenSet() const { return m_attributeValuesHasBeenSet; }
 
     /**
-     * <p>One or more values for the account attribute.</p>
+     * <p>The values for the account attribute.</p>
      */
     inline void SetAttributeValues(const Aws::Vector<AccountAttributeValue>& value) { m_attributeValuesHasBeenSet = true; m_attributeValues = value; }
 
     /**
-     * <p>One or more values for the account attribute.</p>
+     * <p>The values for the account attribute.</p>
      */
     inline void SetAttributeValues(Aws::Vector<AccountAttributeValue>&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues = std::move(value); }
 
     /**
-     * <p>One or more values for the account attribute.</p>
+     * <p>The values for the account attribute.</p>
      */
     inline AccountAttribute& WithAttributeValues(const Aws::Vector<AccountAttributeValue>& value) { SetAttributeValues(value); return *this;}
 
     /**
-     * <p>One or more values for the account attribute.</p>
+     * <p>The values for the account attribute.</p>
      */
     inline AccountAttribute& WithAttributeValues(Aws::Vector<AccountAttributeValue>&& value) { SetAttributeValues(std::move(value)); return *this;}
 
     /**
-     * <p>One or more values for the account attribute.</p>
+     * <p>The values for the account attribute.</p>
      */
     inline AccountAttribute& AddAttributeValues(const AccountAttributeValue& value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(value); return *this; }
 
     /**
-     * <p>One or more values for the account attribute.</p>
+     * <p>The values for the account attribute.</p>
      */
     inline AccountAttribute& AddAttributeValues(AccountAttributeValue&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(std::move(value)); return *this; }
 

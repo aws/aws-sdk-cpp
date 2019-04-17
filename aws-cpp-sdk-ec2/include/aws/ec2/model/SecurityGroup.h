@@ -135,42 +135,42 @@ namespace Model
 
 
     /**
-     * <p>One or more inbound rules associated with the security group.</p>
+     * <p>The inbound rules associated with the security group.</p>
      */
     inline const Aws::Vector<IpPermission>& GetIpPermissions() const{ return m_ipPermissions; }
 
     /**
-     * <p>One or more inbound rules associated with the security group.</p>
+     * <p>The inbound rules associated with the security group.</p>
      */
     inline bool IpPermissionsHasBeenSet() const { return m_ipPermissionsHasBeenSet; }
 
     /**
-     * <p>One or more inbound rules associated with the security group.</p>
+     * <p>The inbound rules associated with the security group.</p>
      */
     inline void SetIpPermissions(const Aws::Vector<IpPermission>& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
 
     /**
-     * <p>One or more inbound rules associated with the security group.</p>
+     * <p>The inbound rules associated with the security group.</p>
      */
     inline void SetIpPermissions(Aws::Vector<IpPermission>&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = std::move(value); }
 
     /**
-     * <p>One or more inbound rules associated with the security group.</p>
+     * <p>The inbound rules associated with the security group.</p>
      */
     inline SecurityGroup& WithIpPermissions(const Aws::Vector<IpPermission>& value) { SetIpPermissions(value); return *this;}
 
     /**
-     * <p>One or more inbound rules associated with the security group.</p>
+     * <p>The inbound rules associated with the security group.</p>
      */
     inline SecurityGroup& WithIpPermissions(Aws::Vector<IpPermission>&& value) { SetIpPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>One or more inbound rules associated with the security group.</p>
+     * <p>The inbound rules associated with the security group.</p>
      */
     inline SecurityGroup& AddIpPermissions(const IpPermission& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(value); return *this; }
 
     /**
-     * <p>One or more inbound rules associated with the security group.</p>
+     * <p>The inbound rules associated with the security group.</p>
      */
     inline SecurityGroup& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(std::move(value)); return *this; }
 
@@ -258,42 +258,42 @@ namespace Model
 
 
     /**
-     * <p>[EC2-VPC] One or more outbound rules associated with the security group.</p>
+     * <p>[EC2-VPC] The outbound rules associated with the security group.</p>
      */
     inline const Aws::Vector<IpPermission>& GetIpPermissionsEgress() const{ return m_ipPermissionsEgress; }
 
     /**
-     * <p>[EC2-VPC] One or more outbound rules associated with the security group.</p>
+     * <p>[EC2-VPC] The outbound rules associated with the security group.</p>
      */
     inline bool IpPermissionsEgressHasBeenSet() const { return m_ipPermissionsEgressHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC] One or more outbound rules associated with the security group.</p>
+     * <p>[EC2-VPC] The outbound rules associated with the security group.</p>
      */
     inline void SetIpPermissionsEgress(const Aws::Vector<IpPermission>& value) { m_ipPermissionsEgressHasBeenSet = true; m_ipPermissionsEgress = value; }
 
     /**
-     * <p>[EC2-VPC] One or more outbound rules associated with the security group.</p>
+     * <p>[EC2-VPC] The outbound rules associated with the security group.</p>
      */
     inline void SetIpPermissionsEgress(Aws::Vector<IpPermission>&& value) { m_ipPermissionsEgressHasBeenSet = true; m_ipPermissionsEgress = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] One or more outbound rules associated with the security group.</p>
+     * <p>[EC2-VPC] The outbound rules associated with the security group.</p>
      */
     inline SecurityGroup& WithIpPermissionsEgress(const Aws::Vector<IpPermission>& value) { SetIpPermissionsEgress(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] One or more outbound rules associated with the security group.</p>
+     * <p>[EC2-VPC] The outbound rules associated with the security group.</p>
      */
     inline SecurityGroup& WithIpPermissionsEgress(Aws::Vector<IpPermission>&& value) { SetIpPermissionsEgress(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] One or more outbound rules associated with the security group.</p>
+     * <p>[EC2-VPC] The outbound rules associated with the security group.</p>
      */
     inline SecurityGroup& AddIpPermissionsEgress(const IpPermission& value) { m_ipPermissionsEgressHasBeenSet = true; m_ipPermissionsEgress.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-VPC] One or more outbound rules associated with the security group.</p>
+     * <p>[EC2-VPC] The outbound rules associated with the security group.</p>
      */
     inline SecurityGroup& AddIpPermissionsEgress(IpPermission&& value) { m_ipPermissionsEgressHasBeenSet = true; m_ipPermissionsEgress.push_back(std::move(value)); return *this; }
 

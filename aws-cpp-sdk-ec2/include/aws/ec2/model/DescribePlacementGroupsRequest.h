@@ -49,8 +49,8 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-name</code> - The name of
-     * the placement group.</p> </li> <li> <p> <code>state</code> - The state of the
+     * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
+     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
      * placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
@@ -60,8 +60,8 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-name</code> - The name of
-     * the placement group.</p> </li> <li> <p> <code>state</code> - The state of the
+     * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
+     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
      * placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
@@ -71,8 +71,8 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-name</code> - The name of
-     * the placement group.</p> </li> <li> <p> <code>state</code> - The state of the
+     * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
+     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
      * placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
@@ -82,8 +82,8 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-name</code> - The name of
-     * the placement group.</p> </li> <li> <p> <code>state</code> - The state of the
+     * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
+     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
      * placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
@@ -93,8 +93,8 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-name</code> - The name of
-     * the placement group.</p> </li> <li> <p> <code>state</code> - The state of the
+     * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
+     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
      * placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
@@ -104,8 +104,8 @@ namespace Model
     inline DescribePlacementGroupsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-name</code> - The name of
-     * the placement group.</p> </li> <li> <p> <code>state</code> - The state of the
+     * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
+     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
      * placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
@@ -115,8 +115,8 @@ namespace Model
     inline DescribePlacementGroupsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-name</code> - The name of
-     * the placement group.</p> </li> <li> <p> <code>state</code> - The state of the
+     * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
+     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
      * placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
@@ -126,8 +126,8 @@ namespace Model
     inline DescribePlacementGroupsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>group-name</code> - The name of
-     * the placement group.</p> </li> <li> <p> <code>state</code> - The state of the
+     * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
+     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
      * placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
@@ -171,55 +171,55 @@ namespace Model
 
 
     /**
-     * <p>One or more placement group names.</p> <p>Default: Describes all your
+     * <p>The names of the placement groups.</p> <p>Default: Describes all your
      * placement groups, or only those otherwise specified.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroupNames() const{ return m_groupNames; }
 
     /**
-     * <p>One or more placement group names.</p> <p>Default: Describes all your
+     * <p>The names of the placement groups.</p> <p>Default: Describes all your
      * placement groups, or only those otherwise specified.</p>
      */
     inline bool GroupNamesHasBeenSet() const { return m_groupNamesHasBeenSet; }
 
     /**
-     * <p>One or more placement group names.</p> <p>Default: Describes all your
+     * <p>The names of the placement groups.</p> <p>Default: Describes all your
      * placement groups, or only those otherwise specified.</p>
      */
     inline void SetGroupNames(const Aws::Vector<Aws::String>& value) { m_groupNamesHasBeenSet = true; m_groupNames = value; }
 
     /**
-     * <p>One or more placement group names.</p> <p>Default: Describes all your
+     * <p>The names of the placement groups.</p> <p>Default: Describes all your
      * placement groups, or only those otherwise specified.</p>
      */
     inline void SetGroupNames(Aws::Vector<Aws::String>&& value) { m_groupNamesHasBeenSet = true; m_groupNames = std::move(value); }
 
     /**
-     * <p>One or more placement group names.</p> <p>Default: Describes all your
+     * <p>The names of the placement groups.</p> <p>Default: Describes all your
      * placement groups, or only those otherwise specified.</p>
      */
     inline DescribePlacementGroupsRequest& WithGroupNames(const Aws::Vector<Aws::String>& value) { SetGroupNames(value); return *this;}
 
     /**
-     * <p>One or more placement group names.</p> <p>Default: Describes all your
+     * <p>The names of the placement groups.</p> <p>Default: Describes all your
      * placement groups, or only those otherwise specified.</p>
      */
     inline DescribePlacementGroupsRequest& WithGroupNames(Aws::Vector<Aws::String>&& value) { SetGroupNames(std::move(value)); return *this;}
 
     /**
-     * <p>One or more placement group names.</p> <p>Default: Describes all your
+     * <p>The names of the placement groups.</p> <p>Default: Describes all your
      * placement groups, or only those otherwise specified.</p>
      */
     inline DescribePlacementGroupsRequest& AddGroupNames(const Aws::String& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
 
     /**
-     * <p>One or more placement group names.</p> <p>Default: Describes all your
+     * <p>The names of the placement groups.</p> <p>Default: Describes all your
      * placement groups, or only those otherwise specified.</p>
      */
     inline DescribePlacementGroupsRequest& AddGroupNames(Aws::String&& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more placement group names.</p> <p>Default: Describes all your
+     * <p>The names of the placement groups.</p> <p>Default: Describes all your
      * placement groups, or only those otherwise specified.</p>
      */
     inline DescribePlacementGroupsRequest& AddGroupNames(const char* value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }

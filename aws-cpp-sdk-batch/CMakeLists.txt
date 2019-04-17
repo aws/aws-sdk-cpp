@@ -71,11 +71,6 @@ setup_install()
 install (FILES ${AWS_BATCH_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/batch)
 install (FILES ${AWS_BATCH_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/batch/model)
 
-if(PLATFORM_WINDOWS AND MSVC)
-    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
-    install (FILES ${NUGET_FILES} DESTINATION nuget)
-endif()
-
 do_packaging()
 
 

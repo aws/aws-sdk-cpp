@@ -305,56 +305,47 @@ namespace Model
 
 
     /**
-     * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your
-     * Elastic IP addresses.</p>
+     * <p>[EC2-VPC] Information about the allocation IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllocationIds() const{ return m_allocationIds; }
 
     /**
-     * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your
-     * Elastic IP addresses.</p>
+     * <p>[EC2-VPC] Information about the allocation IDs.</p>
      */
     inline bool AllocationIdsHasBeenSet() const { return m_allocationIdsHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your
-     * Elastic IP addresses.</p>
+     * <p>[EC2-VPC] Information about the allocation IDs.</p>
      */
     inline void SetAllocationIds(const Aws::Vector<Aws::String>& value) { m_allocationIdsHasBeenSet = true; m_allocationIds = value; }
 
     /**
-     * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your
-     * Elastic IP addresses.</p>
+     * <p>[EC2-VPC] Information about the allocation IDs.</p>
      */
     inline void SetAllocationIds(Aws::Vector<Aws::String>&& value) { m_allocationIdsHasBeenSet = true; m_allocationIds = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your
-     * Elastic IP addresses.</p>
+     * <p>[EC2-VPC] Information about the allocation IDs.</p>
      */
     inline DescribeAddressesRequest& WithAllocationIds(const Aws::Vector<Aws::String>& value) { SetAllocationIds(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your
-     * Elastic IP addresses.</p>
+     * <p>[EC2-VPC] Information about the allocation IDs.</p>
      */
     inline DescribeAddressesRequest& WithAllocationIds(Aws::Vector<Aws::String>&& value) { SetAllocationIds(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your
-     * Elastic IP addresses.</p>
+     * <p>[EC2-VPC] Information about the allocation IDs.</p>
      */
     inline DescribeAddressesRequest& AddAllocationIds(const Aws::String& value) { m_allocationIdsHasBeenSet = true; m_allocationIds.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your
-     * Elastic IP addresses.</p>
+     * <p>[EC2-VPC] Information about the allocation IDs.</p>
      */
     inline DescribeAddressesRequest& AddAllocationIds(Aws::String&& value) { m_allocationIdsHasBeenSet = true; m_allocationIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your
-     * Elastic IP addresses.</p>
+     * <p>[EC2-VPC] Information about the allocation IDs.</p>
      */
     inline DescribeAddressesRequest& AddAllocationIds(const char* value) { m_allocationIdsHasBeenSet = true; m_allocationIds.push_back(value); return *this; }
 

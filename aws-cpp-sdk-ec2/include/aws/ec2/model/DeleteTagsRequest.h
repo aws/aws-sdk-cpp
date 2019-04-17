@@ -82,65 +82,56 @@ namespace Model
 
 
     /**
-     * <p>The IDs of one or more resources, separated by spaces.</p> <p>Constraints: Up
-     * to 1000 resource IDs. We recommend breaking up this request into smaller
-     * batches.</p>
+     * <p>The IDs of the resources, separated by spaces.</p> <p>Constraints: Up to 1000
+     * resource IDs. We recommend breaking up this request into smaller batches.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
 
     /**
-     * <p>The IDs of one or more resources, separated by spaces.</p> <p>Constraints: Up
-     * to 1000 resource IDs. We recommend breaking up this request into smaller
-     * batches.</p>
+     * <p>The IDs of the resources, separated by spaces.</p> <p>Constraints: Up to 1000
+     * resource IDs. We recommend breaking up this request into smaller batches.</p>
      */
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
 
     /**
-     * <p>The IDs of one or more resources, separated by spaces.</p> <p>Constraints: Up
-     * to 1000 resource IDs. We recommend breaking up this request into smaller
-     * batches.</p>
+     * <p>The IDs of the resources, separated by spaces.</p> <p>Constraints: Up to 1000
+     * resource IDs. We recommend breaking up this request into smaller batches.</p>
      */
     inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
     /**
-     * <p>The IDs of one or more resources, separated by spaces.</p> <p>Constraints: Up
-     * to 1000 resource IDs. We recommend breaking up this request into smaller
-     * batches.</p>
+     * <p>The IDs of the resources, separated by spaces.</p> <p>Constraints: Up to 1000
+     * resource IDs. We recommend breaking up this request into smaller batches.</p>
      */
     inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
-     * <p>The IDs of one or more resources, separated by spaces.</p> <p>Constraints: Up
-     * to 1000 resource IDs. We recommend breaking up this request into smaller
-     * batches.</p>
+     * <p>The IDs of the resources, separated by spaces.</p> <p>Constraints: Up to 1000
+     * resource IDs. We recommend breaking up this request into smaller batches.</p>
      */
     inline DeleteTagsRequest& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
 
     /**
-     * <p>The IDs of one or more resources, separated by spaces.</p> <p>Constraints: Up
-     * to 1000 resource IDs. We recommend breaking up this request into smaller
-     * batches.</p>
+     * <p>The IDs of the resources, separated by spaces.</p> <p>Constraints: Up to 1000
+     * resource IDs. We recommend breaking up this request into smaller batches.</p>
      */
     inline DeleteTagsRequest& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of one or more resources, separated by spaces.</p> <p>Constraints: Up
-     * to 1000 resource IDs. We recommend breaking up this request into smaller
-     * batches.</p>
+     * <p>The IDs of the resources, separated by spaces.</p> <p>Constraints: Up to 1000
+     * resource IDs. We recommend breaking up this request into smaller batches.</p>
      */
     inline DeleteTagsRequest& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of one or more resources, separated by spaces.</p> <p>Constraints: Up
-     * to 1000 resource IDs. We recommend breaking up this request into smaller
-     * batches.</p>
+     * <p>The IDs of the resources, separated by spaces.</p> <p>Constraints: Up to 1000
+     * resource IDs. We recommend breaking up this request into smaller batches.</p>
      */
     inline DeleteTagsRequest& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of one or more resources, separated by spaces.</p> <p>Constraints: Up
-     * to 1000 resource IDs. We recommend breaking up this request into smaller
-     * batches.</p>
+     * <p>The IDs of the resources, separated by spaces.</p> <p>Constraints: Up to 1000
+     * resource IDs. We recommend breaking up this request into smaller batches.</p>
      */
     inline DeleteTagsRequest& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
