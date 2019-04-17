@@ -21,6 +21,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 
 using namespace Aws::Http;
+#ifndef NO_HTTP_CLIENT
 TEST(HttpClientTest, TestNullResponse)
 {
 	auto request = CreateHttpRequest(Aws::String("http://some.unknown1234xxx.test.aws"), 
@@ -29,3 +30,4 @@ TEST(HttpClientTest, TestNullResponse)
 	auto response = httpClient->MakeRequest(request);
 	ASSERT_EQ(nullptr, response);
 }
+#endif

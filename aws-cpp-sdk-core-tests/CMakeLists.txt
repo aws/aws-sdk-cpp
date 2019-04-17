@@ -95,6 +95,10 @@ endif()
 set_compiler_flags(${PROJECT_NAME})
 set_compiler_warnings(${PROJECT_NAME})
 
+if (NO_HTTP_CLIENT)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE "NO_HTTP_CLIENT")
+endif()
+
 target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
 
 add_custom_command(TARGET aws-cpp-sdk-core-tests PRE_BUILD
