@@ -47,7 +47,7 @@ namespace Stream
 
             virtual ~SimpleStreamBuf();
 
-            Aws::String str();
+            Aws::String str() const;
             void str(const Aws::String& value);
 
             void swap(SimpleStreamBuf& rhs);

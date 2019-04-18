@@ -16,7 +16,6 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/event/EventHeader.h>
 
 namespace Aws
