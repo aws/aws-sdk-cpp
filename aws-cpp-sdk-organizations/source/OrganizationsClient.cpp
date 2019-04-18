@@ -34,6 +34,7 @@
 #include <aws/organizations/model/AttachPolicyRequest.h>
 #include <aws/organizations/model/CancelHandshakeRequest.h>
 #include <aws/organizations/model/CreateAccountRequest.h>
+#include <aws/organizations/model/CreateGovCloudAccountRequest.h>
 #include <aws/organizations/model/CreateOrganizationRequest.h>
 #include <aws/organizations/model/CreateOrganizationalUnitRequest.h>
 #include <aws/organizations/model/CreatePolicyRequest.h>
@@ -279,6 +280,41 @@ void OrganizationsClient::CreateAccountAsync(const CreateAccountRequest& request
 void OrganizationsClient::CreateAccountAsyncHelper(const CreateAccountRequest& request, const CreateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateAccount(request), context);
+}
+
+CreateGovCloudAccountOutcome OrganizationsClient::CreateGovCloudAccount(const CreateGovCloudAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateGovCloudAccountOutcome(CreateGovCloudAccountResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateGovCloudAccountOutcome(outcome.GetError());
+  }
+}
+
+CreateGovCloudAccountOutcomeCallable OrganizationsClient::CreateGovCloudAccountCallable(const CreateGovCloudAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateGovCloudAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGovCloudAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OrganizationsClient::CreateGovCloudAccountAsync(const CreateGovCloudAccountRequest& request, const CreateGovCloudAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateGovCloudAccountAsyncHelper( request, handler, context ); } );
+}
+
+void OrganizationsClient::CreateGovCloudAccountAsyncHelper(const CreateGovCloudAccountRequest& request, const CreateGovCloudAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateGovCloudAccount(request), context);
 }
 
 CreateOrganizationOutcome OrganizationsClient::CreateOrganization(const CreateOrganizationRequest& request) const

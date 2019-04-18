@@ -50,6 +50,7 @@ static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyReque
 static const int SOURCE_PARENT_NOT_FOUND_HASH = HashingUtils::HashString("SourceParentNotFoundException");
 static const int ORGANIZATIONAL_UNIT_NOT_EMPTY_HASH = HashingUtils::HashString("OrganizationalUnitNotEmptyException");
 static const int DESTINATION_PARENT_NOT_FOUND_HASH = HashingUtils::HashString("DestinationParentNotFoundException");
+static const int UNSUPPORTED_A_P_I_ENDPOINT_HASH = HashingUtils::HashString("UnsupportedAPIEndpointException");
 static const int POLICY_TYPE_NOT_AVAILABLE_FOR_ORGANIZATION_HASH = HashingUtils::HashString("PolicyTypeNotAvailableForOrganizationException");
 static const int A_W_S_ORGANIZATIONS_NOT_IN_USE_HASH = HashingUtils::HashString("AWSOrganizationsNotInUseException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
@@ -159,6 +160,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DESTINATION_PARENT_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DESTINATION_PARENT_NOT_FOUND), false);
+  }
+  else if (hashCode == UNSUPPORTED_A_P_I_ENDPOINT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::UNSUPPORTED_A_P_I_ENDPOINT), false);
   }
   else if (hashCode == POLICY_TYPE_NOT_AVAILABLE_FOR_ORGANIZATION_HASH)
   {

@@ -104,34 +104,38 @@ namespace Model
 
 
     /**
-     * <p>The DB cluster capacity.</p> <p>Constraints:</p> <ul> <li> <p>Value must be
-     * <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
-     * <code>32</code>, <code>64</code>, <code>128</code>, or <code>256</code>.</p>
-     * </li> </ul>
+     * <p>The DB cluster capacity.</p> <p>When you change the capacity of a paused
+     * Aurora Serverless DB cluster, it automatically resumes.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Value must be <code>2</code>, <code>4</code>, <code>8</code>,
+     * <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, or
+     * <code>256</code>.</p> </li> </ul>
      */
     inline int GetCapacity() const{ return m_capacity; }
 
     /**
-     * <p>The DB cluster capacity.</p> <p>Constraints:</p> <ul> <li> <p>Value must be
-     * <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
-     * <code>32</code>, <code>64</code>, <code>128</code>, or <code>256</code>.</p>
-     * </li> </ul>
+     * <p>The DB cluster capacity.</p> <p>When you change the capacity of a paused
+     * Aurora Serverless DB cluster, it automatically resumes.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Value must be <code>2</code>, <code>4</code>, <code>8</code>,
+     * <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, or
+     * <code>256</code>.</p> </li> </ul>
      */
     inline bool CapacityHasBeenSet() const { return m_capacityHasBeenSet; }
 
     /**
-     * <p>The DB cluster capacity.</p> <p>Constraints:</p> <ul> <li> <p>Value must be
-     * <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
-     * <code>32</code>, <code>64</code>, <code>128</code>, or <code>256</code>.</p>
-     * </li> </ul>
+     * <p>The DB cluster capacity.</p> <p>When you change the capacity of a paused
+     * Aurora Serverless DB cluster, it automatically resumes.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Value must be <code>2</code>, <code>4</code>, <code>8</code>,
+     * <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, or
+     * <code>256</code>.</p> </li> </ul>
      */
     inline void SetCapacity(int value) { m_capacityHasBeenSet = true; m_capacity = value; }
 
     /**
-     * <p>The DB cluster capacity.</p> <p>Constraints:</p> <ul> <li> <p>Value must be
-     * <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
-     * <code>32</code>, <code>64</code>, <code>128</code>, or <code>256</code>.</p>
-     * </li> </ul>
+     * <p>The DB cluster capacity.</p> <p>When you change the capacity of a paused
+     * Aurora Serverless DB cluster, it automatically resumes.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Value must be <code>2</code>, <code>4</code>, <code>8</code>,
+     * <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, or
+     * <code>256</code>.</p> </li> </ul>
      */
     inline ModifyCurrentDBClusterCapacityRequest& WithCapacity(int value) { SetCapacity(value); return *this;}
 

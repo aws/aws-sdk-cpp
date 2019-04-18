@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     NOT_FOUND,
-    INTERNAL_SERVER_ERROR
+    INTERNAL_SERVER_ERROR,
+    OVER_LIMIT
   };
 
 namespace BatchDeleteImportDataErrorCodeMapper

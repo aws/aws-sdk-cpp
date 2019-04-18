@@ -32,6 +32,7 @@ namespace Aws
 
         static const int NOT_FOUND_HASH = HashingUtils::HashString("NOT_FOUND");
         static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("INTERNAL_SERVER_ERROR");
+        static const int OVER_LIMIT_HASH = HashingUtils::HashString("OVER_LIMIT");
 
 
         BatchDeleteImportDataErrorCode GetBatchDeleteImportDataErrorCodeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == INTERNAL_SERVER_ERROR_HASH)
           {
             return BatchDeleteImportDataErrorCode::INTERNAL_SERVER_ERROR;
+          }
+          else if (hashCode == OVER_LIMIT_HASH)
+          {
+            return BatchDeleteImportDataErrorCode::OVER_LIMIT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "NOT_FOUND";
           case BatchDeleteImportDataErrorCode::INTERNAL_SERVER_ERROR:
             return "INTERNAL_SERVER_ERROR";
+          case BatchDeleteImportDataErrorCode::OVER_LIMIT:
+            return "OVER_LIMIT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

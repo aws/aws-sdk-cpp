@@ -287,113 +287,97 @@ namespace Model
 
     /**
      * <p>The meaning of this parameter differs according to the database engine you
-     * use. For example, this value returns MySQL, MariaDB, or PostgreSQL information
-     * when returning values from CreateDBInstanceReadReplica since Read Replicas are
-     * only supported for these engines.</p> <p> <b>MySQL, MariaDB, SQL Server,
-     * PostgreSQL</b> </p> <p>Contains the name of the initial database of this
-     * instance that was provided at create time, if one was specified when the DB
-     * instance was created. This same name is returned for the life of the DB
-     * instance.</p> <p>Type: String</p> <p> <b>Oracle</b> </p> <p>Contains the Oracle
-     * System ID (SID) of the created DB instance. Not shown when the returned
-     * parameters do not apply to an Oracle DB instance.</p>
+     * use.</p> <p> <b>MySQL, MariaDB, SQL Server, PostgreSQL</b> </p> <p>Contains the
+     * name of the initial database of this instance that was provided at create time,
+     * if one was specified when the DB instance was created. This same name is
+     * returned for the life of the DB instance.</p> <p>Type: String</p> <p>
+     * <b>Oracle</b> </p> <p>Contains the Oracle System ID (SID) of the created DB
+     * instance. Not shown when the returned parameters do not apply to an Oracle DB
+     * instance.</p>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
 
     /**
      * <p>The meaning of this parameter differs according to the database engine you
-     * use. For example, this value returns MySQL, MariaDB, or PostgreSQL information
-     * when returning values from CreateDBInstanceReadReplica since Read Replicas are
-     * only supported for these engines.</p> <p> <b>MySQL, MariaDB, SQL Server,
-     * PostgreSQL</b> </p> <p>Contains the name of the initial database of this
-     * instance that was provided at create time, if one was specified when the DB
-     * instance was created. This same name is returned for the life of the DB
-     * instance.</p> <p>Type: String</p> <p> <b>Oracle</b> </p> <p>Contains the Oracle
-     * System ID (SID) of the created DB instance. Not shown when the returned
-     * parameters do not apply to an Oracle DB instance.</p>
+     * use.</p> <p> <b>MySQL, MariaDB, SQL Server, PostgreSQL</b> </p> <p>Contains the
+     * name of the initial database of this instance that was provided at create time,
+     * if one was specified when the DB instance was created. This same name is
+     * returned for the life of the DB instance.</p> <p>Type: String</p> <p>
+     * <b>Oracle</b> </p> <p>Contains the Oracle System ID (SID) of the created DB
+     * instance. Not shown when the returned parameters do not apply to an Oracle DB
+     * instance.</p>
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
 
     /**
      * <p>The meaning of this parameter differs according to the database engine you
-     * use. For example, this value returns MySQL, MariaDB, or PostgreSQL information
-     * when returning values from CreateDBInstanceReadReplica since Read Replicas are
-     * only supported for these engines.</p> <p> <b>MySQL, MariaDB, SQL Server,
-     * PostgreSQL</b> </p> <p>Contains the name of the initial database of this
-     * instance that was provided at create time, if one was specified when the DB
-     * instance was created. This same name is returned for the life of the DB
-     * instance.</p> <p>Type: String</p> <p> <b>Oracle</b> </p> <p>Contains the Oracle
-     * System ID (SID) of the created DB instance. Not shown when the returned
-     * parameters do not apply to an Oracle DB instance.</p>
+     * use.</p> <p> <b>MySQL, MariaDB, SQL Server, PostgreSQL</b> </p> <p>Contains the
+     * name of the initial database of this instance that was provided at create time,
+     * if one was specified when the DB instance was created. This same name is
+     * returned for the life of the DB instance.</p> <p>Type: String</p> <p>
+     * <b>Oracle</b> </p> <p>Contains the Oracle System ID (SID) of the created DB
+     * instance. Not shown when the returned parameters do not apply to an Oracle DB
+     * instance.</p>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
     /**
      * <p>The meaning of this parameter differs according to the database engine you
-     * use. For example, this value returns MySQL, MariaDB, or PostgreSQL information
-     * when returning values from CreateDBInstanceReadReplica since Read Replicas are
-     * only supported for these engines.</p> <p> <b>MySQL, MariaDB, SQL Server,
-     * PostgreSQL</b> </p> <p>Contains the name of the initial database of this
-     * instance that was provided at create time, if one was specified when the DB
-     * instance was created. This same name is returned for the life of the DB
-     * instance.</p> <p>Type: String</p> <p> <b>Oracle</b> </p> <p>Contains the Oracle
-     * System ID (SID) of the created DB instance. Not shown when the returned
-     * parameters do not apply to an Oracle DB instance.</p>
+     * use.</p> <p> <b>MySQL, MariaDB, SQL Server, PostgreSQL</b> </p> <p>Contains the
+     * name of the initial database of this instance that was provided at create time,
+     * if one was specified when the DB instance was created. This same name is
+     * returned for the life of the DB instance.</p> <p>Type: String</p> <p>
+     * <b>Oracle</b> </p> <p>Contains the Oracle System ID (SID) of the created DB
+     * instance. Not shown when the returned parameters do not apply to an Oracle DB
+     * instance.</p>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
     /**
      * <p>The meaning of this parameter differs according to the database engine you
-     * use. For example, this value returns MySQL, MariaDB, or PostgreSQL information
-     * when returning values from CreateDBInstanceReadReplica since Read Replicas are
-     * only supported for these engines.</p> <p> <b>MySQL, MariaDB, SQL Server,
-     * PostgreSQL</b> </p> <p>Contains the name of the initial database of this
-     * instance that was provided at create time, if one was specified when the DB
-     * instance was created. This same name is returned for the life of the DB
-     * instance.</p> <p>Type: String</p> <p> <b>Oracle</b> </p> <p>Contains the Oracle
-     * System ID (SID) of the created DB instance. Not shown when the returned
-     * parameters do not apply to an Oracle DB instance.</p>
+     * use.</p> <p> <b>MySQL, MariaDB, SQL Server, PostgreSQL</b> </p> <p>Contains the
+     * name of the initial database of this instance that was provided at create time,
+     * if one was specified when the DB instance was created. This same name is
+     * returned for the life of the DB instance.</p> <p>Type: String</p> <p>
+     * <b>Oracle</b> </p> <p>Contains the Oracle System ID (SID) of the created DB
+     * instance. Not shown when the returned parameters do not apply to an Oracle DB
+     * instance.</p>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
 
     /**
      * <p>The meaning of this parameter differs according to the database engine you
-     * use. For example, this value returns MySQL, MariaDB, or PostgreSQL information
-     * when returning values from CreateDBInstanceReadReplica since Read Replicas are
-     * only supported for these engines.</p> <p> <b>MySQL, MariaDB, SQL Server,
-     * PostgreSQL</b> </p> <p>Contains the name of the initial database of this
-     * instance that was provided at create time, if one was specified when the DB
-     * instance was created. This same name is returned for the life of the DB
-     * instance.</p> <p>Type: String</p> <p> <b>Oracle</b> </p> <p>Contains the Oracle
-     * System ID (SID) of the created DB instance. Not shown when the returned
-     * parameters do not apply to an Oracle DB instance.</p>
+     * use.</p> <p> <b>MySQL, MariaDB, SQL Server, PostgreSQL</b> </p> <p>Contains the
+     * name of the initial database of this instance that was provided at create time,
+     * if one was specified when the DB instance was created. This same name is
+     * returned for the life of the DB instance.</p> <p>Type: String</p> <p>
+     * <b>Oracle</b> </p> <p>Contains the Oracle System ID (SID) of the created DB
+     * instance. Not shown when the returned parameters do not apply to an Oracle DB
+     * instance.</p>
      */
     inline DBInstance& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
 
     /**
      * <p>The meaning of this parameter differs according to the database engine you
-     * use. For example, this value returns MySQL, MariaDB, or PostgreSQL information
-     * when returning values from CreateDBInstanceReadReplica since Read Replicas are
-     * only supported for these engines.</p> <p> <b>MySQL, MariaDB, SQL Server,
-     * PostgreSQL</b> </p> <p>Contains the name of the initial database of this
-     * instance that was provided at create time, if one was specified when the DB
-     * instance was created. This same name is returned for the life of the DB
-     * instance.</p> <p>Type: String</p> <p> <b>Oracle</b> </p> <p>Contains the Oracle
-     * System ID (SID) of the created DB instance. Not shown when the returned
-     * parameters do not apply to an Oracle DB instance.</p>
+     * use.</p> <p> <b>MySQL, MariaDB, SQL Server, PostgreSQL</b> </p> <p>Contains the
+     * name of the initial database of this instance that was provided at create time,
+     * if one was specified when the DB instance was created. This same name is
+     * returned for the life of the DB instance.</p> <p>Type: String</p> <p>
+     * <b>Oracle</b> </p> <p>Contains the Oracle System ID (SID) of the created DB
+     * instance. Not shown when the returned parameters do not apply to an Oracle DB
+     * instance.</p>
      */
     inline DBInstance& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
     /**
      * <p>The meaning of this parameter differs according to the database engine you
-     * use. For example, this value returns MySQL, MariaDB, or PostgreSQL information
-     * when returning values from CreateDBInstanceReadReplica since Read Replicas are
-     * only supported for these engines.</p> <p> <b>MySQL, MariaDB, SQL Server,
-     * PostgreSQL</b> </p> <p>Contains the name of the initial database of this
-     * instance that was provided at create time, if one was specified when the DB
-     * instance was created. This same name is returned for the life of the DB
-     * instance.</p> <p>Type: String</p> <p> <b>Oracle</b> </p> <p>Contains the Oracle
-     * System ID (SID) of the created DB instance. Not shown when the returned
-     * parameters do not apply to an Oracle DB instance.</p>
+     * use.</p> <p> <b>MySQL, MariaDB, SQL Server, PostgreSQL</b> </p> <p>Contains the
+     * name of the initial database of this instance that was provided at create time,
+     * if one was specified when the DB instance was created. This same name is
+     * returned for the life of the DB instance.</p> <p>Type: String</p> <p>
+     * <b>Oracle</b> </p> <p>Contains the Oracle System ID (SID) of the created DB
+     * instance. Not shown when the returned parameters do not apply to an Oracle DB
+     * instance.</p>
      */
     inline DBInstance& WithDBName(const char* value) { SetDBName(value); return *this;}
 

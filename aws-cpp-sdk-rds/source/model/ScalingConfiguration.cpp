@@ -38,7 +38,8 @@ ScalingConfiguration::ScalingConfiguration() :
     m_autoPause(false),
     m_autoPauseHasBeenSet(false),
     m_secondsUntilAutoPause(0),
-    m_secondsUntilAutoPauseHasBeenSet(false)
+    m_secondsUntilAutoPauseHasBeenSet(false),
+    m_timeoutActionHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ ScalingConfiguration::ScalingConfiguration(const XmlNode& xmlNode) :
     m_autoPause(false),
     m_autoPauseHasBeenSet(false),
     m_secondsUntilAutoPause(0),
-    m_secondsUntilAutoPauseHasBeenSet(false)
+    m_secondsUntilAutoPauseHasBeenSet(false),
+    m_timeoutActionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -85,6 +87,12 @@ ScalingConfiguration& ScalingConfiguration::operator =(const XmlNode& xmlNode)
       m_secondsUntilAutoPause = StringUtils::ConvertToInt32(StringUtils::Trim(secondsUntilAutoPauseNode.GetText().c_str()).c_str());
       m_secondsUntilAutoPauseHasBeenSet = true;
     }
+    XmlNode timeoutActionNode = resultNode.FirstChild("TimeoutAction");
+    if(!timeoutActionNode.IsNull())
+    {
+      m_timeoutAction = StringUtils::Trim(timeoutActionNode.GetText().c_str());
+      m_timeoutActionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -112,6 +120,11 @@ void ScalingConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << index << locationValue << ".SecondsUntilAutoPause=" << m_secondsUntilAutoPause << "&";
   }
 
+  if(m_timeoutActionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TimeoutAction=" << StringUtils::URLEncode(m_timeoutAction.c_str()) << "&";
+  }
+
 }
 
 void ScalingConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -131,6 +144,10 @@ void ScalingConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
   if(m_secondsUntilAutoPauseHasBeenSet)
   {
       oStream << location << ".SecondsUntilAutoPause=" << m_secondsUntilAutoPause << "&";
+  }
+  if(m_timeoutActionHasBeenSet)
+  {
+      oStream << location << ".TimeoutAction=" << StringUtils::URLEncode(m_timeoutAction.c_str()) << "&";
   }
 }
 

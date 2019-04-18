@@ -222,7 +222,12 @@ namespace Model
      * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
      * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
      * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
-     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> </ul>
+     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> <li>
+     * <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
+     * reset his or her password before he or she can sign in.</p> </li> <li>
+     * <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using
+     * a temporary password, but on first sign-in, the user must change his or her
+     * password to a new value before doing anything else. </p> </li> </ul>
      */
     inline const UserStatusType& GetUserStatus() const{ return m_userStatus; }
 
@@ -231,7 +236,12 @@ namespace Model
      * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
      * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
      * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
-     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> </ul>
+     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> <li>
+     * <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
+     * reset his or her password before he or she can sign in.</p> </li> <li>
+     * <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using
+     * a temporary password, but on first sign-in, the user must change his or her
+     * password to a new value before doing anything else. </p> </li> </ul>
      */
     inline bool UserStatusHasBeenSet() const { return m_userStatusHasBeenSet; }
 
@@ -240,7 +250,12 @@ namespace Model
      * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
      * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
      * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
-     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> </ul>
+     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> <li>
+     * <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
+     * reset his or her password before he or she can sign in.</p> </li> <li>
+     * <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using
+     * a temporary password, but on first sign-in, the user must change his or her
+     * password to a new value before doing anything else. </p> </li> </ul>
      */
     inline void SetUserStatus(const UserStatusType& value) { m_userStatusHasBeenSet = true; m_userStatus = value; }
 
@@ -249,7 +264,12 @@ namespace Model
      * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
      * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
      * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
-     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> </ul>
+     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> <li>
+     * <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
+     * reset his or her password before he or she can sign in.</p> </li> <li>
+     * <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using
+     * a temporary password, but on first sign-in, the user must change his or her
+     * password to a new value before doing anything else. </p> </li> </ul>
      */
     inline void SetUserStatus(UserStatusType&& value) { m_userStatusHasBeenSet = true; m_userStatus = std::move(value); }
 
@@ -258,7 +278,12 @@ namespace Model
      * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
      * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
      * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
-     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> </ul>
+     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> <li>
+     * <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
+     * reset his or her password before he or she can sign in.</p> </li> <li>
+     * <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using
+     * a temporary password, but on first sign-in, the user must change his or her
+     * password to a new value before doing anything else. </p> </li> </ul>
      */
     inline UserType& WithUserStatus(const UserStatusType& value) { SetUserStatus(value); return *this;}
 
@@ -267,7 +292,12 @@ namespace Model
      * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
      * been confirmed.</p> </li> <li> <p>ARCHIVED - User is no longer active.</p> </li>
      * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
-     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> </ul>
+     * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> <li>
+     * <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
+     * reset his or her password before he or she can sign in.</p> </li> <li>
+     * <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using
+     * a temporary password, but on first sign-in, the user must change his or her
+     * password to a new value before doing anything else. </p> </li> </ul>
      */
     inline UserType& WithUserStatus(UserStatusType&& value) { SetUserStatus(std::move(value)); return *this;}
 

@@ -110,16 +110,19 @@ namespace Model
      * <p>The identifier of the DB instance that will act as the source for the Read
      * Replica. Each DB instance can have up to five Read Replicas.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing MySQL,
-     * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
-     * that is a MySQL Read Replica only if the source is running MySQL 5.6 or
-     * later.</p> </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB
-     * instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and
-     * higher for cross-region replication).</p> </li> <li> <p>The specified DB
-     * instance must have automatic backups enabled, its backup retention period must
-     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
-     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
-     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
+     * MariaDB, Oracle, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB
+     * instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>For the limitations of Oracle Read Replicas, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read
+     * Replica Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if
+     * the source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for
+     * cross-region replication).</p> </li> <li> <p>The specified DB instance must have
+     * automatic backups enabled, its backup retention period must be greater than
+     * 0.</p> </li> <li> <p>If the source DB instance is in the same AWS Region as the
+     * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
+     * source DB instance is in a different AWS Region than the Read Replica, specify a
+     * valid DB instance ARN. For more information, go to <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * </li> </ul>
@@ -130,16 +133,19 @@ namespace Model
      * <p>The identifier of the DB instance that will act as the source for the Read
      * Replica. Each DB instance can have up to five Read Replicas.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing MySQL,
-     * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
-     * that is a MySQL Read Replica only if the source is running MySQL 5.6 or
-     * later.</p> </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB
-     * instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and
-     * higher for cross-region replication).</p> </li> <li> <p>The specified DB
-     * instance must have automatic backups enabled, its backup retention period must
-     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
-     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
-     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
+     * MariaDB, Oracle, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB
+     * instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>For the limitations of Oracle Read Replicas, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read
+     * Replica Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if
+     * the source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for
+     * cross-region replication).</p> </li> <li> <p>The specified DB instance must have
+     * automatic backups enabled, its backup retention period must be greater than
+     * 0.</p> </li> <li> <p>If the source DB instance is in the same AWS Region as the
+     * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
+     * source DB instance is in a different AWS Region than the Read Replica, specify a
+     * valid DB instance ARN. For more information, go to <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * </li> </ul>
@@ -150,16 +156,19 @@ namespace Model
      * <p>The identifier of the DB instance that will act as the source for the Read
      * Replica. Each DB instance can have up to five Read Replicas.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing MySQL,
-     * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
-     * that is a MySQL Read Replica only if the source is running MySQL 5.6 or
-     * later.</p> </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB
-     * instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and
-     * higher for cross-region replication).</p> </li> <li> <p>The specified DB
-     * instance must have automatic backups enabled, its backup retention period must
-     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
-     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
-     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
+     * MariaDB, Oracle, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB
+     * instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>For the limitations of Oracle Read Replicas, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read
+     * Replica Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if
+     * the source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for
+     * cross-region replication).</p> </li> <li> <p>The specified DB instance must have
+     * automatic backups enabled, its backup retention period must be greater than
+     * 0.</p> </li> <li> <p>If the source DB instance is in the same AWS Region as the
+     * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
+     * source DB instance is in a different AWS Region than the Read Replica, specify a
+     * valid DB instance ARN. For more information, go to <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * </li> </ul>
@@ -170,16 +179,19 @@ namespace Model
      * <p>The identifier of the DB instance that will act as the source for the Read
      * Replica. Each DB instance can have up to five Read Replicas.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing MySQL,
-     * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
-     * that is a MySQL Read Replica only if the source is running MySQL 5.6 or
-     * later.</p> </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB
-     * instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and
-     * higher for cross-region replication).</p> </li> <li> <p>The specified DB
-     * instance must have automatic backups enabled, its backup retention period must
-     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
-     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
-     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
+     * MariaDB, Oracle, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB
+     * instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>For the limitations of Oracle Read Replicas, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read
+     * Replica Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if
+     * the source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for
+     * cross-region replication).</p> </li> <li> <p>The specified DB instance must have
+     * automatic backups enabled, its backup retention period must be greater than
+     * 0.</p> </li> <li> <p>If the source DB instance is in the same AWS Region as the
+     * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
+     * source DB instance is in a different AWS Region than the Read Replica, specify a
+     * valid DB instance ARN. For more information, go to <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * </li> </ul>
@@ -190,16 +202,19 @@ namespace Model
      * <p>The identifier of the DB instance that will act as the source for the Read
      * Replica. Each DB instance can have up to five Read Replicas.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing MySQL,
-     * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
-     * that is a MySQL Read Replica only if the source is running MySQL 5.6 or
-     * later.</p> </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB
-     * instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and
-     * higher for cross-region replication).</p> </li> <li> <p>The specified DB
-     * instance must have automatic backups enabled, its backup retention period must
-     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
-     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
-     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
+     * MariaDB, Oracle, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB
+     * instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>For the limitations of Oracle Read Replicas, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read
+     * Replica Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if
+     * the source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for
+     * cross-region replication).</p> </li> <li> <p>The specified DB instance must have
+     * automatic backups enabled, its backup retention period must be greater than
+     * 0.</p> </li> <li> <p>If the source DB instance is in the same AWS Region as the
+     * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
+     * source DB instance is in a different AWS Region than the Read Replica, specify a
+     * valid DB instance ARN. For more information, go to <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * </li> </ul>
@@ -210,16 +225,19 @@ namespace Model
      * <p>The identifier of the DB instance that will act as the source for the Read
      * Replica. Each DB instance can have up to five Read Replicas.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing MySQL,
-     * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
-     * that is a MySQL Read Replica only if the source is running MySQL 5.6 or
-     * later.</p> </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB
-     * instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and
-     * higher for cross-region replication).</p> </li> <li> <p>The specified DB
-     * instance must have automatic backups enabled, its backup retention period must
-     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
-     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
-     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
+     * MariaDB, Oracle, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB
+     * instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>For the limitations of Oracle Read Replicas, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read
+     * Replica Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if
+     * the source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for
+     * cross-region replication).</p> </li> <li> <p>The specified DB instance must have
+     * automatic backups enabled, its backup retention period must be greater than
+     * 0.</p> </li> <li> <p>If the source DB instance is in the same AWS Region as the
+     * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
+     * source DB instance is in a different AWS Region than the Read Replica, specify a
+     * valid DB instance ARN. For more information, go to <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * </li> </ul>
@@ -230,16 +248,19 @@ namespace Model
      * <p>The identifier of the DB instance that will act as the source for the Read
      * Replica. Each DB instance can have up to five Read Replicas.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing MySQL,
-     * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
-     * that is a MySQL Read Replica only if the source is running MySQL 5.6 or
-     * later.</p> </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB
-     * instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and
-     * higher for cross-region replication).</p> </li> <li> <p>The specified DB
-     * instance must have automatic backups enabled, its backup retention period must
-     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
-     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
-     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
+     * MariaDB, Oracle, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB
+     * instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>For the limitations of Oracle Read Replicas, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read
+     * Replica Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if
+     * the source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for
+     * cross-region replication).</p> </li> <li> <p>The specified DB instance must have
+     * automatic backups enabled, its backup retention period must be greater than
+     * 0.</p> </li> <li> <p>If the source DB instance is in the same AWS Region as the
+     * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
+     * source DB instance is in a different AWS Region than the Read Replica, specify a
+     * valid DB instance ARN. For more information, go to <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * </li> </ul>
@@ -250,16 +271,19 @@ namespace Model
      * <p>The identifier of the DB instance that will act as the source for the Read
      * Replica. Each DB instance can have up to five Read Replicas.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing MySQL,
-     * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
-     * that is a MySQL Read Replica only if the source is running MySQL 5.6 or
-     * later.</p> </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB
-     * instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and
-     * higher for cross-region replication).</p> </li> <li> <p>The specified DB
-     * instance must have automatic backups enabled, its backup retention period must
-     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
-     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
-     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
-     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
+     * MariaDB, Oracle, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB
+     * instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>For the limitations of Oracle Read Replicas, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read
+     * Replica Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if
+     * the source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for
+     * cross-region replication).</p> </li> <li> <p>The specified DB instance must have
+     * automatic backups enabled, its backup retention period must be greater than
+     * 0.</p> </li> <li> <p>If the source DB instance is in the same AWS Region as the
+     * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
+     * source DB instance is in a different AWS Region than the Read Replica, specify a
+     * valid DB instance ARN. For more information, go to <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * </li> </ul>
@@ -534,50 +558,50 @@ namespace Model
 
 
     /**
-     * <p>The option group the DB instance is associated with. If omitted, the default
-     * option group for the engine specified is used.</p>
+     * <p>The option group the DB instance is associated with. If omitted, the option
+     * group associated with the source instance is used.</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
-     * <p>The option group the DB instance is associated with. If omitted, the default
-     * option group for the engine specified is used.</p>
+     * <p>The option group the DB instance is associated with. If omitted, the option
+     * group associated with the source instance is used.</p>
      */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
-     * <p>The option group the DB instance is associated with. If omitted, the default
-     * option group for the engine specified is used.</p>
+     * <p>The option group the DB instance is associated with. If omitted, the option
+     * group associated with the source instance is used.</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p>The option group the DB instance is associated with. If omitted, the default
-     * option group for the engine specified is used.</p>
+     * <p>The option group the DB instance is associated with. If omitted, the option
+     * group associated with the source instance is used.</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
-     * <p>The option group the DB instance is associated with. If omitted, the default
-     * option group for the engine specified is used.</p>
+     * <p>The option group the DB instance is associated with. If omitted, the option
+     * group associated with the source instance is used.</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
-     * <p>The option group the DB instance is associated with. If omitted, the default
-     * option group for the engine specified is used.</p>
+     * <p>The option group the DB instance is associated with. If omitted, the option
+     * group associated with the source instance is used.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p>The option group the DB instance is associated with. If omitted, the default
-     * option group for the engine specified is used.</p>
+     * <p>The option group the DB instance is associated with. If omitted, the option
+     * group associated with the source instance is used.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The option group the DB instance is associated with. If omitted, the default
-     * option group for the engine specified is used.</p>
+     * <p>The option group the DB instance is associated with. If omitted, the option
+     * group associated with the source instance is used.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
@@ -1569,7 +1593,7 @@ namespace Model
 
 
     /**
-     * <p>True to enable Performance Insights for the read replica, and otherwise
+     * <p>True to enable Performance Insights for the Read Replica, and otherwise
      * false. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>. </p>
@@ -1577,7 +1601,7 @@ namespace Model
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
     /**
-     * <p>True to enable Performance Insights for the read replica, and otherwise
+     * <p>True to enable Performance Insights for the Read Replica, and otherwise
      * false. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>. </p>
@@ -1585,7 +1609,7 @@ namespace Model
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
 
     /**
-     * <p>True to enable Performance Insights for the read replica, and otherwise
+     * <p>True to enable Performance Insights for the Read Replica, and otherwise
      * false. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>. </p>
@@ -1593,7 +1617,7 @@ namespace Model
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
     /**
-     * <p>True to enable Performance Insights for the read replica, and otherwise
+     * <p>True to enable Performance Insights for the Read Replica, and otherwise
      * false. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>. </p>

@@ -45,7 +45,9 @@ namespace Aws
         static const int ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED");
         static const int MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE_HASH = HashingUtils::HashString("MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE");
         static const int MASTER_ACCOUNT_MISSING_CONTACT_INFO_HASH = HashingUtils::HashString("MASTER_ACCOUNT_MISSING_CONTACT_INFO");
+        static const int MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED_HASH = HashingUtils::HashString("MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED");
         static const int ORGANIZATION_NOT_IN_ALL_FEATURES_MODE_HASH = HashingUtils::HashString("ORGANIZATION_NOT_IN_ALL_FEATURES_MODE");
+        static const int CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION_HASH = HashingUtils::HashString("CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION");
         static const int EMAIL_VERIFICATION_CODE_EXPIRED_HASH = HashingUtils::HashString("EMAIL_VERIFICATION_CODE_EXPIRED");
         static const int WAIT_PERIOD_ACTIVE_HASH = HashingUtils::HashString("WAIT_PERIOD_ACTIVE");
 
@@ -113,9 +115,17 @@ namespace Aws
           {
             return ConstraintViolationExceptionReason::MASTER_ACCOUNT_MISSING_CONTACT_INFO;
           }
+          else if (hashCode == MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED_HASH)
+          {
+            return ConstraintViolationExceptionReason::MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED;
+          }
           else if (hashCode == ORGANIZATION_NOT_IN_ALL_FEATURES_MODE_HASH)
           {
             return ConstraintViolationExceptionReason::ORGANIZATION_NOT_IN_ALL_FEATURES_MODE;
+          }
+          else if (hashCode == CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION_HASH)
+          {
+            return ConstraintViolationExceptionReason::CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION;
           }
           else if (hashCode == EMAIL_VERIFICATION_CODE_EXPIRED_HASH)
           {
@@ -169,8 +179,12 @@ namespace Aws
             return "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE";
           case ConstraintViolationExceptionReason::MASTER_ACCOUNT_MISSING_CONTACT_INFO:
             return "MASTER_ACCOUNT_MISSING_CONTACT_INFO";
+          case ConstraintViolationExceptionReason::MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED:
+            return "MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED";
           case ConstraintViolationExceptionReason::ORGANIZATION_NOT_IN_ALL_FEATURES_MODE:
             return "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE";
+          case ConstraintViolationExceptionReason::CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION:
+            return "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION";
           case ConstraintViolationExceptionReason::EMAIL_VERIFICATION_CODE_EXPIRED:
             return "EMAIL_VERIFICATION_CODE_EXPIRED";
           case ConstraintViolationExceptionReason::WAIT_PERIOD_ACTIVE:

@@ -546,22 +546,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the database engine version supports read replicas.</p>
+     * <p>Indicates whether the database engine version supports Read Replicas.</p>
      */
     inline bool GetSupportsReadReplica() const{ return m_supportsReadReplica; }
 
     /**
-     * <p>Indicates whether the database engine version supports read replicas.</p>
+     * <p>Indicates whether the database engine version supports Read Replicas.</p>
      */
     inline bool SupportsReadReplicaHasBeenSet() const { return m_supportsReadReplicaHasBeenSet; }
 
     /**
-     * <p>Indicates whether the database engine version supports read replicas.</p>
+     * <p>Indicates whether the database engine version supports Read Replicas.</p>
      */
     inline void SetSupportsReadReplica(bool value) { m_supportsReadReplicaHasBeenSet = true; m_supportsReadReplica = value; }
 
     /**
-     * <p>Indicates whether the database engine version supports read replicas.</p>
+     * <p>Indicates whether the database engine version supports Read Replicas.</p>
      */
     inline DBEngineVersion& WithSupportsReadReplica(bool value) { SetSupportsReadReplica(value); return *this;}
 

@@ -651,72 +651,56 @@ namespace Model
     /**
      * <p>Set to <code>code</code> to initiate a code grant flow, which provides an
      * authorization code as the response. This code can be exchanged for access tokens
-     * with the token endpoint.</p> <p>Set to <code>token</code> to specify that the
-     * client should get the access token (and, optionally, ID token, based on scopes)
-     * directly.</p>
+     * with the token endpoint.</p>
      */
     inline const Aws::Vector<OAuthFlowType>& GetAllowedOAuthFlows() const{ return m_allowedOAuthFlows; }
 
     /**
      * <p>Set to <code>code</code> to initiate a code grant flow, which provides an
      * authorization code as the response. This code can be exchanged for access tokens
-     * with the token endpoint.</p> <p>Set to <code>token</code> to specify that the
-     * client should get the access token (and, optionally, ID token, based on scopes)
-     * directly.</p>
+     * with the token endpoint.</p>
      */
     inline bool AllowedOAuthFlowsHasBeenSet() const { return m_allowedOAuthFlowsHasBeenSet; }
 
     /**
      * <p>Set to <code>code</code> to initiate a code grant flow, which provides an
      * authorization code as the response. This code can be exchanged for access tokens
-     * with the token endpoint.</p> <p>Set to <code>token</code> to specify that the
-     * client should get the access token (and, optionally, ID token, based on scopes)
-     * directly.</p>
+     * with the token endpoint.</p>
      */
     inline void SetAllowedOAuthFlows(const Aws::Vector<OAuthFlowType>& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows = value; }
 
     /**
      * <p>Set to <code>code</code> to initiate a code grant flow, which provides an
      * authorization code as the response. This code can be exchanged for access tokens
-     * with the token endpoint.</p> <p>Set to <code>token</code> to specify that the
-     * client should get the access token (and, optionally, ID token, based on scopes)
-     * directly.</p>
+     * with the token endpoint.</p>
      */
     inline void SetAllowedOAuthFlows(Aws::Vector<OAuthFlowType>&& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows = std::move(value); }
 
     /**
      * <p>Set to <code>code</code> to initiate a code grant flow, which provides an
      * authorization code as the response. This code can be exchanged for access tokens
-     * with the token endpoint.</p> <p>Set to <code>token</code> to specify that the
-     * client should get the access token (and, optionally, ID token, based on scopes)
-     * directly.</p>
+     * with the token endpoint.</p>
      */
     inline UpdateUserPoolClientRequest& WithAllowedOAuthFlows(const Aws::Vector<OAuthFlowType>& value) { SetAllowedOAuthFlows(value); return *this;}
 
     /**
      * <p>Set to <code>code</code> to initiate a code grant flow, which provides an
      * authorization code as the response. This code can be exchanged for access tokens
-     * with the token endpoint.</p> <p>Set to <code>token</code> to specify that the
-     * client should get the access token (and, optionally, ID token, based on scopes)
-     * directly.</p>
+     * with the token endpoint.</p>
      */
     inline UpdateUserPoolClientRequest& WithAllowedOAuthFlows(Aws::Vector<OAuthFlowType>&& value) { SetAllowedOAuthFlows(std::move(value)); return *this;}
 
     /**
      * <p>Set to <code>code</code> to initiate a code grant flow, which provides an
      * authorization code as the response. This code can be exchanged for access tokens
-     * with the token endpoint.</p> <p>Set to <code>token</code> to specify that the
-     * client should get the access token (and, optionally, ID token, based on scopes)
-     * directly.</p>
+     * with the token endpoint.</p>
      */
     inline UpdateUserPoolClientRequest& AddAllowedOAuthFlows(const OAuthFlowType& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows.push_back(value); return *this; }
 
     /**
      * <p>Set to <code>code</code> to initiate a code grant flow, which provides an
      * authorization code as the response. This code can be exchanged for access tokens
-     * with the token endpoint.</p> <p>Set to <code>token</code> to specify that the
-     * client should get the access token (and, optionally, ID token, based on scopes)
-     * directly.</p>
+     * with the token endpoint.</p>
      */
     inline UpdateUserPoolClientRequest& AddAllowedOAuthFlows(OAuthFlowType&& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows.push_back(std::move(value)); return *this; }
 
