@@ -580,12 +580,6 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), TEST_FILE_KEY));
 
-    HeadObjectRequest headObjectRequest;
-    headObjectRequest.WithBucket(GetTestBucketName())
-        .WithKey(TEST_FILE_KEY);
-
-    ASSERT_TRUE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
-
     VerifyUploadedFile(*transferManager,
                        testFileName,
                        GetTestBucketName(),
@@ -641,15 +635,6 @@ TEST_F(TransferTests, TransferManager_EmptyFileTest)
     ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), EMPTY_FILE_KEY));
-
-    HeadObjectRequest headObjectRequest;
-    headObjectRequest.WithBucket(GetTestBucketName())
-        .WithKey(EMPTY_FILE_KEY);
-
-    auto outcome = m_s3Client->HeadObject(headObjectRequest);
-
-    ASSERT_TRUE(outcome.IsSuccess());
-    ASSERT_STREQ(requestPtr->GetContentType().c_str(), outcome.GetResult().GetContentType().c_str());
 
     VerifyUploadedFile(*transferManager,
         emptyTestFileName,
@@ -707,15 +692,6 @@ TEST_F(TransferTests, TransferManager_SmallTest)
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), SMALL_FILE_KEY));
 
-    HeadObjectRequest headObjectRequest;
-    headObjectRequest.WithBucket(GetTestBucketName())
-        .WithKey(SMALL_FILE_KEY);
-
-    auto outcome = m_s3Client->HeadObject(headObjectRequest);
-
-    ASSERT_TRUE(outcome.IsSuccess());
-    ASSERT_STREQ(requestPtr->GetContentType().c_str(), outcome.GetResult().GetContentType().c_str());
-
     VerifyUploadedFile(*transferManager,
                        smallTestFileName,
                        GetTestBucketName(),
@@ -769,12 +745,6 @@ TEST_F(TransferTests, TransferManager_ContentTest)
     ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), CONTENT_FILE_KEY));
-
-    HeadObjectRequest headObjectRequest;
-    headObjectRequest.WithBucket(GetTestBucketName())
-        .WithKey(CONTENT_FILE_KEY);
-
-    ASSERT_TRUE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
 
     VerifyUploadedFile(*transferManager,
                        contentTestFileName,
@@ -863,12 +833,6 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
         ASSERT_EQ(TransferStatus::COMPLETED, handle->GetStatus());
 
         ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), handle->GetKey().c_str()));
-
-        HeadObjectRequest headObjectRequest;
-        headObjectRequest.WithBucket(GetTestBucketName())
-            .WithKey(handle->GetKey());
-
-        ASSERT_TRUE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
 
         VerifyUploadedFile(*transferManager,
             handle->GetTargetFilePath(),
@@ -960,14 +924,6 @@ TEST_F(TransferTests, TransferManager_MediumTest)
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), MEDIUM_FILE_KEY));
 
-    HeadObjectRequest headObjectRequest;
-    headObjectRequest.WithBucket(GetTestBucketName())
-        .WithKey(MEDIUM_FILE_KEY);
-
-    auto outcome = m_s3Client->HeadObject(headObjectRequest);
-    ASSERT_TRUE(outcome.IsSuccess());
-    ASSERT_STREQ(requestPtr->GetContentType().c_str(), outcome.GetResult().GetContentType().c_str());
-
     VerifyUploadedFile(*transferManager,
                        mediumTestFileName,
                        GetTestBucketName(),
@@ -1026,12 +982,6 @@ TEST_F(TransferTests, TransferManager_BigTest)
     ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), BIG_FILE_KEY));
-
-    HeadObjectRequest headObjectRequest;
-    headObjectRequest.WithBucket(GetTestBucketName())
-        .WithKey(BIG_FILE_KEY);
-
-    ASSERT_TRUE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
 
     VerifyUploadedFile(*transferManager,
                        bigTestFileName,
@@ -1092,12 +1042,6 @@ TEST_F(TransferTests, TransferManager_UnicodeFileNameTest)
     ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), UNICODE_FILE_KEY));
-
-    HeadObjectRequest headObjectRequest;
-    headObjectRequest.WithBucket(GetTestBucketName())
-        .WithKey(UNICODE_FILE_KEY);
-
-    ASSERT_TRUE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
 
     VerifyUploadedFile(*transferManager,
                        fileName,
@@ -1214,11 +1158,6 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), CANCEL_FILE_KEY));
 
-    headObjectRequest.WithBucket(GetTestBucketName())
-        .WithKey(CANCEL_FILE_KEY);
-
-    ASSERT_TRUE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
-
     VerifyUploadedFile(*transferManager,
                        cancelTestFileName,
                        GetTestBucketName(),
@@ -1331,12 +1270,6 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
     ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), CANCEL_FILE_KEY));
-
-    headObjectRequest.WithBucket(GetTestBucketName())
-        .WithKey(CANCEL_FILE_KEY);
-
-    ASSERT_TRUE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
-
 
     VerifyUploadedFile(*transferManager,
                        cancelTestFileName,
@@ -1710,14 +1643,6 @@ TEST_F(TransferTests, TransferManager_MediumVersionedTest)
         ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
 
         ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), MEDIUM_FILE_KEY));
-
-        HeadObjectRequest headObjectRequest;
-        headObjectRequest.WithBucket(GetTestBucketName())
-            .WithKey(MEDIUM_FILE_KEY);
-
-        auto outcome = m_s3Client->HeadObject(headObjectRequest);
-        ASSERT_TRUE(outcome.IsSuccess());
-        ASSERT_STREQ(requestPtr->GetContentType().c_str(), outcome.GetResult().GetContentType().c_str());
 
         uploadCount++;
     }
