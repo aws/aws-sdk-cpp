@@ -66,18 +66,18 @@ namespace Model
      * (<code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>)
      * The results of this query might include the following.</p> <ul> <li> <p>An EC2
      * instance that has the following two tags:
-     * <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
-     * <code>{"Key":"Version","Values":["2"]}</code> </p> </li> <li> <p>An S3 bucket
-     * that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
-     * {"Key":"Version","Values":["1"]}</p> </li> </ul> <p>The query would not return
-     * the following results, however. The following EC2 instance does not have all tag
+     * <code>{"Key":"Stage","Value":"Deploy"}</code>, and
+     * <code>{"Key":"Version","Value":"2"}</code> </p> </li> <li> <p>An S3 bucket that
+     * has the following two tags: {"Key":"Stage","Value":"Test"}, and
+     * {"Key":"Version","Value":"1"}</p> </li> </ul> <p>The query would not return the
+     * following results, however. The following EC2 instance does not have all tag
      * keys specified in the filter, so it is rejected. The RDS database has all of the
      * tag keys, but no values that match at least one of the specified tag key values
      * in the filter.</p> <ul> <li> <p>An EC2 instance that has only the following tag:
-     * <code>{"Key":"Stage","Values":["Deploy"]}</code>.</p> </li> <li> <p>An RDS
-     * database that has the following two tags:
-     * <code>{"Key":"Stage","Values":["Archived"]}</code>, and
-     * <code>{"Key":"Version","Values":["4"]}</code> </p> </li> </ul> <p> <i>
+     * <code>{"Key":"Stage","Value":"Deploy"}</code>.</p> </li> <li> <p>An RDS database
+     * that has the following two tags:
+     * <code>{"Key":"Stage","Value":"Archived"}</code>, and
+     * <code>{"Key":"Version","Value":"4"}</code> </p> </li> </ul> <p> <i>
      * <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify
      * a CloudFormation stack ARN.</p>
      */
@@ -100,18 +100,18 @@ namespace Model
      * (<code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>)
      * The results of this query might include the following.</p> <ul> <li> <p>An EC2
      * instance that has the following two tags:
-     * <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
-     * <code>{"Key":"Version","Values":["2"]}</code> </p> </li> <li> <p>An S3 bucket
-     * that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
-     * {"Key":"Version","Values":["1"]}</p> </li> </ul> <p>The query would not return
-     * the following results, however. The following EC2 instance does not have all tag
+     * <code>{"Key":"Stage","Value":"Deploy"}</code>, and
+     * <code>{"Key":"Version","Value":"2"}</code> </p> </li> <li> <p>An S3 bucket that
+     * has the following two tags: {"Key":"Stage","Value":"Test"}, and
+     * {"Key":"Version","Value":"1"}</p> </li> </ul> <p>The query would not return the
+     * following results, however. The following EC2 instance does not have all tag
      * keys specified in the filter, so it is rejected. The RDS database has all of the
      * tag keys, but no values that match at least one of the specified tag key values
      * in the filter.</p> <ul> <li> <p>An EC2 instance that has only the following tag:
-     * <code>{"Key":"Stage","Values":["Deploy"]}</code>.</p> </li> <li> <p>An RDS
-     * database that has the following two tags:
-     * <code>{"Key":"Stage","Values":["Archived"]}</code>, and
-     * <code>{"Key":"Version","Values":["4"]}</code> </p> </li> </ul> <p> <i>
+     * <code>{"Key":"Stage","Value":"Deploy"}</code>.</p> </li> <li> <p>An RDS database
+     * that has the following two tags:
+     * <code>{"Key":"Stage","Value":"Archived"}</code>, and
+     * <code>{"Key":"Version","Value":"4"}</code> </p> </li> </ul> <p> <i>
      * <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify
      * a CloudFormation stack ARN.</p>
      */
@@ -134,18 +134,18 @@ namespace Model
      * (<code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>)
      * The results of this query might include the following.</p> <ul> <li> <p>An EC2
      * instance that has the following two tags:
-     * <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
-     * <code>{"Key":"Version","Values":["2"]}</code> </p> </li> <li> <p>An S3 bucket
-     * that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
-     * {"Key":"Version","Values":["1"]}</p> </li> </ul> <p>The query would not return
-     * the following results, however. The following EC2 instance does not have all tag
+     * <code>{"Key":"Stage","Value":"Deploy"}</code>, and
+     * <code>{"Key":"Version","Value":"2"}</code> </p> </li> <li> <p>An S3 bucket that
+     * has the following two tags: {"Key":"Stage","Value":"Test"}, and
+     * {"Key":"Version","Value":"1"}</p> </li> </ul> <p>The query would not return the
+     * following results, however. The following EC2 instance does not have all tag
      * keys specified in the filter, so it is rejected. The RDS database has all of the
      * tag keys, but no values that match at least one of the specified tag key values
      * in the filter.</p> <ul> <li> <p>An EC2 instance that has only the following tag:
-     * <code>{"Key":"Stage","Values":["Deploy"]}</code>.</p> </li> <li> <p>An RDS
-     * database that has the following two tags:
-     * <code>{"Key":"Stage","Values":["Archived"]}</code>, and
-     * <code>{"Key":"Version","Values":["4"]}</code> </p> </li> </ul> <p> <i>
+     * <code>{"Key":"Stage","Value":"Deploy"}</code>.</p> </li> <li> <p>An RDS database
+     * that has the following two tags:
+     * <code>{"Key":"Stage","Value":"Archived"}</code>, and
+     * <code>{"Key":"Version","Value":"4"}</code> </p> </li> </ul> <p> <i>
      * <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify
      * a CloudFormation stack ARN.</p>
      */
@@ -168,18 +168,18 @@ namespace Model
      * (<code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>)
      * The results of this query might include the following.</p> <ul> <li> <p>An EC2
      * instance that has the following two tags:
-     * <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
-     * <code>{"Key":"Version","Values":["2"]}</code> </p> </li> <li> <p>An S3 bucket
-     * that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
-     * {"Key":"Version","Values":["1"]}</p> </li> </ul> <p>The query would not return
-     * the following results, however. The following EC2 instance does not have all tag
+     * <code>{"Key":"Stage","Value":"Deploy"}</code>, and
+     * <code>{"Key":"Version","Value":"2"}</code> </p> </li> <li> <p>An S3 bucket that
+     * has the following two tags: {"Key":"Stage","Value":"Test"}, and
+     * {"Key":"Version","Value":"1"}</p> </li> </ul> <p>The query would not return the
+     * following results, however. The following EC2 instance does not have all tag
      * keys specified in the filter, so it is rejected. The RDS database has all of the
      * tag keys, but no values that match at least one of the specified tag key values
      * in the filter.</p> <ul> <li> <p>An EC2 instance that has only the following tag:
-     * <code>{"Key":"Stage","Values":["Deploy"]}</code>.</p> </li> <li> <p>An RDS
-     * database that has the following two tags:
-     * <code>{"Key":"Stage","Values":["Archived"]}</code>, and
-     * <code>{"Key":"Version","Values":["4"]}</code> </p> </li> </ul> <p> <i>
+     * <code>{"Key":"Stage","Value":"Deploy"}</code>.</p> </li> <li> <p>An RDS database
+     * that has the following two tags:
+     * <code>{"Key":"Stage","Value":"Archived"}</code>, and
+     * <code>{"Key":"Version","Value":"4"}</code> </p> </li> </ul> <p> <i>
      * <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify
      * a CloudFormation stack ARN.</p>
      */
@@ -202,18 +202,18 @@ namespace Model
      * (<code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>)
      * The results of this query might include the following.</p> <ul> <li> <p>An EC2
      * instance that has the following two tags:
-     * <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
-     * <code>{"Key":"Version","Values":["2"]}</code> </p> </li> <li> <p>An S3 bucket
-     * that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
-     * {"Key":"Version","Values":["1"]}</p> </li> </ul> <p>The query would not return
-     * the following results, however. The following EC2 instance does not have all tag
+     * <code>{"Key":"Stage","Value":"Deploy"}</code>, and
+     * <code>{"Key":"Version","Value":"2"}</code> </p> </li> <li> <p>An S3 bucket that
+     * has the following two tags: {"Key":"Stage","Value":"Test"}, and
+     * {"Key":"Version","Value":"1"}</p> </li> </ul> <p>The query would not return the
+     * following results, however. The following EC2 instance does not have all tag
      * keys specified in the filter, so it is rejected. The RDS database has all of the
      * tag keys, but no values that match at least one of the specified tag key values
      * in the filter.</p> <ul> <li> <p>An EC2 instance that has only the following tag:
-     * <code>{"Key":"Stage","Values":["Deploy"]}</code>.</p> </li> <li> <p>An RDS
-     * database that has the following two tags:
-     * <code>{"Key":"Stage","Values":["Archived"]}</code>, and
-     * <code>{"Key":"Version","Values":["4"]}</code> </p> </li> </ul> <p> <i>
+     * <code>{"Key":"Stage","Value":"Deploy"}</code>.</p> </li> <li> <p>An RDS database
+     * that has the following two tags:
+     * <code>{"Key":"Stage","Value":"Archived"}</code>, and
+     * <code>{"Key":"Version","Value":"4"}</code> </p> </li> </ul> <p> <i>
      * <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify
      * a CloudFormation stack ARN.</p>
      */
@@ -236,18 +236,18 @@ namespace Model
      * (<code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>)
      * The results of this query might include the following.</p> <ul> <li> <p>An EC2
      * instance that has the following two tags:
-     * <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
-     * <code>{"Key":"Version","Values":["2"]}</code> </p> </li> <li> <p>An S3 bucket
-     * that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
-     * {"Key":"Version","Values":["1"]}</p> </li> </ul> <p>The query would not return
-     * the following results, however. The following EC2 instance does not have all tag
+     * <code>{"Key":"Stage","Value":"Deploy"}</code>, and
+     * <code>{"Key":"Version","Value":"2"}</code> </p> </li> <li> <p>An S3 bucket that
+     * has the following two tags: {"Key":"Stage","Value":"Test"}, and
+     * {"Key":"Version","Value":"1"}</p> </li> </ul> <p>The query would not return the
+     * following results, however. The following EC2 instance does not have all tag
      * keys specified in the filter, so it is rejected. The RDS database has all of the
      * tag keys, but no values that match at least one of the specified tag key values
      * in the filter.</p> <ul> <li> <p>An EC2 instance that has only the following tag:
-     * <code>{"Key":"Stage","Values":["Deploy"]}</code>.</p> </li> <li> <p>An RDS
-     * database that has the following two tags:
-     * <code>{"Key":"Stage","Values":["Archived"]}</code>, and
-     * <code>{"Key":"Version","Values":["4"]}</code> </p> </li> </ul> <p> <i>
+     * <code>{"Key":"Stage","Value":"Deploy"}</code>.</p> </li> <li> <p>An RDS database
+     * that has the following two tags:
+     * <code>{"Key":"Stage","Value":"Archived"}</code>, and
+     * <code>{"Key":"Version","Value":"4"}</code> </p> </li> </ul> <p> <i>
      * <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify
      * a CloudFormation stack ARN.</p>
      */

@@ -377,16 +377,16 @@ namespace Model
         virtual void CreateIpGroupAsync(const Model::CreateIpGroupRequest& request, const CreateIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates the specified tags for the specified WorkSpaces
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates the specified tags for the specified WorkSpace.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateTagsOutcome CreateTags(const Model::CreateTagsRequest& request) const;
 
         /**
-         * <p>Creates the specified tags for the specified WorkSpaces
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates the specified tags for the specified WorkSpace.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags">AWS
          * API Reference</a></p>
          *
@@ -395,8 +395,8 @@ namespace Model
         virtual Model::CreateTagsOutcomeCallable CreateTagsCallable(const Model::CreateTagsRequest& request) const;
 
         /**
-         * <p>Creates the specified tags for the specified WorkSpaces
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates the specified tags for the specified WorkSpace.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags">AWS
          * API Reference</a></p>
          *
@@ -464,16 +464,16 @@ namespace Model
         virtual void DeleteIpGroupAsync(const Model::DeleteIpGroupRequest& request, const DeleteIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified tags from the specified WorkSpaces
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified tags from the specified WorkSpace.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest& request) const;
 
         /**
-         * <p>Deletes the specified tags from the specified WorkSpaces
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified tags from the specified WorkSpace.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags">AWS
          * API Reference</a></p>
          *
@@ -482,8 +482,8 @@ namespace Model
         virtual Model::DeleteTagsOutcomeCallable DeleteTagsCallable(const Model::DeleteTagsRequest& request) const;
 
         /**
-         * <p>Deletes the specified tags from the specified WorkSpaces
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified tags from the specified WorkSpace.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags">AWS
          * API Reference</a></p>
          *
@@ -635,16 +635,16 @@ namespace Model
         virtual void DescribeIpGroupsAsync(const Model::DescribeIpGroupsRequest& request, const DescribeIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified tags for the specified WorkSpaces
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified tags for the specified WorkSpace.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
         /**
-         * <p>Describes the specified tags for the specified WorkSpaces
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified tags for the specified WorkSpace.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags">AWS
          * API Reference</a></p>
          *
@@ -653,8 +653,8 @@ namespace Model
         virtual Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const Model::DescribeTagsRequest& request) const;
 
         /**
-         * <p>Describes the specified tags for the specified WorkSpaces
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified tags for the specified WorkSpace.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags">AWS
          * API Reference</a></p>
          *

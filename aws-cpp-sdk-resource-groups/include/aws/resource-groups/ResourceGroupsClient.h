@@ -299,16 +299,16 @@ namespace Model
         virtual void GetGroupQueryAsync(const Model::GetGroupQueryRequest& request, const GetGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of tags that are associated with a resource, specified by an
-         * ARN.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of tags that are associated with a resource group, specified
+         * by an ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetTags">AWS
          * API Reference</a></p>
          */
         virtual Model::GetTagsOutcome GetTags(const Model::GetTagsRequest& request) const;
 
         /**
-         * <p>Returns a list of tags that are associated with a resource, specified by an
-         * ARN.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of tags that are associated with a resource group, specified
+         * by an ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetTags">AWS
          * API Reference</a></p>
          *
@@ -317,8 +317,8 @@ namespace Model
         virtual Model::GetTagsOutcomeCallable GetTagsCallable(const Model::GetTagsRequest& request) const;
 
         /**
-         * <p>Returns a list of tags that are associated with a resource, specified by an
-         * ARN.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of tags that are associated with a resource group, specified
+         * by an ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetTags">AWS
          * API Reference</a></p>
          *
