@@ -122,6 +122,34 @@ namespace Aws
             */
             Aws::String proxyPassword;
             /**
+            * Username to use for TLS Authentication with a proxy
+            */
+            Aws::String proxyTlsUsername;
+            /**
+            * Password to use for TLS Authentication with a proxy
+            */
+            Aws::String proxyTlsPassword;
+            /**
+            * SSL Certificate file to use for connecting to an HTTPS proxy 
+            */
+            Aws::String proxySslCertPath;
+            /**
+            * Type of proxy client SSL certificate
+            */
+            Aws::String proxySslCertType;
+            /**
+            * Private key file to use for connecting to an HTTPS proxy
+            */
+            Aws::String proxySslKeyPath;
+            /**
+            * Type of private key file used to connect to an HTTPS proxy
+            */
+            Aws::String proxySslKeyType;
+            /**
+            * Passphrase to the private key file used to connect to an HTTPS proxy
+            */
+            Aws::String proxySslKeyPassword;
+            /**
             * Threading Executor implementation. Default uses std::thread::detach()
             */
             std::shared_ptr<Aws::Utils::Threading::Executor> executor;

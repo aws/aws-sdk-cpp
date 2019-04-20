@@ -60,6 +60,13 @@ private:
     Aws::String m_proxyPassword;
     Aws::String m_proxyScheme;
     Aws::String m_proxyHost;
+    Aws::String m_proxyTlsAuthUserName;
+    Aws::String m_proxyTlsAuthPassword;
+    Aws::String m_proxySslCertPath;
+    Aws::String m_proxySslCertType;
+    Aws::String m_proxySslKeyPath;
+    Aws::String m_proxySslKeyType;
+    Aws::String m_proxyKeyPasswd;
     unsigned m_proxyPort;
     bool m_verifySSL;
     Aws::String m_caPath;
