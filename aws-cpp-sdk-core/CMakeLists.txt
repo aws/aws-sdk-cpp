@@ -98,6 +98,11 @@ if(ENABLE_CURL_CLIENT)
     int main() {
     CURL* handle = curl_easy_init();
     return curl_easy_setopt(handle, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_2_0); }" CURL_HAS_H2)
+    check_c_source_runs("
+    #include <curl/curl.h>
+    int main() {
+    CURL* handle = curl_easy_init();
+    return curl_easy_setopt(handle, CURLOPT_PROXY_SSLCERT, \"client.pem\"); }" CURL_HAS_TLS_PROXY)
     unset(CMAKE_REQUIRED_LIBRARIES)
 elseif(ENABLE_WINDOWS_CLIENT)
     if(USE_IXML_HTTP_REQUEST_2)
@@ -421,6 +426,10 @@ endif()
 
 if (CURL_HAS_H2)
     target_compile_definitions(${PROJECT_NAME} PRIVATE "CURL_HAS_H2")
+endif()
+
+if (CURL_HAS_TLS_PROXY)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE "CURL_HAS_TLS_PROXY")
 endif()
 
 set(Core_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include/")

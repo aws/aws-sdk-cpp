@@ -130,6 +130,31 @@ namespace Aws
             */
             Aws::String proxyPassword;
             /**
+            * SSL Certificate file to use for connecting to an HTTPS proxy.
+            * Used to set CURLOPT_PROXY_SSLCERT in libcurl. Example: client.pem
+            */
+            Aws::String proxySSLCertPath;
+            /**
+            * Type of proxy client SSL certificate.
+            * Used to set CURLOPT_PROXY_SSLCERTTYPE in libcurl. Example: PEM
+            */
+            Aws::String proxySSLCertType;
+            /**
+            * Private key file to use for connecting to an HTTPS proxy.
+            * Used to set CURLOPT_PROXY_SSLKEY in libcurl. Example: key.pem
+            */
+            Aws::String proxySSLKeyPath;
+            /**
+            * Type of private key file used to connect to an HTTPS proxy.
+            * Used to set CURLOPT_PROXY_SSLKEYTYPE in libcurl. Example: PEM
+            */
+            Aws::String proxySSLKeyType;
+            /**
+            * Passphrase to the private key file used to connect to an HTTPS proxy.
+            * Used to set CURLOPT_PROXY_KEYPASSWD in libcurl. Example: password1 
+            */
+            Aws::String proxySSLKeyPassword;
+            /**
             * Threading Executor implementation. Default uses std::thread::detach()
             */
             std::shared_ptr<Aws::Utils::Threading::Executor> executor;
