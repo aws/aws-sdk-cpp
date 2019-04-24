@@ -121,7 +121,10 @@ namespace Aws
                 {
                     AWS_LOGSTREAM_ERROR(TAG, "Error creating event-stream message from paylaod.");
                     aws_array_list_clean_up(&headers);
-                    return {};
+                    // GCC 4.9.4 issues a warning with -Wextra if we simply do
+                    // return {};
+                    aws_event_stream_message empty{nullptr, nullptr, 0};
+                    return empty;
                 }
                 aws_array_list_clean_up(&headers);
                 return encoded;
@@ -137,7 +140,10 @@ namespace Aws
                 if (!m_signer->SignEventMessage(signedMessage, m_signatureSeed))
                 {
                     AWS_LOGSTREAM_ERROR(TAG, "Failed to sign event message frame.");
-                    return {};
+                    // GCC 4.9.4 issues a warning with -Wextra if we simply do
+                    // return {};
+                    aws_event_stream_message empty{nullptr, nullptr, 0};
+                    return empty;
                 }
 
                 aws_array_list headers;
@@ -154,7 +160,10 @@ namespace Aws
                 {
                     AWS_LOGSTREAM_ERROR(TAG, "Error creating event-stream message from paylaod.");
                     aws_array_list_clean_up(&headers);
-                    return {};
+                    // GCC 4.9.4 issues a warning with -Wextra if we simply do
+                    // return {};
+                    aws_event_stream_message empty{nullptr, nullptr, 0};
+                    return empty;
                 }
                 aws_array_list_clean_up(&headers);
                 return signedmsg;
