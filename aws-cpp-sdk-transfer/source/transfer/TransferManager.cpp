@@ -477,6 +477,7 @@ namespace Aws
             auto originalStreamBuffer = (Aws::Utils::Stream::PreallocatedStreamBuf*)request.GetBody()->rdbuf();
 
             m_bufferManager.Release(originalStreamBuffer->GetBuffer());
+            Aws::Delete(originalStreamBuffer);
             const auto& handle = transferContext->handle;
             const auto& partState = transferContext->partState;
 
@@ -583,6 +584,7 @@ namespace Aws
             auto originalStreamBuffer = static_cast<Aws::Utils::Stream::PreallocatedStreamBuf*>(request.GetBody()->rdbuf());
 
             m_bufferManager.Release(originalStreamBuffer->GetBuffer());
+            Aws::Delete(originalStreamBuffer);
 
             const auto& handle = transferContext->handle;
             const auto& partState = transferContext->partState;
