@@ -141,9 +141,12 @@ class AWS_TESTING_API ExactTestMemorySystem : public BaseTestMemorySystem
 #define AWS_BEGIN_MEMORY_TEST_EX(options, x, y) ExactTestMemorySystem memorySystem(x, y); \
                                                 options.memoryManagementOptions.memoryManager = &memorySystem;
 
-#define AWS_END_MEMORY_TEST_EX                  EXPECT_EQ(memorySystem.GetCurrentOutstandingAllocations(), 0ULL); \
-                                                EXPECT_EQ(memorySystem.GetCurrentBytesAllocated(), 0ULL); \
-                                                EXPECT_TRUE(memorySystem.IsClean()); 
+#define AWS_END_MEMORY_TEST_EX                  EXPECT_EQ(memorySystem.GetCurrentOutstandingAllocations(), 0ULL);      \
+                                                EXPECT_EQ(memorySystem.GetCurrentBytesAllocated(), 0ULL);              \
+                                                EXPECT_TRUE(memorySystem.IsClean());                                   \
+                                                if (memorySystem.GetCurrentOutstandingAllocations() != 0ULL) return 1; \
+                                                if (memorySystem.GetCurrentBytesAllocated() != 0ULL) return 1;         \
+                                                if (!memorySystem.IsClean()) return 1;
 #else
 
 #define AWS_BEGIN_MEMORY_TEST(x, y)
