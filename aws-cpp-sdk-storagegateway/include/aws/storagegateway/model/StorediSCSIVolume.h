@@ -554,30 +554,46 @@ namespace Model
 
 
     /**
-     * <p>The size of the data stored on the volume in bytes. </p> <note> <p>This value
-     * is not available for volumes created prior to May 13, 2015, until you store data
-     * on the volume.</p> </note>
+     * <p>The size of the data stored on the volume in bytes. This value is calculated
+     * based on the number of blocks that are touched, instead of the actual amount of
+     * data written. This value can be useful for sequential write patterns but less
+     * accurate for random write patterns. <code>VolumeUsedInBytes</code> is different
+     * from the compressed size of the volume, which is the value that is used to
+     * calculate your bill.</p> <note> <p>This value is not available for volumes
+     * created prior to May 13, 2015, until you store data on the volume.</p> </note>
      */
     inline long long GetVolumeUsedInBytes() const{ return m_volumeUsedInBytes; }
 
     /**
-     * <p>The size of the data stored on the volume in bytes. </p> <note> <p>This value
-     * is not available for volumes created prior to May 13, 2015, until you store data
-     * on the volume.</p> </note>
+     * <p>The size of the data stored on the volume in bytes. This value is calculated
+     * based on the number of blocks that are touched, instead of the actual amount of
+     * data written. This value can be useful for sequential write patterns but less
+     * accurate for random write patterns. <code>VolumeUsedInBytes</code> is different
+     * from the compressed size of the volume, which is the value that is used to
+     * calculate your bill.</p> <note> <p>This value is not available for volumes
+     * created prior to May 13, 2015, until you store data on the volume.</p> </note>
      */
     inline bool VolumeUsedInBytesHasBeenSet() const { return m_volumeUsedInBytesHasBeenSet; }
 
     /**
-     * <p>The size of the data stored on the volume in bytes. </p> <note> <p>This value
-     * is not available for volumes created prior to May 13, 2015, until you store data
-     * on the volume.</p> </note>
+     * <p>The size of the data stored on the volume in bytes. This value is calculated
+     * based on the number of blocks that are touched, instead of the actual amount of
+     * data written. This value can be useful for sequential write patterns but less
+     * accurate for random write patterns. <code>VolumeUsedInBytes</code> is different
+     * from the compressed size of the volume, which is the value that is used to
+     * calculate your bill.</p> <note> <p>This value is not available for volumes
+     * created prior to May 13, 2015, until you store data on the volume.</p> </note>
      */
     inline void SetVolumeUsedInBytes(long long value) { m_volumeUsedInBytesHasBeenSet = true; m_volumeUsedInBytes = value; }
 
     /**
-     * <p>The size of the data stored on the volume in bytes. </p> <note> <p>This value
-     * is not available for volumes created prior to May 13, 2015, until you store data
-     * on the volume.</p> </note>
+     * <p>The size of the data stored on the volume in bytes. This value is calculated
+     * based on the number of blocks that are touched, instead of the actual amount of
+     * data written. This value can be useful for sequential write patterns but less
+     * accurate for random write patterns. <code>VolumeUsedInBytes</code> is different
+     * from the compressed size of the volume, which is the value that is used to
+     * calculate your bill.</p> <note> <p>This value is not available for volumes
+     * created prior to May 13, 2015, until you store data on the volume.</p> </note>
      */
     inline StorediSCSIVolume& WithVolumeUsedInBytes(long long value) { SetVolumeUsedInBytes(value); return *this;}
 

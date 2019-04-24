@@ -528,6 +528,35 @@ namespace Model
 
 
     /**
+     * <p>Set this value to "true to enable ACL (access control list) on the SMB file
+     * share. Set it to "false" to map file and directory permissions to the POSIX
+     * permissions.</p>
+     */
+    inline bool GetSMBACLEnabled() const{ return m_sMBACLEnabled; }
+
+    /**
+     * <p>Set this value to "true to enable ACL (access control list) on the SMB file
+     * share. Set it to "false" to map file and directory permissions to the POSIX
+     * permissions.</p>
+     */
+    inline bool SMBACLEnabledHasBeenSet() const { return m_sMBACLEnabledHasBeenSet; }
+
+    /**
+     * <p>Set this value to "true to enable ACL (access control list) on the SMB file
+     * share. Set it to "false" to map file and directory permissions to the POSIX
+     * permissions.</p>
+     */
+    inline void SetSMBACLEnabled(bool value) { m_sMBACLEnabledHasBeenSet = true; m_sMBACLEnabled = value; }
+
+    /**
+     * <p>Set this value to "true to enable ACL (access control list) on the SMB file
+     * share. Set it to "false" to map file and directory permissions to the POSIX
+     * permissions.</p>
+     */
+    inline CreateSMBFileShareRequest& WithSMBACLEnabled(bool value) { SetSMBACLEnabled(value); return *this;}
+
+
+    /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
      * the file share. A group must be prefixed with the @ character. For example
      * <code>@group1</code>. Can only be set if Authentication is set to
@@ -836,6 +865,9 @@ namespace Model
 
     bool m_requesterPays;
     bool m_requesterPaysHasBeenSet;
+
+    bool m_sMBACLEnabled;
+    bool m_sMBACLEnabledHasBeenSet;
 
     Aws::Vector<Aws::String> m_validUserList;
     bool m_validUserListHasBeenSet;

@@ -48,6 +48,7 @@ namespace Aws
         static const int sa_east_1_HASH = HashingUtils::HashString("sa-east-1");
         static const int cn_north_1_HASH = HashingUtils::HashString("cn-north-1");
         static const int cn_northwest_1_HASH = HashingUtils::HashString("cn-northwest-1");
+        static const int ap_east_1_HASH = HashingUtils::HashString("ap-east-1");
         static const int ap_south_1_HASH = HashingUtils::HashString("ap-south-1");
 
 
@@ -126,6 +127,10 @@ namespace Aws
           {
             return ResourceRecordSetRegion::cn_northwest_1;
           }
+          else if (hashCode == ap_east_1_HASH)
+          {
+            return ResourceRecordSetRegion::ap_east_1;
+          }
           else if (hashCode == ap_south_1_HASH)
           {
             return ResourceRecordSetRegion::ap_south_1;
@@ -180,6 +185,8 @@ namespace Aws
             return "cn-north-1";
           case ResourceRecordSetRegion::cn_northwest_1:
             return "cn-northwest-1";
+          case ResourceRecordSetRegion::ap_east_1:
+            return "ap-east-1";
           case ResourceRecordSetRegion::ap_south_1:
             return "ap-south-1";
           default:

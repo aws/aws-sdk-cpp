@@ -28,9 +28,9 @@ namespace Model
 {
 
   /**
-   * The tags to add to the resource. Tag keys can have a maximum character length of
-   * 128 characters, and tag values can have a maximum length of 256
-   * characters.<p><h3>See Also:</h3>   <a
+   * The tags to add to the resource. A tag is an array of key-value pairs. Tag keys
+   * can have a maximum character length of 128 characters, and tag values can have a
+   * maximum length of 256 characters.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagResourceRequest">AWS
    * API Reference</a></p>
    */
@@ -49,42 +49,50 @@ namespace Model
 
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to add tags to.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
+     * resource to which to add tags.
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to add tags to.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
+     * resource to which to add tags.
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to add tags to.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
+     * resource to which to add tags.
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to add tags to.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
+     * resource to which to add tags.
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to add tags to.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
+     * resource to which to add tags.
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to add tags to.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
+     * resource to which to add tags.
      */
     inline TagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to add tags to.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
+     * resource to which to add tags.
      */
     inline TagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to add tags to.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
+     * resource to which to add tags.
      */
     inline TagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

@@ -70,13 +70,14 @@ namespace Model
      * an EC2 instance, we recommend that you create an Elastic IP address, associate
      * it with your EC2 instance, and specify the Elastic IP address for
      * <code>IPAddress</code>. This ensures that the IP address of your instance will
-     * never change.</p> <p>For more information, see
-     * <a>HealthCheckConfig$FullyQualifiedDomainName</a>.</p> <p>Constraints: Route 53
-     * can't check the health of endpoints for which the IP address is in local,
-     * private, non-routable, or multicast ranges. For more information about IP
-     * addresses for which you can't create health checks, see the following
-     * documents:</p> <ul> <li> <p> <a href="https://tools.ietf.org/html/rfc5735">RFC
-     * 5735, Special Use IPv4 Addresses</a> </p> </li> <li> <p> <a
+     * never change.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.
+     * </p> <p>Constraints: Route 53 can't check the health of endpoints for which the
+     * IP address is in local, private, non-routable, or multicast ranges. For more
+     * information about IP addresses for which you can't create health checks, see the
+     * following documents:</p> <ul> <li> <p> <a
+     * href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4
+     * Addresses</a> </p> </li> <li> <p> <a
      * href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix
      * for Shared Address Space</a> </p> </li> <li> <p> <a
      * href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6
@@ -103,13 +104,14 @@ namespace Model
      * an EC2 instance, we recommend that you create an Elastic IP address, associate
      * it with your EC2 instance, and specify the Elastic IP address for
      * <code>IPAddress</code>. This ensures that the IP address of your instance will
-     * never change.</p> <p>For more information, see
-     * <a>HealthCheckConfig$FullyQualifiedDomainName</a>.</p> <p>Constraints: Route 53
-     * can't check the health of endpoints for which the IP address is in local,
-     * private, non-routable, or multicast ranges. For more information about IP
-     * addresses for which you can't create health checks, see the following
-     * documents:</p> <ul> <li> <p> <a href="https://tools.ietf.org/html/rfc5735">RFC
-     * 5735, Special Use IPv4 Addresses</a> </p> </li> <li> <p> <a
+     * never change.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.
+     * </p> <p>Constraints: Route 53 can't check the health of endpoints for which the
+     * IP address is in local, private, non-routable, or multicast ranges. For more
+     * information about IP addresses for which you can't create health checks, see the
+     * following documents:</p> <ul> <li> <p> <a
+     * href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4
+     * Addresses</a> </p> </li> <li> <p> <a
      * href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix
      * for Shared Address Space</a> </p> </li> <li> <p> <a
      * href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6
@@ -136,13 +138,14 @@ namespace Model
      * an EC2 instance, we recommend that you create an Elastic IP address, associate
      * it with your EC2 instance, and specify the Elastic IP address for
      * <code>IPAddress</code>. This ensures that the IP address of your instance will
-     * never change.</p> <p>For more information, see
-     * <a>HealthCheckConfig$FullyQualifiedDomainName</a>.</p> <p>Constraints: Route 53
-     * can't check the health of endpoints for which the IP address is in local,
-     * private, non-routable, or multicast ranges. For more information about IP
-     * addresses for which you can't create health checks, see the following
-     * documents:</p> <ul> <li> <p> <a href="https://tools.ietf.org/html/rfc5735">RFC
-     * 5735, Special Use IPv4 Addresses</a> </p> </li> <li> <p> <a
+     * never change.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.
+     * </p> <p>Constraints: Route 53 can't check the health of endpoints for which the
+     * IP address is in local, private, non-routable, or multicast ranges. For more
+     * information about IP addresses for which you can't create health checks, see the
+     * following documents:</p> <ul> <li> <p> <a
+     * href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4
+     * Addresses</a> </p> </li> <li> <p> <a
      * href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix
      * for Shared Address Space</a> </p> </li> <li> <p> <a
      * href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6
@@ -169,13 +172,14 @@ namespace Model
      * an EC2 instance, we recommend that you create an Elastic IP address, associate
      * it with your EC2 instance, and specify the Elastic IP address for
      * <code>IPAddress</code>. This ensures that the IP address of your instance will
-     * never change.</p> <p>For more information, see
-     * <a>HealthCheckConfig$FullyQualifiedDomainName</a>.</p> <p>Constraints: Route 53
-     * can't check the health of endpoints for which the IP address is in local,
-     * private, non-routable, or multicast ranges. For more information about IP
-     * addresses for which you can't create health checks, see the following
-     * documents:</p> <ul> <li> <p> <a href="https://tools.ietf.org/html/rfc5735">RFC
-     * 5735, Special Use IPv4 Addresses</a> </p> </li> <li> <p> <a
+     * never change.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.
+     * </p> <p>Constraints: Route 53 can't check the health of endpoints for which the
+     * IP address is in local, private, non-routable, or multicast ranges. For more
+     * information about IP addresses for which you can't create health checks, see the
+     * following documents:</p> <ul> <li> <p> <a
+     * href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4
+     * Addresses</a> </p> </li> <li> <p> <a
      * href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix
      * for Shared Address Space</a> </p> </li> <li> <p> <a
      * href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6
@@ -202,13 +206,14 @@ namespace Model
      * an EC2 instance, we recommend that you create an Elastic IP address, associate
      * it with your EC2 instance, and specify the Elastic IP address for
      * <code>IPAddress</code>. This ensures that the IP address of your instance will
-     * never change.</p> <p>For more information, see
-     * <a>HealthCheckConfig$FullyQualifiedDomainName</a>.</p> <p>Constraints: Route 53
-     * can't check the health of endpoints for which the IP address is in local,
-     * private, non-routable, or multicast ranges. For more information about IP
-     * addresses for which you can't create health checks, see the following
-     * documents:</p> <ul> <li> <p> <a href="https://tools.ietf.org/html/rfc5735">RFC
-     * 5735, Special Use IPv4 Addresses</a> </p> </li> <li> <p> <a
+     * never change.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.
+     * </p> <p>Constraints: Route 53 can't check the health of endpoints for which the
+     * IP address is in local, private, non-routable, or multicast ranges. For more
+     * information about IP addresses for which you can't create health checks, see the
+     * following documents:</p> <ul> <li> <p> <a
+     * href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4
+     * Addresses</a> </p> </li> <li> <p> <a
      * href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix
      * for Shared Address Space</a> </p> </li> <li> <p> <a
      * href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6
@@ -235,13 +240,14 @@ namespace Model
      * an EC2 instance, we recommend that you create an Elastic IP address, associate
      * it with your EC2 instance, and specify the Elastic IP address for
      * <code>IPAddress</code>. This ensures that the IP address of your instance will
-     * never change.</p> <p>For more information, see
-     * <a>HealthCheckConfig$FullyQualifiedDomainName</a>.</p> <p>Constraints: Route 53
-     * can't check the health of endpoints for which the IP address is in local,
-     * private, non-routable, or multicast ranges. For more information about IP
-     * addresses for which you can't create health checks, see the following
-     * documents:</p> <ul> <li> <p> <a href="https://tools.ietf.org/html/rfc5735">RFC
-     * 5735, Special Use IPv4 Addresses</a> </p> </li> <li> <p> <a
+     * never change.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.
+     * </p> <p>Constraints: Route 53 can't check the health of endpoints for which the
+     * IP address is in local, private, non-routable, or multicast ranges. For more
+     * information about IP addresses for which you can't create health checks, see the
+     * following documents:</p> <ul> <li> <p> <a
+     * href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4
+     * Addresses</a> </p> </li> <li> <p> <a
      * href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix
      * for Shared Address Space</a> </p> </li> <li> <p> <a
      * href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6
@@ -268,13 +274,14 @@ namespace Model
      * an EC2 instance, we recommend that you create an Elastic IP address, associate
      * it with your EC2 instance, and specify the Elastic IP address for
      * <code>IPAddress</code>. This ensures that the IP address of your instance will
-     * never change.</p> <p>For more information, see
-     * <a>HealthCheckConfig$FullyQualifiedDomainName</a>.</p> <p>Constraints: Route 53
-     * can't check the health of endpoints for which the IP address is in local,
-     * private, non-routable, or multicast ranges. For more information about IP
-     * addresses for which you can't create health checks, see the following
-     * documents:</p> <ul> <li> <p> <a href="https://tools.ietf.org/html/rfc5735">RFC
-     * 5735, Special Use IPv4 Addresses</a> </p> </li> <li> <p> <a
+     * never change.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.
+     * </p> <p>Constraints: Route 53 can't check the health of endpoints for which the
+     * IP address is in local, private, non-routable, or multicast ranges. For more
+     * information about IP addresses for which you can't create health checks, see the
+     * following documents:</p> <ul> <li> <p> <a
+     * href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4
+     * Addresses</a> </p> </li> <li> <p> <a
      * href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix
      * for Shared Address Space</a> </p> </li> <li> <p> <a
      * href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6
@@ -301,13 +308,14 @@ namespace Model
      * an EC2 instance, we recommend that you create an Elastic IP address, associate
      * it with your EC2 instance, and specify the Elastic IP address for
      * <code>IPAddress</code>. This ensures that the IP address of your instance will
-     * never change.</p> <p>For more information, see
-     * <a>HealthCheckConfig$FullyQualifiedDomainName</a>.</p> <p>Constraints: Route 53
-     * can't check the health of endpoints for which the IP address is in local,
-     * private, non-routable, or multicast ranges. For more information about IP
-     * addresses for which you can't create health checks, see the following
-     * documents:</p> <ul> <li> <p> <a href="https://tools.ietf.org/html/rfc5735">RFC
-     * 5735, Special Use IPv4 Addresses</a> </p> </li> <li> <p> <a
+     * never change.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.
+     * </p> <p>Constraints: Route 53 can't check the health of endpoints for which the
+     * IP address is in local, private, non-routable, or multicast ranges. For more
+     * information about IP addresses for which you can't create health checks, see the
+     * following documents:</p> <ul> <li> <p> <a
+     * href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4
+     * Addresses</a> </p> </li> <li> <p> <a
      * href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix
      * for Shared Address Space</a> </p> </li> <li> <p> <a
      * href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6
@@ -379,7 +387,7 @@ namespace Model
      * 53 health checkers consider to be healthy and compares that number with the
      * value of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p>
      */
@@ -417,7 +425,7 @@ namespace Model
      * 53 health checkers consider to be healthy and compares that number with the
      * value of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p>
      */
@@ -455,7 +463,7 @@ namespace Model
      * 53 health checkers consider to be healthy and compares that number with the
      * value of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p>
      */
@@ -493,7 +501,7 @@ namespace Model
      * 53 health checkers consider to be healthy and compares that number with the
      * value of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p>
      */
@@ -531,7 +539,7 @@ namespace Model
      * 53 health checkers consider to be healthy and compares that number with the
      * value of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p>
      */
@@ -569,7 +577,7 @@ namespace Model
      * 53 health checkers consider to be healthy and compares that number with the
      * value of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p>
      */
@@ -1326,10 +1334,11 @@ namespace Model
      * disable a health check, Route 53 considers the status of the health check to
      * always be healthy. If you configured DNS failover, Route 53 continues to route
      * traffic to the corresponding resources. If you want to stop routing traffic to a
-     * resource, change the value of <a>UpdateHealthCheckRequest$Inverted</a>.</p>
-     * <p>Charges for a health check still apply when the health check is disabled. For
-     * more information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-     * Route 53 Pricing</a>.</p>
+     * resource, change the value of <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted">Inverted</a>.
+     * </p> <p>Charges for a health check still apply when the health check is
+     * disabled. For more information, see <a
+     * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
      */
     inline bool GetDisabled() const{ return m_disabled; }
 
@@ -1344,10 +1353,11 @@ namespace Model
      * disable a health check, Route 53 considers the status of the health check to
      * always be healthy. If you configured DNS failover, Route 53 continues to route
      * traffic to the corresponding resources. If you want to stop routing traffic to a
-     * resource, change the value of <a>UpdateHealthCheckRequest$Inverted</a>.</p>
-     * <p>Charges for a health check still apply when the health check is disabled. For
-     * more information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-     * Route 53 Pricing</a>.</p>
+     * resource, change the value of <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted">Inverted</a>.
+     * </p> <p>Charges for a health check still apply when the health check is
+     * disabled. For more information, see <a
+     * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
      */
     inline bool DisabledHasBeenSet() const { return m_disabledHasBeenSet; }
 
@@ -1362,10 +1372,11 @@ namespace Model
      * disable a health check, Route 53 considers the status of the health check to
      * always be healthy. If you configured DNS failover, Route 53 continues to route
      * traffic to the corresponding resources. If you want to stop routing traffic to a
-     * resource, change the value of <a>UpdateHealthCheckRequest$Inverted</a>.</p>
-     * <p>Charges for a health check still apply when the health check is disabled. For
-     * more information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-     * Route 53 Pricing</a>.</p>
+     * resource, change the value of <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted">Inverted</a>.
+     * </p> <p>Charges for a health check still apply when the health check is
+     * disabled. For more information, see <a
+     * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
      */
     inline void SetDisabled(bool value) { m_disabledHasBeenSet = true; m_disabled = value; }
 
@@ -1380,71 +1391,68 @@ namespace Model
      * disable a health check, Route 53 considers the status of the health check to
      * always be healthy. If you configured DNS failover, Route 53 continues to route
      * traffic to the corresponding resources. If you want to stop routing traffic to a
-     * resource, change the value of <a>UpdateHealthCheckRequest$Inverted</a>.</p>
-     * <p>Charges for a health check still apply when the health check is disabled. For
-     * more information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-     * Route 53 Pricing</a>.</p>
+     * resource, change the value of <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted">Inverted</a>.
+     * </p> <p>Charges for a health check still apply when the health check is
+     * disabled. For more information, see <a
+     * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
      */
     inline HealthCheckConfig& WithDisabled(bool value) { SetDisabled(value); return *this;}
 
 
     /**
      * <p>The number of child health checks that are associated with a
-     * <code>CALCULATED</code> health that Amazon Route 53 must consider healthy for
-     * the <code>CALCULATED</code> health check to be considered healthy. To specify
-     * the child health checks that you want to associate with a
-     * <code>CALCULATED</code> health check, use the
-     * <a>HealthCheckConfig$ChildHealthChecks</a> and
-     * <a>HealthCheckConfig$ChildHealthChecks</a> elements.</p> <p>Note the
-     * following:</p> <ul> <li> <p>If you specify a number greater than the number of
-     * child health checks, Route 53 always considers this health check to be
-     * unhealthy.</p> </li> <li> <p>If you specify <code>0</code>, Route 53 always
-     * considers this health check to be healthy.</p> </li> </ul>
+     * <code>CALCULATED</code> health check that Amazon Route 53 must consider healthy
+     * for the <code>CALCULATED</code> health check to be considered healthy. To
+     * specify the child health checks that you want to associate with a
+     * <code>CALCULATED</code> health check, use the <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks">ChildHealthChecks</a>
+     * element.</p> <p>Note the following:</p> <ul> <li> <p>If you specify a number
+     * greater than the number of child health checks, Route 53 always considers this
+     * health check to be unhealthy.</p> </li> <li> <p>If you specify <code>0</code>,
+     * Route 53 always considers this health check to be healthy.</p> </li> </ul>
      */
     inline int GetHealthThreshold() const{ return m_healthThreshold; }
 
     /**
      * <p>The number of child health checks that are associated with a
-     * <code>CALCULATED</code> health that Amazon Route 53 must consider healthy for
-     * the <code>CALCULATED</code> health check to be considered healthy. To specify
-     * the child health checks that you want to associate with a
-     * <code>CALCULATED</code> health check, use the
-     * <a>HealthCheckConfig$ChildHealthChecks</a> and
-     * <a>HealthCheckConfig$ChildHealthChecks</a> elements.</p> <p>Note the
-     * following:</p> <ul> <li> <p>If you specify a number greater than the number of
-     * child health checks, Route 53 always considers this health check to be
-     * unhealthy.</p> </li> <li> <p>If you specify <code>0</code>, Route 53 always
-     * considers this health check to be healthy.</p> </li> </ul>
+     * <code>CALCULATED</code> health check that Amazon Route 53 must consider healthy
+     * for the <code>CALCULATED</code> health check to be considered healthy. To
+     * specify the child health checks that you want to associate with a
+     * <code>CALCULATED</code> health check, use the <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks">ChildHealthChecks</a>
+     * element.</p> <p>Note the following:</p> <ul> <li> <p>If you specify a number
+     * greater than the number of child health checks, Route 53 always considers this
+     * health check to be unhealthy.</p> </li> <li> <p>If you specify <code>0</code>,
+     * Route 53 always considers this health check to be healthy.</p> </li> </ul>
      */
     inline bool HealthThresholdHasBeenSet() const { return m_healthThresholdHasBeenSet; }
 
     /**
      * <p>The number of child health checks that are associated with a
-     * <code>CALCULATED</code> health that Amazon Route 53 must consider healthy for
-     * the <code>CALCULATED</code> health check to be considered healthy. To specify
-     * the child health checks that you want to associate with a
-     * <code>CALCULATED</code> health check, use the
-     * <a>HealthCheckConfig$ChildHealthChecks</a> and
-     * <a>HealthCheckConfig$ChildHealthChecks</a> elements.</p> <p>Note the
-     * following:</p> <ul> <li> <p>If you specify a number greater than the number of
-     * child health checks, Route 53 always considers this health check to be
-     * unhealthy.</p> </li> <li> <p>If you specify <code>0</code>, Route 53 always
-     * considers this health check to be healthy.</p> </li> </ul>
+     * <code>CALCULATED</code> health check that Amazon Route 53 must consider healthy
+     * for the <code>CALCULATED</code> health check to be considered healthy. To
+     * specify the child health checks that you want to associate with a
+     * <code>CALCULATED</code> health check, use the <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks">ChildHealthChecks</a>
+     * element.</p> <p>Note the following:</p> <ul> <li> <p>If you specify a number
+     * greater than the number of child health checks, Route 53 always considers this
+     * health check to be unhealthy.</p> </li> <li> <p>If you specify <code>0</code>,
+     * Route 53 always considers this health check to be healthy.</p> </li> </ul>
      */
     inline void SetHealthThreshold(int value) { m_healthThresholdHasBeenSet = true; m_healthThreshold = value; }
 
     /**
      * <p>The number of child health checks that are associated with a
-     * <code>CALCULATED</code> health that Amazon Route 53 must consider healthy for
-     * the <code>CALCULATED</code> health check to be considered healthy. To specify
-     * the child health checks that you want to associate with a
-     * <code>CALCULATED</code> health check, use the
-     * <a>HealthCheckConfig$ChildHealthChecks</a> and
-     * <a>HealthCheckConfig$ChildHealthChecks</a> elements.</p> <p>Note the
-     * following:</p> <ul> <li> <p>If you specify a number greater than the number of
-     * child health checks, Route 53 always considers this health check to be
-     * unhealthy.</p> </li> <li> <p>If you specify <code>0</code>, Route 53 always
-     * considers this health check to be healthy.</p> </li> </ul>
+     * <code>CALCULATED</code> health check that Amazon Route 53 must consider healthy
+     * for the <code>CALCULATED</code> health check to be considered healthy. To
+     * specify the child health checks that you want to associate with a
+     * <code>CALCULATED</code> health check, use the <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks">ChildHealthChecks</a>
+     * element.</p> <p>Note the following:</p> <ul> <li> <p>If you specify a number
+     * greater than the number of child health checks, Route 53 always considers this
+     * health check to be unhealthy.</p> </li> <li> <p>If you specify <code>0</code>,
+     * Route 53 always considers this health check to be healthy.</p> </li> </ul>
      */
     inline HealthCheckConfig& WithHealthThreshold(int value) { SetHealthThreshold(value); return *this;}
 

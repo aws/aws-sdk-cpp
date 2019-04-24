@@ -55,42 +55,42 @@ namespace Model
 
 
     /**
-     * <p>The Maintenance Window ID where the task is registered.</p>
+     * <p>The ID of the Maintenance Window where the task is registered.</p>
      */
     inline const Aws::String& GetWindowId() const{ return m_windowId; }
 
     /**
-     * <p>The Maintenance Window ID where the task is registered.</p>
+     * <p>The ID of the Maintenance Window where the task is registered.</p>
      */
     inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
 
     /**
-     * <p>The Maintenance Window ID where the task is registered.</p>
+     * <p>The ID of the Maintenance Window where the task is registered.</p>
      */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
-     * <p>The Maintenance Window ID where the task is registered.</p>
+     * <p>The ID of the Maintenance Window where the task is registered.</p>
      */
     inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = std::move(value); }
 
     /**
-     * <p>The Maintenance Window ID where the task is registered.</p>
+     * <p>The ID of the Maintenance Window where the task is registered.</p>
      */
     inline void SetWindowId(const char* value) { m_windowIdHasBeenSet = true; m_windowId.assign(value); }
 
     /**
-     * <p>The Maintenance Window ID where the task is registered.</p>
+     * <p>The ID of the Maintenance Window where the task is registered.</p>
      */
     inline MaintenanceWindowTask& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
 
     /**
-     * <p>The Maintenance Window ID where the task is registered.</p>
+     * <p>The ID of the Maintenance Window where the task is registered.</p>
      */
     inline MaintenanceWindowTask& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
-     * <p>The Maintenance Window ID where the task is registered.</p>
+     * <p>The ID of the Maintenance Window where the task is registered.</p>
      */
     inline MaintenanceWindowTask& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
@@ -554,42 +554,42 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of targets this task can be run for in parallel.</p>
+     * <p>The maximum number of targets this task can be run for, in parallel.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
     /**
-     * <p>The maximum number of targets this task can be run for in parallel.</p>
+     * <p>The maximum number of targets this task can be run for, in parallel.</p>
      */
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
     /**
-     * <p>The maximum number of targets this task can be run for in parallel.</p>
+     * <p>The maximum number of targets this task can be run for, in parallel.</p>
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
     /**
-     * <p>The maximum number of targets this task can be run for in parallel.</p>
+     * <p>The maximum number of targets this task can be run for, in parallel.</p>
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
 
     /**
-     * <p>The maximum number of targets this task can be run for in parallel.</p>
+     * <p>The maximum number of targets this task can be run for, in parallel.</p>
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
 
     /**
-     * <p>The maximum number of targets this task can be run for in parallel.</p>
+     * <p>The maximum number of targets this task can be run for, in parallel.</p>
      */
     inline MaintenanceWindowTask& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
     /**
-     * <p>The maximum number of targets this task can be run for in parallel.</p>
+     * <p>The maximum number of targets this task can be run for, in parallel.</p>
      */
     inline MaintenanceWindowTask& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum number of targets this task can be run for in parallel.</p>
+     * <p>The maximum number of targets this task can be run for, in parallel.</p>
      */
     inline MaintenanceWindowTask& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 

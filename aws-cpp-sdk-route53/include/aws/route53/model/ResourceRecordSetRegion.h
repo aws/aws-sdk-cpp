@@ -44,6 +44,7 @@ namespace Model
     sa_east_1,
     cn_north_1,
     cn_northwest_1,
+    ap_east_1,
     ap_south_1
   };
 

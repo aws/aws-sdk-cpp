@@ -30,13 +30,17 @@ namespace Model
 
 DashConfiguration::DashConfiguration() : 
     m_manifestEndpointPrefixHasBeenSet(false),
-    m_mpdLocationHasBeenSet(false)
+    m_mpdLocationHasBeenSet(false),
+    m_originManifestType(OriginManifestType::NOT_SET),
+    m_originManifestTypeHasBeenSet(false)
 {
 }
 
 DashConfiguration::DashConfiguration(JsonView jsonValue) : 
     m_manifestEndpointPrefixHasBeenSet(false),
-    m_mpdLocationHasBeenSet(false)
+    m_mpdLocationHasBeenSet(false),
+    m_originManifestType(OriginManifestType::NOT_SET),
+    m_originManifestTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +61,13 @@ DashConfiguration& DashConfiguration::operator =(JsonView jsonValue)
     m_mpdLocationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OriginManifestType"))
+  {
+    m_originManifestType = OriginManifestTypeMapper::GetOriginManifestTypeForName(jsonValue.GetString("OriginManifestType"));
+
+    m_originManifestTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -74,6 +85,11 @@ JsonValue DashConfiguration::Jsonize() const
   {
    payload.WithString("MpdLocation", m_mpdLocation);
 
+  }
+
+  if(m_originManifestTypeHasBeenSet)
+  {
+   payload.WithString("OriginManifestType", OriginManifestTypeMapper::GetNameForOriginManifestType(m_originManifestType));
   }
 
   return payload;

@@ -104,7 +104,8 @@ namespace Model
      * have registered with your DNS registrar.</p> <p>For information about how to
      * specify characters other than <code>a-z</code>, <code>0-9</code>, and
      * <code>-</code> (hyphen) and how to specify internationalized domain names, see
-     * <a>CreateHostedZone</a>.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -113,7 +114,8 @@ namespace Model
      * have registered with your DNS registrar.</p> <p>For information about how to
      * specify characters other than <code>a-z</code>, <code>0-9</code>, and
      * <code>-</code> (hyphen) and how to specify internationalized domain names, see
-     * <a>CreateHostedZone</a>.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -122,7 +124,8 @@ namespace Model
      * have registered with your DNS registrar.</p> <p>For information about how to
      * specify characters other than <code>a-z</code>, <code>0-9</code>, and
      * <code>-</code> (hyphen) and how to specify internationalized domain names, see
-     * <a>CreateHostedZone</a>.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -131,7 +134,8 @@ namespace Model
      * have registered with your DNS registrar.</p> <p>For information about how to
      * specify characters other than <code>a-z</code>, <code>0-9</code>, and
      * <code>-</code> (hyphen) and how to specify internationalized domain names, see
-     * <a>CreateHostedZone</a>.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -140,7 +144,8 @@ namespace Model
      * have registered with your DNS registrar.</p> <p>For information about how to
      * specify characters other than <code>a-z</code>, <code>0-9</code>, and
      * <code>-</code> (hyphen) and how to specify internationalized domain names, see
-     * <a>CreateHostedZone</a>.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -149,7 +154,8 @@ namespace Model
      * have registered with your DNS registrar.</p> <p>For information about how to
      * specify characters other than <code>a-z</code>, <code>0-9</code>, and
      * <code>-</code> (hyphen) and how to specify internationalized domain names, see
-     * <a>CreateHostedZone</a>.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
      */
     inline HostedZone& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -158,7 +164,8 @@ namespace Model
      * have registered with your DNS registrar.</p> <p>For information about how to
      * specify characters other than <code>a-z</code>, <code>0-9</code>, and
      * <code>-</code> (hyphen) and how to specify internationalized domain names, see
-     * <a>CreateHostedZone</a>.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
      */
     inline HostedZone& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -167,7 +174,8 @@ namespace Model
      * have registered with your DNS registrar.</p> <p>For information about how to
      * specify characters other than <code>a-z</code>, <code>0-9</code>, and
      * <code>-</code> (hyphen) and how to specify internationalized domain names, see
-     * <a>CreateHostedZone</a>.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
      */
     inline HostedZone& WithName(const char* value) { SetName(value); return *this;}
 

@@ -347,21 +347,24 @@ namespace Model
      * are not to use it." In RFC 7208, see section 14.1, <a
      * href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record
      * Type</a>.</p> </note> <p>Values for alias resource record sets:</p> <ul> <li>
-     * <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled
-     * for the distribution, create two resource record sets to route traffic to your
-     * distribution, one with a value of <code>A</code> and one with a value of
-     * <code>AAAA</code>. </p> </li> <li> <p> <b>AWS Elastic Beanstalk environment that
-     * has a regionalized subdomain</b>: <code>A</code> </p> </li> <li> <p> <b>ELB load
-     * balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> <li> <p> <b>Amazon
-     * S3 buckets:</b> <code>A</code> </p> </li> <li> <p> <b>Another resource record
-     * set in this hosted zone:</b> Specify the type of the resource record set that
-     * you're creating the alias for. All values are supported except <code>NS</code>
-     * and <code>SOA</code>.</p> <note> <p>If you're creating an alias record that has
-     * the same name as the hosted zone (known as the zone apex), you can't route
-     * traffic to a record for which the value of <code>Type</code> is
-     * <code>CNAME</code>. This is because the alias record must have the same type as
-     * the record you're routing traffic to, and creating a CNAME record for the zone
-     * apex isn't supported even for an alias record.</p> </note> </li> </ul>
+     * <p> <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b>
+     * <code>A</code> </p> </li> <li> <p> <b>CloudFront distributions:</b>
+     * <code>A</code> </p> <p>If IPv6 is enabled for the distribution, create two
+     * resource record sets to route traffic to your distribution, one with a value of
+     * <code>A</code> and one with a value of <code>AAAA</code>. </p> </li> <li> <p>
+     * <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>:
+     * <code>A</code> </p> </li> <li> <p> <b>ELB load balancers:</b> <code>A</code> |
+     * <code>AAAA</code> </p> </li> <li> <p> <b>Amazon S3 buckets:</b> <code>A</code>
+     * </p> </li> <li> <p> <b>Amazon Virtual Private Cloud interface VPC endpoints</b>
+     * <code>A</code> </p> </li> <li> <p> <b>Another resource record set in this hosted
+     * zone:</b> Specify the type of the resource record set that you're creating the
+     * alias for. All values are supported except <code>NS</code> and
+     * <code>SOA</code>.</p> <note> <p>If you're creating an alias record that has the
+     * same name as the hosted zone (known as the zone apex), you can't route traffic
+     * to a record for which the value of <code>Type</code> is <code>CNAME</code>. This
+     * is because the alias record must have the same type as the record you're routing
+     * traffic to, and creating a CNAME record for the zone apex isn't supported even
+     * for an alias record.</p> </note> </li> </ul>
      */
     inline const RRType& GetType() const{ return m_type; }
 
@@ -392,21 +395,24 @@ namespace Model
      * are not to use it." In RFC 7208, see section 14.1, <a
      * href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record
      * Type</a>.</p> </note> <p>Values for alias resource record sets:</p> <ul> <li>
-     * <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled
-     * for the distribution, create two resource record sets to route traffic to your
-     * distribution, one with a value of <code>A</code> and one with a value of
-     * <code>AAAA</code>. </p> </li> <li> <p> <b>AWS Elastic Beanstalk environment that
-     * has a regionalized subdomain</b>: <code>A</code> </p> </li> <li> <p> <b>ELB load
-     * balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> <li> <p> <b>Amazon
-     * S3 buckets:</b> <code>A</code> </p> </li> <li> <p> <b>Another resource record
-     * set in this hosted zone:</b> Specify the type of the resource record set that
-     * you're creating the alias for. All values are supported except <code>NS</code>
-     * and <code>SOA</code>.</p> <note> <p>If you're creating an alias record that has
-     * the same name as the hosted zone (known as the zone apex), you can't route
-     * traffic to a record for which the value of <code>Type</code> is
-     * <code>CNAME</code>. This is because the alias record must have the same type as
-     * the record you're routing traffic to, and creating a CNAME record for the zone
-     * apex isn't supported even for an alias record.</p> </note> </li> </ul>
+     * <p> <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b>
+     * <code>A</code> </p> </li> <li> <p> <b>CloudFront distributions:</b>
+     * <code>A</code> </p> <p>If IPv6 is enabled for the distribution, create two
+     * resource record sets to route traffic to your distribution, one with a value of
+     * <code>A</code> and one with a value of <code>AAAA</code>. </p> </li> <li> <p>
+     * <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>:
+     * <code>A</code> </p> </li> <li> <p> <b>ELB load balancers:</b> <code>A</code> |
+     * <code>AAAA</code> </p> </li> <li> <p> <b>Amazon S3 buckets:</b> <code>A</code>
+     * </p> </li> <li> <p> <b>Amazon Virtual Private Cloud interface VPC endpoints</b>
+     * <code>A</code> </p> </li> <li> <p> <b>Another resource record set in this hosted
+     * zone:</b> Specify the type of the resource record set that you're creating the
+     * alias for. All values are supported except <code>NS</code> and
+     * <code>SOA</code>.</p> <note> <p>If you're creating an alias record that has the
+     * same name as the hosted zone (known as the zone apex), you can't route traffic
+     * to a record for which the value of <code>Type</code> is <code>CNAME</code>. This
+     * is because the alias record must have the same type as the record you're routing
+     * traffic to, and creating a CNAME record for the zone apex isn't supported even
+     * for an alias record.</p> </note> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -437,21 +443,24 @@ namespace Model
      * are not to use it." In RFC 7208, see section 14.1, <a
      * href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record
      * Type</a>.</p> </note> <p>Values for alias resource record sets:</p> <ul> <li>
-     * <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled
-     * for the distribution, create two resource record sets to route traffic to your
-     * distribution, one with a value of <code>A</code> and one with a value of
-     * <code>AAAA</code>. </p> </li> <li> <p> <b>AWS Elastic Beanstalk environment that
-     * has a regionalized subdomain</b>: <code>A</code> </p> </li> <li> <p> <b>ELB load
-     * balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> <li> <p> <b>Amazon
-     * S3 buckets:</b> <code>A</code> </p> </li> <li> <p> <b>Another resource record
-     * set in this hosted zone:</b> Specify the type of the resource record set that
-     * you're creating the alias for. All values are supported except <code>NS</code>
-     * and <code>SOA</code>.</p> <note> <p>If you're creating an alias record that has
-     * the same name as the hosted zone (known as the zone apex), you can't route
-     * traffic to a record for which the value of <code>Type</code> is
-     * <code>CNAME</code>. This is because the alias record must have the same type as
-     * the record you're routing traffic to, and creating a CNAME record for the zone
-     * apex isn't supported even for an alias record.</p> </note> </li> </ul>
+     * <p> <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b>
+     * <code>A</code> </p> </li> <li> <p> <b>CloudFront distributions:</b>
+     * <code>A</code> </p> <p>If IPv6 is enabled for the distribution, create two
+     * resource record sets to route traffic to your distribution, one with a value of
+     * <code>A</code> and one with a value of <code>AAAA</code>. </p> </li> <li> <p>
+     * <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>:
+     * <code>A</code> </p> </li> <li> <p> <b>ELB load balancers:</b> <code>A</code> |
+     * <code>AAAA</code> </p> </li> <li> <p> <b>Amazon S3 buckets:</b> <code>A</code>
+     * </p> </li> <li> <p> <b>Amazon Virtual Private Cloud interface VPC endpoints</b>
+     * <code>A</code> </p> </li> <li> <p> <b>Another resource record set in this hosted
+     * zone:</b> Specify the type of the resource record set that you're creating the
+     * alias for. All values are supported except <code>NS</code> and
+     * <code>SOA</code>.</p> <note> <p>If you're creating an alias record that has the
+     * same name as the hosted zone (known as the zone apex), you can't route traffic
+     * to a record for which the value of <code>Type</code> is <code>CNAME</code>. This
+     * is because the alias record must have the same type as the record you're routing
+     * traffic to, and creating a CNAME record for the zone apex isn't supported even
+     * for an alias record.</p> </note> </li> </ul>
      */
     inline void SetType(const RRType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -482,21 +491,24 @@ namespace Model
      * are not to use it." In RFC 7208, see section 14.1, <a
      * href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record
      * Type</a>.</p> </note> <p>Values for alias resource record sets:</p> <ul> <li>
-     * <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled
-     * for the distribution, create two resource record sets to route traffic to your
-     * distribution, one with a value of <code>A</code> and one with a value of
-     * <code>AAAA</code>. </p> </li> <li> <p> <b>AWS Elastic Beanstalk environment that
-     * has a regionalized subdomain</b>: <code>A</code> </p> </li> <li> <p> <b>ELB load
-     * balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> <li> <p> <b>Amazon
-     * S3 buckets:</b> <code>A</code> </p> </li> <li> <p> <b>Another resource record
-     * set in this hosted zone:</b> Specify the type of the resource record set that
-     * you're creating the alias for. All values are supported except <code>NS</code>
-     * and <code>SOA</code>.</p> <note> <p>If you're creating an alias record that has
-     * the same name as the hosted zone (known as the zone apex), you can't route
-     * traffic to a record for which the value of <code>Type</code> is
-     * <code>CNAME</code>. This is because the alias record must have the same type as
-     * the record you're routing traffic to, and creating a CNAME record for the zone
-     * apex isn't supported even for an alias record.</p> </note> </li> </ul>
+     * <p> <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b>
+     * <code>A</code> </p> </li> <li> <p> <b>CloudFront distributions:</b>
+     * <code>A</code> </p> <p>If IPv6 is enabled for the distribution, create two
+     * resource record sets to route traffic to your distribution, one with a value of
+     * <code>A</code> and one with a value of <code>AAAA</code>. </p> </li> <li> <p>
+     * <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>:
+     * <code>A</code> </p> </li> <li> <p> <b>ELB load balancers:</b> <code>A</code> |
+     * <code>AAAA</code> </p> </li> <li> <p> <b>Amazon S3 buckets:</b> <code>A</code>
+     * </p> </li> <li> <p> <b>Amazon Virtual Private Cloud interface VPC endpoints</b>
+     * <code>A</code> </p> </li> <li> <p> <b>Another resource record set in this hosted
+     * zone:</b> Specify the type of the resource record set that you're creating the
+     * alias for. All values are supported except <code>NS</code> and
+     * <code>SOA</code>.</p> <note> <p>If you're creating an alias record that has the
+     * same name as the hosted zone (known as the zone apex), you can't route traffic
+     * to a record for which the value of <code>Type</code> is <code>CNAME</code>. This
+     * is because the alias record must have the same type as the record you're routing
+     * traffic to, and creating a CNAME record for the zone apex isn't supported even
+     * for an alias record.</p> </note> </li> </ul>
      */
     inline void SetType(RRType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -527,21 +539,24 @@ namespace Model
      * are not to use it." In RFC 7208, see section 14.1, <a
      * href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record
      * Type</a>.</p> </note> <p>Values for alias resource record sets:</p> <ul> <li>
-     * <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled
-     * for the distribution, create two resource record sets to route traffic to your
-     * distribution, one with a value of <code>A</code> and one with a value of
-     * <code>AAAA</code>. </p> </li> <li> <p> <b>AWS Elastic Beanstalk environment that
-     * has a regionalized subdomain</b>: <code>A</code> </p> </li> <li> <p> <b>ELB load
-     * balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> <li> <p> <b>Amazon
-     * S3 buckets:</b> <code>A</code> </p> </li> <li> <p> <b>Another resource record
-     * set in this hosted zone:</b> Specify the type of the resource record set that
-     * you're creating the alias for. All values are supported except <code>NS</code>
-     * and <code>SOA</code>.</p> <note> <p>If you're creating an alias record that has
-     * the same name as the hosted zone (known as the zone apex), you can't route
-     * traffic to a record for which the value of <code>Type</code> is
-     * <code>CNAME</code>. This is because the alias record must have the same type as
-     * the record you're routing traffic to, and creating a CNAME record for the zone
-     * apex isn't supported even for an alias record.</p> </note> </li> </ul>
+     * <p> <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b>
+     * <code>A</code> </p> </li> <li> <p> <b>CloudFront distributions:</b>
+     * <code>A</code> </p> <p>If IPv6 is enabled for the distribution, create two
+     * resource record sets to route traffic to your distribution, one with a value of
+     * <code>A</code> and one with a value of <code>AAAA</code>. </p> </li> <li> <p>
+     * <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>:
+     * <code>A</code> </p> </li> <li> <p> <b>ELB load balancers:</b> <code>A</code> |
+     * <code>AAAA</code> </p> </li> <li> <p> <b>Amazon S3 buckets:</b> <code>A</code>
+     * </p> </li> <li> <p> <b>Amazon Virtual Private Cloud interface VPC endpoints</b>
+     * <code>A</code> </p> </li> <li> <p> <b>Another resource record set in this hosted
+     * zone:</b> Specify the type of the resource record set that you're creating the
+     * alias for. All values are supported except <code>NS</code> and
+     * <code>SOA</code>.</p> <note> <p>If you're creating an alias record that has the
+     * same name as the hosted zone (known as the zone apex), you can't route traffic
+     * to a record for which the value of <code>Type</code> is <code>CNAME</code>. This
+     * is because the alias record must have the same type as the record you're routing
+     * traffic to, and creating a CNAME record for the zone apex isn't supported even
+     * for an alias record.</p> </note> </li> </ul>
      */
     inline ResourceRecordSet& WithType(const RRType& value) { SetType(value); return *this;}
 
@@ -572,21 +587,24 @@ namespace Model
      * are not to use it." In RFC 7208, see section 14.1, <a
      * href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record
      * Type</a>.</p> </note> <p>Values for alias resource record sets:</p> <ul> <li>
-     * <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled
-     * for the distribution, create two resource record sets to route traffic to your
-     * distribution, one with a value of <code>A</code> and one with a value of
-     * <code>AAAA</code>. </p> </li> <li> <p> <b>AWS Elastic Beanstalk environment that
-     * has a regionalized subdomain</b>: <code>A</code> </p> </li> <li> <p> <b>ELB load
-     * balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> <li> <p> <b>Amazon
-     * S3 buckets:</b> <code>A</code> </p> </li> <li> <p> <b>Another resource record
-     * set in this hosted zone:</b> Specify the type of the resource record set that
-     * you're creating the alias for. All values are supported except <code>NS</code>
-     * and <code>SOA</code>.</p> <note> <p>If you're creating an alias record that has
-     * the same name as the hosted zone (known as the zone apex), you can't route
-     * traffic to a record for which the value of <code>Type</code> is
-     * <code>CNAME</code>. This is because the alias record must have the same type as
-     * the record you're routing traffic to, and creating a CNAME record for the zone
-     * apex isn't supported even for an alias record.</p> </note> </li> </ul>
+     * <p> <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b>
+     * <code>A</code> </p> </li> <li> <p> <b>CloudFront distributions:</b>
+     * <code>A</code> </p> <p>If IPv6 is enabled for the distribution, create two
+     * resource record sets to route traffic to your distribution, one with a value of
+     * <code>A</code> and one with a value of <code>AAAA</code>. </p> </li> <li> <p>
+     * <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>:
+     * <code>A</code> </p> </li> <li> <p> <b>ELB load balancers:</b> <code>A</code> |
+     * <code>AAAA</code> </p> </li> <li> <p> <b>Amazon S3 buckets:</b> <code>A</code>
+     * </p> </li> <li> <p> <b>Amazon Virtual Private Cloud interface VPC endpoints</b>
+     * <code>A</code> </p> </li> <li> <p> <b>Another resource record set in this hosted
+     * zone:</b> Specify the type of the resource record set that you're creating the
+     * alias for. All values are supported except <code>NS</code> and
+     * <code>SOA</code>.</p> <note> <p>If you're creating an alias record that has the
+     * same name as the hosted zone (known as the zone apex), you can't route traffic
+     * to a record for which the value of <code>Type</code> is <code>CNAME</code>. This
+     * is because the alias record must have the same type as the record you're routing
+     * traffic to, and creating a CNAME record for the zone apex isn't supported even
+     * for an alias record.</p> </note> </li> </ul>
      */
     inline ResourceRecordSet& WithType(RRType&& value) { SetType(std::move(value)); return *this;}
 
@@ -599,7 +617,7 @@ namespace Model
      * sets that have the same name and type, the value of <code>SetIdentifier</code>
      * must be unique for each resource record set. </p> <p>For information about
      * routing policies, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
      * a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline const Aws::String& GetSetIdentifier() const{ return m_setIdentifier; }
@@ -612,7 +630,7 @@ namespace Model
      * sets that have the same name and type, the value of <code>SetIdentifier</code>
      * must be unique for each resource record set. </p> <p>For information about
      * routing policies, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
      * a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline bool SetIdentifierHasBeenSet() const { return m_setIdentifierHasBeenSet; }
@@ -625,7 +643,7 @@ namespace Model
      * sets that have the same name and type, the value of <code>SetIdentifier</code>
      * must be unique for each resource record set. </p> <p>For information about
      * routing policies, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
      * a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline void SetSetIdentifier(const Aws::String& value) { m_setIdentifierHasBeenSet = true; m_setIdentifier = value; }
@@ -638,7 +656,7 @@ namespace Model
      * sets that have the same name and type, the value of <code>SetIdentifier</code>
      * must be unique for each resource record set. </p> <p>For information about
      * routing policies, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
      * a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline void SetSetIdentifier(Aws::String&& value) { m_setIdentifierHasBeenSet = true; m_setIdentifier = std::move(value); }
@@ -651,7 +669,7 @@ namespace Model
      * sets that have the same name and type, the value of <code>SetIdentifier</code>
      * must be unique for each resource record set. </p> <p>For information about
      * routing policies, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
      * a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline void SetSetIdentifier(const char* value) { m_setIdentifierHasBeenSet = true; m_setIdentifier.assign(value); }
@@ -664,7 +682,7 @@ namespace Model
      * sets that have the same name and type, the value of <code>SetIdentifier</code>
      * must be unique for each resource record set. </p> <p>For information about
      * routing policies, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
      * a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline ResourceRecordSet& WithSetIdentifier(const Aws::String& value) { SetSetIdentifier(value); return *this;}
@@ -677,7 +695,7 @@ namespace Model
      * sets that have the same name and type, the value of <code>SetIdentifier</code>
      * must be unique for each resource record set. </p> <p>For information about
      * routing policies, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
      * a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline ResourceRecordSet& WithSetIdentifier(Aws::String&& value) { SetSetIdentifier(std::move(value)); return *this;}
@@ -690,7 +708,7 @@ namespace Model
      * sets that have the same name and type, the value of <code>SetIdentifier</code>
      * must be unique for each resource record set. </p> <p>For information about
      * routing policies, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
      * a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline ResourceRecordSet& WithSetIdentifier(const char* value) { SetSetIdentifier(value); return *this;}
@@ -1602,17 +1620,15 @@ namespace Model
 
 
     /**
-     * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
-     * distribution, AWS Elastic Beanstalk environment, ELB load balancer, Amazon S3
-     * bucket, or Amazon Route 53 resource record set to which you're redirecting
-     * queries. The AWS Elastic Beanstalk environment must have a regionalized
-     * subdomain.</p> <p>If you're creating resource records sets for a private hosted
-     * zone, note the following:</p> <ul> <li> <p>You can't create alias resource
-     * record sets for CloudFront distributions in a private hosted zone.</p> </li>
-     * <li> <p>Creating geolocation alias resource record sets or latency alias
-     * resource record sets in a private hosted zone is unsupported.</p> </li> <li>
-     * <p>For information about creating failover resource record sets in a private
-     * hosted zone, see <a
+     * <p> <i>Alias resource record sets only:</i> Information about the AWS resource,
+     * such as a CloudFront distribution or an Amazon S3 bucket, that you want to route
+     * traffic to. </p> <p>If you're creating resource records sets for a private
+     * hosted zone, note the following:</p> <ul> <li> <p>You can't create an alias
+     * resource record set in a private hosted zone to route traffic to a CloudFront
+     * distribution.</p> </li> <li> <p>Creating geolocation alias resource record sets
+     * or latency alias resource record sets in a private hosted zone is
+     * unsupported.</p> </li> <li> <p>For information about creating failover resource
+     * record sets in a private hosted zone, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
      * Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.</p> </li> </ul>
@@ -1620,17 +1636,15 @@ namespace Model
     inline const AliasTarget& GetAliasTarget() const{ return m_aliasTarget; }
 
     /**
-     * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
-     * distribution, AWS Elastic Beanstalk environment, ELB load balancer, Amazon S3
-     * bucket, or Amazon Route 53 resource record set to which you're redirecting
-     * queries. The AWS Elastic Beanstalk environment must have a regionalized
-     * subdomain.</p> <p>If you're creating resource records sets for a private hosted
-     * zone, note the following:</p> <ul> <li> <p>You can't create alias resource
-     * record sets for CloudFront distributions in a private hosted zone.</p> </li>
-     * <li> <p>Creating geolocation alias resource record sets or latency alias
-     * resource record sets in a private hosted zone is unsupported.</p> </li> <li>
-     * <p>For information about creating failover resource record sets in a private
-     * hosted zone, see <a
+     * <p> <i>Alias resource record sets only:</i> Information about the AWS resource,
+     * such as a CloudFront distribution or an Amazon S3 bucket, that you want to route
+     * traffic to. </p> <p>If you're creating resource records sets for a private
+     * hosted zone, note the following:</p> <ul> <li> <p>You can't create an alias
+     * resource record set in a private hosted zone to route traffic to a CloudFront
+     * distribution.</p> </li> <li> <p>Creating geolocation alias resource record sets
+     * or latency alias resource record sets in a private hosted zone is
+     * unsupported.</p> </li> <li> <p>For information about creating failover resource
+     * record sets in a private hosted zone, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
      * Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.</p> </li> </ul>
@@ -1638,17 +1652,15 @@ namespace Model
     inline bool AliasTargetHasBeenSet() const { return m_aliasTargetHasBeenSet; }
 
     /**
-     * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
-     * distribution, AWS Elastic Beanstalk environment, ELB load balancer, Amazon S3
-     * bucket, or Amazon Route 53 resource record set to which you're redirecting
-     * queries. The AWS Elastic Beanstalk environment must have a regionalized
-     * subdomain.</p> <p>If you're creating resource records sets for a private hosted
-     * zone, note the following:</p> <ul> <li> <p>You can't create alias resource
-     * record sets for CloudFront distributions in a private hosted zone.</p> </li>
-     * <li> <p>Creating geolocation alias resource record sets or latency alias
-     * resource record sets in a private hosted zone is unsupported.</p> </li> <li>
-     * <p>For information about creating failover resource record sets in a private
-     * hosted zone, see <a
+     * <p> <i>Alias resource record sets only:</i> Information about the AWS resource,
+     * such as a CloudFront distribution or an Amazon S3 bucket, that you want to route
+     * traffic to. </p> <p>If you're creating resource records sets for a private
+     * hosted zone, note the following:</p> <ul> <li> <p>You can't create an alias
+     * resource record set in a private hosted zone to route traffic to a CloudFront
+     * distribution.</p> </li> <li> <p>Creating geolocation alias resource record sets
+     * or latency alias resource record sets in a private hosted zone is
+     * unsupported.</p> </li> <li> <p>For information about creating failover resource
+     * record sets in a private hosted zone, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
      * Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.</p> </li> </ul>
@@ -1656,17 +1668,15 @@ namespace Model
     inline void SetAliasTarget(const AliasTarget& value) { m_aliasTargetHasBeenSet = true; m_aliasTarget = value; }
 
     /**
-     * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
-     * distribution, AWS Elastic Beanstalk environment, ELB load balancer, Amazon S3
-     * bucket, or Amazon Route 53 resource record set to which you're redirecting
-     * queries. The AWS Elastic Beanstalk environment must have a regionalized
-     * subdomain.</p> <p>If you're creating resource records sets for a private hosted
-     * zone, note the following:</p> <ul> <li> <p>You can't create alias resource
-     * record sets for CloudFront distributions in a private hosted zone.</p> </li>
-     * <li> <p>Creating geolocation alias resource record sets or latency alias
-     * resource record sets in a private hosted zone is unsupported.</p> </li> <li>
-     * <p>For information about creating failover resource record sets in a private
-     * hosted zone, see <a
+     * <p> <i>Alias resource record sets only:</i> Information about the AWS resource,
+     * such as a CloudFront distribution or an Amazon S3 bucket, that you want to route
+     * traffic to. </p> <p>If you're creating resource records sets for a private
+     * hosted zone, note the following:</p> <ul> <li> <p>You can't create an alias
+     * resource record set in a private hosted zone to route traffic to a CloudFront
+     * distribution.</p> </li> <li> <p>Creating geolocation alias resource record sets
+     * or latency alias resource record sets in a private hosted zone is
+     * unsupported.</p> </li> <li> <p>For information about creating failover resource
+     * record sets in a private hosted zone, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
      * Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.</p> </li> </ul>
@@ -1674,17 +1684,15 @@ namespace Model
     inline void SetAliasTarget(AliasTarget&& value) { m_aliasTargetHasBeenSet = true; m_aliasTarget = std::move(value); }
 
     /**
-     * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
-     * distribution, AWS Elastic Beanstalk environment, ELB load balancer, Amazon S3
-     * bucket, or Amazon Route 53 resource record set to which you're redirecting
-     * queries. The AWS Elastic Beanstalk environment must have a regionalized
-     * subdomain.</p> <p>If you're creating resource records sets for a private hosted
-     * zone, note the following:</p> <ul> <li> <p>You can't create alias resource
-     * record sets for CloudFront distributions in a private hosted zone.</p> </li>
-     * <li> <p>Creating geolocation alias resource record sets or latency alias
-     * resource record sets in a private hosted zone is unsupported.</p> </li> <li>
-     * <p>For information about creating failover resource record sets in a private
-     * hosted zone, see <a
+     * <p> <i>Alias resource record sets only:</i> Information about the AWS resource,
+     * such as a CloudFront distribution or an Amazon S3 bucket, that you want to route
+     * traffic to. </p> <p>If you're creating resource records sets for a private
+     * hosted zone, note the following:</p> <ul> <li> <p>You can't create an alias
+     * resource record set in a private hosted zone to route traffic to a CloudFront
+     * distribution.</p> </li> <li> <p>Creating geolocation alias resource record sets
+     * or latency alias resource record sets in a private hosted zone is
+     * unsupported.</p> </li> <li> <p>For information about creating failover resource
+     * record sets in a private hosted zone, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
      * Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.</p> </li> </ul>
@@ -1692,17 +1700,15 @@ namespace Model
     inline ResourceRecordSet& WithAliasTarget(const AliasTarget& value) { SetAliasTarget(value); return *this;}
 
     /**
-     * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
-     * distribution, AWS Elastic Beanstalk environment, ELB load balancer, Amazon S3
-     * bucket, or Amazon Route 53 resource record set to which you're redirecting
-     * queries. The AWS Elastic Beanstalk environment must have a regionalized
-     * subdomain.</p> <p>If you're creating resource records sets for a private hosted
-     * zone, note the following:</p> <ul> <li> <p>You can't create alias resource
-     * record sets for CloudFront distributions in a private hosted zone.</p> </li>
-     * <li> <p>Creating geolocation alias resource record sets or latency alias
-     * resource record sets in a private hosted zone is unsupported.</p> </li> <li>
-     * <p>For information about creating failover resource record sets in a private
-     * hosted zone, see <a
+     * <p> <i>Alias resource record sets only:</i> Information about the AWS resource,
+     * such as a CloudFront distribution or an Amazon S3 bucket, that you want to route
+     * traffic to. </p> <p>If you're creating resource records sets for a private
+     * hosted zone, note the following:</p> <ul> <li> <p>You can't create an alias
+     * resource record set in a private hosted zone to route traffic to a CloudFront
+     * distribution.</p> </li> <li> <p>Creating geolocation alias resource record sets
+     * or latency alias resource record sets in a private hosted zone is
+     * unsupported.</p> </li> <li> <p>For information about creating failover resource
+     * record sets in a private hosted zone, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
      * Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.</p> </li> </ul>
@@ -1727,7 +1733,7 @@ namespace Model
      * specified in the health check. </p> </important> <p>For more information, see
      * the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> <ul>
      * <li> <p> <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> </p> </li> <li>
      * <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route
@@ -1807,7 +1813,7 @@ namespace Model
      * specified in the health check. </p> </important> <p>For more information, see
      * the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> <ul>
      * <li> <p> <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> </p> </li> <li>
      * <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route
@@ -1887,7 +1893,7 @@ namespace Model
      * specified in the health check. </p> </important> <p>For more information, see
      * the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> <ul>
      * <li> <p> <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> </p> </li> <li>
      * <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route
@@ -1967,7 +1973,7 @@ namespace Model
      * specified in the health check. </p> </important> <p>For more information, see
      * the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> <ul>
      * <li> <p> <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> </p> </li> <li>
      * <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route
@@ -2047,7 +2053,7 @@ namespace Model
      * specified in the health check. </p> </important> <p>For more information, see
      * the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> <ul>
      * <li> <p> <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> </p> </li> <li>
      * <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route
@@ -2127,7 +2133,7 @@ namespace Model
      * specified in the health check. </p> </important> <p>For more information, see
      * the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> <ul>
      * <li> <p> <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> </p> </li> <li>
      * <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route
@@ -2207,7 +2213,7 @@ namespace Model
      * specified in the health check. </p> </important> <p>For more information, see
      * the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> <ul>
      * <li> <p> <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> </p> </li> <li>
      * <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route
@@ -2287,7 +2293,7 @@ namespace Model
      * specified in the health check. </p> </important> <p>For more information, see
      * the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> <ul>
      * <li> <p> <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> </p> </li> <li>
      * <p> <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route

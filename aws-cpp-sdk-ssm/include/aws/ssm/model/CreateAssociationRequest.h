@@ -269,62 +269,62 @@ namespace Model
 
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline CreateAssociationRequest& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline CreateAssociationRequest& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline CreateAssociationRequest& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline CreateAssociationRequest& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline CreateAssociationRequest& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline CreateAssociationRequest& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline CreateAssociationRequest& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline CreateAssociationRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

@@ -54,7 +54,7 @@ namespace Model
      * are not included. Resources that do not currently support drift detection are
      * not checked, and so not included. For a list of resources that support drift
      * detection, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>.</p>
      */
     inline const Aws::Vector<StackResourceDrift>& GetStackResourceDrifts() const{ return m_stackResourceDrifts; }
@@ -68,7 +68,7 @@ namespace Model
      * are not included. Resources that do not currently support drift detection are
      * not checked, and so not included. For a list of resources that support drift
      * detection, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>.</p>
      */
     inline void SetStackResourceDrifts(const Aws::Vector<StackResourceDrift>& value) { m_stackResourceDrifts = value; }
@@ -82,7 +82,7 @@ namespace Model
      * are not included. Resources that do not currently support drift detection are
      * not checked, and so not included. For a list of resources that support drift
      * detection, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>.</p>
      */
     inline void SetStackResourceDrifts(Aws::Vector<StackResourceDrift>&& value) { m_stackResourceDrifts = std::move(value); }
@@ -96,7 +96,7 @@ namespace Model
      * are not included. Resources that do not currently support drift detection are
      * not checked, and so not included. For a list of resources that support drift
      * detection, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>.</p>
      */
     inline DescribeStackResourceDriftsResult& WithStackResourceDrifts(const Aws::Vector<StackResourceDrift>& value) { SetStackResourceDrifts(value); return *this;}
@@ -110,7 +110,7 @@ namespace Model
      * are not included. Resources that do not currently support drift detection are
      * not checked, and so not included. For a list of resources that support drift
      * detection, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>.</p>
      */
     inline DescribeStackResourceDriftsResult& WithStackResourceDrifts(Aws::Vector<StackResourceDrift>&& value) { SetStackResourceDrifts(std::move(value)); return *this;}
@@ -124,7 +124,7 @@ namespace Model
      * are not included. Resources that do not currently support drift detection are
      * not checked, and so not included. For a list of resources that support drift
      * detection, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>.</p>
      */
     inline DescribeStackResourceDriftsResult& AddStackResourceDrifts(const StackResourceDrift& value) { m_stackResourceDrifts.push_back(value); return *this; }
@@ -138,7 +138,7 @@ namespace Model
      * are not included. Resources that do not currently support drift detection are
      * not checked, and so not included. For a list of resources that support drift
      * detection, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
      * that Support Drift Detection</a>.</p>
      */
     inline DescribeStackResourceDriftsResult& AddStackResourceDrifts(StackResourceDrift&& value) { m_stackResourceDrifts.push_back(std::move(value)); return *this; }

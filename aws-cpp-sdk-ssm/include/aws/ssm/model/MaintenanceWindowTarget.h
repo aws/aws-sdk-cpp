@@ -52,42 +52,42 @@ namespace Model
 
 
     /**
-     * <p>The Maintenance Window ID where the target is registered.</p>
+     * <p>The ID of the Maintenance Window to register the target with.</p>
      */
     inline const Aws::String& GetWindowId() const{ return m_windowId; }
 
     /**
-     * <p>The Maintenance Window ID where the target is registered.</p>
+     * <p>The ID of the Maintenance Window to register the target with.</p>
      */
     inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
 
     /**
-     * <p>The Maintenance Window ID where the target is registered.</p>
+     * <p>The ID of the Maintenance Window to register the target with.</p>
      */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
-     * <p>The Maintenance Window ID where the target is registered.</p>
+     * <p>The ID of the Maintenance Window to register the target with.</p>
      */
     inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = std::move(value); }
 
     /**
-     * <p>The Maintenance Window ID where the target is registered.</p>
+     * <p>The ID of the Maintenance Window to register the target with.</p>
      */
     inline void SetWindowId(const char* value) { m_windowIdHasBeenSet = true; m_windowId.assign(value); }
 
     /**
-     * <p>The Maintenance Window ID where the target is registered.</p>
+     * <p>The ID of the Maintenance Window to register the target with.</p>
      */
     inline MaintenanceWindowTarget& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
 
     /**
-     * <p>The Maintenance Window ID where the target is registered.</p>
+     * <p>The ID of the Maintenance Window to register the target with.</p>
      */
     inline MaintenanceWindowTarget& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
-     * <p>The Maintenance Window ID where the target is registered.</p>
+     * <p>The ID of the Maintenance Window to register the target with.</p>
      */
     inline MaintenanceWindowTarget& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
@@ -134,138 +134,154 @@ namespace Model
 
 
     /**
-     * <p>The type of target.</p>
+     * <p>The type of target that is being registered with the Maintenance Window.</p>
      */
     inline const MaintenanceWindowResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of target.</p>
+     * <p>The type of target that is being registered with the Maintenance Window.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of target.</p>
+     * <p>The type of target that is being registered with the Maintenance Window.</p>
      */
     inline void SetResourceType(const MaintenanceWindowResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of target.</p>
+     * <p>The type of target that is being registered with the Maintenance Window.</p>
      */
     inline void SetResourceType(MaintenanceWindowResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of target.</p>
+     * <p>The type of target that is being registered with the Maintenance Window.</p>
      */
     inline MaintenanceWindowTarget& WithResourceType(const MaintenanceWindowResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of target.</p>
+     * <p>The type of target that is being registered with the Maintenance Window.</p>
      */
     inline MaintenanceWindowTarget& WithResourceType(MaintenanceWindowResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets, either instances or tags.</p> <p>Specify instances using the
+     * following format:</p> <p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code> </p>
+     * <p>Tags are specified using the following format:</p> <p> <code>Key=&lt;tag
+     * name&gt;,Values=&lt;tag value&gt;</code>.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets, either instances or tags.</p> <p>Specify instances using the
+     * following format:</p> <p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code> </p>
+     * <p>Tags are specified using the following format:</p> <p> <code>Key=&lt;tag
+     * name&gt;,Values=&lt;tag value&gt;</code>.</p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets, either instances or tags.</p> <p>Specify instances using the
+     * following format:</p> <p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code> </p>
+     * <p>Tags are specified using the following format:</p> <p> <code>Key=&lt;tag
+     * name&gt;,Values=&lt;tag value&gt;</code>.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets, either instances or tags.</p> <p>Specify instances using the
+     * following format:</p> <p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code> </p>
+     * <p>Tags are specified using the following format:</p> <p> <code>Key=&lt;tag
+     * name&gt;,Values=&lt;tag value&gt;</code>.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets, either instances or tags.</p> <p>Specify instances using the
+     * following format:</p> <p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code> </p>
+     * <p>Tags are specified using the following format:</p> <p> <code>Key=&lt;tag
+     * name&gt;,Values=&lt;tag value&gt;</code>.</p>
      */
     inline MaintenanceWindowTarget& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets, either instances or tags.</p> <p>Specify instances using the
+     * following format:</p> <p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code> </p>
+     * <p>Tags are specified using the following format:</p> <p> <code>Key=&lt;tag
+     * name&gt;,Values=&lt;tag value&gt;</code>.</p>
      */
     inline MaintenanceWindowTarget& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets, either instances or tags.</p> <p>Specify instances using the
+     * following format:</p> <p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code> </p>
+     * <p>Tags are specified using the following format:</p> <p> <code>Key=&lt;tag
+     * name&gt;,Values=&lt;tag value&gt;</code>.</p>
      */
     inline MaintenanceWindowTarget& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets, either instances or tags.</p> <p>Specify instances using the
+     * following format:</p> <p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code> </p>
+     * <p>Tags are specified using the following format:</p> <p> <code>Key=&lt;tag
+     * name&gt;,Values=&lt;tag value&gt;</code>.</p>
      */
     inline MaintenanceWindowTarget& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window.</p>
+     * <p>A user-provided value that will be included in any CloudWatch events that are
+     * raised while running tasks for these targets in this Maintenance Window.</p>
      */
     inline const Aws::String& GetOwnerInformation() const{ return m_ownerInformation; }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window.</p>
+     * <p>A user-provided value that will be included in any CloudWatch events that are
+     * raised while running tasks for these targets in this Maintenance Window.</p>
      */
     inline bool OwnerInformationHasBeenSet() const { return m_ownerInformationHasBeenSet; }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window.</p>
+     * <p>A user-provided value that will be included in any CloudWatch events that are
+     * raised while running tasks for these targets in this Maintenance Window.</p>
      */
     inline void SetOwnerInformation(const Aws::String& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = value; }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window.</p>
+     * <p>A user-provided value that will be included in any CloudWatch events that are
+     * raised while running tasks for these targets in this Maintenance Window.</p>
      */
     inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = std::move(value); }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window.</p>
+     * <p>A user-provided value that will be included in any CloudWatch events that are
+     * raised while running tasks for these targets in this Maintenance Window.</p>
      */
     inline void SetOwnerInformation(const char* value) { m_ownerInformationHasBeenSet = true; m_ownerInformation.assign(value); }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window.</p>
+     * <p>A user-provided value that will be included in any CloudWatch events that are
+     * raised while running tasks for these targets in this Maintenance Window.</p>
      */
     inline MaintenanceWindowTarget& WithOwnerInformation(const Aws::String& value) { SetOwnerInformation(value); return *this;}
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window.</p>
+     * <p>A user-provided value that will be included in any CloudWatch events that are
+     * raised while running tasks for these targets in this Maintenance Window.</p>
      */
     inline MaintenanceWindowTarget& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(std::move(value)); return *this;}
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window.</p>
+     * <p>A user-provided value that will be included in any CloudWatch events that are
+     * raised while running tasks for these targets in this Maintenance Window.</p>
      */
     inline MaintenanceWindowTarget& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 
@@ -312,42 +328,42 @@ namespace Model
 
 
     /**
-     * <p>A description of the target.</p>
+     * <p>A description for the target.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description of the target.</p>
+     * <p>A description for the target.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description of the target.</p>
+     * <p>A description for the target.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description of the target.</p>
+     * <p>A description for the target.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description of the target.</p>
+     * <p>A description for the target.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description of the target.</p>
+     * <p>A description for the target.</p>
      */
     inline MaintenanceWindowTarget& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description of the target.</p>
+     * <p>A description for the target.</p>
      */
     inline MaintenanceWindowTarget& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the target.</p>
+     * <p>A description for the target.</p>
      */
     inline MaintenanceWindowTarget& WithDescription(const char* value) { SetDescription(value); return *this;}
 

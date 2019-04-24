@@ -35,6 +35,7 @@ namespace Model
     eu_west_1,
     eu_west_2,
     eu_west_3,
+    ap_east_1,
     ap_south_1,
     ap_southeast_1,
     ap_southeast_2,
@@ -42,7 +43,9 @@ namespace Model
     ap_northeast_2,
     ap_northeast_3,
     eu_north_1,
-    sa_east_1
+    sa_east_1,
+    cn_northwest_1,
+    cn_north_1
   };
 
 namespace CloudWatchRegionMapper

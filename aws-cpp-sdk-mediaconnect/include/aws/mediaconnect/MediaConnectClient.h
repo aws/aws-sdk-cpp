@@ -384,14 +384,16 @@ namespace Model
         virtual void ListFlowsAsync(const Model::ListFlowsRequest& request, const ListFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Lists all tags associated with the resource.<p><h3>See Also:</h3>   <a
+         * List all tags on an AWS Elemental MediaConnect resource<p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * Lists all tags associated with the resource.<p><h3>See Also:</h3>   <a
+         * List all tags on an AWS Elemental MediaConnect resource<p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -400,7 +402,8 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * Lists all tags associated with the resource.<p><h3>See Also:</h3>   <a
+         * List all tags on an AWS Elemental MediaConnect resource<p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -527,18 +530,20 @@ namespace Model
         virtual void StopFlowAsync(const Model::StopFlowRequest& request, const StopFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Associates the specified tags to a resource. If the request does not mention an
-         * existing tag associated with the resource, that tag is not changed.<p><h3>See
-         * Also:</h3>   <a
+         * Associates the specified tags to a resource with the specified resourceArn. If
+         * existing tags on a resource are not specified in the request parameters, they
+         * are not changed. When a resource is deleted, the tags associated with that
+         * resource are deleted as well.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * Associates the specified tags to a resource. If the request does not mention an
-         * existing tag associated with the resource, that tag is not changed.<p><h3>See
-         * Also:</h3>   <a
+         * Associates the specified tags to a resource with the specified resourceArn. If
+         * existing tags on a resource are not specified in the request parameters, they
+         * are not changed. When a resource is deleted, the tags associated with that
+         * resource are deleted as well.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagResource">AWS
          * API Reference</a></p>
          *
@@ -547,9 +552,10 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * Associates the specified tags to a resource. If the request does not mention an
-         * existing tag associated with the resource, that tag is not changed.<p><h3>See
-         * Also:</h3>   <a
+         * Associates the specified tags to a resource with the specified resourceArn. If
+         * existing tags on a resource are not specified in the request parameters, they
+         * are not changed. When a resource is deleted, the tags associated with that
+         * resource are deleted as well.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagResource">AWS
          * API Reference</a></p>
          *
@@ -558,14 +564,14 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes the specified tags from a resource.<p><h3>See Also:</h3>   <a
+         * Deletes specified tags from a resource.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * Deletes the specified tags from a resource.<p><h3>See Also:</h3>   <a
+         * Deletes specified tags from a resource.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -574,7 +580,7 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * Deletes the specified tags from a resource.<p><h3>See Also:</h3>   <a
+         * Deletes specified tags from a resource.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UntagResource">AWS
          * API Reference</a></p>
          *

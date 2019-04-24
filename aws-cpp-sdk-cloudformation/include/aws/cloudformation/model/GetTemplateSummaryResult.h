@@ -144,7 +144,7 @@ namespace Model
      * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
@@ -155,7 +155,7 @@ namespace Model
      * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilities = value; }
@@ -166,7 +166,7 @@ namespace Model
      * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilities = std::move(value); }
@@ -177,7 +177,7 @@ namespace Model
      * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
     inline GetTemplateSummaryResult& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
@@ -188,7 +188,7 @@ namespace Model
      * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
     inline GetTemplateSummaryResult& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
@@ -199,7 +199,7 @@ namespace Model
      * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
     inline GetTemplateSummaryResult& AddCapabilities(const Capability& value) { m_capabilities.push_back(value); return *this; }
@@ -210,7 +210,7 @@ namespace Model
      * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
     inline GetTemplateSummaryResult& AddCapabilities(Capability&& value) { m_capabilities.push_back(std::move(value)); return *this; }

@@ -90,7 +90,7 @@ namespace Model
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
      * Policy Document Format</a>.</p>
      */
     inline const Aws::String& GetDocument() const{ return m_document; }
@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
      * Policy Document Format</a>.</p>
      */
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
@@ -106,7 +106,7 @@ namespace Model
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
      * Policy Document Format</a>.</p>
      */
     inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
@@ -114,7 +114,7 @@ namespace Model
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
      * Policy Document Format</a>.</p>
      */
     inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
@@ -122,7 +122,7 @@ namespace Model
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
      * Policy Document Format</a>.</p>
      */
     inline void SetDocument(const char* value) { m_documentHasBeenSet = true; m_document.assign(value); }
@@ -130,7 +130,7 @@ namespace Model
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
      * Policy Document Format</a>.</p>
      */
     inline CreateTrafficPolicyRequest& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
@@ -138,7 +138,7 @@ namespace Model
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
      * Policy Document Format</a>.</p>
      */
     inline CreateTrafficPolicyRequest& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
@@ -146,7 +146,7 @@ namespace Model
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
      * Policy Document Format</a>.</p>
      */
     inline CreateTrafficPolicyRequest& WithDocument(const char* value) { SetDocument(value); return *this;}

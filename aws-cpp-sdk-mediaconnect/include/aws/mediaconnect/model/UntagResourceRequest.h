@@ -50,50 +50,50 @@ namespace Model
 
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to remove tags
-     * from.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
+     * resource from which to delete tags.
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to remove tags
-     * from.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
+     * resource from which to delete tags.
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to remove tags
-     * from.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
+     * resource from which to delete tags.
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to remove tags
-     * from.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
+     * resource from which to delete tags.
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to remove tags
-     * from.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
+     * resource from which to delete tags.
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to remove tags
-     * from.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
+     * resource from which to delete tags.
      */
     inline UntagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to remove tags
-     * from.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
+     * resource from which to delete tags.
      */
     inline UntagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * The Amazon Resource Name (ARN) of the resource that you want to remove tags
-     * from.
+     * The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect
+     * resource from which to delete tags.
      */
     inline UntagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

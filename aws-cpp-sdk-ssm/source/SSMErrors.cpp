@@ -30,6 +30,7 @@ namespace SSMErrorMapper
 
 static const int INVALID_ACTIVATION_ID_HASH = HashingUtils::HashString("InvalidActivationId");
 static const int INVALID_OPTION_HASH = HashingUtils::HashString("InvalidOptionException");
+static const int POLICIES_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("PoliciesLimitExceededException");
 static const int RESOURCE_DATA_SYNC_NOT_FOUND_HASH = HashingUtils::HashString("ResourceDataSyncNotFoundException");
 static const int INVALID_DOCUMENT_CONTENT_HASH = HashingUtils::HashString("InvalidDocumentContent");
 static const int PARAMETER_VERSION_LABEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ParameterVersionLabelLimitExceeded");
@@ -48,6 +49,7 @@ static const int ASSOCIATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("Ass
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int PARAMETER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ParameterLimitExceeded");
 static const int ASSOCIATION_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AssociationVersionLimitExceeded");
+static const int INCOMPATIBLE_POLICY_HASH = HashingUtils::HashString("IncompatiblePolicyException");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
 static const int DOCUMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DocumentLimitExceeded");
 static const int ASSOCIATION_ALREADY_EXISTS_HASH = HashingUtils::HashString("AssociationAlreadyExists");
@@ -67,6 +69,7 @@ static const int AUTOMATION_EXECUTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashSt
 static const int INVALID_OUTPUT_LOCATION_HASH = HashingUtils::HashString("InvalidOutputLocation");
 static const int COMPLIANCE_TYPE_COUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ComplianceTypeCountLimitExceededException");
 static const int PARAMETER_VERSION_NOT_FOUND_HASH = HashingUtils::HashString("ParameterVersionNotFound");
+static const int INVALID_POLICY_ATTRIBUTE_HASH = HashingUtils::HashString("InvalidPolicyAttributeException");
 static const int AUTOMATION_EXECUTION_NOT_FOUND_HASH = HashingUtils::HashString("AutomationExecutionNotFoundException");
 static const int INVALID_INVENTORY_ITEM_CONTEXT_HASH = HashingUtils::HashString("InvalidInventoryItemContextException");
 static const int INVALID_KEY_ID_HASH = HashingUtils::HashString("InvalidKeyId");
@@ -119,6 +122,7 @@ static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("
 static const int UNSUPPORTED_PLATFORM_TYPE_HASH = HashingUtils::HashString("UnsupportedPlatformType");
 static const int INVALID_UPDATE_HASH = HashingUtils::HashString("InvalidUpdate");
 static const int INVALID_ITEM_CONTENT_HASH = HashingUtils::HashString("InvalidItemContentException");
+static const int INVALID_POLICY_TYPE_HASH = HashingUtils::HashString("InvalidPolicyTypeException");
 static const int ASSOCIATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AssociationLimitExceeded");
 static const int INVALID_RESULT_ATTRIBUTE_HASH = HashingUtils::HashString("InvalidResultAttributeException");
 static const int INVALID_TYPE_NAME_HASH = HashingUtils::HashString("InvalidTypeNameException");
@@ -141,6 +145,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_OPTION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_OPTION), false);
+  }
+  else if (hashCode == POLICIES_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::POLICIES_LIMIT_EXCEEDED), false);
   }
   else if (hashCode == RESOURCE_DATA_SYNC_NOT_FOUND_HASH)
   {
@@ -213,6 +221,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ASSOCIATION_VERSION_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_VERSION_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == INCOMPATIBLE_POLICY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INCOMPATIBLE_POLICY), false);
   }
   else if (hashCode == ALREADY_EXISTS_HASH)
   {
@@ -289,6 +301,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == PARAMETER_VERSION_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_VERSION_NOT_FOUND), false);
+  }
+  else if (hashCode == INVALID_POLICY_ATTRIBUTE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_POLICY_ATTRIBUTE), false);
   }
   else if (hashCode == AUTOMATION_EXECUTION_NOT_FOUND_HASH)
   {
@@ -497,6 +513,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_ITEM_CONTENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ITEM_CONTENT), false);
+  }
+  else if (hashCode == INVALID_POLICY_TYPE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_POLICY_TYPE), false);
   }
   else if (hashCode == ASSOCIATION_LIMIT_EXCEEDED_HASH)
   {

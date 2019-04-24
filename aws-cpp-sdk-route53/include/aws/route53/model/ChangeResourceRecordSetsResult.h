@@ -50,36 +50,41 @@ namespace Model
 
     /**
      * <p>A complex type that contains information about changes made to your hosted
-     * zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * zone.</p> <p>This element contains an ID that you use when performing a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>
+     * action to get detailed information about the change.</p>
      */
     inline const ChangeInfo& GetChangeInfo() const{ return m_changeInfo; }
 
     /**
      * <p>A complex type that contains information about changes made to your hosted
-     * zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * zone.</p> <p>This element contains an ID that you use when performing a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>
+     * action to get detailed information about the change.</p>
      */
     inline void SetChangeInfo(const ChangeInfo& value) { m_changeInfo = value; }
 
     /**
      * <p>A complex type that contains information about changes made to your hosted
-     * zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * zone.</p> <p>This element contains an ID that you use when performing a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>
+     * action to get detailed information about the change.</p>
      */
     inline void SetChangeInfo(ChangeInfo&& value) { m_changeInfo = std::move(value); }
 
     /**
      * <p>A complex type that contains information about changes made to your hosted
-     * zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * zone.</p> <p>This element contains an ID that you use when performing a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>
+     * action to get detailed information about the change.</p>
      */
     inline ChangeResourceRecordSetsResult& WithChangeInfo(const ChangeInfo& value) { SetChangeInfo(value); return *this;}
 
     /**
      * <p>A complex type that contains information about changes made to your hosted
-     * zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * zone.</p> <p>This element contains an ID that you use when performing a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>
+     * action to get detailed information about the change.</p>
      */
     inline ChangeResourceRecordSetsResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(std::move(value)); return *this;}
 

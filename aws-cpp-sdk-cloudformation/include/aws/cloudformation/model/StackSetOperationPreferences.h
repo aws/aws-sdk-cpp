@@ -38,7 +38,7 @@ namespace Model
    * <p>The user-specified preferences for how AWS CloudFormation performs a stack
    * set operation. </p> <p>For more information on maximum concurrent accounts and
    * failure tolerance, see <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
    * set operation options</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSetOperationPreferences">AWS
    * API Reference</a></p>

@@ -44,31 +44,41 @@ namespace Model
 
     /**
      * <p>A complex type that contains information about the query logging
-     * configuration that you specified in a <a>GetQueryLoggingConfig</a> request.</p>
+     * configuration that you specified in a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a>
+     * request.</p>
      */
     inline const QueryLoggingConfig& GetQueryLoggingConfig() const{ return m_queryLoggingConfig; }
 
     /**
      * <p>A complex type that contains information about the query logging
-     * configuration that you specified in a <a>GetQueryLoggingConfig</a> request.</p>
+     * configuration that you specified in a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a>
+     * request.</p>
      */
     inline void SetQueryLoggingConfig(const QueryLoggingConfig& value) { m_queryLoggingConfig = value; }
 
     /**
      * <p>A complex type that contains information about the query logging
-     * configuration that you specified in a <a>GetQueryLoggingConfig</a> request.</p>
+     * configuration that you specified in a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a>
+     * request.</p>
      */
     inline void SetQueryLoggingConfig(QueryLoggingConfig&& value) { m_queryLoggingConfig = std::move(value); }
 
     /**
      * <p>A complex type that contains information about the query logging
-     * configuration that you specified in a <a>GetQueryLoggingConfig</a> request.</p>
+     * configuration that you specified in a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a>
+     * request.</p>
      */
     inline GetQueryLoggingConfigResult& WithQueryLoggingConfig(const QueryLoggingConfig& value) { SetQueryLoggingConfig(value); return *this;}
 
     /**
      * <p>A complex type that contains information about the query logging
-     * configuration that you specified in a <a>GetQueryLoggingConfig</a> request.</p>
+     * configuration that you specified in a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a>
+     * request.</p>
      */
     inline GetQueryLoggingConfigResult& WithQueryLoggingConfig(QueryLoggingConfig&& value) { SetQueryLoggingConfig(std::move(value)); return *this;}
 

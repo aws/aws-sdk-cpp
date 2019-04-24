@@ -31,7 +31,8 @@ namespace Model
     LINE,
     WORD,
     TABLE,
-    CELL
+    CELL,
+    SELECTION_ELEMENT
   };
 
 namespace BlockTypeMapper

@@ -228,7 +228,7 @@ namespace Model
      * values overridden for a stack instance are not updated, but retain their
      * overridden value.</p> <p>You can only override the parameter <i>values</i> that
      * are specified in the stack set; to add or delete a parameter itself, use <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
      * to update the stack set template.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameterOverrides() const{ return m_parameterOverrides; }
@@ -252,7 +252,7 @@ namespace Model
      * values overridden for a stack instance are not updated, but retain their
      * overridden value.</p> <p>You can only override the parameter <i>values</i> that
      * are specified in the stack set; to add or delete a parameter itself, use <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
      * to update the stack set template.</p>
      */
     inline bool ParameterOverridesHasBeenSet() const { return m_parameterOverridesHasBeenSet; }
@@ -276,7 +276,7 @@ namespace Model
      * values overridden for a stack instance are not updated, but retain their
      * overridden value.</p> <p>You can only override the parameter <i>values</i> that
      * are specified in the stack set; to add or delete a parameter itself, use <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
      * to update the stack set template.</p>
      */
     inline void SetParameterOverrides(const Aws::Vector<Parameter>& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides = value; }
@@ -300,7 +300,7 @@ namespace Model
      * values overridden for a stack instance are not updated, but retain their
      * overridden value.</p> <p>You can only override the parameter <i>values</i> that
      * are specified in the stack set; to add or delete a parameter itself, use <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
      * to update the stack set template.</p>
      */
     inline void SetParameterOverrides(Aws::Vector<Parameter>&& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides = std::move(value); }
@@ -324,7 +324,7 @@ namespace Model
      * values overridden for a stack instance are not updated, but retain their
      * overridden value.</p> <p>You can only override the parameter <i>values</i> that
      * are specified in the stack set; to add or delete a parameter itself, use <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
      * to update the stack set template.</p>
      */
     inline CreateStackInstancesRequest& WithParameterOverrides(const Aws::Vector<Parameter>& value) { SetParameterOverrides(value); return *this;}
@@ -348,7 +348,7 @@ namespace Model
      * values overridden for a stack instance are not updated, but retain their
      * overridden value.</p> <p>You can only override the parameter <i>values</i> that
      * are specified in the stack set; to add or delete a parameter itself, use <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
      * to update the stack set template.</p>
      */
     inline CreateStackInstancesRequest& WithParameterOverrides(Aws::Vector<Parameter>&& value) { SetParameterOverrides(std::move(value)); return *this;}
@@ -372,7 +372,7 @@ namespace Model
      * values overridden for a stack instance are not updated, but retain their
      * overridden value.</p> <p>You can only override the parameter <i>values</i> that
      * are specified in the stack set; to add or delete a parameter itself, use <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
      * to update the stack set template.</p>
      */
     inline CreateStackInstancesRequest& AddParameterOverrides(const Parameter& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides.push_back(value); return *this; }
@@ -396,7 +396,7 @@ namespace Model
      * values overridden for a stack instance are not updated, but retain their
      * overridden value.</p> <p>You can only override the parameter <i>values</i> that
      * are specified in the stack set; to add or delete a parameter itself, use <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
      * to update the stack set template.</p>
      */
     inline CreateStackInstancesRequest& AddParameterOverrides(Parameter&& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides.push_back(std::move(value)); return *this; }

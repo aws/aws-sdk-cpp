@@ -729,7 +729,8 @@ namespace Aws
 
         /**
          * <p>Associates an AWS Identity and Access Management (IAM) role with a DB
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * instance.</p> <note> <p>To add a role to a DB instance, the status of the DB
+         * instance must be <code>available</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance">AWS
          * API Reference</a></p>
          */
@@ -737,7 +738,8 @@ namespace Aws
 
         /**
          * <p>Associates an AWS Identity and Access Management (IAM) role with a DB
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * instance.</p> <note> <p>To add a role to a DB instance, the status of the DB
+         * instance must be <code>available</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance">AWS
          * API Reference</a></p>
          *
@@ -747,7 +749,8 @@ namespace Aws
 
         /**
          * <p>Associates an AWS Identity and Access Management (IAM) role with a DB
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * instance.</p> <note> <p>To add a role to a DB instance, the status of the DB
+         * instance must be <code>available</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance">AWS
          * API Reference</a></p>
          *
