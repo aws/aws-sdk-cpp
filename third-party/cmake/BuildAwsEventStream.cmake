@@ -1,7 +1,7 @@
 # All the dependencies(aws-c-common and aws-checksums) should live in the same directory as aws-c-event-stream,
 # therefore we set rpath for aws-c-event-stream to "$ORIGIN".
 set(DEPS_RPATH "$ORIGIN")
-if(${TARGET_ARCH} STREQUAL ANDROID)
+if(TARGET_ARCH STREQUAL "ANDROID")
     ExternalProject_Add(AwsCEventStream
         PREFIX ${AWS_DEPS_BUILD_DIR}
         GIT_REPOSITORY ${AWS_EVENT_STREAM_URL}
