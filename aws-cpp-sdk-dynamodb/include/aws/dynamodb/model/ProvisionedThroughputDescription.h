@@ -126,7 +126,7 @@ namespace Model
     /**
      * <p>The number of provisioned throughput decreases for this table during this UTC
      * calendar day. For current maximums on provisioned throughput decreases, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline long long GetNumberOfDecreasesToday() const{ return m_numberOfDecreasesToday; }
@@ -134,7 +134,7 @@ namespace Model
     /**
      * <p>The number of provisioned throughput decreases for this table during this UTC
      * calendar day. For current maximums on provisioned throughput decreases, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool NumberOfDecreasesTodayHasBeenSet() const { return m_numberOfDecreasesTodayHasBeenSet; }
@@ -142,7 +142,7 @@ namespace Model
     /**
      * <p>The number of provisioned throughput decreases for this table during this UTC
      * calendar day. For current maximums on provisioned throughput decreases, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetNumberOfDecreasesToday(long long value) { m_numberOfDecreasesTodayHasBeenSet = true; m_numberOfDecreasesToday = value; }
@@ -150,7 +150,7 @@ namespace Model
     /**
      * <p>The number of provisioned throughput decreases for this table during this UTC
      * calendar day. For current maximums on provisioned throughput decreases, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ProvisionedThroughputDescription& WithNumberOfDecreasesToday(long long value) { SetNumberOfDecreasesToday(value); return *this;}

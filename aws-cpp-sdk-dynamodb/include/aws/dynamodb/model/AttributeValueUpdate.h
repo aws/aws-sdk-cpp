@@ -60,7 +60,7 @@ namespace Model
      * <p>Represents the data for an attribute.</p> <p>Each attribute value is
      * described as a name-value pair. The name is the data type, and the value is the
      * data itself.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
      * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
     inline const AttributeValue& GetValue() const{ return m_value; }
@@ -69,7 +69,7 @@ namespace Model
      * <p>Represents the data for an attribute.</p> <p>Each attribute value is
      * described as a name-value pair. The name is the data type, and the value is the
      * data itself.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
      * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
@@ -78,7 +78,7 @@ namespace Model
      * <p>Represents the data for an attribute.</p> <p>Each attribute value is
      * described as a name-value pair. The name is the data type, and the value is the
      * data itself.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
      * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
     inline void SetValue(const AttributeValue& value) { m_valueHasBeenSet = true; m_value = value; }
@@ -87,7 +87,7 @@ namespace Model
      * <p>Represents the data for an attribute.</p> <p>Each attribute value is
      * described as a name-value pair. The name is the data type, and the value is the
      * data itself.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
      * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
     inline void SetValue(AttributeValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
@@ -96,7 +96,7 @@ namespace Model
      * <p>Represents the data for an attribute.</p> <p>Each attribute value is
      * described as a name-value pair. The name is the data type, and the value is the
      * data itself.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
      * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
     inline AttributeValueUpdate& WithValue(const AttributeValue& value) { SetValue(value); return *this;}
@@ -105,7 +105,7 @@ namespace Model
      * <p>Represents the data for an attribute.</p> <p>Each attribute value is
      * described as a name-value pair. The name is the data type, and the value is the
      * data itself.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
      * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
     inline AttributeValueUpdate& WithValue(AttributeValue&& value) { SetValue(std::move(value)); return *this;}

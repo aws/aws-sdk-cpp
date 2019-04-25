@@ -32,7 +32,8 @@ CreateTableRequest::CreateTableRequest() :
     m_billingModeHasBeenSet(false),
     m_provisionedThroughputHasBeenSet(false),
     m_streamSpecificationHasBeenSet(false),
-    m_sSESpecificationHasBeenSet(false)
+    m_sSESpecificationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,17 @@ Aws::String CreateTableRequest::SerializePayload() const
   if(m_sSESpecificationHasBeenSet)
   {
    payload.WithObject("SSESpecification", m_sSESpecification.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

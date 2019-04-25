@@ -160,7 +160,7 @@ namespace Model
      * <p>The array properties for the submitted job, such as the size of the array.
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
      * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline const ArrayProperties& GetArrayProperties() const{ return m_arrayProperties; }
@@ -169,7 +169,7 @@ namespace Model
      * <p>The array properties for the submitted job, such as the size of the array.
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
      * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline bool ArrayPropertiesHasBeenSet() const { return m_arrayPropertiesHasBeenSet; }
@@ -178,7 +178,7 @@ namespace Model
      * <p>The array properties for the submitted job, such as the size of the array.
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
      * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetArrayProperties(const ArrayProperties& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = value; }
@@ -187,7 +187,7 @@ namespace Model
      * <p>The array properties for the submitted job, such as the size of the array.
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
      * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetArrayProperties(ArrayProperties&& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = std::move(value); }
@@ -196,7 +196,7 @@ namespace Model
      * <p>The array properties for the submitted job, such as the size of the array.
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
      * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline SubmitJobRequest& WithArrayProperties(const ArrayProperties& value) { SetArrayProperties(value); return *this;}
@@ -205,7 +205,7 @@ namespace Model
      * <p>The array properties for the submitted job, such as the size of the array.
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
      * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline SubmitJobRequest& WithArrayProperties(ArrayProperties&& value) { SetArrayProperties(std::move(value)); return *this;}

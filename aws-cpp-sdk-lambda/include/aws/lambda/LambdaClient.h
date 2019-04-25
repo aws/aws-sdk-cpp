@@ -33,6 +33,7 @@
 #include <aws/lambda/model/GetFunctionResult.h>
 #include <aws/lambda/model/GetFunctionConfigurationResult.h>
 #include <aws/lambda/model/GetLayerVersionResult.h>
+#include <aws/lambda/model/GetLayerVersionByArnResult.h>
 #include <aws/lambda/model/GetLayerVersionPolicyResult.h>
 #include <aws/lambda/model/GetPolicyResult.h>
 #include <aws/lambda/model/InvokeResult.h>
@@ -107,6 +108,7 @@ namespace Model
         class GetFunctionRequest;
         class GetFunctionConfigurationRequest;
         class GetLayerVersionRequest;
+        class GetLayerVersionByArnRequest;
         class GetLayerVersionPolicyRequest;
         class GetPolicyRequest;
         class InvokeRequest;
@@ -145,6 +147,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetFunctionResult, Aws::Client::AWSError<LambdaErrors>> GetFunctionOutcome;
         typedef Aws::Utils::Outcome<GetFunctionConfigurationResult, Aws::Client::AWSError<LambdaErrors>> GetFunctionConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetLayerVersionResult, Aws::Client::AWSError<LambdaErrors>> GetLayerVersionOutcome;
+        typedef Aws::Utils::Outcome<GetLayerVersionByArnResult, Aws::Client::AWSError<LambdaErrors>> GetLayerVersionByArnOutcome;
         typedef Aws::Utils::Outcome<GetLayerVersionPolicyResult, Aws::Client::AWSError<LambdaErrors>> GetLayerVersionPolicyOutcome;
         typedef Aws::Utils::Outcome<GetPolicyResult, Aws::Client::AWSError<LambdaErrors>> GetPolicyOutcome;
         typedef Aws::Utils::Outcome<InvokeResult, Aws::Client::AWSError<LambdaErrors>> InvokeOutcome;
@@ -183,6 +186,7 @@ namespace Model
         typedef std::future<GetFunctionOutcome> GetFunctionOutcomeCallable;
         typedef std::future<GetFunctionConfigurationOutcome> GetFunctionConfigurationOutcomeCallable;
         typedef std::future<GetLayerVersionOutcome> GetLayerVersionOutcomeCallable;
+        typedef std::future<GetLayerVersionByArnOutcome> GetLayerVersionByArnOutcomeCallable;
         typedef std::future<GetLayerVersionPolicyOutcome> GetLayerVersionPolicyOutcomeCallable;
         typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
         typedef std::future<InvokeOutcome> InvokeOutcomeCallable;
@@ -224,6 +228,7 @@ namespace Model
     typedef std::function<void(const LambdaClient*, const Model::GetFunctionRequest&, const Model::GetFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetFunctionConfigurationRequest&, const Model::GetFunctionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionConfigurationResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetLayerVersionRequest&, const Model::GetLayerVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLayerVersionResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::GetLayerVersionByArnRequest&, const Model::GetLayerVersionByArnOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLayerVersionByArnResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetLayerVersionPolicyRequest&, const Model::GetLayerVersionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLayerVersionPolicyResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPolicyResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::InvokeRequest&, const Model::InvokeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeResponseReceivedHandler;
@@ -964,6 +969,40 @@ namespace Model
         virtual void GetLayerVersionAsync(const Model::GetLayerVersionRequest& request, const GetLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about a version of an <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+         * Lambda layer</a>, with a link to download the layer archive that's valid for 10
+         * minutes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLayerVersionByArnOutcome GetLayerVersionByArn(const Model::GetLayerVersionByArnRequest& request) const;
+
+        /**
+         * <p>Returns information about a version of an <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+         * Lambda layer</a>, with a link to download the layer archive that's valid for 10
+         * minutes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLayerVersionByArnOutcomeCallable GetLayerVersionByArnCallable(const Model::GetLayerVersionByArnRequest& request) const;
+
+        /**
+         * <p>Returns information about a version of an <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+         * Lambda layer</a>, with a link to download the layer archive that's valid for 10
+         * minutes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLayerVersionByArnAsync(const Model::GetLayerVersionByArnRequest& request, const GetLayerVersionByArnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the permission policy for a version of an <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
          * Lambda layer</a>. For more information, see
@@ -1040,7 +1079,13 @@ namespace Model
          * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">trace</a>. To
          * record function errors for asynchronous invocations, configure your function
          * with a <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead
-         * letter queue</a>.</p> <p>The status code in the API response doesn't reflect
+         * letter queue</a>.</p> <p>When an error occurs, your function may be invoked
+         * multiple times. Retry behavior varies by error type, client, event source, and
+         * invocation type. For example, if you invoke a function asynchronously and it
+         * returns an error, Lambda executes the function up to two more times. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/retries-on-errors.html">Retry
+         * Behavior</a>.</p> <p>The status code in the API response doesn't reflect
          * function errors. Error codes are reserved for errors that prevent your function
          * from executing, such as permissions errors, <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit
@@ -1071,7 +1116,13 @@ namespace Model
          * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">trace</a>. To
          * record function errors for asynchronous invocations, configure your function
          * with a <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead
-         * letter queue</a>.</p> <p>The status code in the API response doesn't reflect
+         * letter queue</a>.</p> <p>When an error occurs, your function may be invoked
+         * multiple times. Retry behavior varies by error type, client, event source, and
+         * invocation type. For example, if you invoke a function asynchronously and it
+         * returns an error, Lambda executes the function up to two more times. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/retries-on-errors.html">Retry
+         * Behavior</a>.</p> <p>The status code in the API response doesn't reflect
          * function errors. Error codes are reserved for errors that prevent your function
          * from executing, such as permissions errors, <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit
@@ -1104,7 +1155,13 @@ namespace Model
          * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">trace</a>. To
          * record function errors for asynchronous invocations, configure your function
          * with a <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead
-         * letter queue</a>.</p> <p>The status code in the API response doesn't reflect
+         * letter queue</a>.</p> <p>When an error occurs, your function may be invoked
+         * multiple times. Retry behavior varies by error type, client, event source, and
+         * invocation type. For example, if you invoke a function asynchronously and it
+         * returns an error, Lambda executes the function up to two more times. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/retries-on-errors.html">Retry
+         * Behavior</a>.</p> <p>The status code in the API response doesn't reflect
          * function errors. Error codes are reserved for errors that prevent your function
          * from executing, such as permissions errors, <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit
@@ -1740,7 +1797,7 @@ namespace Model
         virtual void UpdateFunctionCodeAsync(const Model::UpdateFunctionCodeRequest& request, const UpdateFunctionCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modify the version-specifc settings of a Lambda function.</p> <p>These
+         * <p>Modify the version-specific settings of a Lambda function.</p> <p>These
          * settings can vary between versions of a function and are locked when you publish
          * a version. You can't modify the configuration of a published version, only the
          * unpublished version.</p> <p>To configure function concurrency, use
@@ -1752,7 +1809,7 @@ namespace Model
         virtual Model::UpdateFunctionConfigurationOutcome UpdateFunctionConfiguration(const Model::UpdateFunctionConfigurationRequest& request) const;
 
         /**
-         * <p>Modify the version-specifc settings of a Lambda function.</p> <p>These
+         * <p>Modify the version-specific settings of a Lambda function.</p> <p>These
          * settings can vary between versions of a function and are locked when you publish
          * a version. You can't modify the configuration of a published version, only the
          * unpublished version.</p> <p>To configure function concurrency, use
@@ -1766,7 +1823,7 @@ namespace Model
         virtual Model::UpdateFunctionConfigurationOutcomeCallable UpdateFunctionConfigurationCallable(const Model::UpdateFunctionConfigurationRequest& request) const;
 
         /**
-         * <p>Modify the version-specifc settings of a Lambda function.</p> <p>These
+         * <p>Modify the version-specific settings of a Lambda function.</p> <p>These
          * settings can vary between versions of a function and are locked when you publish
          * a version. You can't modify the configuration of a published version, only the
          * unpublished version.</p> <p>To configure function concurrency, use
@@ -1800,6 +1857,7 @@ namespace Model
         void GetFunctionAsyncHelper(const Model::GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFunctionConfigurationAsyncHelper(const Model::GetFunctionConfigurationRequest& request, const GetFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLayerVersionAsyncHelper(const Model::GetLayerVersionRequest& request, const GetLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetLayerVersionByArnAsyncHelper(const Model::GetLayerVersionByArnRequest& request, const GetLayerVersionByArnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLayerVersionPolicyAsyncHelper(const Model::GetLayerVersionPolicyRequest& request, const GetLayerVersionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPolicyAsyncHelper(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InvokeAsyncHelper(const Model::InvokeRequest& request, const InvokeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -412,10 +412,10 @@ namespace Model
      * following:</p> <ul> <li> <p> <b>NEW</b> -- A new fleet has been defined and
      * desired instances is set to 1. </p> </li> <li> <p>
      * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting
-     * up the new fleet, creating new instances with the game build and starting server
-     * processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now accept game
-     * sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when downloading,
-     * validating, building, or activating the fleet.</p> </li> <li> <p>
+     * up the new fleet, creating new instances with the game build or Realtime script
+     * and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now
+     * accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when
+     * downloading, validating, building, or activating the fleet.</p> </li> <li> <p>
      * <b>DELETING</b> -- Hosts are responding to a delete fleet request.</p> </li>
      * <li> <p> <b>TERMINATED</b> -- The fleet no longer exists.</p> </li> </ul>
      */
@@ -426,10 +426,10 @@ namespace Model
      * following:</p> <ul> <li> <p> <b>NEW</b> -- A new fleet has been defined and
      * desired instances is set to 1. </p> </li> <li> <p>
      * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting
-     * up the new fleet, creating new instances with the game build and starting server
-     * processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now accept game
-     * sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when downloading,
-     * validating, building, or activating the fleet.</p> </li> <li> <p>
+     * up the new fleet, creating new instances with the game build or Realtime script
+     * and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now
+     * accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when
+     * downloading, validating, building, or activating the fleet.</p> </li> <li> <p>
      * <b>DELETING</b> -- Hosts are responding to a delete fleet request.</p> </li>
      * <li> <p> <b>TERMINATED</b> -- The fleet no longer exists.</p> </li> </ul>
      */
@@ -440,10 +440,10 @@ namespace Model
      * following:</p> <ul> <li> <p> <b>NEW</b> -- A new fleet has been defined and
      * desired instances is set to 1. </p> </li> <li> <p>
      * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting
-     * up the new fleet, creating new instances with the game build and starting server
-     * processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now accept game
-     * sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when downloading,
-     * validating, building, or activating the fleet.</p> </li> <li> <p>
+     * up the new fleet, creating new instances with the game build or Realtime script
+     * and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now
+     * accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when
+     * downloading, validating, building, or activating the fleet.</p> </li> <li> <p>
      * <b>DELETING</b> -- Hosts are responding to a delete fleet request.</p> </li>
      * <li> <p> <b>TERMINATED</b> -- The fleet no longer exists.</p> </li> </ul>
      */
@@ -454,10 +454,10 @@ namespace Model
      * following:</p> <ul> <li> <p> <b>NEW</b> -- A new fleet has been defined and
      * desired instances is set to 1. </p> </li> <li> <p>
      * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting
-     * up the new fleet, creating new instances with the game build and starting server
-     * processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now accept game
-     * sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when downloading,
-     * validating, building, or activating the fleet.</p> </li> <li> <p>
+     * up the new fleet, creating new instances with the game build or Realtime script
+     * and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now
+     * accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when
+     * downloading, validating, building, or activating the fleet.</p> </li> <li> <p>
      * <b>DELETING</b> -- Hosts are responding to a delete fleet request.</p> </li>
      * <li> <p> <b>TERMINATED</b> -- The fleet no longer exists.</p> </li> </ul>
      */
@@ -468,10 +468,10 @@ namespace Model
      * following:</p> <ul> <li> <p> <b>NEW</b> -- A new fleet has been defined and
      * desired instances is set to 1. </p> </li> <li> <p>
      * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting
-     * up the new fleet, creating new instances with the game build and starting server
-     * processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now accept game
-     * sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when downloading,
-     * validating, building, or activating the fleet.</p> </li> <li> <p>
+     * up the new fleet, creating new instances with the game build or Realtime script
+     * and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now
+     * accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when
+     * downloading, validating, building, or activating the fleet.</p> </li> <li> <p>
      * <b>DELETING</b> -- Hosts are responding to a delete fleet request.</p> </li>
      * <li> <p> <b>TERMINATED</b> -- The fleet no longer exists.</p> </li> </ul>
      */
@@ -482,10 +482,10 @@ namespace Model
      * following:</p> <ul> <li> <p> <b>NEW</b> -- A new fleet has been defined and
      * desired instances is set to 1. </p> </li> <li> <p>
      * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting
-     * up the new fleet, creating new instances with the game build and starting server
-     * processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now accept game
-     * sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when downloading,
-     * validating, building, or activating the fleet.</p> </li> <li> <p>
+     * up the new fleet, creating new instances with the game build or Realtime script
+     * and starting server processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now
+     * accept game sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when
+     * downloading, validating, building, or activating the fleet.</p> </li> <li> <p>
      * <b>DELETING</b> -- Hosts are responding to a delete fleet request.</p> </li>
      * <li> <p> <b>TERMINATED</b> -- The fleet no longer exists.</p> </li> </ul>
      */
@@ -531,6 +531,47 @@ namespace Model
      * <p>Unique identifier for a build.</p>
      */
     inline FleetAttributes& WithBuildId(const char* value) { SetBuildId(value); return *this;}
+
+
+    /**
+     * <p>Unique identifier for a Realtime script.</p>
+     */
+    inline const Aws::String& GetScriptId() const{ return m_scriptId; }
+
+    /**
+     * <p>Unique identifier for a Realtime script.</p>
+     */
+    inline bool ScriptIdHasBeenSet() const { return m_scriptIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a Realtime script.</p>
+     */
+    inline void SetScriptId(const Aws::String& value) { m_scriptIdHasBeenSet = true; m_scriptId = value; }
+
+    /**
+     * <p>Unique identifier for a Realtime script.</p>
+     */
+    inline void SetScriptId(Aws::String&& value) { m_scriptIdHasBeenSet = true; m_scriptId = std::move(value); }
+
+    /**
+     * <p>Unique identifier for a Realtime script.</p>
+     */
+    inline void SetScriptId(const char* value) { m_scriptIdHasBeenSet = true; m_scriptId.assign(value); }
+
+    /**
+     * <p>Unique identifier for a Realtime script.</p>
+     */
+    inline FleetAttributes& WithScriptId(const Aws::String& value) { SetScriptId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for a Realtime script.</p>
+     */
+    inline FleetAttributes& WithScriptId(Aws::String&& value) { SetScriptId(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique identifier for a Realtime script.</p>
+     */
+    inline FleetAttributes& WithScriptId(const char* value) { SetScriptId(value); return *this;}
 
 
     /**
@@ -1023,11 +1064,11 @@ namespace Model
 
     /**
      * <p>Unique identifier for an AWS IAM role that manages access to your AWS
-     * services. Any application that runs on an instance in this fleet can assume the
-     * role, including install scripts, server processs, daemons (background
-     * processes). Create a role or look up a role's ARN using the <a
-     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS
-     * Management Console. Learn more about using on-box credentials for your game
+     * services. With an instance role ARN set, any application that runs on an
+     * instance in this fleet can assume the role, including install scripts, server
+     * processes, daemons (background processes). Create a role or look up a role's ARN
+     * using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the
+     * AWS Management Console. Learn more about using on-box credentials for your game
      * servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
@@ -1036,11 +1077,11 @@ namespace Model
 
     /**
      * <p>Unique identifier for an AWS IAM role that manages access to your AWS
-     * services. Any application that runs on an instance in this fleet can assume the
-     * role, including install scripts, server processs, daemons (background
-     * processes). Create a role or look up a role's ARN using the <a
-     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS
-     * Management Console. Learn more about using on-box credentials for your game
+     * services. With an instance role ARN set, any application that runs on an
+     * instance in this fleet can assume the role, including install scripts, server
+     * processes, daemons (background processes). Create a role or look up a role's ARN
+     * using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the
+     * AWS Management Console. Learn more about using on-box credentials for your game
      * servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
@@ -1049,11 +1090,11 @@ namespace Model
 
     /**
      * <p>Unique identifier for an AWS IAM role that manages access to your AWS
-     * services. Any application that runs on an instance in this fleet can assume the
-     * role, including install scripts, server processs, daemons (background
-     * processes). Create a role or look up a role's ARN using the <a
-     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS
-     * Management Console. Learn more about using on-box credentials for your game
+     * services. With an instance role ARN set, any application that runs on an
+     * instance in this fleet can assume the role, including install scripts, server
+     * processes, daemons (background processes). Create a role or look up a role's ARN
+     * using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the
+     * AWS Management Console. Learn more about using on-box credentials for your game
      * servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
@@ -1062,11 +1103,11 @@ namespace Model
 
     /**
      * <p>Unique identifier for an AWS IAM role that manages access to your AWS
-     * services. Any application that runs on an instance in this fleet can assume the
-     * role, including install scripts, server processs, daemons (background
-     * processes). Create a role or look up a role's ARN using the <a
-     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS
-     * Management Console. Learn more about using on-box credentials for your game
+     * services. With an instance role ARN set, any application that runs on an
+     * instance in this fleet can assume the role, including install scripts, server
+     * processes, daemons (background processes). Create a role or look up a role's ARN
+     * using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the
+     * AWS Management Console. Learn more about using on-box credentials for your game
      * servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
@@ -1075,11 +1116,11 @@ namespace Model
 
     /**
      * <p>Unique identifier for an AWS IAM role that manages access to your AWS
-     * services. Any application that runs on an instance in this fleet can assume the
-     * role, including install scripts, server processs, daemons (background
-     * processes). Create a role or look up a role's ARN using the <a
-     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS
-     * Management Console. Learn more about using on-box credentials for your game
+     * services. With an instance role ARN set, any application that runs on an
+     * instance in this fleet can assume the role, including install scripts, server
+     * processes, daemons (background processes). Create a role or look up a role's ARN
+     * using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the
+     * AWS Management Console. Learn more about using on-box credentials for your game
      * servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
@@ -1088,11 +1129,11 @@ namespace Model
 
     /**
      * <p>Unique identifier for an AWS IAM role that manages access to your AWS
-     * services. Any application that runs on an instance in this fleet can assume the
-     * role, including install scripts, server processs, daemons (background
-     * processes). Create a role or look up a role's ARN using the <a
-     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS
-     * Management Console. Learn more about using on-box credentials for your game
+     * services. With an instance role ARN set, any application that runs on an
+     * instance in this fleet can assume the role, including install scripts, server
+     * processes, daemons (background processes). Create a role or look up a role's ARN
+     * using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the
+     * AWS Management Console. Learn more about using on-box credentials for your game
      * servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
@@ -1101,11 +1142,11 @@ namespace Model
 
     /**
      * <p>Unique identifier for an AWS IAM role that manages access to your AWS
-     * services. Any application that runs on an instance in this fleet can assume the
-     * role, including install scripts, server processs, daemons (background
-     * processes). Create a role or look up a role's ARN using the <a
-     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS
-     * Management Console. Learn more about using on-box credentials for your game
+     * services. With an instance role ARN set, any application that runs on an
+     * instance in this fleet can assume the role, including install scripts, server
+     * processes, daemons (background processes). Create a role or look up a role's ARN
+     * using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the
+     * AWS Management Console. Learn more about using on-box credentials for your game
      * servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
@@ -1114,11 +1155,11 @@ namespace Model
 
     /**
      * <p>Unique identifier for an AWS IAM role that manages access to your AWS
-     * services. Any application that runs on an instance in this fleet can assume the
-     * role, including install scripts, server processs, daemons (background
-     * processes). Create a role or look up a role's ARN using the <a
-     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS
-     * Management Console. Learn more about using on-box credentials for your game
+     * services. With an instance role ARN set, any application that runs on an
+     * instance in this fleet can assume the role, including install scripts, server
+     * processes, daemons (background processes). Create a role or look up a role's ARN
+     * using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the
+     * AWS Management Console. Learn more about using on-box credentials for your game
      * servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
@@ -1156,6 +1197,9 @@ namespace Model
 
     Aws::String m_buildId;
     bool m_buildIdHasBeenSet;
+
+    Aws::String m_scriptId;
+    bool m_scriptIdHasBeenSet;
 
     Aws::String m_serverLaunchPath;
     bool m_serverLaunchPathHasBeenSet;

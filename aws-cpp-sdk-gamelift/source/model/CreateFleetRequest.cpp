@@ -26,6 +26,7 @@ CreateFleetRequest::CreateFleetRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_buildIdHasBeenSet(false),
+    m_scriptIdHasBeenSet(false),
     m_serverLaunchPathHasBeenSet(false),
     m_serverLaunchParametersHasBeenSet(false),
     m_logPathsHasBeenSet(false),
@@ -64,6 +65,12 @@ Aws::String CreateFleetRequest::SerializePayload() const
   if(m_buildIdHasBeenSet)
   {
    payload.WithString("BuildId", m_buildId);
+
+  }
+
+  if(m_scriptIdHasBeenSet)
+  {
+   payload.WithString("ScriptId", m_scriptId);
 
   }
 

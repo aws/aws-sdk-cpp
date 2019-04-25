@@ -41,7 +41,7 @@ namespace Model
    * tag names have the prefix user: in the Cost Allocation Report. You cannot
    * backdate the application of a tag. </p> <p>For an overview on tagging DynamoDB
    * resources, see <a
-   * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
+   * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
    * for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Tag">AWS API

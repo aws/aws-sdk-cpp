@@ -136,7 +136,7 @@ namespace Model
      * <p>Specifies the type of the assessment report that you want to generate. There
      * are two types of assessment reports: a finding report and a full report. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
+     * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
      * Reports</a>. </p>
      */
     inline const ReportType& GetReportType() const{ return m_reportType; }
@@ -145,7 +145,7 @@ namespace Model
      * <p>Specifies the type of the assessment report that you want to generate. There
      * are two types of assessment reports: a finding report and a full report. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
+     * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
      * Reports</a>. </p>
      */
     inline bool ReportTypeHasBeenSet() const { return m_reportTypeHasBeenSet; }
@@ -154,7 +154,7 @@ namespace Model
      * <p>Specifies the type of the assessment report that you want to generate. There
      * are two types of assessment reports: a finding report and a full report. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
+     * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
      * Reports</a>. </p>
      */
     inline void SetReportType(const ReportType& value) { m_reportTypeHasBeenSet = true; m_reportType = value; }
@@ -163,7 +163,7 @@ namespace Model
      * <p>Specifies the type of the assessment report that you want to generate. There
      * are two types of assessment reports: a finding report and a full report. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
+     * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
      * Reports</a>. </p>
      */
     inline void SetReportType(ReportType&& value) { m_reportTypeHasBeenSet = true; m_reportType = std::move(value); }
@@ -172,7 +172,7 @@ namespace Model
      * <p>Specifies the type of the assessment report that you want to generate. There
      * are two types of assessment reports: a finding report and a full report. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
+     * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
      * Reports</a>. </p>
      */
     inline GetAssessmentReportRequest& WithReportType(const ReportType& value) { SetReportType(value); return *this;}
@@ -181,7 +181,7 @@ namespace Model
      * <p>Specifies the type of the assessment report that you want to generate. There
      * are two types of assessment reports: a finding report and a full report. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
+     * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
      * Reports</a>. </p>
      */
     inline GetAssessmentReportRequest& WithReportType(ReportType&& value) { SetReportType(std::move(value)); return *this;}

@@ -270,7 +270,7 @@ namespace Model
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      * </p> </li> </ul> <p>For usage examples of <code>AttributeValueList</code> and
      * <code>ComparisonOperator</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
@@ -381,7 +381,7 @@ namespace Model
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      * </p> </li> </ul> <p>For usage examples of <code>AttributeValueList</code> and
      * <code>ComparisonOperator</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
@@ -492,7 +492,7 @@ namespace Model
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      * </p> </li> </ul> <p>For usage examples of <code>AttributeValueList</code> and
      * <code>ComparisonOperator</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
@@ -603,7 +603,7 @@ namespace Model
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      * </p> </li> </ul> <p>For usage examples of <code>AttributeValueList</code> and
      * <code>ComparisonOperator</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
@@ -714,7 +714,7 @@ namespace Model
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      * </p> </li> </ul> <p>For usage examples of <code>AttributeValueList</code> and
      * <code>ComparisonOperator</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline Condition& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
@@ -825,7 +825,7 @@ namespace Model
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      * </p> </li> </ul> <p>For usage examples of <code>AttributeValueList</code> and
      * <code>ComparisonOperator</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline Condition& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}

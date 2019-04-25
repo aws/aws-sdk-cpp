@@ -105,6 +105,63 @@ namespace Model
 
 
     /**
+     * <p>Unique identifier for a Realtime script to return fleets for. Use this
+     * parameter to return only fleets using the specified script. To retrieve all
+     * fleets, leave this parameter empty.</p>
+     */
+    inline const Aws::String& GetScriptId() const{ return m_scriptId; }
+
+    /**
+     * <p>Unique identifier for a Realtime script to return fleets for. Use this
+     * parameter to return only fleets using the specified script. To retrieve all
+     * fleets, leave this parameter empty.</p>
+     */
+    inline bool ScriptIdHasBeenSet() const { return m_scriptIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a Realtime script to return fleets for. Use this
+     * parameter to return only fleets using the specified script. To retrieve all
+     * fleets, leave this parameter empty.</p>
+     */
+    inline void SetScriptId(const Aws::String& value) { m_scriptIdHasBeenSet = true; m_scriptId = value; }
+
+    /**
+     * <p>Unique identifier for a Realtime script to return fleets for. Use this
+     * parameter to return only fleets using the specified script. To retrieve all
+     * fleets, leave this parameter empty.</p>
+     */
+    inline void SetScriptId(Aws::String&& value) { m_scriptIdHasBeenSet = true; m_scriptId = std::move(value); }
+
+    /**
+     * <p>Unique identifier for a Realtime script to return fleets for. Use this
+     * parameter to return only fleets using the specified script. To retrieve all
+     * fleets, leave this parameter empty.</p>
+     */
+    inline void SetScriptId(const char* value) { m_scriptIdHasBeenSet = true; m_scriptId.assign(value); }
+
+    /**
+     * <p>Unique identifier for a Realtime script to return fleets for. Use this
+     * parameter to return only fleets using the specified script. To retrieve all
+     * fleets, leave this parameter empty.</p>
+     */
+    inline ListFleetsRequest& WithScriptId(const Aws::String& value) { SetScriptId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for a Realtime script to return fleets for. Use this
+     * parameter to return only fleets using the specified script. To retrieve all
+     * fleets, leave this parameter empty.</p>
+     */
+    inline ListFleetsRequest& WithScriptId(Aws::String&& value) { SetScriptId(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique identifier for a Realtime script to return fleets for. Use this
+     * parameter to return only fleets using the specified script. To retrieve all
+     * fleets, leave this parameter empty.</p>
+     */
+    inline ListFleetsRequest& WithScriptId(const char* value) { SetScriptId(value); return *this;}
+
+
+    /**
      * <p>Maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
@@ -189,6 +246,9 @@ namespace Model
 
     Aws::String m_buildId;
     bool m_buildIdHasBeenSet;
+
+    Aws::String m_scriptId;
+    bool m_scriptIdHasBeenSet;
 
     int m_limit;
     bool m_limitHasBeenSet;

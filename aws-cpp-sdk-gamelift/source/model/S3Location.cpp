@@ -31,14 +31,16 @@ namespace Model
 S3Location::S3Location() : 
     m_bucketHasBeenSet(false),
     m_keyHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_objectVersionHasBeenSet(false)
 {
 }
 
 S3Location::S3Location(JsonView jsonValue) : 
     m_bucketHasBeenSet(false),
     m_keyHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_objectVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +68,13 @@ S3Location& S3Location::operator =(JsonView jsonValue)
     m_roleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ObjectVersion"))
+  {
+    m_objectVersion = jsonValue.GetString("ObjectVersion");
+
+    m_objectVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +97,12 @@ JsonValue S3Location::Jsonize() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("RoleArn", m_roleArn);
+
+  }
+
+  if(m_objectVersionHasBeenSet)
+  {
+   payload.WithString("ObjectVersion", m_objectVersion);
 
   }
 

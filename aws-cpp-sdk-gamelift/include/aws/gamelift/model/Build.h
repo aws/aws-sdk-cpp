@@ -37,10 +37,10 @@ namespace Model
 {
 
   /**
-   * <p>Properties describing a game build.</p> <ul> <li> <p> <a>CreateBuild</a> </p>
-   * </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p>
-   * </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p>
-   * </li> </ul><p><h3>See Also:</h3>   <a
+   * <p>Properties describing a custom game build.</p> <p> <b>Related operations</b>
+   * </p> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p>
+   * </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p>
+   * </li> <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Build">AWS API
    * Reference</a></p>
    */
@@ -144,57 +144,57 @@ namespace Model
 
 
     /**
-     * <p>Version that is associated with this build. Version strings do not need to be
-     * unique. This value can be set using <a>CreateBuild</a> or
+     * <p>Version that is associated with a build or script. Version strings do not
+     * need to be unique. This value can be set using <a>CreateBuild</a> or
      * <a>UpdateBuild</a>.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>Version that is associated with this build. Version strings do not need to be
-     * unique. This value can be set using <a>CreateBuild</a> or
+     * <p>Version that is associated with a build or script. Version strings do not
+     * need to be unique. This value can be set using <a>CreateBuild</a> or
      * <a>UpdateBuild</a>.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>Version that is associated with this build. Version strings do not need to be
-     * unique. This value can be set using <a>CreateBuild</a> or
+     * <p>Version that is associated with a build or script. Version strings do not
+     * need to be unique. This value can be set using <a>CreateBuild</a> or
      * <a>UpdateBuild</a>.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version that is associated with this build. Version strings do not need to be
-     * unique. This value can be set using <a>CreateBuild</a> or
+     * <p>Version that is associated with a build or script. Version strings do not
+     * need to be unique. This value can be set using <a>CreateBuild</a> or
      * <a>UpdateBuild</a>.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>Version that is associated with this build. Version strings do not need to be
-     * unique. This value can be set using <a>CreateBuild</a> or
+     * <p>Version that is associated with a build or script. Version strings do not
+     * need to be unique. This value can be set using <a>CreateBuild</a> or
      * <a>UpdateBuild</a>.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>Version that is associated with this build. Version strings do not need to be
-     * unique. This value can be set using <a>CreateBuild</a> or
+     * <p>Version that is associated with a build or script. Version strings do not
+     * need to be unique. This value can be set using <a>CreateBuild</a> or
      * <a>UpdateBuild</a>.</p>
      */
     inline Build& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Version that is associated with this build. Version strings do not need to be
-     * unique. This value can be set using <a>CreateBuild</a> or
+     * <p>Version that is associated with a build or script. Version strings do not
+     * need to be unique. This value can be set using <a>CreateBuild</a> or
      * <a>UpdateBuild</a>.</p>
      */
     inline Build& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Version that is associated with this build. Version strings do not need to be
-     * unique. This value can be set using <a>CreateBuild</a> or
+     * <p>Version that is associated with a build or script. Version strings do not
+     * need to be unique. This value can be set using <a>CreateBuild</a> or
      * <a>UpdateBuild</a>.</p>
      */
     inline Build& WithVersion(const char* value) { SetVersion(value); return *this;}
