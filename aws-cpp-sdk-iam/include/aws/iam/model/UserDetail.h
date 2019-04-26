@@ -414,7 +414,7 @@ namespace Model
     /**
      * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
      * <p>For more information about permissions boundaries, see <a
-     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
      */
     inline const AttachedPermissionsBoundary& GetPermissionsBoundary() const{ return m_permissionsBoundary; }
@@ -422,7 +422,7 @@ namespace Model
     /**
      * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
      * <p>For more information about permissions boundaries, see <a
-     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool PermissionsBoundaryHasBeenSet() const { return m_permissionsBoundaryHasBeenSet; }
@@ -430,7 +430,7 @@ namespace Model
     /**
      * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
      * <p>For more information about permissions boundaries, see <a
-     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPermissionsBoundary(const AttachedPermissionsBoundary& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = value; }
@@ -438,7 +438,7 @@ namespace Model
     /**
      * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
      * <p>For more information about permissions boundaries, see <a
-     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPermissionsBoundary(AttachedPermissionsBoundary&& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = std::move(value); }
@@ -446,7 +446,7 @@ namespace Model
     /**
      * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
      * <p>For more information about permissions boundaries, see <a
-     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
      */
     inline UserDetail& WithPermissionsBoundary(const AttachedPermissionsBoundary& value) { SetPermissionsBoundary(value); return *this;}
@@ -454,7 +454,7 @@ namespace Model
     /**
      * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
      * <p>For more information about permissions boundaries, see <a
-     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
      */
     inline UserDetail& WithPermissionsBoundary(AttachedPermissionsBoundary&& value) { SetPermissionsBoundary(std::move(value)); return *this;}

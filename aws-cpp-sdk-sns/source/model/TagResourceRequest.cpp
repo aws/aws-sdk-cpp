@@ -13,40 +13,26 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/sns/model/CreateTopicRequest.h>
+#include <aws/sns/model/TagResourceRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-CreateTopicRequest::CreateTopicRequest() : 
-    m_nameHasBeenSet(false),
-    m_attributesHasBeenSet(false),
+TagResourceRequest::TagResourceRequest() : 
+    m_resourceArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
-Aws::String CreateTopicRequest::SerializePayload() const
+Aws::String TagResourceRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=CreateTopic&";
-  if(m_nameHasBeenSet)
+  ss << "Action=TagResource&";
+  if(m_resourceArnHasBeenSet)
   {
-    ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
-  }
-
-  if(m_attributesHasBeenSet)
-  {
-    unsigned attributesCount = 1;
-    for(auto& item : m_attributes)
-    {
-      ss << "Attributes.entry." << attributesCount << ".key="
-          << StringUtils::URLEncode(item.first.c_str()) << "&";
-      ss << "Attributes.entry." << attributesCount << ".value="
-          << StringUtils::URLEncode(item.second.c_str()) << "&";
-      attributesCount++;
-    }
+    ss << "ResourceArn=" << StringUtils::URLEncode(m_resourceArn.c_str()) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -64,7 +50,7 @@ Aws::String CreateTopicRequest::SerializePayload() const
 }
 
 
-void  CreateTopicRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+void  TagResourceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
 {
   uri.SetQueryString(SerializePayload());
 }

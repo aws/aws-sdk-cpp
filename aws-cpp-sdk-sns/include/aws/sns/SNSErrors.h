@@ -57,6 +57,7 @@ enum class SNSErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   AUTHORIZATION_ERROR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_ACCESS,
   ENDPOINT_DISABLED,
   FILTER_POLICY_LIMIT_EXCEEDED,
   INTERNAL_ERROR,
@@ -70,7 +71,10 @@ enum class SNSErrors
   K_M_S_THROTTLING,
   NOT_FOUND,
   PLATFORM_APPLICATION_DISABLED,
+  STALE_TAG,
   SUBSCRIPTION_LIMIT_EXCEEDED,
+  TAG_LIMIT_EXCEEDED,
+  TAG_POLICY,
   TOPIC_LIMIT_EXCEEDED
 };
 namespace SNSErrorMapper

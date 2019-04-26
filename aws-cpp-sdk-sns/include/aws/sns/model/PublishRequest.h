@@ -109,58 +109,58 @@ namespace Model
 
 
     /**
-     * <p>Either TopicArn or EndpointArn, but not both.</p> <p>If you don't specify a
-     * value for the <code>TargetArn</code> parameter, you must specify a value for the
-     * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
+     * <p>If you don't specify a value for the <code>TargetArn</code> parameter, you
+     * must specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code>
+     * parameters.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
-     * <p>Either TopicArn or EndpointArn, but not both.</p> <p>If you don't specify a
-     * value for the <code>TargetArn</code> parameter, you must specify a value for the
-     * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
+     * <p>If you don't specify a value for the <code>TargetArn</code> parameter, you
+     * must specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code>
+     * parameters.</p>
      */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
-     * <p>Either TopicArn or EndpointArn, but not both.</p> <p>If you don't specify a
-     * value for the <code>TargetArn</code> parameter, you must specify a value for the
-     * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
+     * <p>If you don't specify a value for the <code>TargetArn</code> parameter, you
+     * must specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code>
+     * parameters.</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
-     * <p>Either TopicArn or EndpointArn, but not both.</p> <p>If you don't specify a
-     * value for the <code>TargetArn</code> parameter, you must specify a value for the
-     * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
+     * <p>If you don't specify a value for the <code>TargetArn</code> parameter, you
+     * must specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code>
+     * parameters.</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
-     * <p>Either TopicArn or EndpointArn, but not both.</p> <p>If you don't specify a
-     * value for the <code>TargetArn</code> parameter, you must specify a value for the
-     * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
+     * <p>If you don't specify a value for the <code>TargetArn</code> parameter, you
+     * must specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code>
+     * parameters.</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
-     * <p>Either TopicArn or EndpointArn, but not both.</p> <p>If you don't specify a
-     * value for the <code>TargetArn</code> parameter, you must specify a value for the
-     * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
+     * <p>If you don't specify a value for the <code>TargetArn</code> parameter, you
+     * must specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code>
+     * parameters.</p>
      */
     inline PublishRequest& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
-     * <p>Either TopicArn or EndpointArn, but not both.</p> <p>If you don't specify a
-     * value for the <code>TargetArn</code> parameter, you must specify a value for the
-     * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
+     * <p>If you don't specify a value for the <code>TargetArn</code> parameter, you
+     * must specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code>
+     * parameters.</p>
      */
     inline PublishRequest& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
-     * <p>Either TopicArn or EndpointArn, but not both.</p> <p>If you don't specify a
-     * value for the <code>TargetArn</code> parameter, you must specify a value for the
-     * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
+     * <p>If you don't specify a value for the <code>TargetArn</code> parameter, you
+     * must specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code>
+     * parameters.</p>
      */
     inline PublishRequest& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 
@@ -604,7 +604,7 @@ namespace Model
      * want to send to a specific transport protocol (e.g., "http").</p> <p>For
      * information about sending different messages for each protocol using the AWS
      * Management Console, go to <a
-     * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
      * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code> </p>
      */
@@ -622,7 +622,7 @@ namespace Model
      * want to send to a specific transport protocol (e.g., "http").</p> <p>For
      * information about sending different messages for each protocol using the AWS
      * Management Console, go to <a
-     * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
      * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code> </p>
      */
@@ -640,7 +640,7 @@ namespace Model
      * want to send to a specific transport protocol (e.g., "http").</p> <p>For
      * information about sending different messages for each protocol using the AWS
      * Management Console, go to <a
-     * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
      * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code> </p>
      */
@@ -658,7 +658,7 @@ namespace Model
      * want to send to a specific transport protocol (e.g., "http").</p> <p>For
      * information about sending different messages for each protocol using the AWS
      * Management Console, go to <a
-     * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
      * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code> </p>
      */
@@ -676,7 +676,7 @@ namespace Model
      * want to send to a specific transport protocol (e.g., "http").</p> <p>For
      * information about sending different messages for each protocol using the AWS
      * Management Console, go to <a
-     * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
      * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code> </p>
      */
@@ -694,7 +694,7 @@ namespace Model
      * want to send to a specific transport protocol (e.g., "http").</p> <p>For
      * information about sending different messages for each protocol using the AWS
      * Management Console, go to <a
-     * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
      * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code> </p>
      */
@@ -712,7 +712,7 @@ namespace Model
      * want to send to a specific transport protocol (e.g., "http").</p> <p>For
      * information about sending different messages for each protocol using the AWS
      * Management Console, go to <a
-     * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
      * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code> </p>
      */
@@ -730,7 +730,7 @@ namespace Model
      * want to send to a specific transport protocol (e.g., "http").</p> <p>For
      * information about sending different messages for each protocol using the AWS
      * Management Console, go to <a
-     * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
      * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code> </p>
      */

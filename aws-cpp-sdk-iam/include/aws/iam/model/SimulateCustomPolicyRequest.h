@@ -250,63 +250,72 @@ namespace Model
     /**
      * <p>A list of names of API operations to evaluate in the simulation. Each
      * operation is evaluated against each resource. Each operation must include the
-     * service identifier, such as <code>iam:CreateUser</code>.</p>
+     * service identifier, such as <code>iam:CreateUser</code>. This operation does not
+     * support using wildcards (*) in an action name.</p>
      */
     inline const Aws::Vector<Aws::String>& GetActionNames() const{ return m_actionNames; }
 
     /**
      * <p>A list of names of API operations to evaluate in the simulation. Each
      * operation is evaluated against each resource. Each operation must include the
-     * service identifier, such as <code>iam:CreateUser</code>.</p>
+     * service identifier, such as <code>iam:CreateUser</code>. This operation does not
+     * support using wildcards (*) in an action name.</p>
      */
     inline bool ActionNamesHasBeenSet() const { return m_actionNamesHasBeenSet; }
 
     /**
      * <p>A list of names of API operations to evaluate in the simulation. Each
      * operation is evaluated against each resource. Each operation must include the
-     * service identifier, such as <code>iam:CreateUser</code>.</p>
+     * service identifier, such as <code>iam:CreateUser</code>. This operation does not
+     * support using wildcards (*) in an action name.</p>
      */
     inline void SetActionNames(const Aws::Vector<Aws::String>& value) { m_actionNamesHasBeenSet = true; m_actionNames = value; }
 
     /**
      * <p>A list of names of API operations to evaluate in the simulation. Each
      * operation is evaluated against each resource. Each operation must include the
-     * service identifier, such as <code>iam:CreateUser</code>.</p>
+     * service identifier, such as <code>iam:CreateUser</code>. This operation does not
+     * support using wildcards (*) in an action name.</p>
      */
     inline void SetActionNames(Aws::Vector<Aws::String>&& value) { m_actionNamesHasBeenSet = true; m_actionNames = std::move(value); }
 
     /**
      * <p>A list of names of API operations to evaluate in the simulation. Each
      * operation is evaluated against each resource. Each operation must include the
-     * service identifier, such as <code>iam:CreateUser</code>.</p>
+     * service identifier, such as <code>iam:CreateUser</code>. This operation does not
+     * support using wildcards (*) in an action name.</p>
      */
     inline SimulateCustomPolicyRequest& WithActionNames(const Aws::Vector<Aws::String>& value) { SetActionNames(value); return *this;}
 
     /**
      * <p>A list of names of API operations to evaluate in the simulation. Each
      * operation is evaluated against each resource. Each operation must include the
-     * service identifier, such as <code>iam:CreateUser</code>.</p>
+     * service identifier, such as <code>iam:CreateUser</code>. This operation does not
+     * support using wildcards (*) in an action name.</p>
      */
     inline SimulateCustomPolicyRequest& WithActionNames(Aws::Vector<Aws::String>&& value) { SetActionNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of names of API operations to evaluate in the simulation. Each
      * operation is evaluated against each resource. Each operation must include the
-     * service identifier, such as <code>iam:CreateUser</code>.</p>
+     * service identifier, such as <code>iam:CreateUser</code>. This operation does not
+     * support using wildcards (*) in an action name.</p>
      */
     inline SimulateCustomPolicyRequest& AddActionNames(const Aws::String& value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(value); return *this; }
 
     /**
      * <p>A list of names of API operations to evaluate in the simulation. Each
      * operation is evaluated against each resource. Each operation must include the
-     * service identifier, such as <code>iam:CreateUser</code>.</p>
+     * service identifier, such as <code>iam:CreateUser</code>. This operation does not
+     * support using wildcards (*) in an action name.</p>
      */
     inline SimulateCustomPolicyRequest& AddActionNames(Aws::String&& value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of names of API operations to evaluate in the simulation. Each
      * operation is evaluated against each resource. Each operation must include the
-     * service identifier, such as <code>iam:CreateUser</code>.</p>
+     * service identifier, such as <code>iam:CreateUser</code>. This operation does not
+     * support using wildcards (*) in an action name.</p>
      */
     inline SimulateCustomPolicyRequest& AddActionNames(const char* value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(value); return *this; }
 
@@ -589,14 +598,15 @@ namespace Model
 
     /**
      * <p>An ARN representing the AWS account ID that specifies the owner of any
-     * simulated resource that does not identify its owner in the resource ARN, such as
-     * an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also
-     * used as the account owner of any <code>ResourcePolicy</code> included in the
-     * simulation. If the <code>ResourceOwner</code> parameter is not specified, then
-     * the owner of the resources and the resource policy defaults to the account of
-     * the identity provided in <code>CallerArn</code>. This parameter is required only
-     * if you specify a resource-based policy and account that owns the resource is
-     * different from the account that owns the simulated calling user
+     * simulated resource that does not identify its owner in the resource ARN.
+     * Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of
+     * any <code>ResourcePolicy</code> included in the simulation. If the
+     * <code>ResourceOwner</code> parameter is not specified, then the owner of the
+     * resources and the resource policy defaults to the account of the identity
+     * provided in <code>CallerArn</code>. This parameter is required only if you
+     * specify a resource-based policy and account that owns the resource is different
+     * from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p> <p>The ARN for an account uses the following syntax:
      * <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For example, to represent
      * the account with the 112233445566 ID, use the following ARN:
@@ -606,14 +616,15 @@ namespace Model
 
     /**
      * <p>An ARN representing the AWS account ID that specifies the owner of any
-     * simulated resource that does not identify its owner in the resource ARN, such as
-     * an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also
-     * used as the account owner of any <code>ResourcePolicy</code> included in the
-     * simulation. If the <code>ResourceOwner</code> parameter is not specified, then
-     * the owner of the resources and the resource policy defaults to the account of
-     * the identity provided in <code>CallerArn</code>. This parameter is required only
-     * if you specify a resource-based policy and account that owns the resource is
-     * different from the account that owns the simulated calling user
+     * simulated resource that does not identify its owner in the resource ARN.
+     * Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of
+     * any <code>ResourcePolicy</code> included in the simulation. If the
+     * <code>ResourceOwner</code> parameter is not specified, then the owner of the
+     * resources and the resource policy defaults to the account of the identity
+     * provided in <code>CallerArn</code>. This parameter is required only if you
+     * specify a resource-based policy and account that owns the resource is different
+     * from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p> <p>The ARN for an account uses the following syntax:
      * <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For example, to represent
      * the account with the 112233445566 ID, use the following ARN:
@@ -623,14 +634,15 @@ namespace Model
 
     /**
      * <p>An ARN representing the AWS account ID that specifies the owner of any
-     * simulated resource that does not identify its owner in the resource ARN, such as
-     * an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also
-     * used as the account owner of any <code>ResourcePolicy</code> included in the
-     * simulation. If the <code>ResourceOwner</code> parameter is not specified, then
-     * the owner of the resources and the resource policy defaults to the account of
-     * the identity provided in <code>CallerArn</code>. This parameter is required only
-     * if you specify a resource-based policy and account that owns the resource is
-     * different from the account that owns the simulated calling user
+     * simulated resource that does not identify its owner in the resource ARN.
+     * Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of
+     * any <code>ResourcePolicy</code> included in the simulation. If the
+     * <code>ResourceOwner</code> parameter is not specified, then the owner of the
+     * resources and the resource policy defaults to the account of the identity
+     * provided in <code>CallerArn</code>. This parameter is required only if you
+     * specify a resource-based policy and account that owns the resource is different
+     * from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p> <p>The ARN for an account uses the following syntax:
      * <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For example, to represent
      * the account with the 112233445566 ID, use the following ARN:
@@ -640,14 +652,15 @@ namespace Model
 
     /**
      * <p>An ARN representing the AWS account ID that specifies the owner of any
-     * simulated resource that does not identify its owner in the resource ARN, such as
-     * an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also
-     * used as the account owner of any <code>ResourcePolicy</code> included in the
-     * simulation. If the <code>ResourceOwner</code> parameter is not specified, then
-     * the owner of the resources and the resource policy defaults to the account of
-     * the identity provided in <code>CallerArn</code>. This parameter is required only
-     * if you specify a resource-based policy and account that owns the resource is
-     * different from the account that owns the simulated calling user
+     * simulated resource that does not identify its owner in the resource ARN.
+     * Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of
+     * any <code>ResourcePolicy</code> included in the simulation. If the
+     * <code>ResourceOwner</code> parameter is not specified, then the owner of the
+     * resources and the resource policy defaults to the account of the identity
+     * provided in <code>CallerArn</code>. This parameter is required only if you
+     * specify a resource-based policy and account that owns the resource is different
+     * from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p> <p>The ARN for an account uses the following syntax:
      * <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For example, to represent
      * the account with the 112233445566 ID, use the following ARN:
@@ -657,14 +670,15 @@ namespace Model
 
     /**
      * <p>An ARN representing the AWS account ID that specifies the owner of any
-     * simulated resource that does not identify its owner in the resource ARN, such as
-     * an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also
-     * used as the account owner of any <code>ResourcePolicy</code> included in the
-     * simulation. If the <code>ResourceOwner</code> parameter is not specified, then
-     * the owner of the resources and the resource policy defaults to the account of
-     * the identity provided in <code>CallerArn</code>. This parameter is required only
-     * if you specify a resource-based policy and account that owns the resource is
-     * different from the account that owns the simulated calling user
+     * simulated resource that does not identify its owner in the resource ARN.
+     * Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of
+     * any <code>ResourcePolicy</code> included in the simulation. If the
+     * <code>ResourceOwner</code> parameter is not specified, then the owner of the
+     * resources and the resource policy defaults to the account of the identity
+     * provided in <code>CallerArn</code>. This parameter is required only if you
+     * specify a resource-based policy and account that owns the resource is different
+     * from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p> <p>The ARN for an account uses the following syntax:
      * <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For example, to represent
      * the account with the 112233445566 ID, use the following ARN:
@@ -674,14 +688,15 @@ namespace Model
 
     /**
      * <p>An ARN representing the AWS account ID that specifies the owner of any
-     * simulated resource that does not identify its owner in the resource ARN, such as
-     * an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also
-     * used as the account owner of any <code>ResourcePolicy</code> included in the
-     * simulation. If the <code>ResourceOwner</code> parameter is not specified, then
-     * the owner of the resources and the resource policy defaults to the account of
-     * the identity provided in <code>CallerArn</code>. This parameter is required only
-     * if you specify a resource-based policy and account that owns the resource is
-     * different from the account that owns the simulated calling user
+     * simulated resource that does not identify its owner in the resource ARN.
+     * Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of
+     * any <code>ResourcePolicy</code> included in the simulation. If the
+     * <code>ResourceOwner</code> parameter is not specified, then the owner of the
+     * resources and the resource policy defaults to the account of the identity
+     * provided in <code>CallerArn</code>. This parameter is required only if you
+     * specify a resource-based policy and account that owns the resource is different
+     * from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p> <p>The ARN for an account uses the following syntax:
      * <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For example, to represent
      * the account with the 112233445566 ID, use the following ARN:
@@ -691,14 +706,15 @@ namespace Model
 
     /**
      * <p>An ARN representing the AWS account ID that specifies the owner of any
-     * simulated resource that does not identify its owner in the resource ARN, such as
-     * an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also
-     * used as the account owner of any <code>ResourcePolicy</code> included in the
-     * simulation. If the <code>ResourceOwner</code> parameter is not specified, then
-     * the owner of the resources and the resource policy defaults to the account of
-     * the identity provided in <code>CallerArn</code>. This parameter is required only
-     * if you specify a resource-based policy and account that owns the resource is
-     * different from the account that owns the simulated calling user
+     * simulated resource that does not identify its owner in the resource ARN.
+     * Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of
+     * any <code>ResourcePolicy</code> included in the simulation. If the
+     * <code>ResourceOwner</code> parameter is not specified, then the owner of the
+     * resources and the resource policy defaults to the account of the identity
+     * provided in <code>CallerArn</code>. This parameter is required only if you
+     * specify a resource-based policy and account that owns the resource is different
+     * from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p> <p>The ARN for an account uses the following syntax:
      * <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For example, to represent
      * the account with the 112233445566 ID, use the following ARN:
@@ -708,14 +724,15 @@ namespace Model
 
     /**
      * <p>An ARN representing the AWS account ID that specifies the owner of any
-     * simulated resource that does not identify its owner in the resource ARN, such as
-     * an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also
-     * used as the account owner of any <code>ResourcePolicy</code> included in the
-     * simulation. If the <code>ResourceOwner</code> parameter is not specified, then
-     * the owner of the resources and the resource policy defaults to the account of
-     * the identity provided in <code>CallerArn</code>. This parameter is required only
-     * if you specify a resource-based policy and account that owns the resource is
-     * different from the account that owns the simulated calling user
+     * simulated resource that does not identify its owner in the resource ARN.
+     * Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of
+     * any <code>ResourcePolicy</code> included in the simulation. If the
+     * <code>ResourceOwner</code> parameter is not specified, then the owner of the
+     * resources and the resource policy defaults to the account of the identity
+     * provided in <code>CallerArn</code>. This parameter is required only if you
+     * specify a resource-based policy and account that owns the resource is different
+     * from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p> <p>The ARN for an account uses the following syntax:
      * <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For example, to represent
      * the account with the 112233445566 ID, use the following ARN:
@@ -807,56 +824,56 @@ namespace Model
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * Whenever a context key is evaluated in one of the simulated IAM permissions
      * policies, the corresponding value is supplied.</p>
      */
     inline const Aws::Vector<ContextEntry>& GetContextEntries() const{ return m_contextEntries; }
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * Whenever a context key is evaluated in one of the simulated IAM permissions
      * policies, the corresponding value is supplied.</p>
      */
     inline bool ContextEntriesHasBeenSet() const { return m_contextEntriesHasBeenSet; }
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * Whenever a context key is evaluated in one of the simulated IAM permissions
      * policies, the corresponding value is supplied.</p>
      */
     inline void SetContextEntries(const Aws::Vector<ContextEntry>& value) { m_contextEntriesHasBeenSet = true; m_contextEntries = value; }
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * Whenever a context key is evaluated in one of the simulated IAM permissions
      * policies, the corresponding value is supplied.</p>
      */
     inline void SetContextEntries(Aws::Vector<ContextEntry>&& value) { m_contextEntriesHasBeenSet = true; m_contextEntries = std::move(value); }
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * Whenever a context key is evaluated in one of the simulated IAM permissions
      * policies, the corresponding value is supplied.</p>
      */
     inline SimulateCustomPolicyRequest& WithContextEntries(const Aws::Vector<ContextEntry>& value) { SetContextEntries(value); return *this;}
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * Whenever a context key is evaluated in one of the simulated IAM permissions
      * policies, the corresponding value is supplied.</p>
      */
     inline SimulateCustomPolicyRequest& WithContextEntries(Aws::Vector<ContextEntry>&& value) { SetContextEntries(std::move(value)); return *this;}
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * Whenever a context key is evaluated in one of the simulated IAM permissions
      * policies, the corresponding value is supplied.</p>
      */
     inline SimulateCustomPolicyRequest& AddContextEntries(const ContextEntry& value) { m_contextEntriesHasBeenSet = true; m_contextEntries.push_back(value); return *this; }
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * Whenever a context key is evaluated in one of the simulated IAM permissions
      * policies, the corresponding value is supplied.</p>
      */
     inline SimulateCustomPolicyRequest& AddContextEntries(ContextEntry&& value) { m_contextEntriesHasBeenSet = true; m_contextEntries.push_back(std::move(value)); return *this; }
