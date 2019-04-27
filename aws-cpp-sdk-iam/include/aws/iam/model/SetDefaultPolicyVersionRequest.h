@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you
      * want to set.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -58,7 +58,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you
      * want to set.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -67,7 +67,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you
      * want to set.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -76,7 +76,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you
      * want to set.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -85,7 +85,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you
      * want to set.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -94,7 +94,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you
      * want to set.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -103,7 +103,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you
      * want to set.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -112,7 +112,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you
      * want to set.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -122,7 +122,7 @@ namespace Model
     /**
      * <p>The version of the policy to set as the default (operative) version.</p>
      * <p>For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
      * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
@@ -130,7 +130,7 @@ namespace Model
     /**
      * <p>The version of the policy to set as the default (operative) version.</p>
      * <p>For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
      * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
@@ -138,7 +138,7 @@ namespace Model
     /**
      * <p>The version of the policy to set as the default (operative) version.</p>
      * <p>For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
      * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
@@ -146,7 +146,7 @@ namespace Model
     /**
      * <p>The version of the policy to set as the default (operative) version.</p>
      * <p>For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
      * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
@@ -154,7 +154,7 @@ namespace Model
     /**
      * <p>The version of the policy to set as the default (operative) version.</p>
      * <p>For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
      * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
@@ -162,7 +162,7 @@ namespace Model
     /**
      * <p>The version of the policy to set as the default (operative) version.</p>
      * <p>For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
      * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline SetDefaultPolicyVersionRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
@@ -170,7 +170,7 @@ namespace Model
     /**
      * <p>The version of the policy to set as the default (operative) version.</p>
      * <p>For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
      * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline SetDefaultPolicyVersionRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
@@ -178,7 +178,7 @@ namespace Model
     /**
      * <p>The version of the policy to set as the default (operative) version.</p>
      * <p>For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
      * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline SetDefaultPolicyVersionRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}

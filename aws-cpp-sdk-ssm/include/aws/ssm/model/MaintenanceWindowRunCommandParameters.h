@@ -69,42 +69,42 @@ namespace Model
 
 
     /**
-     * <p>Information about the command(s) to execute.</p>
+     * <p>Information about the command(s) to run.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * <p>Information about the command(s) to execute.</p>
+     * <p>Information about the command(s) to run.</p>
      */
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
-     * <p>Information about the command(s) to execute.</p>
+     * <p>Information about the command(s) to run.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p>Information about the command(s) to execute.</p>
+     * <p>Information about the command(s) to run.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
-     * <p>Information about the command(s) to execute.</p>
+     * <p>Information about the command(s) to run.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * <p>Information about the command(s) to execute.</p>
+     * <p>Information about the command(s) to run.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * <p>Information about the command(s) to execute.</p>
+     * <p>Information about the command(s) to run.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the command(s) to execute.</p>
+     * <p>Information about the command(s) to run.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithComment(const char* value) { SetComment(value); return *this;}
 
@@ -411,25 +411,25 @@ namespace Model
 
 
     /**
-     * <p>If this time is reached and the command has not already started executing, it
+     * <p>If this time is reached and the command has not already started running, it
      * doesn't run.</p>
      */
     inline int GetTimeoutSeconds() const{ return m_timeoutSeconds; }
 
     /**
-     * <p>If this time is reached and the command has not already started executing, it
+     * <p>If this time is reached and the command has not already started running, it
      * doesn't run.</p>
      */
     inline bool TimeoutSecondsHasBeenSet() const { return m_timeoutSecondsHasBeenSet; }
 
     /**
-     * <p>If this time is reached and the command has not already started executing, it
+     * <p>If this time is reached and the command has not already started running, it
      * doesn't run.</p>
      */
     inline void SetTimeoutSeconds(int value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
 
     /**
-     * <p>If this time is reached and the command has not already started executing, it
+     * <p>If this time is reached and the command has not already started running, it
      * doesn't run.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithTimeoutSeconds(int value) { SetTimeoutSeconds(value); return *this;}

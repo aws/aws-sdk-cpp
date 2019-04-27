@@ -362,7 +362,7 @@ namespace Model
      * <p>Represents the provisioned throughput settings for the specified global
      * secondary index.</p> <p>For current minimum and maximum provisioned throughput
      * values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const ProvisionedThroughputDescription& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
@@ -371,7 +371,7 @@ namespace Model
      * <p>Represents the provisioned throughput settings for the specified global
      * secondary index.</p> <p>For current minimum and maximum provisioned throughput
      * values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
@@ -380,7 +380,7 @@ namespace Model
      * <p>Represents the provisioned throughput settings for the specified global
      * secondary index.</p> <p>For current minimum and maximum provisioned throughput
      * values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProvisionedThroughput(const ProvisionedThroughputDescription& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
@@ -389,7 +389,7 @@ namespace Model
      * <p>Represents the provisioned throughput settings for the specified global
      * secondary index.</p> <p>For current minimum and maximum provisioned throughput
      * values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProvisionedThroughput(ProvisionedThroughputDescription&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
@@ -398,7 +398,7 @@ namespace Model
      * <p>Represents the provisioned throughput settings for the specified global
      * secondary index.</p> <p>For current minimum and maximum provisioned throughput
      * values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline GlobalSecondaryIndexDescription& WithProvisionedThroughput(const ProvisionedThroughputDescription& value) { SetProvisionedThroughput(value); return *this;}
@@ -407,7 +407,7 @@ namespace Model
      * <p>Represents the provisioned throughput settings for the specified global
      * secondary index.</p> <p>For current minimum and maximum provisioned throughput
      * values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline GlobalSecondaryIndexDescription& WithProvisionedThroughput(ProvisionedThroughputDescription&& value) { SetProvisionedThroughput(std::move(value)); return *this;}

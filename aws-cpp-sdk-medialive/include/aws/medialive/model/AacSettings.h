@@ -40,7 +40,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for AacSettings<p><h3>See Also:</h3>   <a
+   * Aac Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AacSettings">AWS
    * API Reference</a></p>
    */

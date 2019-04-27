@@ -50,6 +50,59 @@ namespace Model
 
 
     /**
+     * <p>The number of nodes to use with a multi-node parallel job. This value
+     * overrides the number of nodes that are specified in the job definition. To use
+     * this override:</p> <ul> <li> <p>There must be at least one node range in your
+     * job definition that has an open upper boundary (such as <code>:</code> or
+     * <code>n:</code>).</p> </li> <li> <p>The lower boundary of the node range
+     * specified in the job definition must be fewer than the number of nodes specified
+     * in the override.</p> </li> <li> <p>The main node index specified in the job
+     * definition must be fewer than the number of nodes specified in the override.</p>
+     * </li> </ul>
+     */
+    inline int GetNumNodes() const{ return m_numNodes; }
+
+    /**
+     * <p>The number of nodes to use with a multi-node parallel job. This value
+     * overrides the number of nodes that are specified in the job definition. To use
+     * this override:</p> <ul> <li> <p>There must be at least one node range in your
+     * job definition that has an open upper boundary (such as <code>:</code> or
+     * <code>n:</code>).</p> </li> <li> <p>The lower boundary of the node range
+     * specified in the job definition must be fewer than the number of nodes specified
+     * in the override.</p> </li> <li> <p>The main node index specified in the job
+     * definition must be fewer than the number of nodes specified in the override.</p>
+     * </li> </ul>
+     */
+    inline bool NumNodesHasBeenSet() const { return m_numNodesHasBeenSet; }
+
+    /**
+     * <p>The number of nodes to use with a multi-node parallel job. This value
+     * overrides the number of nodes that are specified in the job definition. To use
+     * this override:</p> <ul> <li> <p>There must be at least one node range in your
+     * job definition that has an open upper boundary (such as <code>:</code> or
+     * <code>n:</code>).</p> </li> <li> <p>The lower boundary of the node range
+     * specified in the job definition must be fewer than the number of nodes specified
+     * in the override.</p> </li> <li> <p>The main node index specified in the job
+     * definition must be fewer than the number of nodes specified in the override.</p>
+     * </li> </ul>
+     */
+    inline void SetNumNodes(int value) { m_numNodesHasBeenSet = true; m_numNodes = value; }
+
+    /**
+     * <p>The number of nodes to use with a multi-node parallel job. This value
+     * overrides the number of nodes that are specified in the job definition. To use
+     * this override:</p> <ul> <li> <p>There must be at least one node range in your
+     * job definition that has an open upper boundary (such as <code>:</code> or
+     * <code>n:</code>).</p> </li> <li> <p>The lower boundary of the node range
+     * specified in the job definition must be fewer than the number of nodes specified
+     * in the override.</p> </li> <li> <p>The main node index specified in the job
+     * definition must be fewer than the number of nodes specified in the override.</p>
+     * </li> </ul>
+     */
+    inline NodeOverrides& WithNumNodes(int value) { SetNumNodes(value); return *this;}
+
+
+    /**
      * <p>The node property overrides for the job.</p>
      */
     inline const Aws::Vector<NodePropertyOverride>& GetNodePropertyOverrides() const{ return m_nodePropertyOverrides; }
@@ -90,6 +143,9 @@ namespace Model
     inline NodeOverrides& AddNodePropertyOverrides(NodePropertyOverride&& value) { m_nodePropertyOverridesHasBeenSet = true; m_nodePropertyOverrides.push_back(std::move(value)); return *this; }
 
   private:
+
+    int m_numNodes;
+    bool m_numNodesHasBeenSet;
 
     Aws::Vector<NodePropertyOverride> m_nodePropertyOverrides;
     bool m_nodePropertyOverridesHasBeenSet;

@@ -55,6 +55,7 @@ namespace Aws
         static const int PolicyVersionsInUse_HASH = HashingUtils::HashString("PolicyVersionsInUse");
         static const int PolicyVersionsInUseQuota_HASH = HashingUtils::HashString("PolicyVersionsInUseQuota");
         static const int VersionsPerPolicyQuota_HASH = HashingUtils::HashString("VersionsPerPolicyQuota");
+        static const int GlobalEndpointTokenVersion_HASH = HashingUtils::HashString("GlobalEndpointTokenVersion");
 
 
         SummaryKeyType GetSummaryKeyTypeForName(const Aws::String& name)
@@ -160,6 +161,10 @@ namespace Aws
           {
             return SummaryKeyType::VersionsPerPolicyQuota;
           }
+          else if (hashCode == GlobalEndpointTokenVersion_HASH)
+          {
+            return SummaryKeyType::GlobalEndpointTokenVersion;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -224,6 +229,8 @@ namespace Aws
             return "PolicyVersionsInUseQuota";
           case SummaryKeyType::VersionsPerPolicyQuota:
             return "VersionsPerPolicyQuota";
+          case SummaryKeyType::GlobalEndpointTokenVersion:
+            return "GlobalEndpointTokenVersion";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

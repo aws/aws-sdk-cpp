@@ -40,6 +40,7 @@
 #include <aws/gamelift/model/CreateMatchmakingRuleSetRequest.h>
 #include <aws/gamelift/model/CreatePlayerSessionRequest.h>
 #include <aws/gamelift/model/CreatePlayerSessionsRequest.h>
+#include <aws/gamelift/model/CreateScriptRequest.h>
 #include <aws/gamelift/model/CreateVpcPeeringAuthorizationRequest.h>
 #include <aws/gamelift/model/CreateVpcPeeringConnectionRequest.h>
 #include <aws/gamelift/model/DeleteAliasRequest.h>
@@ -49,6 +50,7 @@
 #include <aws/gamelift/model/DeleteMatchmakingConfigurationRequest.h>
 #include <aws/gamelift/model/DeleteMatchmakingRuleSetRequest.h>
 #include <aws/gamelift/model/DeleteScalingPolicyRequest.h>
+#include <aws/gamelift/model/DeleteScriptRequest.h>
 #include <aws/gamelift/model/DeleteVpcPeeringAuthorizationRequest.h>
 #include <aws/gamelift/model/DeleteVpcPeeringConnectionRequest.h>
 #include <aws/gamelift/model/DescribeAliasRequest.h>
@@ -70,6 +72,7 @@
 #include <aws/gamelift/model/DescribePlayerSessionsRequest.h>
 #include <aws/gamelift/model/DescribeRuntimeConfigurationRequest.h>
 #include <aws/gamelift/model/DescribeScalingPoliciesRequest.h>
+#include <aws/gamelift/model/DescribeScriptRequest.h>
 #include <aws/gamelift/model/DescribeVpcPeeringAuthorizationsRequest.h>
 #include <aws/gamelift/model/DescribeVpcPeeringConnectionsRequest.h>
 #include <aws/gamelift/model/GetGameSessionLogUrlRequest.h>
@@ -77,6 +80,7 @@
 #include <aws/gamelift/model/ListAliasesRequest.h>
 #include <aws/gamelift/model/ListBuildsRequest.h>
 #include <aws/gamelift/model/ListFleetsRequest.h>
+#include <aws/gamelift/model/ListScriptsRequest.h>
 #include <aws/gamelift/model/PutScalingPolicyRequest.h>
 #include <aws/gamelift/model/RequestUploadCredentialsRequest.h>
 #include <aws/gamelift/model/ResolveAliasRequest.h>
@@ -97,6 +101,7 @@
 #include <aws/gamelift/model/UpdateGameSessionQueueRequest.h>
 #include <aws/gamelift/model/UpdateMatchmakingConfigurationRequest.h>
 #include <aws/gamelift/model/UpdateRuntimeConfigurationRequest.h>
+#include <aws/gamelift/model/UpdateScriptRequest.h>
 #include <aws/gamelift/model/ValidateMatchmakingRuleSetRequest.h>
 
 using namespace Aws;
@@ -520,6 +525,41 @@ void GameLiftClient::CreatePlayerSessionsAsyncHelper(const CreatePlayerSessionsR
   handler(this, request, CreatePlayerSessions(request), context);
 }
 
+CreateScriptOutcome GameLiftClient::CreateScript(const CreateScriptRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateScriptOutcome(CreateScriptResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateScriptOutcome(outcome.GetError());
+  }
+}
+
+CreateScriptOutcomeCallable GameLiftClient::CreateScriptCallable(const CreateScriptRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateScriptOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateScript(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::CreateScriptAsync(const CreateScriptRequest& request, const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateScriptAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::CreateScriptAsyncHelper(const CreateScriptRequest& request, const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateScript(request), context);
+}
+
 CreateVpcPeeringAuthorizationOutcome GameLiftClient::CreateVpcPeeringAuthorization(const CreateVpcPeeringAuthorizationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -833,6 +873,41 @@ void GameLiftClient::DeleteScalingPolicyAsync(const DeleteScalingPolicyRequest& 
 void GameLiftClient::DeleteScalingPolicyAsyncHelper(const DeleteScalingPolicyRequest& request, const DeleteScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteScalingPolicy(request), context);
+}
+
+DeleteScriptOutcome GameLiftClient::DeleteScript(const DeleteScriptRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteScriptOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteScriptOutcome(outcome.GetError());
+  }
+}
+
+DeleteScriptOutcomeCallable GameLiftClient::DeleteScriptCallable(const DeleteScriptRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteScriptOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteScript(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DeleteScriptAsync(const DeleteScriptRequest& request, const DeleteScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteScriptAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DeleteScriptAsyncHelper(const DeleteScriptRequest& request, const DeleteScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteScript(request), context);
 }
 
 DeleteVpcPeeringAuthorizationOutcome GameLiftClient::DeleteVpcPeeringAuthorization(const DeleteVpcPeeringAuthorizationRequest& request) const
@@ -1570,6 +1645,41 @@ void GameLiftClient::DescribeScalingPoliciesAsyncHelper(const DescribeScalingPol
   handler(this, request, DescribeScalingPolicies(request), context);
 }
 
+DescribeScriptOutcome GameLiftClient::DescribeScript(const DescribeScriptRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeScriptOutcome(DescribeScriptResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeScriptOutcome(outcome.GetError());
+  }
+}
+
+DescribeScriptOutcomeCallable GameLiftClient::DescribeScriptCallable(const DescribeScriptRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeScriptOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeScript(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DescribeScriptAsync(const DescribeScriptRequest& request, const DescribeScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeScriptAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DescribeScriptAsyncHelper(const DescribeScriptRequest& request, const DescribeScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeScript(request), context);
+}
+
 DescribeVpcPeeringAuthorizationsOutcome GameLiftClient::DescribeVpcPeeringAuthorizations(const DescribeVpcPeeringAuthorizationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1813,6 +1923,41 @@ void GameLiftClient::ListFleetsAsync(const ListFleetsRequest& request, const Lis
 void GameLiftClient::ListFleetsAsyncHelper(const ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListFleets(request), context);
+}
+
+ListScriptsOutcome GameLiftClient::ListScripts(const ListScriptsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListScriptsOutcome(ListScriptsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListScriptsOutcome(outcome.GetError());
+  }
+}
+
+ListScriptsOutcomeCallable GameLiftClient::ListScriptsCallable(const ListScriptsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListScriptsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListScripts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::ListScriptsAsync(const ListScriptsRequest& request, const ListScriptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListScriptsAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::ListScriptsAsyncHelper(const ListScriptsRequest& request, const ListScriptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListScripts(request), context);
 }
 
 PutScalingPolicyOutcome GameLiftClient::PutScalingPolicy(const PutScalingPolicyRequest& request) const
@@ -2513,6 +2658,41 @@ void GameLiftClient::UpdateRuntimeConfigurationAsync(const UpdateRuntimeConfigur
 void GameLiftClient::UpdateRuntimeConfigurationAsyncHelper(const UpdateRuntimeConfigurationRequest& request, const UpdateRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateRuntimeConfiguration(request), context);
+}
+
+UpdateScriptOutcome GameLiftClient::UpdateScript(const UpdateScriptRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateScriptOutcome(UpdateScriptResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateScriptOutcome(outcome.GetError());
+  }
+}
+
+UpdateScriptOutcomeCallable GameLiftClient::UpdateScriptCallable(const UpdateScriptRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateScriptOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateScript(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::UpdateScriptAsync(const UpdateScriptRequest& request, const UpdateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateScriptAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::UpdateScriptAsyncHelper(const UpdateScriptRequest& request, const UpdateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateScript(request), context);
 }
 
 ValidateMatchmakingRuleSetOutcome GameLiftClient::ValidateMatchmakingRuleSet(const ValidateMatchmakingRuleSetRequest& request) const

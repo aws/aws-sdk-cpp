@@ -39,7 +39,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for CaptionSelectorSettings<p><h3>See Also:</h3>   <a
+   * Caption Selector Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CaptionSelectorSettings">AWS
    * API Reference</a></p>
    */

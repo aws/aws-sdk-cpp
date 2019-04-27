@@ -32,8 +32,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for WebvttDestinationSettings<p><h3>See Also:</h3>  
-   * <a
+   * Webvtt Destination Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/WebvttDestinationSettings">AWS
    * API Reference</a></p>
    */

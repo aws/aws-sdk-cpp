@@ -51,11 +51,11 @@ namespace Model
 
     /**
      * <p>The name of the SSM document that contains the configuration information for
-     * the instance. You can specify Command, Policy, or Automation documents.</p>
-     * <p>You can specify AWS-predefined documents, documents you created, or a
-     * document that is shared with you from another account.</p> <p>For SSM documents
-     * that are shared with you from other AWS accounts, you must specify the complete
-     * SSM document ARN, in the following format:</p> <p>
+     * the instance. You can specify Command or Automation documents.</p> <p>You can
+     * specify AWS-predefined documents, documents you created, or a document that is
+     * shared with you from another account.</p> <p>For SSM documents that are shared
+     * with you from other AWS accounts, you must specify the complete SSM document
+     * ARN, in the following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -67,11 +67,11 @@ namespace Model
 
     /**
      * <p>The name of the SSM document that contains the configuration information for
-     * the instance. You can specify Command, Policy, or Automation documents.</p>
-     * <p>You can specify AWS-predefined documents, documents you created, or a
-     * document that is shared with you from another account.</p> <p>For SSM documents
-     * that are shared with you from other AWS accounts, you must specify the complete
-     * SSM document ARN, in the following format:</p> <p>
+     * the instance. You can specify Command or Automation documents.</p> <p>You can
+     * specify AWS-predefined documents, documents you created, or a document that is
+     * shared with you from another account.</p> <p>For SSM documents that are shared
+     * with you from other AWS accounts, you must specify the complete SSM document
+     * ARN, in the following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -83,11 +83,11 @@ namespace Model
 
     /**
      * <p>The name of the SSM document that contains the configuration information for
-     * the instance. You can specify Command, Policy, or Automation documents.</p>
-     * <p>You can specify AWS-predefined documents, documents you created, or a
-     * document that is shared with you from another account.</p> <p>For SSM documents
-     * that are shared with you from other AWS accounts, you must specify the complete
-     * SSM document ARN, in the following format:</p> <p>
+     * the instance. You can specify Command or Automation documents.</p> <p>You can
+     * specify AWS-predefined documents, documents you created, or a document that is
+     * shared with you from another account.</p> <p>For SSM documents that are shared
+     * with you from other AWS accounts, you must specify the complete SSM document
+     * ARN, in the following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -99,11 +99,11 @@ namespace Model
 
     /**
      * <p>The name of the SSM document that contains the configuration information for
-     * the instance. You can specify Command, Policy, or Automation documents.</p>
-     * <p>You can specify AWS-predefined documents, documents you created, or a
-     * document that is shared with you from another account.</p> <p>For SSM documents
-     * that are shared with you from other AWS accounts, you must specify the complete
-     * SSM document ARN, in the following format:</p> <p>
+     * the instance. You can specify Command or Automation documents.</p> <p>You can
+     * specify AWS-predefined documents, documents you created, or a document that is
+     * shared with you from another account.</p> <p>For SSM documents that are shared
+     * with you from other AWS accounts, you must specify the complete SSM document
+     * ARN, in the following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -115,11 +115,11 @@ namespace Model
 
     /**
      * <p>The name of the SSM document that contains the configuration information for
-     * the instance. You can specify Command, Policy, or Automation documents.</p>
-     * <p>You can specify AWS-predefined documents, documents you created, or a
-     * document that is shared with you from another account.</p> <p>For SSM documents
-     * that are shared with you from other AWS accounts, you must specify the complete
-     * SSM document ARN, in the following format:</p> <p>
+     * the instance. You can specify Command or Automation documents.</p> <p>You can
+     * specify AWS-predefined documents, documents you created, or a document that is
+     * shared with you from another account.</p> <p>For SSM documents that are shared
+     * with you from other AWS accounts, you must specify the complete SSM document
+     * ARN, in the following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -131,11 +131,11 @@ namespace Model
 
     /**
      * <p>The name of the SSM document that contains the configuration information for
-     * the instance. You can specify Command, Policy, or Automation documents.</p>
-     * <p>You can specify AWS-predefined documents, documents you created, or a
-     * document that is shared with you from another account.</p> <p>For SSM documents
-     * that are shared with you from other AWS accounts, you must specify the complete
-     * SSM document ARN, in the following format:</p> <p>
+     * the instance. You can specify Command or Automation documents.</p> <p>You can
+     * specify AWS-predefined documents, documents you created, or a document that is
+     * shared with you from another account.</p> <p>For SSM documents that are shared
+     * with you from other AWS accounts, you must specify the complete SSM document
+     * ARN, in the following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -147,11 +147,11 @@ namespace Model
 
     /**
      * <p>The name of the SSM document that contains the configuration information for
-     * the instance. You can specify Command, Policy, or Automation documents.</p>
-     * <p>You can specify AWS-predefined documents, documents you created, or a
-     * document that is shared with you from another account.</p> <p>For SSM documents
-     * that are shared with you from other AWS accounts, you must specify the complete
-     * SSM document ARN, in the following format:</p> <p>
+     * the instance. You can specify Command or Automation documents.</p> <p>You can
+     * specify AWS-predefined documents, documents you created, or a document that is
+     * shared with you from another account.</p> <p>For SSM documents that are shared
+     * with you from other AWS accounts, you must specify the complete SSM document
+     * ARN, in the following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -163,11 +163,11 @@ namespace Model
 
     /**
      * <p>The name of the SSM document that contains the configuration information for
-     * the instance. You can specify Command, Policy, or Automation documents.</p>
-     * <p>You can specify AWS-predefined documents, documents you created, or a
-     * document that is shared with you from another account.</p> <p>For SSM documents
-     * that are shared with you from other AWS accounts, you must specify the complete
-     * SSM document ARN, in the following format:</p> <p>
+     * the instance. You can specify Command or Automation documents.</p> <p>You can
+     * specify AWS-predefined documents, documents you created, or a document that is
+     * shared with you from another account.</p> <p>For SSM documents that are shared
+     * with you from other AWS accounts, you must specify the complete SSM document
+     * ARN, in the following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -269,62 +269,62 @@ namespace Model
 
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline CreateAssociationRequest& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline CreateAssociationRequest& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline CreateAssociationRequest& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline CreateAssociationRequest& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline CreateAssociationRequest& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline CreateAssociationRequest& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline CreateAssociationRequest& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The parameters for the documents runtime configuration. </p>
+     * <p>The parameters for the runtime configuration of the document. </p>
      */
     inline CreateAssociationRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
@@ -680,10 +680,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
@@ -692,10 +692,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
@@ -704,10 +704,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
@@ -716,10 +716,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
 
@@ -728,10 +728,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
 
@@ -740,10 +740,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline CreateAssociationRequest& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
@@ -752,10 +752,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline CreateAssociationRequest& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
@@ -764,10 +764,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline CreateAssociationRequest& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 

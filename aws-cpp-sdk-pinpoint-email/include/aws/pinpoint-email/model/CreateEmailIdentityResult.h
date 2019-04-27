@@ -82,7 +82,7 @@ namespace Model
      * <p>Specifies whether or not the identity is verified. In Amazon Pinpoint, you
      * can only send email from verified email addresses or domains. For more
      * information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
      * Pinpoint User Guide</a>.</p>
      */
     inline bool GetVerifiedForSendingStatus() const{ return m_verifiedForSendingStatus; }
@@ -91,7 +91,7 @@ namespace Model
      * <p>Specifies whether or not the identity is verified. In Amazon Pinpoint, you
      * can only send email from verified email addresses or domains. For more
      * information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
      * Pinpoint User Guide</a>.</p>
      */
     inline void SetVerifiedForSendingStatus(bool value) { m_verifiedForSendingStatus = value; }
@@ -100,7 +100,7 @@ namespace Model
      * <p>Specifies whether or not the identity is verified. In Amazon Pinpoint, you
      * can only send email from verified email addresses or domains. For more
      * information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon
      * Pinpoint User Guide</a>.</p>
      */
     inline CreateEmailIdentityResult& WithVerifiedForSendingStatus(bool value) { SetVerifiedForSendingStatus(value); return *this;}

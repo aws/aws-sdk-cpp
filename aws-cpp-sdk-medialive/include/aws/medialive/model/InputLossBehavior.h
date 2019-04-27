@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for InputLossBehavior<p><h3>See Also:</h3>   <a
+   * Input Loss Behavior<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputLossBehavior">AWS
    * API Reference</a></p>
    */

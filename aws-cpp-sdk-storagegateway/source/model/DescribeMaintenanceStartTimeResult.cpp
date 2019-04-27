@@ -29,14 +29,16 @@ using namespace Aws;
 DescribeMaintenanceStartTimeResult::DescribeMaintenanceStartTimeResult() : 
     m_hourOfDay(0),
     m_minuteOfHour(0),
-    m_dayOfWeek(0)
+    m_dayOfWeek(0),
+    m_dayOfMonth(0)
 {
 }
 
 DescribeMaintenanceStartTimeResult::DescribeMaintenanceStartTimeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_hourOfDay(0),
     m_minuteOfHour(0),
-    m_dayOfWeek(0)
+    m_dayOfWeek(0),
+    m_dayOfMonth(0)
 {
   *this = result;
 }
@@ -65,6 +67,12 @@ DescribeMaintenanceStartTimeResult& DescribeMaintenanceStartTimeResult::operator
   if(jsonValue.ValueExists("DayOfWeek"))
   {
     m_dayOfWeek = jsonValue.GetInteger("DayOfWeek");
+
+  }
+
+  if(jsonValue.ValueExists("DayOfMonth"))
+  {
+    m_dayOfMonth = jsonValue.GetInteger("DayOfMonth");
 
   }
 

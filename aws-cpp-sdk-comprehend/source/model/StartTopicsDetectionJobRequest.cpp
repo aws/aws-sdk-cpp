@@ -30,7 +30,8 @@ StartTopicsDetectionJobRequest::StartTopicsDetectionJobRequest() :
     m_numberOfTopics(0),
     m_numberOfTopicsHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
+    m_clientRequestTokenHasBeenSet(true),
+    m_volumeKmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,12 @@ Aws::String StartTopicsDetectionJobRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("ClientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_volumeKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
 
   }
 

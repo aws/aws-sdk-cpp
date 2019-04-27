@@ -55,7 +55,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for M2tsSettings<p><h3>See Also:</h3>   <a
+   * M2ts Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/M2tsSettings">AWS
    * API Reference</a></p>
    */

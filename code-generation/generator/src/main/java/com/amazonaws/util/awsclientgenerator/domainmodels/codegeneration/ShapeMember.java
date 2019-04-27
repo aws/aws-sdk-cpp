@@ -32,12 +32,13 @@ public class ShapeMember {
     String location;
     String locationName;
     String queryName;
-    String xmlnsUri;
+    XmlNamespace xmlNamespace;
     boolean isFlattened;
     boolean isCustomizedQuery;
     boolean isEventPayload;
     boolean hostLabel;
     boolean endpointDiscoveryId;
+    boolean xmlAttribute;
 
     public boolean isUsedForHeader() {
         return "header".equals(location) || "headers".equals(location);

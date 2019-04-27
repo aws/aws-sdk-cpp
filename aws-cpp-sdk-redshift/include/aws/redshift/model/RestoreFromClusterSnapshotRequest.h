@@ -622,7 +622,7 @@ namespace Model
      * <p>The name of the parameter group to be associated with this cluster.</p>
      * <p>Default: The default Amazon Redshift cluster parameter group. For information
      * about the default parameter group, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
      * with Amazon Redshift Parameter Groups</a>.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
@@ -634,7 +634,7 @@ namespace Model
      * <p>The name of the parameter group to be associated with this cluster.</p>
      * <p>Default: The default Amazon Redshift cluster parameter group. For information
      * about the default parameter group, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
      * with Amazon Redshift Parameter Groups</a>.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
@@ -646,7 +646,7 @@ namespace Model
      * <p>The name of the parameter group to be associated with this cluster.</p>
      * <p>Default: The default Amazon Redshift cluster parameter group. For information
      * about the default parameter group, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
      * with Amazon Redshift Parameter Groups</a>.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
@@ -658,7 +658,7 @@ namespace Model
      * <p>The name of the parameter group to be associated with this cluster.</p>
      * <p>Default: The default Amazon Redshift cluster parameter group. For information
      * about the default parameter group, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
      * with Amazon Redshift Parameter Groups</a>.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
@@ -670,7 +670,7 @@ namespace Model
      * <p>The name of the parameter group to be associated with this cluster.</p>
      * <p>Default: The default Amazon Redshift cluster parameter group. For information
      * about the default parameter group, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
      * with Amazon Redshift Parameter Groups</a>.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
@@ -682,7 +682,7 @@ namespace Model
      * <p>The name of the parameter group to be associated with this cluster.</p>
      * <p>Default: The default Amazon Redshift cluster parameter group. For information
      * about the default parameter group, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
      * with Amazon Redshift Parameter Groups</a>.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
@@ -694,7 +694,7 @@ namespace Model
      * <p>The name of the parameter group to be associated with this cluster.</p>
      * <p>Default: The default Amazon Redshift cluster parameter group. For information
      * about the default parameter group, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
      * with Amazon Redshift Parameter Groups</a>.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
@@ -706,7 +706,7 @@ namespace Model
      * <p>The name of the parameter group to be associated with this cluster.</p>
      * <p>Default: The default Amazon Redshift cluster parameter group. For information
      * about the default parameter group, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
      * with Amazon Redshift Parameter Groups</a>.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
@@ -848,7 +848,7 @@ namespace Model
      * occur.</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p> Default:
      * The value selected for the cluster from which the snapshot was taken. For more
      * information about the time blocks for each region, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
      * Windows</a> in Amazon Redshift Cluster Management Guide. </p> <p>Valid Days: Mon
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
@@ -860,7 +860,7 @@ namespace Model
      * occur.</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p> Default:
      * The value selected for the cluster from which the snapshot was taken. For more
      * information about the time blocks for each region, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
      * Windows</a> in Amazon Redshift Cluster Management Guide. </p> <p>Valid Days: Mon
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
@@ -872,7 +872,7 @@ namespace Model
      * occur.</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p> Default:
      * The value selected for the cluster from which the snapshot was taken. For more
      * information about the time blocks for each region, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
      * Windows</a> in Amazon Redshift Cluster Management Guide. </p> <p>Valid Days: Mon
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
@@ -884,7 +884,7 @@ namespace Model
      * occur.</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p> Default:
      * The value selected for the cluster from which the snapshot was taken. For more
      * information about the time blocks for each region, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
      * Windows</a> in Amazon Redshift Cluster Management Guide. </p> <p>Valid Days: Mon
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
@@ -896,7 +896,7 @@ namespace Model
      * occur.</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p> Default:
      * The value selected for the cluster from which the snapshot was taken. For more
      * information about the time blocks for each region, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
      * Windows</a> in Amazon Redshift Cluster Management Guide. </p> <p>Valid Days: Mon
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
@@ -908,7 +908,7 @@ namespace Model
      * occur.</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p> Default:
      * The value selected for the cluster from which the snapshot was taken. For more
      * information about the time blocks for each region, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
      * Windows</a> in Amazon Redshift Cluster Management Guide. </p> <p>Valid Days: Mon
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
@@ -920,7 +920,7 @@ namespace Model
      * occur.</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p> Default:
      * The value selected for the cluster from which the snapshot was taken. For more
      * information about the time blocks for each region, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
      * Windows</a> in Amazon Redshift Cluster Management Guide. </p> <p>Valid Days: Mon
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
@@ -932,7 +932,7 @@ namespace Model
      * occur.</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p> Default:
      * The value selected for the cluster from which the snapshot was taken. For more
      * information about the time blocks for each region, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
      * Windows</a> in Amazon Redshift Cluster Management Guide. </p> <p>Valid Days: Mon
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
@@ -981,16 +981,36 @@ namespace Model
     inline RestoreFromClusterSnapshotRequest& WithAutomatedSnapshotRetentionPeriod(int value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
 
 
-    
+    /**
+     * <p>The default number of days to retain a manual snapshot. If the value is -1,
+     * the snapshot is retained indefinitely. This setting doesn't change the retention
+     * period of existing snapshots.</p> <p>The value must be either -1 or an integer
+     * between 1 and 3,653.</p>
+     */
     inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
 
-    
+    /**
+     * <p>The default number of days to retain a manual snapshot. If the value is -1,
+     * the snapshot is retained indefinitely. This setting doesn't change the retention
+     * period of existing snapshots.</p> <p>The value must be either -1 or an integer
+     * between 1 and 3,653.</p>
+     */
     inline bool ManualSnapshotRetentionPeriodHasBeenSet() const { return m_manualSnapshotRetentionPeriodHasBeenSet; }
 
-    
+    /**
+     * <p>The default number of days to retain a manual snapshot. If the value is -1,
+     * the snapshot is retained indefinitely. This setting doesn't change the retention
+     * period of existing snapshots.</p> <p>The value must be either -1 or an integer
+     * between 1 and 3,653.</p>
+     */
     inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
 
-    
+    /**
+     * <p>The default number of days to retain a manual snapshot. If the value is -1,
+     * the snapshot is retained indefinitely. This setting doesn't change the retention
+     * period of existing snapshots.</p> <p>The value must be either -1 or an integer
+     * between 1 and 3,653.</p>
+     */
     inline RestoreFromClusterSnapshotRequest& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
 
 
@@ -1062,7 +1082,7 @@ namespace Model
      * dc1.large instance type or dc2.large instance type. You can't restore
      * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
      * to a dc2.8large cluster. For more information about node types, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p>
      */
@@ -1079,7 +1099,7 @@ namespace Model
      * dc1.large instance type or dc2.large instance type. You can't restore
      * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
      * to a dc2.8large cluster. For more information about node types, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p>
      */
@@ -1096,7 +1116,7 @@ namespace Model
      * dc1.large instance type or dc2.large instance type. You can't restore
      * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
      * to a dc2.8large cluster. For more information about node types, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p>
      */
@@ -1113,7 +1133,7 @@ namespace Model
      * dc1.large instance type or dc2.large instance type. You can't restore
      * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
      * to a dc2.8large cluster. For more information about node types, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p>
      */
@@ -1130,7 +1150,7 @@ namespace Model
      * dc1.large instance type or dc2.large instance type. You can't restore
      * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
      * to a dc2.8large cluster. For more information about node types, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p>
      */
@@ -1147,7 +1167,7 @@ namespace Model
      * dc1.large instance type or dc2.large instance type. You can't restore
      * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
      * to a dc2.8large cluster. For more information about node types, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p>
      */
@@ -1164,7 +1184,7 @@ namespace Model
      * dc1.large instance type or dc2.large instance type. You can't restore
      * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
      * to a dc2.8large cluster. For more information about node types, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p>
      */
@@ -1181,7 +1201,7 @@ namespace Model
      * dc1.large instance type or dc2.large instance type. You can't restore
      * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
      * to a dc2.8large cluster. For more information about node types, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p>
      */
@@ -1192,7 +1212,7 @@ namespace Model
      * <p>An option that specifies whether to create the cluster with enhanced VPC
      * routing enabled. To create a cluster that uses enhanced VPC routing, the cluster
      * must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
      * VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> <p>If this
      * option is <code>true</code>, enhanced VPC routing is enabled. </p> <p>Default:
      * false</p>
@@ -1203,7 +1223,7 @@ namespace Model
      * <p>An option that specifies whether to create the cluster with enhanced VPC
      * routing enabled. To create a cluster that uses enhanced VPC routing, the cluster
      * must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
      * VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> <p>If this
      * option is <code>true</code>, enhanced VPC routing is enabled. </p> <p>Default:
      * false</p>
@@ -1214,7 +1234,7 @@ namespace Model
      * <p>An option that specifies whether to create the cluster with enhanced VPC
      * routing enabled. To create a cluster that uses enhanced VPC routing, the cluster
      * must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
      * VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> <p>If this
      * option is <code>true</code>, enhanced VPC routing is enabled. </p> <p>Default:
      * false</p>
@@ -1225,7 +1245,7 @@ namespace Model
      * <p>An option that specifies whether to create the cluster with enhanced VPC
      * routing enabled. To create a cluster that uses enhanced VPC routing, the cluster
      * must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
      * VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> <p>If this
      * option is <code>true</code>, enhanced VPC routing is enabled. </p> <p>Default:
      * false</p>

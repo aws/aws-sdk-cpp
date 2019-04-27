@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Information about one or more Availability Zones.</p>
+     * <p>Information about the Availability Zones.</p>
      */
     inline const Aws::Vector<AvailabilityZone>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
     /**
-     * <p>Information about one or more Availability Zones.</p>
+     * <p>Information about the Availability Zones.</p>
      */
     inline void SetAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { m_availabilityZones = value; }
 
     /**
-     * <p>Information about one or more Availability Zones.</p>
+     * <p>Information about the Availability Zones.</p>
      */
     inline void SetAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { m_availabilityZones = std::move(value); }
 
     /**
-     * <p>Information about one or more Availability Zones.</p>
+     * <p>Information about the Availability Zones.</p>
      */
     inline DescribeAvailabilityZonesResponse& WithAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { SetAvailabilityZones(value); return *this;}
 
     /**
-     * <p>Information about one or more Availability Zones.</p>
+     * <p>Information about the Availability Zones.</p>
      */
     inline DescribeAvailabilityZonesResponse& WithAvailabilityZones(Aws::Vector<AvailabilityZone>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
-     * <p>Information about one or more Availability Zones.</p>
+     * <p>Information about the Availability Zones.</p>
      */
     inline DescribeAvailabilityZonesResponse& AddAvailabilityZones(const AvailabilityZone& value) { m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>Information about one or more Availability Zones.</p>
+     * <p>Information about the Availability Zones.</p>
      */
     inline DescribeAvailabilityZonesResponse& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZones.push_back(std::move(value)); return *this; }
 

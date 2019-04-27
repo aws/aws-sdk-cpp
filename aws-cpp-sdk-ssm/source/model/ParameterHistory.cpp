@@ -40,7 +40,10 @@ ParameterHistory::ParameterHistory() :
     m_allowedPatternHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_tier(ParameterTier::NOT_SET),
+    m_tierHasBeenSet(false),
+    m_policiesHasBeenSet(false)
 {
 }
 
@@ -56,7 +59,10 @@ ParameterHistory::ParameterHistory(JsonView jsonValue) :
     m_allowedPatternHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_tier(ParameterTier::NOT_SET),
+    m_tierHasBeenSet(false),
+    m_policiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -136,6 +142,23 @@ ParameterHistory& ParameterHistory::operator =(JsonView jsonValue)
     m_labelsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tier"))
+  {
+    m_tier = ParameterTierMapper::GetParameterTierForName(jsonValue.GetString("Tier"));
+
+    m_tierHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Policies"))
+  {
+    Array<JsonView> policiesJsonList = jsonValue.GetArray("Policies");
+    for(unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex)
+    {
+      m_policies.push_back(policiesJsonList[policiesIndex].AsObject());
+    }
+    m_policiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -203,6 +226,22 @@ JsonValue ParameterHistory::Jsonize() const
      labelsJsonList[labelsIndex].AsString(m_labels[labelsIndex]);
    }
    payload.WithArray("Labels", std::move(labelsJsonList));
+
+  }
+
+  if(m_tierHasBeenSet)
+  {
+   payload.WithString("Tier", ParameterTierMapper::GetNameForParameterTier(m_tier));
+  }
+
+  if(m_policiesHasBeenSet)
+  {
+   Array<JsonValue> policiesJsonList(m_policies.size());
+   for(unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex)
+   {
+     policiesJsonList[policiesIndex].AsObject(m_policies[policiesIndex].Jsonize());
+   }
+   payload.WithArray("Policies", std::move(policiesJsonList));
 
   }
 

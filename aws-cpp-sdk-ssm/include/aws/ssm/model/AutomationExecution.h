@@ -276,56 +276,56 @@ namespace Model
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
-     * execution. An Automation document contains a list of steps that are executed in
+     * execution. An Automation document contains a list of steps that are run in
      * order.</p>
      */
     inline const Aws::Vector<StepExecution>& GetStepExecutions() const{ return m_stepExecutions; }
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
-     * execution. An Automation document contains a list of steps that are executed in
+     * execution. An Automation document contains a list of steps that are run in
      * order.</p>
      */
     inline bool StepExecutionsHasBeenSet() const { return m_stepExecutionsHasBeenSet; }
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
-     * execution. An Automation document contains a list of steps that are executed in
+     * execution. An Automation document contains a list of steps that are run in
      * order.</p>
      */
     inline void SetStepExecutions(const Aws::Vector<StepExecution>& value) { m_stepExecutionsHasBeenSet = true; m_stepExecutions = value; }
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
-     * execution. An Automation document contains a list of steps that are executed in
+     * execution. An Automation document contains a list of steps that are run in
      * order.</p>
      */
     inline void SetStepExecutions(Aws::Vector<StepExecution>&& value) { m_stepExecutionsHasBeenSet = true; m_stepExecutions = std::move(value); }
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
-     * execution. An Automation document contains a list of steps that are executed in
+     * execution. An Automation document contains a list of steps that are run in
      * order.</p>
      */
     inline AutomationExecution& WithStepExecutions(const Aws::Vector<StepExecution>& value) { SetStepExecutions(value); return *this;}
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
-     * execution. An Automation document contains a list of steps that are executed in
+     * execution. An Automation document contains a list of steps that are run in
      * order.</p>
      */
     inline AutomationExecution& WithStepExecutions(Aws::Vector<StepExecution>&& value) { SetStepExecutions(std::move(value)); return *this;}
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
-     * execution. An Automation document contains a list of steps that are executed in
+     * execution. An Automation document contains a list of steps that are run in
      * order.</p>
      */
     inline AutomationExecution& AddStepExecutions(const StepExecution& value) { m_stepExecutionsHasBeenSet = true; m_stepExecutions.push_back(value); return *this; }
 
     /**
      * <p>A list of details about the current state of all steps that comprise an
-     * execution. An Automation document contains a list of steps that are executed in
+     * execution. An Automation document contains a list of steps that are run in
      * order.</p>
      */
     inline AutomationExecution& AddStepExecutions(StepExecution&& value) { m_stepExecutionsHasBeenSet = true; m_stepExecutions.push_back(std::move(value)); return *this; }
@@ -616,124 +616,124 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user who executed the automation.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who ran the automation.</p>
      */
     inline const Aws::String& GetExecutedBy() const{ return m_executedBy; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user who executed the automation.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who ran the automation.</p>
      */
     inline bool ExecutedByHasBeenSet() const { return m_executedByHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user who executed the automation.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who ran the automation.</p>
      */
     inline void SetExecutedBy(const Aws::String& value) { m_executedByHasBeenSet = true; m_executedBy = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user who executed the automation.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who ran the automation.</p>
      */
     inline void SetExecutedBy(Aws::String&& value) { m_executedByHasBeenSet = true; m_executedBy = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user who executed the automation.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who ran the automation.</p>
      */
     inline void SetExecutedBy(const char* value) { m_executedByHasBeenSet = true; m_executedBy.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user who executed the automation.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who ran the automation.</p>
      */
     inline AutomationExecution& WithExecutedBy(const Aws::String& value) { SetExecutedBy(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user who executed the automation.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who ran the automation.</p>
      */
     inline AutomationExecution& WithExecutedBy(Aws::String&& value) { SetExecutedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user who executed the automation.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who ran the automation.</p>
      */
     inline AutomationExecution& WithExecutedBy(const char* value) { SetExecutedBy(value); return *this;}
 
 
     /**
-     * <p>The name of the currently executing step.</p>
+     * <p>The name of the step that is currently running.</p>
      */
     inline const Aws::String& GetCurrentStepName() const{ return m_currentStepName; }
 
     /**
-     * <p>The name of the currently executing step.</p>
+     * <p>The name of the step that is currently running.</p>
      */
     inline bool CurrentStepNameHasBeenSet() const { return m_currentStepNameHasBeenSet; }
 
     /**
-     * <p>The name of the currently executing step.</p>
+     * <p>The name of the step that is currently running.</p>
      */
     inline void SetCurrentStepName(const Aws::String& value) { m_currentStepNameHasBeenSet = true; m_currentStepName = value; }
 
     /**
-     * <p>The name of the currently executing step.</p>
+     * <p>The name of the step that is currently running.</p>
      */
     inline void SetCurrentStepName(Aws::String&& value) { m_currentStepNameHasBeenSet = true; m_currentStepName = std::move(value); }
 
     /**
-     * <p>The name of the currently executing step.</p>
+     * <p>The name of the step that is currently running.</p>
      */
     inline void SetCurrentStepName(const char* value) { m_currentStepNameHasBeenSet = true; m_currentStepName.assign(value); }
 
     /**
-     * <p>The name of the currently executing step.</p>
+     * <p>The name of the step that is currently running.</p>
      */
     inline AutomationExecution& WithCurrentStepName(const Aws::String& value) { SetCurrentStepName(value); return *this;}
 
     /**
-     * <p>The name of the currently executing step.</p>
+     * <p>The name of the step that is currently running.</p>
      */
     inline AutomationExecution& WithCurrentStepName(Aws::String&& value) { SetCurrentStepName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the currently executing step.</p>
+     * <p>The name of the step that is currently running.</p>
      */
     inline AutomationExecution& WithCurrentStepName(const char* value) { SetCurrentStepName(value); return *this;}
 
 
     /**
-     * <p>The action of the currently executing step.</p>
+     * <p>The action of the step that is currently running.</p>
      */
     inline const Aws::String& GetCurrentAction() const{ return m_currentAction; }
 
     /**
-     * <p>The action of the currently executing step.</p>
+     * <p>The action of the step that is currently running.</p>
      */
     inline bool CurrentActionHasBeenSet() const { return m_currentActionHasBeenSet; }
 
     /**
-     * <p>The action of the currently executing step.</p>
+     * <p>The action of the step that is currently running.</p>
      */
     inline void SetCurrentAction(const Aws::String& value) { m_currentActionHasBeenSet = true; m_currentAction = value; }
 
     /**
-     * <p>The action of the currently executing step.</p>
+     * <p>The action of the step that is currently running.</p>
      */
     inline void SetCurrentAction(Aws::String&& value) { m_currentActionHasBeenSet = true; m_currentAction = std::move(value); }
 
     /**
-     * <p>The action of the currently executing step.</p>
+     * <p>The action of the step that is currently running.</p>
      */
     inline void SetCurrentAction(const char* value) { m_currentActionHasBeenSet = true; m_currentAction.assign(value); }
 
     /**
-     * <p>The action of the currently executing step.</p>
+     * <p>The action of the step that is currently running.</p>
      */
     inline AutomationExecution& WithCurrentAction(const Aws::String& value) { SetCurrentAction(value); return *this;}
 
     /**
-     * <p>The action of the currently executing step.</p>
+     * <p>The action of the step that is currently running.</p>
      */
     inline AutomationExecution& WithCurrentAction(Aws::String&& value) { SetCurrentAction(std::move(value)); return *this;}
 
     /**
-     * <p>The action of the currently executing step.</p>
+     * <p>The action of the step that is currently running.</p>
      */
     inline AutomationExecution& WithCurrentAction(const char* value) { SetCurrentAction(value); return *this;}
 
@@ -1032,50 +1032,50 @@ namespace Model
 
 
     /**
-     * <p>The combination of AWS Regions and/or AWS accounts where you want to execute
-     * the Automation.</p>
+     * <p>The combination of AWS Regions and/or AWS accounts where you want to run the
+     * Automation.</p>
      */
     inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
 
     /**
-     * <p>The combination of AWS Regions and/or AWS accounts where you want to execute
-     * the Automation.</p>
+     * <p>The combination of AWS Regions and/or AWS accounts where you want to run the
+     * Automation.</p>
      */
     inline bool TargetLocationsHasBeenSet() const { return m_targetLocationsHasBeenSet; }
 
     /**
-     * <p>The combination of AWS Regions and/or AWS accounts where you want to execute
-     * the Automation.</p>
+     * <p>The combination of AWS Regions and/or AWS accounts where you want to run the
+     * Automation.</p>
      */
     inline void SetTargetLocations(const Aws::Vector<TargetLocation>& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = value; }
 
     /**
-     * <p>The combination of AWS Regions and/or AWS accounts where you want to execute
-     * the Automation.</p>
+     * <p>The combination of AWS Regions and/or AWS accounts where you want to run the
+     * Automation.</p>
      */
     inline void SetTargetLocations(Aws::Vector<TargetLocation>&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::move(value); }
 
     /**
-     * <p>The combination of AWS Regions and/or AWS accounts where you want to execute
-     * the Automation.</p>
+     * <p>The combination of AWS Regions and/or AWS accounts where you want to run the
+     * Automation.</p>
      */
     inline AutomationExecution& WithTargetLocations(const Aws::Vector<TargetLocation>& value) { SetTargetLocations(value); return *this;}
 
     /**
-     * <p>The combination of AWS Regions and/or AWS accounts where you want to execute
-     * the Automation.</p>
+     * <p>The combination of AWS Regions and/or AWS accounts where you want to run the
+     * Automation.</p>
      */
     inline AutomationExecution& WithTargetLocations(Aws::Vector<TargetLocation>&& value) { SetTargetLocations(std::move(value)); return *this;}
 
     /**
-     * <p>The combination of AWS Regions and/or AWS accounts where you want to execute
-     * the Automation.</p>
+     * <p>The combination of AWS Regions and/or AWS accounts where you want to run the
+     * Automation.</p>
      */
     inline AutomationExecution& AddTargetLocations(const TargetLocation& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(value); return *this; }
 
     /**
-     * <p>The combination of AWS Regions and/or AWS accounts where you want to execute
-     * the Automation.</p>
+     * <p>The combination of AWS Regions and/or AWS accounts where you want to run the
+     * Automation.</p>
      */
     inline AutomationExecution& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
 

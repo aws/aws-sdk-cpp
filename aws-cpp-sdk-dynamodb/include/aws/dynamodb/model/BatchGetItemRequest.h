@@ -71,7 +71,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -80,7 +80,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
      * define specific items in the table. For each primary key, you must provide
@@ -93,11 +93,11 @@ namespace Model
      * must be separated by commas.</p> <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes are not
      * found, they will not appear in the result.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
      * <code>ProjectionExpression</code> instead. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>. </p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, KeysAndAttributes>& GetRequestItems() const{ return m_requestItems; }
@@ -122,7 +122,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -131,7 +131,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
      * define specific items in the table. For each primary key, you must provide
@@ -144,11 +144,11 @@ namespace Model
      * must be separated by commas.</p> <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes are not
      * found, they will not appear in the result.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
      * <code>ProjectionExpression</code> instead. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>. </p> </li> </ul>
      */
     inline bool RequestItemsHasBeenSet() const { return m_requestItemsHasBeenSet; }
@@ -173,7 +173,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -182,7 +182,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
      * define specific items in the table. For each primary key, you must provide
@@ -195,11 +195,11 @@ namespace Model
      * must be separated by commas.</p> <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes are not
      * found, they will not appear in the result.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
      * <code>ProjectionExpression</code> instead. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>. </p> </li> </ul>
      */
     inline void SetRequestItems(const Aws::Map<Aws::String, KeysAndAttributes>& value) { m_requestItemsHasBeenSet = true; m_requestItems = value; }
@@ -224,7 +224,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -233,7 +233,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
      * define specific items in the table. For each primary key, you must provide
@@ -246,11 +246,11 @@ namespace Model
      * must be separated by commas.</p> <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes are not
      * found, they will not appear in the result.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
      * <code>ProjectionExpression</code> instead. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>. </p> </li> </ul>
      */
     inline void SetRequestItems(Aws::Map<Aws::String, KeysAndAttributes>&& value) { m_requestItemsHasBeenSet = true; m_requestItems = std::move(value); }
@@ -275,7 +275,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -284,7 +284,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
      * define specific items in the table. For each primary key, you must provide
@@ -297,11 +297,11 @@ namespace Model
      * must be separated by commas.</p> <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes are not
      * found, they will not appear in the result.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
      * <code>ProjectionExpression</code> instead. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>. </p> </li> </ul>
      */
     inline BatchGetItemRequest& WithRequestItems(const Aws::Map<Aws::String, KeysAndAttributes>& value) { SetRequestItems(value); return *this;}
@@ -326,7 +326,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -335,7 +335,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
      * define specific items in the table. For each primary key, you must provide
@@ -348,11 +348,11 @@ namespace Model
      * must be separated by commas.</p> <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes are not
      * found, they will not appear in the result.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
      * <code>ProjectionExpression</code> instead. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>. </p> </li> </ul>
      */
     inline BatchGetItemRequest& WithRequestItems(Aws::Map<Aws::String, KeysAndAttributes>&& value) { SetRequestItems(std::move(value)); return *this;}
@@ -377,7 +377,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -386,7 +386,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
      * define specific items in the table. For each primary key, you must provide
@@ -399,11 +399,11 @@ namespace Model
      * must be separated by commas.</p> <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes are not
      * found, they will not appear in the result.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
      * <code>ProjectionExpression</code> instead. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>. </p> </li> </ul>
      */
     inline BatchGetItemRequest& AddRequestItems(const Aws::String& key, const KeysAndAttributes& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, value); return *this; }
@@ -428,7 +428,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -437,7 +437,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
      * define specific items in the table. For each primary key, you must provide
@@ -450,11 +450,11 @@ namespace Model
      * must be separated by commas.</p> <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes are not
      * found, they will not appear in the result.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
      * <code>ProjectionExpression</code> instead. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>. </p> </li> </ul>
      */
     inline BatchGetItemRequest& AddRequestItems(Aws::String&& key, const KeysAndAttributes& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(std::move(key), value); return *this; }
@@ -479,7 +479,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -488,7 +488,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
      * define specific items in the table. For each primary key, you must provide
@@ -501,11 +501,11 @@ namespace Model
      * must be separated by commas.</p> <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes are not
      * found, they will not appear in the result.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
      * <code>ProjectionExpression</code> instead. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>. </p> </li> </ul>
      */
     inline BatchGetItemRequest& AddRequestItems(const Aws::String& key, KeysAndAttributes&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, std::move(value)); return *this; }
@@ -530,7 +530,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -539,7 +539,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
      * define specific items in the table. For each primary key, you must provide
@@ -552,11 +552,11 @@ namespace Model
      * must be separated by commas.</p> <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes are not
      * found, they will not appear in the result.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
      * <code>ProjectionExpression</code> instead. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>. </p> </li> </ul>
      */
     inline BatchGetItemRequest& AddRequestItems(Aws::String&& key, KeysAndAttributes&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(std::move(key), std::move(value)); return *this; }
@@ -581,7 +581,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -590,7 +590,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
      * define specific items in the table. For each primary key, you must provide
@@ -603,11 +603,11 @@ namespace Model
      * must be separated by commas.</p> <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes are not
      * found, they will not appear in the result.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
      * <code>ProjectionExpression</code> instead. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>. </p> </li> </ul>
      */
     inline BatchGetItemRequest& AddRequestItems(const char* key, KeysAndAttributes&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, std::move(value)); return *this; }
@@ -632,7 +632,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -641,7 +641,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
      * define specific items in the table. For each primary key, you must provide
@@ -654,11 +654,11 @@ namespace Model
      * must be separated by commas.</p> <p>If no attribute names are specified, then
      * all attributes will be returned. If any of the requested attributes are not
      * found, they will not appear in the result.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
      * <code>ProjectionExpression</code> instead. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>. </p> </li> </ul>
      */
     inline BatchGetItemRequest& AddRequestItems(const char* key, const KeysAndAttributes& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, value); return *this; }

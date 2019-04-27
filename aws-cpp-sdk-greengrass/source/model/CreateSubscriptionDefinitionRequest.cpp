@@ -26,7 +26,8 @@ using namespace Aws::Utils;
 CreateSubscriptionDefinitionRequest::CreateSubscriptionDefinitionRequest() : 
     m_amznClientTokenHasBeenSet(false),
     m_initialVersionHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,17 @@ Aws::String CreateSubscriptionDefinitionRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

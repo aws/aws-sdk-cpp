@@ -39,7 +39,7 @@ namespace Model
    * a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and
    * <a>ListPolicies</a> operations. </p> <p>For more information about managed
    * policies, refer to <a
-   * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
    * Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Policy">AWS API
@@ -100,7 +100,7 @@ namespace Model
     /**
      * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
@@ -108,7 +108,7 @@ namespace Model
     /**
      * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
@@ -116,7 +116,7 @@ namespace Model
     /**
      * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
@@ -124,7 +124,7 @@ namespace Model
     /**
      * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
@@ -132,7 +132,7 @@ namespace Model
     /**
      * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
@@ -140,7 +140,7 @@ namespace Model
     /**
      * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline Policy& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
@@ -148,7 +148,7 @@ namespace Model
     /**
      * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline Policy& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
@@ -156,7 +156,7 @@ namespace Model
     /**
      * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline Policy& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
@@ -189,56 +189,56 @@ namespace Model
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline Policy& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline Policy& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline Policy& WithPath(const char* value) { SetPath(value); return *this;}
@@ -322,7 +322,7 @@ namespace Model
      * <p>The number of entities (users and roles) for which the policy is used to set
      * the permissions boundary. </p> <p>For more information about permissions
      * boundaries, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
      */
     inline int GetPermissionsBoundaryUsageCount() const{ return m_permissionsBoundaryUsageCount; }
@@ -331,7 +331,7 @@ namespace Model
      * <p>The number of entities (users and roles) for which the policy is used to set
      * the permissions boundary. </p> <p>For more information about permissions
      * boundaries, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool PermissionsBoundaryUsageCountHasBeenSet() const { return m_permissionsBoundaryUsageCountHasBeenSet; }
@@ -340,7 +340,7 @@ namespace Model
      * <p>The number of entities (users and roles) for which the policy is used to set
      * the permissions boundary. </p> <p>For more information about permissions
      * boundaries, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPermissionsBoundaryUsageCount(int value) { m_permissionsBoundaryUsageCountHasBeenSet = true; m_permissionsBoundaryUsageCount = value; }
@@ -349,7 +349,7 @@ namespace Model
      * <p>The number of entities (users and roles) for which the policy is used to set
      * the permissions boundary. </p> <p>For more information about permissions
      * boundaries, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
      */
     inline Policy& WithPermissionsBoundaryUsageCount(int value) { SetPermissionsBoundaryUsageCount(value); return *this;}

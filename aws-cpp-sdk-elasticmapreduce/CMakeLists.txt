@@ -71,11 +71,6 @@ setup_install()
 install (FILES ${AWS_ELASTICMAPREDUCE_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/elasticmapreduce)
 install (FILES ${AWS_ELASTICMAPREDUCE_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/elasticmapreduce/model)
 
-if(PLATFORM_WINDOWS AND MSVC)
-    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
-    install (FILES ${NUGET_FILES} DESTINATION nuget)
-endif()
-
 do_packaging()
 
 

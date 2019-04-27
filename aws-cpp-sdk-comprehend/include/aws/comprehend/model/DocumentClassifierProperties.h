@@ -20,6 +20,7 @@
 #include <aws/comprehend/model/ModelStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/comprehend/model/DocumentClassifierInputDataConfig.h>
+#include <aws/comprehend/model/DocumentClassifierOutputDataConfig.h>
 #include <aws/comprehend/model/ClassifierMetadata.h>
 #include <utility>
 
@@ -413,6 +414,43 @@ namespace Model
 
 
     /**
+     * <p> Provides output results configuration parameters for custom classifier
+     * jobs.</p>
+     */
+    inline const DocumentClassifierOutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
+
+    /**
+     * <p> Provides output results configuration parameters for custom classifier
+     * jobs.</p>
+     */
+    inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
+
+    /**
+     * <p> Provides output results configuration parameters for custom classifier
+     * jobs.</p>
+     */
+    inline void SetOutputDataConfig(const DocumentClassifierOutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
+
+    /**
+     * <p> Provides output results configuration parameters for custom classifier
+     * jobs.</p>
+     */
+    inline void SetOutputDataConfig(DocumentClassifierOutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
+
+    /**
+     * <p> Provides output results configuration parameters for custom classifier
+     * jobs.</p>
+     */
+    inline DocumentClassifierProperties& WithOutputDataConfig(const DocumentClassifierOutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
+
+    /**
+     * <p> Provides output results configuration parameters for custom classifier
+     * jobs.</p>
+     */
+    inline DocumentClassifierProperties& WithOutputDataConfig(DocumentClassifierOutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Information about the document classifier, including the number of documents
      * used for training the classifier, the number of documents used for test the
      * classifier, and an accuracy rating.</p>
@@ -503,6 +541,103 @@ namespace Model
      */
     inline DocumentClassifierProperties& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt data on the storage volume attached to the ML compute instance(s)
+     * that process the analysis job. The VolumeKmsKeyId can be either of the following
+     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt data on the storage volume attached to the ML compute instance(s)
+     * that process the analysis job. The VolumeKmsKeyId can be either of the following
+     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt data on the storage volume attached to the ML compute instance(s)
+     * that process the analysis job. The VolumeKmsKeyId can be either of the following
+     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt data on the storage volume attached to the ML compute instance(s)
+     * that process the analysis job. The VolumeKmsKeyId can be either of the following
+     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt data on the storage volume attached to the ML compute instance(s)
+     * that process the analysis job. The VolumeKmsKeyId can be either of the following
+     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt data on the storage volume attached to the ML compute instance(s)
+     * that process the analysis job. The VolumeKmsKeyId can be either of the following
+     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline DocumentClassifierProperties& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt data on the storage volume attached to the ML compute instance(s)
+     * that process the analysis job. The VolumeKmsKeyId can be either of the following
+     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline DocumentClassifierProperties& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt data on the storage volume attached to the ML compute instance(s)
+     * that process the analysis job. The VolumeKmsKeyId can be either of the following
+     * formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline DocumentClassifierProperties& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_documentClassifierArn;
@@ -532,11 +667,17 @@ namespace Model
     DocumentClassifierInputDataConfig m_inputDataConfig;
     bool m_inputDataConfigHasBeenSet;
 
+    DocumentClassifierOutputDataConfig m_outputDataConfig;
+    bool m_outputDataConfigHasBeenSet;
+
     ClassifierMetadata m_classifierMetadata;
     bool m_classifierMetadataHasBeenSet;
 
     Aws::String m_dataAccessRoleArn;
     bool m_dataAccessRoleArnHasBeenSet;
+
+    Aws::String m_volumeKmsKeyId;
+    bool m_volumeKmsKeyIdHasBeenSet;
   };
 
 } // namespace Model

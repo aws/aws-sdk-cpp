@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>An object representing an Amazon EKS cluster VPC configuration
-   * request.</p><p><h3>See Also:</h3>   <a
+   * <p>An object representing the VPC configuration to use for an Amazon EKS
+   * cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/VpcConfigRequest">AWS
    * API Reference</a></p>
    */

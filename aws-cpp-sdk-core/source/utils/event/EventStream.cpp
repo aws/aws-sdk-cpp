@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 #include <aws/core/utils/event/EventStream.h>
+#include <iostream>
 
 namespace Aws
 {
@@ -20,12 +21,24 @@ namespace Aws
     {
         namespace Event
         {
-            // static const char EVENT_STREAM_CLASS_TAG[] = "Aws::Utils::Event::EventStream";
-
-            EventStream::EventStream(EventStreamDecoder& decoder, size_t eventStreamBufLength) :
+            EventStream::EventStream(EventStreamDecoder& decoder, size_t bufferSize) :
                 Aws::IOStream(&m_eventStreamBuf),
-                m_eventStreamBuf(decoder, eventStreamBufLength)
+                m_eventStreamBuf(decoder, bufferSize)
+
             {
+            }
+
+            EventEncoderStream::EventEncoderStream(size_t bufferSize) :
+                Aws::IOStream(&m_streambuf),
+                m_streambuf(bufferSize)
+            {
+            }
+
+            EventEncoderStream& EventEncoderStream::WriteEvent(const Aws::Utils::Event::Message& msg)
+            {
+                auto bits = m_encoder.EncodeAndSign(msg);
+                write(reinterpret_cast<char*>(bits.data()), bits.size());
+                return *this;
             }
         }
     }

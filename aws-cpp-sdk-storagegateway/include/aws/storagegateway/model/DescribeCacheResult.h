@@ -202,17 +202,20 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Percent of application read operations from the file shares that are not
+     * served from cache. The sample is taken at the end of the reporting period.</p>
      */
     inline double GetCacheMissPercentage() const{ return m_cacheMissPercentage; }
 
     /**
-     * <p/>
+     * <p>Percent of application read operations from the file shares that are not
+     * served from cache. The sample is taken at the end of the reporting period.</p>
      */
     inline void SetCacheMissPercentage(double value) { m_cacheMissPercentage = value; }
 
     /**
-     * <p/>
+     * <p>Percent of application read operations from the file shares that are not
+     * served from cache. The sample is taken at the end of the reporting period.</p>
      */
     inline DescribeCacheResult& WithCacheMissPercentage(double value) { SetCacheMissPercentage(value); return *this;}
 

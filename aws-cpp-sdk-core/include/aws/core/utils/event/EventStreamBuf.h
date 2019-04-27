@@ -51,7 +51,7 @@ namespace Aws
 
             private:
                 void writeToDecoder();
-                
+
                 ByteBuffer m_byteBuffer;
                 size_t m_bufferLength;
                 Aws::StringStream m_err;

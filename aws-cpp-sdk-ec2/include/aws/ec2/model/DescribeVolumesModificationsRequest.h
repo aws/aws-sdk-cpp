@@ -82,62 +82,62 @@ namespace Model
 
 
     /**
-     * <p>One or more volume IDs for which in-progress modifications will be
+     * <p>The IDs of the volumes for which in-progress modifications will be
      * described.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVolumeIds() const{ return m_volumeIds; }
 
     /**
-     * <p>One or more volume IDs for which in-progress modifications will be
+     * <p>The IDs of the volumes for which in-progress modifications will be
      * described.</p>
      */
     inline bool VolumeIdsHasBeenSet() const { return m_volumeIdsHasBeenSet; }
 
     /**
-     * <p>One or more volume IDs for which in-progress modifications will be
+     * <p>The IDs of the volumes for which in-progress modifications will be
      * described.</p>
      */
     inline void SetVolumeIds(const Aws::Vector<Aws::String>& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = value; }
 
     /**
-     * <p>One or more volume IDs for which in-progress modifications will be
+     * <p>The IDs of the volumes for which in-progress modifications will be
      * described.</p>
      */
     inline void SetVolumeIds(Aws::Vector<Aws::String>&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = std::move(value); }
 
     /**
-     * <p>One or more volume IDs for which in-progress modifications will be
+     * <p>The IDs of the volumes for which in-progress modifications will be
      * described.</p>
      */
     inline DescribeVolumesModificationsRequest& WithVolumeIds(const Aws::Vector<Aws::String>& value) { SetVolumeIds(value); return *this;}
 
     /**
-     * <p>One or more volume IDs for which in-progress modifications will be
+     * <p>The IDs of the volumes for which in-progress modifications will be
      * described.</p>
      */
     inline DescribeVolumesModificationsRequest& WithVolumeIds(Aws::Vector<Aws::String>&& value) { SetVolumeIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more volume IDs for which in-progress modifications will be
+     * <p>The IDs of the volumes for which in-progress modifications will be
      * described.</p>
      */
     inline DescribeVolumesModificationsRequest& AddVolumeIds(const Aws::String& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more volume IDs for which in-progress modifications will be
+     * <p>The IDs of the volumes for which in-progress modifications will be
      * described.</p>
      */
     inline DescribeVolumesModificationsRequest& AddVolumeIds(Aws::String&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more volume IDs for which in-progress modifications will be
+     * <p>The IDs of the volumes for which in-progress modifications will be
      * described.</p>
      */
     inline DescribeVolumesModificationsRequest& AddVolumeIds(const char* value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
 
 
     /**
-     * <p>One or more filters. Supported filters: <code>volume-id</code>,
+     * <p>The filters. Supported filters: <code>volume-id</code>,
      * <code>modification-state</code>, <code>target-size</code>,
      * <code>target-iops</code>, <code>target-volume-type</code>,
      * <code>original-size</code>, <code>original-iops</code>,
@@ -146,7 +146,7 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters. Supported filters: <code>volume-id</code>,
+     * <p>The filters. Supported filters: <code>volume-id</code>,
      * <code>modification-state</code>, <code>target-size</code>,
      * <code>target-iops</code>, <code>target-volume-type</code>,
      * <code>original-size</code>, <code>original-iops</code>,
@@ -155,7 +155,7 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters. Supported filters: <code>volume-id</code>,
+     * <p>The filters. Supported filters: <code>volume-id</code>,
      * <code>modification-state</code>, <code>target-size</code>,
      * <code>target-iops</code>, <code>target-volume-type</code>,
      * <code>original-size</code>, <code>original-iops</code>,
@@ -164,7 +164,7 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters. Supported filters: <code>volume-id</code>,
+     * <p>The filters. Supported filters: <code>volume-id</code>,
      * <code>modification-state</code>, <code>target-size</code>,
      * <code>target-iops</code>, <code>target-volume-type</code>,
      * <code>original-size</code>, <code>original-iops</code>,
@@ -173,7 +173,7 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters. Supported filters: <code>volume-id</code>,
+     * <p>The filters. Supported filters: <code>volume-id</code>,
      * <code>modification-state</code>, <code>target-size</code>,
      * <code>target-iops</code>, <code>target-volume-type</code>,
      * <code>original-size</code>, <code>original-iops</code>,
@@ -182,7 +182,7 @@ namespace Model
     inline DescribeVolumesModificationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters. Supported filters: <code>volume-id</code>,
+     * <p>The filters. Supported filters: <code>volume-id</code>,
      * <code>modification-state</code>, <code>target-size</code>,
      * <code>target-iops</code>, <code>target-volume-type</code>,
      * <code>original-size</code>, <code>original-iops</code>,
@@ -191,7 +191,7 @@ namespace Model
     inline DescribeVolumesModificationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters. Supported filters: <code>volume-id</code>,
+     * <p>The filters. Supported filters: <code>volume-id</code>,
      * <code>modification-state</code>, <code>target-size</code>,
      * <code>target-iops</code>, <code>target-volume-type</code>,
      * <code>original-size</code>, <code>original-iops</code>,
@@ -200,7 +200,7 @@ namespace Model
     inline DescribeVolumesModificationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters. Supported filters: <code>volume-id</code>,
+     * <p>The filters. Supported filters: <code>volume-id</code>,
      * <code>modification-state</code>, <code>target-size</code>,
      * <code>target-iops</code>, <code>target-volume-type</code>,
      * <code>original-size</code>, <code>original-iops</code>,

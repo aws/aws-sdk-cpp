@@ -293,7 +293,7 @@ namespace Aws
 
             static Aws::String DetermineFilePath(const Aws::String& directory, const Aws::String& prefix, const Aws::String& keyName);
 
-            Aws::Utils::ExclusiveOwnershipResourceManager<Aws::Utils::Array<uint8_t>*> m_bufferManager;
+            Aws::Utils::ExclusiveOwnershipResourceManager<unsigned char*> m_bufferManager;
             TransferManagerConfiguration m_transferConfig;
         };
 

@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Information about one or more terminated instances.</p>
+     * <p>Information about the terminated instances.</p>
      */
     inline const Aws::Vector<InstanceStateChange>& GetTerminatingInstances() const{ return m_terminatingInstances; }
 
     /**
-     * <p>Information about one or more terminated instances.</p>
+     * <p>Information about the terminated instances.</p>
      */
     inline void SetTerminatingInstances(const Aws::Vector<InstanceStateChange>& value) { m_terminatingInstances = value; }
 
     /**
-     * <p>Information about one or more terminated instances.</p>
+     * <p>Information about the terminated instances.</p>
      */
     inline void SetTerminatingInstances(Aws::Vector<InstanceStateChange>&& value) { m_terminatingInstances = std::move(value); }
 
     /**
-     * <p>Information about one or more terminated instances.</p>
+     * <p>Information about the terminated instances.</p>
      */
     inline TerminateInstancesResponse& WithTerminatingInstances(const Aws::Vector<InstanceStateChange>& value) { SetTerminatingInstances(value); return *this;}
 
     /**
-     * <p>Information about one or more terminated instances.</p>
+     * <p>Information about the terminated instances.</p>
      */
     inline TerminateInstancesResponse& WithTerminatingInstances(Aws::Vector<InstanceStateChange>&& value) { SetTerminatingInstances(std::move(value)); return *this;}
 
     /**
-     * <p>Information about one or more terminated instances.</p>
+     * <p>Information about the terminated instances.</p>
      */
     inline TerminateInstancesResponse& AddTerminatingInstances(const InstanceStateChange& value) { m_terminatingInstances.push_back(value); return *this; }
 
     /**
-     * <p>Information about one or more terminated instances.</p>
+     * <p>Information about the terminated instances.</p>
      */
     inline TerminateInstancesResponse& AddTerminatingInstances(InstanceStateChange&& value) { m_terminatingInstances.push_back(std::move(value)); return *this; }
 

@@ -99,7 +99,7 @@ namespace Model
      * that allows the Amazon SNS service principle to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
      * Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
@@ -153,7 +153,7 @@ namespace Model
      * that allows the Amazon SNS service principle to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
      * Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
@@ -207,7 +207,7 @@ namespace Model
      * that allows the Amazon SNS service principle to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
      * Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
@@ -261,7 +261,7 @@ namespace Model
      * that allows the Amazon SNS service principle to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
      * Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
@@ -315,7 +315,7 @@ namespace Model
      * that allows the Amazon SNS service principle to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
      * Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
      */
     inline SetSMSAttributesRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
@@ -369,7 +369,7 @@ namespace Model
      * that allows the Amazon SNS service principle to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
      * Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
      */
     inline SetSMSAttributesRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
@@ -423,7 +423,7 @@ namespace Model
      * that allows the Amazon SNS service principle to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
      * Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
      */
     inline SetSMSAttributesRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
@@ -477,7 +477,7 @@ namespace Model
      * that allows the Amazon SNS service principle to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
      * Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
      */
     inline SetSMSAttributesRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
@@ -531,7 +531,7 @@ namespace Model
      * that allows the Amazon SNS service principle to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
      * Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
      */
     inline SetSMSAttributesRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
@@ -585,7 +585,7 @@ namespace Model
      * that allows the Amazon SNS service principle to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
      * Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
      */
     inline SetSMSAttributesRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
@@ -639,7 +639,7 @@ namespace Model
      * that allows the Amazon SNS service principle to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
      * Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
      */
     inline SetSMSAttributesRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
@@ -693,7 +693,7 @@ namespace Model
      * that allows the Amazon SNS service principle to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
      * Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
      */
     inline SetSMSAttributesRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
@@ -747,7 +747,7 @@ namespace Model
      * that allows the Amazon SNS service principle to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
      * Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
      */
     inline SetSMSAttributesRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }

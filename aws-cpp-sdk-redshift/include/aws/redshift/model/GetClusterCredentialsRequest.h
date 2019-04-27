@@ -61,7 +61,7 @@ namespace Model
      * <code>Autocreate</code> is <code>False</code>, then the command succeeds but the
      * connection attempt will fail because the user doesn't exist in the database.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
      * USER</a> in the Amazon Redshift Database Developer Guide. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or
      * hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must
@@ -84,7 +84,7 @@ namespace Model
      * <code>Autocreate</code> is <code>False</code>, then the command succeeds but the
      * connection attempt will fail because the user doesn't exist in the database.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
      * USER</a> in the Amazon Redshift Database Developer Guide. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or
      * hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must
@@ -107,7 +107,7 @@ namespace Model
      * <code>Autocreate</code> is <code>False</code>, then the command succeeds but the
      * connection attempt will fail because the user doesn't exist in the database.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
      * USER</a> in the Amazon Redshift Database Developer Guide. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or
      * hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must
@@ -130,7 +130,7 @@ namespace Model
      * <code>Autocreate</code> is <code>False</code>, then the command succeeds but the
      * connection attempt will fail because the user doesn't exist in the database.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
      * USER</a> in the Amazon Redshift Database Developer Guide. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or
      * hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must
@@ -153,7 +153,7 @@ namespace Model
      * <code>Autocreate</code> is <code>False</code>, then the command succeeds but the
      * connection attempt will fail because the user doesn't exist in the database.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
      * USER</a> in the Amazon Redshift Database Developer Guide. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or
      * hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must
@@ -176,7 +176,7 @@ namespace Model
      * <code>Autocreate</code> is <code>False</code>, then the command succeeds but the
      * connection attempt will fail because the user doesn't exist in the database.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
      * USER</a> in the Amazon Redshift Database Developer Guide. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or
      * hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must
@@ -199,7 +199,7 @@ namespace Model
      * <code>Autocreate</code> is <code>False</code>, then the command succeeds but the
      * connection attempt will fail because the user doesn't exist in the database.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
      * USER</a> in the Amazon Redshift Database Developer Guide. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or
      * hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must
@@ -222,7 +222,7 @@ namespace Model
      * <code>Autocreate</code> is <code>False</code>, then the command succeeds but the
      * connection attempt will fail because the user doesn't exist in the database.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
      * USER</a> in the Amazon Redshift Database Developer Guide. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or
      * hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must

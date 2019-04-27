@@ -34,11 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Location in Amazon Simple Storage Service (Amazon S3) where build files can
-   * be stored for access by Amazon GameLift. This location is specified in a
-   * <a>CreateBuild</a> request. For more details, see the <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">Create
-   * a Build with Files in Amazon S3</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Location in Amazon Simple Storage Service (Amazon S3) where build or script
+   * files are stored for access by Amazon GameLift. This location is specified in
+   * <a>CreateBuild</a>, <a>CreateScript</a>, and <a>UpdateScript</a> requests.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/S3Location">AWS
    * API Reference</a></p>
    */
@@ -52,83 +51,83 @@ namespace Model
 
 
     /**
-     * <p>Amazon S3 bucket identifier. This is the name of your S3 bucket.</p>
+     * <p>Amazon S3 bucket identifier. This is the name of the S3 bucket.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>Amazon S3 bucket identifier. This is the name of your S3 bucket.</p>
+     * <p>Amazon S3 bucket identifier. This is the name of the S3 bucket.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>Amazon S3 bucket identifier. This is the name of your S3 bucket.</p>
+     * <p>Amazon S3 bucket identifier. This is the name of the S3 bucket.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>Amazon S3 bucket identifier. This is the name of your S3 bucket.</p>
+     * <p>Amazon S3 bucket identifier. This is the name of the S3 bucket.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>Amazon S3 bucket identifier. This is the name of your S3 bucket.</p>
+     * <p>Amazon S3 bucket identifier. This is the name of the S3 bucket.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>Amazon S3 bucket identifier. This is the name of your S3 bucket.</p>
+     * <p>Amazon S3 bucket identifier. This is the name of the S3 bucket.</p>
      */
     inline S3Location& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>Amazon S3 bucket identifier. This is the name of your S3 bucket.</p>
+     * <p>Amazon S3 bucket identifier. This is the name of the S3 bucket.</p>
      */
     inline S3Location& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon S3 bucket identifier. This is the name of your S3 bucket.</p>
+     * <p>Amazon S3 bucket identifier. This is the name of the S3 bucket.</p>
      */
     inline S3Location& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * <p>Name of the zip file containing your build files. </p>
+     * <p>Name of the zip file containing the build files or script files. </p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>Name of the zip file containing your build files. </p>
+     * <p>Name of the zip file containing the build files or script files. </p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>Name of the zip file containing your build files. </p>
+     * <p>Name of the zip file containing the build files or script files. </p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>Name of the zip file containing your build files. </p>
+     * <p>Name of the zip file containing the build files or script files. </p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>Name of the zip file containing your build files. </p>
+     * <p>Name of the zip file containing the build files or script files. </p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>Name of the zip file containing your build files. </p>
+     * <p>Name of the zip file containing the build files or script files. </p>
      */
     inline S3Location& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>Name of the zip file containing your build files. </p>
+     * <p>Name of the zip file containing the build files or script files. </p>
      */
     inline S3Location& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the zip file containing your build files. </p>
+     * <p>Name of the zip file containing the build files or script files. </p>
      */
     inline S3Location& WithKey(const char* value) { SetKey(value); return *this;}
 
@@ -136,58 +135,123 @@ namespace Model
     /**
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for the access role that allows Amazon GameLift to access your S3 bucket.</p>
+     * for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for the access role that allows Amazon GameLift to access your S3 bucket.</p>
+     * for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for the access role that allows Amazon GameLift to access your S3 bucket.</p>
+     * for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for the access role that allows Amazon GameLift to access your S3 bucket.</p>
+     * for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for the access role that allows Amazon GameLift to access your S3 bucket.</p>
+     * for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for the access role that allows Amazon GameLift to access your S3 bucket.</p>
+     * for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
      */
     inline S3Location& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for the access role that allows Amazon GameLift to access your S3 bucket.</p>
+     * for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
      */
     inline S3Location& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for the access role that allows Amazon GameLift to access your S3 bucket.</p>
+     * for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
      */
     inline S3Location& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
+
+    /**
+     * <p>Version of the file, if object versioning is turned on for the bucket. Amazon
+     * GameLift uses this information when retrieving files from an S3 bucket that you
+     * own. Use this parameter to specify a specific version of the file; if not set,
+     * the latest version of the file is retrieved. </p>
+     */
+    inline const Aws::String& GetObjectVersion() const{ return m_objectVersion; }
+
+    /**
+     * <p>Version of the file, if object versioning is turned on for the bucket. Amazon
+     * GameLift uses this information when retrieving files from an S3 bucket that you
+     * own. Use this parameter to specify a specific version of the file; if not set,
+     * the latest version of the file is retrieved. </p>
+     */
+    inline bool ObjectVersionHasBeenSet() const { return m_objectVersionHasBeenSet; }
+
+    /**
+     * <p>Version of the file, if object versioning is turned on for the bucket. Amazon
+     * GameLift uses this information when retrieving files from an S3 bucket that you
+     * own. Use this parameter to specify a specific version of the file; if not set,
+     * the latest version of the file is retrieved. </p>
+     */
+    inline void SetObjectVersion(const Aws::String& value) { m_objectVersionHasBeenSet = true; m_objectVersion = value; }
+
+    /**
+     * <p>Version of the file, if object versioning is turned on for the bucket. Amazon
+     * GameLift uses this information when retrieving files from an S3 bucket that you
+     * own. Use this parameter to specify a specific version of the file; if not set,
+     * the latest version of the file is retrieved. </p>
+     */
+    inline void SetObjectVersion(Aws::String&& value) { m_objectVersionHasBeenSet = true; m_objectVersion = std::move(value); }
+
+    /**
+     * <p>Version of the file, if object versioning is turned on for the bucket. Amazon
+     * GameLift uses this information when retrieving files from an S3 bucket that you
+     * own. Use this parameter to specify a specific version of the file; if not set,
+     * the latest version of the file is retrieved. </p>
+     */
+    inline void SetObjectVersion(const char* value) { m_objectVersionHasBeenSet = true; m_objectVersion.assign(value); }
+
+    /**
+     * <p>Version of the file, if object versioning is turned on for the bucket. Amazon
+     * GameLift uses this information when retrieving files from an S3 bucket that you
+     * own. Use this parameter to specify a specific version of the file; if not set,
+     * the latest version of the file is retrieved. </p>
+     */
+    inline S3Location& WithObjectVersion(const Aws::String& value) { SetObjectVersion(value); return *this;}
+
+    /**
+     * <p>Version of the file, if object versioning is turned on for the bucket. Amazon
+     * GameLift uses this information when retrieving files from an S3 bucket that you
+     * own. Use this parameter to specify a specific version of the file; if not set,
+     * the latest version of the file is retrieved. </p>
+     */
+    inline S3Location& WithObjectVersion(Aws::String&& value) { SetObjectVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Version of the file, if object versioning is turned on for the bucket. Amazon
+     * GameLift uses this information when retrieving files from an S3 bucket that you
+     * own. Use this parameter to specify a specific version of the file; if not set,
+     * the latest version of the file is retrieved. </p>
+     */
+    inline S3Location& WithObjectVersion(const char* value) { SetObjectVersion(value); return *this;}
 
   private:
 
@@ -199,6 +263,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    Aws::String m_objectVersion;
+    bool m_objectVersionHasBeenSet;
   };
 
 } // namespace Model

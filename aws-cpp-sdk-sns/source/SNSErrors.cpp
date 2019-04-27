@@ -42,8 +42,12 @@ static const int INVALID_SECURITY_HASH = HashingUtils::HashString("InvalidSecuri
 static const int ENDPOINT_DISABLED_HASH = HashingUtils::HashString("EndpointDisabled");
 static const int K_M_S_OPT_IN_REQUIRED_HASH = HashingUtils::HashString("KMSOptInRequired");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFound");
-static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidState");
+static const int TAG_POLICY_HASH = HashingUtils::HashString("TagPolicy");
 static const int FILTER_POLICY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("FilterPolicyLimitExceeded");
+static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidState");
+static const int TAG_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TagLimitExceeded");
+static const int STALE_TAG_HASH = HashingUtils::HashString("StaleTag");
+static const int CONCURRENT_ACCESS_HASH = HashingUtils::HashString("ConcurrentAccess");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -106,13 +110,29 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::NOT_FOUND), false);
   }
-  else if (hashCode == K_M_S_INVALID_STATE_HASH)
+  else if (hashCode == TAG_POLICY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::K_M_S_INVALID_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::TAG_POLICY), false);
   }
   else if (hashCode == FILTER_POLICY_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::FILTER_POLICY_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == K_M_S_INVALID_STATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::K_M_S_INVALID_STATE), false);
+  }
+  else if (hashCode == TAG_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::TAG_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == STALE_TAG_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::STALE_TAG), false);
+  }
+  else if (hashCode == CONCURRENT_ACCESS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::CONCURRENT_ACCESS), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

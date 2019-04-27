@@ -71,11 +71,6 @@ setup_install()
 install (FILES ${AWS_TRANSCRIBE_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/transcribe)
 install (FILES ${AWS_TRANSCRIBE_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/transcribe/model)
 
-if(PLATFORM_WINDOWS AND MSVC)
-    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
-    install (FILES ${NUGET_FILES} DESTINATION nuget)
-endif()
-
 do_packaging()
 
 

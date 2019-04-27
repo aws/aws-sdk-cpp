@@ -17,6 +17,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/medialive/model/InputClass.h>
 #include <aws/medialive/model/InputState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/InputType.h>
@@ -230,6 +231,85 @@ namespace Model
      * The generated ID of the input (unique for user account, immutable).
      */
     inline Input& WithId(const char* value) { SetId(value); return *this;}
+
+
+    /**
+     * STANDARD - MediaLive expects two sources to be connected to this input. If the
+     * channel is also STANDARD, both sources will be ingested. If the channel is
+     * SINGLE_PIPELINE, only the first source will be ingested; the second source will
+     * always be ignored, even if the first source fails.
+SINGLE_PIPELINE - You can
+     * connect only one source to this input. If the ChannelClass is also 
+     * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
+     * value is not valid because the channel requires two sources in the input.
+
+     */
+    inline const InputClass& GetInputClass() const{ return m_inputClass; }
+
+    /**
+     * STANDARD - MediaLive expects two sources to be connected to this input. If the
+     * channel is also STANDARD, both sources will be ingested. If the channel is
+     * SINGLE_PIPELINE, only the first source will be ingested; the second source will
+     * always be ignored, even if the first source fails.
+SINGLE_PIPELINE - You can
+     * connect only one source to this input. If the ChannelClass is also 
+     * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
+     * value is not valid because the channel requires two sources in the input.
+
+     */
+    inline bool InputClassHasBeenSet() const { return m_inputClassHasBeenSet; }
+
+    /**
+     * STANDARD - MediaLive expects two sources to be connected to this input. If the
+     * channel is also STANDARD, both sources will be ingested. If the channel is
+     * SINGLE_PIPELINE, only the first source will be ingested; the second source will
+     * always be ignored, even if the first source fails.
+SINGLE_PIPELINE - You can
+     * connect only one source to this input. If the ChannelClass is also 
+     * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
+     * value is not valid because the channel requires two sources in the input.
+
+     */
+    inline void SetInputClass(const InputClass& value) { m_inputClassHasBeenSet = true; m_inputClass = value; }
+
+    /**
+     * STANDARD - MediaLive expects two sources to be connected to this input. If the
+     * channel is also STANDARD, both sources will be ingested. If the channel is
+     * SINGLE_PIPELINE, only the first source will be ingested; the second source will
+     * always be ignored, even if the first source fails.
+SINGLE_PIPELINE - You can
+     * connect only one source to this input. If the ChannelClass is also 
+     * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
+     * value is not valid because the channel requires two sources in the input.
+
+     */
+    inline void SetInputClass(InputClass&& value) { m_inputClassHasBeenSet = true; m_inputClass = std::move(value); }
+
+    /**
+     * STANDARD - MediaLive expects two sources to be connected to this input. If the
+     * channel is also STANDARD, both sources will be ingested. If the channel is
+     * SINGLE_PIPELINE, only the first source will be ingested; the second source will
+     * always be ignored, even if the first source fails.
+SINGLE_PIPELINE - You can
+     * connect only one source to this input. If the ChannelClass is also 
+     * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
+     * value is not valid because the channel requires two sources in the input.
+
+     */
+    inline Input& WithInputClass(const InputClass& value) { SetInputClass(value); return *this;}
+
+    /**
+     * STANDARD - MediaLive expects two sources to be connected to this input. If the
+     * channel is also STANDARD, both sources will be ingested. If the channel is
+     * SINGLE_PIPELINE, only the first source will be ingested; the second source will
+     * always be ignored, even if the first source fails.
+SINGLE_PIPELINE - You can
+     * connect only one source to this input. If the ChannelClass is also 
+     * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
+     * value is not valid because the channel requires two sources in the input.
+
+     */
+    inline Input& WithInputClass(InputClass&& value) { SetInputClass(std::move(value)); return *this;}
 
 
     /**
@@ -566,6 +646,9 @@ namespace Model
 
     Aws::String m_id;
     bool m_idHasBeenSet;
+
+    InputClass m_inputClass;
+    bool m_inputClassHasBeenSet;
 
     Aws::Vector<MediaConnectFlow> m_mediaConnectFlows;
     bool m_mediaConnectFlowsHasBeenSet;

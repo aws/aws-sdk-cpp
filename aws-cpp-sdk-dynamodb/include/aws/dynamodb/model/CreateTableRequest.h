@@ -26,6 +26,7 @@
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <aws/dynamodb/model/LocalSecondaryIndex.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndex.h>
+#include <aws/dynamodb/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -151,7 +152,7 @@ namespace Model
      * <p>Specifies the attributes that make up the primary key for a table or an
      * index. The attributes in <code>KeySchema</code> must also be defined in the
      * <code>AttributeDefinitions</code> array. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each
      * <code>KeySchemaElement</code> in the array is composed of:</p> <ul> <li> <p>
      * <code>AttributeName</code> - The name of this key attribute.</p> </li> <li> <p>
@@ -170,7 +171,7 @@ namespace Model
      * in this order: The first element must have a <code>KeyType</code> of
      * <code>HASH</code>, and the second element must have a <code>KeyType</code> of
      * <code>RANGE</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const{ return m_keySchema; }
@@ -179,7 +180,7 @@ namespace Model
      * <p>Specifies the attributes that make up the primary key for a table or an
      * index. The attributes in <code>KeySchema</code> must also be defined in the
      * <code>AttributeDefinitions</code> array. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each
      * <code>KeySchemaElement</code> in the array is composed of:</p> <ul> <li> <p>
      * <code>AttributeName</code> - The name of this key attribute.</p> </li> <li> <p>
@@ -198,7 +199,7 @@ namespace Model
      * in this order: The first element must have a <code>KeyType</code> of
      * <code>HASH</code>, and the second element must have a <code>KeyType</code> of
      * <code>RANGE</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool KeySchemaHasBeenSet() const { return m_keySchemaHasBeenSet; }
@@ -207,7 +208,7 @@ namespace Model
      * <p>Specifies the attributes that make up the primary key for a table or an
      * index. The attributes in <code>KeySchema</code> must also be defined in the
      * <code>AttributeDefinitions</code> array. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each
      * <code>KeySchemaElement</code> in the array is composed of:</p> <ul> <li> <p>
      * <code>AttributeName</code> - The name of this key attribute.</p> </li> <li> <p>
@@ -226,7 +227,7 @@ namespace Model
      * in this order: The first element must have a <code>KeyType</code> of
      * <code>HASH</code>, and the second element must have a <code>KeyType</code> of
      * <code>RANGE</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetKeySchema(const Aws::Vector<KeySchemaElement>& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
@@ -235,7 +236,7 @@ namespace Model
      * <p>Specifies the attributes that make up the primary key for a table or an
      * index. The attributes in <code>KeySchema</code> must also be defined in the
      * <code>AttributeDefinitions</code> array. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each
      * <code>KeySchemaElement</code> in the array is composed of:</p> <ul> <li> <p>
      * <code>AttributeName</code> - The name of this key attribute.</p> </li> <li> <p>
@@ -254,7 +255,7 @@ namespace Model
      * in this order: The first element must have a <code>KeyType</code> of
      * <code>HASH</code>, and the second element must have a <code>KeyType</code> of
      * <code>RANGE</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetKeySchema(Aws::Vector<KeySchemaElement>&& value) { m_keySchemaHasBeenSet = true; m_keySchema = std::move(value); }
@@ -263,7 +264,7 @@ namespace Model
      * <p>Specifies the attributes that make up the primary key for a table or an
      * index. The attributes in <code>KeySchema</code> must also be defined in the
      * <code>AttributeDefinitions</code> array. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each
      * <code>KeySchemaElement</code> in the array is composed of:</p> <ul> <li> <p>
      * <code>AttributeName</code> - The name of this key attribute.</p> </li> <li> <p>
@@ -282,7 +283,7 @@ namespace Model
      * in this order: The first element must have a <code>KeyType</code> of
      * <code>HASH</code>, and the second element must have a <code>KeyType</code> of
      * <code>RANGE</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline CreateTableRequest& WithKeySchema(const Aws::Vector<KeySchemaElement>& value) { SetKeySchema(value); return *this;}
@@ -291,7 +292,7 @@ namespace Model
      * <p>Specifies the attributes that make up the primary key for a table or an
      * index. The attributes in <code>KeySchema</code> must also be defined in the
      * <code>AttributeDefinitions</code> array. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each
      * <code>KeySchemaElement</code> in the array is composed of:</p> <ul> <li> <p>
      * <code>AttributeName</code> - The name of this key attribute.</p> </li> <li> <p>
@@ -310,7 +311,7 @@ namespace Model
      * in this order: The first element must have a <code>KeyType</code> of
      * <code>HASH</code>, and the second element must have a <code>KeyType</code> of
      * <code>RANGE</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline CreateTableRequest& WithKeySchema(Aws::Vector<KeySchemaElement>&& value) { SetKeySchema(std::move(value)); return *this;}
@@ -319,7 +320,7 @@ namespace Model
      * <p>Specifies the attributes that make up the primary key for a table or an
      * index. The attributes in <code>KeySchema</code> must also be defined in the
      * <code>AttributeDefinitions</code> array. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each
      * <code>KeySchemaElement</code> in the array is composed of:</p> <ul> <li> <p>
      * <code>AttributeName</code> - The name of this key attribute.</p> </li> <li> <p>
@@ -338,7 +339,7 @@ namespace Model
      * in this order: The first element must have a <code>KeyType</code> of
      * <code>HASH</code>, and the second element must have a <code>KeyType</code> of
      * <code>RANGE</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline CreateTableRequest& AddKeySchema(const KeySchemaElement& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
@@ -347,7 +348,7 @@ namespace Model
      * <p>Specifies the attributes that make up the primary key for a table or an
      * index. The attributes in <code>KeySchema</code> must also be defined in the
      * <code>AttributeDefinitions</code> array. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
      * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each
      * <code>KeySchemaElement</code> in the array is composed of:</p> <ul> <li> <p>
      * <code>AttributeName</code> - The name of this key attribute.</p> </li> <li> <p>
@@ -366,7 +367,7 @@ namespace Model
      * in this order: The first element must have a <code>KeyType</code> of
      * <code>HASH</code>, and the second element must have a <code>KeyType</code> of
      * <code>RANGE</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline CreateTableRequest& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(std::move(value)); return *this; }
@@ -888,7 +889,7 @@ namespace Model
      * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
      * you cannot specify this property. </p> <p>For current minimum and maximum
      * provisioned throughput values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
@@ -900,7 +901,7 @@ namespace Model
      * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
      * you cannot specify this property. </p> <p>For current minimum and maximum
      * provisioned throughput values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
@@ -912,7 +913,7 @@ namespace Model
      * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
      * you cannot specify this property. </p> <p>For current minimum and maximum
      * provisioned throughput values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
@@ -924,7 +925,7 @@ namespace Model
      * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
      * you cannot specify this property. </p> <p>For current minimum and maximum
      * provisioned throughput values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
@@ -936,7 +937,7 @@ namespace Model
      * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
      * you cannot specify this property. </p> <p>For current minimum and maximum
      * provisioned throughput values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline CreateTableRequest& WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
@@ -948,7 +949,7 @@ namespace Model
      * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
      * you cannot specify this property. </p> <p>For current minimum and maximum
      * provisioned throughput values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline CreateTableRequest& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
@@ -1087,6 +1088,63 @@ namespace Model
      */
     inline CreateTableRequest& WithSSESpecification(SSESpecification&& value) { SetSSESpecification(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of key-value pairs to label the table. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
+     * for DynamoDB</a>.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of key-value pairs to label the table. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
+     * for DynamoDB</a>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of key-value pairs to label the table. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
+     * for DynamoDB</a>.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of key-value pairs to label the table. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
+     * for DynamoDB</a>.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of key-value pairs to label the table. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
+     * for DynamoDB</a>.</p>
+     */
+    inline CreateTableRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of key-value pairs to label the table. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
+     * for DynamoDB</a>.</p>
+     */
+    inline CreateTableRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of key-value pairs to label the table. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
+     * for DynamoDB</a>.</p>
+     */
+    inline CreateTableRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of key-value pairs to label the table. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
+     * for DynamoDB</a>.</p>
+     */
+    inline CreateTableRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
@@ -1115,6 +1173,9 @@ namespace Model
 
     SSESpecification m_sSESpecification;
     bool m_sSESpecificationHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

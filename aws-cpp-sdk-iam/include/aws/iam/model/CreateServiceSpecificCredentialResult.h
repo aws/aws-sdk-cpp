@@ -47,7 +47,7 @@ namespace Model
      * <p>A structure that contains information about the newly created
      * service-specific credential.</p> <important> <p>This is the only time that the
      * password for this credential set is available. It cannot be recovered later.
-     * Instead, you will have to reset the password with
+     * Instead, you must reset the password with
      * <a>ResetServiceSpecificCredential</a>.</p> </important>
      */
     inline const ServiceSpecificCredential& GetServiceSpecificCredential() const{ return m_serviceSpecificCredential; }
@@ -56,7 +56,7 @@ namespace Model
      * <p>A structure that contains information about the newly created
      * service-specific credential.</p> <important> <p>This is the only time that the
      * password for this credential set is available. It cannot be recovered later.
-     * Instead, you will have to reset the password with
+     * Instead, you must reset the password with
      * <a>ResetServiceSpecificCredential</a>.</p> </important>
      */
     inline void SetServiceSpecificCredential(const ServiceSpecificCredential& value) { m_serviceSpecificCredential = value; }
@@ -65,7 +65,7 @@ namespace Model
      * <p>A structure that contains information about the newly created
      * service-specific credential.</p> <important> <p>This is the only time that the
      * password for this credential set is available. It cannot be recovered later.
-     * Instead, you will have to reset the password with
+     * Instead, you must reset the password with
      * <a>ResetServiceSpecificCredential</a>.</p> </important>
      */
     inline void SetServiceSpecificCredential(ServiceSpecificCredential&& value) { m_serviceSpecificCredential = std::move(value); }
@@ -74,7 +74,7 @@ namespace Model
      * <p>A structure that contains information about the newly created
      * service-specific credential.</p> <important> <p>This is the only time that the
      * password for this credential set is available. It cannot be recovered later.
-     * Instead, you will have to reset the password with
+     * Instead, you must reset the password with
      * <a>ResetServiceSpecificCredential</a>.</p> </important>
      */
     inline CreateServiceSpecificCredentialResult& WithServiceSpecificCredential(const ServiceSpecificCredential& value) { SetServiceSpecificCredential(value); return *this;}
@@ -83,7 +83,7 @@ namespace Model
      * <p>A structure that contains information about the newly created
      * service-specific credential.</p> <important> <p>This is the only time that the
      * password for this credential set is available. It cannot be recovered later.
-     * Instead, you will have to reset the password with
+     * Instead, you must reset the password with
      * <a>ResetServiceSpecificCredential</a>.</p> </important>
      */
     inline CreateServiceSpecificCredentialResult& WithServiceSpecificCredential(ServiceSpecificCredential&& value) { SetServiceSpecificCredential(std::move(value)); return *this;}

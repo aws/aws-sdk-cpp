@@ -25,11 +25,14 @@ using namespace Aws::Utils;
 CreateDocumentClassifierRequest::CreateDocumentClassifierRequest() : 
     m_documentClassifierNameHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
+    m_outputDataConfigHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false)
+    m_languageCodeHasBeenSet(false),
+    m_volumeKmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -49,9 +52,26 @@ Aws::String CreateDocumentClassifierRequest::SerializePayload() const
 
   }
 
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
   if(m_inputDataConfigHasBeenSet)
   {
    payload.WithObject("InputDataConfig", m_inputDataConfig.Jsonize());
+
+  }
+
+  if(m_outputDataConfigHasBeenSet)
+  {
+   payload.WithObject("OutputDataConfig", m_outputDataConfig.Jsonize());
 
   }
 
@@ -64,6 +84,12 @@ Aws::String CreateDocumentClassifierRequest::SerializePayload() const
   if(m_languageCodeHasBeenSet)
   {
    payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
+  }
+
+  if(m_volumeKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
+
   }
 
   return payload.View().WriteReadable();

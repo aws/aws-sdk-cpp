@@ -40,7 +40,7 @@ namespace Model
    * copied snapshots with the specified customer master key (CMK) from AWS KMS in
    * the destination region.</p> <p> For more information about managing snapshot
    * copy grants, go to <a
-   * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
+   * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
    * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
    * Guide</i>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/SnapshotCopyGrant">AWS

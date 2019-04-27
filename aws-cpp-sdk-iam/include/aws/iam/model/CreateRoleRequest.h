@@ -50,7 +50,7 @@ namespace Model
 
     /**
      * <p> The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -64,7 +64,7 @@ namespace Model
 
     /**
      * <p> The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -78,7 +78,7 @@ namespace Model
 
     /**
      * <p> The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -92,7 +92,7 @@ namespace Model
 
     /**
      * <p> The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -106,7 +106,7 @@ namespace Model
 
     /**
      * <p> The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -120,7 +120,7 @@ namespace Model
 
     /**
      * <p> The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -134,7 +134,7 @@ namespace Model
 
     /**
      * <p> The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -148,7 +148,7 @@ namespace Model
 
     /**
      * <p> The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -394,7 +394,7 @@ namespace Model
      * operations or the <code>assume-role*</code> CLI operations but does not apply
      * when you use those operations to create a console URL. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline int GetMaxSessionDuration() const{ return m_maxSessionDuration; }
@@ -413,7 +413,7 @@ namespace Model
      * operations or the <code>assume-role*</code> CLI operations but does not apply
      * when you use those operations to create a console URL. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool MaxSessionDurationHasBeenSet() const { return m_maxSessionDurationHasBeenSet; }
@@ -432,7 +432,7 @@ namespace Model
      * operations or the <code>assume-role*</code> CLI operations but does not apply
      * when you use those operations to create a console URL. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetMaxSessionDuration(int value) { m_maxSessionDurationHasBeenSet = true; m_maxSessionDuration = value; }
@@ -451,7 +451,7 @@ namespace Model
      * operations or the <code>assume-role*</code> CLI operations but does not apply
      * when you use those operations to create a console URL. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline CreateRoleRequest& WithMaxSessionDuration(int value) { SetMaxSessionDuration(value); return *this;}
@@ -510,7 +510,7 @@ namespace Model
      * <p>A list of tags that you want to attach to the newly created role. Each tag
      * consists of a key name and an associated value. For more information about
      * tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
      * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
      * tags is invalid or if you exceed the allowed number of tags per role, then the
      * entire request fails and the role is not created.</p> </note>
@@ -521,7 +521,7 @@ namespace Model
      * <p>A list of tags that you want to attach to the newly created role. Each tag
      * consists of a key name and an associated value. For more information about
      * tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
      * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
      * tags is invalid or if you exceed the allowed number of tags per role, then the
      * entire request fails and the role is not created.</p> </note>
@@ -532,7 +532,7 @@ namespace Model
      * <p>A list of tags that you want to attach to the newly created role. Each tag
      * consists of a key name and an associated value. For more information about
      * tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
      * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
      * tags is invalid or if you exceed the allowed number of tags per role, then the
      * entire request fails and the role is not created.</p> </note>
@@ -543,7 +543,7 @@ namespace Model
      * <p>A list of tags that you want to attach to the newly created role. Each tag
      * consists of a key name and an associated value. For more information about
      * tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
      * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
      * tags is invalid or if you exceed the allowed number of tags per role, then the
      * entire request fails and the role is not created.</p> </note>
@@ -554,7 +554,7 @@ namespace Model
      * <p>A list of tags that you want to attach to the newly created role. Each tag
      * consists of a key name and an associated value. For more information about
      * tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
      * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
      * tags is invalid or if you exceed the allowed number of tags per role, then the
      * entire request fails and the role is not created.</p> </note>
@@ -565,7 +565,7 @@ namespace Model
      * <p>A list of tags that you want to attach to the newly created role. Each tag
      * consists of a key name and an associated value. For more information about
      * tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
      * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
      * tags is invalid or if you exceed the allowed number of tags per role, then the
      * entire request fails and the role is not created.</p> </note>
@@ -576,7 +576,7 @@ namespace Model
      * <p>A list of tags that you want to attach to the newly created role. Each tag
      * consists of a key name and an associated value. For more information about
      * tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
      * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
      * tags is invalid or if you exceed the allowed number of tags per role, then the
      * entire request fails and the role is not created.</p> </note>
@@ -587,7 +587,7 @@ namespace Model
      * <p>A list of tags that you want to attach to the newly created role. Each tag
      * consists of a key name and an associated value. For more information about
      * tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
      * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
      * tags is invalid or if you exceed the allowed number of tags per role, then the
      * entire request fails and the role is not created.</p> </note>

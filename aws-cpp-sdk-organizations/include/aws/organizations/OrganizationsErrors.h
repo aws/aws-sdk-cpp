@@ -93,7 +93,8 @@ enum class OrganizationsErrors
   SERVICE,
   SOURCE_PARENT_NOT_FOUND,
   TARGET_NOT_FOUND,
-  TOO_MANY_REQUESTS
+  TOO_MANY_REQUESTS,
+  UNSUPPORTED_A_P_I_ENDPOINT
 };
 namespace OrganizationsErrorMapper
 {

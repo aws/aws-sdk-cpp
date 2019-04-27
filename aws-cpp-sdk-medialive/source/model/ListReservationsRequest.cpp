@@ -26,6 +26,7 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListReservationsRequest::ListReservationsRequest() : 
+    m_channelClassHasBeenSet(false),
     m_codecHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
@@ -47,6 +48,13 @@ Aws::String ListReservationsRequest::SerializePayload() const
 void ListReservationsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_channelClassHasBeenSet)
+    {
+      ss << m_channelClass;
+      uri.AddQueryStringParameter("channelClass", ss.str());
+      ss.str("");
+    }
+
     if(m_codecHasBeenSet)
     {
       ss << m_codec;

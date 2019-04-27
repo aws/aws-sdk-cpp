@@ -32,8 +32,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for Scte27DestinationSettings<p><h3>See Also:</h3>  
-   * <a
+   * Scte27 Destination Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte27DestinationSettings">AWS
    * API Reference</a></p>
    */

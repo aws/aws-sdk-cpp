@@ -60,8 +60,9 @@ namespace
             headers.insert(Aws::Http::HeaderValuePair(":message-type", "event"));
             for (const auto& header : headers)
             {
-                ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_add_string_header(&eventStreamHeaders, header.first.c_str(), static_cast<uint8_t>(header.first.size()),
-                    header.second.c_str(), static_cast<uint16_t>(header.second.size()), 0/*no copy*/));
+                ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_add_string_header(&eventStreamHeaders, header.first.c_str(),
+                            static_cast<uint8_t>(header.first.size()),
+                            header.second.c_str(), static_cast<uint16_t>(header.second.size()), false/*copy*/));
             }
             // Payload
             const char* payload = "Records";
@@ -133,7 +134,7 @@ namespace
 
         stream.write(reinterpret_cast<const char*>(data_raw), partialLength);
         stream.flush();
-        
+
         ASSERT_EQ(1u, handler.m_onPayloadSegmentCount);
         ASSERT_EQ(1u, handler.m_onCompletePayloadCount);
         ASSERT_EQ(1u, handler.m_onPreludeReceivedCount);
@@ -222,5 +223,73 @@ namespace
         ASSERT_EQ(1u, handler.m_internalErrorsCount);
         ASSERT_EQ(EventStreamErrors::EVENT_STREAM_PRELUDE_CHECKSUM_FAILURE, handler.m_error);
         ASSERT_TRUE(handler.m_errorMessage.find("CRC Mismatch.") == 0);
+    }
+
+    TEST_F(EventStreamTest, TestEncodingEvents)
+    {
+        Aws::Client::AWSNullSigner nullSigner;
+        EventEncoderStream io;
+        io.SetSigner(&nullSigner);
+        const char payloadString[] = "Amazon Web Services, Inc.";
+        io.SetSignatureSeed("deadbeef");
+        constexpr long iterations = 5;
+        for (int i = 0; i < iterations; i++)
+        {
+            io.write(payloadString, sizeof(payloadString));
+        }
+
+        io.flush();
+        io.Close();
+        ASSERT_TRUE(io);
+
+        char output[1024];
+        io.read(output, sizeof(output));
+        ASSERT_GE(io.gcount(), static_cast<long>(sizeof(payloadString) * iterations));
+        ASSERT_TRUE(io.eof());
+    }
+
+    TEST_F(EventStreamTest, EncodingEventsDecodesCorrectly)
+    {
+        struct MockHandler : Aws::Utils::Event::EventStreamHandler
+        {
+            void OnEvent() override { m_payloads.push_back(GetEventPayloadAsString()); }
+
+            Aws::Vector<Aws::String> GetPayload() const { return m_payloads; }
+
+            Aws::Vector<Aws::String> m_payloads;
+        };
+
+        // write the payload to the stream and create an event out of it
+        Aws::Client::AWSNullSigner nullSigner;
+        EventEncoderStream io;
+        io.SetSigner(&nullSigner);
+        io.SetSignatureSeed("deadbeef");
+        const char payloadString[] = "Amazon Web Services, Inc.";
+        Event::Message msg;
+        msg.InsertEventHeader(":message-type", Aws::String("event"));
+        msg.WriteEventPayload(reinterpret_cast<const unsigned char*>(payloadString), sizeof(payloadString));
+        io.WriteEvent(msg);
+
+        io.flush();
+        io.Close();
+        ASSERT_TRUE(io);
+
+        // read the event bits and attempt to deserialize them
+        char output[1024];
+        io.read(output, sizeof(output));
+        ASSERT_TRUE(io.eof());
+
+        // verify that we get the same message out
+        MockHandler handler;
+        EventStreamDecoder decoder(&handler);
+        EventStream s(decoder);
+        s.write(output, io.gcount());
+        s.flush();
+        ASSERT_EQ(1u, handler.m_payloads.size()); // this verifies we received the signed message
+        s.write(handler.m_payloads[0].data(), handler.m_payloads[0].length()); // unwrap the signed message to get the
+                                                                               // actual message
+        s.flush();
+        ASSERT_EQ(2u, handler.m_payloads.size());
+        ASSERT_STREQ(payloadString, handler.m_payloads[1].c_str());
     }
 }

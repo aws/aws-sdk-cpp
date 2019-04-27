@@ -51,90 +51,90 @@ namespace Model
 
 
     /**
-     * <p>The instance IDs where the command should execute. You can specify a maximum
-     * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
-     * send commands to a fleet of instances using the Targets parameter, which accepts
-     * EC2 tags. For more information about how to use targets, see <a
+     * <p>The instance IDs where the command should run. You can specify a maximum of
+     * 50 IDs. If you prefer not to list individual instance IDs, you can instead send
+     * commands to a fleet of instances using the Targets parameter, which accepts EC2
+     * tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>The instance IDs where the command should execute. You can specify a maximum
-     * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
-     * send commands to a fleet of instances using the Targets parameter, which accepts
-     * EC2 tags. For more information about how to use targets, see <a
+     * <p>The instance IDs where the command should run. You can specify a maximum of
+     * 50 IDs. If you prefer not to list individual instance IDs, you can instead send
+     * commands to a fleet of instances using the Targets parameter, which accepts EC2
+     * tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
 
     /**
-     * <p>The instance IDs where the command should execute. You can specify a maximum
-     * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
-     * send commands to a fleet of instances using the Targets parameter, which accepts
-     * EC2 tags. For more information about how to use targets, see <a
+     * <p>The instance IDs where the command should run. You can specify a maximum of
+     * 50 IDs. If you prefer not to list individual instance IDs, you can instead send
+     * commands to a fleet of instances using the Targets parameter, which accepts EC2
+     * tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>The instance IDs where the command should execute. You can specify a maximum
-     * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
-     * send commands to a fleet of instances using the Targets parameter, which accepts
-     * EC2 tags. For more information about how to use targets, see <a
+     * <p>The instance IDs where the command should run. You can specify a maximum of
+     * 50 IDs. If you prefer not to list individual instance IDs, you can instead send
+     * commands to a fleet of instances using the Targets parameter, which accepts EC2
+     * tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
-     * <p>The instance IDs where the command should execute. You can specify a maximum
-     * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
-     * send commands to a fleet of instances using the Targets parameter, which accepts
-     * EC2 tags. For more information about how to use targets, see <a
+     * <p>The instance IDs where the command should run. You can specify a maximum of
+     * 50 IDs. If you prefer not to list individual instance IDs, you can instead send
+     * commands to a fleet of instances using the Targets parameter, which accepts EC2
+     * tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>The instance IDs where the command should execute. You can specify a maximum
-     * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
-     * send commands to a fleet of instances using the Targets parameter, which accepts
-     * EC2 tags. For more information about how to use targets, see <a
+     * <p>The instance IDs where the command should run. You can specify a maximum of
+     * 50 IDs. If you prefer not to list individual instance IDs, you can instead send
+     * commands to a fleet of instances using the Targets parameter, which accepts EC2
+     * tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
-     * <p>The instance IDs where the command should execute. You can specify a maximum
-     * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
-     * send commands to a fleet of instances using the Targets parameter, which accepts
-     * EC2 tags. For more information about how to use targets, see <a
+     * <p>The instance IDs where the command should run. You can specify a maximum of
+     * 50 IDs. If you prefer not to list individual instance IDs, you can instead send
+     * commands to a fleet of instances using the Targets parameter, which accepts EC2
+     * tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>The instance IDs where the command should execute. You can specify a maximum
-     * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
-     * send commands to a fleet of instances using the Targets parameter, which accepts
-     * EC2 tags. For more information about how to use targets, see <a
+     * <p>The instance IDs where the command should run. You can specify a maximum of
+     * 50 IDs. If you prefer not to list individual instance IDs, you can instead send
+     * commands to a fleet of instances using the Targets parameter, which accepts EC2
+     * tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The instance IDs where the command should execute. You can specify a maximum
-     * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
-     * send commands to a fleet of instances using the Targets parameter, which accepts
-     * EC2 tags. For more information about how to use targets, see <a
+     * <p>The instance IDs where the command should run. You can specify a maximum of
+     * 50 IDs. If you prefer not to list individual instance IDs, you can instead send
+     * commands to a fleet of instances using the Targets parameter, which accepts EC2
+     * tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -223,49 +223,49 @@ namespace Model
 
 
     /**
-     * <p>Required. The name of the Systems Manager document to execute. This can be a
+     * <p>Required. The name of the Systems Manager document to run. This can be a
      * public document or a custom document.</p>
      */
     inline const Aws::String& GetDocumentName() const{ return m_documentName; }
 
     /**
-     * <p>Required. The name of the Systems Manager document to execute. This can be a
+     * <p>Required. The name of the Systems Manager document to run. This can be a
      * public document or a custom document.</p>
      */
     inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
 
     /**
-     * <p>Required. The name of the Systems Manager document to execute. This can be a
+     * <p>Required. The name of the Systems Manager document to run. This can be a
      * public document or a custom document.</p>
      */
     inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
 
     /**
-     * <p>Required. The name of the Systems Manager document to execute. This can be a
+     * <p>Required. The name of the Systems Manager document to run. This can be a
      * public document or a custom document.</p>
      */
     inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = std::move(value); }
 
     /**
-     * <p>Required. The name of the Systems Manager document to execute. This can be a
+     * <p>Required. The name of the Systems Manager document to run. This can be a
      * public document or a custom document.</p>
      */
     inline void SetDocumentName(const char* value) { m_documentNameHasBeenSet = true; m_documentName.assign(value); }
 
     /**
-     * <p>Required. The name of the Systems Manager document to execute. This can be a
+     * <p>Required. The name of the Systems Manager document to run. This can be a
      * public document or a custom document.</p>
      */
     inline SendCommandRequest& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
 
     /**
-     * <p>Required. The name of the Systems Manager document to execute. This can be a
+     * <p>Required. The name of the Systems Manager document to run. This can be a
      * public document or a custom document.</p>
      */
     inline SendCommandRequest& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
 
     /**
-     * <p>Required. The name of the Systems Manager document to execute. This can be a
+     * <p>Required. The name of the Systems Manager document to run. This can be a
      * public document or a custom document.</p>
      */
     inline SendCommandRequest& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
@@ -273,81 +273,81 @@ namespace Model
 
     /**
      * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you execute commands by using the AWS
-     * CLI, then you must escape the first two options by using a backslash. If you
-     * specify a version number, then you don't need to use the backslash. For
-     * example:</p> <p>--document-version "\$DEFAULT"</p> <p>--document-version
-     * "\$LATEST"</p> <p>--document-version "3"</p>
+     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
+     * then you must escape the first two options by using a backslash. If you specify
+     * a version number, then you don't need to use the backslash. For example:</p>
+     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
+     * <p>--document-version "3"</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
      * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you execute commands by using the AWS
-     * CLI, then you must escape the first two options by using a backslash. If you
-     * specify a version number, then you don't need to use the backslash. For
-     * example:</p> <p>--document-version "\$DEFAULT"</p> <p>--document-version
-     * "\$LATEST"</p> <p>--document-version "3"</p>
+     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
+     * then you must escape the first two options by using a backslash. If you specify
+     * a version number, then you don't need to use the backslash. For example:</p>
+     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
+     * <p>--document-version "3"</p>
      */
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
      * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you execute commands by using the AWS
-     * CLI, then you must escape the first two options by using a backslash. If you
-     * specify a version number, then you don't need to use the backslash. For
-     * example:</p> <p>--document-version "\$DEFAULT"</p> <p>--document-version
-     * "\$LATEST"</p> <p>--document-version "3"</p>
+     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
+     * then you must escape the first two options by using a backslash. If you specify
+     * a version number, then you don't need to use the backslash. For example:</p>
+     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
+     * <p>--document-version "3"</p>
      */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
      * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you execute commands by using the AWS
-     * CLI, then you must escape the first two options by using a backslash. If you
-     * specify a version number, then you don't need to use the backslash. For
-     * example:</p> <p>--document-version "\$DEFAULT"</p> <p>--document-version
-     * "\$LATEST"</p> <p>--document-version "3"</p>
+     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
+     * then you must escape the first two options by using a backslash. If you specify
+     * a version number, then you don't need to use the backslash. For example:</p>
+     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
+     * <p>--document-version "3"</p>
      */
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
      * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you execute commands by using the AWS
-     * CLI, then you must escape the first two options by using a backslash. If you
-     * specify a version number, then you don't need to use the backslash. For
-     * example:</p> <p>--document-version "\$DEFAULT"</p> <p>--document-version
-     * "\$LATEST"</p> <p>--document-version "3"</p>
+     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
+     * then you must escape the first two options by using a backslash. If you specify
+     * a version number, then you don't need to use the backslash. For example:</p>
+     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
+     * <p>--document-version "3"</p>
      */
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
     /**
      * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you execute commands by using the AWS
-     * CLI, then you must escape the first two options by using a backslash. If you
-     * specify a version number, then you don't need to use the backslash. For
-     * example:</p> <p>--document-version "\$DEFAULT"</p> <p>--document-version
-     * "\$LATEST"</p> <p>--document-version "3"</p>
+     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
+     * then you must escape the first two options by using a backslash. If you specify
+     * a version number, then you don't need to use the backslash. For example:</p>
+     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
+     * <p>--document-version "3"</p>
      */
     inline SendCommandRequest& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
      * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you execute commands by using the AWS
-     * CLI, then you must escape the first two options by using a backslash. If you
-     * specify a version number, then you don't need to use the backslash. For
-     * example:</p> <p>--document-version "\$DEFAULT"</p> <p>--document-version
-     * "\$LATEST"</p> <p>--document-version "3"</p>
+     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
+     * then you must escape the first two options by using a backslash. If you specify
+     * a version number, then you don't need to use the backslash. For example:</p>
+     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
+     * <p>--document-version "3"</p>
      */
     inline SendCommandRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
      * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you execute commands by using the AWS
-     * CLI, then you must escape the first two options by using a backslash. If you
-     * specify a version number, then you don't need to use the backslash. For
-     * example:</p> <p>--document-version "\$DEFAULT"</p> <p>--document-version
-     * "\$LATEST"</p> <p>--document-version "3"</p>
+     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
+     * then you must escape the first two options by using a backslash. If you specify
+     * a version number, then you don't need to use the backslash. For example:</p>
+     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
+     * <p>--document-version "3"</p>
      */
     inline SendCommandRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
@@ -433,25 +433,25 @@ namespace Model
 
 
     /**
-     * <p>If this time is reached and the command has not already started executing, it
+     * <p>If this time is reached and the command has not already started running, it
      * will not run.</p>
      */
     inline int GetTimeoutSeconds() const{ return m_timeoutSeconds; }
 
     /**
-     * <p>If this time is reached and the command has not already started executing, it
+     * <p>If this time is reached and the command has not already started running, it
      * will not run.</p>
      */
     inline bool TimeoutSecondsHasBeenSet() const { return m_timeoutSecondsHasBeenSet; }
 
     /**
-     * <p>If this time is reached and the command has not already started executing, it
+     * <p>If this time is reached and the command has not already started running, it
      * will not run.</p>
      */
     inline void SetTimeoutSeconds(int value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
 
     /**
-     * <p>If this time is reached and the command has not already started executing, it
+     * <p>If this time is reached and the command has not already started running, it
      * will not run.</p>
      */
     inline SendCommandRequest& WithTimeoutSeconds(int value) { SetTimeoutSeconds(value); return *this;}
@@ -507,74 +507,62 @@ namespace Model
 
 
     /**
-     * <p>The required and optional parameters specified in the document being
-     * executed.</p>
+     * <p>The required and optional parameters specified in the document being run.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The required and optional parameters specified in the document being
-     * executed.</p>
+     * <p>The required and optional parameters specified in the document being run.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>The required and optional parameters specified in the document being
-     * executed.</p>
+     * <p>The required and optional parameters specified in the document being run.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The required and optional parameters specified in the document being
-     * executed.</p>
+     * <p>The required and optional parameters specified in the document being run.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>The required and optional parameters specified in the document being
-     * executed.</p>
+     * <p>The required and optional parameters specified in the document being run.</p>
      */
     inline SendCommandRequest& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The required and optional parameters specified in the document being
-     * executed.</p>
+     * <p>The required and optional parameters specified in the document being run.</p>
      */
     inline SendCommandRequest& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The required and optional parameters specified in the document being
-     * executed.</p>
+     * <p>The required and optional parameters specified in the document being run.</p>
      */
     inline SendCommandRequest& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The required and optional parameters specified in the document being
-     * executed.</p>
+     * <p>The required and optional parameters specified in the document being run.</p>
      */
     inline SendCommandRequest& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The required and optional parameters specified in the document being
-     * executed.</p>
+     * <p>The required and optional parameters specified in the document being run.</p>
      */
     inline SendCommandRequest& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The required and optional parameters specified in the document being
-     * executed.</p>
+     * <p>The required and optional parameters specified in the document being run.</p>
      */
     inline SendCommandRequest& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The required and optional parameters specified in the document being
-     * executed.</p>
+     * <p>The required and optional parameters specified in the document being run.</p>
      */
     inline SendCommandRequest& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The required and optional parameters specified in the document being
-     * executed.</p>
+     * <p>The required and optional parameters specified in the document being run.</p>
      */
     inline SendCommandRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
@@ -735,7 +723,7 @@ namespace Model
 
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to execute the
+     * <p>(Optional) The maximum number of instances that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is 50. For more information about how to use
      * MaxConcurrency, see <a
@@ -745,7 +733,7 @@ namespace Model
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to execute the
+     * <p>(Optional) The maximum number of instances that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is 50. For more information about how to use
      * MaxConcurrency, see <a
@@ -755,7 +743,7 @@ namespace Model
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to execute the
+     * <p>(Optional) The maximum number of instances that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is 50. For more information about how to use
      * MaxConcurrency, see <a
@@ -765,7 +753,7 @@ namespace Model
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to execute the
+     * <p>(Optional) The maximum number of instances that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is 50. For more information about how to use
      * MaxConcurrency, see <a
@@ -775,7 +763,7 @@ namespace Model
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to execute the
+     * <p>(Optional) The maximum number of instances that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is 50. For more information about how to use
      * MaxConcurrency, see <a
@@ -785,7 +773,7 @@ namespace Model
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to execute the
+     * <p>(Optional) The maximum number of instances that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is 50. For more information about how to use
      * MaxConcurrency, see <a
@@ -795,7 +783,7 @@ namespace Model
     inline SendCommandRequest& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to execute the
+     * <p>(Optional) The maximum number of instances that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is 50. For more information about how to use
      * MaxConcurrency, see <a
@@ -805,7 +793,7 @@ namespace Model
     inline SendCommandRequest& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to execute the
+     * <p>(Optional) The maximum number of instances that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is 50. For more information about how to use
      * MaxConcurrency, see <a

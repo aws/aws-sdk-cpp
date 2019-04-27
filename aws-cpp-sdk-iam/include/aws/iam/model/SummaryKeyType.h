@@ -50,7 +50,8 @@ namespace Model
     PolicySizeQuota,
     PolicyVersionsInUse,
     PolicyVersionsInUseQuota,
-    VersionsPerPolicyQuota
+    VersionsPerPolicyQuota,
+    GlobalEndpointTokenVersion
   };
 
 namespace SummaryKeyTypeMapper

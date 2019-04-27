@@ -48,47 +48,47 @@ namespace Model
   public:
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>The instance IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>The instance IDs.</p>
      */
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>The instance IDs.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>The instance IDs.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>The instance IDs.</p>
      */
     inline RebootInstancesRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>The instance IDs.</p>
      */
     inline RebootInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>The instance IDs.</p>
      */
     inline RebootInstancesRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>The instance IDs.</p>
      */
     inline RebootInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>The instance IDs.</p>
      */
     inline RebootInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 

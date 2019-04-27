@@ -121,7 +121,7 @@ namespace Model
 
     /**
      * <p> The path to the instance profile. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -135,7 +135,7 @@ namespace Model
 
     /**
      * <p> The path to the instance profile. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -149,7 +149,7 @@ namespace Model
 
     /**
      * <p> The path to the instance profile. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -163,7 +163,7 @@ namespace Model
 
     /**
      * <p> The path to the instance profile. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -177,7 +177,7 @@ namespace Model
 
     /**
      * <p> The path to the instance profile. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -191,7 +191,7 @@ namespace Model
 
     /**
      * <p> The path to the instance profile. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -205,7 +205,7 @@ namespace Model
 
     /**
      * <p> The path to the instance profile. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -219,7 +219,7 @@ namespace Model
 
     /**
      * <p> The path to the instance profile. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a

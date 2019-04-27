@@ -83,7 +83,9 @@ namespace Model
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
      * to return detected fields and the associated text. To perform both types of
-     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>.</p>
+     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable
+     * elements (<code>SELECTION_ELEMENT</code>) that are detected are returned,
+     * whatever the value of <code>FeatureTypes</code>. </p>
      */
     inline const Aws::Vector<FeatureType>& GetFeatureTypes() const{ return m_featureTypes; }
 
@@ -91,7 +93,9 @@ namespace Model
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
      * to return detected fields and the associated text. To perform both types of
-     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>.</p>
+     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable
+     * elements (<code>SELECTION_ELEMENT</code>) that are detected are returned,
+     * whatever the value of <code>FeatureTypes</code>. </p>
      */
     inline bool FeatureTypesHasBeenSet() const { return m_featureTypesHasBeenSet; }
 
@@ -99,7 +103,9 @@ namespace Model
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
      * to return detected fields and the associated text. To perform both types of
-     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>.</p>
+     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable
+     * elements (<code>SELECTION_ELEMENT</code>) that are detected are returned,
+     * whatever the value of <code>FeatureTypes</code>. </p>
      */
     inline void SetFeatureTypes(const Aws::Vector<FeatureType>& value) { m_featureTypesHasBeenSet = true; m_featureTypes = value; }
 
@@ -107,7 +113,9 @@ namespace Model
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
      * to return detected fields and the associated text. To perform both types of
-     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>.</p>
+     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable
+     * elements (<code>SELECTION_ELEMENT</code>) that are detected are returned,
+     * whatever the value of <code>FeatureTypes</code>. </p>
      */
     inline void SetFeatureTypes(Aws::Vector<FeatureType>&& value) { m_featureTypesHasBeenSet = true; m_featureTypes = std::move(value); }
 
@@ -115,7 +123,9 @@ namespace Model
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
      * to return detected fields and the associated text. To perform both types of
-     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>.</p>
+     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable
+     * elements (<code>SELECTION_ELEMENT</code>) that are detected are returned,
+     * whatever the value of <code>FeatureTypes</code>. </p>
      */
     inline StartDocumentAnalysisRequest& WithFeatureTypes(const Aws::Vector<FeatureType>& value) { SetFeatureTypes(value); return *this;}
 
@@ -123,7 +133,9 @@ namespace Model
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
      * to return detected fields and the associated text. To perform both types of
-     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>.</p>
+     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable
+     * elements (<code>SELECTION_ELEMENT</code>) that are detected are returned,
+     * whatever the value of <code>FeatureTypes</code>. </p>
      */
     inline StartDocumentAnalysisRequest& WithFeatureTypes(Aws::Vector<FeatureType>&& value) { SetFeatureTypes(std::move(value)); return *this;}
 
@@ -131,7 +143,9 @@ namespace Model
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
      * to return detected fields and the associated text. To perform both types of
-     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>.</p>
+     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable
+     * elements (<code>SELECTION_ELEMENT</code>) that are detected are returned,
+     * whatever the value of <code>FeatureTypes</code>. </p>
      */
     inline StartDocumentAnalysisRequest& AddFeatureTypes(const FeatureType& value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(value); return *this; }
 
@@ -139,7 +153,9 @@ namespace Model
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
      * to return detected fields and the associated text. To perform both types of
-     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>.</p>
+     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable
+     * elements (<code>SELECTION_ELEMENT</code>) that are detected are returned,
+     * whatever the value of <code>FeatureTypes</code>. </p>
      */
     inline StartDocumentAnalysisRequest& AddFeatureTypes(FeatureType&& value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(std::move(value)); return *this; }
 
@@ -210,50 +226,66 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier you specify to identify the job in the completion
-     * status that's published to the Amazon SNS topic.</p>
+     * <p>An identifier you specify that's included in the completion notification
+     * that's published to the Amazon SNS topic. For example, you can use
+     * <code>JobTag</code> to identify the type of document, such as a tax form or a
+     * receipt, that the completion notification corresponds to.</p>
      */
     inline const Aws::String& GetJobTag() const{ return m_jobTag; }
 
     /**
-     * <p>The unique identifier you specify to identify the job in the completion
-     * status that's published to the Amazon SNS topic.</p>
+     * <p>An identifier you specify that's included in the completion notification
+     * that's published to the Amazon SNS topic. For example, you can use
+     * <code>JobTag</code> to identify the type of document, such as a tax form or a
+     * receipt, that the completion notification corresponds to.</p>
      */
     inline bool JobTagHasBeenSet() const { return m_jobTagHasBeenSet; }
 
     /**
-     * <p>The unique identifier you specify to identify the job in the completion
-     * status that's published to the Amazon SNS topic.</p>
+     * <p>An identifier you specify that's included in the completion notification
+     * that's published to the Amazon SNS topic. For example, you can use
+     * <code>JobTag</code> to identify the type of document, such as a tax form or a
+     * receipt, that the completion notification corresponds to.</p>
      */
     inline void SetJobTag(const Aws::String& value) { m_jobTagHasBeenSet = true; m_jobTag = value; }
 
     /**
-     * <p>The unique identifier you specify to identify the job in the completion
-     * status that's published to the Amazon SNS topic.</p>
+     * <p>An identifier you specify that's included in the completion notification
+     * that's published to the Amazon SNS topic. For example, you can use
+     * <code>JobTag</code> to identify the type of document, such as a tax form or a
+     * receipt, that the completion notification corresponds to.</p>
      */
     inline void SetJobTag(Aws::String&& value) { m_jobTagHasBeenSet = true; m_jobTag = std::move(value); }
 
     /**
-     * <p>The unique identifier you specify to identify the job in the completion
-     * status that's published to the Amazon SNS topic.</p>
+     * <p>An identifier you specify that's included in the completion notification
+     * that's published to the Amazon SNS topic. For example, you can use
+     * <code>JobTag</code> to identify the type of document, such as a tax form or a
+     * receipt, that the completion notification corresponds to.</p>
      */
     inline void SetJobTag(const char* value) { m_jobTagHasBeenSet = true; m_jobTag.assign(value); }
 
     /**
-     * <p>The unique identifier you specify to identify the job in the completion
-     * status that's published to the Amazon SNS topic.</p>
+     * <p>An identifier you specify that's included in the completion notification
+     * that's published to the Amazon SNS topic. For example, you can use
+     * <code>JobTag</code> to identify the type of document, such as a tax form or a
+     * receipt, that the completion notification corresponds to.</p>
      */
     inline StartDocumentAnalysisRequest& WithJobTag(const Aws::String& value) { SetJobTag(value); return *this;}
 
     /**
-     * <p>The unique identifier you specify to identify the job in the completion
-     * status that's published to the Amazon SNS topic.</p>
+     * <p>An identifier you specify that's included in the completion notification
+     * that's published to the Amazon SNS topic. For example, you can use
+     * <code>JobTag</code> to identify the type of document, such as a tax form or a
+     * receipt, that the completion notification corresponds to.</p>
      */
     inline StartDocumentAnalysisRequest& WithJobTag(Aws::String&& value) { SetJobTag(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier you specify to identify the job in the completion
-     * status that's published to the Amazon SNS topic.</p>
+     * <p>An identifier you specify that's included in the completion notification
+     * that's published to the Amazon SNS topic. For example, you can use
+     * <code>JobTag</code> to identify the type of document, such as a tax form or a
+     * receipt, that the completion notification corresponds to.</p>
      */
     inline StartDocumentAnalysisRequest& WithJobTag(const char* value) { SetJobTag(value); return *this;}
 

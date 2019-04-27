@@ -160,7 +160,7 @@ namespace Model
      * <p>The array properties for the submitted job, such as the size of the array.
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
      * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline const ArrayProperties& GetArrayProperties() const{ return m_arrayProperties; }
@@ -169,7 +169,7 @@ namespace Model
      * <p>The array properties for the submitted job, such as the size of the array.
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
      * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline bool ArrayPropertiesHasBeenSet() const { return m_arrayPropertiesHasBeenSet; }
@@ -178,7 +178,7 @@ namespace Model
      * <p>The array properties for the submitted job, such as the size of the array.
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
      * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetArrayProperties(const ArrayProperties& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = value; }
@@ -187,7 +187,7 @@ namespace Model
      * <p>The array properties for the submitted job, such as the size of the array.
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
      * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetArrayProperties(ArrayProperties&& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = std::move(value); }
@@ -196,7 +196,7 @@ namespace Model
      * <p>The array properties for the submitted job, such as the size of the array.
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
      * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline SubmitJobRequest& WithArrayProperties(const ArrayProperties& value) { SetArrayProperties(value); return *this;}
@@ -205,7 +205,7 @@ namespace Model
      * <p>The array properties for the submitted job, such as the size of the array.
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
      * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline SubmitJobRequest& WithArrayProperties(ArrayProperties&& value) { SetArrayProperties(std::move(value)); return *this;}
@@ -617,7 +617,7 @@ namespace Model
      * any timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline const JobTimeout& GetTimeout() const{ return m_timeout; }
@@ -630,7 +630,7 @@ namespace Model
      * any timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
@@ -643,7 +643,7 @@ namespace Model
      * any timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline void SetTimeout(const JobTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
@@ -656,7 +656,7 @@ namespace Model
      * any timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline void SetTimeout(JobTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
@@ -669,7 +669,7 @@ namespace Model
      * any timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline SubmitJobRequest& WithTimeout(const JobTimeout& value) { SetTimeout(value); return *this;}
@@ -682,7 +682,7 @@ namespace Model
      * any timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline SubmitJobRequest& WithTimeout(JobTimeout&& value) { SetTimeout(std::move(value)); return *this;}

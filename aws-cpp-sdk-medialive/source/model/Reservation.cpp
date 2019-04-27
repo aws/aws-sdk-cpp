@@ -51,6 +51,7 @@ Reservation::Reservation() :
     m_startHasBeenSet(false),
     m_state(ReservationState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_usagePrice(0.0),
     m_usagePriceHasBeenSet(false)
 {
@@ -79,6 +80,7 @@ Reservation::Reservation(JsonView jsonValue) :
     m_startHasBeenSet(false),
     m_state(ReservationState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_usagePrice(0.0),
     m_usagePriceHasBeenSet(false)
 {
@@ -199,6 +201,16 @@ Reservation& Reservation::operator =(JsonView jsonValue)
     m_stateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("usagePrice"))
   {
     m_usagePrice = jsonValue.GetDouble("usagePrice");
@@ -304,6 +316,17 @@ JsonValue Reservation::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("state", ReservationStateMapper::GetNameForReservationState(m_state));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
   }
 
   if(m_usagePriceHasBeenSet)

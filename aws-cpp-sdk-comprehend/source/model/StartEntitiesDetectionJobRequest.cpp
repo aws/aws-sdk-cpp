@@ -31,7 +31,8 @@ StartEntitiesDetectionJobRequest::StartEntitiesDetectionJobRequest() :
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
+    m_clientRequestTokenHasBeenSet(true),
+    m_volumeKmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,12 @@ Aws::String StartEntitiesDetectionJobRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("ClientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_volumeKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
 
   }
 

@@ -45,7 +45,7 @@ namespace Model
    * <code>FAILED</code>, CloudFormation cancels the operation in that account and
    * region, and sets the stack set operation result status for that account and
    * region to <code>FAILED</code>. </p> <p>For more information, see <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html">Configuring
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html">Configuring
    * a target account gate</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/AccountGateResult">AWS
    * API Reference</a></p>

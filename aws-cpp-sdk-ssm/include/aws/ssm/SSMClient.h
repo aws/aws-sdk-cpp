@@ -2015,8 +2015,8 @@ namespace Model
 
         /**
          * <p>Retrieves the individual task executions (one per target) for a particular
-         * task executed as part of a Maintenance Window execution.</p><p><h3>See
-         * Also:</h3>   <a
+         * task run as part of a Maintenance Window execution.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">AWS
          * API Reference</a></p>
          */
@@ -2024,8 +2024,8 @@ namespace Model
 
         /**
          * <p>Retrieves the individual task executions (one per target) for a particular
-         * task executed as part of a Maintenance Window execution.</p><p><h3>See
-         * Also:</h3>   <a
+         * task run as part of a Maintenance Window execution.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">AWS
          * API Reference</a></p>
          *
@@ -2035,8 +2035,8 @@ namespace Model
 
         /**
          * <p>Retrieves the individual task executions (one per target) for a particular
-         * task executed as part of a Maintenance Window execution.</p><p><h3>See
-         * Also:</h3>   <a
+         * task run as part of a Maintenance Window execution.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">AWS
          * API Reference</a></p>
          *
@@ -2046,7 +2046,7 @@ namespace Model
 
         /**
          * <p>For a given Maintenance Window execution, lists the tasks that were
-         * executed.</p><p><h3>See Also:</h3>   <a
+         * run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">AWS
          * API Reference</a></p>
          */
@@ -2054,7 +2054,7 @@ namespace Model
 
         /**
          * <p>For a given Maintenance Window execution, lists the tasks that were
-         * executed.</p><p><h3>See Also:</h3>   <a
+         * run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">AWS
          * API Reference</a></p>
          *
@@ -2064,7 +2064,7 @@ namespace Model
 
         /**
          * <p>For a given Maintenance Window execution, lists the tasks that were
-         * executed.</p><p><h3>See Also:</h3>   <a
+         * run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">AWS
          * API Reference</a></p>
          *
@@ -2663,16 +2663,16 @@ namespace Model
         virtual void GetMaintenanceWindowAsync(const Model::GetMaintenanceWindowRequest& request, const GetMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves details about a specific task executed as part of a Maintenance
-         * Window execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves details about a specific task run as part of a Maintenance Window
+         * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMaintenanceWindowExecutionOutcome GetMaintenanceWindowExecution(const Model::GetMaintenanceWindowExecutionRequest& request) const;
 
         /**
-         * <p>Retrieves details about a specific task executed as part of a Maintenance
-         * Window execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves details about a specific task run as part of a Maintenance Window
+         * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">AWS
          * API Reference</a></p>
          *
@@ -2681,8 +2681,8 @@ namespace Model
         virtual Model::GetMaintenanceWindowExecutionOutcomeCallable GetMaintenanceWindowExecutionCallable(const Model::GetMaintenanceWindowExecutionRequest& request) const;
 
         /**
-         * <p>Retrieves details about a specific task executed as part of a Maintenance
-         * Window execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves details about a specific task run as part of a Maintenance Window
+         * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">AWS
          * API Reference</a></p>
          *
@@ -2691,7 +2691,7 @@ namespace Model
         virtual void GetMaintenanceWindowExecutionAsync(const Model::GetMaintenanceWindowExecutionRequest& request, const GetMaintenanceWindowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the details about a specific task executed as part of a Maintenance
+         * <p>Retrieves the details about a specific task run as part of a Maintenance
          * Window execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">AWS
          * API Reference</a></p>
@@ -2699,7 +2699,7 @@ namespace Model
         virtual Model::GetMaintenanceWindowExecutionTaskOutcome GetMaintenanceWindowExecutionTask(const Model::GetMaintenanceWindowExecutionTaskRequest& request) const;
 
         /**
-         * <p>Retrieves the details about a specific task executed as part of a Maintenance
+         * <p>Retrieves the details about a specific task run as part of a Maintenance
          * Window execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">AWS
          * API Reference</a></p>
@@ -2709,7 +2709,7 @@ namespace Model
         virtual Model::GetMaintenanceWindowExecutionTaskOutcomeCallable GetMaintenanceWindowExecutionTaskCallable(const Model::GetMaintenanceWindowExecutionTaskRequest& request) const;
 
         /**
-         * <p>Retrieves the details about a specific task executed as part of a Maintenance
+         * <p>Retrieves the details about a specific task run as part of a Maintenance
          * Window execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">AWS
          * API Reference</a></p>
@@ -2719,8 +2719,8 @@ namespace Model
         virtual void GetMaintenanceWindowExecutionTaskAsync(const Model::GetMaintenanceWindowExecutionTaskRequest& request, const GetMaintenanceWindowExecutionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a task invocation. A task invocation is a specific task executing
-         * on a specific target. Maintenance Windows report status for all invocations.
+         * <p>Retrieves a task invocation. A task invocation is a specific task running on
+         * a specific target. Maintenance Windows report status for all invocations.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">AWS
          * API Reference</a></p>
@@ -2728,8 +2728,8 @@ namespace Model
         virtual Model::GetMaintenanceWindowExecutionTaskInvocationOutcome GetMaintenanceWindowExecutionTaskInvocation(const Model::GetMaintenanceWindowExecutionTaskInvocationRequest& request) const;
 
         /**
-         * <p>Retrieves a task invocation. A task invocation is a specific task executing
-         * on a specific target. Maintenance Windows report status for all invocations.
+         * <p>Retrieves a task invocation. A task invocation is a specific task running on
+         * a specific target. Maintenance Windows report status for all invocations.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">AWS
          * API Reference</a></p>
@@ -2739,8 +2739,8 @@ namespace Model
         virtual Model::GetMaintenanceWindowExecutionTaskInvocationOutcomeCallable GetMaintenanceWindowExecutionTaskInvocationCallable(const Model::GetMaintenanceWindowExecutionTaskInvocationRequest& request) const;
 
         /**
-         * <p>Retrieves a task invocation. A task invocation is a specific task executing
-         * on a specific target. Maintenance Windows report status for all invocations.
+         * <p>Retrieves a task invocation. A task invocation is a specific task running on
+         * a specific target. Maintenance Windows report status for all invocations.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">AWS
          * API Reference</a></p>
@@ -3177,10 +3177,9 @@ namespace Model
         /**
          * <p>An invocation is copy of a command sent to a specific instance. A command can
          * apply to one or more instances. A command invocation applies to one instance.
-         * For example, if a user executes SendCommand against three instances, then a
-         * command invocation is created for each requested instance ID.
-         * ListCommandInvocations provide status about command execution.</p><p><h3>See
-         * Also:</h3>   <a
+         * For example, if a user runs SendCommand against three instances, then a command
+         * invocation is created for each requested instance ID. ListCommandInvocations
+         * provide status about command execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">AWS
          * API Reference</a></p>
          */
@@ -3189,10 +3188,9 @@ namespace Model
         /**
          * <p>An invocation is copy of a command sent to a specific instance. A command can
          * apply to one or more instances. A command invocation applies to one instance.
-         * For example, if a user executes SendCommand against three instances, then a
-         * command invocation is created for each requested instance ID.
-         * ListCommandInvocations provide status about command execution.</p><p><h3>See
-         * Also:</h3>   <a
+         * For example, if a user runs SendCommand against three instances, then a command
+         * invocation is created for each requested instance ID. ListCommandInvocations
+         * provide status about command execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">AWS
          * API Reference</a></p>
          *
@@ -3203,10 +3201,9 @@ namespace Model
         /**
          * <p>An invocation is copy of a command sent to a specific instance. A command can
          * apply to one or more instances. A command invocation applies to one instance.
-         * For example, if a user executes SendCommand against three instances, then a
-         * command invocation is created for each requested instance ID.
-         * ListCommandInvocations provide status about command execution.</p><p><h3>See
-         * Also:</h3>   <a
+         * For example, if a user runs SendCommand against three instances, then a command
+         * invocation is created for each requested instance ID. ListCommandInvocations
+         * provide status about command execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">AWS
          * API Reference</a></p>
          *
@@ -3947,33 +3944,33 @@ namespace Model
         virtual void SendAutomationSignalAsync(const Model::SendAutomationSignalRequest& request, const SendAutomationSignalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Executes commands on one or more managed instances.</p><p><h3>See Also:</h3> 
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS
-         * API Reference</a></p>
+         * <p>Runs commands on one or more managed instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS API
+         * Reference</a></p>
          */
         virtual Model::SendCommandOutcome SendCommand(const Model::SendCommandRequest& request) const;
 
         /**
-         * <p>Executes commands on one or more managed instances.</p><p><h3>See Also:</h3> 
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS
-         * API Reference</a></p>
+         * <p>Runs commands on one or more managed instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SendCommandOutcomeCallable SendCommandCallable(const Model::SendCommandRequest& request) const;
 
         /**
-         * <p>Executes commands on one or more managed instances.</p><p><h3>See Also:</h3> 
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS
-         * API Reference</a></p>
+         * <p>Runs commands on one or more managed instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SendCommandAsync(const Model::SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Use this API action to execute an association immediately and only one time.
-         * This action can be helpful when troubleshooting associations.</p><p><h3>See
+         * <p>Use this API action to run an association immediately and only one time. This
+         * action can be helpful when troubleshooting associations.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">AWS
          * API Reference</a></p>
@@ -3981,8 +3978,8 @@ namespace Model
         virtual Model::StartAssociationsOnceOutcome StartAssociationsOnce(const Model::StartAssociationsOnceRequest& request) const;
 
         /**
-         * <p>Use this API action to execute an association immediately and only one time.
-         * This action can be helpful when troubleshooting associations.</p><p><h3>See
+         * <p>Use this API action to run an association immediately and only one time. This
+         * action can be helpful when troubleshooting associations.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">AWS
          * API Reference</a></p>
@@ -3992,8 +3989,8 @@ namespace Model
         virtual Model::StartAssociationsOnceOutcomeCallable StartAssociationsOnceCallable(const Model::StartAssociationsOnceRequest& request) const;
 
         /**
-         * <p>Use this API action to execute an association immediately and only one time.
-         * This action can be helpful when troubleshooting associations.</p><p><h3>See
+         * <p>Use this API action to run an association immediately and only one time. This
+         * action can be helpful when troubleshooting associations.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">AWS
          * API Reference</a></p>
@@ -4077,14 +4074,14 @@ namespace Model
         virtual void StartSessionAsync(const Model::StartSessionRequest& request, const StartSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stop an Automation that is currently executing.</p><p><h3>See Also:</h3>   <a
+         * <p>Stop an Automation that is currently running.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">AWS
          * API Reference</a></p>
          */
         virtual Model::StopAutomationExecutionOutcome StopAutomationExecution(const Model::StopAutomationExecutionRequest& request) const;
 
         /**
-         * <p>Stop an Automation that is currently executing.</p><p><h3>See Also:</h3>   <a
+         * <p>Stop an Automation that is currently running.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">AWS
          * API Reference</a></p>
          *
@@ -4093,7 +4090,7 @@ namespace Model
         virtual Model::StopAutomationExecutionOutcomeCallable StopAutomationExecutionCallable(const Model::StopAutomationExecutionRequest& request) const;
 
         /**
-         * <p>Stop an Automation that is currently executing.</p><p><h3>See Also:</h3>   <a
+         * <p>Stop an Automation that is currently running.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">AWS
          * API Reference</a></p>
          *
@@ -4134,8 +4131,9 @@ namespace Model
 
         /**
          * <p>Updates an association. You can update the association name and version, the
-         * document version, schedule, parameters, and Amazon S3 output.</p><p><h3>See
-         * Also:</h3>   <a
+         * document version, schedule, parameters, and Amazon S3 output.</p> <important>
+         * <p>When you update an association, the association immediately runs against the
+         * specified targets.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
          * API Reference</a></p>
          */
@@ -4143,8 +4141,9 @@ namespace Model
 
         /**
          * <p>Updates an association. You can update the association name and version, the
-         * document version, schedule, parameters, and Amazon S3 output.</p><p><h3>See
-         * Also:</h3>   <a
+         * document version, schedule, parameters, and Amazon S3 output.</p> <important>
+         * <p>When you update an association, the association immediately runs against the
+         * specified targets.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
          * API Reference</a></p>
          *
@@ -4154,8 +4153,9 @@ namespace Model
 
         /**
          * <p>Updates an association. You can update the association name and version, the
-         * document version, schedule, parameters, and Amazon S3 output.</p><p><h3>See
-         * Also:</h3>   <a
+         * document version, schedule, parameters, and Amazon S3 output.</p> <important>
+         * <p>When you update an association, the association immediately runs against the
+         * specified targets.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
          * API Reference</a></p>
          *

@@ -40,6 +40,7 @@
 #include <aws/alexaforbusiness/model/CreateBusinessReportScheduleRequest.h>
 #include <aws/alexaforbusiness/model/CreateConferenceProviderRequest.h>
 #include <aws/alexaforbusiness/model/CreateContactRequest.h>
+#include <aws/alexaforbusiness/model/CreateGatewayGroupRequest.h>
 #include <aws/alexaforbusiness/model/CreateProfileRequest.h>
 #include <aws/alexaforbusiness/model/CreateRoomRequest.h>
 #include <aws/alexaforbusiness/model/CreateSkillGroupRequest.h>
@@ -49,6 +50,7 @@
 #include <aws/alexaforbusiness/model/DeleteConferenceProviderRequest.h>
 #include <aws/alexaforbusiness/model/DeleteContactRequest.h>
 #include <aws/alexaforbusiness/model/DeleteDeviceRequest.h>
+#include <aws/alexaforbusiness/model/DeleteGatewayGroupRequest.h>
 #include <aws/alexaforbusiness/model/DeleteProfileRequest.h>
 #include <aws/alexaforbusiness/model/DeleteRoomRequest.h>
 #include <aws/alexaforbusiness/model/DeleteRoomSkillParameterRequest.h>
@@ -66,6 +68,8 @@
 #include <aws/alexaforbusiness/model/GetConferenceProviderRequest.h>
 #include <aws/alexaforbusiness/model/GetContactRequest.h>
 #include <aws/alexaforbusiness/model/GetDeviceRequest.h>
+#include <aws/alexaforbusiness/model/GetGatewayRequest.h>
+#include <aws/alexaforbusiness/model/GetGatewayGroupRequest.h>
 #include <aws/alexaforbusiness/model/GetInvitationConfigurationRequest.h>
 #include <aws/alexaforbusiness/model/GetProfileRequest.h>
 #include <aws/alexaforbusiness/model/GetRoomRequest.h>
@@ -74,6 +78,8 @@
 #include <aws/alexaforbusiness/model/ListBusinessReportSchedulesRequest.h>
 #include <aws/alexaforbusiness/model/ListConferenceProvidersRequest.h>
 #include <aws/alexaforbusiness/model/ListDeviceEventsRequest.h>
+#include <aws/alexaforbusiness/model/ListGatewayGroupsRequest.h>
+#include <aws/alexaforbusiness/model/ListGatewaysRequest.h>
 #include <aws/alexaforbusiness/model/ListSkillsRequest.h>
 #include <aws/alexaforbusiness/model/ListSkillsStoreCategoriesRequest.h>
 #include <aws/alexaforbusiness/model/ListSkillsStoreSkillsByCategoryRequest.h>
@@ -104,6 +110,8 @@
 #include <aws/alexaforbusiness/model/UpdateConferenceProviderRequest.h>
 #include <aws/alexaforbusiness/model/UpdateContactRequest.h>
 #include <aws/alexaforbusiness/model/UpdateDeviceRequest.h>
+#include <aws/alexaforbusiness/model/UpdateGatewayRequest.h>
+#include <aws/alexaforbusiness/model/UpdateGatewayGroupRequest.h>
 #include <aws/alexaforbusiness/model/UpdateProfileRequest.h>
 #include <aws/alexaforbusiness/model/UpdateRoomRequest.h>
 #include <aws/alexaforbusiness/model/UpdateSkillGroupRequest.h>
@@ -529,6 +537,41 @@ void AlexaForBusinessClient::CreateContactAsyncHelper(const CreateContactRequest
   handler(this, request, CreateContact(request), context);
 }
 
+CreateGatewayGroupOutcome AlexaForBusinessClient::CreateGatewayGroup(const CreateGatewayGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateGatewayGroupOutcome(CreateGatewayGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateGatewayGroupOutcome(outcome.GetError());
+  }
+}
+
+CreateGatewayGroupOutcomeCallable AlexaForBusinessClient::CreateGatewayGroupCallable(const CreateGatewayGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateGatewayGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGatewayGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::CreateGatewayGroupAsync(const CreateGatewayGroupRequest& request, const CreateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateGatewayGroupAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::CreateGatewayGroupAsyncHelper(const CreateGatewayGroupRequest& request, const CreateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateGatewayGroup(request), context);
+}
+
 CreateProfileOutcome AlexaForBusinessClient::CreateProfile(const CreateProfileRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -842,6 +885,41 @@ void AlexaForBusinessClient::DeleteDeviceAsync(const DeleteDeviceRequest& reques
 void AlexaForBusinessClient::DeleteDeviceAsyncHelper(const DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteDevice(request), context);
+}
+
+DeleteGatewayGroupOutcome AlexaForBusinessClient::DeleteGatewayGroup(const DeleteGatewayGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteGatewayGroupOutcome(DeleteGatewayGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteGatewayGroupOutcome(outcome.GetError());
+  }
+}
+
+DeleteGatewayGroupOutcomeCallable AlexaForBusinessClient::DeleteGatewayGroupCallable(const DeleteGatewayGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteGatewayGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGatewayGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::DeleteGatewayGroupAsync(const DeleteGatewayGroupRequest& request, const DeleteGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteGatewayGroupAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::DeleteGatewayGroupAsyncHelper(const DeleteGatewayGroupRequest& request, const DeleteGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteGatewayGroup(request), context);
 }
 
 DeleteProfileOutcome AlexaForBusinessClient::DeleteProfile(const DeleteProfileRequest& request) const
@@ -1439,6 +1517,76 @@ void AlexaForBusinessClient::GetDeviceAsyncHelper(const GetDeviceRequest& reques
   handler(this, request, GetDevice(request), context);
 }
 
+GetGatewayOutcome AlexaForBusinessClient::GetGateway(const GetGatewayRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetGatewayOutcome(GetGatewayResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetGatewayOutcome(outcome.GetError());
+  }
+}
+
+GetGatewayOutcomeCallable AlexaForBusinessClient::GetGatewayCallable(const GetGatewayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGateway(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::GetGatewayAsync(const GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetGatewayAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::GetGatewayAsyncHelper(const GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetGateway(request), context);
+}
+
+GetGatewayGroupOutcome AlexaForBusinessClient::GetGatewayGroup(const GetGatewayGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetGatewayGroupOutcome(GetGatewayGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetGatewayGroupOutcome(outcome.GetError());
+  }
+}
+
+GetGatewayGroupOutcomeCallable AlexaForBusinessClient::GetGatewayGroupCallable(const GetGatewayGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetGatewayGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGatewayGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::GetGatewayGroupAsync(const GetGatewayGroupRequest& request, const GetGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetGatewayGroupAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::GetGatewayGroupAsyncHelper(const GetGatewayGroupRequest& request, const GetGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetGatewayGroup(request), context);
+}
+
 GetInvitationConfigurationOutcome AlexaForBusinessClient::GetInvitationConfiguration(const GetInvitationConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1717,6 +1865,76 @@ void AlexaForBusinessClient::ListDeviceEventsAsync(const ListDeviceEventsRequest
 void AlexaForBusinessClient::ListDeviceEventsAsyncHelper(const ListDeviceEventsRequest& request, const ListDeviceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListDeviceEvents(request), context);
+}
+
+ListGatewayGroupsOutcome AlexaForBusinessClient::ListGatewayGroups(const ListGatewayGroupsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListGatewayGroupsOutcome(ListGatewayGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListGatewayGroupsOutcome(outcome.GetError());
+  }
+}
+
+ListGatewayGroupsOutcomeCallable AlexaForBusinessClient::ListGatewayGroupsCallable(const ListGatewayGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListGatewayGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGatewayGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::ListGatewayGroupsAsync(const ListGatewayGroupsRequest& request, const ListGatewayGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListGatewayGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::ListGatewayGroupsAsyncHelper(const ListGatewayGroupsRequest& request, const ListGatewayGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListGatewayGroups(request), context);
+}
+
+ListGatewaysOutcome AlexaForBusinessClient::ListGateways(const ListGatewaysRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListGatewaysOutcome(ListGatewaysResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListGatewaysOutcome(outcome.GetError());
+  }
+}
+
+ListGatewaysOutcomeCallable AlexaForBusinessClient::ListGatewaysCallable(const ListGatewaysRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListGatewaysOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGateways(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::ListGatewaysAsync(const ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListGatewaysAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::ListGatewaysAsyncHelper(const ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListGateways(request), context);
 }
 
 ListSkillsOutcome AlexaForBusinessClient::ListSkills(const ListSkillsRequest& request) const
@@ -2767,6 +2985,76 @@ void AlexaForBusinessClient::UpdateDeviceAsync(const UpdateDeviceRequest& reques
 void AlexaForBusinessClient::UpdateDeviceAsyncHelper(const UpdateDeviceRequest& request, const UpdateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDevice(request), context);
+}
+
+UpdateGatewayOutcome AlexaForBusinessClient::UpdateGateway(const UpdateGatewayRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateGatewayOutcome(UpdateGatewayResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateGatewayOutcome(outcome.GetError());
+  }
+}
+
+UpdateGatewayOutcomeCallable AlexaForBusinessClient::UpdateGatewayCallable(const UpdateGatewayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGateway(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::UpdateGatewayAsync(const UpdateGatewayRequest& request, const UpdateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateGatewayAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::UpdateGatewayAsyncHelper(const UpdateGatewayRequest& request, const UpdateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateGateway(request), context);
+}
+
+UpdateGatewayGroupOutcome AlexaForBusinessClient::UpdateGatewayGroup(const UpdateGatewayGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateGatewayGroupOutcome(UpdateGatewayGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateGatewayGroupOutcome(outcome.GetError());
+  }
+}
+
+UpdateGatewayGroupOutcomeCallable AlexaForBusinessClient::UpdateGatewayGroupCallable(const UpdateGatewayGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateGatewayGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGatewayGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::UpdateGatewayGroupAsync(const UpdateGatewayGroupRequest& request, const UpdateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateGatewayGroupAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::UpdateGatewayGroupAsyncHelper(const UpdateGatewayGroupRequest& request, const UpdateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateGatewayGroup(request), context);
 }
 
 UpdateProfileOutcome AlexaForBusinessClient::UpdateProfile(const UpdateProfileRequest& request) const

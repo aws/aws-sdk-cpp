@@ -44,7 +44,7 @@ namespace Model
    * optional nested configurations. A classification refers to an
    * application-specific configuration file. Properties are the settings you want to
    * change in that file. For more information, see <a
-   * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring
+   * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring
    * Applications</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Configuration">AWS
    * API Reference</a></p>

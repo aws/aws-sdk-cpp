@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/UpdateProvisioningPreferences.h>
 #include <aws/servicecatalog/model/UpdateProvisioningParameter.h>
+#include <aws/servicecatalog/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -413,6 +414,63 @@ namespace Model
 
 
     /**
+     * <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code>
+     * constraint with <code>TagUpdatesOnProvisionedProduct</code> set to
+     * <code>ALLOWED</code> to allow tag updates.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code>
+     * constraint with <code>TagUpdatesOnProvisionedProduct</code> set to
+     * <code>ALLOWED</code> to allow tag updates.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code>
+     * constraint with <code>TagUpdatesOnProvisionedProduct</code> set to
+     * <code>ALLOWED</code> to allow tag updates.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code>
+     * constraint with <code>TagUpdatesOnProvisionedProduct</code> set to
+     * <code>ALLOWED</code> to allow tag updates.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code>
+     * constraint with <code>TagUpdatesOnProvisionedProduct</code> set to
+     * <code>ALLOWED</code> to allow tag updates.</p>
+     */
+    inline UpdateProvisionedProductRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code>
+     * constraint with <code>TagUpdatesOnProvisionedProduct</code> set to
+     * <code>ALLOWED</code> to allow tag updates.</p>
+     */
+    inline UpdateProvisionedProductRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code>
+     * constraint with <code>TagUpdatesOnProvisionedProduct</code> set to
+     * <code>ALLOWED</code> to allow tag updates.</p>
+     */
+    inline UpdateProvisionedProductRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code>
+     * constraint with <code>TagUpdatesOnProvisionedProduct</code> set to
+     * <code>ALLOWED</code> to allow tag updates.</p>
+     */
+    inline UpdateProvisionedProductRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The idempotency token that uniquely identifies the provisioning update
      * request.</p>
      */
@@ -485,6 +543,9 @@ namespace Model
 
     UpdateProvisioningPreferences m_provisioningPreferences;
     bool m_provisioningPreferencesHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
 
     Aws::String m_updateToken;
     bool m_updateTokenHasBeenSet;

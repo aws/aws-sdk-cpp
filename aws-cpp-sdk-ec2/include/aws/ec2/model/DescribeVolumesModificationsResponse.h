@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>A list of returned <a>VolumeModification</a> objects.</p>
+     * <p>Information about the volume modifications.</p>
      */
     inline const Aws::Vector<VolumeModification>& GetVolumesModifications() const{ return m_volumesModifications; }
 
     /**
-     * <p>A list of returned <a>VolumeModification</a> objects.</p>
+     * <p>Information about the volume modifications.</p>
      */
     inline void SetVolumesModifications(const Aws::Vector<VolumeModification>& value) { m_volumesModifications = value; }
 
     /**
-     * <p>A list of returned <a>VolumeModification</a> objects.</p>
+     * <p>Information about the volume modifications.</p>
      */
     inline void SetVolumesModifications(Aws::Vector<VolumeModification>&& value) { m_volumesModifications = std::move(value); }
 
     /**
-     * <p>A list of returned <a>VolumeModification</a> objects.</p>
+     * <p>Information about the volume modifications.</p>
      */
     inline DescribeVolumesModificationsResponse& WithVolumesModifications(const Aws::Vector<VolumeModification>& value) { SetVolumesModifications(value); return *this;}
 
     /**
-     * <p>A list of returned <a>VolumeModification</a> objects.</p>
+     * <p>Information about the volume modifications.</p>
      */
     inline DescribeVolumesModificationsResponse& WithVolumesModifications(Aws::Vector<VolumeModification>&& value) { SetVolumesModifications(std::move(value)); return *this;}
 
     /**
-     * <p>A list of returned <a>VolumeModification</a> objects.</p>
+     * <p>Information about the volume modifications.</p>
      */
     inline DescribeVolumesModificationsResponse& AddVolumesModifications(const VolumeModification& value) { m_volumesModifications.push_back(value); return *this; }
 
     /**
-     * <p>A list of returned <a>VolumeModification</a> objects.</p>
+     * <p>Information about the volume modifications.</p>
      */
     inline DescribeVolumesModificationsResponse& AddVolumesModifications(VolumeModification&& value) { m_volumesModifications.push_back(std::move(value)); return *this; }
 

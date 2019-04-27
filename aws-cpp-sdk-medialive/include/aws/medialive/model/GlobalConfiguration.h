@@ -17,6 +17,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/GlobalConfigurationInputEndAction.h>
 #include <aws/medialive/model/InputLossBehavior.h>
+#include <aws/medialive/model/GlobalConfigurationOutputLockingMode.h>
 #include <aws/medialive/model/GlobalConfigurationOutputTimingSource.h>
 #include <aws/medialive/model/GlobalConfigurationLowFramerateInputs.h>
 #include <utility>
@@ -37,7 +38,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for GlobalConfiguration<p><h3>See Also:</h3>   <a
+   * Global Configuration<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GlobalConfiguration">AWS
    * API Reference</a></p>
    */
@@ -164,6 +165,73 @@ namespace Model
 
 
     /**
+     * Indicates how MediaLive pipelines are synchronized.
+
+PIPELINELOCKING - MediaLive
+     * will attempt to synchronize the output of each pipeline to the
+     * other.
+EPOCHLOCKING - MediaLive will attempt to synchronize the output of each
+     * pipeline to the Unix epoch.
+     */
+    inline const GlobalConfigurationOutputLockingMode& GetOutputLockingMode() const{ return m_outputLockingMode; }
+
+    /**
+     * Indicates how MediaLive pipelines are synchronized.
+
+PIPELINELOCKING - MediaLive
+     * will attempt to synchronize the output of each pipeline to the
+     * other.
+EPOCHLOCKING - MediaLive will attempt to synchronize the output of each
+     * pipeline to the Unix epoch.
+     */
+    inline bool OutputLockingModeHasBeenSet() const { return m_outputLockingModeHasBeenSet; }
+
+    /**
+     * Indicates how MediaLive pipelines are synchronized.
+
+PIPELINELOCKING - MediaLive
+     * will attempt to synchronize the output of each pipeline to the
+     * other.
+EPOCHLOCKING - MediaLive will attempt to synchronize the output of each
+     * pipeline to the Unix epoch.
+     */
+    inline void SetOutputLockingMode(const GlobalConfigurationOutputLockingMode& value) { m_outputLockingModeHasBeenSet = true; m_outputLockingMode = value; }
+
+    /**
+     * Indicates how MediaLive pipelines are synchronized.
+
+PIPELINELOCKING - MediaLive
+     * will attempt to synchronize the output of each pipeline to the
+     * other.
+EPOCHLOCKING - MediaLive will attempt to synchronize the output of each
+     * pipeline to the Unix epoch.
+     */
+    inline void SetOutputLockingMode(GlobalConfigurationOutputLockingMode&& value) { m_outputLockingModeHasBeenSet = true; m_outputLockingMode = std::move(value); }
+
+    /**
+     * Indicates how MediaLive pipelines are synchronized.
+
+PIPELINELOCKING - MediaLive
+     * will attempt to synchronize the output of each pipeline to the
+     * other.
+EPOCHLOCKING - MediaLive will attempt to synchronize the output of each
+     * pipeline to the Unix epoch.
+     */
+    inline GlobalConfiguration& WithOutputLockingMode(const GlobalConfigurationOutputLockingMode& value) { SetOutputLockingMode(value); return *this;}
+
+    /**
+     * Indicates how MediaLive pipelines are synchronized.
+
+PIPELINELOCKING - MediaLive
+     * will attempt to synchronize the output of each pipeline to the
+     * other.
+EPOCHLOCKING - MediaLive will attempt to synchronize the output of each
+     * pipeline to the Unix epoch.
+     */
+    inline GlobalConfiguration& WithOutputLockingMode(GlobalConfigurationOutputLockingMode&& value) { SetOutputLockingMode(std::move(value)); return *this;}
+
+
+    /**
      * Indicates whether the rate of frames emitted by the Live encoder should be paced
      * by its system clock (which optionally may be locked to another source via NTP)
      * or should be locked to the clock of the source that is providing the input
@@ -264,6 +332,9 @@ namespace Model
 
     InputLossBehavior m_inputLossBehavior;
     bool m_inputLossBehaviorHasBeenSet;
+
+    GlobalConfigurationOutputLockingMode m_outputLockingMode;
+    bool m_outputLockingModeHasBeenSet;
 
     GlobalConfigurationOutputTimingSource m_outputTimingSource;
     bool m_outputTimingSourceHasBeenSet;

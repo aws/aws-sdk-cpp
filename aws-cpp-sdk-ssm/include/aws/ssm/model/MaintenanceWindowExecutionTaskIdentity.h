@@ -284,73 +284,73 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the executed task.</p>
+     * <p>The ARN of the task that ran.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>The ARN of the executed task.</p>
+     * <p>The ARN of the task that ran.</p>
      */
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the executed task.</p>
+     * <p>The ARN of the task that ran.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
-     * <p>The ARN of the executed task.</p>
+     * <p>The ARN of the task that ran.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
-     * <p>The ARN of the executed task.</p>
+     * <p>The ARN of the task that ran.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
 
     /**
-     * <p>The ARN of the executed task.</p>
+     * <p>The ARN of the task that ran.</p>
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The ARN of the executed task.</p>
+     * <p>The ARN of the task that ran.</p>
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the executed task.</p>
+     * <p>The ARN of the task that ran.</p>
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
 
     /**
-     * <p>The type of executed task.</p>
+     * <p>The type of task that ran.</p>
      */
     inline const MaintenanceWindowTaskType& GetTaskType() const{ return m_taskType; }
 
     /**
-     * <p>The type of executed task.</p>
+     * <p>The type of task that ran.</p>
      */
     inline bool TaskTypeHasBeenSet() const { return m_taskTypeHasBeenSet; }
 
     /**
-     * <p>The type of executed task.</p>
+     * <p>The type of task that ran.</p>
      */
     inline void SetTaskType(const MaintenanceWindowTaskType& value) { m_taskTypeHasBeenSet = true; m_taskType = value; }
 
     /**
-     * <p>The type of executed task.</p>
+     * <p>The type of task that ran.</p>
      */
     inline void SetTaskType(MaintenanceWindowTaskType&& value) { m_taskTypeHasBeenSet = true; m_taskType = std::move(value); }
 
     /**
-     * <p>The type of executed task.</p>
+     * <p>The type of task that ran.</p>
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithTaskType(const MaintenanceWindowTaskType& value) { SetTaskType(value); return *this;}
 
     /**
-     * <p>The type of executed task.</p>
+     * <p>The type of task that ran.</p>
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithTaskType(MaintenanceWindowTaskType&& value) { SetTaskType(std::move(value)); return *this;}
 

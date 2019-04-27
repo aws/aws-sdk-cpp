@@ -33,6 +33,7 @@ namespace Aws
         static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
         static const int BOOTSTRAPPING_HASH = HashingUtils::HashString("BOOTSTRAPPING");
         static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
+        static const int RECONFIGURING_HASH = HashingUtils::HashString("RECONFIGURING");
         static const int RESIZING_HASH = HashingUtils::HashString("RESIZING");
         static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
         static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
@@ -56,6 +57,10 @@ namespace Aws
           else if (hashCode == RUNNING_HASH)
           {
             return InstanceGroupState::RUNNING;
+          }
+          else if (hashCode == RECONFIGURING_HASH)
+          {
+            return InstanceGroupState::RECONFIGURING;
           }
           else if (hashCode == RESIZING_HASH)
           {
@@ -105,6 +110,8 @@ namespace Aws
             return "BOOTSTRAPPING";
           case InstanceGroupState::RUNNING:
             return "RUNNING";
+          case InstanceGroupState::RECONFIGURING:
+            return "RECONFIGURING";
           case InstanceGroupState::RESIZING:
             return "RESIZING";
           case InstanceGroupState::SUSPENDED:

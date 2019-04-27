@@ -32,6 +32,7 @@ namespace Aws
 
         static const int IMPORT_IN_PROGRESS_HASH = HashingUtils::HashString("IMPORT_IN_PROGRESS");
         static const int IMPORT_COMPLETE_HASH = HashingUtils::HashString("IMPORT_COMPLETE");
+        static const int IMPORT_COMPLETE_WITH_ERRORS_HASH = HashingUtils::HashString("IMPORT_COMPLETE_WITH_ERRORS");
         static const int IMPORT_FAILED_HASH = HashingUtils::HashString("IMPORT_FAILED");
         static const int IMPORT_FAILED_SERVER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("IMPORT_FAILED_SERVER_LIMIT_EXCEEDED");
         static const int IMPORT_FAILED_RECORD_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("IMPORT_FAILED_RECORD_LIMIT_EXCEEDED");
@@ -39,6 +40,7 @@ namespace Aws
         static const int DELETE_COMPLETE_HASH = HashingUtils::HashString("DELETE_COMPLETE");
         static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
         static const int DELETE_FAILED_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DELETE_FAILED_LIMIT_EXCEEDED");
+        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
 
 
         ImportStatus GetImportStatusForName(const Aws::String& name)
@@ -51,6 +53,10 @@ namespace Aws
           else if (hashCode == IMPORT_COMPLETE_HASH)
           {
             return ImportStatus::IMPORT_COMPLETE;
+          }
+          else if (hashCode == IMPORT_COMPLETE_WITH_ERRORS_HASH)
+          {
+            return ImportStatus::IMPORT_COMPLETE_WITH_ERRORS;
           }
           else if (hashCode == IMPORT_FAILED_HASH)
           {
@@ -80,6 +86,10 @@ namespace Aws
           {
             return ImportStatus::DELETE_FAILED_LIMIT_EXCEEDED;
           }
+          else if (hashCode == INTERNAL_ERROR_HASH)
+          {
+            return ImportStatus::INTERNAL_ERROR;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -98,6 +108,8 @@ namespace Aws
             return "IMPORT_IN_PROGRESS";
           case ImportStatus::IMPORT_COMPLETE:
             return "IMPORT_COMPLETE";
+          case ImportStatus::IMPORT_COMPLETE_WITH_ERRORS:
+            return "IMPORT_COMPLETE_WITH_ERRORS";
           case ImportStatus::IMPORT_FAILED:
             return "IMPORT_FAILED";
           case ImportStatus::IMPORT_FAILED_SERVER_LIMIT_EXCEEDED:
@@ -112,6 +124,8 @@ namespace Aws
             return "DELETE_FAILED";
           case ImportStatus::DELETE_FAILED_LIMIT_EXCEEDED:
             return "DELETE_FAILED_LIMIT_EXCEEDED";
+          case ImportStatus::INTERNAL_ERROR:
+            return "INTERNAL_ERROR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

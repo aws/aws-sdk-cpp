@@ -157,8 +157,9 @@ namespace Model
      * <p>(Private hosted zones only) A complex type that contains information about
      * the Amazon VPC that you're associating with this hosted zone.</p> <p>You can
      * specify only one Amazon VPC when you create a private hosted zone. To associate
-     * additional Amazon VPCs with the hosted zone, use
-     * <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.</p>
+     * additional Amazon VPCs with the hosted zone, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
+     * after you create a hosted zone.</p>
      */
     inline const VPC& GetVPC() const{ return m_vPC; }
 
@@ -166,8 +167,9 @@ namespace Model
      * <p>(Private hosted zones only) A complex type that contains information about
      * the Amazon VPC that you're associating with this hosted zone.</p> <p>You can
      * specify only one Amazon VPC when you create a private hosted zone. To associate
-     * additional Amazon VPCs with the hosted zone, use
-     * <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.</p>
+     * additional Amazon VPCs with the hosted zone, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
+     * after you create a hosted zone.</p>
      */
     inline bool VPCHasBeenSet() const { return m_vPCHasBeenSet; }
 
@@ -175,8 +177,9 @@ namespace Model
      * <p>(Private hosted zones only) A complex type that contains information about
      * the Amazon VPC that you're associating with this hosted zone.</p> <p>You can
      * specify only one Amazon VPC when you create a private hosted zone. To associate
-     * additional Amazon VPCs with the hosted zone, use
-     * <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.</p>
+     * additional Amazon VPCs with the hosted zone, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
+     * after you create a hosted zone.</p>
      */
     inline void SetVPC(const VPC& value) { m_vPCHasBeenSet = true; m_vPC = value; }
 
@@ -184,8 +187,9 @@ namespace Model
      * <p>(Private hosted zones only) A complex type that contains information about
      * the Amazon VPC that you're associating with this hosted zone.</p> <p>You can
      * specify only one Amazon VPC when you create a private hosted zone. To associate
-     * additional Amazon VPCs with the hosted zone, use
-     * <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.</p>
+     * additional Amazon VPCs with the hosted zone, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
+     * after you create a hosted zone.</p>
      */
     inline void SetVPC(VPC&& value) { m_vPCHasBeenSet = true; m_vPC = std::move(value); }
 
@@ -193,8 +197,9 @@ namespace Model
      * <p>(Private hosted zones only) A complex type that contains information about
      * the Amazon VPC that you're associating with this hosted zone.</p> <p>You can
      * specify only one Amazon VPC when you create a private hosted zone. To associate
-     * additional Amazon VPCs with the hosted zone, use
-     * <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.</p>
+     * additional Amazon VPCs with the hosted zone, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
+     * after you create a hosted zone.</p>
      */
     inline CreateHostedZoneRequest& WithVPC(const VPC& value) { SetVPC(value); return *this;}
 
@@ -202,8 +207,9 @@ namespace Model
      * <p>(Private hosted zones only) A complex type that contains information about
      * the Amazon VPC that you're associating with this hosted zone.</p> <p>You can
      * specify only one Amazon VPC when you create a private hosted zone. To associate
-     * additional Amazon VPCs with the hosted zone, use
-     * <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.</p>
+     * additional Amazon VPCs with the hosted zone, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
+     * after you create a hosted zone.</p>
      */
     inline CreateHostedZoneRequest& WithVPC(VPC&& value) { SetVPC(std::move(value)); return *this;}
 
@@ -353,64 +359,64 @@ namespace Model
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
      * ID that Amazon Route 53 assigned to the reusable delegation set when you created
-     * it. For more information about reusable delegation sets, see
-     * <a>CreateReusableDelegationSet</a>.</p>
+     * it. For more information about reusable delegation sets, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
      */
     inline const Aws::String& GetDelegationSetId() const{ return m_delegationSetId; }
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
      * ID that Amazon Route 53 assigned to the reusable delegation set when you created
-     * it. For more information about reusable delegation sets, see
-     * <a>CreateReusableDelegationSet</a>.</p>
+     * it. For more information about reusable delegation sets, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
      */
     inline bool DelegationSetIdHasBeenSet() const { return m_delegationSetIdHasBeenSet; }
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
      * ID that Amazon Route 53 assigned to the reusable delegation set when you created
-     * it. For more information about reusable delegation sets, see
-     * <a>CreateReusableDelegationSet</a>.</p>
+     * it. For more information about reusable delegation sets, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
      */
     inline void SetDelegationSetId(const Aws::String& value) { m_delegationSetIdHasBeenSet = true; m_delegationSetId = value; }
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
      * ID that Amazon Route 53 assigned to the reusable delegation set when you created
-     * it. For more information about reusable delegation sets, see
-     * <a>CreateReusableDelegationSet</a>.</p>
+     * it. For more information about reusable delegation sets, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
      */
     inline void SetDelegationSetId(Aws::String&& value) { m_delegationSetIdHasBeenSet = true; m_delegationSetId = std::move(value); }
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
      * ID that Amazon Route 53 assigned to the reusable delegation set when you created
-     * it. For more information about reusable delegation sets, see
-     * <a>CreateReusableDelegationSet</a>.</p>
+     * it. For more information about reusable delegation sets, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
      */
     inline void SetDelegationSetId(const char* value) { m_delegationSetIdHasBeenSet = true; m_delegationSetId.assign(value); }
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
      * ID that Amazon Route 53 assigned to the reusable delegation set when you created
-     * it. For more information about reusable delegation sets, see
-     * <a>CreateReusableDelegationSet</a>.</p>
+     * it. For more information about reusable delegation sets, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
      */
     inline CreateHostedZoneRequest& WithDelegationSetId(const Aws::String& value) { SetDelegationSetId(value); return *this;}
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
      * ID that Amazon Route 53 assigned to the reusable delegation set when you created
-     * it. For more information about reusable delegation sets, see
-     * <a>CreateReusableDelegationSet</a>.</p>
+     * it. For more information about reusable delegation sets, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
      */
     inline CreateHostedZoneRequest& WithDelegationSetId(Aws::String&& value) { SetDelegationSetId(std::move(value)); return *this;}
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the
      * ID that Amazon Route 53 assigned to the reusable delegation set when you created
-     * it. For more information about reusable delegation sets, see
-     * <a>CreateReusableDelegationSet</a>.</p>
+     * it. For more information about reusable delegation sets, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
      */
     inline CreateHostedZoneRequest& WithDelegationSetId(const char* value) { SetDelegationSetId(value); return *this;}
 

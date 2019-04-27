@@ -35,7 +35,8 @@ DefinitionInformation::DefinitionInformation() :
     m_lastUpdatedTimestampHasBeenSet(false),
     m_latestVersionHasBeenSet(false),
     m_latestVersionArnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ DefinitionInformation::DefinitionInformation(JsonView jsonValue) :
     m_lastUpdatedTimestampHasBeenSet(false),
     m_latestVersionHasBeenSet(false),
     m_latestVersionArnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -102,6 +104,16 @@ DefinitionInformation& DefinitionInformation::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +160,17 @@ JsonValue DefinitionInformation::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

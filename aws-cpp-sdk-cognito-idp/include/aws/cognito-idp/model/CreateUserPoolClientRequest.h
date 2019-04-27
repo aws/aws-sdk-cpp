@@ -399,55 +399,64 @@ namespace Model
 
     /**
      * <p>A list of provider names for the identity providers that are supported on
-     * this client.</p>
+     * this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedIdentityProviders() const{ return m_supportedIdentityProviders; }
 
     /**
      * <p>A list of provider names for the identity providers that are supported on
-     * this client.</p>
+     * this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.</p>
      */
     inline bool SupportedIdentityProvidersHasBeenSet() const { return m_supportedIdentityProvidersHasBeenSet; }
 
     /**
      * <p>A list of provider names for the identity providers that are supported on
-     * this client.</p>
+     * this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.</p>
      */
     inline void SetSupportedIdentityProviders(const Aws::Vector<Aws::String>& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders = value; }
 
     /**
      * <p>A list of provider names for the identity providers that are supported on
-     * this client.</p>
+     * this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.</p>
      */
     inline void SetSupportedIdentityProviders(Aws::Vector<Aws::String>&& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders = std::move(value); }
 
     /**
      * <p>A list of provider names for the identity providers that are supported on
-     * this client.</p>
+     * this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.</p>
      */
     inline CreateUserPoolClientRequest& WithSupportedIdentityProviders(const Aws::Vector<Aws::String>& value) { SetSupportedIdentityProviders(value); return *this;}
 
     /**
      * <p>A list of provider names for the identity providers that are supported on
-     * this client.</p>
+     * this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.</p>
      */
     inline CreateUserPoolClientRequest& WithSupportedIdentityProviders(Aws::Vector<Aws::String>&& value) { SetSupportedIdentityProviders(std::move(value)); return *this;}
 
     /**
      * <p>A list of provider names for the identity providers that are supported on
-     * this client.</p>
+     * this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.</p>
      */
     inline CreateUserPoolClientRequest& AddSupportedIdentityProviders(const Aws::String& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders.push_back(value); return *this; }
 
     /**
      * <p>A list of provider names for the identity providers that are supported on
-     * this client.</p>
+     * this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.</p>
      */
     inline CreateUserPoolClientRequest& AddSupportedIdentityProviders(Aws::String&& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of provider names for the identity providers that are supported on
-     * this client.</p>
+     * this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.</p>
      */
     inline CreateUserPoolClientRequest& AddSupportedIdentityProviders(const char* value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders.push_back(value); return *this; }
 

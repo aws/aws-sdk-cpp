@@ -159,7 +159,7 @@ namespace Model
      * <code>ConsumedCapacity</code> is only returned if the
      * <code>ReturnConsumedCapacity</code> parameter was specified. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const ConsumedCapacity& GetConsumedCapacity() const{ return m_consumedCapacity; }
@@ -171,7 +171,7 @@ namespace Model
      * <code>ConsumedCapacity</code> is only returned if the
      * <code>ReturnConsumedCapacity</code> parameter was specified. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetConsumedCapacity(const ConsumedCapacity& value) { m_consumedCapacity = value; }
@@ -183,7 +183,7 @@ namespace Model
      * <code>ConsumedCapacity</code> is only returned if the
      * <code>ReturnConsumedCapacity</code> parameter was specified. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity = std::move(value); }
@@ -195,7 +195,7 @@ namespace Model
      * <code>ConsumedCapacity</code> is only returned if the
      * <code>ReturnConsumedCapacity</code> parameter was specified. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemResult& WithConsumedCapacity(const ConsumedCapacity& value) { SetConsumedCapacity(value); return *this;}
@@ -207,7 +207,7 @@ namespace Model
      * <code>ConsumedCapacity</code> is only returned if the
      * <code>ReturnConsumedCapacity</code> parameter was specified. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(std::move(value)); return *this;}

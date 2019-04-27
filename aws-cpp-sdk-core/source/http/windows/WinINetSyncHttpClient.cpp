@@ -25,6 +25,7 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
+#include <aws/core/utils/UnreferencedParam.h>
 
 #include <Windows.h>
 #include <WinInet.h>
@@ -38,6 +39,23 @@ using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
 
 static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 8192;
+
+static void WinINetEnableHttp2(void* handle)
+{
+#ifdef WININET_HAS_H2
+    DWORD http2 = HTTP_PROTOCOL_FLAG_HTTP2;
+    if (!InternetSetOptionA(handle, INTERNET_OPTION_ENABLE_HTTP_PROTOCOL, &http2, sizeof(http2))) 
+    {
+        AWS_LOGSTREAM_ERROR("WinINetHttp2", "Failed to enable HTTP/2 on WinInet handle: " << handle << ". Falling back to HTTP/1.1.");
+    }
+    else
+    {
+        AWS_LOGSTREAM_DEBUG("WinINetHttp2", "HTTP/2 enabled on WinInet handle: " << handle << ".");
+    }
+#else
+    AWS_UNREFERENCED_PARAM(handle);
+#endif
+}
 
 WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) :
     Base()
@@ -76,7 +94,7 @@ WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) 
 
     //override offline mode.
     InternetSetOptionA(GetOpenHandle(), INTERNET_OPTION_IGNORE_OFFLINE, nullptr, 0);
-
+    WinINetEnableHttp2(GetOpenHandle());
     if (!config.verifySSL)
     {
         AWS_LOGSTREAM_WARN(GetLogTag(), "Turning ssl unknown ca verification off.");
@@ -131,6 +149,7 @@ void* WinINetSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, 
         if (!m_proxyPassword.empty() && !InternetSetOptionA(hHttpRequest, INTERNET_OPTION_PROXY_PASSWORD, (LPVOID)m_proxyPassword.c_str(), (DWORD)m_proxyPassword.length()))
             AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting password for proxy with error code: " << GetLastError());
     }
+    WinINetEnableHttp2(hHttpRequest);
 
     return hHttpRequest;
 }

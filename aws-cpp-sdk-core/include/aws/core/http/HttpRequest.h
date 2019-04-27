@@ -503,6 +503,15 @@ namespace Aws
             */
             virtual const HttpClientMetricsCollection& GetRequestMetrics() const { return m_httpRequestMetrics; }
 
+            /**
+             * Returns the IP address of the remote host the request was made out to.
+             * This value is populated after the request is made and when the HTTP client supports retrieving such
+             * information.
+             * If the information is not available, an empty string is returned.
+             */
+            Aws::String GetResolvedRemoteHost() const { return m_resolvedRemoteHost; }
+            void SetResolvedRemoteHost(const Aws::String& ip) { m_resolvedRemoteHost = ip; }
+
         private:
             URI m_uri;
             HttpMethod m_method;
@@ -511,6 +520,7 @@ namespace Aws
             ContinueRequestHandler m_continueRequest;
             Aws::String m_signingRegion;
             Aws::String m_signingAccessKey;
+            Aws::String m_resolvedRemoteHost;
             HttpClientMetricsCollection m_httpRequestMetrics;
         };
 

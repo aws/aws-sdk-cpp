@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 CreateIpGroupRequest::CreateIpGroupRequest() : 
     m_groupNameHasBeenSet(false),
     m_groupDescHasBeenSet(false),
-    m_userRulesHasBeenSet(false)
+    m_userRulesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,17 @@ Aws::String CreateIpGroupRequest::SerializePayload() const
      userRulesJsonList[userRulesIndex].AsObject(m_userRules[userRulesIndex].Jsonize());
    }
    payload.WithArray("UserRules", std::move(userRulesJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

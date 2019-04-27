@@ -17,6 +17,8 @@
 #include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
 #include <aws/pinpoint-email/PinpointEmailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/pinpoint-email/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -88,10 +90,62 @@ namespace Model
      */
     inline CreateEmailIdentityRequest& WithEmailIdentity(const char* value) { SetEmailIdentity(value); return *this;}
 
+
+    /**
+     * <p>An object that defines the tags (keys and values) that you want to associate
+     * with the email identity.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>An object that defines the tags (keys and values) that you want to associate
+     * with the email identity.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>An object that defines the tags (keys and values) that you want to associate
+     * with the email identity.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>An object that defines the tags (keys and values) that you want to associate
+     * with the email identity.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>An object that defines the tags (keys and values) that you want to associate
+     * with the email identity.</p>
+     */
+    inline CreateEmailIdentityRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>An object that defines the tags (keys and values) that you want to associate
+     * with the email identity.</p>
+     */
+    inline CreateEmailIdentityRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>An object that defines the tags (keys and values) that you want to associate
+     * with the email identity.</p>
+     */
+    inline CreateEmailIdentityRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>An object that defines the tags (keys and values) that you want to associate
+     * with the email identity.</p>
+     */
+    inline CreateEmailIdentityRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_emailIdentity;
     bool m_emailIdentityHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

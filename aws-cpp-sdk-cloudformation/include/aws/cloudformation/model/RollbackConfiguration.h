@@ -211,7 +211,7 @@ namespace Model
      * update operations. You can use this monitoring period to perform any manual
      * stack validation desired, and manually cancel the stack creation or update
      * (using <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>,
      * for example) as necessary.</p> <p>If you specify 0 for this parameter,
      * CloudFormation still monitors the specified rollback triggers during stack
      * creation and update operations. Then, for update operations, it begins disposing
@@ -228,7 +228,7 @@ namespace Model
      * update operations. You can use this monitoring period to perform any manual
      * stack validation desired, and manually cancel the stack creation or update
      * (using <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>,
      * for example) as necessary.</p> <p>If you specify 0 for this parameter,
      * CloudFormation still monitors the specified rollback triggers during stack
      * creation and update operations. Then, for update operations, it begins disposing
@@ -245,7 +245,7 @@ namespace Model
      * update operations. You can use this monitoring period to perform any manual
      * stack validation desired, and manually cancel the stack creation or update
      * (using <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>,
      * for example) as necessary.</p> <p>If you specify 0 for this parameter,
      * CloudFormation still monitors the specified rollback triggers during stack
      * creation and update operations. Then, for update operations, it begins disposing
@@ -262,7 +262,7 @@ namespace Model
      * update operations. You can use this monitoring period to perform any manual
      * stack validation desired, and manually cancel the stack creation or update
      * (using <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>,
      * for example) as necessary.</p> <p>If you specify 0 for this parameter,
      * CloudFormation still monitors the specified rollback triggers during stack
      * creation and update operations. Then, for update operations, it begins disposing

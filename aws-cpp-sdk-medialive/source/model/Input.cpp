@@ -33,6 +33,8 @@ Input::Input() :
     m_attachedChannelsHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_inputClass(InputClass::NOT_SET),
+    m_inputClassHasBeenSet(false),
     m_mediaConnectFlowsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
@@ -51,6 +53,8 @@ Input::Input(JsonView jsonValue) :
     m_attachedChannelsHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_inputClass(InputClass::NOT_SET),
+    m_inputClassHasBeenSet(false),
     m_mediaConnectFlowsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
@@ -99,6 +103,13 @@ Input& Input::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputClass"))
+  {
+    m_inputClass = InputClassMapper::GetInputClassForName(jsonValue.GetString("inputClass"));
+
+    m_inputClassHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("mediaConnectFlows"))
@@ -208,6 +219,11 @@ JsonValue Input::Jsonize() const
   {
    payload.WithString("id", m_id);
 
+  }
+
+  if(m_inputClassHasBeenSet)
+  {
+   payload.WithString("inputClass", InputClassMapper::GetNameForInputClass(m_inputClass));
   }
 
   if(m_mediaConnectFlowsHasBeenSet)

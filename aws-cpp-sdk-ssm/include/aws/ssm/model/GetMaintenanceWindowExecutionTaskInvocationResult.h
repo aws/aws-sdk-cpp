@@ -221,37 +221,37 @@ namespace Model
 
 
     /**
-     * <p>The parameters used at the time that the task executed.</p>
+     * <p>The parameters used at the time that the task ran.</p>
      */
     inline const Aws::String& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The parameters used at the time that the task executed.</p>
+     * <p>The parameters used at the time that the task ran.</p>
      */
     inline void SetParameters(const Aws::String& value) { m_parameters = value; }
 
     /**
-     * <p>The parameters used at the time that the task executed.</p>
+     * <p>The parameters used at the time that the task ran.</p>
      */
     inline void SetParameters(Aws::String&& value) { m_parameters = std::move(value); }
 
     /**
-     * <p>The parameters used at the time that the task executed.</p>
+     * <p>The parameters used at the time that the task ran.</p>
      */
     inline void SetParameters(const char* value) { m_parameters.assign(value); }
 
     /**
-     * <p>The parameters used at the time that the task executed.</p>
+     * <p>The parameters used at the time that the task ran.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithParameters(const Aws::String& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The parameters used at the time that the task executed.</p>
+     * <p>The parameters used at the time that the task ran.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithParameters(Aws::String&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The parameters used at the time that the task executed.</p>
+     * <p>The parameters used at the time that the task ran.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithParameters(const char* value) { SetParameters(value); return *this;}
 
@@ -326,53 +326,53 @@ namespace Model
 
 
     /**
-     * <p>The time that the task started executing on the target.</p>
+     * <p>The time that the task started running on the target.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The time that the task started executing on the target.</p>
+     * <p>The time that the task started running on the target.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
 
     /**
-     * <p>The time that the task started executing on the target.</p>
+     * <p>The time that the task started running on the target.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
 
     /**
-     * <p>The time that the task started executing on the target.</p>
+     * <p>The time that the task started running on the target.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The time that the task started executing on the target.</p>
+     * <p>The time that the task started running on the target.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time that the task finished executing on the target.</p>
+     * <p>The time that the task finished running on the target.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The time that the task finished executing on the target.</p>
+     * <p>The time that the task finished running on the target.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
 
     /**
-     * <p>The time that the task finished executing on the target.</p>
+     * <p>The time that the task finished running on the target.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
 
     /**
-     * <p>The time that the task finished executing on the target.</p>
+     * <p>The time that the task finished running on the target.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The time that the task finished executing on the target.</p>
+     * <p>The time that the task finished running on the target.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 

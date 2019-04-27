@@ -71,11 +71,6 @@ setup_install()
 install (FILES ${AWS_STORAGEGATEWAY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/storagegateway)
 install (FILES ${AWS_STORAGEGATEWAY_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/storagegateway/model)
 
-if(PLATFORM_WINDOWS AND MSVC)
-    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
-    install (FILES ${NUGET_FILES} DESTINATION nuget)
-endif()
-
 do_packaging()
 
 

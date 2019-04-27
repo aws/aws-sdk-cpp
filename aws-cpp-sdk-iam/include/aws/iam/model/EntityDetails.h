@@ -96,7 +96,7 @@ namespace Model
      * date-time format</a>, when the authenticated entity last attempted to access
      * AWS. AWS does not report unauthenticated requests.</p> <p>This field is null if
      * no IAM entities attempted to access the service within the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAuthenticated() const{ return m_lastAuthenticated; }
@@ -106,7 +106,7 @@ namespace Model
      * date-time format</a>, when the authenticated entity last attempted to access
      * AWS. AWS does not report unauthenticated requests.</p> <p>This field is null if
      * no IAM entities attempted to access the service within the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
     inline bool LastAuthenticatedHasBeenSet() const { return m_lastAuthenticatedHasBeenSet; }
@@ -116,7 +116,7 @@ namespace Model
      * date-time format</a>, when the authenticated entity last attempted to access
      * AWS. AWS does not report unauthenticated requests.</p> <p>This field is null if
      * no IAM entities attempted to access the service within the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
     inline void SetLastAuthenticated(const Aws::Utils::DateTime& value) { m_lastAuthenticatedHasBeenSet = true; m_lastAuthenticated = value; }
@@ -126,7 +126,7 @@ namespace Model
      * date-time format</a>, when the authenticated entity last attempted to access
      * AWS. AWS does not report unauthenticated requests.</p> <p>This field is null if
      * no IAM entities attempted to access the service within the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
     inline void SetLastAuthenticated(Aws::Utils::DateTime&& value) { m_lastAuthenticatedHasBeenSet = true; m_lastAuthenticated = std::move(value); }
@@ -136,7 +136,7 @@ namespace Model
      * date-time format</a>, when the authenticated entity last attempted to access
      * AWS. AWS does not report unauthenticated requests.</p> <p>This field is null if
      * no IAM entities attempted to access the service within the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
     inline EntityDetails& WithLastAuthenticated(const Aws::Utils::DateTime& value) { SetLastAuthenticated(value); return *this;}
@@ -146,7 +146,7 @@ namespace Model
      * date-time format</a>, when the authenticated entity last attempted to access
      * AWS. AWS does not report unauthenticated requests.</p> <p>This field is null if
      * no IAM entities attempted to access the service within the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
     inline EntityDetails& WithLastAuthenticated(Aws::Utils::DateTime&& value) { SetLastAuthenticated(std::move(value)); return *this;}

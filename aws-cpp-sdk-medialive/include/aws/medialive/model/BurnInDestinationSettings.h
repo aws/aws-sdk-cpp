@@ -41,8 +41,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for BurnInDestinationSettings<p><h3>See Also:</h3>  
-   * <a
+   * Burn In Destination Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BurnInDestinationSettings">AWS
    * API Reference</a></p>
    */

@@ -39,7 +39,7 @@ namespace Aws
                  * @param lengthToRead length in bytes to actually use in the buffer (e.g. you have a 1kb buffer, but only want the stream
                  * to see 500 b of it.
                  */
-                PreallocatedStreamBuf(Aws::Utils::Array<uint8_t>* buffer, std::size_t lengthToRead);
+                PreallocatedStreamBuf(unsigned char* buffer, std::size_t lengthToRead);
 
                 PreallocatedStreamBuf(const PreallocatedStreamBuf&) = delete;
                 PreallocatedStreamBuf& operator=(const PreallocatedStreamBuf&) = delete;
@@ -51,15 +51,15 @@ namespace Aws
                  * Get the buffer that is being used by the stream buffer.
                  * @return Pointer to the underlying buffer (probably for a Aws::Delete() call).
                  */
-                Aws::Utils::Array<uint8_t>* GetBuffer() { return m_underlyingBuffer; }
+                unsigned char* GetBuffer() { return m_underlyingBuffer; }
 
             protected:
                 pos_type seekoff(off_type off, std::ios_base::seekdir dir, std::ios_base::openmode which = std::ios_base::in | std::ios_base::out) override;
                 pos_type seekpos(pos_type pos, std::ios_base::openmode which = std::ios_base::in | std::ios_base::out) override;
 
             private:
-                Aws::Utils::Array<uint8_t>* m_underlyingBuffer;
-                std::size_t m_lengthToRead;
+                unsigned char* m_underlyingBuffer;
+                const std::size_t m_lengthToRead;
             };
         }
     }

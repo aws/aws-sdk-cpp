@@ -401,7 +401,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline const Aws::Map<Aws::String, PolicyEvaluationDecisionType>& GetEvalDecisionDetails() const{ return m_evalDecisionDetails; }
@@ -412,7 +412,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline bool EvalDecisionDetailsHasBeenSet() const { return m_evalDecisionDetailsHasBeenSet; }
@@ -423,7 +423,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline void SetEvalDecisionDetails(const Aws::Map<Aws::String, PolicyEvaluationDecisionType>& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails = value; }
@@ -434,7 +434,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline void SetEvalDecisionDetails(Aws::Map<Aws::String, PolicyEvaluationDecisionType>&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails = std::move(value); }
@@ -445,7 +445,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& WithEvalDecisionDetails(const Aws::Map<Aws::String, PolicyEvaluationDecisionType>& value) { SetEvalDecisionDetails(value); return *this;}
@@ -456,7 +456,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& WithEvalDecisionDetails(Aws::Map<Aws::String, PolicyEvaluationDecisionType>&& value) { SetEvalDecisionDetails(std::move(value)); return *this;}
@@ -467,7 +467,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& AddEvalDecisionDetails(const Aws::String& key, const PolicyEvaluationDecisionType& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, value); return *this; }
@@ -478,7 +478,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& AddEvalDecisionDetails(Aws::String&& key, const PolicyEvaluationDecisionType& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(std::move(key), value); return *this; }
@@ -489,7 +489,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& AddEvalDecisionDetails(const Aws::String& key, PolicyEvaluationDecisionType&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, std::move(value)); return *this; }
@@ -500,7 +500,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& AddEvalDecisionDetails(Aws::String&& key, PolicyEvaluationDecisionType&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(std::move(key), std::move(value)); return *this; }
@@ -511,7 +511,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& AddEvalDecisionDetails(const char* key, PolicyEvaluationDecisionType&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, std::move(value)); return *this; }
@@ -522,7 +522,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& AddEvalDecisionDetails(const char* key, const PolicyEvaluationDecisionType& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, value); return *this; }

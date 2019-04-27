@@ -26,6 +26,10 @@ endif()
 if(POLICY CMP0056)
     cmake_policy(SET CMP0056 NEW)
 endif()
+if(POLICY CMP0057)
+    cmake_policy(SET CMP0057 NEW) # support IN_LIST
+endif()
+
 
 # 3.0 or higher is strongly suggested; build settings (target_compile_options/etc...) sometimes do not get propagated properly under certain conditions prior to this version
 # Making this a hard requirement is potentially disruptive to existing customers who aren't affected by the bad behavior though, so just warn for now
@@ -54,7 +58,6 @@ option(ENABLE_UNITY_BUILD "If enabled, the SDK will be built using a single unif
 option(MINIMIZE_SIZE "If enabled, the SDK will be built via a unity aggregation process that results in smaller static libraries; additionally, release binaries will favor size optimizations over speed" OFF)
 option(BUILD_SHARED_LIBS "If enabled, all aws sdk libraries will be build as shared objects; otherwise all Aws libraries will be built as static objects" ON)
 option(FORCE_SHARED_CRT "If enabled, will unconditionally link the standard libraries in dynamically, otherwise the standard library will be linked in based on the BUILD_SHARED_LIBS setting" ON)
-option(DISABLE_ANDROID_STANDALONE_BUILD "If enabled, the android build will not attempt to generate a standalone toolchain and instead rely on externally passed cmake parameters to specify the complete build environment.  The included toolchain file is still used." OFF)
 option(SIMPLE_INSTALL "If enabled, removes all the additional indirection (platform/cpu/config) in the bin and lib directories on the install step" ON)
 option(NO_HTTP_CLIENT "If enabled, no platform-default http client will be included in the library.  For the library to be used you will need to provide your own platform-specific implementation" OFF)
 option(NO_ENCRYPTION "If enabled, no platform-default encryption will be included in the library.  For the library to be used you will need to provide your own platform-specific implementations" OFF)
@@ -69,6 +72,7 @@ option(FORCE_CURL "Forces usage of the Curl client rather than the default OS-sp
 option(ENABLE_ADDRESS_SANITIZER "Flags to enable/disable Address Sanitizer for gcc or clang" OFF)
 option(BYPASS_DEFAULT_PROXY "Bypass the machine's default proxy settings when using IXmlHttpRequest2" ON)
 option(BUILD_DEPS "Build third-party dependencies" ON)
+option(ENABLE_CURL_LOGGING "If enabled, Curl's internal log will be piped to SDK's logger" OFF)
 
 set(BUILD_ONLY "" CACHE STRING "A semi-colon delimited list of the projects to build")
 set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The default is 11. The minimum is 11.")
@@ -135,10 +139,10 @@ if (BUILD_DEPS)
             COMMAND ${CMAKE_COMMAND} -G ${CMAKE_GENERATOR}
             -DTARGET_ARCH=${TARGET_ARCH}
             -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
+            -DCMAKE_ANDROID_NDK_TOOLCHAIN_VERSION=${CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION}
             -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
             -DANDROID_ABI=${ANDROID_ABI}
-            -DANDROID_TOOLCHAIN_NAME=${ANDROID_TOOLCHAIN_NAME}
-            -DANDROID_STANDALONE_TOOLCHAIN=${ANDROID_STANDALONE_TOOLCHAIN}
+            -DANDROID_TOOLCHAIN=${ANDROID_TOOLCHAIN}
             -DANDROID_STL=${ANDROID_STL}
             -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
             -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}

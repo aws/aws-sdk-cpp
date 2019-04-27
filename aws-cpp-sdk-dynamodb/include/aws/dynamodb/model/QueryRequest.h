@@ -399,7 +399,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttributesToGet() const{ return m_attributesToGet; }
@@ -407,7 +407,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool AttributesToGetHasBeenSet() const { return m_attributesToGetHasBeenSet; }
@@ -415,7 +415,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetAttributesToGet(const Aws::Vector<Aws::String>& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = value; }
@@ -423,7 +423,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetAttributesToGet(Aws::Vector<Aws::String>&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = std::move(value); }
@@ -431,7 +431,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithAttributesToGet(const Aws::Vector<Aws::String>& value) { SetAttributesToGet(value); return *this;}
@@ -439,7 +439,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithAttributesToGet(Aws::Vector<Aws::String>&& value) { SetAttributesToGet(std::move(value)); return *this;}
@@ -447,7 +447,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddAttributesToGet(const Aws::String& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
@@ -455,7 +455,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddAttributesToGet(Aws::String&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(std::move(value)); return *this; }
@@ -463,7 +463,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddAttributesToGet(const char* value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
@@ -479,7 +479,7 @@ namespace Model
      * stops the operation and returns the matching values up to the limit, and a key
      * in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue
      * the operation. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline int GetLimit() const{ return m_limit; }
@@ -494,7 +494,7 @@ namespace Model
      * stops the operation and returns the matching values up to the limit, and a key
      * in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue
      * the operation. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
@@ -509,7 +509,7 @@ namespace Model
      * stops the operation and returns the matching values up to the limit, and a key
      * in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue
      * the operation. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
@@ -524,7 +524,7 @@ namespace Model
      * stops the operation and returns the matching values up to the limit, and a key
      * in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue
      * the operation. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -574,7 +574,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Condition>& GetKeyConditions() const{ return m_keyConditions; }
@@ -582,7 +582,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool KeyConditionsHasBeenSet() const { return m_keyConditionsHasBeenSet; }
@@ -590,7 +590,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetKeyConditions(const Aws::Map<Aws::String, Condition>& value) { m_keyConditionsHasBeenSet = true; m_keyConditions = value; }
@@ -598,7 +598,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetKeyConditions(Aws::Map<Aws::String, Condition>&& value) { m_keyConditionsHasBeenSet = true; m_keyConditions = std::move(value); }
@@ -606,7 +606,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithKeyConditions(const Aws::Map<Aws::String, Condition>& value) { SetKeyConditions(value); return *this;}
@@ -614,7 +614,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithKeyConditions(Aws::Map<Aws::String, Condition>&& value) { SetKeyConditions(std::move(value)); return *this;}
@@ -622,7 +622,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddKeyConditions(const Aws::String& key, const Condition& value) { m_keyConditionsHasBeenSet = true; m_keyConditions.emplace(key, value); return *this; }
@@ -630,7 +630,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddKeyConditions(Aws::String&& key, const Condition& value) { m_keyConditionsHasBeenSet = true; m_keyConditions.emplace(std::move(key), value); return *this; }
@@ -638,7 +638,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddKeyConditions(const Aws::String& key, Condition&& value) { m_keyConditionsHasBeenSet = true; m_keyConditions.emplace(key, std::move(value)); return *this; }
@@ -646,7 +646,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddKeyConditions(Aws::String&& key, Condition&& value) { m_keyConditionsHasBeenSet = true; m_keyConditions.emplace(std::move(key), std::move(value)); return *this; }
@@ -654,7 +654,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddKeyConditions(const char* key, Condition&& value) { m_keyConditionsHasBeenSet = true; m_keyConditions.emplace(key, std::move(value)); return *this; }
@@ -662,7 +662,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddKeyConditions(const char* key, const Condition& value) { m_keyConditionsHasBeenSet = true; m_keyConditions.emplace(key, value); return *this; }
@@ -671,7 +671,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Condition>& GetQueryFilter() const{ return m_queryFilter; }
@@ -679,7 +679,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool QueryFilterHasBeenSet() const { return m_queryFilterHasBeenSet; }
@@ -687,7 +687,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetQueryFilter(const Aws::Map<Aws::String, Condition>& value) { m_queryFilterHasBeenSet = true; m_queryFilter = value; }
@@ -695,7 +695,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetQueryFilter(Aws::Map<Aws::String, Condition>&& value) { m_queryFilterHasBeenSet = true; m_queryFilter = std::move(value); }
@@ -703,7 +703,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithQueryFilter(const Aws::Map<Aws::String, Condition>& value) { SetQueryFilter(value); return *this;}
@@ -711,7 +711,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithQueryFilter(Aws::Map<Aws::String, Condition>&& value) { SetQueryFilter(std::move(value)); return *this;}
@@ -719,7 +719,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddQueryFilter(const Aws::String& key, const Condition& value) { m_queryFilterHasBeenSet = true; m_queryFilter.emplace(key, value); return *this; }
@@ -727,7 +727,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddQueryFilter(Aws::String&& key, const Condition& value) { m_queryFilterHasBeenSet = true; m_queryFilter.emplace(std::move(key), value); return *this; }
@@ -735,7 +735,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddQueryFilter(const Aws::String& key, Condition&& value) { m_queryFilterHasBeenSet = true; m_queryFilter.emplace(key, std::move(value)); return *this; }
@@ -743,7 +743,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddQueryFilter(Aws::String&& key, Condition&& value) { m_queryFilterHasBeenSet = true; m_queryFilter.emplace(std::move(key), std::move(value)); return *this; }
@@ -751,7 +751,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddQueryFilter(const char* key, Condition&& value) { m_queryFilterHasBeenSet = true; m_queryFilter.emplace(key, std::move(value)); return *this; }
@@ -759,7 +759,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddQueryFilter(const char* key, const Condition& value) { m_queryFilterHasBeenSet = true; m_queryFilter.emplace(key, value); return *this; }
@@ -768,7 +768,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const ConditionalOperator& GetConditionalOperator() const{ return m_conditionalOperator; }
@@ -776,7 +776,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ConditionalOperatorHasBeenSet() const { return m_conditionalOperatorHasBeenSet; }
@@ -784,7 +784,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetConditionalOperator(const ConditionalOperator& value) { m_conditionalOperatorHasBeenSet = true; m_conditionalOperator = value; }
@@ -792,7 +792,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetConditionalOperator(ConditionalOperator&& value) { m_conditionalOperatorHasBeenSet = true; m_conditionalOperator = std::move(value); }
@@ -800,7 +800,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithConditionalOperator(const ConditionalOperator& value) { SetConditionalOperator(value); return *this;}
@@ -808,7 +808,7 @@ namespace Model
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithConditionalOperator(ConditionalOperator&& value) { SetConditionalOperator(std::move(value)); return *this;}
@@ -1002,7 +1002,7 @@ namespace Model
      * names are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the result.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::String& GetProjectionExpression() const{ return m_projectionExpression; }
@@ -1014,7 +1014,7 @@ namespace Model
      * names are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the result.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ProjectionExpressionHasBeenSet() const { return m_projectionExpressionHasBeenSet; }
@@ -1026,7 +1026,7 @@ namespace Model
      * names are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the result.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProjectionExpression(const Aws::String& value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression = value; }
@@ -1038,7 +1038,7 @@ namespace Model
      * names are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the result.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProjectionExpression(Aws::String&& value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression = std::move(value); }
@@ -1050,7 +1050,7 @@ namespace Model
      * names are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the result.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProjectionExpression(const char* value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression.assign(value); }
@@ -1062,7 +1062,7 @@ namespace Model
      * names are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the result.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithProjectionExpression(const Aws::String& value) { SetProjectionExpression(value); return *this;}
@@ -1074,7 +1074,7 @@ namespace Model
      * names are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the result.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithProjectionExpression(Aws::String&& value) { SetProjectionExpression(std::move(value)); return *this;}
@@ -1086,7 +1086,7 @@ namespace Model
      * names are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the result.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithProjectionExpression(const char* value) { SetProjectionExpression(value); return *this;}
@@ -1101,7 +1101,7 @@ namespace Model
      * <p>A <code>FilterExpression</code> is applied after the items have already been
      * read; the process of filtering does not consume any additional read capacity
      * units.</p> </note> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::String& GetFilterExpression() const{ return m_filterExpression; }
@@ -1115,7 +1115,7 @@ namespace Model
      * <p>A <code>FilterExpression</code> is applied after the items have already been
      * read; the process of filtering does not consume any additional read capacity
      * units.</p> </note> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool FilterExpressionHasBeenSet() const { return m_filterExpressionHasBeenSet; }
@@ -1129,7 +1129,7 @@ namespace Model
      * <p>A <code>FilterExpression</code> is applied after the items have already been
      * read; the process of filtering does not consume any additional read capacity
      * units.</p> </note> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetFilterExpression(const Aws::String& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = value; }
@@ -1143,7 +1143,7 @@ namespace Model
      * <p>A <code>FilterExpression</code> is applied after the items have already been
      * read; the process of filtering does not consume any additional read capacity
      * units.</p> </note> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetFilterExpression(Aws::String&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = std::move(value); }
@@ -1157,7 +1157,7 @@ namespace Model
      * <p>A <code>FilterExpression</code> is applied after the items have already been
      * read; the process of filtering does not consume any additional read capacity
      * units.</p> </note> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetFilterExpression(const char* value) { m_filterExpressionHasBeenSet = true; m_filterExpression.assign(value); }
@@ -1171,7 +1171,7 @@ namespace Model
      * <p>A <code>FilterExpression</code> is applied after the items have already been
      * read; the process of filtering does not consume any additional read capacity
      * units.</p> </note> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithFilterExpression(const Aws::String& value) { SetFilterExpression(value); return *this;}
@@ -1185,7 +1185,7 @@ namespace Model
      * <p>A <code>FilterExpression</code> is applied after the items have already been
      * read; the process of filtering does not consume any additional read capacity
      * units.</p> </note> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithFilterExpression(Aws::String&& value) { SetFilterExpression(std::move(value)); return *this;}
@@ -1199,7 +1199,7 @@ namespace Model
      * <p>A <code>FilterExpression</code> is applied after the items have already been
      * read; the process of filtering does not consume any additional read capacity
      * units.</p> </note> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithFilterExpression(const char* value) { SetFilterExpression(value); return *this;}
@@ -1253,11 +1253,11 @@ namespace Model
      * <code>KeyConditionExpression</code> then is as follows:</p> <ul> <li> <p>
      * <code>#S = :myval</code> </p> </li> </ul> <p>For a list of reserved words, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>For more
      * information on <code>ExpressionAttributeNames</code> and
      * <code>ExpressionAttributeValues</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
      * Developer Guide</i>.</p>
      */
@@ -1311,11 +1311,11 @@ namespace Model
      * <code>KeyConditionExpression</code> then is as follows:</p> <ul> <li> <p>
      * <code>#S = :myval</code> </p> </li> </ul> <p>For a list of reserved words, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>For more
      * information on <code>ExpressionAttributeNames</code> and
      * <code>ExpressionAttributeValues</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
      * Developer Guide</i>.</p>
      */
@@ -1369,11 +1369,11 @@ namespace Model
      * <code>KeyConditionExpression</code> then is as follows:</p> <ul> <li> <p>
      * <code>#S = :myval</code> </p> </li> </ul> <p>For a list of reserved words, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>For more
      * information on <code>ExpressionAttributeNames</code> and
      * <code>ExpressionAttributeValues</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
      * Developer Guide</i>.</p>
      */
@@ -1427,11 +1427,11 @@ namespace Model
      * <code>KeyConditionExpression</code> then is as follows:</p> <ul> <li> <p>
      * <code>#S = :myval</code> </p> </li> </ul> <p>For a list of reserved words, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>For more
      * information on <code>ExpressionAttributeNames</code> and
      * <code>ExpressionAttributeValues</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
      * Developer Guide</i>.</p>
      */
@@ -1485,11 +1485,11 @@ namespace Model
      * <code>KeyConditionExpression</code> then is as follows:</p> <ul> <li> <p>
      * <code>#S = :myval</code> </p> </li> </ul> <p>For a list of reserved words, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>For more
      * information on <code>ExpressionAttributeNames</code> and
      * <code>ExpressionAttributeValues</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
      * Developer Guide</i>.</p>
      */
@@ -1543,11 +1543,11 @@ namespace Model
      * <code>KeyConditionExpression</code> then is as follows:</p> <ul> <li> <p>
      * <code>#S = :myval</code> </p> </li> </ul> <p>For a list of reserved words, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>For more
      * information on <code>ExpressionAttributeNames</code> and
      * <code>ExpressionAttributeValues</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
      * Developer Guide</i>.</p>
      */
@@ -1601,11 +1601,11 @@ namespace Model
      * <code>KeyConditionExpression</code> then is as follows:</p> <ul> <li> <p>
      * <code>#S = :myval</code> </p> </li> </ul> <p>For a list of reserved words, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>For more
      * information on <code>ExpressionAttributeNames</code> and
      * <code>ExpressionAttributeValues</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
      * Developer Guide</i>.</p>
      */
@@ -1659,11 +1659,11 @@ namespace Model
      * <code>KeyConditionExpression</code> then is as follows:</p> <ul> <li> <p>
      * <code>#S = :myval</code> </p> </li> </ul> <p>For a list of reserved words, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>For more
      * information on <code>ExpressionAttributeNames</code> and
      * <code>ExpressionAttributeValues</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
      * Developer Guide</i>.</p>
      */
@@ -1683,7 +1683,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -1692,7 +1692,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetExpressionAttributeNames() const{ return m_expressionAttributeNames; }
@@ -1710,7 +1710,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -1719,7 +1719,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ExpressionAttributeNamesHasBeenSet() const { return m_expressionAttributeNamesHasBeenSet; }
@@ -1737,7 +1737,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -1746,7 +1746,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeNames(const Aws::Map<Aws::String, Aws::String>& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = value; }
@@ -1764,7 +1764,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -1773,7 +1773,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = std::move(value); }
@@ -1791,7 +1791,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -1800,7 +1800,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithExpressionAttributeNames(const Aws::Map<Aws::String, Aws::String>& value) { SetExpressionAttributeNames(value); return *this;}
@@ -1818,7 +1818,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -1827,7 +1827,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { SetExpressionAttributeNames(std::move(value)); return *this;}
@@ -1845,7 +1845,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -1854,7 +1854,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeNames(const Aws::String& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
@@ -1872,7 +1872,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -1881,7 +1881,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeNames(Aws::String&& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
@@ -1899,7 +1899,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -1908,7 +1908,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeNames(const Aws::String& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
@@ -1926,7 +1926,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -1935,7 +1935,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeNames(Aws::String&& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), std::move(value)); return *this; }
@@ -1953,7 +1953,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -1962,7 +1962,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeNames(const char* key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
@@ -1980,7 +1980,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -1989,7 +1989,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeNames(Aws::String&& key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
@@ -2007,7 +2007,7 @@ namespace Model
      * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
@@ -2016,7 +2016,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeNames(const char* key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
@@ -2034,7 +2034,7 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetExpressionAttributeValues() const{ return m_expressionAttributeValues; }
@@ -2051,7 +2051,7 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ExpressionAttributeValuesHasBeenSet() const { return m_expressionAttributeValuesHasBeenSet; }
@@ -2068,7 +2068,7 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeValues(const Aws::Map<Aws::String, AttributeValue>& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues = value; }
@@ -2085,7 +2085,7 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeValues(Aws::Map<Aws::String, AttributeValue>&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues = std::move(value); }
@@ -2102,7 +2102,7 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithExpressionAttributeValues(const Aws::Map<Aws::String, AttributeValue>& value) { SetExpressionAttributeValues(value); return *this;}
@@ -2119,7 +2119,7 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithExpressionAttributeValues(Aws::Map<Aws::String, AttributeValue>&& value) { SetExpressionAttributeValues(std::move(value)); return *this;}
@@ -2136,7 +2136,7 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeValues(const Aws::String& key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }
@@ -2153,7 +2153,7 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeValues(Aws::String&& key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(std::move(key), value); return *this; }
@@ -2170,7 +2170,7 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeValues(const Aws::String& key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, std::move(value)); return *this; }
@@ -2187,7 +2187,7 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeValues(Aws::String&& key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(std::move(key), std::move(value)); return *this; }
@@ -2204,7 +2204,7 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeValues(const char* key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, std::move(value)); return *this; }
@@ -2221,7 +2221,7 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeValues(const char* key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }

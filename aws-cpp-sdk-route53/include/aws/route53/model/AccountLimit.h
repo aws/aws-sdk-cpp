@@ -152,26 +152,26 @@ namespace Model
 
 
     /**
-     * <p>The current value for the limit that is specified by
-     * <a>AccountLimit$Type</a>.</p>
+     * <p>The current value for the limit that is specified by <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
      */
     inline long long GetValue() const{ return m_value; }
 
     /**
-     * <p>The current value for the limit that is specified by
-     * <a>AccountLimit$Type</a>.</p>
+     * <p>The current value for the limit that is specified by <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The current value for the limit that is specified by
-     * <a>AccountLimit$Type</a>.</p>
+     * <p>The current value for the limit that is specified by <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
      */
     inline void SetValue(long long value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The current value for the limit that is specified by
-     * <a>AccountLimit$Type</a>.</p>
+     * <p>The current value for the limit that is specified by <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
      */
     inline AccountLimit& WithValue(long long value) { SetValue(value); return *this;}
 

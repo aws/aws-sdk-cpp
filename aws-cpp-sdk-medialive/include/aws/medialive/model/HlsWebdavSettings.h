@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for HlsWebdavSettings<p><h3>See Also:</h3>   <a
+   * Hls Webdav Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsWebdavSettings">AWS
    * API Reference</a></p>
    */

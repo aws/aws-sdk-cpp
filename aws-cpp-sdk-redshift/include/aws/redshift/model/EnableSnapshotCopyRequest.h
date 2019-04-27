@@ -110,7 +110,7 @@ namespace Model
      * <p>The destination AWS Region that you want to copy snapshots to.</p>
      * <p>Constraints: Must be the name of a valid AWS Region. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline const Aws::String& GetDestinationRegion() const{ return m_destinationRegion; }
@@ -119,7 +119,7 @@ namespace Model
      * <p>The destination AWS Region that you want to copy snapshots to.</p>
      * <p>Constraints: Must be the name of a valid AWS Region. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline bool DestinationRegionHasBeenSet() const { return m_destinationRegionHasBeenSet; }
@@ -128,7 +128,7 @@ namespace Model
      * <p>The destination AWS Region that you want to copy snapshots to.</p>
      * <p>Constraints: Must be the name of a valid AWS Region. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline void SetDestinationRegion(const Aws::String& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = value; }
@@ -137,7 +137,7 @@ namespace Model
      * <p>The destination AWS Region that you want to copy snapshots to.</p>
      * <p>Constraints: Must be the name of a valid AWS Region. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline void SetDestinationRegion(Aws::String&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = std::move(value); }
@@ -146,7 +146,7 @@ namespace Model
      * <p>The destination AWS Region that you want to copy snapshots to.</p>
      * <p>Constraints: Must be the name of a valid AWS Region. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline void SetDestinationRegion(const char* value) { m_destinationRegionHasBeenSet = true; m_destinationRegion.assign(value); }
@@ -155,7 +155,7 @@ namespace Model
      * <p>The destination AWS Region that you want to copy snapshots to.</p>
      * <p>Constraints: Must be the name of a valid AWS Region. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline EnableSnapshotCopyRequest& WithDestinationRegion(const Aws::String& value) { SetDestinationRegion(value); return *this;}
@@ -164,7 +164,7 @@ namespace Model
      * <p>The destination AWS Region that you want to copy snapshots to.</p>
      * <p>Constraints: Must be the name of a valid AWS Region. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline EnableSnapshotCopyRequest& WithDestinationRegion(Aws::String&& value) { SetDestinationRegion(std::move(value)); return *this;}
@@ -173,7 +173,7 @@ namespace Model
      * <p>The destination AWS Region that you want to copy snapshots to.</p>
      * <p>Constraints: Must be the name of a valid AWS Region. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline EnableSnapshotCopyRequest& WithDestinationRegion(const char* value) { SetDestinationRegion(value); return *this;}

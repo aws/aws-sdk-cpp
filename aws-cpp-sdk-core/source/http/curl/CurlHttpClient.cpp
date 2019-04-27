@@ -417,9 +417,11 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
         {
             curl_easy_setopt(connectionHandle, CURLOPT_FOLLOWLOCATION, 0L);
         }
-        //curl_easy_setopt(connectionHandle, CURLOPT_VERBOSE, 1);
-        //curl_easy_setopt(connectionHandle, CURLOPT_DEBUGFUNCTION, CurlDebugCallback);
 
+#ifdef ENABLE_CURL_LOGGING
+        curl_easy_setopt(connectionHandle, CURLOPT_VERBOSE, 1);
+        curl_easy_setopt(connectionHandle, CURLOPT_DEBUGFUNCTION, CurlDebugCallback);
+#endif
         if (m_isUsingProxy)
         {
             Aws::StringStream ss;
@@ -536,6 +538,13 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
         if (ret == CURLE_OK)
         {
             request.AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::SslLatency), static_cast<int64_t>(timep * 1000));
+        }
+
+        const char* ip = nullptr;
+        auto curlGetInfoResult = curl_easy_getinfo(connectionHandle, CURLINFO_PRIMARY_IP, &ip); // Get the IP address of the remote endpoint
+        if (curlGetInfoResult == CURLE_OK && ip)
+        {
+            request.SetResolvedRemoteHost(ip);
         }
 
         m_curlHandleContainer.ReleaseCurlHandle(connectionHandle);

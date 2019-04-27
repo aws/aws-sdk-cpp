@@ -33,7 +33,9 @@ GatewayInfo::GatewayInfo() :
     m_gatewayARNHasBeenSet(false),
     m_gatewayTypeHasBeenSet(false),
     m_gatewayOperationalStateHasBeenSet(false),
-    m_gatewayNameHasBeenSet(false)
+    m_gatewayNameHasBeenSet(false),
+    m_ec2InstanceIdHasBeenSet(false),
+    m_ec2InstanceRegionHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ GatewayInfo::GatewayInfo(JsonView jsonValue) :
     m_gatewayARNHasBeenSet(false),
     m_gatewayTypeHasBeenSet(false),
     m_gatewayOperationalStateHasBeenSet(false),
-    m_gatewayNameHasBeenSet(false)
+    m_gatewayNameHasBeenSet(false),
+    m_ec2InstanceIdHasBeenSet(false),
+    m_ec2InstanceRegionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,6 +88,20 @@ GatewayInfo& GatewayInfo::operator =(JsonView jsonValue)
     m_gatewayNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Ec2InstanceId"))
+  {
+    m_ec2InstanceId = jsonValue.GetString("Ec2InstanceId");
+
+    m_ec2InstanceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Ec2InstanceRegion"))
+  {
+    m_ec2InstanceRegion = jsonValue.GetString("Ec2InstanceRegion");
+
+    m_ec2InstanceRegionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -118,6 +136,18 @@ JsonValue GatewayInfo::Jsonize() const
   if(m_gatewayNameHasBeenSet)
   {
    payload.WithString("GatewayName", m_gatewayName);
+
+  }
+
+  if(m_ec2InstanceIdHasBeenSet)
+  {
+   payload.WithString("Ec2InstanceId", m_ec2InstanceId);
+
+  }
+
+  if(m_ec2InstanceRegionHasBeenSet)
+  {
+   payload.WithString("Ec2InstanceRegion", m_ec2InstanceRegion);
 
   }
 

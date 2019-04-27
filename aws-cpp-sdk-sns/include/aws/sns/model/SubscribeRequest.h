@@ -215,7 +215,7 @@ namespace Model
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with "http://"</p> </li> <li> <p>For the <code>https</code>
+     * an URL beginning with "https://"</p> </li> <li> <p>For the <code>https</code>
      * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
      * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
      * <p>For the <code>email-json</code> protocol, the endpoint is an email
@@ -231,7 +231,7 @@ namespace Model
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with "http://"</p> </li> <li> <p>For the <code>https</code>
+     * an URL beginning with "https://"</p> </li> <li> <p>For the <code>https</code>
      * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
      * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
      * <p>For the <code>email-json</code> protocol, the endpoint is an email
@@ -247,7 +247,7 @@ namespace Model
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with "http://"</p> </li> <li> <p>For the <code>https</code>
+     * an URL beginning with "https://"</p> </li> <li> <p>For the <code>https</code>
      * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
      * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
      * <p>For the <code>email-json</code> protocol, the endpoint is an email
@@ -263,7 +263,7 @@ namespace Model
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with "http://"</p> </li> <li> <p>For the <code>https</code>
+     * an URL beginning with "https://"</p> </li> <li> <p>For the <code>https</code>
      * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
      * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
      * <p>For the <code>email-json</code> protocol, the endpoint is an email
@@ -279,7 +279,7 @@ namespace Model
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with "http://"</p> </li> <li> <p>For the <code>https</code>
+     * an URL beginning with "https://"</p> </li> <li> <p>For the <code>https</code>
      * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
      * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
      * <p>For the <code>email-json</code> protocol, the endpoint is an email
@@ -295,7 +295,7 @@ namespace Model
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with "http://"</p> </li> <li> <p>For the <code>https</code>
+     * an URL beginning with "https://"</p> </li> <li> <p>For the <code>https</code>
      * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
      * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
      * <p>For the <code>email-json</code> protocol, the endpoint is an email
@@ -311,7 +311,7 @@ namespace Model
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with "http://"</p> </li> <li> <p>For the <code>https</code>
+     * an URL beginning with "https://"</p> </li> <li> <p>For the <code>https</code>
      * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
      * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
      * <p>For the <code>email-json</code> protocol, the endpoint is an email
@@ -327,7 +327,7 @@ namespace Model
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with "http://"</p> </li> <li> <p>For the <code>https</code>
+     * an URL beginning with "https://"</p> </li> <li> <p>For the <code>https</code>
      * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
      * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
      * <p>For the <code>email-json</code> protocol, the endpoint is an email

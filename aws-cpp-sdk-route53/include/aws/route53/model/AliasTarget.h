@@ -33,16 +33,13 @@ namespace Model
 {
 
   /**
-   * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
-   * distribution, Elastic Beanstalk environment, ELB load balancer, Amazon S3
-   * bucket, or Amazon Route 53 resource record set that you're redirecting queries
-   * to. An Elastic Beanstalk environment must have a regionalized subdomain.</p>
-   * <p>When creating resource record sets for a private hosted zone, note the
-   * following:</p> <ul> <li> <p>Resource record sets can't be created for CloudFront
-   * distributions in a private hosted zone.</p> </li> <li> <p>Creating geolocation
-   * alias resource record sets or latency alias resource record sets in a private
-   * hosted zone is unsupported.</p> </li> <li> <p>For information about creating
-   * failover resource record sets in a private hosted zone, see <a
+   * <p> <i>Alias resource record sets only:</i> Information about the AWS resource,
+   * such as a CloudFront distribution or an Amazon S3 bucket, that you want to route
+   * traffic to.</p> <p>When creating resource record sets for a private hosted zone,
+   * note the following:</p> <ul> <li> <p>Creating geolocation alias resource record
+   * sets or latency alias resource record sets in a private hosted zone is
+   * unsupported.</p> </li> <li> <p>For information about creating failover resource
+   * record sets in a private hosted zone, see <a
    * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
    * Failover in a Private Hosted Zone</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AliasTarget">AWS
@@ -60,7 +57,18 @@ namespace Model
 
     /**
      * <p> <i>Alias resource records sets only</i>: The value used depends on where you
-     * want to route traffic:</p> <dl> <dt>CloudFront distribution</dt> <dd> <p>Specify
+     * want to route traffic:</p> <dl> <dt>Amazon API Gateway custom regional APIs and
+     * edge-optimized APIs</dt> <dd> <p>Specify the hosted zone ID for your API. You
+     * can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
+     * <ul> <li> <p>For regional APIs, specify the value of
+     * <code>regionalHostedZoneId</code>.</p> </li> <li> <p>For edge-optimized APIs,
+     * specify the value of <code>distributionHostedZoneId</code>.</p> </li> </ul>
+     * </dd> <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt> <dd>
+     * <p>Specify the hosted zone ID for your interface endpoint. You can get the value
+     * of <code>HostedZoneId</code> using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
+     * </dd> <dt>CloudFront distribution</dt> <dd> <p>Specify
      * <code>Z2FDTNDATAQYW2</code>.</p> <note> <p>Alias resource record sets for
      * CloudFront can't be created in a private zone.</p> </note> </dd> <dt>Elastic
      * Beanstalk environment</dt> <dd> <p>Specify the hosted zone ID for the region
@@ -72,7 +80,7 @@ namespace Model
      * balancer</dt> <dd> <p>Specify the value of the hosted zone ID for the load
      * balancer. Use the following methods to get the hosted zone ID:</p> <ul> <li> <p>
      * <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic
      * Load Balancing</a> table in the "AWS Regions and Endpoints" chapter of the
      * <i>Amazon Web Services General Reference</i>: Use the value that corresponds
      * with the region that you created your load balancer in. Note that there are
@@ -112,7 +120,18 @@ namespace Model
 
     /**
      * <p> <i>Alias resource records sets only</i>: The value used depends on where you
-     * want to route traffic:</p> <dl> <dt>CloudFront distribution</dt> <dd> <p>Specify
+     * want to route traffic:</p> <dl> <dt>Amazon API Gateway custom regional APIs and
+     * edge-optimized APIs</dt> <dd> <p>Specify the hosted zone ID for your API. You
+     * can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
+     * <ul> <li> <p>For regional APIs, specify the value of
+     * <code>regionalHostedZoneId</code>.</p> </li> <li> <p>For edge-optimized APIs,
+     * specify the value of <code>distributionHostedZoneId</code>.</p> </li> </ul>
+     * </dd> <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt> <dd>
+     * <p>Specify the hosted zone ID for your interface endpoint. You can get the value
+     * of <code>HostedZoneId</code> using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
+     * </dd> <dt>CloudFront distribution</dt> <dd> <p>Specify
      * <code>Z2FDTNDATAQYW2</code>.</p> <note> <p>Alias resource record sets for
      * CloudFront can't be created in a private zone.</p> </note> </dd> <dt>Elastic
      * Beanstalk environment</dt> <dd> <p>Specify the hosted zone ID for the region
@@ -124,7 +143,7 @@ namespace Model
      * balancer</dt> <dd> <p>Specify the value of the hosted zone ID for the load
      * balancer. Use the following methods to get the hosted zone ID:</p> <ul> <li> <p>
      * <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic
      * Load Balancing</a> table in the "AWS Regions and Endpoints" chapter of the
      * <i>Amazon Web Services General Reference</i>: Use the value that corresponds
      * with the region that you created your load balancer in. Note that there are
@@ -164,7 +183,18 @@ namespace Model
 
     /**
      * <p> <i>Alias resource records sets only</i>: The value used depends on where you
-     * want to route traffic:</p> <dl> <dt>CloudFront distribution</dt> <dd> <p>Specify
+     * want to route traffic:</p> <dl> <dt>Amazon API Gateway custom regional APIs and
+     * edge-optimized APIs</dt> <dd> <p>Specify the hosted zone ID for your API. You
+     * can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
+     * <ul> <li> <p>For regional APIs, specify the value of
+     * <code>regionalHostedZoneId</code>.</p> </li> <li> <p>For edge-optimized APIs,
+     * specify the value of <code>distributionHostedZoneId</code>.</p> </li> </ul>
+     * </dd> <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt> <dd>
+     * <p>Specify the hosted zone ID for your interface endpoint. You can get the value
+     * of <code>HostedZoneId</code> using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
+     * </dd> <dt>CloudFront distribution</dt> <dd> <p>Specify
      * <code>Z2FDTNDATAQYW2</code>.</p> <note> <p>Alias resource record sets for
      * CloudFront can't be created in a private zone.</p> </note> </dd> <dt>Elastic
      * Beanstalk environment</dt> <dd> <p>Specify the hosted zone ID for the region
@@ -176,7 +206,7 @@ namespace Model
      * balancer</dt> <dd> <p>Specify the value of the hosted zone ID for the load
      * balancer. Use the following methods to get the hosted zone ID:</p> <ul> <li> <p>
      * <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic
      * Load Balancing</a> table in the "AWS Regions and Endpoints" chapter of the
      * <i>Amazon Web Services General Reference</i>: Use the value that corresponds
      * with the region that you created your load balancer in. Note that there are
@@ -216,7 +246,18 @@ namespace Model
 
     /**
      * <p> <i>Alias resource records sets only</i>: The value used depends on where you
-     * want to route traffic:</p> <dl> <dt>CloudFront distribution</dt> <dd> <p>Specify
+     * want to route traffic:</p> <dl> <dt>Amazon API Gateway custom regional APIs and
+     * edge-optimized APIs</dt> <dd> <p>Specify the hosted zone ID for your API. You
+     * can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
+     * <ul> <li> <p>For regional APIs, specify the value of
+     * <code>regionalHostedZoneId</code>.</p> </li> <li> <p>For edge-optimized APIs,
+     * specify the value of <code>distributionHostedZoneId</code>.</p> </li> </ul>
+     * </dd> <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt> <dd>
+     * <p>Specify the hosted zone ID for your interface endpoint. You can get the value
+     * of <code>HostedZoneId</code> using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
+     * </dd> <dt>CloudFront distribution</dt> <dd> <p>Specify
      * <code>Z2FDTNDATAQYW2</code>.</p> <note> <p>Alias resource record sets for
      * CloudFront can't be created in a private zone.</p> </note> </dd> <dt>Elastic
      * Beanstalk environment</dt> <dd> <p>Specify the hosted zone ID for the region
@@ -228,7 +269,7 @@ namespace Model
      * balancer</dt> <dd> <p>Specify the value of the hosted zone ID for the load
      * balancer. Use the following methods to get the hosted zone ID:</p> <ul> <li> <p>
      * <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic
      * Load Balancing</a> table in the "AWS Regions and Endpoints" chapter of the
      * <i>Amazon Web Services General Reference</i>: Use the value that corresponds
      * with the region that you created your load balancer in. Note that there are
@@ -268,7 +309,18 @@ namespace Model
 
     /**
      * <p> <i>Alias resource records sets only</i>: The value used depends on where you
-     * want to route traffic:</p> <dl> <dt>CloudFront distribution</dt> <dd> <p>Specify
+     * want to route traffic:</p> <dl> <dt>Amazon API Gateway custom regional APIs and
+     * edge-optimized APIs</dt> <dd> <p>Specify the hosted zone ID for your API. You
+     * can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
+     * <ul> <li> <p>For regional APIs, specify the value of
+     * <code>regionalHostedZoneId</code>.</p> </li> <li> <p>For edge-optimized APIs,
+     * specify the value of <code>distributionHostedZoneId</code>.</p> </li> </ul>
+     * </dd> <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt> <dd>
+     * <p>Specify the hosted zone ID for your interface endpoint. You can get the value
+     * of <code>HostedZoneId</code> using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
+     * </dd> <dt>CloudFront distribution</dt> <dd> <p>Specify
      * <code>Z2FDTNDATAQYW2</code>.</p> <note> <p>Alias resource record sets for
      * CloudFront can't be created in a private zone.</p> </note> </dd> <dt>Elastic
      * Beanstalk environment</dt> <dd> <p>Specify the hosted zone ID for the region
@@ -280,7 +332,7 @@ namespace Model
      * balancer</dt> <dd> <p>Specify the value of the hosted zone ID for the load
      * balancer. Use the following methods to get the hosted zone ID:</p> <ul> <li> <p>
      * <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic
      * Load Balancing</a> table in the "AWS Regions and Endpoints" chapter of the
      * <i>Amazon Web Services General Reference</i>: Use the value that corresponds
      * with the region that you created your load balancer in. Note that there are
@@ -320,7 +372,18 @@ namespace Model
 
     /**
      * <p> <i>Alias resource records sets only</i>: The value used depends on where you
-     * want to route traffic:</p> <dl> <dt>CloudFront distribution</dt> <dd> <p>Specify
+     * want to route traffic:</p> <dl> <dt>Amazon API Gateway custom regional APIs and
+     * edge-optimized APIs</dt> <dd> <p>Specify the hosted zone ID for your API. You
+     * can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
+     * <ul> <li> <p>For regional APIs, specify the value of
+     * <code>regionalHostedZoneId</code>.</p> </li> <li> <p>For edge-optimized APIs,
+     * specify the value of <code>distributionHostedZoneId</code>.</p> </li> </ul>
+     * </dd> <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt> <dd>
+     * <p>Specify the hosted zone ID for your interface endpoint. You can get the value
+     * of <code>HostedZoneId</code> using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
+     * </dd> <dt>CloudFront distribution</dt> <dd> <p>Specify
      * <code>Z2FDTNDATAQYW2</code>.</p> <note> <p>Alias resource record sets for
      * CloudFront can't be created in a private zone.</p> </note> </dd> <dt>Elastic
      * Beanstalk environment</dt> <dd> <p>Specify the hosted zone ID for the region
@@ -332,7 +395,7 @@ namespace Model
      * balancer</dt> <dd> <p>Specify the value of the hosted zone ID for the load
      * balancer. Use the following methods to get the hosted zone ID:</p> <ul> <li> <p>
      * <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic
      * Load Balancing</a> table in the "AWS Regions and Endpoints" chapter of the
      * <i>Amazon Web Services General Reference</i>: Use the value that corresponds
      * with the region that you created your load balancer in. Note that there are
@@ -372,7 +435,18 @@ namespace Model
 
     /**
      * <p> <i>Alias resource records sets only</i>: The value used depends on where you
-     * want to route traffic:</p> <dl> <dt>CloudFront distribution</dt> <dd> <p>Specify
+     * want to route traffic:</p> <dl> <dt>Amazon API Gateway custom regional APIs and
+     * edge-optimized APIs</dt> <dd> <p>Specify the hosted zone ID for your API. You
+     * can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
+     * <ul> <li> <p>For regional APIs, specify the value of
+     * <code>regionalHostedZoneId</code>.</p> </li> <li> <p>For edge-optimized APIs,
+     * specify the value of <code>distributionHostedZoneId</code>.</p> </li> </ul>
+     * </dd> <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt> <dd>
+     * <p>Specify the hosted zone ID for your interface endpoint. You can get the value
+     * of <code>HostedZoneId</code> using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
+     * </dd> <dt>CloudFront distribution</dt> <dd> <p>Specify
      * <code>Z2FDTNDATAQYW2</code>.</p> <note> <p>Alias resource record sets for
      * CloudFront can't be created in a private zone.</p> </note> </dd> <dt>Elastic
      * Beanstalk environment</dt> <dd> <p>Specify the hosted zone ID for the region
@@ -384,7 +458,7 @@ namespace Model
      * balancer</dt> <dd> <p>Specify the value of the hosted zone ID for the load
      * balancer. Use the following methods to get the hosted zone ID:</p> <ul> <li> <p>
      * <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic
      * Load Balancing</a> table in the "AWS Regions and Endpoints" chapter of the
      * <i>Amazon Web Services General Reference</i>: Use the value that corresponds
      * with the region that you created your load balancer in. Note that there are
@@ -424,7 +498,18 @@ namespace Model
 
     /**
      * <p> <i>Alias resource records sets only</i>: The value used depends on where you
-     * want to route traffic:</p> <dl> <dt>CloudFront distribution</dt> <dd> <p>Specify
+     * want to route traffic:</p> <dl> <dt>Amazon API Gateway custom regional APIs and
+     * edge-optimized APIs</dt> <dd> <p>Specify the hosted zone ID for your API. You
+     * can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
+     * <ul> <li> <p>For regional APIs, specify the value of
+     * <code>regionalHostedZoneId</code>.</p> </li> <li> <p>For edge-optimized APIs,
+     * specify the value of <code>distributionHostedZoneId</code>.</p> </li> </ul>
+     * </dd> <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt> <dd>
+     * <p>Specify the hosted zone ID for your interface endpoint. You can get the value
+     * of <code>HostedZoneId</code> using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
+     * </dd> <dt>CloudFront distribution</dt> <dd> <p>Specify
      * <code>Z2FDTNDATAQYW2</code>.</p> <note> <p>Alias resource record sets for
      * CloudFront can't be created in a private zone.</p> </note> </dd> <dt>Elastic
      * Beanstalk environment</dt> <dd> <p>Specify the hosted zone ID for the region
@@ -436,7 +521,7 @@ namespace Model
      * balancer</dt> <dd> <p>Specify the value of the hosted zone ID for the load
      * balancer. Use the following methods to get the hosted zone ID:</p> <ul> <li> <p>
      * <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic
      * Load Balancing</a> table in the "AWS Regions and Endpoints" chapter of the
      * <i>Amazon Web Services General Reference</i>: Use the value that corresponds
      * with the region that you created your load balancer in. Note that there are
@@ -477,24 +562,43 @@ namespace Model
 
     /**
      * <p> <i>Alias resource record sets only:</i> The value that you specify depends
-     * on where you want to route queries:</p> <dl> <dt>CloudFront distribution</dt>
-     * <dd> <p>Specify the domain name that CloudFront assigned when you created your
-     * distribution.</p> <p>Your CloudFront distribution must include an alternate
-     * domain name that matches the name of the resource record set. For example, if
-     * the name of the resource record set is <i>acme.example.com</i>, your CloudFront
-     * distribution must include <i>acme.example.com</i> as one of the alternate domain
-     * names. For more information, see <a
+     * on where you want to route queries:</p> <dl> <dt>Amazon API Gateway custom
+     * regional APIs and edge-optimized APIs</dt> <dd> <p>Specify the applicable domain
+     * name for your API. You can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
+     * <ul> <li> <p>For regional APIs, specify the value of
+     * <code>regionalDomainName</code>.</p> </li> <li> <p>For edge-optimized APIs,
+     * specify the value of <code>distributionDomainName</code>. This is the name of
+     * the associated CloudFront distribution, such as
+     * <code>da1b2c3d4e5.cloudfront.net</code>.</p> </li> </ul> <note> <p>The name of
+     * the record that you're creating must match a custom domain name for your API,
+     * such as <code>api.example.com</code>.</p> </note> </dd> <dt>Amazon Virtual
+     * Private Cloud interface VPC endpoint</dt> <dd> <p>Enter the API endpoint for the
+     * interface endpoint, such as
+     * <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>.
+     * For edge-optimized APIs, this is the domain name for the corresponding
+     * CloudFront distribution. You can get the value of <code>DnsName</code> using the
+     * AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
+     * </dd> <dt>CloudFront distribution</dt> <dd> <p>Specify the domain name that
+     * CloudFront assigned when you created your distribution.</p> <p>Your CloudFront
+     * distribution must include an alternate domain name that matches the name of the
+     * resource record set. For example, if the name of the resource record set is
+     * <i>acme.example.com</i>, your CloudFront distribution must include
+     * <i>acme.example.com</i> as one of the alternate domain names. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using
      * Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <note> <p>For failover alias records, you can't specify a
-     * CloudFront distribution for both the primary and secondary records. A
-     * distribution must include an alternate domain name that matches the name of the
-     * record. However, the primary and secondary records have the same name, and you
-     * can't include the same alternate domain name in more than one distribution. </p>
-     * </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd> <p>If the domain name
-     * for your Elastic Beanstalk environment includes the region that you deployed the
-     * environment in, you can create an alias record that routes traffic to the
-     * environment. For example, the domain name
+     * Guide</i>.</p> <p>You can't create a resource record set in a private hosted
+     * zone to route traffic to a CloudFront distribution.</p> <note> <p>For failover
+     * alias records, you can't specify a CloudFront distribution for both the primary
+     * and secondary records. A distribution must include an alternate domain name that
+     * matches the name of the record. However, the primary and secondary records have
+     * the same name, and you can't include the same alternate domain name in more than
+     * one distribution. </p> </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd>
+     * <p>If the domain name for your Elastic Beanstalk environment includes the region
+     * that you deployed the environment in, you can create an alias record that routes
+     * traffic to the environment. For example, the domain name
      * <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a
      * regionalized domain name. </p> <important> <p>For environments that were created
      * before early 2016, the domain name doesn't include the region. To route traffic
@@ -565,24 +669,43 @@ namespace Model
 
     /**
      * <p> <i>Alias resource record sets only:</i> The value that you specify depends
-     * on where you want to route queries:</p> <dl> <dt>CloudFront distribution</dt>
-     * <dd> <p>Specify the domain name that CloudFront assigned when you created your
-     * distribution.</p> <p>Your CloudFront distribution must include an alternate
-     * domain name that matches the name of the resource record set. For example, if
-     * the name of the resource record set is <i>acme.example.com</i>, your CloudFront
-     * distribution must include <i>acme.example.com</i> as one of the alternate domain
-     * names. For more information, see <a
+     * on where you want to route queries:</p> <dl> <dt>Amazon API Gateway custom
+     * regional APIs and edge-optimized APIs</dt> <dd> <p>Specify the applicable domain
+     * name for your API. You can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
+     * <ul> <li> <p>For regional APIs, specify the value of
+     * <code>regionalDomainName</code>.</p> </li> <li> <p>For edge-optimized APIs,
+     * specify the value of <code>distributionDomainName</code>. This is the name of
+     * the associated CloudFront distribution, such as
+     * <code>da1b2c3d4e5.cloudfront.net</code>.</p> </li> </ul> <note> <p>The name of
+     * the record that you're creating must match a custom domain name for your API,
+     * such as <code>api.example.com</code>.</p> </note> </dd> <dt>Amazon Virtual
+     * Private Cloud interface VPC endpoint</dt> <dd> <p>Enter the API endpoint for the
+     * interface endpoint, such as
+     * <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>.
+     * For edge-optimized APIs, this is the domain name for the corresponding
+     * CloudFront distribution. You can get the value of <code>DnsName</code> using the
+     * AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
+     * </dd> <dt>CloudFront distribution</dt> <dd> <p>Specify the domain name that
+     * CloudFront assigned when you created your distribution.</p> <p>Your CloudFront
+     * distribution must include an alternate domain name that matches the name of the
+     * resource record set. For example, if the name of the resource record set is
+     * <i>acme.example.com</i>, your CloudFront distribution must include
+     * <i>acme.example.com</i> as one of the alternate domain names. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using
      * Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <note> <p>For failover alias records, you can't specify a
-     * CloudFront distribution for both the primary and secondary records. A
-     * distribution must include an alternate domain name that matches the name of the
-     * record. However, the primary and secondary records have the same name, and you
-     * can't include the same alternate domain name in more than one distribution. </p>
-     * </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd> <p>If the domain name
-     * for your Elastic Beanstalk environment includes the region that you deployed the
-     * environment in, you can create an alias record that routes traffic to the
-     * environment. For example, the domain name
+     * Guide</i>.</p> <p>You can't create a resource record set in a private hosted
+     * zone to route traffic to a CloudFront distribution.</p> <note> <p>For failover
+     * alias records, you can't specify a CloudFront distribution for both the primary
+     * and secondary records. A distribution must include an alternate domain name that
+     * matches the name of the record. However, the primary and secondary records have
+     * the same name, and you can't include the same alternate domain name in more than
+     * one distribution. </p> </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd>
+     * <p>If the domain name for your Elastic Beanstalk environment includes the region
+     * that you deployed the environment in, you can create an alias record that routes
+     * traffic to the environment. For example, the domain name
      * <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a
      * regionalized domain name. </p> <important> <p>For environments that were created
      * before early 2016, the domain name doesn't include the region. To route traffic
@@ -653,24 +776,43 @@ namespace Model
 
     /**
      * <p> <i>Alias resource record sets only:</i> The value that you specify depends
-     * on where you want to route queries:</p> <dl> <dt>CloudFront distribution</dt>
-     * <dd> <p>Specify the domain name that CloudFront assigned when you created your
-     * distribution.</p> <p>Your CloudFront distribution must include an alternate
-     * domain name that matches the name of the resource record set. For example, if
-     * the name of the resource record set is <i>acme.example.com</i>, your CloudFront
-     * distribution must include <i>acme.example.com</i> as one of the alternate domain
-     * names. For more information, see <a
+     * on where you want to route queries:</p> <dl> <dt>Amazon API Gateway custom
+     * regional APIs and edge-optimized APIs</dt> <dd> <p>Specify the applicable domain
+     * name for your API. You can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
+     * <ul> <li> <p>For regional APIs, specify the value of
+     * <code>regionalDomainName</code>.</p> </li> <li> <p>For edge-optimized APIs,
+     * specify the value of <code>distributionDomainName</code>. This is the name of
+     * the associated CloudFront distribution, such as
+     * <code>da1b2c3d4e5.cloudfront.net</code>.</p> </li> </ul> <note> <p>The name of
+     * the record that you're creating must match a custom domain name for your API,
+     * such as <code>api.example.com</code>.</p> </note> </dd> <dt>Amazon Virtual
+     * Private Cloud interface VPC endpoint</dt> <dd> <p>Enter the API endpoint for the
+     * interface endpoint, such as
+     * <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>.
+     * For edge-optimized APIs, this is the domain name for the corresponding
+     * CloudFront distribution. You can get the value of <code>DnsName</code> using the
+     * AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
+     * </dd> <dt>CloudFront distribution</dt> <dd> <p>Specify the domain name that
+     * CloudFront assigned when you created your distribution.</p> <p>Your CloudFront
+     * distribution must include an alternate domain name that matches the name of the
+     * resource record set. For example, if the name of the resource record set is
+     * <i>acme.example.com</i>, your CloudFront distribution must include
+     * <i>acme.example.com</i> as one of the alternate domain names. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using
      * Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <note> <p>For failover alias records, you can't specify a
-     * CloudFront distribution for both the primary and secondary records. A
-     * distribution must include an alternate domain name that matches the name of the
-     * record. However, the primary and secondary records have the same name, and you
-     * can't include the same alternate domain name in more than one distribution. </p>
-     * </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd> <p>If the domain name
-     * for your Elastic Beanstalk environment includes the region that you deployed the
-     * environment in, you can create an alias record that routes traffic to the
-     * environment. For example, the domain name
+     * Guide</i>.</p> <p>You can't create a resource record set in a private hosted
+     * zone to route traffic to a CloudFront distribution.</p> <note> <p>For failover
+     * alias records, you can't specify a CloudFront distribution for both the primary
+     * and secondary records. A distribution must include an alternate domain name that
+     * matches the name of the record. However, the primary and secondary records have
+     * the same name, and you can't include the same alternate domain name in more than
+     * one distribution. </p> </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd>
+     * <p>If the domain name for your Elastic Beanstalk environment includes the region
+     * that you deployed the environment in, you can create an alias record that routes
+     * traffic to the environment. For example, the domain name
      * <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a
      * regionalized domain name. </p> <important> <p>For environments that were created
      * before early 2016, the domain name doesn't include the region. To route traffic
@@ -741,24 +883,43 @@ namespace Model
 
     /**
      * <p> <i>Alias resource record sets only:</i> The value that you specify depends
-     * on where you want to route queries:</p> <dl> <dt>CloudFront distribution</dt>
-     * <dd> <p>Specify the domain name that CloudFront assigned when you created your
-     * distribution.</p> <p>Your CloudFront distribution must include an alternate
-     * domain name that matches the name of the resource record set. For example, if
-     * the name of the resource record set is <i>acme.example.com</i>, your CloudFront
-     * distribution must include <i>acme.example.com</i> as one of the alternate domain
-     * names. For more information, see <a
+     * on where you want to route queries:</p> <dl> <dt>Amazon API Gateway custom
+     * regional APIs and edge-optimized APIs</dt> <dd> <p>Specify the applicable domain
+     * name for your API. You can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
+     * <ul> <li> <p>For regional APIs, specify the value of
+     * <code>regionalDomainName</code>.</p> </li> <li> <p>For edge-optimized APIs,
+     * specify the value of <code>distributionDomainName</code>. This is the name of
+     * the associated CloudFront distribution, such as
+     * <code>da1b2c3d4e5.cloudfront.net</code>.</p> </li> </ul> <note> <p>The name of
+     * the record that you're creating must match a custom domain name for your API,
+     * such as <code>api.example.com</code>.</p> </note> </dd> <dt>Amazon Virtual
+     * Private Cloud interface VPC endpoint</dt> <dd> <p>Enter the API endpoint for the
+     * interface endpoint, such as
+     * <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>.
+     * For edge-optimized APIs, this is the domain name for the corresponding
+     * CloudFront distribution. You can get the value of <code>DnsName</code> using the
+     * AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
+     * </dd> <dt>CloudFront distribution</dt> <dd> <p>Specify the domain name that
+     * CloudFront assigned when you created your distribution.</p> <p>Your CloudFront
+     * distribution must include an alternate domain name that matches the name of the
+     * resource record set. For example, if the name of the resource record set is
+     * <i>acme.example.com</i>, your CloudFront distribution must include
+     * <i>acme.example.com</i> as one of the alternate domain names. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using
      * Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <note> <p>For failover alias records, you can't specify a
-     * CloudFront distribution for both the primary and secondary records. A
-     * distribution must include an alternate domain name that matches the name of the
-     * record. However, the primary and secondary records have the same name, and you
-     * can't include the same alternate domain name in more than one distribution. </p>
-     * </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd> <p>If the domain name
-     * for your Elastic Beanstalk environment includes the region that you deployed the
-     * environment in, you can create an alias record that routes traffic to the
-     * environment. For example, the domain name
+     * Guide</i>.</p> <p>You can't create a resource record set in a private hosted
+     * zone to route traffic to a CloudFront distribution.</p> <note> <p>For failover
+     * alias records, you can't specify a CloudFront distribution for both the primary
+     * and secondary records. A distribution must include an alternate domain name that
+     * matches the name of the record. However, the primary and secondary records have
+     * the same name, and you can't include the same alternate domain name in more than
+     * one distribution. </p> </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd>
+     * <p>If the domain name for your Elastic Beanstalk environment includes the region
+     * that you deployed the environment in, you can create an alias record that routes
+     * traffic to the environment. For example, the domain name
      * <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a
      * regionalized domain name. </p> <important> <p>For environments that were created
      * before early 2016, the domain name doesn't include the region. To route traffic
@@ -829,24 +990,43 @@ namespace Model
 
     /**
      * <p> <i>Alias resource record sets only:</i> The value that you specify depends
-     * on where you want to route queries:</p> <dl> <dt>CloudFront distribution</dt>
-     * <dd> <p>Specify the domain name that CloudFront assigned when you created your
-     * distribution.</p> <p>Your CloudFront distribution must include an alternate
-     * domain name that matches the name of the resource record set. For example, if
-     * the name of the resource record set is <i>acme.example.com</i>, your CloudFront
-     * distribution must include <i>acme.example.com</i> as one of the alternate domain
-     * names. For more information, see <a
+     * on where you want to route queries:</p> <dl> <dt>Amazon API Gateway custom
+     * regional APIs and edge-optimized APIs</dt> <dd> <p>Specify the applicable domain
+     * name for your API. You can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
+     * <ul> <li> <p>For regional APIs, specify the value of
+     * <code>regionalDomainName</code>.</p> </li> <li> <p>For edge-optimized APIs,
+     * specify the value of <code>distributionDomainName</code>. This is the name of
+     * the associated CloudFront distribution, such as
+     * <code>da1b2c3d4e5.cloudfront.net</code>.</p> </li> </ul> <note> <p>The name of
+     * the record that you're creating must match a custom domain name for your API,
+     * such as <code>api.example.com</code>.</p> </note> </dd> <dt>Amazon Virtual
+     * Private Cloud interface VPC endpoint</dt> <dd> <p>Enter the API endpoint for the
+     * interface endpoint, such as
+     * <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>.
+     * For edge-optimized APIs, this is the domain name for the corresponding
+     * CloudFront distribution. You can get the value of <code>DnsName</code> using the
+     * AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
+     * </dd> <dt>CloudFront distribution</dt> <dd> <p>Specify the domain name that
+     * CloudFront assigned when you created your distribution.</p> <p>Your CloudFront
+     * distribution must include an alternate domain name that matches the name of the
+     * resource record set. For example, if the name of the resource record set is
+     * <i>acme.example.com</i>, your CloudFront distribution must include
+     * <i>acme.example.com</i> as one of the alternate domain names. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using
      * Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <note> <p>For failover alias records, you can't specify a
-     * CloudFront distribution for both the primary and secondary records. A
-     * distribution must include an alternate domain name that matches the name of the
-     * record. However, the primary and secondary records have the same name, and you
-     * can't include the same alternate domain name in more than one distribution. </p>
-     * </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd> <p>If the domain name
-     * for your Elastic Beanstalk environment includes the region that you deployed the
-     * environment in, you can create an alias record that routes traffic to the
-     * environment. For example, the domain name
+     * Guide</i>.</p> <p>You can't create a resource record set in a private hosted
+     * zone to route traffic to a CloudFront distribution.</p> <note> <p>For failover
+     * alias records, you can't specify a CloudFront distribution for both the primary
+     * and secondary records. A distribution must include an alternate domain name that
+     * matches the name of the record. However, the primary and secondary records have
+     * the same name, and you can't include the same alternate domain name in more than
+     * one distribution. </p> </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd>
+     * <p>If the domain name for your Elastic Beanstalk environment includes the region
+     * that you deployed the environment in, you can create an alias record that routes
+     * traffic to the environment. For example, the domain name
      * <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a
      * regionalized domain name. </p> <important> <p>For environments that were created
      * before early 2016, the domain name doesn't include the region. To route traffic
@@ -917,24 +1097,43 @@ namespace Model
 
     /**
      * <p> <i>Alias resource record sets only:</i> The value that you specify depends
-     * on where you want to route queries:</p> <dl> <dt>CloudFront distribution</dt>
-     * <dd> <p>Specify the domain name that CloudFront assigned when you created your
-     * distribution.</p> <p>Your CloudFront distribution must include an alternate
-     * domain name that matches the name of the resource record set. For example, if
-     * the name of the resource record set is <i>acme.example.com</i>, your CloudFront
-     * distribution must include <i>acme.example.com</i> as one of the alternate domain
-     * names. For more information, see <a
+     * on where you want to route queries:</p> <dl> <dt>Amazon API Gateway custom
+     * regional APIs and edge-optimized APIs</dt> <dd> <p>Specify the applicable domain
+     * name for your API. You can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
+     * <ul> <li> <p>For regional APIs, specify the value of
+     * <code>regionalDomainName</code>.</p> </li> <li> <p>For edge-optimized APIs,
+     * specify the value of <code>distributionDomainName</code>. This is the name of
+     * the associated CloudFront distribution, such as
+     * <code>da1b2c3d4e5.cloudfront.net</code>.</p> </li> </ul> <note> <p>The name of
+     * the record that you're creating must match a custom domain name for your API,
+     * such as <code>api.example.com</code>.</p> </note> </dd> <dt>Amazon Virtual
+     * Private Cloud interface VPC endpoint</dt> <dd> <p>Enter the API endpoint for the
+     * interface endpoint, such as
+     * <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>.
+     * For edge-optimized APIs, this is the domain name for the corresponding
+     * CloudFront distribution. You can get the value of <code>DnsName</code> using the
+     * AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
+     * </dd> <dt>CloudFront distribution</dt> <dd> <p>Specify the domain name that
+     * CloudFront assigned when you created your distribution.</p> <p>Your CloudFront
+     * distribution must include an alternate domain name that matches the name of the
+     * resource record set. For example, if the name of the resource record set is
+     * <i>acme.example.com</i>, your CloudFront distribution must include
+     * <i>acme.example.com</i> as one of the alternate domain names. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using
      * Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <note> <p>For failover alias records, you can't specify a
-     * CloudFront distribution for both the primary and secondary records. A
-     * distribution must include an alternate domain name that matches the name of the
-     * record. However, the primary and secondary records have the same name, and you
-     * can't include the same alternate domain name in more than one distribution. </p>
-     * </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd> <p>If the domain name
-     * for your Elastic Beanstalk environment includes the region that you deployed the
-     * environment in, you can create an alias record that routes traffic to the
-     * environment. For example, the domain name
+     * Guide</i>.</p> <p>You can't create a resource record set in a private hosted
+     * zone to route traffic to a CloudFront distribution.</p> <note> <p>For failover
+     * alias records, you can't specify a CloudFront distribution for both the primary
+     * and secondary records. A distribution must include an alternate domain name that
+     * matches the name of the record. However, the primary and secondary records have
+     * the same name, and you can't include the same alternate domain name in more than
+     * one distribution. </p> </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd>
+     * <p>If the domain name for your Elastic Beanstalk environment includes the region
+     * that you deployed the environment in, you can create an alias record that routes
+     * traffic to the environment. For example, the domain name
      * <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a
      * regionalized domain name. </p> <important> <p>For environments that were created
      * before early 2016, the domain name doesn't include the region. To route traffic
@@ -1005,24 +1204,43 @@ namespace Model
 
     /**
      * <p> <i>Alias resource record sets only:</i> The value that you specify depends
-     * on where you want to route queries:</p> <dl> <dt>CloudFront distribution</dt>
-     * <dd> <p>Specify the domain name that CloudFront assigned when you created your
-     * distribution.</p> <p>Your CloudFront distribution must include an alternate
-     * domain name that matches the name of the resource record set. For example, if
-     * the name of the resource record set is <i>acme.example.com</i>, your CloudFront
-     * distribution must include <i>acme.example.com</i> as one of the alternate domain
-     * names. For more information, see <a
+     * on where you want to route queries:</p> <dl> <dt>Amazon API Gateway custom
+     * regional APIs and edge-optimized APIs</dt> <dd> <p>Specify the applicable domain
+     * name for your API. You can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
+     * <ul> <li> <p>For regional APIs, specify the value of
+     * <code>regionalDomainName</code>.</p> </li> <li> <p>For edge-optimized APIs,
+     * specify the value of <code>distributionDomainName</code>. This is the name of
+     * the associated CloudFront distribution, such as
+     * <code>da1b2c3d4e5.cloudfront.net</code>.</p> </li> </ul> <note> <p>The name of
+     * the record that you're creating must match a custom domain name for your API,
+     * such as <code>api.example.com</code>.</p> </note> </dd> <dt>Amazon Virtual
+     * Private Cloud interface VPC endpoint</dt> <dd> <p>Enter the API endpoint for the
+     * interface endpoint, such as
+     * <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>.
+     * For edge-optimized APIs, this is the domain name for the corresponding
+     * CloudFront distribution. You can get the value of <code>DnsName</code> using the
+     * AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
+     * </dd> <dt>CloudFront distribution</dt> <dd> <p>Specify the domain name that
+     * CloudFront assigned when you created your distribution.</p> <p>Your CloudFront
+     * distribution must include an alternate domain name that matches the name of the
+     * resource record set. For example, if the name of the resource record set is
+     * <i>acme.example.com</i>, your CloudFront distribution must include
+     * <i>acme.example.com</i> as one of the alternate domain names. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using
      * Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <note> <p>For failover alias records, you can't specify a
-     * CloudFront distribution for both the primary and secondary records. A
-     * distribution must include an alternate domain name that matches the name of the
-     * record. However, the primary and secondary records have the same name, and you
-     * can't include the same alternate domain name in more than one distribution. </p>
-     * </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd> <p>If the domain name
-     * for your Elastic Beanstalk environment includes the region that you deployed the
-     * environment in, you can create an alias record that routes traffic to the
-     * environment. For example, the domain name
+     * Guide</i>.</p> <p>You can't create a resource record set in a private hosted
+     * zone to route traffic to a CloudFront distribution.</p> <note> <p>For failover
+     * alias records, you can't specify a CloudFront distribution for both the primary
+     * and secondary records. A distribution must include an alternate domain name that
+     * matches the name of the record. However, the primary and secondary records have
+     * the same name, and you can't include the same alternate domain name in more than
+     * one distribution. </p> </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd>
+     * <p>If the domain name for your Elastic Beanstalk environment includes the region
+     * that you deployed the environment in, you can create an alias record that routes
+     * traffic to the environment. For example, the domain name
      * <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a
      * regionalized domain name. </p> <important> <p>For environments that were created
      * before early 2016, the domain name doesn't include the region. To route traffic
@@ -1093,24 +1311,43 @@ namespace Model
 
     /**
      * <p> <i>Alias resource record sets only:</i> The value that you specify depends
-     * on where you want to route queries:</p> <dl> <dt>CloudFront distribution</dt>
-     * <dd> <p>Specify the domain name that CloudFront assigned when you created your
-     * distribution.</p> <p>Your CloudFront distribution must include an alternate
-     * domain name that matches the name of the resource record set. For example, if
-     * the name of the resource record set is <i>acme.example.com</i>, your CloudFront
-     * distribution must include <i>acme.example.com</i> as one of the alternate domain
-     * names. For more information, see <a
+     * on where you want to route queries:</p> <dl> <dt>Amazon API Gateway custom
+     * regional APIs and edge-optimized APIs</dt> <dd> <p>Specify the applicable domain
+     * name for your API. You can get the applicable value using the AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
+     * <ul> <li> <p>For regional APIs, specify the value of
+     * <code>regionalDomainName</code>.</p> </li> <li> <p>For edge-optimized APIs,
+     * specify the value of <code>distributionDomainName</code>. This is the name of
+     * the associated CloudFront distribution, such as
+     * <code>da1b2c3d4e5.cloudfront.net</code>.</p> </li> </ul> <note> <p>The name of
+     * the record that you're creating must match a custom domain name for your API,
+     * such as <code>api.example.com</code>.</p> </note> </dd> <dt>Amazon Virtual
+     * Private Cloud interface VPC endpoint</dt> <dd> <p>Enter the API endpoint for the
+     * interface endpoint, such as
+     * <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>.
+     * For edge-optimized APIs, this is the domain name for the corresponding
+     * CloudFront distribution. You can get the value of <code>DnsName</code> using the
+     * AWS CLI command <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
+     * </dd> <dt>CloudFront distribution</dt> <dd> <p>Specify the domain name that
+     * CloudFront assigned when you created your distribution.</p> <p>Your CloudFront
+     * distribution must include an alternate domain name that matches the name of the
+     * resource record set. For example, if the name of the resource record set is
+     * <i>acme.example.com</i>, your CloudFront distribution must include
+     * <i>acme.example.com</i> as one of the alternate domain names. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using
      * Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <note> <p>For failover alias records, you can't specify a
-     * CloudFront distribution for both the primary and secondary records. A
-     * distribution must include an alternate domain name that matches the name of the
-     * record. However, the primary and secondary records have the same name, and you
-     * can't include the same alternate domain name in more than one distribution. </p>
-     * </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd> <p>If the domain name
-     * for your Elastic Beanstalk environment includes the region that you deployed the
-     * environment in, you can create an alias record that routes traffic to the
-     * environment. For example, the domain name
+     * Guide</i>.</p> <p>You can't create a resource record set in a private hosted
+     * zone to route traffic to a CloudFront distribution.</p> <note> <p>For failover
+     * alias records, you can't specify a CloudFront distribution for both the primary
+     * and secondary records. A distribution must include an alternate domain name that
+     * matches the name of the record. However, the primary and secondary records have
+     * the same name, and you can't include the same alternate domain name in more than
+     * one distribution. </p> </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd>
+     * <p>If the domain name for your Elastic Beanstalk environment includes the region
+     * that you deployed the environment in, you can create an alias record that routes
+     * traffic to the environment. For example, the domain name
      * <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a
      * regionalized domain name. </p> <important> <p>For environments that were created
      * before early 2016, the domain name doesn't include the region. To route traffic
@@ -1215,18 +1452,18 @@ namespace Model
      * target. If any target group contains only unhealthy targets, the load balancer
      * is considered unhealthy, and Route 53 routes queries to other resources.</p>
      * </li> <li> <p>A target group that has no registered targets is considered
-     * healthy.</p> </li> </ul> </li> </ul> <note> <p>When you create a load balancer,
-     * you configure settings for Elastic Load Balancing health checks; they're not
-     * Route 53 health checks, but they perform a similar function. Do not create Route
-     * 53 health checks for the EC2 instances that you register with an ELB load
-     * balancer. </p> </note> </dd> <dt>S3 buckets</dt> <dd> <p>There are no special
-     * requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code>
-     * when the alias target is an S3 bucket.</p> </dd> <dt>Other records in the same
-     * hosted zone</dt> <dd> <p>If the AWS resource that you specify in
-     * <code>DNSName</code> is a record or a group of records (for example, a group of
-     * weighted records) but is not another alias record, we recommend that you
-     * associate a health check with all of the records in the alias target. For more
-     * information, see <a
+     * unhealthy.</p> </li> </ul> </li> </ul> <note> <p>When you create a load
+     * balancer, you configure settings for Elastic Load Balancing health checks;
+     * they're not Route 53 health checks, but they perform a similar function. Do not
+     * create Route 53 health checks for the EC2 instances that you register with an
+     * ELB load balancer. </p> </note> </dd> <dt>S3 buckets</dt> <dd> <p>There are no
+     * special requirements for setting <code>EvaluateTargetHealth</code> to
+     * <code>true</code> when the alias target is an S3 bucket.</p> </dd> <dt>Other
+     * records in the same hosted zone</dt> <dd> <p>If the AWS resource that you
+     * specify in <code>DNSName</code> is a record or a group of records (for example,
+     * a group of weighted records) but is not another alias record, we recommend that
+     * you associate a health check with all of the records in the alias target. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What
      * Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.</p> </dd> </dl> <p>For more information and examples, see <a
@@ -1271,18 +1508,18 @@ namespace Model
      * target. If any target group contains only unhealthy targets, the load balancer
      * is considered unhealthy, and Route 53 routes queries to other resources.</p>
      * </li> <li> <p>A target group that has no registered targets is considered
-     * healthy.</p> </li> </ul> </li> </ul> <note> <p>When you create a load balancer,
-     * you configure settings for Elastic Load Balancing health checks; they're not
-     * Route 53 health checks, but they perform a similar function. Do not create Route
-     * 53 health checks for the EC2 instances that you register with an ELB load
-     * balancer. </p> </note> </dd> <dt>S3 buckets</dt> <dd> <p>There are no special
-     * requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code>
-     * when the alias target is an S3 bucket.</p> </dd> <dt>Other records in the same
-     * hosted zone</dt> <dd> <p>If the AWS resource that you specify in
-     * <code>DNSName</code> is a record or a group of records (for example, a group of
-     * weighted records) but is not another alias record, we recommend that you
-     * associate a health check with all of the records in the alias target. For more
-     * information, see <a
+     * unhealthy.</p> </li> </ul> </li> </ul> <note> <p>When you create a load
+     * balancer, you configure settings for Elastic Load Balancing health checks;
+     * they're not Route 53 health checks, but they perform a similar function. Do not
+     * create Route 53 health checks for the EC2 instances that you register with an
+     * ELB load balancer. </p> </note> </dd> <dt>S3 buckets</dt> <dd> <p>There are no
+     * special requirements for setting <code>EvaluateTargetHealth</code> to
+     * <code>true</code> when the alias target is an S3 bucket.</p> </dd> <dt>Other
+     * records in the same hosted zone</dt> <dd> <p>If the AWS resource that you
+     * specify in <code>DNSName</code> is a record or a group of records (for example,
+     * a group of weighted records) but is not another alias record, we recommend that
+     * you associate a health check with all of the records in the alias target. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What
      * Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.</p> </dd> </dl> <p>For more information and examples, see <a
@@ -1327,18 +1564,18 @@ namespace Model
      * target. If any target group contains only unhealthy targets, the load balancer
      * is considered unhealthy, and Route 53 routes queries to other resources.</p>
      * </li> <li> <p>A target group that has no registered targets is considered
-     * healthy.</p> </li> </ul> </li> </ul> <note> <p>When you create a load balancer,
-     * you configure settings for Elastic Load Balancing health checks; they're not
-     * Route 53 health checks, but they perform a similar function. Do not create Route
-     * 53 health checks for the EC2 instances that you register with an ELB load
-     * balancer. </p> </note> </dd> <dt>S3 buckets</dt> <dd> <p>There are no special
-     * requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code>
-     * when the alias target is an S3 bucket.</p> </dd> <dt>Other records in the same
-     * hosted zone</dt> <dd> <p>If the AWS resource that you specify in
-     * <code>DNSName</code> is a record or a group of records (for example, a group of
-     * weighted records) but is not another alias record, we recommend that you
-     * associate a health check with all of the records in the alias target. For more
-     * information, see <a
+     * unhealthy.</p> </li> </ul> </li> </ul> <note> <p>When you create a load
+     * balancer, you configure settings for Elastic Load Balancing health checks;
+     * they're not Route 53 health checks, but they perform a similar function. Do not
+     * create Route 53 health checks for the EC2 instances that you register with an
+     * ELB load balancer. </p> </note> </dd> <dt>S3 buckets</dt> <dd> <p>There are no
+     * special requirements for setting <code>EvaluateTargetHealth</code> to
+     * <code>true</code> when the alias target is an S3 bucket.</p> </dd> <dt>Other
+     * records in the same hosted zone</dt> <dd> <p>If the AWS resource that you
+     * specify in <code>DNSName</code> is a record or a group of records (for example,
+     * a group of weighted records) but is not another alias record, we recommend that
+     * you associate a health check with all of the records in the alias target. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What
      * Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.</p> </dd> </dl> <p>For more information and examples, see <a
@@ -1383,18 +1620,18 @@ namespace Model
      * target. If any target group contains only unhealthy targets, the load balancer
      * is considered unhealthy, and Route 53 routes queries to other resources.</p>
      * </li> <li> <p>A target group that has no registered targets is considered
-     * healthy.</p> </li> </ul> </li> </ul> <note> <p>When you create a load balancer,
-     * you configure settings for Elastic Load Balancing health checks; they're not
-     * Route 53 health checks, but they perform a similar function. Do not create Route
-     * 53 health checks for the EC2 instances that you register with an ELB load
-     * balancer. </p> </note> </dd> <dt>S3 buckets</dt> <dd> <p>There are no special
-     * requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code>
-     * when the alias target is an S3 bucket.</p> </dd> <dt>Other records in the same
-     * hosted zone</dt> <dd> <p>If the AWS resource that you specify in
-     * <code>DNSName</code> is a record or a group of records (for example, a group of
-     * weighted records) but is not another alias record, we recommend that you
-     * associate a health check with all of the records in the alias target. For more
-     * information, see <a
+     * unhealthy.</p> </li> </ul> </li> </ul> <note> <p>When you create a load
+     * balancer, you configure settings for Elastic Load Balancing health checks;
+     * they're not Route 53 health checks, but they perform a similar function. Do not
+     * create Route 53 health checks for the EC2 instances that you register with an
+     * ELB load balancer. </p> </note> </dd> <dt>S3 buckets</dt> <dd> <p>There are no
+     * special requirements for setting <code>EvaluateTargetHealth</code> to
+     * <code>true</code> when the alias target is an S3 bucket.</p> </dd> <dt>Other
+     * records in the same hosted zone</dt> <dd> <p>If the AWS resource that you
+     * specify in <code>DNSName</code> is a record or a group of records (for example,
+     * a group of weighted records) but is not another alias record, we recommend that
+     * you associate a health check with all of the records in the alias target. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What
      * Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.</p> </dd> </dl> <p>For more information and examples, see <a

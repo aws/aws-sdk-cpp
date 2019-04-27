@@ -43,7 +43,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for EncoderSettings<p><h3>See Also:</h3>   <a
+   * Encoder Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/EncoderSettings">AWS
    * API Reference</a></p>
    */

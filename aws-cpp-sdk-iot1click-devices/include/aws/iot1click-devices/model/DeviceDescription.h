@@ -85,92 +85,92 @@ namespace Model
 
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline DeviceDescription& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline DeviceDescription& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline DeviceDescription& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline DeviceDescription& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline DeviceDescription& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline DeviceDescription& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline DeviceDescription& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline DeviceDescription& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline DeviceDescription& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
@@ -240,29 +240,29 @@ namespace Model
 
     /**
      * <p>A value between 0 and 1 inclusive, representing the fraction of life
-     * remaining for
- the device.</p>
+     * remaining for the
+ device.</p>
      */
     inline double GetRemainingLife() const{ return m_remainingLife; }
 
     /**
      * <p>A value between 0 and 1 inclusive, representing the fraction of life
-     * remaining for
- the device.</p>
+     * remaining for the
+ device.</p>
      */
     inline bool RemainingLifeHasBeenSet() const { return m_remainingLifeHasBeenSet; }
 
     /**
      * <p>A value between 0 and 1 inclusive, representing the fraction of life
-     * remaining for
- the device.</p>
+     * remaining for the
+ device.</p>
      */
     inline void SetRemainingLife(double value) { m_remainingLifeHasBeenSet = true; m_remainingLife = value; }
 
     /**
      * <p>A value between 0 and 1 inclusive, representing the fraction of life
-     * remaining for
- the device.</p>
+     * remaining for the
+ device.</p>
      */
     inline DeviceDescription& WithRemainingLife(double value) { SetRemainingLife(value); return *this;}
 

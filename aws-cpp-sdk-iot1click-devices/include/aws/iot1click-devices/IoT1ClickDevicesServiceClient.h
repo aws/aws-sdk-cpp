@@ -133,7 +133,11 @@ namespace Model
     typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::UpdateDeviceStateRequest&, const Model::UpdateDeviceStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceStateResponseReceivedHandler;
 
   /**
-   * <p>Stub description</p>
+   * <p>Describes all of the AWS IoT 1-Click device-related API operations for the
+   * service.
+ Also provides sample requests, responses, and errors for the supported
+   * web services
+ protocols.</p>
    */
   class AWS_IOT1CLICKDEVICESSERVICE_API IoT1ClickDevicesServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -166,8 +170,8 @@ namespace Model
 
         /**
          * <p>Adds device(s) to your account (i.e., claim one or more devices) if and only
-         * if
- you received a claim code with the device(s).</p><p><h3>See Also:</h3>   <a
+         * if you
+ received a claim code with the device(s).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ClaimDevicesByClaimCode">AWS
          * API Reference</a></p>
          */
@@ -175,8 +179,8 @@ namespace Model
 
         /**
          * <p>Adds device(s) to your account (i.e., claim one or more devices) if and only
-         * if
- you received a claim code with the device(s).</p><p><h3>See Also:</h3>   <a
+         * if you
+ received a claim code with the device(s).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ClaimDevicesByClaimCode">AWS
          * API Reference</a></p>
          *
@@ -186,8 +190,8 @@ namespace Model
 
         /**
          * <p>Adds device(s) to your account (i.e., claim one or more devices) if and only
-         * if
- you received a claim code with the device(s).</p><p><h3>See Also:</h3>   <a
+         * if you
+ received a claim code with the device(s).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ClaimDevicesByClaimCode">AWS
          * API Reference</a></p>
          *
@@ -196,8 +200,8 @@ namespace Model
         virtual void ClaimDevicesByClaimCodeAsync(const Model::ClaimDevicesByClaimCodeRequest& request, const ClaimDevicesByClaimCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Given a device ID, returns a DescribeDeviceResponse object describing
- the
+         * <p>Given a device ID, returns a DescribeDeviceResponse object describing the
+
          * details of the device.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/DescribeDevice">AWS
          * API Reference</a></p>
@@ -205,8 +209,8 @@ namespace Model
         virtual Model::DescribeDeviceOutcome DescribeDevice(const Model::DescribeDeviceRequest& request) const;
 
         /**
-         * <p>Given a device ID, returns a DescribeDeviceResponse object describing
- the
+         * <p>Given a device ID, returns a DescribeDeviceResponse object describing the
+
          * details of the device.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/DescribeDevice">AWS
          * API Reference</a></p>
@@ -216,8 +220,8 @@ namespace Model
         virtual Model::DescribeDeviceOutcomeCallable DescribeDeviceCallable(const Model::DescribeDeviceRequest& request) const;
 
         /**
-         * <p>Given a device ID, returns a DescribeDeviceResponse object describing
- the
+         * <p>Given a device ID, returns a DescribeDeviceResponse object describing the
+
          * details of the device.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/DescribeDevice">AWS
          * API Reference</a></p>
@@ -230,10 +234,10 @@ namespace Model
          * <p>Given a device ID, finalizes the claim request for the associated
          * device.</p><note>
  <p>Claiming a device consists of initiating a claim, then
-         * publishing a device
- event, and finalizing the claim. For a device of type
-         * button, a
- device event can be published by simply clicking the device.</p>
+         * publishing a device event,
+ and finalizing the claim. For a device of type
+         * button, a device event can
+ be published by simply clicking the device.</p>
 
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/FinalizeDeviceClaim">AWS
@@ -245,10 +249,10 @@ namespace Model
          * <p>Given a device ID, finalizes the claim request for the associated
          * device.</p><note>
  <p>Claiming a device consists of initiating a claim, then
-         * publishing a device
- event, and finalizing the claim. For a device of type
-         * button, a
- device event can be published by simply clicking the device.</p>
+         * publishing a device event,
+ and finalizing the claim. For a device of type
+         * button, a device event can
+ be published by simply clicking the device.</p>
 
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/FinalizeDeviceClaim">AWS
@@ -262,10 +266,10 @@ namespace Model
          * <p>Given a device ID, finalizes the claim request for the associated
          * device.</p><note>
  <p>Claiming a device consists of initiating a claim, then
-         * publishing a device
- event, and finalizing the claim. For a device of type
-         * button, a
- device event can be published by simply clicking the device.</p>
+         * publishing a device event,
+ and finalizing the claim. For a device of type
+         * button, a device event can
+ be published by simply clicking the device.</p>
 
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/FinalizeDeviceClaim">AWS
@@ -277,7 +281,6 @@ namespace Model
 
         /**
          * <p>Given a device ID, returns the invokable methods associated with the
-
          * device.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/GetDeviceMethods">AWS
          * API Reference</a></p>
@@ -286,7 +289,6 @@ namespace Model
 
         /**
          * <p>Given a device ID, returns the invokable methods associated with the
-
          * device.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/GetDeviceMethods">AWS
          * API Reference</a></p>
@@ -297,7 +299,6 @@ namespace Model
 
         /**
          * <p>Given a device ID, returns the invokable methods associated with the
-
          * device.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/GetDeviceMethods">AWS
          * API Reference</a></p>
@@ -310,10 +311,10 @@ namespace Model
          * <p>Given a device ID, initiates a claim request for the associated
          * device.</p><note>
  <p>Claiming a device consists of initiating a claim, then
-         * publishing a device
- event, and finalizing the claim. For a device of type
-         * button, a
- device event can be published by simply clicking the device.</p>
+         * publishing a device event,
+ and finalizing the claim. For a device of type
+         * button, a device event can
+ be published by simply clicking the device.</p>
 
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/InitiateDeviceClaim">AWS
@@ -325,10 +326,10 @@ namespace Model
          * <p>Given a device ID, initiates a claim request for the associated
          * device.</p><note>
  <p>Claiming a device consists of initiating a claim, then
-         * publishing a device
- event, and finalizing the claim. For a device of type
-         * button, a
- device event can be published by simply clicking the device.</p>
+         * publishing a device event,
+ and finalizing the claim. For a device of type
+         * button, a device event can
+ be published by simply clicking the device.</p>
 
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/InitiateDeviceClaim">AWS
@@ -342,10 +343,10 @@ namespace Model
          * <p>Given a device ID, initiates a claim request for the associated
          * device.</p><note>
  <p>Claiming a device consists of initiating a claim, then
-         * publishing a device
- event, and finalizing the claim. For a device of type
-         * button, a
- device event can be published by simply clicking the device.</p>
+         * publishing a device event,
+ and finalizing the claim. For a device of type
+         * button, a device event can
+ be published by simply clicking the device.</p>
 
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/InitiateDeviceClaim">AWS
@@ -390,8 +391,8 @@ namespace Model
         virtual void InvokeDeviceMethodAsync(const Model::InvokeDeviceMethodRequest& request, const InvokeDeviceMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Using a device ID, returns a DeviceEventsResponse object containing
- an array
+         * <p>Using a device ID, returns a DeviceEventsResponse object containing an
+ array
          * of events for the device.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListDeviceEvents">AWS
          * API Reference</a></p>
@@ -399,8 +400,8 @@ namespace Model
         virtual Model::ListDeviceEventsOutcome ListDeviceEvents(const Model::ListDeviceEventsRequest& request) const;
 
         /**
-         * <p>Using a device ID, returns a DeviceEventsResponse object containing
- an array
+         * <p>Using a device ID, returns a DeviceEventsResponse object containing an
+ array
          * of events for the device.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListDeviceEvents">AWS
          * API Reference</a></p>
@@ -410,8 +411,8 @@ namespace Model
         virtual Model::ListDeviceEventsOutcomeCallable ListDeviceEventsCallable(const Model::ListDeviceEventsRequest& request) const;
 
         /**
-         * <p>Using a device ID, returns a DeviceEventsResponse object containing
- an array
+         * <p>Using a device ID, returns a DeviceEventsResponse object containing an
+ array
          * of events for the device.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListDeviceEvents">AWS
          * API Reference</a></p>
@@ -449,14 +450,16 @@ namespace Model
         virtual void ListDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List all tags on an AWS IoT 1-Click resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tags associated with the specified resource ARN.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>List all tags on an AWS IoT 1-Click resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tags associated with the specified resource ARN.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -465,7 +468,8 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>List all tags on an AWS IoT 1-Click resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tags associated with the specified resource ARN.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -474,18 +478,22 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associate a set of tags with an AWS IoT 1-Click resource. You can then
-         * activate these user-defined tags so that they appear on the Billing and Cost
-         * Management console for cost allocation tracking.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or updates the tags associated with the resource ARN. See <a
+         * href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS
+         * IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
+
+         * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Associate a set of tags with an AWS IoT 1-Click resource. You can then
-         * activate these user-defined tags so that they appear on the Billing and Cost
-         * Management console for cost allocation tracking.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or updates the tags associated with the resource ARN. See <a
+         * href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS
+         * IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
+
+         * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/TagResource">AWS
          * API Reference</a></p>
          *
@@ -494,9 +502,11 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Associate a set of tags with an AWS IoT 1-Click resource. You can then
-         * activate these user-defined tags so that they appear on the Billing and Cost
-         * Management console for cost allocation tracking.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or updates the tags associated with the resource ARN. See <a
+         * href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS
+         * IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
+
+         * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/TagResource">AWS
          * API Reference</a></p>
          *
@@ -533,16 +543,18 @@ namespace Model
         virtual void UnclaimDeviceAsync(const Model::UnclaimDeviceRequest& request, const UnclaimDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the association of tags from an AWS IoT 1-Click
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Using tag keys, deletes the tags (key/value pairs) associated with the
+         * specified
+ resource ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes the association of tags from an AWS IoT 1-Click
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Using tag keys, deletes the tags (key/value pairs) associated with the
+         * specified
+ resource ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -551,8 +563,9 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes the association of tags from an AWS IoT 1-Click
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Using tag keys, deletes the tags (key/value pairs) associated with the
+         * specified
+ resource ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UntagResource">AWS
          * API Reference</a></p>
          *

@@ -354,6 +354,10 @@ namespace Model
     typedef std::function<void(const Route53Client*, const Model::UpdateTrafficPolicyCommentRequest&, const Model::UpdateTrafficPolicyCommentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrafficPolicyCommentResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::UpdateTrafficPolicyInstanceRequest&, const Model::UpdateTrafficPolicyInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrafficPolicyInstanceResponseReceivedHandler;
 
+  /**
+   * <p>Amazon Route 53 is a highly available and scalable Domain Name System (DNS)
+   * web service.</p>
+   */
   class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient
   {
     public:
@@ -486,10 +490,11 @@ namespace Model
          * propagating, <code>GetChange</code> returns a status of <code>PENDING</code>.
          * When propagation is complete, <code>GetChange</code> returns a status of
          * <code>INSYNC</code>. Changes generally propagate to all Route 53 name servers
-         * within 60 seconds. For more information, see <a>GetChange</a>.</p> <p> <b>Limits
-         * on ChangeResourceRecordSets Requests</b> </p> <p>For information about the
-         * limits on a <code>ChangeResourceRecordSets</code> request, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * within 60 seconds. For more information, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>.</p>
+         * <p> <b>Limits on ChangeResourceRecordSets Requests</b> </p> <p>For information
+         * about the limits on a <code>ChangeResourceRecordSets</code> request, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSets">AWS
          * API Reference</a></p>
@@ -550,10 +555,11 @@ namespace Model
          * propagating, <code>GetChange</code> returns a status of <code>PENDING</code>.
          * When propagation is complete, <code>GetChange</code> returns a status of
          * <code>INSYNC</code>. Changes generally propagate to all Route 53 name servers
-         * within 60 seconds. For more information, see <a>GetChange</a>.</p> <p> <b>Limits
-         * on ChangeResourceRecordSets Requests</b> </p> <p>For information about the
-         * limits on a <code>ChangeResourceRecordSets</code> request, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * within 60 seconds. For more information, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>.</p>
+         * <p> <b>Limits on ChangeResourceRecordSets Requests</b> </p> <p>For information
+         * about the limits on a <code>ChangeResourceRecordSets</code> request, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSets">AWS
          * API Reference</a></p>
@@ -616,10 +622,11 @@ namespace Model
          * propagating, <code>GetChange</code> returns a status of <code>PENDING</code>.
          * When propagation is complete, <code>GetChange</code> returns a status of
          * <code>INSYNC</code>. Changes generally propagate to all Route 53 name servers
-         * within 60 seconds. For more information, see <a>GetChange</a>.</p> <p> <b>Limits
-         * on ChangeResourceRecordSets Requests</b> </p> <p>For information about the
-         * limits on a <code>ChangeResourceRecordSets</code> request, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * within 60 seconds. For more information, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>.</p>
+         * <p> <b>Limits on ChangeResourceRecordSets Requests</b> </p> <p>For information
+         * about the limits on a <code>ChangeResourceRecordSets</code> request, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSets">AWS
          * API Reference</a></p>
@@ -631,7 +638,7 @@ namespace Model
         /**
          * <p>Adds, edits, or deletes tags for a health check or a hosted zone.</p> <p>For
          * information about using tags for cost allocation, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
          * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource">AWS
@@ -642,7 +649,7 @@ namespace Model
         /**
          * <p>Adds, edits, or deletes tags for a health check or a hosted zone.</p> <p>For
          * information about using tags for cost allocation, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
          * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource">AWS
@@ -655,7 +662,7 @@ namespace Model
         /**
          * <p>Adds, edits, or deletes tags for a health check or a hosted zone.</p> <p>For
          * information about using tags for cost allocation, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
          * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource">AWS
@@ -667,26 +674,28 @@ namespace Model
 
         /**
          * <p>Creates a new health check.</p> <p>For information about adding health checks
-         * to resource record sets, see <a>ResourceRecordSet$HealthCheckId</a> in
-         * <a>ChangeResourceRecordSets</a>. </p> <p> <b>ELB Load Balancers</b> </p> <p>If
-         * you're registering EC2 instances with an Elastic Load Balancing (ELB) load
-         * balancer, do not create Amazon Route 53 health checks for the EC2 instances.
-         * When you register an EC2 instance with a load balancer, you configure settings
-         * for an ELB health check, which performs a similar function to a Route 53 health
-         * check.</p> <p> <b>Private Hosted Zones</b> </p> <p>You can associate health
-         * checks with failover resource record sets in a private hosted zone. Note the
-         * following:</p> <ul> <li> <p>Route 53 health checkers are outside the VPC. To
-         * check the health of an endpoint within a VPC by IP address, you must assign a
-         * public IP address to the instance in the VPC.</p> </li> <li> <p>You can
-         * configure a health checker to check the health of an external resource that the
-         * instance relies on, such as a database server.</p> </li> <li> <p>You can create
-         * a CloudWatch metric, associate an alarm with the metric, and then create a
-         * health check that is based on the state of the alarm. For example, you might
-         * create a CloudWatch metric that checks the status of the Amazon EC2
-         * <code>StatusCheckFailed</code> metric, add an alarm to the metric, and then
-         * create a health check that is based on the state of the alarm. For information
-         * about creating CloudWatch metrics and alarms by using the CloudWatch console,
-         * see the <a
+         * to resource record sets, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResourceRecordSet.html#Route53-Type-ResourceRecordSet-HealthCheckId">HealthCheckId</a>
+         * in <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.
+         * </p> <p> <b>ELB Load Balancers</b> </p> <p>If you're registering EC2 instances
+         * with an Elastic Load Balancing (ELB) load balancer, do not create Amazon Route
+         * 53 health checks for the EC2 instances. When you register an EC2 instance with a
+         * load balancer, you configure settings for an ELB health check, which performs a
+         * similar function to a Route 53 health check.</p> <p> <b>Private Hosted Zones</b>
+         * </p> <p>You can associate health checks with failover resource record sets in a
+         * private hosted zone. Note the following:</p> <ul> <li> <p>Route 53 health
+         * checkers are outside the VPC. To check the health of an endpoint within a VPC by
+         * IP address, you must assign a public IP address to the instance in the VPC.</p>
+         * </li> <li> <p>You can configure a health checker to check the health of an
+         * external resource that the instance relies on, such as a database server.</p>
+         * </li> <li> <p>You can create a CloudWatch metric, associate an alarm with the
+         * metric, and then create a health check that is based on the state of the alarm.
+         * For example, you might create a CloudWatch metric that checks the status of the
+         * Amazon EC2 <code>StatusCheckFailed</code> metric, add an alarm to the metric,
+         * and then create a health check that is based on the state of the alarm. For
+         * information about creating CloudWatch metrics and alarms by using the CloudWatch
+         * console, see the <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
          * CloudWatch User Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">AWS
@@ -696,26 +705,28 @@ namespace Model
 
         /**
          * <p>Creates a new health check.</p> <p>For information about adding health checks
-         * to resource record sets, see <a>ResourceRecordSet$HealthCheckId</a> in
-         * <a>ChangeResourceRecordSets</a>. </p> <p> <b>ELB Load Balancers</b> </p> <p>If
-         * you're registering EC2 instances with an Elastic Load Balancing (ELB) load
-         * balancer, do not create Amazon Route 53 health checks for the EC2 instances.
-         * When you register an EC2 instance with a load balancer, you configure settings
-         * for an ELB health check, which performs a similar function to a Route 53 health
-         * check.</p> <p> <b>Private Hosted Zones</b> </p> <p>You can associate health
-         * checks with failover resource record sets in a private hosted zone. Note the
-         * following:</p> <ul> <li> <p>Route 53 health checkers are outside the VPC. To
-         * check the health of an endpoint within a VPC by IP address, you must assign a
-         * public IP address to the instance in the VPC.</p> </li> <li> <p>You can
-         * configure a health checker to check the health of an external resource that the
-         * instance relies on, such as a database server.</p> </li> <li> <p>You can create
-         * a CloudWatch metric, associate an alarm with the metric, and then create a
-         * health check that is based on the state of the alarm. For example, you might
-         * create a CloudWatch metric that checks the status of the Amazon EC2
-         * <code>StatusCheckFailed</code> metric, add an alarm to the metric, and then
-         * create a health check that is based on the state of the alarm. For information
-         * about creating CloudWatch metrics and alarms by using the CloudWatch console,
-         * see the <a
+         * to resource record sets, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResourceRecordSet.html#Route53-Type-ResourceRecordSet-HealthCheckId">HealthCheckId</a>
+         * in <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.
+         * </p> <p> <b>ELB Load Balancers</b> </p> <p>If you're registering EC2 instances
+         * with an Elastic Load Balancing (ELB) load balancer, do not create Amazon Route
+         * 53 health checks for the EC2 instances. When you register an EC2 instance with a
+         * load balancer, you configure settings for an ELB health check, which performs a
+         * similar function to a Route 53 health check.</p> <p> <b>Private Hosted Zones</b>
+         * </p> <p>You can associate health checks with failover resource record sets in a
+         * private hosted zone. Note the following:</p> <ul> <li> <p>Route 53 health
+         * checkers are outside the VPC. To check the health of an endpoint within a VPC by
+         * IP address, you must assign a public IP address to the instance in the VPC.</p>
+         * </li> <li> <p>You can configure a health checker to check the health of an
+         * external resource that the instance relies on, such as a database server.</p>
+         * </li> <li> <p>You can create a CloudWatch metric, associate an alarm with the
+         * metric, and then create a health check that is based on the state of the alarm.
+         * For example, you might create a CloudWatch metric that checks the status of the
+         * Amazon EC2 <code>StatusCheckFailed</code> metric, add an alarm to the metric,
+         * and then create a health check that is based on the state of the alarm. For
+         * information about creating CloudWatch metrics and alarms by using the CloudWatch
+         * console, see the <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
          * CloudWatch User Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">AWS
@@ -727,26 +738,28 @@ namespace Model
 
         /**
          * <p>Creates a new health check.</p> <p>For information about adding health checks
-         * to resource record sets, see <a>ResourceRecordSet$HealthCheckId</a> in
-         * <a>ChangeResourceRecordSets</a>. </p> <p> <b>ELB Load Balancers</b> </p> <p>If
-         * you're registering EC2 instances with an Elastic Load Balancing (ELB) load
-         * balancer, do not create Amazon Route 53 health checks for the EC2 instances.
-         * When you register an EC2 instance with a load balancer, you configure settings
-         * for an ELB health check, which performs a similar function to a Route 53 health
-         * check.</p> <p> <b>Private Hosted Zones</b> </p> <p>You can associate health
-         * checks with failover resource record sets in a private hosted zone. Note the
-         * following:</p> <ul> <li> <p>Route 53 health checkers are outside the VPC. To
-         * check the health of an endpoint within a VPC by IP address, you must assign a
-         * public IP address to the instance in the VPC.</p> </li> <li> <p>You can
-         * configure a health checker to check the health of an external resource that the
-         * instance relies on, such as a database server.</p> </li> <li> <p>You can create
-         * a CloudWatch metric, associate an alarm with the metric, and then create a
-         * health check that is based on the state of the alarm. For example, you might
-         * create a CloudWatch metric that checks the status of the Amazon EC2
-         * <code>StatusCheckFailed</code> metric, add an alarm to the metric, and then
-         * create a health check that is based on the state of the alarm. For information
-         * about creating CloudWatch metrics and alarms by using the CloudWatch console,
-         * see the <a
+         * to resource record sets, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResourceRecordSet.html#Route53-Type-ResourceRecordSet-HealthCheckId">HealthCheckId</a>
+         * in <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.
+         * </p> <p> <b>ELB Load Balancers</b> </p> <p>If you're registering EC2 instances
+         * with an Elastic Load Balancing (ELB) load balancer, do not create Amazon Route
+         * 53 health checks for the EC2 instances. When you register an EC2 instance with a
+         * load balancer, you configure settings for an ELB health check, which performs a
+         * similar function to a Route 53 health check.</p> <p> <b>Private Hosted Zones</b>
+         * </p> <p>You can associate health checks with failover resource record sets in a
+         * private hosted zone. Note the following:</p> <ul> <li> <p>Route 53 health
+         * checkers are outside the VPC. To check the health of an endpoint within a VPC by
+         * IP address, you must assign a public IP address to the instance in the VPC.</p>
+         * </li> <li> <p>You can configure a health checker to check the health of an
+         * external resource that the instance relies on, such as a database server.</p>
+         * </li> <li> <p>You can create a CloudWatch metric, associate an alarm with the
+         * metric, and then create a health check that is based on the state of the alarm.
+         * For example, you might create a CloudWatch metric that checks the status of the
+         * Amazon EC2 <code>StatusCheckFailed</code> metric, add an alarm to the metric,
+         * and then create a health check that is based on the state of the alarm. For
+         * information about creating CloudWatch metrics and alarms by using the CloudWatch
+         * console, see the <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
          * CloudWatch User Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">AWS
@@ -929,17 +942,18 @@ namespace Model
          * record set, query logs might contain information about only one query out of
          * every several thousand queries that are submitted to DNS. For more information
          * about how DNS works, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">Routing
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">Routing
          * Internet Traffic to Your Website or Web Application</a> in the <i>Amazon Route
          * 53 Developer Guide</i>.</p> </dd> <dt>Log File Format</dt> <dd> <p>For a list of
          * the values in each query log and the format of each value, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
          * DNS Queries</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </dd>
          * <dt>Pricing</dt> <dd> <p>For information about charges for query logs, see <a
          * href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
          * Pricing</a>.</p> </dd> <dt>How to Stop Logging</dt> <dd> <p>If you want Route 53
          * to stop sending query logs to CloudWatch Logs, delete the query logging
-         * configuration. For more information, see <a>DeleteQueryLoggingConfig</a>.</p>
+         * configuration. For more information, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteQueryLoggingConfig.html">DeleteQueryLoggingConfig</a>.</p>
          * </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateQueryLoggingConfig">AWS
          * API Reference</a></p>
@@ -1004,17 +1018,18 @@ namespace Model
          * record set, query logs might contain information about only one query out of
          * every several thousand queries that are submitted to DNS. For more information
          * about how DNS works, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">Routing
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">Routing
          * Internet Traffic to Your Website or Web Application</a> in the <i>Amazon Route
          * 53 Developer Guide</i>.</p> </dd> <dt>Log File Format</dt> <dd> <p>For a list of
          * the values in each query log and the format of each value, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
          * DNS Queries</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </dd>
          * <dt>Pricing</dt> <dd> <p>For information about charges for query logs, see <a
          * href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
          * Pricing</a>.</p> </dd> <dt>How to Stop Logging</dt> <dd> <p>If you want Route 53
          * to stop sending query logs to CloudWatch Logs, delete the query logging
-         * configuration. For more information, see <a>DeleteQueryLoggingConfig</a>.</p>
+         * configuration. For more information, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteQueryLoggingConfig.html">DeleteQueryLoggingConfig</a>.</p>
          * </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateQueryLoggingConfig">AWS
          * API Reference</a></p>
@@ -1081,17 +1096,18 @@ namespace Model
          * record set, query logs might contain information about only one query out of
          * every several thousand queries that are submitted to DNS. For more information
          * about how DNS works, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">Routing
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">Routing
          * Internet Traffic to Your Website or Web Application</a> in the <i>Amazon Route
          * 53 Developer Guide</i>.</p> </dd> <dt>Log File Format</dt> <dd> <p>For a list of
          * the values in each query log and the format of each value, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
          * DNS Queries</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </dd>
          * <dt>Pricing</dt> <dd> <p>For information about charges for query logs, see <a
          * href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
          * Pricing</a>.</p> </dd> <dt>How to Stop Logging</dt> <dd> <p>If you want Route 53
          * to stop sending query logs to CloudWatch Logs, delete the query logging
-         * configuration. For more information, see <a>DeleteQueryLoggingConfig</a>.</p>
+         * configuration. For more information, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteQueryLoggingConfig.html">DeleteQueryLoggingConfig</a>.</p>
          * </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateQueryLoggingConfig">AWS
          * API Reference</a></p>
@@ -1431,58 +1447,88 @@ namespace Model
         virtual void DeleteHealthCheckAsync(const Model::DeleteHealthCheckRequest& request, const DeleteHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a hosted zone.</p> <important> <p>If the name servers for the hosted
-         * zone are associated with a domain and if you want to make the domain unavailable
-         * on the Internet, we recommend that you delete the name servers from the domain
-         * to prevent future DNS queries from possibly being misrouted. If the domain is
-         * registered with Amazon Route 53, see <code>UpdateDomainNameservers</code>. If
-         * the domain is registered with another registrar, use the method provided by the
-         * registrar to delete name servers for the domain.</p> <p>Some domain registries
-         * don't allow you to remove all of the name servers for a domain. If the registry
-         * for your domain requires one or more name servers, we recommend that you delete
-         * the hosted zone only if you transfer DNS service to another service provider,
-         * and you replace the name servers for the domain with name servers from the new
-         * provider.</p> </important> <p>You can delete a hosted zone only if it contains
-         * only the default SOA record and NS resource record sets. If the hosted zone
-         * contains other resource record sets, you must delete them before you can delete
-         * the hosted zone. If you try to delete a hosted zone that contains other resource
+         * <p>Deletes a hosted zone.</p> <p>If the hosted zone was created by another
+         * service, such as AWS Cloud Map, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service">Deleting
+         * Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon
+         * Route 53 Developer Guide</i> for information about how to delete it. (The
+         * process is the same for public and private hosted zones that were created by
+         * another service.)</p> <p>If you want to keep your domain registration but you
+         * want to stop routing internet traffic to your website or web application, we
+         * recommend that you delete resource record sets in the hosted zone instead of
+         * deleting the hosted zone.</p> <important> <p>If you delete a hosted zone, you
+         * can't undelete it. You must create a new hosted zone and update the name servers
+         * for your domain registration, which can require up to 48 hours to take effect.
+         * (If you delegated responsibility for a subdomain to a hosted zone and you delete
+         * the child hosted zone, you must update the name servers in the parent hosted
+         * zone.) In addition, if you delete a hosted zone, someone could hijack the domain
+         * and route traffic to their own resources using your domain name.</p>
+         * </important> <p>If you want to avoid the monthly charge for the hosted zone, you
+         * can transfer DNS service for the domain to a free DNS service. When you transfer
+         * DNS service, you have to update the name servers for the domain registration. If
+         * the domain is registered with Route 53, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html">UpdateDomainNameservers</a>
+         * for information about how to replace Route 53 name servers with name servers for
+         * the new DNS service. If the domain is registered with another registrar, use the
+         * method provided by the registrar to update name servers for the domain
+         * registration. For more information, perform an internet search on "free DNS
+         * service."</p> <p>You can delete a hosted zone only if it contains only the
+         * default SOA record and NS resource record sets. If the hosted zone contains
+         * other resource record sets, you must delete them before you can delete the
+         * hosted zone. If you try to delete a hosted zone that contains other resource
          * record sets, the request fails, and Route 53 returns a
          * <code>HostedZoneNotEmpty</code> error. For information about deleting records
-         * from your hosted zone, see <a>ChangeResourceRecordSets</a>.</p> <p>To verify
-         * that the hosted zone has been deleted, do one of the following:</p> <ul> <li>
-         * <p>Use the <code>GetHostedZone</code> action to request information about the
-         * hosted zone.</p> </li> <li> <p>Use the <code>ListHostedZones</code> action to
-         * get a list of the hosted zones associated with the current AWS account.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * from your hosted zone, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.</p>
+         * <p>To verify that the hosted zone has been deleted, do one of the following:</p>
+         * <ul> <li> <p>Use the <code>GetHostedZone</code> action to request information
+         * about the hosted zone.</p> </li> <li> <p>Use the <code>ListHostedZones</code>
+         * action to get a list of the hosted zones associated with the current AWS
+         * account.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteHostedZoneOutcome DeleteHostedZone(const Model::DeleteHostedZoneRequest& request) const;
 
         /**
-         * <p>Deletes a hosted zone.</p> <important> <p>If the name servers for the hosted
-         * zone are associated with a domain and if you want to make the domain unavailable
-         * on the Internet, we recommend that you delete the name servers from the domain
-         * to prevent future DNS queries from possibly being misrouted. If the domain is
-         * registered with Amazon Route 53, see <code>UpdateDomainNameservers</code>. If
-         * the domain is registered with another registrar, use the method provided by the
-         * registrar to delete name servers for the domain.</p> <p>Some domain registries
-         * don't allow you to remove all of the name servers for a domain. If the registry
-         * for your domain requires one or more name servers, we recommend that you delete
-         * the hosted zone only if you transfer DNS service to another service provider,
-         * and you replace the name servers for the domain with name servers from the new
-         * provider.</p> </important> <p>You can delete a hosted zone only if it contains
-         * only the default SOA record and NS resource record sets. If the hosted zone
-         * contains other resource record sets, you must delete them before you can delete
-         * the hosted zone. If you try to delete a hosted zone that contains other resource
+         * <p>Deletes a hosted zone.</p> <p>If the hosted zone was created by another
+         * service, such as AWS Cloud Map, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service">Deleting
+         * Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon
+         * Route 53 Developer Guide</i> for information about how to delete it. (The
+         * process is the same for public and private hosted zones that were created by
+         * another service.)</p> <p>If you want to keep your domain registration but you
+         * want to stop routing internet traffic to your website or web application, we
+         * recommend that you delete resource record sets in the hosted zone instead of
+         * deleting the hosted zone.</p> <important> <p>If you delete a hosted zone, you
+         * can't undelete it. You must create a new hosted zone and update the name servers
+         * for your domain registration, which can require up to 48 hours to take effect.
+         * (If you delegated responsibility for a subdomain to a hosted zone and you delete
+         * the child hosted zone, you must update the name servers in the parent hosted
+         * zone.) In addition, if you delete a hosted zone, someone could hijack the domain
+         * and route traffic to their own resources using your domain name.</p>
+         * </important> <p>If you want to avoid the monthly charge for the hosted zone, you
+         * can transfer DNS service for the domain to a free DNS service. When you transfer
+         * DNS service, you have to update the name servers for the domain registration. If
+         * the domain is registered with Route 53, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html">UpdateDomainNameservers</a>
+         * for information about how to replace Route 53 name servers with name servers for
+         * the new DNS service. If the domain is registered with another registrar, use the
+         * method provided by the registrar to update name servers for the domain
+         * registration. For more information, perform an internet search on "free DNS
+         * service."</p> <p>You can delete a hosted zone only if it contains only the
+         * default SOA record and NS resource record sets. If the hosted zone contains
+         * other resource record sets, you must delete them before you can delete the
+         * hosted zone. If you try to delete a hosted zone that contains other resource
          * record sets, the request fails, and Route 53 returns a
          * <code>HostedZoneNotEmpty</code> error. For information about deleting records
-         * from your hosted zone, see <a>ChangeResourceRecordSets</a>.</p> <p>To verify
-         * that the hosted zone has been deleted, do one of the following:</p> <ul> <li>
-         * <p>Use the <code>GetHostedZone</code> action to request information about the
-         * hosted zone.</p> </li> <li> <p>Use the <code>ListHostedZones</code> action to
-         * get a list of the hosted zones associated with the current AWS account.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * from your hosted zone, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.</p>
+         * <p>To verify that the hosted zone has been deleted, do one of the following:</p>
+         * <ul> <li> <p>Use the <code>GetHostedZone</code> action to request information
+         * about the hosted zone.</p> </li> <li> <p>Use the <code>ListHostedZones</code>
+         * action to get a list of the hosted zones associated with the current AWS
+         * account.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone">AWS
          * API Reference</a></p>
          *
@@ -1491,29 +1537,44 @@ namespace Model
         virtual Model::DeleteHostedZoneOutcomeCallable DeleteHostedZoneCallable(const Model::DeleteHostedZoneRequest& request) const;
 
         /**
-         * <p>Deletes a hosted zone.</p> <important> <p>If the name servers for the hosted
-         * zone are associated with a domain and if you want to make the domain unavailable
-         * on the Internet, we recommend that you delete the name servers from the domain
-         * to prevent future DNS queries from possibly being misrouted. If the domain is
-         * registered with Amazon Route 53, see <code>UpdateDomainNameservers</code>. If
-         * the domain is registered with another registrar, use the method provided by the
-         * registrar to delete name servers for the domain.</p> <p>Some domain registries
-         * don't allow you to remove all of the name servers for a domain. If the registry
-         * for your domain requires one or more name servers, we recommend that you delete
-         * the hosted zone only if you transfer DNS service to another service provider,
-         * and you replace the name servers for the domain with name servers from the new
-         * provider.</p> </important> <p>You can delete a hosted zone only if it contains
-         * only the default SOA record and NS resource record sets. If the hosted zone
-         * contains other resource record sets, you must delete them before you can delete
-         * the hosted zone. If you try to delete a hosted zone that contains other resource
+         * <p>Deletes a hosted zone.</p> <p>If the hosted zone was created by another
+         * service, such as AWS Cloud Map, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service">Deleting
+         * Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon
+         * Route 53 Developer Guide</i> for information about how to delete it. (The
+         * process is the same for public and private hosted zones that were created by
+         * another service.)</p> <p>If you want to keep your domain registration but you
+         * want to stop routing internet traffic to your website or web application, we
+         * recommend that you delete resource record sets in the hosted zone instead of
+         * deleting the hosted zone.</p> <important> <p>If you delete a hosted zone, you
+         * can't undelete it. You must create a new hosted zone and update the name servers
+         * for your domain registration, which can require up to 48 hours to take effect.
+         * (If you delegated responsibility for a subdomain to a hosted zone and you delete
+         * the child hosted zone, you must update the name servers in the parent hosted
+         * zone.) In addition, if you delete a hosted zone, someone could hijack the domain
+         * and route traffic to their own resources using your domain name.</p>
+         * </important> <p>If you want to avoid the monthly charge for the hosted zone, you
+         * can transfer DNS service for the domain to a free DNS service. When you transfer
+         * DNS service, you have to update the name servers for the domain registration. If
+         * the domain is registered with Route 53, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html">UpdateDomainNameservers</a>
+         * for information about how to replace Route 53 name servers with name servers for
+         * the new DNS service. If the domain is registered with another registrar, use the
+         * method provided by the registrar to update name servers for the domain
+         * registration. For more information, perform an internet search on "free DNS
+         * service."</p> <p>You can delete a hosted zone only if it contains only the
+         * default SOA record and NS resource record sets. If the hosted zone contains
+         * other resource record sets, you must delete them before you can delete the
+         * hosted zone. If you try to delete a hosted zone that contains other resource
          * record sets, the request fails, and Route 53 returns a
          * <code>HostedZoneNotEmpty</code> error. For information about deleting records
-         * from your hosted zone, see <a>ChangeResourceRecordSets</a>.</p> <p>To verify
-         * that the hosted zone has been deleted, do one of the following:</p> <ul> <li>
-         * <p>Use the <code>GetHostedZone</code> action to request information about the
-         * hosted zone.</p> </li> <li> <p>Use the <code>ListHostedZones</code> action to
-         * get a list of the hosted zones associated with the current AWS account.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * from your hosted zone, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.</p>
+         * <p>To verify that the hosted zone has been deleted, do one of the following:</p>
+         * <ul> <li> <p>Use the <code>GetHostedZone</code> action to request information
+         * about the hosted zone.</p> </li> <li> <p>Use the <code>ListHostedZones</code>
+         * action to get a list of the hosted zones associated with the current AWS
+         * account.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone">AWS
          * API Reference</a></p>
          *
@@ -1525,7 +1586,8 @@ namespace Model
          * <p>Deletes a configuration for DNS query logging. If you delete a configuration,
          * Amazon Route 53 stops sending query logs to CloudWatch Logs. Route 53 doesn't
          * delete any logs that are already in CloudWatch Logs.</p> <p>For more information
-         * about DNS query logs, see <a>CreateQueryLoggingConfig</a>.</p><p><h3>See
+         * about DNS query logs, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteQueryLoggingConfig">AWS
          * API Reference</a></p>
@@ -1536,7 +1598,8 @@ namespace Model
          * <p>Deletes a configuration for DNS query logging. If you delete a configuration,
          * Amazon Route 53 stops sending query logs to CloudWatch Logs. Route 53 doesn't
          * delete any logs that are already in CloudWatch Logs.</p> <p>For more information
-         * about DNS query logs, see <a>CreateQueryLoggingConfig</a>.</p><p><h3>See
+         * about DNS query logs, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteQueryLoggingConfig">AWS
          * API Reference</a></p>
@@ -1549,7 +1612,8 @@ namespace Model
          * <p>Deletes a configuration for DNS query logging. If you delete a configuration,
          * Amazon Route 53 stops sending query logs to CloudWatch Logs. Route 53 doesn't
          * delete any logs that are already in CloudWatch Logs.</p> <p>For more information
-         * about DNS query logs, see <a>CreateQueryLoggingConfig</a>.</p><p><h3>See
+         * about DNS query logs, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteQueryLoggingConfig">AWS
          * API Reference</a></p>
@@ -1562,8 +1626,9 @@ namespace Model
          * <p>Deletes a reusable delegation set.</p> <important> <p>You can delete a
          * reusable delegation set only if it isn't associated with any hosted zones.</p>
          * </important> <p>To verify that the reusable delegation set is not associated
-         * with any hosted zones, submit a <a>GetReusableDelegationSet</a> request and
-         * specify the ID of the reusable delegation set that you want to
+         * with any hosted zones, submit a <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSet.html">GetReusableDelegationSet</a>
+         * request and specify the ID of the reusable delegation set that you want to
          * delete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet">AWS
          * API Reference</a></p>
@@ -1574,8 +1639,9 @@ namespace Model
          * <p>Deletes a reusable delegation set.</p> <important> <p>You can delete a
          * reusable delegation set only if it isn't associated with any hosted zones.</p>
          * </important> <p>To verify that the reusable delegation set is not associated
-         * with any hosted zones, submit a <a>GetReusableDelegationSet</a> request and
-         * specify the ID of the reusable delegation set that you want to
+         * with any hosted zones, submit a <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSet.html">GetReusableDelegationSet</a>
+         * request and specify the ID of the reusable delegation set that you want to
          * delete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet">AWS
          * API Reference</a></p>
@@ -1588,8 +1654,9 @@ namespace Model
          * <p>Deletes a reusable delegation set.</p> <important> <p>You can delete a
          * reusable delegation set only if it isn't associated with any hosted zones.</p>
          * </important> <p>To verify that the reusable delegation set is not associated
-         * with any hosted zones, submit a <a>GetReusableDelegationSet</a> request and
-         * specify the ID of the reusable delegation set that you want to
+         * with any hosted zones, submit a <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSet.html">GetReusableDelegationSet</a>
+         * request and specify the ID of the reusable delegation set that you want to
          * delete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet">AWS
          * API Reference</a></p>
@@ -1759,10 +1826,15 @@ namespace Model
          * <p>Gets the specified limit for the current account, for example, the maximum
          * number of health checks that you can create using the account.</p> <p>For the
          * default limit, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
-         * a case</a>.</p><p><h3>See Also:</h3>   <a
+         * a case</a>.</p> <note> <p>You can also view account limits in AWS Trusted
+         * Advisor. Sign in to the AWS Management Console and open the Trusted Advisor
+         * console at <a
+         * href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>.
+         * Then choose <b>Service limits</b> in the navigation pane.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit">AWS
          * API Reference</a></p>
          */
@@ -1772,10 +1844,15 @@ namespace Model
          * <p>Gets the specified limit for the current account, for example, the maximum
          * number of health checks that you can create using the account.</p> <p>For the
          * default limit, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
-         * a case</a>.</p><p><h3>See Also:</h3>   <a
+         * a case</a>.</p> <note> <p>You can also view account limits in AWS Trusted
+         * Advisor. Sign in to the AWS Management Console and open the Trusted Advisor
+         * console at <a
+         * href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>.
+         * Then choose <b>Service limits</b> in the navigation pane.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit">AWS
          * API Reference</a></p>
          *
@@ -1787,10 +1864,15 @@ namespace Model
          * <p>Gets the specified limit for the current account, for example, the maximum
          * number of health checks that you can create using the account.</p> <p>For the
          * default limit, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
-         * a case</a>.</p><p><h3>See Also:</h3>   <a
+         * a case</a>.</p> <note> <p>You can also view account limits in AWS Trusted
+         * Advisor. Sign in to the AWS Management Console and open the Trusted Advisor
+         * console at <a
+         * href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>.
+         * Then choose <b>Service limits</b> in the navigation pane.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit">AWS
          * API Reference</a></p>
          *
@@ -2105,7 +2187,7 @@ namespace Model
          * <p>Gets the specified limit for a specified hosted zone, for example, the
          * maximum number of records that you can create in the hosted zone. </p> <p>For
          * the default limit, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
          * a case</a>.</p><p><h3>See Also:</h3>   <a
@@ -2118,7 +2200,7 @@ namespace Model
          * <p>Gets the specified limit for a specified hosted zone, for example, the
          * maximum number of records that you can create in the hosted zone. </p> <p>For
          * the default limit, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
          * a case</a>.</p><p><h3>See Also:</h3>   <a
@@ -2133,7 +2215,7 @@ namespace Model
          * <p>Gets the specified limit for a specified hosted zone, for example, the
          * maximum number of records that you can create in the hosted zone. </p> <p>For
          * the default limit, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
          * a case</a>.</p><p><h3>See Also:</h3>   <a
@@ -2146,9 +2228,10 @@ namespace Model
 
         /**
          * <p>Gets information about a specified configuration for DNS query logging.</p>
-         * <p>For more information about DNS query logs, see
-         * <a>CreateQueryLoggingConfig</a> and <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+         * <p>For more information about DNS query logs, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
          * DNS Queries</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetQueryLoggingConfig">AWS
          * API Reference</a></p>
@@ -2157,9 +2240,10 @@ namespace Model
 
         /**
          * <p>Gets information about a specified configuration for DNS query logging.</p>
-         * <p>For more information about DNS query logs, see
-         * <a>CreateQueryLoggingConfig</a> and <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+         * <p>For more information about DNS query logs, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
          * DNS Queries</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetQueryLoggingConfig">AWS
          * API Reference</a></p>
@@ -2170,9 +2254,10 @@ namespace Model
 
         /**
          * <p>Gets information about a specified configuration for DNS query logging.</p>
-         * <p>For more information about DNS query logs, see
-         * <a>CreateQueryLoggingConfig</a> and <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+         * <p>For more information about DNS query logs, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
          * DNS Queries</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetQueryLoggingConfig">AWS
          * API Reference</a></p>
@@ -2215,7 +2300,7 @@ namespace Model
         /**
          * <p>Gets the maximum number of hosted zones that you can associate with the
          * specified reusable delegation set.</p> <p>For the default limit, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
          * a case</a>.</p><p><h3>See Also:</h3>   <a
@@ -2227,7 +2312,7 @@ namespace Model
         /**
          * <p>Gets the maximum number of hosted zones that you can associate with the
          * specified reusable delegation set.</p> <p>For the default limit, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
          * a case</a>.</p><p><h3>See Also:</h3>   <a
@@ -2241,7 +2326,7 @@ namespace Model
         /**
          * <p>Gets the maximum number of hosted zones that you can associate with the
          * specified reusable delegation set.</p> <p>For the default limit, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
          * a case</a>.</p><p><h3>See Also:</h3>   <a
@@ -2598,10 +2683,10 @@ namespace Model
         /**
          * <p>Lists the configurations for DNS query logging that are associated with the
          * current AWS account or the configuration that is associated with a specified
-         * hosted zone.</p> <p>For more information about DNS query logs, see
-         * <a>CreateQueryLoggingConfig</a>. Additional information, including the format of
-         * DNS query logs, appears in <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+         * hosted zone.</p> <p>For more information about DNS query logs, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>.
+         * Additional information, including the format of DNS query logs, appears in <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
          * DNS Queries</a> in the <i>Amazon Route 53 Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListQueryLoggingConfigs">AWS
@@ -2612,10 +2697,10 @@ namespace Model
         /**
          * <p>Lists the configurations for DNS query logging that are associated with the
          * current AWS account or the configuration that is associated with a specified
-         * hosted zone.</p> <p>For more information about DNS query logs, see
-         * <a>CreateQueryLoggingConfig</a>. Additional information, including the format of
-         * DNS query logs, appears in <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+         * hosted zone.</p> <p>For more information about DNS query logs, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>.
+         * Additional information, including the format of DNS query logs, appears in <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
          * DNS Queries</a> in the <i>Amazon Route 53 Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListQueryLoggingConfigs">AWS
@@ -2628,10 +2713,10 @@ namespace Model
         /**
          * <p>Lists the configurations for DNS query logging that are associated with the
          * current AWS account or the configuration that is associated with a specified
-         * hosted zone.</p> <p>For more information about DNS query logs, see
-         * <a>CreateQueryLoggingConfig</a>. Additional information, including the format of
-         * DNS query logs, appears in <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+         * hosted zone.</p> <p>For more information about DNS query logs, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>.
+         * Additional information, including the format of DNS query logs, appears in <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
          * DNS Queries</a> in the <i>Amazon Route 53 Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListQueryLoggingConfigs">AWS
@@ -2814,7 +2899,7 @@ namespace Model
         /**
          * <p>Lists tags for one health check or hosted zone. </p> <p>For information about
          * using tags for cost allocation, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
          * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource">AWS
@@ -2825,7 +2910,7 @@ namespace Model
         /**
          * <p>Lists tags for one health check or hosted zone. </p> <p>For information about
          * using tags for cost allocation, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
          * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource">AWS
@@ -2838,7 +2923,7 @@ namespace Model
         /**
          * <p>Lists tags for one health check or hosted zone. </p> <p>For information about
          * using tags for cost allocation, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
          * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource">AWS
@@ -2851,7 +2936,7 @@ namespace Model
         /**
          * <p>Lists tags for up to 10 health checks or hosted zones.</p> <p>For information
          * about using tags for cost allocation, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
          * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResources">AWS
@@ -2862,7 +2947,7 @@ namespace Model
         /**
          * <p>Lists tags for up to 10 health checks or hosted zones.</p> <p>For information
          * about using tags for cost allocation, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
          * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResources">AWS
@@ -2875,7 +2960,7 @@ namespace Model
         /**
          * <p>Lists tags for up to 10 health checks or hosted zones.</p> <p>For information
          * about using tags for cost allocation, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
          * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResources">AWS

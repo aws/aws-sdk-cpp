@@ -27,6 +27,7 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 StopChannelResult::StopChannelResult() : 
+    m_channelClass(ChannelClass::NOT_SET),
     m_logLevel(LogLevel::NOT_SET),
     m_pipelinesRunningCount(0),
     m_state(ChannelState::NOT_SET)
@@ -34,6 +35,7 @@ StopChannelResult::StopChannelResult() :
 }
 
 StopChannelResult::StopChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_channelClass(ChannelClass::NOT_SET),
     m_logLevel(LogLevel::NOT_SET),
     m_pipelinesRunningCount(0),
     m_state(ChannelState::NOT_SET)
@@ -47,6 +49,12 @@ StopChannelResult& StopChannelResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
+
+  }
+
+  if(jsonValue.ValueExists("channelClass"))
+  {
+    m_channelClass = ChannelClassMapper::GetChannelClassForName(jsonValue.GetString("channelClass"));
 
   }
 

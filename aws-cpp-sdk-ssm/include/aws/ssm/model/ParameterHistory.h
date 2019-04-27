@@ -19,6 +19,8 @@
 #include <aws/ssm/model/ParameterType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/ParameterTier.h>
+#include <aws/ssm/model/ParameterInlinePolicy.h>
 #include <utility>
 
 namespace Aws
@@ -440,6 +442,78 @@ namespace Model
      */
     inline ParameterHistory& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
 
+
+    /**
+     * <p>The parameter tier.</p>
+     */
+    inline const ParameterTier& GetTier() const{ return m_tier; }
+
+    /**
+     * <p>The parameter tier.</p>
+     */
+    inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
+
+    /**
+     * <p>The parameter tier.</p>
+     */
+    inline void SetTier(const ParameterTier& value) { m_tierHasBeenSet = true; m_tier = value; }
+
+    /**
+     * <p>The parameter tier.</p>
+     */
+    inline void SetTier(ParameterTier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
+
+    /**
+     * <p>The parameter tier.</p>
+     */
+    inline ParameterHistory& WithTier(const ParameterTier& value) { SetTier(value); return *this;}
+
+    /**
+     * <p>The parameter tier.</p>
+     */
+    inline ParameterHistory& WithTier(ParameterTier&& value) { SetTier(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the policies assigned to a parameter.</p>
+     */
+    inline const Aws::Vector<ParameterInlinePolicy>& GetPolicies() const{ return m_policies; }
+
+    /**
+     * <p>Information about the policies assigned to a parameter.</p>
+     */
+    inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
+
+    /**
+     * <p>Information about the policies assigned to a parameter.</p>
+     */
+    inline void SetPolicies(const Aws::Vector<ParameterInlinePolicy>& value) { m_policiesHasBeenSet = true; m_policies = value; }
+
+    /**
+     * <p>Information about the policies assigned to a parameter.</p>
+     */
+    inline void SetPolicies(Aws::Vector<ParameterInlinePolicy>&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
+
+    /**
+     * <p>Information about the policies assigned to a parameter.</p>
+     */
+    inline ParameterHistory& WithPolicies(const Aws::Vector<ParameterInlinePolicy>& value) { SetPolicies(value); return *this;}
+
+    /**
+     * <p>Information about the policies assigned to a parameter.</p>
+     */
+    inline ParameterHistory& WithPolicies(Aws::Vector<ParameterInlinePolicy>&& value) { SetPolicies(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the policies assigned to a parameter.</p>
+     */
+    inline ParameterHistory& AddPolicies(const ParameterInlinePolicy& value) { m_policiesHasBeenSet = true; m_policies.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the policies assigned to a parameter.</p>
+     */
+    inline ParameterHistory& AddPolicies(ParameterInlinePolicy&& value) { m_policiesHasBeenSet = true; m_policies.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -471,6 +545,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_labels;
     bool m_labelsHasBeenSet;
+
+    ParameterTier m_tier;
+    bool m_tierHasBeenSet;
+
+    Aws::Vector<ParameterInlinePolicy> m_policies;
+    bool m_policiesHasBeenSet;
   };
 
 } // namespace Model

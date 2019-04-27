@@ -206,89 +206,89 @@ namespace Model
 
 
     /**
-     * <p>One or more IPv4 ranges.</p>
+     * <p>The IPv4 ranges.</p>
      */
     inline const Aws::Vector<IpRange>& GetIpRanges() const{ return m_ipRanges; }
 
     /**
-     * <p>One or more IPv4 ranges.</p>
+     * <p>The IPv4 ranges.</p>
      */
     inline bool IpRangesHasBeenSet() const { return m_ipRangesHasBeenSet; }
 
     /**
-     * <p>One or more IPv4 ranges.</p>
+     * <p>The IPv4 ranges.</p>
      */
     inline void SetIpRanges(const Aws::Vector<IpRange>& value) { m_ipRangesHasBeenSet = true; m_ipRanges = value; }
 
     /**
-     * <p>One or more IPv4 ranges.</p>
+     * <p>The IPv4 ranges.</p>
      */
     inline void SetIpRanges(Aws::Vector<IpRange>&& value) { m_ipRangesHasBeenSet = true; m_ipRanges = std::move(value); }
 
     /**
-     * <p>One or more IPv4 ranges.</p>
+     * <p>The IPv4 ranges.</p>
      */
     inline IpPermission& WithIpRanges(const Aws::Vector<IpRange>& value) { SetIpRanges(value); return *this;}
 
     /**
-     * <p>One or more IPv4 ranges.</p>
+     * <p>The IPv4 ranges.</p>
      */
     inline IpPermission& WithIpRanges(Aws::Vector<IpRange>&& value) { SetIpRanges(std::move(value)); return *this;}
 
     /**
-     * <p>One or more IPv4 ranges.</p>
+     * <p>The IPv4 ranges.</p>
      */
     inline IpPermission& AddIpRanges(const IpRange& value) { m_ipRangesHasBeenSet = true; m_ipRanges.push_back(value); return *this; }
 
     /**
-     * <p>One or more IPv4 ranges.</p>
+     * <p>The IPv4 ranges.</p>
      */
     inline IpPermission& AddIpRanges(IpRange&& value) { m_ipRangesHasBeenSet = true; m_ipRanges.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>[EC2-VPC only] One or more IPv6 ranges.</p>
+     * <p>[EC2-VPC only] The IPv6 ranges.</p>
      */
     inline const Aws::Vector<Ipv6Range>& GetIpv6Ranges() const{ return m_ipv6Ranges; }
 
     /**
-     * <p>[EC2-VPC only] One or more IPv6 ranges.</p>
+     * <p>[EC2-VPC only] The IPv6 ranges.</p>
      */
     inline bool Ipv6RangesHasBeenSet() const { return m_ipv6RangesHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC only] One or more IPv6 ranges.</p>
+     * <p>[EC2-VPC only] The IPv6 ranges.</p>
      */
     inline void SetIpv6Ranges(const Aws::Vector<Ipv6Range>& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges = value; }
 
     /**
-     * <p>[EC2-VPC only] One or more IPv6 ranges.</p>
+     * <p>[EC2-VPC only] The IPv6 ranges.</p>
      */
     inline void SetIpv6Ranges(Aws::Vector<Ipv6Range>&& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges = std::move(value); }
 
     /**
-     * <p>[EC2-VPC only] One or more IPv6 ranges.</p>
+     * <p>[EC2-VPC only] The IPv6 ranges.</p>
      */
     inline IpPermission& WithIpv6Ranges(const Aws::Vector<Ipv6Range>& value) { SetIpv6Ranges(value); return *this;}
 
     /**
-     * <p>[EC2-VPC only] One or more IPv6 ranges.</p>
+     * <p>[EC2-VPC only] The IPv6 ranges.</p>
      */
     inline IpPermission& WithIpv6Ranges(Aws::Vector<Ipv6Range>&& value) { SetIpv6Ranges(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC only] One or more IPv6 ranges.</p>
+     * <p>[EC2-VPC only] The IPv6 ranges.</p>
      */
     inline IpPermission& AddIpv6Ranges(const Ipv6Range& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-VPC only] One or more IPv6 ranges.</p>
+     * <p>[EC2-VPC only] The IPv6 ranges.</p>
      */
     inline IpPermission& AddIpv6Ranges(Ipv6Range&& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>[EC2-VPC only] One or more prefix list IDs for an AWS service. With
+     * <p>[EC2-VPC only] The prefix list IDs for an AWS service. With
      * <a>AuthorizeSecurityGroupEgress</a>, this is the AWS service that you want to
      * access through a VPC endpoint from instances associated with the security
      * group.</p>
@@ -296,7 +296,7 @@ namespace Model
     inline const Aws::Vector<PrefixListId>& GetPrefixListIds() const{ return m_prefixListIds; }
 
     /**
-     * <p>[EC2-VPC only] One or more prefix list IDs for an AWS service. With
+     * <p>[EC2-VPC only] The prefix list IDs for an AWS service. With
      * <a>AuthorizeSecurityGroupEgress</a>, this is the AWS service that you want to
      * access through a VPC endpoint from instances associated with the security
      * group.</p>
@@ -304,7 +304,7 @@ namespace Model
     inline bool PrefixListIdsHasBeenSet() const { return m_prefixListIdsHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC only] One or more prefix list IDs for an AWS service. With
+     * <p>[EC2-VPC only] The prefix list IDs for an AWS service. With
      * <a>AuthorizeSecurityGroupEgress</a>, this is the AWS service that you want to
      * access through a VPC endpoint from instances associated with the security
      * group.</p>
@@ -312,7 +312,7 @@ namespace Model
     inline void SetPrefixListIds(const Aws::Vector<PrefixListId>& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = value; }
 
     /**
-     * <p>[EC2-VPC only] One or more prefix list IDs for an AWS service. With
+     * <p>[EC2-VPC only] The prefix list IDs for an AWS service. With
      * <a>AuthorizeSecurityGroupEgress</a>, this is the AWS service that you want to
      * access through a VPC endpoint from instances associated with the security
      * group.</p>
@@ -320,7 +320,7 @@ namespace Model
     inline void SetPrefixListIds(Aws::Vector<PrefixListId>&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = std::move(value); }
 
     /**
-     * <p>[EC2-VPC only] One or more prefix list IDs for an AWS service. With
+     * <p>[EC2-VPC only] The prefix list IDs for an AWS service. With
      * <a>AuthorizeSecurityGroupEgress</a>, this is the AWS service that you want to
      * access through a VPC endpoint from instances associated with the security
      * group.</p>
@@ -328,7 +328,7 @@ namespace Model
     inline IpPermission& WithPrefixListIds(const Aws::Vector<PrefixListId>& value) { SetPrefixListIds(value); return *this;}
 
     /**
-     * <p>[EC2-VPC only] One or more prefix list IDs for an AWS service. With
+     * <p>[EC2-VPC only] The prefix list IDs for an AWS service. With
      * <a>AuthorizeSecurityGroupEgress</a>, this is the AWS service that you want to
      * access through a VPC endpoint from instances associated with the security
      * group.</p>
@@ -336,7 +336,7 @@ namespace Model
     inline IpPermission& WithPrefixListIds(Aws::Vector<PrefixListId>&& value) { SetPrefixListIds(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC only] One or more prefix list IDs for an AWS service. With
+     * <p>[EC2-VPC only] The prefix list IDs for an AWS service. With
      * <a>AuthorizeSecurityGroupEgress</a>, this is the AWS service that you want to
      * access through a VPC endpoint from instances associated with the security
      * group.</p>
@@ -344,7 +344,7 @@ namespace Model
     inline IpPermission& AddPrefixListIds(const PrefixListId& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-VPC only] One or more prefix list IDs for an AWS service. With
+     * <p>[EC2-VPC only] The prefix list IDs for an AWS service. With
      * <a>AuthorizeSecurityGroupEgress</a>, this is the AWS service that you want to
      * access through a VPC endpoint from instances associated with the security
      * group.</p>
@@ -382,42 +382,42 @@ namespace Model
 
 
     /**
-     * <p>One or more security group and AWS account ID pairs.</p>
+     * <p>The security group and AWS account ID pairs.</p>
      */
     inline const Aws::Vector<UserIdGroupPair>& GetUserIdGroupPairs() const{ return m_userIdGroupPairs; }
 
     /**
-     * <p>One or more security group and AWS account ID pairs.</p>
+     * <p>The security group and AWS account ID pairs.</p>
      */
     inline bool UserIdGroupPairsHasBeenSet() const { return m_userIdGroupPairsHasBeenSet; }
 
     /**
-     * <p>One or more security group and AWS account ID pairs.</p>
+     * <p>The security group and AWS account ID pairs.</p>
      */
     inline void SetUserIdGroupPairs(const Aws::Vector<UserIdGroupPair>& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs = value; }
 
     /**
-     * <p>One or more security group and AWS account ID pairs.</p>
+     * <p>The security group and AWS account ID pairs.</p>
      */
     inline void SetUserIdGroupPairs(Aws::Vector<UserIdGroupPair>&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs = std::move(value); }
 
     /**
-     * <p>One or more security group and AWS account ID pairs.</p>
+     * <p>The security group and AWS account ID pairs.</p>
      */
     inline IpPermission& WithUserIdGroupPairs(const Aws::Vector<UserIdGroupPair>& value) { SetUserIdGroupPairs(value); return *this;}
 
     /**
-     * <p>One or more security group and AWS account ID pairs.</p>
+     * <p>The security group and AWS account ID pairs.</p>
      */
     inline IpPermission& WithUserIdGroupPairs(Aws::Vector<UserIdGroupPair>&& value) { SetUserIdGroupPairs(std::move(value)); return *this;}
 
     /**
-     * <p>One or more security group and AWS account ID pairs.</p>
+     * <p>The security group and AWS account ID pairs.</p>
      */
     inline IpPermission& AddUserIdGroupPairs(const UserIdGroupPair& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs.push_back(value); return *this; }
 
     /**
-     * <p>One or more security group and AWS account ID pairs.</p>
+     * <p>The security group and AWS account ID pairs.</p>
      */
     inline IpPermission& AddUserIdGroupPairs(UserIdGroupPair&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs.push_back(std::move(value)); return *this; }
 

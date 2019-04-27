@@ -57,15 +57,19 @@ enum class ComprehendErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   BATCH_SIZE_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION,
   INTERNAL_SERVER,
   INVALID_FILTER,
   INVALID_REQUEST,
   JOB_NOT_FOUND,
+  KMS_KEY_VALIDATION,
   RESOURCE_IN_USE,
   RESOURCE_LIMIT_EXCEEDED,
   RESOURCE_UNAVAILABLE,
   TEXT_SIZE_LIMIT_EXCEEDED,
   TOO_MANY_REQUESTS,
+  TOO_MANY_TAGS,
+  TOO_MANY_TAG_KEYS,
   UNSUPPORTED_LANGUAGE
 };
 namespace ComprehendErrorMapper

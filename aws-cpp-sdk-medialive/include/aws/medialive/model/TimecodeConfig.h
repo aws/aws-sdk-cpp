@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for TimecodeConfig<p><h3>See Also:</h3>   <a
+   * Timecode Config<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/TimecodeConfig">AWS
    * API Reference</a></p>
    */

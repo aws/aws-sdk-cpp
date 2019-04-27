@@ -71,11 +71,6 @@ setup_install()
 install (FILES ${AWS_APPLICATION-AUTOSCALING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/application-autoscaling)
 install (FILES ${AWS_APPLICATION-AUTOSCALING_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/application-autoscaling/model)
 
-if(PLATFORM_WINDOWS AND MSVC)
-    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
-    install (FILES ${NUGET_FILES} DESTINATION nuget)
-endif()
-
 do_packaging()
 
 

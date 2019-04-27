@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>Zero or more reservations.</p>
+     * <p>Information about the reservations.</p>
      */
     inline const Aws::Vector<Reservation>& GetReservations() const{ return m_reservations; }
 
     /**
-     * <p>Zero or more reservations.</p>
+     * <p>Information about the reservations.</p>
      */
     inline void SetReservations(const Aws::Vector<Reservation>& value) { m_reservations = value; }
 
     /**
-     * <p>Zero or more reservations.</p>
+     * <p>Information about the reservations.</p>
      */
     inline void SetReservations(Aws::Vector<Reservation>&& value) { m_reservations = std::move(value); }
 
     /**
-     * <p>Zero or more reservations.</p>
+     * <p>Information about the reservations.</p>
      */
     inline DescribeInstancesResponse& WithReservations(const Aws::Vector<Reservation>& value) { SetReservations(value); return *this;}
 
     /**
-     * <p>Zero or more reservations.</p>
+     * <p>Information about the reservations.</p>
      */
     inline DescribeInstancesResponse& WithReservations(Aws::Vector<Reservation>&& value) { SetReservations(std::move(value)); return *this;}
 
     /**
-     * <p>Zero or more reservations.</p>
+     * <p>Information about the reservations.</p>
      */
     inline DescribeInstancesResponse& AddReservations(const Reservation& value) { m_reservations.push_back(value); return *this; }
 
     /**
-     * <p>Zero or more reservations.</p>
+     * <p>Information about the reservations.</p>
      */
     inline DescribeInstancesResponse& AddReservations(Reservation&& value) { m_reservations.push_back(std::move(value)); return *this; }
 

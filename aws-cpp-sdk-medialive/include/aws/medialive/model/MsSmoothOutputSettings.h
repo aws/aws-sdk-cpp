@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for MsSmoothOutputSettings<p><h3>See Also:</h3>   <a
+   * Ms Smooth Output Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MsSmoothOutputSettings">AWS
    * API Reference</a></p>
    */

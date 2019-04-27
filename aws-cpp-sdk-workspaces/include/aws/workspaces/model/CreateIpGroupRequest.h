@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/model/IpRuleItem.h>
+#include <aws/workspaces/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -168,6 +169,47 @@ namespace Model
      */
     inline CreateIpGroupRequest& AddUserRules(IpRuleItem&& value) { m_userRulesHasBeenSet = true; m_userRules.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+     */
+    inline CreateIpGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+     */
+    inline CreateIpGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+     */
+    inline CreateIpGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+     */
+    inline CreateIpGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_groupName;
@@ -178,6 +220,9 @@ namespace Model
 
     Aws::Vector<IpRuleItem> m_userRules;
     bool m_userRulesHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

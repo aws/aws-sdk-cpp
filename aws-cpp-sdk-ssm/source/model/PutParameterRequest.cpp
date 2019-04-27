@@ -32,7 +32,10 @@ PutParameterRequest::PutParameterRequest() :
     m_overwrite(false),
     m_overwriteHasBeenSet(false),
     m_allowedPatternHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_tier(ParameterTier::NOT_SET),
+    m_tierHasBeenSet(false),
+    m_policiesHasBeenSet(false)
 {
 }
 
@@ -89,6 +92,17 @@ Aws::String PutParameterRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_tierHasBeenSet)
+  {
+   payload.WithString("Tier", ParameterTierMapper::GetNameForParameterTier(m_tier));
+  }
+
+  if(m_policiesHasBeenSet)
+  {
+   payload.WithString("Policies", m_policies);
 
   }
 

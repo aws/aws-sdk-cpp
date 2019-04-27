@@ -1253,42 +1253,42 @@ namespace Model
 
 
     /**
-     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
+     * <p>[EC2-VPC] The network interfaces for the instance.</p>
      */
     inline const Aws::Vector<InstanceNetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
     /**
-     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
+     * <p>[EC2-VPC] The network interfaces for the instance.</p>
      */
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
+     * <p>[EC2-VPC] The network interfaces for the instance.</p>
      */
     inline void SetNetworkInterfaces(const Aws::Vector<InstanceNetworkInterface>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
 
     /**
-     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
+     * <p>[EC2-VPC] The network interfaces for the instance.</p>
      */
     inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterface>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
+     * <p>[EC2-VPC] The network interfaces for the instance.</p>
      */
     inline Instance& WithNetworkInterfaces(const Aws::Vector<InstanceNetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
+     * <p>[EC2-VPC] The network interfaces for the instance.</p>
      */
     inline Instance& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
+     * <p>[EC2-VPC] The network interfaces for the instance.</p>
      */
     inline Instance& AddNetworkInterfaces(const InstanceNetworkInterface& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
+     * <p>[EC2-VPC] The network interfaces for the instance.</p>
      */
     inline Instance& AddNetworkInterfaces(InstanceNetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 
@@ -1380,42 +1380,42 @@ namespace Model
 
 
     /**
-     * <p>One or more security groups for the instance.</p>
+     * <p>The security groups for the instance.</p>
      */
     inline const Aws::Vector<GroupIdentifier>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
-     * <p>One or more security groups for the instance.</p>
+     * <p>The security groups for the instance.</p>
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
-     * <p>One or more security groups for the instance.</p>
+     * <p>The security groups for the instance.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<GroupIdentifier>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
-     * <p>One or more security groups for the instance.</p>
+     * <p>The security groups for the instance.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<GroupIdentifier>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
-     * <p>One or more security groups for the instance.</p>
+     * <p>The security groups for the instance.</p>
      */
     inline Instance& WithSecurityGroups(const Aws::Vector<GroupIdentifier>& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * <p>One or more security groups for the instance.</p>
+     * <p>The security groups for the instance.</p>
      */
     inline Instance& WithSecurityGroups(Aws::Vector<GroupIdentifier>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>One or more security groups for the instance.</p>
+     * <p>The security groups for the instance.</p>
      */
     inline Instance& AddSecurityGroups(const GroupIdentifier& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
-     * <p>One or more security groups for the instance.</p>
+     * <p>The security groups for the instance.</p>
      */
     inline Instance& AddSecurityGroups(GroupIdentifier&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 

@@ -142,7 +142,7 @@ namespace Model
      * operations or the <code>assume-role*</code> CLI operations but does not apply
      * when you use those operations to create a console URL. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline int GetMaxSessionDuration() const{ return m_maxSessionDuration; }
@@ -161,7 +161,7 @@ namespace Model
      * operations or the <code>assume-role*</code> CLI operations but does not apply
      * when you use those operations to create a console URL. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool MaxSessionDurationHasBeenSet() const { return m_maxSessionDurationHasBeenSet; }
@@ -180,7 +180,7 @@ namespace Model
      * operations or the <code>assume-role*</code> CLI operations but does not apply
      * when you use those operations to create a console URL. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetMaxSessionDuration(int value) { m_maxSessionDurationHasBeenSet = true; m_maxSessionDuration = value; }
@@ -199,7 +199,7 @@ namespace Model
      * operations or the <code>assume-role*</code> CLI operations but does not apply
      * when you use those operations to create a console URL. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline UpdateRoleRequest& WithMaxSessionDuration(int value) { SetMaxSessionDuration(value); return *this;}

@@ -81,47 +81,47 @@ namespace Model
 
 
     /**
-     * <p>One or more security group IDs in your account.</p>
+     * <p>The IDs of the security groups in your account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroupId() const{ return m_groupId; }
 
     /**
-     * <p>One or more security group IDs in your account.</p>
+     * <p>The IDs of the security groups in your account.</p>
      */
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
 
     /**
-     * <p>One or more security group IDs in your account.</p>
+     * <p>The IDs of the security groups in your account.</p>
      */
     inline void SetGroupId(const Aws::Vector<Aws::String>& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * <p>One or more security group IDs in your account.</p>
+     * <p>The IDs of the security groups in your account.</p>
      */
     inline void SetGroupId(Aws::Vector<Aws::String>&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * <p>One or more security group IDs in your account.</p>
+     * <p>The IDs of the security groups in your account.</p>
      */
     inline DescribeSecurityGroupReferencesRequest& WithGroupId(const Aws::Vector<Aws::String>& value) { SetGroupId(value); return *this;}
 
     /**
-     * <p>One or more security group IDs in your account.</p>
+     * <p>The IDs of the security groups in your account.</p>
      */
     inline DescribeSecurityGroupReferencesRequest& WithGroupId(Aws::Vector<Aws::String>&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>One or more security group IDs in your account.</p>
+     * <p>The IDs of the security groups in your account.</p>
      */
     inline DescribeSecurityGroupReferencesRequest& AddGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId.push_back(value); return *this; }
 
     /**
-     * <p>One or more security group IDs in your account.</p>
+     * <p>The IDs of the security groups in your account.</p>
      */
     inline DescribeSecurityGroupReferencesRequest& AddGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more security group IDs in your account.</p>
+     * <p>The IDs of the security groups in your account.</p>
      */
     inline DescribeSecurityGroupReferencesRequest& AddGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.push_back(value); return *this; }
 

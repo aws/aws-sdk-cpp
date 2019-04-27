@@ -152,10 +152,126 @@ namespace Model
      */
     inline OutputDataConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
 
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt the output results from an analysis job. The KmsKeyId can be one of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> <li> <p>KMS Key Alias: <code>"alias/ExampleAlias"</code> </p> </li>
+     * <li> <p>ARN of a KMS Key Alias:
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+     * </ul>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt the output results from an analysis job. The KmsKeyId can be one of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> <li> <p>KMS Key Alias: <code>"alias/ExampleAlias"</code> </p> </li>
+     * <li> <p>ARN of a KMS Key Alias:
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+     * </ul>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt the output results from an analysis job. The KmsKeyId can be one of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> <li> <p>KMS Key Alias: <code>"alias/ExampleAlias"</code> </p> </li>
+     * <li> <p>ARN of a KMS Key Alias:
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+     * </ul>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt the output results from an analysis job. The KmsKeyId can be one of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> <li> <p>KMS Key Alias: <code>"alias/ExampleAlias"</code> </p> </li>
+     * <li> <p>ARN of a KMS Key Alias:
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+     * </ul>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt the output results from an analysis job. The KmsKeyId can be one of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> <li> <p>KMS Key Alias: <code>"alias/ExampleAlias"</code> </p> </li>
+     * <li> <p>ARN of a KMS Key Alias:
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+     * </ul>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt the output results from an analysis job. The KmsKeyId can be one of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> <li> <p>KMS Key Alias: <code>"alias/ExampleAlias"</code> </p> </li>
+     * <li> <p>ARN of a KMS Key Alias:
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+     * </ul>
+     */
+    inline OutputDataConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt the output results from an analysis job. The KmsKeyId can be one of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> <li> <p>KMS Key Alias: <code>"alias/ExampleAlias"</code> </p> </li>
+     * <li> <p>ARN of a KMS Key Alias:
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+     * </ul>
+     */
+    inline OutputDataConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
+     * to encrypt the output results from an analysis job. The KmsKeyId can be one of
+     * the following formats:</p> <ul> <li> <p>KMS Key ID:
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
+     * Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> <li> <p>KMS Key Alias: <code>"alias/ExampleAlias"</code> </p> </li>
+     * <li> <p>ARN of a KMS Key Alias:
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+     * </ul>
+     */
+    inline OutputDataConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_s3Uri;
     bool m_s3UriHasBeenSet;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
   };
 
 } // namespace Model

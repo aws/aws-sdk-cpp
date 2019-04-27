@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for InputChannelLevel<p><h3>See Also:</h3>   <a
+   * Input Channel Level<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputChannelLevel">AWS
    * API Reference</a></p>
    */

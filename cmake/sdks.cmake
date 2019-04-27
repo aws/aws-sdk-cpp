@@ -98,25 +98,6 @@ if(REGENERATE_CLIENTS)
            message(STATUS "Directory for ${SDK} is either missing a service definition, is a custom client, or it is not a generated client. Skipping.")
         endif()
     endforeach()
-
-    foreach(SDK IN LISTS HIGH_LEVEL_SDK_LIST)
-        if (BUILD_ONLY) 
-            list(FIND BUILD_ONLY ${SDK} INDEX)
-            # when BUILD_ONLY is set only update high level sdks specified in it.
-            if ((INDEX GREATER 0) OR (INDEX EQUAL 0))
-                execute_process(
-                    COMMAND ${PYTHON_CMD} scripts/prepare_regenerate_high_level_sdks.py --highLevelSdkName ${SDK}
-                    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-                )
-            endif()
-        else()
-            execute_process(
-                COMMAND ${PYTHON_CMD} scripts/prepare_regenerate_high_level_sdks.py --highLevelSdkName ${SDK}
-                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-            )
-        endif()
-    endforeach()
-
 endif()
 
 #at this point, if user has specified some customized clients, generate them and add them to the build here.
@@ -202,6 +183,10 @@ function(add_sdks)
             foreach(SDK IN LISTS SDK_BUILD_LIST)
                 get_test_projects_for_service(${SDK} TEST_PROJECTS)
                 if(TEST_PROJECTS)
+                    if (NO_HTTP_CLIENT AND NOT "${SDK}" STREQUAL "core")
+                        set(NO_HTTP_CLIENT_SKIP_INTEGRATION_TEST ON)
+                        continue()
+                    endif()
                     STRING(REPLACE "," ";" LIST_RESULT ${TEST_PROJECTS})
                     foreach(TEST_PROJECT IN LISTS LIST_RESULT)
                         if(TEST_PROJECT)                         
@@ -226,6 +211,10 @@ function(add_sdks)
                     endforeach()
                 endif()
              endforeach()
+             if (NO_HTTP_CLIENT_SKIP_INTEGRATION_TEST)
+                 message(STATUS "No http client is specified, SDK will not build integration tests")
+             endif()
+             unset(NO_HTTP_CLIENT_SKIP_INTEGRATION_TEST)
         endif()
     endif()
 

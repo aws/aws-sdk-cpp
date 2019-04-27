@@ -29,7 +29,9 @@ UpdateMaintenanceStartTimeRequest::UpdateMaintenanceStartTimeRequest() :
     m_minuteOfHour(0),
     m_minuteOfHourHasBeenSet(false),
     m_dayOfWeek(0),
-    m_dayOfWeekHasBeenSet(false)
+    m_dayOfWeekHasBeenSet(false),
+    m_dayOfMonth(0),
+    m_dayOfMonthHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,12 @@ Aws::String UpdateMaintenanceStartTimeRequest::SerializePayload() const
   if(m_dayOfWeekHasBeenSet)
   {
    payload.WithInteger("DayOfWeek", m_dayOfWeek);
+
+  }
+
+  if(m_dayOfMonthHasBeenSet)
+  {
+   payload.WithInteger("DayOfMonth", m_dayOfMonth);
 
   }
 

@@ -54,7 +54,7 @@ namespace Model
      * simulation includes all policies that are associated with that entity. If you
      * specify a user, the simulation also includes all policies that are attached to
      * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -66,7 +66,7 @@ namespace Model
      * simulation includes all policies that are associated with that entity. If you
      * specify a user, the simulation also includes all policies that are attached to
      * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -78,7 +78,7 @@ namespace Model
      * simulation includes all policies that are associated with that entity. If you
      * specify a user, the simulation also includes all policies that are attached to
      * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -90,7 +90,7 @@ namespace Model
      * simulation includes all policies that are associated with that entity. If you
      * specify a user, the simulation also includes all policies that are attached to
      * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -102,7 +102,7 @@ namespace Model
      * simulation includes all policies that are associated with that entity. If you
      * specify a user, the simulation also includes all policies that are attached to
      * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -114,7 +114,7 @@ namespace Model
      * simulation includes all policies that are associated with that entity. If you
      * specify a user, the simulation also includes all policies that are attached to
      * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -126,7 +126,7 @@ namespace Model
      * simulation includes all policies that are associated with that entity. If you
      * specify a user, the simulation also includes all policies that are attached to
      * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -138,7 +138,7 @@ namespace Model
      * simulation includes all policies that are associated with that entity. If you
      * specify a user, the simulation also includes all policies that are attached to
      * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -337,7 +337,7 @@ namespace Model
      * If you want to include a resource policy in the simulation, then you must
      * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -353,7 +353,7 @@ namespace Model
      * If you want to include a resource policy in the simulation, then you must
      * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -369,7 +369,7 @@ namespace Model
      * If you want to include a resource policy in the simulation, then you must
      * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -385,7 +385,7 @@ namespace Model
      * If you want to include a resource policy in the simulation, then you must
      * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -401,7 +401,7 @@ namespace Model
      * If you want to include a resource policy in the simulation, then you must
      * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -417,7 +417,7 @@ namespace Model
      * If you want to include a resource policy in the simulation, then you must
      * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -433,7 +433,7 @@ namespace Model
      * If you want to include a resource policy in the simulation, then you must
      * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -449,7 +449,7 @@ namespace Model
      * If you want to include a resource policy in the simulation, then you must
      * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -465,7 +465,7 @@ namespace Model
      * If you want to include a resource policy in the simulation, then you must
      * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -587,112 +587,112 @@ namespace Model
 
     /**
      * <p>An AWS account ID that specifies the owner of any simulated resource that
-     * does not identify its owner in the resource ARN, such as an S3 bucket or object.
-     * If <code>ResourceOwner</code> is specified, it is also used as the account owner
-     * of any <code>ResourcePolicy</code> included in the simulation. If the
-     * <code>ResourceOwner</code> parameter is not specified, then the owner of the
-     * resources and the resource policy defaults to the account of the identity
-     * provided in <code>CallerArn</code>. This parameter is required only if you
-     * specify a resource-based policy and account that owns the resource is different
-     * from the account that owns the simulated calling user
+     * does not identify its owner in the resource ARN. Examples of resource ARNs
+     * include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it
+     * is also used as the account owner of any <code>ResourcePolicy</code> included in
+     * the simulation. If the <code>ResourceOwner</code> parameter is not specified,
+     * then the owner of the resources and the resource policy defaults to the account
+     * of the identity provided in <code>CallerArn</code>. This parameter is required
+     * only if you specify a resource-based policy and account that owns the resource
+     * is different from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p>
      */
     inline const Aws::String& GetResourceOwner() const{ return m_resourceOwner; }
 
     /**
      * <p>An AWS account ID that specifies the owner of any simulated resource that
-     * does not identify its owner in the resource ARN, such as an S3 bucket or object.
-     * If <code>ResourceOwner</code> is specified, it is also used as the account owner
-     * of any <code>ResourcePolicy</code> included in the simulation. If the
-     * <code>ResourceOwner</code> parameter is not specified, then the owner of the
-     * resources and the resource policy defaults to the account of the identity
-     * provided in <code>CallerArn</code>. This parameter is required only if you
-     * specify a resource-based policy and account that owns the resource is different
-     * from the account that owns the simulated calling user
+     * does not identify its owner in the resource ARN. Examples of resource ARNs
+     * include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it
+     * is also used as the account owner of any <code>ResourcePolicy</code> included in
+     * the simulation. If the <code>ResourceOwner</code> parameter is not specified,
+     * then the owner of the resources and the resource policy defaults to the account
+     * of the identity provided in <code>CallerArn</code>. This parameter is required
+     * only if you specify a resource-based policy and account that owns the resource
+     * is different from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p>
      */
     inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
 
     /**
      * <p>An AWS account ID that specifies the owner of any simulated resource that
-     * does not identify its owner in the resource ARN, such as an S3 bucket or object.
-     * If <code>ResourceOwner</code> is specified, it is also used as the account owner
-     * of any <code>ResourcePolicy</code> included in the simulation. If the
-     * <code>ResourceOwner</code> parameter is not specified, then the owner of the
-     * resources and the resource policy defaults to the account of the identity
-     * provided in <code>CallerArn</code>. This parameter is required only if you
-     * specify a resource-based policy and account that owns the resource is different
-     * from the account that owns the simulated calling user
+     * does not identify its owner in the resource ARN. Examples of resource ARNs
+     * include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it
+     * is also used as the account owner of any <code>ResourcePolicy</code> included in
+     * the simulation. If the <code>ResourceOwner</code> parameter is not specified,
+     * then the owner of the resources and the resource policy defaults to the account
+     * of the identity provided in <code>CallerArn</code>. This parameter is required
+     * only if you specify a resource-based policy and account that owns the resource
+     * is different from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p>
      */
     inline void SetResourceOwner(const Aws::String& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = value; }
 
     /**
      * <p>An AWS account ID that specifies the owner of any simulated resource that
-     * does not identify its owner in the resource ARN, such as an S3 bucket or object.
-     * If <code>ResourceOwner</code> is specified, it is also used as the account owner
-     * of any <code>ResourcePolicy</code> included in the simulation. If the
-     * <code>ResourceOwner</code> parameter is not specified, then the owner of the
-     * resources and the resource policy defaults to the account of the identity
-     * provided in <code>CallerArn</code>. This parameter is required only if you
-     * specify a resource-based policy and account that owns the resource is different
-     * from the account that owns the simulated calling user
+     * does not identify its owner in the resource ARN. Examples of resource ARNs
+     * include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it
+     * is also used as the account owner of any <code>ResourcePolicy</code> included in
+     * the simulation. If the <code>ResourceOwner</code> parameter is not specified,
+     * then the owner of the resources and the resource policy defaults to the account
+     * of the identity provided in <code>CallerArn</code>. This parameter is required
+     * only if you specify a resource-based policy and account that owns the resource
+     * is different from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p>
      */
     inline void SetResourceOwner(Aws::String&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::move(value); }
 
     /**
      * <p>An AWS account ID that specifies the owner of any simulated resource that
-     * does not identify its owner in the resource ARN, such as an S3 bucket or object.
-     * If <code>ResourceOwner</code> is specified, it is also used as the account owner
-     * of any <code>ResourcePolicy</code> included in the simulation. If the
-     * <code>ResourceOwner</code> parameter is not specified, then the owner of the
-     * resources and the resource policy defaults to the account of the identity
-     * provided in <code>CallerArn</code>. This parameter is required only if you
-     * specify a resource-based policy and account that owns the resource is different
-     * from the account that owns the simulated calling user
+     * does not identify its owner in the resource ARN. Examples of resource ARNs
+     * include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it
+     * is also used as the account owner of any <code>ResourcePolicy</code> included in
+     * the simulation. If the <code>ResourceOwner</code> parameter is not specified,
+     * then the owner of the resources and the resource policy defaults to the account
+     * of the identity provided in <code>CallerArn</code>. This parameter is required
+     * only if you specify a resource-based policy and account that owns the resource
+     * is different from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p>
      */
     inline void SetResourceOwner(const char* value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner.assign(value); }
 
     /**
      * <p>An AWS account ID that specifies the owner of any simulated resource that
-     * does not identify its owner in the resource ARN, such as an S3 bucket or object.
-     * If <code>ResourceOwner</code> is specified, it is also used as the account owner
-     * of any <code>ResourcePolicy</code> included in the simulation. If the
-     * <code>ResourceOwner</code> parameter is not specified, then the owner of the
-     * resources and the resource policy defaults to the account of the identity
-     * provided in <code>CallerArn</code>. This parameter is required only if you
-     * specify a resource-based policy and account that owns the resource is different
-     * from the account that owns the simulated calling user
+     * does not identify its owner in the resource ARN. Examples of resource ARNs
+     * include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it
+     * is also used as the account owner of any <code>ResourcePolicy</code> included in
+     * the simulation. If the <code>ResourceOwner</code> parameter is not specified,
+     * then the owner of the resources and the resource policy defaults to the account
+     * of the identity provided in <code>CallerArn</code>. This parameter is required
+     * only if you specify a resource-based policy and account that owns the resource
+     * is different from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithResourceOwner(const Aws::String& value) { SetResourceOwner(value); return *this;}
 
     /**
      * <p>An AWS account ID that specifies the owner of any simulated resource that
-     * does not identify its owner in the resource ARN, such as an S3 bucket or object.
-     * If <code>ResourceOwner</code> is specified, it is also used as the account owner
-     * of any <code>ResourcePolicy</code> included in the simulation. If the
-     * <code>ResourceOwner</code> parameter is not specified, then the owner of the
-     * resources and the resource policy defaults to the account of the identity
-     * provided in <code>CallerArn</code>. This parameter is required only if you
-     * specify a resource-based policy and account that owns the resource is different
-     * from the account that owns the simulated calling user
+     * does not identify its owner in the resource ARN. Examples of resource ARNs
+     * include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it
+     * is also used as the account owner of any <code>ResourcePolicy</code> included in
+     * the simulation. If the <code>ResourceOwner</code> parameter is not specified,
+     * then the owner of the resources and the resource policy defaults to the account
+     * of the identity provided in <code>CallerArn</code>. This parameter is required
+     * only if you specify a resource-based policy and account that owns the resource
+     * is different from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithResourceOwner(Aws::String&& value) { SetResourceOwner(std::move(value)); return *this;}
 
     /**
      * <p>An AWS account ID that specifies the owner of any simulated resource that
-     * does not identify its owner in the resource ARN, such as an S3 bucket or object.
-     * If <code>ResourceOwner</code> is specified, it is also used as the account owner
-     * of any <code>ResourcePolicy</code> included in the simulation. If the
-     * <code>ResourceOwner</code> parameter is not specified, then the owner of the
-     * resources and the resource policy defaults to the account of the identity
-     * provided in <code>CallerArn</code>. This parameter is required only if you
-     * specify a resource-based policy and account that owns the resource is different
-     * from the account that owns the simulated calling user
+     * does not identify its owner in the resource ARN. Examples of resource ARNs
+     * include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it
+     * is also used as the account owner of any <code>ResourcePolicy</code> included in
+     * the simulation. If the <code>ResourceOwner</code> parameter is not specified,
+     * then the owner of the resources and the resource policy defaults to the account
+     * of the identity provided in <code>CallerArn</code>. This parameter is required
+     * only if you specify a resource-based policy and account that owns the resource
+     * is different from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithResourceOwner(const char* value) { SetResourceOwner(value); return *this;}
@@ -714,7 +714,7 @@ namespace Model
      * required so that the resource-based policy's <code>Principal</code> element has
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -736,7 +736,7 @@ namespace Model
      * required so that the resource-based policy's <code>Principal</code> element has
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -758,7 +758,7 @@ namespace Model
      * required so that the resource-based policy's <code>Principal</code> element has
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -780,7 +780,7 @@ namespace Model
      * required so that the resource-based policy's <code>Principal</code> element has
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -802,7 +802,7 @@ namespace Model
      * required so that the resource-based policy's <code>Principal</code> element has
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -824,7 +824,7 @@ namespace Model
      * required so that the resource-based policy's <code>Principal</code> element has
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -846,7 +846,7 @@ namespace Model
      * required so that the resource-based policy's <code>Principal</code> element has
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -868,7 +868,7 @@ namespace Model
      * required so that the resource-based policy's <code>Principal</code> element has
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -946,7 +946,7 @@ namespace Model
      * VPC, then you must supply the network interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
@@ -974,7 +974,7 @@ namespace Model
      * VPC, then you must supply the network interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
@@ -1002,7 +1002,7 @@ namespace Model
      * VPC, then you must supply the network interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
@@ -1030,7 +1030,7 @@ namespace Model
      * VPC, then you must supply the network interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
@@ -1058,7 +1058,7 @@ namespace Model
      * VPC, then you must supply the network interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
@@ -1086,7 +1086,7 @@ namespace Model
      * VPC, then you must supply the network interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
@@ -1114,7 +1114,7 @@ namespace Model
      * VPC, then you must supply the network interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
@@ -1142,7 +1142,7 @@ namespace Model
      * VPC, then you must supply the network interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,

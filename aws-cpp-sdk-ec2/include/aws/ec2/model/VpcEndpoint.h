@@ -457,6 +457,27 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether the VPC Endpoint is being managed by its service.</p>
+     */
+    inline bool GetRequesterManaged() const{ return m_requesterManaged; }
+
+    /**
+     * <p>Indicates whether the VPC Endpoint is being managed by its service.</p>
+     */
+    inline bool RequesterManagedHasBeenSet() const { return m_requesterManagedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the VPC Endpoint is being managed by its service.</p>
+     */
+    inline void SetRequesterManaged(bool value) { m_requesterManagedHasBeenSet = true; m_requesterManaged = value; }
+
+    /**
+     * <p>Indicates whether the VPC Endpoint is being managed by its service.</p>
+     */
+    inline VpcEndpoint& WithRequesterManaged(bool value) { SetRequesterManaged(value); return *this;}
+
+
+    /**
      * <p>(Interface endpoint) One or more network interfaces for the endpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNetworkInterfaceIds() const{ return m_networkInterfaceIds; }
@@ -604,6 +625,9 @@ namespace Model
 
     bool m_privateDnsEnabled;
     bool m_privateDnsEnabledHasBeenSet;
+
+    bool m_requesterManaged;
+    bool m_requesterManagedHasBeenSet;
 
     Aws::Vector<Aws::String> m_networkInterfaceIds;
     bool m_networkInterfaceIdsHasBeenSet;

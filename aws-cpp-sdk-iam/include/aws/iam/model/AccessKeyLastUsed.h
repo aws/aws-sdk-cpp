@@ -194,7 +194,7 @@ namespace Model
      * used since IAM began tracking this information.</p> </li> <li> <p>There is no
      * sign-in data associated with the user</p> </li> </ul> <p>For more information
      * about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a> in the Amazon Web Services General Reference.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
@@ -206,7 +206,7 @@ namespace Model
      * used since IAM began tracking this information.</p> </li> <li> <p>There is no
      * sign-in data associated with the user</p> </li> </ul> <p>For more information
      * about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a> in the Amazon Web Services General Reference.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
@@ -218,7 +218,7 @@ namespace Model
      * used since IAM began tracking this information.</p> </li> <li> <p>There is no
      * sign-in data associated with the user</p> </li> </ul> <p>For more information
      * about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a> in the Amazon Web Services General Reference.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
@@ -230,7 +230,7 @@ namespace Model
      * used since IAM began tracking this information.</p> </li> <li> <p>There is no
      * sign-in data associated with the user</p> </li> </ul> <p>For more information
      * about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a> in the Amazon Web Services General Reference.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
@@ -242,7 +242,7 @@ namespace Model
      * used since IAM began tracking this information.</p> </li> <li> <p>There is no
      * sign-in data associated with the user</p> </li> </ul> <p>For more information
      * about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a> in the Amazon Web Services General Reference.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
@@ -254,7 +254,7 @@ namespace Model
      * used since IAM began tracking this information.</p> </li> <li> <p>There is no
      * sign-in data associated with the user</p> </li> </ul> <p>For more information
      * about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a> in the Amazon Web Services General Reference.</p>
      */
     inline AccessKeyLastUsed& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
@@ -266,7 +266,7 @@ namespace Model
      * used since IAM began tracking this information.</p> </li> <li> <p>There is no
      * sign-in data associated with the user</p> </li> </ul> <p>For more information
      * about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a> in the Amazon Web Services General Reference.</p>
      */
     inline AccessKeyLastUsed& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
@@ -278,7 +278,7 @@ namespace Model
      * used since IAM began tracking this information.</p> </li> <li> <p>There is no
      * sign-in data associated with the user</p> </li> </ul> <p>For more information
      * about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a> in the Amazon Web Services General Reference.</p>
      */
     inline AccessKeyLastUsed& WithRegion(const char* value) { SetRegion(value); return *this;}

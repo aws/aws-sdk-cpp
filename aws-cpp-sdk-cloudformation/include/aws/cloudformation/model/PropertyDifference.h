@@ -40,7 +40,7 @@ namespace Model
    * template parameters. These will be present only for resources whose
    * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. For more
    * information, see <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
    * Unregulated Configuration Changes to Stacks and Resources</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PropertyDifference">AWS

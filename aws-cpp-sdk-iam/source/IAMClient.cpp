@@ -144,6 +144,7 @@
 #include <aws/iam/model/ResetServiceSpecificCredentialRequest.h>
 #include <aws/iam/model/ResyncMFADeviceRequest.h>
 #include <aws/iam/model/SetDefaultPolicyVersionRequest.h>
+#include <aws/iam/model/SetSecurityTokenServicePreferencesRequest.h>
 #include <aws/iam/model/SimulateCustomPolicyRequest.h>
 #include <aws/iam/model/SimulatePrincipalPolicyRequest.h>
 #include <aws/iam/model/TagRoleRequest.h>
@@ -4238,6 +4239,41 @@ void IAMClient::SetDefaultPolicyVersionAsync(const SetDefaultPolicyVersionReques
 void IAMClient::SetDefaultPolicyVersionAsyncHelper(const SetDefaultPolicyVersionRequest& request, const SetDefaultPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SetDefaultPolicyVersion(request), context);
+}
+
+SetSecurityTokenServicePreferencesOutcome IAMClient::SetSecurityTokenServicePreferences(const SetSecurityTokenServicePreferencesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SetSecurityTokenServicePreferencesOutcome(NoResult());
+  }
+  else
+  {
+    return SetSecurityTokenServicePreferencesOutcome(outcome.GetError());
+  }
+}
+
+SetSecurityTokenServicePreferencesOutcomeCallable IAMClient::SetSecurityTokenServicePreferencesCallable(const SetSecurityTokenServicePreferencesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SetSecurityTokenServicePreferencesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetSecurityTokenServicePreferences(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::SetSecurityTokenServicePreferencesAsync(const SetSecurityTokenServicePreferencesRequest& request, const SetSecurityTokenServicePreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SetSecurityTokenServicePreferencesAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::SetSecurityTokenServicePreferencesAsyncHelper(const SetSecurityTokenServicePreferencesRequest& request, const SetSecurityTokenServicePreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SetSecurityTokenServicePreferences(request), context);
 }
 
 SimulateCustomPolicyOutcome IAMClient::SimulateCustomPolicy(const SimulateCustomPolicyRequest& request) const

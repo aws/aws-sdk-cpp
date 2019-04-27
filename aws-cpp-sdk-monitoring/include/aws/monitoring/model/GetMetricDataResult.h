@@ -126,65 +126,86 @@ namespace Model
 
 
     /**
-     * <p>Contains a message about the operation or the results, if the operation
-     * results in such a message. Examples of messages that may be returned include
-     * <code>Maximum number of allowed metrics exceeded</code> and <code>You are not
-     * authorized to search one or more metrics</code>. If there is a message, as much
-     * of the operation as possible is still executed.</p>
+     * <p>Contains a message about this <code>GetMetricData</code> operation, if the
+     * operation results in such a message. An example of a message that may be
+     * returned is <code>Maximum number of allowed metrics exceeded</code>. If there is
+     * a message, as much of the operation as possible is still executed.</p> <p>A
+     * message appears here only if it is related to the global
+     * <code>GetMetricData</code> operation. Any message about a specific metric
+     * returned by the operation appears in the <code>MetricDataResult</code> object
+     * returned for that metric.</p>
      */
     inline const Aws::Vector<MessageData>& GetMessages() const{ return m_messages; }
 
     /**
-     * <p>Contains a message about the operation or the results, if the operation
-     * results in such a message. Examples of messages that may be returned include
-     * <code>Maximum number of allowed metrics exceeded</code> and <code>You are not
-     * authorized to search one or more metrics</code>. If there is a message, as much
-     * of the operation as possible is still executed.</p>
+     * <p>Contains a message about this <code>GetMetricData</code> operation, if the
+     * operation results in such a message. An example of a message that may be
+     * returned is <code>Maximum number of allowed metrics exceeded</code>. If there is
+     * a message, as much of the operation as possible is still executed.</p> <p>A
+     * message appears here only if it is related to the global
+     * <code>GetMetricData</code> operation. Any message about a specific metric
+     * returned by the operation appears in the <code>MetricDataResult</code> object
+     * returned for that metric.</p>
      */
     inline void SetMessages(const Aws::Vector<MessageData>& value) { m_messages = value; }
 
     /**
-     * <p>Contains a message about the operation or the results, if the operation
-     * results in such a message. Examples of messages that may be returned include
-     * <code>Maximum number of allowed metrics exceeded</code> and <code>You are not
-     * authorized to search one or more metrics</code>. If there is a message, as much
-     * of the operation as possible is still executed.</p>
+     * <p>Contains a message about this <code>GetMetricData</code> operation, if the
+     * operation results in such a message. An example of a message that may be
+     * returned is <code>Maximum number of allowed metrics exceeded</code>. If there is
+     * a message, as much of the operation as possible is still executed.</p> <p>A
+     * message appears here only if it is related to the global
+     * <code>GetMetricData</code> operation. Any message about a specific metric
+     * returned by the operation appears in the <code>MetricDataResult</code> object
+     * returned for that metric.</p>
      */
     inline void SetMessages(Aws::Vector<MessageData>&& value) { m_messages = std::move(value); }
 
     /**
-     * <p>Contains a message about the operation or the results, if the operation
-     * results in such a message. Examples of messages that may be returned include
-     * <code>Maximum number of allowed metrics exceeded</code> and <code>You are not
-     * authorized to search one or more metrics</code>. If there is a message, as much
-     * of the operation as possible is still executed.</p>
+     * <p>Contains a message about this <code>GetMetricData</code> operation, if the
+     * operation results in such a message. An example of a message that may be
+     * returned is <code>Maximum number of allowed metrics exceeded</code>. If there is
+     * a message, as much of the operation as possible is still executed.</p> <p>A
+     * message appears here only if it is related to the global
+     * <code>GetMetricData</code> operation. Any message about a specific metric
+     * returned by the operation appears in the <code>MetricDataResult</code> object
+     * returned for that metric.</p>
      */
     inline GetMetricDataResult& WithMessages(const Aws::Vector<MessageData>& value) { SetMessages(value); return *this;}
 
     /**
-     * <p>Contains a message about the operation or the results, if the operation
-     * results in such a message. Examples of messages that may be returned include
-     * <code>Maximum number of allowed metrics exceeded</code> and <code>You are not
-     * authorized to search one or more metrics</code>. If there is a message, as much
-     * of the operation as possible is still executed.</p>
+     * <p>Contains a message about this <code>GetMetricData</code> operation, if the
+     * operation results in such a message. An example of a message that may be
+     * returned is <code>Maximum number of allowed metrics exceeded</code>. If there is
+     * a message, as much of the operation as possible is still executed.</p> <p>A
+     * message appears here only if it is related to the global
+     * <code>GetMetricData</code> operation. Any message about a specific metric
+     * returned by the operation appears in the <code>MetricDataResult</code> object
+     * returned for that metric.</p>
      */
     inline GetMetricDataResult& WithMessages(Aws::Vector<MessageData>&& value) { SetMessages(std::move(value)); return *this;}
 
     /**
-     * <p>Contains a message about the operation or the results, if the operation
-     * results in such a message. Examples of messages that may be returned include
-     * <code>Maximum number of allowed metrics exceeded</code> and <code>You are not
-     * authorized to search one or more metrics</code>. If there is a message, as much
-     * of the operation as possible is still executed.</p>
+     * <p>Contains a message about this <code>GetMetricData</code> operation, if the
+     * operation results in such a message. An example of a message that may be
+     * returned is <code>Maximum number of allowed metrics exceeded</code>. If there is
+     * a message, as much of the operation as possible is still executed.</p> <p>A
+     * message appears here only if it is related to the global
+     * <code>GetMetricData</code> operation. Any message about a specific metric
+     * returned by the operation appears in the <code>MetricDataResult</code> object
+     * returned for that metric.</p>
      */
     inline GetMetricDataResult& AddMessages(const MessageData& value) { m_messages.push_back(value); return *this; }
 
     /**
-     * <p>Contains a message about the operation or the results, if the operation
-     * results in such a message. Examples of messages that may be returned include
-     * <code>Maximum number of allowed metrics exceeded</code> and <code>You are not
-     * authorized to search one or more metrics</code>. If there is a message, as much
-     * of the operation as possible is still executed.</p>
+     * <p>Contains a message about this <code>GetMetricData</code> operation, if the
+     * operation results in such a message. An example of a message that may be
+     * returned is <code>Maximum number of allowed metrics exceeded</code>. If there is
+     * a message, as much of the operation as possible is still executed.</p> <p>A
+     * message appears here only if it is related to the global
+     * <code>GetMetricData</code> operation. Any message about a specific metric
+     * returned by the operation appears in the <code>MetricDataResult</code> object
+     * returned for that metric.</p>
      */
     inline GetMetricDataResult& AddMessages(MessageData&& value) { m_messages.push_back(std::move(value)); return *this; }
 

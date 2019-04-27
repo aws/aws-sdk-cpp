@@ -48,6 +48,8 @@ SMBFileShareInfo::SMBFileShareInfo() :
     m_guessMIMETypeEnabledHasBeenSet(false),
     m_requesterPays(false),
     m_requesterPaysHasBeenSet(false),
+    m_sMBACLEnabled(false),
+    m_sMBACLEnabledHasBeenSet(false),
     m_validUserListHasBeenSet(false),
     m_invalidUserListHasBeenSet(false),
     m_authenticationHasBeenSet(false),
@@ -75,6 +77,8 @@ SMBFileShareInfo::SMBFileShareInfo(JsonView jsonValue) :
     m_guessMIMETypeEnabledHasBeenSet(false),
     m_requesterPays(false),
     m_requesterPaysHasBeenSet(false),
+    m_sMBACLEnabled(false),
+    m_sMBACLEnabledHasBeenSet(false),
     m_validUserListHasBeenSet(false),
     m_invalidUserListHasBeenSet(false),
     m_authenticationHasBeenSet(false),
@@ -181,6 +185,13 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
     m_requesterPays = jsonValue.GetBool("RequesterPays");
 
     m_requesterPaysHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SMBACLEnabled"))
+  {
+    m_sMBACLEnabled = jsonValue.GetBool("SMBACLEnabled");
+
+    m_sMBACLEnabledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ValidUserList"))
@@ -307,6 +318,12 @@ JsonValue SMBFileShareInfo::Jsonize() const
   if(m_requesterPaysHasBeenSet)
   {
    payload.WithBool("RequesterPays", m_requesterPays);
+
+  }
+
+  if(m_sMBACLEnabledHasBeenSet)
+  {
+   payload.WithBool("SMBACLEnabled", m_sMBACLEnabled);
 
   }
 

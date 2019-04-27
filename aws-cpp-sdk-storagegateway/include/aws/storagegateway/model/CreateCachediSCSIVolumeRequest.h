@@ -17,6 +17,8 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/storagegateway/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -520,6 +522,79 @@ namespace Model
      */
     inline CreateCachediSCSIVolumeRequest& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}
 
+
+    /**
+     * <p>A list of up to 50 tags that can be assigned to a cached volume. Each tag is
+     * a key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of up to 50 tags that can be assigned to a cached volume. Each tag is
+     * a key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of up to 50 tags that can be assigned to a cached volume. Each tag is
+     * a key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of up to 50 tags that can be assigned to a cached volume. Each tag is
+     * a key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of up to 50 tags that can be assigned to a cached volume. Each tag is
+     * a key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline CreateCachediSCSIVolumeRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of up to 50 tags that can be assigned to a cached volume. Each tag is
+     * a key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline CreateCachediSCSIVolumeRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of up to 50 tags that can be assigned to a cached volume. Each tag is
+     * a key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline CreateCachediSCSIVolumeRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of up to 50 tags that can be assigned to a cached volume. Each tag is
+     * a key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline CreateCachediSCSIVolumeRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_gatewayARN;
@@ -548,6 +623,9 @@ namespace Model
 
     Aws::String m_kMSKey;
     bool m_kMSKeyHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

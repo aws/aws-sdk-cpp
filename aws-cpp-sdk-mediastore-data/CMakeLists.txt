@@ -71,11 +71,6 @@ setup_install()
 install (FILES ${AWS_MEDIASTORE-DATA_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/mediastore-data)
 install (FILES ${AWS_MEDIASTORE-DATA_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/mediastore-data/model)
 
-if(PLATFORM_WINDOWS AND MSVC)
-    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
-    install (FILES ${NUGET_FILES} DESTINATION nuget)
-endif()
-
 do_packaging()
 
 

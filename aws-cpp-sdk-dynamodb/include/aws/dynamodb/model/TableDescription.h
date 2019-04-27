@@ -194,7 +194,7 @@ namespace Model
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
      * </note> </li> </ul> <p>For more information about primary keys, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const{ return m_keySchema; }
@@ -212,7 +212,7 @@ namespace Model
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
      * </note> </li> </ul> <p>For more information about primary keys, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool KeySchemaHasBeenSet() const { return m_keySchemaHasBeenSet; }
@@ -230,7 +230,7 @@ namespace Model
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
      * </note> </li> </ul> <p>For more information about primary keys, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetKeySchema(const Aws::Vector<KeySchemaElement>& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
@@ -248,7 +248,7 @@ namespace Model
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
      * </note> </li> </ul> <p>For more information about primary keys, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetKeySchema(Aws::Vector<KeySchemaElement>&& value) { m_keySchemaHasBeenSet = true; m_keySchema = std::move(value); }
@@ -266,7 +266,7 @@ namespace Model
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
      * </note> </li> </ul> <p>For more information about primary keys, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline TableDescription& WithKeySchema(const Aws::Vector<KeySchemaElement>& value) { SetKeySchema(value); return *this;}
@@ -284,7 +284,7 @@ namespace Model
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
      * </note> </li> </ul> <p>For more information about primary keys, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline TableDescription& WithKeySchema(Aws::Vector<KeySchemaElement>&& value) { SetKeySchema(std::move(value)); return *this;}
@@ -302,7 +302,7 @@ namespace Model
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
      * </note> </li> </ul> <p>For more information about primary keys, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline TableDescription& AddKeySchema(const KeySchemaElement& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
@@ -320,7 +320,7 @@ namespace Model
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
      * </note> </li> </ul> <p>For more information about primary keys, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline TableDescription& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(std::move(value)); return *this; }

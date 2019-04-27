@@ -45,8 +45,12 @@ Job::Job() :
     m_timeoutHasBeenSet(false),
     m_maxCapacity(0.0),
     m_maxCapacityHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false)
+    m_workerType(WorkerType::NOT_SET),
+    m_workerTypeHasBeenSet(false),
+    m_numberOfWorkers(0),
+    m_numberOfWorkersHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false),
+    m_notificationPropertyHasBeenSet(false)
 {
 }
 
@@ -67,8 +71,12 @@ Job::Job(JsonView jsonValue) :
     m_timeoutHasBeenSet(false),
     m_maxCapacity(0.0),
     m_maxCapacityHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false)
+    m_workerType(WorkerType::NOT_SET),
+    m_workerTypeHasBeenSet(false),
+    m_numberOfWorkers(0),
+    m_numberOfWorkersHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false),
+    m_notificationPropertyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -169,11 +177,18 @@ Job& Job::operator =(JsonView jsonValue)
     m_maxCapacityHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("NotificationProperty"))
+  if(jsonValue.ValueExists("WorkerType"))
   {
-    m_notificationProperty = jsonValue.GetObject("NotificationProperty");
+    m_workerType = WorkerTypeMapper::GetWorkerTypeForName(jsonValue.GetString("WorkerType"));
 
-    m_notificationPropertyHasBeenSet = true;
+    m_workerTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NumberOfWorkers"))
+  {
+    m_numberOfWorkers = jsonValue.GetInteger("NumberOfWorkers");
+
+    m_numberOfWorkersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SecurityConfiguration"))
@@ -181,6 +196,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_securityConfiguration = jsonValue.GetString("SecurityConfiguration");
 
     m_securityConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NotificationProperty"))
+  {
+    m_notificationProperty = jsonValue.GetObject("NotificationProperty");
+
+    m_notificationPropertyHasBeenSet = true;
   }
 
   return *this;
@@ -271,15 +293,26 @@ JsonValue Job::Jsonize() const
 
   }
 
-  if(m_notificationPropertyHasBeenSet)
+  if(m_workerTypeHasBeenSet)
   {
-   payload.WithObject("NotificationProperty", m_notificationProperty.Jsonize());
+   payload.WithString("WorkerType", WorkerTypeMapper::GetNameForWorkerType(m_workerType));
+  }
+
+  if(m_numberOfWorkersHasBeenSet)
+  {
+   payload.WithInteger("NumberOfWorkers", m_numberOfWorkers);
 
   }
 
   if(m_securityConfigurationHasBeenSet)
   {
    payload.WithString("SecurityConfiguration", m_securityConfiguration);
+
+  }
+
+  if(m_notificationPropertyHasBeenSet)
+  {
+   payload.WithObject("NotificationProperty", m_notificationProperty.Jsonize());
 
   }
 

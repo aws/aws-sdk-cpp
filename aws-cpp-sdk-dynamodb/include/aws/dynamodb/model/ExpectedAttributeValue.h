@@ -71,7 +71,7 @@ namespace Model
      * <p>Represents the data for the expected attribute.</p> <p>Each attribute value
      * is described as a name-value pair. The name is the data type, and the value is
      * the data itself.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
      * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const AttributeValue& GetValue() const{ return m_value; }
@@ -80,7 +80,7 @@ namespace Model
      * <p>Represents the data for the expected attribute.</p> <p>Each attribute value
      * is described as a name-value pair. The name is the data type, and the value is
      * the data itself.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
      * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
@@ -89,7 +89,7 @@ namespace Model
      * <p>Represents the data for the expected attribute.</p> <p>Each attribute value
      * is described as a name-value pair. The name is the data type, and the value is
      * the data itself.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
      * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetValue(const AttributeValue& value) { m_valueHasBeenSet = true; m_value = value; }
@@ -98,7 +98,7 @@ namespace Model
      * <p>Represents the data for the expected attribute.</p> <p>Each attribute value
      * is described as a name-value pair. The name is the data type, and the value is
      * the data itself.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
      * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetValue(AttributeValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
@@ -107,7 +107,7 @@ namespace Model
      * <p>Represents the data for the expected attribute.</p> <p>Each attribute value
      * is described as a name-value pair. The name is the data type, and the value is
      * the data itself.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
      * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ExpectedAttributeValue& WithValue(const AttributeValue& value) { SetValue(value); return *this;}
@@ -116,7 +116,7 @@ namespace Model
      * <p>Represents the data for the expected attribute.</p> <p>Each attribute value
      * is described as a name-value pair. The name is the data type, and the value is
      * the data itself.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
      * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ExpectedAttributeValue& WithValue(AttributeValue&& value) { SetValue(std::move(value)); return *this;}
@@ -885,7 +885,7 @@ namespace Model
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Vector<AttributeValue>& GetAttributeValueList() const{ return m_attributeValueList; }
@@ -901,7 +901,7 @@ namespace Model
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool AttributeValueListHasBeenSet() const { return m_attributeValueListHasBeenSet; }
@@ -917,7 +917,7 @@ namespace Model
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetAttributeValueList(const Aws::Vector<AttributeValue>& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList = value; }
@@ -933,7 +933,7 @@ namespace Model
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetAttributeValueList(Aws::Vector<AttributeValue>&& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList = std::move(value); }
@@ -949,7 +949,7 @@ namespace Model
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ExpectedAttributeValue& WithAttributeValueList(const Aws::Vector<AttributeValue>& value) { SetAttributeValueList(value); return *this;}
@@ -965,7 +965,7 @@ namespace Model
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ExpectedAttributeValue& WithAttributeValueList(Aws::Vector<AttributeValue>&& value) { SetAttributeValueList(std::move(value)); return *this;}
@@ -981,7 +981,7 @@ namespace Model
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ExpectedAttributeValue& AddAttributeValueList(const AttributeValue& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList.push_back(value); return *this; }
@@ -997,7 +997,7 @@ namespace Model
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ExpectedAttributeValue& AddAttributeValueList(AttributeValue&& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList.push_back(std::move(value)); return *this; }

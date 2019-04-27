@@ -29,9 +29,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateImage.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImageRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_EC2_API CreateImageRequest : public EC2Request
   {
@@ -52,58 +49,58 @@ namespace Model
   public:
 
     /**
-     * <p>Information about one or more block device mappings. This parameter cannot be
-     * used to modify the encryption status of existing volumes or snapshots. To create
-     * an AMI with encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>Tthe block device mappings. This parameter cannot be used to modify the
+     * encryption status of existing volumes or snapshots. To create an AMI with
+     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>Information about one or more block device mappings. This parameter cannot be
-     * used to modify the encryption status of existing volumes or snapshots. To create
-     * an AMI with encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>Tthe block device mappings. This parameter cannot be used to modify the
+     * encryption status of existing volumes or snapshots. To create an AMI with
+     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
      */
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
     /**
-     * <p>Information about one or more block device mappings. This parameter cannot be
-     * used to modify the encryption status of existing volumes or snapshots. To create
-     * an AMI with encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>Tthe block device mappings. This parameter cannot be used to modify the
+     * encryption status of existing volumes or snapshots. To create an AMI with
+     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>Information about one or more block device mappings. This parameter cannot be
-     * used to modify the encryption status of existing volumes or snapshots. To create
-     * an AMI with encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>Tthe block device mappings. This parameter cannot be used to modify the
+     * encryption status of existing volumes or snapshots. To create an AMI with
+     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
-     * <p>Information about one or more block device mappings. This parameter cannot be
-     * used to modify the encryption status of existing volumes or snapshots. To create
-     * an AMI with encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>Tthe block device mappings. This parameter cannot be used to modify the
+     * encryption status of existing volumes or snapshots. To create an AMI with
+     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
      */
     inline CreateImageRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>Information about one or more block device mappings. This parameter cannot be
-     * used to modify the encryption status of existing volumes or snapshots. To create
-     * an AMI with encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>Tthe block device mappings. This parameter cannot be used to modify the
+     * encryption status of existing volumes or snapshots. To create an AMI with
+     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
      */
     inline CreateImageRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
-     * <p>Information about one or more block device mappings. This parameter cannot be
-     * used to modify the encryption status of existing volumes or snapshots. To create
-     * an AMI with encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>Tthe block device mappings. This parameter cannot be used to modify the
+     * encryption status of existing volumes or snapshots. To create an AMI with
+     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
      */
     inline CreateImageRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>Information about one or more block device mappings. This parameter cannot be
-     * used to modify the encryption status of existing volumes or snapshots. To create
-     * an AMI with encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     * <p>Tthe block device mappings. This parameter cannot be used to modify the
+     * encryption status of existing volumes or snapshots. To create an AMI with
+     * encrypted snapshots, use the <a>CopyImage</a> action.</p>
      */
     inline CreateImageRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 

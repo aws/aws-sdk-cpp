@@ -29,9 +29,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeVolumes.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeVolumesRequest : public EC2Request
   {
@@ -52,8 +49,8 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> -
-     * The time stamp when the attachment initiated.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> - The time
+     * stamp when the attachment initiated.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Whether the volume is deleted on
      * instance termination.</p> </li> <li> <p> <code>attachment.device</code> - The
      * device name specified in the block device mapping (for example,
@@ -86,8 +83,8 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> -
-     * The time stamp when the attachment initiated.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> - The time
+     * stamp when the attachment initiated.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Whether the volume is deleted on
      * instance termination.</p> </li> <li> <p> <code>attachment.device</code> - The
      * device name specified in the block device mapping (for example,
@@ -120,8 +117,8 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> -
-     * The time stamp when the attachment initiated.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> - The time
+     * stamp when the attachment initiated.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Whether the volume is deleted on
      * instance termination.</p> </li> <li> <p> <code>attachment.device</code> - The
      * device name specified in the block device mapping (for example,
@@ -154,8 +151,8 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> -
-     * The time stamp when the attachment initiated.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> - The time
+     * stamp when the attachment initiated.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Whether the volume is deleted on
      * instance termination.</p> </li> <li> <p> <code>attachment.device</code> - The
      * device name specified in the block device mapping (for example,
@@ -188,8 +185,8 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> -
-     * The time stamp when the attachment initiated.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> - The time
+     * stamp when the attachment initiated.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Whether the volume is deleted on
      * instance termination.</p> </li> <li> <p> <code>attachment.device</code> - The
      * device name specified in the block device mapping (for example,
@@ -222,8 +219,8 @@ namespace Model
     inline DescribeVolumesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> -
-     * The time stamp when the attachment initiated.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> - The time
+     * stamp when the attachment initiated.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Whether the volume is deleted on
      * instance termination.</p> </li> <li> <p> <code>attachment.device</code> - The
      * device name specified in the block device mapping (for example,
@@ -256,8 +253,8 @@ namespace Model
     inline DescribeVolumesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> -
-     * The time stamp when the attachment initiated.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> - The time
+     * stamp when the attachment initiated.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Whether the volume is deleted on
      * instance termination.</p> </li> <li> <p> <code>attachment.device</code> - The
      * device name specified in the block device mapping (for example,
@@ -290,8 +287,8 @@ namespace Model
     inline DescribeVolumesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> -
-     * The time stamp when the attachment initiated.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> - The time
+     * stamp when the attachment initiated.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Whether the volume is deleted on
      * instance termination.</p> </li> <li> <p> <code>attachment.device</code> - The
      * device name specified in the block device mapping (for example,
@@ -325,47 +322,47 @@ namespace Model
 
 
     /**
-     * <p>One or more volume IDs.</p>
+     * <p>The volume IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVolumeIds() const{ return m_volumeIds; }
 
     /**
-     * <p>One or more volume IDs.</p>
+     * <p>The volume IDs.</p>
      */
     inline bool VolumeIdsHasBeenSet() const { return m_volumeIdsHasBeenSet; }
 
     /**
-     * <p>One or more volume IDs.</p>
+     * <p>The volume IDs.</p>
      */
     inline void SetVolumeIds(const Aws::Vector<Aws::String>& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = value; }
 
     /**
-     * <p>One or more volume IDs.</p>
+     * <p>The volume IDs.</p>
      */
     inline void SetVolumeIds(Aws::Vector<Aws::String>&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = std::move(value); }
 
     /**
-     * <p>One or more volume IDs.</p>
+     * <p>The volume IDs.</p>
      */
     inline DescribeVolumesRequest& WithVolumeIds(const Aws::Vector<Aws::String>& value) { SetVolumeIds(value); return *this;}
 
     /**
-     * <p>One or more volume IDs.</p>
+     * <p>The volume IDs.</p>
      */
     inline DescribeVolumesRequest& WithVolumeIds(Aws::Vector<Aws::String>&& value) { SetVolumeIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more volume IDs.</p>
+     * <p>The volume IDs.</p>
      */
     inline DescribeVolumesRequest& AddVolumeIds(const Aws::String& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more volume IDs.</p>
+     * <p>The volume IDs.</p>
      */
     inline DescribeVolumesRequest& AddVolumeIds(Aws::String&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more volume IDs.</p>
+     * <p>The volume IDs.</p>
      */
     inline DescribeVolumesRequest& AddVolumeIds(const char* value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
 

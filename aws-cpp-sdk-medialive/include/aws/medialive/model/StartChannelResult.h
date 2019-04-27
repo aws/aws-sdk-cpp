@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/model/ChannelClass.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputSpecification.h>
@@ -90,6 +91,37 @@ namespace Model
      * The unique arn of the channel.
      */
     inline StartChannelResult& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline const ChannelClass& GetChannelClass() const{ return m_channelClass; }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline void SetChannelClass(const ChannelClass& value) { m_channelClass = value; }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline void SetChannelClass(ChannelClass&& value) { m_channelClass = std::move(value); }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline StartChannelResult& WithChannelClass(const ChannelClass& value) { SetChannelClass(value); return *this;}
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline StartChannelResult& WithChannelClass(ChannelClass&& value) { SetChannelClass(std::move(value)); return *this;}
 
 
     /**
@@ -496,6 +528,8 @@ one destination per
   private:
 
     Aws::String m_arn;
+
+    ChannelClass m_channelClass;
 
     Aws::Vector<OutputDestination> m_destinations;
 

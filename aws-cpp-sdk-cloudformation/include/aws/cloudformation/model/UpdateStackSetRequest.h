@@ -137,7 +137,7 @@ namespace Model
     /**
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.</p>
@@ -147,7 +147,7 @@ namespace Model
     /**
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.</p>
@@ -157,7 +157,7 @@ namespace Model
     /**
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.</p>
@@ -167,7 +167,7 @@ namespace Model
     /**
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.</p>
@@ -177,7 +177,7 @@ namespace Model
     /**
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.</p>
@@ -187,7 +187,7 @@ namespace Model
     /**
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.</p>
@@ -197,7 +197,7 @@ namespace Model
     /**
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.</p>
@@ -207,7 +207,7 @@ namespace Model
     /**
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.</p>
@@ -219,7 +219,7 @@ namespace Model
      * <p>The location of the file that contains the template body. The URL must point
      * to a template (maximum size: 460,800 bytes) that is located in an Amazon S3
      * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true. </p>
@@ -230,7 +230,7 @@ namespace Model
      * <p>The location of the file that contains the template body. The URL must point
      * to a template (maximum size: 460,800 bytes) that is located in an Amazon S3
      * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true. </p>
@@ -241,7 +241,7 @@ namespace Model
      * <p>The location of the file that contains the template body. The URL must point
      * to a template (maximum size: 460,800 bytes) that is located in an Amazon S3
      * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true. </p>
@@ -252,7 +252,7 @@ namespace Model
      * <p>The location of the file that contains the template body. The URL must point
      * to a template (maximum size: 460,800 bytes) that is located in an Amazon S3
      * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true. </p>
@@ -263,7 +263,7 @@ namespace Model
      * <p>The location of the file that contains the template body. The URL must point
      * to a template (maximum size: 460,800 bytes) that is located in an Amazon S3
      * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true. </p>
@@ -274,7 +274,7 @@ namespace Model
      * <p>The location of the file that contains the template body. The URL must point
      * to a template (maximum size: 460,800 bytes) that is located in an Amazon S3
      * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true. </p>
@@ -285,7 +285,7 @@ namespace Model
      * <p>The location of the file that contains the template body. The URL must point
      * to a template (maximum size: 460,800 bytes) that is located in an Amazon S3
      * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true. </p>
@@ -296,7 +296,7 @@ namespace Model
      * <p>The location of the file that contains the template body. The URL must point
      * to a template (maximum size: 460,800 bytes) that is located in an Amazon S3
      * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true. </p>
@@ -397,19 +397,19 @@ namespace Model
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      * AWS::IAM::InstanceProfile</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
@@ -451,19 +451,19 @@ namespace Model
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      * AWS::IAM::InstanceProfile</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
@@ -505,19 +505,19 @@ namespace Model
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      * AWS::IAM::InstanceProfile</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
@@ -559,19 +559,19 @@ namespace Model
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      * AWS::IAM::InstanceProfile</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
@@ -613,19 +613,19 @@ namespace Model
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      * AWS::IAM::InstanceProfile</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
@@ -667,19 +667,19 @@ namespace Model
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      * AWS::IAM::InstanceProfile</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
@@ -721,19 +721,19 @@ namespace Model
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      * AWS::IAM::InstanceProfile</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
@@ -775,19 +775,19 @@ namespace Model
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      * AWS::IAM::InstanceProfile</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
@@ -1048,13 +1048,12 @@ namespace Model
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
-     * Guide</i>.</p> <p> If you specify a customized administrator role, AWS
-     * CloudFormation uses that role to update the stack. If you do not specify a
-     * customized administrator role, AWS CloudFormation performs the update using the
-     * role previously associated with the stack set, so long as you have permissions
-     * to perform operations on the stack set.</p>
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
+     * Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User
+     * Guide</i>.</p> <p>If you specified a customized administrator role when you
+     * created the stack set, you must specify a customized administrator role, even if
+     * it is the same customized administrator role used with this stack set
+     * previously.</p>
      */
     inline const Aws::String& GetAdministrationRoleARN() const{ return m_administrationRoleARN; }
 
@@ -1063,13 +1062,12 @@ namespace Model
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
-     * Guide</i>.</p> <p> If you specify a customized administrator role, AWS
-     * CloudFormation uses that role to update the stack. If you do not specify a
-     * customized administrator role, AWS CloudFormation performs the update using the
-     * role previously associated with the stack set, so long as you have permissions
-     * to perform operations on the stack set.</p>
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
+     * Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User
+     * Guide</i>.</p> <p>If you specified a customized administrator role when you
+     * created the stack set, you must specify a customized administrator role, even if
+     * it is the same customized administrator role used with this stack set
+     * previously.</p>
      */
     inline bool AdministrationRoleARNHasBeenSet() const { return m_administrationRoleARNHasBeenSet; }
 
@@ -1078,13 +1076,12 @@ namespace Model
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
-     * Guide</i>.</p> <p> If you specify a customized administrator role, AWS
-     * CloudFormation uses that role to update the stack. If you do not specify a
-     * customized administrator role, AWS CloudFormation performs the update using the
-     * role previously associated with the stack set, so long as you have permissions
-     * to perform operations on the stack set.</p>
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
+     * Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User
+     * Guide</i>.</p> <p>If you specified a customized administrator role when you
+     * created the stack set, you must specify a customized administrator role, even if
+     * it is the same customized administrator role used with this stack set
+     * previously.</p>
      */
     inline void SetAdministrationRoleARN(const Aws::String& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = value; }
 
@@ -1093,13 +1090,12 @@ namespace Model
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
-     * Guide</i>.</p> <p> If you specify a customized administrator role, AWS
-     * CloudFormation uses that role to update the stack. If you do not specify a
-     * customized administrator role, AWS CloudFormation performs the update using the
-     * role previously associated with the stack set, so long as you have permissions
-     * to perform operations on the stack set.</p>
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
+     * Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User
+     * Guide</i>.</p> <p>If you specified a customized administrator role when you
+     * created the stack set, you must specify a customized administrator role, even if
+     * it is the same customized administrator role used with this stack set
+     * previously.</p>
      */
     inline void SetAdministrationRoleARN(Aws::String&& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = std::move(value); }
 
@@ -1108,13 +1104,12 @@ namespace Model
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
-     * Guide</i>.</p> <p> If you specify a customized administrator role, AWS
-     * CloudFormation uses that role to update the stack. If you do not specify a
-     * customized administrator role, AWS CloudFormation performs the update using the
-     * role previously associated with the stack set, so long as you have permissions
-     * to perform operations on the stack set.</p>
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
+     * Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User
+     * Guide</i>.</p> <p>If you specified a customized administrator role when you
+     * created the stack set, you must specify a customized administrator role, even if
+     * it is the same customized administrator role used with this stack set
+     * previously.</p>
      */
     inline void SetAdministrationRoleARN(const char* value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN.assign(value); }
 
@@ -1123,13 +1118,12 @@ namespace Model
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
-     * Guide</i>.</p> <p> If you specify a customized administrator role, AWS
-     * CloudFormation uses that role to update the stack. If you do not specify a
-     * customized administrator role, AWS CloudFormation performs the update using the
-     * role previously associated with the stack set, so long as you have permissions
-     * to perform operations on the stack set.</p>
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
+     * Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User
+     * Guide</i>.</p> <p>If you specified a customized administrator role when you
+     * created the stack set, you must specify a customized administrator role, even if
+     * it is the same customized administrator role used with this stack set
+     * previously.</p>
      */
     inline UpdateStackSetRequest& WithAdministrationRoleARN(const Aws::String& value) { SetAdministrationRoleARN(value); return *this;}
 
@@ -1138,13 +1132,12 @@ namespace Model
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
-     * Guide</i>.</p> <p> If you specify a customized administrator role, AWS
-     * CloudFormation uses that role to update the stack. If you do not specify a
-     * customized administrator role, AWS CloudFormation performs the update using the
-     * role previously associated with the stack set, so long as you have permissions
-     * to perform operations on the stack set.</p>
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
+     * Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User
+     * Guide</i>.</p> <p>If you specified a customized administrator role when you
+     * created the stack set, you must specify a customized administrator role, even if
+     * it is the same customized administrator role used with this stack set
+     * previously.</p>
      */
     inline UpdateStackSetRequest& WithAdministrationRoleARN(Aws::String&& value) { SetAdministrationRoleARN(std::move(value)); return *this;}
 
@@ -1153,13 +1146,12 @@ namespace Model
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
-     * Guide</i>.</p> <p> If you specify a customized administrator role, AWS
-     * CloudFormation uses that role to update the stack. If you do not specify a
-     * customized administrator role, AWS CloudFormation performs the update using the
-     * role previously associated with the stack set, so long as you have permissions
-     * to perform operations on the stack set.</p>
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
+     * Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User
+     * Guide</i>.</p> <p>If you specified a customized administrator role when you
+     * created the stack set, you must specify a customized administrator role, even if
+     * it is the same customized administrator role used with this stack set
+     * previously.</p>
      */
     inline UpdateStackSetRequest& WithAdministrationRoleARN(const char* value) { SetAdministrationRoleARN(value); return *this;}
 

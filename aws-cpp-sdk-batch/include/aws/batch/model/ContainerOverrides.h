@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/batch/model/KeyValuePair.h>
+#include <aws/batch/model/ResourceRequirement.h>
 #include <utility>
 
 namespace Aws
@@ -284,6 +285,63 @@ namespace Model
      */
     inline ContainerOverrides& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. This value
+     * overrides the value set in the job definition. Currently, the only supported
+     * resource is <code>GPU</code>.</p>
+     */
+    inline const Aws::Vector<ResourceRequirement>& GetResourceRequirements() const{ return m_resourceRequirements; }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. This value
+     * overrides the value set in the job definition. Currently, the only supported
+     * resource is <code>GPU</code>.</p>
+     */
+    inline bool ResourceRequirementsHasBeenSet() const { return m_resourceRequirementsHasBeenSet; }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. This value
+     * overrides the value set in the job definition. Currently, the only supported
+     * resource is <code>GPU</code>.</p>
+     */
+    inline void SetResourceRequirements(const Aws::Vector<ResourceRequirement>& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = value; }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. This value
+     * overrides the value set in the job definition. Currently, the only supported
+     * resource is <code>GPU</code>.</p>
+     */
+    inline void SetResourceRequirements(Aws::Vector<ResourceRequirement>&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = std::move(value); }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. This value
+     * overrides the value set in the job definition. Currently, the only supported
+     * resource is <code>GPU</code>.</p>
+     */
+    inline ContainerOverrides& WithResourceRequirements(const Aws::Vector<ResourceRequirement>& value) { SetResourceRequirements(value); return *this;}
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. This value
+     * overrides the value set in the job definition. Currently, the only supported
+     * resource is <code>GPU</code>.</p>
+     */
+    inline ContainerOverrides& WithResourceRequirements(Aws::Vector<ResourceRequirement>&& value) { SetResourceRequirements(std::move(value)); return *this;}
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. This value
+     * overrides the value set in the job definition. Currently, the only supported
+     * resource is <code>GPU</code>.</p>
+     */
+    inline ContainerOverrides& AddResourceRequirements(const ResourceRequirement& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(value); return *this; }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. This value
+     * overrides the value set in the job definition. Currently, the only supported
+     * resource is <code>GPU</code>.</p>
+     */
+    inline ContainerOverrides& AddResourceRequirements(ResourceRequirement&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(std::move(value)); return *this; }
+
   private:
 
     int m_vcpus;
@@ -300,6 +358,9 @@ namespace Model
 
     Aws::Vector<KeyValuePair> m_environment;
     bool m_environmentHasBeenSet;
+
+    Aws::Vector<ResourceRequirement> m_resourceRequirements;
+    bool m_resourceRequirementsHasBeenSet;
   };
 
 } // namespace Model

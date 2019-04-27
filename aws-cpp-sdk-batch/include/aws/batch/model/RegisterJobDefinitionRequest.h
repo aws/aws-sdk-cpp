@@ -286,7 +286,7 @@ namespace Model
      * <p>An object with various properties specific to multi-node parallel jobs. If
      * you specify node properties for a job, it becomes a multi-node parallel job. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
      * Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's
      * <code>type</code> parameter is <code>container</code>, then you must specify
      * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
@@ -297,7 +297,7 @@ namespace Model
      * <p>An object with various properties specific to multi-node parallel jobs. If
      * you specify node properties for a job, it becomes a multi-node parallel job. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
      * Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's
      * <code>type</code> parameter is <code>container</code>, then you must specify
      * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
@@ -308,7 +308,7 @@ namespace Model
      * <p>An object with various properties specific to multi-node parallel jobs. If
      * you specify node properties for a job, it becomes a multi-node parallel job. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
      * Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's
      * <code>type</code> parameter is <code>container</code>, then you must specify
      * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
@@ -319,7 +319,7 @@ namespace Model
      * <p>An object with various properties specific to multi-node parallel jobs. If
      * you specify node properties for a job, it becomes a multi-node parallel job. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
      * Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's
      * <code>type</code> parameter is <code>container</code>, then you must specify
      * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
@@ -330,7 +330,7 @@ namespace Model
      * <p>An object with various properties specific to multi-node parallel jobs. If
      * you specify node properties for a job, it becomes a multi-node parallel job. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
      * Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's
      * <code>type</code> parameter is <code>container</code>, then you must specify
      * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
@@ -341,7 +341,7 @@ namespace Model
      * <p>An object with various properties specific to multi-node parallel jobs. If
      * you specify node properties for a job, it becomes a multi-node parallel job. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
      * Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's
      * <code>type</code> parameter is <code>container</code>, then you must specify
      * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
@@ -405,7 +405,7 @@ namespace Model
      * minimum value for the timeout is 60 seconds. Any timeout configuration that is
      * specified during a <a>SubmitJob</a> operation overrides the timeout
      * configuration defined here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline const JobTimeout& GetTimeout() const{ return m_timeout; }
@@ -417,7 +417,7 @@ namespace Model
      * minimum value for the timeout is 60 seconds. Any timeout configuration that is
      * specified during a <a>SubmitJob</a> operation overrides the timeout
      * configuration defined here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
@@ -429,7 +429,7 @@ namespace Model
      * minimum value for the timeout is 60 seconds. Any timeout configuration that is
      * specified during a <a>SubmitJob</a> operation overrides the timeout
      * configuration defined here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline void SetTimeout(const JobTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
@@ -441,7 +441,7 @@ namespace Model
      * minimum value for the timeout is 60 seconds. Any timeout configuration that is
      * specified during a <a>SubmitJob</a> operation overrides the timeout
      * configuration defined here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline void SetTimeout(JobTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
@@ -453,7 +453,7 @@ namespace Model
      * minimum value for the timeout is 60 seconds. Any timeout configuration that is
      * specified during a <a>SubmitJob</a> operation overrides the timeout
      * configuration defined here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline RegisterJobDefinitionRequest& WithTimeout(const JobTimeout& value) { SetTimeout(value); return *this;}
@@ -465,7 +465,7 @@ namespace Model
      * minimum value for the timeout is 60 seconds. Any timeout configuration that is
      * specified during a <a>SubmitJob</a> operation overrides the timeout
      * configuration defined here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline RegisterJobDefinitionRequest& WithTimeout(JobTimeout&& value) { SetTimeout(std::move(value)); return *this;}

@@ -214,9 +214,11 @@ namespace Model
      * <p>(Optional) The maximum number of query logging configurations that you want
      * Amazon Route 53 to return in response to the current request. If the current AWS
      * account has more than <code>MaxResults</code> configurations, use the value of
-     * <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next
-     * page of results.</p> <p>If you don't specify a value for
-     * <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
+     * in the response to get the next page of results.</p> <p>If you don't specify a
+     * value for <code>MaxResults</code>, Route 53 returns up to 100
+     * configurations.</p>
      */
     inline const Aws::String& GetMaxResults() const{ return m_maxResults; }
 
@@ -224,9 +226,11 @@ namespace Model
      * <p>(Optional) The maximum number of query logging configurations that you want
      * Amazon Route 53 to return in response to the current request. If the current AWS
      * account has more than <code>MaxResults</code> configurations, use the value of
-     * <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next
-     * page of results.</p> <p>If you don't specify a value for
-     * <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
+     * in the response to get the next page of results.</p> <p>If you don't specify a
+     * value for <code>MaxResults</code>, Route 53 returns up to 100
+     * configurations.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -234,9 +238,11 @@ namespace Model
      * <p>(Optional) The maximum number of query logging configurations that you want
      * Amazon Route 53 to return in response to the current request. If the current AWS
      * account has more than <code>MaxResults</code> configurations, use the value of
-     * <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next
-     * page of results.</p> <p>If you don't specify a value for
-     * <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
+     * in the response to get the next page of results.</p> <p>If you don't specify a
+     * value for <code>MaxResults</code>, Route 53 returns up to 100
+     * configurations.</p>
      */
     inline void SetMaxResults(const Aws::String& value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -244,9 +250,11 @@ namespace Model
      * <p>(Optional) The maximum number of query logging configurations that you want
      * Amazon Route 53 to return in response to the current request. If the current AWS
      * account has more than <code>MaxResults</code> configurations, use the value of
-     * <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next
-     * page of results.</p> <p>If you don't specify a value for
-     * <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
+     * in the response to get the next page of results.</p> <p>If you don't specify a
+     * value for <code>MaxResults</code>, Route 53 returns up to 100
+     * configurations.</p>
      */
     inline void SetMaxResults(Aws::String&& value) { m_maxResultsHasBeenSet = true; m_maxResults = std::move(value); }
 
@@ -254,9 +262,11 @@ namespace Model
      * <p>(Optional) The maximum number of query logging configurations that you want
      * Amazon Route 53 to return in response to the current request. If the current AWS
      * account has more than <code>MaxResults</code> configurations, use the value of
-     * <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next
-     * page of results.</p> <p>If you don't specify a value for
-     * <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
+     * in the response to get the next page of results.</p> <p>If you don't specify a
+     * value for <code>MaxResults</code>, Route 53 returns up to 100
+     * configurations.</p>
      */
     inline void SetMaxResults(const char* value) { m_maxResultsHasBeenSet = true; m_maxResults.assign(value); }
 
@@ -264,9 +274,11 @@ namespace Model
      * <p>(Optional) The maximum number of query logging configurations that you want
      * Amazon Route 53 to return in response to the current request. If the current AWS
      * account has more than <code>MaxResults</code> configurations, use the value of
-     * <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next
-     * page of results.</p> <p>If you don't specify a value for
-     * <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
+     * in the response to get the next page of results.</p> <p>If you don't specify a
+     * value for <code>MaxResults</code>, Route 53 returns up to 100
+     * configurations.</p>
      */
     inline ListQueryLoggingConfigsRequest& WithMaxResults(const Aws::String& value) { SetMaxResults(value); return *this;}
 
@@ -274,9 +286,11 @@ namespace Model
      * <p>(Optional) The maximum number of query logging configurations that you want
      * Amazon Route 53 to return in response to the current request. If the current AWS
      * account has more than <code>MaxResults</code> configurations, use the value of
-     * <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next
-     * page of results.</p> <p>If you don't specify a value for
-     * <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
+     * in the response to get the next page of results.</p> <p>If you don't specify a
+     * value for <code>MaxResults</code>, Route 53 returns up to 100
+     * configurations.</p>
      */
     inline ListQueryLoggingConfigsRequest& WithMaxResults(Aws::String&& value) { SetMaxResults(std::move(value)); return *this;}
 
@@ -284,9 +298,11 @@ namespace Model
      * <p>(Optional) The maximum number of query logging configurations that you want
      * Amazon Route 53 to return in response to the current request. If the current AWS
      * account has more than <code>MaxResults</code> configurations, use the value of
-     * <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next
-     * page of results.</p> <p>If you don't specify a value for
-     * <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
+     * in the response to get the next page of results.</p> <p>If you don't specify a
+     * value for <code>MaxResults</code>, Route 53 returns up to 100
+     * configurations.</p>
      */
     inline ListQueryLoggingConfigsRequest& WithMaxResults(const char* value) { SetMaxResults(value); return *this;}
 

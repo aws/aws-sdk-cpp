@@ -37,11 +37,14 @@
 #include <aws/sns/model/ListPlatformApplicationsResult.h>
 #include <aws/sns/model/ListSubscriptionsResult.h>
 #include <aws/sns/model/ListSubscriptionsByTopicResult.h>
+#include <aws/sns/model/ListTagsForResourceResult.h>
 #include <aws/sns/model/ListTopicsResult.h>
 #include <aws/sns/model/OptInPhoneNumberResult.h>
 #include <aws/sns/model/PublishResult.h>
 #include <aws/sns/model/SetSMSAttributesResult.h>
 #include <aws/sns/model/SubscribeResult.h>
+#include <aws/sns/model/TagResourceResult.h>
+#include <aws/sns/model/UntagResourceResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -107,6 +110,7 @@ namespace Model
         class ListPlatformApplicationsRequest;
         class ListSubscriptionsRequest;
         class ListSubscriptionsByTopicRequest;
+        class ListTagsForResourceRequest;
         class ListTopicsRequest;
         class OptInPhoneNumberRequest;
         class PublishRequest;
@@ -117,7 +121,9 @@ namespace Model
         class SetSubscriptionAttributesRequest;
         class SetTopicAttributesRequest;
         class SubscribeRequest;
+        class TagResourceRequest;
         class UnsubscribeRequest;
+        class UntagResourceRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> AddPermissionOutcome;
         typedef Aws::Utils::Outcome<CheckIfPhoneNumberIsOptedOutResult, Aws::Client::AWSError<SNSErrors>> CheckIfPhoneNumberIsOptedOutOutcome;
@@ -138,6 +144,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListPlatformApplicationsResult, Aws::Client::AWSError<SNSErrors>> ListPlatformApplicationsOutcome;
         typedef Aws::Utils::Outcome<ListSubscriptionsResult, Aws::Client::AWSError<SNSErrors>> ListSubscriptionsOutcome;
         typedef Aws::Utils::Outcome<ListSubscriptionsByTopicResult, Aws::Client::AWSError<SNSErrors>> ListSubscriptionsByTopicOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<SNSErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListTopicsResult, Aws::Client::AWSError<SNSErrors>> ListTopicsOutcome;
         typedef Aws::Utils::Outcome<OptInPhoneNumberResult, Aws::Client::AWSError<SNSErrors>> OptInPhoneNumberOutcome;
         typedef Aws::Utils::Outcome<PublishResult, Aws::Client::AWSError<SNSErrors>> PublishOutcome;
@@ -148,7 +155,9 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> SetSubscriptionAttributesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> SetTopicAttributesOutcome;
         typedef Aws::Utils::Outcome<SubscribeResult, Aws::Client::AWSError<SNSErrors>> SubscribeOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<SNSErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> UnsubscribeOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<SNSErrors>> UntagResourceOutcome;
 
         typedef std::future<AddPermissionOutcome> AddPermissionOutcomeCallable;
         typedef std::future<CheckIfPhoneNumberIsOptedOutOutcome> CheckIfPhoneNumberIsOptedOutOutcomeCallable;
@@ -169,6 +178,7 @@ namespace Model
         typedef std::future<ListPlatformApplicationsOutcome> ListPlatformApplicationsOutcomeCallable;
         typedef std::future<ListSubscriptionsOutcome> ListSubscriptionsOutcomeCallable;
         typedef std::future<ListSubscriptionsByTopicOutcome> ListSubscriptionsByTopicOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListTopicsOutcome> ListTopicsOutcomeCallable;
         typedef std::future<OptInPhoneNumberOutcome> OptInPhoneNumberOutcomeCallable;
         typedef std::future<PublishOutcome> PublishOutcomeCallable;
@@ -179,7 +189,9 @@ namespace Model
         typedef std::future<SetSubscriptionAttributesOutcome> SetSubscriptionAttributesOutcomeCallable;
         typedef std::future<SetTopicAttributesOutcome> SetTopicAttributesOutcomeCallable;
         typedef std::future<SubscribeOutcome> SubscribeOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UnsubscribeOutcome> UnsubscribeOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 } // namespace Model
 
   class SNSClient;
@@ -203,6 +215,7 @@ namespace Model
     typedef std::function<void(const SNSClient*, const Model::ListPlatformApplicationsRequest&, const Model::ListPlatformApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlatformApplicationsResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::ListSubscriptionsRequest&, const Model::ListSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscriptionsResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::ListSubscriptionsByTopicRequest&, const Model::ListSubscriptionsByTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscriptionsByTopicResponseReceivedHandler;
+    typedef std::function<void(const SNSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::ListTopicsRequest&, const Model::ListTopicsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTopicsResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::OptInPhoneNumberRequest&, const Model::OptInPhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > OptInPhoneNumberResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::PublishRequest&, const Model::PublishOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PublishResponseReceivedHandler;
@@ -213,7 +226,9 @@ namespace Model
     typedef std::function<void(const SNSClient*, const Model::SetSubscriptionAttributesRequest&, const Model::SetSubscriptionAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetSubscriptionAttributesResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::SetTopicAttributesRequest&, const Model::SetTopicAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetTopicAttributesResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::SubscribeRequest&, const Model::SubscribeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubscribeResponseReceivedHandler;
+    typedef std::function<void(const SNSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::UnsubscribeRequest&, const Model::UnsubscribeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnsubscribeResponseReceivedHandler;
+    typedef std::function<void(const SNSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
    * <fullname>Amazon Simple Notification Service</fullname> <p>Amazon Simple
@@ -221,11 +236,11 @@ namespace Model
    * distributed web-enabled applications. Applications can use Amazon SNS to easily
    * push real-time notification messages to interested subscribers over multiple
    * delivery protocols. For more information about this product see <a
-   * href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. For detailed
+   * href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. For detailed
    * information about Amazon SNS features and their associated API calls, see the <a
-   * href="http://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer Guide</a>.
-   * </p> <p>We also provide SDKs that enable you to access Amazon SNS from your
-   * preferred programming language. The SDKs contain functionality that
+   * href="https://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer
+   * Guide</a>. </p> <p>We also provide SDKs that enable you to access Amazon SNS
+   * from your preferred programming language. The SDKs contain functionality that
    * automatically takes care of tasks such as: cryptographically signing your
    * service requests, retrying requests, and handling error responses. For a list of
    * available SDKs, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon
@@ -373,7 +388,7 @@ namespace Model
 
         /**
          * <p>Creates a platform application object for one of the supported push
-         * notification services, such as APNS and GCM, to which devices and mobile apps
+         * notification services, such as APNS and FCM, to which devices and mobile apps
          * may register. You must specify PlatformPrincipal and PlatformCredential
          * attributes when using the <code>CreatePlatformApplication</code> action. The
          * PlatformPrincipal is received from the notification service. For
@@ -389,21 +404,21 @@ namespace Model
          * PlatformApplicationArn that is returned when using
          * <code>CreatePlatformApplication</code> is then used as an attribute for the
          * <code>CreatePlatformEndpoint</code> action. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. For more information about obtaining the
          * PlatformPrincipal and PlatformCredential for each of the supported push
          * notification services, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting
          * Started with Apple Push Notification Service</a>, <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting
          * Started with Amazon Device Messaging</a>, <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting
          * Started with Baidu Cloud Push</a>, <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting
          * Started with Google Cloud Messaging for Android</a>, <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting
          * Started with MPNS</a>, or <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting
          * Started with WNS</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">AWS
          * API Reference</a></p>
@@ -412,7 +427,7 @@ namespace Model
 
         /**
          * <p>Creates a platform application object for one of the supported push
-         * notification services, such as APNS and GCM, to which devices and mobile apps
+         * notification services, such as APNS and FCM, to which devices and mobile apps
          * may register. You must specify PlatformPrincipal and PlatformCredential
          * attributes when using the <code>CreatePlatformApplication</code> action. The
          * PlatformPrincipal is received from the notification service. For
@@ -428,21 +443,21 @@ namespace Model
          * PlatformApplicationArn that is returned when using
          * <code>CreatePlatformApplication</code> is then used as an attribute for the
          * <code>CreatePlatformEndpoint</code> action. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. For more information about obtaining the
          * PlatformPrincipal and PlatformCredential for each of the supported push
          * notification services, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting
          * Started with Apple Push Notification Service</a>, <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting
          * Started with Amazon Device Messaging</a>, <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting
          * Started with Baidu Cloud Push</a>, <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting
          * Started with Google Cloud Messaging for Android</a>, <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting
          * Started with MPNS</a>, or <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting
          * Started with WNS</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">AWS
          * API Reference</a></p>
@@ -453,7 +468,7 @@ namespace Model
 
         /**
          * <p>Creates a platform application object for one of the supported push
-         * notification services, such as APNS and GCM, to which devices and mobile apps
+         * notification services, such as APNS and FCM, to which devices and mobile apps
          * may register. You must specify PlatformPrincipal and PlatformCredential
          * attributes when using the <code>CreatePlatformApplication</code> action. The
          * PlatformPrincipal is received from the notification service. For
@@ -469,21 +484,21 @@ namespace Model
          * PlatformApplicationArn that is returned when using
          * <code>CreatePlatformApplication</code> is then used as an attribute for the
          * <code>CreatePlatformEndpoint</code> action. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. For more information about obtaining the
          * PlatformPrincipal and PlatformCredential for each of the supported push
          * notification services, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting
          * Started with Apple Push Notification Service</a>, <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting
          * Started with Amazon Device Messaging</a>, <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting
          * Started with Baidu Cloud Push</a>, <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting
          * Started with Google Cloud Messaging for Android</a>, <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting
          * Started with MPNS</a>, or <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting
          * Started with WNS</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">AWS
          * API Reference</a></p>
@@ -504,12 +519,12 @@ namespace Model
          * already owns an endpoint with the same device token and attributes, that
          * endpoint's ARN is returned without creating a new endpoint. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p> <p>When using
          * <code>CreatePlatformEndpoint</code> with Baidu, two attributes must be provided:
          * ChannelId and UserId. The token field must also contain the ChannelId. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating
          * an Amazon SNS Endpoint for Baidu</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">AWS
          * API Reference</a></p>
@@ -528,12 +543,12 @@ namespace Model
          * already owns an endpoint with the same device token and attributes, that
          * endpoint's ARN is returned without creating a new endpoint. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p> <p>When using
          * <code>CreatePlatformEndpoint</code> with Baidu, two attributes must be provided:
          * ChannelId and UserId. The token field must also contain the ChannelId. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating
          * an Amazon SNS Endpoint for Baidu</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">AWS
          * API Reference</a></p>
@@ -554,12 +569,12 @@ namespace Model
          * already owns an endpoint with the same device token and attributes, that
          * endpoint's ARN is returned without creating a new endpoint. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p> <p>When using
          * <code>CreatePlatformEndpoint</code> with Baidu, two attributes must be provided:
          * ChannelId and UserId. The token field must also contain the ChannelId. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating
          * an Amazon SNS Endpoint for Baidu</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">AWS
          * API Reference</a></p>
@@ -571,7 +586,7 @@ namespace Model
         /**
          * <p>Creates a topic to which notifications can be published. Users can create at
          * most 100,000 topics. For more information, see <a
-         * href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. This action is
+         * href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is
          * idempotent, so if the requester already owns a topic with the specified name,
          * that topic's ARN is returned without creating a new topic.</p><p><h3>See
          * Also:</h3>   <a
@@ -583,7 +598,7 @@ namespace Model
         /**
          * <p>Creates a topic to which notifications can be published. Users can create at
          * most 100,000 topics. For more information, see <a
-         * href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. This action is
+         * href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is
          * idempotent, so if the requester already owns a topic with the specified name,
          * that topic's ARN is returned without creating a new topic.</p><p><h3>See
          * Also:</h3>   <a
@@ -597,7 +612,7 @@ namespace Model
         /**
          * <p>Creates a topic to which notifications can be published. Users can create at
          * most 100,000 topics. For more information, see <a
-         * href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. This action is
+         * href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is
          * idempotent, so if the requester already owns a topic with the specified name,
          * that topic's ARN is returned without creating a new topic.</p><p><h3>See
          * Also:</h3>   <a
@@ -611,7 +626,7 @@ namespace Model
         /**
          * <p>Deletes the endpoint for a device and mobile app from Amazon SNS. This action
          * is idempotent. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p> <p>When you delete an endpoint that is
          * also subscribed to a topic, then you must also unsubscribe the endpoint from the
          * topic.</p><p><h3>See Also:</h3>   <a
@@ -623,7 +638,7 @@ namespace Model
         /**
          * <p>Deletes the endpoint for a device and mobile app from Amazon SNS. This action
          * is idempotent. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p> <p>When you delete an endpoint that is
          * also subscribed to a topic, then you must also unsubscribe the endpoint from the
          * topic.</p><p><h3>See Also:</h3>   <a
@@ -637,7 +652,7 @@ namespace Model
         /**
          * <p>Deletes the endpoint for a device and mobile app from Amazon SNS. This action
          * is idempotent. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p> <p>When you delete an endpoint that is
          * also subscribed to a topic, then you must also unsubscribe the endpoint from the
          * topic.</p><p><h3>See Also:</h3>   <a
@@ -651,7 +666,7 @@ namespace Model
         /**
          * <p>Deletes a platform application object for one of the supported push
          * notification services, such as APNS and GCM. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">AWS
          * API Reference</a></p>
@@ -661,7 +676,7 @@ namespace Model
         /**
          * <p>Deletes a platform application object for one of the supported push
          * notification services, such as APNS and GCM. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">AWS
          * API Reference</a></p>
@@ -673,7 +688,7 @@ namespace Model
         /**
          * <p>Deletes a platform application object for one of the supported push
          * notification services, such as APNS and GCM. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">AWS
          * API Reference</a></p>
@@ -719,7 +734,7 @@ namespace Model
         /**
          * <p>Retrieves the endpoint attributes for a device on one of the supported push
          * notification services, such as GCM and APNS. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">AWS
          * API Reference</a></p>
@@ -729,7 +744,7 @@ namespace Model
         /**
          * <p>Retrieves the endpoint attributes for a device on one of the supported push
          * notification services, such as GCM and APNS. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">AWS
          * API Reference</a></p>
@@ -741,7 +756,7 @@ namespace Model
         /**
          * <p>Retrieves the endpoint attributes for a device on one of the supported push
          * notification services, such as GCM and APNS. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">AWS
          * API Reference</a></p>
@@ -753,7 +768,7 @@ namespace Model
         /**
          * <p>Retrieves the attributes of the platform application object for the supported
          * push notification services, such as APNS and GCM. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">AWS
          * API Reference</a></p>
@@ -763,7 +778,7 @@ namespace Model
         /**
          * <p>Retrieves the attributes of the platform application object for the supported
          * push notification services, such as APNS and GCM. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">AWS
          * API Reference</a></p>
@@ -775,7 +790,7 @@ namespace Model
         /**
          * <p>Retrieves the attributes of the platform application object for the supported
          * push notification services, such as APNS and GCM. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">AWS
          * API Reference</a></p>
@@ -880,7 +895,7 @@ namespace Model
          * next page, you call <code>ListEndpointsByPlatformApplication</code> again using
          * the NextToken string received from the previous call. When there are no more
          * records to return, NextToken will be null. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p> <p>This action is throttled at 30
          * transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">AWS
@@ -897,7 +912,7 @@ namespace Model
          * next page, you call <code>ListEndpointsByPlatformApplication</code> again using
          * the NextToken string received from the previous call. When there are no more
          * records to return, NextToken will be null. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p> <p>This action is throttled at 30
          * transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">AWS
@@ -916,7 +931,7 @@ namespace Model
          * next page, you call <code>ListEndpointsByPlatformApplication</code> again using
          * the NextToken string received from the previous call. When there are no more
          * records to return, NextToken will be null. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p> <p>This action is throttled at 30
          * transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">AWS
@@ -984,7 +999,7 @@ namespace Model
          * page, you call <code>ListPlatformApplications</code> using the NextToken string
          * received from the previous call. When there are no more records to return,
          * NextToken will be null. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p> <p>This action is throttled at 15
          * transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">AWS
@@ -1001,7 +1016,7 @@ namespace Model
          * page, you call <code>ListPlatformApplications</code> using the NextToken string
          * received from the previous call. When there are no more records to return,
          * NextToken will be null. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p> <p>This action is throttled at 15
          * transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">AWS
@@ -1020,7 +1035,7 @@ namespace Model
          * page, you call <code>ListPlatformApplications</code> using the NextToken string
          * received from the previous call. When there are no more records to return,
          * NextToken will be null. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p> <p>This action is throttled at 15
          * transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">AWS
@@ -1111,6 +1126,40 @@ namespace Model
         virtual void ListSubscriptionsByTopicAsync(const Model::ListSubscriptionsByTopicRequest& request, const ListSubscriptionsByTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>List all tags added to the specified Amazon SNS topic. For an overview, see
+         * <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS
+         * Tags</a> in the <i>Amazon Simple Notification Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>List all tags added to the specified Amazon SNS topic. For an overview, see
+         * <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS
+         * Tags</a> in the <i>Amazon Simple Notification Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>List all tags added to the specified Amazon SNS topic. For an overview, see
+         * <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS
+         * Tags</a> in the <i>Amazon Simple Notification Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of the requester's topics. Each call returns a limited list of
          * topics, up to 100. If there are more topics, a <code>NextToken</code> is also
          * returned. Use the <code>NextToken</code> parameter in a new
@@ -1190,7 +1239,7 @@ namespace Model
          * the TargetArn parameter. The EndpointArn is returned when making a call with the
          * <code>CreatePlatformEndpoint</code> action. </p> <p>For more information about
          * formatting messages, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
          * Custom Platform-Specific Payloads in Messages to Mobile Devices</a>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">AWS API
@@ -1210,7 +1259,7 @@ namespace Model
          * the TargetArn parameter. The EndpointArn is returned when making a call with the
          * <code>CreatePlatformEndpoint</code> action. </p> <p>For more information about
          * formatting messages, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
          * Custom Platform-Specific Payloads in Messages to Mobile Devices</a>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">AWS API
@@ -1232,7 +1281,7 @@ namespace Model
          * the TargetArn parameter. The EndpointArn is returned when making a call with the
          * <code>CreatePlatformEndpoint</code> action. </p> <p>For more information about
          * formatting messages, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
+         * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
          * Custom Platform-Specific Payloads in Messages to Mobile Devices</a>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">AWS API
@@ -1273,7 +1322,7 @@ namespace Model
         /**
          * <p>Sets the attributes for an endpoint for a device on one of the supported push
          * notification services, such as GCM and APNS. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">AWS
          * API Reference</a></p>
@@ -1283,7 +1332,7 @@ namespace Model
         /**
          * <p>Sets the attributes for an endpoint for a device on one of the supported push
          * notification services, such as GCM and APNS. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">AWS
          * API Reference</a></p>
@@ -1295,7 +1344,7 @@ namespace Model
         /**
          * <p>Sets the attributes for an endpoint for a device on one of the supported push
          * notification services, such as GCM and APNS. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">AWS
          * API Reference</a></p>
@@ -1307,12 +1356,12 @@ namespace Model
         /**
          * <p>Sets the attributes of the platform application object for the supported push
          * notification services, such as APNS and GCM. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. For information on configuring attributes for
          * message delivery status, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon
-         * SNS Application Attributes for Message Delivery Status</a>. </p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using
+         * Amazon SNS Application Attributes for Message Delivery Status</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">AWS
          * API Reference</a></p>
          */
@@ -1321,12 +1370,12 @@ namespace Model
         /**
          * <p>Sets the attributes of the platform application object for the supported push
          * notification services, such as APNS and GCM. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. For information on configuring attributes for
          * message delivery status, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon
-         * SNS Application Attributes for Message Delivery Status</a>. </p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using
+         * Amazon SNS Application Attributes for Message Delivery Status</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">AWS
          * API Reference</a></p>
          *
@@ -1337,12 +1386,12 @@ namespace Model
         /**
          * <p>Sets the attributes of the platform application object for the supported push
          * notification services, such as APNS and GCM. For more information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
+         * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. For information on configuring attributes for
          * message delivery status, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon
-         * SNS Application Attributes for Message Delivery Status</a>. </p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using
+         * Amazon SNS Application Attributes for Message Delivery Status</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">AWS
          * API Reference</a></p>
          *
@@ -1356,7 +1405,7 @@ namespace Model
          * settings for a single message when you use the <code>Publish</code> action with
          * the <code>MessageAttributes.entry.N</code> parameter. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending
          * an SMS Message</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">AWS
@@ -1370,7 +1419,7 @@ namespace Model
          * settings for a single message when you use the <code>Publish</code> action with
          * the <code>MessageAttributes.entry.N</code> parameter. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending
          * an SMS Message</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">AWS
@@ -1386,7 +1435,7 @@ namespace Model
          * settings for a single message when you use the <code>Publish</code> action with
          * the <code>MessageAttributes.entry.N</code> parameter. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending
          * an SMS Message</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">AWS
@@ -1490,6 +1539,76 @@ namespace Model
         virtual void SubscribeAsync(const Model::SubscribeRequest& request, const SubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Add tags to the specified Amazon SNS topic. For an overview, see <a
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS
+         * Tags</a> in the <i>Amazon SNS Developer Guide</i>.</p> <p>When you use topic
+         * tags, keep the following guidelines in mind:</p> <ul> <li> <p>Adding more than
+         * 50 tags to a topic isn't recommended.</p> </li> <li> <p>Tags don't have any
+         * semantic meaning. Amazon SNS interprets tags as character strings.</p> </li>
+         * <li> <p>Tags are case-sensitive.</p> </li> <li> <p>A new tag with a key
+         * identical to that of an existing tag overwrites the existing tag.</p> </li> <li>
+         * <p>Tagging actions are limited to 10 TPS per AWS account. If your application
+         * requires a higher throughput, file a <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
+         * support request</a>.</p> </li> </ul> <p>For a full list of tag restrictions, see
+         * <a
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sns-limits.html#limits-topics">Limits
+         * Related to Topics</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/TagResource">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Add tags to the specified Amazon SNS topic. For an overview, see <a
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS
+         * Tags</a> in the <i>Amazon SNS Developer Guide</i>.</p> <p>When you use topic
+         * tags, keep the following guidelines in mind:</p> <ul> <li> <p>Adding more than
+         * 50 tags to a topic isn't recommended.</p> </li> <li> <p>Tags don't have any
+         * semantic meaning. Amazon SNS interprets tags as character strings.</p> </li>
+         * <li> <p>Tags are case-sensitive.</p> </li> <li> <p>A new tag with a key
+         * identical to that of an existing tag overwrites the existing tag.</p> </li> <li>
+         * <p>Tagging actions are limited to 10 TPS per AWS account. If your application
+         * requires a higher throughput, file a <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
+         * support request</a>.</p> </li> </ul> <p>For a full list of tag restrictions, see
+         * <a
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sns-limits.html#limits-topics">Limits
+         * Related to Topics</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/TagResource">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Add tags to the specified Amazon SNS topic. For an overview, see <a
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS
+         * Tags</a> in the <i>Amazon SNS Developer Guide</i>.</p> <p>When you use topic
+         * tags, keep the following guidelines in mind:</p> <ul> <li> <p>Adding more than
+         * 50 tags to a topic isn't recommended.</p> </li> <li> <p>Tags don't have any
+         * semantic meaning. Amazon SNS interprets tags as character strings.</p> </li>
+         * <li> <p>Tags are case-sensitive.</p> </li> <li> <p>A new tag with a key
+         * identical to that of an existing tag overwrites the existing tag.</p> </li> <li>
+         * <p>Tagging actions are limited to 10 TPS per AWS account. If your application
+         * requires a higher throughput, file a <a
+         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
+         * support request</a>.</p> </li> </ul> <p>For a full list of tag restrictions, see
+         * <a
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sns-limits.html#limits-topics">Limits
+         * Related to Topics</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/TagResource">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a subscription. If the subscription requires authentication for
          * deletion, only the owner of the subscription or the topic's owner can
          * unsubscribe, and an AWS signature is required. If the <code>Unsubscribe</code>
@@ -1535,6 +1654,37 @@ namespace Model
          */
         virtual void UnsubscribeAsync(const Model::UnsubscribeRequest& request, const UnsubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Remove tags from the specified Amazon SNS topic. For an overview, see <a
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS
+         * Tags</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Remove tags from the specified Amazon SNS topic. For an overview, see <a
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS
+         * Tags</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Remove tags from the specified Amazon SNS topic. For an overview, see <a
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS
+         * Tags</a> in the <i>Amazon SNS Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
       
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
@@ -1559,6 +1709,7 @@ namespace Model
         void ListPlatformApplicationsAsyncHelper(const Model::ListPlatformApplicationsRequest& request, const ListPlatformApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSubscriptionsAsyncHelper(const Model::ListSubscriptionsRequest& request, const ListSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSubscriptionsByTopicAsyncHelper(const Model::ListSubscriptionsByTopicRequest& request, const ListSubscriptionsByTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTopicsAsyncHelper(const Model::ListTopicsRequest& request, const ListTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void OptInPhoneNumberAsyncHelper(const Model::OptInPhoneNumberRequest& request, const OptInPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PublishAsyncHelper(const Model::PublishRequest& request, const PublishResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1569,7 +1720,9 @@ namespace Model
         void SetSubscriptionAttributesAsyncHelper(const Model::SetSubscriptionAttributesRequest& request, const SetSubscriptionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetTopicAttributesAsyncHelper(const Model::SetTopicAttributesRequest& request, const SetTopicAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SubscribeAsyncHelper(const Model::SubscribeRequest& request, const SubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UnsubscribeAsyncHelper(const Model::UnsubscribeRequest& request, const UnsubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
         Aws::String m_uri;
         Aws::String m_configScheme;

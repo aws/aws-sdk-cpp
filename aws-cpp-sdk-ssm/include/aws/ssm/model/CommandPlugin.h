@@ -107,38 +107,32 @@ namespace Model
 
 
     /**
-     * <p>The status of this plugin. You can execute a document with multiple
-     * plugins.</p>
+     * <p>The status of this plugin. You can run a document with multiple plugins.</p>
      */
     inline const CommandPluginStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of this plugin. You can execute a document with multiple
-     * plugins.</p>
+     * <p>The status of this plugin. You can run a document with multiple plugins.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of this plugin. You can execute a document with multiple
-     * plugins.</p>
+     * <p>The status of this plugin. You can run a document with multiple plugins.</p>
      */
     inline void SetStatus(const CommandPluginStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of this plugin. You can execute a document with multiple
-     * plugins.</p>
+     * <p>The status of this plugin. You can run a document with multiple plugins.</p>
      */
     inline void SetStatus(CommandPluginStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of this plugin. You can execute a document with multiple
-     * plugins.</p>
+     * <p>The status of this plugin. You can run a document with multiple plugins.</p>
      */
     inline CommandPlugin& WithStatus(const CommandPluginStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of this plugin. You can execute a document with multiple
-     * plugins.</p>
+     * <p>The status of this plugin. You can run a document with multiple plugins.</p>
      */
     inline CommandPlugin& WithStatus(CommandPluginStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -417,90 +411,90 @@ namespace Model
 
 
     /**
-     * <p>A numeric response code generated after executing the plugin. </p>
+     * <p>A numeric response code generated after running the plugin. </p>
      */
     inline int GetResponseCode() const{ return m_responseCode; }
 
     /**
-     * <p>A numeric response code generated after executing the plugin. </p>
+     * <p>A numeric response code generated after running the plugin. </p>
      */
     inline bool ResponseCodeHasBeenSet() const { return m_responseCodeHasBeenSet; }
 
     /**
-     * <p>A numeric response code generated after executing the plugin. </p>
+     * <p>A numeric response code generated after running the plugin. </p>
      */
     inline void SetResponseCode(int value) { m_responseCodeHasBeenSet = true; m_responseCode = value; }
 
     /**
-     * <p>A numeric response code generated after executing the plugin. </p>
+     * <p>A numeric response code generated after running the plugin. </p>
      */
     inline CommandPlugin& WithResponseCode(int value) { SetResponseCode(value); return *this;}
 
 
     /**
-     * <p>The time the plugin started executing. </p>
+     * <p>The time the plugin started running. </p>
      */
     inline const Aws::Utils::DateTime& GetResponseStartDateTime() const{ return m_responseStartDateTime; }
 
     /**
-     * <p>The time the plugin started executing. </p>
+     * <p>The time the plugin started running. </p>
      */
     inline bool ResponseStartDateTimeHasBeenSet() const { return m_responseStartDateTimeHasBeenSet; }
 
     /**
-     * <p>The time the plugin started executing. </p>
+     * <p>The time the plugin started running. </p>
      */
     inline void SetResponseStartDateTime(const Aws::Utils::DateTime& value) { m_responseStartDateTimeHasBeenSet = true; m_responseStartDateTime = value; }
 
     /**
-     * <p>The time the plugin started executing. </p>
+     * <p>The time the plugin started running. </p>
      */
     inline void SetResponseStartDateTime(Aws::Utils::DateTime&& value) { m_responseStartDateTimeHasBeenSet = true; m_responseStartDateTime = std::move(value); }
 
     /**
-     * <p>The time the plugin started executing. </p>
+     * <p>The time the plugin started running. </p>
      */
     inline CommandPlugin& WithResponseStartDateTime(const Aws::Utils::DateTime& value) { SetResponseStartDateTime(value); return *this;}
 
     /**
-     * <p>The time the plugin started executing. </p>
+     * <p>The time the plugin started running. </p>
      */
     inline CommandPlugin& WithResponseStartDateTime(Aws::Utils::DateTime&& value) { SetResponseStartDateTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time the plugin stopped executing. Could stop prematurely if, for
-     * example, a cancel command was sent. </p>
+     * <p>The time the plugin stopped running. Could stop prematurely if, for example,
+     * a cancel command was sent. </p>
      */
     inline const Aws::Utils::DateTime& GetResponseFinishDateTime() const{ return m_responseFinishDateTime; }
 
     /**
-     * <p>The time the plugin stopped executing. Could stop prematurely if, for
-     * example, a cancel command was sent. </p>
+     * <p>The time the plugin stopped running. Could stop prematurely if, for example,
+     * a cancel command was sent. </p>
      */
     inline bool ResponseFinishDateTimeHasBeenSet() const { return m_responseFinishDateTimeHasBeenSet; }
 
     /**
-     * <p>The time the plugin stopped executing. Could stop prematurely if, for
-     * example, a cancel command was sent. </p>
+     * <p>The time the plugin stopped running. Could stop prematurely if, for example,
+     * a cancel command was sent. </p>
      */
     inline void SetResponseFinishDateTime(const Aws::Utils::DateTime& value) { m_responseFinishDateTimeHasBeenSet = true; m_responseFinishDateTime = value; }
 
     /**
-     * <p>The time the plugin stopped executing. Could stop prematurely if, for
-     * example, a cancel command was sent. </p>
+     * <p>The time the plugin stopped running. Could stop prematurely if, for example,
+     * a cancel command was sent. </p>
      */
     inline void SetResponseFinishDateTime(Aws::Utils::DateTime&& value) { m_responseFinishDateTimeHasBeenSet = true; m_responseFinishDateTime = std::move(value); }
 
     /**
-     * <p>The time the plugin stopped executing. Could stop prematurely if, for
-     * example, a cancel command was sent. </p>
+     * <p>The time the plugin stopped running. Could stop prematurely if, for example,
+     * a cancel command was sent. </p>
      */
     inline CommandPlugin& WithResponseFinishDateTime(const Aws::Utils::DateTime& value) { SetResponseFinishDateTime(value); return *this;}
 
     /**
-     * <p>The time the plugin stopped executing. Could stop prematurely if, for
-     * example, a cancel command was sent. </p>
+     * <p>The time the plugin stopped running. Could stop prematurely if, for example,
+     * a cancel command was sent. </p>
      */
     inline CommandPlugin& WithResponseFinishDateTime(Aws::Utils::DateTime&& value) { SetResponseFinishDateTime(std::move(value)); return *this;}
 

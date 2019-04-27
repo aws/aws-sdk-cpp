@@ -192,90 +192,90 @@ namespace Model
 
     /**
      * <p>The maxium number of errors allowed before the system stops queueing
-     * additional Automation executions for the currently executing Automation. </p>
+     * additional Automation executions for the currently running Automation. </p>
      */
     inline const Aws::String& GetTargetLocationMaxErrors() const{ return m_targetLocationMaxErrors; }
 
     /**
      * <p>The maxium number of errors allowed before the system stops queueing
-     * additional Automation executions for the currently executing Automation. </p>
+     * additional Automation executions for the currently running Automation. </p>
      */
     inline bool TargetLocationMaxErrorsHasBeenSet() const { return m_targetLocationMaxErrorsHasBeenSet; }
 
     /**
      * <p>The maxium number of errors allowed before the system stops queueing
-     * additional Automation executions for the currently executing Automation. </p>
+     * additional Automation executions for the currently running Automation. </p>
      */
     inline void SetTargetLocationMaxErrors(const Aws::String& value) { m_targetLocationMaxErrorsHasBeenSet = true; m_targetLocationMaxErrors = value; }
 
     /**
      * <p>The maxium number of errors allowed before the system stops queueing
-     * additional Automation executions for the currently executing Automation. </p>
+     * additional Automation executions for the currently running Automation. </p>
      */
     inline void SetTargetLocationMaxErrors(Aws::String&& value) { m_targetLocationMaxErrorsHasBeenSet = true; m_targetLocationMaxErrors = std::move(value); }
 
     /**
      * <p>The maxium number of errors allowed before the system stops queueing
-     * additional Automation executions for the currently executing Automation. </p>
+     * additional Automation executions for the currently running Automation. </p>
      */
     inline void SetTargetLocationMaxErrors(const char* value) { m_targetLocationMaxErrorsHasBeenSet = true; m_targetLocationMaxErrors.assign(value); }
 
     /**
      * <p>The maxium number of errors allowed before the system stops queueing
-     * additional Automation executions for the currently executing Automation. </p>
+     * additional Automation executions for the currently running Automation. </p>
      */
     inline TargetLocation& WithTargetLocationMaxErrors(const Aws::String& value) { SetTargetLocationMaxErrors(value); return *this;}
 
     /**
      * <p>The maxium number of errors allowed before the system stops queueing
-     * additional Automation executions for the currently executing Automation. </p>
+     * additional Automation executions for the currently running Automation. </p>
      */
     inline TargetLocation& WithTargetLocationMaxErrors(Aws::String&& value) { SetTargetLocationMaxErrors(std::move(value)); return *this;}
 
     /**
      * <p>The maxium number of errors allowed before the system stops queueing
-     * additional Automation executions for the currently executing Automation. </p>
+     * additional Automation executions for the currently running Automation. </p>
      */
     inline TargetLocation& WithTargetLocationMaxErrors(const char* value) { SetTargetLocationMaxErrors(value); return *this;}
 
 
     /**
-     * <p>The Automation execution role used by the currently executing Automation.</p>
+     * <p>The Automation execution role used by the currently running Automation.</p>
      */
     inline const Aws::String& GetExecutionRoleName() const{ return m_executionRoleName; }
 
     /**
-     * <p>The Automation execution role used by the currently executing Automation.</p>
+     * <p>The Automation execution role used by the currently running Automation.</p>
      */
     inline bool ExecutionRoleNameHasBeenSet() const { return m_executionRoleNameHasBeenSet; }
 
     /**
-     * <p>The Automation execution role used by the currently executing Automation.</p>
+     * <p>The Automation execution role used by the currently running Automation.</p>
      */
     inline void SetExecutionRoleName(const Aws::String& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = value; }
 
     /**
-     * <p>The Automation execution role used by the currently executing Automation.</p>
+     * <p>The Automation execution role used by the currently running Automation.</p>
      */
     inline void SetExecutionRoleName(Aws::String&& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = std::move(value); }
 
     /**
-     * <p>The Automation execution role used by the currently executing Automation.</p>
+     * <p>The Automation execution role used by the currently running Automation.</p>
      */
     inline void SetExecutionRoleName(const char* value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName.assign(value); }
 
     /**
-     * <p>The Automation execution role used by the currently executing Automation.</p>
+     * <p>The Automation execution role used by the currently running Automation.</p>
      */
     inline TargetLocation& WithExecutionRoleName(const Aws::String& value) { SetExecutionRoleName(value); return *this;}
 
     /**
-     * <p>The Automation execution role used by the currently executing Automation.</p>
+     * <p>The Automation execution role used by the currently running Automation.</p>
      */
     inline TargetLocation& WithExecutionRoleName(Aws::String&& value) { SetExecutionRoleName(std::move(value)); return *this;}
 
     /**
-     * <p>The Automation execution role used by the currently executing Automation.</p>
+     * <p>The Automation execution role used by the currently running Automation.</p>
      */
     inline TargetLocation& WithExecutionRoleName(const char* value) { SetExecutionRoleName(value); return *this;}
 

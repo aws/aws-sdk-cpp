@@ -242,7 +242,7 @@ namespace Model
      * <p>A list of <code>Parameter</code> structures that describes the input
      * parameters and their values used to create the change set. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      * data type.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
@@ -251,7 +251,7 @@ namespace Model
      * <p>A list of <code>Parameter</code> structures that describes the input
      * parameters and their values used to create the change set. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      * data type.</p>
      */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parameters = value; }
@@ -260,7 +260,7 @@ namespace Model
      * <p>A list of <code>Parameter</code> structures that describes the input
      * parameters and their values used to create the change set. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      * data type.</p>
      */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = std::move(value); }
@@ -269,7 +269,7 @@ namespace Model
      * <p>A list of <code>Parameter</code> structures that describes the input
      * parameters and their values used to create the change set. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      * data type.</p>
      */
     inline DescribeChangeSetResult& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
@@ -278,7 +278,7 @@ namespace Model
      * <p>A list of <code>Parameter</code> structures that describes the input
      * parameters and their values used to create the change set. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      * data type.</p>
      */
     inline DescribeChangeSetResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
@@ -287,7 +287,7 @@ namespace Model
      * <p>A list of <code>Parameter</code> structures that describes the input
      * parameters and their values used to create the change set. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      * data type.</p>
      */
     inline DescribeChangeSetResult& AddParameters(const Parameter& value) { m_parameters.push_back(value); return *this; }
@@ -296,7 +296,7 @@ namespace Model
      * <p>A list of <code>Parameter</code> structures that describes the input
      * parameters and their values used to create the change set. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      * data type.</p>
      */
     inline DescribeChangeSetResult& AddParameters(Parameter&& value) { m_parameters.push_back(std::move(value)); return *this; }

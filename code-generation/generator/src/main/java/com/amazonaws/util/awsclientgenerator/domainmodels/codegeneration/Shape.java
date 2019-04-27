@@ -39,7 +39,7 @@ public class Shape {
     private String documentation;
     private String locationName;
     private String payload;
-    private String xmlNamespace;
+    private XmlNamespace xmlNamespace;
     private boolean isRequest;
     private boolean isResult;
     private boolean isReferenced;

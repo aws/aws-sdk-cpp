@@ -2803,11 +2803,11 @@ namespace Model
         virtual void AuthorizeClientVpnIngressAsync(const Model::AuthorizeClientVpnIngressRequest& request, const AuthorizeClientVpnIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>[EC2-VPC only] Adds one or more egress rules to a security group for use with
-         * a VPC. Specifically, this action permits instances to send traffic to one or
-         * more destination IPv4 or IPv6 CIDR address ranges, or to one or more destination
-         * security groups for the same VPC. This action doesn't apply to security groups
-         * for use in EC2-Classic. For more information, see <a
+         * <p>[EC2-VPC only] Adds the specified egress rules to a security group for use
+         * with a VPC. Specifically, this action permits instances to send traffic to the
+         * specified destination IPv4 or IPv6 CIDR address ranges, or to the specified
+         * destination security groups for the same VPC. This action doesn't apply to
+         * security groups for use in EC2-Classic. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
          * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
          * For more information about security group limits, see <a
@@ -2825,11 +2825,11 @@ namespace Model
         virtual Model::AuthorizeSecurityGroupEgressOutcome AuthorizeSecurityGroupEgress(const Model::AuthorizeSecurityGroupEgressRequest& request) const;
 
         /**
-         * <p>[EC2-VPC only] Adds one or more egress rules to a security group for use with
-         * a VPC. Specifically, this action permits instances to send traffic to one or
-         * more destination IPv4 or IPv6 CIDR address ranges, or to one or more destination
-         * security groups for the same VPC. This action doesn't apply to security groups
-         * for use in EC2-Classic. For more information, see <a
+         * <p>[EC2-VPC only] Adds the specified egress rules to a security group for use
+         * with a VPC. Specifically, this action permits instances to send traffic to the
+         * specified destination IPv4 or IPv6 CIDR address ranges, or to the specified
+         * destination security groups for the same VPC. This action doesn't apply to
+         * security groups for use in EC2-Classic. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
          * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
          * For more information about security group limits, see <a
@@ -2849,11 +2849,11 @@ namespace Model
         virtual Model::AuthorizeSecurityGroupEgressOutcomeCallable AuthorizeSecurityGroupEgressCallable(const Model::AuthorizeSecurityGroupEgressRequest& request) const;
 
         /**
-         * <p>[EC2-VPC only] Adds one or more egress rules to a security group for use with
-         * a VPC. Specifically, this action permits instances to send traffic to one or
-         * more destination IPv4 or IPv6 CIDR address ranges, or to one or more destination
-         * security groups for the same VPC. This action doesn't apply to security groups
-         * for use in EC2-Classic. For more information, see <a
+         * <p>[EC2-VPC only] Adds the specified egress rules to a security group for use
+         * with a VPC. Specifically, this action permits instances to send traffic to the
+         * specified destination IPv4 or IPv6 CIDR address ranges, or to the specified
+         * destination security groups for the same VPC. This action doesn't apply to
+         * security groups for use in EC2-Classic. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
          * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
          * For more information about security group limits, see <a
@@ -2873,19 +2873,18 @@ namespace Model
         virtual void AuthorizeSecurityGroupEgressAsync(const Model::AuthorizeSecurityGroupEgressRequest& request, const AuthorizeSecurityGroupEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds one or more ingress rules to a security group.</p> <p>Rule changes are
+         * <p>Adds the specified ingress rules to a security group.</p> <p>Rule changes are
          * propagated to instances within the security group as quickly as possible.
-         * However, a small delay might occur.</p> <p>[EC2-Classic] This action gives one
-         * or more IPv4 CIDR address ranges permission to access a security group in your
-         * account, or gives one or more security groups (called the <i>source groups</i>)
-         * permission to access a security group for your account. A source group can be
-         * for your own AWS account, or another. You can have up to 100 rules per
-         * group.</p> <p>[EC2-VPC] This action gives one or more IPv4 or IPv6 CIDR address
-         * ranges permission to access a security group in your VPC, or gives one or more
-         * other security groups (called the <i>source groups</i>) permission to access a
-         * security group for your VPC. The security groups must all be for the same VPC or
-         * a peer VPC in a VPC peering connection. For more information about VPC security
-         * group limits, see <a
+         * However, a small delay might occur.</p> <p>[EC2-Classic] This action gives the
+         * IPv4 CIDR address ranges permission to access a security group in your account,
+         * or gives the security groups (called the <i>source groups</i>) permission to
+         * access a security group for your account. A source group can be for your own AWS
+         * account, or another. You can have up to 100 rules per group.</p> <p>[EC2-VPC]
+         * This action gives the specified IPv4 or IPv6 CIDR address ranges permission to
+         * access a security group in your VPC, or gives the specified security groups
+         * (called the <i>source groups</i>) permission to access a security group for your
+         * VPC. The security groups must all be for the same VPC or a peer VPC in a VPC
+         * peering connection. For more information about VPC security group limits, see <a
          * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
          * VPC Limits</a>.</p> <p>You can optionally specify a description for the security
          * group rule.</p><p><h3>See Also:</h3>   <a
@@ -2895,19 +2894,18 @@ namespace Model
         virtual Model::AuthorizeSecurityGroupIngressOutcome AuthorizeSecurityGroupIngress(const Model::AuthorizeSecurityGroupIngressRequest& request) const;
 
         /**
-         * <p>Adds one or more ingress rules to a security group.</p> <p>Rule changes are
+         * <p>Adds the specified ingress rules to a security group.</p> <p>Rule changes are
          * propagated to instances within the security group as quickly as possible.
-         * However, a small delay might occur.</p> <p>[EC2-Classic] This action gives one
-         * or more IPv4 CIDR address ranges permission to access a security group in your
-         * account, or gives one or more security groups (called the <i>source groups</i>)
-         * permission to access a security group for your account. A source group can be
-         * for your own AWS account, or another. You can have up to 100 rules per
-         * group.</p> <p>[EC2-VPC] This action gives one or more IPv4 or IPv6 CIDR address
-         * ranges permission to access a security group in your VPC, or gives one or more
-         * other security groups (called the <i>source groups</i>) permission to access a
-         * security group for your VPC. The security groups must all be for the same VPC or
-         * a peer VPC in a VPC peering connection. For more information about VPC security
-         * group limits, see <a
+         * However, a small delay might occur.</p> <p>[EC2-Classic] This action gives the
+         * IPv4 CIDR address ranges permission to access a security group in your account,
+         * or gives the security groups (called the <i>source groups</i>) permission to
+         * access a security group for your account. A source group can be for your own AWS
+         * account, or another. You can have up to 100 rules per group.</p> <p>[EC2-VPC]
+         * This action gives the specified IPv4 or IPv6 CIDR address ranges permission to
+         * access a security group in your VPC, or gives the specified security groups
+         * (called the <i>source groups</i>) permission to access a security group for your
+         * VPC. The security groups must all be for the same VPC or a peer VPC in a VPC
+         * peering connection. For more information about VPC security group limits, see <a
          * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
          * VPC Limits</a>.</p> <p>You can optionally specify a description for the security
          * group rule.</p><p><h3>See Also:</h3>   <a
@@ -2919,19 +2917,18 @@ namespace Model
         virtual Model::AuthorizeSecurityGroupIngressOutcomeCallable AuthorizeSecurityGroupIngressCallable(const Model::AuthorizeSecurityGroupIngressRequest& request) const;
 
         /**
-         * <p>Adds one or more ingress rules to a security group.</p> <p>Rule changes are
+         * <p>Adds the specified ingress rules to a security group.</p> <p>Rule changes are
          * propagated to instances within the security group as quickly as possible.
-         * However, a small delay might occur.</p> <p>[EC2-Classic] This action gives one
-         * or more IPv4 CIDR address ranges permission to access a security group in your
-         * account, or gives one or more security groups (called the <i>source groups</i>)
-         * permission to access a security group for your account. A source group can be
-         * for your own AWS account, or another. You can have up to 100 rules per
-         * group.</p> <p>[EC2-VPC] This action gives one or more IPv4 or IPv6 CIDR address
-         * ranges permission to access a security group in your VPC, or gives one or more
-         * other security groups (called the <i>source groups</i>) permission to access a
-         * security group for your VPC. The security groups must all be for the same VPC or
-         * a peer VPC in a VPC peering connection. For more information about VPC security
-         * group limits, see <a
+         * However, a small delay might occur.</p> <p>[EC2-Classic] This action gives the
+         * IPv4 CIDR address ranges permission to access a security group in your account,
+         * or gives the security groups (called the <i>source groups</i>) permission to
+         * access a security group for your account. A source group can be for your own AWS
+         * account, or another. You can have up to 100 rules per group.</p> <p>[EC2-VPC]
+         * This action gives the specified IPv4 or IPv6 CIDR address ranges permission to
+         * access a security group in your VPC, or gives the specified security groups
+         * (called the <i>source groups</i>) permission to access a security group for your
+         * VPC. The security groups must all be for the same VPC or a peer VPC in a VPC
+         * peering connection. For more information about VPC security group limits, see <a
          * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
          * VPC Limits</a>.</p> <p>You can optionally specify a description for the security
          * group rule.</p><p><h3>See Also:</h3>   <a
@@ -5176,9 +5173,9 @@ namespace Model
         virtual void CreateSubnetAsync(const Model::CreateSubnetRequest& request, const CreateSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or overwrites one or more tags for the specified Amazon EC2 resource or
-         * resources. Each resource can have a maximum of 50 tags. Each tag consists of a
-         * key and optional value. Tag keys must be unique per resource.</p> <p>For more
+         * <p>Adds or overwrites the specified tags for the specified Amazon EC2 resource
+         * or resources. Each resource can have a maximum of 50 tags. Each tag consists of
+         * a key and optional value. Tag keys must be unique per resource.</p> <p>For more
          * information about tags, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For
@@ -5193,9 +5190,9 @@ namespace Model
         virtual Model::CreateTagsOutcome CreateTags(const Model::CreateTagsRequest& request) const;
 
         /**
-         * <p>Adds or overwrites one or more tags for the specified Amazon EC2 resource or
-         * resources. Each resource can have a maximum of 50 tags. Each tag consists of a
-         * key and optional value. Tag keys must be unique per resource.</p> <p>For more
+         * <p>Adds or overwrites the specified tags for the specified Amazon EC2 resource
+         * or resources. Each resource can have a maximum of 50 tags. Each tag consists of
+         * a key and optional value. Tag keys must be unique per resource.</p> <p>For more
          * information about tags, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For
@@ -5212,9 +5209,9 @@ namespace Model
         virtual Model::CreateTagsOutcomeCallable CreateTagsCallable(const Model::CreateTagsRequest& request) const;
 
         /**
-         * <p>Adds or overwrites one or more tags for the specified Amazon EC2 resource or
-         * resources. Each resource can have a maximum of 50 tags. Each tag consists of a
-         * key and optional value. Tag keys must be unique per resource.</p> <p>For more
+         * <p>Adds or overwrites the specified tags for the specified Amazon EC2 resource
+         * or resources. Each resource can have a maximum of 50 tags. Each tag consists of
+         * a key and optional value. Tag keys must be unique per resource.</p> <p>For more
          * information about tags, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For
@@ -7337,9 +7334,9 @@ namespace Model
         virtual void DescribeAccountAttributesAsync(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your Elastic IP addresses.</p> <p>An Elastic IP
-         * address is for use in either the EC2-Classic platform or in a VPC. For more
-         * information, see <a
+         * <p>Describes the specified Elastic IP addresses or all of your Elastic IP
+         * addresses.</p> <p>An Elastic IP address is for use in either the EC2-Classic
+         * platform or in a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -7349,9 +7346,9 @@ namespace Model
         virtual Model::DescribeAddressesOutcome DescribeAddresses(const Model::DescribeAddressesRequest& request) const;
 
         /**
-         * <p>Describes one or more of your Elastic IP addresses.</p> <p>An Elastic IP
-         * address is for use in either the EC2-Classic platform or in a VPC. For more
-         * information, see <a
+         * <p>Describes the specified Elastic IP addresses or all of your Elastic IP
+         * addresses.</p> <p>An Elastic IP address is for use in either the EC2-Classic
+         * platform or in a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -7363,9 +7360,9 @@ namespace Model
         virtual Model::DescribeAddressesOutcomeCallable DescribeAddressesCallable(const Model::DescribeAddressesRequest& request) const;
 
         /**
-         * <p>Describes one or more of your Elastic IP addresses.</p> <p>An Elastic IP
-         * address is for use in either the EC2-Classic platform or in a VPC. For more
-         * information, see <a
+         * <p>Describes the specified Elastic IP addresses or all of your Elastic IP
+         * addresses.</p> <p>An Elastic IP address is for use in either the EC2-Classic
+         * platform or in a VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -7459,11 +7456,11 @@ namespace Model
         virtual void DescribeAggregateIdFormatAsync(const Model::DescribeAggregateIdFormatRequest& request, const DescribeAggregateIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of the Availability Zones that are available to you.
-         * The results include zones only for the region you're currently using. If there
-         * is an event impacting an Availability Zone, you can use this request to view the
-         * state and any provided message for that Availability Zone.</p> <p>For more
-         * information, see <a
+         * <p>Describes the Availability Zones that are available to you. The results
+         * include zones only for the region you're currently using. If there is an event
+         * impacting an Availability Zone, you can use this request to view the state and
+         * any provided message for that Availability Zone.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
          * and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -7473,11 +7470,11 @@ namespace Model
         virtual Model::DescribeAvailabilityZonesOutcome DescribeAvailabilityZones(const Model::DescribeAvailabilityZonesRequest& request) const;
 
         /**
-         * <p>Describes one or more of the Availability Zones that are available to you.
-         * The results include zones only for the region you're currently using. If there
-         * is an event impacting an Availability Zone, you can use this request to view the
-         * state and any provided message for that Availability Zone.</p> <p>For more
-         * information, see <a
+         * <p>Describes the Availability Zones that are available to you. The results
+         * include zones only for the region you're currently using. If there is an event
+         * impacting an Availability Zone, you can use this request to view the state and
+         * any provided message for that Availability Zone.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
          * and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -7489,11 +7486,11 @@ namespace Model
         virtual Model::DescribeAvailabilityZonesOutcomeCallable DescribeAvailabilityZonesCallable(const Model::DescribeAvailabilityZonesRequest& request) const;
 
         /**
-         * <p>Describes one or more of the Availability Zones that are available to you.
-         * The results include zones only for the region you're currently using. If there
-         * is an event impacting an Availability Zone, you can use this request to view the
-         * state and any provided message for that Availability Zone.</p> <p>For more
-         * information, see <a
+         * <p>Describes the Availability Zones that are available to you. The results
+         * include zones only for the region you're currently using. If there is an event
+         * impacting an Availability Zone, you can use this request to view the state and
+         * any provided message for that Availability Zone.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
          * and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -7505,9 +7502,9 @@ namespace Model
         virtual void DescribeAvailabilityZonesAsync(const Model::DescribeAvailabilityZonesRequest& request, const DescribeAvailabilityZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your bundling tasks.</p> <note> <p>Completed bundle
-         * tasks are listed for only a limited time. If your bundle task is no longer in
-         * the list, you can still register an AMI from it. Just use
+         * <p>Describes the specified bundle tasks or all of your bundle tasks.</p> <note>
+         * <p>Completed bundle tasks are listed for only a limited time. If your bundle
+         * task is no longer in the list, you can still register an AMI from it. Just use
          * <code>RegisterImage</code> with the Amazon S3 bucket name and image manifest
          * name you provided to the bundle task.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">AWS
@@ -7516,9 +7513,9 @@ namespace Model
         virtual Model::DescribeBundleTasksOutcome DescribeBundleTasks(const Model::DescribeBundleTasksRequest& request) const;
 
         /**
-         * <p>Describes one or more of your bundling tasks.</p> <note> <p>Completed bundle
-         * tasks are listed for only a limited time. If your bundle task is no longer in
-         * the list, you can still register an AMI from it. Just use
+         * <p>Describes the specified bundle tasks or all of your bundle tasks.</p> <note>
+         * <p>Completed bundle tasks are listed for only a limited time. If your bundle
+         * task is no longer in the list, you can still register an AMI from it. Just use
          * <code>RegisterImage</code> with the Amazon S3 bucket name and image manifest
          * name you provided to the bundle task.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">AWS
@@ -7529,9 +7526,9 @@ namespace Model
         virtual Model::DescribeBundleTasksOutcomeCallable DescribeBundleTasksCallable(const Model::DescribeBundleTasksRequest& request) const;
 
         /**
-         * <p>Describes one or more of your bundling tasks.</p> <note> <p>Completed bundle
-         * tasks are listed for only a limited time. If your bundle task is no longer in
-         * the list, you can still register an AMI from it. Just use
+         * <p>Describes the specified bundle tasks or all of your bundle tasks.</p> <note>
+         * <p>Completed bundle tasks are listed for only a limited time. If your bundle
+         * task is no longer in the list, you can still register an AMI from it. Just use
          * <code>RegisterImage</code> with the Amazon S3 bucket name and image manifest
          * name you provided to the bundle task.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">AWS
@@ -8520,24 +8517,24 @@ namespace Model
         virtual void DescribeImageAttributeAsync(const Model::DescribeImageAttributeRequest& request, const DescribeImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of the images (AMIs, AKIs, and ARIs) available to you.
-         * Images available to you include public images, private images that you own, and
-         * private images owned by other AWS accounts but for which you have explicit
-         * launch permissions.</p> <note> <p>Deregistered images are included in the
-         * returned results for an unspecified interval after deregistration.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified images (AMIs, AKIs, and ARIs) available to you or all
+         * of the images available to you.</p> <p>The images available to you include
+         * public images, private images that you own, and private images owned by other
+         * AWS accounts for which you have explicit launch permissions.</p> <note>
+         * <p>Deregistered images are included in the returned results for an unspecified
+         * interval after deregistration.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest& request) const;
 
         /**
-         * <p>Describes one or more of the images (AMIs, AKIs, and ARIs) available to you.
-         * Images available to you include public images, private images that you own, and
-         * private images owned by other AWS accounts but for which you have explicit
-         * launch permissions.</p> <note> <p>Deregistered images are included in the
-         * returned results for an unspecified interval after deregistration.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified images (AMIs, AKIs, and ARIs) available to you or all
+         * of the images available to you.</p> <p>The images available to you include
+         * public images, private images that you own, and private images owned by other
+         * AWS accounts for which you have explicit launch permissions.</p> <note>
+         * <p>Deregistered images are included in the returned results for an unspecified
+         * interval after deregistration.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages">AWS
          * API Reference</a></p>
          *
@@ -8546,12 +8543,12 @@ namespace Model
         virtual Model::DescribeImagesOutcomeCallable DescribeImagesCallable(const Model::DescribeImagesRequest& request) const;
 
         /**
-         * <p>Describes one or more of the images (AMIs, AKIs, and ARIs) available to you.
-         * Images available to you include public images, private images that you own, and
-         * private images owned by other AWS accounts but for which you have explicit
-         * launch permissions.</p> <note> <p>Deregistered images are included in the
-         * returned results for an unspecified interval after deregistration.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified images (AMIs, AKIs, and ARIs) available to you or all
+         * of the images available to you.</p> <p>The images available to you include
+         * public images, private images that you own, and private images owned by other
+         * AWS accounts for which you have explicit launch permissions.</p> <note>
+         * <p>Deregistered images are included in the returned results for an unspecified
+         * interval after deregistration.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages">AWS
          * API Reference</a></p>
          *
@@ -8659,7 +8656,7 @@ namespace Model
         virtual void DescribeInstanceAttributeAsync(const Model::DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the credit option for CPU usage of one or more of your T2 or T3
+         * <p>Describes the credit option for CPU usage of the specified T2 or T3
          * instances. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>If you do not specify an instance ID, Amazon EC2
          * returns T2 and T3 instances with the <code>unlimited</code> credit option, as
@@ -8685,7 +8682,7 @@ namespace Model
         virtual Model::DescribeInstanceCreditSpecificationsOutcome DescribeInstanceCreditSpecifications(const Model::DescribeInstanceCreditSpecificationsRequest& request) const;
 
         /**
-         * <p>Describes the credit option for CPU usage of one or more of your T2 or T3
+         * <p>Describes the credit option for CPU usage of the specified T2 or T3
          * instances. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>If you do not specify an instance ID, Amazon EC2
          * returns T2 and T3 instances with the <code>unlimited</code> credit option, as
@@ -8713,7 +8710,7 @@ namespace Model
         virtual Model::DescribeInstanceCreditSpecificationsOutcomeCallable DescribeInstanceCreditSpecificationsCallable(const Model::DescribeInstanceCreditSpecificationsRequest& request) const;
 
         /**
-         * <p>Describes the credit option for CPU usage of one or more of your T2 or T3
+         * <p>Describes the credit option for CPU usage of the specified T2 or T3
          * instances. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>If you do not specify an instance ID, Amazon EC2
          * returns T2 and T3 instances with the <code>unlimited</code> credit option, as
@@ -8741,12 +8738,12 @@ namespace Model
         virtual void DescribeInstanceCreditSpecificationsAsync(const Model::DescribeInstanceCreditSpecificationsRequest& request, const DescribeInstanceCreditSpecificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the status of one or more instances. By default, only running
-         * instances are described, unless you specifically indicate to return the status
-         * of all instances.</p> <p>Instance status includes the following components:</p>
-         * <ul> <li> <p> <b>Status checks</b> - Amazon EC2 performs status checks on
-         * running EC2 instances to identify hardware and software issues. For more
-         * information, see <a
+         * <p>Describes the status of the specified instances or all of your instances. By
+         * default, only running instances are described, unless you specifically indicate
+         * to return the status of all instances.</p> <p>Instance status includes the
+         * following components:</p> <ul> <li> <p> <b>Status checks</b> - Amazon EC2
+         * performs status checks on running EC2 instances to identify hardware and
+         * software issues. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
          * Checks for Your Instances</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
@@ -8769,12 +8766,12 @@ namespace Model
         virtual Model::DescribeInstanceStatusOutcome DescribeInstanceStatus(const Model::DescribeInstanceStatusRequest& request) const;
 
         /**
-         * <p>Describes the status of one or more instances. By default, only running
-         * instances are described, unless you specifically indicate to return the status
-         * of all instances.</p> <p>Instance status includes the following components:</p>
-         * <ul> <li> <p> <b>Status checks</b> - Amazon EC2 performs status checks on
-         * running EC2 instances to identify hardware and software issues. For more
-         * information, see <a
+         * <p>Describes the status of the specified instances or all of your instances. By
+         * default, only running instances are described, unless you specifically indicate
+         * to return the status of all instances.</p> <p>Instance status includes the
+         * following components:</p> <ul> <li> <p> <b>Status checks</b> - Amazon EC2
+         * performs status checks on running EC2 instances to identify hardware and
+         * software issues. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
          * Checks for Your Instances</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
@@ -8799,12 +8796,12 @@ namespace Model
         virtual Model::DescribeInstanceStatusOutcomeCallable DescribeInstanceStatusCallable(const Model::DescribeInstanceStatusRequest& request) const;
 
         /**
-         * <p>Describes the status of one or more instances. By default, only running
-         * instances are described, unless you specifically indicate to return the status
-         * of all instances.</p> <p>Instance status includes the following components:</p>
-         * <ul> <li> <p> <b>Status checks</b> - Amazon EC2 performs status checks on
-         * running EC2 instances to identify hardware and software issues. For more
-         * information, see <a
+         * <p>Describes the status of the specified instances or all of your instances. By
+         * default, only running instances are described, unless you specifically indicate
+         * to return the status of all instances.</p> <p>Instance status includes the
+         * following components:</p> <ul> <li> <p> <b>Status checks</b> - Amazon EC2
+         * performs status checks on running EC2 instances to identify hardware and
+         * software issues. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
          * Checks for Your Instances</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
@@ -8829,36 +8826,36 @@ namespace Model
         virtual void DescribeInstanceStatusAsync(const Model::DescribeInstanceStatusRequest& request, const DescribeInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your instances.</p> <p>If you specify one or more
-         * instance IDs, Amazon EC2 returns information for those instances. If you do not
-         * specify instance IDs, Amazon EC2 returns information for all relevant instances.
-         * If you specify an instance ID that is not valid, an error is returned. If you
-         * specify an instance that you do not own, it is not included in the returned
-         * results.</p> <p>Recently terminated instances might appear in the returned
-         * results. This interval is usually less than one hour.</p> <p>If you describe
-         * instances in the rare case where an Availability Zone is experiencing a service
-         * disruption and you specify instance IDs that are in the affected zone, or do not
-         * specify any instance IDs at all, the call fails. If you describe instances and
-         * specify only instance IDs that are in an unaffected zone, the call works
-         * normally.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified instances or all of your instances.</p> <p>If you
+         * specify one or more instance IDs, Amazon EC2 returns information for those
+         * instances. If you do not specify instance IDs, Amazon EC2 returns information
+         * for all relevant instances. If you specify an instance ID that is not valid, an
+         * error is returned. If you specify an instance that you do not own, it is not
+         * included in the returned results.</p> <p>Recently terminated instances might
+         * appear in the returned results. This interval is usually less than one hour.</p>
+         * <p>If you describe instances in the rare case where an Availability Zone is
+         * experiencing a service disruption and you specify instance IDs that are in the
+         * affected zone, or do not specify any instance IDs at all, the call fails. If you
+         * describe instances and specify only instance IDs that are in an unaffected zone,
+         * the call works normally.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest& request) const;
 
         /**
-         * <p>Describes one or more of your instances.</p> <p>If you specify one or more
-         * instance IDs, Amazon EC2 returns information for those instances. If you do not
-         * specify instance IDs, Amazon EC2 returns information for all relevant instances.
-         * If you specify an instance ID that is not valid, an error is returned. If you
-         * specify an instance that you do not own, it is not included in the returned
-         * results.</p> <p>Recently terminated instances might appear in the returned
-         * results. This interval is usually less than one hour.</p> <p>If you describe
-         * instances in the rare case where an Availability Zone is experiencing a service
-         * disruption and you specify instance IDs that are in the affected zone, or do not
-         * specify any instance IDs at all, the call fails. If you describe instances and
-         * specify only instance IDs that are in an unaffected zone, the call works
-         * normally.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified instances or all of your instances.</p> <p>If you
+         * specify one or more instance IDs, Amazon EC2 returns information for those
+         * instances. If you do not specify instance IDs, Amazon EC2 returns information
+         * for all relevant instances. If you specify an instance ID that is not valid, an
+         * error is returned. If you specify an instance that you do not own, it is not
+         * included in the returned results.</p> <p>Recently terminated instances might
+         * appear in the returned results. This interval is usually less than one hour.</p>
+         * <p>If you describe instances in the rare case where an Availability Zone is
+         * experiencing a service disruption and you specify instance IDs that are in the
+         * affected zone, or do not specify any instance IDs at all, the call fails. If you
+         * describe instances and specify only instance IDs that are in an unaffected zone,
+         * the call works normally.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">AWS
          * API Reference</a></p>
          *
@@ -8867,18 +8864,18 @@ namespace Model
         virtual Model::DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request) const;
 
         /**
-         * <p>Describes one or more of your instances.</p> <p>If you specify one or more
-         * instance IDs, Amazon EC2 returns information for those instances. If you do not
-         * specify instance IDs, Amazon EC2 returns information for all relevant instances.
-         * If you specify an instance ID that is not valid, an error is returned. If you
-         * specify an instance that you do not own, it is not included in the returned
-         * results.</p> <p>Recently terminated instances might appear in the returned
-         * results. This interval is usually less than one hour.</p> <p>If you describe
-         * instances in the rare case where an Availability Zone is experiencing a service
-         * disruption and you specify instance IDs that are in the affected zone, or do not
-         * specify any instance IDs at all, the call fails. If you describe instances and
-         * specify only instance IDs that are in an unaffected zone, the call works
-         * normally.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified instances or all of your instances.</p> <p>If you
+         * specify one or more instance IDs, Amazon EC2 returns information for those
+         * instances. If you do not specify instance IDs, Amazon EC2 returns information
+         * for all relevant instances. If you specify an instance ID that is not valid, an
+         * error is returned. If you specify an instance that you do not own, it is not
+         * included in the returned results.</p> <p>Recently terminated instances might
+         * appear in the returned results. This interval is usually less than one hour.</p>
+         * <p>If you describe instances in the rare case where an Availability Zone is
+         * experiencing a service disruption and you specify instance IDs that are in the
+         * affected zone, or do not specify any instance IDs at all, the call fails. If you
+         * describe instances and specify only instance IDs that are in an unaffected zone,
+         * the call works normally.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">AWS
          * API Reference</a></p>
          *
@@ -8915,8 +8912,8 @@ namespace Model
         virtual void DescribeInternetGatewaysAsync(const Model::DescribeInternetGatewaysRequest& request, const DescribeInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your key pairs.</p> <p>For more information about
-         * key pairs, see <a
+         * <p>Describes the specified key pairs or all of your key pairs.</p> <p>For more
+         * information about key pairs, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
          * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -8926,8 +8923,8 @@ namespace Model
         virtual Model::DescribeKeyPairsOutcome DescribeKeyPairs(const Model::DescribeKeyPairsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your key pairs.</p> <p>For more information about
-         * key pairs, see <a
+         * <p>Describes the specified key pairs or all of your key pairs.</p> <p>For more
+         * information about key pairs, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
          * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -8939,8 +8936,8 @@ namespace Model
         virtual Model::DescribeKeyPairsOutcomeCallable DescribeKeyPairsCallable(const Model::DescribeKeyPairsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your key pairs.</p> <p>For more information about
-         * key pairs, see <a
+         * <p>Describes the specified key pairs or all of your key pairs.</p> <p>For more
+         * information about key pairs, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
          * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -9188,7 +9185,8 @@ namespace Model
         virtual void DescribeNetworkInterfacesAsync(const Model::DescribeNetworkInterfacesRequest& request, const DescribeNetworkInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your placement groups. For more information, see <a
+         * <p>Describes the specified placement groups or all of your placement groups. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -9198,7 +9196,8 @@ namespace Model
         virtual Model::DescribePlacementGroupsOutcome DescribePlacementGroups(const Model::DescribePlacementGroupsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your placement groups. For more information, see <a
+         * <p>Describes the specified placement groups or all of your placement groups. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -9210,7 +9209,8 @@ namespace Model
         virtual Model::DescribePlacementGroupsOutcomeCallable DescribePlacementGroupsCallable(const Model::DescribePlacementGroupsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your placement groups. For more information, see <a
+         * <p>Describes the specified placement groups or all of your placement groups. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -9372,8 +9372,8 @@ namespace Model
         virtual void DescribePublicIpv4PoolsAsync(const Model::DescribePublicIpv4PoolsRequest& request, const DescribePublicIpv4PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more regions that are currently available to you.</p> <p>For
-         * a list of the regions supported by Amazon EC2, see <a
+         * <p>Describes the regions that are currently available to you.</p> <p>For a list
+         * of the regions supported by Amazon EC2, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">Regions
          * and Endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">AWS
@@ -9382,8 +9382,8 @@ namespace Model
         virtual Model::DescribeRegionsOutcome DescribeRegions(const Model::DescribeRegionsRequest& request) const;
 
         /**
-         * <p>Describes one or more regions that are currently available to you.</p> <p>For
-         * a list of the regions supported by Amazon EC2, see <a
+         * <p>Describes the regions that are currently available to you.</p> <p>For a list
+         * of the regions supported by Amazon EC2, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">Regions
          * and Endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">AWS
@@ -9394,8 +9394,8 @@ namespace Model
         virtual Model::DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
 
         /**
-         * <p>Describes one or more regions that are currently available to you.</p> <p>For
-         * a list of the regions supported by Amazon EC2, see <a
+         * <p>Describes the regions that are currently available to you.</p> <p>For a list
+         * of the regions supported by Amazon EC2, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">Regions
          * and Endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">AWS
@@ -9762,9 +9762,9 @@ namespace Model
         virtual void DescribeSecurityGroupReferencesAsync(const Model::DescribeSecurityGroupReferencesRequest& request, const DescribeSecurityGroupReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your security groups.</p> <p>A security group is for
-         * use with instances either in the EC2-Classic platform or in a specific VPC. For
-         * more information, see <a
+         * <p>Describes the specified security groups or all of your security groups.</p>
+         * <p>A security group is for use with instances either in the EC2-Classic platform
+         * or in a specific VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
          * EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
          * and <a
@@ -9777,9 +9777,9 @@ namespace Model
         virtual Model::DescribeSecurityGroupsOutcome DescribeSecurityGroups(const Model::DescribeSecurityGroupsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your security groups.</p> <p>A security group is for
-         * use with instances either in the EC2-Classic platform or in a specific VPC. For
-         * more information, see <a
+         * <p>Describes the specified security groups or all of your security groups.</p>
+         * <p>A security group is for use with instances either in the EC2-Classic platform
+         * or in a specific VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
          * EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
          * and <a
@@ -9794,9 +9794,9 @@ namespace Model
         virtual Model::DescribeSecurityGroupsOutcomeCallable DescribeSecurityGroupsCallable(const Model::DescribeSecurityGroupsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your security groups.</p> <p>A security group is for
-         * use with instances either in the EC2-Classic platform or in a specific VPC. For
-         * more information, see <a
+         * <p>Describes the specified security groups or all of your security groups.</p>
+         * <p>A security group is for use with instances either in the EC2-Classic platform
+         * or in a specific VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
          * EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
          * and <a
@@ -9851,11 +9851,11 @@ namespace Model
         virtual void DescribeSnapshotAttributeAsync(const Model::DescribeSnapshotAttributeRequest& request, const DescribeSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of the EBS snapshots available to you. Available
-         * snapshots include public snapshots available for use by any AWS account, private
-         * snapshots that you own, and private snapshots owned by another AWS account for
-         * which you've been given explicit create volume permissions.</p> <p>The create
-         * volume permissions fall into the following categories:</p> <ul> <li> <p>
+         * <p>Describes the specified EBS snapshots available to you or all of the EBS
+         * snapshots available to you.</p> <p>The snapshots available to you include public
+         * snapshots, private snapshots that you own, and private snapshots owned by other
+         * AWS accounts for which you have explicit create volume permissions.</p> <p>The
+         * create volume permissions fall into the following categories:</p> <ul> <li> <p>
          * <i>public</i>: The owner of the snapshot granted create volume permissions for
          * the snapshot to the <code>all</code> group. All AWS accounts have create volume
          * permissions for these snapshots.</p> </li> <li> <p> <i>explicit</i>: The owner
@@ -9893,11 +9893,11 @@ namespace Model
         virtual Model::DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest& request) const;
 
         /**
-         * <p>Describes one or more of the EBS snapshots available to you. Available
-         * snapshots include public snapshots available for use by any AWS account, private
-         * snapshots that you own, and private snapshots owned by another AWS account for
-         * which you've been given explicit create volume permissions.</p> <p>The create
-         * volume permissions fall into the following categories:</p> <ul> <li> <p>
+         * <p>Describes the specified EBS snapshots available to you or all of the EBS
+         * snapshots available to you.</p> <p>The snapshots available to you include public
+         * snapshots, private snapshots that you own, and private snapshots owned by other
+         * AWS accounts for which you have explicit create volume permissions.</p> <p>The
+         * create volume permissions fall into the following categories:</p> <ul> <li> <p>
          * <i>public</i>: The owner of the snapshot granted create volume permissions for
          * the snapshot to the <code>all</code> group. All AWS accounts have create volume
          * permissions for these snapshots.</p> </li> <li> <p> <i>explicit</i>: The owner
@@ -9937,11 +9937,11 @@ namespace Model
         virtual Model::DescribeSnapshotsOutcomeCallable DescribeSnapshotsCallable(const Model::DescribeSnapshotsRequest& request) const;
 
         /**
-         * <p>Describes one or more of the EBS snapshots available to you. Available
-         * snapshots include public snapshots available for use by any AWS account, private
-         * snapshots that you own, and private snapshots owned by another AWS account for
-         * which you've been given explicit create volume permissions.</p> <p>The create
-         * volume permissions fall into the following categories:</p> <ul> <li> <p>
+         * <p>Describes the specified EBS snapshots available to you or all of the EBS
+         * snapshots available to you.</p> <p>The snapshots available to you include public
+         * snapshots, private snapshots that you own, and private snapshots owned by other
+         * AWS accounts for which you have explicit create volume permissions.</p> <p>The
+         * create volume permissions fall into the following categories:</p> <ul> <li> <p>
          * <i>public</i>: The owner of the snapshot granted create volume permissions for
          * the snapshot to the <code>all</code> group. All AWS accounts have create volume
          * permissions for these snapshots.</p> </li> <li> <p> <i>explicit</i>: The owner
@@ -10292,7 +10292,7 @@ namespace Model
         virtual void DescribeSubnetsAsync(const Model::DescribeSubnetsRequest& request, const DescribeSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of the tags for your EC2 resources.</p> <p>For more
+         * <p>Describes the specified tags for your EC2 resources.</p> <p>For more
          * information about tags, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User
@@ -10303,7 +10303,7 @@ namespace Model
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
         /**
-         * <p>Describes one or more of the tags for your EC2 resources.</p> <p>For more
+         * <p>Describes the specified tags for your EC2 resources.</p> <p>For more
          * information about tags, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User
@@ -10316,7 +10316,7 @@ namespace Model
         virtual Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const Model::DescribeTagsRequest& request) const;
 
         /**
-         * <p>Describes one or more of the tags for your EC2 resources.</p> <p>For more
+         * <p>Describes the specified tags for your EC2 resources.</p> <p>For more
          * information about tags, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User
@@ -10617,12 +10617,12 @@ namespace Model
         virtual void DescribeVolumeStatusAsync(const Model::DescribeVolumeStatusRequest& request, const DescribeVolumeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified EBS volumes.</p> <p>If you are describing a long list
-         * of volumes, you can paginate the output to make the list more manageable. The
-         * <code>MaxResults</code> parameter sets the maximum number of results returned in
-         * a single page. If the list of results exceeds your <code>MaxResults</code>
-         * value, then that number of results is returned along with a
-         * <code>NextToken</code> value that can be passed to a subsequent
+         * <p>Describes the specified EBS volumes or all of your EBS volumes.</p> <p>If you
+         * are describing a long list of volumes, you can paginate the output to make the
+         * list more manageable. The <code>MaxResults</code> parameter sets the maximum
+         * number of results returned in a single page. If the list of results exceeds your
+         * <code>MaxResults</code> value, then that number of results is returned along
+         * with a <code>NextToken</code> value that can be passed to a subsequent
          * <code>DescribeVolumes</code> request to retrieve the remaining results.</p>
          * <p>For more information about EBS volumes, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
@@ -10634,12 +10634,12 @@ namespace Model
         virtual Model::DescribeVolumesOutcome DescribeVolumes(const Model::DescribeVolumesRequest& request) const;
 
         /**
-         * <p>Describes the specified EBS volumes.</p> <p>If you are describing a long list
-         * of volumes, you can paginate the output to make the list more manageable. The
-         * <code>MaxResults</code> parameter sets the maximum number of results returned in
-         * a single page. If the list of results exceeds your <code>MaxResults</code>
-         * value, then that number of results is returned along with a
-         * <code>NextToken</code> value that can be passed to a subsequent
+         * <p>Describes the specified EBS volumes or all of your EBS volumes.</p> <p>If you
+         * are describing a long list of volumes, you can paginate the output to make the
+         * list more manageable. The <code>MaxResults</code> parameter sets the maximum
+         * number of results returned in a single page. If the list of results exceeds your
+         * <code>MaxResults</code> value, then that number of results is returned along
+         * with a <code>NextToken</code> value that can be passed to a subsequent
          * <code>DescribeVolumes</code> request to retrieve the remaining results.</p>
          * <p>For more information about EBS volumes, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
@@ -10653,12 +10653,12 @@ namespace Model
         virtual Model::DescribeVolumesOutcomeCallable DescribeVolumesCallable(const Model::DescribeVolumesRequest& request) const;
 
         /**
-         * <p>Describes the specified EBS volumes.</p> <p>If you are describing a long list
-         * of volumes, you can paginate the output to make the list more manageable. The
-         * <code>MaxResults</code> parameter sets the maximum number of results returned in
-         * a single page. If the list of results exceeds your <code>MaxResults</code>
-         * value, then that number of results is returned along with a
-         * <code>NextToken</code> value that can be passed to a subsequent
+         * <p>Describes the specified EBS volumes or all of your EBS volumes.</p> <p>If you
+         * are describing a long list of volumes, you can paginate the output to make the
+         * list more manageable. The <code>MaxResults</code> parameter sets the maximum
+         * number of results returned in a single page. If the list of results exceeds your
+         * <code>MaxResults</code> value, then that number of results is returned along
+         * with a <code>NextToken</code> value that can be passed to a subsequent
          * <code>DescribeVolumes</code> request to retrieve the remaining results.</p>
          * <p>For more information about EBS volumes, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
@@ -14318,7 +14318,7 @@ namespace Model
         virtual void PurchaseScheduledInstancesAsync(const Model::PurchaseScheduledInstancesRequest& request, const PurchaseScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Requests a reboot of one or more instances. This operation is asynchronous;
+         * <p>Requests a reboot of the specified instances. This operation is asynchronous;
          * it only queues a request to reboot the specified instances. The operation
          * succeeds if the instances are valid and belong to you. Requests to reboot
          * terminated instances are ignored.</p> <p>If an instance does not cleanly shut
@@ -14333,7 +14333,7 @@ namespace Model
         virtual Model::RebootInstancesOutcome RebootInstances(const Model::RebootInstancesRequest& request) const;
 
         /**
-         * <p>Requests a reboot of one or more instances. This operation is asynchronous;
+         * <p>Requests a reboot of the specified instances. This operation is asynchronous;
          * it only queues a request to reboot the specified instances. The operation
          * succeeds if the instances are valid and belong to you. Requests to reboot
          * terminated instances are ignored.</p> <p>If an instance does not cleanly shut
@@ -14350,7 +14350,7 @@ namespace Model
         virtual Model::RebootInstancesOutcomeCallable RebootInstancesCallable(const Model::RebootInstancesRequest& request) const;
 
         /**
-         * <p>Requests a reboot of one or more instances. This operation is asynchronous;
+         * <p>Requests a reboot of the specified instances. This operation is asynchronous;
          * it only queues a request to reboot the specified instances. The operation
          * succeeds if the instances are valid and belong to you. Requests to reboot
          * terminated instances are ignored.</p> <p>If an instance does not cleanly shut
@@ -15322,7 +15322,7 @@ namespace Model
         virtual void RevokeClientVpnIngressAsync(const Model::RevokeClientVpnIngressRequest& request, const RevokeClientVpnIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>[EC2-VPC only] Removes one or more egress rules from a security group for
+         * <p>[EC2-VPC only] Removes the specified egress rules from a security group for
          * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic. To
          * remove a rule, the values that you specify (for example, ports) must match the
          * existing rule's values exactly.</p> <p>Each rule consists of the protocol and
@@ -15339,7 +15339,7 @@ namespace Model
         virtual Model::RevokeSecurityGroupEgressOutcome RevokeSecurityGroupEgress(const Model::RevokeSecurityGroupEgressRequest& request) const;
 
         /**
-         * <p>[EC2-VPC only] Removes one or more egress rules from a security group for
+         * <p>[EC2-VPC only] Removes the specified egress rules from a security group for
          * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic. To
          * remove a rule, the values that you specify (for example, ports) must match the
          * existing rule's values exactly.</p> <p>Each rule consists of the protocol and
@@ -15358,7 +15358,7 @@ namespace Model
         virtual Model::RevokeSecurityGroupEgressOutcomeCallable RevokeSecurityGroupEgressCallable(const Model::RevokeSecurityGroupEgressRequest& request) const;
 
         /**
-         * <p>[EC2-VPC only] Removes one or more egress rules from a security group for
+         * <p>[EC2-VPC only] Removes the specified egress rules from a security group for
          * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic. To
          * remove a rule, the values that you specify (for example, ports) must match the
          * existing rule's values exactly.</p> <p>Each rule consists of the protocol and
@@ -15377,7 +15377,7 @@ namespace Model
         virtual void RevokeSecurityGroupEgressAsync(const Model::RevokeSecurityGroupEgressRequest& request, const RevokeSecurityGroupEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more ingress rules from a security group. To remove a rule,
+         * <p>Removes the specified ingress rules from a security group. To remove a rule,
          * the values that you specify (for example, ports) must match the existing rule's
          * values exactly.</p> <note> <p>[EC2-Classic security groups only] If the values
          * you specify do not match the existing rule's values, no error is returned. Use
@@ -15395,7 +15395,7 @@ namespace Model
         virtual Model::RevokeSecurityGroupIngressOutcome RevokeSecurityGroupIngress(const Model::RevokeSecurityGroupIngressRequest& request) const;
 
         /**
-         * <p>Removes one or more ingress rules from a security group. To remove a rule,
+         * <p>Removes the specified ingress rules from a security group. To remove a rule,
          * the values that you specify (for example, ports) must match the existing rule's
          * values exactly.</p> <note> <p>[EC2-Classic security groups only] If the values
          * you specify do not match the existing rule's values, no error is returned. Use
@@ -15415,7 +15415,7 @@ namespace Model
         virtual Model::RevokeSecurityGroupIngressOutcomeCallable RevokeSecurityGroupIngressCallable(const Model::RevokeSecurityGroupIngressRequest& request) const;
 
         /**
-         * <p>Removes one or more ingress rules from a security group. To remove a rule,
+         * <p>Removes the specified ingress rules from a security group. To remove a rule,
          * the values that you specify (for example, ports) must match the existing rule's
          * values exactly.</p> <note> <p>[EC2-Classic security groups only] If the values
          * you specify do not match the existing rule's values, no error is returned. Use
@@ -15933,7 +15933,7 @@ namespace Model
         virtual void TerminateClientVpnConnectionsAsync(const Model::TerminateClientVpnConnectionsRequest& request, const TerminateClientVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Shuts down one or more instances. This operation is idempotent; if you
+         * <p>Shuts down the specified instances. This operation is idempotent; if you
          * terminate an instance more than once, each call succeeds. </p> <p>If you specify
          * multiple instances and the request fails (for example, because of a single
          * incorrect instance ID), none of the instances are terminated.</p> <p>Terminated
@@ -15960,7 +15960,7 @@ namespace Model
         virtual Model::TerminateInstancesOutcome TerminateInstances(const Model::TerminateInstancesRequest& request) const;
 
         /**
-         * <p>Shuts down one or more instances. This operation is idempotent; if you
+         * <p>Shuts down the specified instances. This operation is idempotent; if you
          * terminate an instance more than once, each call succeeds. </p> <p>If you specify
          * multiple instances and the request fails (for example, because of a single
          * incorrect instance ID), none of the instances are terminated.</p> <p>Terminated
@@ -15989,7 +15989,7 @@ namespace Model
         virtual Model::TerminateInstancesOutcomeCallable TerminateInstancesCallable(const Model::TerminateInstancesRequest& request) const;
 
         /**
-         * <p>Shuts down one or more instances. This operation is idempotent; if you
+         * <p>Shuts down the specified instances. This operation is idempotent; if you
          * terminate an instance more than once, each call succeeds. </p> <p>If you specify
          * multiple instances and the request fails (for example, because of a single
          * incorrect instance ID), none of the instances are terminated.</p> <p>Terminated

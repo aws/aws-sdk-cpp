@@ -36,6 +36,8 @@ UpdateSMBFileShareRequest::UpdateSMBFileShareRequest() :
     m_guessMIMETypeEnabledHasBeenSet(false),
     m_requesterPays(false),
     m_requesterPaysHasBeenSet(false),
+    m_sMBACLEnabled(false),
+    m_sMBACLEnabledHasBeenSet(false),
     m_validUserListHasBeenSet(false),
     m_invalidUserListHasBeenSet(false)
 {
@@ -89,6 +91,12 @@ Aws::String UpdateSMBFileShareRequest::SerializePayload() const
   if(m_requesterPaysHasBeenSet)
   {
    payload.WithBool("RequesterPays", m_requesterPays);
+
+  }
+
+  if(m_sMBACLEnabledHasBeenSet)
+  {
+   payload.WithBool("SMBACLEnabled", m_sMBACLEnabled);
 
   }
 

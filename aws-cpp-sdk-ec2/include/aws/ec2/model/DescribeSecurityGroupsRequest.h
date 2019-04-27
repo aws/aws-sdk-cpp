@@ -49,7 +49,7 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters. If using multiple filters for rules, the results include
+     * <p>The filters. If using multiple filters for rules, the results include
      * security groups for which any combination of rules - not necessarily a single
      * rule - match all filters.</p> <ul> <li> <p> <code>description</code> - The
      * description of the security group.</p> </li> <li> <p>
@@ -106,7 +106,7 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters. If using multiple filters for rules, the results include
+     * <p>The filters. If using multiple filters for rules, the results include
      * security groups for which any combination of rules - not necessarily a single
      * rule - match all filters.</p> <ul> <li> <p> <code>description</code> - The
      * description of the security group.</p> </li> <li> <p>
@@ -163,7 +163,7 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters. If using multiple filters for rules, the results include
+     * <p>The filters. If using multiple filters for rules, the results include
      * security groups for which any combination of rules - not necessarily a single
      * rule - match all filters.</p> <ul> <li> <p> <code>description</code> - The
      * description of the security group.</p> </li> <li> <p>
@@ -220,7 +220,7 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters. If using multiple filters for rules, the results include
+     * <p>The filters. If using multiple filters for rules, the results include
      * security groups for which any combination of rules - not necessarily a single
      * rule - match all filters.</p> <ul> <li> <p> <code>description</code> - The
      * description of the security group.</p> </li> <li> <p>
@@ -277,7 +277,7 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters. If using multiple filters for rules, the results include
+     * <p>The filters. If using multiple filters for rules, the results include
      * security groups for which any combination of rules - not necessarily a single
      * rule - match all filters.</p> <ul> <li> <p> <code>description</code> - The
      * description of the security group.</p> </li> <li> <p>
@@ -334,7 +334,7 @@ namespace Model
     inline DescribeSecurityGroupsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters. If using multiple filters for rules, the results include
+     * <p>The filters. If using multiple filters for rules, the results include
      * security groups for which any combination of rules - not necessarily a single
      * rule - match all filters.</p> <ul> <li> <p> <code>description</code> - The
      * description of the security group.</p> </li> <li> <p>
@@ -391,7 +391,7 @@ namespace Model
     inline DescribeSecurityGroupsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters. If using multiple filters for rules, the results include
+     * <p>The filters. If using multiple filters for rules, the results include
      * security groups for which any combination of rules - not necessarily a single
      * rule - match all filters.</p> <ul> <li> <p> <code>description</code> - The
      * description of the security group.</p> </li> <li> <p>
@@ -448,7 +448,7 @@ namespace Model
     inline DescribeSecurityGroupsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters. If using multiple filters for rules, the results include
+     * <p>The filters. If using multiple filters for rules, the results include
      * security groups for which any combination of rules - not necessarily a single
      * rule - match all filters.</p> <ul> <li> <p> <code>description</code> - The
      * description of the security group.</p> </li> <li> <p>
@@ -506,62 +506,62 @@ namespace Model
 
 
     /**
-     * <p>One or more security group IDs. Required for security groups in a nondefault
+     * <p>The IDs of the security groups. Required for security groups in a nondefault
      * VPC.</p> <p>Default: Describes all your security groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroupIds() const{ return m_groupIds; }
 
     /**
-     * <p>One or more security group IDs. Required for security groups in a nondefault
+     * <p>The IDs of the security groups. Required for security groups in a nondefault
      * VPC.</p> <p>Default: Describes all your security groups.</p>
      */
     inline bool GroupIdsHasBeenSet() const { return m_groupIdsHasBeenSet; }
 
     /**
-     * <p>One or more security group IDs. Required for security groups in a nondefault
+     * <p>The IDs of the security groups. Required for security groups in a nondefault
      * VPC.</p> <p>Default: Describes all your security groups.</p>
      */
     inline void SetGroupIds(const Aws::Vector<Aws::String>& value) { m_groupIdsHasBeenSet = true; m_groupIds = value; }
 
     /**
-     * <p>One or more security group IDs. Required for security groups in a nondefault
+     * <p>The IDs of the security groups. Required for security groups in a nondefault
      * VPC.</p> <p>Default: Describes all your security groups.</p>
      */
     inline void SetGroupIds(Aws::Vector<Aws::String>&& value) { m_groupIdsHasBeenSet = true; m_groupIds = std::move(value); }
 
     /**
-     * <p>One or more security group IDs. Required for security groups in a nondefault
+     * <p>The IDs of the security groups. Required for security groups in a nondefault
      * VPC.</p> <p>Default: Describes all your security groups.</p>
      */
     inline DescribeSecurityGroupsRequest& WithGroupIds(const Aws::Vector<Aws::String>& value) { SetGroupIds(value); return *this;}
 
     /**
-     * <p>One or more security group IDs. Required for security groups in a nondefault
+     * <p>The IDs of the security groups. Required for security groups in a nondefault
      * VPC.</p> <p>Default: Describes all your security groups.</p>
      */
     inline DescribeSecurityGroupsRequest& WithGroupIds(Aws::Vector<Aws::String>&& value) { SetGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more security group IDs. Required for security groups in a nondefault
+     * <p>The IDs of the security groups. Required for security groups in a nondefault
      * VPC.</p> <p>Default: Describes all your security groups.</p>
      */
     inline DescribeSecurityGroupsRequest& AddGroupIds(const Aws::String& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more security group IDs. Required for security groups in a nondefault
+     * <p>The IDs of the security groups. Required for security groups in a nondefault
      * VPC.</p> <p>Default: Describes all your security groups.</p>
      */
     inline DescribeSecurityGroupsRequest& AddGroupIds(Aws::String&& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more security group IDs. Required for security groups in a nondefault
+     * <p>The IDs of the security groups. Required for security groups in a nondefault
      * VPC.</p> <p>Default: Describes all your security groups.</p>
      */
     inline DescribeSecurityGroupsRequest& AddGroupIds(const char* value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
 
 
     /**
-     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
+     * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
      * security groups by name.</p> <p>Default: Describes all your security groups.</p>
@@ -569,7 +569,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetGroupNames() const{ return m_groupNames; }
 
     /**
-     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
+     * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
      * security groups by name.</p> <p>Default: Describes all your security groups.</p>
@@ -577,7 +577,7 @@ namespace Model
     inline bool GroupNamesHasBeenSet() const { return m_groupNamesHasBeenSet; }
 
     /**
-     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
+     * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
      * security groups by name.</p> <p>Default: Describes all your security groups.</p>
@@ -585,7 +585,7 @@ namespace Model
     inline void SetGroupNames(const Aws::Vector<Aws::String>& value) { m_groupNamesHasBeenSet = true; m_groupNames = value; }
 
     /**
-     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
+     * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
      * security groups by name.</p> <p>Default: Describes all your security groups.</p>
@@ -593,7 +593,7 @@ namespace Model
     inline void SetGroupNames(Aws::Vector<Aws::String>&& value) { m_groupNamesHasBeenSet = true; m_groupNames = std::move(value); }
 
     /**
-     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
+     * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
      * security groups by name.</p> <p>Default: Describes all your security groups.</p>
@@ -601,7 +601,7 @@ namespace Model
     inline DescribeSecurityGroupsRequest& WithGroupNames(const Aws::Vector<Aws::String>& value) { SetGroupNames(value); return *this;}
 
     /**
-     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
+     * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
      * security groups by name.</p> <p>Default: Describes all your security groups.</p>
@@ -609,7 +609,7 @@ namespace Model
     inline DescribeSecurityGroupsRequest& WithGroupNames(Aws::Vector<Aws::String>&& value) { SetGroupNames(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
+     * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
      * security groups by name.</p> <p>Default: Describes all your security groups.</p>
@@ -617,7 +617,7 @@ namespace Model
     inline DescribeSecurityGroupsRequest& AddGroupNames(const Aws::String& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
+     * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
      * security groups by name.</p> <p>Default: Describes all your security groups.</p>
@@ -625,7 +625,7 @@ namespace Model
     inline DescribeSecurityGroupsRequest& AddGroupNames(Aws::String&& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>[EC2-Classic and default VPC only] One or more security group names. You can
+     * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
      * security groups by name.</p> <p>Default: Describes all your security groups.</p>

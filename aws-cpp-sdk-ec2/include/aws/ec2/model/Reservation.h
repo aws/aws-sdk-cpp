@@ -54,83 +54,83 @@ namespace Model
 
 
     /**
-     * <p>[EC2-Classic only] One or more security groups.</p>
+     * <p>[EC2-Classic only] The security groups.</p>
      */
     inline const Aws::Vector<GroupIdentifier>& GetGroups() const{ return m_groups; }
 
     /**
-     * <p>[EC2-Classic only] One or more security groups.</p>
+     * <p>[EC2-Classic only] The security groups.</p>
      */
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
-     * <p>[EC2-Classic only] One or more security groups.</p>
+     * <p>[EC2-Classic only] The security groups.</p>
      */
     inline void SetGroups(const Aws::Vector<GroupIdentifier>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
-     * <p>[EC2-Classic only] One or more security groups.</p>
+     * <p>[EC2-Classic only] The security groups.</p>
      */
     inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
-     * <p>[EC2-Classic only] One or more security groups.</p>
+     * <p>[EC2-Classic only] The security groups.</p>
      */
     inline Reservation& WithGroups(const Aws::Vector<GroupIdentifier>& value) { SetGroups(value); return *this;}
 
     /**
-     * <p>[EC2-Classic only] One or more security groups.</p>
+     * <p>[EC2-Classic only] The security groups.</p>
      */
     inline Reservation& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-Classic only] One or more security groups.</p>
+     * <p>[EC2-Classic only] The security groups.</p>
      */
     inline Reservation& AddGroups(const GroupIdentifier& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-Classic only] One or more security groups.</p>
+     * <p>[EC2-Classic only] The security groups.</p>
      */
     inline Reservation& AddGroups(GroupIdentifier&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>One or more instances.</p>
+     * <p>The instances.</p>
      */
     inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
 
     /**
-     * <p>One or more instances.</p>
+     * <p>The instances.</p>
      */
     inline bool InstancesHasBeenSet() const { return m_instancesHasBeenSet; }
 
     /**
-     * <p>One or more instances.</p>
+     * <p>The instances.</p>
      */
     inline void SetInstances(const Aws::Vector<Instance>& value) { m_instancesHasBeenSet = true; m_instances = value; }
 
     /**
-     * <p>One or more instances.</p>
+     * <p>The instances.</p>
      */
     inline void SetInstances(Aws::Vector<Instance>&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
 
     /**
-     * <p>One or more instances.</p>
+     * <p>The instances.</p>
      */
     inline Reservation& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
 
     /**
-     * <p>One or more instances.</p>
+     * <p>The instances.</p>
      */
     inline Reservation& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(std::move(value)); return *this;}
 
     /**
-     * <p>One or more instances.</p>
+     * <p>The instances.</p>
      */
     inline Reservation& AddInstances(const Instance& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
 
     /**
-     * <p>One or more instances.</p>
+     * <p>The instances.</p>
      */
     inline Reservation& AddInstances(Instance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
 

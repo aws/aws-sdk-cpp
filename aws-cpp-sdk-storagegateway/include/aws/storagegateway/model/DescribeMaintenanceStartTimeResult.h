@@ -36,6 +36,7 @@ namespace Model
 {
   /**
    * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
+   * <a>DescribeMaintenanceStartTimeOutput$DayOfMonth</a> </p> </li> <li> <p>
    * <a>DescribeMaintenanceStartTimeOutput$DayOfWeek</a> </p> </li> <li> <p>
    * <a>DescribeMaintenanceStartTimeOutput$HourOfDay</a> </p> </li> <li> <p>
    * <a>DescribeMaintenanceStartTimeOutput$MinuteOfHour</a> </p> </li> <li> <p>
@@ -141,6 +142,31 @@ namespace Model
 
 
     /**
+     * <p>The day of the month component of the maintenance start time represented as
+     * an ordinal number from 1 to 28, where 1 represents the first day of the month
+     * and 28 represents the last day of the month.</p> <note> <p>This value is only
+     * available for tape and volume gateways.</p> </note>
+     */
+    inline int GetDayOfMonth() const{ return m_dayOfMonth; }
+
+    /**
+     * <p>The day of the month component of the maintenance start time represented as
+     * an ordinal number from 1 to 28, where 1 represents the first day of the month
+     * and 28 represents the last day of the month.</p> <note> <p>This value is only
+     * available for tape and volume gateways.</p> </note>
+     */
+    inline void SetDayOfMonth(int value) { m_dayOfMonth = value; }
+
+    /**
+     * <p>The day of the month component of the maintenance start time represented as
+     * an ordinal number from 1 to 28, where 1 represents the first day of the month
+     * and 28 represents the last day of the month.</p> <note> <p>This value is only
+     * available for tape and volume gateways.</p> </note>
+     */
+    inline DescribeMaintenanceStartTimeResult& WithDayOfMonth(int value) { SetDayOfMonth(value); return *this;}
+
+
+    /**
      * <p>A value that indicates the time zone that is set for the gateway. The start
      * time and day of week specified should be in the time zone of the gateway.</p>
      */
@@ -191,6 +217,8 @@ namespace Model
     int m_minuteOfHour;
 
     int m_dayOfWeek;
+
+    int m_dayOfMonth;
 
     Aws::String m_timezone;
   };

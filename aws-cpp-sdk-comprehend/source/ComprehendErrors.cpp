@@ -29,10 +29,14 @@ namespace ComprehendErrorMapper
 {
 
 static const int BATCH_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("BatchSizeLimitExceededException");
-static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
+static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
+static const int TOO_MANY_TAG_KEYS_HASH = HashingUtils::HashString("TooManyTagKeysException");
+static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int JOB_NOT_FOUND_HASH = HashingUtils::HashString("JobNotFoundException");
+static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
+static const int KMS_KEY_VALIDATION_HASH = HashingUtils::HashString("KmsKeyValidationException");
+static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int RESOURCE_UNAVAILABLE_HASH = HashingUtils::HashString("ResourceUnavailableException");
 static const int TEXT_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TextSizeLimitExceededException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
@@ -49,13 +53,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendErrors::BATCH_SIZE_LIMIT_EXCEEDED), false);
   }
-  else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH)
+  else if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendErrors::RESOURCE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendErrors::TOO_MANY_TAGS), false);
   }
-  else if (hashCode == RESOURCE_IN_USE_HASH)
+  else if (hashCode == TOO_MANY_TAG_KEYS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendErrors::RESOURCE_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendErrors::TOO_MANY_TAG_KEYS), false);
+  }
+  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendErrors::CONCURRENT_MODIFICATION), false);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
@@ -64,6 +72,18 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == JOB_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendErrors::JOB_NOT_FOUND), false);
+  }
+  else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendErrors::RESOURCE_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == KMS_KEY_VALIDATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendErrors::KMS_KEY_VALIDATION), false);
+  }
+  else if (hashCode == RESOURCE_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendErrors::RESOURCE_IN_USE), false);
   }
   else if (hashCode == RESOURCE_UNAVAILABLE_HASH)
   {

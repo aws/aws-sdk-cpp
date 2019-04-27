@@ -22,7 +22,8 @@ using namespace Aws::Utils;
 
 AddRoleToDBClusterRequest::AddRoleToDBClusterRequest() : 
     m_dBClusterIdentifierHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_featureNameHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,11 @@ Aws::String AddRoleToDBClusterRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
     ss << "RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
+  }
+
+  if(m_featureNameHasBeenSet)
+  {
+    ss << "FeatureName=" << StringUtils::URLEncode(m_featureName.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

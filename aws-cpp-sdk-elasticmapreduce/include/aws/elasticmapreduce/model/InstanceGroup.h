@@ -452,6 +452,105 @@ namespace Model
 
 
     /**
+     * <p>The version number of the requested configuration specification for this
+     * instance group.</p>
+     */
+    inline long long GetConfigurationsVersion() const{ return m_configurationsVersion; }
+
+    /**
+     * <p>The version number of the requested configuration specification for this
+     * instance group.</p>
+     */
+    inline bool ConfigurationsVersionHasBeenSet() const { return m_configurationsVersionHasBeenSet; }
+
+    /**
+     * <p>The version number of the requested configuration specification for this
+     * instance group.</p>
+     */
+    inline void SetConfigurationsVersion(long long value) { m_configurationsVersionHasBeenSet = true; m_configurationsVersion = value; }
+
+    /**
+     * <p>The version number of the requested configuration specification for this
+     * instance group.</p>
+     */
+    inline InstanceGroup& WithConfigurationsVersion(long long value) { SetConfigurationsVersion(value); return *this;}
+
+
+    /**
+     * <p>A list of configurations that were successfully applied for an instance group
+     * last time.</p>
+     */
+    inline const Aws::Vector<Configuration>& GetLastSuccessfullyAppliedConfigurations() const{ return m_lastSuccessfullyAppliedConfigurations; }
+
+    /**
+     * <p>A list of configurations that were successfully applied for an instance group
+     * last time.</p>
+     */
+    inline bool LastSuccessfullyAppliedConfigurationsHasBeenSet() const { return m_lastSuccessfullyAppliedConfigurationsHasBeenSet; }
+
+    /**
+     * <p>A list of configurations that were successfully applied for an instance group
+     * last time.</p>
+     */
+    inline void SetLastSuccessfullyAppliedConfigurations(const Aws::Vector<Configuration>& value) { m_lastSuccessfullyAppliedConfigurationsHasBeenSet = true; m_lastSuccessfullyAppliedConfigurations = value; }
+
+    /**
+     * <p>A list of configurations that were successfully applied for an instance group
+     * last time.</p>
+     */
+    inline void SetLastSuccessfullyAppliedConfigurations(Aws::Vector<Configuration>&& value) { m_lastSuccessfullyAppliedConfigurationsHasBeenSet = true; m_lastSuccessfullyAppliedConfigurations = std::move(value); }
+
+    /**
+     * <p>A list of configurations that were successfully applied for an instance group
+     * last time.</p>
+     */
+    inline InstanceGroup& WithLastSuccessfullyAppliedConfigurations(const Aws::Vector<Configuration>& value) { SetLastSuccessfullyAppliedConfigurations(value); return *this;}
+
+    /**
+     * <p>A list of configurations that were successfully applied for an instance group
+     * last time.</p>
+     */
+    inline InstanceGroup& WithLastSuccessfullyAppliedConfigurations(Aws::Vector<Configuration>&& value) { SetLastSuccessfullyAppliedConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of configurations that were successfully applied for an instance group
+     * last time.</p>
+     */
+    inline InstanceGroup& AddLastSuccessfullyAppliedConfigurations(const Configuration& value) { m_lastSuccessfullyAppliedConfigurationsHasBeenSet = true; m_lastSuccessfullyAppliedConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>A list of configurations that were successfully applied for an instance group
+     * last time.</p>
+     */
+    inline InstanceGroup& AddLastSuccessfullyAppliedConfigurations(Configuration&& value) { m_lastSuccessfullyAppliedConfigurationsHasBeenSet = true; m_lastSuccessfullyAppliedConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The version number of a configuration specification that was successfully
+     * applied for an instance group last time. </p>
+     */
+    inline long long GetLastSuccessfullyAppliedConfigurationsVersion() const{ return m_lastSuccessfullyAppliedConfigurationsVersion; }
+
+    /**
+     * <p>The version number of a configuration specification that was successfully
+     * applied for an instance group last time. </p>
+     */
+    inline bool LastSuccessfullyAppliedConfigurationsVersionHasBeenSet() const { return m_lastSuccessfullyAppliedConfigurationsVersionHasBeenSet; }
+
+    /**
+     * <p>The version number of a configuration specification that was successfully
+     * applied for an instance group last time. </p>
+     */
+    inline void SetLastSuccessfullyAppliedConfigurationsVersion(long long value) { m_lastSuccessfullyAppliedConfigurationsVersionHasBeenSet = true; m_lastSuccessfullyAppliedConfigurationsVersion = value; }
+
+    /**
+     * <p>The version number of a configuration specification that was successfully
+     * applied for an instance group last time. </p>
+     */
+    inline InstanceGroup& WithLastSuccessfullyAppliedConfigurationsVersion(long long value) { SetLastSuccessfullyAppliedConfigurationsVersion(value); return *this;}
+
+
+    /**
      * <p>The EBS block devices that are mapped to this instance group.</p>
      */
     inline const Aws::Vector<EbsBlockDevice>& GetEbsBlockDevices() const{ return m_ebsBlockDevices; }
@@ -631,6 +730,15 @@ namespace Model
 
     Aws::Vector<Configuration> m_configurations;
     bool m_configurationsHasBeenSet;
+
+    long long m_configurationsVersion;
+    bool m_configurationsVersionHasBeenSet;
+
+    Aws::Vector<Configuration> m_lastSuccessfullyAppliedConfigurations;
+    bool m_lastSuccessfullyAppliedConfigurationsHasBeenSet;
+
+    long long m_lastSuccessfullyAppliedConfigurationsVersion;
+    bool m_lastSuccessfullyAppliedConfigurationsVersionHasBeenSet;
 
     Aws::Vector<EbsBlockDevice> m_ebsBlockDevices;
     bool m_ebsBlockDevicesHasBeenSet;

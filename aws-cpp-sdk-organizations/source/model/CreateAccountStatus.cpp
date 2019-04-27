@@ -36,6 +36,7 @@ CreateAccountStatus::CreateAccountStatus() :
     m_requestedTimestampHasBeenSet(false),
     m_completedTimestampHasBeenSet(false),
     m_accountIdHasBeenSet(false),
+    m_govCloudAccountIdHasBeenSet(false),
     m_failureReason(CreateAccountFailureReason::NOT_SET),
     m_failureReasonHasBeenSet(false)
 {
@@ -49,6 +50,7 @@ CreateAccountStatus::CreateAccountStatus(JsonView jsonValue) :
     m_requestedTimestampHasBeenSet(false),
     m_completedTimestampHasBeenSet(false),
     m_accountIdHasBeenSet(false),
+    m_govCloudAccountIdHasBeenSet(false),
     m_failureReason(CreateAccountFailureReason::NOT_SET),
     m_failureReasonHasBeenSet(false)
 {
@@ -99,6 +101,13 @@ CreateAccountStatus& CreateAccountStatus::operator =(JsonView jsonValue)
     m_accountIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GovCloudAccountId"))
+  {
+    m_govCloudAccountId = jsonValue.GetString("GovCloudAccountId");
+
+    m_govCloudAccountIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = CreateAccountFailureReasonMapper::GetCreateAccountFailureReasonForName(jsonValue.GetString("FailureReason"));
@@ -143,6 +152,12 @@ JsonValue CreateAccountStatus::Jsonize() const
   if(m_accountIdHasBeenSet)
   {
    payload.WithString("AccountId", m_accountId);
+
+  }
+
+  if(m_govCloudAccountIdHasBeenSet)
+  {
+   payload.WithString("GovCloudAccountId", m_govCloudAccountId);
 
   }
 

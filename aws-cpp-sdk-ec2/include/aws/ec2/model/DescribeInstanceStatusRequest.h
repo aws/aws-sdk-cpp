@@ -49,7 +49,7 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone of the instance.</p> </li> <li> <p> <code>event.code</code> -
      * The code for the scheduled event (<code>instance-reboot</code> |
      * <code>system-reboot</code> | <code>system-maintenance</code> |
@@ -88,7 +88,7 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone of the instance.</p> </li> <li> <p> <code>event.code</code> -
      * The code for the scheduled event (<code>instance-reboot</code> |
      * <code>system-reboot</code> | <code>system-maintenance</code> |
@@ -127,7 +127,7 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone of the instance.</p> </li> <li> <p> <code>event.code</code> -
      * The code for the scheduled event (<code>instance-reboot</code> |
      * <code>system-reboot</code> | <code>system-maintenance</code> |
@@ -166,7 +166,7 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone of the instance.</p> </li> <li> <p> <code>event.code</code> -
      * The code for the scheduled event (<code>instance-reboot</code> |
      * <code>system-reboot</code> | <code>system-maintenance</code> |
@@ -205,7 +205,7 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone of the instance.</p> </li> <li> <p> <code>event.code</code> -
      * The code for the scheduled event (<code>instance-reboot</code> |
      * <code>system-reboot</code> | <code>system-maintenance</code> |
@@ -244,7 +244,7 @@ namespace Model
     inline DescribeInstanceStatusRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone of the instance.</p> </li> <li> <p> <code>event.code</code> -
      * The code for the scheduled event (<code>instance-reboot</code> |
      * <code>system-reboot</code> | <code>system-maintenance</code> |
@@ -283,7 +283,7 @@ namespace Model
     inline DescribeInstanceStatusRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone of the instance.</p> </li> <li> <p> <code>event.code</code> -
      * The code for the scheduled event (<code>instance-reboot</code> |
      * <code>system-reboot</code> | <code>system-maintenance</code> |
@@ -322,7 +322,7 @@ namespace Model
     inline DescribeInstanceStatusRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone of the instance.</p> </li> <li> <p> <code>event.code</code> -
      * The code for the scheduled event (<code>instance-reboot</code> |
      * <code>system-reboot</code> | <code>system-maintenance</code> |
@@ -362,55 +362,55 @@ namespace Model
 
 
     /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
      * <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
      * <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
      */
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
 
     /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
      * <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
      * <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
      * <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
      */
     inline DescribeInstanceStatusRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
      * <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
      */
     inline DescribeInstanceStatusRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
      * <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
      */
     inline DescribeInstanceStatusRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
      * <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
      */
     inline DescribeInstanceStatusRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
      * <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
      */
     inline DescribeInstanceStatusRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }

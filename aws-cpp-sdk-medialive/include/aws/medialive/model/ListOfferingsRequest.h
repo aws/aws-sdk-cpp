@@ -52,6 +52,55 @@ namespace Model
 
 
     /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+
+     */
+    inline const Aws::String& GetChannelClass() const{ return m_channelClass; }
+
+    /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+
+     */
+    inline bool ChannelClassHasBeenSet() const { return m_channelClassHasBeenSet; }
+
+    /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+
+     */
+    inline void SetChannelClass(const Aws::String& value) { m_channelClassHasBeenSet = true; m_channelClass = value; }
+
+    /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+
+     */
+    inline void SetChannelClass(Aws::String&& value) { m_channelClassHasBeenSet = true; m_channelClass = std::move(value); }
+
+    /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+
+     */
+    inline void SetChannelClass(const char* value) { m_channelClassHasBeenSet = true; m_channelClass.assign(value); }
+
+    /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+
+     */
+    inline ListOfferingsRequest& WithChannelClass(const Aws::String& value) { SetChannelClass(value); return *this;}
+
+    /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+
+     */
+    inline ListOfferingsRequest& WithChannelClass(Aws::String&& value) { SetChannelClass(std::move(value)); return *this;}
+
+    /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+
+     */
+    inline ListOfferingsRequest& WithChannelClass(const char* value) { SetChannelClass(value); return *this;}
+
+
+    /**
      * Filter to offerings that match the configuration of an existing channel, e.g.
      * '2345678' (a channel ID)
 
@@ -457,6 +506,9 @@ namespace Model
     inline ListOfferingsRequest& WithVideoQuality(const char* value) { SetVideoQuality(value); return *this;}
 
   private:
+
+    Aws::String m_channelClass;
+    bool m_channelClassHasBeenSet;
 
     Aws::String m_channelConfiguration;
     bool m_channelConfigurationHasBeenSet;

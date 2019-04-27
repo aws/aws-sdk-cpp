@@ -132,58 +132,42 @@ namespace Model
 
 
     /**
-     * <p>The execution ID for the association. If the association does not run at
-     * intervals or according to a schedule, then the ExecutionID is the same as the
-     * AssociationID.</p>
+     * <p>The execution ID for the association.</p>
      */
     inline const Aws::String& GetExecutionId() const{ return m_executionId; }
 
     /**
-     * <p>The execution ID for the association. If the association does not run at
-     * intervals or according to a schedule, then the ExecutionID is the same as the
-     * AssociationID.</p>
+     * <p>The execution ID for the association.</p>
      */
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
 
     /**
-     * <p>The execution ID for the association. If the association does not run at
-     * intervals or according to a schedule, then the ExecutionID is the same as the
-     * AssociationID.</p>
+     * <p>The execution ID for the association.</p>
      */
     inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
 
     /**
-     * <p>The execution ID for the association. If the association does not run at
-     * intervals or according to a schedule, then the ExecutionID is the same as the
-     * AssociationID.</p>
+     * <p>The execution ID for the association.</p>
      */
     inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
 
     /**
-     * <p>The execution ID for the association. If the association does not run at
-     * intervals or according to a schedule, then the ExecutionID is the same as the
-     * AssociationID.</p>
+     * <p>The execution ID for the association.</p>
      */
     inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
 
     /**
-     * <p>The execution ID for the association. If the association does not run at
-     * intervals or according to a schedule, then the ExecutionID is the same as the
-     * AssociationID.</p>
+     * <p>The execution ID for the association.</p>
      */
     inline AssociationExecution& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
 
     /**
-     * <p>The execution ID for the association. If the association does not run at
-     * intervals or according to a schedule, then the ExecutionID is the same as the
-     * AssociationID.</p>
+     * <p>The execution ID for the association.</p>
      */
     inline AssociationExecution& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
 
     /**
-     * <p>The execution ID for the association. If the association does not run at
-     * intervals or according to a schedule, then the ExecutionID is the same as the
-     * AssociationID.</p>
+     * <p>The execution ID for the association.</p>
      */
     inline AssociationExecution& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
 

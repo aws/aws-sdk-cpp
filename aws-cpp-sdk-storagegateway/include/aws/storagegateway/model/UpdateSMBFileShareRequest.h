@@ -343,32 +343,77 @@ namespace Model
 
 
     /**
-     * <p>A value that sets the access control list permission for objects in the
-     * Amazon S3 bucket that a file gateway puts objects into. The default value is
-     * <code>private</code>.</p>
+     * <p>A value that sets who pays the cost of the request and the cost associated
+     * with data download from the S3 bucket. If this value is set to true, the
+     * requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
+     * bucket owner always pays the cost of storing data.</p> <note> <p>
+     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the
+     * file share, so make sure that the configuration on the file share is the same as
+     * the S3 bucket configuration.</p> </note>
      */
     inline bool GetRequesterPays() const{ return m_requesterPays; }
 
     /**
-     * <p>A value that sets the access control list permission for objects in the
-     * Amazon S3 bucket that a file gateway puts objects into. The default value is
-     * <code>private</code>.</p>
+     * <p>A value that sets who pays the cost of the request and the cost associated
+     * with data download from the S3 bucket. If this value is set to true, the
+     * requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
+     * bucket owner always pays the cost of storing data.</p> <note> <p>
+     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the
+     * file share, so make sure that the configuration on the file share is the same as
+     * the S3 bucket configuration.</p> </note>
      */
     inline bool RequesterPaysHasBeenSet() const { return m_requesterPaysHasBeenSet; }
 
     /**
-     * <p>A value that sets the access control list permission for objects in the
-     * Amazon S3 bucket that a file gateway puts objects into. The default value is
-     * <code>private</code>.</p>
+     * <p>A value that sets who pays the cost of the request and the cost associated
+     * with data download from the S3 bucket. If this value is set to true, the
+     * requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
+     * bucket owner always pays the cost of storing data.</p> <note> <p>
+     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the
+     * file share, so make sure that the configuration on the file share is the same as
+     * the S3 bucket configuration.</p> </note>
      */
     inline void SetRequesterPays(bool value) { m_requesterPaysHasBeenSet = true; m_requesterPays = value; }
 
     /**
-     * <p>A value that sets the access control list permission for objects in the
-     * Amazon S3 bucket that a file gateway puts objects into. The default value is
-     * <code>private</code>.</p>
+     * <p>A value that sets who pays the cost of the request and the cost associated
+     * with data download from the S3 bucket. If this value is set to true, the
+     * requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
+     * bucket owner always pays the cost of storing data.</p> <note> <p>
+     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the
+     * file share, so make sure that the configuration on the file share is the same as
+     * the S3 bucket configuration.</p> </note>
      */
     inline UpdateSMBFileShareRequest& WithRequesterPays(bool value) { SetRequesterPays(value); return *this;}
+
+
+    /**
+     * <p>Set this value to "true to enable ACL (access control list) on the SMB file
+     * share. Set it to "false" to map file and directory permissions to the POSIX
+     * permissions.</p>
+     */
+    inline bool GetSMBACLEnabled() const{ return m_sMBACLEnabled; }
+
+    /**
+     * <p>Set this value to "true to enable ACL (access control list) on the SMB file
+     * share. Set it to "false" to map file and directory permissions to the POSIX
+     * permissions.</p>
+     */
+    inline bool SMBACLEnabledHasBeenSet() const { return m_sMBACLEnabledHasBeenSet; }
+
+    /**
+     * <p>Set this value to "true to enable ACL (access control list) on the SMB file
+     * share. Set it to "false" to map file and directory permissions to the POSIX
+     * permissions.</p>
+     */
+    inline void SetSMBACLEnabled(bool value) { m_sMBACLEnabledHasBeenSet = true; m_sMBACLEnabled = value; }
+
+    /**
+     * <p>Set this value to "true to enable ACL (access control list) on the SMB file
+     * share. Set it to "false" to map file and directory permissions to the POSIX
+     * permissions.</p>
+     */
+    inline UpdateSMBFileShareRequest& WithSMBACLEnabled(bool value) { SetSMBACLEnabled(value); return *this;}
 
 
     /**
@@ -541,6 +586,9 @@ namespace Model
 
     bool m_requesterPays;
     bool m_requesterPaysHasBeenSet;
+
+    bool m_sMBACLEnabled;
+    bool m_sMBACLEnabledHasBeenSet;
 
     Aws::Vector<Aws::String> m_validUserList;
     bool m_validUserListHasBeenSet;

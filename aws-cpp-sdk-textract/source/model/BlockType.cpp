@@ -36,6 +36,7 @@ namespace Aws
         static const int WORD_HASH = HashingUtils::HashString("WORD");
         static const int TABLE_HASH = HashingUtils::HashString("TABLE");
         static const int CELL_HASH = HashingUtils::HashString("CELL");
+        static const int SELECTION_ELEMENT_HASH = HashingUtils::HashString("SELECTION_ELEMENT");
 
 
         BlockType GetBlockTypeForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return BlockType::CELL;
           }
+          else if (hashCode == SELECTION_ELEMENT_HASH)
+          {
+            return BlockType::SELECTION_ELEMENT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +96,8 @@ namespace Aws
             return "TABLE";
           case BlockType::CELL:
             return "CELL";
+          case BlockType::SELECTION_ELEMENT:
+            return "SELECTION_ELEMENT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -666,62 +666,62 @@ namespace Model
 
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetOverriddenParameters() const{ return m_overriddenParameters; }
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline bool OverriddenParametersHasBeenSet() const { return m_overriddenParametersHasBeenSet; }
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline void SetOverriddenParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters = value; }
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline void SetOverriddenParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters = std::move(value); }
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline StepExecution& WithOverriddenParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetOverriddenParameters(value); return *this;}
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline StepExecution& WithOverriddenParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetOverriddenParameters(std::move(value)); return *this;}
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline StepExecution& AddOverriddenParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline StepExecution& AddOverriddenParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline StepExecution& AddOverriddenParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline StepExecution& AddOverriddenParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline StepExecution& AddOverriddenParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline StepExecution& AddOverriddenParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(key, value); return *this; }
 
@@ -820,7 +820,7 @@ namespace Model
     /**
      * <p>Strategies used when step fails, we support Continue and Abort. Abort will
      * fail the automation when the step fails. Continue will ignore the failure of
-     * current step and allow automation to execute the next step. With conditional
+     * current step and allow automation to run the next step. With conditional
      * branching, we add step:stepName to support the automation to go to another
      * specific step.</p>
      */
@@ -829,7 +829,7 @@ namespace Model
     /**
      * <p>Strategies used when step fails, we support Continue and Abort. Abort will
      * fail the automation when the step fails. Continue will ignore the failure of
-     * current step and allow automation to execute the next step. With conditional
+     * current step and allow automation to run the next step. With conditional
      * branching, we add step:stepName to support the automation to go to another
      * specific step.</p>
      */
@@ -838,7 +838,7 @@ namespace Model
     /**
      * <p>Strategies used when step fails, we support Continue and Abort. Abort will
      * fail the automation when the step fails. Continue will ignore the failure of
-     * current step and allow automation to execute the next step. With conditional
+     * current step and allow automation to run the next step. With conditional
      * branching, we add step:stepName to support the automation to go to another
      * specific step.</p>
      */
@@ -847,7 +847,7 @@ namespace Model
     /**
      * <p>Strategies used when step fails, we support Continue and Abort. Abort will
      * fail the automation when the step fails. Continue will ignore the failure of
-     * current step and allow automation to execute the next step. With conditional
+     * current step and allow automation to run the next step. With conditional
      * branching, we add step:stepName to support the automation to go to another
      * specific step.</p>
      */
@@ -856,7 +856,7 @@ namespace Model
     /**
      * <p>Strategies used when step fails, we support Continue and Abort. Abort will
      * fail the automation when the step fails. Continue will ignore the failure of
-     * current step and allow automation to execute the next step. With conditional
+     * current step and allow automation to run the next step. With conditional
      * branching, we add step:stepName to support the automation to go to another
      * specific step.</p>
      */
@@ -865,7 +865,7 @@ namespace Model
     /**
      * <p>Strategies used when step fails, we support Continue and Abort. Abort will
      * fail the automation when the step fails. Continue will ignore the failure of
-     * current step and allow automation to execute the next step. With conditional
+     * current step and allow automation to run the next step. With conditional
      * branching, we add step:stepName to support the automation to go to another
      * specific step.</p>
      */
@@ -874,7 +874,7 @@ namespace Model
     /**
      * <p>Strategies used when step fails, we support Continue and Abort. Abort will
      * fail the automation when the step fails. Continue will ignore the failure of
-     * current step and allow automation to execute the next step. With conditional
+     * current step and allow automation to run the next step. With conditional
      * branching, we add step:stepName to support the automation to go to another
      * specific step.</p>
      */
@@ -883,7 +883,7 @@ namespace Model
     /**
      * <p>Strategies used when step fails, we support Continue and Abort. Abort will
      * fail the automation when the step fails. Continue will ignore the failure of
-     * current step and allow automation to execute the next step. With conditional
+     * current step and allow automation to run the next step. With conditional
      * branching, we add step:stepName to support the automation to go to another
      * specific step.</p>
      */
@@ -892,7 +892,7 @@ namespace Model
     /**
      * <p>Strategies used when step fails, we support Continue and Abort. Abort will
      * fail the automation when the step fails. Continue will ignore the failure of
-     * current step and allow automation to execute the next step. With conditional
+     * current step and allow automation to run the next step. With conditional
      * branching, we add step:stepName to support the automation to go to another
      * specific step.</p>
      */

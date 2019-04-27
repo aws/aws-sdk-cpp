@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for VideoSelectorProgramId<p><h3>See Also:</h3>   <a
+   * Video Selector Program Id<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/VideoSelectorProgramId">AWS
    * API Reference</a></p>
    */

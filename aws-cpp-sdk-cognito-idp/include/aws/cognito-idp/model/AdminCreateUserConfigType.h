@@ -81,8 +81,11 @@ namespace Model
      * <p>The user account expiration limit, in days, after which the account is no
      * longer usable. To reset the account after that time limit, you must call
      * <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
-     * <code>MessageAction</code> parameter. The default value for this parameter is
-     * 7.</p>
+     * <code>MessageAction</code> parameter. The default value for this parameter is 7.
+     * </p> <note> <p>If you set a value for <code>TemporaryPasswordValidityDays</code>
+     * in <code>PasswordPolicy</code>, that value will be used and
+     * <code>UnusedAccountValidityDays</code> will be deprecated for that user pool.
+     * </p> </note>
      */
     inline int GetUnusedAccountValidityDays() const{ return m_unusedAccountValidityDays; }
 
@@ -90,8 +93,11 @@ namespace Model
      * <p>The user account expiration limit, in days, after which the account is no
      * longer usable. To reset the account after that time limit, you must call
      * <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
-     * <code>MessageAction</code> parameter. The default value for this parameter is
-     * 7.</p>
+     * <code>MessageAction</code> parameter. The default value for this parameter is 7.
+     * </p> <note> <p>If you set a value for <code>TemporaryPasswordValidityDays</code>
+     * in <code>PasswordPolicy</code>, that value will be used and
+     * <code>UnusedAccountValidityDays</code> will be deprecated for that user pool.
+     * </p> </note>
      */
     inline bool UnusedAccountValidityDaysHasBeenSet() const { return m_unusedAccountValidityDaysHasBeenSet; }
 
@@ -99,8 +105,11 @@ namespace Model
      * <p>The user account expiration limit, in days, after which the account is no
      * longer usable. To reset the account after that time limit, you must call
      * <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
-     * <code>MessageAction</code> parameter. The default value for this parameter is
-     * 7.</p>
+     * <code>MessageAction</code> parameter. The default value for this parameter is 7.
+     * </p> <note> <p>If you set a value for <code>TemporaryPasswordValidityDays</code>
+     * in <code>PasswordPolicy</code>, that value will be used and
+     * <code>UnusedAccountValidityDays</code> will be deprecated for that user pool.
+     * </p> </note>
      */
     inline void SetUnusedAccountValidityDays(int value) { m_unusedAccountValidityDaysHasBeenSet = true; m_unusedAccountValidityDays = value; }
 
@@ -108,8 +117,11 @@ namespace Model
      * <p>The user account expiration limit, in days, after which the account is no
      * longer usable. To reset the account after that time limit, you must call
      * <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
-     * <code>MessageAction</code> parameter. The default value for this parameter is
-     * 7.</p>
+     * <code>MessageAction</code> parameter. The default value for this parameter is 7.
+     * </p> <note> <p>If you set a value for <code>TemporaryPasswordValidityDays</code>
+     * in <code>PasswordPolicy</code>, that value will be used and
+     * <code>UnusedAccountValidityDays</code> will be deprecated for that user pool.
+     * </p> </note>
      */
     inline AdminCreateUserConfigType& WithUnusedAccountValidityDays(int value) { SetUnusedAccountValidityDays(value); return *this;}
 

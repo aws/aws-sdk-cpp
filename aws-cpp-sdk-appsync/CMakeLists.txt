@@ -71,11 +71,6 @@ setup_install()
 install (FILES ${AWS_APPSYNC_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/appsync)
 install (FILES ${AWS_APPSYNC_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/appsync/model)
 
-if(PLATFORM_WINDOWS AND MSVC)
-    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
-    install (FILES ${NUGET_FILES} DESTINATION nuget)
-endif()
-
 do_packaging()
 
 

@@ -44,47 +44,47 @@ namespace Model
 
 
     /**
-     * <p>A space-separated list of up to 100 job IDs.</p>
+     * <p>A list of up to 100 job IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetJobs() const{ return m_jobs; }
 
     /**
-     * <p>A space-separated list of up to 100 job IDs.</p>
+     * <p>A list of up to 100 job IDs.</p>
      */
     inline bool JobsHasBeenSet() const { return m_jobsHasBeenSet; }
 
     /**
-     * <p>A space-separated list of up to 100 job IDs.</p>
+     * <p>A list of up to 100 job IDs.</p>
      */
     inline void SetJobs(const Aws::Vector<Aws::String>& value) { m_jobsHasBeenSet = true; m_jobs = value; }
 
     /**
-     * <p>A space-separated list of up to 100 job IDs.</p>
+     * <p>A list of up to 100 job IDs.</p>
      */
     inline void SetJobs(Aws::Vector<Aws::String>&& value) { m_jobsHasBeenSet = true; m_jobs = std::move(value); }
 
     /**
-     * <p>A space-separated list of up to 100 job IDs.</p>
+     * <p>A list of up to 100 job IDs.</p>
      */
     inline DescribeJobsRequest& WithJobs(const Aws::Vector<Aws::String>& value) { SetJobs(value); return *this;}
 
     /**
-     * <p>A space-separated list of up to 100 job IDs.</p>
+     * <p>A list of up to 100 job IDs.</p>
      */
     inline DescribeJobsRequest& WithJobs(Aws::Vector<Aws::String>&& value) { SetJobs(std::move(value)); return *this;}
 
     /**
-     * <p>A space-separated list of up to 100 job IDs.</p>
+     * <p>A list of up to 100 job IDs.</p>
      */
     inline DescribeJobsRequest& AddJobs(const Aws::String& value) { m_jobsHasBeenSet = true; m_jobs.push_back(value); return *this; }
 
     /**
-     * <p>A space-separated list of up to 100 job IDs.</p>
+     * <p>A list of up to 100 job IDs.</p>
      */
     inline DescribeJobsRequest& AddJobs(Aws::String&& value) { m_jobsHasBeenSet = true; m_jobs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A space-separated list of up to 100 job IDs.</p>
+     * <p>A list of up to 100 job IDs.</p>
      */
     inline DescribeJobsRequest& AddJobs(const char* value) { m_jobsHasBeenSet = true; m_jobs.push_back(value); return *this; }
 

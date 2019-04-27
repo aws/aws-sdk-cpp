@@ -71,11 +71,6 @@ setup_install()
 install (FILES ${AWS_LAMBDA_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/lambda)
 install (FILES ${AWS_LAMBDA_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/lambda/model)
 
-if(PLATFORM_WINDOWS AND MSVC)
-    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
-    install (FILES ${NUGET_FILES} DESTINATION nuget)
-endif()
-
 do_packaging()
 
 

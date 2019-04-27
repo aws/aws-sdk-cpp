@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for Scte20SourceSettings<p><h3>See Also:</h3>   <a
+   * Scte20 Source Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte20SourceSettings">AWS
    * API Reference</a></p>
    */

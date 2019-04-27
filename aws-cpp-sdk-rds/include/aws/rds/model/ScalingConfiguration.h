@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -190,6 +192,119 @@ namespace Model
      */
     inline ScalingConfiguration& WithSecondsUntilAutoPause(int value) { SetSecondsUntilAutoPause(value); return *this;}
 
+
+    /**
+     * <p>The action to take when the timeout is reached, either
+     * <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.</p> <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point is not found in the timeout
+     * period.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
+     * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetTimeoutAction() const{ return m_timeoutAction; }
+
+    /**
+     * <p>The action to take when the timeout is reached, either
+     * <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.</p> <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point is not found in the timeout
+     * period.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
+     * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline bool TimeoutActionHasBeenSet() const { return m_timeoutActionHasBeenSet; }
+
+    /**
+     * <p>The action to take when the timeout is reached, either
+     * <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.</p> <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point is not found in the timeout
+     * period.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
+     * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline void SetTimeoutAction(const Aws::String& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = value; }
+
+    /**
+     * <p>The action to take when the timeout is reached, either
+     * <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.</p> <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point is not found in the timeout
+     * period.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
+     * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline void SetTimeoutAction(Aws::String&& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = std::move(value); }
+
+    /**
+     * <p>The action to take when the timeout is reached, either
+     * <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.</p> <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point is not found in the timeout
+     * period.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
+     * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline void SetTimeoutAction(const char* value) { m_timeoutActionHasBeenSet = true; m_timeoutAction.assign(value); }
+
+    /**
+     * <p>The action to take when the timeout is reached, either
+     * <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.</p> <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point is not found in the timeout
+     * period.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
+     * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline ScalingConfiguration& WithTimeoutAction(const Aws::String& value) { SetTimeoutAction(value); return *this;}
+
+    /**
+     * <p>The action to take when the timeout is reached, either
+     * <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.</p> <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point is not found in the timeout
+     * period.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
+     * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline ScalingConfiguration& WithTimeoutAction(Aws::String&& value) { SetTimeoutAction(std::move(value)); return *this;}
+
+    /**
+     * <p>The action to take when the timeout is reached, either
+     * <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.</p> <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
+     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * ignores the capacity change if a scaling point is not found in the timeout
+     * period.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
+     * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline ScalingConfiguration& WithTimeoutAction(const char* value) { SetTimeoutAction(value); return *this;}
+
   private:
 
     int m_minCapacity;
@@ -203,6 +318,9 @@ namespace Model
 
     int m_secondsUntilAutoPause;
     bool m_secondsUntilAutoPauseHasBeenSet;
+
+    Aws::String m_timeoutAction;
+    bool m_timeoutActionHasBeenSet;
   };
 
 } // namespace Model

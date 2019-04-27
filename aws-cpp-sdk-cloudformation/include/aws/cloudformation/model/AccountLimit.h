@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>The AccountLimit data type.</p><p><h3>See Also:</h3>   <a
+   * <p>The AccountLimit data type. For more information about account limits, see <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">AWS
+   * CloudFormation Limits</a> in the <i>AWS CloudFormation User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/AccountLimit">AWS
    * API Reference</a></p>
    */
@@ -50,50 +53,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the account limit. Currently, the only account limit is
-     * <code>StackLimit</code>.</p>
+     * <p>The name of the account limit.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the account limit. Currently, the only account limit is
-     * <code>StackLimit</code>.</p>
+     * <p>The name of the account limit.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the account limit. Currently, the only account limit is
-     * <code>StackLimit</code>.</p>
+     * <p>The name of the account limit.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the account limit. Currently, the only account limit is
-     * <code>StackLimit</code>.</p>
+     * <p>The name of the account limit.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the account limit. Currently, the only account limit is
-     * <code>StackLimit</code>.</p>
+     * <p>The name of the account limit.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the account limit. Currently, the only account limit is
-     * <code>StackLimit</code>.</p>
+     * <p>The name of the account limit.</p>
      */
     inline AccountLimit& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the account limit. Currently, the only account limit is
-     * <code>StackLimit</code>.</p>
+     * <p>The name of the account limit.</p>
      */
     inline AccountLimit& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the account limit. Currently, the only account limit is
-     * <code>StackLimit</code>.</p>
+     * <p>The name of the account limit.</p>
      */
     inline AccountLimit& WithName(const char* value) { SetName(value); return *this;}
 

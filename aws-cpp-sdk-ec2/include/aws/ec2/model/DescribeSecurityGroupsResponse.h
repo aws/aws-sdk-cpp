@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>Information about one or more security groups.</p>
+     * <p>Information about the security groups.</p>
      */
     inline const Aws::Vector<SecurityGroup>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
-     * <p>Information about one or more security groups.</p>
+     * <p>Information about the security groups.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<SecurityGroup>& value) { m_securityGroups = value; }
 
     /**
-     * <p>Information about one or more security groups.</p>
+     * <p>Information about the security groups.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<SecurityGroup>&& value) { m_securityGroups = std::move(value); }
 
     /**
-     * <p>Information about one or more security groups.</p>
+     * <p>Information about the security groups.</p>
      */
     inline DescribeSecurityGroupsResponse& WithSecurityGroups(const Aws::Vector<SecurityGroup>& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * <p>Information about one or more security groups.</p>
+     * <p>Information about the security groups.</p>
      */
     inline DescribeSecurityGroupsResponse& WithSecurityGroups(Aws::Vector<SecurityGroup>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>Information about one or more security groups.</p>
+     * <p>Information about the security groups.</p>
      */
     inline DescribeSecurityGroupsResponse& AddSecurityGroups(const SecurityGroup& value) { m_securityGroups.push_back(value); return *this; }
 
     /**
-     * <p>Information about one or more security groups.</p>
+     * <p>Information about the security groups.</p>
      */
     inline DescribeSecurityGroupsResponse& AddSecurityGroups(SecurityGroup&& value) { m_securityGroups.push_back(std::move(value)); return *this; }
 

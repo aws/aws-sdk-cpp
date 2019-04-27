@@ -136,7 +136,7 @@ namespace Model
     /**
      * <p>The list of parameter statuses.</p> <p> For more information about parameters
      * and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p>
      */
@@ -145,7 +145,7 @@ namespace Model
     /**
      * <p>The list of parameter statuses.</p> <p> For more information about parameters
      * and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p>
      */
@@ -154,7 +154,7 @@ namespace Model
     /**
      * <p>The list of parameter statuses.</p> <p> For more information about parameters
      * and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p>
      */
@@ -163,7 +163,7 @@ namespace Model
     /**
      * <p>The list of parameter statuses.</p> <p> For more information about parameters
      * and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p>
      */
@@ -172,7 +172,7 @@ namespace Model
     /**
      * <p>The list of parameter statuses.</p> <p> For more information about parameters
      * and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p>
      */
@@ -181,7 +181,7 @@ namespace Model
     /**
      * <p>The list of parameter statuses.</p> <p> For more information about parameters
      * and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p>
      */
@@ -190,7 +190,7 @@ namespace Model
     /**
      * <p>The list of parameter statuses.</p> <p> For more information about parameters
      * and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p>
      */
@@ -199,7 +199,7 @@ namespace Model
     /**
      * <p>The list of parameter statuses.</p> <p> For more information about parameters
      * and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p>
      */

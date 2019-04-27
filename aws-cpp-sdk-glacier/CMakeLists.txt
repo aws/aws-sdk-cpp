@@ -71,11 +71,6 @@ setup_install()
 install (FILES ${AWS_GLACIER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/glacier)
 install (FILES ${AWS_GLACIER_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/glacier/model)
 
-if(PLATFORM_WINDOWS AND MSVC)
-    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
-    install (FILES ${NUGET_FILES} DESTINATION nuget)
-endif()
-
 do_packaging()
 
 

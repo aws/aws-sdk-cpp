@@ -42,6 +42,7 @@ FleetAttributes::FleetAttributes() :
     m_status(FleetStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_buildIdHasBeenSet(false),
+    m_scriptIdHasBeenSet(false),
     m_serverLaunchPathHasBeenSet(false),
     m_serverLaunchParametersHasBeenSet(false),
     m_logPathsHasBeenSet(false),
@@ -70,6 +71,7 @@ FleetAttributes::FleetAttributes(JsonView jsonValue) :
     m_status(FleetStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_buildIdHasBeenSet(false),
+    m_scriptIdHasBeenSet(false),
     m_serverLaunchPathHasBeenSet(false),
     m_serverLaunchParametersHasBeenSet(false),
     m_logPathsHasBeenSet(false),
@@ -155,6 +157,13 @@ FleetAttributes& FleetAttributes::operator =(JsonView jsonValue)
     m_buildId = jsonValue.GetString("BuildId");
 
     m_buildIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ScriptId"))
+  {
+    m_scriptId = jsonValue.GetString("ScriptId");
+
+    m_scriptIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ServerLaunchPath"))
@@ -288,6 +297,12 @@ JsonValue FleetAttributes::Jsonize() const
   if(m_buildIdHasBeenSet)
   {
    payload.WithString("BuildId", m_buildId);
+
+  }
+
+  if(m_scriptIdHasBeenSet)
+  {
+   payload.WithString("ScriptId", m_scriptId);
 
   }
 

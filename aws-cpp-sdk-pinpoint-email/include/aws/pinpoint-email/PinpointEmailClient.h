@@ -44,6 +44,7 @@
 #include <aws/pinpoint-email/model/ListDedicatedIpPoolsResult.h>
 #include <aws/pinpoint-email/model/ListDeliverabilityTestReportsResult.h>
 #include <aws/pinpoint-email/model/ListEmailIdentitiesResult.h>
+#include <aws/pinpoint-email/model/ListTagsForResourceResult.h>
 #include <aws/pinpoint-email/model/PutAccountDedicatedIpWarmupAttributesResult.h>
 #include <aws/pinpoint-email/model/PutAccountSendingAttributesResult.h>
 #include <aws/pinpoint-email/model/PutConfigurationSetDeliveryOptionsResult.h>
@@ -57,6 +58,8 @@
 #include <aws/pinpoint-email/model/PutEmailIdentityFeedbackAttributesResult.h>
 #include <aws/pinpoint-email/model/PutEmailIdentityMailFromAttributesResult.h>
 #include <aws/pinpoint-email/model/SendEmailResult.h>
+#include <aws/pinpoint-email/model/TagResourceResult.h>
+#include <aws/pinpoint-email/model/UntagResourceResult.h>
 #include <aws/pinpoint-email/model/UpdateConfigurationSetEventDestinationResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -121,6 +124,7 @@ namespace Model
         class ListDedicatedIpPoolsRequest;
         class ListDeliverabilityTestReportsRequest;
         class ListEmailIdentitiesRequest;
+        class ListTagsForResourceRequest;
         class PutAccountDedicatedIpWarmupAttributesRequest;
         class PutAccountSendingAttributesRequest;
         class PutConfigurationSetDeliveryOptionsRequest;
@@ -134,6 +138,8 @@ namespace Model
         class PutEmailIdentityFeedbackAttributesRequest;
         class PutEmailIdentityMailFromAttributesRequest;
         class SendEmailRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateConfigurationSetEventDestinationRequest;
 
         typedef Aws::Utils::Outcome<CreateConfigurationSetResult, Aws::Client::AWSError<PinpointEmailErrors>> CreateConfigurationSetOutcome;
@@ -159,6 +165,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDedicatedIpPoolsResult, Aws::Client::AWSError<PinpointEmailErrors>> ListDedicatedIpPoolsOutcome;
         typedef Aws::Utils::Outcome<ListDeliverabilityTestReportsResult, Aws::Client::AWSError<PinpointEmailErrors>> ListDeliverabilityTestReportsOutcome;
         typedef Aws::Utils::Outcome<ListEmailIdentitiesResult, Aws::Client::AWSError<PinpointEmailErrors>> ListEmailIdentitiesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<PinpointEmailErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutAccountDedicatedIpWarmupAttributesResult, Aws::Client::AWSError<PinpointEmailErrors>> PutAccountDedicatedIpWarmupAttributesOutcome;
         typedef Aws::Utils::Outcome<PutAccountSendingAttributesResult, Aws::Client::AWSError<PinpointEmailErrors>> PutAccountSendingAttributesOutcome;
         typedef Aws::Utils::Outcome<PutConfigurationSetDeliveryOptionsResult, Aws::Client::AWSError<PinpointEmailErrors>> PutConfigurationSetDeliveryOptionsOutcome;
@@ -172,6 +179,8 @@ namespace Model
         typedef Aws::Utils::Outcome<PutEmailIdentityFeedbackAttributesResult, Aws::Client::AWSError<PinpointEmailErrors>> PutEmailIdentityFeedbackAttributesOutcome;
         typedef Aws::Utils::Outcome<PutEmailIdentityMailFromAttributesResult, Aws::Client::AWSError<PinpointEmailErrors>> PutEmailIdentityMailFromAttributesOutcome;
         typedef Aws::Utils::Outcome<SendEmailResult, Aws::Client::AWSError<PinpointEmailErrors>> SendEmailOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<PinpointEmailErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<PinpointEmailErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateConfigurationSetEventDestinationResult, Aws::Client::AWSError<PinpointEmailErrors>> UpdateConfigurationSetEventDestinationOutcome;
 
         typedef std::future<CreateConfigurationSetOutcome> CreateConfigurationSetOutcomeCallable;
@@ -197,6 +206,7 @@ namespace Model
         typedef std::future<ListDedicatedIpPoolsOutcome> ListDedicatedIpPoolsOutcomeCallable;
         typedef std::future<ListDeliverabilityTestReportsOutcome> ListDeliverabilityTestReportsOutcomeCallable;
         typedef std::future<ListEmailIdentitiesOutcome> ListEmailIdentitiesOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutAccountDedicatedIpWarmupAttributesOutcome> PutAccountDedicatedIpWarmupAttributesOutcomeCallable;
         typedef std::future<PutAccountSendingAttributesOutcome> PutAccountSendingAttributesOutcomeCallable;
         typedef std::future<PutConfigurationSetDeliveryOptionsOutcome> PutConfigurationSetDeliveryOptionsOutcomeCallable;
@@ -210,6 +220,8 @@ namespace Model
         typedef std::future<PutEmailIdentityFeedbackAttributesOutcome> PutEmailIdentityFeedbackAttributesOutcomeCallable;
         typedef std::future<PutEmailIdentityMailFromAttributesOutcome> PutEmailIdentityMailFromAttributesOutcomeCallable;
         typedef std::future<SendEmailOutcome> SendEmailOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateConfigurationSetEventDestinationOutcome> UpdateConfigurationSetEventDestinationOutcomeCallable;
 } // namespace Model
 
@@ -238,6 +250,7 @@ namespace Model
     typedef std::function<void(const PinpointEmailClient*, const Model::ListDedicatedIpPoolsRequest&, const Model::ListDedicatedIpPoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDedicatedIpPoolsResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::ListDeliverabilityTestReportsRequest&, const Model::ListDeliverabilityTestReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeliverabilityTestReportsResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::ListEmailIdentitiesRequest&, const Model::ListEmailIdentitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEmailIdentitiesResponseReceivedHandler;
+    typedef std::function<void(const PinpointEmailClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::PutAccountDedicatedIpWarmupAttributesRequest&, const Model::PutAccountDedicatedIpWarmupAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountDedicatedIpWarmupAttributesResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::PutAccountSendingAttributesRequest&, const Model::PutAccountSendingAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountSendingAttributesResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::PutConfigurationSetDeliveryOptionsRequest&, const Model::PutConfigurationSetDeliveryOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetDeliveryOptionsResponseReceivedHandler;
@@ -251,6 +264,8 @@ namespace Model
     typedef std::function<void(const PinpointEmailClient*, const Model::PutEmailIdentityFeedbackAttributesRequest&, const Model::PutEmailIdentityFeedbackAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEmailIdentityFeedbackAttributesResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::PutEmailIdentityMailFromAttributesRequest&, const Model::PutEmailIdentityMailFromAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEmailIdentityMailFromAttributesResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::SendEmailRequest&, const Model::SendEmailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendEmailResponseReceivedHandler;
+    typedef std::function<void(const PinpointEmailClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const PinpointEmailClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::UpdateConfigurationSetEventDestinationRequest&, const Model::UpdateConfigurationSetEventDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigurationSetEventDestinationResponseReceivedHandler;
 
   /**
@@ -258,13 +273,15 @@ namespace Model
    * reference information for the <a href="https://aws.amazon.com/pinpoint">Amazon
    * Pinpoint</a> Email API, version 1.0. This document is best used in conjunction
    * with the <a
-   * href="http://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+   * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
    * Pinpoint Developer Guide</a>.</p> <p>The Amazon Pinpoint Email API is available
-   * in the US East (N. Virginia), US West (Oregon) and the EU (Ireland) Regions at
-   * the following endpoints:</p> <ul> <li> <p> <b>US East (N. Virginia)</b>:
-   * <code>email.us-east-1.amazonaws.com</code> </p> </li> <li> <p> <b>US West
-   * (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code> </p> </li> <li> <p>
-   * <b>EU (Ireland)</b>: <code>email.eu-west-1.amazonaws.com</code> </p> </li> </ul>
+   * in the US East (N. Virginia), US West (Oregon), EU (Frankfurt), and EU (Ireland)
+   * Regions at the following endpoints:</p> <ul> <li> <p> <b>US East (N.
+   * Virginia)</b>: <code>email.us-east-1.amazonaws.com</code> </p> </li> <li> <p>
+   * <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code> </p> </li>
+   * <li> <p> <b>EU (Frankfurt)</b>: <code>email.eu-central-1.amazonaws.com</code>
+   * </p> </li> <li> <p> <b>EU (Ireland)</b>:
+   * <code>email.eu-west-1.amazonaws.com</code> </p> </li> </ul>
    */
   class AWS_PINPOINTEMAIL_API PinpointEmailClient : public Aws::Client::AWSJsonClient
   {
@@ -1141,6 +1158,46 @@ namespace Model
         virtual void ListEmailIdentitiesAsync(const Model::ListEmailIdentitiesRequest& request, const ListEmailIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieve a list of the tags (keys and values) that are associated with a
+         * specific resource. A <i>tag</i> is a label that you optionally define and
+         * associate with a resource in Amazon Pinpoint. Each tag consists of a
+         * required <i>tag key</i> and an optional associated <i>tag value</i>. A tag key
+         * is a general label that acts as a category for more specific tag values. A tag
+         * value acts as a descriptor within a tag key.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Retrieve a list of the tags (keys and values) that are associated with a
+         * specific resource. A <i>tag</i> is a label that you optionally define and
+         * associate with a resource in Amazon Pinpoint. Each tag consists of a
+         * required <i>tag key</i> and an optional associated <i>tag value</i>. A tag key
+         * is a general label that acts as a category for more specific tag values. A tag
+         * value acts as a descriptor within a tag key.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Retrieve a list of the tags (keys and values) that are associated with a
+         * specific resource. A <i>tag</i> is a label that you optionally define and
+         * associate with a resource in Amazon Pinpoint. Each tag consists of a
+         * required <i>tag key</i> and an optional associated <i>tag value</i>. A tag key
+         * is a general label that acts as a category for more specific tag values. A tag
+         * value acts as a descriptor within a tag key.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Enable or disable the automatic warm-up feature for dedicated IP
          * addresses.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutAccountDedicatedIpWarmupAttributes">AWS
@@ -1592,6 +1649,83 @@ namespace Model
         virtual void SendEmailAsync(const Model::SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Add one or more tags (keys and values) to one or more specified resources. A
+         * <i>tag</i> is a label that you optionally define and associate with a resource
+         * in Amazon Pinpoint. Tags can help you categorize and manage resources in
+         * different ways, such as by purpose, owner, environment, or other criteria. A
+         * resource can have as many as 50 tags.</p> <p>Each tag consists of a
+         * required <i>tag key</i> and an associated <i>tag value</i>, both of which you
+         * define. A tag key is a general label that acts as a category for more specific
+         * tag values. A tag value acts as a descriptor within a tag key.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Add one or more tags (keys and values) to one or more specified resources. A
+         * <i>tag</i> is a label that you optionally define and associate with a resource
+         * in Amazon Pinpoint. Tags can help you categorize and manage resources in
+         * different ways, such as by purpose, owner, environment, or other criteria. A
+         * resource can have as many as 50 tags.</p> <p>Each tag consists of a
+         * required <i>tag key</i> and an associated <i>tag value</i>, both of which you
+         * define. A tag key is a general label that acts as a category for more specific
+         * tag values. A tag value acts as a descriptor within a tag key.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Add one or more tags (keys and values) to one or more specified resources. A
+         * <i>tag</i> is a label that you optionally define and associate with a resource
+         * in Amazon Pinpoint. Tags can help you categorize and manage resources in
+         * different ways, such as by purpose, owner, environment, or other criteria. A
+         * resource can have as many as 50 tags.</p> <p>Each tag consists of a
+         * required <i>tag key</i> and an associated <i>tag value</i>, both of which you
+         * define. A tag key is a general label that acts as a category for more specific
+         * tag values. A tag value acts as a descriptor within a tag key.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Remove one or more tags (keys and values) from a specified
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Remove one or more tags (keys and values) from a specified
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Remove one or more tags (keys and values) from a specified
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Update the configuration of an event destination for a configuration set.</p>
          * <p>In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens,
          * clicks, bounces, and complaints. <i>Event destinations</i> are places that you
@@ -1662,6 +1796,7 @@ namespace Model
         void ListDedicatedIpPoolsAsyncHelper(const Model::ListDedicatedIpPoolsRequest& request, const ListDedicatedIpPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDeliverabilityTestReportsAsyncHelper(const Model::ListDeliverabilityTestReportsRequest& request, const ListDeliverabilityTestReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEmailIdentitiesAsyncHelper(const Model::ListEmailIdentitiesRequest& request, const ListEmailIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAccountDedicatedIpWarmupAttributesAsyncHelper(const Model::PutAccountDedicatedIpWarmupAttributesRequest& request, const PutAccountDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAccountSendingAttributesAsyncHelper(const Model::PutAccountSendingAttributesRequest& request, const PutAccountSendingAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutConfigurationSetDeliveryOptionsAsyncHelper(const Model::PutConfigurationSetDeliveryOptionsRequest& request, const PutConfigurationSetDeliveryOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1675,6 +1810,8 @@ namespace Model
         void PutEmailIdentityFeedbackAttributesAsyncHelper(const Model::PutEmailIdentityFeedbackAttributesRequest& request, const PutEmailIdentityFeedbackAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEmailIdentityMailFromAttributesAsyncHelper(const Model::PutEmailIdentityMailFromAttributesRequest& request, const PutEmailIdentityMailFromAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendEmailAsyncHelper(const Model::SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConfigurationSetEventDestinationAsyncHelper(const Model::UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

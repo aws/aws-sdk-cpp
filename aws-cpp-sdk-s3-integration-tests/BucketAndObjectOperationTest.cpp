@@ -529,13 +529,6 @@ namespace
         ss << "\"" << HashingUtils::HexEncode(HashingUtils::CalculateMD5(*putObjectRequest.GetBody())) << "\"";
         ASSERT_STREQ(ss.str().c_str(), putObjectOutcome.GetResult().GetETag().c_str());
 
-        WaitForObjectToPropagate(fullBucketName, TEST_OBJ_KEY);
-
-        ListObjectsRequest listObjectsRequest;
-        listObjectsRequest.SetBucket(fullBucketName);
-
-        ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
-        ASSERT_TRUE(listObjectsOutcome.IsSuccess());
         ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_OBJ_KEY));
 
         GetObjectRequest getObjectRequest;
@@ -678,13 +671,6 @@ namespace
         ss << "\"" << HashingUtils::HexEncode(HashingUtils::CalculateMD5(*putObjectRequest.GetBody())) << "\"";
         ASSERT_STREQ(ss.str().c_str(), putObjectOutcome.GetResult().GetETag().c_str());
 
-        WaitForObjectToPropagate(fullBucketName, TEST_OBJ_KEY);
-
-        ListObjectsRequest listObjectsRequest;
-        listObjectsRequest.SetBucket(fullBucketName);
-
-        ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
-        ASSERT_TRUE(listObjectsOutcome.IsSuccess());
         ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_OBJ_KEY));
 
         GetObjectRequest getObjectRequest;
@@ -752,21 +738,7 @@ namespace
             PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
             ASSERT_TRUE(putObjectOutcome.IsSuccess());
 
-            WaitForObjectToPropagate(fullBucketName, unicodekey.c_str());
-
-            ListObjectsRequest listObjectsRequest;
-            listObjectsRequest.SetBucket(fullBucketName);
-
-            ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
-            ASSERT_TRUE(listObjectsOutcome.IsSuccess());
             ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, unicodekey.c_str()));
-
-            HeadObjectRequest headObjectRequest;
-            headObjectRequest.SetBucket(fullBucketName);
-            headObjectRequest.SetKey(unicodekey);
-
-            HeadObjectOutcome headObjectOutcome = Client->HeadObject(headObjectRequest);
-            ASSERT_TRUE(headObjectOutcome.IsSuccess());
 
             DeleteObjectRequest deleteObjectRequest;
             deleteObjectRequest.SetBucket(fullBucketName);
@@ -789,21 +761,7 @@ namespace
             PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
             ASSERT_TRUE(putObjectOutcome.IsSuccess());
 
-            WaitForObjectToPropagate(fullBucketName, URIESCAPE_KEY);
-
-            ListObjectsRequest listObjectsRequest;
-            listObjectsRequest.SetBucket(fullBucketName);
-
-            ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
-            ASSERT_TRUE(listObjectsOutcome.IsSuccess());
             ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, URIESCAPE_KEY));
-
-            HeadObjectRequest headObjectRequest;
-            headObjectRequest.SetBucket(fullBucketName);
-            headObjectRequest.SetKey(URIESCAPE_KEY);
-
-            HeadObjectOutcome headObjectOutcome = Client->HeadObject(headObjectRequest);
-            ASSERT_TRUE(headObjectOutcome.IsSuccess());
 
             DeleteObjectRequest deleteObjectRequest;
             deleteObjectRequest.SetBucket(fullBucketName);
@@ -1155,7 +1113,7 @@ namespace
 
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
-        WaitForBucketToPropagate(fullBucketName);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
 
         GetObjectRequest getObjectRequest;
         getObjectRequest.SetBucket(fullBucketName);
@@ -1289,19 +1247,6 @@ namespace
         ASSERT_TRUE(putObjectOutcome.IsSuccess());
         
         ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
-        
-        ListObjectsRequest listObjectsRequest;
-        listObjectsRequest.SetBucket(fullBucketName);
-        
-        ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
-        ASSERT_TRUE(listObjectsOutcome.IsSuccess());
-        
-        HeadObjectRequest headObjectRequest;
-        headObjectRequest.SetBucket(fullBucketName);
-        headObjectRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
-        
-        HeadObjectOutcome headObjectOutcome = Client->HeadObject(headObjectRequest);
-        ASSERT_TRUE(headObjectOutcome.IsSuccess());
 
         SelectObjectContentRequest selectObjectContentRequest;
         selectObjectContentRequest.SetBucket(fullBucketName);
@@ -1380,19 +1325,6 @@ namespace
         ASSERT_TRUE(putObjectOutcome.IsSuccess());
             
         ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
-            
-        ListObjectsRequest listObjectsRequest;
-        listObjectsRequest.SetBucket(fullBucketName);
-            
-        ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
-        ASSERT_TRUE(listObjectsOutcome.IsSuccess());
-            
-        HeadObjectRequest headObjectRequest;
-        headObjectRequest.SetBucket(fullBucketName);
-        headObjectRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
-            
-        HeadObjectOutcome headObjectOutcome = Client->HeadObject(headObjectRequest);
-        ASSERT_TRUE(headObjectOutcome.IsSuccess());
 
         SelectObjectContentRequest selectObjectContentRequest;
         selectObjectContentRequest.SetBucket(fullBucketName);
@@ -1470,10 +1402,6 @@ namespace
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-        if (!createBucketOutcome.IsSuccess())
-        {
-            std::cout << createBucketOutcome.GetError().GetMessage() << std::endl;
-        }
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
         ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
 
@@ -1498,21 +1426,7 @@ namespace
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
         ASSERT_TRUE(putObjectOutcome.IsSuccess());
 
-        WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY);
-
-        ListObjectsRequest listObjectsRequest;
-        listObjectsRequest.SetBucket(fullBucketName);
-
-        ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
-        ASSERT_TRUE(listObjectsOutcome.IsSuccess());
         ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
-
-        HeadObjectRequest headObjectRequest;
-        headObjectRequest.SetBucket(fullBucketName);
-        headObjectRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
-
-        HeadObjectOutcome headObjectOutcome = Client->HeadObject(headObjectRequest);
-        ASSERT_TRUE(headObjectOutcome.IsSuccess());
 
         SelectObjectContentRequest selectObjectContentRequest;
         selectObjectContentRequest.SetBucket(fullBucketName);

@@ -256,32 +256,32 @@ namespace Model
 
 
     /**
-     * <p>The date the instance association executed. </p>
+     * <p>The date the instance association ran. </p>
      */
     inline const Aws::Utils::DateTime& GetExecutionDate() const{ return m_executionDate; }
 
     /**
-     * <p>The date the instance association executed. </p>
+     * <p>The date the instance association ran. </p>
      */
     inline bool ExecutionDateHasBeenSet() const { return m_executionDateHasBeenSet; }
 
     /**
-     * <p>The date the instance association executed. </p>
+     * <p>The date the instance association ran. </p>
      */
     inline void SetExecutionDate(const Aws::Utils::DateTime& value) { m_executionDateHasBeenSet = true; m_executionDate = value; }
 
     /**
-     * <p>The date the instance association executed. </p>
+     * <p>The date the instance association ran. </p>
      */
     inline void SetExecutionDate(Aws::Utils::DateTime&& value) { m_executionDateHasBeenSet = true; m_executionDate = std::move(value); }
 
     /**
-     * <p>The date the instance association executed. </p>
+     * <p>The date the instance association ran. </p>
      */
     inline InstanceAssociationStatusInfo& WithExecutionDate(const Aws::Utils::DateTime& value) { SetExecutionDate(value); return *this;}
 
     /**
-     * <p>The date the instance association executed. </p>
+     * <p>The date the instance association ran. </p>
      */
     inline InstanceAssociationStatusInfo& WithExecutionDate(Aws::Utils::DateTime&& value) { SetExecutionDate(std::move(value)); return *this;}
 

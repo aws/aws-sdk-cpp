@@ -30,6 +30,7 @@
 #include <aws/worklink/WorkLinkClient.h>
 #include <aws/worklink/WorkLinkEndpoint.h>
 #include <aws/worklink/WorkLinkErrorMarshaller.h>
+#include <aws/worklink/model/AssociateDomainRequest.h>
 #include <aws/worklink/model/AssociateWebsiteCertificateAuthorityRequest.h>
 #include <aws/worklink/model/CreateFleetRequest.h>
 #include <aws/worklink/model/DeleteFleetRequest.h>
@@ -37,17 +38,23 @@
 #include <aws/worklink/model/DescribeCompanyNetworkConfigurationRequest.h>
 #include <aws/worklink/model/DescribeDeviceRequest.h>
 #include <aws/worklink/model/DescribeDevicePolicyConfigurationRequest.h>
+#include <aws/worklink/model/DescribeDomainRequest.h>
 #include <aws/worklink/model/DescribeFleetMetadataRequest.h>
 #include <aws/worklink/model/DescribeIdentityProviderConfigurationRequest.h>
 #include <aws/worklink/model/DescribeWebsiteCertificateAuthorityRequest.h>
+#include <aws/worklink/model/DisassociateDomainRequest.h>
 #include <aws/worklink/model/DisassociateWebsiteCertificateAuthorityRequest.h>
 #include <aws/worklink/model/ListDevicesRequest.h>
+#include <aws/worklink/model/ListDomainsRequest.h>
 #include <aws/worklink/model/ListFleetsRequest.h>
 #include <aws/worklink/model/ListWebsiteCertificateAuthoritiesRequest.h>
+#include <aws/worklink/model/RestoreDomainAccessRequest.h>
+#include <aws/worklink/model/RevokeDomainAccessRequest.h>
 #include <aws/worklink/model/SignOutUserRequest.h>
 #include <aws/worklink/model/UpdateAuditStreamConfigurationRequest.h>
 #include <aws/worklink/model/UpdateCompanyNetworkConfigurationRequest.h>
 #include <aws/worklink/model/UpdateDevicePolicyConfigurationRequest.h>
+#include <aws/worklink/model/UpdateDomainMetadataRequest.h>
 #include <aws/worklink/model/UpdateFleetMetadataRequest.h>
 #include <aws/worklink/model/UpdateIdentityProviderConfigurationRequest.h>
 
@@ -122,6 +129,41 @@ void WorkLinkClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+AssociateDomainOutcome WorkLinkClient::AssociateDomain(const AssociateDomainRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/associateDomain";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AssociateDomainOutcome(AssociateDomainResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateDomainOutcome(outcome.GetError());
+  }
+}
+
+AssociateDomainOutcomeCallable WorkLinkClient::AssociateDomainCallable(const AssociateDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkLinkClient::AssociateDomainAsync(const AssociateDomainRequest& request, const AssociateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateDomainAsyncHelper( request, handler, context ); } );
+}
+
+void WorkLinkClient::AssociateDomainAsyncHelper(const AssociateDomainRequest& request, const AssociateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateDomain(request), context);
+}
+
 AssociateWebsiteCertificateAuthorityOutcome WorkLinkClient::AssociateWebsiteCertificateAuthority(const AssociateWebsiteCertificateAuthorityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -367,6 +409,41 @@ void WorkLinkClient::DescribeDevicePolicyConfigurationAsyncHelper(const Describe
   handler(this, request, DescribeDevicePolicyConfiguration(request), context);
 }
 
+DescribeDomainOutcome WorkLinkClient::DescribeDomain(const DescribeDomainRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/describeDomain";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeDomainOutcome(DescribeDomainResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeDomainOutcome(outcome.GetError());
+  }
+}
+
+DescribeDomainOutcomeCallable WorkLinkClient::DescribeDomainCallable(const DescribeDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkLinkClient::DescribeDomainAsync(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainAsyncHelper( request, handler, context ); } );
+}
+
+void WorkLinkClient::DescribeDomainAsyncHelper(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDomain(request), context);
+}
+
 DescribeFleetMetadataOutcome WorkLinkClient::DescribeFleetMetadata(const DescribeFleetMetadataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -472,6 +549,41 @@ void WorkLinkClient::DescribeWebsiteCertificateAuthorityAsyncHelper(const Descri
   handler(this, request, DescribeWebsiteCertificateAuthority(request), context);
 }
 
+DisassociateDomainOutcome WorkLinkClient::DisassociateDomain(const DisassociateDomainRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/disassociateDomain";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DisassociateDomainOutcome(DisassociateDomainResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DisassociateDomainOutcome(outcome.GetError());
+  }
+}
+
+DisassociateDomainOutcomeCallable WorkLinkClient::DisassociateDomainCallable(const DisassociateDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkLinkClient::DisassociateDomainAsync(const DisassociateDomainRequest& request, const DisassociateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateDomainAsyncHelper( request, handler, context ); } );
+}
+
+void WorkLinkClient::DisassociateDomainAsyncHelper(const DisassociateDomainRequest& request, const DisassociateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateDomain(request), context);
+}
+
 DisassociateWebsiteCertificateAuthorityOutcome WorkLinkClient::DisassociateWebsiteCertificateAuthority(const DisassociateWebsiteCertificateAuthorityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -542,6 +654,41 @@ void WorkLinkClient::ListDevicesAsyncHelper(const ListDevicesRequest& request, c
   handler(this, request, ListDevices(request), context);
 }
 
+ListDomainsOutcome WorkLinkClient::ListDomains(const ListDomainsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/listDomains";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListDomainsOutcome(ListDomainsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListDomainsOutcome(outcome.GetError());
+  }
+}
+
+ListDomainsOutcomeCallable WorkLinkClient::ListDomainsCallable(const ListDomainsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDomainsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDomains(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkLinkClient::ListDomainsAsync(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDomainsAsyncHelper( request, handler, context ); } );
+}
+
+void WorkLinkClient::ListDomainsAsyncHelper(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDomains(request), context);
+}
+
 ListFleetsOutcome WorkLinkClient::ListFleets(const ListFleetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -610,6 +757,76 @@ void WorkLinkClient::ListWebsiteCertificateAuthoritiesAsync(const ListWebsiteCer
 void WorkLinkClient::ListWebsiteCertificateAuthoritiesAsyncHelper(const ListWebsiteCertificateAuthoritiesRequest& request, const ListWebsiteCertificateAuthoritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListWebsiteCertificateAuthorities(request), context);
+}
+
+RestoreDomainAccessOutcome WorkLinkClient::RestoreDomainAccess(const RestoreDomainAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/restoreDomainAccess";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RestoreDomainAccessOutcome(RestoreDomainAccessResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RestoreDomainAccessOutcome(outcome.GetError());
+  }
+}
+
+RestoreDomainAccessOutcomeCallable WorkLinkClient::RestoreDomainAccessCallable(const RestoreDomainAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RestoreDomainAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RestoreDomainAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkLinkClient::RestoreDomainAccessAsync(const RestoreDomainAccessRequest& request, const RestoreDomainAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RestoreDomainAccessAsyncHelper( request, handler, context ); } );
+}
+
+void WorkLinkClient::RestoreDomainAccessAsyncHelper(const RestoreDomainAccessRequest& request, const RestoreDomainAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RestoreDomainAccess(request), context);
+}
+
+RevokeDomainAccessOutcome WorkLinkClient::RevokeDomainAccess(const RevokeDomainAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/revokeDomainAccess";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RevokeDomainAccessOutcome(RevokeDomainAccessResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RevokeDomainAccessOutcome(outcome.GetError());
+  }
+}
+
+RevokeDomainAccessOutcomeCallable WorkLinkClient::RevokeDomainAccessCallable(const RevokeDomainAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RevokeDomainAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RevokeDomainAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkLinkClient::RevokeDomainAccessAsync(const RevokeDomainAccessRequest& request, const RevokeDomainAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RevokeDomainAccessAsyncHelper( request, handler, context ); } );
+}
+
+void WorkLinkClient::RevokeDomainAccessAsyncHelper(const RevokeDomainAccessRequest& request, const RevokeDomainAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RevokeDomainAccess(request), context);
 }
 
 SignOutUserOutcome WorkLinkClient::SignOutUser(const SignOutUserRequest& request) const
@@ -750,6 +967,41 @@ void WorkLinkClient::UpdateDevicePolicyConfigurationAsync(const UpdateDevicePoli
 void WorkLinkClient::UpdateDevicePolicyConfigurationAsyncHelper(const UpdateDevicePolicyConfigurationRequest& request, const UpdateDevicePolicyConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDevicePolicyConfiguration(request), context);
+}
+
+UpdateDomainMetadataOutcome WorkLinkClient::UpdateDomainMetadata(const UpdateDomainMetadataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/updateDomainMetadata";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateDomainMetadataOutcome(UpdateDomainMetadataResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateDomainMetadataOutcome(outcome.GetError());
+  }
+}
+
+UpdateDomainMetadataOutcomeCallable WorkLinkClient::UpdateDomainMetadataCallable(const UpdateDomainMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDomainMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDomainMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkLinkClient::UpdateDomainMetadataAsync(const UpdateDomainMetadataRequest& request, const UpdateDomainMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDomainMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void WorkLinkClient::UpdateDomainMetadataAsyncHelper(const UpdateDomainMetadataRequest& request, const UpdateDomainMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDomainMetadata(request), context);
 }
 
 UpdateFleetMetadataOutcome WorkLinkClient::UpdateFleetMetadata(const UpdateFleetMetadataRequest& request) const

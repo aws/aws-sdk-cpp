@@ -46,6 +46,8 @@ Block::Block() :
     m_idHasBeenSet(false),
     m_relationshipsHasBeenSet(false),
     m_entityTypesHasBeenSet(false),
+    m_selectionStatus(SelectionStatus::NOT_SET),
+    m_selectionStatusHasBeenSet(false),
     m_page(0),
     m_pageHasBeenSet(false)
 {
@@ -69,6 +71,8 @@ Block::Block(JsonView jsonValue) :
     m_idHasBeenSet(false),
     m_relationshipsHasBeenSet(false),
     m_entityTypesHasBeenSet(false),
+    m_selectionStatus(SelectionStatus::NOT_SET),
+    m_selectionStatusHasBeenSet(false),
     m_page(0),
     m_pageHasBeenSet(false)
 {
@@ -160,6 +164,13 @@ Block& Block::operator =(JsonView jsonValue)
     m_entityTypesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SelectionStatus"))
+  {
+    m_selectionStatus = SelectionStatusMapper::GetSelectionStatusForName(jsonValue.GetString("SelectionStatus"));
+
+    m_selectionStatusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Page"))
   {
     m_page = jsonValue.GetInteger("Page");
@@ -247,6 +258,11 @@ JsonValue Block::Jsonize() const
    }
    payload.WithArray("EntityTypes", std::move(entityTypesJsonList));
 
+  }
+
+  if(m_selectionStatusHasBeenSet)
+  {
+   payload.WithString("SelectionStatus", SelectionStatusMapper::GetNameForSelectionStatus(m_selectionStatus));
   }
 
   if(m_pageHasBeenSet)

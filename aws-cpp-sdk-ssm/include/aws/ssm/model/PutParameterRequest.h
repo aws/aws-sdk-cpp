@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/ParameterType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/ParameterTier.h>
 #include <aws/ssm/model/Tag.h>
 #include <utility>
 
@@ -274,42 +275,50 @@ namespace Model
 
 
     /**
-     * <p>The parameter value that you want to add to the system.</p>
+     * <p>The parameter value that you want to add to the system. Standard parameters
+     * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The parameter value that you want to add to the system.</p>
+     * <p>The parameter value that you want to add to the system. Standard parameters
+     * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The parameter value that you want to add to the system.</p>
+     * <p>The parameter value that you want to add to the system. Standard parameters
+     * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The parameter value that you want to add to the system.</p>
+     * <p>The parameter value that you want to add to the system. Standard parameters
+     * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The parameter value that you want to add to the system.</p>
+     * <p>The parameter value that you want to add to the system. Standard parameters
+     * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The parameter value that you want to add to the system.</p>
+     * <p>The parameter value that you want to add to the system. Standard parameters
+     * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
      */
     inline PutParameterRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The parameter value that you want to add to the system.</p>
+     * <p>The parameter value that you want to add to the system. Standard parameters
+     * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
      */
     inline PutParameterRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The parameter value that you want to add to the system.</p>
+     * <p>The parameter value that you want to add to the system. Standard parameters
+     * have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
      */
     inline PutParameterRequest& WithValue(const char* value) { SetValue(value); return *this;}
 
@@ -698,6 +707,320 @@ namespace Model
      */
     inline PutParameterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Parameter Store offers a standard tier and an advanced tier for parameters.
+     * Standard parameters have a value limit of 4 KB and can't be configured to use
+     * parameter policies. You can create a maximum of 10,000 standard parameters per
+     * account and per Region. Standard parameters are offered at no additional
+     * cost.</p> <p>Advanced parameters have a value limit of 8 KB and can be
+     * configured to use parameter policies. You can create a maximum of 100,000
+     * advanced parameters per account and per Region. Advanced parameters incur a
+     * charge.</p> <p>If you don't specify a parameter tier when you create a new
+     * parameter, the parameter defaults to using the standard tier. You can change a
+     * standard parameter to an advanced parameter at any time. But you can't revert an
+     * advanced parameter to a standard parameter. Reverting an advanced parameter to a
+     * standard parameter would result in data loss because the system would truncate
+     * the size of the parameter from 8 KB to 4 KB. Reverting would also remove any
+     * policies attached to the parameter. Lastly, advanced parameters use a different
+     * form of encryption than standard parameters.</p> <p>If you no longer need an
+     * advanced parameter, or if you no longer want to incur charges for an advanced
+     * parameter, you must delete it and recreate it as a new standard parameter. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
+     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     */
+    inline const ParameterTier& GetTier() const{ return m_tier; }
+
+    /**
+     * <p>Parameter Store offers a standard tier and an advanced tier for parameters.
+     * Standard parameters have a value limit of 4 KB and can't be configured to use
+     * parameter policies. You can create a maximum of 10,000 standard parameters per
+     * account and per Region. Standard parameters are offered at no additional
+     * cost.</p> <p>Advanced parameters have a value limit of 8 KB and can be
+     * configured to use parameter policies. You can create a maximum of 100,000
+     * advanced parameters per account and per Region. Advanced parameters incur a
+     * charge.</p> <p>If you don't specify a parameter tier when you create a new
+     * parameter, the parameter defaults to using the standard tier. You can change a
+     * standard parameter to an advanced parameter at any time. But you can't revert an
+     * advanced parameter to a standard parameter. Reverting an advanced parameter to a
+     * standard parameter would result in data loss because the system would truncate
+     * the size of the parameter from 8 KB to 4 KB. Reverting would also remove any
+     * policies attached to the parameter. Lastly, advanced parameters use a different
+     * form of encryption than standard parameters.</p> <p>If you no longer need an
+     * advanced parameter, or if you no longer want to incur charges for an advanced
+     * parameter, you must delete it and recreate it as a new standard parameter. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
+     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     */
+    inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
+
+    /**
+     * <p>Parameter Store offers a standard tier and an advanced tier for parameters.
+     * Standard parameters have a value limit of 4 KB and can't be configured to use
+     * parameter policies. You can create a maximum of 10,000 standard parameters per
+     * account and per Region. Standard parameters are offered at no additional
+     * cost.</p> <p>Advanced parameters have a value limit of 8 KB and can be
+     * configured to use parameter policies. You can create a maximum of 100,000
+     * advanced parameters per account and per Region. Advanced parameters incur a
+     * charge.</p> <p>If you don't specify a parameter tier when you create a new
+     * parameter, the parameter defaults to using the standard tier. You can change a
+     * standard parameter to an advanced parameter at any time. But you can't revert an
+     * advanced parameter to a standard parameter. Reverting an advanced parameter to a
+     * standard parameter would result in data loss because the system would truncate
+     * the size of the parameter from 8 KB to 4 KB. Reverting would also remove any
+     * policies attached to the parameter. Lastly, advanced parameters use a different
+     * form of encryption than standard parameters.</p> <p>If you no longer need an
+     * advanced parameter, or if you no longer want to incur charges for an advanced
+     * parameter, you must delete it and recreate it as a new standard parameter. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
+     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     */
+    inline void SetTier(const ParameterTier& value) { m_tierHasBeenSet = true; m_tier = value; }
+
+    /**
+     * <p>Parameter Store offers a standard tier and an advanced tier for parameters.
+     * Standard parameters have a value limit of 4 KB and can't be configured to use
+     * parameter policies. You can create a maximum of 10,000 standard parameters per
+     * account and per Region. Standard parameters are offered at no additional
+     * cost.</p> <p>Advanced parameters have a value limit of 8 KB and can be
+     * configured to use parameter policies. You can create a maximum of 100,000
+     * advanced parameters per account and per Region. Advanced parameters incur a
+     * charge.</p> <p>If you don't specify a parameter tier when you create a new
+     * parameter, the parameter defaults to using the standard tier. You can change a
+     * standard parameter to an advanced parameter at any time. But you can't revert an
+     * advanced parameter to a standard parameter. Reverting an advanced parameter to a
+     * standard parameter would result in data loss because the system would truncate
+     * the size of the parameter from 8 KB to 4 KB. Reverting would also remove any
+     * policies attached to the parameter. Lastly, advanced parameters use a different
+     * form of encryption than standard parameters.</p> <p>If you no longer need an
+     * advanced parameter, or if you no longer want to incur charges for an advanced
+     * parameter, you must delete it and recreate it as a new standard parameter. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
+     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     */
+    inline void SetTier(ParameterTier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
+
+    /**
+     * <p>Parameter Store offers a standard tier and an advanced tier for parameters.
+     * Standard parameters have a value limit of 4 KB and can't be configured to use
+     * parameter policies. You can create a maximum of 10,000 standard parameters per
+     * account and per Region. Standard parameters are offered at no additional
+     * cost.</p> <p>Advanced parameters have a value limit of 8 KB and can be
+     * configured to use parameter policies. You can create a maximum of 100,000
+     * advanced parameters per account and per Region. Advanced parameters incur a
+     * charge.</p> <p>If you don't specify a parameter tier when you create a new
+     * parameter, the parameter defaults to using the standard tier. You can change a
+     * standard parameter to an advanced parameter at any time. But you can't revert an
+     * advanced parameter to a standard parameter. Reverting an advanced parameter to a
+     * standard parameter would result in data loss because the system would truncate
+     * the size of the parameter from 8 KB to 4 KB. Reverting would also remove any
+     * policies attached to the parameter. Lastly, advanced parameters use a different
+     * form of encryption than standard parameters.</p> <p>If you no longer need an
+     * advanced parameter, or if you no longer want to incur charges for an advanced
+     * parameter, you must delete it and recreate it as a new standard parameter. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
+     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     */
+    inline PutParameterRequest& WithTier(const ParameterTier& value) { SetTier(value); return *this;}
+
+    /**
+     * <p>Parameter Store offers a standard tier and an advanced tier for parameters.
+     * Standard parameters have a value limit of 4 KB and can't be configured to use
+     * parameter policies. You can create a maximum of 10,000 standard parameters per
+     * account and per Region. Standard parameters are offered at no additional
+     * cost.</p> <p>Advanced parameters have a value limit of 8 KB and can be
+     * configured to use parameter policies. You can create a maximum of 100,000
+     * advanced parameters per account and per Region. Advanced parameters incur a
+     * charge.</p> <p>If you don't specify a parameter tier when you create a new
+     * parameter, the parameter defaults to using the standard tier. You can change a
+     * standard parameter to an advanced parameter at any time. But you can't revert an
+     * advanced parameter to a standard parameter. Reverting an advanced parameter to a
+     * standard parameter would result in data loss because the system would truncate
+     * the size of the parameter from 8 KB to 4 KB. Reverting would also remove any
+     * policies attached to the parameter. Lastly, advanced parameters use a different
+     * form of encryption than standard parameters.</p> <p>If you no longer need an
+     * advanced parameter, or if you no longer want to incur charges for an advanced
+     * parameter, you must delete it and recreate it as a new standard parameter. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
+     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     */
+    inline PutParameterRequest& WithTier(ParameterTier&& value) { SetTier(std::move(value)); return *this;}
+
+
+    /**
+     * <p>One or more policies to apply to a parameter. This action takes a JSON array.
+     * Parameter Store supports the following policy types:</p> <p>Expiration: This
+     * policy deletes the parameter after it expires. When you create the policy, you
+     * specify the expiration date. You can update the expiration date and time by
+     * updating the policy. Updating the <i>parameter</i> does not affect the
+     * expiration date and time. When the expiration time is reached, Parameter Store
+     * deletes the parameter.</p> <p>ExpirationNotification: This policy triggers an
+     * event in Amazon CloudWatch Events that notifies you about the expiration. By
+     * using this policy, you can receive notification before or after the expiration
+     * time is reached, in units of days or hours.</p> <p>NoChangeNotification: This
+     * policy triggers a CloudWatch event if a parameter has not been modified for a
+     * specified period of time. This policy type is useful when, for example, a secret
+     * needs to be changed within a period of time, but it has not been changed.</p>
+     * <p>All existing policies are preserved until you send new policies or an empty
+     * policy. For more information about parameter policies, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
+     * with Parameter Policies</a>. </p>
+     */
+    inline const Aws::String& GetPolicies() const{ return m_policies; }
+
+    /**
+     * <p>One or more policies to apply to a parameter. This action takes a JSON array.
+     * Parameter Store supports the following policy types:</p> <p>Expiration: This
+     * policy deletes the parameter after it expires. When you create the policy, you
+     * specify the expiration date. You can update the expiration date and time by
+     * updating the policy. Updating the <i>parameter</i> does not affect the
+     * expiration date and time. When the expiration time is reached, Parameter Store
+     * deletes the parameter.</p> <p>ExpirationNotification: This policy triggers an
+     * event in Amazon CloudWatch Events that notifies you about the expiration. By
+     * using this policy, you can receive notification before or after the expiration
+     * time is reached, in units of days or hours.</p> <p>NoChangeNotification: This
+     * policy triggers a CloudWatch event if a parameter has not been modified for a
+     * specified period of time. This policy type is useful when, for example, a secret
+     * needs to be changed within a period of time, but it has not been changed.</p>
+     * <p>All existing policies are preserved until you send new policies or an empty
+     * policy. For more information about parameter policies, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
+     * with Parameter Policies</a>. </p>
+     */
+    inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
+
+    /**
+     * <p>One or more policies to apply to a parameter. This action takes a JSON array.
+     * Parameter Store supports the following policy types:</p> <p>Expiration: This
+     * policy deletes the parameter after it expires. When you create the policy, you
+     * specify the expiration date. You can update the expiration date and time by
+     * updating the policy. Updating the <i>parameter</i> does not affect the
+     * expiration date and time. When the expiration time is reached, Parameter Store
+     * deletes the parameter.</p> <p>ExpirationNotification: This policy triggers an
+     * event in Amazon CloudWatch Events that notifies you about the expiration. By
+     * using this policy, you can receive notification before or after the expiration
+     * time is reached, in units of days or hours.</p> <p>NoChangeNotification: This
+     * policy triggers a CloudWatch event if a parameter has not been modified for a
+     * specified period of time. This policy type is useful when, for example, a secret
+     * needs to be changed within a period of time, but it has not been changed.</p>
+     * <p>All existing policies are preserved until you send new policies or an empty
+     * policy. For more information about parameter policies, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
+     * with Parameter Policies</a>. </p>
+     */
+    inline void SetPolicies(const Aws::String& value) { m_policiesHasBeenSet = true; m_policies = value; }
+
+    /**
+     * <p>One or more policies to apply to a parameter. This action takes a JSON array.
+     * Parameter Store supports the following policy types:</p> <p>Expiration: This
+     * policy deletes the parameter after it expires. When you create the policy, you
+     * specify the expiration date. You can update the expiration date and time by
+     * updating the policy. Updating the <i>parameter</i> does not affect the
+     * expiration date and time. When the expiration time is reached, Parameter Store
+     * deletes the parameter.</p> <p>ExpirationNotification: This policy triggers an
+     * event in Amazon CloudWatch Events that notifies you about the expiration. By
+     * using this policy, you can receive notification before or after the expiration
+     * time is reached, in units of days or hours.</p> <p>NoChangeNotification: This
+     * policy triggers a CloudWatch event if a parameter has not been modified for a
+     * specified period of time. This policy type is useful when, for example, a secret
+     * needs to be changed within a period of time, but it has not been changed.</p>
+     * <p>All existing policies are preserved until you send new policies or an empty
+     * policy. For more information about parameter policies, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
+     * with Parameter Policies</a>. </p>
+     */
+    inline void SetPolicies(Aws::String&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
+
+    /**
+     * <p>One or more policies to apply to a parameter. This action takes a JSON array.
+     * Parameter Store supports the following policy types:</p> <p>Expiration: This
+     * policy deletes the parameter after it expires. When you create the policy, you
+     * specify the expiration date. You can update the expiration date and time by
+     * updating the policy. Updating the <i>parameter</i> does not affect the
+     * expiration date and time. When the expiration time is reached, Parameter Store
+     * deletes the parameter.</p> <p>ExpirationNotification: This policy triggers an
+     * event in Amazon CloudWatch Events that notifies you about the expiration. By
+     * using this policy, you can receive notification before or after the expiration
+     * time is reached, in units of days or hours.</p> <p>NoChangeNotification: This
+     * policy triggers a CloudWatch event if a parameter has not been modified for a
+     * specified period of time. This policy type is useful when, for example, a secret
+     * needs to be changed within a period of time, but it has not been changed.</p>
+     * <p>All existing policies are preserved until you send new policies or an empty
+     * policy. For more information about parameter policies, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
+     * with Parameter Policies</a>. </p>
+     */
+    inline void SetPolicies(const char* value) { m_policiesHasBeenSet = true; m_policies.assign(value); }
+
+    /**
+     * <p>One or more policies to apply to a parameter. This action takes a JSON array.
+     * Parameter Store supports the following policy types:</p> <p>Expiration: This
+     * policy deletes the parameter after it expires. When you create the policy, you
+     * specify the expiration date. You can update the expiration date and time by
+     * updating the policy. Updating the <i>parameter</i> does not affect the
+     * expiration date and time. When the expiration time is reached, Parameter Store
+     * deletes the parameter.</p> <p>ExpirationNotification: This policy triggers an
+     * event in Amazon CloudWatch Events that notifies you about the expiration. By
+     * using this policy, you can receive notification before or after the expiration
+     * time is reached, in units of days or hours.</p> <p>NoChangeNotification: This
+     * policy triggers a CloudWatch event if a parameter has not been modified for a
+     * specified period of time. This policy type is useful when, for example, a secret
+     * needs to be changed within a period of time, but it has not been changed.</p>
+     * <p>All existing policies are preserved until you send new policies or an empty
+     * policy. For more information about parameter policies, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
+     * with Parameter Policies</a>. </p>
+     */
+    inline PutParameterRequest& WithPolicies(const Aws::String& value) { SetPolicies(value); return *this;}
+
+    /**
+     * <p>One or more policies to apply to a parameter. This action takes a JSON array.
+     * Parameter Store supports the following policy types:</p> <p>Expiration: This
+     * policy deletes the parameter after it expires. When you create the policy, you
+     * specify the expiration date. You can update the expiration date and time by
+     * updating the policy. Updating the <i>parameter</i> does not affect the
+     * expiration date and time. When the expiration time is reached, Parameter Store
+     * deletes the parameter.</p> <p>ExpirationNotification: This policy triggers an
+     * event in Amazon CloudWatch Events that notifies you about the expiration. By
+     * using this policy, you can receive notification before or after the expiration
+     * time is reached, in units of days or hours.</p> <p>NoChangeNotification: This
+     * policy triggers a CloudWatch event if a parameter has not been modified for a
+     * specified period of time. This policy type is useful when, for example, a secret
+     * needs to be changed within a period of time, but it has not been changed.</p>
+     * <p>All existing policies are preserved until you send new policies or an empty
+     * policy. For more information about parameter policies, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
+     * with Parameter Policies</a>. </p>
+     */
+    inline PutParameterRequest& WithPolicies(Aws::String&& value) { SetPolicies(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more policies to apply to a parameter. This action takes a JSON array.
+     * Parameter Store supports the following policy types:</p> <p>Expiration: This
+     * policy deletes the parameter after it expires. When you create the policy, you
+     * specify the expiration date. You can update the expiration date and time by
+     * updating the policy. Updating the <i>parameter</i> does not affect the
+     * expiration date and time. When the expiration time is reached, Parameter Store
+     * deletes the parameter.</p> <p>ExpirationNotification: This policy triggers an
+     * event in Amazon CloudWatch Events that notifies you about the expiration. By
+     * using this policy, you can receive notification before or after the expiration
+     * time is reached, in units of days or hours.</p> <p>NoChangeNotification: This
+     * policy triggers a CloudWatch event if a parameter has not been modified for a
+     * specified period of time. This policy type is useful when, for example, a secret
+     * needs to be changed within a period of time, but it has not been changed.</p>
+     * <p>All existing policies are preserved until you send new policies or an empty
+     * policy. For more information about parameter policies, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
+     * with Parameter Policies</a>. </p>
+     */
+    inline PutParameterRequest& WithPolicies(const char* value) { SetPolicies(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -723,6 +1046,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    ParameterTier m_tier;
+    bool m_tierHasBeenSet;
+
+    Aws::String m_policies;
+    bool m_policiesHasBeenSet;
   };
 
 } // namespace Model

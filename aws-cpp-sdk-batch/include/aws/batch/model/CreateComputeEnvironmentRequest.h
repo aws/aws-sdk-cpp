@@ -96,42 +96,42 @@ namespace Model
 
     /**
      * <p>The type of the compute environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline const CEType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of the compute environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of the compute environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetType(const CEType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of the compute environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetType(CEType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of the compute environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline CreateComputeEnvironmentRequest& WithType(const CEType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of the compute environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline CreateComputeEnvironmentRequest& WithType(CEType&& value) { SetType(std::move(value)); return *this;}
@@ -182,37 +182,55 @@ namespace Model
 
     /**
      * <p>Details of the compute resources managed by the compute environment. This
-     * parameter is required for managed compute environments.</p>
+     * parameter is required for managed compute environments. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline const ComputeResource& GetComputeResources() const{ return m_computeResources; }
 
     /**
      * <p>Details of the compute resources managed by the compute environment. This
-     * parameter is required for managed compute environments.</p>
+     * parameter is required for managed compute environments. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline bool ComputeResourcesHasBeenSet() const { return m_computeResourcesHasBeenSet; }
 
     /**
      * <p>Details of the compute resources managed by the compute environment. This
-     * parameter is required for managed compute environments.</p>
+     * parameter is required for managed compute environments. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetComputeResources(const ComputeResource& value) { m_computeResourcesHasBeenSet = true; m_computeResources = value; }
 
     /**
      * <p>Details of the compute resources managed by the compute environment. This
-     * parameter is required for managed compute environments.</p>
+     * parameter is required for managed compute environments. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetComputeResources(ComputeResource&& value) { m_computeResourcesHasBeenSet = true; m_computeResources = std::move(value); }
 
     /**
      * <p>Details of the compute resources managed by the compute environment. This
-     * parameter is required for managed compute environments.</p>
+     * parameter is required for managed compute environments. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline CreateComputeEnvironmentRequest& WithComputeResources(const ComputeResource& value) { SetComputeResources(value); return *this;}
 
     /**
      * <p>Details of the compute resources managed by the compute environment. This
-     * parameter is required for managed compute environments.</p>
+     * parameter is required for managed compute environments. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline CreateComputeEnvironmentRequest& WithComputeResources(ComputeResource&& value) { SetComputeResources(std::move(value)); return *this;}
 

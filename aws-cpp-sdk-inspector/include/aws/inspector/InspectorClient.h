@@ -248,7 +248,7 @@ namespace Model
    * <fullname>Amazon Inspector</fullname> <p>Amazon Inspector enables you to analyze
    * the behavior of your AWS resources and to identify potential security issues.
    * For more information, see <a
-   * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html">
+   * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html">
    * Amazon Inspector User Guide</a>.</p>
    */
   class AWS_INSPECTOR_API InspectorClient : public Aws::Client::AWSJsonClient
@@ -319,7 +319,7 @@ namespace Model
          * perform security assessments. You can create up to 50 assessment targets per AWS
          * account. You can run up to 500 concurrent agents per AWS account. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">
+         * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">
          * Amazon Inspector Assessment Targets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTarget">AWS
          * API Reference</a></p>
@@ -337,7 +337,7 @@ namespace Model
          * perform security assessments. You can create up to 50 assessment targets per AWS
          * account. You can run up to 500 concurrent agents per AWS account. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">
+         * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">
          * Amazon Inspector Assessment Targets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTarget">AWS
          * API Reference</a></p>
@@ -357,7 +357,7 @@ namespace Model
          * perform security assessments. You can create up to 50 assessment targets per AWS
          * account. You can run up to 500 concurrent agents per AWS account. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">
+         * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">
          * Amazon Inspector Assessment Targets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTarget">AWS
          * API Reference</a></p>
@@ -933,7 +933,7 @@ namespace Model
         /**
          * <p>Lists the ARNs of the assessment targets within this AWS account. For more
          * information about assessment targets, see <a
-         * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon
+         * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon
          * Inspector Assessment Targets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTargets">AWS
          * API Reference</a></p>
@@ -943,7 +943,7 @@ namespace Model
         /**
          * <p>Lists the ARNs of the assessment targets within this AWS account. For more
          * information about assessment targets, see <a
-         * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon
+         * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon
          * Inspector Assessment Targets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTargets">AWS
          * API Reference</a></p>
@@ -955,7 +955,7 @@ namespace Model
         /**
          * <p>Lists the ARNs of the assessment targets within this AWS account. For more
          * information about assessment targets, see <a
-         * href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon
+         * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon
          * Inspector Assessment Targets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTargets">AWS
          * API Reference</a></p>

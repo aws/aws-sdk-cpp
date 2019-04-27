@@ -479,7 +479,7 @@ namespace Model
    * parameter descriptions indicate whether a change is applied immediately, on the
    * next instance reboot, or during the next maintenance window. For a summary of
    * the Amazon Redshift cluster management interfaces, go to <a
-   * href="http://docs.aws.amazon.com/redshift/latest/mgmt/using-aws-sdk.html">Using
+   * href="https://docs.aws.amazon.com/redshift/latest/mgmt/using-aws-sdk.html">Using
    * the Amazon Redshift Management Interfaces</a>.</p> <p>Amazon Redshift manages
    * all the work of setting up, operating, and scaling a data warehouse:
    * provisioning capacity, monitoring and backing up the cluster, and applying
@@ -487,9 +487,9 @@ namespace Model
    * data to acquire new insights for your business and customers.</p> <p>If you are
    * a first-time user of Amazon Redshift, we recommend that you begin by reading the
    * <a
-   * href="http://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html">Amazon
+   * href="https://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html">Amazon
    * Redshift Getting Started Guide</a>.</p> <p>If you are a database developer, the
-   * <a href="http://docs.aws.amazon.com/redshift/latest/dg/welcome.html">Amazon
+   * <a href="https://docs.aws.amazon.com/redshift/latest/dg/welcome.html">Amazon
    * Redshift Database Developer Guide</a> explains how to design, build, query, and
    * maintain the databases that make up your data warehouse. </p>
    */
@@ -576,7 +576,7 @@ namespace Model
          * with a cluster so that clients running on these IP addresses or the EC2 instance
          * are authorized to connect to the cluster. For information about managing
          * security groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working
          * with Security Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeClusterSecurityGroupIngress">AWS
@@ -601,7 +601,7 @@ namespace Model
          * with a cluster so that clients running on these IP addresses or the EC2 instance
          * are authorized to connect to the cluster. For information about managing
          * security groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working
          * with Security Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeClusterSecurityGroupIngress">AWS
@@ -628,7 +628,7 @@ namespace Model
          * with a cluster so that clients running on these IP addresses or the EC2 instance
          * are authorized to connect to the cluster. For information about managing
          * security groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working
          * with Security Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeClusterSecurityGroupIngress">AWS
@@ -641,7 +641,7 @@ namespace Model
         /**
          * <p>Authorizes the specified AWS customer account to restore the specified
          * snapshot.</p> <p> For more information about working with snapshots, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess">AWS
@@ -652,7 +652,7 @@ namespace Model
         /**
          * <p>Authorizes the specified AWS customer account to restore the specified
          * snapshot.</p> <p> For more information about working with snapshots, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess">AWS
@@ -665,7 +665,7 @@ namespace Model
         /**
          * <p>Authorizes the specified AWS customer account to restore the specified
          * snapshot.</p> <p> For more information about working with snapshots, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess">AWS
@@ -759,7 +759,7 @@ namespace Model
          * an automated snapshot for a longer period, you can make a manual copy of the
          * snapshot. Manual snapshots are retained until you delete them.</p> <p> For more
          * information about working with snapshots, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CopyClusterSnapshot">AWS
@@ -776,7 +776,7 @@ namespace Model
          * an automated snapshot for a longer period, you can make a manual copy of the
          * snapshot. Manual snapshots are retained until you delete them.</p> <p> For more
          * information about working with snapshots, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CopyClusterSnapshot">AWS
@@ -795,7 +795,7 @@ namespace Model
          * an automated snapshot for a longer period, you can make a manual copy of the
          * snapshot. Manual snapshots are retained until you delete them.</p> <p> For more
          * information about working with snapshots, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CopyClusterSnapshot">AWS
@@ -810,7 +810,7 @@ namespace Model
          * (VPC), you must provide a cluster subnet group name. The cluster subnet group
          * identifies the subnets of your VPC that Amazon Redshift uses when creating the
          * cluster. For more information about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster">AWS
@@ -823,7 +823,7 @@ namespace Model
          * (VPC), you must provide a cluster subnet group name. The cluster subnet group
          * identifies the subnets of your VPC that Amazon Redshift uses when creating the
          * cluster. For more information about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster">AWS
@@ -838,7 +838,7 @@ namespace Model
          * (VPC), you must provide a cluster subnet group name. The cluster subnet group
          * identifies the subnets of your VPC that Amazon Redshift uses when creating the
          * cluster. For more information about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster">AWS
@@ -856,7 +856,7 @@ namespace Model
          * <a>ModifyCluster</a>. </p> <p>Parameters in the parameter group define specific
          * behavior that applies to the databases you create on the cluster. For more
          * information about parameters and parameter groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterParameterGroup">AWS
@@ -872,7 +872,7 @@ namespace Model
          * <a>ModifyCluster</a>. </p> <p>Parameters in the parameter group define specific
          * behavior that applies to the databases you create on the cluster. For more
          * information about parameters and parameter groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterParameterGroup">AWS
@@ -890,7 +890,7 @@ namespace Model
          * <a>ModifyCluster</a>. </p> <p>Parameters in the parameter group define specific
          * behavior that applies to the databases you create on the cluster. For more
          * information about parameters and parameter groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterParameterGroup">AWS
@@ -904,7 +904,7 @@ namespace Model
          * <p>Creates a new Amazon Redshift security group. You use security groups to
          * control access to non-VPC clusters.</p> <p> For information about managing
          * security groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
          * Management Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSecurityGroup">AWS
@@ -916,7 +916,7 @@ namespace Model
          * <p>Creates a new Amazon Redshift security group. You use security groups to
          * control access to non-VPC clusters.</p> <p> For information about managing
          * security groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
          * Management Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSecurityGroup">AWS
@@ -930,7 +930,7 @@ namespace Model
          * <p>Creates a new Amazon Redshift security group. You use security groups to
          * control access to non-VPC clusters.</p> <p> For information about managing
          * security groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
          * Management Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSecurityGroup">AWS
@@ -944,7 +944,7 @@ namespace Model
          * <p>Creates a manual snapshot of the specified cluster. The cluster must be in
          * the <code>available</code> state. </p> <p> For more information about working
          * with snapshots, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSnapshot">AWS
@@ -956,7 +956,7 @@ namespace Model
          * <p>Creates a manual snapshot of the specified cluster. The cluster must be in
          * the <code>available</code> state. </p> <p> For more information about working
          * with snapshots, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSnapshot">AWS
@@ -970,7 +970,7 @@ namespace Model
          * <p>Creates a manual snapshot of the specified cluster. The cluster must be in
          * the <code>available</code> state. </p> <p> For more information about working
          * with snapshots, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSnapshot">AWS
@@ -985,7 +985,7 @@ namespace Model
          * more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when
          * creating Amazon Redshift subnet group.</p> <p> For information about subnet
          * groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon
          * Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSubnetGroup">AWS
@@ -998,7 +998,7 @@ namespace Model
          * more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when
          * creating Amazon Redshift subnet group.</p> <p> For information about subnet
          * groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon
          * Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSubnetGroup">AWS
@@ -1013,7 +1013,7 @@ namespace Model
          * more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when
          * creating Amazon Redshift subnet group.</p> <p> For information about subnet
          * groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon
          * Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSubnetGroup">AWS
@@ -1113,7 +1113,7 @@ namespace Model
          * create an Amazon Redshift HSM configuration that provides a cluster the
          * information needed to store and use encryption keys in the HSM. For more
          * information, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
          * Security Modules</a> in the Amazon Redshift Cluster Management
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmClientCertificate">AWS
@@ -1129,7 +1129,7 @@ namespace Model
          * create an Amazon Redshift HSM configuration that provides a cluster the
          * information needed to store and use encryption keys in the HSM. For more
          * information, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
          * Security Modules</a> in the Amazon Redshift Cluster Management
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmClientCertificate">AWS
@@ -1147,7 +1147,7 @@ namespace Model
          * create an Amazon Redshift HSM configuration that provides a cluster the
          * information needed to store and use encryption keys in the HSM. For more
          * information, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
          * Security Modules</a> in the Amazon Redshift Cluster Management
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmClientCertificate">AWS
@@ -1164,7 +1164,7 @@ namespace Model
          * as a parameter when creating a cluster. The cluster will then store its
          * encryption keys in the HSM.</p> <p>In addition to creating an HSM configuration,
          * you must also create an HSM client certificate. For more information, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
          * Security Modules</a> in the Amazon Redshift Cluster Management
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfiguration">AWS
@@ -1179,7 +1179,7 @@ namespace Model
          * as a parameter when creating a cluster. The cluster will then store its
          * encryption keys in the HSM.</p> <p>In addition to creating an HSM configuration,
          * you must also create an HSM client certificate. For more information, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
          * Security Modules</a> in the Amazon Redshift Cluster Management
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfiguration">AWS
@@ -1196,7 +1196,7 @@ namespace Model
          * as a parameter when creating a cluster. The cluster will then store its
          * encryption keys in the HSM.</p> <p>In addition to creating an HSM configuration,
          * you must also create an HSM client certificate. For more information, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
          * Security Modules</a> in the Amazon Redshift Cluster Management
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfiguration">AWS
@@ -1211,7 +1211,7 @@ namespace Model
          * master key (CMK) from AWS Key Management Service (AWS KMS) to encrypt copied
          * snapshots in a destination region.</p> <p> For more information about managing
          * snapshot copy grants, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotCopyGrant">AWS
@@ -1224,7 +1224,7 @@ namespace Model
          * master key (CMK) from AWS Key Management Service (AWS KMS) to encrypt copied
          * snapshots in a destination region.</p> <p> For more information about managing
          * snapshot copy grants, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotCopyGrant">AWS
@@ -1239,7 +1239,7 @@ namespace Model
          * master key (CMK) from AWS Key Management Service (AWS KMS) to encrypt copied
          * snapshots in a destination region.</p> <p> For more information about managing
          * snapshot copy grants, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotCopyGrant">AWS
@@ -1317,7 +1317,7 @@ namespace Model
          * <a>DescribeClusters</a> to monitor the status of the deletion. The delete
          * operation cannot be canceled or reverted once submitted. For more information
          * about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p> <p>If you want to shut down the cluster and retain it for future
          * use, set <i>SkipFinalClusterSnapshot</i> to <code>false</code> and specify a
@@ -1326,7 +1326,7 @@ namespace Model
          * the status of the cluster will be "final-snapshot" while the snapshot is being
          * taken, then it's "deleting" once Amazon Redshift begins deleting the cluster.
          * </p> <p> For more information about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCluster">AWS
@@ -1340,7 +1340,7 @@ namespace Model
          * <a>DescribeClusters</a> to monitor the status of the deletion. The delete
          * operation cannot be canceled or reverted once submitted. For more information
          * about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p> <p>If you want to shut down the cluster and retain it for future
          * use, set <i>SkipFinalClusterSnapshot</i> to <code>false</code> and specify a
@@ -1349,7 +1349,7 @@ namespace Model
          * the status of the cluster will be "final-snapshot" while the snapshot is being
          * taken, then it's "deleting" once Amazon Redshift begins deleting the cluster.
          * </p> <p> For more information about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCluster">AWS
@@ -1365,7 +1365,7 @@ namespace Model
          * <a>DescribeClusters</a> to monitor the status of the deletion. The delete
          * operation cannot be canceled or reverted once submitted. For more information
          * about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p> <p>If you want to shut down the cluster and retain it for future
          * use, set <i>SkipFinalClusterSnapshot</i> to <code>false</code> and specify a
@@ -1374,7 +1374,7 @@ namespace Model
          * the status of the cluster will be "final-snapshot" while the snapshot is being
          * taken, then it's "deleting" once Amazon Redshift begins deleting the cluster.
          * </p> <p> For more information about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCluster">AWS
@@ -1420,7 +1420,7 @@ namespace Model
          * security group that is associated with any clusters. You cannot delete the
          * default security group.</p> </note> <p> For information about managing security
          * groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
          * Management Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSecurityGroup">AWS
@@ -1433,7 +1433,7 @@ namespace Model
          * security group that is associated with any clusters. You cannot delete the
          * default security group.</p> </note> <p> For information about managing security
          * groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
          * Management Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSecurityGroup">AWS
@@ -1448,7 +1448,7 @@ namespace Model
          * security group that is associated with any clusters. You cannot delete the
          * default security group.</p> </note> <p> For information about managing security
          * groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
          * Management Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSecurityGroup">AWS
@@ -1754,7 +1754,7 @@ namespace Model
          * family name. You can optionally specify a name to retrieve the description of a
          * specific parameter group.</p> <p> For more information about parameters and
          * parameter groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p> <p>If you specify both tag keys and tag values in the same
          * request, Amazon Redshift returns all parameter groups that match any combination
@@ -1776,7 +1776,7 @@ namespace Model
          * family name. You can optionally specify a name to retrieve the description of a
          * specific parameter group.</p> <p> For more information about parameters and
          * parameter groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p> <p>If you specify both tag keys and tag values in the same
          * request, Amazon Redshift returns all parameter groups that match any combination
@@ -1800,7 +1800,7 @@ namespace Model
          * family name. You can optionally specify a name to retrieve the description of a
          * specific parameter group.</p> <p> For more information about parameters and
          * parameter groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p> <p>If you specify both tag keys and tag values in the same
          * request, Amazon Redshift returns all parameter groups that match any combination
@@ -1827,7 +1827,7 @@ namespace Model
          * <a>ModifyClusterParameterGroup</a>, you can specify <i>source</i> equal to
          * <i>user</i>.</p> <p> For more information about parameters and parameter groups,
          * go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameters">AWS
@@ -1845,7 +1845,7 @@ namespace Model
          * <a>ModifyClusterParameterGroup</a>, you can specify <i>source</i> equal to
          * <i>user</i>.</p> <p> For more information about parameters and parameter groups,
          * go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameters">AWS
@@ -1865,7 +1865,7 @@ namespace Model
          * <a>ModifyClusterParameterGroup</a>, you can specify <i>source</i> equal to
          * <i>user</i>.</p> <p> For more information about parameters and parameter groups,
          * go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameters">AWS
@@ -1880,7 +1880,7 @@ namespace Model
          * security group is specified, the response will contain only information about
          * only that security group.</p> <p> For information about managing security
          * groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
          * Management Guide</i>.</p> <p>If you specify both tag keys and tag values in the
          * same request, Amazon Redshift returns all security groups that match any
@@ -1901,7 +1901,7 @@ namespace Model
          * security group is specified, the response will contain only information about
          * only that security group.</p> <p> For information about managing security
          * groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
          * Management Guide</i>.</p> <p>If you specify both tag keys and tag values in the
          * same request, Amazon Redshift returns all security groups that match any
@@ -1924,7 +1924,7 @@ namespace Model
          * security group is specified, the response will contain only information about
          * only that security group.</p> <p> For information about managing security
          * groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
          * Management Guide</i>.</p> <p>If you specify both tag keys and tag values in the
          * same request, Amazon Redshift returns all security groups that match any
@@ -2094,7 +2094,7 @@ namespace Model
          * can call this operation even before creating any clusters to learn more about
          * the Amazon Redshift versions. For more information about managing clusters, go
          * to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterVersions">AWS
@@ -2107,7 +2107,7 @@ namespace Model
          * can call this operation even before creating any clusters to learn more about
          * the Amazon Redshift versions. For more information about managing clusters, go
          * to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterVersions">AWS
@@ -2122,7 +2122,7 @@ namespace Model
          * can call this operation even before creating any clusters to learn more about
          * the Amazon Redshift versions. For more information about managing clusters, go
          * to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterVersions">AWS
@@ -2137,7 +2137,7 @@ namespace Model
          * properties, cluster database properties, maintenance and backup properties, and
          * security and access properties. This operation supports pagination. For more
          * information about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p> <p>If you specify both tag keys and tag values in the same
          * request, Amazon Redshift returns all clusters that match any combination of the
@@ -2157,7 +2157,7 @@ namespace Model
          * properties, cluster database properties, maintenance and backup properties, and
          * security and access properties. This operation supports pagination. For more
          * information about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p> <p>If you specify both tag keys and tag values in the same
          * request, Amazon Redshift returns all clusters that match any combination of the
@@ -2179,7 +2179,7 @@ namespace Model
          * properties, cluster database properties, maintenance and backup properties, and
          * security and access properties. This operation supports pagination. For more
          * information about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p> <p>If you specify both tag keys and tag values in the same
          * request, Amazon Redshift returns all clusters that match any combination of the
@@ -2200,7 +2200,7 @@ namespace Model
          * <p>Returns a list of parameter settings for the specified parameter group
          * family.</p> <p> For more information about parameters and parameter groups, go
          * to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDefaultClusterParameters">AWS
@@ -2212,7 +2212,7 @@ namespace Model
          * <p>Returns a list of parameter settings for the specified parameter group
          * family.</p> <p> For more information about parameters and parameter groups, go
          * to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDefaultClusterParameters">AWS
@@ -2226,7 +2226,7 @@ namespace Model
          * <p>Returns a list of parameter settings for the specified parameter group
          * family.</p> <p> For more information about parameters and parameter groups, go
          * to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDefaultClusterParameters">AWS
@@ -2240,7 +2240,7 @@ namespace Model
          * <p>Displays a list of event categories for all event source types, or for a
          * specified source type. For a list of the event categories and source types, go
          * to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon
          * Redshift Event Notifications</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventCategories">AWS
          * API Reference</a></p>
@@ -2251,7 +2251,7 @@ namespace Model
          * <p>Displays a list of event categories for all event source types, or for a
          * specified source type. For a list of the event categories and source types, go
          * to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon
          * Redshift Event Notifications</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventCategories">AWS
          * API Reference</a></p>
@@ -2264,7 +2264,7 @@ namespace Model
          * <p>Displays a list of event categories for all event source types, or for a
          * specified source type. For a list of the event categories and source types, go
          * to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon
          * Redshift Event Notifications</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventCategories">AWS
          * API Reference</a></p>
@@ -2514,7 +2514,7 @@ namespace Model
          * CPU and price. With the cost involved you might want to obtain a list of cluster
          * options in the specific region and specify values when creating a cluster. For
          * more information about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeOrderableClusterOptions">AWS
@@ -2530,7 +2530,7 @@ namespace Model
          * CPU and price. With the cost involved you might want to obtain a list of cluster
          * options in the specific region and specify values when creating a cluster. For
          * more information about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeOrderableClusterOptions">AWS
@@ -2548,7 +2548,7 @@ namespace Model
          * CPU and price. With the cost involved you might want to obtain a list of cluster
          * options in the specific region and specify values when creating a cluster. For
          * more information about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeOrderableClusterOptions">AWS
@@ -2567,7 +2567,7 @@ namespace Model
          * <a>PurchaseReservedNodeOffering</a> to reserve one or more nodes for your Amazon
          * Redshift cluster. </p> <p> For more information about reserved node offerings,
          * go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
          * Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodeOfferings">AWS
@@ -2584,7 +2584,7 @@ namespace Model
          * <a>PurchaseReservedNodeOffering</a> to reserve one or more nodes for your Amazon
          * Redshift cluster. </p> <p> For more information about reserved node offerings,
          * go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
          * Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodeOfferings">AWS
@@ -2603,7 +2603,7 @@ namespace Model
          * <a>PurchaseReservedNodeOffering</a> to reserve one or more nodes for your Amazon
          * Redshift cluster. </p> <p> For more information about reserved node offerings,
          * go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
          * Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodeOfferings">AWS
@@ -2685,7 +2685,7 @@ namespace Model
          * <p>Returns a list of snapshot copy grants owned by the AWS account in the
          * destination region.</p> <p> For more information about managing snapshot copy
          * grants, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotCopyGrants">AWS
@@ -2697,7 +2697,7 @@ namespace Model
          * <p>Returns a list of snapshot copy grants owned by the AWS account in the
          * destination region.</p> <p> For more information about managing snapshot copy
          * grants, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotCopyGrants">AWS
@@ -2711,7 +2711,7 @@ namespace Model
          * <p>Returns a list of snapshot copy grants owned by the AWS account in the
          * destination region.</p> <p> For more information about managing snapshot copy
          * grants, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotCopyGrants">AWS
@@ -3020,13 +3020,13 @@ namespace Model
          * that the user will join at log on. By default, the temporary credentials expire
          * in 900 seconds. You can optionally specify a duration between 900 seconds (15
          * minutes) and 3600 seconds (60 minutes). For more information, see <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using
          * IAM Authentication to Generate Database User Credentials</a> in the Amazon
          * Redshift Cluster Management Guide.</p> <p>The AWS Identity and Access Management
          * (IAM)user or role that executes GetClusterCredentials must have an IAM policy
          * attached that allows access to all necessary actions and resources. For more
          * information about permissions, see <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources">Resource
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources">Resource
          * Policies for GetClusterCredentials</a> in the Amazon Redshift Cluster Management
          * Guide.</p> <p>If the <code>DbGroups</code> parameter is specified, the IAM
          * policy must allow the <code>redshift:JoinGroup</code> action with access to the
@@ -3050,13 +3050,13 @@ namespace Model
          * that the user will join at log on. By default, the temporary credentials expire
          * in 900 seconds. You can optionally specify a duration between 900 seconds (15
          * minutes) and 3600 seconds (60 minutes). For more information, see <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using
          * IAM Authentication to Generate Database User Credentials</a> in the Amazon
          * Redshift Cluster Management Guide.</p> <p>The AWS Identity and Access Management
          * (IAM)user or role that executes GetClusterCredentials must have an IAM policy
          * attached that allows access to all necessary actions and resources. For more
          * information about permissions, see <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources">Resource
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources">Resource
          * Policies for GetClusterCredentials</a> in the Amazon Redshift Cluster Management
          * Guide.</p> <p>If the <code>DbGroups</code> parameter is specified, the IAM
          * policy must allow the <code>redshift:JoinGroup</code> action with access to the
@@ -3082,13 +3082,13 @@ namespace Model
          * that the user will join at log on. By default, the temporary credentials expire
          * in 900 seconds. You can optionally specify a duration between 900 seconds (15
          * minutes) and 3600 seconds (60 minutes). For more information, see <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using
          * IAM Authentication to Generate Database User Credentials</a> in the Amazon
          * Redshift Cluster Management Guide.</p> <p>The AWS Identity and Access Management
          * (IAM)user or role that executes GetClusterCredentials must have an IAM policy
          * attached that allows access to all necessary actions and resources. For more
          * information about permissions, see <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources">Resource
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources">Resource
          * Policies for GetClusterCredentials</a> in the Amazon Redshift Cluster Management
          * Guide.</p> <p>If the <code>DbGroups</code> parameter is specified, the IAM
          * policy must allow the <code>redshift:JoinGroup</code> action with access to the
@@ -3143,7 +3143,7 @@ namespace Model
          * groups associated with a cluster do not need a reboot. However, modifying a
          * parameter group requires a reboot for parameters to take effect. For more
          * information about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p> <p>You can also change node type and the number of nodes to scale
          * up or down the cluster. When resizing a cluster, you must specify both the
@@ -3161,7 +3161,7 @@ namespace Model
          * groups associated with a cluster do not need a reboot. However, modifying a
          * parameter group requires a reboot for parameters to take effect. For more
          * information about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p> <p>You can also change node type and the number of nodes to scale
          * up or down the cluster. When resizing a cluster, you must specify both the
@@ -3181,7 +3181,7 @@ namespace Model
          * groups associated with a cluster do not need a reboot. However, modifying a
          * parameter group requires a reboot for parameters to take effect. For more
          * information about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p> <p>You can also change node type and the number of nodes to scale
          * up or down the cluster. When resizing a cluster, you must specify both the
@@ -3290,7 +3290,7 @@ namespace Model
         /**
          * <p>Modifies the parameters of a parameter group.</p> <p> For more information
          * about parameters and parameter groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterParameterGroup">AWS
@@ -3301,7 +3301,7 @@ namespace Model
         /**
          * <p>Modifies the parameters of a parameter group.</p> <p> For more information
          * about parameters and parameter groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterParameterGroup">AWS
@@ -3314,7 +3314,7 @@ namespace Model
         /**
          * <p>Modifies the parameters of a parameter group.</p> <p> For more information
          * about parameters and parameter groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterParameterGroup">AWS
@@ -3514,7 +3514,7 @@ namespace Model
          * available reserved node offerings. You can call this API by providing a specific
          * reserved node offering and the number of nodes you want to reserve. </p> <p> For
          * more information about reserved node offerings, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
          * Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PurchaseReservedNodeOffering">AWS
@@ -3529,7 +3529,7 @@ namespace Model
          * available reserved node offerings. You can call this API by providing a specific
          * reserved node offering and the number of nodes you want to reserve. </p> <p> For
          * more information about reserved node offerings, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
          * Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PurchaseReservedNodeOffering">AWS
@@ -3546,7 +3546,7 @@ namespace Model
          * available reserved node offerings. You can call this API by providing a specific
          * reserved node offering and the number of nodes you want to reserve. </p> <p> For
          * more information about reserved node offerings, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
          * Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PurchaseReservedNodeOffering">AWS
@@ -3562,7 +3562,7 @@ namespace Model
          * <code>rebooting</code>. A cluster event is created when the reboot is completed.
          * Any pending cluster modifications (see <a>ModifyCluster</a>) are applied at this
          * reboot. For more information about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RebootCluster">AWS
@@ -3576,7 +3576,7 @@ namespace Model
          * <code>rebooting</code>. A cluster event is created when the reboot is completed.
          * Any pending cluster modifications (see <a>ModifyCluster</a>) are applied at this
          * reboot. For more information about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RebootCluster">AWS
@@ -3592,7 +3592,7 @@ namespace Model
          * <code>rebooting</code>. A cluster event is created when the reboot is completed.
          * Any pending cluster modifications (see <a>ModifyCluster</a>) are applied at this
          * reboot. For more information about managing clusters, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RebootCluster">AWS
@@ -3699,7 +3699,7 @@ namespace Model
          * of the same size during restore.</p> <p>If you restore a cluster into a VPC, you
          * must provide a cluster subnet group where you want the cluster restored.</p> <p>
          * For more information about working with snapshots, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot">AWS
@@ -3718,7 +3718,7 @@ namespace Model
          * of the same size during restore.</p> <p>If you restore a cluster into a VPC, you
          * must provide a cluster subnet group where you want the cluster restored.</p> <p>
          * For more information about working with snapshots, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot">AWS
@@ -3739,7 +3739,7 @@ namespace Model
          * of the same size during restore.</p> <p>If you restore a cluster into a VPC, you
          * must provide a cluster subnet group where you want the cluster restored.</p> <p>
          * For more information about working with snapshots, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot">AWS
@@ -3815,7 +3815,7 @@ namespace Model
          * authorized IP range or Amazon EC2 security group. To add an ingress rule, see
          * <a>AuthorizeClusterSecurityGroupIngress</a>. For information about managing
          * security groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
          * Management Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeClusterSecurityGroupIngress">AWS
@@ -3828,7 +3828,7 @@ namespace Model
          * authorized IP range or Amazon EC2 security group. To add an ingress rule, see
          * <a>AuthorizeClusterSecurityGroupIngress</a>. For information about managing
          * security groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
          * Management Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeClusterSecurityGroupIngress">AWS
@@ -3843,7 +3843,7 @@ namespace Model
          * authorized IP range or Amazon EC2 security group. To add an ingress rule, see
          * <a>AuthorizeClusterSecurityGroupIngress</a>. For information about managing
          * security groups, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
          * Management Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeClusterSecurityGroupIngress">AWS
@@ -3858,7 +3858,7 @@ namespace Model
          * specified snapshot. If the account is currently restoring the snapshot, the
          * restore will run to completion.</p> <p> For more information about working with
          * snapshots, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeSnapshotAccess">AWS
@@ -3871,7 +3871,7 @@ namespace Model
          * specified snapshot. If the account is currently restoring the snapshot, the
          * restore will run to completion.</p> <p> For more information about working with
          * snapshots, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeSnapshotAccess">AWS
@@ -3886,7 +3886,7 @@ namespace Model
          * specified snapshot. If the account is currently restoring the snapshot, the
          * restore will run to completion.</p> <p> For more information about working with
          * snapshots, go to <a
-         * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeSnapshotAccess">AWS

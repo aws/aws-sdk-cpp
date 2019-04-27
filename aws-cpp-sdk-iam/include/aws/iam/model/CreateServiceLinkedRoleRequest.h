@@ -52,8 +52,8 @@ namespace Model
      * <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service principals are
      * unique and case-sensitive. To find the exact service principal for your
      * service-linked role, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i> and look for the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
+     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the
      * services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose
      * the <b>Yes</b> link to view the service-linked role documentation for that
      * service.</p>
@@ -66,8 +66,8 @@ namespace Model
      * <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service principals are
      * unique and case-sensitive. To find the exact service principal for your
      * service-linked role, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i> and look for the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
+     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the
      * services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose
      * the <b>Yes</b> link to view the service-linked role documentation for that
      * service.</p>
@@ -80,8 +80,8 @@ namespace Model
      * <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service principals are
      * unique and case-sensitive. To find the exact service principal for your
      * service-linked role, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i> and look for the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
+     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the
      * services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose
      * the <b>Yes</b> link to view the service-linked role documentation for that
      * service.</p>
@@ -94,8 +94,8 @@ namespace Model
      * <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service principals are
      * unique and case-sensitive. To find the exact service principal for your
      * service-linked role, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i> and look for the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
+     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the
      * services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose
      * the <b>Yes</b> link to view the service-linked role documentation for that
      * service.</p>
@@ -108,8 +108,8 @@ namespace Model
      * <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service principals are
      * unique and case-sensitive. To find the exact service principal for your
      * service-linked role, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i> and look for the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
+     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the
      * services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose
      * the <b>Yes</b> link to view the service-linked role documentation for that
      * service.</p>
@@ -122,8 +122,8 @@ namespace Model
      * <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service principals are
      * unique and case-sensitive. To find the exact service principal for your
      * service-linked role, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i> and look for the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
+     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the
      * services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose
      * the <b>Yes</b> link to view the service-linked role documentation for that
      * service.</p>
@@ -136,8 +136,8 @@ namespace Model
      * <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service principals are
      * unique and case-sensitive. To find the exact service principal for your
      * service-linked role, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i> and look for the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
+     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the
      * services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose
      * the <b>Yes</b> link to view the service-linked role documentation for that
      * service.</p>
@@ -150,8 +150,8 @@ namespace Model
      * <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service principals are
      * unique and case-sensitive. To find the exact service principal for your
      * service-linked role, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
-     * Services That Work with IAM</a> in the <i>IAM User Guide</i> and look for the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
+     * Services That Work with IAM</a> in the <i>IAM User Guide</i>. Look for the
      * services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose
      * the <b>Yes</b> link to view the service-linked role documentation for that
      * service.</p>

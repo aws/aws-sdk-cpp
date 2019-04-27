@@ -84,10 +84,20 @@ file(GLOB UTILS_MEMORY_STL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/memo
 file(GLOB UTILS_STREAM_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/stream/*.cpp")
 file(GLOB UTILS_CRYPTO_FACTORY_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/factory/*.cpp")
 
+include(CheckCXXSourceCompiles)
+include(CheckCSourceRuns)
+
 # http client implementations
 if(ENABLE_CURL_CLIENT)
     file(GLOB HTTP_CURL_CLIENT_HEADERS "include/aws/core/http/curl/*.h")
     file(GLOB HTTP_CURL_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/curl/*.cpp")
+    set(CMAKE_REQUIRED_LIBRARIES "curl")
+    check_c_source_runs("
+    #include <curl/curl.h>
+    int main() {
+    CURL* handle = curl_easy_init();
+    return curl_easy_setopt(handle, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_2_0); }" CURL_HAS_H2)
+    unset(CMAKE_REQUIRED_LIBRARIES)
 elseif(ENABLE_WINDOWS_CLIENT)
     if(USE_IXML_HTTP_REQUEST_2)
         set(HTTP_WINDOWS_CLIENT_HEADERS "include/aws/core/http/windows/IXmlHttpRequest2HttpClient.h")
@@ -109,6 +119,27 @@ elseif(ENABLE_WINDOWS_CLIENT)
     else()
         file(GLOB HTTP_WINDOWS_CLIENT_HEADERS "include/aws/core/http/windows/Win*.h")
         file(GLOB HTTP_WINDOWS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/Win*.cpp")
+
+        # Strating with Windows 10, version 1507, WinINet supports HTTP2.
+        # https://docs.microsoft.com/en-us/windows/desktop/WinInet/option-flags#INTERNET_OPTION_ENABLE_HTTP_PROTOCOL
+        # Starting with Windows 10, version 1607, WinHttp supports HTTP2.
+        # https://docs.microsoft.com/en-us/windows/desktop/WinHttp/option-flags#WINHTTP_OPTION_ENABLE_HTTP_PROTOCOL
+        check_cxx_source_compiles("
+        #include <Windows.h>
+        #include <winhttp.h>
+        int main() {
+        int x = WINHTTP_PROTOCOL_FLAG_HTTP2;
+        return x;
+        }" WINHTTP_HAS_H2)
+
+        check_cxx_source_compiles("
+        #include <Windows.h>
+        #include <WinInet.h>
+        int main() {
+        int x = HTTP_PROTOCOL_FLAG_HTTP2;
+        return x;
+        }" WININET_HAS_H2)
+
     endif()
 endif()
 
@@ -356,6 +387,18 @@ target_compile_definitions(${PROJECT_NAME} PUBLIC "AWS_SDK_VERSION_MAJOR=${AWSSD
 target_compile_definitions(${PROJECT_NAME} PUBLIC "AWS_SDK_VERSION_MINOR=${AWSSDK_VERSION_MINOR}")
 target_compile_definitions(${PROJECT_NAME} PUBLIC "AWS_SDK_VERSION_PATCH=${AWSSDK_VERSION_PATCH}")
 
+if (WININET_HAS_H2)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE "WININET_HAS_H2")
+endif()
+
+if (WINHTTP_HAS_H2)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE "WINHTTP_HAS_H2")
+endif()
+
+if (CURL_HAS_H2)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE "CURL_HAS_H2")
+endif()
+
 set(Core_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 
 if(PLATFORM_CUSTOM)
@@ -388,6 +431,11 @@ endif()
 
 
 set(PKG_CONFIG_LIB "-l${PROJECT_NAME}")
+
+if (ENABLE_CURL_LOGGING)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE "ENABLE_CURL_LOGGING")
+endif()
+
 
 if(ENABLE_CURL_CLIENT AND BUILD_CURL)
     add_dependencies(${PROJECT_NAME} CURL)

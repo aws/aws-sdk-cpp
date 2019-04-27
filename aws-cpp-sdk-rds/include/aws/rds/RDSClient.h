@@ -729,7 +729,8 @@ namespace Aws
 
         /**
          * <p>Associates an AWS Identity and Access Management (IAM) role with a DB
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * instance.</p> <note> <p>To add a role to a DB instance, the status of the DB
+         * instance must be <code>available</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance">AWS
          * API Reference</a></p>
          */
@@ -737,7 +738,8 @@ namespace Aws
 
         /**
          * <p>Associates an AWS Identity and Access Management (IAM) role with a DB
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * instance.</p> <note> <p>To add a role to a DB instance, the status of the DB
+         * instance must be <code>available</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance">AWS
          * API Reference</a></p>
          *
@@ -747,7 +749,8 @@ namespace Aws
 
         /**
          * <p>Associates an AWS Identity and Access Management (IAM) role with a DB
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * instance.</p> <note> <p>To add a role to a DB instance, the status of the DB
+         * instance must be <code>available</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance">AWS
          * API Reference</a></p>
          *
@@ -1520,10 +1523,10 @@ namespace Aws
         /**
          * <p>Creates a new DB instance that acts as a Read Replica for an existing source
          * DB instance. You can create a Read Replica for a DB instance running MySQL,
-         * MariaDB, or PostgreSQL. For more information, see <a
+         * MariaDB, Oracle, or PostgreSQL. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
-         * with PostgreSQL, MySQL, and MariaDB Read Replicas</a> in the <i>Amazon RDS User
-         * Guide</i>. </p> <p>Amazon Aurora doesn't support this action. You must call the
+         * with Read Replicas</a> in the <i>Amazon RDS User Guide</i>. </p> <p>Amazon
+         * Aurora doesn't support this action. You must call the
          * <code>CreateDBInstance</code> action to create a DB instance for an Aurora DB
          * cluster. </p> <p>All Read Replica DB instances are created with backups
          * disabled. All other DB instance attributes (including DB security groups and DB
@@ -1538,10 +1541,10 @@ namespace Aws
         /**
          * <p>Creates a new DB instance that acts as a Read Replica for an existing source
          * DB instance. You can create a Read Replica for a DB instance running MySQL,
-         * MariaDB, or PostgreSQL. For more information, see <a
+         * MariaDB, Oracle, or PostgreSQL. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
-         * with PostgreSQL, MySQL, and MariaDB Read Replicas</a> in the <i>Amazon RDS User
-         * Guide</i>. </p> <p>Amazon Aurora doesn't support this action. You must call the
+         * with Read Replicas</a> in the <i>Amazon RDS User Guide</i>. </p> <p>Amazon
+         * Aurora doesn't support this action. You must call the
          * <code>CreateDBInstance</code> action to create a DB instance for an Aurora DB
          * cluster. </p> <p>All Read Replica DB instances are created with backups
          * disabled. All other DB instance attributes (including DB security groups and DB
@@ -1558,10 +1561,10 @@ namespace Aws
         /**
          * <p>Creates a new DB instance that acts as a Read Replica for an existing source
          * DB instance. You can create a Read Replica for a DB instance running MySQL,
-         * MariaDB, or PostgreSQL. For more information, see <a
+         * MariaDB, Oracle, or PostgreSQL. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
-         * with PostgreSQL, MySQL, and MariaDB Read Replicas</a> in the <i>Amazon RDS User
-         * Guide</i>. </p> <p>Amazon Aurora doesn't support this action. You must call the
+         * with Read Replicas</a> in the <i>Amazon RDS User Guide</i>. </p> <p>Amazon
+         * Aurora doesn't support this action. You must call the
          * <code>CreateDBInstance</code> action to create a DB instance for an Aurora DB
          * cluster. </p> <p>All Read Replica DB instances are created with backups
          * disabled. All other DB instance attributes (including DB security groups and DB

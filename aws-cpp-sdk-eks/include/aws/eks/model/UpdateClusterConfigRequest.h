@@ -18,6 +18,7 @@
 #include <aws/eks/EKSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eks/model/VpcConfigRequest.h>
+#include <aws/eks/model/Logging.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -105,6 +106,85 @@ namespace Model
 
 
     /**
+     * <p>Enable or disable exporting the Kubernetes control plane logs for your
+     * cluster to CloudWatch Logs. By default, cluster control plane logs are not
+     * exported to CloudWatch Logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+     * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * scanning rates apply to exported control plane logs. For more information, see
+     * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     * Pricing</a>.</p> </note>
+     */
+    inline const Logging& GetLogging() const{ return m_logging; }
+
+    /**
+     * <p>Enable or disable exporting the Kubernetes control plane logs for your
+     * cluster to CloudWatch Logs. By default, cluster control plane logs are not
+     * exported to CloudWatch Logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+     * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * scanning rates apply to exported control plane logs. For more information, see
+     * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     * Pricing</a>.</p> </note>
+     */
+    inline bool LoggingHasBeenSet() const { return m_loggingHasBeenSet; }
+
+    /**
+     * <p>Enable or disable exporting the Kubernetes control plane logs for your
+     * cluster to CloudWatch Logs. By default, cluster control plane logs are not
+     * exported to CloudWatch Logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+     * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * scanning rates apply to exported control plane logs. For more information, see
+     * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     * Pricing</a>.</p> </note>
+     */
+    inline void SetLogging(const Logging& value) { m_loggingHasBeenSet = true; m_logging = value; }
+
+    /**
+     * <p>Enable or disable exporting the Kubernetes control plane logs for your
+     * cluster to CloudWatch Logs. By default, cluster control plane logs are not
+     * exported to CloudWatch Logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+     * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * scanning rates apply to exported control plane logs. For more information, see
+     * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     * Pricing</a>.</p> </note>
+     */
+    inline void SetLogging(Logging&& value) { m_loggingHasBeenSet = true; m_logging = std::move(value); }
+
+    /**
+     * <p>Enable or disable exporting the Kubernetes control plane logs for your
+     * cluster to CloudWatch Logs. By default, cluster control plane logs are not
+     * exported to CloudWatch Logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+     * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * scanning rates apply to exported control plane logs. For more information, see
+     * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     * Pricing</a>.</p> </note>
+     */
+    inline UpdateClusterConfigRequest& WithLogging(const Logging& value) { SetLogging(value); return *this;}
+
+    /**
+     * <p>Enable or disable exporting the Kubernetes control plane logs for your
+     * cluster to CloudWatch Logs. By default, cluster control plane logs are not
+     * exported to CloudWatch Logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+     * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * scanning rates apply to exported control plane logs. For more information, see
+     * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     * Pricing</a>.</p> </note>
+     */
+    inline UpdateClusterConfigRequest& WithLogging(Logging&& value) { SetLogging(std::move(value)); return *this;}
+
+
+    /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request.</p>
      */
@@ -159,6 +239,9 @@ namespace Model
 
     VpcConfigRequest m_resourcesVpcConfig;
     bool m_resourcesVpcConfigHasBeenSet;
+
+    Logging m_logging;
+    bool m_loggingHasBeenSet;
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
