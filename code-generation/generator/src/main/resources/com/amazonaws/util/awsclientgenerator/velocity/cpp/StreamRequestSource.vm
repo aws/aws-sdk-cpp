@@ -28,6 +28,17 @@ ${typeInfo.className}::${typeInfo.className}()$initializers
 {
 }
 
+#if($shape.hasEventStreamMembers())
+#foreach($member in $shape.members.entrySet())
+#if($shape.request && $member.value.shape.isEventStream())
+std::shared_ptr<Aws::IOStream> ${typeInfo.className}::GetBody() const
+{
+    return $CppViewHelper.computeMemberVariableName($member.key);
+}
+#end
+#end
+#end
+
 #if($shape.hasQueryStringMembers())
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/AddQueryStringParametersToRequest.vm")
 #end

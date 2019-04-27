@@ -86,6 +86,7 @@ file(GLOB UTILS_CRYPTO_FACTORY_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/
 
 include(CheckCXXSourceCompiles)
 include(CheckCSourceRuns)
+include(CheckCXXSourceRuns)
 
 # http client implementations
 if(ENABLE_CURL_CLIENT)
@@ -124,21 +125,44 @@ elseif(ENABLE_WINDOWS_CLIENT)
         # https://docs.microsoft.com/en-us/windows/desktop/WinInet/option-flags#INTERNET_OPTION_ENABLE_HTTP_PROTOCOL
         # Starting with Windows 10, version 1607, WinHttp supports HTTP2.
         # https://docs.microsoft.com/en-us/windows/desktop/WinHttp/option-flags#WINHTTP_OPTION_ENABLE_HTTP_PROTOCOL
-        check_cxx_source_compiles("
+        set(CMAKE_REQUIRED_LIBRARIES "WinHttp.lib")
+        check_cxx_source_runs("
         #include <Windows.h>
         #include <winhttp.h>
         int main() {
-        int x = WINHTTP_PROTOCOL_FLAG_HTTP2;
-        return x;
+
+        auto handle = WinHttpOpen(L\"aws-cpp-sdk\"/*user-agent*/,
+        WINHTTP_ACCESS_TYPE_NO_PROXY,
+        nullptr/*pszProxyW*/,
+        nullptr/*pszProxyBypassW*/,
+        0/*dwFlags*/);
+
+        DWORD http2 = WINHTTP_PROTOCOL_FLAG_HTTP2;
+        if (WinHttpSetOption(handle, WINHTTP_OPTION_ENABLE_HTTP_PROTOCOL, &http2, sizeof(http2)))
+        {
+            return 0;
+        }
+        return 1;
         }" WINHTTP_HAS_H2)
 
+        set(CMAKE_REQUIRED_LIBRARIES "Wininet.lib")
         check_cxx_source_compiles("
         #include <Windows.h>
         #include <WinInet.h>
         int main() {
-        int x = HTTP_PROTOCOL_FLAG_HTTP2;
-        return x;
+        auto handle = InternetOpenA(\"aws-cpp-sdk\"/*lpszAgent*/,
+            INTERNET_OPEN_TYPE_DIRECT /*dwAccessType*/,
+            nullptr /*lpszProxy*/,
+            nullptr /*lpszProxyBypass*/,
+            0 /*dwFlags*/);
+        DWORD http2 = HTTP_PROTOCOL_FLAG_HTTP2;
+        if (InternetSetOptionA(handle, INTERNET_OPTION_ENABLE_HTTP_PROTOCOL, &http2, sizeof(http2))) 
+        {
+            return 0;
+        }
+        return 1;
         }" WININET_HAS_H2)
+        unset(CMAKE_REQUIRED_LIBRARIES)
 
     endif()
 endif()

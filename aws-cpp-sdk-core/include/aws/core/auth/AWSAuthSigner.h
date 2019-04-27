@@ -44,11 +44,6 @@ namespace Aws
         {
             class Message;
         }
-        namespace Crypto
-        {
-            class Sha256;
-            class Sha256HMAC;
-        } // namespace Crypto
     } // namespace Utils
 
     namespace Auth

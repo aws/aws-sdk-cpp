@@ -199,7 +199,9 @@ public class C2jModelToGeneratorModelTransformer {
         // All shapes only related to shapes enable "eventstream" or "event" should be removed, there are two cases:
         // 1. The removed shape is the only ancestor of this shape.
         // 2. This shape is the ancestor of the removed shape.
-        if ((c2jShape.isEventstream() || c2jShape.isEvent()) && !this.c2jServiceModel.getServiceName().equals("s3")) {
+        if ((c2jShape.isEventstream() || c2jShape.isEvent()) &&
+                !this.c2jServiceModel.getServiceName().equals("s3") &&
+                !this.c2jServiceModel.getServiceName().equals("transcribestreaming")) {
             // shape.setIgnored(true);
             removedShapes.add(shape.getName());
         }
@@ -234,7 +236,7 @@ public class C2jModelToGeneratorModelTransformer {
         if (removedShapes.contains(shape.getName())) {
             return;
         }
-        
+
         Map<String, ShapeMember> shapeMemberMap = new LinkedHashMap<>();
 
         Set<String> required;

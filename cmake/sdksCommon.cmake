@@ -141,6 +141,7 @@ list(APPEND SDK_TEST_PROJECT_LIST "s3-encryption:aws-cpp-sdk-s3-encryption-tests
 list(APPEND SDK_TEST_PROJECT_LIST "ec2:aws-cpp-sdk-ec2-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "core:aws-cpp-sdk-core-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "text-to-speech:aws-cpp-sdk-text-to-speech-tests,aws-cpp-sdk-polly-sample")
+list(APPEND SDK_TEST_PROJECT_LIST "transcribestreaming:aws-cpp-sdk-transcribestreaming-integration-tests")
 
 set(SDK_DEPENDENCY_LIST "")
 list(APPEND SDK_DEPENDENCY_LIST "access-management:iam,cognito-identity,core")

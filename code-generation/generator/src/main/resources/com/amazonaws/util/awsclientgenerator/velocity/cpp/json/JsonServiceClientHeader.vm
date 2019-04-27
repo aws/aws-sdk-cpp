@@ -32,7 +32,16 @@ namespace Http
 namespace Utils
 {
   template< typename R, typename E> class Outcome;
+#foreach($operation in $serviceModel.operations)
+#if($operation.request && $operation.request.shape.hasEventStreamMembers())
+namespace Event
+{
+  class EventEncoderStream;
+}
 
+#break
+#end
+#end
 namespace Threading
 {
   class Executor;
@@ -81,7 +90,7 @@ namespace Model
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
-      
+
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
@@ -93,7 +102,7 @@ namespace Model
       bool m_enableHostPrefixInjection;
 #else
       Aws::String m_uri;
-#end    
+#end
 #if($metadata.hasEndpointDiscoveryTrait)
       mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
       bool m_enableEndpointDiscovery;

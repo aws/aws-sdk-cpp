@@ -1,0 +1,63 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#pragma once
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
+#foreach($header in $typeInfo.headerIncludes)
+\#include $header
+#end
+\#include <aws/core/utils/event/EventStream.h>
+
+namespace Aws
+{
+#if ($rootNamespace != "Aws")
+} // namespace Aws
+namespace ${rootNamespace}
+{
+#end
+namespace ${serviceNamespace}
+{
+namespace Model
+{
+#set($classNameRef = "${typeInfo.className}&")
+
+#if($shape.documentation)
+  /**
+   * $shape.documentation
+   */
+#end
+  class $typeInfo.exportValue $typeInfo.className : public Aws::Utils::Event::EventEncoderStream
+  {
+  public:
+#foreach($entry in $shape.members.entrySet())
+#if($entry.value.shape.isEvent())
+    ${typeInfo.className}& Write${entry.value.shape.name}(const ${entry.value.shape.name}& value)
+    {
+       Aws::Utils::Event::Message msg;
+       msg.InsertEventHeader(":message-type", Aws::String("event"));
+       msg.InsertEventHeader(":event-type", Aws::String("${entry.value.shape.name}"));
+#foreach($eventPayloadMember in $entry.value.shape.members.entrySet())
+#if($eventPayloadMember.value.isEventPayload())
+#if($eventPayloadMember.value.shape.isBlob())
+       msg.InsertEventHeader(":content-type", Aws::String("application/octet-stream"));
+#elseif($eventPayloadMember.value.shape.isString())
+       msg.InsertEventHeader(":content-type", Aws::String("text/plain"));
+#end
+## handle other kinds of payload as they come
+       msg.WriteEventPayload(value.Get${eventPayloadMember.value.shape.name}());
+#break
+#end
+#end
+       WriteEvent(msg);
+       return *this;
+    }
+#end
+#end
+
+  };
+
+} // namespace Model
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

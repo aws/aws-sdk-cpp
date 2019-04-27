@@ -16,8 +16,10 @@
 package com.amazonaws.util.awsclientgenerator.generators.cpp;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Operation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppShapeInformation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import org.apache.velocity.Template;
@@ -58,12 +60,15 @@ public class JsonCppClientGenerator extends CppClientGenerator {
             Template template = null;
             VelocityContext context = createContext(serviceModel);
 
-            if (shape.isResult() && shape.hasStreamMembers()) {
-                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/StreamResultHeader.vm", StandardCharsets.UTF_8.name());
-            }
-            else if (shape.isResult()) {
-                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonResultHeader.vm", StandardCharsets.UTF_8.name());
-            } else if (!shape.isRequest() && shape.isStructure()) {
+            if (shape.isResult()) {
+                if (shape.hasStreamMembers()) {
+                    template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/StreamResultHeader.vm", StandardCharsets.UTF_8.name());
+                } else {
+                    template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonResultHeader.vm", StandardCharsets.UTF_8.name());
+                }
+            } else if (shape.isEventStream() && shape.hasNestedEventPayloadMembers()) { // streams with event-payload members are input event-streams
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/EventStreamHeader.vm", StandardCharsets.UTF_8.name());
+            } else if (shape.isStructure()) {
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonSubObjectHeader.vm", StandardCharsets.UTF_8.name());
             }
 
@@ -81,7 +86,8 @@ public class JsonCppClientGenerator extends CppClientGenerator {
     @Override
     protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
         Shape shape = shapeEntry.getValue();
-        if (shape.isEnum()) {
+        if (shape.isEnum() || (shape.hasNestedEventPayloadMembers() && !shape.isRequest())) {
+            // event-stream input shapes do their serialization via the encoder; So skip generating code for those.
             return super.generateModelSourceFile(serviceModel, shapeEntry);
         }
 
@@ -89,7 +95,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
             Template template;
             VelocityContext context = createContext(serviceModel);
 
-            if (shape.isRequest() && shape.hasStreamMembers()) {
+            if (shape.isRequest() && (shape.hasStreamMembers() || shape.hasEventStreamMembers())) {
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/StreamRequestSource.vm", StandardCharsets.UTF_8.name());
             }
             else if (shape.isRequest()) {
@@ -102,6 +108,14 @@ public class JsonCppClientGenerator extends CppClientGenerator {
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonResultSource.vm", StandardCharsets.UTF_8.name());
             } else {
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonSubObjectSource.vm", StandardCharsets.UTF_8.name());
+            }
+
+            for (Map.Entry<String, Operation> opEntry : serviceModel.getOperations().entrySet()) {
+                Operation op = opEntry.getValue();
+                if (op.getRequest() != null && op.getRequest().getShape().getName() == shape.getName()) {
+                    context.put("operation", op);
+                    break;
+                }
             }
 
             context.put("shape", shape);
@@ -141,5 +155,37 @@ public class JsonCppClientGenerator extends CppClientGenerator {
         String fileName = String.format("source/%sClient.cpp", serviceModel.getMetadata().getClassNamePrefix());
 
         return makeFile(template, context, fileName, true);
+    }
+
+    @Override
+    protected SdkFileEntry generateEventStreamHandlerSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
+        Shape shape = shapeEntry.getValue();
+        if (shape.isRequest()) {
+            Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonEventStreamHandlerSource.vm", StandardCharsets.UTF_8.name());
+            VelocityContext context = createContext(serviceModel);
+
+            for (Map.Entry<String, Operation> opEntry : serviceModel.getOperations().entrySet()) {
+                String key = opEntry.getKey();
+                Operation op = opEntry.getValue();
+                if (op.getRequest() != null && op.getRequest().getShape().getName() == shape.getName() && op.getResult() != null) {
+                    if (op.getResult().getShape().hasEventStreamMembers()) {
+                        for (Map.Entry<String, ShapeMember> shapeMemberEntry : op.getResult().getShape().getMembers().entrySet()) {
+                            if (shapeMemberEntry.getValue().getShape().isEventStream()) {
+                                context.put("eventStreamShape", shapeMemberEntry.getValue().getShape());
+                                context.put("operation", op);
+                                context.put("shape", shape);
+                                context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
+                                context.put("CppViewHelper", CppViewHelper.class);
+
+                                String fileName = String.format("source/model/%sHandler.cpp", key);
+                                return makeFile(template, context, fileName, true);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return null;
     }
 }

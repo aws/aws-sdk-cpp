@@ -7,8 +7,11 @@
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Request.h>
 #if($operation.result.shape.hasEventStreamMembers())
-\#include <aws/s3/model/${operation.name}Handler.h>
+\#include <aws/${metadata.projectName}/model/${operation.name}Handler.h>
 \#include <aws/core/utils/event/EventStreamDecoder.h>
+#end
+#if($operation.request.shape.hasEventStreamMembers())
+\#include <memory>
 #end
 #foreach($header in $typeInfo.headerIncludes)
 \#include $header
@@ -43,16 +46,21 @@ namespace Model
   {
   public:
     ${typeInfo.className}();
-    
+
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "${operationName}"; }
 
-#if(!$shape.hasStreamMembers())
+#if(!$shape.hasStreamMembers() && !$shape.hasEventStreamMembers())
     Aws::String SerializePayload() const override;
 
+#elseif($shape.hasEventStreamMembers())
+    // SerializePayload will not be invoked.
+    // This request is sent by encoding its data in event-streams which is sent as IOStream via GetBody()
+    Aws::String SerializePayload() const override { return {}; }
+    std::shared_ptr<Aws::IOStream> GetBody() const override;
 #end
 #if($shape.hasQueryStringMembers())
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;

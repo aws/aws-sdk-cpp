@@ -280,7 +280,7 @@ namespace Aws
         };
 
         typedef Utils::Outcome<AmazonWebServiceResult<Utils::Json::JsonValue>, AWSError<CoreErrors>> JsonOutcome;
-        Aws::String GetAuthorizationHeader(const Aws::Http::HttpRequest& httpRequest);
+        AWS_CORE_API Aws::String GetAuthorizationHeader(const Aws::Http::HttpRequest& httpRequest);
 
         /**
          *  AWSClient that handles marshalling json response bodies. You would inherit from this class

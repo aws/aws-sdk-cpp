@@ -46,21 +46,18 @@ namespace Aws
                             aws_event_stream_add_bool_header(headers, header.first.c_str(), headerKeyLen, header.second.GetEventHeaderValueAsByte());
                             break;
                         case EventHeaderValue::EventHeaderType::INT16:
-                            // NOTE: the aws_event_stream library assumes endianness conversion has already been performed.
-                            aws_event_stream_add_int16_header(headers, header.first.c_str(), headerKeyLen, aws_hton16(header.second.GetEventHeaderValueAsInt16()));
+                            aws_event_stream_add_int16_header(headers, header.first.c_str(), headerKeyLen, header.second.GetEventHeaderValueAsInt16());
                             break;
                         case EventHeaderValue::EventHeaderType::INT32:
-                            // NOTE: the aws_event_stream library assumes endianness conversion has already been performed.
-                            aws_event_stream_add_int32_header(headers, header.first.c_str(), headerKeyLen, aws_hton32(header.second.GetEventHeaderValueAsInt32()));
+                            aws_event_stream_add_int32_header(headers, header.first.c_str(), headerKeyLen, header.second.GetEventHeaderValueAsInt32());
                             break;
                         case EventHeaderValue::EventHeaderType::INT64:
-                            // NOTE: the aws_event_stream library assumes endianness conversion has already been performed.
-                            aws_event_stream_add_int64_header(headers, header.first.c_str(), headerKeyLen, aws_hton64(header.second.GetEventHeaderValueAsInt64()));
+                            aws_event_stream_add_int64_header(headers, header.first.c_str(), headerKeyLen, header.second.GetEventHeaderValueAsInt64());
                             break;
                         case EventHeaderValue::EventHeaderType::BYTE_BUF:
                             {
                                 const auto& bytes = header.second.GetEventHeaderValueAsBytebuf();
-                                aws_event_stream_add_bytebuf_header(headers, header.first.c_str(), headerKeyLen, bytes.GetUnderlyingData(), static_cast<uint16_t>(bytes.GetLength()), 0 /*copy*/);
+                                aws_event_stream_add_bytebuf_header(headers, header.first.c_str(), headerKeyLen, bytes.GetUnderlyingData(), static_cast<uint16_t>(bytes.GetLength()), 1 /*copy*/);
                             }
                             break;
                         case EventHeaderValue::EventHeaderType::STRING:
@@ -70,8 +67,7 @@ namespace Aws
                             }
                             break;
                         case EventHeaderValue::EventHeaderType::TIMESTAMP:
-                            // NOTE: the aws_event_stream library assumes endianness conversion has already been performed.
-                            aws_event_stream_add_timestamp_header(headers, header.first.c_str(), headerKeyLen, aws_hton64(header.second.GetEventHeaderValueAsTimestamp()));
+                            aws_event_stream_add_timestamp_header(headers, header.first.c_str(), headerKeyLen, header.second.GetEventHeaderValueAsTimestamp());
                             break;
                         case EventHeaderValue::EventHeaderType::UUID:
                             {
@@ -120,13 +116,13 @@ namespace Aws
                 if(aws_event_stream_message_init(&encoded, aws_default_allocator(), &headers, &payload) == AWS_OP_ERR)
                 {
                     AWS_LOGSTREAM_ERROR(TAG, "Error creating event-stream message from paylaod.");
-                    aws_array_list_clean_up(&headers);
+                    aws_event_stream_headers_list_cleanup(&headers);
                     // GCC 4.9.4 issues a warning with -Wextra if we simply do
                     // return {};
                     aws_event_stream_message empty{nullptr, nullptr, 0};
                     return empty;
                 }
-                aws_array_list_clean_up(&headers);
+                aws_event_stream_headers_list_cleanup(&headers);
                 return encoded;
             }
 
@@ -159,13 +155,13 @@ namespace Aws
                 if(aws_event_stream_message_init(&signedmsg, aws_default_allocator(), &headers, &payload))
                 {
                     AWS_LOGSTREAM_ERROR(TAG, "Error creating event-stream message from paylaod.");
-                    aws_array_list_clean_up(&headers);
+                    aws_event_stream_headers_list_cleanup(&headers);
                     // GCC 4.9.4 issues a warning with -Wextra if we simply do
                     // return {};
                     aws_event_stream_message empty{nullptr, nullptr, 0};
                     return empty;
                 }
-                aws_array_list_clean_up(&headers);
+                aws_event_stream_headers_list_cleanup(&headers);
                 return signedmsg;
             }
 

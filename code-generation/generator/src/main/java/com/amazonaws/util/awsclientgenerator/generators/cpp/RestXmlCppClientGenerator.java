@@ -123,7 +123,7 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
               shape.isResult() && shape.hasEventStreamMembers())) {
             Template template = null;
             VelocityContext context = createContext(serviceModel);
-            
+
             for (Map.Entry<String, Operation> opEntry : serviceModel.getOperations().entrySet()) {
                 Operation op = opEntry.getValue();
                 if (op.getRequest() != null && op.getRequest().getShape().getName() == shape.getName()) {

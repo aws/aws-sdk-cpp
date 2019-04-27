@@ -1,6 +1,11 @@
 #foreach($operation in $serviceModel.operations)
 #if($operation.request)
         class ${operation.request.shape.name};
+#foreach($entity in $operation.request.shape.members.entrySet())
+#if($entity.value.shape.isEventStream())
+        class ${entity.value.shape.name};
+#end
+#end
 #end
 #end
 

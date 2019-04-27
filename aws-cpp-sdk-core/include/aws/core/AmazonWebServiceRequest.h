@@ -96,32 +96,32 @@ namespace Aws
          */
         inline virtual void SetContinueRequestHandler(const Aws::Http::ContinueRequestHandler& continueRequestHandler) { m_continueRequest = continueRequestHandler; }
         /**
-        * Register closure for data recieved event.
-        */
+         * Register closure for data recieved event.
+         */
         inline virtual void SetDataReceivedEventHandler(Aws::Http::DataReceivedEventHandler&& dataReceivedEventHandler) { m_onDataReceived = std::move(dataReceivedEventHandler); }
         /**
-        * register closure for data sent event
-        */
+         * register closure for data sent event
+         */
         inline virtual void SetDataSentEventHandler(Aws::Http::DataSentEventHandler&& dataSentEventHandler) { m_onDataSent = std::move(dataSentEventHandler); }
         /**
          * Register closure for handling whether or not to cancel a request.
          */
         inline virtual void SetContinueRequestHandler(Aws::Http::ContinueRequestHandler&& continueRequestHandler) { m_continueRequest = std::move(continueRequestHandler); }
         /**
-        * Register closure for notification that a request is being retried
-        */
+         * Register closure for notification that a request is being retried
+         */
         inline virtual void SetRequestRetryHandler(const RequestRetryHandler& handler) { m_requestRetryHandler = handler; }
         /**
-        * Register closure for notification that a request is being retried
-        */
+         * Register closure for notification that a request is being retried
+         */
         inline virtual void SetRequestRetryHandler(RequestRetryHandler&& handler) { m_requestRetryHandler = std::move(handler); }
         /**
-        * get closure for data recieved event.
-        */
+         * get closure for data recieved event.
+         */
         inline virtual const Aws::Http::DataReceivedEventHandler& GetDataReceivedEventHandler() const { return m_onDataReceived; }
         /**
-        * get closure for data sent event
-        */
+         * get closure for data sent event
+         */
         inline virtual const Aws::Http::DataSentEventHandler& GetDataSentEventHandler() const { return m_onDataSent; }
         /**
          * get closure for handling whether or not to cancel a request.

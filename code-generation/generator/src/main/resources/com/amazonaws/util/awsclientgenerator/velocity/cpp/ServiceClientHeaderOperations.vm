@@ -9,6 +9,20 @@
 #set($operation.documentation = '')
 #end
 #if($operation.request)
+#if($operation.request.shape.hasEventStreamMembers())
+        /**
+         * ${operation.documentation}
+         *
+         * Queues the request into a thread executor.
+         * The streamReadyHandler is triggered when the stream is ready to be written to.
+         * The responseHandler is triggered when the request is finished.
+         */
+        virtual void ${operation.name}Async(Model::${operation.request.shape.name}& request,
+                const ${operation.name}StreamReadyHandler& streamReadyHandler,
+                const ${operation.name}ResponseReceivedHandler& responseHandler,
+                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext = nullptr) const;
+
+#else
         /**
          * ${operation.documentation}
          */
@@ -28,6 +42,7 @@
          */
         virtual void ${operation.name}Async(${constText}Model::${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+#end
 #else
         /**
          * ${operation.documentation}

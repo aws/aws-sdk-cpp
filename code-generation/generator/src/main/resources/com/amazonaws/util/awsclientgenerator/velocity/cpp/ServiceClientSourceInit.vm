@@ -21,6 +21,37 @@
 #set($virtualAddressingInit = "")
 #end
 
+#if($hasEventStreamInputOperation)
+${className}::${className}(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), SERVICE_NAME, clientConfiguration.region),
+    Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor)${virtualAddressingInit}
+{
+  init(clientConfiguration);
+}
+
+${className}::${className}(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+         SERVICE_NAME, clientConfiguration.region),
+    Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor)${virtualAddressingInit}
+{
+  init(clientConfiguration);
+}
+
+${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+  const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider,
+         SERVICE_NAME, clientConfiguration.region),
+    Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor)${virtualAddressingInit}
+{
+  init(clientConfiguration);
+}
+#else
 ${className}::${className}(const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
@@ -51,6 +82,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
 {
   init(clientConfiguration);
 }
+#end
 
 #if($metadata.standalone)
 ${className}::${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,

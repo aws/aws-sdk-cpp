@@ -17,6 +17,18 @@
 \#include <aws/core/utils/threading/Executor.h>
 \#include <aws/core/utils/DNS.h>
 \#include <aws/core/utils/logging/LogMacros.h>
+#set($hasEventStream = false)
+#foreach($operation in $serviceModel.operations)
+#if($operation.result.shape.hasEventStreamMembers())
+    #set($hasEventStream = true)
+#end
+#if($operation.request.shape.hasEventStreamMembers())
+    #set($hasEventStreamInputOperation = true)
+#end
+#end
+#if($hasEventStream)
+\#include <aws/core/utils/event/EventStream.h>
+#end
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceHeaders.vm")
 

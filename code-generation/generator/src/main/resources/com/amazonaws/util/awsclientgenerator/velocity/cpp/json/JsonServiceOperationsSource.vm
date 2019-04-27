@@ -1,6 +1,16 @@
 #foreach($operation in $serviceModel.operations)
+#if($operation.request.shape.hasEventStreamMembers())
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonServiceEventStreamOperationsSource.vm")
+#else
+#if($operation.result.shape.hasEventStreamMembers())
+#set($constText = "")
+#set($refText = "&")
+#else
+#set($constText = "const ")
+#set($refText = "")
+#end
 #if($operation.request)
-${operation.name}Outcome ${className}::${operation.name}(const ${operation.request.shape.name}& request) const
+${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
 {
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationRequestRequiredMemberValidate.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationEndpointPrepareCommonBody.vm")
@@ -52,13 +62,21 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
 #end
 #if($operation.result && $operation.result.shape.hasStreamMembers())
   StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_${operation.http.method});
+#elseif($operation.result && $operation.result.shape.hasEventStreamMembers())
+  request.GetEventStreamDecoder().Reset();
+  request.SetResponseStreamFactory(
+      [&] { return Aws::New<Aws::Utils::Event::EventStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
+  );
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_${operation.http.method});
 #else
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_${operation.http.method}, ${operation.request.shape.signerName});
 #end
   if(outcome.IsSuccess())
   {
 #if(${operation.result})
-#if($operation.result.shape.hasStreamMembers())
+#if($operation.result.shape.hasEventStreamMembers())
+    return ${operation.name}Outcome(NoResult());
+#elseif($operation.result.shape.hasStreamMembers())
     return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResultWithOwnership()));
 #else
     return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResult()));
@@ -73,20 +91,20 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
   }
 }
 
-${operation.name}OutcomeCallable ${className}::${operation.name}Callable(const ${operation.request.shape.name}& request) const
+${operation.name}OutcomeCallable ${className}::${operation.name}Callable(${constText}${operation.request.shape.name}& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ${operation.name}Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->${operation.name}(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< ${operation.name}Outcome() > >(ALLOCATION_TAG, [this, ${refText}request](){ return this->${operation.name}(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void ${className}::${operation.name}Async(const ${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ${className}::${operation.name}Async(${constText}${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->${operation.name}AsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, ${refText}request, handler, context](){ this->${operation.name}AsyncHelper( request, handler, context ); } );
 }
 
-void ${className}::${operation.name}AsyncHelper(const ${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ${className}::${operation.name}AsyncHelper(${constText}${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ${operation.name}(request), context);
 }
@@ -143,5 +161,6 @@ void ${className}::${operation.name}AsyncHelper(const ${operation.name}ResponseR
   handler(this, ${operation.name}(), context);
 }
 
+#end
 #end
 #end

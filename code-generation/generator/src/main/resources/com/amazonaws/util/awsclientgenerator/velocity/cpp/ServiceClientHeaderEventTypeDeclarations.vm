@@ -1,5 +1,10 @@
 #foreach($operation in $serviceModel.operations)
 #if($operation.request)
+#foreach($entity in $operation.request.shape.members.entrySet())
+#if($entity.value.shape.isEventStream())
+    typedef std::function<void(Model::${entity.value.shape.name}&)> ${operation.name}StreamReadyHandler;
+#end
+#end
     typedef std::function<void(const ${className}*, const Model::${operation.request.shape.name}&, const Model::${operation.name}Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ${operation.name}ResponseReceivedHandler;
 #else
     typedef std::function<void(const ${className}*, const Model::${operation.name}Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ${operation.name}ResponseReceivedHandler;

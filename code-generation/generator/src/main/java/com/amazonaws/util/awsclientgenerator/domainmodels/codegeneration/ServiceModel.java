@@ -45,7 +45,7 @@ public class ServiceModel {
     Set<String> outputShapes = new HashSet<>();
 
     public boolean hasStreamingRequestShapes() {
-        return shapes.values().parallelStream().anyMatch(shape -> shape.isRequest() && shape.hasStreamMembers());
+        return shapes.values().parallelStream().anyMatch(shape -> shape.isRequest() && (shape.hasStreamMembers() || shape.hasEventStreamMembers()));
     }
 
 }

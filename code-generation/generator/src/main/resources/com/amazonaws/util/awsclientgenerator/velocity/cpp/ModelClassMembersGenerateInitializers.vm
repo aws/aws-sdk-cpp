@@ -7,7 +7,7 @@
 #set($initializerCount = $initializerCount + 1)
 #end
 #set($isStreamingMember = ($shape.payload && ($shape.payload == $entry.key && !$entry.value.shape.structure)))
-#if(!$entry.value.required && $useRequiredField && !$isStreamingMember)
+#if(!$entry.value.required && $useRequiredField && !$isStreamingMember && !$memberShape.isEventStream())
 #set($initializerCount = $initializerCount + 1)
 #end
 #end
@@ -31,7 +31,7 @@
 #set($index = $index + 1)
 #end
 #set($isStreamingMember = ($shape.payload && ($shape.payload == $entry.key && !$entry.value.shape.structure)))
-#if($useRequiredField && ((!$entry.value.required && $useRequiredField && !$isStreamingMember) || $entry.value.idempotencyToken))
+#if($useRequiredField && ((!$entry.value.required && $useRequiredField && !$isStreamingMember && !$memberShape.isEventStream()) || $entry.value.idempotencyToken))
 #if(!$entry.value.idempotencyToken)
 #set($initializers = "${initializers}${nl}    ${CppViewHelper.computeVariableHasBeenSetName($entry.key)}(false)")
 #else

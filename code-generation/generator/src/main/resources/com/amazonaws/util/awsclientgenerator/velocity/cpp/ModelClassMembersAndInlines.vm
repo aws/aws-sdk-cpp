@@ -17,6 +17,11 @@
 #set($isStream = false)
 #end
 #set($subShape = $member.value.shape)
+#if ($shape.request && $member.value.shape.isEventStream())
+    #set($isEventStreamInput = true)
+#else
+    #set($isEventStreamInput = false)
+#end
 #if(!$subShape.primitive)
 #set($rawCppType = ${cppType})
 #set($cppType = "const ${rawCppType}&")
@@ -37,7 +42,17 @@
 
     $memberDocumentation
     inline void ReplaceBody(Aws::IOStream* body) { ${memberVariableName} = Aws::Utils::Stream::ResponseStream(body); }
-    
+
+#elseif ($isEventStreamInput)
+    $memberDocumentation
+    std::shared_ptr<${member.value.shape.name}> Get${memberKeyWithFirstLetterCapitalized}() const { return ${memberVariableName}${singleElementVector}; }
+
+    $memberDocumentation
+    void Set${memberKeyWithFirstLetterCapitalized}(const std::shared_ptr<${member.value.shape.name}>& value) { ${memberVariableName}${resizeSingleElementVector} = value; }
+
+    $memberDocumentation
+    ${classNameRef} With${memberKeyWithFirstLetterCapitalized}(const std::shared_ptr<${member.value.shape.name}>& value) { Set${memberKeyWithFirstLetterCapitalized}(value); return *this;}
+
 #else
 #set($override = "")
 #if($memberKeyWithFirstLetterCapitalized == "ContentType" && $shape.hasStreamMembers() && $shape.request)
@@ -47,7 +62,7 @@
     inline ${cppType} Get${memberKeyWithFirstLetterCapitalized}() const$override{ return ${memberVariableName}${singleElementVector}; }
 
 #end
-#if(!$isStream)
+#if(!$isStream && !$isEventStreamInput)
 #set ($required = '')
 #if(!$member.value.required && $useRequiredField)
 #set ($required = "${CppViewHelper.computeVariableHasBeenSetName($member.key)} = true; ")
@@ -165,22 +180,30 @@
   private:
 #foreach($member in $shape.members.entrySet())
 
+#if ($shape.request && $member.value.shape.isEventStream())
+#set($isEventStreamInput = true)
+#else
+#set($isEventStreamInput = false)
+#end
 #if((($shape.payload && ($shape.payload == $member.key && !$member.value.shape.structure && !$member.value.shape.list)) || $member.value.streaming) && $shape.result)
   Aws::Utils::Stream::ResponseStream $CppViewHelper.computeMemberVariableName($member.key);
 #elseif(($shape.payload && ($shape.payload == $member.key && !$member.value.shape.structure && !$member.value.shape.list)) && $shape.request)
 #else
 #if($member.value.shape.getName() == $shape.getName())
     Aws::Vector<$CppViewHelper.computeCppType($member.value.shape)> $CppViewHelper.computeMemberVariableName($member.key);
+#elseif($isEventStreamInput)
+    std::shared_ptr<$member.value.shape.name> $CppViewHelper.computeMemberVariableName($member.key);
 #else
     $CppViewHelper.computeCppType($member.value.shape) $CppViewHelper.computeMemberVariableName($member.key);
 #end
-#if(!$member.value.required && $useRequiredField)
+#if(!$member.value.required && $useRequiredField && !$isEventStreamInput)
     bool ${CppViewHelper.computeVariableHasBeenSetName($member.key)};
 #end
 #end
 #end
 #if($operation.result.shape.hasEventStreamMembers())
     Aws::Utils::Event::EventStreamDecoder m_decoder;
-    SelectObjectContentHandler m_handler;
+    ${operation.name}Handler m_handler;
+
 #end
 #end
