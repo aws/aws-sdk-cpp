@@ -297,10 +297,9 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
                           clientConfig.enableTcpKeepAlive, clientConfig.tcpKeepAliveIntervalMs, clientConfig.lowSpeedLimit),
     m_isUsingProxy(!clientConfig.proxyHost.empty()), m_proxyUserName(clientConfig.proxyUserName),
     m_proxyPassword(clientConfig.proxyPassword), m_proxyScheme(SchemeMapper::ToString(clientConfig.proxyScheme)), m_proxyHost(clientConfig.proxyHost),
-    m_proxyTlsAuthUserName(clientConfig.proxyTlsUsername), m_proxyTlsAuthPassword(clientConfig.proxyTlsPassword),
-    m_proxySslCertPath(clientConfig.proxySslCertPath), m_proxySslCertType(clientConfig.proxySslCertType),
-    m_proxySslKeyPath(clientConfig.proxySslKeyPath), m_proxySslKeyType(clientConfig.proxySslKeyType),
-    m_proxyKeyPasswd(clientConfig.proxySslKeyPassword),
+    m_proxySSLCertPath(clientConfig.proxySSLCertPath), m_proxySSLCertType(clientConfig.proxySSLCertType),
+    m_proxySSLKeyPath(clientConfig.proxySSLKeyPath), m_proxySSLKeyType(clientConfig.proxySSLKeyType),
+    m_proxyKeyPasswd(clientConfig.proxySSLKeyPassword),
     m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_caPath(clientConfig.caPath),
     m_caFile(clientConfig.caFile), 
     m_disableExpectHeader(clientConfig.disableExpectHeader),
@@ -433,35 +432,28 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
                 curl_easy_setopt(connectionHandle, CURLOPT_PROXYUSERNAME, m_proxyUserName.c_str());
                 curl_easy_setopt(connectionHandle, CURLOPT_PROXYPASSWORD, m_proxyPassword.c_str());
             }
-#if LIBCURL_VERSION_MAJOR >= 7
-#if LIBCURL_VERSION_MINOR >= 52
-            if (!m_proxyTlsAuthUserName.empty() || !m_proxyTlsAuthPassword.empty())
+#ifdef CURL_HAS_TLS_PROXY
+            if (!m_proxySSLCertPath.empty())
             {
-                curl_easy_setopt(connectionHandle, CURLOPT_PROXY_TLSAUTH_USERNAME, m_proxyTlsAuthUserName.c_str());
-                curl_easy_setopt(connectionHandle, CURLOPT_PROXY_TLSAUTH_PASSWORD, m_proxyTlsAuthPassword.c_str());
-            }
-            if (!m_proxySslCertPath.empty())
-            {
-                curl_easy_setopt(connectionHandle, CURLOPT_PROXY_SSLCERT, m_proxySslCertPath.c_str());
-                if (!m_proxySslCertType.empty())
+                curl_easy_setopt(connectionHandle, CURLOPT_PROXY_SSLCERT, m_proxySSLCertPath.c_str());
+                if (!m_proxySSLCertType.empty())
                 {
-                    curl_easy_setopt(connectionHandle, CURLOPT_PROXY_SSLCERTTYPE, m_proxySslCertType.c_str());
+                    curl_easy_setopt(connectionHandle, CURLOPT_PROXY_SSLCERTTYPE, m_proxySSLCertType.c_str());
                 }
             }
-            if (!m_proxySslKeyPath.empty())
+            if (!m_proxySSLKeyPath.empty())
             {
-                curl_easy_setopt(connectionHandle, CURLOPT_PROXY_SSLKEY, m_proxySslKeyPath.c_str());
-                if (!m_proxySslKeyType.empty())
+                curl_easy_setopt(connectionHandle, CURLOPT_PROXY_SSLKEY, m_proxySSLKeyPath.c_str());
+                if (!m_proxySSLKeyType.empty())
                 {
-                    curl_easy_setopt(connectionHandle, CURLOPT_PROXY_SSLKEYTYPE, m_proxySslKeyType.c_str());
+                    curl_easy_setopt(connectionHandle, CURLOPT_PROXY_SSLKEYTYPE, m_proxySSLKeyType.c_str());
                 }
                 if (!m_proxyKeyPasswd.empty())
                 {
                     curl_easy_setopt(connectionHandle, CURLOPT_PROXY_KEYPASSWD, m_proxyKeyPasswd.c_str());
                 }
             }
-#endif //LIBCURL_VERSION_MINOR
-#endif //LIBCURL_VERSION_MAJOR
+#endif //CURL_HAS_TLS_PROXY
         }
         else
         {

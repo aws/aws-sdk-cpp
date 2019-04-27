@@ -122,33 +122,30 @@ namespace Aws
             */
             Aws::String proxyPassword;
             /**
-            * Username to use for TLS Authentication with a proxy
+            * SSL Certificate file to use for connecting to an HTTPS proxy.
+            * Used to set CURLOPT_PROXY_SSLCERT in libcurl. Example: client.pem
             */
-            Aws::String proxyTlsUsername;
+            Aws::String proxySSLCertPath;
             /**
-            * Password to use for TLS Authentication with a proxy
+            * Type of proxy client SSL certificate.
+            * Used to set CURLOPT_PROXY_SSLCERTTYPE in libcurl. Example: PEM
             */
-            Aws::String proxyTlsPassword;
+            Aws::String proxySSLCertType;
             /**
-            * SSL Certificate file to use for connecting to an HTTPS proxy 
+            * Private key file to use for connecting to an HTTPS proxy.
+            * Used to set CURLOPT_PROXY_SSLKEY in libcurl. Example: key.pem
             */
-            Aws::String proxySslCertPath;
+            Aws::String proxySSLKeyPath;
             /**
-            * Type of proxy client SSL certificate
+            * Type of private key file used to connect to an HTTPS proxy.
+            * Used to set CURLOPT_PROXY_SSLKEYTYPE in libcurl. Example: PEM
             */
-            Aws::String proxySslCertType;
+            Aws::String proxySSLKeyType;
             /**
-            * Private key file to use for connecting to an HTTPS proxy
+            * Passphrase to the private key file used to connect to an HTTPS proxy.
+            * Used to set CURLOPT_PROXY_KEYPASSWD in libcurl. Example: password1 
             */
-            Aws::String proxySslKeyPath;
-            /**
-            * Type of private key file used to connect to an HTTPS proxy
-            */
-            Aws::String proxySslKeyType;
-            /**
-            * Passphrase to the private key file used to connect to an HTTPS proxy
-            */
-            Aws::String proxySslKeyPassword;
+            Aws::String proxySSLKeyPassword;
             /**
             * Threading Executor implementation. Default uses std::thread::detach()
             */
