@@ -597,6 +597,47 @@ namespace Model
      */
     inline InstanceNetworkInterfaceSpecification& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
+
+    /**
+     * <p>The type of interface.</p>
+     */
+    inline const Aws::String& GetInterfaceType() const{ return m_interfaceType; }
+
+    /**
+     * <p>The type of interface.</p>
+     */
+    inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of interface.</p>
+     */
+    inline void SetInterfaceType(const Aws::String& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
+
+    /**
+     * <p>The type of interface.</p>
+     */
+    inline void SetInterfaceType(Aws::String&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = std::move(value); }
+
+    /**
+     * <p>The type of interface.</p>
+     */
+    inline void SetInterfaceType(const char* value) { m_interfaceTypeHasBeenSet = true; m_interfaceType.assign(value); }
+
+    /**
+     * <p>The type of interface.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithInterfaceType(const Aws::String& value) { SetInterfaceType(value); return *this;}
+
+    /**
+     * <p>The type of interface.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithInterfaceType(Aws::String&& value) { SetInterfaceType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of interface.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithInterfaceType(const char* value) { SetInterfaceType(value); return *this;}
+
   private:
 
     bool m_associatePublicIpAddress;
@@ -634,6 +675,9 @@ namespace Model
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
+    Aws::String m_interfaceType;
+    bool m_interfaceTypeHasBeenSet;
   };
 
 } // namespace Model

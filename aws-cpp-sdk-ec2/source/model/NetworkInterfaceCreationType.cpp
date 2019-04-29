@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/ec2/model/NetworkInterfaceType.h>
+#include <aws/ec2/model/NetworkInterfaceCreationType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -27,48 +27,34 @@ namespace Aws
   {
     namespace Model
     {
-      namespace NetworkInterfaceTypeMapper
+      namespace NetworkInterfaceCreationTypeMapper
       {
 
-        static const int interface_HASH = HashingUtils::HashString("interface");
-        static const int natGateway_HASH = HashingUtils::HashString("natGateway");
         static const int efa_HASH = HashingUtils::HashString("efa");
 
 
-        NetworkInterfaceType GetNetworkInterfaceTypeForName(const Aws::String& name)
+        NetworkInterfaceCreationType GetNetworkInterfaceCreationTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == interface_HASH)
+          if (hashCode == efa_HASH)
           {
-            return NetworkInterfaceType::interface;
-          }
-          else if (hashCode == natGateway_HASH)
-          {
-            return NetworkInterfaceType::natGateway;
-          }
-          else if (hashCode == efa_HASH)
-          {
-            return NetworkInterfaceType::efa;
+            return NetworkInterfaceCreationType::efa;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<NetworkInterfaceType>(hashCode);
+            return static_cast<NetworkInterfaceCreationType>(hashCode);
           }
 
-          return NetworkInterfaceType::NOT_SET;
+          return NetworkInterfaceCreationType::NOT_SET;
         }
 
-        Aws::String GetNameForNetworkInterfaceType(NetworkInterfaceType enumValue)
+        Aws::String GetNameForNetworkInterfaceCreationType(NetworkInterfaceCreationType enumValue)
         {
           switch(enumValue)
           {
-          case NetworkInterfaceType::interface:
-            return "interface";
-          case NetworkInterfaceType::natGateway:
-            return "natGateway";
-          case NetworkInterfaceType::efa:
+          case NetworkInterfaceCreationType::efa:
             return "efa";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
@@ -81,7 +67,7 @@ namespace Aws
           }
         }
 
-      } // namespace NetworkInterfaceTypeMapper
+      } // namespace NetworkInterfaceCreationTypeMapper
     } // namespace Model
   } // namespace EC2
 } // namespace Aws

@@ -113,7 +113,7 @@ namespace Model
 
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>architecture</code> - The image
+     * <p>The filters.</p> <ul> <li> <p> <code>architecture</code> - The image
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.delete-on-termination</code> - A Boolean value that
      * indicates whether the Amazon EBS volume is deleted on instance termination.</p>
@@ -174,7 +174,7 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>architecture</code> - The image
+     * <p>The filters.</p> <ul> <li> <p> <code>architecture</code> - The image
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.delete-on-termination</code> - A Boolean value that
      * indicates whether the Amazon EBS volume is deleted on instance termination.</p>
@@ -235,7 +235,7 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>architecture</code> - The image
+     * <p>The filters.</p> <ul> <li> <p> <code>architecture</code> - The image
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.delete-on-termination</code> - A Boolean value that
      * indicates whether the Amazon EBS volume is deleted on instance termination.</p>
@@ -296,7 +296,7 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>architecture</code> - The image
+     * <p>The filters.</p> <ul> <li> <p> <code>architecture</code> - The image
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.delete-on-termination</code> - A Boolean value that
      * indicates whether the Amazon EBS volume is deleted on instance termination.</p>
@@ -357,7 +357,7 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>architecture</code> - The image
+     * <p>The filters.</p> <ul> <li> <p> <code>architecture</code> - The image
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.delete-on-termination</code> - A Boolean value that
      * indicates whether the Amazon EBS volume is deleted on instance termination.</p>
@@ -418,7 +418,7 @@ namespace Model
     inline DescribeImagesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>architecture</code> - The image
+     * <p>The filters.</p> <ul> <li> <p> <code>architecture</code> - The image
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.delete-on-termination</code> - A Boolean value that
      * indicates whether the Amazon EBS volume is deleted on instance termination.</p>
@@ -479,7 +479,7 @@ namespace Model
     inline DescribeImagesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>architecture</code> - The image
+     * <p>The filters.</p> <ul> <li> <p> <code>architecture</code> - The image
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.delete-on-termination</code> - A Boolean value that
      * indicates whether the Amazon EBS volume is deleted on instance termination.</p>
@@ -540,7 +540,7 @@ namespace Model
     inline DescribeImagesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>architecture</code> - The image
+     * <p>The filters.</p> <ul> <li> <p> <code>architecture</code> - The image
      * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li> <p>
      * <code>block-device-mapping.delete-on-termination</code> - A Boolean value that
      * indicates whether the Amazon EBS volume is deleted on instance termination.</p>
@@ -602,56 +602,47 @@ namespace Model
 
 
     /**
-     * <p>One or more image IDs.</p> <p>Default: Describes all images available to
-     * you.</p>
+     * <p>The image IDs.</p> <p>Default: Describes all images available to you.</p>
      */
     inline const Aws::Vector<Aws::String>& GetImageIds() const{ return m_imageIds; }
 
     /**
-     * <p>One or more image IDs.</p> <p>Default: Describes all images available to
-     * you.</p>
+     * <p>The image IDs.</p> <p>Default: Describes all images available to you.</p>
      */
     inline bool ImageIdsHasBeenSet() const { return m_imageIdsHasBeenSet; }
 
     /**
-     * <p>One or more image IDs.</p> <p>Default: Describes all images available to
-     * you.</p>
+     * <p>The image IDs.</p> <p>Default: Describes all images available to you.</p>
      */
     inline void SetImageIds(const Aws::Vector<Aws::String>& value) { m_imageIdsHasBeenSet = true; m_imageIds = value; }
 
     /**
-     * <p>One or more image IDs.</p> <p>Default: Describes all images available to
-     * you.</p>
+     * <p>The image IDs.</p> <p>Default: Describes all images available to you.</p>
      */
     inline void SetImageIds(Aws::Vector<Aws::String>&& value) { m_imageIdsHasBeenSet = true; m_imageIds = std::move(value); }
 
     /**
-     * <p>One or more image IDs.</p> <p>Default: Describes all images available to
-     * you.</p>
+     * <p>The image IDs.</p> <p>Default: Describes all images available to you.</p>
      */
     inline DescribeImagesRequest& WithImageIds(const Aws::Vector<Aws::String>& value) { SetImageIds(value); return *this;}
 
     /**
-     * <p>One or more image IDs.</p> <p>Default: Describes all images available to
-     * you.</p>
+     * <p>The image IDs.</p> <p>Default: Describes all images available to you.</p>
      */
     inline DescribeImagesRequest& WithImageIds(Aws::Vector<Aws::String>&& value) { SetImageIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more image IDs.</p> <p>Default: Describes all images available to
-     * you.</p>
+     * <p>The image IDs.</p> <p>Default: Describes all images available to you.</p>
      */
     inline DescribeImagesRequest& AddImageIds(const Aws::String& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more image IDs.</p> <p>Default: Describes all images available to
-     * you.</p>
+     * <p>The image IDs.</p> <p>Default: Describes all images available to you.</p>
      */
     inline DescribeImagesRequest& AddImageIds(Aws::String&& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more image IDs.</p> <p>Default: Describes all images available to
-     * you.</p>
+     * <p>The image IDs.</p> <p>Default: Describes all images available to you.</p>
      */
     inline DescribeImagesRequest& AddImageIds(const char* value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
 

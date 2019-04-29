@@ -331,42 +331,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AMI, which you can get by using <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
 
     /**
-     * <p>The ID of the AMI, which you can get by using <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.</p>
      */
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AMI, which you can get by using <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.</p>
      */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
-     * <p>The ID of the AMI, which you can get by using <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.</p>
      */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
-     * <p>The ID of the AMI, which you can get by using <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.</p>
      */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
 
     /**
-     * <p>The ID of the AMI, which you can get by using <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.</p>
      */
     inline RequestLaunchTemplateData& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
 
     /**
-     * <p>The ID of the AMI, which you can get by using <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.</p>
      */
     inline RequestLaunchTemplateData& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AMI, which you can get by using <a>DescribeImages</a>.</p>
+     * <p>The ID of the AMI, which you can get by using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.</p>
      */
     inline RequestLaunchTemplateData& WithImageId(const char* value) { SetImageId(value); return *this;}
 
@@ -415,66 +423,90 @@ namespace Model
 
 
     /**
-     * <p>The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important> <p>If you do not
-     * specify a key pair, you can't connect to the instance unless you choose an AMI
-     * that is configured to allow users another way to log in.</p> </important>
+     * <p>The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
+     * <important> <p>If you do not specify a key pair, you can't connect to the
+     * instance unless you choose an AMI that is configured to allow users another way
+     * to log in.</p> </important>
      */
     inline const Aws::String& GetKeyName() const{ return m_keyName; }
 
     /**
-     * <p>The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important> <p>If you do not
-     * specify a key pair, you can't connect to the instance unless you choose an AMI
-     * that is configured to allow users another way to log in.</p> </important>
+     * <p>The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
+     * <important> <p>If you do not specify a key pair, you can't connect to the
+     * instance unless you choose an AMI that is configured to allow users another way
+     * to log in.</p> </important>
      */
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
 
     /**
-     * <p>The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important> <p>If you do not
-     * specify a key pair, you can't connect to the instance unless you choose an AMI
-     * that is configured to allow users another way to log in.</p> </important>
+     * <p>The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
+     * <important> <p>If you do not specify a key pair, you can't connect to the
+     * instance unless you choose an AMI that is configured to allow users another way
+     * to log in.</p> </important>
      */
     inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
 
     /**
-     * <p>The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important> <p>If you do not
-     * specify a key pair, you can't connect to the instance unless you choose an AMI
-     * that is configured to allow users another way to log in.</p> </important>
+     * <p>The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
+     * <important> <p>If you do not specify a key pair, you can't connect to the
+     * instance unless you choose an AMI that is configured to allow users another way
+     * to log in.</p> </important>
      */
     inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
 
     /**
-     * <p>The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important> <p>If you do not
-     * specify a key pair, you can't connect to the instance unless you choose an AMI
-     * that is configured to allow users another way to log in.</p> </important>
+     * <p>The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
+     * <important> <p>If you do not specify a key pair, you can't connect to the
+     * instance unless you choose an AMI that is configured to allow users another way
+     * to log in.</p> </important>
      */
     inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
 
     /**
-     * <p>The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important> <p>If you do not
-     * specify a key pair, you can't connect to the instance unless you choose an AMI
-     * that is configured to allow users another way to log in.</p> </important>
+     * <p>The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
+     * <important> <p>If you do not specify a key pair, you can't connect to the
+     * instance unless you choose an AMI that is configured to allow users another way
+     * to log in.</p> </important>
      */
     inline RequestLaunchTemplateData& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
 
     /**
-     * <p>The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important> <p>If you do not
-     * specify a key pair, you can't connect to the instance unless you choose an AMI
-     * that is configured to allow users another way to log in.</p> </important>
+     * <p>The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
+     * <important> <p>If you do not specify a key pair, you can't connect to the
+     * instance unless you choose an AMI that is configured to allow users another way
+     * to log in.</p> </important>
      */
     inline RequestLaunchTemplateData& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important> <p>If you do not
-     * specify a key pair, you can't connect to the instance unless you choose an AMI
-     * that is configured to allow users another way to log in.</p> </important>
+     * <p>The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
+     * <important> <p>If you do not specify a key pair, you can't connect to the
+     * instance unless you choose an AMI that is configured to allow users another way
+     * to log in.</p> </important>
      */
     inline RequestLaunchTemplateData& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
@@ -617,28 +649,36 @@ namespace Model
     /**
      * <p>If set to <code>true</code>, you can't terminate the instance using the
      * Amazon EC2 console, CLI, or API. To change this attribute to <code>false</code>
-     * after launch, use <a>ModifyInstanceAttribute</a>.</p>
+     * after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
+     * ModifyInstanceAttribute</a>.</p>
      */
     inline bool GetDisableApiTermination() const{ return m_disableApiTermination; }
 
     /**
      * <p>If set to <code>true</code>, you can't terminate the instance using the
      * Amazon EC2 console, CLI, or API. To change this attribute to <code>false</code>
-     * after launch, use <a>ModifyInstanceAttribute</a>.</p>
+     * after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
+     * ModifyInstanceAttribute</a>.</p>
      */
     inline bool DisableApiTerminationHasBeenSet() const { return m_disableApiTerminationHasBeenSet; }
 
     /**
      * <p>If set to <code>true</code>, you can't terminate the instance using the
      * Amazon EC2 console, CLI, or API. To change this attribute to <code>false</code>
-     * after launch, use <a>ModifyInstanceAttribute</a>.</p>
+     * after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
+     * ModifyInstanceAttribute</a>.</p>
      */
     inline void SetDisableApiTermination(bool value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = value; }
 
     /**
      * <p>If set to <code>true</code>, you can't terminate the instance using the
      * Amazon EC2 console, CLI, or API. To change this attribute to <code>false</code>
-     * after launch, use <a>ModifyInstanceAttribute</a>.</p>
+     * after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
+     * ModifyInstanceAttribute</a>.</p>
      */
     inline RequestLaunchTemplateData& WithDisableApiTermination(bool value) { SetDisableApiTermination(value); return *this;}
 
@@ -1203,6 +1243,47 @@ namespace Model
 
 
     /**
+     * <p>The license configurations.</p>
+     */
+    inline const Aws::Vector<LaunchTemplateLicenseConfigurationRequest>& GetLicenseSpecifications() const{ return m_licenseSpecifications; }
+
+    /**
+     * <p>The license configurations.</p>
+     */
+    inline bool LicenseSpecificationsHasBeenSet() const { return m_licenseSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The license configurations.</p>
+     */
+    inline void SetLicenseSpecifications(const Aws::Vector<LaunchTemplateLicenseConfigurationRequest>& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications = value; }
+
+    /**
+     * <p>The license configurations.</p>
+     */
+    inline void SetLicenseSpecifications(Aws::Vector<LaunchTemplateLicenseConfigurationRequest>&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications = std::move(value); }
+
+    /**
+     * <p>The license configurations.</p>
+     */
+    inline RequestLaunchTemplateData& WithLicenseSpecifications(const Aws::Vector<LaunchTemplateLicenseConfigurationRequest>& value) { SetLicenseSpecifications(value); return *this;}
+
+    /**
+     * <p>The license configurations.</p>
+     */
+    inline RequestLaunchTemplateData& WithLicenseSpecifications(Aws::Vector<LaunchTemplateLicenseConfigurationRequest>&& value) { SetLicenseSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The license configurations.</p>
+     */
+    inline RequestLaunchTemplateData& AddLicenseSpecifications(const LaunchTemplateLicenseConfigurationRequest& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The license configurations.</p>
+     */
+    inline RequestLaunchTemplateData& AddLicenseSpecifications(LaunchTemplateLicenseConfigurationRequest&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Indicates whether an instance is enabled for hibernation. This parameter is
      * valid only if the instance meets the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
@@ -1267,47 +1348,6 @@ namespace Model
      * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline RequestLaunchTemplateData& WithHibernationOptions(LaunchTemplateHibernationOptionsRequest&& value) { SetHibernationOptions(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The license configurations.</p>
-     */
-    inline const Aws::Vector<LaunchTemplateLicenseConfigurationRequest>& GetLicenseSpecifications() const{ return m_licenseSpecifications; }
-
-    /**
-     * <p>The license configurations.</p>
-     */
-    inline bool LicenseSpecificationsHasBeenSet() const { return m_licenseSpecificationsHasBeenSet; }
-
-    /**
-     * <p>The license configurations.</p>
-     */
-    inline void SetLicenseSpecifications(const Aws::Vector<LaunchTemplateLicenseConfigurationRequest>& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications = value; }
-
-    /**
-     * <p>The license configurations.</p>
-     */
-    inline void SetLicenseSpecifications(Aws::Vector<LaunchTemplateLicenseConfigurationRequest>&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications = std::move(value); }
-
-    /**
-     * <p>The license configurations.</p>
-     */
-    inline RequestLaunchTemplateData& WithLicenseSpecifications(const Aws::Vector<LaunchTemplateLicenseConfigurationRequest>& value) { SetLicenseSpecifications(value); return *this;}
-
-    /**
-     * <p>The license configurations.</p>
-     */
-    inline RequestLaunchTemplateData& WithLicenseSpecifications(Aws::Vector<LaunchTemplateLicenseConfigurationRequest>&& value) { SetLicenseSpecifications(std::move(value)); return *this;}
-
-    /**
-     * <p>The license configurations.</p>
-     */
-    inline RequestLaunchTemplateData& AddLicenseSpecifications(const LaunchTemplateLicenseConfigurationRequest& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.push_back(value); return *this; }
-
-    /**
-     * <p>The license configurations.</p>
-     */
-    inline RequestLaunchTemplateData& AddLicenseSpecifications(LaunchTemplateLicenseConfigurationRequest&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -1380,11 +1420,11 @@ namespace Model
     LaunchTemplateCapacityReservationSpecificationRequest m_capacityReservationSpecification;
     bool m_capacityReservationSpecificationHasBeenSet;
 
-    LaunchTemplateHibernationOptionsRequest m_hibernationOptions;
-    bool m_hibernationOptionsHasBeenSet;
-
     Aws::Vector<LaunchTemplateLicenseConfigurationRequest> m_licenseSpecifications;
     bool m_licenseSpecificationsHasBeenSet;
+
+    LaunchTemplateHibernationOptionsRequest m_hibernationOptions;
+    bool m_hibernationOptionsHasBeenSet;
   };
 
 } // namespace Model

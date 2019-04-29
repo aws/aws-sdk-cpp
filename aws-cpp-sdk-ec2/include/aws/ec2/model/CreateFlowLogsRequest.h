@@ -149,200 +149,266 @@ namespace Model
 
 
     /**
-     * <p>The ARN for the IAM role that's used to post flow logs to a log group.</p>
+     * <p>The ARN for the IAM role that permits Amazon EC2 to publish flow logs to a
+     * CloudWatch Logs log group in your account.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      */
     inline const Aws::String& GetDeliverLogsPermissionArn() const{ return m_deliverLogsPermissionArn; }
 
     /**
-     * <p>The ARN for the IAM role that's used to post flow logs to a log group.</p>
+     * <p>The ARN for the IAM role that permits Amazon EC2 to publish flow logs to a
+     * CloudWatch Logs log group in your account.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      */
     inline bool DeliverLogsPermissionArnHasBeenSet() const { return m_deliverLogsPermissionArnHasBeenSet; }
 
     /**
-     * <p>The ARN for the IAM role that's used to post flow logs to a log group.</p>
+     * <p>The ARN for the IAM role that permits Amazon EC2 to publish flow logs to a
+     * CloudWatch Logs log group in your account.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      */
     inline void SetDeliverLogsPermissionArn(const Aws::String& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = value; }
 
     /**
-     * <p>The ARN for the IAM role that's used to post flow logs to a log group.</p>
+     * <p>The ARN for the IAM role that permits Amazon EC2 to publish flow logs to a
+     * CloudWatch Logs log group in your account.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      */
     inline void SetDeliverLogsPermissionArn(Aws::String&& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = std::move(value); }
 
     /**
-     * <p>The ARN for the IAM role that's used to post flow logs to a log group.</p>
+     * <p>The ARN for the IAM role that permits Amazon EC2 to publish flow logs to a
+     * CloudWatch Logs log group in your account.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      */
     inline void SetDeliverLogsPermissionArn(const char* value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn.assign(value); }
 
     /**
-     * <p>The ARN for the IAM role that's used to post flow logs to a log group.</p>
+     * <p>The ARN for the IAM role that permits Amazon EC2 to publish flow logs to a
+     * CloudWatch Logs log group in your account.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      */
     inline CreateFlowLogsRequest& WithDeliverLogsPermissionArn(const Aws::String& value) { SetDeliverLogsPermissionArn(value); return *this;}
 
     /**
-     * <p>The ARN for the IAM role that's used to post flow logs to a log group.</p>
+     * <p>The ARN for the IAM role that permits Amazon EC2 to publish flow logs to a
+     * CloudWatch Logs log group in your account.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      */
     inline CreateFlowLogsRequest& WithDeliverLogsPermissionArn(Aws::String&& value) { SetDeliverLogsPermissionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN for the IAM role that's used to post flow logs to a log group.</p>
+     * <p>The ARN for the IAM role that permits Amazon EC2 to publish flow logs to a
+     * CloudWatch Logs log group in your account.</p> <p>If you specify
+     * <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
      */
     inline CreateFlowLogsRequest& WithDeliverLogsPermissionArn(const char* value) { SetDeliverLogsPermissionArn(value); return *this;}
 
 
     /**
-     * <p>The name of the log group.</p>
+     * <p>The name of a new or existing CloudWatch Logs log group where Amazon EC2
+     * publishes your flow logs.</p> <p>If you specify <code>LogDestinationType</code>
+     * as <code>s3</code>, do not specify <code>DeliverLogsPermissionArn</code> or
+     * <code>LogGroupName</code>.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
     /**
-     * <p>The name of the log group.</p>
+     * <p>The name of a new or existing CloudWatch Logs log group where Amazon EC2
+     * publishes your flow logs.</p> <p>If you specify <code>LogDestinationType</code>
+     * as <code>s3</code>, do not specify <code>DeliverLogsPermissionArn</code> or
+     * <code>LogGroupName</code>.</p>
      */
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the log group.</p>
+     * <p>The name of a new or existing CloudWatch Logs log group where Amazon EC2
+     * publishes your flow logs.</p> <p>If you specify <code>LogDestinationType</code>
+     * as <code>s3</code>, do not specify <code>DeliverLogsPermissionArn</code> or
+     * <code>LogGroupName</code>.</p>
      */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The name of the log group.</p>
+     * <p>The name of a new or existing CloudWatch Logs log group where Amazon EC2
+     * publishes your flow logs.</p> <p>If you specify <code>LogDestinationType</code>
+     * as <code>s3</code>, do not specify <code>DeliverLogsPermissionArn</code> or
+     * <code>LogGroupName</code>.</p>
      */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
-     * <p>The name of the log group.</p>
+     * <p>The name of a new or existing CloudWatch Logs log group where Amazon EC2
+     * publishes your flow logs.</p> <p>If you specify <code>LogDestinationType</code>
+     * as <code>s3</code>, do not specify <code>DeliverLogsPermissionArn</code> or
+     * <code>LogGroupName</code>.</p>
      */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
     /**
-     * <p>The name of the log group.</p>
+     * <p>The name of a new or existing CloudWatch Logs log group where Amazon EC2
+     * publishes your flow logs.</p> <p>If you specify <code>LogDestinationType</code>
+     * as <code>s3</code>, do not specify <code>DeliverLogsPermissionArn</code> or
+     * <code>LogGroupName</code>.</p>
      */
     inline CreateFlowLogsRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The name of the log group.</p>
+     * <p>The name of a new or existing CloudWatch Logs log group where Amazon EC2
+     * publishes your flow logs.</p> <p>If you specify <code>LogDestinationType</code>
+     * as <code>s3</code>, do not specify <code>DeliverLogsPermissionArn</code> or
+     * <code>LogGroupName</code>.</p>
      */
     inline CreateFlowLogsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the log group.</p>
+     * <p>The name of a new or existing CloudWatch Logs log group where Amazon EC2
+     * publishes your flow logs.</p> <p>If you specify <code>LogDestinationType</code>
+     * as <code>s3</code>, do not specify <code>DeliverLogsPermissionArn</code> or
+     * <code>LogGroupName</code>.</p>
      */
     inline CreateFlowLogsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
 
     /**
-     * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
-     * Maximum of 1000 resources</p>
+     * <p>The ID of the subnet, network interface, or VPC for which you want to create
+     * a flow log.</p> <p>Constraints: Maximum of 1000 resources</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
 
     /**
-     * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
-     * Maximum of 1000 resources</p>
+     * <p>The ID of the subnet, network interface, or VPC for which you want to create
+     * a flow log.</p> <p>Constraints: Maximum of 1000 resources</p>
      */
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
 
     /**
-     * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
-     * Maximum of 1000 resources</p>
+     * <p>The ID of the subnet, network interface, or VPC for which you want to create
+     * a flow log.</p> <p>Constraints: Maximum of 1000 resources</p>
      */
     inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
 
     /**
-     * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
-     * Maximum of 1000 resources</p>
+     * <p>The ID of the subnet, network interface, or VPC for which you want to create
+     * a flow log.</p> <p>Constraints: Maximum of 1000 resources</p>
      */
     inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
 
     /**
-     * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
-     * Maximum of 1000 resources</p>
+     * <p>The ID of the subnet, network interface, or VPC for which you want to create
+     * a flow log.</p> <p>Constraints: Maximum of 1000 resources</p>
      */
     inline CreateFlowLogsRequest& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
 
     /**
-     * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
-     * Maximum of 1000 resources</p>
+     * <p>The ID of the subnet, network interface, or VPC for which you want to create
+     * a flow log.</p> <p>Constraints: Maximum of 1000 resources</p>
      */
     inline CreateFlowLogsRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
-     * Maximum of 1000 resources</p>
+     * <p>The ID of the subnet, network interface, or VPC for which you want to create
+     * a flow log.</p> <p>Constraints: Maximum of 1000 resources</p>
      */
     inline CreateFlowLogsRequest& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
-     * Maximum of 1000 resources</p>
+     * <p>The ID of the subnet, network interface, or VPC for which you want to create
+     * a flow log.</p> <p>Constraints: Maximum of 1000 resources</p>
      */
     inline CreateFlowLogsRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
-     * Maximum of 1000 resources</p>
+     * <p>The ID of the subnet, network interface, or VPC for which you want to create
+     * a flow log.</p> <p>Constraints: Maximum of 1000 resources</p>
      */
     inline CreateFlowLogsRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The type of resource on which to create the flow log.</p>
+     * <p>The type of resource for which to create the flow log. For example, if you
+     * specified a VPC ID for the <code>ResourceId</code> property, specify
+     * <code>VPC</code> for this property.</p>
      */
     inline const FlowLogsResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of resource on which to create the flow log.</p>
+     * <p>The type of resource for which to create the flow log. For example, if you
+     * specified a VPC ID for the <code>ResourceId</code> property, specify
+     * <code>VPC</code> for this property.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of resource on which to create the flow log.</p>
+     * <p>The type of resource for which to create the flow log. For example, if you
+     * specified a VPC ID for the <code>ResourceId</code> property, specify
+     * <code>VPC</code> for this property.</p>
      */
     inline void SetResourceType(const FlowLogsResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of resource on which to create the flow log.</p>
+     * <p>The type of resource for which to create the flow log. For example, if you
+     * specified a VPC ID for the <code>ResourceId</code> property, specify
+     * <code>VPC</code> for this property.</p>
      */
     inline void SetResourceType(FlowLogsResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of resource on which to create the flow log.</p>
+     * <p>The type of resource for which to create the flow log. For example, if you
+     * specified a VPC ID for the <code>ResourceId</code> property, specify
+     * <code>VPC</code> for this property.</p>
      */
     inline CreateFlowLogsRequest& WithResourceType(const FlowLogsResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of resource on which to create the flow log.</p>
+     * <p>The type of resource for which to create the flow log. For example, if you
+     * specified a VPC ID for the <code>ResourceId</code> property, specify
+     * <code>VPC</code> for this property.</p>
      */
     inline CreateFlowLogsRequest& WithResourceType(FlowLogsResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The type of traffic to log.</p>
+     * <p>The type of traffic to log. You can log traffic that the resource accepts or
+     * rejects, or all traffic.</p>
      */
     inline const TrafficType& GetTrafficType() const{ return m_trafficType; }
 
     /**
-     * <p>The type of traffic to log.</p>
+     * <p>The type of traffic to log. You can log traffic that the resource accepts or
+     * rejects, or all traffic.</p>
      */
     inline bool TrafficTypeHasBeenSet() const { return m_trafficTypeHasBeenSet; }
 
     /**
-     * <p>The type of traffic to log.</p>
+     * <p>The type of traffic to log. You can log traffic that the resource accepts or
+     * rejects, or all traffic.</p>
      */
     inline void SetTrafficType(const TrafficType& value) { m_trafficTypeHasBeenSet = true; m_trafficType = value; }
 
     /**
-     * <p>The type of traffic to log.</p>
+     * <p>The type of traffic to log. You can log traffic that the resource accepts or
+     * rejects, or all traffic.</p>
      */
     inline void SetTrafficType(TrafficType&& value) { m_trafficTypeHasBeenSet = true; m_trafficType = std::move(value); }
 
     /**
-     * <p>The type of traffic to log.</p>
+     * <p>The type of traffic to log. You can log traffic that the resource accepts or
+     * rejects, or all traffic.</p>
      */
     inline CreateFlowLogsRequest& WithTrafficType(const TrafficType& value) { SetTrafficType(value); return *this;}
 
     /**
-     * <p>The type of traffic to log.</p>
+     * <p>The type of traffic to log. You can log traffic that the resource accepts or
+     * rejects, or all traffic.</p>
      */
     inline CreateFlowLogsRequest& WithTrafficType(TrafficType&& value) { SetTrafficType(std::move(value)); return *this;}
 
@@ -351,8 +417,10 @@ namespace Model
      * <p>Specifies the type of destination to which the flow log data is to be
      * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
      * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
-     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>Default:
-     * <code>cloud-watch-logs</code> </p>
+     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>If you
+     * specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
+     * <p>Default: <code>cloud-watch-logs</code> </p>
      */
     inline const LogDestinationType& GetLogDestinationType() const{ return m_logDestinationType; }
 
@@ -360,8 +428,10 @@ namespace Model
      * <p>Specifies the type of destination to which the flow log data is to be
      * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
      * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
-     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>Default:
-     * <code>cloud-watch-logs</code> </p>
+     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>If you
+     * specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
+     * <p>Default: <code>cloud-watch-logs</code> </p>
      */
     inline bool LogDestinationTypeHasBeenSet() const { return m_logDestinationTypeHasBeenSet; }
 
@@ -369,8 +439,10 @@ namespace Model
      * <p>Specifies the type of destination to which the flow log data is to be
      * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
      * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
-     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>Default:
-     * <code>cloud-watch-logs</code> </p>
+     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>If you
+     * specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
+     * <p>Default: <code>cloud-watch-logs</code> </p>
      */
     inline void SetLogDestinationType(const LogDestinationType& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = value; }
 
@@ -378,8 +450,10 @@ namespace Model
      * <p>Specifies the type of destination to which the flow log data is to be
      * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
      * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
-     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>Default:
-     * <code>cloud-watch-logs</code> </p>
+     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>If you
+     * specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
+     * <p>Default: <code>cloud-watch-logs</code> </p>
      */
     inline void SetLogDestinationType(LogDestinationType&& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = std::move(value); }
 
@@ -387,8 +461,10 @@ namespace Model
      * <p>Specifies the type of destination to which the flow log data is to be
      * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
      * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
-     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>Default:
-     * <code>cloud-watch-logs</code> </p>
+     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>If you
+     * specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
+     * <p>Default: <code>cloud-watch-logs</code> </p>
      */
     inline CreateFlowLogsRequest& WithLogDestinationType(const LogDestinationType& value) { SetLogDestinationType(value); return *this;}
 
@@ -396,18 +472,20 @@ namespace Model
      * <p>Specifies the type of destination to which the flow log data is to be
      * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
      * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
-     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>Default:
-     * <code>cloud-watch-logs</code> </p>
+     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>If you
+     * specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
+     * <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.</p>
+     * <p>Default: <code>cloud-watch-logs</code> </p>
      */
     inline CreateFlowLogsRequest& WithLogDestinationType(LogDestinationType&& value) { SetLogDestinationType(std::move(value)); return *this;}
 
 
     /**
      * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to an CloudWatch Logs log group or an Amazon S3
-     * bucket. The value specified for this parameter depends on the value specified
-     * for LogDestinationType.</p> <p>If LogDestinationType is not specified or
-     * <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN) of the
+     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
+     * The value specified for this parameter depends on the value specified for
+     * <code>LogDestinationType</code>.</p> <p>If LogDestinationType is not specified
+     * or <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN) of the
      * CloudWatch Logs log group.</p> <p>If LogDestinationType is <code>s3</code>,
      * specify the ARN of the Amazon S3 bucket. You can also specify a subfolder in the
      * bucket. To specify a subfolder in the bucket, use the following ARN format:
@@ -420,10 +498,10 @@ namespace Model
 
     /**
      * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to an CloudWatch Logs log group or an Amazon S3
-     * bucket. The value specified for this parameter depends on the value specified
-     * for LogDestinationType.</p> <p>If LogDestinationType is not specified or
-     * <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN) of the
+     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
+     * The value specified for this parameter depends on the value specified for
+     * <code>LogDestinationType</code>.</p> <p>If LogDestinationType is not specified
+     * or <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN) of the
      * CloudWatch Logs log group.</p> <p>If LogDestinationType is <code>s3</code>,
      * specify the ARN of the Amazon S3 bucket. You can also specify a subfolder in the
      * bucket. To specify a subfolder in the bucket, use the following ARN format:
@@ -436,10 +514,10 @@ namespace Model
 
     /**
      * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to an CloudWatch Logs log group or an Amazon S3
-     * bucket. The value specified for this parameter depends on the value specified
-     * for LogDestinationType.</p> <p>If LogDestinationType is not specified or
-     * <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN) of the
+     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
+     * The value specified for this parameter depends on the value specified for
+     * <code>LogDestinationType</code>.</p> <p>If LogDestinationType is not specified
+     * or <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN) of the
      * CloudWatch Logs log group.</p> <p>If LogDestinationType is <code>s3</code>,
      * specify the ARN of the Amazon S3 bucket. You can also specify a subfolder in the
      * bucket. To specify a subfolder in the bucket, use the following ARN format:
@@ -452,10 +530,10 @@ namespace Model
 
     /**
      * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to an CloudWatch Logs log group or an Amazon S3
-     * bucket. The value specified for this parameter depends on the value specified
-     * for LogDestinationType.</p> <p>If LogDestinationType is not specified or
-     * <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN) of the
+     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
+     * The value specified for this parameter depends on the value specified for
+     * <code>LogDestinationType</code>.</p> <p>If LogDestinationType is not specified
+     * or <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN) of the
      * CloudWatch Logs log group.</p> <p>If LogDestinationType is <code>s3</code>,
      * specify the ARN of the Amazon S3 bucket. You can also specify a subfolder in the
      * bucket. To specify a subfolder in the bucket, use the following ARN format:
@@ -468,10 +546,10 @@ namespace Model
 
     /**
      * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to an CloudWatch Logs log group or an Amazon S3
-     * bucket. The value specified for this parameter depends on the value specified
-     * for LogDestinationType.</p> <p>If LogDestinationType is not specified or
-     * <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN) of the
+     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
+     * The value specified for this parameter depends on the value specified for
+     * <code>LogDestinationType</code>.</p> <p>If LogDestinationType is not specified
+     * or <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN) of the
      * CloudWatch Logs log group.</p> <p>If LogDestinationType is <code>s3</code>,
      * specify the ARN of the Amazon S3 bucket. You can also specify a subfolder in the
      * bucket. To specify a subfolder in the bucket, use the following ARN format:
@@ -484,10 +562,10 @@ namespace Model
 
     /**
      * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to an CloudWatch Logs log group or an Amazon S3
-     * bucket. The value specified for this parameter depends on the value specified
-     * for LogDestinationType.</p> <p>If LogDestinationType is not specified or
-     * <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN) of the
+     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
+     * The value specified for this parameter depends on the value specified for
+     * <code>LogDestinationType</code>.</p> <p>If LogDestinationType is not specified
+     * or <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN) of the
      * CloudWatch Logs log group.</p> <p>If LogDestinationType is <code>s3</code>,
      * specify the ARN of the Amazon S3 bucket. You can also specify a subfolder in the
      * bucket. To specify a subfolder in the bucket, use the following ARN format:
@@ -500,10 +578,10 @@ namespace Model
 
     /**
      * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to an CloudWatch Logs log group or an Amazon S3
-     * bucket. The value specified for this parameter depends on the value specified
-     * for LogDestinationType.</p> <p>If LogDestinationType is not specified or
-     * <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN) of the
+     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
+     * The value specified for this parameter depends on the value specified for
+     * <code>LogDestinationType</code>.</p> <p>If LogDestinationType is not specified
+     * or <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN) of the
      * CloudWatch Logs log group.</p> <p>If LogDestinationType is <code>s3</code>,
      * specify the ARN of the Amazon S3 bucket. You can also specify a subfolder in the
      * bucket. To specify a subfolder in the bucket, use the following ARN format:
@@ -516,10 +594,10 @@ namespace Model
 
     /**
      * <p>Specifies the destination to which the flow log data is to be published. Flow
-     * log data can be published to an CloudWatch Logs log group or an Amazon S3
-     * bucket. The value specified for this parameter depends on the value specified
-     * for LogDestinationType.</p> <p>If LogDestinationType is not specified or
-     * <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN) of the
+     * log data can be published to a CloudWatch Logs log group or an Amazon S3 bucket.
+     * The value specified for this parameter depends on the value specified for
+     * <code>LogDestinationType</code>.</p> <p>If LogDestinationType is not specified
+     * or <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN) of the
      * CloudWatch Logs log group.</p> <p>If LogDestinationType is <code>s3</code>,
      * specify the ARN of the Amazon S3 bucket. You can also specify a subfolder in the
      * bucket. To specify a subfolder in the bucket, use the following ARN format:

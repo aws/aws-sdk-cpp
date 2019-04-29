@@ -211,6 +211,47 @@ namespace Model
 
 
     /**
+     * <p>The type of network interface.</p>
+     */
+    inline const Aws::String& GetInterfaceType() const{ return m_interfaceType; }
+
+    /**
+     * <p>The type of network interface.</p>
+     */
+    inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of network interface.</p>
+     */
+    inline void SetInterfaceType(const Aws::String& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
+
+    /**
+     * <p>The type of network interface.</p>
+     */
+    inline void SetInterfaceType(Aws::String&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = std::move(value); }
+
+    /**
+     * <p>The type of network interface.</p>
+     */
+    inline void SetInterfaceType(const char* value) { m_interfaceTypeHasBeenSet = true; m_interfaceType.assign(value); }
+
+    /**
+     * <p>The type of network interface.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithInterfaceType(const Aws::String& value) { SetInterfaceType(value); return *this;}
+
+    /**
+     * <p>The type of network interface.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithInterfaceType(Aws::String&& value) { SetInterfaceType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of network interface.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithInterfaceType(const char* value) { SetInterfaceType(value); return *this;}
+
+
+    /**
      * <p>The number of IPv6 addresses for the network interface.</p>
      */
     inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
@@ -472,6 +513,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_groups;
     bool m_groupsHasBeenSet;
+
+    Aws::String m_interfaceType;
+    bool m_interfaceTypeHasBeenSet;
 
     int m_ipv6AddressCount;
     bool m_ipv6AddressCountHasBeenSet;

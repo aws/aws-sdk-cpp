@@ -52,47 +52,47 @@ namespace Model
   public:
 
     /**
-     * <p>One or more conversion task IDs.</p>
+     * <p>The conversion task IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConversionTaskIds() const{ return m_conversionTaskIds; }
 
     /**
-     * <p>One or more conversion task IDs.</p>
+     * <p>The conversion task IDs.</p>
      */
     inline bool ConversionTaskIdsHasBeenSet() const { return m_conversionTaskIdsHasBeenSet; }
 
     /**
-     * <p>One or more conversion task IDs.</p>
+     * <p>The conversion task IDs.</p>
      */
     inline void SetConversionTaskIds(const Aws::Vector<Aws::String>& value) { m_conversionTaskIdsHasBeenSet = true; m_conversionTaskIds = value; }
 
     /**
-     * <p>One or more conversion task IDs.</p>
+     * <p>The conversion task IDs.</p>
      */
     inline void SetConversionTaskIds(Aws::Vector<Aws::String>&& value) { m_conversionTaskIdsHasBeenSet = true; m_conversionTaskIds = std::move(value); }
 
     /**
-     * <p>One or more conversion task IDs.</p>
+     * <p>The conversion task IDs.</p>
      */
     inline DescribeConversionTasksRequest& WithConversionTaskIds(const Aws::Vector<Aws::String>& value) { SetConversionTaskIds(value); return *this;}
 
     /**
-     * <p>One or more conversion task IDs.</p>
+     * <p>The conversion task IDs.</p>
      */
     inline DescribeConversionTasksRequest& WithConversionTaskIds(Aws::Vector<Aws::String>&& value) { SetConversionTaskIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more conversion task IDs.</p>
+     * <p>The conversion task IDs.</p>
      */
     inline DescribeConversionTasksRequest& AddConversionTaskIds(const Aws::String& value) { m_conversionTaskIdsHasBeenSet = true; m_conversionTaskIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more conversion task IDs.</p>
+     * <p>The conversion task IDs.</p>
      */
     inline DescribeConversionTasksRequest& AddConversionTaskIds(Aws::String&& value) { m_conversionTaskIdsHasBeenSet = true; m_conversionTaskIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more conversion task IDs.</p>
+     * <p>The conversion task IDs.</p>
      */
     inline DescribeConversionTasksRequest& AddConversionTaskIds(const char* value) { m_conversionTaskIdsHasBeenSet = true; m_conversionTaskIds.push_back(value); return *this; }
 

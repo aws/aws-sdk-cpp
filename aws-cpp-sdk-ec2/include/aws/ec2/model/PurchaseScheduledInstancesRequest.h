@@ -152,42 +152,42 @@ namespace Model
 
 
     /**
-     * <p>One or more purchase requests.</p>
+     * <p>The purchase requests.</p>
      */
     inline const Aws::Vector<PurchaseRequest>& GetPurchaseRequests() const{ return m_purchaseRequests; }
 
     /**
-     * <p>One or more purchase requests.</p>
+     * <p>The purchase requests.</p>
      */
     inline bool PurchaseRequestsHasBeenSet() const { return m_purchaseRequestsHasBeenSet; }
 
     /**
-     * <p>One or more purchase requests.</p>
+     * <p>The purchase requests.</p>
      */
     inline void SetPurchaseRequests(const Aws::Vector<PurchaseRequest>& value) { m_purchaseRequestsHasBeenSet = true; m_purchaseRequests = value; }
 
     /**
-     * <p>One or more purchase requests.</p>
+     * <p>The purchase requests.</p>
      */
     inline void SetPurchaseRequests(Aws::Vector<PurchaseRequest>&& value) { m_purchaseRequestsHasBeenSet = true; m_purchaseRequests = std::move(value); }
 
     /**
-     * <p>One or more purchase requests.</p>
+     * <p>The purchase requests.</p>
      */
     inline PurchaseScheduledInstancesRequest& WithPurchaseRequests(const Aws::Vector<PurchaseRequest>& value) { SetPurchaseRequests(value); return *this;}
 
     /**
-     * <p>One or more purchase requests.</p>
+     * <p>The purchase requests.</p>
      */
     inline PurchaseScheduledInstancesRequest& WithPurchaseRequests(Aws::Vector<PurchaseRequest>&& value) { SetPurchaseRequests(std::move(value)); return *this;}
 
     /**
-     * <p>One or more purchase requests.</p>
+     * <p>The purchase requests.</p>
      */
     inline PurchaseScheduledInstancesRequest& AddPurchaseRequests(const PurchaseRequest& value) { m_purchaseRequestsHasBeenSet = true; m_purchaseRequests.push_back(value); return *this; }
 
     /**
-     * <p>One or more purchase requests.</p>
+     * <p>The purchase requests.</p>
      */
     inline PurchaseScheduledInstancesRequest& AddPurchaseRequests(PurchaseRequest&& value) { m_purchaseRequestsHasBeenSet = true; m_purchaseRequests.push_back(std::move(value)); return *this; }
 

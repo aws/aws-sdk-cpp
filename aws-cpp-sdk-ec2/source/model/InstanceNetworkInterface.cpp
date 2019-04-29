@@ -47,7 +47,8 @@ InstanceNetworkInterface::InstanceNetworkInterface() :
     m_status(NetworkInterfaceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_interfaceTypeHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ InstanceNetworkInterface::InstanceNetworkInterface(const XmlNode& xmlNode) :
     m_status(NetworkInterfaceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_interfaceTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -187,6 +189,12 @@ InstanceNetworkInterface& InstanceNetworkInterface::operator =(const XmlNode& xm
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
       m_vpcIdHasBeenSet = true;
     }
+    XmlNode interfaceTypeNode = resultNode.FirstChild("interfaceType");
+    if(!interfaceTypeNode.IsNull())
+    {
+      m_interfaceType = StringUtils::Trim(interfaceTypeNode.GetText().c_str());
+      m_interfaceTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -291,6 +299,11 @@ void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char*
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
+  if(m_interfaceTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InterfaceType=" << StringUtils::URLEncode(m_interfaceType.c_str()) << "&";
+  }
+
 }
 
 void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -376,6 +389,10 @@ void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char*
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+  if(m_interfaceTypeHasBeenSet)
+  {
+      oStream << location << ".InterfaceType=" << StringUtils::URLEncode(m_interfaceType.c_str()) << "&";
   }
 }
 

@@ -106,42 +106,141 @@ namespace Model
     inline DescribedServer& WithArn(const char* value) { SetArn(value); return *this;}
 
 
-    
+    /**
+     * <p>The virtual private cloud (VPC) endpoint settings that you configured for
+     * your SFTP server.</p>
+     */
     inline const EndpointDetails& GetEndpointDetails() const{ return m_endpointDetails; }
 
-    
+    /**
+     * <p>The virtual private cloud (VPC) endpoint settings that you configured for
+     * your SFTP server.</p>
+     */
     inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
 
-    
+    /**
+     * <p>The virtual private cloud (VPC) endpoint settings that you configured for
+     * your SFTP server.</p>
+     */
     inline void SetEndpointDetails(const EndpointDetails& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = value; }
 
-    
+    /**
+     * <p>The virtual private cloud (VPC) endpoint settings that you configured for
+     * your SFTP server.</p>
+     */
     inline void SetEndpointDetails(EndpointDetails&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = std::move(value); }
 
-    
+    /**
+     * <p>The virtual private cloud (VPC) endpoint settings that you configured for
+     * your SFTP server.</p>
+     */
     inline DescribedServer& WithEndpointDetails(const EndpointDetails& value) { SetEndpointDetails(value); return *this;}
 
-    
+    /**
+     * <p>The virtual private cloud (VPC) endpoint settings that you configured for
+     * your SFTP server.</p>
+     */
     inline DescribedServer& WithEndpointDetails(EndpointDetails&& value) { SetEndpointDetails(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The type of endpoint that your SFTP server is connected to. If your SFTP
+     * server is connected to a VPC endpoint, your server isn't accessible over the
+     * public internet.</p>
+     */
     inline const EndpointType& GetEndpointType() const{ return m_endpointType; }
 
-    
+    /**
+     * <p>The type of endpoint that your SFTP server is connected to. If your SFTP
+     * server is connected to a VPC endpoint, your server isn't accessible over the
+     * public internet.</p>
+     */
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
 
-    
+    /**
+     * <p>The type of endpoint that your SFTP server is connected to. If your SFTP
+     * server is connected to a VPC endpoint, your server isn't accessible over the
+     * public internet.</p>
+     */
     inline void SetEndpointType(const EndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
-    
+    /**
+     * <p>The type of endpoint that your SFTP server is connected to. If your SFTP
+     * server is connected to a VPC endpoint, your server isn't accessible over the
+     * public internet.</p>
+     */
     inline void SetEndpointType(EndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
-    
+    /**
+     * <p>The type of endpoint that your SFTP server is connected to. If your SFTP
+     * server is connected to a VPC endpoint, your server isn't accessible over the
+     * public internet.</p>
+     */
     inline DescribedServer& WithEndpointType(const EndpointType& value) { SetEndpointType(value); return *this;}
 
-    
+    /**
+     * <p>The type of endpoint that your SFTP server is connected to. If your SFTP
+     * server is connected to a VPC endpoint, your server isn't accessible over the
+     * public internet.</p>
+     */
     inline DescribedServer& WithEndpointType(EndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>This value contains the Message-Digest Algorithm (MD5) hash of the server's
+     * host key. This value is equivalent to the output of <code>ssh-keygen -l -E md5
+     * -f my-new-server-key</code> command.</p>
+     */
+    inline const Aws::String& GetHostKeyFingerprint() const{ return m_hostKeyFingerprint; }
+
+    /**
+     * <p>This value contains the Message-Digest Algorithm (MD5) hash of the server's
+     * host key. This value is equivalent to the output of <code>ssh-keygen -l -E md5
+     * -f my-new-server-key</code> command.</p>
+     */
+    inline bool HostKeyFingerprintHasBeenSet() const { return m_hostKeyFingerprintHasBeenSet; }
+
+    /**
+     * <p>This value contains the Message-Digest Algorithm (MD5) hash of the server's
+     * host key. This value is equivalent to the output of <code>ssh-keygen -l -E md5
+     * -f my-new-server-key</code> command.</p>
+     */
+    inline void SetHostKeyFingerprint(const Aws::String& value) { m_hostKeyFingerprintHasBeenSet = true; m_hostKeyFingerprint = value; }
+
+    /**
+     * <p>This value contains the Message-Digest Algorithm (MD5) hash of the server's
+     * host key. This value is equivalent to the output of <code>ssh-keygen -l -E md5
+     * -f my-new-server-key</code> command.</p>
+     */
+    inline void SetHostKeyFingerprint(Aws::String&& value) { m_hostKeyFingerprintHasBeenSet = true; m_hostKeyFingerprint = std::move(value); }
+
+    /**
+     * <p>This value contains the Message-Digest Algorithm (MD5) hash of the server's
+     * host key. This value is equivalent to the output of <code>ssh-keygen -l -E md5
+     * -f my-new-server-key</code> command.</p>
+     */
+    inline void SetHostKeyFingerprint(const char* value) { m_hostKeyFingerprintHasBeenSet = true; m_hostKeyFingerprint.assign(value); }
+
+    /**
+     * <p>This value contains the Message-Digest Algorithm (MD5) hash of the server's
+     * host key. This value is equivalent to the output of <code>ssh-keygen -l -E md5
+     * -f my-new-server-key</code> command.</p>
+     */
+    inline DescribedServer& WithHostKeyFingerprint(const Aws::String& value) { SetHostKeyFingerprint(value); return *this;}
+
+    /**
+     * <p>This value contains the Message-Digest Algorithm (MD5) hash of the server's
+     * host key. This value is equivalent to the output of <code>ssh-keygen -l -E md5
+     * -f my-new-server-key</code> command.</p>
+     */
+    inline DescribedServer& WithHostKeyFingerprint(Aws::String&& value) { SetHostKeyFingerprint(std::move(value)); return *this;}
+
+    /**
+     * <p>This value contains the Message-Digest Algorithm (MD5) hash of the server's
+     * host key. This value is equivalent to the output of <code>ssh-keygen -l -E md5
+     * -f my-new-server-key</code> command.</p>
+     */
+    inline DescribedServer& WithHostKeyFingerprint(const char* value) { SetHostKeyFingerprint(value); return *this;}
 
 
     /**
@@ -504,6 +603,9 @@ namespace Model
 
     EndpointType m_endpointType;
     bool m_endpointTypeHasBeenSet;
+
+    Aws::String m_hostKeyFingerprint;
+    bool m_hostKeyFingerprintHasBeenSet;
 
     IdentityProviderDetails m_identityProviderDetails;
     bool m_identityProviderDetailsHasBeenSet;

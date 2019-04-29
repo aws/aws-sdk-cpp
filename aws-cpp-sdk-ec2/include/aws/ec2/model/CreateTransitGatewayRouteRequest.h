@@ -178,22 +178,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether traffic matching this route is to be dropped.</p>
+     * <p>Indicates whether to drop traffic if the target isn't available.</p>
      */
     inline bool GetBlackhole() const{ return m_blackhole; }
 
     /**
-     * <p>Indicates whether traffic matching this route is to be dropped.</p>
+     * <p>Indicates whether to drop traffic if the target isn't available.</p>
      */
     inline bool BlackholeHasBeenSet() const { return m_blackholeHasBeenSet; }
 
     /**
-     * <p>Indicates whether traffic matching this route is to be dropped.</p>
+     * <p>Indicates whether to drop traffic if the target isn't available.</p>
      */
     inline void SetBlackhole(bool value) { m_blackholeHasBeenSet = true; m_blackhole = value; }
 
     /**
-     * <p>Indicates whether traffic matching this route is to be dropped.</p>
+     * <p>Indicates whether to drop traffic if the target isn't available.</p>
      */
     inline CreateTransitGatewayRouteRequest& WithBlackhole(bool value) { SetBlackhole(value); return *this;}
 

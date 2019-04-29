@@ -250,32 +250,32 @@ namespace Model
 
 
     /**
-     * <p>The type of interface.</p>
+     * <p>The type of network interface.</p>
      */
     inline const NetworkInterfaceType& GetInterfaceType() const{ return m_interfaceType; }
 
     /**
-     * <p>The type of interface.</p>
+     * <p>The type of network interface.</p>
      */
     inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }
 
     /**
-     * <p>The type of interface.</p>
+     * <p>The type of network interface.</p>
      */
     inline void SetInterfaceType(const NetworkInterfaceType& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
 
     /**
-     * <p>The type of interface.</p>
+     * <p>The type of network interface.</p>
      */
     inline void SetInterfaceType(NetworkInterfaceType&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = std::move(value); }
 
     /**
-     * <p>The type of interface.</p>
+     * <p>The type of network interface.</p>
      */
     inline NetworkInterface& WithInterfaceType(const NetworkInterfaceType& value) { SetInterfaceType(value); return *this;}
 
     /**
-     * <p>The type of interface.</p>
+     * <p>The type of network interface.</p>
      */
     inline NetworkInterface& WithInterfaceType(NetworkInterfaceType&& value) { SetInterfaceType(std::move(value)); return *this;}
 

@@ -82,17 +82,16 @@ namespace Model
 
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
-     * </li> <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li> <li>
-     * <p> <code>resource-type</code> - The resource type
-     * (<code>customer-gateway</code> | <code>dedicated-host</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     * <code>fpga-image</code> | <code>image</code> | <code>instance</code> |
-     * <code>host-reservation</code> | <code>internet-gateway</code> |
-     * <code>launch-template</code> | <code>natgateway</code> |
-     * <code>network-acl</code> | <code>network-interface</code> |
-     * <code>reserved-instances</code> | <code>route-table</code> |
-     * <code>security-group</code> | <code>snapshot</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p> </li> <li>
+     * <p> <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
+     * <code>dedicated-host</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
+     * <code>image</code> | <code>instance</code> | <code>host-reservation</code> |
+     * <code>internet-gateway</code> | <code>launch-template</code> |
+     * <code>natgateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> |
+     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
      * | <code>vpc</code> | <code>vpc-peering-connection</code> |
      * <code>vpn-connection</code> | <code>vpn-gateway</code>).</p> </li> <li> <p>
@@ -104,17 +103,16 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
-     * </li> <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li> <li>
-     * <p> <code>resource-type</code> - The resource type
-     * (<code>customer-gateway</code> | <code>dedicated-host</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     * <code>fpga-image</code> | <code>image</code> | <code>instance</code> |
-     * <code>host-reservation</code> | <code>internet-gateway</code> |
-     * <code>launch-template</code> | <code>natgateway</code> |
-     * <code>network-acl</code> | <code>network-interface</code> |
-     * <code>reserved-instances</code> | <code>route-table</code> |
-     * <code>security-group</code> | <code>snapshot</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p> </li> <li>
+     * <p> <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
+     * <code>dedicated-host</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
+     * <code>image</code> | <code>instance</code> | <code>host-reservation</code> |
+     * <code>internet-gateway</code> | <code>launch-template</code> |
+     * <code>natgateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> |
+     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
      * | <code>vpc</code> | <code>vpc-peering-connection</code> |
      * <code>vpn-connection</code> | <code>vpn-gateway</code>).</p> </li> <li> <p>
@@ -126,17 +124,16 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
-     * </li> <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li> <li>
-     * <p> <code>resource-type</code> - The resource type
-     * (<code>customer-gateway</code> | <code>dedicated-host</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     * <code>fpga-image</code> | <code>image</code> | <code>instance</code> |
-     * <code>host-reservation</code> | <code>internet-gateway</code> |
-     * <code>launch-template</code> | <code>natgateway</code> |
-     * <code>network-acl</code> | <code>network-interface</code> |
-     * <code>reserved-instances</code> | <code>route-table</code> |
-     * <code>security-group</code> | <code>snapshot</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p> </li> <li>
+     * <p> <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
+     * <code>dedicated-host</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
+     * <code>image</code> | <code>instance</code> | <code>host-reservation</code> |
+     * <code>internet-gateway</code> | <code>launch-template</code> |
+     * <code>natgateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> |
+     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
      * | <code>vpc</code> | <code>vpc-peering-connection</code> |
      * <code>vpn-connection</code> | <code>vpn-gateway</code>).</p> </li> <li> <p>
@@ -148,17 +145,16 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
-     * </li> <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li> <li>
-     * <p> <code>resource-type</code> - The resource type
-     * (<code>customer-gateway</code> | <code>dedicated-host</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     * <code>fpga-image</code> | <code>image</code> | <code>instance</code> |
-     * <code>host-reservation</code> | <code>internet-gateway</code> |
-     * <code>launch-template</code> | <code>natgateway</code> |
-     * <code>network-acl</code> | <code>network-interface</code> |
-     * <code>reserved-instances</code> | <code>route-table</code> |
-     * <code>security-group</code> | <code>snapshot</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p> </li> <li>
+     * <p> <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
+     * <code>dedicated-host</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
+     * <code>image</code> | <code>instance</code> | <code>host-reservation</code> |
+     * <code>internet-gateway</code> | <code>launch-template</code> |
+     * <code>natgateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> |
+     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
      * | <code>vpc</code> | <code>vpc-peering-connection</code> |
      * <code>vpn-connection</code> | <code>vpn-gateway</code>).</p> </li> <li> <p>
@@ -170,17 +166,16 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
-     * </li> <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li> <li>
-     * <p> <code>resource-type</code> - The resource type
-     * (<code>customer-gateway</code> | <code>dedicated-host</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     * <code>fpga-image</code> | <code>image</code> | <code>instance</code> |
-     * <code>host-reservation</code> | <code>internet-gateway</code> |
-     * <code>launch-template</code> | <code>natgateway</code> |
-     * <code>network-acl</code> | <code>network-interface</code> |
-     * <code>reserved-instances</code> | <code>route-table</code> |
-     * <code>security-group</code> | <code>snapshot</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p> </li> <li>
+     * <p> <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
+     * <code>dedicated-host</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
+     * <code>image</code> | <code>instance</code> | <code>host-reservation</code> |
+     * <code>internet-gateway</code> | <code>launch-template</code> |
+     * <code>natgateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> |
+     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
      * | <code>vpc</code> | <code>vpc-peering-connection</code> |
      * <code>vpn-connection</code> | <code>vpn-gateway</code>).</p> </li> <li> <p>
@@ -192,17 +187,16 @@ namespace Model
     inline DescribeTagsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
-     * </li> <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li> <li>
-     * <p> <code>resource-type</code> - The resource type
-     * (<code>customer-gateway</code> | <code>dedicated-host</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     * <code>fpga-image</code> | <code>image</code> | <code>instance</code> |
-     * <code>host-reservation</code> | <code>internet-gateway</code> |
-     * <code>launch-template</code> | <code>natgateway</code> |
-     * <code>network-acl</code> | <code>network-interface</code> |
-     * <code>reserved-instances</code> | <code>route-table</code> |
-     * <code>security-group</code> | <code>snapshot</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p> </li> <li>
+     * <p> <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
+     * <code>dedicated-host</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
+     * <code>image</code> | <code>instance</code> | <code>host-reservation</code> |
+     * <code>internet-gateway</code> | <code>launch-template</code> |
+     * <code>natgateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> |
+     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
      * | <code>vpc</code> | <code>vpc-peering-connection</code> |
      * <code>vpn-connection</code> | <code>vpn-gateway</code>).</p> </li> <li> <p>
@@ -214,17 +208,16 @@ namespace Model
     inline DescribeTagsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
-     * </li> <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li> <li>
-     * <p> <code>resource-type</code> - The resource type
-     * (<code>customer-gateway</code> | <code>dedicated-host</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     * <code>fpga-image</code> | <code>image</code> | <code>instance</code> |
-     * <code>host-reservation</code> | <code>internet-gateway</code> |
-     * <code>launch-template</code> | <code>natgateway</code> |
-     * <code>network-acl</code> | <code>network-interface</code> |
-     * <code>reserved-instances</code> | <code>route-table</code> |
-     * <code>security-group</code> | <code>snapshot</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p> </li> <li>
+     * <p> <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
+     * <code>dedicated-host</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
+     * <code>image</code> | <code>instance</code> | <code>host-reservation</code> |
+     * <code>internet-gateway</code> | <code>launch-template</code> |
+     * <code>natgateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> |
+     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
      * | <code>vpc</code> | <code>vpc-peering-connection</code> |
      * <code>vpn-connection</code> | <code>vpn-gateway</code>).</p> </li> <li> <p>
@@ -236,17 +229,16 @@ namespace Model
     inline DescribeTagsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
-     * </li> <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li> <li>
-     * <p> <code>resource-type</code> - The resource type
-     * (<code>customer-gateway</code> | <code>dedicated-host</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     * <code>fpga-image</code> | <code>image</code> | <code>instance</code> |
-     * <code>host-reservation</code> | <code>internet-gateway</code> |
-     * <code>launch-template</code> | <code>natgateway</code> |
-     * <code>network-acl</code> | <code>network-interface</code> |
-     * <code>reserved-instances</code> | <code>route-table</code> |
-     * <code>security-group</code> | <code>snapshot</code> |
+     * <p>The filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p> </li> <li>
+     * <p> <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
+     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
+     * <code>dedicated-host</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
+     * <code>image</code> | <code>instance</code> | <code>host-reservation</code> |
+     * <code>internet-gateway</code> | <code>launch-template</code> |
+     * <code>natgateway</code> | <code>network-acl</code> |
+     * <code>network-interface</code> | <code>reserved-instances</code> |
+     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
      * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
      * | <code>vpc</code> | <code>vpc-peering-connection</code> |
      * <code>vpn-connection</code> | <code>vpn-gateway</code>).</p> </li> <li> <p>

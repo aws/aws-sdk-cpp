@@ -695,42 +695,50 @@ namespace Model
 
 
     /**
-     * <p>The Base64-encoded user data for the instance.</p>
+     * <p>The Base64-encoded user data for the instance. User data is limited to 16
+     * KB.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The Base64-encoded user data for the instance.</p>
+     * <p>The Base64-encoded user data for the instance. User data is limited to 16
+     * KB.</p>
      */
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
-     * <p>The Base64-encoded user data for the instance.</p>
+     * <p>The Base64-encoded user data for the instance. User data is limited to 16
+     * KB.</p>
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The Base64-encoded user data for the instance.</p>
+     * <p>The Base64-encoded user data for the instance. User data is limited to 16
+     * KB.</p>
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
-     * <p>The Base64-encoded user data for the instance.</p>
+     * <p>The Base64-encoded user data for the instance. User data is limited to 16
+     * KB.</p>
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
-     * <p>The Base64-encoded user data for the instance.</p>
+     * <p>The Base64-encoded user data for the instance. User data is limited to 16
+     * KB.</p>
      */
     inline RequestSpotLaunchSpecification& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The Base64-encoded user data for the instance.</p>
+     * <p>The Base64-encoded user data for the instance. User data is limited to 16
+     * KB.</p>
      */
     inline RequestSpotLaunchSpecification& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
-     * <p>The Base64-encoded user data for the instance.</p>
+     * <p>The Base64-encoded user data for the instance. User data is limited to 16
+     * KB.</p>
      */
     inline RequestSpotLaunchSpecification& WithUserData(const char* value) { SetUserData(value); return *this;}
 

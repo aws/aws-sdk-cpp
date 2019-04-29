@@ -129,93 +129,93 @@ namespace Model
 
 
     /**
-     * <p>One or more security group IDs.</p>
+     * <p>The security group IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroupIds() const{ return m_groupIds; }
 
     /**
-     * <p>One or more security group IDs.</p>
+     * <p>The security group IDs.</p>
      */
     inline bool GroupIdsHasBeenSet() const { return m_groupIdsHasBeenSet; }
 
     /**
-     * <p>One or more security group IDs.</p>
+     * <p>The security group IDs.</p>
      */
     inline void SetGroupIds(const Aws::Vector<Aws::String>& value) { m_groupIdsHasBeenSet = true; m_groupIds = value; }
 
     /**
-     * <p>One or more security group IDs.</p>
+     * <p>The security group IDs.</p>
      */
     inline void SetGroupIds(Aws::Vector<Aws::String>&& value) { m_groupIdsHasBeenSet = true; m_groupIds = std::move(value); }
 
     /**
-     * <p>One or more security group IDs.</p>
+     * <p>The security group IDs.</p>
      */
     inline ImportInstanceLaunchSpecification& WithGroupIds(const Aws::Vector<Aws::String>& value) { SetGroupIds(value); return *this;}
 
     /**
-     * <p>One or more security group IDs.</p>
+     * <p>The security group IDs.</p>
      */
     inline ImportInstanceLaunchSpecification& WithGroupIds(Aws::Vector<Aws::String>&& value) { SetGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more security group IDs.</p>
+     * <p>The security group IDs.</p>
      */
     inline ImportInstanceLaunchSpecification& AddGroupIds(const Aws::String& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more security group IDs.</p>
+     * <p>The security group IDs.</p>
      */
     inline ImportInstanceLaunchSpecification& AddGroupIds(Aws::String&& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more security group IDs.</p>
+     * <p>The security group IDs.</p>
      */
     inline ImportInstanceLaunchSpecification& AddGroupIds(const char* value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
 
 
     /**
-     * <p>One or more security group names.</p>
+     * <p>The security group names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroupNames() const{ return m_groupNames; }
 
     /**
-     * <p>One or more security group names.</p>
+     * <p>The security group names.</p>
      */
     inline bool GroupNamesHasBeenSet() const { return m_groupNamesHasBeenSet; }
 
     /**
-     * <p>One or more security group names.</p>
+     * <p>The security group names.</p>
      */
     inline void SetGroupNames(const Aws::Vector<Aws::String>& value) { m_groupNamesHasBeenSet = true; m_groupNames = value; }
 
     /**
-     * <p>One or more security group names.</p>
+     * <p>The security group names.</p>
      */
     inline void SetGroupNames(Aws::Vector<Aws::String>&& value) { m_groupNamesHasBeenSet = true; m_groupNames = std::move(value); }
 
     /**
-     * <p>One or more security group names.</p>
+     * <p>The security group names.</p>
      */
     inline ImportInstanceLaunchSpecification& WithGroupNames(const Aws::Vector<Aws::String>& value) { SetGroupNames(value); return *this;}
 
     /**
-     * <p>One or more security group names.</p>
+     * <p>The security group names.</p>
      */
     inline ImportInstanceLaunchSpecification& WithGroupNames(Aws::Vector<Aws::String>&& value) { SetGroupNames(std::move(value)); return *this;}
 
     /**
-     * <p>One or more security group names.</p>
+     * <p>The security group names.</p>
      */
     inline ImportInstanceLaunchSpecification& AddGroupNames(const Aws::String& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
 
     /**
-     * <p>One or more security group names.</p>
+     * <p>The security group names.</p>
      */
     inline ImportInstanceLaunchSpecification& AddGroupNames(Aws::String&& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more security group names.</p>
+     * <p>The security group names.</p>
      */
     inline ImportInstanceLaunchSpecification& AddGroupNames(const char* value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
 

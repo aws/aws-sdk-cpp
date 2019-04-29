@@ -207,6 +207,47 @@ namespace Model
 
 
     /**
+     * <p>The type of networking interface.</p>
+     */
+    inline const Aws::String& GetInterfaceType() const{ return m_interfaceType; }
+
+    /**
+     * <p>The type of networking interface.</p>
+     */
+    inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of networking interface.</p>
+     */
+    inline void SetInterfaceType(const Aws::String& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
+
+    /**
+     * <p>The type of networking interface.</p>
+     */
+    inline void SetInterfaceType(Aws::String&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = std::move(value); }
+
+    /**
+     * <p>The type of networking interface.</p>
+     */
+    inline void SetInterfaceType(const char* value) { m_interfaceTypeHasBeenSet = true; m_interfaceType.assign(value); }
+
+    /**
+     * <p>The type of networking interface.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& WithInterfaceType(const Aws::String& value) { SetInterfaceType(value); return *this;}
+
+    /**
+     * <p>The type of networking interface.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& WithInterfaceType(Aws::String&& value) { SetInterfaceType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of networking interface.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& WithInterfaceType(const char* value) { SetInterfaceType(value); return *this;}
+
+
+    /**
      * <p>The number of IPv6 addresses to assign to a network interface. Amazon EC2
      * automatically selects the IPv6 addresses from the subnet range. You can't use
      * this option if specifying specific IPv6 addresses.</p>
@@ -496,6 +537,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_groups;
     bool m_groupsHasBeenSet;
+
+    Aws::String m_interfaceType;
+    bool m_interfaceTypeHasBeenSet;
 
     int m_ipv6AddressCount;
     bool m_ipv6AddressCountHasBeenSet;

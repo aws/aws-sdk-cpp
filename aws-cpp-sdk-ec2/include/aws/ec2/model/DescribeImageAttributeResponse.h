@@ -54,37 +54,37 @@ namespace Model
 
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>The block device mapping entries.</p>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>The block device mapping entries.</p>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappings = value; }
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>The block device mapping entries.</p>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappings = std::move(value); }
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>The block device mapping entries.</p>
      */
     inline DescribeImageAttributeResponse& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>The block device mapping entries.</p>
      */
     inline DescribeImageAttributeResponse& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>The block device mapping entries.</p>
      */
     inline DescribeImageAttributeResponse& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>The block device mapping entries.</p>
      */
     inline DescribeImageAttributeResponse& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
@@ -126,73 +126,73 @@ namespace Model
 
 
     /**
-     * <p>One or more launch permissions.</p>
+     * <p>The launch permissions.</p>
      */
     inline const Aws::Vector<LaunchPermission>& GetLaunchPermissions() const{ return m_launchPermissions; }
 
     /**
-     * <p>One or more launch permissions.</p>
+     * <p>The launch permissions.</p>
      */
     inline void SetLaunchPermissions(const Aws::Vector<LaunchPermission>& value) { m_launchPermissions = value; }
 
     /**
-     * <p>One or more launch permissions.</p>
+     * <p>The launch permissions.</p>
      */
     inline void SetLaunchPermissions(Aws::Vector<LaunchPermission>&& value) { m_launchPermissions = std::move(value); }
 
     /**
-     * <p>One or more launch permissions.</p>
+     * <p>The launch permissions.</p>
      */
     inline DescribeImageAttributeResponse& WithLaunchPermissions(const Aws::Vector<LaunchPermission>& value) { SetLaunchPermissions(value); return *this;}
 
     /**
-     * <p>One or more launch permissions.</p>
+     * <p>The launch permissions.</p>
      */
     inline DescribeImageAttributeResponse& WithLaunchPermissions(Aws::Vector<LaunchPermission>&& value) { SetLaunchPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>One or more launch permissions.</p>
+     * <p>The launch permissions.</p>
      */
     inline DescribeImageAttributeResponse& AddLaunchPermissions(const LaunchPermission& value) { m_launchPermissions.push_back(value); return *this; }
 
     /**
-     * <p>One or more launch permissions.</p>
+     * <p>The launch permissions.</p>
      */
     inline DescribeImageAttributeResponse& AddLaunchPermissions(LaunchPermission&& value) { m_launchPermissions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>One or more product codes.</p>
+     * <p>The product codes.</p>
      */
     inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
 
     /**
-     * <p>One or more product codes.</p>
+     * <p>The product codes.</p>
      */
     inline void SetProductCodes(const Aws::Vector<ProductCode>& value) { m_productCodes = value; }
 
     /**
-     * <p>One or more product codes.</p>
+     * <p>The product codes.</p>
      */
     inline void SetProductCodes(Aws::Vector<ProductCode>&& value) { m_productCodes = std::move(value); }
 
     /**
-     * <p>One or more product codes.</p>
+     * <p>The product codes.</p>
      */
     inline DescribeImageAttributeResponse& WithProductCodes(const Aws::Vector<ProductCode>& value) { SetProductCodes(value); return *this;}
 
     /**
-     * <p>One or more product codes.</p>
+     * <p>The product codes.</p>
      */
     inline DescribeImageAttributeResponse& WithProductCodes(Aws::Vector<ProductCode>&& value) { SetProductCodes(std::move(value)); return *this;}
 
     /**
-     * <p>One or more product codes.</p>
+     * <p>The product codes.</p>
      */
     inline DescribeImageAttributeResponse& AddProductCodes(const ProductCode& value) { m_productCodes.push_back(value); return *this; }
 
     /**
-     * <p>One or more product codes.</p>
+     * <p>The product codes.</p>
      */
     inline DescribeImageAttributeResponse& AddProductCodes(ProductCode&& value) { m_productCodes.push_back(std::move(value)); return *this; }
 

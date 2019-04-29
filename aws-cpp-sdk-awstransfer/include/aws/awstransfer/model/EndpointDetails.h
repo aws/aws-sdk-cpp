@@ -33,6 +33,12 @@ namespace Transfer
 namespace Model
 {
 
+  /**
+   * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
+   * your SFTP server.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/EndpointDetails">AWS
+   * API Reference</a></p>
+   */
   class AWS_TRANSFER_API EndpointDetails
   {
   public:
@@ -42,28 +48,44 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The ID of the VPC endpoint.</p>
+     */
     inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
 
-    
+    /**
+     * <p>The ID of the VPC endpoint.</p>
+     */
     inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
 
-    
+    /**
+     * <p>The ID of the VPC endpoint.</p>
+     */
     inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
 
-    
+    /**
+     * <p>The ID of the VPC endpoint.</p>
+     */
     inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the VPC endpoint.</p>
+     */
     inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the VPC endpoint.</p>
+     */
     inline EndpointDetails& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the VPC endpoint.</p>
+     */
     inline EndpointDetails& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the VPC endpoint.</p>
+     */
     inline EndpointDetails& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
 
   private:

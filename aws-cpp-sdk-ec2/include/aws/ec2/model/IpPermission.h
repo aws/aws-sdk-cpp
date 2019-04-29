@@ -85,122 +85,114 @@ namespace Model
 
 
     /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+     * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). </p> <p>[EC2-VPC only] Use <code>-1</code> to specify all
-     * protocols. When authorizing security group rules, specifying <code>-1</code> or
-     * a protocol number other than <code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>, or <code>58</code> (ICMPv6) allows traffic on all ports,
-     * regardless of any port range you specify. For <code>tcp</code>,
-     * <code>udp</code>, and <code>icmp</code>, you must specify a port range. For
-     * <code>58</code> (ICMPv6), you can optionally specify a port range; if you don't,
-     * traffic for all types and codes is allowed when authorizing rules. </p>
+     * Numbers</a>).</p> <p>[VPC only] Use <code>-1</code> to specify all protocols.
+     * When authorizing security group rules, specifying <code>-1</code> or a protocol
+     * number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or
+     * <code>icmpv6</code> allows traffic on all ports, regardless of any port range
+     * you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
+     * must specify a port range. For <code>icmpv6</code>, the port range is optional;
+     * if you omit the port range, traffic for all types and codes is allowed.</p>
      */
     inline const Aws::String& GetIpProtocol() const{ return m_ipProtocol; }
 
     /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+     * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). </p> <p>[EC2-VPC only] Use <code>-1</code> to specify all
-     * protocols. When authorizing security group rules, specifying <code>-1</code> or
-     * a protocol number other than <code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>, or <code>58</code> (ICMPv6) allows traffic on all ports,
-     * regardless of any port range you specify. For <code>tcp</code>,
-     * <code>udp</code>, and <code>icmp</code>, you must specify a port range. For
-     * <code>58</code> (ICMPv6), you can optionally specify a port range; if you don't,
-     * traffic for all types and codes is allowed when authorizing rules. </p>
+     * Numbers</a>).</p> <p>[VPC only] Use <code>-1</code> to specify all protocols.
+     * When authorizing security group rules, specifying <code>-1</code> or a protocol
+     * number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or
+     * <code>icmpv6</code> allows traffic on all ports, regardless of any port range
+     * you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
+     * must specify a port range. For <code>icmpv6</code>, the port range is optional;
+     * if you omit the port range, traffic for all types and codes is allowed.</p>
      */
     inline bool IpProtocolHasBeenSet() const { return m_ipProtocolHasBeenSet; }
 
     /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+     * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). </p> <p>[EC2-VPC only] Use <code>-1</code> to specify all
-     * protocols. When authorizing security group rules, specifying <code>-1</code> or
-     * a protocol number other than <code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>, or <code>58</code> (ICMPv6) allows traffic on all ports,
-     * regardless of any port range you specify. For <code>tcp</code>,
-     * <code>udp</code>, and <code>icmp</code>, you must specify a port range. For
-     * <code>58</code> (ICMPv6), you can optionally specify a port range; if you don't,
-     * traffic for all types and codes is allowed when authorizing rules. </p>
+     * Numbers</a>).</p> <p>[VPC only] Use <code>-1</code> to specify all protocols.
+     * When authorizing security group rules, specifying <code>-1</code> or a protocol
+     * number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or
+     * <code>icmpv6</code> allows traffic on all ports, regardless of any port range
+     * you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
+     * must specify a port range. For <code>icmpv6</code>, the port range is optional;
+     * if you omit the port range, traffic for all types and codes is allowed.</p>
      */
     inline void SetIpProtocol(const Aws::String& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
 
     /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+     * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). </p> <p>[EC2-VPC only] Use <code>-1</code> to specify all
-     * protocols. When authorizing security group rules, specifying <code>-1</code> or
-     * a protocol number other than <code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>, or <code>58</code> (ICMPv6) allows traffic on all ports,
-     * regardless of any port range you specify. For <code>tcp</code>,
-     * <code>udp</code>, and <code>icmp</code>, you must specify a port range. For
-     * <code>58</code> (ICMPv6), you can optionally specify a port range; if you don't,
-     * traffic for all types and codes is allowed when authorizing rules. </p>
+     * Numbers</a>).</p> <p>[VPC only] Use <code>-1</code> to specify all protocols.
+     * When authorizing security group rules, specifying <code>-1</code> or a protocol
+     * number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or
+     * <code>icmpv6</code> allows traffic on all ports, regardless of any port range
+     * you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
+     * must specify a port range. For <code>icmpv6</code>, the port range is optional;
+     * if you omit the port range, traffic for all types and codes is allowed.</p>
      */
     inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = std::move(value); }
 
     /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+     * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). </p> <p>[EC2-VPC only] Use <code>-1</code> to specify all
-     * protocols. When authorizing security group rules, specifying <code>-1</code> or
-     * a protocol number other than <code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>, or <code>58</code> (ICMPv6) allows traffic on all ports,
-     * regardless of any port range you specify. For <code>tcp</code>,
-     * <code>udp</code>, and <code>icmp</code>, you must specify a port range. For
-     * <code>58</code> (ICMPv6), you can optionally specify a port range; if you don't,
-     * traffic for all types and codes is allowed when authorizing rules. </p>
+     * Numbers</a>).</p> <p>[VPC only] Use <code>-1</code> to specify all protocols.
+     * When authorizing security group rules, specifying <code>-1</code> or a protocol
+     * number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or
+     * <code>icmpv6</code> allows traffic on all ports, regardless of any port range
+     * you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
+     * must specify a port range. For <code>icmpv6</code>, the port range is optional;
+     * if you omit the port range, traffic for all types and codes is allowed.</p>
      */
     inline void SetIpProtocol(const char* value) { m_ipProtocolHasBeenSet = true; m_ipProtocol.assign(value); }
 
     /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+     * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). </p> <p>[EC2-VPC only] Use <code>-1</code> to specify all
-     * protocols. When authorizing security group rules, specifying <code>-1</code> or
-     * a protocol number other than <code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>, or <code>58</code> (ICMPv6) allows traffic on all ports,
-     * regardless of any port range you specify. For <code>tcp</code>,
-     * <code>udp</code>, and <code>icmp</code>, you must specify a port range. For
-     * <code>58</code> (ICMPv6), you can optionally specify a port range; if you don't,
-     * traffic for all types and codes is allowed when authorizing rules. </p>
+     * Numbers</a>).</p> <p>[VPC only] Use <code>-1</code> to specify all protocols.
+     * When authorizing security group rules, specifying <code>-1</code> or a protocol
+     * number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or
+     * <code>icmpv6</code> allows traffic on all ports, regardless of any port range
+     * you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
+     * must specify a port range. For <code>icmpv6</code>, the port range is optional;
+     * if you omit the port range, traffic for all types and codes is allowed.</p>
      */
     inline IpPermission& WithIpProtocol(const Aws::String& value) { SetIpProtocol(value); return *this;}
 
     /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+     * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). </p> <p>[EC2-VPC only] Use <code>-1</code> to specify all
-     * protocols. When authorizing security group rules, specifying <code>-1</code> or
-     * a protocol number other than <code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>, or <code>58</code> (ICMPv6) allows traffic on all ports,
-     * regardless of any port range you specify. For <code>tcp</code>,
-     * <code>udp</code>, and <code>icmp</code>, you must specify a port range. For
-     * <code>58</code> (ICMPv6), you can optionally specify a port range; if you don't,
-     * traffic for all types and codes is allowed when authorizing rules. </p>
+     * Numbers</a>).</p> <p>[VPC only] Use <code>-1</code> to specify all protocols.
+     * When authorizing security group rules, specifying <code>-1</code> or a protocol
+     * number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or
+     * <code>icmpv6</code> allows traffic on all ports, regardless of any port range
+     * you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
+     * must specify a port range. For <code>icmpv6</code>, the port range is optional;
+     * if you omit the port range, traffic for all types and codes is allowed.</p>
      */
     inline IpPermission& WithIpProtocol(Aws::String&& value) { SetIpProtocol(std::move(value)); return *this;}
 
     /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+     * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). </p> <p>[EC2-VPC only] Use <code>-1</code> to specify all
-     * protocols. When authorizing security group rules, specifying <code>-1</code> or
-     * a protocol number other than <code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>, or <code>58</code> (ICMPv6) allows traffic on all ports,
-     * regardless of any port range you specify. For <code>tcp</code>,
-     * <code>udp</code>, and <code>icmp</code>, you must specify a port range. For
-     * <code>58</code> (ICMPv6), you can optionally specify a port range; if you don't,
-     * traffic for all types and codes is allowed when authorizing rules. </p>
+     * Numbers</a>).</p> <p>[VPC only] Use <code>-1</code> to specify all protocols.
+     * When authorizing security group rules, specifying <code>-1</code> or a protocol
+     * number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or
+     * <code>icmpv6</code> allows traffic on all ports, regardless of any port range
+     * you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
+     * must specify a port range. For <code>icmpv6</code>, the port range is optional;
+     * if you omit the port range, traffic for all types and codes is allowed.</p>
      */
     inline IpPermission& WithIpProtocol(const char* value) { SetIpProtocol(value); return *this;}
 
@@ -247,136 +239,128 @@ namespace Model
 
 
     /**
-     * <p>[EC2-VPC only] The IPv6 ranges.</p>
+     * <p>[VPC only] The IPv6 ranges.</p>
      */
     inline const Aws::Vector<Ipv6Range>& GetIpv6Ranges() const{ return m_ipv6Ranges; }
 
     /**
-     * <p>[EC2-VPC only] The IPv6 ranges.</p>
+     * <p>[VPC only] The IPv6 ranges.</p>
      */
     inline bool Ipv6RangesHasBeenSet() const { return m_ipv6RangesHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC only] The IPv6 ranges.</p>
+     * <p>[VPC only] The IPv6 ranges.</p>
      */
     inline void SetIpv6Ranges(const Aws::Vector<Ipv6Range>& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges = value; }
 
     /**
-     * <p>[EC2-VPC only] The IPv6 ranges.</p>
+     * <p>[VPC only] The IPv6 ranges.</p>
      */
     inline void SetIpv6Ranges(Aws::Vector<Ipv6Range>&& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges = std::move(value); }
 
     /**
-     * <p>[EC2-VPC only] The IPv6 ranges.</p>
+     * <p>[VPC only] The IPv6 ranges.</p>
      */
     inline IpPermission& WithIpv6Ranges(const Aws::Vector<Ipv6Range>& value) { SetIpv6Ranges(value); return *this;}
 
     /**
-     * <p>[EC2-VPC only] The IPv6 ranges.</p>
+     * <p>[VPC only] The IPv6 ranges.</p>
      */
     inline IpPermission& WithIpv6Ranges(Aws::Vector<Ipv6Range>&& value) { SetIpv6Ranges(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC only] The IPv6 ranges.</p>
+     * <p>[VPC only] The IPv6 ranges.</p>
      */
     inline IpPermission& AddIpv6Ranges(const Ipv6Range& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-VPC only] The IPv6 ranges.</p>
+     * <p>[VPC only] The IPv6 ranges.</p>
      */
     inline IpPermission& AddIpv6Ranges(Ipv6Range&& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>[EC2-VPC only] The prefix list IDs for an AWS service. With
-     * <a>AuthorizeSecurityGroupEgress</a>, this is the AWS service that you want to
-     * access through a VPC endpoint from instances associated with the security
-     * group.</p>
+     * <p>[VPC only] The prefix list IDs for an AWS service. With outbound rules, this
+     * is the AWS service to access through a VPC endpoint from instances associated
+     * with the security group.</p>
      */
     inline const Aws::Vector<PrefixListId>& GetPrefixListIds() const{ return m_prefixListIds; }
 
     /**
-     * <p>[EC2-VPC only] The prefix list IDs for an AWS service. With
-     * <a>AuthorizeSecurityGroupEgress</a>, this is the AWS service that you want to
-     * access through a VPC endpoint from instances associated with the security
-     * group.</p>
+     * <p>[VPC only] The prefix list IDs for an AWS service. With outbound rules, this
+     * is the AWS service to access through a VPC endpoint from instances associated
+     * with the security group.</p>
      */
     inline bool PrefixListIdsHasBeenSet() const { return m_prefixListIdsHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC only] The prefix list IDs for an AWS service. With
-     * <a>AuthorizeSecurityGroupEgress</a>, this is the AWS service that you want to
-     * access through a VPC endpoint from instances associated with the security
-     * group.</p>
+     * <p>[VPC only] The prefix list IDs for an AWS service. With outbound rules, this
+     * is the AWS service to access through a VPC endpoint from instances associated
+     * with the security group.</p>
      */
     inline void SetPrefixListIds(const Aws::Vector<PrefixListId>& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = value; }
 
     /**
-     * <p>[EC2-VPC only] The prefix list IDs for an AWS service. With
-     * <a>AuthorizeSecurityGroupEgress</a>, this is the AWS service that you want to
-     * access through a VPC endpoint from instances associated with the security
-     * group.</p>
+     * <p>[VPC only] The prefix list IDs for an AWS service. With outbound rules, this
+     * is the AWS service to access through a VPC endpoint from instances associated
+     * with the security group.</p>
      */
     inline void SetPrefixListIds(Aws::Vector<PrefixListId>&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = std::move(value); }
 
     /**
-     * <p>[EC2-VPC only] The prefix list IDs for an AWS service. With
-     * <a>AuthorizeSecurityGroupEgress</a>, this is the AWS service that you want to
-     * access through a VPC endpoint from instances associated with the security
-     * group.</p>
+     * <p>[VPC only] The prefix list IDs for an AWS service. With outbound rules, this
+     * is the AWS service to access through a VPC endpoint from instances associated
+     * with the security group.</p>
      */
     inline IpPermission& WithPrefixListIds(const Aws::Vector<PrefixListId>& value) { SetPrefixListIds(value); return *this;}
 
     /**
-     * <p>[EC2-VPC only] The prefix list IDs for an AWS service. With
-     * <a>AuthorizeSecurityGroupEgress</a>, this is the AWS service that you want to
-     * access through a VPC endpoint from instances associated with the security
-     * group.</p>
+     * <p>[VPC only] The prefix list IDs for an AWS service. With outbound rules, this
+     * is the AWS service to access through a VPC endpoint from instances associated
+     * with the security group.</p>
      */
     inline IpPermission& WithPrefixListIds(Aws::Vector<PrefixListId>&& value) { SetPrefixListIds(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC only] The prefix list IDs for an AWS service. With
-     * <a>AuthorizeSecurityGroupEgress</a>, this is the AWS service that you want to
-     * access through a VPC endpoint from instances associated with the security
-     * group.</p>
+     * <p>[VPC only] The prefix list IDs for an AWS service. With outbound rules, this
+     * is the AWS service to access through a VPC endpoint from instances associated
+     * with the security group.</p>
      */
     inline IpPermission& AddPrefixListIds(const PrefixListId& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-VPC only] The prefix list IDs for an AWS service. With
-     * <a>AuthorizeSecurityGroupEgress</a>, this is the AWS service that you want to
-     * access through a VPC endpoint from instances associated with the security
-     * group.</p>
+     * <p>[VPC only] The prefix list IDs for an AWS service. With outbound rules, this
+     * is the AWS service to access through a VPC endpoint from instances associated
+     * with the security group.</p>
      */
     inline IpPermission& AddPrefixListIds(PrefixListId&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
-     * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes for the specified
-     * ICMP type. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
+     * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all
+     * ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline int GetToPort() const{ return m_toPort; }
 
     /**
      * <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
-     * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes for the specified
-     * ICMP type. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
+     * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all
+     * ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
 
     /**
      * <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
-     * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes for the specified
-     * ICMP type. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
+     * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all
+     * ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
      * <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
-     * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes for the specified
-     * ICMP type. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
+     * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all
+     * ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline IpPermission& WithToPort(int value) { SetToPort(value); return *this;}
 

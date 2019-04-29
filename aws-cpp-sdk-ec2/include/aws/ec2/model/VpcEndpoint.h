@@ -457,22 +457,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the VPC Endpoint is being managed by its service.</p>
+     * <p>Indicates whether the VPC endpoint is being managed by its service.</p>
      */
     inline bool GetRequesterManaged() const{ return m_requesterManaged; }
 
     /**
-     * <p>Indicates whether the VPC Endpoint is being managed by its service.</p>
+     * <p>Indicates whether the VPC endpoint is being managed by its service.</p>
      */
     inline bool RequesterManagedHasBeenSet() const { return m_requesterManagedHasBeenSet; }
 
     /**
-     * <p>Indicates whether the VPC Endpoint is being managed by its service.</p>
+     * <p>Indicates whether the VPC endpoint is being managed by its service.</p>
      */
     inline void SetRequesterManaged(bool value) { m_requesterManagedHasBeenSet = true; m_requesterManaged = value; }
 
     /**
-     * <p>Indicates whether the VPC Endpoint is being managed by its service.</p>
+     * <p>Indicates whether the VPC endpoint is being managed by its service.</p>
      */
     inline VpcEndpoint& WithRequesterManaged(bool value) { SetRequesterManaged(value); return *this;}
 

@@ -39,6 +39,7 @@ LaunchTemplateInstanceNetworkInterfaceSpecification::LaunchTemplateInstanceNetwo
     m_deviceIndex(0),
     m_deviceIndexHasBeenSet(false),
     m_groupsHasBeenSet(false),
+    m_interfaceTypeHasBeenSet(false),
     m_ipv6AddressCount(0),
     m_ipv6AddressCountHasBeenSet(false),
     m_ipv6AddressesHasBeenSet(false),
@@ -60,6 +61,7 @@ LaunchTemplateInstanceNetworkInterfaceSpecification::LaunchTemplateInstanceNetwo
     m_deviceIndex(0),
     m_deviceIndexHasBeenSet(false),
     m_groupsHasBeenSet(false),
+    m_interfaceTypeHasBeenSet(false),
     m_ipv6AddressCount(0),
     m_ipv6AddressCountHasBeenSet(false),
     m_ipv6AddressesHasBeenSet(false),
@@ -114,6 +116,12 @@ LaunchTemplateInstanceNetworkInterfaceSpecification& LaunchTemplateInstanceNetwo
       }
 
       m_groupsHasBeenSet = true;
+    }
+    XmlNode interfaceTypeNode = resultNode.FirstChild("interfaceType");
+    if(!interfaceTypeNode.IsNull())
+    {
+      m_interfaceType = StringUtils::Trim(interfaceTypeNode.GetText().c_str());
+      m_interfaceTypeHasBeenSet = true;
     }
     XmlNode ipv6AddressCountNode = resultNode.FirstChild("ipv6AddressCount");
     if(!ipv6AddressCountNode.IsNull())
@@ -205,6 +213,11 @@ void LaunchTemplateInstanceNetworkInterfaceSpecification::OutputToStream(Aws::OS
       }
   }
 
+  if(m_interfaceTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InterfaceType=" << StringUtils::URLEncode(m_interfaceType.c_str()) << "&";
+  }
+
   if(m_ipv6AddressCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".Ipv6AddressCount=" << m_ipv6AddressCount << "&";
@@ -279,6 +292,10 @@ void LaunchTemplateInstanceNetworkInterfaceSpecification::OutputToStream(Aws::OS
       {
         oStream << location << ".GroupSet." << groupsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_interfaceTypeHasBeenSet)
+  {
+      oStream << location << ".InterfaceType=" << StringUtils::URLEncode(m_interfaceType.c_str()) << "&";
   }
   if(m_ipv6AddressCountHasBeenSet)
   {

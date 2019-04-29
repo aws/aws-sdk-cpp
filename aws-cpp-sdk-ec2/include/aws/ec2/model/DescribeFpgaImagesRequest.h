@@ -82,47 +82,47 @@ namespace Model
 
 
     /**
-     * <p>One or more AFI IDs.</p>
+     * <p>The AFI IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFpgaImageIds() const{ return m_fpgaImageIds; }
 
     /**
-     * <p>One or more AFI IDs.</p>
+     * <p>The AFI IDs.</p>
      */
     inline bool FpgaImageIdsHasBeenSet() const { return m_fpgaImageIdsHasBeenSet; }
 
     /**
-     * <p>One or more AFI IDs.</p>
+     * <p>The AFI IDs.</p>
      */
     inline void SetFpgaImageIds(const Aws::Vector<Aws::String>& value) { m_fpgaImageIdsHasBeenSet = true; m_fpgaImageIds = value; }
 
     /**
-     * <p>One or more AFI IDs.</p>
+     * <p>The AFI IDs.</p>
      */
     inline void SetFpgaImageIds(Aws::Vector<Aws::String>&& value) { m_fpgaImageIdsHasBeenSet = true; m_fpgaImageIds = std::move(value); }
 
     /**
-     * <p>One or more AFI IDs.</p>
+     * <p>The AFI IDs.</p>
      */
     inline DescribeFpgaImagesRequest& WithFpgaImageIds(const Aws::Vector<Aws::String>& value) { SetFpgaImageIds(value); return *this;}
 
     /**
-     * <p>One or more AFI IDs.</p>
+     * <p>The AFI IDs.</p>
      */
     inline DescribeFpgaImagesRequest& WithFpgaImageIds(Aws::Vector<Aws::String>&& value) { SetFpgaImageIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more AFI IDs.</p>
+     * <p>The AFI IDs.</p>
      */
     inline DescribeFpgaImagesRequest& AddFpgaImageIds(const Aws::String& value) { m_fpgaImageIdsHasBeenSet = true; m_fpgaImageIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more AFI IDs.</p>
+     * <p>The AFI IDs.</p>
      */
     inline DescribeFpgaImagesRequest& AddFpgaImageIds(Aws::String&& value) { m_fpgaImageIdsHasBeenSet = true; m_fpgaImageIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more AFI IDs.</p>
+     * <p>The AFI IDs.</p>
      */
     inline DescribeFpgaImagesRequest& AddFpgaImageIds(const char* value) { m_fpgaImageIdsHasBeenSet = true; m_fpgaImageIds.push_back(value); return *this; }
 
@@ -192,194 +192,186 @@ namespace Model
 
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>create-time</code> - The
-     * creation time of the AFI.</p> </li> <li> <p> <code>fpga-image-id</code> - The
-     * FPGA image identifier (AFI ID).</p> </li> <li> <p>
-     * <code>fpga-image-global-id</code> - The global FPGA image identifier (AGFI
-     * ID).</p> </li> <li> <p> <code>name</code> - The name of the AFI.</p> </li> <li>
-     * <p> <code>owner-id</code> - The AWS account ID of the AFI owner.</p> </li> <li>
-     * <p> <code>product-code</code> - The product code.</p> </li> <li> <p>
-     * <code>shell-version</code> - The version of the AWS Shell that was used to
-     * create the bitstream.</p> </li> <li> <p> <code>state</code> - The state of the
-     * AFI (<code>pending</code> | <code>failed</code> | <code>available</code> |
-     * <code>unavailable</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> <li> <p> <code>update-time</code> - The time of the most recent
-     * update.</p> </li> </ul>
+     * <p>The filters.</p> <ul> <li> <p> <code>create-time</code> - The creation time
+     * of the AFI.</p> </li> <li> <p> <code>fpga-image-id</code> - The FPGA image
+     * identifier (AFI ID).</p> </li> <li> <p> <code>fpga-image-global-id</code> - The
+     * global FPGA image identifier (AGFI ID).</p> </li> <li> <p> <code>name</code> -
+     * The name of the AFI.</p> </li> <li> <p> <code>owner-id</code> - The AWS account
+     * ID of the AFI owner.</p> </li> <li> <p> <code>product-code</code> - The product
+     * code.</p> </li> <li> <p> <code>shell-version</code> - The version of the AWS
+     * Shell that was used to create the bitstream.</p> </li> <li> <p>
+     * <code>state</code> - The state of the AFI (<code>pending</code> |
+     * <code>failed</code> | <code>available</code> | <code>unavailable</code>).</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>update-time</code> - The time of the most recent update.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>create-time</code> - The
-     * creation time of the AFI.</p> </li> <li> <p> <code>fpga-image-id</code> - The
-     * FPGA image identifier (AFI ID).</p> </li> <li> <p>
-     * <code>fpga-image-global-id</code> - The global FPGA image identifier (AGFI
-     * ID).</p> </li> <li> <p> <code>name</code> - The name of the AFI.</p> </li> <li>
-     * <p> <code>owner-id</code> - The AWS account ID of the AFI owner.</p> </li> <li>
-     * <p> <code>product-code</code> - The product code.</p> </li> <li> <p>
-     * <code>shell-version</code> - The version of the AWS Shell that was used to
-     * create the bitstream.</p> </li> <li> <p> <code>state</code> - The state of the
-     * AFI (<code>pending</code> | <code>failed</code> | <code>available</code> |
-     * <code>unavailable</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> <li> <p> <code>update-time</code> - The time of the most recent
-     * update.</p> </li> </ul>
+     * <p>The filters.</p> <ul> <li> <p> <code>create-time</code> - The creation time
+     * of the AFI.</p> </li> <li> <p> <code>fpga-image-id</code> - The FPGA image
+     * identifier (AFI ID).</p> </li> <li> <p> <code>fpga-image-global-id</code> - The
+     * global FPGA image identifier (AGFI ID).</p> </li> <li> <p> <code>name</code> -
+     * The name of the AFI.</p> </li> <li> <p> <code>owner-id</code> - The AWS account
+     * ID of the AFI owner.</p> </li> <li> <p> <code>product-code</code> - The product
+     * code.</p> </li> <li> <p> <code>shell-version</code> - The version of the AWS
+     * Shell that was used to create the bitstream.</p> </li> <li> <p>
+     * <code>state</code> - The state of the AFI (<code>pending</code> |
+     * <code>failed</code> | <code>available</code> | <code>unavailable</code>).</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>update-time</code> - The time of the most recent update.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>create-time</code> - The
-     * creation time of the AFI.</p> </li> <li> <p> <code>fpga-image-id</code> - The
-     * FPGA image identifier (AFI ID).</p> </li> <li> <p>
-     * <code>fpga-image-global-id</code> - The global FPGA image identifier (AGFI
-     * ID).</p> </li> <li> <p> <code>name</code> - The name of the AFI.</p> </li> <li>
-     * <p> <code>owner-id</code> - The AWS account ID of the AFI owner.</p> </li> <li>
-     * <p> <code>product-code</code> - The product code.</p> </li> <li> <p>
-     * <code>shell-version</code> - The version of the AWS Shell that was used to
-     * create the bitstream.</p> </li> <li> <p> <code>state</code> - The state of the
-     * AFI (<code>pending</code> | <code>failed</code> | <code>available</code> |
-     * <code>unavailable</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> <li> <p> <code>update-time</code> - The time of the most recent
-     * update.</p> </li> </ul>
+     * <p>The filters.</p> <ul> <li> <p> <code>create-time</code> - The creation time
+     * of the AFI.</p> </li> <li> <p> <code>fpga-image-id</code> - The FPGA image
+     * identifier (AFI ID).</p> </li> <li> <p> <code>fpga-image-global-id</code> - The
+     * global FPGA image identifier (AGFI ID).</p> </li> <li> <p> <code>name</code> -
+     * The name of the AFI.</p> </li> <li> <p> <code>owner-id</code> - The AWS account
+     * ID of the AFI owner.</p> </li> <li> <p> <code>product-code</code> - The product
+     * code.</p> </li> <li> <p> <code>shell-version</code> - The version of the AWS
+     * Shell that was used to create the bitstream.</p> </li> <li> <p>
+     * <code>state</code> - The state of the AFI (<code>pending</code> |
+     * <code>failed</code> | <code>available</code> | <code>unavailable</code>).</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>update-time</code> - The time of the most recent update.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>create-time</code> - The
-     * creation time of the AFI.</p> </li> <li> <p> <code>fpga-image-id</code> - The
-     * FPGA image identifier (AFI ID).</p> </li> <li> <p>
-     * <code>fpga-image-global-id</code> - The global FPGA image identifier (AGFI
-     * ID).</p> </li> <li> <p> <code>name</code> - The name of the AFI.</p> </li> <li>
-     * <p> <code>owner-id</code> - The AWS account ID of the AFI owner.</p> </li> <li>
-     * <p> <code>product-code</code> - The product code.</p> </li> <li> <p>
-     * <code>shell-version</code> - The version of the AWS Shell that was used to
-     * create the bitstream.</p> </li> <li> <p> <code>state</code> - The state of the
-     * AFI (<code>pending</code> | <code>failed</code> | <code>available</code> |
-     * <code>unavailable</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> <li> <p> <code>update-time</code> - The time of the most recent
-     * update.</p> </li> </ul>
+     * <p>The filters.</p> <ul> <li> <p> <code>create-time</code> - The creation time
+     * of the AFI.</p> </li> <li> <p> <code>fpga-image-id</code> - The FPGA image
+     * identifier (AFI ID).</p> </li> <li> <p> <code>fpga-image-global-id</code> - The
+     * global FPGA image identifier (AGFI ID).</p> </li> <li> <p> <code>name</code> -
+     * The name of the AFI.</p> </li> <li> <p> <code>owner-id</code> - The AWS account
+     * ID of the AFI owner.</p> </li> <li> <p> <code>product-code</code> - The product
+     * code.</p> </li> <li> <p> <code>shell-version</code> - The version of the AWS
+     * Shell that was used to create the bitstream.</p> </li> <li> <p>
+     * <code>state</code> - The state of the AFI (<code>pending</code> |
+     * <code>failed</code> | <code>available</code> | <code>unavailable</code>).</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>update-time</code> - The time of the most recent update.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>create-time</code> - The
-     * creation time of the AFI.</p> </li> <li> <p> <code>fpga-image-id</code> - The
-     * FPGA image identifier (AFI ID).</p> </li> <li> <p>
-     * <code>fpga-image-global-id</code> - The global FPGA image identifier (AGFI
-     * ID).</p> </li> <li> <p> <code>name</code> - The name of the AFI.</p> </li> <li>
-     * <p> <code>owner-id</code> - The AWS account ID of the AFI owner.</p> </li> <li>
-     * <p> <code>product-code</code> - The product code.</p> </li> <li> <p>
-     * <code>shell-version</code> - The version of the AWS Shell that was used to
-     * create the bitstream.</p> </li> <li> <p> <code>state</code> - The state of the
-     * AFI (<code>pending</code> | <code>failed</code> | <code>available</code> |
-     * <code>unavailable</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> <li> <p> <code>update-time</code> - The time of the most recent
-     * update.</p> </li> </ul>
+     * <p>The filters.</p> <ul> <li> <p> <code>create-time</code> - The creation time
+     * of the AFI.</p> </li> <li> <p> <code>fpga-image-id</code> - The FPGA image
+     * identifier (AFI ID).</p> </li> <li> <p> <code>fpga-image-global-id</code> - The
+     * global FPGA image identifier (AGFI ID).</p> </li> <li> <p> <code>name</code> -
+     * The name of the AFI.</p> </li> <li> <p> <code>owner-id</code> - The AWS account
+     * ID of the AFI owner.</p> </li> <li> <p> <code>product-code</code> - The product
+     * code.</p> </li> <li> <p> <code>shell-version</code> - The version of the AWS
+     * Shell that was used to create the bitstream.</p> </li> <li> <p>
+     * <code>state</code> - The state of the AFI (<code>pending</code> |
+     * <code>failed</code> | <code>available</code> | <code>unavailable</code>).</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>update-time</code> - The time of the most recent update.</p> </li> </ul>
      */
     inline DescribeFpgaImagesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>create-time</code> - The
-     * creation time of the AFI.</p> </li> <li> <p> <code>fpga-image-id</code> - The
-     * FPGA image identifier (AFI ID).</p> </li> <li> <p>
-     * <code>fpga-image-global-id</code> - The global FPGA image identifier (AGFI
-     * ID).</p> </li> <li> <p> <code>name</code> - The name of the AFI.</p> </li> <li>
-     * <p> <code>owner-id</code> - The AWS account ID of the AFI owner.</p> </li> <li>
-     * <p> <code>product-code</code> - The product code.</p> </li> <li> <p>
-     * <code>shell-version</code> - The version of the AWS Shell that was used to
-     * create the bitstream.</p> </li> <li> <p> <code>state</code> - The state of the
-     * AFI (<code>pending</code> | <code>failed</code> | <code>available</code> |
-     * <code>unavailable</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> <li> <p> <code>update-time</code> - The time of the most recent
-     * update.</p> </li> </ul>
+     * <p>The filters.</p> <ul> <li> <p> <code>create-time</code> - The creation time
+     * of the AFI.</p> </li> <li> <p> <code>fpga-image-id</code> - The FPGA image
+     * identifier (AFI ID).</p> </li> <li> <p> <code>fpga-image-global-id</code> - The
+     * global FPGA image identifier (AGFI ID).</p> </li> <li> <p> <code>name</code> -
+     * The name of the AFI.</p> </li> <li> <p> <code>owner-id</code> - The AWS account
+     * ID of the AFI owner.</p> </li> <li> <p> <code>product-code</code> - The product
+     * code.</p> </li> <li> <p> <code>shell-version</code> - The version of the AWS
+     * Shell that was used to create the bitstream.</p> </li> <li> <p>
+     * <code>state</code> - The state of the AFI (<code>pending</code> |
+     * <code>failed</code> | <code>available</code> | <code>unavailable</code>).</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>update-time</code> - The time of the most recent update.</p> </li> </ul>
      */
     inline DescribeFpgaImagesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>create-time</code> - The
-     * creation time of the AFI.</p> </li> <li> <p> <code>fpga-image-id</code> - The
-     * FPGA image identifier (AFI ID).</p> </li> <li> <p>
-     * <code>fpga-image-global-id</code> - The global FPGA image identifier (AGFI
-     * ID).</p> </li> <li> <p> <code>name</code> - The name of the AFI.</p> </li> <li>
-     * <p> <code>owner-id</code> - The AWS account ID of the AFI owner.</p> </li> <li>
-     * <p> <code>product-code</code> - The product code.</p> </li> <li> <p>
-     * <code>shell-version</code> - The version of the AWS Shell that was used to
-     * create the bitstream.</p> </li> <li> <p> <code>state</code> - The state of the
-     * AFI (<code>pending</code> | <code>failed</code> | <code>available</code> |
-     * <code>unavailable</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> <li> <p> <code>update-time</code> - The time of the most recent
-     * update.</p> </li> </ul>
+     * <p>The filters.</p> <ul> <li> <p> <code>create-time</code> - The creation time
+     * of the AFI.</p> </li> <li> <p> <code>fpga-image-id</code> - The FPGA image
+     * identifier (AFI ID).</p> </li> <li> <p> <code>fpga-image-global-id</code> - The
+     * global FPGA image identifier (AGFI ID).</p> </li> <li> <p> <code>name</code> -
+     * The name of the AFI.</p> </li> <li> <p> <code>owner-id</code> - The AWS account
+     * ID of the AFI owner.</p> </li> <li> <p> <code>product-code</code> - The product
+     * code.</p> </li> <li> <p> <code>shell-version</code> - The version of the AWS
+     * Shell that was used to create the bitstream.</p> </li> <li> <p>
+     * <code>state</code> - The state of the AFI (<code>pending</code> |
+     * <code>failed</code> | <code>available</code> | <code>unavailable</code>).</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>update-time</code> - The time of the most recent update.</p> </li> </ul>
      */
     inline DescribeFpgaImagesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>create-time</code> - The
-     * creation time of the AFI.</p> </li> <li> <p> <code>fpga-image-id</code> - The
-     * FPGA image identifier (AFI ID).</p> </li> <li> <p>
-     * <code>fpga-image-global-id</code> - The global FPGA image identifier (AGFI
-     * ID).</p> </li> <li> <p> <code>name</code> - The name of the AFI.</p> </li> <li>
-     * <p> <code>owner-id</code> - The AWS account ID of the AFI owner.</p> </li> <li>
-     * <p> <code>product-code</code> - The product code.</p> </li> <li> <p>
-     * <code>shell-version</code> - The version of the AWS Shell that was used to
-     * create the bitstream.</p> </li> <li> <p> <code>state</code> - The state of the
-     * AFI (<code>pending</code> | <code>failed</code> | <code>available</code> |
-     * <code>unavailable</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> <li> <p> <code>update-time</code> - The time of the most recent
-     * update.</p> </li> </ul>
+     * <p>The filters.</p> <ul> <li> <p> <code>create-time</code> - The creation time
+     * of the AFI.</p> </li> <li> <p> <code>fpga-image-id</code> - The FPGA image
+     * identifier (AFI ID).</p> </li> <li> <p> <code>fpga-image-global-id</code> - The
+     * global FPGA image identifier (AGFI ID).</p> </li> <li> <p> <code>name</code> -
+     * The name of the AFI.</p> </li> <li> <p> <code>owner-id</code> - The AWS account
+     * ID of the AFI owner.</p> </li> <li> <p> <code>product-code</code> - The product
+     * code.</p> </li> <li> <p> <code>shell-version</code> - The version of the AWS
+     * Shell that was used to create the bitstream.</p> </li> <li> <p>
+     * <code>state</code> - The state of the AFI (<code>pending</code> |
+     * <code>failed</code> | <code>available</code> | <code>unavailable</code>).</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>update-time</code> - The time of the most recent update.</p> </li> </ul>
      */
     inline DescribeFpgaImagesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

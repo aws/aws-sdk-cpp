@@ -279,26 +279,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the service manages it's VPC Endpoints. Management of the
-     * service VPC Endpoints using the VPC Endpoint API is restricted.</p>
+     * <p>Indicates whether the service manages it's VPC endpoints. Management of the
+     * service VPC endpoints using the VPC endpoint API is restricted.</p>
      */
     inline bool GetManagesVpcEndpoints() const{ return m_managesVpcEndpoints; }
 
     /**
-     * <p>Indicates whether the service manages it's VPC Endpoints. Management of the
-     * service VPC Endpoints using the VPC Endpoint API is restricted.</p>
+     * <p>Indicates whether the service manages it's VPC endpoints. Management of the
+     * service VPC endpoints using the VPC endpoint API is restricted.</p>
      */
     inline bool ManagesVpcEndpointsHasBeenSet() const { return m_managesVpcEndpointsHasBeenSet; }
 
     /**
-     * <p>Indicates whether the service manages it's VPC Endpoints. Management of the
-     * service VPC Endpoints using the VPC Endpoint API is restricted.</p>
+     * <p>Indicates whether the service manages it's VPC endpoints. Management of the
+     * service VPC endpoints using the VPC endpoint API is restricted.</p>
      */
     inline void SetManagesVpcEndpoints(bool value) { m_managesVpcEndpointsHasBeenSet = true; m_managesVpcEndpoints = value; }
 
     /**
-     * <p>Indicates whether the service manages it's VPC Endpoints. Management of the
-     * service VPC Endpoints using the VPC Endpoint API is restricted.</p>
+     * <p>Indicates whether the service manages it's VPC endpoints. Management of the
+     * service VPC endpoints using the VPC endpoint API is restricted.</p>
      */
     inline ServiceConfiguration& WithManagesVpcEndpoints(bool value) { SetManagesVpcEndpoints(value); return *this;}
 

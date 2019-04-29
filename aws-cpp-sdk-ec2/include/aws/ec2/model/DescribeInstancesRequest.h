@@ -170,12 +170,12 @@ namespace Model
      * <code>placement-group-name</code> - The name of the placement group for the
      * instance.</p> </li> <li> <p> <code>placement-partition-number</code> - The
      * partition in which the instance is located.</p> </li> <li> <p>
-     * <code>platform</code> - The platform. Use <code>windows</code> if you have
-     * Windows instances; otherwise, leave blank.</p> </li> <li> <p>
-     * <code>private-dns-name</code> - The private IPv4 DNS name of the instance.</p>
-     * </li> <li> <p> <code>private-ip-address</code> - The private IPv4 address of the
-     * instance.</p> </li> <li> <p> <code>product-code</code> - The product code
-     * associated with the AMI used to launch the instance.</p> </li> <li> <p>
+     * <code>platform</code> - The platform. To list only Windows instances, use
+     * <code>windows</code>.</p> </li> <li> <p> <code>private-dns-name</code> - The
+     * private IPv4 DNS name of the instance.</p> </li> <li> <p>
+     * <code>private-ip-address</code> - The private IPv4 address of the instance.</p>
+     * </li> <li> <p> <code>product-code</code> - The product code associated with the
+     * AMI used to launch the instance.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of product code (<code>devpay</code> |
      * <code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
      * disk ID.</p> </li> <li> <p> <code>reason</code> - The reason for the current
@@ -342,12 +342,12 @@ namespace Model
      * <code>placement-group-name</code> - The name of the placement group for the
      * instance.</p> </li> <li> <p> <code>placement-partition-number</code> - The
      * partition in which the instance is located.</p> </li> <li> <p>
-     * <code>platform</code> - The platform. Use <code>windows</code> if you have
-     * Windows instances; otherwise, leave blank.</p> </li> <li> <p>
-     * <code>private-dns-name</code> - The private IPv4 DNS name of the instance.</p>
-     * </li> <li> <p> <code>private-ip-address</code> - The private IPv4 address of the
-     * instance.</p> </li> <li> <p> <code>product-code</code> - The product code
-     * associated with the AMI used to launch the instance.</p> </li> <li> <p>
+     * <code>platform</code> - The platform. To list only Windows instances, use
+     * <code>windows</code>.</p> </li> <li> <p> <code>private-dns-name</code> - The
+     * private IPv4 DNS name of the instance.</p> </li> <li> <p>
+     * <code>private-ip-address</code> - The private IPv4 address of the instance.</p>
+     * </li> <li> <p> <code>product-code</code> - The product code associated with the
+     * AMI used to launch the instance.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of product code (<code>devpay</code> |
      * <code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
      * disk ID.</p> </li> <li> <p> <code>reason</code> - The reason for the current
@@ -514,12 +514,12 @@ namespace Model
      * <code>placement-group-name</code> - The name of the placement group for the
      * instance.</p> </li> <li> <p> <code>placement-partition-number</code> - The
      * partition in which the instance is located.</p> </li> <li> <p>
-     * <code>platform</code> - The platform. Use <code>windows</code> if you have
-     * Windows instances; otherwise, leave blank.</p> </li> <li> <p>
-     * <code>private-dns-name</code> - The private IPv4 DNS name of the instance.</p>
-     * </li> <li> <p> <code>private-ip-address</code> - The private IPv4 address of the
-     * instance.</p> </li> <li> <p> <code>product-code</code> - The product code
-     * associated with the AMI used to launch the instance.</p> </li> <li> <p>
+     * <code>platform</code> - The platform. To list only Windows instances, use
+     * <code>windows</code>.</p> </li> <li> <p> <code>private-dns-name</code> - The
+     * private IPv4 DNS name of the instance.</p> </li> <li> <p>
+     * <code>private-ip-address</code> - The private IPv4 address of the instance.</p>
+     * </li> <li> <p> <code>product-code</code> - The product code associated with the
+     * AMI used to launch the instance.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of product code (<code>devpay</code> |
      * <code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
      * disk ID.</p> </li> <li> <p> <code>reason</code> - The reason for the current
@@ -686,12 +686,12 @@ namespace Model
      * <code>placement-group-name</code> - The name of the placement group for the
      * instance.</p> </li> <li> <p> <code>placement-partition-number</code> - The
      * partition in which the instance is located.</p> </li> <li> <p>
-     * <code>platform</code> - The platform. Use <code>windows</code> if you have
-     * Windows instances; otherwise, leave blank.</p> </li> <li> <p>
-     * <code>private-dns-name</code> - The private IPv4 DNS name of the instance.</p>
-     * </li> <li> <p> <code>private-ip-address</code> - The private IPv4 address of the
-     * instance.</p> </li> <li> <p> <code>product-code</code> - The product code
-     * associated with the AMI used to launch the instance.</p> </li> <li> <p>
+     * <code>platform</code> - The platform. To list only Windows instances, use
+     * <code>windows</code>.</p> </li> <li> <p> <code>private-dns-name</code> - The
+     * private IPv4 DNS name of the instance.</p> </li> <li> <p>
+     * <code>private-ip-address</code> - The private IPv4 address of the instance.</p>
+     * </li> <li> <p> <code>product-code</code> - The product code associated with the
+     * AMI used to launch the instance.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of product code (<code>devpay</code> |
      * <code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
      * disk ID.</p> </li> <li> <p> <code>reason</code> - The reason for the current
@@ -858,12 +858,12 @@ namespace Model
      * <code>placement-group-name</code> - The name of the placement group for the
      * instance.</p> </li> <li> <p> <code>placement-partition-number</code> - The
      * partition in which the instance is located.</p> </li> <li> <p>
-     * <code>platform</code> - The platform. Use <code>windows</code> if you have
-     * Windows instances; otherwise, leave blank.</p> </li> <li> <p>
-     * <code>private-dns-name</code> - The private IPv4 DNS name of the instance.</p>
-     * </li> <li> <p> <code>private-ip-address</code> - The private IPv4 address of the
-     * instance.</p> </li> <li> <p> <code>product-code</code> - The product code
-     * associated with the AMI used to launch the instance.</p> </li> <li> <p>
+     * <code>platform</code> - The platform. To list only Windows instances, use
+     * <code>windows</code>.</p> </li> <li> <p> <code>private-dns-name</code> - The
+     * private IPv4 DNS name of the instance.</p> </li> <li> <p>
+     * <code>private-ip-address</code> - The private IPv4 address of the instance.</p>
+     * </li> <li> <p> <code>product-code</code> - The product code associated with the
+     * AMI used to launch the instance.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of product code (<code>devpay</code> |
      * <code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
      * disk ID.</p> </li> <li> <p> <code>reason</code> - The reason for the current
@@ -1030,12 +1030,12 @@ namespace Model
      * <code>placement-group-name</code> - The name of the placement group for the
      * instance.</p> </li> <li> <p> <code>placement-partition-number</code> - The
      * partition in which the instance is located.</p> </li> <li> <p>
-     * <code>platform</code> - The platform. Use <code>windows</code> if you have
-     * Windows instances; otherwise, leave blank.</p> </li> <li> <p>
-     * <code>private-dns-name</code> - The private IPv4 DNS name of the instance.</p>
-     * </li> <li> <p> <code>private-ip-address</code> - The private IPv4 address of the
-     * instance.</p> </li> <li> <p> <code>product-code</code> - The product code
-     * associated with the AMI used to launch the instance.</p> </li> <li> <p>
+     * <code>platform</code> - The platform. To list only Windows instances, use
+     * <code>windows</code>.</p> </li> <li> <p> <code>private-dns-name</code> - The
+     * private IPv4 DNS name of the instance.</p> </li> <li> <p>
+     * <code>private-ip-address</code> - The private IPv4 address of the instance.</p>
+     * </li> <li> <p> <code>product-code</code> - The product code associated with the
+     * AMI used to launch the instance.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of product code (<code>devpay</code> |
      * <code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
      * disk ID.</p> </li> <li> <p> <code>reason</code> - The reason for the current
@@ -1202,12 +1202,12 @@ namespace Model
      * <code>placement-group-name</code> - The name of the placement group for the
      * instance.</p> </li> <li> <p> <code>placement-partition-number</code> - The
      * partition in which the instance is located.</p> </li> <li> <p>
-     * <code>platform</code> - The platform. Use <code>windows</code> if you have
-     * Windows instances; otherwise, leave blank.</p> </li> <li> <p>
-     * <code>private-dns-name</code> - The private IPv4 DNS name of the instance.</p>
-     * </li> <li> <p> <code>private-ip-address</code> - The private IPv4 address of the
-     * instance.</p> </li> <li> <p> <code>product-code</code> - The product code
-     * associated with the AMI used to launch the instance.</p> </li> <li> <p>
+     * <code>platform</code> - The platform. To list only Windows instances, use
+     * <code>windows</code>.</p> </li> <li> <p> <code>private-dns-name</code> - The
+     * private IPv4 DNS name of the instance.</p> </li> <li> <p>
+     * <code>private-ip-address</code> - The private IPv4 address of the instance.</p>
+     * </li> <li> <p> <code>product-code</code> - The product code associated with the
+     * AMI used to launch the instance.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of product code (<code>devpay</code> |
      * <code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
      * disk ID.</p> </li> <li> <p> <code>reason</code> - The reason for the current
@@ -1374,12 +1374,12 @@ namespace Model
      * <code>placement-group-name</code> - The name of the placement group for the
      * instance.</p> </li> <li> <p> <code>placement-partition-number</code> - The
      * partition in which the instance is located.</p> </li> <li> <p>
-     * <code>platform</code> - The platform. Use <code>windows</code> if you have
-     * Windows instances; otherwise, leave blank.</p> </li> <li> <p>
-     * <code>private-dns-name</code> - The private IPv4 DNS name of the instance.</p>
-     * </li> <li> <p> <code>private-ip-address</code> - The private IPv4 address of the
-     * instance.</p> </li> <li> <p> <code>product-code</code> - The product code
-     * associated with the AMI used to launch the instance.</p> </li> <li> <p>
+     * <code>platform</code> - The platform. To list only Windows instances, use
+     * <code>windows</code>.</p> </li> <li> <p> <code>private-dns-name</code> - The
+     * private IPv4 DNS name of the instance.</p> </li> <li> <p>
+     * <code>private-ip-address</code> - The private IPv4 address of the instance.</p>
+     * </li> <li> <p> <code>product-code</code> - The product code associated with the
+     * AMI used to launch the instance.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of product code (<code>devpay</code> |
      * <code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
      * disk ID.</p> </li> <li> <p> <code>reason</code> - The reason for the current

@@ -153,42 +153,50 @@ namespace Model
 
 
     /**
-     * <p>The Elastic IP address. This is required for EC2-Classic.</p>
+     * <p>The Elastic IP address to associate with the instance. This is required for
+     * EC2-Classic.</p>
      */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
 
     /**
-     * <p>The Elastic IP address. This is required for EC2-Classic.</p>
+     * <p>The Elastic IP address to associate with the instance. This is required for
+     * EC2-Classic.</p>
      */
     inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
 
     /**
-     * <p>The Elastic IP address. This is required for EC2-Classic.</p>
+     * <p>The Elastic IP address to associate with the instance. This is required for
+     * EC2-Classic.</p>
      */
     inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
 
     /**
-     * <p>The Elastic IP address. This is required for EC2-Classic.</p>
+     * <p>The Elastic IP address to associate with the instance. This is required for
+     * EC2-Classic.</p>
      */
     inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
 
     /**
-     * <p>The Elastic IP address. This is required for EC2-Classic.</p>
+     * <p>The Elastic IP address to associate with the instance. This is required for
+     * EC2-Classic.</p>
      */
     inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
 
     /**
-     * <p>The Elastic IP address. This is required for EC2-Classic.</p>
+     * <p>The Elastic IP address to associate with the instance. This is required for
+     * EC2-Classic.</p>
      */
     inline AssociateAddressRequest& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
 
     /**
-     * <p>The Elastic IP address. This is required for EC2-Classic.</p>
+     * <p>The Elastic IP address to associate with the instance. This is required for
+     * EC2-Classic.</p>
      */
     inline AssociateAddressRequest& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
 
     /**
-     * <p>The Elastic IP address. This is required for EC2-Classic.</p>
+     * <p>The Elastic IP address to associate with the instance. This is required for
+     * EC2-Classic.</p>
      */
     inline AssociateAddressRequest& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
@@ -273,49 +281,65 @@ namespace Model
 
     /**
      * <p>[EC2-VPC] The ID of the network interface. If the instance has more than one
-     * network interface, you must specify a network interface ID.</p>
+     * network interface, you must specify a network interface ID.</p> <p>For EC2-VPC,
+     * you can specify either the instance ID or the network interface ID, but not
+     * both. </p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
 
     /**
      * <p>[EC2-VPC] The ID of the network interface. If the instance has more than one
-     * network interface, you must specify a network interface ID.</p>
+     * network interface, you must specify a network interface ID.</p> <p>For EC2-VPC,
+     * you can specify either the instance ID or the network interface ID, but not
+     * both. </p>
      */
     inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
 
     /**
      * <p>[EC2-VPC] The ID of the network interface. If the instance has more than one
-     * network interface, you must specify a network interface ID.</p>
+     * network interface, you must specify a network interface ID.</p> <p>For EC2-VPC,
+     * you can specify either the instance ID or the network interface ID, but not
+     * both. </p>
      */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     /**
      * <p>[EC2-VPC] The ID of the network interface. If the instance has more than one
-     * network interface, you must specify a network interface ID.</p>
+     * network interface, you must specify a network interface ID.</p> <p>For EC2-VPC,
+     * you can specify either the instance ID or the network interface ID, but not
+     * both. </p>
      */
     inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
 
     /**
      * <p>[EC2-VPC] The ID of the network interface. If the instance has more than one
-     * network interface, you must specify a network interface ID.</p>
+     * network interface, you must specify a network interface ID.</p> <p>For EC2-VPC,
+     * you can specify either the instance ID or the network interface ID, but not
+     * both. </p>
      */
     inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
 
     /**
      * <p>[EC2-VPC] The ID of the network interface. If the instance has more than one
-     * network interface, you must specify a network interface ID.</p>
+     * network interface, you must specify a network interface ID.</p> <p>For EC2-VPC,
+     * you can specify either the instance ID or the network interface ID, but not
+     * both. </p>
      */
     inline AssociateAddressRequest& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
 
     /**
      * <p>[EC2-VPC] The ID of the network interface. If the instance has more than one
-     * network interface, you must specify a network interface ID.</p>
+     * network interface, you must specify a network interface ID.</p> <p>For EC2-VPC,
+     * you can specify either the instance ID or the network interface ID, but not
+     * both. </p>
      */
     inline AssociateAddressRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] The ID of the network interface. If the instance has more than one
-     * network interface, you must specify a network interface ID.</p>
+     * network interface, you must specify a network interface ID.</p> <p>For EC2-VPC,
+     * you can specify either the instance ID or the network interface ID, but not
+     * both. </p>
      */
     inline AssociateAddressRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 

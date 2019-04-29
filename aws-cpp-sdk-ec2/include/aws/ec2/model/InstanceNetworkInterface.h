@@ -630,6 +630,47 @@ namespace Model
      */
     inline InstanceNetworkInterface& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
+    /**
+     * <p>Describes the type of network interface.</p>
+     */
+    inline const Aws::String& GetInterfaceType() const{ return m_interfaceType; }
+
+    /**
+     * <p>Describes the type of network interface.</p>
+     */
+    inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }
+
+    /**
+     * <p>Describes the type of network interface.</p>
+     */
+    inline void SetInterfaceType(const Aws::String& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
+
+    /**
+     * <p>Describes the type of network interface.</p>
+     */
+    inline void SetInterfaceType(Aws::String&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = std::move(value); }
+
+    /**
+     * <p>Describes the type of network interface.</p>
+     */
+    inline void SetInterfaceType(const char* value) { m_interfaceTypeHasBeenSet = true; m_interfaceType.assign(value); }
+
+    /**
+     * <p>Describes the type of network interface.</p>
+     */
+    inline InstanceNetworkInterface& WithInterfaceType(const Aws::String& value) { SetInterfaceType(value); return *this;}
+
+    /**
+     * <p>Describes the type of network interface.</p>
+     */
+    inline InstanceNetworkInterface& WithInterfaceType(Aws::String&& value) { SetInterfaceType(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the type of network interface.</p>
+     */
+    inline InstanceNetworkInterface& WithInterfaceType(const char* value) { SetInterfaceType(value); return *this;}
+
   private:
 
     InstanceNetworkInterfaceAssociation m_association;
@@ -676,6 +717,9 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
+    Aws::String m_interfaceType;
+    bool m_interfaceTypeHasBeenSet;
   };
 
 } // namespace Model

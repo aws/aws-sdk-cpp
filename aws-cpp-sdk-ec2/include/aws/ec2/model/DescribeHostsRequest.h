@@ -49,7 +49,7 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>auto-placement</code> - Whether
+     * <p>The filters.</p> <ul> <li> <p> <code>auto-placement</code> - Whether
      * auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p>
      * </li> <li> <p> <code>availability-zone</code> - The Availability Zone of the
      * host.</p> </li> <li> <p> <code>client-token</code> - The idempotency token that
@@ -68,7 +68,7 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>auto-placement</code> - Whether
+     * <p>The filters.</p> <ul> <li> <p> <code>auto-placement</code> - Whether
      * auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p>
      * </li> <li> <p> <code>availability-zone</code> - The Availability Zone of the
      * host.</p> </li> <li> <p> <code>client-token</code> - The idempotency token that
@@ -87,7 +87,7 @@ namespace Model
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>auto-placement</code> - Whether
+     * <p>The filters.</p> <ul> <li> <p> <code>auto-placement</code> - Whether
      * auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p>
      * </li> <li> <p> <code>availability-zone</code> - The Availability Zone of the
      * host.</p> </li> <li> <p> <code>client-token</code> - The idempotency token that
@@ -106,7 +106,7 @@ namespace Model
     inline void SetFilter(const Aws::Vector<Filter>& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>auto-placement</code> - Whether
+     * <p>The filters.</p> <ul> <li> <p> <code>auto-placement</code> - Whether
      * auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p>
      * </li> <li> <p> <code>availability-zone</code> - The Availability Zone of the
      * host.</p> </li> <li> <p> <code>client-token</code> - The idempotency token that
@@ -125,7 +125,7 @@ namespace Model
     inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>auto-placement</code> - Whether
+     * <p>The filters.</p> <ul> <li> <p> <code>auto-placement</code> - Whether
      * auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p>
      * </li> <li> <p> <code>availability-zone</code> - The Availability Zone of the
      * host.</p> </li> <li> <p> <code>client-token</code> - The idempotency token that
@@ -144,7 +144,7 @@ namespace Model
     inline DescribeHostsRequest& WithFilter(const Aws::Vector<Filter>& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>auto-placement</code> - Whether
+     * <p>The filters.</p> <ul> <li> <p> <code>auto-placement</code> - Whether
      * auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p>
      * </li> <li> <p> <code>availability-zone</code> - The Availability Zone of the
      * host.</p> </li> <li> <p> <code>client-token</code> - The idempotency token that
@@ -163,7 +163,7 @@ namespace Model
     inline DescribeHostsRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>auto-placement</code> - Whether
+     * <p>The filters.</p> <ul> <li> <p> <code>auto-placement</code> - Whether
      * auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p>
      * </li> <li> <p> <code>availability-zone</code> - The Availability Zone of the
      * host.</p> </li> <li> <p> <code>client-token</code> - The idempotency token that
@@ -182,7 +182,7 @@ namespace Model
     inline DescribeHostsRequest& AddFilter(const Filter& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>auto-placement</code> - Whether
+     * <p>The filters.</p> <ul> <li> <p> <code>auto-placement</code> - Whether
      * auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p>
      * </li> <li> <p> <code>availability-zone</code> - The Availability Zone of the
      * host.</p> </li> <li> <p> <code>client-token</code> - The idempotency token that

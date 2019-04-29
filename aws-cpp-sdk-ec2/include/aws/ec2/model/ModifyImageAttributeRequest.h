@@ -252,165 +252,165 @@ namespace Model
 
 
     /**
-     * <p>One or more DevPay product codes. After you add a product code to an AMI, it
-     * can't be removed.</p>
+     * <p>The DevPay product codes. After you add a product code to an AMI, it can't be
+     * removed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProductCodes() const{ return m_productCodes; }
 
     /**
-     * <p>One or more DevPay product codes. After you add a product code to an AMI, it
-     * can't be removed.</p>
+     * <p>The DevPay product codes. After you add a product code to an AMI, it can't be
+     * removed.</p>
      */
     inline bool ProductCodesHasBeenSet() const { return m_productCodesHasBeenSet; }
 
     /**
-     * <p>One or more DevPay product codes. After you add a product code to an AMI, it
-     * can't be removed.</p>
+     * <p>The DevPay product codes. After you add a product code to an AMI, it can't be
+     * removed.</p>
      */
     inline void SetProductCodes(const Aws::Vector<Aws::String>& value) { m_productCodesHasBeenSet = true; m_productCodes = value; }
 
     /**
-     * <p>One or more DevPay product codes. After you add a product code to an AMI, it
-     * can't be removed.</p>
+     * <p>The DevPay product codes. After you add a product code to an AMI, it can't be
+     * removed.</p>
      */
     inline void SetProductCodes(Aws::Vector<Aws::String>&& value) { m_productCodesHasBeenSet = true; m_productCodes = std::move(value); }
 
     /**
-     * <p>One or more DevPay product codes. After you add a product code to an AMI, it
-     * can't be removed.</p>
+     * <p>The DevPay product codes. After you add a product code to an AMI, it can't be
+     * removed.</p>
      */
     inline ModifyImageAttributeRequest& WithProductCodes(const Aws::Vector<Aws::String>& value) { SetProductCodes(value); return *this;}
 
     /**
-     * <p>One or more DevPay product codes. After you add a product code to an AMI, it
-     * can't be removed.</p>
+     * <p>The DevPay product codes. After you add a product code to an AMI, it can't be
+     * removed.</p>
      */
     inline ModifyImageAttributeRequest& WithProductCodes(Aws::Vector<Aws::String>&& value) { SetProductCodes(std::move(value)); return *this;}
 
     /**
-     * <p>One or more DevPay product codes. After you add a product code to an AMI, it
-     * can't be removed.</p>
+     * <p>The DevPay product codes. After you add a product code to an AMI, it can't be
+     * removed.</p>
      */
     inline ModifyImageAttributeRequest& AddProductCodes(const Aws::String& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(value); return *this; }
 
     /**
-     * <p>One or more DevPay product codes. After you add a product code to an AMI, it
-     * can't be removed.</p>
+     * <p>The DevPay product codes. After you add a product code to an AMI, it can't be
+     * removed.</p>
      */
     inline ModifyImageAttributeRequest& AddProductCodes(Aws::String&& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more DevPay product codes. After you add a product code to an AMI, it
-     * can't be removed.</p>
+     * <p>The DevPay product codes. After you add a product code to an AMI, it can't be
+     * removed.</p>
      */
     inline ModifyImageAttributeRequest& AddProductCodes(const char* value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(value); return *this; }
 
 
     /**
-     * <p>One or more user groups. This parameter can be used only when the
+     * <p>The user groups. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserGroups() const{ return m_userGroups; }
 
     /**
-     * <p>One or more user groups. This parameter can be used only when the
+     * <p>The user groups. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline bool UserGroupsHasBeenSet() const { return m_userGroupsHasBeenSet; }
 
     /**
-     * <p>One or more user groups. This parameter can be used only when the
+     * <p>The user groups. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline void SetUserGroups(const Aws::Vector<Aws::String>& value) { m_userGroupsHasBeenSet = true; m_userGroups = value; }
 
     /**
-     * <p>One or more user groups. This parameter can be used only when the
+     * <p>The user groups. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline void SetUserGroups(Aws::Vector<Aws::String>&& value) { m_userGroupsHasBeenSet = true; m_userGroups = std::move(value); }
 
     /**
-     * <p>One or more user groups. This parameter can be used only when the
+     * <p>The user groups. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline ModifyImageAttributeRequest& WithUserGroups(const Aws::Vector<Aws::String>& value) { SetUserGroups(value); return *this;}
 
     /**
-     * <p>One or more user groups. This parameter can be used only when the
+     * <p>The user groups. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline ModifyImageAttributeRequest& WithUserGroups(Aws::Vector<Aws::String>&& value) { SetUserGroups(std::move(value)); return *this;}
 
     /**
-     * <p>One or more user groups. This parameter can be used only when the
+     * <p>The user groups. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline ModifyImageAttributeRequest& AddUserGroups(const Aws::String& value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(value); return *this; }
 
     /**
-     * <p>One or more user groups. This parameter can be used only when the
+     * <p>The user groups. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline ModifyImageAttributeRequest& AddUserGroups(Aws::String&& value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more user groups. This parameter can be used only when the
+     * <p>The user groups. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline ModifyImageAttributeRequest& AddUserGroups(const char* value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(value); return *this; }
 
 
     /**
-     * <p>One or more AWS account IDs. This parameter can be used only when the
+     * <p>The AWS account IDs. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserIds() const{ return m_userIds; }
 
     /**
-     * <p>One or more AWS account IDs. This parameter can be used only when the
+     * <p>The AWS account IDs. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline bool UserIdsHasBeenSet() const { return m_userIdsHasBeenSet; }
 
     /**
-     * <p>One or more AWS account IDs. This parameter can be used only when the
+     * <p>The AWS account IDs. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline void SetUserIds(const Aws::Vector<Aws::String>& value) { m_userIdsHasBeenSet = true; m_userIds = value; }
 
     /**
-     * <p>One or more AWS account IDs. This parameter can be used only when the
+     * <p>The AWS account IDs. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline void SetUserIds(Aws::Vector<Aws::String>&& value) { m_userIdsHasBeenSet = true; m_userIds = std::move(value); }
 
     /**
-     * <p>One or more AWS account IDs. This parameter can be used only when the
+     * <p>The AWS account IDs. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline ModifyImageAttributeRequest& WithUserIds(const Aws::Vector<Aws::String>& value) { SetUserIds(value); return *this;}
 
     /**
-     * <p>One or more AWS account IDs. This parameter can be used only when the
+     * <p>The AWS account IDs. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline ModifyImageAttributeRequest& WithUserIds(Aws::Vector<Aws::String>&& value) { SetUserIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more AWS account IDs. This parameter can be used only when the
+     * <p>The AWS account IDs. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline ModifyImageAttributeRequest& AddUserIds(const Aws::String& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more AWS account IDs. This parameter can be used only when the
+     * <p>The AWS account IDs. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline ModifyImageAttributeRequest& AddUserIds(Aws::String&& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more AWS account IDs. This parameter can be used only when the
+     * <p>The AWS account IDs. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline ModifyImageAttributeRequest& AddUserIds(const char* value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }

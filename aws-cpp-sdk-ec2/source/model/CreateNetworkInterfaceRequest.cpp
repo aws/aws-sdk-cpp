@@ -32,6 +32,8 @@ CreateNetworkInterfaceRequest::CreateNetworkInterfaceRequest() :
     m_privateIpAddressesHasBeenSet(false),
     m_secondaryPrivateIpAddressCount(0),
     m_secondaryPrivateIpAddressCountHasBeenSet(false),
+    m_interfaceType(NetworkInterfaceCreationType::NOT_SET),
+    m_interfaceTypeHasBeenSet(false),
     m_subnetIdHasBeenSet(false)
 {
 }
@@ -94,6 +96,11 @@ Aws::String CreateNetworkInterfaceRequest::SerializePayload() const
   if(m_secondaryPrivateIpAddressCountHasBeenSet)
   {
     ss << "SecondaryPrivateIpAddressCount=" << m_secondaryPrivateIpAddressCount << "&";
+  }
+
+  if(m_interfaceTypeHasBeenSet)
+  {
+    ss << "InterfaceType=" << NetworkInterfaceCreationTypeMapper::GetNameForNetworkInterfaceCreationType(m_interfaceType) << "&";
   }
 
   if(m_subnetIdHasBeenSet)

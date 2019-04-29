@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>Information about one or more IAM instance profile associations.</p>
+     * <p>Information about the IAM instance profile associations.</p>
      */
     inline const Aws::Vector<IamInstanceProfileAssociation>& GetIamInstanceProfileAssociations() const{ return m_iamInstanceProfileAssociations; }
 
     /**
-     * <p>Information about one or more IAM instance profile associations.</p>
+     * <p>Information about the IAM instance profile associations.</p>
      */
     inline void SetIamInstanceProfileAssociations(const Aws::Vector<IamInstanceProfileAssociation>& value) { m_iamInstanceProfileAssociations = value; }
 
     /**
-     * <p>Information about one or more IAM instance profile associations.</p>
+     * <p>Information about the IAM instance profile associations.</p>
      */
     inline void SetIamInstanceProfileAssociations(Aws::Vector<IamInstanceProfileAssociation>&& value) { m_iamInstanceProfileAssociations = std::move(value); }
 
     /**
-     * <p>Information about one or more IAM instance profile associations.</p>
+     * <p>Information about the IAM instance profile associations.</p>
      */
     inline DescribeIamInstanceProfileAssociationsResponse& WithIamInstanceProfileAssociations(const Aws::Vector<IamInstanceProfileAssociation>& value) { SetIamInstanceProfileAssociations(value); return *this;}
 
     /**
-     * <p>Information about one or more IAM instance profile associations.</p>
+     * <p>Information about the IAM instance profile associations.</p>
      */
     inline DescribeIamInstanceProfileAssociationsResponse& WithIamInstanceProfileAssociations(Aws::Vector<IamInstanceProfileAssociation>&& value) { SetIamInstanceProfileAssociations(std::move(value)); return *this;}
 
     /**
-     * <p>Information about one or more IAM instance profile associations.</p>
+     * <p>Information about the IAM instance profile associations.</p>
      */
     inline DescribeIamInstanceProfileAssociationsResponse& AddIamInstanceProfileAssociations(const IamInstanceProfileAssociation& value) { m_iamInstanceProfileAssociations.push_back(value); return *this; }
 
     /**
-     * <p>Information about one or more IAM instance profile associations.</p>
+     * <p>Information about the IAM instance profile associations.</p>
      */
     inline DescribeIamInstanceProfileAssociationsResponse& AddIamInstanceProfileAssociations(IamInstanceProfileAssociation&& value) { m_iamInstanceProfileAssociations.push_back(std::move(value)); return *this; }
 

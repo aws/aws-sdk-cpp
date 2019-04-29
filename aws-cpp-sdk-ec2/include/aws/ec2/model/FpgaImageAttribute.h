@@ -176,83 +176,83 @@ namespace Model
 
 
     /**
-     * <p>One or more load permissions.</p>
+     * <p>The load permissions.</p>
      */
     inline const Aws::Vector<LoadPermission>& GetLoadPermissions() const{ return m_loadPermissions; }
 
     /**
-     * <p>One or more load permissions.</p>
+     * <p>The load permissions.</p>
      */
     inline bool LoadPermissionsHasBeenSet() const { return m_loadPermissionsHasBeenSet; }
 
     /**
-     * <p>One or more load permissions.</p>
+     * <p>The load permissions.</p>
      */
     inline void SetLoadPermissions(const Aws::Vector<LoadPermission>& value) { m_loadPermissionsHasBeenSet = true; m_loadPermissions = value; }
 
     /**
-     * <p>One or more load permissions.</p>
+     * <p>The load permissions.</p>
      */
     inline void SetLoadPermissions(Aws::Vector<LoadPermission>&& value) { m_loadPermissionsHasBeenSet = true; m_loadPermissions = std::move(value); }
 
     /**
-     * <p>One or more load permissions.</p>
+     * <p>The load permissions.</p>
      */
     inline FpgaImageAttribute& WithLoadPermissions(const Aws::Vector<LoadPermission>& value) { SetLoadPermissions(value); return *this;}
 
     /**
-     * <p>One or more load permissions.</p>
+     * <p>The load permissions.</p>
      */
     inline FpgaImageAttribute& WithLoadPermissions(Aws::Vector<LoadPermission>&& value) { SetLoadPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>One or more load permissions.</p>
+     * <p>The load permissions.</p>
      */
     inline FpgaImageAttribute& AddLoadPermissions(const LoadPermission& value) { m_loadPermissionsHasBeenSet = true; m_loadPermissions.push_back(value); return *this; }
 
     /**
-     * <p>One or more load permissions.</p>
+     * <p>The load permissions.</p>
      */
     inline FpgaImageAttribute& AddLoadPermissions(LoadPermission&& value) { m_loadPermissionsHasBeenSet = true; m_loadPermissions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>One or more product codes.</p>
+     * <p>The product codes.</p>
      */
     inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
 
     /**
-     * <p>One or more product codes.</p>
+     * <p>The product codes.</p>
      */
     inline bool ProductCodesHasBeenSet() const { return m_productCodesHasBeenSet; }
 
     /**
-     * <p>One or more product codes.</p>
+     * <p>The product codes.</p>
      */
     inline void SetProductCodes(const Aws::Vector<ProductCode>& value) { m_productCodesHasBeenSet = true; m_productCodes = value; }
 
     /**
-     * <p>One or more product codes.</p>
+     * <p>The product codes.</p>
      */
     inline void SetProductCodes(Aws::Vector<ProductCode>&& value) { m_productCodesHasBeenSet = true; m_productCodes = std::move(value); }
 
     /**
-     * <p>One or more product codes.</p>
+     * <p>The product codes.</p>
      */
     inline FpgaImageAttribute& WithProductCodes(const Aws::Vector<ProductCode>& value) { SetProductCodes(value); return *this;}
 
     /**
-     * <p>One or more product codes.</p>
+     * <p>The product codes.</p>
      */
     inline FpgaImageAttribute& WithProductCodes(Aws::Vector<ProductCode>&& value) { SetProductCodes(std::move(value)); return *this;}
 
     /**
-     * <p>One or more product codes.</p>
+     * <p>The product codes.</p>
      */
     inline FpgaImageAttribute& AddProductCodes(const ProductCode& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(value); return *this; }
 
     /**
-     * <p>One or more product codes.</p>
+     * <p>The product codes.</p>
      */
     inline FpgaImageAttribute& AddProductCodes(ProductCode&& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(std::move(value)); return *this; }
 

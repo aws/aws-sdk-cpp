@@ -49,8 +49,8 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family (for example, <code>m4</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>instance-family</code> - The instance
+     * family (for example, <code>m4</code>).</p> </li> <li> <p>
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
@@ -67,8 +67,8 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family (for example, <code>m4</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>instance-family</code> - The instance
+     * family (for example, <code>m4</code>).</p> </li> <li> <p>
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
@@ -85,8 +85,8 @@ namespace Model
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family (for example, <code>m4</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>instance-family</code> - The instance
+     * family (for example, <code>m4</code>).</p> </li> <li> <p>
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
@@ -103,8 +103,8 @@ namespace Model
     inline void SetFilter(const Aws::Vector<Filter>& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family (for example, <code>m4</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>instance-family</code> - The instance
+     * family (for example, <code>m4</code>).</p> </li> <li> <p>
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
@@ -121,8 +121,8 @@ namespace Model
     inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family (for example, <code>m4</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>instance-family</code> - The instance
+     * family (for example, <code>m4</code>).</p> </li> <li> <p>
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
@@ -139,8 +139,8 @@ namespace Model
     inline DescribeHostReservationsRequest& WithFilter(const Aws::Vector<Filter>& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family (for example, <code>m4</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>instance-family</code> - The instance
+     * family (for example, <code>m4</code>).</p> </li> <li> <p>
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
@@ -157,8 +157,8 @@ namespace Model
     inline DescribeHostReservationsRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family (for example, <code>m4</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>instance-family</code> - The instance
+     * family (for example, <code>m4</code>).</p> </li> <li> <p>
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
@@ -175,8 +175,8 @@ namespace Model
     inline DescribeHostReservationsRequest& AddFilter(const Filter& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family (for example, <code>m4</code>).</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>instance-family</code> - The instance
+     * family (for example, <code>m4</code>).</p> </li> <li> <p>
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
@@ -194,47 +194,47 @@ namespace Model
 
 
     /**
-     * <p>One or more host reservation IDs.</p>
+     * <p>The host reservation IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHostReservationIdSet() const{ return m_hostReservationIdSet; }
 
     /**
-     * <p>One or more host reservation IDs.</p>
+     * <p>The host reservation IDs.</p>
      */
     inline bool HostReservationIdSetHasBeenSet() const { return m_hostReservationIdSetHasBeenSet; }
 
     /**
-     * <p>One or more host reservation IDs.</p>
+     * <p>The host reservation IDs.</p>
      */
     inline void SetHostReservationIdSet(const Aws::Vector<Aws::String>& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet = value; }
 
     /**
-     * <p>One or more host reservation IDs.</p>
+     * <p>The host reservation IDs.</p>
      */
     inline void SetHostReservationIdSet(Aws::Vector<Aws::String>&& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet = std::move(value); }
 
     /**
-     * <p>One or more host reservation IDs.</p>
+     * <p>The host reservation IDs.</p>
      */
     inline DescribeHostReservationsRequest& WithHostReservationIdSet(const Aws::Vector<Aws::String>& value) { SetHostReservationIdSet(value); return *this;}
 
     /**
-     * <p>One or more host reservation IDs.</p>
+     * <p>The host reservation IDs.</p>
      */
     inline DescribeHostReservationsRequest& WithHostReservationIdSet(Aws::Vector<Aws::String>&& value) { SetHostReservationIdSet(std::move(value)); return *this;}
 
     /**
-     * <p>One or more host reservation IDs.</p>
+     * <p>The host reservation IDs.</p>
      */
     inline DescribeHostReservationsRequest& AddHostReservationIdSet(const Aws::String& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet.push_back(value); return *this; }
 
     /**
-     * <p>One or more host reservation IDs.</p>
+     * <p>The host reservation IDs.</p>
      */
     inline DescribeHostReservationsRequest& AddHostReservationIdSet(Aws::String&& value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more host reservation IDs.</p>
+     * <p>The host reservation IDs.</p>
      */
     inline DescribeHostReservationsRequest& AddHostReservationIdSet(const char* value) { m_hostReservationIdSetHasBeenSet = true; m_hostReservationIdSet.push_back(value); return *this; }
 

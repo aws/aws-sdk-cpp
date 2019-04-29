@@ -166,42 +166,42 @@ namespace Model
 
 
     /**
-     * <p>One or more volumes.</p>
+     * <p>The volumes.</p>
      */
     inline const Aws::Vector<ImportInstanceVolumeDetailItem>& GetVolumes() const{ return m_volumes; }
 
     /**
-     * <p>One or more volumes.</p>
+     * <p>The volumes.</p>
      */
     inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
 
     /**
-     * <p>One or more volumes.</p>
+     * <p>The volumes.</p>
      */
     inline void SetVolumes(const Aws::Vector<ImportInstanceVolumeDetailItem>& value) { m_volumesHasBeenSet = true; m_volumes = value; }
 
     /**
-     * <p>One or more volumes.</p>
+     * <p>The volumes.</p>
      */
     inline void SetVolumes(Aws::Vector<ImportInstanceVolumeDetailItem>&& value) { m_volumesHasBeenSet = true; m_volumes = std::move(value); }
 
     /**
-     * <p>One or more volumes.</p>
+     * <p>The volumes.</p>
      */
     inline ImportInstanceTaskDetails& WithVolumes(const Aws::Vector<ImportInstanceVolumeDetailItem>& value) { SetVolumes(value); return *this;}
 
     /**
-     * <p>One or more volumes.</p>
+     * <p>The volumes.</p>
      */
     inline ImportInstanceTaskDetails& WithVolumes(Aws::Vector<ImportInstanceVolumeDetailItem>&& value) { SetVolumes(std::move(value)); return *this;}
 
     /**
-     * <p>One or more volumes.</p>
+     * <p>The volumes.</p>
      */
     inline ImportInstanceTaskDetails& AddVolumes(const ImportInstanceVolumeDetailItem& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
 
     /**
-     * <p>One or more volumes.</p>
+     * <p>The volumes.</p>
      */
     inline ImportInstanceTaskDetails& AddVolumes(ImportInstanceVolumeDetailItem&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
 

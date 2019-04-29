@@ -58,8 +58,8 @@ ResponseLaunchTemplateData::ResponseLaunchTemplateData() :
     m_creditSpecificationHasBeenSet(false),
     m_cpuOptionsHasBeenSet(false),
     m_capacityReservationSpecificationHasBeenSet(false),
-    m_hibernationOptionsHasBeenSet(false),
-    m_licenseSpecificationsHasBeenSet(false)
+    m_licenseSpecificationsHasBeenSet(false),
+    m_hibernationOptionsHasBeenSet(false)
 {
 }
 
@@ -91,8 +91,8 @@ ResponseLaunchTemplateData::ResponseLaunchTemplateData(const XmlNode& xmlNode) :
     m_creditSpecificationHasBeenSet(false),
     m_cpuOptionsHasBeenSet(false),
     m_capacityReservationSpecificationHasBeenSet(false),
-    m_hibernationOptionsHasBeenSet(false),
-    m_licenseSpecificationsHasBeenSet(false)
+    m_licenseSpecificationsHasBeenSet(false),
+    m_hibernationOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -283,12 +283,6 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
       m_capacityReservationSpecification = capacityReservationSpecificationNode;
       m_capacityReservationSpecificationHasBeenSet = true;
     }
-    XmlNode hibernationOptionsNode = resultNode.FirstChild("hibernationOptions");
-    if(!hibernationOptionsNode.IsNull())
-    {
-      m_hibernationOptions = hibernationOptionsNode;
-      m_hibernationOptionsHasBeenSet = true;
-    }
     XmlNode licenseSpecificationsNode = resultNode.FirstChild("licenseSet");
     if(!licenseSpecificationsNode.IsNull())
     {
@@ -300,6 +294,12 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
       }
 
       m_licenseSpecificationsHasBeenSet = true;
+    }
+    XmlNode hibernationOptionsNode = resultNode.FirstChild("hibernationOptions");
+    if(!hibernationOptionsNode.IsNull())
+    {
+      m_hibernationOptions = hibernationOptionsNode;
+      m_hibernationOptionsHasBeenSet = true;
     }
   }
 
@@ -475,13 +475,6 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
       m_capacityReservationSpecification.OutputToStream(oStream, capacityReservationSpecificationLocationAndMemberSs.str().c_str());
   }
 
-  if(m_hibernationOptionsHasBeenSet)
-  {
-      Aws::StringStream hibernationOptionsLocationAndMemberSs;
-      hibernationOptionsLocationAndMemberSs << location << index << locationValue << ".HibernationOptions";
-      m_hibernationOptions.OutputToStream(oStream, hibernationOptionsLocationAndMemberSs.str().c_str());
-  }
-
   if(m_licenseSpecificationsHasBeenSet)
   {
       unsigned licenseSpecificationsIdx = 1;
@@ -491,6 +484,13 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
         licenseSpecificationsSs << location << index << locationValue << ".LicenseSet." << licenseSpecificationsIdx++;
         item.OutputToStream(oStream, licenseSpecificationsSs.str().c_str());
       }
+  }
+
+  if(m_hibernationOptionsHasBeenSet)
+  {
+      Aws::StringStream hibernationOptionsLocationAndMemberSs;
+      hibernationOptionsLocationAndMemberSs << location << index << locationValue << ".HibernationOptions";
+      m_hibernationOptions.OutputToStream(oStream, hibernationOptionsLocationAndMemberSs.str().c_str());
   }
 
 }
@@ -641,12 +641,6 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
       capacityReservationSpecificationLocationAndMember += ".CapacityReservationSpecification";
       m_capacityReservationSpecification.OutputToStream(oStream, capacityReservationSpecificationLocationAndMember.c_str());
   }
-  if(m_hibernationOptionsHasBeenSet)
-  {
-      Aws::String hibernationOptionsLocationAndMember(location);
-      hibernationOptionsLocationAndMember += ".HibernationOptions";
-      m_hibernationOptions.OutputToStream(oStream, hibernationOptionsLocationAndMember.c_str());
-  }
   if(m_licenseSpecificationsHasBeenSet)
   {
       unsigned licenseSpecificationsIdx = 1;
@@ -656,6 +650,12 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
         licenseSpecificationsSs << location <<  ".LicenseSet." << licenseSpecificationsIdx++;
         item.OutputToStream(oStream, licenseSpecificationsSs.str().c_str());
       }
+  }
+  if(m_hibernationOptionsHasBeenSet)
+  {
+      Aws::String hibernationOptionsLocationAndMember(location);
+      hibernationOptionsLocationAndMember += ".HibernationOptions";
+      m_hibernationOptions.OutputToStream(oStream, hibernationOptionsLocationAndMember.c_str());
   }
 }
 

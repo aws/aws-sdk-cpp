@@ -190,93 +190,83 @@ namespace Model
 
 
     /**
-     * <p>The size of the volume, in GiB.</p> <p>Constraints: 1-16384 for General
-     * Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD
-     * (<code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>),
-     * 500-16384 for Cold HDD (<code>sc1</code>), and 1-1024 for Magnetic
-     * (<code>standard</code>) volumes. If you specify a snapshot, the volume size must
-     * be equal to or larger than the snapshot size.</p> <p>Default: If you're creating
-     * the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.</p>
+     * <p>The size of the volume, in GiB.</p> <p>Default: If you're creating the volume
+     * from a snapshot and don't specify a volume size, the default is the snapshot
+     * size.</p> <p>Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>),
+     * 4-16384 for Provisioned IOPS SSD (<code>io1</code>), 500-16384 for Throughput
+     * Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (<code>sc1</code>), and
+     * 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot,
+     * the volume size must be equal to or larger than the snapshot size.</p>
      */
     inline int GetVolumeSize() const{ return m_volumeSize; }
 
     /**
-     * <p>The size of the volume, in GiB.</p> <p>Constraints: 1-16384 for General
-     * Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD
-     * (<code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>),
-     * 500-16384 for Cold HDD (<code>sc1</code>), and 1-1024 for Magnetic
-     * (<code>standard</code>) volumes. If you specify a snapshot, the volume size must
-     * be equal to or larger than the snapshot size.</p> <p>Default: If you're creating
-     * the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.</p>
+     * <p>The size of the volume, in GiB.</p> <p>Default: If you're creating the volume
+     * from a snapshot and don't specify a volume size, the default is the snapshot
+     * size.</p> <p>Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>),
+     * 4-16384 for Provisioned IOPS SSD (<code>io1</code>), 500-16384 for Throughput
+     * Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (<code>sc1</code>), and
+     * 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot,
+     * the volume size must be equal to or larger than the snapshot size.</p>
      */
     inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
 
     /**
-     * <p>The size of the volume, in GiB.</p> <p>Constraints: 1-16384 for General
-     * Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD
-     * (<code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>),
-     * 500-16384 for Cold HDD (<code>sc1</code>), and 1-1024 for Magnetic
-     * (<code>standard</code>) volumes. If you specify a snapshot, the volume size must
-     * be equal to or larger than the snapshot size.</p> <p>Default: If you're creating
-     * the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.</p>
+     * <p>The size of the volume, in GiB.</p> <p>Default: If you're creating the volume
+     * from a snapshot and don't specify a volume size, the default is the snapshot
+     * size.</p> <p>Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>),
+     * 4-16384 for Provisioned IOPS SSD (<code>io1</code>), 500-16384 for Throughput
+     * Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (<code>sc1</code>), and
+     * 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot,
+     * the volume size must be equal to or larger than the snapshot size.</p>
      */
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**
-     * <p>The size of the volume, in GiB.</p> <p>Constraints: 1-16384 for General
-     * Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD
-     * (<code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>),
-     * 500-16384 for Cold HDD (<code>sc1</code>), and 1-1024 for Magnetic
-     * (<code>standard</code>) volumes. If you specify a snapshot, the volume size must
-     * be equal to or larger than the snapshot size.</p> <p>Default: If you're creating
-     * the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.</p>
+     * <p>The size of the volume, in GiB.</p> <p>Default: If you're creating the volume
+     * from a snapshot and don't specify a volume size, the default is the snapshot
+     * size.</p> <p>Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>),
+     * 4-16384 for Provisioned IOPS SSD (<code>io1</code>), 500-16384 for Throughput
+     * Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (<code>sc1</code>), and
+     * 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot,
+     * the volume size must be equal to or larger than the snapshot size.</p>
      */
     inline EbsBlockDevice& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
 
 
     /**
-     * <p>The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>,
-     * <code>sc1</code>, or <code>standard</code>.</p> <p>Default:
-     * <code>standard</code> </p>
+     * <p>The volume type. If you set the type to <code>io1</code>, you must also set
+     * the <b>Iops</b> property.</p> <p>Default: <code>standard</code> </p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
     /**
-     * <p>The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>,
-     * <code>sc1</code>, or <code>standard</code>.</p> <p>Default:
-     * <code>standard</code> </p>
+     * <p>The volume type. If you set the type to <code>io1</code>, you must also set
+     * the <b>Iops</b> property.</p> <p>Default: <code>standard</code> </p>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
-     * <p>The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>,
-     * <code>sc1</code>, or <code>standard</code>.</p> <p>Default:
-     * <code>standard</code> </p>
+     * <p>The volume type. If you set the type to <code>io1</code>, you must also set
+     * the <b>Iops</b> property.</p> <p>Default: <code>standard</code> </p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
-     * <p>The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>,
-     * <code>sc1</code>, or <code>standard</code>.</p> <p>Default:
-     * <code>standard</code> </p>
+     * <p>The volume type. If you set the type to <code>io1</code>, you must also set
+     * the <b>Iops</b> property.</p> <p>Default: <code>standard</code> </p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
-     * <p>The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>,
-     * <code>sc1</code>, or <code>standard</code>.</p> <p>Default:
-     * <code>standard</code> </p>
+     * <p>The volume type. If you set the type to <code>io1</code>, you must also set
+     * the <b>Iops</b> property.</p> <p>Default: <code>standard</code> </p>
      */
     inline EbsBlockDevice& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>,
-     * <code>sc1</code>, or <code>standard</code>.</p> <p>Default:
-     * <code>standard</code> </p>
+     * <p>The volume type. If you set the type to <code>io1</code>, you must also set
+     * the <b>Iops</b> property.</p> <p>Default: <code>standard</code> </p>
      */
     inline EbsBlockDevice& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 

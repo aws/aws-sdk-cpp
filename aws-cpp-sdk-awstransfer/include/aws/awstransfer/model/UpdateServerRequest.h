@@ -18,8 +18,8 @@
 #include <aws/awstransfer/TransferRequest.h>
 #include <aws/awstransfer/model/EndpointDetails.h>
 #include <aws/awstransfer/model/EndpointType.h>
-#include <aws/awstransfer/model/IdentityProviderDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/awstransfer/model/IdentityProviderDetails.h>
 #include <utility>
 
 namespace Aws
@@ -47,42 +47,177 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your SFTP server. With a VPC endpoint, your SFTP server isn't accessible over
+     * the public internet.</p>
+     */
     inline const EndpointDetails& GetEndpointDetails() const{ return m_endpointDetails; }
 
-    
+    /**
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your SFTP server. With a VPC endpoint, your SFTP server isn't accessible over
+     * the public internet.</p>
+     */
     inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
 
-    
+    /**
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your SFTP server. With a VPC endpoint, your SFTP server isn't accessible over
+     * the public internet.</p>
+     */
     inline void SetEndpointDetails(const EndpointDetails& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = value; }
 
-    
+    /**
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your SFTP server. With a VPC endpoint, your SFTP server isn't accessible over
+     * the public internet.</p>
+     */
     inline void SetEndpointDetails(EndpointDetails&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = std::move(value); }
 
-    
+    /**
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your SFTP server. With a VPC endpoint, your SFTP server isn't accessible over
+     * the public internet.</p>
+     */
     inline UpdateServerRequest& WithEndpointDetails(const EndpointDetails& value) { SetEndpointDetails(value); return *this;}
 
-    
+    /**
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your SFTP server. With a VPC endpoint, your SFTP server isn't accessible over
+     * the public internet.</p>
+     */
     inline UpdateServerRequest& WithEndpointDetails(EndpointDetails&& value) { SetEndpointDetails(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The type of endpoint that you want your SFTP server to connect to. You can
+     * choose to connect to the public internet or a virtual private cloud (VPC)
+     * endpoint. With a VPC endpoint, your SFTP server isn't accessible over the public
+     * internet. </p>
+     */
     inline const EndpointType& GetEndpointType() const{ return m_endpointType; }
 
-    
+    /**
+     * <p>The type of endpoint that you want your SFTP server to connect to. You can
+     * choose to connect to the public internet or a virtual private cloud (VPC)
+     * endpoint. With a VPC endpoint, your SFTP server isn't accessible over the public
+     * internet. </p>
+     */
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
 
-    
+    /**
+     * <p>The type of endpoint that you want your SFTP server to connect to. You can
+     * choose to connect to the public internet or a virtual private cloud (VPC)
+     * endpoint. With a VPC endpoint, your SFTP server isn't accessible over the public
+     * internet. </p>
+     */
     inline void SetEndpointType(const EndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
-    
+    /**
+     * <p>The type of endpoint that you want your SFTP server to connect to. You can
+     * choose to connect to the public internet or a virtual private cloud (VPC)
+     * endpoint. With a VPC endpoint, your SFTP server isn't accessible over the public
+     * internet. </p>
+     */
     inline void SetEndpointType(EndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
-    
+    /**
+     * <p>The type of endpoint that you want your SFTP server to connect to. You can
+     * choose to connect to the public internet or a virtual private cloud (VPC)
+     * endpoint. With a VPC endpoint, your SFTP server isn't accessible over the public
+     * internet. </p>
+     */
     inline UpdateServerRequest& WithEndpointType(const EndpointType& value) { SetEndpointType(value); return *this;}
 
-    
+    /**
+     * <p>The type of endpoint that you want your SFTP server to connect to. You can
+     * choose to connect to the public internet or a virtual private cloud (VPC)
+     * endpoint. With a VPC endpoint, your SFTP server isn't accessible over the public
+     * internet. </p>
+     */
     inline UpdateServerRequest& WithEndpointType(EndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The RSA private key as generated by <code>ssh-keygen -N "" -f
+     * my-new-server-key</code>.</p> <important> <p>If you aren't planning to migrate
+     * existing users from an existing SFTP server to a new AWS SFTP server, don't
+     * update the host key. Accidentally changing a server's host key can be
+     * disruptive. For more information, see <a>change-host-key</a> in the <i>AWS SFTP
+     * User Guide.</i> </p> </important>
+     */
+    inline const Aws::String& GetHostKey() const{ return m_hostKey; }
+
+    /**
+     * <p>The RSA private key as generated by <code>ssh-keygen -N "" -f
+     * my-new-server-key</code>.</p> <important> <p>If you aren't planning to migrate
+     * existing users from an existing SFTP server to a new AWS SFTP server, don't
+     * update the host key. Accidentally changing a server's host key can be
+     * disruptive. For more information, see <a>change-host-key</a> in the <i>AWS SFTP
+     * User Guide.</i> </p> </important>
+     */
+    inline bool HostKeyHasBeenSet() const { return m_hostKeyHasBeenSet; }
+
+    /**
+     * <p>The RSA private key as generated by <code>ssh-keygen -N "" -f
+     * my-new-server-key</code>.</p> <important> <p>If you aren't planning to migrate
+     * existing users from an existing SFTP server to a new AWS SFTP server, don't
+     * update the host key. Accidentally changing a server's host key can be
+     * disruptive. For more information, see <a>change-host-key</a> in the <i>AWS SFTP
+     * User Guide.</i> </p> </important>
+     */
+    inline void SetHostKey(const Aws::String& value) { m_hostKeyHasBeenSet = true; m_hostKey = value; }
+
+    /**
+     * <p>The RSA private key as generated by <code>ssh-keygen -N "" -f
+     * my-new-server-key</code>.</p> <important> <p>If you aren't planning to migrate
+     * existing users from an existing SFTP server to a new AWS SFTP server, don't
+     * update the host key. Accidentally changing a server's host key can be
+     * disruptive. For more information, see <a>change-host-key</a> in the <i>AWS SFTP
+     * User Guide.</i> </p> </important>
+     */
+    inline void SetHostKey(Aws::String&& value) { m_hostKeyHasBeenSet = true; m_hostKey = std::move(value); }
+
+    /**
+     * <p>The RSA private key as generated by <code>ssh-keygen -N "" -f
+     * my-new-server-key</code>.</p> <important> <p>If you aren't planning to migrate
+     * existing users from an existing SFTP server to a new AWS SFTP server, don't
+     * update the host key. Accidentally changing a server's host key can be
+     * disruptive. For more information, see <a>change-host-key</a> in the <i>AWS SFTP
+     * User Guide.</i> </p> </important>
+     */
+    inline void SetHostKey(const char* value) { m_hostKeyHasBeenSet = true; m_hostKey.assign(value); }
+
+    /**
+     * <p>The RSA private key as generated by <code>ssh-keygen -N "" -f
+     * my-new-server-key</code>.</p> <important> <p>If you aren't planning to migrate
+     * existing users from an existing SFTP server to a new AWS SFTP server, don't
+     * update the host key. Accidentally changing a server's host key can be
+     * disruptive. For more information, see <a>change-host-key</a> in the <i>AWS SFTP
+     * User Guide.</i> </p> </important>
+     */
+    inline UpdateServerRequest& WithHostKey(const Aws::String& value) { SetHostKey(value); return *this;}
+
+    /**
+     * <p>The RSA private key as generated by <code>ssh-keygen -N "" -f
+     * my-new-server-key</code>.</p> <important> <p>If you aren't planning to migrate
+     * existing users from an existing SFTP server to a new AWS SFTP server, don't
+     * update the host key. Accidentally changing a server's host key can be
+     * disruptive. For more information, see <a>change-host-key</a> in the <i>AWS SFTP
+     * User Guide.</i> </p> </important>
+     */
+    inline UpdateServerRequest& WithHostKey(Aws::String&& value) { SetHostKey(std::move(value)); return *this;}
+
+    /**
+     * <p>The RSA private key as generated by <code>ssh-keygen -N "" -f
+     * my-new-server-key</code>.</p> <important> <p>If you aren't planning to migrate
+     * existing users from an existing SFTP server to a new AWS SFTP server, don't
+     * update the host key. Accidentally changing a server's host key can be
+     * disruptive. For more information, see <a>change-host-key</a> in the <i>AWS SFTP
+     * User Guide.</i> </p> </important>
+     */
+    inline UpdateServerRequest& WithHostKey(const char* value) { SetHostKey(value); return *this;}
 
 
     /**
@@ -123,50 +258,58 @@ namespace Model
 
 
     /**
-     * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>
+     * <p>A value that changes the AWS Identity and Access Management (IAM) role that
+     * allows Amazon S3 events to be logged in Amazon CloudWatch, turning logging on or
+     * off.</p>
      */
     inline const Aws::String& GetLoggingRole() const{ return m_loggingRole; }
 
     /**
-     * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>
+     * <p>A value that changes the AWS Identity and Access Management (IAM) role that
+     * allows Amazon S3 events to be logged in Amazon CloudWatch, turning logging on or
+     * off.</p>
      */
     inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
 
     /**
-     * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>
+     * <p>A value that changes the AWS Identity and Access Management (IAM) role that
+     * allows Amazon S3 events to be logged in Amazon CloudWatch, turning logging on or
+     * off.</p>
      */
     inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
 
     /**
-     * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>
+     * <p>A value that changes the AWS Identity and Access Management (IAM) role that
+     * allows Amazon S3 events to be logged in Amazon CloudWatch, turning logging on or
+     * off.</p>
      */
     inline void SetLoggingRole(Aws::String&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::move(value); }
 
     /**
-     * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>
+     * <p>A value that changes the AWS Identity and Access Management (IAM) role that
+     * allows Amazon S3 events to be logged in Amazon CloudWatch, turning logging on or
+     * off.</p>
      */
     inline void SetLoggingRole(const char* value) { m_loggingRoleHasBeenSet = true; m_loggingRole.assign(value); }
 
     /**
-     * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>
+     * <p>A value that changes the AWS Identity and Access Management (IAM) role that
+     * allows Amazon S3 events to be logged in Amazon CloudWatch, turning logging on or
+     * off.</p>
      */
     inline UpdateServerRequest& WithLoggingRole(const Aws::String& value) { SetLoggingRole(value); return *this;}
 
     /**
-     * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>
+     * <p>A value that changes the AWS Identity and Access Management (IAM) role that
+     * allows Amazon S3 events to be logged in Amazon CloudWatch, turning logging on or
+     * off.</p>
      */
     inline UpdateServerRequest& WithLoggingRole(Aws::String&& value) { SetLoggingRole(std::move(value)); return *this;}
 
     /**
-     * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>
+     * <p>A value that changes the AWS Identity and Access Management (IAM) role that
+     * allows Amazon S3 events to be logged in Amazon CloudWatch, turning logging on or
+     * off.</p>
      */
     inline UpdateServerRequest& WithLoggingRole(const char* value) { SetLoggingRole(value); return *this;}
 
@@ -226,6 +369,9 @@ namespace Model
 
     EndpointType m_endpointType;
     bool m_endpointTypeHasBeenSet;
+
+    Aws::String m_hostKey;
+    bool m_hostKeyHasBeenSet;
 
     IdentityProviderDetails m_identityProviderDetails;
     bool m_identityProviderDetailsHasBeenSet;

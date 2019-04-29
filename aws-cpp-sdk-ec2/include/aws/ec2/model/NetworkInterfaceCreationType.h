@@ -23,20 +23,18 @@ namespace EC2
 {
 namespace Model
 {
-  enum class NetworkInterfaceType
+  enum class NetworkInterfaceCreationType
   {
     NOT_SET,
-    interface,
-    natGateway,
     efa
   };
 
-namespace NetworkInterfaceTypeMapper
+namespace NetworkInterfaceCreationTypeMapper
 {
-AWS_EC2_API NetworkInterfaceType GetNetworkInterfaceTypeForName(const Aws::String& name);
+AWS_EC2_API NetworkInterfaceCreationType GetNetworkInterfaceCreationTypeForName(const Aws::String& name);
 
-AWS_EC2_API Aws::String GetNameForNetworkInterfaceType(NetworkInterfaceType value);
-} // namespace NetworkInterfaceTypeMapper
+AWS_EC2_API Aws::String GetNameForNetworkInterfaceCreationType(NetworkInterfaceCreationType value);
+} // namespace NetworkInterfaceCreationTypeMapper
 } // namespace Model
 } // namespace EC2
 } // namespace Aws

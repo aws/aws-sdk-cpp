@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>Information about one or more FPGA images.</p>
+     * <p>Information about the FPGA images.</p>
      */
     inline const Aws::Vector<FpgaImage>& GetFpgaImages() const{ return m_fpgaImages; }
 
     /**
-     * <p>Information about one or more FPGA images.</p>
+     * <p>Information about the FPGA images.</p>
      */
     inline void SetFpgaImages(const Aws::Vector<FpgaImage>& value) { m_fpgaImages = value; }
 
     /**
-     * <p>Information about one or more FPGA images.</p>
+     * <p>Information about the FPGA images.</p>
      */
     inline void SetFpgaImages(Aws::Vector<FpgaImage>&& value) { m_fpgaImages = std::move(value); }
 
     /**
-     * <p>Information about one or more FPGA images.</p>
+     * <p>Information about the FPGA images.</p>
      */
     inline DescribeFpgaImagesResponse& WithFpgaImages(const Aws::Vector<FpgaImage>& value) { SetFpgaImages(value); return *this;}
 
     /**
-     * <p>Information about one or more FPGA images.</p>
+     * <p>Information about the FPGA images.</p>
      */
     inline DescribeFpgaImagesResponse& WithFpgaImages(Aws::Vector<FpgaImage>&& value) { SetFpgaImages(std::move(value)); return *this;}
 
     /**
-     * <p>Information about one or more FPGA images.</p>
+     * <p>Information about the FPGA images.</p>
      */
     inline DescribeFpgaImagesResponse& AddFpgaImages(const FpgaImage& value) { m_fpgaImages.push_back(value); return *this; }
 
     /**
-     * <p>Information about one or more FPGA images.</p>
+     * <p>Information about the FPGA images.</p>
      */
     inline DescribeFpgaImagesResponse& AddFpgaImages(FpgaImage&& value) { m_fpgaImages.push_back(std::move(value)); return *this; }
 

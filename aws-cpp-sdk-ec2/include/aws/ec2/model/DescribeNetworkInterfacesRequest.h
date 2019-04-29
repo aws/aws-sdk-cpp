@@ -104,7 +104,7 @@ namespace Model
      * Console, Auto Scaling, and so on).</p> </li> <li> <p>
      * <code>requester-managed</code> - Indicates whether the network interface is
      * being managed by an AWS service (for example, AWS Management Console, Auto
-     * Scaling, and so on).</p> </li> <li> <p> <code>source-desk-check</code> -
+     * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
      * Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code>
      * means checking is disabled. The value must be <code>false</code> for the network
@@ -179,7 +179,7 @@ namespace Model
      * Console, Auto Scaling, and so on).</p> </li> <li> <p>
      * <code>requester-managed</code> - Indicates whether the network interface is
      * being managed by an AWS service (for example, AWS Management Console, Auto
-     * Scaling, and so on).</p> </li> <li> <p> <code>source-desk-check</code> -
+     * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
      * Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code>
      * means checking is disabled. The value must be <code>false</code> for the network
@@ -254,7 +254,7 @@ namespace Model
      * Console, Auto Scaling, and so on).</p> </li> <li> <p>
      * <code>requester-managed</code> - Indicates whether the network interface is
      * being managed by an AWS service (for example, AWS Management Console, Auto
-     * Scaling, and so on).</p> </li> <li> <p> <code>source-desk-check</code> -
+     * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
      * Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code>
      * means checking is disabled. The value must be <code>false</code> for the network
@@ -329,7 +329,7 @@ namespace Model
      * Console, Auto Scaling, and so on).</p> </li> <li> <p>
      * <code>requester-managed</code> - Indicates whether the network interface is
      * being managed by an AWS service (for example, AWS Management Console, Auto
-     * Scaling, and so on).</p> </li> <li> <p> <code>source-desk-check</code> -
+     * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
      * Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code>
      * means checking is disabled. The value must be <code>false</code> for the network
@@ -404,7 +404,7 @@ namespace Model
      * Console, Auto Scaling, and so on).</p> </li> <li> <p>
      * <code>requester-managed</code> - Indicates whether the network interface is
      * being managed by an AWS service (for example, AWS Management Console, Auto
-     * Scaling, and so on).</p> </li> <li> <p> <code>source-desk-check</code> -
+     * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
      * Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code>
      * means checking is disabled. The value must be <code>false</code> for the network
@@ -479,7 +479,7 @@ namespace Model
      * Console, Auto Scaling, and so on).</p> </li> <li> <p>
      * <code>requester-managed</code> - Indicates whether the network interface is
      * being managed by an AWS service (for example, AWS Management Console, Auto
-     * Scaling, and so on).</p> </li> <li> <p> <code>source-desk-check</code> -
+     * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
      * Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code>
      * means checking is disabled. The value must be <code>false</code> for the network
@@ -554,7 +554,7 @@ namespace Model
      * Console, Auto Scaling, and so on).</p> </li> <li> <p>
      * <code>requester-managed</code> - Indicates whether the network interface is
      * being managed by an AWS service (for example, AWS Management Console, Auto
-     * Scaling, and so on).</p> </li> <li> <p> <code>source-desk-check</code> -
+     * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
      * Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code>
      * means checking is disabled. The value must be <code>false</code> for the network
@@ -629,7 +629,7 @@ namespace Model
      * Console, Auto Scaling, and so on).</p> </li> <li> <p>
      * <code>requester-managed</code> - Indicates whether the network interface is
      * being managed by an AWS service (for example, AWS Management Console, Auto
-     * Scaling, and so on).</p> </li> <li> <p> <code>source-desk-check</code> -
+     * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
      * Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code>
      * means checking is disabled. The value must be <code>false</code> for the network

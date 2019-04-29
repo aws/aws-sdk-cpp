@@ -178,47 +178,47 @@ namespace Model
 
 
     /**
-     * <p>The IDs of one or more security groups.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
 
     /**
-     * <p>The IDs of one or more security groups.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
-     * <p>The IDs of one or more security groups.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline void SetGroups(const Aws::Vector<Aws::String>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
-     * <p>The IDs of one or more security groups.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
-     * <p>The IDs of one or more security groups.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline ScheduledInstancesNetworkInterface& WithGroups(const Aws::Vector<Aws::String>& value) { SetGroups(value); return *this;}
 
     /**
-     * <p>The IDs of one or more security groups.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline ScheduledInstancesNetworkInterface& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of one or more security groups.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline ScheduledInstancesNetworkInterface& AddGroups(const Aws::String& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of one or more security groups.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline ScheduledInstancesNetworkInterface& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of one or more security groups.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline ScheduledInstancesNetworkInterface& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
@@ -249,42 +249,42 @@ namespace Model
 
 
     /**
-     * <p>One or more specific IPv6 addresses from the subnet range.</p>
+     * <p>The specific IPv6 addresses from the subnet range.</p>
      */
     inline const Aws::Vector<ScheduledInstancesIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
 
     /**
-     * <p>One or more specific IPv6 addresses from the subnet range.</p>
+     * <p>The specific IPv6 addresses from the subnet range.</p>
      */
     inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
 
     /**
-     * <p>One or more specific IPv6 addresses from the subnet range.</p>
+     * <p>The specific IPv6 addresses from the subnet range.</p>
      */
     inline void SetIpv6Addresses(const Aws::Vector<ScheduledInstancesIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
 
     /**
-     * <p>One or more specific IPv6 addresses from the subnet range.</p>
+     * <p>The specific IPv6 addresses from the subnet range.</p>
      */
     inline void SetIpv6Addresses(Aws::Vector<ScheduledInstancesIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
 
     /**
-     * <p>One or more specific IPv6 addresses from the subnet range.</p>
+     * <p>The specific IPv6 addresses from the subnet range.</p>
      */
     inline ScheduledInstancesNetworkInterface& WithIpv6Addresses(const Aws::Vector<ScheduledInstancesIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
 
     /**
-     * <p>One or more specific IPv6 addresses from the subnet range.</p>
+     * <p>The specific IPv6 addresses from the subnet range.</p>
      */
     inline ScheduledInstancesNetworkInterface& WithIpv6Addresses(Aws::Vector<ScheduledInstancesIpv6Address>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
 
     /**
-     * <p>One or more specific IPv6 addresses from the subnet range.</p>
+     * <p>The specific IPv6 addresses from the subnet range.</p>
      */
     inline ScheduledInstancesNetworkInterface& AddIpv6Addresses(const ScheduledInstancesIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
 
     /**
-     * <p>One or more specific IPv6 addresses from the subnet range.</p>
+     * <p>The specific IPv6 addresses from the subnet range.</p>
      */
     inline ScheduledInstancesNetworkInterface& AddIpv6Addresses(ScheduledInstancesIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
 

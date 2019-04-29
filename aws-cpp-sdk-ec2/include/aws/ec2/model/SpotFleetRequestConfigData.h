@@ -390,83 +390,115 @@ namespace Model
 
 
     /**
-     * <p>The launch specifications for the Spot Fleet request.</p>
+     * <p>The launch specifications for the Spot Fleet request. If you specify
+     * <code>LaunchSpecifications</code>, you can't specify
+     * <code>LaunchTemplateConfigs</code>.</p>
      */
     inline const Aws::Vector<SpotFleetLaunchSpecification>& GetLaunchSpecifications() const{ return m_launchSpecifications; }
 
     /**
-     * <p>The launch specifications for the Spot Fleet request.</p>
+     * <p>The launch specifications for the Spot Fleet request. If you specify
+     * <code>LaunchSpecifications</code>, you can't specify
+     * <code>LaunchTemplateConfigs</code>.</p>
      */
     inline bool LaunchSpecificationsHasBeenSet() const { return m_launchSpecificationsHasBeenSet; }
 
     /**
-     * <p>The launch specifications for the Spot Fleet request.</p>
+     * <p>The launch specifications for the Spot Fleet request. If you specify
+     * <code>LaunchSpecifications</code>, you can't specify
+     * <code>LaunchTemplateConfigs</code>.</p>
      */
     inline void SetLaunchSpecifications(const Aws::Vector<SpotFleetLaunchSpecification>& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications = value; }
 
     /**
-     * <p>The launch specifications for the Spot Fleet request.</p>
+     * <p>The launch specifications for the Spot Fleet request. If you specify
+     * <code>LaunchSpecifications</code>, you can't specify
+     * <code>LaunchTemplateConfigs</code>.</p>
      */
     inline void SetLaunchSpecifications(Aws::Vector<SpotFleetLaunchSpecification>&& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications = std::move(value); }
 
     /**
-     * <p>The launch specifications for the Spot Fleet request.</p>
+     * <p>The launch specifications for the Spot Fleet request. If you specify
+     * <code>LaunchSpecifications</code>, you can't specify
+     * <code>LaunchTemplateConfigs</code>.</p>
      */
     inline SpotFleetRequestConfigData& WithLaunchSpecifications(const Aws::Vector<SpotFleetLaunchSpecification>& value) { SetLaunchSpecifications(value); return *this;}
 
     /**
-     * <p>The launch specifications for the Spot Fleet request.</p>
+     * <p>The launch specifications for the Spot Fleet request. If you specify
+     * <code>LaunchSpecifications</code>, you can't specify
+     * <code>LaunchTemplateConfigs</code>.</p>
      */
     inline SpotFleetRequestConfigData& WithLaunchSpecifications(Aws::Vector<SpotFleetLaunchSpecification>&& value) { SetLaunchSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The launch specifications for the Spot Fleet request.</p>
+     * <p>The launch specifications for the Spot Fleet request. If you specify
+     * <code>LaunchSpecifications</code>, you can't specify
+     * <code>LaunchTemplateConfigs</code>.</p>
      */
     inline SpotFleetRequestConfigData& AddLaunchSpecifications(const SpotFleetLaunchSpecification& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The launch specifications for the Spot Fleet request.</p>
+     * <p>The launch specifications for the Spot Fleet request. If you specify
+     * <code>LaunchSpecifications</code>, you can't specify
+     * <code>LaunchTemplateConfigs</code>.</p>
      */
     inline SpotFleetRequestConfigData& AddLaunchSpecifications(SpotFleetLaunchSpecification&& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The launch template and overrides.</p>
+     * <p>The launch template and overrides. If you specify
+     * <code>LaunchTemplateConfigs</code>, you can't specify
+     * <code>LaunchSpecifications</code>.</p>
      */
     inline const Aws::Vector<LaunchTemplateConfig>& GetLaunchTemplateConfigs() const{ return m_launchTemplateConfigs; }
 
     /**
-     * <p>The launch template and overrides.</p>
+     * <p>The launch template and overrides. If you specify
+     * <code>LaunchTemplateConfigs</code>, you can't specify
+     * <code>LaunchSpecifications</code>.</p>
      */
     inline bool LaunchTemplateConfigsHasBeenSet() const { return m_launchTemplateConfigsHasBeenSet; }
 
     /**
-     * <p>The launch template and overrides.</p>
+     * <p>The launch template and overrides. If you specify
+     * <code>LaunchTemplateConfigs</code>, you can't specify
+     * <code>LaunchSpecifications</code>.</p>
      */
     inline void SetLaunchTemplateConfigs(const Aws::Vector<LaunchTemplateConfig>& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs = value; }
 
     /**
-     * <p>The launch template and overrides.</p>
+     * <p>The launch template and overrides. If you specify
+     * <code>LaunchTemplateConfigs</code>, you can't specify
+     * <code>LaunchSpecifications</code>.</p>
      */
     inline void SetLaunchTemplateConfigs(Aws::Vector<LaunchTemplateConfig>&& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs = std::move(value); }
 
     /**
-     * <p>The launch template and overrides.</p>
+     * <p>The launch template and overrides. If you specify
+     * <code>LaunchTemplateConfigs</code>, you can't specify
+     * <code>LaunchSpecifications</code>.</p>
      */
     inline SpotFleetRequestConfigData& WithLaunchTemplateConfigs(const Aws::Vector<LaunchTemplateConfig>& value) { SetLaunchTemplateConfigs(value); return *this;}
 
     /**
-     * <p>The launch template and overrides.</p>
+     * <p>The launch template and overrides. If you specify
+     * <code>LaunchTemplateConfigs</code>, you can't specify
+     * <code>LaunchSpecifications</code>.</p>
      */
     inline SpotFleetRequestConfigData& WithLaunchTemplateConfigs(Aws::Vector<LaunchTemplateConfig>&& value) { SetLaunchTemplateConfigs(std::move(value)); return *this;}
 
     /**
-     * <p>The launch template and overrides.</p>
+     * <p>The launch template and overrides. If you specify
+     * <code>LaunchTemplateConfigs</code>, you can't specify
+     * <code>LaunchSpecifications</code>.</p>
      */
     inline SpotFleetRequestConfigData& AddLaunchTemplateConfigs(const LaunchTemplateConfig& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs.push_back(value); return *this; }
 
     /**
-     * <p>The launch template and overrides.</p>
+     * <p>The launch template and overrides. If you specify
+     * <code>LaunchTemplateConfigs</code>, you can't specify
+     * <code>LaunchSpecifications</code>.</p>
      */
     inline SpotFleetRequestConfigData& AddLaunchTemplateConfigs(LaunchTemplateConfig&& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs.push_back(std::move(value)); return *this; }
 

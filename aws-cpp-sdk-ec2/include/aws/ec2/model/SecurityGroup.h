@@ -258,42 +258,42 @@ namespace Model
 
 
     /**
-     * <p>[EC2-VPC] The outbound rules associated with the security group.</p>
+     * <p>[VPC only] The outbound rules associated with the security group.</p>
      */
     inline const Aws::Vector<IpPermission>& GetIpPermissionsEgress() const{ return m_ipPermissionsEgress; }
 
     /**
-     * <p>[EC2-VPC] The outbound rules associated with the security group.</p>
+     * <p>[VPC only] The outbound rules associated with the security group.</p>
      */
     inline bool IpPermissionsEgressHasBeenSet() const { return m_ipPermissionsEgressHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC] The outbound rules associated with the security group.</p>
+     * <p>[VPC only] The outbound rules associated with the security group.</p>
      */
     inline void SetIpPermissionsEgress(const Aws::Vector<IpPermission>& value) { m_ipPermissionsEgressHasBeenSet = true; m_ipPermissionsEgress = value; }
 
     /**
-     * <p>[EC2-VPC] The outbound rules associated with the security group.</p>
+     * <p>[VPC only] The outbound rules associated with the security group.</p>
      */
     inline void SetIpPermissionsEgress(Aws::Vector<IpPermission>&& value) { m_ipPermissionsEgressHasBeenSet = true; m_ipPermissionsEgress = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] The outbound rules associated with the security group.</p>
+     * <p>[VPC only] The outbound rules associated with the security group.</p>
      */
     inline SecurityGroup& WithIpPermissionsEgress(const Aws::Vector<IpPermission>& value) { SetIpPermissionsEgress(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The outbound rules associated with the security group.</p>
+     * <p>[VPC only] The outbound rules associated with the security group.</p>
      */
     inline SecurityGroup& WithIpPermissionsEgress(Aws::Vector<IpPermission>&& value) { SetIpPermissionsEgress(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] The outbound rules associated with the security group.</p>
+     * <p>[VPC only] The outbound rules associated with the security group.</p>
      */
     inline SecurityGroup& AddIpPermissionsEgress(const IpPermission& value) { m_ipPermissionsEgressHasBeenSet = true; m_ipPermissionsEgress.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-VPC] The outbound rules associated with the security group.</p>
+     * <p>[VPC only] The outbound rules associated with the security group.</p>
      */
     inline SecurityGroup& AddIpPermissionsEgress(IpPermission&& value) { m_ipPermissionsEgressHasBeenSet = true; m_ipPermissionsEgress.push_back(std::move(value)); return *this; }
 
@@ -340,42 +340,42 @@ namespace Model
 
 
     /**
-     * <p>[EC2-VPC] The ID of the VPC for the security group.</p>
+     * <p>[VPC only] The ID of the VPC for the security group.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>[EC2-VPC] The ID of the VPC for the security group.</p>
+     * <p>[VPC only] The ID of the VPC for the security group.</p>
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC] The ID of the VPC for the security group.</p>
+     * <p>[VPC only] The ID of the VPC for the security group.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>[EC2-VPC] The ID of the VPC for the security group.</p>
+     * <p>[VPC only] The ID of the VPC for the security group.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] The ID of the VPC for the security group.</p>
+     * <p>[VPC only] The ID of the VPC for the security group.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>[EC2-VPC] The ID of the VPC for the security group.</p>
+     * <p>[VPC only] The ID of the VPC for the security group.</p>
      */
     inline SecurityGroup& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID of the VPC for the security group.</p>
+     * <p>[VPC only] The ID of the VPC for the security group.</p>
      */
     inline SecurityGroup& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID of the VPC for the security group.</p>
+     * <p>[VPC only] The ID of the VPC for the security group.</p>
      */
     inline SecurityGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 

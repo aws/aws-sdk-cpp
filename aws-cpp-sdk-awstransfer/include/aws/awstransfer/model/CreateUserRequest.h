@@ -398,49 +398,65 @@ namespace Model
 
     /**
      * <p>A unique string that identifies a user and is associated with a server as
-     * specified by the <code>ServerId</code>.</p>
+     * specified by the <code>ServerId</code>. This user name must be a minimum of 3
+     * and a maximum of 32 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
      * <p>A unique string that identifies a user and is associated with a server as
-     * specified by the <code>ServerId</code>.</p>
+     * specified by the <code>ServerId</code>. This user name must be a minimum of 3
+     * and a maximum of 32 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>A unique string that identifies a user and is associated with a server as
-     * specified by the <code>ServerId</code>.</p>
+     * specified by the <code>ServerId</code>. This user name must be a minimum of 3
+     * and a maximum of 32 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>A unique string that identifies a user and is associated with a server as
-     * specified by the <code>ServerId</code>.</p>
+     * specified by the <code>ServerId</code>. This user name must be a minimum of 3
+     * and a maximum of 32 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>A unique string that identifies a user and is associated with a server as
-     * specified by the <code>ServerId</code>.</p>
+     * specified by the <code>ServerId</code>. This user name must be a minimum of 3
+     * and a maximum of 32 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
      * <p>A unique string that identifies a user and is associated with a server as
-     * specified by the <code>ServerId</code>.</p>
+     * specified by the <code>ServerId</code>. This user name must be a minimum of 3
+     * and a maximum of 32 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
      */
     inline CreateUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
      * <p>A unique string that identifies a user and is associated with a server as
-     * specified by the <code>ServerId</code>.</p>
+     * specified by the <code>ServerId</code>. This user name must be a minimum of 3
+     * and a maximum of 32 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
      */
     inline CreateUserRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that identifies a user and is associated with a server as
-     * specified by the <code>ServerId</code>.</p>
+     * specified by the <code>ServerId</code>. This user name must be a minimum of 3
+     * and a maximum of 32 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
      */
     inline CreateUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 

@@ -51,83 +51,107 @@ namespace Model
   public:
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway that is attached to a VPC. The virtual
+     * private gateway must be attached to the same VPC that the routing tables are
+     * associated with. </p>
      */
     inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway that is attached to a VPC. The virtual
+     * private gateway must be attached to the same VPC that the routing tables are
+     * associated with. </p>
      */
     inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway that is attached to a VPC. The virtual
+     * private gateway must be attached to the same VPC that the routing tables are
+     * associated with. </p>
      */
     inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway that is attached to a VPC. The virtual
+     * private gateway must be attached to the same VPC that the routing tables are
+     * associated with. </p>
      */
     inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway that is attached to a VPC. The virtual
+     * private gateway must be attached to the same VPC that the routing tables are
+     * associated with. </p>
      */
     inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway that is attached to a VPC. The virtual
+     * private gateway must be attached to the same VPC that the routing tables are
+     * associated with. </p>
      */
     inline EnableVgwRoutePropagationRequest& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway that is attached to a VPC. The virtual
+     * private gateway must be attached to the same VPC that the routing tables are
+     * associated with. </p>
      */
     inline EnableVgwRoutePropagationRequest& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway that is attached to a VPC. The virtual
+     * private gateway must be attached to the same VPC that the routing tables are
+     * associated with. </p>
      */
     inline EnableVgwRoutePropagationRequest& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
 
 
     /**
-     * <p>The ID of the route table.</p>
+     * <p>The ID of the route table. The routing table must be associated with the same
+     * VPC that the virtual private gateway is attached to. </p>
      */
     inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
 
     /**
-     * <p>The ID of the route table.</p>
+     * <p>The ID of the route table. The routing table must be associated with the same
+     * VPC that the virtual private gateway is attached to. </p>
      */
     inline bool RouteTableIdHasBeenSet() const { return m_routeTableIdHasBeenSet; }
 
     /**
-     * <p>The ID of the route table.</p>
+     * <p>The ID of the route table. The routing table must be associated with the same
+     * VPC that the virtual private gateway is attached to. </p>
      */
     inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
 
     /**
-     * <p>The ID of the route table.</p>
+     * <p>The ID of the route table. The routing table must be associated with the same
+     * VPC that the virtual private gateway is attached to. </p>
      */
     inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
 
     /**
-     * <p>The ID of the route table.</p>
+     * <p>The ID of the route table. The routing table must be associated with the same
+     * VPC that the virtual private gateway is attached to. </p>
      */
     inline void SetRouteTableId(const char* value) { m_routeTableIdHasBeenSet = true; m_routeTableId.assign(value); }
 
     /**
-     * <p>The ID of the route table.</p>
+     * <p>The ID of the route table. The routing table must be associated with the same
+     * VPC that the virtual private gateway is attached to. </p>
      */
     inline EnableVgwRoutePropagationRequest& WithRouteTableId(const Aws::String& value) { SetRouteTableId(value); return *this;}
 
     /**
-     * <p>The ID of the route table.</p>
+     * <p>The ID of the route table. The routing table must be associated with the same
+     * VPC that the virtual private gateway is attached to. </p>
      */
     inline EnableVgwRoutePropagationRequest& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the route table.</p>
+     * <p>The ID of the route table. The routing table must be associated with the same
+     * VPC that the virtual private gateway is attached to. </p>
      */
     inline EnableVgwRoutePropagationRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
 
