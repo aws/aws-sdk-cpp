@@ -34,9 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details of an Amazon Neptune DB cluster parameter group. </p>
+   * <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p>
    * <p>This data type is used as a response element in the
-   * <a>DescribeDBClusterParameterGroups</a> action. </p><p><h3>See Also:</h3>   <a
+   * <a>DescribeDBClusterParameterGroups</a> action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DBClusterParameterGroup">AWS
    * API Reference</a></p>
    */

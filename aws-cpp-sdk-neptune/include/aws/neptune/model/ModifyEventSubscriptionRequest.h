@@ -28,9 +28,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyEventSubscriptionMessage">AWS
-   * API Reference</a></p>
    */
   class AWS_NEPTUNE_API ModifyEventSubscriptionRequest : public NeptuneRequest
   {
@@ -224,84 +221,84 @@ namespace Model
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType by using the
-     * <b>DescribeEventCategories</b> action. </p>
+     * <b>DescribeEventCategories</b> action.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType by using the
-     * <b>DescribeEventCategories</b> action. </p>
+     * <b>DescribeEventCategories</b> action.</p>
      */
     inline bool EventCategoriesHasBeenSet() const { return m_eventCategoriesHasBeenSet; }
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType by using the
-     * <b>DescribeEventCategories</b> action. </p>
+     * <b>DescribeEventCategories</b> action.</p>
      */
     inline void SetEventCategories(const Aws::Vector<Aws::String>& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType by using the
-     * <b>DescribeEventCategories</b> action. </p>
+     * <b>DescribeEventCategories</b> action.</p>
      */
     inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::move(value); }
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType by using the
-     * <b>DescribeEventCategories</b> action. </p>
+     * <b>DescribeEventCategories</b> action.</p>
      */
     inline ModifyEventSubscriptionRequest& WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType by using the
-     * <b>DescribeEventCategories</b> action. </p>
+     * <b>DescribeEventCategories</b> action.</p>
      */
     inline ModifyEventSubscriptionRequest& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(std::move(value)); return *this;}
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType by using the
-     * <b>DescribeEventCategories</b> action. </p>
+     * <b>DescribeEventCategories</b> action.</p>
      */
     inline ModifyEventSubscriptionRequest& AddEventCategories(const Aws::String& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType by using the
-     * <b>DescribeEventCategories</b> action. </p>
+     * <b>DescribeEventCategories</b> action.</p>
      */
     inline ModifyEventSubscriptionRequest& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(std::move(value)); return *this; }
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType by using the
-     * <b>DescribeEventCategories</b> action. </p>
+     * <b>DescribeEventCategories</b> action.</p>
      */
     inline ModifyEventSubscriptionRequest& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
 
     /**
-     * <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
+     * <p> A Boolean value; set to <b>true</b> to activate the subscription.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
+     * <p> A Boolean value; set to <b>true</b> to activate the subscription.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
+     * <p> A Boolean value; set to <b>true</b> to activate the subscription.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
+     * <p> A Boolean value; set to <b>true</b> to activate the subscription.</p>
      */
     inline ModifyEventSubscriptionRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

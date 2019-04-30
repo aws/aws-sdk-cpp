@@ -88,10 +88,54 @@ namespace Model
      */
     inline ActionContext& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>The system-generated unique ID that corresponds to an action's execution.</p>
+     */
+    inline const Aws::String& GetActionExecutionId() const{ return m_actionExecutionId; }
+
+    /**
+     * <p>The system-generated unique ID that corresponds to an action's execution.</p>
+     */
+    inline bool ActionExecutionIdHasBeenSet() const { return m_actionExecutionIdHasBeenSet; }
+
+    /**
+     * <p>The system-generated unique ID that corresponds to an action's execution.</p>
+     */
+    inline void SetActionExecutionId(const Aws::String& value) { m_actionExecutionIdHasBeenSet = true; m_actionExecutionId = value; }
+
+    /**
+     * <p>The system-generated unique ID that corresponds to an action's execution.</p>
+     */
+    inline void SetActionExecutionId(Aws::String&& value) { m_actionExecutionIdHasBeenSet = true; m_actionExecutionId = std::move(value); }
+
+    /**
+     * <p>The system-generated unique ID that corresponds to an action's execution.</p>
+     */
+    inline void SetActionExecutionId(const char* value) { m_actionExecutionIdHasBeenSet = true; m_actionExecutionId.assign(value); }
+
+    /**
+     * <p>The system-generated unique ID that corresponds to an action's execution.</p>
+     */
+    inline ActionContext& WithActionExecutionId(const Aws::String& value) { SetActionExecutionId(value); return *this;}
+
+    /**
+     * <p>The system-generated unique ID that corresponds to an action's execution.</p>
+     */
+    inline ActionContext& WithActionExecutionId(Aws::String&& value) { SetActionExecutionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The system-generated unique ID that corresponds to an action's execution.</p>
+     */
+    inline ActionContext& WithActionExecutionId(const char* value) { SetActionExecutionId(value); return *this;}
+
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_actionExecutionId;
+    bool m_actionExecutionIdHasBeenSet;
   };
 
 } // namespace Model

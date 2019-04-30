@@ -167,25 +167,25 @@ namespace Model
 
     /**
      * <p>A value that specifies the order in which a Read Replica is promoted to the
-     * primary instance after a failure of the existing primary instance. </p>
+     * primary instance after a failure of the existing primary instance.</p>
      */
     inline int GetPromotionTier() const{ return m_promotionTier; }
 
     /**
      * <p>A value that specifies the order in which a Read Replica is promoted to the
-     * primary instance after a failure of the existing primary instance. </p>
+     * primary instance after a failure of the existing primary instance.</p>
      */
     inline bool PromotionTierHasBeenSet() const { return m_promotionTierHasBeenSet; }
 
     /**
      * <p>A value that specifies the order in which a Read Replica is promoted to the
-     * primary instance after a failure of the existing primary instance. </p>
+     * primary instance after a failure of the existing primary instance.</p>
      */
     inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
 
     /**
      * <p>A value that specifies the order in which a Read Replica is promoted to the
-     * primary instance after a failure of the existing primary instance. </p>
+     * primary instance after a failure of the existing primary instance.</p>
      */
     inline DBClusterMember& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 

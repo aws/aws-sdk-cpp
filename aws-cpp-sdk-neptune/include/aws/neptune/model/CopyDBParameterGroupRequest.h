@@ -29,9 +29,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CopyDBParameterGroupMessage">AWS
-   * API Reference</a></p>
    */
   class AWS_NEPTUNE_API CopyDBParameterGroupRequest : public NeptuneRequest
   {
@@ -52,10 +49,10 @@ namespace Model
   public:
 
     /**
-     * <p> The identifier or ARN for the source DB parameter group. For information
+     * <p>The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     * Constructing an Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p> <ul>
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * Constructing an Amazon Resource Name (ARN)</a>.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p>Must specify
      * a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
@@ -63,10 +60,10 @@ namespace Model
     inline const Aws::String& GetSourceDBParameterGroupIdentifier() const{ return m_sourceDBParameterGroupIdentifier; }
 
     /**
-     * <p> The identifier or ARN for the source DB parameter group. For information
+     * <p>The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     * Constructing an Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p> <ul>
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * Constructing an Amazon Resource Name (ARN)</a>.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p>Must specify
      * a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
@@ -74,10 +71,10 @@ namespace Model
     inline bool SourceDBParameterGroupIdentifierHasBeenSet() const { return m_sourceDBParameterGroupIdentifierHasBeenSet; }
 
     /**
-     * <p> The identifier or ARN for the source DB parameter group. For information
+     * <p>The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     * Constructing an Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p> <ul>
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * Constructing an Amazon Resource Name (ARN)</a>.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p>Must specify
      * a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
@@ -85,10 +82,10 @@ namespace Model
     inline void SetSourceDBParameterGroupIdentifier(const Aws::String& value) { m_sourceDBParameterGroupIdentifierHasBeenSet = true; m_sourceDBParameterGroupIdentifier = value; }
 
     /**
-     * <p> The identifier or ARN for the source DB parameter group. For information
+     * <p>The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     * Constructing an Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p> <ul>
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * Constructing an Amazon Resource Name (ARN)</a>.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p>Must specify
      * a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
@@ -96,10 +93,10 @@ namespace Model
     inline void SetSourceDBParameterGroupIdentifier(Aws::String&& value) { m_sourceDBParameterGroupIdentifierHasBeenSet = true; m_sourceDBParameterGroupIdentifier = std::move(value); }
 
     /**
-     * <p> The identifier or ARN for the source DB parameter group. For information
+     * <p>The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     * Constructing an Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p> <ul>
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * Constructing an Amazon Resource Name (ARN)</a>.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p>Must specify
      * a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
@@ -107,10 +104,10 @@ namespace Model
     inline void SetSourceDBParameterGroupIdentifier(const char* value) { m_sourceDBParameterGroupIdentifierHasBeenSet = true; m_sourceDBParameterGroupIdentifier.assign(value); }
 
     /**
-     * <p> The identifier or ARN for the source DB parameter group. For information
+     * <p>The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     * Constructing an Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p> <ul>
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * Constructing an Amazon Resource Name (ARN)</a>.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p>Must specify
      * a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
@@ -118,10 +115,10 @@ namespace Model
     inline CopyDBParameterGroupRequest& WithSourceDBParameterGroupIdentifier(const Aws::String& value) { SetSourceDBParameterGroupIdentifier(value); return *this;}
 
     /**
-     * <p> The identifier or ARN for the source DB parameter group. For information
+     * <p>The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     * Constructing an Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p> <ul>
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * Constructing an Amazon Resource Name (ARN)</a>.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p>Must specify
      * a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
@@ -129,10 +126,10 @@ namespace Model
     inline CopyDBParameterGroupRequest& WithSourceDBParameterGroupIdentifier(Aws::String&& value) { SetSourceDBParameterGroupIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier or ARN for the source DB parameter group. For information
+     * <p>The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     * Constructing an Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p> <ul>
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * Constructing an Amazon Resource Name (ARN)</a>.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p>Must specify
      * a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
@@ -142,73 +139,81 @@ namespace Model
 
     /**
      * <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
-     * 1 to 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul> <p>Example: <code>my-db-parameter-group</code> </p>
+     * <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain
+     * from 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character
+     * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>my-db-parameter-group</code> </p>
      */
     inline const Aws::String& GetTargetDBParameterGroupIdentifier() const{ return m_targetDBParameterGroupIdentifier; }
 
     /**
      * <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
-     * 1 to 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul> <p>Example: <code>my-db-parameter-group</code> </p>
+     * <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain
+     * from 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character
+     * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>my-db-parameter-group</code> </p>
      */
     inline bool TargetDBParameterGroupIdentifierHasBeenSet() const { return m_targetDBParameterGroupIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
-     * 1 to 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul> <p>Example: <code>my-db-parameter-group</code> </p>
+     * <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain
+     * from 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character
+     * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>my-db-parameter-group</code> </p>
      */
     inline void SetTargetDBParameterGroupIdentifier(const Aws::String& value) { m_targetDBParameterGroupIdentifierHasBeenSet = true; m_targetDBParameterGroupIdentifier = value; }
 
     /**
      * <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
-     * 1 to 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul> <p>Example: <code>my-db-parameter-group</code> </p>
+     * <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain
+     * from 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character
+     * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>my-db-parameter-group</code> </p>
      */
     inline void SetTargetDBParameterGroupIdentifier(Aws::String&& value) { m_targetDBParameterGroupIdentifierHasBeenSet = true; m_targetDBParameterGroupIdentifier = std::move(value); }
 
     /**
      * <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
-     * 1 to 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul> <p>Example: <code>my-db-parameter-group</code> </p>
+     * <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain
+     * from 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character
+     * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>my-db-parameter-group</code> </p>
      */
     inline void SetTargetDBParameterGroupIdentifier(const char* value) { m_targetDBParameterGroupIdentifierHasBeenSet = true; m_targetDBParameterGroupIdentifier.assign(value); }
 
     /**
      * <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
-     * 1 to 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul> <p>Example: <code>my-db-parameter-group</code> </p>
+     * <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain
+     * from 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character
+     * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>my-db-parameter-group</code> </p>
      */
     inline CopyDBParameterGroupRequest& WithTargetDBParameterGroupIdentifier(const Aws::String& value) { SetTargetDBParameterGroupIdentifier(value); return *this;}
 
     /**
      * <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
-     * 1 to 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul> <p>Example: <code>my-db-parameter-group</code> </p>
+     * <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain
+     * from 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character
+     * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>my-db-parameter-group</code> </p>
      */
     inline CopyDBParameterGroupRequest& WithTargetDBParameterGroupIdentifier(Aws::String&& value) { SetTargetDBParameterGroupIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
-     * 1 to 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul> <p>Example: <code>my-db-parameter-group</code> </p>
+     * <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain
+     * from 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character
+     * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>my-db-parameter-group</code> </p>
      */
     inline CopyDBParameterGroupRequest& WithTargetDBParameterGroupIdentifier(const char* value) { SetTargetDBParameterGroupIdentifier(value); return *this;}
 
@@ -254,28 +259,44 @@ namespace Model
     inline CopyDBParameterGroupRequest& WithTargetDBParameterGroupDescription(const char* value) { SetTargetDBParameterGroupDescription(value); return *this;}
 
 
-    
+    /**
+     * <p>The tags to be assigned to the copied DB parameter group.</p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    
+    /**
+     * <p>The tags to be assigned to the copied DB parameter group.</p>
+     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
-    
+    /**
+     * <p>The tags to be assigned to the copied DB parameter group.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    
+    /**
+     * <p>The tags to be assigned to the copied DB parameter group.</p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
-    
+    /**
+     * <p>The tags to be assigned to the copied DB parameter group.</p>
+     */
     inline CopyDBParameterGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    
+    /**
+     * <p>The tags to be assigned to the copied DB parameter group.</p>
+     */
     inline CopyDBParameterGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The tags to be assigned to the copied DB parameter group.</p>
+     */
     inline CopyDBParameterGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The tags to be assigned to the copied DB parameter group.</p>
+     */
     inline CopyDBParameterGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:

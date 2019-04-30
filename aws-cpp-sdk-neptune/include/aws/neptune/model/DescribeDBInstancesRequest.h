@@ -29,9 +29,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBInstancesMessage">AWS
-   * API Reference</a></p>
    */
   class AWS_NEPTUNE_API DescribeDBInstancesRequest : public NeptuneRequest
   {
@@ -217,7 +214,7 @@ namespace Model
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * retrieved.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
@@ -225,7 +222,7 @@ namespace Model
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * retrieved.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
@@ -233,7 +230,7 @@ namespace Model
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * retrieved.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
@@ -241,7 +238,7 @@ namespace Model
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * retrieved.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeDBInstancesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
@@ -250,7 +247,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * <code>DescribeDBInstances</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
@@ -258,7 +255,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * <code>DescribeDBInstances</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
@@ -266,7 +263,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * <code>DescribeDBInstances</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
@@ -274,7 +271,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * <code>DescribeDBInstances</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
@@ -282,7 +279,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * <code>DescribeDBInstances</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
@@ -290,7 +287,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * <code>DescribeDBInstances</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeDBInstancesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
@@ -298,7 +295,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * <code>DescribeDBInstances</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeDBInstancesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
@@ -306,7 +303,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * <code>DescribeDBInstances</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeDBInstancesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 

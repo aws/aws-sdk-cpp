@@ -194,7 +194,7 @@ namespace Model
      * portfolio.</p> </dd> <dt>NOTIFICATION</dt> <dd> <p>Specify the
      * <code>NotificationArns</code> property as follows:</p> <p>
      * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-     * </p> </dd> <dt>RESOUCE_UPDATE</dt> <dd> <p>Specify the
+     * </p> </dd> <dt>RESOURCE_UPDATE</dt> <dd> <p>Specify the
      * <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p> <p>
      * <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
      * </p> <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a
@@ -223,7 +223,7 @@ namespace Model
      * portfolio.</p> </dd> <dt>NOTIFICATION</dt> <dd> <p>Specify the
      * <code>NotificationArns</code> property as follows:</p> <p>
      * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-     * </p> </dd> <dt>RESOUCE_UPDATE</dt> <dd> <p>Specify the
+     * </p> </dd> <dt>RESOURCE_UPDATE</dt> <dd> <p>Specify the
      * <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p> <p>
      * <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
      * </p> <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a
@@ -252,7 +252,7 @@ namespace Model
      * portfolio.</p> </dd> <dt>NOTIFICATION</dt> <dd> <p>Specify the
      * <code>NotificationArns</code> property as follows:</p> <p>
      * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-     * </p> </dd> <dt>RESOUCE_UPDATE</dt> <dd> <p>Specify the
+     * </p> </dd> <dt>RESOURCE_UPDATE</dt> <dd> <p>Specify the
      * <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p> <p>
      * <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
      * </p> <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a
@@ -281,7 +281,7 @@ namespace Model
      * portfolio.</p> </dd> <dt>NOTIFICATION</dt> <dd> <p>Specify the
      * <code>NotificationArns</code> property as follows:</p> <p>
      * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-     * </p> </dd> <dt>RESOUCE_UPDATE</dt> <dd> <p>Specify the
+     * </p> </dd> <dt>RESOURCE_UPDATE</dt> <dd> <p>Specify the
      * <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p> <p>
      * <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
      * </p> <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a
@@ -310,7 +310,7 @@ namespace Model
      * portfolio.</p> </dd> <dt>NOTIFICATION</dt> <dd> <p>Specify the
      * <code>NotificationArns</code> property as follows:</p> <p>
      * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-     * </p> </dd> <dt>RESOUCE_UPDATE</dt> <dd> <p>Specify the
+     * </p> </dd> <dt>RESOURCE_UPDATE</dt> <dd> <p>Specify the
      * <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p> <p>
      * <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
      * </p> <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a
@@ -339,7 +339,7 @@ namespace Model
      * portfolio.</p> </dd> <dt>NOTIFICATION</dt> <dd> <p>Specify the
      * <code>NotificationArns</code> property as follows:</p> <p>
      * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-     * </p> </dd> <dt>RESOUCE_UPDATE</dt> <dd> <p>Specify the
+     * </p> </dd> <dt>RESOURCE_UPDATE</dt> <dd> <p>Specify the
      * <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p> <p>
      * <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
      * </p> <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a
@@ -368,7 +368,7 @@ namespace Model
      * portfolio.</p> </dd> <dt>NOTIFICATION</dt> <dd> <p>Specify the
      * <code>NotificationArns</code> property as follows:</p> <p>
      * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-     * </p> </dd> <dt>RESOUCE_UPDATE</dt> <dd> <p>Specify the
+     * </p> </dd> <dt>RESOURCE_UPDATE</dt> <dd> <p>Specify the
      * <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p> <p>
      * <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
      * </p> <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a
@@ -397,7 +397,7 @@ namespace Model
      * portfolio.</p> </dd> <dt>NOTIFICATION</dt> <dd> <p>Specify the
      * <code>NotificationArns</code> property as follows:</p> <p>
      * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
-     * </p> </dd> <dt>RESOUCE_UPDATE</dt> <dd> <p>Specify the
+     * </p> </dd> <dt>RESOURCE_UPDATE</dt> <dd> <p>Specify the
      * <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p> <p>
      * <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
      * </p> <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a

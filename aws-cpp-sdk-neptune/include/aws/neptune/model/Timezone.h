@@ -34,10 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>A time zone associated with a <a>DBInstance</a>. This data type is an element
-   * in the response to the <a>DescribeDBInstances</a>, and the
-   * <a>DescribeDBEngineVersions</a> actions. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/Timezone">AWS
+   * <p>A time zone associated with a <a>DBInstance</a>.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/Timezone">AWS
    * API Reference</a></p>
    */
   class AWS_NEPTUNE_API Timezone

@@ -45,9 +45,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details of an Amazon Neptune DB instance. </p> <p>This data type
-   * is used as a response element in the <a>DescribeDBInstances</a> action.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Contains the details of an Amazon Neptune DB instance.</p> <p>This data type
+   * is used as a response element in the <a>DescribeDBInstances</a>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DBInstance">AWS
    * API Reference</a></p>
    */
@@ -410,56 +410,56 @@ namespace Model
     /**
      * <p> Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
     /**
      * <p> Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     /**
      * <p> Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
     /**
      * <p> Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
      * <p> Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
     /**
      * <p> Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline DBInstance& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
     /**
      * <p> Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline DBInstance& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
      * <p> Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline DBInstance& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -492,56 +492,56 @@ namespace Model
     /**
      * <p> Provides List of DB security group elements containing only
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
-     * subelements. </p>
+     * subelements.</p>
      */
     inline const Aws::Vector<DBSecurityGroupMembership>& GetDBSecurityGroups() const{ return m_dBSecurityGroups; }
 
     /**
      * <p> Provides List of DB security group elements containing only
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
-     * subelements. </p>
+     * subelements.</p>
      */
     inline bool DBSecurityGroupsHasBeenSet() const { return m_dBSecurityGroupsHasBeenSet; }
 
     /**
      * <p> Provides List of DB security group elements containing only
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
-     * subelements. </p>
+     * subelements.</p>
      */
     inline void SetDBSecurityGroups(const Aws::Vector<DBSecurityGroupMembership>& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = value; }
 
     /**
      * <p> Provides List of DB security group elements containing only
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
-     * subelements. </p>
+     * subelements.</p>
      */
     inline void SetDBSecurityGroups(Aws::Vector<DBSecurityGroupMembership>&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = std::move(value); }
 
     /**
      * <p> Provides List of DB security group elements containing only
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
-     * subelements. </p>
+     * subelements.</p>
      */
     inline DBInstance& WithDBSecurityGroups(const Aws::Vector<DBSecurityGroupMembership>& value) { SetDBSecurityGroups(value); return *this;}
 
     /**
      * <p> Provides List of DB security group elements containing only
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
-     * subelements. </p>
+     * subelements.</p>
      */
     inline DBInstance& WithDBSecurityGroups(Aws::Vector<DBSecurityGroupMembership>&& value) { SetDBSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p> Provides List of DB security group elements containing only
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
-     * subelements. </p>
+     * subelements.</p>
      */
     inline DBInstance& AddDBSecurityGroups(const DBSecurityGroupMembership& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
 
     /**
      * <p> Provides List of DB security group elements containing only
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
-     * subelements. </p>
+     * subelements.</p>
      */
     inline DBInstance& AddDBSecurityGroups(DBSecurityGroupMembership&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(std::move(value)); return *this; }
 
@@ -1508,71 +1508,75 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the DB instance is encrypted.</p>
+     * <p>Not supported: The encryption for DB instances is managed by the DB
+     * cluster.</p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
 
     /**
-     * <p>Specifies whether the DB instance is encrypted.</p>
+     * <p>Not supported: The encryption for DB instances is managed by the DB
+     * cluster.</p>
      */
     inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
 
     /**
-     * <p>Specifies whether the DB instance is encrypted.</p>
+     * <p>Not supported: The encryption for DB instances is managed by the DB
+     * cluster.</p>
      */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
-     * <p>Specifies whether the DB instance is encrypted.</p>
+     * <p>Not supported: The encryption for DB instances is managed by the DB
+     * cluster.</p>
      */
     inline DBInstance& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
 
 
     /**
-     * <p> If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB instance. </p>
+     * <p> Not supported: The encryption for DB instances is managed by the DB
+     * cluster.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p> If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB instance. </p>
+     * <p> Not supported: The encryption for DB instances is managed by the DB
+     * cluster.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p> If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB instance. </p>
+     * <p> Not supported: The encryption for DB instances is managed by the DB
+     * cluster.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p> If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB instance. </p>
+     * <p> Not supported: The encryption for DB instances is managed by the DB
+     * cluster.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p> If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB instance. </p>
+     * <p> Not supported: The encryption for DB instances is managed by the DB
+     * cluster.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p> If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB instance. </p>
+     * <p> Not supported: The encryption for DB instances is managed by the DB
+     * cluster.</p>
      */
     inline DBInstance& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p> If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB instance. </p>
+     * <p> Not supported: The encryption for DB instances is managed by the DB
+     * cluster.</p>
      */
     inline DBInstance& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p> If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB instance. </p>
+     * <p> Not supported: The encryption for DB instances is managed by the DB
+     * cluster.</p>
      */
     inline DBInstance& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1931,42 +1935,42 @@ namespace Model
 
 
     /**
-     * <p>Not supported. </p>
+     * <p>Not supported.</p>
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
 
     /**
-     * <p>Not supported. </p>
+     * <p>Not supported.</p>
      */
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
 
     /**
-     * <p>Not supported. </p>
+     * <p>Not supported.</p>
      */
     inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
 
     /**
-     * <p>Not supported. </p>
+     * <p>Not supported.</p>
      */
     inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
 
     /**
-     * <p>Not supported. </p>
+     * <p>Not supported.</p>
      */
     inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
 
     /**
-     * <p>Not supported. </p>
+     * <p>Not supported.</p>
      */
     inline DBInstance& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
 
     /**
-     * <p>Not supported. </p>
+     * <p>Not supported.</p>
      */
     inline DBInstance& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
 
     /**
-     * <p>Not supported. </p>
+     * <p>Not supported.</p>
      */
     inline DBInstance& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 

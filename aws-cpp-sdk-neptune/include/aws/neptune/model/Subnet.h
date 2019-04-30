@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p> This data type is used as a response element in the
-   * <a>DescribeDBSubnetGroups</a> action. </p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a subnet.</p> <p> This data type is used as a response element in
+   * the <a>DescribeDBSubnetGroups</a> action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/Subnet">AWS API
    * Reference</a></p>
    */
@@ -92,22 +92,34 @@ namespace Model
     inline Subnet& WithSubnetIdentifier(const char* value) { SetSubnetIdentifier(value); return *this;}
 
 
-    
+    /**
+     * <p>Specifies the EC2 Availability Zone that the subnet is in.</p>
+     */
     inline const AvailabilityZone& GetSubnetAvailabilityZone() const{ return m_subnetAvailabilityZone; }
 
-    
+    /**
+     * <p>Specifies the EC2 Availability Zone that the subnet is in.</p>
+     */
     inline bool SubnetAvailabilityZoneHasBeenSet() const { return m_subnetAvailabilityZoneHasBeenSet; }
 
-    
+    /**
+     * <p>Specifies the EC2 Availability Zone that the subnet is in.</p>
+     */
     inline void SetSubnetAvailabilityZone(const AvailabilityZone& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = value; }
 
-    
+    /**
+     * <p>Specifies the EC2 Availability Zone that the subnet is in.</p>
+     */
     inline void SetSubnetAvailabilityZone(AvailabilityZone&& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = std::move(value); }
 
-    
+    /**
+     * <p>Specifies the EC2 Availability Zone that the subnet is in.</p>
+     */
     inline Subnet& WithSubnetAvailabilityZone(const AvailabilityZone& value) { SetSubnetAvailabilityZone(value); return *this;}
 
-    
+    /**
+     * <p>Specifies the EC2 Availability Zone that the subnet is in.</p>
+     */
     inline Subnet& WithSubnetAvailabilityZone(AvailabilityZone&& value) { SetSubnetAvailabilityZone(std::move(value)); return *this;}
 
 

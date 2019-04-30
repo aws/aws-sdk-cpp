@@ -34,12 +34,14 @@
 #include <aws/directconnect/model/AllocateHostedConnectionRequest.h>
 #include <aws/directconnect/model/AllocatePrivateVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/AllocatePublicVirtualInterfaceRequest.h>
+#include <aws/directconnect/model/AllocateTransitVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/AssociateConnectionWithLagRequest.h>
 #include <aws/directconnect/model/AssociateHostedConnectionRequest.h>
 #include <aws/directconnect/model/AssociateVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/ConfirmConnectionRequest.h>
 #include <aws/directconnect/model/ConfirmPrivateVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/ConfirmPublicVirtualInterfaceRequest.h>
+#include <aws/directconnect/model/ConfirmTransitVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/CreateBGPPeerRequest.h>
 #include <aws/directconnect/model/CreateConnectionRequest.h>
 #include <aws/directconnect/model/CreateDirectConnectGatewayRequest.h>
@@ -49,6 +51,7 @@
 #include <aws/directconnect/model/CreateLagRequest.h>
 #include <aws/directconnect/model/CreatePrivateVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/CreatePublicVirtualInterfaceRequest.h>
+#include <aws/directconnect/model/CreateTransitVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/DeleteBGPPeerRequest.h>
 #include <aws/directconnect/model/DeleteConnectionRequest.h>
 #include <aws/directconnect/model/DeleteDirectConnectGatewayRequest.h>
@@ -286,6 +289,41 @@ void DirectConnectClient::AllocatePublicVirtualInterfaceAsyncHelper(const Alloca
   handler(this, request, AllocatePublicVirtualInterface(request), context);
 }
 
+AllocateTransitVirtualInterfaceOutcome DirectConnectClient::AllocateTransitVirtualInterface(const AllocateTransitVirtualInterfaceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AllocateTransitVirtualInterfaceOutcome(AllocateTransitVirtualInterfaceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AllocateTransitVirtualInterfaceOutcome(outcome.GetError());
+  }
+}
+
+AllocateTransitVirtualInterfaceOutcomeCallable DirectConnectClient::AllocateTransitVirtualInterfaceCallable(const AllocateTransitVirtualInterfaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AllocateTransitVirtualInterfaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AllocateTransitVirtualInterface(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::AllocateTransitVirtualInterfaceAsync(const AllocateTransitVirtualInterfaceRequest& request, const AllocateTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AllocateTransitVirtualInterfaceAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::AllocateTransitVirtualInterfaceAsyncHelper(const AllocateTransitVirtualInterfaceRequest& request, const AllocateTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AllocateTransitVirtualInterface(request), context);
+}
+
 AssociateConnectionWithLagOutcome DirectConnectClient::AssociateConnectionWithLag(const AssociateConnectionWithLagRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -494,6 +532,41 @@ void DirectConnectClient::ConfirmPublicVirtualInterfaceAsync(const ConfirmPublic
 void DirectConnectClient::ConfirmPublicVirtualInterfaceAsyncHelper(const ConfirmPublicVirtualInterfaceRequest& request, const ConfirmPublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ConfirmPublicVirtualInterface(request), context);
+}
+
+ConfirmTransitVirtualInterfaceOutcome DirectConnectClient::ConfirmTransitVirtualInterface(const ConfirmTransitVirtualInterfaceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ConfirmTransitVirtualInterfaceOutcome(ConfirmTransitVirtualInterfaceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ConfirmTransitVirtualInterfaceOutcome(outcome.GetError());
+  }
+}
+
+ConfirmTransitVirtualInterfaceOutcomeCallable DirectConnectClient::ConfirmTransitVirtualInterfaceCallable(const ConfirmTransitVirtualInterfaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ConfirmTransitVirtualInterfaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ConfirmTransitVirtualInterface(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::ConfirmTransitVirtualInterfaceAsync(const ConfirmTransitVirtualInterfaceRequest& request, const ConfirmTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ConfirmTransitVirtualInterfaceAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::ConfirmTransitVirtualInterfaceAsyncHelper(const ConfirmTransitVirtualInterfaceRequest& request, const ConfirmTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ConfirmTransitVirtualInterface(request), context);
 }
 
 CreateBGPPeerOutcome DirectConnectClient::CreateBGPPeer(const CreateBGPPeerRequest& request) const
@@ -809,6 +882,41 @@ void DirectConnectClient::CreatePublicVirtualInterfaceAsync(const CreatePublicVi
 void DirectConnectClient::CreatePublicVirtualInterfaceAsyncHelper(const CreatePublicVirtualInterfaceRequest& request, const CreatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreatePublicVirtualInterface(request), context);
+}
+
+CreateTransitVirtualInterfaceOutcome DirectConnectClient::CreateTransitVirtualInterface(const CreateTransitVirtualInterfaceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateTransitVirtualInterfaceOutcome(CreateTransitVirtualInterfaceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateTransitVirtualInterfaceOutcome(outcome.GetError());
+  }
+}
+
+CreateTransitVirtualInterfaceOutcomeCallable DirectConnectClient::CreateTransitVirtualInterfaceCallable(const CreateTransitVirtualInterfaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateTransitVirtualInterfaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTransitVirtualInterface(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::CreateTransitVirtualInterfaceAsync(const CreateTransitVirtualInterfaceRequest& request, const CreateTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitVirtualInterfaceAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::CreateTransitVirtualInterfaceAsyncHelper(const CreateTransitVirtualInterfaceRequest& request, const CreateTransitVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateTransitVirtualInterface(request), context);
 }
 
 DeleteBGPPeerOutcome DirectConnectClient::DeleteBGPPeer(const DeleteBGPPeerRequest& request) const

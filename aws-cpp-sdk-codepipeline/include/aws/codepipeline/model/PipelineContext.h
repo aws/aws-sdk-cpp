@@ -36,8 +36,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents information about a pipeline to a job worker.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents information about a pipeline to a job worker.</p> <note>
+   * <p>PipelineContext contains <code>pipelineArn</code> and
+   * <code>pipelineExecutionId</code> for custom action jobs. The
+   * <code>pipelineArn</code> and <code>pipelineExecutionId</code> fields are not
+   * populated for ThirdParty action jobs.</p> </note><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PipelineContext">AWS
    * API Reference</a></p>
    */
@@ -160,6 +163,88 @@ namespace Model
      */
     inline PipelineContext& WithAction(ActionContext&& value) { SetAction(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The pipeline execution ID provided to the job worker.</p>
+     */
+    inline const Aws::String& GetPipelineArn() const{ return m_pipelineArn; }
+
+    /**
+     * <p>The pipeline execution ID provided to the job worker.</p>
+     */
+    inline bool PipelineArnHasBeenSet() const { return m_pipelineArnHasBeenSet; }
+
+    /**
+     * <p>The pipeline execution ID provided to the job worker.</p>
+     */
+    inline void SetPipelineArn(const Aws::String& value) { m_pipelineArnHasBeenSet = true; m_pipelineArn = value; }
+
+    /**
+     * <p>The pipeline execution ID provided to the job worker.</p>
+     */
+    inline void SetPipelineArn(Aws::String&& value) { m_pipelineArnHasBeenSet = true; m_pipelineArn = std::move(value); }
+
+    /**
+     * <p>The pipeline execution ID provided to the job worker.</p>
+     */
+    inline void SetPipelineArn(const char* value) { m_pipelineArnHasBeenSet = true; m_pipelineArn.assign(value); }
+
+    /**
+     * <p>The pipeline execution ID provided to the job worker.</p>
+     */
+    inline PipelineContext& WithPipelineArn(const Aws::String& value) { SetPipelineArn(value); return *this;}
+
+    /**
+     * <p>The pipeline execution ID provided to the job worker.</p>
+     */
+    inline PipelineContext& WithPipelineArn(Aws::String&& value) { SetPipelineArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The pipeline execution ID provided to the job worker.</p>
+     */
+    inline PipelineContext& WithPipelineArn(const char* value) { SetPipelineArn(value); return *this;}
+
+
+    /**
+     * <p>The pipeline Amazon Resource Name (ARN) provided to the job worker.</p>
+     */
+    inline const Aws::String& GetPipelineExecutionId() const{ return m_pipelineExecutionId; }
+
+    /**
+     * <p>The pipeline Amazon Resource Name (ARN) provided to the job worker.</p>
+     */
+    inline bool PipelineExecutionIdHasBeenSet() const { return m_pipelineExecutionIdHasBeenSet; }
+
+    /**
+     * <p>The pipeline Amazon Resource Name (ARN) provided to the job worker.</p>
+     */
+    inline void SetPipelineExecutionId(const Aws::String& value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId = value; }
+
+    /**
+     * <p>The pipeline Amazon Resource Name (ARN) provided to the job worker.</p>
+     */
+    inline void SetPipelineExecutionId(Aws::String&& value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId = std::move(value); }
+
+    /**
+     * <p>The pipeline Amazon Resource Name (ARN) provided to the job worker.</p>
+     */
+    inline void SetPipelineExecutionId(const char* value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId.assign(value); }
+
+    /**
+     * <p>The pipeline Amazon Resource Name (ARN) provided to the job worker.</p>
+     */
+    inline PipelineContext& WithPipelineExecutionId(const Aws::String& value) { SetPipelineExecutionId(value); return *this;}
+
+    /**
+     * <p>The pipeline Amazon Resource Name (ARN) provided to the job worker.</p>
+     */
+    inline PipelineContext& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The pipeline Amazon Resource Name (ARN) provided to the job worker.</p>
+     */
+    inline PipelineContext& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
+
   private:
 
     Aws::String m_pipelineName;
@@ -170,6 +255,12 @@ namespace Model
 
     ActionContext m_action;
     bool m_actionHasBeenSet;
+
+    Aws::String m_pipelineArn;
+    bool m_pipelineArnHasBeenSet;
+
+    Aws::String m_pipelineExecutionId;
+    bool m_pipelineExecutionIdHasBeenSet;
   };
 
 } // namespace Model

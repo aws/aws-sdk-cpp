@@ -40,9 +40,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details of an Amazon Neptune DB cluster. </p> <p>This data type
-   * is used as a response element in the <a>DescribeDBClusters</a> action.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type
+   * is used as a response element in the <a>DescribeDBClusters</a>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DBCluster">AWS
    * API Reference</a></p>
    */
@@ -581,7 +581,7 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Neptune
      * distributes the connection requests among the Read Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Read
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Read Replica
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Read Replica
      * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Read
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
@@ -594,7 +594,7 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Neptune
      * distributes the connection requests among the Read Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Read
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Read Replica
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Read Replica
      * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Read
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
@@ -607,7 +607,7 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Neptune
      * distributes the connection requests among the Read Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Read
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Read Replica
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Read Replica
      * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Read
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
@@ -620,7 +620,7 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Neptune
      * distributes the connection requests among the Read Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Read
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Read Replica
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Read Replica
      * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Read
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
@@ -633,7 +633,7 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Neptune
      * distributes the connection requests among the Read Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Read
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Read Replica
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Read Replica
      * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Read
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
@@ -646,7 +646,7 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Neptune
      * distributes the connection requests among the Read Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Read
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Read Replica
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Read Replica
      * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Read
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
@@ -659,7 +659,7 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Neptune
      * distributes the connection requests among the Read Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Read
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Read Replica
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Read Replica
      * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Read
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
@@ -672,7 +672,7 @@ namespace Model
      * cluster. As clients request new connections to the reader endpoint, Neptune
      * distributes the connection requests among the Read Replicas in the DB cluster.
      * This functionality can help balance your read workload across multiple Read
-     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Read Replica
+     * Replicas in your DB cluster.</p> <p>If a failover occurs, and the Read Replica
      * that you are connected to is promoted to be the primary instance, your
      * connection is dropped. To continue sending your read workload to other Read
      * Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
@@ -930,56 +930,56 @@ namespace Model
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline DBCluster& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline DBCluster& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. </p>
+     * <code>BackupRetentionPeriod</code>.</p>
      */
     inline DBCluster& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -1034,50 +1034,42 @@ namespace Model
 
 
     /**
-     * <p>Contains the identifier of the source DB cluster if this DB cluster is a Read
-     * Replica.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline const Aws::String& GetReplicationSourceIdentifier() const{ return m_replicationSourceIdentifier; }
 
     /**
-     * <p>Contains the identifier of the source DB cluster if this DB cluster is a Read
-     * Replica.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool ReplicationSourceIdentifierHasBeenSet() const { return m_replicationSourceIdentifierHasBeenSet; }
 
     /**
-     * <p>Contains the identifier of the source DB cluster if this DB cluster is a Read
-     * Replica.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetReplicationSourceIdentifier(const Aws::String& value) { m_replicationSourceIdentifierHasBeenSet = true; m_replicationSourceIdentifier = value; }
 
     /**
-     * <p>Contains the identifier of the source DB cluster if this DB cluster is a Read
-     * Replica.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetReplicationSourceIdentifier(Aws::String&& value) { m_replicationSourceIdentifierHasBeenSet = true; m_replicationSourceIdentifier = std::move(value); }
 
     /**
-     * <p>Contains the identifier of the source DB cluster if this DB cluster is a Read
-     * Replica.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetReplicationSourceIdentifier(const char* value) { m_replicationSourceIdentifierHasBeenSet = true; m_replicationSourceIdentifier.assign(value); }
 
     /**
-     * <p>Contains the identifier of the source DB cluster if this DB cluster is a Read
-     * Replica.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBCluster& WithReplicationSourceIdentifier(const Aws::String& value) { SetReplicationSourceIdentifier(value); return *this;}
 
     /**
-     * <p>Contains the identifier of the source DB cluster if this DB cluster is a Read
-     * Replica.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBCluster& WithReplicationSourceIdentifier(Aws::String&& value) { SetReplicationSourceIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>Contains the identifier of the source DB cluster if this DB cluster is a Read
-     * Replica.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBCluster& WithReplicationSourceIdentifier(const char* value) { SetReplicationSourceIdentifier(value); return *this;}
 

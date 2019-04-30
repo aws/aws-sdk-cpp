@@ -37,12 +37,6 @@ namespace Neptune
 {
 namespace Model
 {
-  /**
-   * <p> Contains the result of a successful invocation of the
-   * <a>DescribeDBInstances</a> action. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DBInstanceMessage">AWS
-   * API Reference</a></p>
-   */
   class AWS_NEPTUNE_API DescribeDBInstancesResult
   {
   public:
@@ -54,85 +48,85 @@ namespace Model
     /**
      * <p> An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code> . </p>
+     * to the value specified by <code>MaxRecords</code> .</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code> . </p>
+     * to the value specified by <code>MaxRecords</code> .</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code> . </p>
+     * to the value specified by <code>MaxRecords</code> .</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code> . </p>
+     * to the value specified by <code>MaxRecords</code> .</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code> . </p>
+     * to the value specified by <code>MaxRecords</code> .</p>
      */
     inline DescribeDBInstancesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code> . </p>
+     * to the value specified by <code>MaxRecords</code> .</p>
      */
     inline DescribeDBInstancesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code> . </p>
+     * to the value specified by <code>MaxRecords</code> .</p>
      */
     inline DescribeDBInstancesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
 
     /**
-     * <p> A list of <a>DBInstance</a> instances. </p>
+     * <p> A list of <a>DBInstance</a> instances.</p>
      */
     inline const Aws::Vector<DBInstance>& GetDBInstances() const{ return m_dBInstances; }
 
     /**
-     * <p> A list of <a>DBInstance</a> instances. </p>
+     * <p> A list of <a>DBInstance</a> instances.</p>
      */
     inline void SetDBInstances(const Aws::Vector<DBInstance>& value) { m_dBInstances = value; }
 
     /**
-     * <p> A list of <a>DBInstance</a> instances. </p>
+     * <p> A list of <a>DBInstance</a> instances.</p>
      */
     inline void SetDBInstances(Aws::Vector<DBInstance>&& value) { m_dBInstances = std::move(value); }
 
     /**
-     * <p> A list of <a>DBInstance</a> instances. </p>
+     * <p> A list of <a>DBInstance</a> instances.</p>
      */
     inline DescribeDBInstancesResult& WithDBInstances(const Aws::Vector<DBInstance>& value) { SetDBInstances(value); return *this;}
 
     /**
-     * <p> A list of <a>DBInstance</a> instances. </p>
+     * <p> A list of <a>DBInstance</a> instances.</p>
      */
     inline DescribeDBInstancesResult& WithDBInstances(Aws::Vector<DBInstance>&& value) { SetDBInstances(std::move(value)); return *this;}
 
     /**
-     * <p> A list of <a>DBInstance</a> instances. </p>
+     * <p> A list of <a>DBInstance</a> instances.</p>
      */
     inline DescribeDBInstancesResult& AddDBInstances(const DBInstance& value) { m_dBInstances.push_back(value); return *this; }
 
     /**
-     * <p> A list of <a>DBInstance</a> instances. </p>
+     * <p> A list of <a>DBInstance</a> instances.</p>
      */
     inline DescribeDBInstancesResult& AddDBInstances(DBInstance&& value) { m_dBInstances.push_back(std::move(value)); return *this; }
 

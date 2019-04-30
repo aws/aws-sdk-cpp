@@ -18,6 +18,7 @@
 #include <aws/servicecatalog/model/ProductViewSummary.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/ProvisioningArtifact.h>
+#include <aws/servicecatalog/model/BudgetDetail.h>
 #include <utility>
 
 namespace Aws
@@ -105,11 +106,49 @@ namespace Model
      */
     inline DescribeProductResult& AddProvisioningArtifacts(ProvisioningArtifact&& value) { m_provisioningArtifacts.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline const Aws::Vector<BudgetDetail>& GetBudgets() const{ return m_budgets; }
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline void SetBudgets(const Aws::Vector<BudgetDetail>& value) { m_budgets = value; }
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline void SetBudgets(Aws::Vector<BudgetDetail>&& value) { m_budgets = std::move(value); }
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline DescribeProductResult& WithBudgets(const Aws::Vector<BudgetDetail>& value) { SetBudgets(value); return *this;}
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline DescribeProductResult& WithBudgets(Aws::Vector<BudgetDetail>&& value) { SetBudgets(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline DescribeProductResult& AddBudgets(const BudgetDetail& value) { m_budgets.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline DescribeProductResult& AddBudgets(BudgetDetail&& value) { m_budgets.push_back(std::move(value)); return *this; }
+
   private:
 
     ProductViewSummary m_productViewSummary;
 
     Aws::Vector<ProvisioningArtifact> m_provisioningArtifacts;
+
+    Aws::Vector<BudgetDetail> m_budgets;
   };
 
 } // namespace Model

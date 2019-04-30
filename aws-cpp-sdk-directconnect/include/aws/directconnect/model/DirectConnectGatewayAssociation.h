@@ -39,7 +39,7 @@ namespace Model
 
   /**
    * <p>Information about an association between a Direct Connect gateway and a
-   * virtual private gateway.</p><p><h3>See Also:</h3>   <a
+   * virtual private gateway or transit gateway.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DirectConnectGatewayAssociation">AWS
    * API Reference</a></p>
    */
@@ -139,12 +139,13 @@ namespace Model
      * <li> <p> <code>associating</code>: The initial state after calling
      * <a>CreateDirectConnectGatewayAssociation</a>.</p> </li> <li> <p>
      * <code>associated</code>: The Direct Connect gateway and virtual private gateway
-     * are successfully associated and ready to pass traffic.</p> </li> <li> <p>
-     * <code>disassociating</code>: The initial state after calling
+     * or transit gateway are successfully associated and ready to pass traffic.</p>
+     * </li> <li> <p> <code>disassociating</code>: The initial state after calling
      * <a>DeleteDirectConnectGatewayAssociation</a>.</p> </li> <li> <p>
-     * <code>disassociated</code>: The virtual private gateway is disassociated from
-     * the Direct Connect gateway. Traffic flow between the Direct Connect gateway and
-     * virtual private gateway is stopped.</p> </li> </ul>
+     * <code>disassociated</code>: The virtual private gateway or transit gateway is
+     * disassociated from the Direct Connect gateway. Traffic flow between the Direct
+     * Connect gateway and virtual private gateway or transit gateway is stopped.</p>
+     * </li> </ul>
      */
     inline const DirectConnectGatewayAssociationState& GetAssociationState() const{ return m_associationState; }
 
@@ -153,12 +154,13 @@ namespace Model
      * <li> <p> <code>associating</code>: The initial state after calling
      * <a>CreateDirectConnectGatewayAssociation</a>.</p> </li> <li> <p>
      * <code>associated</code>: The Direct Connect gateway and virtual private gateway
-     * are successfully associated and ready to pass traffic.</p> </li> <li> <p>
-     * <code>disassociating</code>: The initial state after calling
+     * or transit gateway are successfully associated and ready to pass traffic.</p>
+     * </li> <li> <p> <code>disassociating</code>: The initial state after calling
      * <a>DeleteDirectConnectGatewayAssociation</a>.</p> </li> <li> <p>
-     * <code>disassociated</code>: The virtual private gateway is disassociated from
-     * the Direct Connect gateway. Traffic flow between the Direct Connect gateway and
-     * virtual private gateway is stopped.</p> </li> </ul>
+     * <code>disassociated</code>: The virtual private gateway or transit gateway is
+     * disassociated from the Direct Connect gateway. Traffic flow between the Direct
+     * Connect gateway and virtual private gateway or transit gateway is stopped.</p>
+     * </li> </ul>
      */
     inline bool AssociationStateHasBeenSet() const { return m_associationStateHasBeenSet; }
 
@@ -167,12 +169,13 @@ namespace Model
      * <li> <p> <code>associating</code>: The initial state after calling
      * <a>CreateDirectConnectGatewayAssociation</a>.</p> </li> <li> <p>
      * <code>associated</code>: The Direct Connect gateway and virtual private gateway
-     * are successfully associated and ready to pass traffic.</p> </li> <li> <p>
-     * <code>disassociating</code>: The initial state after calling
+     * or transit gateway are successfully associated and ready to pass traffic.</p>
+     * </li> <li> <p> <code>disassociating</code>: The initial state after calling
      * <a>DeleteDirectConnectGatewayAssociation</a>.</p> </li> <li> <p>
-     * <code>disassociated</code>: The virtual private gateway is disassociated from
-     * the Direct Connect gateway. Traffic flow between the Direct Connect gateway and
-     * virtual private gateway is stopped.</p> </li> </ul>
+     * <code>disassociated</code>: The virtual private gateway or transit gateway is
+     * disassociated from the Direct Connect gateway. Traffic flow between the Direct
+     * Connect gateway and virtual private gateway or transit gateway is stopped.</p>
+     * </li> </ul>
      */
     inline void SetAssociationState(const DirectConnectGatewayAssociationState& value) { m_associationStateHasBeenSet = true; m_associationState = value; }
 
@@ -181,12 +184,13 @@ namespace Model
      * <li> <p> <code>associating</code>: The initial state after calling
      * <a>CreateDirectConnectGatewayAssociation</a>.</p> </li> <li> <p>
      * <code>associated</code>: The Direct Connect gateway and virtual private gateway
-     * are successfully associated and ready to pass traffic.</p> </li> <li> <p>
-     * <code>disassociating</code>: The initial state after calling
+     * or transit gateway are successfully associated and ready to pass traffic.</p>
+     * </li> <li> <p> <code>disassociating</code>: The initial state after calling
      * <a>DeleteDirectConnectGatewayAssociation</a>.</p> </li> <li> <p>
-     * <code>disassociated</code>: The virtual private gateway is disassociated from
-     * the Direct Connect gateway. Traffic flow between the Direct Connect gateway and
-     * virtual private gateway is stopped.</p> </li> </ul>
+     * <code>disassociated</code>: The virtual private gateway or transit gateway is
+     * disassociated from the Direct Connect gateway. Traffic flow between the Direct
+     * Connect gateway and virtual private gateway or transit gateway is stopped.</p>
+     * </li> </ul>
      */
     inline void SetAssociationState(DirectConnectGatewayAssociationState&& value) { m_associationStateHasBeenSet = true; m_associationState = std::move(value); }
 
@@ -195,12 +199,13 @@ namespace Model
      * <li> <p> <code>associating</code>: The initial state after calling
      * <a>CreateDirectConnectGatewayAssociation</a>.</p> </li> <li> <p>
      * <code>associated</code>: The Direct Connect gateway and virtual private gateway
-     * are successfully associated and ready to pass traffic.</p> </li> <li> <p>
-     * <code>disassociating</code>: The initial state after calling
+     * or transit gateway are successfully associated and ready to pass traffic.</p>
+     * </li> <li> <p> <code>disassociating</code>: The initial state after calling
      * <a>DeleteDirectConnectGatewayAssociation</a>.</p> </li> <li> <p>
-     * <code>disassociated</code>: The virtual private gateway is disassociated from
-     * the Direct Connect gateway. Traffic flow between the Direct Connect gateway and
-     * virtual private gateway is stopped.</p> </li> </ul>
+     * <code>disassociated</code>: The virtual private gateway or transit gateway is
+     * disassociated from the Direct Connect gateway. Traffic flow between the Direct
+     * Connect gateway and virtual private gateway or transit gateway is stopped.</p>
+     * </li> </ul>
      */
     inline DirectConnectGatewayAssociation& WithAssociationState(const DirectConnectGatewayAssociationState& value) { SetAssociationState(value); return *this;}
 
@@ -209,12 +214,13 @@ namespace Model
      * <li> <p> <code>associating</code>: The initial state after calling
      * <a>CreateDirectConnectGatewayAssociation</a>.</p> </li> <li> <p>
      * <code>associated</code>: The Direct Connect gateway and virtual private gateway
-     * are successfully associated and ready to pass traffic.</p> </li> <li> <p>
-     * <code>disassociating</code>: The initial state after calling
+     * or transit gateway are successfully associated and ready to pass traffic.</p>
+     * </li> <li> <p> <code>disassociating</code>: The initial state after calling
      * <a>DeleteDirectConnectGatewayAssociation</a>.</p> </li> <li> <p>
-     * <code>disassociated</code>: The virtual private gateway is disassociated from
-     * the Direct Connect gateway. Traffic flow between the Direct Connect gateway and
-     * virtual private gateway is stopped.</p> </li> </ul>
+     * <code>disassociated</code>: The virtual private gateway or transit gateway is
+     * disassociated from the Direct Connect gateway. Traffic flow between the Direct
+     * Connect gateway and virtual private gateway or transit gateway is stopped.</p>
+     * </li> </ul>
      */
     inline DirectConnectGatewayAssociation& WithAssociationState(DirectConnectGatewayAssociationState&& value) { SetAssociationState(std::move(value)); return *this;}
 
@@ -261,32 +267,32 @@ namespace Model
 
 
     /**
-     * <p>Information about the associated virtual private gateway.</p>
+     * <p>Information about the associated gateway.</p>
      */
     inline const AssociatedGateway& GetAssociatedGateway() const{ return m_associatedGateway; }
 
     /**
-     * <p>Information about the associated virtual private gateway.</p>
+     * <p>Information about the associated gateway.</p>
      */
     inline bool AssociatedGatewayHasBeenSet() const { return m_associatedGatewayHasBeenSet; }
 
     /**
-     * <p>Information about the associated virtual private gateway.</p>
+     * <p>Information about the associated gateway.</p>
      */
     inline void SetAssociatedGateway(const AssociatedGateway& value) { m_associatedGatewayHasBeenSet = true; m_associatedGateway = value; }
 
     /**
-     * <p>Information about the associated virtual private gateway.</p>
+     * <p>Information about the associated gateway.</p>
      */
     inline void SetAssociatedGateway(AssociatedGateway&& value) { m_associatedGatewayHasBeenSet = true; m_associatedGateway = std::move(value); }
 
     /**
-     * <p>Information about the associated virtual private gateway.</p>
+     * <p>Information about the associated gateway.</p>
      */
     inline DirectConnectGatewayAssociation& WithAssociatedGateway(const AssociatedGateway& value) { SetAssociatedGateway(value); return *this;}
 
     /**
-     * <p>Information about the associated virtual private gateway.</p>
+     * <p>Information about the associated gateway.</p>
      */
     inline DirectConnectGatewayAssociation& WithAssociatedGateway(AssociatedGateway&& value) { SetAssociatedGateway(std::move(value)); return *this;}
 

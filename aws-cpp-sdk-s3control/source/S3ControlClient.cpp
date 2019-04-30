@@ -30,9 +30,14 @@
 #include <aws/s3control/S3ControlClient.h>
 #include <aws/s3control/S3ControlEndpoint.h>
 #include <aws/s3control/S3ControlErrorMarshaller.h>
+#include <aws/s3control/model/CreateJobRequest.h>
 #include <aws/s3control/model/DeletePublicAccessBlockRequest.h>
+#include <aws/s3control/model/DescribeJobRequest.h>
 #include <aws/s3control/model/GetPublicAccessBlockRequest.h>
+#include <aws/s3control/model/ListJobsRequest.h>
 #include <aws/s3control/model/PutPublicAccessBlockRequest.h>
+#include <aws/s3control/model/UpdateJobPriorityRequest.h>
+#include <aws/s3control/model/UpdateJobStatusRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -114,6 +119,51 @@ void S3ControlClient::OverrideEndpoint(const Aws::String& endpoint)
       m_baseUri = endpoint;
   }
 }
+CreateJobOutcome S3ControlClient::CreateJob(const CreateJobRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateJob", "Required field: AccountId, is not set");
+    return CreateJobOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
+  if (endpointString.empty())
+  {
+      return CreateJobOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Account ID provided is not a valid [RFC 1123 2.1] host domain name label.", false/*retryable*/));
+  }
+  Aws::Http::URI uri = endpointString;
+  Aws::StringStream ss;
+  ss << "/v20180820/jobs";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateJobOutcome(CreateJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateJobOutcome(outcome.GetError());
+  }
+}
+
+CreateJobOutcomeCallable S3ControlClient::CreateJobCallable(const CreateJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateJobAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::CreateJobAsyncHelper(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateJob(request), context);
+}
+
 DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const DeletePublicAccessBlockRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -157,6 +207,57 @@ void S3ControlClient::DeletePublicAccessBlockAsync(const DeletePublicAccessBlock
 void S3ControlClient::DeletePublicAccessBlockAsyncHelper(const DeletePublicAccessBlockRequest& request, const DeletePublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeletePublicAccessBlock(request), context);
+}
+
+DescribeJobOutcome S3ControlClient::DescribeJob(const DescribeJobRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeJob", "Required field: AccountId, is not set");
+    return DescribeJobOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeJob", "Required field: JobId, is not set");
+    return DescribeJobOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
+  if (endpointString.empty())
+  {
+      return DescribeJobOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Account ID provided is not a valid [RFC 1123 2.1] host domain name label.", false/*retryable*/));
+  }
+  Aws::Http::URI uri = endpointString;
+  Aws::StringStream ss;
+  ss << "/v20180820/jobs/";
+  ss << request.GetJobId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return DescribeJobOutcome(DescribeJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeJobOutcome(outcome.GetError());
+  }
+}
+
+DescribeJobOutcomeCallable S3ControlClient::DescribeJobCallable(const DescribeJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::DescribeJobAsync(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::DescribeJobAsyncHelper(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeJob(request), context);
 }
 
 GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPublicAccessBlockRequest& request) const
@@ -204,6 +305,51 @@ void S3ControlClient::GetPublicAccessBlockAsyncHelper(const GetPublicAccessBlock
   handler(this, request, GetPublicAccessBlock(request), context);
 }
 
+ListJobsOutcome S3ControlClient::ListJobs(const ListJobsRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListJobs", "Required field: AccountId, is not set");
+    return ListJobsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
+  if (endpointString.empty())
+  {
+      return ListJobsOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Account ID provided is not a valid [RFC 1123 2.1] host domain name label.", false/*retryable*/));
+  }
+  Aws::Http::URI uri = endpointString;
+  Aws::StringStream ss;
+  ss << "/v20180820/jobs";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListJobsOutcome(ListJobsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListJobsOutcome(outcome.GetError());
+  }
+}
+
+ListJobsOutcomeCallable S3ControlClient::ListJobsCallable(const ListJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListJobsAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListJobs(request), context);
+}
+
 PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPublicAccessBlockRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -247,6 +393,120 @@ void S3ControlClient::PutPublicAccessBlockAsync(const PutPublicAccessBlockReques
 void S3ControlClient::PutPublicAccessBlockAsyncHelper(const PutPublicAccessBlockRequest& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutPublicAccessBlock(request), context);
+}
+
+UpdateJobPriorityOutcome S3ControlClient::UpdateJobPriority(const UpdateJobPriorityRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateJobPriority", "Required field: AccountId, is not set");
+    return UpdateJobPriorityOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateJobPriority", "Required field: JobId, is not set");
+    return UpdateJobPriorityOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  if (!request.PriorityHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateJobPriority", "Required field: Priority, is not set");
+    return UpdateJobPriorityOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Priority]", false));
+  }
+  Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
+  if (endpointString.empty())
+  {
+      return UpdateJobPriorityOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Account ID provided is not a valid [RFC 1123 2.1] host domain name label.", false/*retryable*/));
+  }
+  Aws::Http::URI uri = endpointString;
+  Aws::StringStream ss;
+  ss << "/v20180820/jobs/";
+  ss << request.GetJobId();
+  ss << "/priority";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateJobPriorityOutcome(UpdateJobPriorityResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateJobPriorityOutcome(outcome.GetError());
+  }
+}
+
+UpdateJobPriorityOutcomeCallable S3ControlClient::UpdateJobPriorityCallable(const UpdateJobPriorityRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateJobPriorityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateJobPriority(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::UpdateJobPriorityAsync(const UpdateJobPriorityRequest& request, const UpdateJobPriorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateJobPriorityAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::UpdateJobPriorityAsyncHelper(const UpdateJobPriorityRequest& request, const UpdateJobPriorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateJobPriority(request), context);
+}
+
+UpdateJobStatusOutcome S3ControlClient::UpdateJobStatus(const UpdateJobStatusRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateJobStatus", "Required field: AccountId, is not set");
+    return UpdateJobStatusOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateJobStatus", "Required field: JobId, is not set");
+    return UpdateJobStatusOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  if (!request.RequestedJobStatusHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateJobStatus", "Required field: RequestedJobStatus, is not set");
+    return UpdateJobStatusOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RequestedJobStatus]", false));
+  }
+  Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
+  if (endpointString.empty())
+  {
+      return UpdateJobStatusOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Account ID provided is not a valid [RFC 1123 2.1] host domain name label.", false/*retryable*/));
+  }
+  Aws::Http::URI uri = endpointString;
+  Aws::StringStream ss;
+  ss << "/v20180820/jobs/";
+  ss << request.GetJobId();
+  ss << "/status";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateJobStatusOutcome(UpdateJobStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateJobStatusOutcome(outcome.GetError());
+  }
+}
+
+UpdateJobStatusOutcomeCallable S3ControlClient::UpdateJobStatusCallable(const UpdateJobStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateJobStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateJobStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::UpdateJobStatusAsync(const UpdateJobStatusRequest& request, const UpdateJobStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateJobStatusAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::UpdateJobStatusAsyncHelper(const UpdateJobStatusRequest& request, const UpdateJobStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateJobStatus(request), context);
 }
 
 

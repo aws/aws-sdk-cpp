@@ -28,9 +28,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterMessage">AWS
-   * API Reference</a></p>
    */
   class AWS_NEPTUNE_API ModifyDBClusterRequest : public NeptuneRequest
   {
@@ -466,9 +463,9 @@ namespace Model
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. If the parameter change results in an option
      * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not interrupted.
-     * </p> <p>Permanent options can't be removed from an option group. The option
-     * group can't be removed from a DB cluster once it is associated with a DB
+     * which new connections are rejected but existing connections are not
+     * interrupted.</p> <p>Permanent options can't be removed from an option group. The
+     * option group can't be removed from a DB cluster once it is associated with a DB
      * cluster.</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
@@ -480,9 +477,9 @@ namespace Model
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. If the parameter change results in an option
      * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not interrupted.
-     * </p> <p>Permanent options can't be removed from an option group. The option
-     * group can't be removed from a DB cluster once it is associated with a DB
+     * which new connections are rejected but existing connections are not
+     * interrupted.</p> <p>Permanent options can't be removed from an option group. The
+     * option group can't be removed from a DB cluster once it is associated with a DB
      * cluster.</p>
      */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
@@ -494,9 +491,9 @@ namespace Model
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. If the parameter change results in an option
      * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not interrupted.
-     * </p> <p>Permanent options can't be removed from an option group. The option
-     * group can't be removed from a DB cluster once it is associated with a DB
+     * which new connections are rejected but existing connections are not
+     * interrupted.</p> <p>Permanent options can't be removed from an option group. The
+     * option group can't be removed from a DB cluster once it is associated with a DB
      * cluster.</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
@@ -508,9 +505,9 @@ namespace Model
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. If the parameter change results in an option
      * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not interrupted.
-     * </p> <p>Permanent options can't be removed from an option group. The option
-     * group can't be removed from a DB cluster once it is associated with a DB
+     * which new connections are rejected but existing connections are not
+     * interrupted.</p> <p>Permanent options can't be removed from an option group. The
+     * option group can't be removed from a DB cluster once it is associated with a DB
      * cluster.</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
@@ -522,9 +519,9 @@ namespace Model
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. If the parameter change results in an option
      * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not interrupted.
-     * </p> <p>Permanent options can't be removed from an option group. The option
-     * group can't be removed from a DB cluster once it is associated with a DB
+     * which new connections are rejected but existing connections are not
+     * interrupted.</p> <p>Permanent options can't be removed from an option group. The
+     * option group can't be removed from a DB cluster once it is associated with a DB
      * cluster.</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
@@ -536,9 +533,9 @@ namespace Model
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. If the parameter change results in an option
      * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not interrupted.
-     * </p> <p>Permanent options can't be removed from an option group. The option
-     * group can't be removed from a DB cluster once it is associated with a DB
+     * which new connections are rejected but existing connections are not
+     * interrupted.</p> <p>Permanent options can't be removed from an option group. The
+     * option group can't be removed from a DB cluster once it is associated with a DB
      * cluster.</p>
      */
     inline ModifyDBClusterRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
@@ -550,9 +547,9 @@ namespace Model
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. If the parameter change results in an option
      * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not interrupted.
-     * </p> <p>Permanent options can't be removed from an option group. The option
-     * group can't be removed from a DB cluster once it is associated with a DB
+     * which new connections are rejected but existing connections are not
+     * interrupted.</p> <p>Permanent options can't be removed from an option group. The
+     * option group can't be removed from a DB cluster once it is associated with a DB
      * cluster.</p>
      */
     inline ModifyDBClusterRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
@@ -564,9 +561,9 @@ namespace Model
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. If the parameter change results in an option
      * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not interrupted.
-     * </p> <p>Permanent options can't be removed from an option group. The option
-     * group can't be removed from a DB cluster once it is associated with a DB
+     * which new connections are rejected but existing connections are not
+     * interrupted.</p> <p>Permanent options can't be removed from an option group. The
+     * option group can't be removed from a DB cluster once it is associated with a DB
      * cluster.</p>
      */
     inline ModifyDBClusterRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
@@ -574,97 +571,97 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
-     * </p> <p>The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be
-     * in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in
-     * Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the
-     * preferred maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p>
-     * </li> </ul>
+     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
+     * <p>The default is a 30-minute window selected at random from an 8-hour block of
+     * time for each AWS Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
-     * </p> <p>The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be
-     * in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in
-     * Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the
-     * preferred maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p>
-     * </li> </ul>
+     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
+     * <p>The default is a 30-minute window selected at random from an 8-hour block of
+     * time for each AWS Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
-     * </p> <p>The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be
-     * in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in
-     * Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the
-     * preferred maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p>
-     * </li> </ul>
+     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
+     * <p>The default is a 30-minute window selected at random from an 8-hour block of
+     * time for each AWS Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
-     * </p> <p>The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be
-     * in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in
-     * Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the
-     * preferred maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p>
-     * </li> </ul>
+     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
+     * <p>The default is a 30-minute window selected at random from an 8-hour block of
+     * time for each AWS Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
-     * </p> <p>The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be
-     * in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in
-     * Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the
-     * preferred maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p>
-     * </li> </ul>
+     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
+     * <p>The default is a 30-minute window selected at random from an 8-hour block of
+     * time for each AWS Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
-     * </p> <p>The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be
-     * in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in
-     * Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the
-     * preferred maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p>
-     * </li> </ul>
+     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
+     * <p>The default is a 30-minute window selected at random from an 8-hour block of
+     * time for each AWS Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline ModifyDBClusterRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
-     * </p> <p>The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be
-     * in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in
-     * Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the
-     * preferred maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p>
-     * </li> </ul>
+     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
+     * <p>The default is a 30-minute window selected at random from an 8-hour block of
+     * time for each AWS Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline ModifyDBClusterRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
-     * </p> <p>The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be
-     * in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in
-     * Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the
-     * preferred maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p>
-     * </li> </ul>
+     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
+     * <p>The default is a 30-minute window selected at random from an 8-hour block of
+     * time for each AWS Region.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline ModifyDBClusterRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -673,7 +670,7 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. </p> <p>Valid
+     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
      * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
@@ -683,7 +680,7 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. </p> <p>Valid
+     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
      * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
@@ -693,7 +690,7 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. </p> <p>Valid
+     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
      * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
@@ -703,7 +700,7 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. </p> <p>Valid
+     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
      * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
@@ -713,7 +710,7 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. </p> <p>Valid
+     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
      * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
@@ -723,7 +720,7 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. </p> <p>Valid
+     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
      * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
@@ -733,7 +730,7 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. </p> <p>Valid
+     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
      * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
@@ -743,7 +740,7 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week. </p> <p>Valid
+     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
      * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */

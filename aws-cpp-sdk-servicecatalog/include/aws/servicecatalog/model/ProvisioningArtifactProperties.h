@@ -294,6 +294,31 @@ namespace Model
      */
     inline ProvisioningArtifactProperties& WithType(ProvisioningArtifactType&& value) { SetType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>If set to true, AWS Service Catalog stops validating the specified
+     * provisioning artifact even if it is invalid.</p>
+     */
+    inline bool GetDisableTemplateValidation() const{ return m_disableTemplateValidation; }
+
+    /**
+     * <p>If set to true, AWS Service Catalog stops validating the specified
+     * provisioning artifact even if it is invalid.</p>
+     */
+    inline bool DisableTemplateValidationHasBeenSet() const { return m_disableTemplateValidationHasBeenSet; }
+
+    /**
+     * <p>If set to true, AWS Service Catalog stops validating the specified
+     * provisioning artifact even if it is invalid.</p>
+     */
+    inline void SetDisableTemplateValidation(bool value) { m_disableTemplateValidationHasBeenSet = true; m_disableTemplateValidation = value; }
+
+    /**
+     * <p>If set to true, AWS Service Catalog stops validating the specified
+     * provisioning artifact even if it is invalid.</p>
+     */
+    inline ProvisioningArtifactProperties& WithDisableTemplateValidation(bool value) { SetDisableTemplateValidation(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -307,6 +332,9 @@ namespace Model
 
     ProvisioningArtifactType m_type;
     bool m_typeHasBeenSet;
+
+    bool m_disableTemplateValidation;
+    bool m_disableTemplateValidationHasBeenSet;
   };
 
 } // namespace Model

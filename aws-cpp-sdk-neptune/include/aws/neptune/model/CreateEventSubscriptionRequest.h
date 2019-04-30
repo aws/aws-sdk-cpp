@@ -29,9 +29,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateEventSubscriptionMessage">AWS
-   * API Reference</a></p>
    */
   class AWS_NEPTUNE_API CreateEventSubscriptionRequest : public NeptuneRequest
   {
@@ -241,63 +238,63 @@ namespace Model
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType by using the
-     * <b>DescribeEventCategories</b> action. </p>
+     * <b>DescribeEventCategories</b> action.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType by using the
-     * <b>DescribeEventCategories</b> action. </p>
+     * <b>DescribeEventCategories</b> action.</p>
      */
     inline bool EventCategoriesHasBeenSet() const { return m_eventCategoriesHasBeenSet; }
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType by using the
-     * <b>DescribeEventCategories</b> action. </p>
+     * <b>DescribeEventCategories</b> action.</p>
      */
     inline void SetEventCategories(const Aws::Vector<Aws::String>& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType by using the
-     * <b>DescribeEventCategories</b> action. </p>
+     * <b>DescribeEventCategories</b> action.</p>
      */
     inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::move(value); }
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType by using the
-     * <b>DescribeEventCategories</b> action. </p>
+     * <b>DescribeEventCategories</b> action.</p>
      */
     inline CreateEventSubscriptionRequest& WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType by using the
-     * <b>DescribeEventCategories</b> action. </p>
+     * <b>DescribeEventCategories</b> action.</p>
      */
     inline CreateEventSubscriptionRequest& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(std::move(value)); return *this;}
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType by using the
-     * <b>DescribeEventCategories</b> action. </p>
+     * <b>DescribeEventCategories</b> action.</p>
      */
     inline CreateEventSubscriptionRequest& AddEventCategories(const Aws::String& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType by using the
-     * <b>DescribeEventCategories</b> action. </p>
+     * <b>DescribeEventCategories</b> action.</p>
      */
     inline CreateEventSubscriptionRequest& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(std::move(value)); return *this; }
 
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType by using the
-     * <b>DescribeEventCategories</b> action. </p>
+     * <b>DescribeEventCategories</b> action.</p>
      */
     inline CreateEventSubscriptionRequest& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
@@ -449,51 +446,67 @@ namespace Model
 
     /**
      * <p> A Boolean value; set to <b>true</b> to activate the subscription, set to
-     * <b>false</b> to create the subscription but not active it. </p>
+     * <b>false</b> to create the subscription but not active it.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
      * <p> A Boolean value; set to <b>true</b> to activate the subscription, set to
-     * <b>false</b> to create the subscription but not active it. </p>
+     * <b>false</b> to create the subscription but not active it.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * <p> A Boolean value; set to <b>true</b> to activate the subscription, set to
-     * <b>false</b> to create the subscription but not active it. </p>
+     * <b>false</b> to create the subscription but not active it.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
      * <p> A Boolean value; set to <b>true</b> to activate the subscription, set to
-     * <b>false</b> to create the subscription but not active it. </p>
+     * <b>false</b> to create the subscription but not active it.</p>
      */
     inline CreateEventSubscriptionRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
 
-    
+    /**
+     * <p>The tags to be applied to the new event subscription.</p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    
+    /**
+     * <p>The tags to be applied to the new event subscription.</p>
+     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
-    
+    /**
+     * <p>The tags to be applied to the new event subscription.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    
+    /**
+     * <p>The tags to be applied to the new event subscription.</p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
-    
+    /**
+     * <p>The tags to be applied to the new event subscription.</p>
+     */
     inline CreateEventSubscriptionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    
+    /**
+     * <p>The tags to be applied to the new event subscription.</p>
+     */
     inline CreateEventSubscriptionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The tags to be applied to the new event subscription.</p>
+     */
     inline CreateEventSubscriptionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The tags to be applied to the new event subscription.</p>
+     */
     inline CreateEventSubscriptionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:

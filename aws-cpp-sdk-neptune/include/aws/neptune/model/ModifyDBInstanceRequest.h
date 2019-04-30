@@ -29,9 +29,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBInstanceMessage">AWS
-   * API Reference</a></p>
    */
   class AWS_NEPTUNE_API ModifyDBInstanceRequest : public NeptuneRequest
   {
@@ -109,26 +106,26 @@ namespace Model
 
 
     /**
-     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.
-     * </p> <p>Not applicable. Storage is managed by the DB Cluster.</p>
+     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.</p>
+     * <p>Not applicable. Storage is managed by the DB Cluster.</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.
-     * </p> <p>Not applicable. Storage is managed by the DB Cluster.</p>
+     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.</p>
+     * <p>Not applicable. Storage is managed by the DB Cluster.</p>
      */
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
     /**
-     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.
-     * </p> <p>Not applicable. Storage is managed by the DB Cluster.</p>
+     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.</p>
+     * <p>Not applicable. Storage is managed by the DB Cluster.</p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.
-     * </p> <p>Not applicable. Storage is managed by the DB Cluster.</p>
+     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.</p>
+     * <p>Not applicable. Storage is managed by the DB Cluster.</p>
      */
     inline ModifyDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
@@ -136,90 +133,90 @@ namespace Model
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the DB instance class, an outage occurs during
-     * the change. The change is applied during the next maintenance window, unless
+     * Regions.</p> <p>If you modify the DB instance class, an outage occurs during the
+     * change. The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
-     * request. </p> <p>Default: Uses existing setting</p>
+     * request.</p> <p>Default: Uses existing setting</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the DB instance class, an outage occurs during
-     * the change. The change is applied during the next maintenance window, unless
+     * Regions.</p> <p>If you modify the DB instance class, an outage occurs during the
+     * change. The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
-     * request. </p> <p>Default: Uses existing setting</p>
+     * request.</p> <p>Default: Uses existing setting</p>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the DB instance class, an outage occurs during
-     * the change. The change is applied during the next maintenance window, unless
+     * Regions.</p> <p>If you modify the DB instance class, an outage occurs during the
+     * change. The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
-     * request. </p> <p>Default: Uses existing setting</p>
+     * request.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the DB instance class, an outage occurs during
-     * the change. The change is applied during the next maintenance window, unless
+     * Regions.</p> <p>If you modify the DB instance class, an outage occurs during the
+     * change. The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
-     * request. </p> <p>Default: Uses existing setting</p>
+     * request.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the DB instance class, an outage occurs during
-     * the change. The change is applied during the next maintenance window, unless
+     * Regions.</p> <p>If you modify the DB instance class, an outage occurs during the
+     * change. The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
-     * request. </p> <p>Default: Uses existing setting</p>
+     * request.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the DB instance class, an outage occurs during
-     * the change. The change is applied during the next maintenance window, unless
+     * Regions.</p> <p>If you modify the DB instance class, an outage occurs during the
+     * change. The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
-     * request. </p> <p>Default: Uses existing setting</p>
+     * request.</p> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the DB instance class, an outage occurs during
-     * the change. The change is applied during the next maintenance window, unless
+     * Regions.</p> <p>If you modify the DB instance class, an outage occurs during the
+     * change. The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
-     * request. </p> <p>Default: Uses existing setting</p>
+     * request.</p> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the DB instance class, an outage occurs during
-     * the change. The change is applied during the next maintenance window, unless
+     * Regions.</p> <p>If you modify the DB instance class, an outage occurs during the
+     * change. The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
-     * request. </p> <p>Default: Uses existing setting</p>
+     * request.</p> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
 
     /**
      * <p>The new DB subnet group for the DB instance. You can use this parameter to
-     * move your DB instance to a different VPC. </p> <p>Changing the subnet group
+     * move your DB instance to a different VPC.</p> <p>Changing the subnet group
      * causes an outage during the change. The change is applied during the next
      * maintenance window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * <code>ApplyImmediately</code> parameter.</p> <p>Constraints: If supplied, must
      * match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetGroup</code> </p>
      */
@@ -227,10 +224,10 @@ namespace Model
 
     /**
      * <p>The new DB subnet group for the DB instance. You can use this parameter to
-     * move your DB instance to a different VPC. </p> <p>Changing the subnet group
+     * move your DB instance to a different VPC.</p> <p>Changing the subnet group
      * causes an outage during the change. The change is applied during the next
      * maintenance window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * <code>ApplyImmediately</code> parameter.</p> <p>Constraints: If supplied, must
      * match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetGroup</code> </p>
      */
@@ -238,10 +235,10 @@ namespace Model
 
     /**
      * <p>The new DB subnet group for the DB instance. You can use this parameter to
-     * move your DB instance to a different VPC. </p> <p>Changing the subnet group
+     * move your DB instance to a different VPC.</p> <p>Changing the subnet group
      * causes an outage during the change. The change is applied during the next
      * maintenance window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * <code>ApplyImmediately</code> parameter.</p> <p>Constraints: If supplied, must
      * match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetGroup</code> </p>
      */
@@ -249,10 +246,10 @@ namespace Model
 
     /**
      * <p>The new DB subnet group for the DB instance. You can use this parameter to
-     * move your DB instance to a different VPC. </p> <p>Changing the subnet group
+     * move your DB instance to a different VPC.</p> <p>Changing the subnet group
      * causes an outage during the change. The change is applied during the next
      * maintenance window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * <code>ApplyImmediately</code> parameter.</p> <p>Constraints: If supplied, must
      * match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetGroup</code> </p>
      */
@@ -260,10 +257,10 @@ namespace Model
 
     /**
      * <p>The new DB subnet group for the DB instance. You can use this parameter to
-     * move your DB instance to a different VPC. </p> <p>Changing the subnet group
+     * move your DB instance to a different VPC.</p> <p>Changing the subnet group
      * causes an outage during the change. The change is applied during the next
      * maintenance window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * <code>ApplyImmediately</code> parameter.</p> <p>Constraints: If supplied, must
      * match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetGroup</code> </p>
      */
@@ -271,10 +268,10 @@ namespace Model
 
     /**
      * <p>The new DB subnet group for the DB instance. You can use this parameter to
-     * move your DB instance to a different VPC. </p> <p>Changing the subnet group
+     * move your DB instance to a different VPC.</p> <p>Changing the subnet group
      * causes an outage during the change. The change is applied during the next
      * maintenance window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * <code>ApplyImmediately</code> parameter.</p> <p>Constraints: If supplied, must
      * match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetGroup</code> </p>
      */
@@ -282,10 +279,10 @@ namespace Model
 
     /**
      * <p>The new DB subnet group for the DB instance. You can use this parameter to
-     * move your DB instance to a different VPC. </p> <p>Changing the subnet group
+     * move your DB instance to a different VPC.</p> <p>Changing the subnet group
      * causes an outage during the change. The change is applied during the next
      * maintenance window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * <code>ApplyImmediately</code> parameter.</p> <p>Constraints: If supplied, must
      * match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetGroup</code> </p>
      */
@@ -293,10 +290,10 @@ namespace Model
 
     /**
      * <p>The new DB subnet group for the DB instance. You can use this parameter to
-     * move your DB instance to a different VPC. </p> <p>Changing the subnet group
+     * move your DB instance to a different VPC.</p> <p>Changing the subnet group
      * causes an outage during the change. The change is applied during the next
      * maintenance window, unless you specify <code>true</code> for the
-     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: If supplied, must
+     * <code>ApplyImmediately</code> parameter.</p> <p>Constraints: If supplied, must
      * match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetGroup</code> </p>
      */
@@ -461,101 +458,85 @@ namespace Model
     /**
      * <p>Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible, regardless of the
-     * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p> If
+     * <code>PreferredMaintenanceWindow</code> setting for the DB instance.</p> <p> If
      * this parameter is set to <code>false</code>, changes to the DB instance are
      * applied during the next maintenance window. Some parameter changes can cause an
      * outage and are applied on the next call to <a>RebootDBInstance</a>, or the next
-     * failure reboot. </p> <p>Default: <code>false</code> </p>
+     * failure reboot.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
 
     /**
      * <p>Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible, regardless of the
-     * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p> If
+     * <code>PreferredMaintenanceWindow</code> setting for the DB instance.</p> <p> If
      * this parameter is set to <code>false</code>, changes to the DB instance are
      * applied during the next maintenance window. Some parameter changes can cause an
      * outage and are applied on the next call to <a>RebootDBInstance</a>, or the next
-     * failure reboot. </p> <p>Default: <code>false</code> </p>
+     * failure reboot.</p> <p>Default: <code>false</code> </p>
      */
     inline bool ApplyImmediatelyHasBeenSet() const { return m_applyImmediatelyHasBeenSet; }
 
     /**
      * <p>Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible, regardless of the
-     * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p> If
+     * <code>PreferredMaintenanceWindow</code> setting for the DB instance.</p> <p> If
      * this parameter is set to <code>false</code>, changes to the DB instance are
      * applied during the next maintenance window. Some parameter changes can cause an
      * outage and are applied on the next call to <a>RebootDBInstance</a>, or the next
-     * failure reboot. </p> <p>Default: <code>false</code> </p>
+     * failure reboot.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
 
     /**
      * <p>Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible, regardless of the
-     * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p> If
+     * <code>PreferredMaintenanceWindow</code> setting for the DB instance.</p> <p> If
      * this parameter is set to <code>false</code>, changes to the DB instance are
      * applied during the next maintenance window. Some parameter changes can cause an
      * outage and are applied on the next call to <a>RebootDBInstance</a>, or the next
-     * failure reboot. </p> <p>Default: <code>false</code> </p>
+     * failure reboot.</p> <p>Default: <code>false</code> </p>
      */
     inline ModifyDBInstanceRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 
 
     /**
-     * <p>The new password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Not applicable. </p> <p>Default:
-     * Uses existing setting</p>
+     * <p>Not applicable.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>The new password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Not applicable. </p> <p>Default:
-     * Uses existing setting</p>
+     * <p>Not applicable.</p>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
-     * <p>The new password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Not applicable. </p> <p>Default:
-     * Uses existing setting</p>
+     * <p>Not applicable.</p>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>The new password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Not applicable. </p> <p>Default:
-     * Uses existing setting</p>
+     * <p>Not applicable.</p>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>The new password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Not applicable. </p> <p>Default:
-     * Uses existing setting</p>
+     * <p>Not applicable.</p>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>The new password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Not applicable. </p> <p>Default:
-     * Uses existing setting</p>
+     * <p>Not applicable.</p>
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>The new password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Not applicable. </p> <p>Default:
-     * Uses existing setting</p>
+     * <p>Not applicable.</p>
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The new password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p>Not applicable. </p> <p>Default:
-     * Uses existing setting</p>
+     * <p>Not applicable.</p>
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -658,45 +639,37 @@ namespace Model
 
 
     /**
-     * <p>The number of days to retain automated backups. Setting this parameter to a
-     * positive number enables backups. Setting this parameter to 0 disables automated
-     * backups.</p> <p>Not applicable. The retention period for automated backups is
-     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
-     * <p>Default: Uses existing setting</p>
+     * <p>Not applicable. The retention period for automated backups is managed by the
+     * DB cluster. For more information, see <a>ModifyDBCluster</a>.</p> <p>Default:
+     * Uses existing setting</p>
      */
     inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
     /**
-     * <p>The number of days to retain automated backups. Setting this parameter to a
-     * positive number enables backups. Setting this parameter to 0 disables automated
-     * backups.</p> <p>Not applicable. The retention period for automated backups is
-     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
-     * <p>Default: Uses existing setting</p>
+     * <p>Not applicable. The retention period for automated backups is managed by the
+     * DB cluster. For more information, see <a>ModifyDBCluster</a>.</p> <p>Default:
+     * Uses existing setting</p>
      */
     inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
 
     /**
-     * <p>The number of days to retain automated backups. Setting this parameter to a
-     * positive number enables backups. Setting this parameter to 0 disables automated
-     * backups.</p> <p>Not applicable. The retention period for automated backups is
-     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
-     * <p>Default: Uses existing setting</p>
+     * <p>Not applicable. The retention period for automated backups is managed by the
+     * DB cluster. For more information, see <a>ModifyDBCluster</a>.</p> <p>Default:
+     * Uses existing setting</p>
      */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
-     * <p>The number of days to retain automated backups. Setting this parameter to a
-     * positive number enables backups. Setting this parameter to 0 disables automated
-     * backups.</p> <p>Not applicable. The retention period for automated backups is
-     * managed by the DB cluster. For more information, see <a>ModifyDBCluster</a>.</p>
-     * <p>Default: Uses existing setting</p>
+     * <p>Not applicable. The retention period for automated backups is managed by the
+     * DB cluster. For more information, see <a>ModifyDBCluster</a>.</p> <p>Default:
+     * Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
 
     /**
      * <p> The daily time range during which automated backups are created if automated
-     * backups are enabled. </p> <p>Not applicable. The daily time range for creating
+     * backups are enabled.</p> <p>Not applicable. The daily time range for creating
      * automated backups is managed by the DB cluster. For more information, see
      * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format hh24:mi-hh24:mi</p> </li> <li> <p>Must be in Universal Time Coordinated
@@ -707,7 +680,7 @@ namespace Model
 
     /**
      * <p> The daily time range during which automated backups are created if automated
-     * backups are enabled. </p> <p>Not applicable. The daily time range for creating
+     * backups are enabled.</p> <p>Not applicable. The daily time range for creating
      * automated backups is managed by the DB cluster. For more information, see
      * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format hh24:mi-hh24:mi</p> </li> <li> <p>Must be in Universal Time Coordinated
@@ -718,7 +691,7 @@ namespace Model
 
     /**
      * <p> The daily time range during which automated backups are created if automated
-     * backups are enabled. </p> <p>Not applicable. The daily time range for creating
+     * backups are enabled.</p> <p>Not applicable. The daily time range for creating
      * automated backups is managed by the DB cluster. For more information, see
      * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format hh24:mi-hh24:mi</p> </li> <li> <p>Must be in Universal Time Coordinated
@@ -729,7 +702,7 @@ namespace Model
 
     /**
      * <p> The daily time range during which automated backups are created if automated
-     * backups are enabled. </p> <p>Not applicable. The daily time range for creating
+     * backups are enabled.</p> <p>Not applicable. The daily time range for creating
      * automated backups is managed by the DB cluster. For more information, see
      * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format hh24:mi-hh24:mi</p> </li> <li> <p>Must be in Universal Time Coordinated
@@ -740,7 +713,7 @@ namespace Model
 
     /**
      * <p> The daily time range during which automated backups are created if automated
-     * backups are enabled. </p> <p>Not applicable. The daily time range for creating
+     * backups are enabled.</p> <p>Not applicable. The daily time range for creating
      * automated backups is managed by the DB cluster. For more information, see
      * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format hh24:mi-hh24:mi</p> </li> <li> <p>Must be in Universal Time Coordinated
@@ -751,7 +724,7 @@ namespace Model
 
     /**
      * <p> The daily time range during which automated backups are created if automated
-     * backups are enabled. </p> <p>Not applicable. The daily time range for creating
+     * backups are enabled.</p> <p>Not applicable. The daily time range for creating
      * automated backups is managed by the DB cluster. For more information, see
      * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format hh24:mi-hh24:mi</p> </li> <li> <p>Must be in Universal Time Coordinated
@@ -762,7 +735,7 @@ namespace Model
 
     /**
      * <p> The daily time range during which automated backups are created if automated
-     * backups are enabled. </p> <p>Not applicable. The daily time range for creating
+     * backups are enabled.</p> <p>Not applicable. The daily time range for creating
      * automated backups is managed by the DB cluster. For more information, see
      * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format hh24:mi-hh24:mi</p> </li> <li> <p>Must be in Universal Time Coordinated
@@ -773,7 +746,7 @@ namespace Model
 
     /**
      * <p> The daily time range during which automated backups are created if automated
-     * backups are enabled. </p> <p>Not applicable. The daily time range for creating
+     * backups are enabled.</p> <p>Not applicable. The daily time range for creating
      * automated backups is managed by the DB cluster. For more information, see
      * <a>ModifyDBCluster</a>.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format hh24:mi-hh24:mi</p> </li> <li> <p>Must be in Universal Time Coordinated
@@ -908,7 +881,7 @@ namespace Model
      * <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this
      * parameter doesn't result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. </p>
+     * <code>true</code> for this request.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
@@ -916,7 +889,7 @@ namespace Model
      * <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this
      * parameter doesn't result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. </p>
+     * <code>true</code> for this request.</p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
@@ -924,7 +897,7 @@ namespace Model
      * <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this
      * parameter doesn't result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. </p>
+     * <code>true</code> for this request.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
@@ -932,7 +905,7 @@ namespace Model
      * <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this
      * parameter doesn't result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. </p>
+     * <code>true</code> for this request.</p>
      */
     inline ModifyDBInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
@@ -941,7 +914,7 @@ namespace Model
      * <p> The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. </p> <p>For major version upgrades, if a
+     * <code>true</code> for this request.</p> <p>For major version upgrades, if a
      * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
@@ -953,7 +926,7 @@ namespace Model
      * <p> The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. </p> <p>For major version upgrades, if a
+     * <code>true</code> for this request.</p> <p>For major version upgrades, if a
      * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
@@ -965,7 +938,7 @@ namespace Model
      * <p> The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. </p> <p>For major version upgrades, if a
+     * <code>true</code> for this request.</p> <p>For major version upgrades, if a
      * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
@@ -977,7 +950,7 @@ namespace Model
      * <p> The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. </p> <p>For major version upgrades, if a
+     * <code>true</code> for this request.</p> <p>For major version upgrades, if a
      * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
@@ -989,7 +962,7 @@ namespace Model
      * <p> The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. </p> <p>For major version upgrades, if a
+     * <code>true</code> for this request.</p> <p>For major version upgrades, if a
      * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
@@ -1001,7 +974,7 @@ namespace Model
      * <p> The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. </p> <p>For major version upgrades, if a
+     * <code>true</code> for this request.</p> <p>For major version upgrades, if a
      * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
@@ -1013,7 +986,7 @@ namespace Model
      * <p> The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. </p> <p>For major version upgrades, if a
+     * <code>true</code> for this request.</p> <p>For major version upgrades, if a
      * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
@@ -1025,7 +998,7 @@ namespace Model
      * <p> The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. </p> <p>For major version upgrades, if a
+     * <code>true</code> for this request.</p> <p>For major version upgrades, if a
      * nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The
      * new DB parameter group can be the default for that DB parameter group
@@ -1077,7 +1050,7 @@ namespace Model
      * in an outage except in the following case and the change is asynchronously
      * applied as soon as possible. An outage will result if this parameter is set to
      * <code>true</code> during the maintenance window, and a newer minor version is
-     * available, and Neptune has enabled auto patching for that engine version. </p>
+     * available, and Neptune has enabled auto patching for that engine version.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
@@ -1087,7 +1060,7 @@ namespace Model
      * in an outage except in the following case and the change is asynchronously
      * applied as soon as possible. An outage will result if this parameter is set to
      * <code>true</code> during the maintenance window, and a newer minor version is
-     * available, and Neptune has enabled auto patching for that engine version. </p>
+     * available, and Neptune has enabled auto patching for that engine version.</p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
@@ -1097,7 +1070,7 @@ namespace Model
      * in an outage except in the following case and the change is asynchronously
      * applied as soon as possible. An outage will result if this parameter is set to
      * <code>true</code> during the maintenance window, and a newer minor version is
-     * available, and Neptune has enabled auto patching for that engine version. </p>
+     * available, and Neptune has enabled auto patching for that engine version.</p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
@@ -1107,99 +1080,83 @@ namespace Model
      * in an outage except in the following case and the change is asynchronously
      * applied as soon as possible. An outage will result if this parameter is set to
      * <code>true</code> during the maintenance window, and a newer minor version is
-     * available, and Neptune has enabled auto patching for that engine version. </p>
+     * available, and Neptune has enabled auto patching for that engine version.</p>
      */
     inline ModifyDBInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
 
     /**
-     * <p>The license model for the DB instance.</p> <p>Valid values:
-     * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>Not supported.</p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
 
     /**
-     * <p>The license model for the DB instance.</p> <p>Valid values:
-     * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>Not supported.</p>
      */
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
-     * <p>The license model for the DB instance.</p> <p>Valid values:
-     * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>Not supported.</p>
      */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /**
-     * <p>The license model for the DB instance.</p> <p>Valid values:
-     * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>Not supported.</p>
      */
     inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
     /**
-     * <p>The license model for the DB instance.</p> <p>Valid values:
-     * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>Not supported.</p>
      */
     inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
 
     /**
-     * <p>The license model for the DB instance.</p> <p>Valid values:
-     * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>Not supported.</p>
      */
     inline ModifyDBInstanceRequest& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
 
     /**
-     * <p>The license model for the DB instance.</p> <p>Valid values:
-     * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>Not supported.</p>
      */
     inline ModifyDBInstanceRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
     /**
-     * <p>The license model for the DB instance.</p> <p>Valid values:
-     * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>Not supported.</p>
      */
     inline ModifyDBInstanceRequest& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
 
     /**
-     * <p>The new Provisioned IOPS (I/O operations per second) value for the instance.
-     * </p> <p>Changing this setting doesn't result in an outage and the change is
-     * applied during the next maintenance window unless the
+     * <p>The new Provisioned IOPS (I/O operations per second) value for the
+     * instance.</p> <p>Changing this setting doesn't result in an outage and the
+     * change is applied during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
      * request.</p> <p>Default: Uses existing setting</p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
-     * <p>The new Provisioned IOPS (I/O operations per second) value for the instance.
-     * </p> <p>Changing this setting doesn't result in an outage and the change is
-     * applied during the next maintenance window unless the
+     * <p>The new Provisioned IOPS (I/O operations per second) value for the
+     * instance.</p> <p>Changing this setting doesn't result in an outage and the
+     * change is applied during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
      * request.</p> <p>Default: Uses existing setting</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
-     * <p>The new Provisioned IOPS (I/O operations per second) value for the instance.
-     * </p> <p>Changing this setting doesn't result in an outage and the change is
-     * applied during the next maintenance window unless the
+     * <p>The new Provisioned IOPS (I/O operations per second) value for the
+     * instance.</p> <p>Changing this setting doesn't result in an outage and the
+     * change is applied during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
      * request.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
-     * <p>The new Provisioned IOPS (I/O operations per second) value for the instance.
-     * </p> <p>Changing this setting doesn't result in an outage and the change is
-     * applied during the next maintenance window unless the
+     * <p>The new Provisioned IOPS (I/O operations per second) value for the
+     * instance.</p> <p>Changing this setting doesn't result in an outage and the
+     * change is applied during the next maintenance window unless the
      * <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
      * request.</p> <p>Default: Uses existing setting</p>
      */
@@ -1213,7 +1170,7 @@ namespace Model
      * unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. If the parameter change results in an option group that
      * enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted. </p>
+     * connections are rejected but existing connections are not interrupted.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
      * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
@@ -1227,7 +1184,7 @@ namespace Model
      * unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. If the parameter change results in an option group that
      * enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted. </p>
+     * connections are rejected but existing connections are not interrupted.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
      * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
@@ -1241,7 +1198,7 @@ namespace Model
      * unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. If the parameter change results in an option group that
      * enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted. </p>
+     * connections are rejected but existing connections are not interrupted.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
      * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
@@ -1255,7 +1212,7 @@ namespace Model
      * unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. If the parameter change results in an option group that
      * enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted. </p>
+     * connections are rejected but existing connections are not interrupted.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
      * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
@@ -1269,7 +1226,7 @@ namespace Model
      * unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. If the parameter change results in an option group that
      * enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted. </p>
+     * connections are rejected but existing connections are not interrupted.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
      * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
@@ -1283,7 +1240,7 @@ namespace Model
      * unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. If the parameter change results in an option group that
      * enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted. </p>
+     * connections are rejected but existing connections are not interrupted.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
      * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
@@ -1297,7 +1254,7 @@ namespace Model
      * unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. If the parameter change results in an option group that
      * enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted. </p>
+     * connections are rejected but existing connections are not interrupted.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
      * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
@@ -1311,7 +1268,7 @@ namespace Model
      * unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
      * for this request. If the parameter change results in an option group that
      * enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted. </p>
+     * connections are rejected but existing connections are not interrupted.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
      * can't be removed from an option group, and that option group can't be removed
      * from a DB instance once it is associated with a DB instance</p>
@@ -1324,7 +1281,7 @@ namespace Model
      * instance. When you change the DB instance identifier, an instance reboot will
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
-     * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
+     * false. This value is stored as a lowercase string.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
@@ -1337,7 +1294,7 @@ namespace Model
      * instance. When you change the DB instance identifier, an instance reboot will
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
-     * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
+     * false. This value is stored as a lowercase string.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
@@ -1350,7 +1307,7 @@ namespace Model
      * instance. When you change the DB instance identifier, an instance reboot will
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
-     * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
+     * false. This value is stored as a lowercase string.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
@@ -1363,7 +1320,7 @@ namespace Model
      * instance. When you change the DB instance identifier, an instance reboot will
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
-     * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
+     * false. This value is stored as a lowercase string.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
@@ -1376,7 +1333,7 @@ namespace Model
      * instance. When you change the DB instance identifier, an instance reboot will
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
-     * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
+     * false. This value is stored as a lowercase string.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
@@ -1389,7 +1346,7 @@ namespace Model
      * instance. When you change the DB instance identifier, an instance reboot will
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
-     * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
+     * false. This value is stored as a lowercase string.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
@@ -1402,7 +1359,7 @@ namespace Model
      * instance. When you change the DB instance identifier, an instance reboot will
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
-     * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
+     * false. This value is stored as a lowercase string.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
@@ -1415,7 +1372,7 @@ namespace Model
      * instance. When you change the DB instance identifier, an instance reboot will
      * occur immediately if you set <code>Apply Immediately</code> to true, or will
      * occur during the next maintenance window if <code>Apply Immediately</code> to
-     * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
+     * false. This value is stored as a lowercase string.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
@@ -1425,170 +1382,42 @@ namespace Model
 
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
-     * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
-     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
-     * instance from using standard storage to using Provisioned IOPS, or from using
-     * Provisioned IOPS to using standard storage, the process can take time. The
-     * duration of the migration depends on several factors such as database load,
-     * storage size, storage type (standard or Provisioned IOPS), amount of IOPS
-     * provisioned (if any), and the number of prior scale storage operations. Typical
-     * migration times are under 24 hours, but the process can take up to several days
-     * in some cases. During the migration, the DB instance is available for use, but
-     * might experience performance degradation. While the migration takes place,
-     * nightly backups for the instance are suspended. No other Amazon Neptune
-     * operations can take place for the instance, including modifying the instance,
-     * rebooting the instance, deleting the instance, creating a Read Replica for the
-     * instance, and creating a DB snapshot of the instance. </p> <p> Valid values:
-     * <code>standard | gp2 | io1</code> </p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>standard</code> </p>
+     * <p>Not supported.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
-     * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
-     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
-     * instance from using standard storage to using Provisioned IOPS, or from using
-     * Provisioned IOPS to using standard storage, the process can take time. The
-     * duration of the migration depends on several factors such as database load,
-     * storage size, storage type (standard or Provisioned IOPS), amount of IOPS
-     * provisioned (if any), and the number of prior scale storage operations. Typical
-     * migration times are under 24 hours, but the process can take up to several days
-     * in some cases. During the migration, the DB instance is available for use, but
-     * might experience performance degradation. While the migration takes place,
-     * nightly backups for the instance are suspended. No other Amazon Neptune
-     * operations can take place for the instance, including modifying the instance,
-     * rebooting the instance, deleting the instance, creating a Read Replica for the
-     * instance, and creating a DB snapshot of the instance. </p> <p> Valid values:
-     * <code>standard | gp2 | io1</code> </p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>standard</code> </p>
+     * <p>Not supported.</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
-     * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
-     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
-     * instance from using standard storage to using Provisioned IOPS, or from using
-     * Provisioned IOPS to using standard storage, the process can take time. The
-     * duration of the migration depends on several factors such as database load,
-     * storage size, storage type (standard or Provisioned IOPS), amount of IOPS
-     * provisioned (if any), and the number of prior scale storage operations. Typical
-     * migration times are under 24 hours, but the process can take up to several days
-     * in some cases. During the migration, the DB instance is available for use, but
-     * might experience performance degradation. While the migration takes place,
-     * nightly backups for the instance are suspended. No other Amazon Neptune
-     * operations can take place for the instance, including modifying the instance,
-     * rebooting the instance, deleting the instance, creating a Read Replica for the
-     * instance, and creating a DB snapshot of the instance. </p> <p> Valid values:
-     * <code>standard | gp2 | io1</code> </p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>standard</code> </p>
+     * <p>Not supported.</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
-     * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
-     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
-     * instance from using standard storage to using Provisioned IOPS, or from using
-     * Provisioned IOPS to using standard storage, the process can take time. The
-     * duration of the migration depends on several factors such as database load,
-     * storage size, storage type (standard or Provisioned IOPS), amount of IOPS
-     * provisioned (if any), and the number of prior scale storage operations. Typical
-     * migration times are under 24 hours, but the process can take up to several days
-     * in some cases. During the migration, the DB instance is available for use, but
-     * might experience performance degradation. While the migration takes place,
-     * nightly backups for the instance are suspended. No other Amazon Neptune
-     * operations can take place for the instance, including modifying the instance,
-     * rebooting the instance, deleting the instance, creating a Read Replica for the
-     * instance, and creating a DB snapshot of the instance. </p> <p> Valid values:
-     * <code>standard | gp2 | io1</code> </p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>standard</code> </p>
+     * <p>Not supported.</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
-     * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
-     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
-     * instance from using standard storage to using Provisioned IOPS, or from using
-     * Provisioned IOPS to using standard storage, the process can take time. The
-     * duration of the migration depends on several factors such as database load,
-     * storage size, storage type (standard or Provisioned IOPS), amount of IOPS
-     * provisioned (if any), and the number of prior scale storage operations. Typical
-     * migration times are under 24 hours, but the process can take up to several days
-     * in some cases. During the migration, the DB instance is available for use, but
-     * might experience performance degradation. While the migration takes place,
-     * nightly backups for the instance are suspended. No other Amazon Neptune
-     * operations can take place for the instance, including modifying the instance,
-     * rebooting the instance, deleting the instance, creating a Read Replica for the
-     * instance, and creating a DB snapshot of the instance. </p> <p> Valid values:
-     * <code>standard | gp2 | io1</code> </p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>standard</code> </p>
+     * <p>Not supported.</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
-     * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
-     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
-     * instance from using standard storage to using Provisioned IOPS, or from using
-     * Provisioned IOPS to using standard storage, the process can take time. The
-     * duration of the migration depends on several factors such as database load,
-     * storage size, storage type (standard or Provisioned IOPS), amount of IOPS
-     * provisioned (if any), and the number of prior scale storage operations. Typical
-     * migration times are under 24 hours, but the process can take up to several days
-     * in some cases. During the migration, the DB instance is available for use, but
-     * might experience performance degradation. While the migration takes place,
-     * nightly backups for the instance are suspended. No other Amazon Neptune
-     * operations can take place for the instance, including modifying the instance,
-     * rebooting the instance, deleting the instance, creating a Read Replica for the
-     * instance, and creating a DB snapshot of the instance. </p> <p> Valid values:
-     * <code>standard | gp2 | io1</code> </p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>standard</code> </p>
+     * <p>Not supported.</p>
      */
     inline ModifyDBInstanceRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
-     * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
-     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
-     * instance from using standard storage to using Provisioned IOPS, or from using
-     * Provisioned IOPS to using standard storage, the process can take time. The
-     * duration of the migration depends on several factors such as database load,
-     * storage size, storage type (standard or Provisioned IOPS), amount of IOPS
-     * provisioned (if any), and the number of prior scale storage operations. Typical
-     * migration times are under 24 hours, but the process can take up to several days
-     * in some cases. During the migration, the DB instance is available for use, but
-     * might experience performance degradation. While the migration takes place,
-     * nightly backups for the instance are suspended. No other Amazon Neptune
-     * operations can take place for the instance, including modifying the instance,
-     * rebooting the instance, deleting the instance, creating a Read Replica for the
-     * instance, and creating a DB snapshot of the instance. </p> <p> Valid values:
-     * <code>standard | gp2 | io1</code> </p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>standard</code> </p>
+     * <p>Not supported.</p>
      */
     inline ModifyDBInstanceRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance. </p> <p>If
-     * you specify Provisioned IOPS (<code>io1</code>), you must also include a value
-     * for the <code>Iops</code> parameter. </p> <p>If you choose to migrate your DB
-     * instance from using standard storage to using Provisioned IOPS, or from using
-     * Provisioned IOPS to using standard storage, the process can take time. The
-     * duration of the migration depends on several factors such as database load,
-     * storage size, storage type (standard or Provisioned IOPS), amount of IOPS
-     * provisioned (if any), and the number of prior scale storage operations. Typical
-     * migration times are under 24 hours, but the process can take up to several days
-     * in some cases. During the migration, the DB instance is available for use, but
-     * might experience performance degradation. While the migration takes place,
-     * nightly backups for the instance are suspended. No other Amazon Neptune
-     * operations can take place for the instance, including modifying the instance,
-     * rebooting the instance, deleting the instance, creating a Read Replica for the
-     * instance, and creating a DB snapshot of the instance. </p> <p> Valid values:
-     * <code>standard | gp2 | io1</code> </p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>standard</code> </p>
+     * <p>Not supported.</p>
      */
     inline ModifyDBInstanceRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
@@ -1733,42 +1562,42 @@ namespace Model
 
 
     /**
-     * <p>Not supported. </p>
+     * <p>Not supported.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>Not supported. </p>
+     * <p>Not supported.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>Not supported. </p>
+     * <p>Not supported.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>Not supported. </p>
+     * <p>Not supported.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>Not supported. </p>
+     * <p>Not supported.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>Not supported. </p>
+     * <p>Not supported.</p>
      */
     inline ModifyDBInstanceRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>Not supported. </p>
+     * <p>Not supported.</p>
      */
     inline ModifyDBInstanceRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>Not supported. </p>
+     * <p>Not supported.</p>
      */
     inline ModifyDBInstanceRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
@@ -1879,7 +1708,7 @@ namespace Model
     /**
      * <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring
      * metrics to Amazon CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. </p> <p>If
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>.</p> <p>If
      * <code>MonitoringInterval</code> is set to a value other than 0, then you must
      * supply a <code>MonitoringRoleArn</code> value.</p>
      */
@@ -1888,7 +1717,7 @@ namespace Model
     /**
      * <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring
      * metrics to Amazon CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. </p> <p>If
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>.</p> <p>If
      * <code>MonitoringInterval</code> is set to a value other than 0, then you must
      * supply a <code>MonitoringRoleArn</code> value.</p>
      */
@@ -1897,7 +1726,7 @@ namespace Model
     /**
      * <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring
      * metrics to Amazon CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. </p> <p>If
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>.</p> <p>If
      * <code>MonitoringInterval</code> is set to a value other than 0, then you must
      * supply a <code>MonitoringRoleArn</code> value.</p>
      */
@@ -1906,7 +1735,7 @@ namespace Model
     /**
      * <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring
      * metrics to Amazon CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. </p> <p>If
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>.</p> <p>If
      * <code>MonitoringInterval</code> is set to a value other than 0, then you must
      * supply a <code>MonitoringRoleArn</code> value.</p>
      */
@@ -1915,7 +1744,7 @@ namespace Model
     /**
      * <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring
      * metrics to Amazon CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. </p> <p>If
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>.</p> <p>If
      * <code>MonitoringInterval</code> is set to a value other than 0, then you must
      * supply a <code>MonitoringRoleArn</code> value.</p>
      */
@@ -1924,7 +1753,7 @@ namespace Model
     /**
      * <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring
      * metrics to Amazon CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. </p> <p>If
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>.</p> <p>If
      * <code>MonitoringInterval</code> is set to a value other than 0, then you must
      * supply a <code>MonitoringRoleArn</code> value.</p>
      */
@@ -1933,7 +1762,7 @@ namespace Model
     /**
      * <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring
      * metrics to Amazon CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. </p> <p>If
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>.</p> <p>If
      * <code>MonitoringInterval</code> is set to a value other than 0, then you must
      * supply a <code>MonitoringRoleArn</code> value.</p>
      */
@@ -1942,7 +1771,7 @@ namespace Model
     /**
      * <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring
      * metrics to Amazon CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. </p> <p>If
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>.</p> <p>If
      * <code>MonitoringInterval</code> is set to a value other than 0, then you must
      * supply a <code>MonitoringRoleArn</code> value.</p>
      */
@@ -1992,28 +1821,28 @@ namespace Model
 
     /**
      * <p>A value that specifies the order in which a Read Replica is promoted to the
-     * primary instance after a failure of the existing primary instance. </p>
+     * primary instance after a failure of the existing primary instance.</p>
      * <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline int GetPromotionTier() const{ return m_promotionTier; }
 
     /**
      * <p>A value that specifies the order in which a Read Replica is promoted to the
-     * primary instance after a failure of the existing primary instance. </p>
+     * primary instance after a failure of the existing primary instance.</p>
      * <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline bool PromotionTierHasBeenSet() const { return m_promotionTierHasBeenSet; }
 
     /**
      * <p>A value that specifies the order in which a Read Replica is promoted to the
-     * primary instance after a failure of the existing primary instance. </p>
+     * primary instance after a failure of the existing primary instance.</p>
      * <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
 
     /**
      * <p>A value that specifies the order in which a Read Replica is promoted to the
-     * primary instance after a failure of the existing primary instance. </p>
+     * primary instance after a failure of the existing primary instance.</p>
      * <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline ModifyDBInstanceRequest& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
@@ -2057,83 +1886,63 @@ namespace Model
 
 
     /**
-     * <p>True to enable Performance Insights for the DB instance, and otherwise
-     * false.</p>
+     * <p>Not supported.</p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
     /**
-     * <p>True to enable Performance Insights for the DB instance, and otherwise
-     * false.</p>
+     * <p>Not supported.</p>
      */
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
 
     /**
-     * <p>True to enable Performance Insights for the DB instance, and otherwise
-     * false.</p>
+     * <p>Not supported.</p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
     /**
-     * <p>True to enable Performance Insights for the DB instance, and otherwise
-     * false.</p>
+     * <p>Not supported.</p>
      */
     inline ModifyDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p>Not supported.</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p>Not supported.</p>
      */
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p>Not supported.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p>Not supported.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p>Not supported.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p>Not supported.</p>
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p>Not supported.</p>
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p>Not supported.</p>
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 

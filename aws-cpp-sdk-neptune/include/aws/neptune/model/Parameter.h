@@ -35,11 +35,7 @@ namespace Model
 {
 
   /**
-   * <p> This data type is used as a request parameter in the
-   * <a>ModifyDBParameterGroup</a> and <a>ResetDBParameterGroup</a> actions. </p>
-   * <p>This data type is used as a response element in the
-   * <a>DescribeEngineDefaultParameters</a> and <a>DescribeDBParameters</a>
-   * actions.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a parameter.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/Parameter">AWS
    * API Reference</a></p>
    */
@@ -344,28 +340,28 @@ namespace Model
     /**
      * <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the
      * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed. </p>
+     * implications that prevent them from being changed.</p>
      */
     inline bool GetIsModifiable() const{ return m_isModifiable; }
 
     /**
      * <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the
      * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed. </p>
+     * implications that prevent them from being changed.</p>
      */
     inline bool IsModifiableHasBeenSet() const { return m_isModifiableHasBeenSet; }
 
     /**
      * <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the
      * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed. </p>
+     * implications that prevent them from being changed.</p>
      */
     inline void SetIsModifiable(bool value) { m_isModifiableHasBeenSet = true; m_isModifiable = value; }
 
     /**
      * <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the
      * parameter can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed. </p>
+     * implications that prevent them from being changed.</p>
      */
     inline Parameter& WithIsModifiable(bool value) { SetIsModifiable(value); return *this;}
 

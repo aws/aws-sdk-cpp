@@ -35,6 +35,8 @@ DirectConnectGatewayAttachment::DirectConnectGatewayAttachment() :
     m_virtualInterfaceOwnerAccountHasBeenSet(false),
     m_attachmentState(DirectConnectGatewayAttachmentState::NOT_SET),
     m_attachmentStateHasBeenSet(false),
+    m_attachmentType(DirectConnectGatewayAttachmentType::NOT_SET),
+    m_attachmentTypeHasBeenSet(false),
     m_stateChangeErrorHasBeenSet(false)
 {
 }
@@ -46,6 +48,8 @@ DirectConnectGatewayAttachment::DirectConnectGatewayAttachment(JsonView jsonValu
     m_virtualInterfaceOwnerAccountHasBeenSet(false),
     m_attachmentState(DirectConnectGatewayAttachmentState::NOT_SET),
     m_attachmentStateHasBeenSet(false),
+    m_attachmentType(DirectConnectGatewayAttachmentType::NOT_SET),
+    m_attachmentTypeHasBeenSet(false),
     m_stateChangeErrorHasBeenSet(false)
 {
   *this = jsonValue;
@@ -86,6 +90,13 @@ DirectConnectGatewayAttachment& DirectConnectGatewayAttachment::operator =(JsonV
     m_attachmentState = DirectConnectGatewayAttachmentStateMapper::GetDirectConnectGatewayAttachmentStateForName(jsonValue.GetString("attachmentState"));
 
     m_attachmentStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("attachmentType"))
+  {
+    m_attachmentType = DirectConnectGatewayAttachmentTypeMapper::GetDirectConnectGatewayAttachmentTypeForName(jsonValue.GetString("attachmentType"));
+
+    m_attachmentTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("stateChangeError"))
@@ -129,6 +140,11 @@ JsonValue DirectConnectGatewayAttachment::Jsonize() const
   if(m_attachmentStateHasBeenSet)
   {
    payload.WithString("attachmentState", DirectConnectGatewayAttachmentStateMapper::GetNameForDirectConnectGatewayAttachmentState(m_attachmentState));
+  }
+
+  if(m_attachmentTypeHasBeenSet)
+  {
+   payload.WithString("attachmentType", DirectConnectGatewayAttachmentTypeMapper::GetNameForDirectConnectGatewayAttachmentType(m_attachmentType));
   }
 
   if(m_stateChangeErrorHasBeenSet)

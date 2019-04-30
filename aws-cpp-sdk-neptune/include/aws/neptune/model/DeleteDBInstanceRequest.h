@@ -27,9 +27,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBInstanceMessage">AWS
-   * API Reference</a></p>
    */
   class AWS_NEPTUNE_API DeleteDBInstanceRequest : public NeptuneRequest
   {
@@ -110,7 +107,7 @@ namespace Model
      * <p> Determines whether a final DB snapshot is created before the DB instance is
      * deleted. If <code>true</code> is specified, no DBSnapshot is created. If
      * <code>false</code> is specified, a DB snapshot is created before the DB instance
-     * is deleted. </p> <p>Note that when a DB instance is in a failure state and has a
+     * is deleted.</p> <p>Note that when a DB instance is in a failure state and has a
      * status of 'failed', 'incompatible-restore', or 'incompatible-network', it can
      * only be deleted when the SkipFinalSnapshot parameter is set to "true".</p>
      * <p>Specify <code>true</code> when deleting a Read Replica.</p> <note> <p>The
@@ -123,7 +120,7 @@ namespace Model
      * <p> Determines whether a final DB snapshot is created before the DB instance is
      * deleted. If <code>true</code> is specified, no DBSnapshot is created. If
      * <code>false</code> is specified, a DB snapshot is created before the DB instance
-     * is deleted. </p> <p>Note that when a DB instance is in a failure state and has a
+     * is deleted.</p> <p>Note that when a DB instance is in a failure state and has a
      * status of 'failed', 'incompatible-restore', or 'incompatible-network', it can
      * only be deleted when the SkipFinalSnapshot parameter is set to "true".</p>
      * <p>Specify <code>true</code> when deleting a Read Replica.</p> <note> <p>The
@@ -136,7 +133,7 @@ namespace Model
      * <p> Determines whether a final DB snapshot is created before the DB instance is
      * deleted. If <code>true</code> is specified, no DBSnapshot is created. If
      * <code>false</code> is specified, a DB snapshot is created before the DB instance
-     * is deleted. </p> <p>Note that when a DB instance is in a failure state and has a
+     * is deleted.</p> <p>Note that when a DB instance is in a failure state and has a
      * status of 'failed', 'incompatible-restore', or 'incompatible-network', it can
      * only be deleted when the SkipFinalSnapshot parameter is set to "true".</p>
      * <p>Specify <code>true</code> when deleting a Read Replica.</p> <note> <p>The
@@ -149,7 +146,7 @@ namespace Model
      * <p> Determines whether a final DB snapshot is created before the DB instance is
      * deleted. If <code>true</code> is specified, no DBSnapshot is created. If
      * <code>false</code> is specified, a DB snapshot is created before the DB instance
-     * is deleted. </p> <p>Note that when a DB instance is in a failure state and has a
+     * is deleted.</p> <p>Note that when a DB instance is in a failure state and has a
      * status of 'failed', 'incompatible-restore', or 'incompatible-network', it can
      * only be deleted when the SkipFinalSnapshot parameter is set to "true".</p>
      * <p>Specify <code>true</code> when deleting a Read Replica.</p> <note> <p>The
@@ -161,7 +158,7 @@ namespace Model
 
     /**
      * <p> The DBSnapshotIdentifier of the new DBSnapshot created when
-     * SkipFinalSnapshot is set to <code>false</code>. </p> <note> <p>Specifying this
+     * SkipFinalSnapshot is set to <code>false</code>.</p> <note> <p>Specifying this
      * parameter and also setting the SkipFinalShapshot parameter to true results in an
      * error.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
@@ -172,7 +169,7 @@ namespace Model
 
     /**
      * <p> The DBSnapshotIdentifier of the new DBSnapshot created when
-     * SkipFinalSnapshot is set to <code>false</code>. </p> <note> <p>Specifying this
+     * SkipFinalSnapshot is set to <code>false</code>.</p> <note> <p>Specifying this
      * parameter and also setting the SkipFinalShapshot parameter to true results in an
      * error.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
@@ -183,7 +180,7 @@ namespace Model
 
     /**
      * <p> The DBSnapshotIdentifier of the new DBSnapshot created when
-     * SkipFinalSnapshot is set to <code>false</code>. </p> <note> <p>Specifying this
+     * SkipFinalSnapshot is set to <code>false</code>.</p> <note> <p>Specifying this
      * parameter and also setting the SkipFinalShapshot parameter to true results in an
      * error.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
@@ -194,7 +191,7 @@ namespace Model
 
     /**
      * <p> The DBSnapshotIdentifier of the new DBSnapshot created when
-     * SkipFinalSnapshot is set to <code>false</code>. </p> <note> <p>Specifying this
+     * SkipFinalSnapshot is set to <code>false</code>.</p> <note> <p>Specifying this
      * parameter and also setting the SkipFinalShapshot parameter to true results in an
      * error.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
@@ -205,7 +202,7 @@ namespace Model
 
     /**
      * <p> The DBSnapshotIdentifier of the new DBSnapshot created when
-     * SkipFinalSnapshot is set to <code>false</code>. </p> <note> <p>Specifying this
+     * SkipFinalSnapshot is set to <code>false</code>.</p> <note> <p>Specifying this
      * parameter and also setting the SkipFinalShapshot parameter to true results in an
      * error.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
@@ -216,7 +213,7 @@ namespace Model
 
     /**
      * <p> The DBSnapshotIdentifier of the new DBSnapshot created when
-     * SkipFinalSnapshot is set to <code>false</code>. </p> <note> <p>Specifying this
+     * SkipFinalSnapshot is set to <code>false</code>.</p> <note> <p>Specifying this
      * parameter and also setting the SkipFinalShapshot parameter to true results in an
      * error.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
@@ -227,7 +224,7 @@ namespace Model
 
     /**
      * <p> The DBSnapshotIdentifier of the new DBSnapshot created when
-     * SkipFinalSnapshot is set to <code>false</code>. </p> <note> <p>Specifying this
+     * SkipFinalSnapshot is set to <code>false</code>.</p> <note> <p>Specifying this
      * parameter and also setting the SkipFinalShapshot parameter to true results in an
      * error.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
@@ -238,7 +235,7 @@ namespace Model
 
     /**
      * <p> The DBSnapshotIdentifier of the new DBSnapshot created when
-     * SkipFinalSnapshot is set to <code>false</code>. </p> <note> <p>Specifying this
+     * SkipFinalSnapshot is set to <code>false</code>.</p> <note> <p>Specifying this
      * parameter and also setting the SkipFinalShapshot parameter to true results in an
      * error.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter</p> </li> <li>

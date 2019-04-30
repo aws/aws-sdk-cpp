@@ -33,7 +33,9 @@ ProvisioningArtifactProperties::ProvisioningArtifactProperties() :
     m_descriptionHasBeenSet(false),
     m_infoHasBeenSet(false),
     m_type(ProvisioningArtifactType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_disableTemplateValidation(false),
+    m_disableTemplateValidationHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ ProvisioningArtifactProperties::ProvisioningArtifactProperties(JsonView jsonValu
     m_descriptionHasBeenSet(false),
     m_infoHasBeenSet(false),
     m_type(ProvisioningArtifactType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_disableTemplateValidation(false),
+    m_disableTemplateValidationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -80,6 +84,13 @@ ProvisioningArtifactProperties& ProvisioningArtifactProperties::operator =(JsonV
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DisableTemplateValidation"))
+  {
+    m_disableTemplateValidation = jsonValue.GetBool("DisableTemplateValidation");
+
+    m_disableTemplateValidationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -113,6 +124,12 @@ JsonValue ProvisioningArtifactProperties::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", ProvisioningArtifactTypeMapper::GetNameForProvisioningArtifactType(m_type));
+  }
+
+  if(m_disableTemplateValidationHasBeenSet)
+  {
+   payload.WithBool("DisableTemplateValidation", m_disableTemplateValidation);
+
   }
 
   return payload;

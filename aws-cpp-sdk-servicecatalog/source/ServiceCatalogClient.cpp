@@ -31,6 +31,7 @@
 #include <aws/servicecatalog/ServiceCatalogEndpoint.h>
 #include <aws/servicecatalog/ServiceCatalogErrorMarshaller.h>
 #include <aws/servicecatalog/model/AcceptPortfolioShareRequest.h>
+#include <aws/servicecatalog/model/AssociateBudgetWithResourceRequest.h>
 #include <aws/servicecatalog/model/AssociatePrincipalWithPortfolioRequest.h>
 #include <aws/servicecatalog/model/AssociateProductWithPortfolioRequest.h>
 #include <aws/servicecatalog/model/AssociateServiceActionWithProvisioningArtifactRequest.h>
@@ -69,6 +70,7 @@
 #include <aws/servicecatalog/model/DescribeServiceActionRequest.h>
 #include <aws/servicecatalog/model/DescribeTagOptionRequest.h>
 #include <aws/servicecatalog/model/DisableAWSOrganizationsAccessRequest.h>
+#include <aws/servicecatalog/model/DisassociateBudgetFromResourceRequest.h>
 #include <aws/servicecatalog/model/DisassociatePrincipalFromPortfolioRequest.h>
 #include <aws/servicecatalog/model/DisassociateProductFromPortfolioRequest.h>
 #include <aws/servicecatalog/model/DisassociateServiceActionFromProvisioningArtifactRequest.h>
@@ -78,6 +80,7 @@
 #include <aws/servicecatalog/model/ExecuteProvisionedProductServiceActionRequest.h>
 #include <aws/servicecatalog/model/GetAWSOrganizationsAccessStatusRequest.h>
 #include <aws/servicecatalog/model/ListAcceptedPortfolioSharesRequest.h>
+#include <aws/servicecatalog/model/ListBudgetsForResourceRequest.h>
 #include <aws/servicecatalog/model/ListConstraintsForPortfolioRequest.h>
 #include <aws/servicecatalog/model/ListLaunchPathsRequest.h>
 #include <aws/servicecatalog/model/ListOrganizationPortfolioAccessRequest.h>
@@ -212,6 +215,41 @@ void ServiceCatalogClient::AcceptPortfolioShareAsync(const AcceptPortfolioShareR
 void ServiceCatalogClient::AcceptPortfolioShareAsyncHelper(const AcceptPortfolioShareRequest& request, const AcceptPortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AcceptPortfolioShare(request), context);
+}
+
+AssociateBudgetWithResourceOutcome ServiceCatalogClient::AssociateBudgetWithResource(const AssociateBudgetWithResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AssociateBudgetWithResourceOutcome(AssociateBudgetWithResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateBudgetWithResourceOutcome(outcome.GetError());
+  }
+}
+
+AssociateBudgetWithResourceOutcomeCallable ServiceCatalogClient::AssociateBudgetWithResourceCallable(const AssociateBudgetWithResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateBudgetWithResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateBudgetWithResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::AssociateBudgetWithResourceAsync(const AssociateBudgetWithResourceRequest& request, const AssociateBudgetWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateBudgetWithResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::AssociateBudgetWithResourceAsyncHelper(const AssociateBudgetWithResourceRequest& request, const AssociateBudgetWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateBudgetWithResource(request), context);
 }
 
 AssociatePrincipalWithPortfolioOutcome ServiceCatalogClient::AssociatePrincipalWithPortfolio(const AssociatePrincipalWithPortfolioRequest& request) const
@@ -1544,6 +1582,41 @@ void ServiceCatalogClient::DisableAWSOrganizationsAccessAsyncHelper(const Disabl
   handler(this, request, DisableAWSOrganizationsAccess(request), context);
 }
 
+DisassociateBudgetFromResourceOutcome ServiceCatalogClient::DisassociateBudgetFromResource(const DisassociateBudgetFromResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DisassociateBudgetFromResourceOutcome(DisassociateBudgetFromResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DisassociateBudgetFromResourceOutcome(outcome.GetError());
+  }
+}
+
+DisassociateBudgetFromResourceOutcomeCallable ServiceCatalogClient::DisassociateBudgetFromResourceCallable(const DisassociateBudgetFromResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateBudgetFromResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateBudgetFromResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::DisassociateBudgetFromResourceAsync(const DisassociateBudgetFromResourceRequest& request, const DisassociateBudgetFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateBudgetFromResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::DisassociateBudgetFromResourceAsyncHelper(const DisassociateBudgetFromResourceRequest& request, const DisassociateBudgetFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateBudgetFromResource(request), context);
+}
+
 DisassociatePrincipalFromPortfolioOutcome ServiceCatalogClient::DisassociatePrincipalFromPortfolio(const DisassociatePrincipalFromPortfolioRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1857,6 +1930,41 @@ void ServiceCatalogClient::ListAcceptedPortfolioSharesAsync(const ListAcceptedPo
 void ServiceCatalogClient::ListAcceptedPortfolioSharesAsyncHelper(const ListAcceptedPortfolioSharesRequest& request, const ListAcceptedPortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListAcceptedPortfolioShares(request), context);
+}
+
+ListBudgetsForResourceOutcome ServiceCatalogClient::ListBudgetsForResource(const ListBudgetsForResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListBudgetsForResourceOutcome(ListBudgetsForResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListBudgetsForResourceOutcome(outcome.GetError());
+  }
+}
+
+ListBudgetsForResourceOutcomeCallable ServiceCatalogClient::ListBudgetsForResourceCallable(const ListBudgetsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBudgetsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBudgetsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::ListBudgetsForResourceAsync(const ListBudgetsForResourceRequest& request, const ListBudgetsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBudgetsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::ListBudgetsForResourceAsyncHelper(const ListBudgetsForResourceRequest& request, const ListBudgetsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBudgetsForResource(request), context);
 }
 
 ListConstraintsForPortfolioOutcome ServiceCatalogClient::ListConstraintsForPortfolio(const ListConstraintsForPortfolioRequest& request) const

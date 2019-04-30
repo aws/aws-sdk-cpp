@@ -43,32 +43,27 @@ namespace Model
 
 
     /**
-     * <p>The Public Access Block configuration currently in effect for this Amazon Web
-     * Services account.</p>
+     * <p/>
      */
     inline const PublicAccessBlockConfiguration& GetPublicAccessBlockConfiguration() const{ return m_publicAccessBlockConfiguration; }
 
     /**
-     * <p>The Public Access Block configuration currently in effect for this Amazon Web
-     * Services account.</p>
+     * <p/>
      */
     inline void SetPublicAccessBlockConfiguration(const PublicAccessBlockConfiguration& value) { m_publicAccessBlockConfiguration = value; }
 
     /**
-     * <p>The Public Access Block configuration currently in effect for this Amazon Web
-     * Services account.</p>
+     * <p/>
      */
     inline void SetPublicAccessBlockConfiguration(PublicAccessBlockConfiguration&& value) { m_publicAccessBlockConfiguration = std::move(value); }
 
     /**
-     * <p>The Public Access Block configuration currently in effect for this Amazon Web
-     * Services account.</p>
+     * <p/>
      */
     inline GetPublicAccessBlockResult& WithPublicAccessBlockConfiguration(const PublicAccessBlockConfiguration& value) { SetPublicAccessBlockConfiguration(value); return *this;}
 
     /**
-     * <p>The Public Access Block configuration currently in effect for this Amazon Web
-     * Services account.</p>
+     * <p/>
      */
     inline GetPublicAccessBlockResult& WithPublicAccessBlockConfiguration(PublicAccessBlockConfiguration&& value) { SetPublicAccessBlockConfiguration(std::move(value)); return *this;}
 

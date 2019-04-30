@@ -17,6 +17,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/model/DirectConnectGatewayAttachmentState.h>
+#include <aws/directconnect/model/DirectConnectGatewayAttachmentType.h>
 #include <utility>
 
 namespace Aws
@@ -293,6 +294,37 @@ namespace Model
 
 
     /**
+     * <p>The type of attachment.</p>
+     */
+    inline const DirectConnectGatewayAttachmentType& GetAttachmentType() const{ return m_attachmentType; }
+
+    /**
+     * <p>The type of attachment.</p>
+     */
+    inline bool AttachmentTypeHasBeenSet() const { return m_attachmentTypeHasBeenSet; }
+
+    /**
+     * <p>The type of attachment.</p>
+     */
+    inline void SetAttachmentType(const DirectConnectGatewayAttachmentType& value) { m_attachmentTypeHasBeenSet = true; m_attachmentType = value; }
+
+    /**
+     * <p>The type of attachment.</p>
+     */
+    inline void SetAttachmentType(DirectConnectGatewayAttachmentType&& value) { m_attachmentTypeHasBeenSet = true; m_attachmentType = std::move(value); }
+
+    /**
+     * <p>The type of attachment.</p>
+     */
+    inline DirectConnectGatewayAttachment& WithAttachmentType(const DirectConnectGatewayAttachmentType& value) { SetAttachmentType(value); return *this;}
+
+    /**
+     * <p>The type of attachment.</p>
+     */
+    inline DirectConnectGatewayAttachment& WithAttachmentType(DirectConnectGatewayAttachmentType&& value) { SetAttachmentType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The error message if the state of an object failed to advance.</p>
      */
     inline const Aws::String& GetStateChangeError() const{ return m_stateChangeError; }
@@ -348,6 +380,9 @@ namespace Model
 
     DirectConnectGatewayAttachmentState m_attachmentState;
     bool m_attachmentStateHasBeenSet;
+
+    DirectConnectGatewayAttachmentType m_attachmentType;
+    bool m_attachmentTypeHasBeenSet;
 
     Aws::String m_stateChangeError;
     bool m_stateChangeErrorHasBeenSet;

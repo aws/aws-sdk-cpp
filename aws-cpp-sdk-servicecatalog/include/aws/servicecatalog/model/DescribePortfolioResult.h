@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/Tag.h>
 #include <aws/servicecatalog/model/TagOptionDetail.h>
+#include <aws/servicecatalog/model/BudgetDetail.h>
 #include <utility>
 
 namespace Aws
@@ -142,6 +143,42 @@ namespace Model
      */
     inline DescribePortfolioResult& AddTagOptions(TagOptionDetail&& value) { m_tagOptions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline const Aws::Vector<BudgetDetail>& GetBudgets() const{ return m_budgets; }
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline void SetBudgets(const Aws::Vector<BudgetDetail>& value) { m_budgets = value; }
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline void SetBudgets(Aws::Vector<BudgetDetail>&& value) { m_budgets = std::move(value); }
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline DescribePortfolioResult& WithBudgets(const Aws::Vector<BudgetDetail>& value) { SetBudgets(value); return *this;}
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline DescribePortfolioResult& WithBudgets(Aws::Vector<BudgetDetail>&& value) { SetBudgets(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline DescribePortfolioResult& AddBudgets(const BudgetDetail& value) { m_budgets.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline DescribePortfolioResult& AddBudgets(BudgetDetail&& value) { m_budgets.push_back(std::move(value)); return *this; }
+
   private:
 
     PortfolioDetail m_portfolioDetail;
@@ -149,6 +186,8 @@ namespace Model
     Aws::Vector<Tag> m_tags;
 
     Aws::Vector<TagOptionDetail> m_tagOptions;
+
+    Aws::Vector<BudgetDetail> m_budgets;
   };
 
 } // namespace Model

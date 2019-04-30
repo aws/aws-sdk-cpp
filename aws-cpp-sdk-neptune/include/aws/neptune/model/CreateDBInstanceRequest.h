@@ -29,9 +29,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBInstanceMessage">AWS
-   * API Reference</a></p>
    */
   class AWS_NEPTUNE_API CreateDBInstanceRequest : public NeptuneRequest
   {
@@ -52,42 +49,42 @@ namespace Model
   public:
 
     /**
-     * <p>The database name. </p> <p>Type: String</p>
+     * <p>Not supported.</p>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
 
     /**
-     * <p>The database name. </p> <p>Type: String</p>
+     * <p>Not supported.</p>
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
 
     /**
-     * <p>The database name. </p> <p>Type: String</p>
+     * <p>Not supported.</p>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
     /**
-     * <p>The database name. </p> <p>Type: String</p>
+     * <p>Not supported.</p>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
     /**
-     * <p>The database name. </p> <p>Type: String</p>
+     * <p>Not supported.</p>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
 
     /**
-     * <p>The database name. </p> <p>Type: String</p>
+     * <p>Not supported.</p>
      */
     inline CreateDBInstanceRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
 
     /**
-     * <p>The database name. </p> <p>Type: String</p>
+     * <p>Not supported.</p>
      */
     inline CreateDBInstanceRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
     /**
-     * <p>The database name. </p> <p>Type: String</p>
+     * <p>Not supported.</p>
      */
     inline CreateDBInstanceRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
 
@@ -201,104 +198,104 @@ namespace Model
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions. </p>
+     * Regions.</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions. </p>
+     * Regions.</p>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions. </p>
+     * Regions.</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions. </p>
+     * Regions.</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions. </p>
+     * Regions.</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions. </p>
+     * Regions.</p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions. </p>
+     * Regions.</p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions. </p>
+     * Regions.</p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>Valid
+     * <p>The name of the database engine to be used for this instance.</p> <p>Valid
      * Values: <code>neptune</code> </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>Valid
+     * <p>The name of the database engine to be used for this instance.</p> <p>Valid
      * Values: <code>neptune</code> </p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>Valid
+     * <p>The name of the database engine to be used for this instance.</p> <p>Valid
      * Values: <code>neptune</code> </p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>Valid
+     * <p>The name of the database engine to be used for this instance.</p> <p>Valid
      * Values: <code>neptune</code> </p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>Valid
+     * <p>The name of the database engine to be used for this instance.</p> <p>Valid
      * Values: <code>neptune</code> </p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>Valid
+     * <p>The name of the database engine to be used for this instance.</p> <p>Valid
      * Values: <code>neptune</code> </p>
      */
     inline CreateDBInstanceRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>Valid
+     * <p>The name of the database engine to be used for this instance.</p> <p>Valid
      * Values: <code>neptune</code> </p>
      */
     inline CreateDBInstanceRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the database engine to be used for this instance. </p> <p>Valid
+     * <p>The name of the database engine to be used for this instance.</p> <p>Valid
      * Values: <code>neptune</code> </p>
      */
     inline CreateDBInstanceRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
@@ -347,49 +344,49 @@ namespace Model
 
     /**
      * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Not used. </p>
+     * ASCII character except "/", """, or "@".</p> <p> Not used.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
      * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Not used. </p>
+     * ASCII character except "/", """, or "@".</p> <p> Not used.</p>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
      * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Not used. </p>
+     * ASCII character except "/", """, or "@".</p> <p> Not used.</p>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
      * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Not used. </p>
+     * ASCII character except "/", """, or "@".</p> <p> Not used.</p>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
      * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Not used. </p>
+     * ASCII character except "/", """, or "@".</p> <p> Not used.</p>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
      * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Not used. </p>
+     * ASCII character except "/", """, or "@".</p> <p> Not used.</p>
      */
     inline CreateDBInstanceRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
      * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Not used. </p>
+     * ASCII character except "/", """, or "@".</p> <p> Not used.</p>
      */
     inline CreateDBInstanceRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
      * <p>The password for the master user. The password can include any printable
-     * ASCII character except "/", """, or "@".</p> <p> Not used. </p>
+     * ASCII character except "/", """, or "@".</p> <p> Not used.</p>
      */
     inline CreateDBInstanceRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -532,82 +529,82 @@ namespace Model
 
 
     /**
-     * <p> The EC2 Availability Zone that the DB instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
-     * AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
+     * <p> The EC2 Availability Zone that the DB instance is created in</p> <p>Default:
+     * A random, system-chosen Availability Zone in the endpoint's AWS Region.</p> <p>
+     * Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
      * <code>true</code>. The specified Availability Zone must be in the same AWS
-     * Region as the current endpoint. </p>
+     * Region as the current endpoint.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p> The EC2 Availability Zone that the DB instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
-     * AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
+     * <p> The EC2 Availability Zone that the DB instance is created in</p> <p>Default:
+     * A random, system-chosen Availability Zone in the endpoint's AWS Region.</p> <p>
+     * Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
      * <code>true</code>. The specified Availability Zone must be in the same AWS
-     * Region as the current endpoint. </p>
+     * Region as the current endpoint.</p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
-     * <p> The EC2 Availability Zone that the DB instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
-     * AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
+     * <p> The EC2 Availability Zone that the DB instance is created in</p> <p>Default:
+     * A random, system-chosen Availability Zone in the endpoint's AWS Region.</p> <p>
+     * Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
      * <code>true</code>. The specified Availability Zone must be in the same AWS
-     * Region as the current endpoint. </p>
+     * Region as the current endpoint.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p> The EC2 Availability Zone that the DB instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
-     * AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
+     * <p> The EC2 Availability Zone that the DB instance is created in</p> <p>Default:
+     * A random, system-chosen Availability Zone in the endpoint's AWS Region.</p> <p>
+     * Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
      * <code>true</code>. The specified Availability Zone must be in the same AWS
-     * Region as the current endpoint. </p>
+     * Region as the current endpoint.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p> The EC2 Availability Zone that the DB instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
-     * AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
+     * <p> The EC2 Availability Zone that the DB instance is created in</p> <p>Default:
+     * A random, system-chosen Availability Zone in the endpoint's AWS Region.</p> <p>
+     * Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
      * <code>true</code>. The specified Availability Zone must be in the same AWS
-     * Region as the current endpoint. </p>
+     * Region as the current endpoint.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p> The EC2 Availability Zone that the DB instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
-     * AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
+     * <p> The EC2 Availability Zone that the DB instance is created in</p> <p>Default:
+     * A random, system-chosen Availability Zone in the endpoint's AWS Region.</p> <p>
+     * Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
      * <code>true</code>. The specified Availability Zone must be in the same AWS
-     * Region as the current endpoint. </p>
+     * Region as the current endpoint.</p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p> The EC2 Availability Zone that the DB instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
-     * AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
+     * <p> The EC2 Availability Zone that the DB instance is created in</p> <p>Default:
+     * A random, system-chosen Availability Zone in the endpoint's AWS Region.</p> <p>
+     * Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
      * <code>true</code>. The specified Availability Zone must be in the same AWS
-     * Region as the current endpoint. </p>
+     * Region as the current endpoint.</p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p> The EC2 Availability Zone that the DB instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
-     * AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
+     * <p> The EC2 Availability Zone that the DB instance is created in</p> <p>Default:
+     * A random, system-chosen Availability Zone in the endpoint's AWS Region.</p> <p>
+     * Example: <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
      * <code>true</code>. The specified Availability Zone must be in the same AWS
-     * Region as the current endpoint. </p>
+     * Region as the current endpoint.</p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
@@ -663,80 +660,80 @@ namespace Model
 
     /**
      * <p>The time range each week during which system maintenance can occur, in
-     * Universal Coordinated Time (UTC). </p> <p> Format:
+     * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
      * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
      * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
     /**
      * <p>The time range each week during which system maintenance can occur, in
-     * Universal Coordinated Time (UTC). </p> <p> Format:
+     * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
      * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
      * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
     /**
      * <p>The time range each week during which system maintenance can occur, in
-     * Universal Coordinated Time (UTC). </p> <p> Format:
+     * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
      * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
      * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /**
      * <p>The time range each week during which system maintenance can occur, in
-     * Universal Coordinated Time (UTC). </p> <p> Format:
+     * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
      * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
      * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p>The time range each week during which system maintenance can occur, in
-     * Universal Coordinated Time (UTC). </p> <p> Format:
+     * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
      * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
      * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
     /**
      * <p>The time range each week during which system maintenance can occur, in
-     * Universal Coordinated Time (UTC). </p> <p> Format:
+     * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
      * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
      * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
      * <p>The time range each week during which system maintenance can occur, in
-     * Universal Coordinated Time (UTC). </p> <p> Format:
+     * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
      * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
      * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p>The time range each week during which system maintenance can occur, in
-     * Universal Coordinated Time (UTC). </p> <p> Format:
+     * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
      * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * on a random day of the week.</p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
      * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
@@ -857,56 +854,56 @@ namespace Model
 
 
     /**
-     * <p> The daily time range during which automated backups are created. </p> <p>Not
+     * <p> The daily time range during which automated backups are created.</p> <p>Not
      * applicable. The daily time range for creating automated backups is managed by
      * the DB cluster. For more information, see <a>CreateDBCluster</a>.</p>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
     /**
-     * <p> The daily time range during which automated backups are created. </p> <p>Not
+     * <p> The daily time range during which automated backups are created.</p> <p>Not
      * applicable. The daily time range for creating automated backups is managed by
      * the DB cluster. For more information, see <a>CreateDBCluster</a>.</p>
      */
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     /**
-     * <p> The daily time range during which automated backups are created. </p> <p>Not
+     * <p> The daily time range during which automated backups are created.</p> <p>Not
      * applicable. The daily time range for creating automated backups is managed by
      * the DB cluster. For more information, see <a>CreateDBCluster</a>.</p>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
     /**
-     * <p> The daily time range during which automated backups are created. </p> <p>Not
+     * <p> The daily time range during which automated backups are created.</p> <p>Not
      * applicable. The daily time range for creating automated backups is managed by
      * the DB cluster. For more information, see <a>CreateDBCluster</a>.</p>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
-     * <p> The daily time range during which automated backups are created. </p> <p>Not
+     * <p> The daily time range during which automated backups are created.</p> <p>Not
      * applicable. The daily time range for creating automated backups is managed by
      * the DB cluster. For more information, see <a>CreateDBCluster</a>.</p>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
     /**
-     * <p> The daily time range during which automated backups are created. </p> <p>Not
+     * <p> The daily time range during which automated backups are created.</p> <p>Not
      * applicable. The daily time range for creating automated backups is managed by
      * the DB cluster. For more information, see <a>CreateDBCluster</a>.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
     /**
-     * <p> The daily time range during which automated backups are created. </p> <p>Not
+     * <p> The daily time range during which automated backups are created.</p> <p>Not
      * applicable. The daily time range for creating automated backups is managed by
      * the DB cluster. For more information, see <a>CreateDBCluster</a>.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
-     * <p> The daily time range during which automated backups are created. </p> <p>Not
+     * <p> The daily time range during which automated backups are created.</p> <p>Not
      * applicable. The daily time range for creating automated backups is managed by
      * the DB cluster. For more information, see <a>CreateDBCluster</a>.</p>
      */
@@ -1096,25 +1093,25 @@ namespace Model
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance. </p>
+     * initially allocated for the DB instance.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance. </p>
+     * initially allocated for the DB instance.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance. </p>
+     * initially allocated for the DB instance.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance. </p>
+     * initially allocated for the DB instance.</p>
      */
     inline CreateDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
 
@@ -1241,28 +1238,44 @@ namespace Model
     inline CreateDBInstanceRequest& WithCharacterSetName(const char* value) { SetCharacterSetName(value); return *this;}
 
 
-    
+    /**
+     * <p>The tags to assign to the new instance.</p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    
+    /**
+     * <p>The tags to assign to the new instance.</p>
+     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
-    
+    /**
+     * <p>The tags to assign to the new instance.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    
+    /**
+     * <p>The tags to assign to the new instance.</p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
-    
+    /**
+     * <p>The tags to assign to the new instance.</p>
+     */
     inline CreateDBInstanceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    
+    /**
+     * <p>The tags to assign to the new instance.</p>
+     */
     inline CreateDBInstanceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The tags to assign to the new instance.</p>
+     */
     inline CreateDBInstanceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The tags to assign to the new instance.</p>
+     */
     inline CreateDBInstanceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
@@ -1875,42 +1888,42 @@ namespace Model
 
 
     /**
-     * <p>The time zone of the DB instance. </p>
+     * <p>The time zone of the DB instance.</p>
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
 
     /**
-     * <p>The time zone of the DB instance. </p>
+     * <p>The time zone of the DB instance.</p>
      */
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
 
     /**
-     * <p>The time zone of the DB instance. </p>
+     * <p>The time zone of the DB instance.</p>
      */
     inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
 
     /**
-     * <p>The time zone of the DB instance. </p>
+     * <p>The time zone of the DB instance.</p>
      */
     inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
 
     /**
-     * <p>The time zone of the DB instance. </p>
+     * <p>The time zone of the DB instance.</p>
      */
     inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
 
     /**
-     * <p>The time zone of the DB instance. </p>
+     * <p>The time zone of the DB instance.</p>
      */
     inline CreateDBInstanceRequest& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
 
     /**
-     * <p>The time zone of the DB instance. </p>
+     * <p>The time zone of the DB instance.</p>
      */
     inline CreateDBInstanceRequest& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
 
     /**
-     * <p>The time zone of the DB instance. </p>
+     * <p>The time zone of the DB instance.</p>
      */
     inline CreateDBInstanceRequest& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 
@@ -1941,26 +1954,26 @@ namespace Model
 
 
     /**
-     * <p>True to enable Performance Insights for the DB instance, and otherwise false.
-     * </p>
+     * <p>True to enable Performance Insights for the DB instance, and otherwise
+     * false.</p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
     /**
-     * <p>True to enable Performance Insights for the DB instance, and otherwise false.
-     * </p>
+     * <p>True to enable Performance Insights for the DB instance, and otherwise
+     * false.</p>
      */
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
 
     /**
-     * <p>True to enable Performance Insights for the DB instance, and otherwise false.
-     * </p>
+     * <p>True to enable Performance Insights for the DB instance, and otherwise
+     * false.</p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
     /**
-     * <p>True to enable Performance Insights for the DB instance, and otherwise false.
-     * </p>
+     * <p>True to enable Performance Insights for the DB instance, and otherwise
+     * false.</p>
      */
     inline CreateDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 

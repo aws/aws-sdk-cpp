@@ -62,6 +62,15 @@ DescribePortfolioResult& DescribePortfolioResult::operator =(const Aws::AmazonWe
     }
   }
 
+  if(jsonValue.ValueExists("Budgets"))
+  {
+    Array<JsonView> budgetsJsonList = jsonValue.GetArray("Budgets");
+    for(unsigned budgetsIndex = 0; budgetsIndex < budgetsJsonList.GetLength(); ++budgetsIndex)
+    {
+      m_budgets.push_back(budgetsJsonList[budgetsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

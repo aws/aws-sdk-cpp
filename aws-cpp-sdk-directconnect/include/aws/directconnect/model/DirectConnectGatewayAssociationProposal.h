@@ -39,7 +39,7 @@ namespace Model
 
   /**
    * <p>Information about the proposal request to attach a virtual private gateway to
-   * a DDirect Connect gateway. </p><p><h3>See Also:</h3>   <a
+   * a Direct Connect gateway. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DirectConnectGatewayAssociationProposal">AWS
    * API Reference</a></p>
    */
@@ -249,32 +249,32 @@ namespace Model
 
 
     /**
-     * <p>Information about the associated virtual private gateway.</p>
+     * <p>Information about the associated gateway.</p>
      */
     inline const AssociatedGateway& GetAssociatedGateway() const{ return m_associatedGateway; }
 
     /**
-     * <p>Information about the associated virtual private gateway.</p>
+     * <p>Information about the associated gateway.</p>
      */
     inline bool AssociatedGatewayHasBeenSet() const { return m_associatedGatewayHasBeenSet; }
 
     /**
-     * <p>Information about the associated virtual private gateway.</p>
+     * <p>Information about the associated gateway.</p>
      */
     inline void SetAssociatedGateway(const AssociatedGateway& value) { m_associatedGatewayHasBeenSet = true; m_associatedGateway = value; }
 
     /**
-     * <p>Information about the associated virtual private gateway.</p>
+     * <p>Information about the associated gateway.</p>
      */
     inline void SetAssociatedGateway(AssociatedGateway&& value) { m_associatedGatewayHasBeenSet = true; m_associatedGateway = std::move(value); }
 
     /**
-     * <p>Information about the associated virtual private gateway.</p>
+     * <p>Information about the associated gateway.</p>
      */
     inline DirectConnectGatewayAssociationProposal& WithAssociatedGateway(const AssociatedGateway& value) { SetAssociatedGateway(value); return *this;}
 
     /**
-     * <p>Information about the associated virtual private gateway.</p>
+     * <p>Information about the associated gateway.</p>
      */
     inline DirectConnectGatewayAssociationProposal& WithAssociatedGateway(AssociatedGateway&& value) { SetAssociatedGateway(std::move(value)); return *this;}
 

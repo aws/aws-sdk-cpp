@@ -96,7 +96,7 @@ namespace Model
      * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
      * <code>pending-maintenance-apply</code>,
      * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>. </p>
+     * <code>removing</code>, and <code>failed</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
@@ -105,7 +105,7 @@ namespace Model
      * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
      * <code>pending-maintenance-apply</code>,
      * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>. </p>
+     * <code>removing</code>, and <code>failed</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -114,7 +114,7 @@ namespace Model
      * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
      * <code>pending-maintenance-apply</code>,
      * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>. </p>
+     * <code>removing</code>, and <code>failed</code>.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -123,7 +123,7 @@ namespace Model
      * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
      * <code>pending-maintenance-apply</code>,
      * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>. </p>
+     * <code>removing</code>, and <code>failed</code>.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -132,7 +132,7 @@ namespace Model
      * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
      * <code>pending-maintenance-apply</code>,
      * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>. </p>
+     * <code>removing</code>, and <code>failed</code>.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
@@ -141,7 +141,7 @@ namespace Model
      * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
      * <code>pending-maintenance-apply</code>,
      * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>. </p>
+     * <code>removing</code>, and <code>failed</code>.</p>
      */
     inline OptionGroupMembership& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
@@ -150,7 +150,7 @@ namespace Model
      * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
      * <code>pending-maintenance-apply</code>,
      * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>. </p>
+     * <code>removing</code>, and <code>failed</code>.</p>
      */
     inline OptionGroupMembership& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -159,7 +159,7 @@ namespace Model
      * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
      * <code>pending-maintenance-apply</code>,
      * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>. </p>
+     * <code>removing</code>, and <code>failed</code>.</p>
      */
     inline OptionGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
 

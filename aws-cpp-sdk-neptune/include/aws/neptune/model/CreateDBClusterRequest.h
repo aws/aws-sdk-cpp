@@ -29,9 +29,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterMessage">AWS
-   * API Reference</a></p>
    */
   class AWS_NEPTUNE_API CreateDBClusterRequest : public NeptuneRequest
   {
@@ -53,55 +50,55 @@ namespace Model
 
     /**
      * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
-     * created in. </p>
+     * created in.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
     /**
      * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
-     * created in. </p>
+     * created in.</p>
      */
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
      * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
-     * created in. </p>
+     * created in.</p>
      */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
      * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
-     * created in. </p>
+     * created in.</p>
      */
     inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
      * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
-     * created in. </p>
+     * created in.</p>
      */
     inline CreateDBClusterRequest& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
 
     /**
      * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
-     * created in. </p>
+     * created in.</p>
      */
     inline CreateDBClusterRequest& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
      * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
-     * created in. </p>
+     * created in.</p>
      */
     inline CreateDBClusterRequest& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /**
      * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
-     * created in. </p>
+     * created in.</p>
      */
     inline CreateDBClusterRequest& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
-     * created in. </p>
+     * created in.</p>
      */
     inline CreateDBClusterRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
@@ -316,7 +313,7 @@ namespace Model
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, the default is used. </p>
+     * cluster. If this argument is omitted, the default is used.</p>
      * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
      * DBClusterParameterGroup.</p> </li> </ul>
      */
@@ -324,7 +321,7 @@ namespace Model
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, the default is used. </p>
+     * cluster. If this argument is omitted, the default is used.</p>
      * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
      * DBClusterParameterGroup.</p> </li> </ul>
      */
@@ -332,7 +329,7 @@ namespace Model
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, the default is used. </p>
+     * cluster. If this argument is omitted, the default is used.</p>
      * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
      * DBClusterParameterGroup.</p> </li> </ul>
      */
@@ -340,7 +337,7 @@ namespace Model
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, the default is used. </p>
+     * cluster. If this argument is omitted, the default is used.</p>
      * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
      * DBClusterParameterGroup.</p> </li> </ul>
      */
@@ -348,7 +345,7 @@ namespace Model
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, the default is used. </p>
+     * cluster. If this argument is omitted, the default is used.</p>
      * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
      * DBClusterParameterGroup.</p> </li> </ul>
      */
@@ -356,7 +353,7 @@ namespace Model
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, the default is used. </p>
+     * cluster. If this argument is omitted, the default is used.</p>
      * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
      * DBClusterParameterGroup.</p> </li> </ul>
      */
@@ -364,7 +361,7 @@ namespace Model
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, the default is used. </p>
+     * cluster. If this argument is omitted, the default is used.</p>
      * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
      * DBClusterParameterGroup.</p> </li> </ul>
      */
@@ -372,7 +369,7 @@ namespace Model
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, the default is used. </p>
+     * cluster. If this argument is omitted, the default is used.</p>
      * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
      * DBClusterParameterGroup.</p> </li> </ul>
      */
@@ -794,10 +791,10 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
@@ -808,10 +805,10 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
@@ -822,10 +819,10 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
@@ -836,10 +833,10 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
@@ -850,10 +847,10 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
@@ -864,10 +861,10 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
@@ -878,10 +875,10 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
@@ -892,10 +889,10 @@ namespace Model
 
     /**
      * <p>The daily time range during which automated backups are created if automated
-     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region. To see the time blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
@@ -911,7 +908,7 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region, occurring on a random day of the week. To see the time
      * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
@@ -924,7 +921,7 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region, occurring on a random day of the week. To see the time
      * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
@@ -937,7 +934,7 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region, occurring on a random day of the week. To see the time
      * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
@@ -950,7 +947,7 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region, occurring on a random day of the week. To see the time
      * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
@@ -963,7 +960,7 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region, occurring on a random day of the week. To see the time
      * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
@@ -976,7 +973,7 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region, occurring on a random day of the week. To see the time
      * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
@@ -989,7 +986,7 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region, occurring on a random day of the week. To see the time
      * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
@@ -1002,7 +999,7 @@ namespace Model
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
      * time for each AWS Region, occurring on a random day of the week. To see the time
      * blocks available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
@@ -1059,28 +1056,44 @@ namespace Model
     inline CreateDBClusterRequest& WithReplicationSourceIdentifier(const char* value) { SetReplicationSourceIdentifier(value); return *this;}
 
 
-    
+    /**
+     * <p>The tags to assign to the new DB cluster.</p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    
+    /**
+     * <p>The tags to assign to the new DB cluster.</p>
+     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
-    
+    /**
+     * <p>The tags to assign to the new DB cluster.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    
+    /**
+     * <p>The tags to assign to the new DB cluster.</p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
-    
+    /**
+     * <p>The tags to assign to the new DB cluster.</p>
+     */
     inline CreateDBClusterRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    
+    /**
+     * <p>The tags to assign to the new DB cluster.</p>
+     */
     inline CreateDBClusterRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The tags to assign to the new DB cluster.</p>
+     */
     inline CreateDBClusterRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The tags to assign to the new DB cluster.</p>
+     */
     inline CreateDBClusterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
@@ -1114,7 +1127,7 @@ namespace Model
      * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon Neptune will use the encryption key used to encrypt the source.
-     * Otherwise, Amazon Neptune will use your default encryption key. </p> </li> <li>
+     * Otherwise, Amazon Neptune will use your default encryption key.</p> </li> <li>
      * <p>If the <code>StorageEncrypted</code> parameter is true and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune
      * will use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the
@@ -1135,7 +1148,7 @@ namespace Model
      * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon Neptune will use the encryption key used to encrypt the source.
-     * Otherwise, Amazon Neptune will use your default encryption key. </p> </li> <li>
+     * Otherwise, Amazon Neptune will use your default encryption key.</p> </li> <li>
      * <p>If the <code>StorageEncrypted</code> parameter is true and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune
      * will use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the
@@ -1156,7 +1169,7 @@ namespace Model
      * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon Neptune will use the encryption key used to encrypt the source.
-     * Otherwise, Amazon Neptune will use your default encryption key. </p> </li> <li>
+     * Otherwise, Amazon Neptune will use your default encryption key.</p> </li> <li>
      * <p>If the <code>StorageEncrypted</code> parameter is true and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune
      * will use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the
@@ -1177,7 +1190,7 @@ namespace Model
      * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon Neptune will use the encryption key used to encrypt the source.
-     * Otherwise, Amazon Neptune will use your default encryption key. </p> </li> <li>
+     * Otherwise, Amazon Neptune will use your default encryption key.</p> </li> <li>
      * <p>If the <code>StorageEncrypted</code> parameter is true and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune
      * will use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the
@@ -1198,7 +1211,7 @@ namespace Model
      * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon Neptune will use the encryption key used to encrypt the source.
-     * Otherwise, Amazon Neptune will use your default encryption key. </p> </li> <li>
+     * Otherwise, Amazon Neptune will use your default encryption key.</p> </li> <li>
      * <p>If the <code>StorageEncrypted</code> parameter is true and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune
      * will use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the
@@ -1219,7 +1232,7 @@ namespace Model
      * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon Neptune will use the encryption key used to encrypt the source.
-     * Otherwise, Amazon Neptune will use your default encryption key. </p> </li> <li>
+     * Otherwise, Amazon Neptune will use your default encryption key.</p> </li> <li>
      * <p>If the <code>StorageEncrypted</code> parameter is true and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune
      * will use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the
@@ -1240,7 +1253,7 @@ namespace Model
      * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon Neptune will use the encryption key used to encrypt the source.
-     * Otherwise, Amazon Neptune will use your default encryption key. </p> </li> <li>
+     * Otherwise, Amazon Neptune will use your default encryption key.</p> </li> <li>
      * <p>If the <code>StorageEncrypted</code> parameter is true and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune
      * will use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the
@@ -1261,7 +1274,7 @@ namespace Model
      * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon Neptune will use the encryption key used to encrypt the source.
-     * Otherwise, Amazon Neptune will use your default encryption key. </p> </li> <li>
+     * Otherwise, Amazon Neptune will use your default encryption key.</p> </li> <li>
      * <p>If the <code>StorageEncrypted</code> parameter is true and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune
      * will use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the
@@ -1275,250 +1288,42 @@ namespace Model
 
 
     /**
-     * <p>A URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBCluster</code> action to be called in the source AWS Region where
-     * the DB cluster is replicated from. You only need to specify
-     * <code>PreSignedUrl</code> when you are performing cross-region replication from
-     * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
-     * the <code>CreateDBCluster</code> API action that can be executed in the source
-     * AWS Region that contains the encrypted DB cluster to be copied.</p> <p>The
-     * pre-signed URL request must contain the following parameter values:</p> <ul>
-     * <li> <p> <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use
-     * to encrypt the copy of the DB cluster in the destination AWS Region. This should
-     * refer to the same KMS key for both the <code>CreateDBCluster</code> action that
-     * is called in the destination AWS Region, and the action contained in the
-     * pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of
-     * the AWS Region that Read Replica will be created in.</p> </li> <li> <p>
-     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
-     * encrypted DB cluster to be copied. This identifier must be in the Amazon
-     * Resource Name (ARN) format for the source AWS Region. For example, if you are
-     * copying an encrypted DB cluster from the us-west-2 AWS Region, then your
-     * <code>ReplicationSourceIdentifier</code> would look like Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:cluster:neptune-cluster1</code>.</p>
-     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
-     * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * <p>This parameter is not currently supported.</p>
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
 
     /**
-     * <p>A URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBCluster</code> action to be called in the source AWS Region where
-     * the DB cluster is replicated from. You only need to specify
-     * <code>PreSignedUrl</code> when you are performing cross-region replication from
-     * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
-     * the <code>CreateDBCluster</code> API action that can be executed in the source
-     * AWS Region that contains the encrypted DB cluster to be copied.</p> <p>The
-     * pre-signed URL request must contain the following parameter values:</p> <ul>
-     * <li> <p> <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use
-     * to encrypt the copy of the DB cluster in the destination AWS Region. This should
-     * refer to the same KMS key for both the <code>CreateDBCluster</code> action that
-     * is called in the destination AWS Region, and the action contained in the
-     * pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of
-     * the AWS Region that Read Replica will be created in.</p> </li> <li> <p>
-     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
-     * encrypted DB cluster to be copied. This identifier must be in the Amazon
-     * Resource Name (ARN) format for the source AWS Region. For example, if you are
-     * copying an encrypted DB cluster from the us-west-2 AWS Region, then your
-     * <code>ReplicationSourceIdentifier</code> would look like Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:cluster:neptune-cluster1</code>.</p>
-     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
-     * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * <p>This parameter is not currently supported.</p>
      */
     inline bool PreSignedUrlHasBeenSet() const { return m_preSignedUrlHasBeenSet; }
 
     /**
-     * <p>A URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBCluster</code> action to be called in the source AWS Region where
-     * the DB cluster is replicated from. You only need to specify
-     * <code>PreSignedUrl</code> when you are performing cross-region replication from
-     * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
-     * the <code>CreateDBCluster</code> API action that can be executed in the source
-     * AWS Region that contains the encrypted DB cluster to be copied.</p> <p>The
-     * pre-signed URL request must contain the following parameter values:</p> <ul>
-     * <li> <p> <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use
-     * to encrypt the copy of the DB cluster in the destination AWS Region. This should
-     * refer to the same KMS key for both the <code>CreateDBCluster</code> action that
-     * is called in the destination AWS Region, and the action contained in the
-     * pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of
-     * the AWS Region that Read Replica will be created in.</p> </li> <li> <p>
-     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
-     * encrypted DB cluster to be copied. This identifier must be in the Amazon
-     * Resource Name (ARN) format for the source AWS Region. For example, if you are
-     * copying an encrypted DB cluster from the us-west-2 AWS Region, then your
-     * <code>ReplicationSourceIdentifier</code> would look like Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:cluster:neptune-cluster1</code>.</p>
-     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
-     * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * <p>This parameter is not currently supported.</p>
      */
     inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
 
     /**
-     * <p>A URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBCluster</code> action to be called in the source AWS Region where
-     * the DB cluster is replicated from. You only need to specify
-     * <code>PreSignedUrl</code> when you are performing cross-region replication from
-     * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
-     * the <code>CreateDBCluster</code> API action that can be executed in the source
-     * AWS Region that contains the encrypted DB cluster to be copied.</p> <p>The
-     * pre-signed URL request must contain the following parameter values:</p> <ul>
-     * <li> <p> <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use
-     * to encrypt the copy of the DB cluster in the destination AWS Region. This should
-     * refer to the same KMS key for both the <code>CreateDBCluster</code> action that
-     * is called in the destination AWS Region, and the action contained in the
-     * pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of
-     * the AWS Region that Read Replica will be created in.</p> </li> <li> <p>
-     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
-     * encrypted DB cluster to be copied. This identifier must be in the Amazon
-     * Resource Name (ARN) format for the source AWS Region. For example, if you are
-     * copying an encrypted DB cluster from the us-west-2 AWS Region, then your
-     * <code>ReplicationSourceIdentifier</code> would look like Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:cluster:neptune-cluster1</code>.</p>
-     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
-     * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * <p>This parameter is not currently supported.</p>
      */
     inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::move(value); }
 
     /**
-     * <p>A URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBCluster</code> action to be called in the source AWS Region where
-     * the DB cluster is replicated from. You only need to specify
-     * <code>PreSignedUrl</code> when you are performing cross-region replication from
-     * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
-     * the <code>CreateDBCluster</code> API action that can be executed in the source
-     * AWS Region that contains the encrypted DB cluster to be copied.</p> <p>The
-     * pre-signed URL request must contain the following parameter values:</p> <ul>
-     * <li> <p> <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use
-     * to encrypt the copy of the DB cluster in the destination AWS Region. This should
-     * refer to the same KMS key for both the <code>CreateDBCluster</code> action that
-     * is called in the destination AWS Region, and the action contained in the
-     * pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of
-     * the AWS Region that Read Replica will be created in.</p> </li> <li> <p>
-     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
-     * encrypted DB cluster to be copied. This identifier must be in the Amazon
-     * Resource Name (ARN) format for the source AWS Region. For example, if you are
-     * copying an encrypted DB cluster from the us-west-2 AWS Region, then your
-     * <code>ReplicationSourceIdentifier</code> would look like Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:cluster:neptune-cluster1</code>.</p>
-     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
-     * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * <p>This parameter is not currently supported.</p>
      */
     inline void SetPreSignedUrl(const char* value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl.assign(value); }
 
     /**
-     * <p>A URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBCluster</code> action to be called in the source AWS Region where
-     * the DB cluster is replicated from. You only need to specify
-     * <code>PreSignedUrl</code> when you are performing cross-region replication from
-     * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
-     * the <code>CreateDBCluster</code> API action that can be executed in the source
-     * AWS Region that contains the encrypted DB cluster to be copied.</p> <p>The
-     * pre-signed URL request must contain the following parameter values:</p> <ul>
-     * <li> <p> <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use
-     * to encrypt the copy of the DB cluster in the destination AWS Region. This should
-     * refer to the same KMS key for both the <code>CreateDBCluster</code> action that
-     * is called in the destination AWS Region, and the action contained in the
-     * pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of
-     * the AWS Region that Read Replica will be created in.</p> </li> <li> <p>
-     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
-     * encrypted DB cluster to be copied. This identifier must be in the Amazon
-     * Resource Name (ARN) format for the source AWS Region. For example, if you are
-     * copying an encrypted DB cluster from the us-west-2 AWS Region, then your
-     * <code>ReplicationSourceIdentifier</code> would look like Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:cluster:neptune-cluster1</code>.</p>
-     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
-     * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * <p>This parameter is not currently supported.</p>
      */
     inline CreateDBClusterRequest& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
 
     /**
-     * <p>A URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBCluster</code> action to be called in the source AWS Region where
-     * the DB cluster is replicated from. You only need to specify
-     * <code>PreSignedUrl</code> when you are performing cross-region replication from
-     * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
-     * the <code>CreateDBCluster</code> API action that can be executed in the source
-     * AWS Region that contains the encrypted DB cluster to be copied.</p> <p>The
-     * pre-signed URL request must contain the following parameter values:</p> <ul>
-     * <li> <p> <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use
-     * to encrypt the copy of the DB cluster in the destination AWS Region. This should
-     * refer to the same KMS key for both the <code>CreateDBCluster</code> action that
-     * is called in the destination AWS Region, and the action contained in the
-     * pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of
-     * the AWS Region that Read Replica will be created in.</p> </li> <li> <p>
-     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
-     * encrypted DB cluster to be copied. This identifier must be in the Amazon
-     * Resource Name (ARN) format for the source AWS Region. For example, if you are
-     * copying an encrypted DB cluster from the us-west-2 AWS Region, then your
-     * <code>ReplicationSourceIdentifier</code> would look like Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:cluster:neptune-cluster1</code>.</p>
-     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
-     * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * <p>This parameter is not currently supported.</p>
      */
     inline CreateDBClusterRequest& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBCluster</code> action to be called in the source AWS Region where
-     * the DB cluster is replicated from. You only need to specify
-     * <code>PreSignedUrl</code> when you are performing cross-region replication from
-     * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
-     * the <code>CreateDBCluster</code> API action that can be executed in the source
-     * AWS Region that contains the encrypted DB cluster to be copied.</p> <p>The
-     * pre-signed URL request must contain the following parameter values:</p> <ul>
-     * <li> <p> <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use
-     * to encrypt the copy of the DB cluster in the destination AWS Region. This should
-     * refer to the same KMS key for both the <code>CreateDBCluster</code> action that
-     * is called in the destination AWS Region, and the action contained in the
-     * pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of
-     * the AWS Region that Read Replica will be created in.</p> </li> <li> <p>
-     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
-     * encrypted DB cluster to be copied. This identifier must be in the Amazon
-     * Resource Name (ARN) format for the source AWS Region. For example, if you are
-     * copying an encrypted DB cluster from the us-west-2 AWS Region, then your
-     * <code>ReplicationSourceIdentifier</code> would look like Example:
-     * <code>arn:aws:rds:us-west-2:123456789012:cluster:neptune-cluster1</code>.</p>
-     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
-     * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * <p>This parameter is not currently supported.</p>
      */
     inline CreateDBClusterRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 

@@ -37,12 +37,6 @@ namespace Neptune
 {
 namespace Model
 {
-  /**
-   * <p> Contains the result of a successful invocation of the
-   * <a>DescribeOrderableDBInstanceOptions</a> action. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/OrderableDBInstanceOptionsMessage">AWS
-   * API Reference</a></p>
-   */
   class AWS_NEPTUNE_API DescribeOrderableDBInstanceOptionsResult
   {
   public:
@@ -98,7 +92,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * OrderableDBInstanceOptions request. If this parameter is specified, the response
      * includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
@@ -106,7 +100,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * OrderableDBInstanceOptions request. If this parameter is specified, the response
      * includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
@@ -114,7 +108,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * OrderableDBInstanceOptions request. If this parameter is specified, the response
      * includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
@@ -122,7 +116,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * OrderableDBInstanceOptions request. If this parameter is specified, the response
      * includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
@@ -130,7 +124,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * OrderableDBInstanceOptions request. If this parameter is specified, the response
      * includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline DescribeOrderableDBInstanceOptionsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
@@ -138,7 +132,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * OrderableDBInstanceOptions request. If this parameter is specified, the response
      * includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline DescribeOrderableDBInstanceOptionsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
@@ -146,7 +140,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * OrderableDBInstanceOptions request. If this parameter is specified, the response
      * includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline DescribeOrderableDBInstanceOptionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 

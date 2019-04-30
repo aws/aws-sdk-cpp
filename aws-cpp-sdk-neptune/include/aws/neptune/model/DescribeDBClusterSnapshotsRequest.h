@@ -29,9 +29,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterSnapshotsMessage">AWS
-   * API Reference</a></p>
    */
   class AWS_NEPTUNE_API DescribeDBClusterSnapshotsRequest : public NeptuneRequest
   {
@@ -55,8 +52,8 @@ namespace Model
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter can't be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
-     * the identifier of an existing DBCluster.</p> </li> </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the
+     * identifier of an existing DBCluster.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
@@ -64,8 +61,8 @@ namespace Model
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter can't be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
-     * the identifier of an existing DBCluster.</p> </li> </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the
+     * identifier of an existing DBCluster.</p> </li> </ul>
      */
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
@@ -73,8 +70,8 @@ namespace Model
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter can't be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
-     * the identifier of an existing DBCluster.</p> </li> </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the
+     * identifier of an existing DBCluster.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
@@ -82,8 +79,8 @@ namespace Model
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter can't be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
-     * the identifier of an existing DBCluster.</p> </li> </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the
+     * identifier of an existing DBCluster.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
@@ -91,8 +88,8 @@ namespace Model
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter can't be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
-     * the identifier of an existing DBCluster.</p> </li> </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the
+     * identifier of an existing DBCluster.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
@@ -100,8 +97,8 @@ namespace Model
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter can't be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
-     * the identifier of an existing DBCluster.</p> </li> </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the
+     * identifier of an existing DBCluster.</p> </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
@@ -109,8 +106,8 @@ namespace Model
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter can't be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
-     * the identifier of an existing DBCluster.</p> </li> </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the
+     * identifier of an existing DBCluster.</p> </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
@@ -118,8 +115,8 @@ namespace Model
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter can't be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
-     * the identifier of an existing DBCluster.</p> </li> </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the
+     * identifier of an existing DBCluster.</p> </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
@@ -127,7 +124,7 @@ namespace Model
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter can't
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * value is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
      * <li> <p>If this identifier is for an automated snapshot, the
      * <code>SnapshotType</code> parameter must also be specified.</p> </li> </ul>
@@ -137,7 +134,7 @@ namespace Model
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter can't
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * value is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
      * <li> <p>If this identifier is for an automated snapshot, the
      * <code>SnapshotType</code> parameter must also be specified.</p> </li> </ul>
@@ -147,7 +144,7 @@ namespace Model
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter can't
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * value is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
      * <li> <p>If this identifier is for an automated snapshot, the
      * <code>SnapshotType</code> parameter must also be specified.</p> </li> </ul>
@@ -157,7 +154,7 @@ namespace Model
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter can't
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * value is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
      * <li> <p>If this identifier is for an automated snapshot, the
      * <code>SnapshotType</code> parameter must also be specified.</p> </li> </ul>
@@ -167,7 +164,7 @@ namespace Model
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter can't
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * value is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
      * <li> <p>If this identifier is for an automated snapshot, the
      * <code>SnapshotType</code> parameter must also be specified.</p> </li> </ul>
@@ -177,7 +174,7 @@ namespace Model
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter can't
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * value is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
      * <li> <p>If this identifier is for an automated snapshot, the
      * <code>SnapshotType</code> parameter must also be specified.</p> </li> </ul>
@@ -187,7 +184,7 @@ namespace Model
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter can't
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * value is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
      * <li> <p>If this identifier is for an automated snapshot, the
      * <code>SnapshotType</code> parameter must also be specified.</p> </li> </ul>
@@ -197,7 +194,7 @@ namespace Model
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter can't
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * value is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
      * <li> <p>If this identifier is for an automated snapshot, the
      * <code>SnapshotType</code> parameter must also be specified.</p> </li> </ul>
@@ -443,7 +440,7 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * retrieved.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
@@ -451,7 +448,7 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * retrieved.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
@@ -459,7 +456,7 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * retrieved.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
@@ -467,7 +464,7 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * retrieved.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeDBClusterSnapshotsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 

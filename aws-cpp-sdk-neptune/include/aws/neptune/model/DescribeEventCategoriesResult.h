@@ -36,12 +36,6 @@ namespace Neptune
 {
 namespace Model
 {
-  /**
-   * <p>Data returned from the <b>DescribeEventCategories</b> action.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/EventCategoriesMessage">AWS
-   * API Reference</a></p>
-   */
   class AWS_NEPTUNE_API DescribeEventCategoriesResult
   {
   public:

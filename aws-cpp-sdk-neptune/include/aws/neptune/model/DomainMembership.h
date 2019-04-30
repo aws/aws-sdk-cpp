@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>An Active Directory Domain membership record associated with the DB
+   * <p>An Active Directory Domain membership record associated with a DB
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DomainMembership">AWS
    * API Reference</a></p>

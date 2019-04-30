@@ -51,8 +51,8 @@ namespace Model
     /**
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     * Constructing an Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p> <ul>
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * Constructing an Amazon Resource Name (ARN)</a>.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must specify a valid DB cluster parameter group.</p> </li> <li> <p>If
      * the source DB cluster parameter group is in the same AWS Region as the copy,
      * specify a valid DB parameter group identifier, for example
@@ -67,8 +67,8 @@ namespace Model
     /**
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     * Constructing an Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p> <ul>
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * Constructing an Amazon Resource Name (ARN)</a>.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must specify a valid DB cluster parameter group.</p> </li> <li> <p>If
      * the source DB cluster parameter group is in the same AWS Region as the copy,
      * specify a valid DB parameter group identifier, for example
@@ -83,8 +83,8 @@ namespace Model
     /**
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     * Constructing an Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p> <ul>
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * Constructing an Amazon Resource Name (ARN)</a>.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must specify a valid DB cluster parameter group.</p> </li> <li> <p>If
      * the source DB cluster parameter group is in the same AWS Region as the copy,
      * specify a valid DB parameter group identifier, for example
@@ -99,8 +99,8 @@ namespace Model
     /**
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     * Constructing an Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p> <ul>
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * Constructing an Amazon Resource Name (ARN)</a>.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must specify a valid DB cluster parameter group.</p> </li> <li> <p>If
      * the source DB cluster parameter group is in the same AWS Region as the copy,
      * specify a valid DB parameter group identifier, for example
@@ -115,8 +115,8 @@ namespace Model
     /**
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     * Constructing an Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p> <ul>
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * Constructing an Amazon Resource Name (ARN)</a>.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must specify a valid DB cluster parameter group.</p> </li> <li> <p>If
      * the source DB cluster parameter group is in the same AWS Region as the copy,
      * specify a valid DB parameter group identifier, for example
@@ -131,8 +131,8 @@ namespace Model
     /**
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     * Constructing an Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p> <ul>
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * Constructing an Amazon Resource Name (ARN)</a>.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must specify a valid DB cluster parameter group.</p> </li> <li> <p>If
      * the source DB cluster parameter group is in the same AWS Region as the copy,
      * specify a valid DB parameter group identifier, for example
@@ -147,8 +147,8 @@ namespace Model
     /**
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     * Constructing an Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p> <ul>
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * Constructing an Amazon Resource Name (ARN)</a>.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must specify a valid DB cluster parameter group.</p> </li> <li> <p>If
      * the source DB cluster parameter group is in the same AWS Region as the copy,
      * specify a valid DB parameter group identifier, for example
@@ -163,8 +163,8 @@ namespace Model
     /**
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     * Constructing an Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p> <ul>
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * Constructing an Amazon Resource Name (ARN)</a>.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must specify a valid DB cluster parameter group.</p> </li> <li> <p>If
      * the source DB cluster parameter group is in the same AWS Region as the copy,
      * specify a valid DB parameter group identifier, for example
@@ -299,28 +299,44 @@ namespace Model
     inline CopyDBClusterParameterGroupRequest& WithTargetDBClusterParameterGroupDescription(const char* value) { SetTargetDBClusterParameterGroupDescription(value); return *this;}
 
 
-    
+    /**
+     * <p>The tags to be assigned to the copied DB cluster parameter group.</p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    
+    /**
+     * <p>The tags to be assigned to the copied DB cluster parameter group.</p>
+     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
-    
+    /**
+     * <p>The tags to be assigned to the copied DB cluster parameter group.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    
+    /**
+     * <p>The tags to be assigned to the copied DB cluster parameter group.</p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
-    
+    /**
+     * <p>The tags to be assigned to the copied DB cluster parameter group.</p>
+     */
     inline CopyDBClusterParameterGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    
+    /**
+     * <p>The tags to be assigned to the copied DB cluster parameter group.</p>
+     */
     inline CopyDBClusterParameterGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The tags to be assigned to the copied DB cluster parameter group.</p>
+     */
     inline CopyDBClusterParameterGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The tags to be assigned to the copied DB cluster parameter group.</p>
+     */
     inline CopyDBClusterParameterGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:

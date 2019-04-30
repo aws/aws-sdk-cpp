@@ -127,42 +127,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the associated virtual private gateway.</p>
+     * <p>The ID of the associated gateway.</p>
      */
     inline const Aws::String& GetAssociatedGatewayId() const{ return m_associatedGatewayId; }
 
     /**
-     * <p>The ID of the associated virtual private gateway.</p>
+     * <p>The ID of the associated gateway.</p>
      */
     inline bool AssociatedGatewayIdHasBeenSet() const { return m_associatedGatewayIdHasBeenSet; }
 
     /**
-     * <p>The ID of the associated virtual private gateway.</p>
+     * <p>The ID of the associated gateway.</p>
      */
     inline void SetAssociatedGatewayId(const Aws::String& value) { m_associatedGatewayIdHasBeenSet = true; m_associatedGatewayId = value; }
 
     /**
-     * <p>The ID of the associated virtual private gateway.</p>
+     * <p>The ID of the associated gateway.</p>
      */
     inline void SetAssociatedGatewayId(Aws::String&& value) { m_associatedGatewayIdHasBeenSet = true; m_associatedGatewayId = std::move(value); }
 
     /**
-     * <p>The ID of the associated virtual private gateway.</p>
+     * <p>The ID of the associated gateway.</p>
      */
     inline void SetAssociatedGatewayId(const char* value) { m_associatedGatewayIdHasBeenSet = true; m_associatedGatewayId.assign(value); }
 
     /**
-     * <p>The ID of the associated virtual private gateway.</p>
+     * <p>The ID of the associated gateway.</p>
      */
     inline DescribeDirectConnectGatewayAssociationProposalsRequest& WithAssociatedGatewayId(const Aws::String& value) { SetAssociatedGatewayId(value); return *this;}
 
     /**
-     * <p>The ID of the associated virtual private gateway.</p>
+     * <p>The ID of the associated gateway.</p>
      */
     inline DescribeDirectConnectGatewayAssociationProposalsRequest& WithAssociatedGatewayId(Aws::String&& value) { SetAssociatedGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the associated virtual private gateway.</p>
+     * <p>The ID of the associated gateway.</p>
      */
     inline DescribeDirectConnectGatewayAssociationProposalsRequest& WithAssociatedGatewayId(const char* value) { SetAssociatedGatewayId(value); return *this;}
 

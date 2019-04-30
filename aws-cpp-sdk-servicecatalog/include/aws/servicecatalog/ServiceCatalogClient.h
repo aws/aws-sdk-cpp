@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/servicecatalog/model/AcceptPortfolioShareResult.h>
+#include <aws/servicecatalog/model/AssociateBudgetWithResourceResult.h>
 #include <aws/servicecatalog/model/AssociatePrincipalWithPortfolioResult.h>
 #include <aws/servicecatalog/model/AssociateProductWithPortfolioResult.h>
 #include <aws/servicecatalog/model/AssociateServiceActionWithProvisioningArtifactResult.h>
@@ -60,6 +61,7 @@
 #include <aws/servicecatalog/model/DescribeServiceActionResult.h>
 #include <aws/servicecatalog/model/DescribeTagOptionResult.h>
 #include <aws/servicecatalog/model/DisableAWSOrganizationsAccessResult.h>
+#include <aws/servicecatalog/model/DisassociateBudgetFromResourceResult.h>
 #include <aws/servicecatalog/model/DisassociatePrincipalFromPortfolioResult.h>
 #include <aws/servicecatalog/model/DisassociateProductFromPortfolioResult.h>
 #include <aws/servicecatalog/model/DisassociateServiceActionFromProvisioningArtifactResult.h>
@@ -69,6 +71,7 @@
 #include <aws/servicecatalog/model/ExecuteProvisionedProductServiceActionResult.h>
 #include <aws/servicecatalog/model/GetAWSOrganizationsAccessStatusResult.h>
 #include <aws/servicecatalog/model/ListAcceptedPortfolioSharesResult.h>
+#include <aws/servicecatalog/model/ListBudgetsForResourceResult.h>
 #include <aws/servicecatalog/model/ListConstraintsForPortfolioResult.h>
 #include <aws/servicecatalog/model/ListLaunchPathsResult.h>
 #include <aws/servicecatalog/model/ListOrganizationPortfolioAccessResult.h>
@@ -139,6 +142,7 @@ namespace ServiceCatalog
 namespace Model
 {
         class AcceptPortfolioShareRequest;
+        class AssociateBudgetWithResourceRequest;
         class AssociatePrincipalWithPortfolioRequest;
         class AssociateProductWithPortfolioRequest;
         class AssociateServiceActionWithProvisioningArtifactRequest;
@@ -177,6 +181,7 @@ namespace Model
         class DescribeServiceActionRequest;
         class DescribeTagOptionRequest;
         class DisableAWSOrganizationsAccessRequest;
+        class DisassociateBudgetFromResourceRequest;
         class DisassociatePrincipalFromPortfolioRequest;
         class DisassociateProductFromPortfolioRequest;
         class DisassociateServiceActionFromProvisioningArtifactRequest;
@@ -186,6 +191,7 @@ namespace Model
         class ExecuteProvisionedProductServiceActionRequest;
         class GetAWSOrganizationsAccessStatusRequest;
         class ListAcceptedPortfolioSharesRequest;
+        class ListBudgetsForResourceRequest;
         class ListConstraintsForPortfolioRequest;
         class ListLaunchPathsRequest;
         class ListOrganizationPortfolioAccessRequest;
@@ -217,6 +223,7 @@ namespace Model
         class UpdateTagOptionRequest;
 
         typedef Aws::Utils::Outcome<AcceptPortfolioShareResult, Aws::Client::AWSError<ServiceCatalogErrors>> AcceptPortfolioShareOutcome;
+        typedef Aws::Utils::Outcome<AssociateBudgetWithResourceResult, Aws::Client::AWSError<ServiceCatalogErrors>> AssociateBudgetWithResourceOutcome;
         typedef Aws::Utils::Outcome<AssociatePrincipalWithPortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> AssociatePrincipalWithPortfolioOutcome;
         typedef Aws::Utils::Outcome<AssociateProductWithPortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> AssociateProductWithPortfolioOutcome;
         typedef Aws::Utils::Outcome<AssociateServiceActionWithProvisioningArtifactResult, Aws::Client::AWSError<ServiceCatalogErrors>> AssociateServiceActionWithProvisioningArtifactOutcome;
@@ -255,6 +262,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeServiceActionResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeServiceActionOutcome;
         typedef Aws::Utils::Outcome<DescribeTagOptionResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeTagOptionOutcome;
         typedef Aws::Utils::Outcome<DisableAWSOrganizationsAccessResult, Aws::Client::AWSError<ServiceCatalogErrors>> DisableAWSOrganizationsAccessOutcome;
+        typedef Aws::Utils::Outcome<DisassociateBudgetFromResourceResult, Aws::Client::AWSError<ServiceCatalogErrors>> DisassociateBudgetFromResourceOutcome;
         typedef Aws::Utils::Outcome<DisassociatePrincipalFromPortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> DisassociatePrincipalFromPortfolioOutcome;
         typedef Aws::Utils::Outcome<DisassociateProductFromPortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> DisassociateProductFromPortfolioOutcome;
         typedef Aws::Utils::Outcome<DisassociateServiceActionFromProvisioningArtifactResult, Aws::Client::AWSError<ServiceCatalogErrors>> DisassociateServiceActionFromProvisioningArtifactOutcome;
@@ -264,6 +272,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ExecuteProvisionedProductServiceActionResult, Aws::Client::AWSError<ServiceCatalogErrors>> ExecuteProvisionedProductServiceActionOutcome;
         typedef Aws::Utils::Outcome<GetAWSOrganizationsAccessStatusResult, Aws::Client::AWSError<ServiceCatalogErrors>> GetAWSOrganizationsAccessStatusOutcome;
         typedef Aws::Utils::Outcome<ListAcceptedPortfolioSharesResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListAcceptedPortfolioSharesOutcome;
+        typedef Aws::Utils::Outcome<ListBudgetsForResourceResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListBudgetsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListConstraintsForPortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListConstraintsForPortfolioOutcome;
         typedef Aws::Utils::Outcome<ListLaunchPathsResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListLaunchPathsOutcome;
         typedef Aws::Utils::Outcome<ListOrganizationPortfolioAccessResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListOrganizationPortfolioAccessOutcome;
@@ -295,6 +304,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateTagOptionResult, Aws::Client::AWSError<ServiceCatalogErrors>> UpdateTagOptionOutcome;
 
         typedef std::future<AcceptPortfolioShareOutcome> AcceptPortfolioShareOutcomeCallable;
+        typedef std::future<AssociateBudgetWithResourceOutcome> AssociateBudgetWithResourceOutcomeCallable;
         typedef std::future<AssociatePrincipalWithPortfolioOutcome> AssociatePrincipalWithPortfolioOutcomeCallable;
         typedef std::future<AssociateProductWithPortfolioOutcome> AssociateProductWithPortfolioOutcomeCallable;
         typedef std::future<AssociateServiceActionWithProvisioningArtifactOutcome> AssociateServiceActionWithProvisioningArtifactOutcomeCallable;
@@ -333,6 +343,7 @@ namespace Model
         typedef std::future<DescribeServiceActionOutcome> DescribeServiceActionOutcomeCallable;
         typedef std::future<DescribeTagOptionOutcome> DescribeTagOptionOutcomeCallable;
         typedef std::future<DisableAWSOrganizationsAccessOutcome> DisableAWSOrganizationsAccessOutcomeCallable;
+        typedef std::future<DisassociateBudgetFromResourceOutcome> DisassociateBudgetFromResourceOutcomeCallable;
         typedef std::future<DisassociatePrincipalFromPortfolioOutcome> DisassociatePrincipalFromPortfolioOutcomeCallable;
         typedef std::future<DisassociateProductFromPortfolioOutcome> DisassociateProductFromPortfolioOutcomeCallable;
         typedef std::future<DisassociateServiceActionFromProvisioningArtifactOutcome> DisassociateServiceActionFromProvisioningArtifactOutcomeCallable;
@@ -342,6 +353,7 @@ namespace Model
         typedef std::future<ExecuteProvisionedProductServiceActionOutcome> ExecuteProvisionedProductServiceActionOutcomeCallable;
         typedef std::future<GetAWSOrganizationsAccessStatusOutcome> GetAWSOrganizationsAccessStatusOutcomeCallable;
         typedef std::future<ListAcceptedPortfolioSharesOutcome> ListAcceptedPortfolioSharesOutcomeCallable;
+        typedef std::future<ListBudgetsForResourceOutcome> ListBudgetsForResourceOutcomeCallable;
         typedef std::future<ListConstraintsForPortfolioOutcome> ListConstraintsForPortfolioOutcomeCallable;
         typedef std::future<ListLaunchPathsOutcome> ListLaunchPathsOutcomeCallable;
         typedef std::future<ListOrganizationPortfolioAccessOutcome> ListOrganizationPortfolioAccessOutcomeCallable;
@@ -376,6 +388,7 @@ namespace Model
   class ServiceCatalogClient;
 
     typedef std::function<void(const ServiceCatalogClient*, const Model::AcceptPortfolioShareRequest&, const Model::AcceptPortfolioShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptPortfolioShareResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::AssociateBudgetWithResourceRequest&, const Model::AssociateBudgetWithResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateBudgetWithResourceResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::AssociatePrincipalWithPortfolioRequest&, const Model::AssociatePrincipalWithPortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociatePrincipalWithPortfolioResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::AssociateProductWithPortfolioRequest&, const Model::AssociateProductWithPortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateProductWithPortfolioResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::AssociateServiceActionWithProvisioningArtifactRequest&, const Model::AssociateServiceActionWithProvisioningArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateServiceActionWithProvisioningArtifactResponseReceivedHandler;
@@ -414,6 +427,7 @@ namespace Model
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeServiceActionRequest&, const Model::DescribeServiceActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServiceActionResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeTagOptionRequest&, const Model::DescribeTagOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagOptionResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DisableAWSOrganizationsAccessRequest&, const Model::DisableAWSOrganizationsAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableAWSOrganizationsAccessResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::DisassociateBudgetFromResourceRequest&, const Model::DisassociateBudgetFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateBudgetFromResourceResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DisassociatePrincipalFromPortfolioRequest&, const Model::DisassociatePrincipalFromPortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociatePrincipalFromPortfolioResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DisassociateProductFromPortfolioRequest&, const Model::DisassociateProductFromPortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateProductFromPortfolioResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DisassociateServiceActionFromProvisioningArtifactRequest&, const Model::DisassociateServiceActionFromProvisioningArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateServiceActionFromProvisioningArtifactResponseReceivedHandler;
@@ -423,6 +437,7 @@ namespace Model
     typedef std::function<void(const ServiceCatalogClient*, const Model::ExecuteProvisionedProductServiceActionRequest&, const Model::ExecuteProvisionedProductServiceActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteProvisionedProductServiceActionResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::GetAWSOrganizationsAccessStatusRequest&, const Model::GetAWSOrganizationsAccessStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAWSOrganizationsAccessStatusResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListAcceptedPortfolioSharesRequest&, const Model::ListAcceptedPortfolioSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAcceptedPortfolioSharesResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::ListBudgetsForResourceRequest&, const Model::ListBudgetsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBudgetsForResourceResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListConstraintsForPortfolioRequest&, const Model::ListConstraintsForPortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConstraintsForPortfolioResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListLaunchPathsRequest&, const Model::ListLaunchPathsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLaunchPathsResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListOrganizationPortfolioAccessRequest&, const Model::ListOrganizationPortfolioAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrganizationPortfolioAccessResponseReceivedHandler;
@@ -518,6 +533,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AcceptPortfolioShareAsync(const Model::AcceptPortfolioShareRequest& request, const AcceptPortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates the specified budget with the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateBudgetWithResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateBudgetWithResourceOutcome AssociateBudgetWithResource(const Model::AssociateBudgetWithResourceRequest& request) const;
+
+        /**
+         * <p>Associates the specified budget with the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateBudgetWithResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateBudgetWithResourceOutcomeCallable AssociateBudgetWithResourceCallable(const Model::AssociateBudgetWithResourceRequest& request) const;
+
+        /**
+         * <p>Associates the specified budget with the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateBudgetWithResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateBudgetWithResourceAsync(const Model::AssociateBudgetWithResourceRequest& request, const AssociateBudgetWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified principal ARN with the specified
@@ -1641,6 +1684,34 @@ namespace Model
         virtual void DisableAWSOrganizationsAccessAsync(const Model::DisableAWSOrganizationsAccessRequest& request, const DisableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disassociates the specified budget from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateBudgetFromResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateBudgetFromResourceOutcome DisassociateBudgetFromResource(const Model::DisassociateBudgetFromResourceRequest& request) const;
+
+        /**
+         * <p>Disassociates the specified budget from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateBudgetFromResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateBudgetFromResourceOutcomeCallable DisassociateBudgetFromResourceCallable(const Model::DisassociateBudgetFromResourceRequest& request) const;
+
+        /**
+         * <p>Disassociates the specified budget from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateBudgetFromResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateBudgetFromResourceAsync(const Model::DisassociateBudgetFromResourceRequest& request, const DisassociateBudgetFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disassociates a previously associated principal ARN from a specified
          * portfolio.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio">AWS
@@ -1909,6 +1980,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAcceptedPortfolioSharesAsync(const Model::ListAcceptedPortfolioSharesRequest& request, const ListAcceptedPortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all the budgets associated to the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListBudgetsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBudgetsForResourceOutcome ListBudgetsForResource(const Model::ListBudgetsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists all the budgets associated to the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListBudgetsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListBudgetsForResourceOutcomeCallable ListBudgetsForResourceCallable(const Model::ListBudgetsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists all the budgets associated to the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListBudgetsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListBudgetsForResourceAsync(const Model::ListBudgetsForResourceRequest& request, const ListBudgetsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the constraints for the specified portfolio and product.</p><p><h3>See
@@ -2764,6 +2863,7 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         /**Async helpers**/
         void AcceptPortfolioShareAsyncHelper(const Model::AcceptPortfolioShareRequest& request, const AcceptPortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateBudgetWithResourceAsyncHelper(const Model::AssociateBudgetWithResourceRequest& request, const AssociateBudgetWithResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociatePrincipalWithPortfolioAsyncHelper(const Model::AssociatePrincipalWithPortfolioRequest& request, const AssociatePrincipalWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateProductWithPortfolioAsyncHelper(const Model::AssociateProductWithPortfolioRequest& request, const AssociateProductWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateServiceActionWithProvisioningArtifactAsyncHelper(const Model::AssociateServiceActionWithProvisioningArtifactRequest& request, const AssociateServiceActionWithProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2802,6 +2902,7 @@ namespace Model
         void DescribeServiceActionAsyncHelper(const Model::DescribeServiceActionRequest& request, const DescribeServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTagOptionAsyncHelper(const Model::DescribeTagOptionRequest& request, const DescribeTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableAWSOrganizationsAccessAsyncHelper(const Model::DisableAWSOrganizationsAccessRequest& request, const DisableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateBudgetFromResourceAsyncHelper(const Model::DisassociateBudgetFromResourceRequest& request, const DisassociateBudgetFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociatePrincipalFromPortfolioAsyncHelper(const Model::DisassociatePrincipalFromPortfolioRequest& request, const DisassociatePrincipalFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateProductFromPortfolioAsyncHelper(const Model::DisassociateProductFromPortfolioRequest& request, const DisassociateProductFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateServiceActionFromProvisioningArtifactAsyncHelper(const Model::DisassociateServiceActionFromProvisioningArtifactRequest& request, const DisassociateServiceActionFromProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2811,6 +2912,7 @@ namespace Model
         void ExecuteProvisionedProductServiceActionAsyncHelper(const Model::ExecuteProvisionedProductServiceActionRequest& request, const ExecuteProvisionedProductServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAWSOrganizationsAccessStatusAsyncHelper(const Model::GetAWSOrganizationsAccessStatusRequest& request, const GetAWSOrganizationsAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAcceptedPortfolioSharesAsyncHelper(const Model::ListAcceptedPortfolioSharesRequest& request, const ListAcceptedPortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListBudgetsForResourceAsyncHelper(const Model::ListBudgetsForResourceRequest& request, const ListBudgetsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConstraintsForPortfolioAsyncHelper(const Model::ListConstraintsForPortfolioRequest& request, const ListConstraintsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLaunchPathsAsyncHelper(const Model::ListLaunchPathsRequest& request, const ListLaunchPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOrganizationPortfolioAccessAsyncHelper(const Model::ListOrganizationPortfolioAccessRequest& request, const ListOrganizationPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

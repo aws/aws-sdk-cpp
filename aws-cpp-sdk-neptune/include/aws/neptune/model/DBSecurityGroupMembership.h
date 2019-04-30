@@ -34,9 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>This data type is used as a response element in the following actions:</p>
-   * <ul> <li> <p> <a>ModifyDBInstance</a> </p> </li> <li> <p>
-   * <a>RebootDBInstance</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <p>Specifies membership in a designated DB security group.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DBSecurityGroupMembership">AWS
    * API Reference</a></p>
    */

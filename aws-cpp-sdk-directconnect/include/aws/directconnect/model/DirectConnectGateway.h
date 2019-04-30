@@ -36,7 +36,8 @@ namespace Model
 
   /**
    * <p>Information about a Direct Connect gateway, which enables you to connect
-   * virtual interfaces and virtual private gateways.</p><p><h3>See Also:</h3>   <a
+   * virtual interfaces and virtual private gateway or transit
+   * gateways.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DirectConnectGateway">AWS
    * API Reference</a></p>
    */

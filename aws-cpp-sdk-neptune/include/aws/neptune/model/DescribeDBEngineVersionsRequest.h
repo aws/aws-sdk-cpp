@@ -239,7 +239,7 @@ namespace Model
     /**
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so that the following results can be retrieved. </p>
+     * is included in the response so that the following results can be retrieved.</p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
@@ -247,7 +247,7 @@ namespace Model
     /**
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so that the following results can be retrieved. </p>
+     * is included in the response so that the following results can be retrieved.</p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
@@ -255,7 +255,7 @@ namespace Model
     /**
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so that the following results can be retrieved. </p>
+     * is included in the response so that the following results can be retrieved.</p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
@@ -263,7 +263,7 @@ namespace Model
     /**
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so that the following results can be retrieved. </p>
+     * is included in the response so that the following results can be retrieved.</p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -272,56 +272,56 @@ namespace Model
     /**
      * <p> An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
@@ -354,32 +354,32 @@ namespace Model
     /**
      * <p>If this parameter is specified and the requested engine supports the
      * <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the
-     * response includes a list of supported character sets for each engine version.
-     * </p>
+     * response includes a list of supported character sets for each engine
+     * version.</p>
      */
     inline bool GetListSupportedCharacterSets() const{ return m_listSupportedCharacterSets; }
 
     /**
      * <p>If this parameter is specified and the requested engine supports the
      * <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the
-     * response includes a list of supported character sets for each engine version.
-     * </p>
+     * response includes a list of supported character sets for each engine
+     * version.</p>
      */
     inline bool ListSupportedCharacterSetsHasBeenSet() const { return m_listSupportedCharacterSetsHasBeenSet; }
 
     /**
      * <p>If this parameter is specified and the requested engine supports the
      * <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the
-     * response includes a list of supported character sets for each engine version.
-     * </p>
+     * response includes a list of supported character sets for each engine
+     * version.</p>
      */
     inline void SetListSupportedCharacterSets(bool value) { m_listSupportedCharacterSetsHasBeenSet = true; m_listSupportedCharacterSets = value; }
 
     /**
      * <p>If this parameter is specified and the requested engine supports the
      * <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the
-     * response includes a list of supported character sets for each engine version.
-     * </p>
+     * response includes a list of supported character sets for each engine
+     * version.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithListSupportedCharacterSets(bool value) { SetListSupportedCharacterSets(value); return *this;}
 
@@ -387,28 +387,28 @@ namespace Model
     /**
      * <p>If this parameter is specified and the requested engine supports the
      * <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response
-     * includes a list of supported time zones for each engine version. </p>
+     * includes a list of supported time zones for each engine version.</p>
      */
     inline bool GetListSupportedTimezones() const{ return m_listSupportedTimezones; }
 
     /**
      * <p>If this parameter is specified and the requested engine supports the
      * <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response
-     * includes a list of supported time zones for each engine version. </p>
+     * includes a list of supported time zones for each engine version.</p>
      */
     inline bool ListSupportedTimezonesHasBeenSet() const { return m_listSupportedTimezonesHasBeenSet; }
 
     /**
      * <p>If this parameter is specified and the requested engine supports the
      * <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response
-     * includes a list of supported time zones for each engine version. </p>
+     * includes a list of supported time zones for each engine version.</p>
      */
     inline void SetListSupportedTimezones(bool value) { m_listSupportedTimezonesHasBeenSet = true; m_listSupportedTimezones = value; }
 
     /**
      * <p>If this parameter is specified and the requested engine supports the
      * <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response
-     * includes a list of supported time zones for each engine version. </p>
+     * includes a list of supported time zones for each engine version.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithListSupportedTimezones(bool value) { SetListSupportedTimezones(value); return *this;}
 

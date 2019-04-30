@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int virtualPrivateGateway_HASH = HashingUtils::HashString("virtualPrivateGateway");
+        static const int transitGateway_HASH = HashingUtils::HashString("transitGateway");
 
 
         GatewayType GetGatewayTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == virtualPrivateGateway_HASH)
           {
             return GatewayType::virtualPrivateGateway;
+          }
+          else if (hashCode == transitGateway_HASH)
+          {
+            return GatewayType::transitGateway;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case GatewayType::virtualPrivateGateway:
             return "virtualPrivateGateway";
+          case GatewayType::transitGateway:
+            return "transitGateway";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

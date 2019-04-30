@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the associated gateway.</p>
      */
     inline const DirectConnectGatewayAssociationProposal& GetDirectConnectGatewayAssociationProposal() const{ return m_directConnectGatewayAssociationProposal; }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the associated gateway.</p>
      */
     inline void SetDirectConnectGatewayAssociationProposal(const DirectConnectGatewayAssociationProposal& value) { m_directConnectGatewayAssociationProposal = value; }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the associated gateway.</p>
      */
     inline void SetDirectConnectGatewayAssociationProposal(DirectConnectGatewayAssociationProposal&& value) { m_directConnectGatewayAssociationProposal = std::move(value); }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the associated gateway.</p>
      */
     inline DeleteDirectConnectGatewayAssociationProposalResult& WithDirectConnectGatewayAssociationProposal(const DirectConnectGatewayAssociationProposal& value) { SetDirectConnectGatewayAssociationProposal(value); return *this;}
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the associated gateway.</p>
      */
     inline DeleteDirectConnectGatewayAssociationProposalResult& WithDirectConnectGatewayAssociationProposal(DirectConnectGatewayAssociationProposal&& value) { SetDirectConnectGatewayAssociationProposal(std::move(value)); return *this;}
 

@@ -56,7 +56,15 @@ enum class S3ControlErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  NO_SUCH_PUBLIC_ACCESS_BLOCK_CONFIGURATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
+  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  IDEMPOTENCY,
+  INTERNAL_SERVICE,
+  INVALID_NEXT_TOKEN,
+  INVALID_REQUEST,
+  JOB_STATUS,
+  NOT_FOUND,
+  NO_SUCH_PUBLIC_ACCESS_BLOCK_CONFIGURATION,
+  TOO_MANY_REQUESTS
 };
 namespace S3ControlErrorMapper
 {

@@ -37,12 +37,6 @@ namespace Neptune
 {
 namespace Model
 {
-  /**
-   * <p>Provides details about a DB cluster parameter group including the parameters
-   * in the DB cluster parameter group.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DBClusterParameterGroupDetails">AWS
-   * API Reference</a></p>
-   */
   class AWS_NEPTUNE_API DescribeDBClusterParametersResult
   {
   public:
@@ -91,7 +85,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * DescribeDBClusterParameters request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
@@ -99,7 +93,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * DescribeDBClusterParameters request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
@@ -107,7 +101,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * DescribeDBClusterParameters request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
@@ -115,7 +109,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * DescribeDBClusterParameters request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
@@ -123,7 +117,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * DescribeDBClusterParameters request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline DescribeDBClusterParametersResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
@@ -131,7 +125,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * DescribeDBClusterParameters request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline DescribeDBClusterParametersResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
@@ -139,7 +133,7 @@ namespace Model
      * <p> An optional pagination token provided by a previous
      * DescribeDBClusterParameters request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code> . </p>
+     * <code>MaxRecords</code> .</p>
      */
     inline DescribeDBClusterParametersResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 

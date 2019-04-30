@@ -20,6 +20,7 @@
 #include <aws/servicecatalog/model/ProvisioningArtifactSummary.h>
 #include <aws/servicecatalog/model/Tag.h>
 #include <aws/servicecatalog/model/TagOptionDetail.h>
+#include <aws/servicecatalog/model/BudgetDetail.h>
 #include <utility>
 
 namespace Aws
@@ -186,6 +187,42 @@ namespace Model
      */
     inline DescribeProductAsAdminResult& AddTagOptions(TagOptionDetail&& value) { m_tagOptions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline const Aws::Vector<BudgetDetail>& GetBudgets() const{ return m_budgets; }
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline void SetBudgets(const Aws::Vector<BudgetDetail>& value) { m_budgets = value; }
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline void SetBudgets(Aws::Vector<BudgetDetail>&& value) { m_budgets = std::move(value); }
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline DescribeProductAsAdminResult& WithBudgets(const Aws::Vector<BudgetDetail>& value) { SetBudgets(value); return *this;}
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline DescribeProductAsAdminResult& WithBudgets(Aws::Vector<BudgetDetail>&& value) { SetBudgets(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline DescribeProductAsAdminResult& AddBudgets(const BudgetDetail& value) { m_budgets.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the associated budgets.</p>
+     */
+    inline DescribeProductAsAdminResult& AddBudgets(BudgetDetail&& value) { m_budgets.push_back(std::move(value)); return *this; }
+
   private:
 
     ProductViewDetail m_productViewDetail;
@@ -195,6 +232,8 @@ namespace Model
     Aws::Vector<Tag> m_tags;
 
     Aws::Vector<TagOptionDetail> m_tagOptions;
+
+    Aws::Vector<BudgetDetail> m_budgets;
   };
 
 } // namespace Model

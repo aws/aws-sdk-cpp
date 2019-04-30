@@ -30,9 +30,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RestoreDBClusterToPointInTimeMessage">AWS
-   * API Reference</a></p>
    */
   class AWS_NEPTUNE_API RestoreDBClusterToPointInTimeRequest : public NeptuneRequest
   {
@@ -118,98 +115,50 @@ namespace Model
 
 
     /**
-     * <p>The type of restore to be performed. You can specify one of the following
-     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
-     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
-     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+     * <p>The type of restore to be performed. The only type of restore currently
+     * supported is <code>full-copy</code> (the default).</p>
      */
     inline const Aws::String& GetRestoreType() const{ return m_restoreType; }
 
     /**
-     * <p>The type of restore to be performed. You can specify one of the following
-     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
-     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
-     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+     * <p>The type of restore to be performed. The only type of restore currently
+     * supported is <code>full-copy</code> (the default).</p>
      */
     inline bool RestoreTypeHasBeenSet() const { return m_restoreTypeHasBeenSet; }
 
     /**
-     * <p>The type of restore to be performed. You can specify one of the following
-     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
-     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
-     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+     * <p>The type of restore to be performed. The only type of restore currently
+     * supported is <code>full-copy</code> (the default).</p>
      */
     inline void SetRestoreType(const Aws::String& value) { m_restoreTypeHasBeenSet = true; m_restoreType = value; }
 
     /**
-     * <p>The type of restore to be performed. You can specify one of the following
-     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
-     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
-     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+     * <p>The type of restore to be performed. The only type of restore currently
+     * supported is <code>full-copy</code> (the default).</p>
      */
     inline void SetRestoreType(Aws::String&& value) { m_restoreTypeHasBeenSet = true; m_restoreType = std::move(value); }
 
     /**
-     * <p>The type of restore to be performed. You can specify one of the following
-     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
-     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
-     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+     * <p>The type of restore to be performed. The only type of restore currently
+     * supported is <code>full-copy</code> (the default).</p>
      */
     inline void SetRestoreType(const char* value) { m_restoreTypeHasBeenSet = true; m_restoreType.assign(value); }
 
     /**
-     * <p>The type of restore to be performed. You can specify one of the following
-     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
-     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
-     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+     * <p>The type of restore to be performed. The only type of restore currently
+     * supported is <code>full-copy</code> (the default).</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(const Aws::String& value) { SetRestoreType(value); return *this;}
 
     /**
-     * <p>The type of restore to be performed. You can specify one of the following
-     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
-     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
-     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+     * <p>The type of restore to be performed. The only type of restore currently
+     * supported is <code>full-copy</code> (the default).</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(Aws::String&& value) { SetRestoreType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of restore to be performed. You can specify one of the following
-     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
-     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
-     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+     * <p>The type of restore to be performed. The only type of restore currently
+     * supported is <code>full-copy</code> (the default).</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(const char* value) { SetRestoreType(value); return *this;}
 
@@ -352,32 +301,32 @@ namespace Model
 
     /**
      * <p>A value that is set to <code>true</code> to restore the DB cluster to the
-     * latest restorable backup time, and <code>false</code> otherwise. </p>
-     * <p>Default: <code>false</code> </p> <p>Constraints: Cannot be specified if
+     * latest restorable backup time, and <code>false</code> otherwise.</p> <p>Default:
+     * <code>false</code> </p> <p>Constraints: Cannot be specified if
      * <code>RestoreToTime</code> parameter is provided.</p>
      */
     inline bool GetUseLatestRestorableTime() const{ return m_useLatestRestorableTime; }
 
     /**
      * <p>A value that is set to <code>true</code> to restore the DB cluster to the
-     * latest restorable backup time, and <code>false</code> otherwise. </p>
-     * <p>Default: <code>false</code> </p> <p>Constraints: Cannot be specified if
+     * latest restorable backup time, and <code>false</code> otherwise.</p> <p>Default:
+     * <code>false</code> </p> <p>Constraints: Cannot be specified if
      * <code>RestoreToTime</code> parameter is provided.</p>
      */
     inline bool UseLatestRestorableTimeHasBeenSet() const { return m_useLatestRestorableTimeHasBeenSet; }
 
     /**
      * <p>A value that is set to <code>true</code> to restore the DB cluster to the
-     * latest restorable backup time, and <code>false</code> otherwise. </p>
-     * <p>Default: <code>false</code> </p> <p>Constraints: Cannot be specified if
+     * latest restorable backup time, and <code>false</code> otherwise.</p> <p>Default:
+     * <code>false</code> </p> <p>Constraints: Cannot be specified if
      * <code>RestoreToTime</code> parameter is provided.</p>
      */
     inline void SetUseLatestRestorableTime(bool value) { m_useLatestRestorableTimeHasBeenSet = true; m_useLatestRestorableTime = value; }
 
     /**
      * <p>A value that is set to <code>true</code> to restore the DB cluster to the
-     * latest restorable backup time, and <code>false</code> otherwise. </p>
-     * <p>Default: <code>false</code> </p> <p>Constraints: Cannot be specified if
+     * latest restorable backup time, and <code>false</code> otherwise.</p> <p>Default:
+     * <code>false</code> </p> <p>Constraints: Cannot be specified if
      * <code>RestoreToTime</code> parameter is provided.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithUseLatestRestorableTime(bool value) { SetUseLatestRestorableTime(value); return *this;}
@@ -556,28 +505,44 @@ namespace Model
     inline RestoreDBClusterToPointInTimeRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
 
-    
+    /**
+     * <p>The tags to be applied to the restored DB cluster.</p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    
+    /**
+     * <p>The tags to be applied to the restored DB cluster.</p>
+     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
-    
+    /**
+     * <p>The tags to be applied to the restored DB cluster.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    
+    /**
+     * <p>The tags to be applied to the restored DB cluster.</p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
-    
+    /**
+     * <p>The tags to be applied to the restored DB cluster.</p>
+     */
     inline RestoreDBClusterToPointInTimeRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    
+    /**
+     * <p>The tags to be applied to the restored DB cluster.</p>
+     */
     inline RestoreDBClusterToPointInTimeRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The tags to be applied to the restored DB cluster.</p>
+     */
     inline RestoreDBClusterToPointInTimeRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The tags to be applied to the restored DB cluster.</p>
+     */
     inline RestoreDBClusterToPointInTimeRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
@@ -762,6 +727,63 @@ namespace Model
      */
     inline RestoreDBClusterToPointInTimeRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with the new DB
+     * cluster.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBClusterParameterGroup.</p> </li> </ul>
+     */
+    inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with the new DB
+     * cluster.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBClusterParameterGroup.</p> </li> </ul>
+     */
+    inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with the new DB
+     * cluster.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBClusterParameterGroup.</p> </li> </ul>
+     */
+    inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with the new DB
+     * cluster.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBClusterParameterGroup.</p> </li> </ul>
+     */
+    inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with the new DB
+     * cluster.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBClusterParameterGroup.</p> </li> </ul>
+     */
+    inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with the new DB
+     * cluster.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBClusterParameterGroup.</p> </li> </ul>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with the new DB
+     * cluster.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBClusterParameterGroup.</p> </li> </ul>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with the new DB
+     * cluster.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBClusterParameterGroup.</p> </li> </ul>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -799,6 +821,9 @@ namespace Model
 
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+
+    Aws::String m_dBClusterParameterGroupName;
+    bool m_dBClusterParameterGroupNameHasBeenSet;
   };
 
 } // namespace Model

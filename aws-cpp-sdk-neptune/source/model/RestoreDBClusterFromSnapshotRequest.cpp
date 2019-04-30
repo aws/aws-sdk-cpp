@@ -35,7 +35,8 @@ RestoreDBClusterFromSnapshotRequest::RestoreDBClusterFromSnapshotRequest() :
     m_tagsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_enableIAMDatabaseAuthentication(false),
-    m_enableIAMDatabaseAuthenticationHasBeenSet(false)
+    m_enableIAMDatabaseAuthenticationHasBeenSet(false),
+    m_dBClusterParameterGroupNameHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,11 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
   if(m_enableIAMDatabaseAuthenticationHasBeenSet)
   {
     ss << "EnableIAMDatabaseAuthentication=" << std::boolalpha << m_enableIAMDatabaseAuthentication << "&";
+  }
+
+  if(m_dBClusterParameterGroupNameHasBeenSet)
+  {
+    ss << "DBClusterParameterGroupName=" << StringUtils::URLEncode(m_dBClusterParameterGroupName.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

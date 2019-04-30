@@ -26,7 +26,8 @@ namespace Model
   enum class GatewayType
   {
     NOT_SET,
-    virtualPrivateGateway
+    virtualPrivateGateway,
+    transitGateway
   };
 
 namespace GatewayTypeMapper
