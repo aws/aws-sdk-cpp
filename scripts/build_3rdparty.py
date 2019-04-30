@@ -40,19 +40,19 @@ def GetPlatformEnvironments():
 def GetPlatformBuildTargets():
     return { 'Windows' : { 'buildPlatforms' : [ 'Windows' ],
                            'configs' : { 'DebugDynamic' : { 'directory' : '_build_windows_dynamic_debug', 
-                                                            'cmake_params' : "-DSTATIC_LINKING=0",
+                                                            'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
                                                             'build_params' : [ "-p:Configuration=Debug" ],
                                                             'config' : 'Debug' }, 
                                          'DebugStatic' : { 'directory' : '_build_windows_static_debug', 
-                                                           'cmake_params' : "-DSTATIC_LINKING=1",
+                                                           'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Debug",
                                                            'build_params' : [ "-p:Configuration=Debug" ],
                                                            'config' : 'Debug' }, 
                                          'ReleaseDynamic' : { 'directory' : '_build_windows_dynamic_release', 
-                                                              'cmake_params' : "-DSTATIC_LINKING=0",
+                                                              'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Release",
                                                               'build_params' : [ "-p:Configuration=Release" ],
                                                               'config' : 'Release' }, 
                                          'ReleaseStatic' : { 'directory' : '_build_windows_static_release', 
-                                                             'cmake_params' : "-DSTATIC_LINKING=1",
+                                                             'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Release",
                                                              'build_params' : [ "-p:Configuration=Release" ],
                                                              'config' : 'Release' } },
                            'platform_install_qualifier' : "vs2013", 
@@ -61,19 +61,19 @@ def GetPlatformBuildTargets():
                            'global_cmake_params' : "-DGENERATE_VERSION_INFO=0 -DSIMPLE_INSTALL=OFF -DENABLE_UNITY_BUILD=ON -DCMAKE_CONFIGURATION_TYPES=\"Debug;Release;MinSizeRel;RelWithDebInfo\" -DCMAKE_CXX_FLAGS_DEBUGOPT=\"\" -DCMAKE_EXE_LINKER_FLAGS_DEBUGOPT=\"\" -DCMAKE_SHARED_LINKER_FLAGS_DEBUGOPT=\"\"" },
              'Windows2015' : { 'buildPlatforms' : [ 'Windows' ],
                                'configs' : { 'DebugDynamic' : { 'directory' : '_build_windows_2015_dynamic_debug', 
-                                                                'cmake_params' : "-DSTATIC_LINKING=0",
+                                                                'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
                                                                 'build_params' : [ "-p:Configuration=Debug" ],
                                                                 'config' : 'Debug' }, 
                                              'DebugStatic' : { 'directory' : '_build_windows_2015_static_debug', 
-                                                               'cmake_params' : "-DSTATIC_LINKING=1",
+                                                               'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Debug",
                                                                'build_params' : [ "-p:Configuration=Debug" ],
                                                                'config' : 'Debug' }, 
                                              'ReleaseDynamic' : { 'directory' : '_build_windows_2015_dynamic_release', 
-                                                                  'cmake_params' : "-DSTATIC_LINKING=0",
+                                                                  'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Release",
                                                                   'build_params' : [ "-p:Configuration=Release" ],
                                                                   'config' : 'Release' }, 
                                              'ReleaseStatic' : { 'directory' : '_build_windows_2015_static_release', 
-                                                                 'cmake_params' : "-DSTATIC_LINKING=1",
+                                                                 'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Release",
                                                                  'build_params' : [ "-p:Configuration=Release" ],
                                                                  'config' : 'Release' } },
                                'platform_install_qualifier' : "vs2015",
@@ -82,49 +82,49 @@ def GetPlatformBuildTargets():
                                'global_cmake_params' : "-DGENERATE_VERSION_INFO=0 -DSIMPLE_INSTALL=OFF -DENABLE_UNITY_BUILD=ON -DCMAKE_CONFIGURATION_TYPES=\"Debug;Release;MinSizeRel;RelWithDebInfo\" -DCMAKE_CXX_FLAGS_DEBUGOPT=\"\" -DCMAKE_EXE_LINKER_FLAGS_DEBUGOPT=\"\" -DCMAKE_SHARED_LINKER_FLAGS_DEBUGOPT=\"\"" },
              'Windows2017' : { 'buildPlatforms' : [ 'Windows' ],
                                'configs' : { 'DebugDynamic' : { 'directory' : '_build_windows_2017_dynamic_debug', 
-                                                                'cmake_params' : "-DSTATIC_LINKING=0",
+                                                                'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
                                                                 'build_params' : [ "-p:Configuration=Debug" ],
                                                                 'config' : 'Debug' }, 
                                              'DebugStatic' : { 'directory' : '_build_windows_2017_static_debug', 
-                                                               'cmake_params' : "-DSTATIC_LINKING=1",
+                                                               'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Debug",
                                                                'build_params' : [ "-p:Configuration=Debug" ],
                                                                'config' : 'Debug' }, 
                                              'ReleaseDynamic' : { 'directory' : '_build_windows_2017_dynamic_release', 
-                                                                  'cmake_params' : "-DSTATIC_LINKING=0",
+                                                                  'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Release",
                                                                   'build_params' : [ "-p:Configuration=Release" ],
                                                                   'config' : 'Release' }, 
                                              'ReleaseStatic' : { 'directory' : '_build_windows_2017_static_release', 
-                                                                 'cmake_params' : "-DSTATIC_LINKING=1",
+                                                                 'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Release",
                                                                  'build_params' : [ "-p:Configuration=Release" ],
                                                                  'config' : 'Release' } },
                                'platform_install_qualifier' : "vs2017",
                                'build_environment' : 'msbuild',
                                'gen_param' : { 'x86' : "-G \"Visual Studio 15 2017\"", 'x86_64' : "-G \"Visual Studio 15 2017 Win64\"" },
                                'global_cmake_params' : "-DGENERATE_VERSION_INFO=0 -DSIMPLE_INSTALL=OFF -DENABLE_UNITY_BUILD=ON -DCMAKE_CONFIGURATION_TYPES=\"Debug;Release;MinSizeRel;RelWithDebInfo\" -DCMAKE_CXX_FLAGS_DEBUGOPT=\"\" -DCMAKE_EXE_LINKER_FLAGS_DEBUGOPT=\"\" -DCMAKE_SHARED_LINKER_FLAGS_DEBUGOPT=\"\"" },
-             'AndroidArm' : { 'buildPlatforms' : [ 'Linux' ],
-                              'configs' : { 'DebugDynamic' : { 'directory' : '_build_android_arm_32_dynamic_debug', 
-                                                               'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
-                                                               'build_params' : [],
-                                                               'config' : 'Debug' },
-                                            'DebugStatic' : { 'directory' : '_build_android_arm_32_dynamic_static', 
-                                                              'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Debug",
-                                                              'build_params' : [],
-                                                              'config' : 'Debug' },
-                                            'ReleaseDynamic' : { 'directory' : '_build_android_arm_32_dynamic_release', 
-                                                                 'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Release",
+             'AndroidArm32' : { 'buildPlatforms' : [ 'Linux' ],
+                                'configs' : { 'DebugDynamic' : { 'directory' : '_build_android_arm_32_dynamic_debug', 
+                                                                 'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
                                                                  'build_params' : [],
-                                                                 'config' : 'Release' }, 
-                                            'ReleaseStatic' : { 'directory' : '_build_android_arm_32_static_release', 
-                                                                'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Release",
+                                                                 'config' : 'Debug' },
+                                              'DebugStatic' : { 'directory' : '_build_android_arm_32_dynamic_static', 
+                                                                'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Debug",
                                                                 'build_params' : [],
-                                                                'config' : 'Release' } },
-                              'platform_install_qualifier' : "",
-                              'build_environment' : 'make',
-                              'gen_param' : { 'x86' : "", 'x86_64' : "" },
-                              'global_cmake_params' : "-DSIMPLE_INSTALL=OFF " \
-                                                      "-DGENERATE_VERSION_INFO=0 " \
-                                                      "-DMINIMIZE_SIZE=ON " \
-                                                      "-DTARGET_ARCH=ANDROID "},
+                                                                'config' : 'Debug' },
+                                              'ReleaseDynamic' : { 'directory' : '_build_android_arm_32_dynamic_release', 
+                                                                   'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Release",
+                                                                   'build_params' : [],
+                                                                   'config' : 'Release' }, 
+                                              'ReleaseStatic' : { 'directory' : '_build_android_arm_32_static_release', 
+                                                                  'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Release",
+                                                                  'build_params' : [],
+                                                                  'config' : 'Release' } },
+                                'platform_install_qualifier' : "",
+                                'build_environment' : 'make',
+                                'gen_param' : { 'x86' : "", 'x86_64' : "" },
+                                'global_cmake_params' : "-DSIMPLE_INSTALL=OFF " \
+                                                        "-DGENERATE_VERSION_INFO=0 " \
+                                                        "-DMINIMIZE_SIZE=ON " \
+                                                        "-DTARGET_ARCH=ANDROID "},
              'AndroidArm64' : { 'buildPlatforms' : [ 'Linux' ],
                                 'configs' : { 'DebugDynamic' : { 'directory' : '_build_android_arm_64_dynamic_debug', 
                                                                  'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
@@ -218,7 +218,7 @@ def ParseArguments(platformEnvironments):
     argMap[ "cmakeParams" ] = re.sub(r'^"|"$', '', args[ "cmake_params" ] or "")
     argMap[ "architecture" ] = re.sub(r'^"|"$', '', args[ "architecture" ] or platformName)
     argMap[ "configs" ] = re.sub(r'^"\"$', '', args[ "configs" ] or "DebugStatic DebugDynamic ReleaseDynamic ReleaseStatic").split()
-    argMap[ "parallel" ] = args[ "parallel" ] or "2"
+    argMap[ "parallel" ] = args[ "parallel" ] or ""
     argMap[ "generateClients" ] = args[ "generateClients" ] or "0"
     argMap[ "sourcedir" ] = args[ "sourcedir"] or ".."
     argMap[ "customMemoryManagement" ] = args[ "customMemoryManagement"] or "1"
@@ -280,6 +280,7 @@ def Main():
     quotedInstallDirectory = '"' + installDirectory + '"'
     generateClients = arguments[ "generateClients" ]
     sourceDir = arguments["sourcedir" ]
+    quotedSourceDir = '"' + sourceDir + '"'
     customMemoryManagement = arguments["customMemoryManagement"]
     enableRtti = arguments["enableRtti"]
     cpuArch = arguments["cpuArchitecture"]
@@ -305,9 +306,6 @@ def Main():
         print( "No definition for target architecture " + architecture )
         return 1
 
-    if architecture == "Linux":
-        os.environ["CXX"] = "clang++ -stdlib=libc++"
-
     targetPlatformDef = platformBuildTargets[ architecture ]
     if not sourcePlatform in targetPlatformDef[ 'buildPlatforms' ]:
         print( "Platform " + sourcePlatform + " does not support building for architecture " + architecture )
@@ -315,7 +313,7 @@ def Main():
 
     buildEnvironment = buildEnvironments[ targetPlatformDef[ 'build_environment' ] ]
 
-    if architecture == 'Android':
+    if architecture[:7] == 'Android':
        RemoveExternalAndroidDirectories()
 
     archConfigs = targetPlatformDef[ 'configs' ]
@@ -350,7 +348,7 @@ def Main():
             if customPlatformDir != "":
                 cmake_call_list = cmake_call_list + " -DCUSTOM_PLATFORM_DIR=\"" + customPlatformDir + "\""
 
-            cmake_call_list = cmake_call_list + " " + sourceDir
+            cmake_call_list = cmake_call_list + " " + quotedSourceDir
             print( "cmake call = " + cmake_call_list )
             subprocess.check_call( cmake_call_list, shell = True )
 
@@ -361,7 +359,7 @@ def Main():
             print( "build call = " + str( build_call_list ) )
             subprocess.check_call( build_call_list )
 
-            install_call = "cmake -DCMAKE_INSTALL_CONFIG_NAME=" + archConfig[ 'config' ] + " -DCMAKE_INSTALL_PREFIX=" + quotedInstallDirectory + " -P cmake_install.cmake " + sourceDir
+            install_call = "cmake -DCMAKE_INSTALL_CONFIG_NAME=" + archConfig[ 'config' ] + " -DCMAKE_INSTALL_PREFIX=" + quotedInstallDirectory + " -P cmake_install.cmake " + quotedSourceDir
             print( "install call = " + install_call )
             subprocess.check_call( install_call, shell = True )
 

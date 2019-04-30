@@ -1,0 +1,22 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - mv aws-sdk-cpp /tmp
+      - mkdir /tmp/build
+      - cd /tmp/build
+      - python /tmp/aws-sdk-cpp/scripts/build_3rdparty.py --configs="${BUILD_CONFIG}" --sourcedir=/tmp/aws-sdk-cpp/ --parallel=${BUILD_PARALLEL} --installdir=/tmp/install --generateClients="0" --cmake_params=""
+  post_build:
+    commands:
+      - export BUILD_JOB_NAME=$(echo "${CODEBUILD_BUILD_ID}" | cut -f1 -d ":")
+      - export BUILD_URL="https://console.aws.amazon.com/codesuite/codebuild/projects/${BUILD_JOB_NAME}/build/${CODEBUILD_BUILD_ID}"
+      - |
+        if [ "${CODEBUILD_BUILD_SUCCEEDING}" = "1" ]; then
+          aws sns publish --topic-arn ${NOTIFICATIONS_TOPIC} --message "/md [BUILD SUCCESS](${BUILD_URL}) (${CODEBUILD_BUILD_ID})";
+        else
+          aws sns publish --topic-arn ${NOTIFICATIONS_TOPIC} --message "/md [BUILD FAILURE](${BUILD_URL}) (${CODEBUILD_BUILD_ID})";
+        fi
+artifacts:
+  files:
+    - "**/*"
+  base-directory: /tmp/install

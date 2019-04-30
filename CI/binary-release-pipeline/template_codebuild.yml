@@ -1,0 +1,308 @@
+# Whenever you make any change here, you should update it in Amazon S3.
+# This CloudFormation template is used to create resources for CodeBuild projects to build C++ SDK on Linux and Windows with both Visual Studio 2015 and 2017.
+# It's a sub-template used in the main template to create binary release pipeline.
+AWSTemplateFormatVersion: 2010-09-09
+Parameters:
+  BuildConfig:
+    Type: String
+    Default: <build-config>
+    Description: Build config when building SDK on Linux and Windows.
+  BinaryReleaseResultNotificationsTopic:
+    Type: String
+    Default: <binary-release-result-notifications-topic>
+    Description: Topic ARN of the SNS, used to handle notifications received from lambda functions.
+  BinaryReleaseCodeBuildRole:
+    Type: String
+    Default: <binary-release-codebuild-role>
+    Description: Name of the service role used by CodeBuild projects used to build SDK.
+  ParameterStoreAwsAccessKeyId:
+    Type: String
+    Default: <parameter-store-aws-access-key-id>
+    Description: Key name in Parameter Store, used for aws access key id.
+  ParameterStoreAwsSecretAccessKey:
+    Type: String
+    Default: <parameter-store-aws-secret-access-key>
+    Description: Key name in Parameter Store, used for aws secret access key.
+  LinuxGccProjectName:
+    Type: String
+    Default: <linux-gcc-project-name>
+    Description: Name of the CodeBuild project, which will build C++ SDK on Linux with GCC.
+  LinuxGccImageName:
+    Type: String
+    Default: <linux-gcc-image-name>
+    Description: Name of the image used in the CodeBuild Project to build SDK on Linux with GCC.
+  LinuxGccBuildSpecLocation:
+    Type: String
+    Default: <linux-gcc-buildspec-location>
+    Description: Location of buildspec for CodeBuild Project to build SDK on Linux with GCC.
+  WindowsProjectName:
+    Type: String
+    Default: <windows-project-name>
+    Description: Name of the CodeBuild project, which will build C++ SDK on Windows.
+  WindowsVS2015ImageName:
+    Type: String
+    Default: <windows-vs2015-image-name>
+    Description: Name of the image used in the CodeBuild Project to build SDK on Windows with VS2015.
+  WindowsVS2017ImageName:
+    Type: String
+    Default: <windows-vs2017-image-name>
+    Description: Name of the image used in the CodeBuild Project to build SDK on Windows with VS2017.
+  WindowsBuildSpecLocation:
+    Type: String
+    Default: <windows-buildspec-location>
+    Description: Location of buildspec for CodeBuild Project to build SDK on Windows.
+  AndroidProjectName:
+    Type: String
+    Default: <android-project-name>
+    Description: Name of the CodeBuild project, which cross compiles C++ SDK on Linux with Android NDK.
+  AndroidBuildSpecLocation:
+    Type: String
+    Default: <android-buildspec-location>
+    Description: Location of buildspec for CodeBuild Project to build SDK with Android NDK.
+  BuildParallel:
+    Type: Number
+    Default: <build-parallel>
+    Description: Number of jobs in parallel to build C++ SDK.
+Resources:
+  LinuxGccProject:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name:
+        !Join
+          - '-'
+          - - !Ref LinuxGccProjectName
+            - !Ref BuildConfig
+      ServiceRole: !Ref BinaryReleaseCodeBuildRole
+      Source:
+        Type: CODEPIPELINE
+        BuildSpec: !Ref LinuxGccBuildSpecLocation
+      Artifacts:
+        Type: CODEPIPELINE
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_LARGE
+        Image: !Ref LinuxGccImageName
+        EnvironmentVariables:
+          - Name: BUILD_CONFIG
+            Type: PLAINTEXT
+            Value: !Ref BuildConfig
+          - Name: BUILD_PARALLEL
+            Type: PLAINTEXT
+            Value: !Ref BuildParallel
+          - Name: NOTIFICATIONS_TOPIC
+            Type: PLAINTEXT
+            Value: !Ref BinaryReleaseResultNotificationsTopic
+          - Name: AWS_ACCESS_KEY_ID
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsAccessKeyId
+          - Name: AWS_SECRET_ACCESS_KEY
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsSecretAccessKey
+      TimeoutInMinutes: 60
+  WindowsVS2015Project:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: 
+        !Join
+          - '-'
+          - - !Ref WindowsProjectName
+            - vs2015
+            - !Ref BuildConfig
+      ServiceRole: !Ref BinaryReleaseCodeBuildRole
+      Source:
+        Type: CODEPIPELINE
+        BuildSpec: !Ref WindowsBuildSpecLocation
+      Artifacts:
+        Type: CODEPIPELINE
+      Environment:
+        Type: WINDOWS_CONTAINER
+        ComputeType: BUILD_GENERAL1_LARGE
+        Image: !Ref WindowsVS2015ImageName
+        EnvironmentVariables:
+          - Name: ARCHITURE
+            Type: PLAINTEXT
+            Value: Windows2015
+          - Name: BUILD_CONFIG
+            Type: PLAINTEXT
+            Value: !Ref BuildConfig
+          - Name: BUILD_PARALLEL
+            Type: PLAINTEXT
+            Value: !Ref BuildParallel
+          - Name: NOTIFICATIONS_TOPIC
+            Type: PLAINTEXT
+            Value: !Ref BinaryReleaseResultNotificationsTopic
+          - Name: AWS_ACCESS_KEY_ID
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsAccessKeyId
+          - Name: AWS_SECRET_ACCESS_KEY
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsSecretAccessKey
+      TimeoutInMinutes: 90
+  WindowsVS2017Project:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name:
+        !Join
+          - '-'
+          - - !Ref WindowsProjectName
+            - vs2017
+            - !Ref BuildConfig
+      ServiceRole: !Ref BinaryReleaseCodeBuildRole
+      Source:
+        Type: CODEPIPELINE
+        BuildSpec: !Ref WindowsBuildSpecLocation
+      Artifacts:
+        Type: CODEPIPELINE
+      Environment:
+        Type: WINDOWS_CONTAINER
+        ComputeType: BUILD_GENERAL1_LARGE
+        Image: !Ref WindowsVS2017ImageName
+        EnvironmentVariables:
+          - Name: ARCHITURE
+            Type: PLAINTEXT
+            Value: Windows2017
+          - Name: BUILD_CONFIG
+            Type: PLAINTEXT
+            Value: !Ref BuildConfig
+          - Name: BUILD_PARALLEL
+            Type: PLAINTEXT
+            Value: !Ref BuildParallel
+          - Name: NOTIFICATIONS_TOPIC
+            Type: PLAINTEXT
+            Value: !Ref BinaryReleaseResultNotificationsTopic
+          - Name: AWS_ACCESS_KEY_ID
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsAccessKeyId
+          - Name: AWS_SECRET_ACCESS_KEY
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsSecretAccessKey
+      TimeoutInMinutes: 90
+  AndroidArm32Api19Project:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name:
+        !Join
+          - '-'
+          - - !Ref AndroidProjectName
+            - arm32
+            - api19
+            - !Ref BuildConfig
+      ServiceRole: !Ref BinaryReleaseCodeBuildRole
+      Source:
+        Type: CODEPIPELINE
+        BuildSpec: !Ref AndroidBuildSpecLocation
+      Artifacts:
+        Type: CODEPIPELINE
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_LARGE
+        Image: !Ref LinuxGccImageName
+        EnvironmentVariables:
+          - Name: ARCHITECTURE
+            Type: PLAINTEXT
+            Value: AndroidArm32
+          - Name: API_LEVEL
+            Type: PLAINTEXT
+            Value: 19
+          - Name: BUILD_CONFIG
+            Type: PLAINTEXT
+            Value: !Ref BuildConfig
+          - Name: BUILD_PARALLEL
+            Type: PLAINTEXT
+            Value: !Ref BuildParallel
+          - Name: NOTIFICATIONS_TOPIC
+            Type: PLAINTEXT
+            Value: !Ref BinaryReleaseResultNotificationsTopic
+          - Name: AWS_ACCESS_KEY_ID
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsAccessKeyId
+          - Name: AWS_SECRET_ACCESS_KEY
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsSecretAccessKey
+      TimeoutInMinutes: 60
+  AndroidArm32Api21Project:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name:
+        !Join
+          - '-'
+          - - !Ref AndroidProjectName
+            - arm32
+            - api21
+            - !Ref BuildConfig
+      ServiceRole: !Ref BinaryReleaseCodeBuildRole
+      Source:
+        Type: CODEPIPELINE
+        BuildSpec: !Ref AndroidBuildSpecLocation
+      Artifacts:
+        Type: CODEPIPELINE
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_LARGE
+        Image: !Ref LinuxGccImageName
+        EnvironmentVariables:
+          - Name: ARCHITECTURE
+            Type: PLAINTEXT
+            Value: AndroidArm32
+          - Name: API_LEVEL
+            Type: PLAINTEXT
+            Value: 21
+          - Name: BUILD_CONFIG
+            Type: PLAINTEXT
+            Value: !Ref BuildConfig
+          - Name: BUILD_PARALLEL
+            Type: PLAINTEXT
+            Value: !Ref BuildParallel
+          - Name: NOTIFICATIONS_TOPIC
+            Type: PLAINTEXT
+            Value: !Ref BinaryReleaseResultNotificationsTopic
+          - Name: AWS_ACCESS_KEY_ID
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsAccessKeyId
+          - Name: AWS_SECRET_ACCESS_KEY
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsSecretAccessKey
+      TimeoutInMinutes: 60
+  AndroidArm64Api21Project:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name:
+        !Join
+          - '-'
+          - - !Ref AndroidProjectName
+            - arm64
+            - api21
+            - !Ref BuildConfig
+      ServiceRole: !Ref BinaryReleaseCodeBuildRole
+      Source:
+        Type: CODEPIPELINE
+        BuildSpec: !Ref AndroidBuildSpecLocation
+      Artifacts:
+        Type: CODEPIPELINE
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_LARGE
+        Image: !Ref LinuxGccImageName
+        EnvironmentVariables:
+          - Name: ARCHITECTURE
+            Type: PLAINTEXT
+            Value: AndroidArm64
+          - Name: API_LEVEL
+            Type: PLAINTEXT
+            Value: 21
+          - Name: BUILD_CONFIG
+            Type: PLAINTEXT
+            Value: !Ref BuildConfig
+          - Name: BUILD_PARALLEL
+            Type: PLAINTEXT
+            Value: !Ref BuildParallel
+          - Name: NOTIFICATIONS_TOPIC
+            Type: PLAINTEXT
+            Value: !Ref BinaryReleaseResultNotificationsTopic
+          - Name: AWS_ACCESS_KEY_ID
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsAccessKeyId
+          - Name: AWS_SECRET_ACCESS_KEY
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsSecretAccessKey
+      TimeoutInMinutes: 60

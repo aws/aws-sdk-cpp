@@ -1,0 +1,19 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - VERSION_NUM=$(grep AWS_SDK_VERSION_STRING aws-sdk-cpp/aws-cpp-sdk-core/include/aws/core/VersionConfig.h | cut -f2 -d '"')
+      - echo $VERSION_NUM | tee aws-sdk-cpp-version
+  post_build:
+    commands:
+      - export BUILD_JOB_NAME=$(echo "${CODEBUILD_BUILD_ID}" | cut -f1 -d ":")
+      - export BUILD_URL="https://console.aws.amazon.com/codesuite/codebuild/projects/${BUILD_JOB_NAME}/build/${CODEBUILD_BUILD_ID}"
+      - |
+        if [ "${CODEBUILD_BUILD_SUCCEEDING}" = "1" ]; then
+          aws sns publish --topic-arn ${NOTIFICATIONS_TOPIC} --message "/md [BUILD SUCCESS](${BUILD_URL}) (Extract Metadata)";
+        else
+          aws sns publish --topic-arn ${NOTIFICATIONS_TOPIC} --message "/md [BUILD FAILURE](${BUILD_URL}) (Extract Metadata)";
+        fi
+artifacts:
+  files:
+    - "aws-sdk-cpp-version"
