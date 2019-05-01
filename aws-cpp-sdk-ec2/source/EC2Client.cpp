@@ -316,6 +316,7 @@
 #include <aws/ec2/model/ModifyVpcEndpointServicePermissionsRequest.h>
 #include <aws/ec2/model/ModifyVpcPeeringConnectionOptionsRequest.h>
 #include <aws/ec2/model/ModifyVpcTenancyRequest.h>
+#include <aws/ec2/model/ModifyVpnConnectionRequest.h>
 #include <aws/ec2/model/MonitorInstancesRequest.h>
 #include <aws/ec2/model/MoveAddressToVpcRequest.h>
 #include <aws/ec2/model/ProvisionByoipCidrRequest.h>
@@ -10441,6 +10442,41 @@ void EC2Client::ModifyVpcTenancyAsync(const ModifyVpcTenancyRequest& request, co
 void EC2Client::ModifyVpcTenancyAsyncHelper(const ModifyVpcTenancyRequest& request, const ModifyVpcTenancyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyVpcTenancy(request), context);
+}
+
+ModifyVpnConnectionOutcome EC2Client::ModifyVpnConnection(const ModifyVpnConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyVpnConnectionOutcome(ModifyVpnConnectionResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyVpnConnectionOutcome(outcome.GetError());
+  }
+}
+
+ModifyVpnConnectionOutcomeCallable EC2Client::ModifyVpnConnectionCallable(const ModifyVpnConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyVpnConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyVpnConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::ModifyVpnConnectionAsync(const ModifyVpnConnectionRequest& request, const ModifyVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyVpnConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::ModifyVpnConnectionAsyncHelper(const ModifyVpnConnectionRequest& request, const ModifyVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyVpnConnection(request), context);
 }
 
 MonitorInstancesOutcome EC2Client::MonitorInstances(const MonitorInstancesRequest& request) const

@@ -42,6 +42,7 @@
 #include <aws/xray/model/GetSamplingStatisticSummariesRequest.h>
 #include <aws/xray/model/GetSamplingTargetsRequest.h>
 #include <aws/xray/model/GetServiceGraphRequest.h>
+#include <aws/xray/model/GetTimeSeriesServiceStatisticsRequest.h>
 #include <aws/xray/model/GetTraceGraphRequest.h>
 #include <aws/xray/model/GetTraceSummariesRequest.h>
 #include <aws/xray/model/PutEncryptionConfigRequest.h>
@@ -539,6 +540,41 @@ void XRayClient::GetServiceGraphAsync(const GetServiceGraphRequest& request, con
 void XRayClient::GetServiceGraphAsyncHelper(const GetServiceGraphRequest& request, const GetServiceGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetServiceGraph(request), context);
+}
+
+GetTimeSeriesServiceStatisticsOutcome XRayClient::GetTimeSeriesServiceStatistics(const GetTimeSeriesServiceStatisticsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/TimeSeriesServiceStatistics";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetTimeSeriesServiceStatisticsOutcome(GetTimeSeriesServiceStatisticsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetTimeSeriesServiceStatisticsOutcome(outcome.GetError());
+  }
+}
+
+GetTimeSeriesServiceStatisticsOutcomeCallable XRayClient::GetTimeSeriesServiceStatisticsCallable(const GetTimeSeriesServiceStatisticsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTimeSeriesServiceStatisticsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTimeSeriesServiceStatistics(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void XRayClient::GetTimeSeriesServiceStatisticsAsync(const GetTimeSeriesServiceStatisticsRequest& request, const GetTimeSeriesServiceStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetTimeSeriesServiceStatisticsAsyncHelper( request, handler, context ); } );
+}
+
+void XRayClient::GetTimeSeriesServiceStatisticsAsyncHelper(const GetTimeSeriesServiceStatisticsRequest& request, const GetTimeSeriesServiceStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetTimeSeriesServiceStatistics(request), context);
 }
 
 GetTraceGraphOutcome XRayClient::GetTraceGraph(const GetTraceGraphRequest& request) const

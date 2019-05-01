@@ -31,14 +31,16 @@ namespace Model
 LogConfiguration::LogConfiguration() : 
     m_logDriver(LogDriver::NOT_SET),
     m_logDriverHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+    m_optionsHasBeenSet(false),
+    m_secretOptionsHasBeenSet(false)
 {
 }
 
 LogConfiguration::LogConfiguration(JsonView jsonValue) : 
     m_logDriver(LogDriver::NOT_SET),
     m_logDriverHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+    m_optionsHasBeenSet(false),
+    m_secretOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +64,16 @@ LogConfiguration& LogConfiguration::operator =(JsonView jsonValue)
     m_optionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("secretOptions"))
+  {
+    Array<JsonView> secretOptionsJsonList = jsonValue.GetArray("secretOptions");
+    for(unsigned secretOptionsIndex = 0; secretOptionsIndex < secretOptionsJsonList.GetLength(); ++secretOptionsIndex)
+    {
+      m_secretOptions.push_back(secretOptionsJsonList[secretOptionsIndex].AsObject());
+    }
+    m_secretOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -82,6 +94,17 @@ JsonValue LogConfiguration::Jsonize() const
      optionsJsonMap.WithString(optionsItem.first, optionsItem.second);
    }
    payload.WithObject("options", std::move(optionsJsonMap));
+
+  }
+
+  if(m_secretOptionsHasBeenSet)
+  {
+   Array<JsonValue> secretOptionsJsonList(m_secretOptions.size());
+   for(unsigned secretOptionsIndex = 0; secretOptionsIndex < secretOptionsJsonList.GetLength(); ++secretOptionsIndex)
+   {
+     secretOptionsJsonList[secretOptionsIndex].AsObject(m_secretOptions[secretOptionsIndex].Jsonize());
+   }
+   payload.WithArray("secretOptions", std::move(secretOptionsJsonList));
 
   }
 

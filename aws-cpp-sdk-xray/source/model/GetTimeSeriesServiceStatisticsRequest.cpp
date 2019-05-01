@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/xray/model/GetTraceSummariesRequest.h>
+#include <aws/xray/model/GetTimeSeriesServiceStatisticsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,20 +22,19 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTraceSummariesRequest::GetTraceSummariesRequest() : 
+GetTimeSeriesServiceStatisticsRequest::GetTimeSeriesServiceStatisticsRequest() : 
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_timeRangeType(TimeRangeType::NOT_SET),
-    m_timeRangeTypeHasBeenSet(false),
-    m_sampling(false),
-    m_samplingHasBeenSet(false),
-    m_samplingStrategyHasBeenSet(false),
-    m_filterExpressionHasBeenSet(false),
+    m_groupNameHasBeenSet(false),
+    m_groupARNHasBeenSet(false),
+    m_entitySelectorExpressionHasBeenSet(false),
+    m_period(0),
+    m_periodHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
 }
 
-Aws::String GetTraceSummariesRequest::SerializePayload() const
+Aws::String GetTimeSeriesServiceStatisticsRequest::SerializePayload() const
 {
   JsonValue payload;
 
@@ -49,26 +48,27 @@ Aws::String GetTraceSummariesRequest::SerializePayload() const
    payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
   }
 
-  if(m_timeRangeTypeHasBeenSet)
+  if(m_groupNameHasBeenSet)
   {
-   payload.WithString("TimeRangeType", TimeRangeTypeMapper::GetNameForTimeRangeType(m_timeRangeType));
-  }
-
-  if(m_samplingHasBeenSet)
-  {
-   payload.WithBool("Sampling", m_sampling);
+   payload.WithString("GroupName", m_groupName);
 
   }
 
-  if(m_samplingStrategyHasBeenSet)
+  if(m_groupARNHasBeenSet)
   {
-   payload.WithObject("SamplingStrategy", m_samplingStrategy.Jsonize());
+   payload.WithString("GroupARN", m_groupARN);
 
   }
 
-  if(m_filterExpressionHasBeenSet)
+  if(m_entitySelectorExpressionHasBeenSet)
   {
-   payload.WithString("FilterExpression", m_filterExpression);
+   payload.WithString("EntitySelectorExpression", m_entitySelectorExpression);
+
+  }
+
+  if(m_periodHasBeenSet)
+  {
+   payload.WithInteger("Period", m_period);
 
   }
 

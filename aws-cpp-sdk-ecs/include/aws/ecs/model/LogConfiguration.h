@@ -17,7 +17,9 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/LogDriver.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/model/Secret.h>
 #include <utility>
 
 namespace Aws
@@ -53,9 +55,12 @@ namespace Model
     /**
      * <p>The log driver to use for the container. The valid values listed for this
      * parameter are log drivers that the Amazon ECS container agent can communicate
-     * with by default. If you are using the Fargate launch type, the only supported
-     * value is <code>awslogs</code>. For more information about using the
-     * <code>awslogs</code> driver, see <a
+     * with by default.</p> <p>For tasks using the Fargate launch type, the supported
+     * log drivers are <code>awslogs</code> and <code>splunk</code>.</p> <p>For tasks
+     * using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
+     * <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>,
+     * <code>splunk</code>, <code>journald</code>, and <code>json-file</code>.</p>
+     * <p>For more information about using the <code>awslogs</code> log driver, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed above
@@ -75,9 +80,12 @@ namespace Model
     /**
      * <p>The log driver to use for the container. The valid values listed for this
      * parameter are log drivers that the Amazon ECS container agent can communicate
-     * with by default. If you are using the Fargate launch type, the only supported
-     * value is <code>awslogs</code>. For more information about using the
-     * <code>awslogs</code> driver, see <a
+     * with by default.</p> <p>For tasks using the Fargate launch type, the supported
+     * log drivers are <code>awslogs</code> and <code>splunk</code>.</p> <p>For tasks
+     * using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
+     * <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>,
+     * <code>splunk</code>, <code>journald</code>, and <code>json-file</code>.</p>
+     * <p>For more information about using the <code>awslogs</code> log driver, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed above
@@ -97,9 +105,12 @@ namespace Model
     /**
      * <p>The log driver to use for the container. The valid values listed for this
      * parameter are log drivers that the Amazon ECS container agent can communicate
-     * with by default. If you are using the Fargate launch type, the only supported
-     * value is <code>awslogs</code>. For more information about using the
-     * <code>awslogs</code> driver, see <a
+     * with by default.</p> <p>For tasks using the Fargate launch type, the supported
+     * log drivers are <code>awslogs</code> and <code>splunk</code>.</p> <p>For tasks
+     * using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
+     * <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>,
+     * <code>splunk</code>, <code>journald</code>, and <code>json-file</code>.</p>
+     * <p>For more information about using the <code>awslogs</code> log driver, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed above
@@ -119,9 +130,12 @@ namespace Model
     /**
      * <p>The log driver to use for the container. The valid values listed for this
      * parameter are log drivers that the Amazon ECS container agent can communicate
-     * with by default. If you are using the Fargate launch type, the only supported
-     * value is <code>awslogs</code>. For more information about using the
-     * <code>awslogs</code> driver, see <a
+     * with by default.</p> <p>For tasks using the Fargate launch type, the supported
+     * log drivers are <code>awslogs</code> and <code>splunk</code>.</p> <p>For tasks
+     * using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
+     * <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>,
+     * <code>splunk</code>, <code>journald</code>, and <code>json-file</code>.</p>
+     * <p>For more information about using the <code>awslogs</code> log driver, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed above
@@ -141,9 +155,12 @@ namespace Model
     /**
      * <p>The log driver to use for the container. The valid values listed for this
      * parameter are log drivers that the Amazon ECS container agent can communicate
-     * with by default. If you are using the Fargate launch type, the only supported
-     * value is <code>awslogs</code>. For more information about using the
-     * <code>awslogs</code> driver, see <a
+     * with by default.</p> <p>For tasks using the Fargate launch type, the supported
+     * log drivers are <code>awslogs</code> and <code>splunk</code>.</p> <p>For tasks
+     * using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
+     * <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>,
+     * <code>splunk</code>, <code>journald</code>, and <code>json-file</code>.</p>
+     * <p>For more information about using the <code>awslogs</code> log driver, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed above
@@ -163,9 +180,12 @@ namespace Model
     /**
      * <p>The log driver to use for the container. The valid values listed for this
      * parameter are log drivers that the Amazon ECS container agent can communicate
-     * with by default. If you are using the Fargate launch type, the only supported
-     * value is <code>awslogs</code>. For more information about using the
-     * <code>awslogs</code> driver, see <a
+     * with by default.</p> <p>For tasks using the Fargate launch type, the supported
+     * log drivers are <code>awslogs</code> and <code>splunk</code>.</p> <p>For tasks
+     * using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
+     * <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>,
+     * <code>splunk</code>, <code>journald</code>, and <code>json-file</code>.</p>
+     * <p>For more information about using the <code>awslogs</code> log driver, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed above
@@ -300,6 +320,47 @@ namespace Model
      */
     inline LogConfiguration& AddOptions(const char* key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The secrets to pass to the log configuration.</p>
+     */
+    inline const Aws::Vector<Secret>& GetSecretOptions() const{ return m_secretOptions; }
+
+    /**
+     * <p>The secrets to pass to the log configuration.</p>
+     */
+    inline bool SecretOptionsHasBeenSet() const { return m_secretOptionsHasBeenSet; }
+
+    /**
+     * <p>The secrets to pass to the log configuration.</p>
+     */
+    inline void SetSecretOptions(const Aws::Vector<Secret>& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = value; }
+
+    /**
+     * <p>The secrets to pass to the log configuration.</p>
+     */
+    inline void SetSecretOptions(Aws::Vector<Secret>&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = std::move(value); }
+
+    /**
+     * <p>The secrets to pass to the log configuration.</p>
+     */
+    inline LogConfiguration& WithSecretOptions(const Aws::Vector<Secret>& value) { SetSecretOptions(value); return *this;}
+
+    /**
+     * <p>The secrets to pass to the log configuration.</p>
+     */
+    inline LogConfiguration& WithSecretOptions(Aws::Vector<Secret>&& value) { SetSecretOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>The secrets to pass to the log configuration.</p>
+     */
+    inline LogConfiguration& AddSecretOptions(const Secret& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.push_back(value); return *this; }
+
+    /**
+     * <p>The secrets to pass to the log configuration.</p>
+     */
+    inline LogConfiguration& AddSecretOptions(Secret&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.push_back(std::move(value)); return *this; }
+
   private:
 
     LogDriver m_logDriver;
@@ -307,6 +368,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_options;
     bool m_optionsHasBeenSet;
+
+    Aws::Vector<Secret> m_secretOptions;
+    bool m_secretOptionsHasBeenSet;
   };
 
 } // namespace Model

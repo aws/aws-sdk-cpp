@@ -54,7 +54,8 @@ TraceSummary::TraceSummary() :
     m_errorRootCausesHasBeenSet(false),
     m_responseTimeRootCausesHasBeenSet(false),
     m_revision(0),
-    m_revisionHasBeenSet(false)
+    m_revisionHasBeenSet(false),
+    m_matchedEventTimeHasBeenSet(false)
 {
 }
 
@@ -84,7 +85,8 @@ TraceSummary::TraceSummary(JsonView jsonValue) :
     m_errorRootCausesHasBeenSet(false),
     m_responseTimeRootCausesHasBeenSet(false),
     m_revision(0),
-    m_revisionHasBeenSet(false)
+    m_revisionHasBeenSet(false),
+    m_matchedEventTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -258,6 +260,13 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
     m_revisionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MatchedEventTime"))
+  {
+    m_matchedEventTime = jsonValue.GetDouble("MatchedEventTime");
+
+    m_matchedEventTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -427,6 +436,11 @@ JsonValue TraceSummary::Jsonize() const
   {
    payload.WithInteger("Revision", m_revision);
 
+  }
+
+  if(m_matchedEventTimeHasBeenSet)
+  {
+   payload.WithDouble("MatchedEventTime", m_matchedEventTime.SecondsWithMSPrecision());
   }
 
   return payload;

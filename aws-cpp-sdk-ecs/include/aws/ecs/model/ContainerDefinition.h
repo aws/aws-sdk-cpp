@@ -2102,11 +2102,11 @@ namespace Model
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
      * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container
-     * instances require at least version 1.26.0 of the container agent to enable
-     * container dependencies. However, we recommend using the latest container agent
-     * version. For information about checking your agent version and updating to the
-     * latest version, see <a
+     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
+     * launch type, the container instances require at least version 1.26.0 of the
+     * container agent to enable container dependencies. However, we recommend using
+     * the latest container agent version. For information about checking your agent
+     * version and updating to the latest version, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2116,18 +2116,20 @@ namespace Model
      * <code>ecs-init</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>This parameter is available for tasks using the Fargate launch
+     * type in the Ohio (us-east-2) region only and the task or service requires
+     * platform version 1.3.0 or later.</p>
      */
     inline const Aws::Vector<ContainerDependency>& GetDependsOn() const{ return m_dependsOn; }
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
      * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container
-     * instances require at least version 1.26.0 of the container agent to enable
-     * container dependencies. However, we recommend using the latest container agent
-     * version. For information about checking your agent version and updating to the
-     * latest version, see <a
+     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
+     * launch type, the container instances require at least version 1.26.0 of the
+     * container agent to enable container dependencies. However, we recommend using
+     * the latest container agent version. For information about checking your agent
+     * version and updating to the latest version, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2137,18 +2139,20 @@ namespace Model
      * <code>ecs-init</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>This parameter is available for tasks using the Fargate launch
+     * type in the Ohio (us-east-2) region only and the task or service requires
+     * platform version 1.3.0 or later.</p>
      */
     inline bool DependsOnHasBeenSet() const { return m_dependsOnHasBeenSet; }
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
      * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container
-     * instances require at least version 1.26.0 of the container agent to enable
-     * container dependencies. However, we recommend using the latest container agent
-     * version. For information about checking your agent version and updating to the
-     * latest version, see <a
+     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
+     * launch type, the container instances require at least version 1.26.0 of the
+     * container agent to enable container dependencies. However, we recommend using
+     * the latest container agent version. For information about checking your agent
+     * version and updating to the latest version, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2158,18 +2162,20 @@ namespace Model
      * <code>ecs-init</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>This parameter is available for tasks using the Fargate launch
+     * type in the Ohio (us-east-2) region only and the task or service requires
+     * platform version 1.3.0 or later.</p>
      */
     inline void SetDependsOn(const Aws::Vector<ContainerDependency>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
      * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container
-     * instances require at least version 1.26.0 of the container agent to enable
-     * container dependencies. However, we recommend using the latest container agent
-     * version. For information about checking your agent version and updating to the
-     * latest version, see <a
+     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
+     * launch type, the container instances require at least version 1.26.0 of the
+     * container agent to enable container dependencies. However, we recommend using
+     * the latest container agent version. For information about checking your agent
+     * version and updating to the latest version, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2179,18 +2185,20 @@ namespace Model
      * <code>ecs-init</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>This parameter is available for tasks using the Fargate launch
+     * type in the Ohio (us-east-2) region only and the task or service requires
+     * platform version 1.3.0 or later.</p>
      */
     inline void SetDependsOn(Aws::Vector<ContainerDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
      * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container
-     * instances require at least version 1.26.0 of the container agent to enable
-     * container dependencies. However, we recommend using the latest container agent
-     * version. For information about checking your agent version and updating to the
-     * latest version, see <a
+     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
+     * launch type, the container instances require at least version 1.26.0 of the
+     * container agent to enable container dependencies. However, we recommend using
+     * the latest container agent version. For information about checking your agent
+     * version and updating to the latest version, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2200,18 +2208,20 @@ namespace Model
      * <code>ecs-init</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>This parameter is available for tasks using the Fargate launch
+     * type in the Ohio (us-east-2) region only and the task or service requires
+     * platform version 1.3.0 or later.</p>
      */
     inline ContainerDefinition& WithDependsOn(const Aws::Vector<ContainerDependency>& value) { SetDependsOn(value); return *this;}
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
      * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container
-     * instances require at least version 1.26.0 of the container agent to enable
-     * container dependencies. However, we recommend using the latest container agent
-     * version. For information about checking your agent version and updating to the
-     * latest version, see <a
+     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
+     * launch type, the container instances require at least version 1.26.0 of the
+     * container agent to enable container dependencies. However, we recommend using
+     * the latest container agent version. For information about checking your agent
+     * version and updating to the latest version, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2221,18 +2231,20 @@ namespace Model
      * <code>ecs-init</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>This parameter is available for tasks using the Fargate launch
+     * type in the Ohio (us-east-2) region only and the task or service requires
+     * platform version 1.3.0 or later.</p>
      */
     inline ContainerDefinition& WithDependsOn(Aws::Vector<ContainerDependency>&& value) { SetDependsOn(std::move(value)); return *this;}
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
      * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container
-     * instances require at least version 1.26.0 of the container agent to enable
-     * container dependencies. However, we recommend using the latest container agent
-     * version. For information about checking your agent version and updating to the
-     * latest version, see <a
+     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
+     * launch type, the container instances require at least version 1.26.0 of the
+     * container agent to enable container dependencies. However, we recommend using
+     * the latest container agent version. For information about checking your agent
+     * version and updating to the latest version, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2242,18 +2254,20 @@ namespace Model
      * <code>ecs-init</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>This parameter is available for tasks using the Fargate launch
+     * type in the Ohio (us-east-2) region only and the task or service requires
+     * platform version 1.3.0 or later.</p>
      */
     inline ContainerDefinition& AddDependsOn(const ContainerDependency& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
 
     /**
      * <p>The dependencies defined for container startup and shutdown. A container can
      * contain multiple dependencies. When a dependency is defined for container
-     * startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container
-     * instances require at least version 1.26.0 of the container agent to enable
-     * container dependencies. However, we recommend using the latest container agent
-     * version. For information about checking your agent version and updating to the
-     * latest version, see <a
+     * startup, for container shutdown it is reversed.</p> <p>For tasks using the EC2
+     * launch type, the container instances require at least version 1.26.0 of the
+     * container agent to enable container dependencies. However, we recommend using
+     * the latest container agent version. For information about checking your agent
+     * version and updating to the latest version, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2263,7 +2277,9 @@ namespace Model
      * <code>ecs-init</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>This parameter is available for tasks using the Fargate launch
+     * type in the Ohio (us-east-2) region only and the task or service requires
+     * platform version 1.3.0 or later.</p>
      */
     inline ContainerDefinition& AddDependsOn(ContainerDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
 
@@ -2276,10 +2292,11 @@ namespace Model
      * <code>startTimeout</code> value is specified for containerB and it does not
      * reach the desired status within that time then containerA will give up and not
      * start. This results in the task transitioning to a <code>STOPPED</code>
-     * state.</p> <p>Your Amazon ECS container instances require at least version
-     * 1.26.0 of the container agent to enable a container start timeout value.
-     * However, we recommend using the latest container agent version. For information
-     * about checking your agent version and updating to the latest version, see <a
+     * state.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to enable a container
+     * start timeout value. However, we recommend using the latest container agent
+     * version. For information about checking your agent version and updating to the
+     * latest version, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2289,7 +2306,9 @@ namespace Model
      * <code>ecs-init</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>This parameter is available for tasks using the Fargate launch
+     * type in the Ohio (us-east-2) region only and the task or service requires
+     * platform version 1.3.0 or later.</p>
      */
     inline int GetStartTimeout() const{ return m_startTimeout; }
 
@@ -2301,10 +2320,11 @@ namespace Model
      * <code>startTimeout</code> value is specified for containerB and it does not
      * reach the desired status within that time then containerA will give up and not
      * start. This results in the task transitioning to a <code>STOPPED</code>
-     * state.</p> <p>Your Amazon ECS container instances require at least version
-     * 1.26.0 of the container agent to enable a container start timeout value.
-     * However, we recommend using the latest container agent version. For information
-     * about checking your agent version and updating to the latest version, see <a
+     * state.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to enable a container
+     * start timeout value. However, we recommend using the latest container agent
+     * version. For information about checking your agent version and updating to the
+     * latest version, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2314,7 +2334,9 @@ namespace Model
      * <code>ecs-init</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>This parameter is available for tasks using the Fargate launch
+     * type in the Ohio (us-east-2) region only and the task or service requires
+     * platform version 1.3.0 or later.</p>
      */
     inline bool StartTimeoutHasBeenSet() const { return m_startTimeoutHasBeenSet; }
 
@@ -2326,10 +2348,11 @@ namespace Model
      * <code>startTimeout</code> value is specified for containerB and it does not
      * reach the desired status within that time then containerA will give up and not
      * start. This results in the task transitioning to a <code>STOPPED</code>
-     * state.</p> <p>Your Amazon ECS container instances require at least version
-     * 1.26.0 of the container agent to enable a container start timeout value.
-     * However, we recommend using the latest container agent version. For information
-     * about checking your agent version and updating to the latest version, see <a
+     * state.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to enable a container
+     * start timeout value. However, we recommend using the latest container agent
+     * version. For information about checking your agent version and updating to the
+     * latest version, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2339,7 +2362,9 @@ namespace Model
      * <code>ecs-init</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>This parameter is available for tasks using the Fargate launch
+     * type in the Ohio (us-east-2) region only and the task or service requires
+     * platform version 1.3.0 or later.</p>
      */
     inline void SetStartTimeout(int value) { m_startTimeoutHasBeenSet = true; m_startTimeout = value; }
 
@@ -2351,10 +2376,11 @@ namespace Model
      * <code>startTimeout</code> value is specified for containerB and it does not
      * reach the desired status within that time then containerA will give up and not
      * start. This results in the task transitioning to a <code>STOPPED</code>
-     * state.</p> <p>Your Amazon ECS container instances require at least version
-     * 1.26.0 of the container agent to enable a container start timeout value.
-     * However, we recommend using the latest container agent version. For information
-     * about checking your agent version and updating to the latest version, see <a
+     * state.</p> <p>For tasks using the EC2 launch type, the container instances
+     * require at least version 1.26.0 of the container agent to enable a container
+     * start timeout value. However, we recommend using the latest container agent
+     * version. For information about checking your agent version and updating to the
+     * latest version, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2364,20 +2390,25 @@ namespace Model
      * <code>ecs-init</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>This parameter is available for tasks using the Fargate launch
+     * type in the Ohio (us-east-2) region only and the task or service requires
+     * platform version 1.3.0 or later.</p>
      */
     inline ContainerDefinition& WithStartTimeout(int value) { SetStartTimeout(value); return *this;}
 
 
     /**
      * <p>Time duration to wait before the container is forcefully killed if it doesn't
-     * exit normally on its own. The stop timeout value for the container takes
-     * precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent
-     * configuration parameter, if used.</p> <p>Your Amazon ECS container instances
-     * require at least version 1.26.0 of the container agent to enable a container
-     * stop timeout value. However, we recommend using the latest container agent
-     * version. For information about checking your agent version and updating to the
-     * latest version, see <a
+     * exit normally on its own. For tasks using the Fargate launch type, the max
+     * <code>stopTimeout</code> value is 2 minutes. This parameter is available for
+     * tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
+     * task or service requires platform version 1.3.0 or later.</p> <p>For tasks using
+     * the EC2 launch type, the stop timeout value for the container takes precedence
+     * over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration
+     * parameter, if used. Container instances require at least version 1.26.0 of the
+     * container agent to enable a container stop timeout value. However, we recommend
+     * using the latest container agent version. For information about checking your
+     * agent version and updating to the latest version, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2393,13 +2424,16 @@ namespace Model
 
     /**
      * <p>Time duration to wait before the container is forcefully killed if it doesn't
-     * exit normally on its own. The stop timeout value for the container takes
-     * precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent
-     * configuration parameter, if used.</p> <p>Your Amazon ECS container instances
-     * require at least version 1.26.0 of the container agent to enable a container
-     * stop timeout value. However, we recommend using the latest container agent
-     * version. For information about checking your agent version and updating to the
-     * latest version, see <a
+     * exit normally on its own. For tasks using the Fargate launch type, the max
+     * <code>stopTimeout</code> value is 2 minutes. This parameter is available for
+     * tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
+     * task or service requires platform version 1.3.0 or later.</p> <p>For tasks using
+     * the EC2 launch type, the stop timeout value for the container takes precedence
+     * over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration
+     * parameter, if used. Container instances require at least version 1.26.0 of the
+     * container agent to enable a container stop timeout value. However, we recommend
+     * using the latest container agent version. For information about checking your
+     * agent version and updating to the latest version, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2415,13 +2449,16 @@ namespace Model
 
     /**
      * <p>Time duration to wait before the container is forcefully killed if it doesn't
-     * exit normally on its own. The stop timeout value for the container takes
-     * precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent
-     * configuration parameter, if used.</p> <p>Your Amazon ECS container instances
-     * require at least version 1.26.0 of the container agent to enable a container
-     * stop timeout value. However, we recommend using the latest container agent
-     * version. For information about checking your agent version and updating to the
-     * latest version, see <a
+     * exit normally on its own. For tasks using the Fargate launch type, the max
+     * <code>stopTimeout</code> value is 2 minutes. This parameter is available for
+     * tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
+     * task or service requires platform version 1.3.0 or later.</p> <p>For tasks using
+     * the EC2 launch type, the stop timeout value for the container takes precedence
+     * over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration
+     * parameter, if used. Container instances require at least version 1.26.0 of the
+     * container agent to enable a container stop timeout value. However, we recommend
+     * using the latest container agent version. For information about checking your
+     * agent version and updating to the latest version, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2437,13 +2474,16 @@ namespace Model
 
     /**
      * <p>Time duration to wait before the container is forcefully killed if it doesn't
-     * exit normally on its own. The stop timeout value for the container takes
-     * precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent
-     * configuration parameter, if used.</p> <p>Your Amazon ECS container instances
-     * require at least version 1.26.0 of the container agent to enable a container
-     * stop timeout value. However, we recommend using the latest container agent
-     * version. For information about checking your agent version and updating to the
-     * latest version, see <a
+     * exit normally on its own. For tasks using the Fargate launch type, the max
+     * <code>stopTimeout</code> value is 2 minutes. This parameter is available for
+     * tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
+     * task or service requires platform version 1.3.0 or later.</p> <p>For tasks using
+     * the EC2 launch type, the stop timeout value for the container takes precedence
+     * over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration
+     * parameter, if used. Container instances require at least version 1.26.0 of the
+     * container agent to enable a container stop timeout value. However, we recommend
+     * using the latest container agent version. For information about checking your
+     * agent version and updating to the latest version, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -3894,9 +3934,12 @@ namespace Model
 
 
     /**
-     * <p>The log configuration specification for the container.</p> <p>If you are
-     * using the Fargate launch type, the only supported value is
-     * <code>awslogs</code>.</p> <p>This parameter maps to <code>LogConfig</code> in
+     * <p>The log configuration specification for the container.</p> <p>For tasks using
+     * the Fargate launch type, the supported log drivers are <code>awslogs</code> and
+     * <code>splunk</code>.</p> <p>For tasks using the EC2 launch type, the supported
+     * log drivers are <code>awslogs</code>, <code>syslog</code>, <code>gelf</code>,
+     * <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and
+     * <code>json-file</code>.</p> <p>This parameter maps to <code>LogConfig</code> in
      * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -3931,9 +3974,12 @@ namespace Model
     inline const LogConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
 
     /**
-     * <p>The log configuration specification for the container.</p> <p>If you are
-     * using the Fargate launch type, the only supported value is
-     * <code>awslogs</code>.</p> <p>This parameter maps to <code>LogConfig</code> in
+     * <p>The log configuration specification for the container.</p> <p>For tasks using
+     * the Fargate launch type, the supported log drivers are <code>awslogs</code> and
+     * <code>splunk</code>.</p> <p>For tasks using the EC2 launch type, the supported
+     * log drivers are <code>awslogs</code>, <code>syslog</code>, <code>gelf</code>,
+     * <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and
+     * <code>json-file</code>.</p> <p>This parameter maps to <code>LogConfig</code> in
      * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -3968,9 +4014,12 @@ namespace Model
     inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
 
     /**
-     * <p>The log configuration specification for the container.</p> <p>If you are
-     * using the Fargate launch type, the only supported value is
-     * <code>awslogs</code>.</p> <p>This parameter maps to <code>LogConfig</code> in
+     * <p>The log configuration specification for the container.</p> <p>For tasks using
+     * the Fargate launch type, the supported log drivers are <code>awslogs</code> and
+     * <code>splunk</code>.</p> <p>For tasks using the EC2 launch type, the supported
+     * log drivers are <code>awslogs</code>, <code>syslog</code>, <code>gelf</code>,
+     * <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and
+     * <code>json-file</code>.</p> <p>This parameter maps to <code>LogConfig</code> in
      * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -4005,9 +4054,12 @@ namespace Model
     inline void SetLogConfiguration(const LogConfiguration& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
 
     /**
-     * <p>The log configuration specification for the container.</p> <p>If you are
-     * using the Fargate launch type, the only supported value is
-     * <code>awslogs</code>.</p> <p>This parameter maps to <code>LogConfig</code> in
+     * <p>The log configuration specification for the container.</p> <p>For tasks using
+     * the Fargate launch type, the supported log drivers are <code>awslogs</code> and
+     * <code>splunk</code>.</p> <p>For tasks using the EC2 launch type, the supported
+     * log drivers are <code>awslogs</code>, <code>syslog</code>, <code>gelf</code>,
+     * <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and
+     * <code>json-file</code>.</p> <p>This parameter maps to <code>LogConfig</code> in
      * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -4042,9 +4094,12 @@ namespace Model
     inline void SetLogConfiguration(LogConfiguration&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
 
     /**
-     * <p>The log configuration specification for the container.</p> <p>If you are
-     * using the Fargate launch type, the only supported value is
-     * <code>awslogs</code>.</p> <p>This parameter maps to <code>LogConfig</code> in
+     * <p>The log configuration specification for the container.</p> <p>For tasks using
+     * the Fargate launch type, the supported log drivers are <code>awslogs</code> and
+     * <code>splunk</code>.</p> <p>For tasks using the EC2 launch type, the supported
+     * log drivers are <code>awslogs</code>, <code>syslog</code>, <code>gelf</code>,
+     * <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and
+     * <code>json-file</code>.</p> <p>This parameter maps to <code>LogConfig</code> in
      * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -4079,9 +4134,12 @@ namespace Model
     inline ContainerDefinition& WithLogConfiguration(const LogConfiguration& value) { SetLogConfiguration(value); return *this;}
 
     /**
-     * <p>The log configuration specification for the container.</p> <p>If you are
-     * using the Fargate launch type, the only supported value is
-     * <code>awslogs</code>.</p> <p>This parameter maps to <code>LogConfig</code> in
+     * <p>The log configuration specification for the container.</p> <p>For tasks using
+     * the Fargate launch type, the supported log drivers are <code>awslogs</code> and
+     * <code>splunk</code>.</p> <p>For tasks using the EC2 launch type, the supported
+     * log drivers are <code>awslogs</code>, <code>syslog</code>, <code>gelf</code>,
+     * <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and
+     * <code>json-file</code>.</p> <p>This parameter maps to <code>LogConfig</code> in
      * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a

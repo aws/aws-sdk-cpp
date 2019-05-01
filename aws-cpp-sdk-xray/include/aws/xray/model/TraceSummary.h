@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/xray/model/ServiceId.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/xray/model/TraceUser.h>
 #include <aws/xray/model/ResourceARNDetail.h>
 #include <aws/xray/model/InstanceIdDetail.h>
@@ -770,6 +771,37 @@ namespace Model
      */
     inline TraceSummary& WithRevision(int value) { SetRevision(value); return *this;}
 
+
+    /**
+     * <p>The matched time stamp of a defined event.</p>
+     */
+    inline const Aws::Utils::DateTime& GetMatchedEventTime() const{ return m_matchedEventTime; }
+
+    /**
+     * <p>The matched time stamp of a defined event.</p>
+     */
+    inline bool MatchedEventTimeHasBeenSet() const { return m_matchedEventTimeHasBeenSet; }
+
+    /**
+     * <p>The matched time stamp of a defined event.</p>
+     */
+    inline void SetMatchedEventTime(const Aws::Utils::DateTime& value) { m_matchedEventTimeHasBeenSet = true; m_matchedEventTime = value; }
+
+    /**
+     * <p>The matched time stamp of a defined event.</p>
+     */
+    inline void SetMatchedEventTime(Aws::Utils::DateTime&& value) { m_matchedEventTimeHasBeenSet = true; m_matchedEventTime = std::move(value); }
+
+    /**
+     * <p>The matched time stamp of a defined event.</p>
+     */
+    inline TraceSummary& WithMatchedEventTime(const Aws::Utils::DateTime& value) { SetMatchedEventTime(value); return *this;}
+
+    /**
+     * <p>The matched time stamp of a defined event.</p>
+     */
+    inline TraceSummary& WithMatchedEventTime(Aws::Utils::DateTime&& value) { SetMatchedEventTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -828,6 +860,9 @@ namespace Model
 
     int m_revision;
     bool m_revisionHasBeenSet;
+
+    Aws::Utils::DateTime m_matchedEventTime;
+    bool m_matchedEventTimeHasBeenSet;
   };
 
 } // namespace Model
