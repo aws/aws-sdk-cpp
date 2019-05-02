@@ -141,11 +141,11 @@ namespace Model
     /**
      * <p>The retiring principal for which to list grants.</p> <p>To specify the
      * retiring principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
      * examples of the ARN syntax for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>Amazon Web Services General Reference</i>.</p>
      */
@@ -154,11 +154,11 @@ namespace Model
     /**
      * <p>The retiring principal for which to list grants.</p> <p>To specify the
      * retiring principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
      * examples of the ARN syntax for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>Amazon Web Services General Reference</i>.</p>
      */
@@ -167,11 +167,11 @@ namespace Model
     /**
      * <p>The retiring principal for which to list grants.</p> <p>To specify the
      * retiring principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
      * examples of the ARN syntax for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>Amazon Web Services General Reference</i>.</p>
      */
@@ -180,11 +180,11 @@ namespace Model
     /**
      * <p>The retiring principal for which to list grants.</p> <p>To specify the
      * retiring principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
      * examples of the ARN syntax for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>Amazon Web Services General Reference</i>.</p>
      */
@@ -193,11 +193,11 @@ namespace Model
     /**
      * <p>The retiring principal for which to list grants.</p> <p>To specify the
      * retiring principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
      * examples of the ARN syntax for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>Amazon Web Services General Reference</i>.</p>
      */
@@ -206,11 +206,11 @@ namespace Model
     /**
      * <p>The retiring principal for which to list grants.</p> <p>To specify the
      * retiring principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
      * examples of the ARN syntax for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>Amazon Web Services General Reference</i>.</p>
      */
@@ -219,11 +219,11 @@ namespace Model
     /**
      * <p>The retiring principal for which to list grants.</p> <p>To specify the
      * retiring principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
      * examples of the ARN syntax for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>Amazon Web Services General Reference</i>.</p>
      */
@@ -232,11 +232,11 @@ namespace Model
     /**
      * <p>The retiring principal for which to list grants.</p> <p>To specify the
      * retiring principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
      * examples of the ARN syntax for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>Amazon Web Services General Reference</i>.</p>
      */

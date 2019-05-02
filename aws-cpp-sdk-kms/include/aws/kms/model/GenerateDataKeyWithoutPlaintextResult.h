@@ -44,75 +44,68 @@ namespace Model
 
 
     /**
-     * <p>The encrypted data encryption key. When you use the HTTP API or the AWS CLI,
-     * the value is Base64-encdoded. Otherwise, it is not encoded.</p>
+     * <p>The encrypted data key. When you use the HTTP API or the AWS CLI, the value
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetCiphertextBlob() const{ return m_ciphertextBlob; }
 
     /**
-     * <p>The encrypted data encryption key. When you use the HTTP API or the AWS CLI,
-     * the value is Base64-encdoded. Otherwise, it is not encoded.</p>
+     * <p>The encrypted data key. When you use the HTTP API or the AWS CLI, the value
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlob = value; }
 
     /**
-     * <p>The encrypted data encryption key. When you use the HTTP API or the AWS CLI,
-     * the value is Base64-encdoded. Otherwise, it is not encoded.</p>
+     * <p>The encrypted data key. When you use the HTTP API or the AWS CLI, the value
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlob = std::move(value); }
 
     /**
-     * <p>The encrypted data encryption key. When you use the HTTP API or the AWS CLI,
-     * the value is Base64-encdoded. Otherwise, it is not encoded.</p>
+     * <p>The encrypted data key. When you use the HTTP API or the AWS CLI, the value
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline GenerateDataKeyWithoutPlaintextResult& WithCiphertextBlob(const Aws::Utils::ByteBuffer& value) { SetCiphertextBlob(value); return *this;}
 
     /**
-     * <p>The encrypted data encryption key. When you use the HTTP API or the AWS CLI,
-     * the value is Base64-encdoded. Otherwise, it is not encoded.</p>
+     * <p>The encrypted data key. When you use the HTTP API or the AWS CLI, the value
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline GenerateDataKeyWithoutPlaintextResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(std::move(value)); return *this;}
 
 
     /**
-     * <p>The identifier of the CMK under which the data encryption key was generated
-     * and encrypted.</p>
+     * <p>The identifier of the CMK that encrypted the data key.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The identifier of the CMK under which the data encryption key was generated
-     * and encrypted.</p>
+     * <p>The identifier of the CMK that encrypted the data key.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
 
     /**
-     * <p>The identifier of the CMK under which the data encryption key was generated
-     * and encrypted.</p>
+     * <p>The identifier of the CMK that encrypted the data key.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
 
     /**
-     * <p>The identifier of the CMK under which the data encryption key was generated
-     * and encrypted.</p>
+     * <p>The identifier of the CMK that encrypted the data key.</p>
      */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
     /**
-     * <p>The identifier of the CMK under which the data encryption key was generated
-     * and encrypted.</p>
+     * <p>The identifier of the CMK that encrypted the data key.</p>
      */
     inline GenerateDataKeyWithoutPlaintextResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of the CMK under which the data encryption key was generated
-     * and encrypted.</p>
+     * <p>The identifier of the CMK that encrypted the data key.</p>
      */
     inline GenerateDataKeyWithoutPlaintextResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the CMK under which the data encryption key was generated
-     * and encrypted.</p>
+     * <p>The identifier of the CMK that encrypted the data key.</p>
      */
     inline GenerateDataKeyWithoutPlaintextResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

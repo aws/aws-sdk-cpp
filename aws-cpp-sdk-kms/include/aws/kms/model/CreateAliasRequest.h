@@ -45,147 +45,147 @@ namespace Model
 
 
     /**
-     * <p>String that contains the display name. The name must start with the word
-     * "alias" followed by a forward slash (alias/). Aliases that begin with
-     * "alias/AWS" are reserved.</p>
+     * <p>Specifies the alias name. This value must begin with <code>alias/</code>
+     * followed by a name, such as <code>alias/ExampleAlias</code>. The alias name
+     * cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is
+     * reserved for AWS managed CMKs.</p>
      */
     inline const Aws::String& GetAliasName() const{ return m_aliasName; }
 
     /**
-     * <p>String that contains the display name. The name must start with the word
-     * "alias" followed by a forward slash (alias/). Aliases that begin with
-     * "alias/AWS" are reserved.</p>
+     * <p>Specifies the alias name. This value must begin with <code>alias/</code>
+     * followed by a name, such as <code>alias/ExampleAlias</code>. The alias name
+     * cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is
+     * reserved for AWS managed CMKs.</p>
      */
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
 
     /**
-     * <p>String that contains the display name. The name must start with the word
-     * "alias" followed by a forward slash (alias/). Aliases that begin with
-     * "alias/AWS" are reserved.</p>
+     * <p>Specifies the alias name. This value must begin with <code>alias/</code>
+     * followed by a name, such as <code>alias/ExampleAlias</code>. The alias name
+     * cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is
+     * reserved for AWS managed CMKs.</p>
      */
     inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
 
     /**
-     * <p>String that contains the display name. The name must start with the word
-     * "alias" followed by a forward slash (alias/). Aliases that begin with
-     * "alias/AWS" are reserved.</p>
+     * <p>Specifies the alias name. This value must begin with <code>alias/</code>
+     * followed by a name, such as <code>alias/ExampleAlias</code>. The alias name
+     * cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is
+     * reserved for AWS managed CMKs.</p>
      */
     inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
 
     /**
-     * <p>String that contains the display name. The name must start with the word
-     * "alias" followed by a forward slash (alias/). Aliases that begin with
-     * "alias/AWS" are reserved.</p>
+     * <p>Specifies the alias name. This value must begin with <code>alias/</code>
+     * followed by a name, such as <code>alias/ExampleAlias</code>. The alias name
+     * cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is
+     * reserved for AWS managed CMKs.</p>
      */
     inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
 
     /**
-     * <p>String that contains the display name. The name must start with the word
-     * "alias" followed by a forward slash (alias/). Aliases that begin with
-     * "alias/AWS" are reserved.</p>
+     * <p>Specifies the alias name. This value must begin with <code>alias/</code>
+     * followed by a name, such as <code>alias/ExampleAlias</code>. The alias name
+     * cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is
+     * reserved for AWS managed CMKs.</p>
      */
     inline CreateAliasRequest& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
 
     /**
-     * <p>String that contains the display name. The name must start with the word
-     * "alias" followed by a forward slash (alias/). Aliases that begin with
-     * "alias/AWS" are reserved.</p>
+     * <p>Specifies the alias name. This value must begin with <code>alias/</code>
+     * followed by a name, such as <code>alias/ExampleAlias</code>. The alias name
+     * cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is
+     * reserved for AWS managed CMKs.</p>
      */
     inline CreateAliasRequest& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
 
     /**
-     * <p>String that contains the display name. The name must start with the word
-     * "alias" followed by a forward slash (alias/). Aliases that begin with
-     * "alias/AWS" are reserved.</p>
+     * <p>Specifies the alias name. This value must begin with <code>alias/</code>
+     * followed by a name, such as <code>alias/ExampleAlias</code>. The alias name
+     * cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is
+     * reserved for AWS managed CMKs.</p>
      */
     inline CreateAliasRequest& WithAliasName(const char* value) { SetAliasName(value); return *this;}
 
 
     /**
-     * <p>Identifies the CMK for which you are creating the alias. This value cannot be
-     * an alias.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
-     * CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p>
+     * <p>Identifies the CMK to which the alias refers. Specify the key ID or the
+     * Amazon Resource Name (ARN) of the CMK. You cannot specify another alias. For
+     * help finding the key ID and ARN, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding
+     * the Key ID and ARN</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetTargetKeyId() const{ return m_targetKeyId; }
 
     /**
-     * <p>Identifies the CMK for which you are creating the alias. This value cannot be
-     * an alias.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
-     * CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p>
+     * <p>Identifies the CMK to which the alias refers. Specify the key ID or the
+     * Amazon Resource Name (ARN) of the CMK. You cannot specify another alias. For
+     * help finding the key ID and ARN, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding
+     * the Key ID and ARN</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline bool TargetKeyIdHasBeenSet() const { return m_targetKeyIdHasBeenSet; }
 
     /**
-     * <p>Identifies the CMK for which you are creating the alias. This value cannot be
-     * an alias.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
-     * CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p>
+     * <p>Identifies the CMK to which the alias refers. Specify the key ID or the
+     * Amazon Resource Name (ARN) of the CMK. You cannot specify another alias. For
+     * help finding the key ID and ARN, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding
+     * the Key ID and ARN</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline void SetTargetKeyId(const Aws::String& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = value; }
 
     /**
-     * <p>Identifies the CMK for which you are creating the alias. This value cannot be
-     * an alias.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
-     * CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p>
+     * <p>Identifies the CMK to which the alias refers. Specify the key ID or the
+     * Amazon Resource Name (ARN) of the CMK. You cannot specify another alias. For
+     * help finding the key ID and ARN, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding
+     * the Key ID and ARN</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline void SetTargetKeyId(Aws::String&& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = std::move(value); }
 
     /**
-     * <p>Identifies the CMK for which you are creating the alias. This value cannot be
-     * an alias.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
-     * CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p>
+     * <p>Identifies the CMK to which the alias refers. Specify the key ID or the
+     * Amazon Resource Name (ARN) of the CMK. You cannot specify another alias. For
+     * help finding the key ID and ARN, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding
+     * the Key ID and ARN</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline void SetTargetKeyId(const char* value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId.assign(value); }
 
     /**
-     * <p>Identifies the CMK for which you are creating the alias. This value cannot be
-     * an alias.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
-     * CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p>
+     * <p>Identifies the CMK to which the alias refers. Specify the key ID or the
+     * Amazon Resource Name (ARN) of the CMK. You cannot specify another alias. For
+     * help finding the key ID and ARN, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding
+     * the Key ID and ARN</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline CreateAliasRequest& WithTargetKeyId(const Aws::String& value) { SetTargetKeyId(value); return *this;}
 
     /**
-     * <p>Identifies the CMK for which you are creating the alias. This value cannot be
-     * an alias.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
-     * CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p>
+     * <p>Identifies the CMK to which the alias refers. Specify the key ID or the
+     * Amazon Resource Name (ARN) of the CMK. You cannot specify another alias. For
+     * help finding the key ID and ARN, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding
+     * the Key ID and ARN</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline CreateAliasRequest& WithTargetKeyId(Aws::String&& value) { SetTargetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifies the CMK for which you are creating the alias. This value cannot be
-     * an alias.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
-     * CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
-     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
-     * or <a>DescribeKey</a>.</p>
+     * <p>Identifies the CMK to which the alias refers. Specify the key ID or the
+     * Amazon Resource Name (ARN) of the CMK. You cannot specify another alias. For
+     * help finding the key ID and ARN, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding
+     * the Key ID and ARN</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline CreateAliasRequest& WithTargetKeyId(const char* value) { SetTargetKeyId(value); return *this;}
 

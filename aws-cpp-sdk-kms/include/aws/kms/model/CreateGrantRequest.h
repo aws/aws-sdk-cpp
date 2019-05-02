@@ -147,11 +147,11 @@ namespace Model
     /**
      * <p>The principal that is given permission to perform the operations that the
      * grant permits.</p> <p>To specify the principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, IAM roles, federated users, and assumed role users.
      * For examples of the ARN syntax to use for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>AWS General Reference</i>.</p>
      */
@@ -160,11 +160,11 @@ namespace Model
     /**
      * <p>The principal that is given permission to perform the operations that the
      * grant permits.</p> <p>To specify the principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, IAM roles, federated users, and assumed role users.
      * For examples of the ARN syntax to use for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>AWS General Reference</i>.</p>
      */
@@ -173,11 +173,11 @@ namespace Model
     /**
      * <p>The principal that is given permission to perform the operations that the
      * grant permits.</p> <p>To specify the principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, IAM roles, federated users, and assumed role users.
      * For examples of the ARN syntax to use for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>AWS General Reference</i>.</p>
      */
@@ -186,11 +186,11 @@ namespace Model
     /**
      * <p>The principal that is given permission to perform the operations that the
      * grant permits.</p> <p>To specify the principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, IAM roles, federated users, and assumed role users.
      * For examples of the ARN syntax to use for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>AWS General Reference</i>.</p>
      */
@@ -199,11 +199,11 @@ namespace Model
     /**
      * <p>The principal that is given permission to perform the operations that the
      * grant permits.</p> <p>To specify the principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, IAM roles, federated users, and assumed role users.
      * For examples of the ARN syntax to use for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>AWS General Reference</i>.</p>
      */
@@ -212,11 +212,11 @@ namespace Model
     /**
      * <p>The principal that is given permission to perform the operations that the
      * grant permits.</p> <p>To specify the principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, IAM roles, federated users, and assumed role users.
      * For examples of the ARN syntax to use for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>AWS General Reference</i>.</p>
      */
@@ -225,11 +225,11 @@ namespace Model
     /**
      * <p>The principal that is given permission to perform the operations that the
      * grant permits.</p> <p>To specify the principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, IAM roles, federated users, and assumed role users.
      * For examples of the ARN syntax to use for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>AWS General Reference</i>.</p>
      */
@@ -238,11 +238,11 @@ namespace Model
     /**
      * <p>The principal that is given permission to perform the operations that the
      * grant permits.</p> <p>To specify the principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, IAM roles, federated users, and assumed role users.
      * For examples of the ARN syntax to use for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>AWS General Reference</i>.</p>
      */
@@ -252,11 +252,11 @@ namespace Model
     /**
      * <p>The principal that is given permission to retire the grant by using
      * <a>RetireGrant</a> operation.</p> <p>To specify the principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
      * examples of the ARN syntax to use for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>AWS General Reference</i>.</p>
      */
@@ -265,11 +265,11 @@ namespace Model
     /**
      * <p>The principal that is given permission to retire the grant by using
      * <a>RetireGrant</a> operation.</p> <p>To specify the principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
      * examples of the ARN syntax to use for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>AWS General Reference</i>.</p>
      */
@@ -278,11 +278,11 @@ namespace Model
     /**
      * <p>The principal that is given permission to retire the grant by using
      * <a>RetireGrant</a> operation.</p> <p>To specify the principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
      * examples of the ARN syntax to use for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>AWS General Reference</i>.</p>
      */
@@ -291,11 +291,11 @@ namespace Model
     /**
      * <p>The principal that is given permission to retire the grant by using
      * <a>RetireGrant</a> operation.</p> <p>To specify the principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
      * examples of the ARN syntax to use for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>AWS General Reference</i>.</p>
      */
@@ -304,11 +304,11 @@ namespace Model
     /**
      * <p>The principal that is given permission to retire the grant by using
      * <a>RetireGrant</a> operation.</p> <p>To specify the principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
      * examples of the ARN syntax to use for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>AWS General Reference</i>.</p>
      */
@@ -317,11 +317,11 @@ namespace Model
     /**
      * <p>The principal that is given permission to retire the grant by using
      * <a>RetireGrant</a> operation.</p> <p>To specify the principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
      * examples of the ARN syntax to use for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>AWS General Reference</i>.</p>
      */
@@ -330,11 +330,11 @@ namespace Model
     /**
      * <p>The principal that is given permission to retire the grant by using
      * <a>RetireGrant</a> operation.</p> <p>To specify the principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
      * examples of the ARN syntax to use for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>AWS General Reference</i>.</p>
      */
@@ -343,11 +343,11 @@ namespace Model
     /**
      * <p>The principal that is given permission to retire the grant by using
      * <a>RetireGrant</a> operation.</p> <p>To specify the principal, use the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
      * examples of the ARN syntax to use for specifying a principal, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>AWS General Reference</i>.</p>
      */
@@ -396,126 +396,132 @@ namespace Model
 
 
     /**
-     * <p>A structure that you can use to allow certain operations in the grant only
-     * when the desired encryption context is present. For more information about
-     * encryption context, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
-     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * <p>Allows a cryptographic operation only when the encryption context matches or
+     * includes the encryption context specified in this structure. For more
+     * information about encryption context, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
+     * </i>.</p>
      */
     inline const GrantConstraints& GetConstraints() const{ return m_constraints; }
 
     /**
-     * <p>A structure that you can use to allow certain operations in the grant only
-     * when the desired encryption context is present. For more information about
-     * encryption context, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
-     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * <p>Allows a cryptographic operation only when the encryption context matches or
+     * includes the encryption context specified in this structure. For more
+     * information about encryption context, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
+     * </i>.</p>
      */
     inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
 
     /**
-     * <p>A structure that you can use to allow certain operations in the grant only
-     * when the desired encryption context is present. For more information about
-     * encryption context, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
-     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * <p>Allows a cryptographic operation only when the encryption context matches or
+     * includes the encryption context specified in this structure. For more
+     * information about encryption context, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
+     * </i>.</p>
      */
     inline void SetConstraints(const GrantConstraints& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
 
     /**
-     * <p>A structure that you can use to allow certain operations in the grant only
-     * when the desired encryption context is present. For more information about
-     * encryption context, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
-     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * <p>Allows a cryptographic operation only when the encryption context matches or
+     * includes the encryption context specified in this structure. For more
+     * information about encryption context, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
+     * </i>.</p>
      */
     inline void SetConstraints(GrantConstraints&& value) { m_constraintsHasBeenSet = true; m_constraints = std::move(value); }
 
     /**
-     * <p>A structure that you can use to allow certain operations in the grant only
-     * when the desired encryption context is present. For more information about
-     * encryption context, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
-     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * <p>Allows a cryptographic operation only when the encryption context matches or
+     * includes the encryption context specified in this structure. For more
+     * information about encryption context, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
+     * </i>.</p>
      */
     inline CreateGrantRequest& WithConstraints(const GrantConstraints& value) { SetConstraints(value); return *this;}
 
     /**
-     * <p>A structure that you can use to allow certain operations in the grant only
-     * when the desired encryption context is present. For more information about
-     * encryption context, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
-     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * <p>Allows a cryptographic operation only when the encryption context matches or
+     * includes the encryption context specified in this structure. For more
+     * information about encryption context, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
+     * </i>.</p>
      */
     inline CreateGrantRequest& WithConstraints(GrantConstraints&& value) { SetConstraints(std::move(value)); return *this;}
 
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGrantTokens() const{ return m_grantTokens; }
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline bool GrantTokensHasBeenSet() const { return m_grantTokensHasBeenSet; }
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantTokens(const Aws::Vector<Aws::String>& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantTokens(Aws::Vector<Aws::String>&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = std::move(value); }
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& WithGrantTokens(const Aws::Vector<Aws::String>& value) { SetGrantTokens(value); return *this;}
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& WithGrantTokens(Aws::Vector<Aws::String>&& value) { SetGrantTokens(std::move(value)); return *this;}
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& AddGrantTokens(const Aws::String& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& AddGrantTokens(Aws::String&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent
+     * <p>A friendly name for identifying the grant. Use this value to prevent the
      * unintended creation of duplicate grants when retrying this request.</p> <p>When
      * this value is absent, all <code>CreateGrant</code> requests result in a new
      * grant with a unique <code>GrantId</code> even if all the supplied parameters are
@@ -530,7 +536,7 @@ namespace Model
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent
+     * <p>A friendly name for identifying the grant. Use this value to prevent the
      * unintended creation of duplicate grants when retrying this request.</p> <p>When
      * this value is absent, all <code>CreateGrant</code> requests result in a new
      * grant with a unique <code>GrantId</code> even if all the supplied parameters are
@@ -545,7 +551,7 @@ namespace Model
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent
+     * <p>A friendly name for identifying the grant. Use this value to prevent the
      * unintended creation of duplicate grants when retrying this request.</p> <p>When
      * this value is absent, all <code>CreateGrant</code> requests result in a new
      * grant with a unique <code>GrantId</code> even if all the supplied parameters are
@@ -560,7 +566,7 @@ namespace Model
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent
+     * <p>A friendly name for identifying the grant. Use this value to prevent the
      * unintended creation of duplicate grants when retrying this request.</p> <p>When
      * this value is absent, all <code>CreateGrant</code> requests result in a new
      * grant with a unique <code>GrantId</code> even if all the supplied parameters are
@@ -575,7 +581,7 @@ namespace Model
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent
+     * <p>A friendly name for identifying the grant. Use this value to prevent the
      * unintended creation of duplicate grants when retrying this request.</p> <p>When
      * this value is absent, all <code>CreateGrant</code> requests result in a new
      * grant with a unique <code>GrantId</code> even if all the supplied parameters are
@@ -590,7 +596,7 @@ namespace Model
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent
+     * <p>A friendly name for identifying the grant. Use this value to prevent the
      * unintended creation of duplicate grants when retrying this request.</p> <p>When
      * this value is absent, all <code>CreateGrant</code> requests result in a new
      * grant with a unique <code>GrantId</code> even if all the supplied parameters are
@@ -605,7 +611,7 @@ namespace Model
     inline CreateGrantRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent
+     * <p>A friendly name for identifying the grant. Use this value to prevent the
      * unintended creation of duplicate grants when retrying this request.</p> <p>When
      * this value is absent, all <code>CreateGrant</code> requests result in a new
      * grant with a unique <code>GrantId</code> even if all the supplied parameters are
@@ -620,7 +626,7 @@ namespace Model
     inline CreateGrantRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent
+     * <p>A friendly name for identifying the grant. Use this value to prevent the
      * unintended creation of duplicate grants when retrying this request.</p> <p>When
      * this value is absent, all <code>CreateGrant</code> requests result in a new
      * grant with a unique <code>GrantId</code> even if all the supplied parameters are

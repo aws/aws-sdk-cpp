@@ -91,6 +91,7 @@
 #include <aws/alexaforbusiness/model/SearchRoomsResult.h>
 #include <aws/alexaforbusiness/model/SearchSkillGroupsResult.h>
 #include <aws/alexaforbusiness/model/SearchUsersResult.h>
+#include <aws/alexaforbusiness/model/SendAnnouncementResult.h>
 #include <aws/alexaforbusiness/model/SendInvitationResult.h>
 #include <aws/alexaforbusiness/model/StartDeviceSyncResult.h>
 #include <aws/alexaforbusiness/model/StartSmartHomeApplianceDiscoveryResult.h>
@@ -216,6 +217,7 @@ namespace Model
         class SearchRoomsRequest;
         class SearchSkillGroupsRequest;
         class SearchUsersRequest;
+        class SendAnnouncementRequest;
         class SendInvitationRequest;
         class StartDeviceSyncRequest;
         class StartSmartHomeApplianceDiscoveryRequest;
@@ -302,6 +304,7 @@ namespace Model
         typedef Aws::Utils::Outcome<SearchRoomsResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SearchRoomsOutcome;
         typedef Aws::Utils::Outcome<SearchSkillGroupsResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SearchSkillGroupsOutcome;
         typedef Aws::Utils::Outcome<SearchUsersResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SearchUsersOutcome;
+        typedef Aws::Utils::Outcome<SendAnnouncementResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SendAnnouncementOutcome;
         typedef Aws::Utils::Outcome<SendInvitationResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SendInvitationOutcome;
         typedef Aws::Utils::Outcome<StartDeviceSyncResult, Aws::Client::AWSError<AlexaForBusinessErrors>> StartDeviceSyncOutcome;
         typedef Aws::Utils::Outcome<StartSmartHomeApplianceDiscoveryResult, Aws::Client::AWSError<AlexaForBusinessErrors>> StartSmartHomeApplianceDiscoveryOutcome;
@@ -388,6 +391,7 @@ namespace Model
         typedef std::future<SearchRoomsOutcome> SearchRoomsOutcomeCallable;
         typedef std::future<SearchSkillGroupsOutcome> SearchSkillGroupsOutcomeCallable;
         typedef std::future<SearchUsersOutcome> SearchUsersOutcomeCallable;
+        typedef std::future<SendAnnouncementOutcome> SendAnnouncementOutcomeCallable;
         typedef std::future<SendInvitationOutcome> SendInvitationOutcomeCallable;
         typedef std::future<StartDeviceSyncOutcome> StartDeviceSyncOutcomeCallable;
         typedef std::future<StartSmartHomeApplianceDiscoveryOutcome> StartSmartHomeApplianceDiscoveryOutcomeCallable;
@@ -477,6 +481,7 @@ namespace Model
     typedef std::function<void(const AlexaForBusinessClient*, const Model::SearchRoomsRequest&, const Model::SearchRoomsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchRoomsResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::SearchSkillGroupsRequest&, const Model::SearchSkillGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchSkillGroupsResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::SearchUsersRequest&, const Model::SearchUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchUsersResponseReceivedHandler;
+    typedef std::function<void(const AlexaForBusinessClient*, const Model::SendAnnouncementRequest&, const Model::SendAnnouncementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendAnnouncementResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::SendInvitationRequest&, const Model::SendInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendInvitationResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::StartDeviceSyncRequest&, const Model::StartDeviceSyncOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDeviceSyncResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::StartSmartHomeApplianceDiscoveryRequest&, const Model::StartSmartHomeApplianceDiscoveryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSmartHomeApplianceDiscoveryResponseReceivedHandler;
@@ -2462,6 +2467,37 @@ namespace Model
         virtual void SearchUsersAsync(const Model::SearchUsersRequest& request, const SearchUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Triggers an asynchronous flow to send text, SSML, or audio announcements to
+         * multiple rooms, identified by a search, such as filter. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendAnnouncement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendAnnouncementOutcome SendAnnouncement(const Model::SendAnnouncementRequest& request) const;
+
+        /**
+         * <p>Triggers an asynchronous flow to send text, SSML, or audio announcements to
+         * multiple rooms, identified by a search, such as filter. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendAnnouncement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SendAnnouncementOutcomeCallable SendAnnouncementCallable(const Model::SendAnnouncementRequest& request) const;
+
+        /**
+         * <p>Triggers an asynchronous flow to send text, SSML, or audio announcements to
+         * multiple rooms, identified by a search, such as filter. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendAnnouncement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SendAnnouncementAsync(const Model::SendAnnouncementRequest& request, const SendAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Sends an enrollment invitation email with a URL to a user. The URL is valid
          * for 72 hours or until you call this operation again, whichever comes first.
          * </p><p><h3>See Also:</h3>   <a
@@ -2950,6 +2986,7 @@ namespace Model
         void SearchRoomsAsyncHelper(const Model::SearchRoomsRequest& request, const SearchRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchSkillGroupsAsyncHelper(const Model::SearchSkillGroupsRequest& request, const SearchSkillGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchUsersAsyncHelper(const Model::SearchUsersRequest& request, const SearchUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SendAnnouncementAsyncHelper(const Model::SendAnnouncementRequest& request, const SendAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendInvitationAsyncHelper(const Model::SendInvitationRequest& request, const SendInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartDeviceSyncAsyncHelper(const Model::StartDeviceSyncRequest& request, const StartDeviceSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartSmartHomeApplianceDiscoveryAsyncHelper(const Model::StartSmartHomeApplianceDiscoveryRequest& request, const StartSmartHomeApplianceDiscoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

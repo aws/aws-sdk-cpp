@@ -100,6 +100,7 @@
 #include <aws/alexaforbusiness/model/SearchRoomsRequest.h>
 #include <aws/alexaforbusiness/model/SearchSkillGroupsRequest.h>
 #include <aws/alexaforbusiness/model/SearchUsersRequest.h>
+#include <aws/alexaforbusiness/model/SendAnnouncementRequest.h>
 #include <aws/alexaforbusiness/model/SendInvitationRequest.h>
 #include <aws/alexaforbusiness/model/StartDeviceSyncRequest.h>
 #include <aws/alexaforbusiness/model/StartSmartHomeApplianceDiscoveryRequest.h>
@@ -2635,6 +2636,41 @@ void AlexaForBusinessClient::SearchUsersAsync(const SearchUsersRequest& request,
 void AlexaForBusinessClient::SearchUsersAsyncHelper(const SearchUsersRequest& request, const SearchUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SearchUsers(request), context);
+}
+
+SendAnnouncementOutcome AlexaForBusinessClient::SendAnnouncement(const SendAnnouncementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return SendAnnouncementOutcome(SendAnnouncementResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SendAnnouncementOutcome(outcome.GetError());
+  }
+}
+
+SendAnnouncementOutcomeCallable AlexaForBusinessClient::SendAnnouncementCallable(const SendAnnouncementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SendAnnouncementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendAnnouncement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::SendAnnouncementAsync(const SendAnnouncementRequest& request, const SendAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SendAnnouncementAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::SendAnnouncementAsyncHelper(const SendAnnouncementRequest& request, const SendAnnouncementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendAnnouncement(request), context);
 }
 
 SendInvitationOutcome AlexaForBusinessClient::SendInvitation(const SendInvitationRequest& request) const

@@ -68,7 +68,7 @@ namespace Model
     /**
      * <p>Generates the random byte string in the AWS CloudHSM cluster that is
      * associated with the specified <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>. To find the ID of a custom key store, use the
      * <a>DescribeCustomKeyStores</a> operation.</p>
      */
@@ -77,7 +77,7 @@ namespace Model
     /**
      * <p>Generates the random byte string in the AWS CloudHSM cluster that is
      * associated with the specified <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>. To find the ID of a custom key store, use the
      * <a>DescribeCustomKeyStores</a> operation.</p>
      */
@@ -86,7 +86,7 @@ namespace Model
     /**
      * <p>Generates the random byte string in the AWS CloudHSM cluster that is
      * associated with the specified <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>. To find the ID of a custom key store, use the
      * <a>DescribeCustomKeyStores</a> operation.</p>
      */
@@ -95,7 +95,7 @@ namespace Model
     /**
      * <p>Generates the random byte string in the AWS CloudHSM cluster that is
      * associated with the specified <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>. To find the ID of a custom key store, use the
      * <a>DescribeCustomKeyStores</a> operation.</p>
      */
@@ -104,7 +104,7 @@ namespace Model
     /**
      * <p>Generates the random byte string in the AWS CloudHSM cluster that is
      * associated with the specified <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>. To find the ID of a custom key store, use the
      * <a>DescribeCustomKeyStores</a> operation.</p>
      */
@@ -113,7 +113,7 @@ namespace Model
     /**
      * <p>Generates the random byte string in the AWS CloudHSM cluster that is
      * associated with the specified <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>. To find the ID of a custom key store, use the
      * <a>DescribeCustomKeyStores</a> operation.</p>
      */
@@ -122,7 +122,7 @@ namespace Model
     /**
      * <p>Generates the random byte string in the AWS CloudHSM cluster that is
      * associated with the specified <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>. To find the ID of a custom key store, use the
      * <a>DescribeCustomKeyStores</a> operation.</p>
      */
@@ -131,7 +131,7 @@ namespace Model
     /**
      * <p>Generates the random byte string in the AWS CloudHSM cluster that is
      * associated with the specified <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>. To find the ID of a custom key store, use the
      * <a>DescribeCustomKeyStores</a> operation.</p>
      */

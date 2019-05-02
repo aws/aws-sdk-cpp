@@ -138,8 +138,7 @@ namespace Model
      * this value is present, AWS KMS does not return more than the specified number of
      * items, but it might return fewer.</p> <p>This value is optional. If you include
      * a value, it must be between 1 and 1000, inclusive. If you do not include a
-     * value, it defaults to 100.</p> <p>Currently only 1 policy can be attached to a
-     * key.</p>
+     * value, it defaults to 100.</p> <p>Only one policy can be attached to a key.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
@@ -148,8 +147,7 @@ namespace Model
      * this value is present, AWS KMS does not return more than the specified number of
      * items, but it might return fewer.</p> <p>This value is optional. If you include
      * a value, it must be between 1 and 1000, inclusive. If you do not include a
-     * value, it defaults to 100.</p> <p>Currently only 1 policy can be attached to a
-     * key.</p>
+     * value, it defaults to 100.</p> <p>Only one policy can be attached to a key.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
@@ -158,8 +156,7 @@ namespace Model
      * this value is present, AWS KMS does not return more than the specified number of
      * items, but it might return fewer.</p> <p>This value is optional. If you include
      * a value, it must be between 1 and 1000, inclusive. If you do not include a
-     * value, it defaults to 100.</p> <p>Currently only 1 policy can be attached to a
-     * key.</p>
+     * value, it defaults to 100.</p> <p>Only one policy can be attached to a key.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
@@ -168,8 +165,7 @@ namespace Model
      * this value is present, AWS KMS does not return more than the specified number of
      * items, but it might return fewer.</p> <p>This value is optional. If you include
      * a value, it must be between 1 and 1000, inclusive. If you do not include a
-     * value, it defaults to 100.</p> <p>Currently only 1 policy can be attached to a
-     * key.</p>
+     * value, it defaults to 100.</p> <p>Only one policy can be attached to a key.</p>
      */
     inline ListKeyPoliciesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

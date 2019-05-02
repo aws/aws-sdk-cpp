@@ -44,31 +44,31 @@ namespace Model
 
     /**
      * <p>The random byte string. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encdoded. Otherwise, it is not encoded.</p>
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetPlaintext() const{ return m_plaintext; }
 
     /**
      * <p>The random byte string. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encdoded. Otherwise, it is not encoded.</p>
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline void SetPlaintext(const Aws::Utils::CryptoBuffer& value) { m_plaintext = value; }
 
     /**
      * <p>The random byte string. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encdoded. Otherwise, it is not encoded.</p>
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline void SetPlaintext(Aws::Utils::CryptoBuffer&& value) { m_plaintext = std::move(value); }
 
     /**
      * <p>The random byte string. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encdoded. Otherwise, it is not encoded.</p>
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline GenerateRandomResult& WithPlaintext(const Aws::Utils::CryptoBuffer& value) { SetPlaintext(value); return *this;}
 
     /**
      * <p>The random byte string. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encdoded. Otherwise, it is not encoded.</p>
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline GenerateRandomResult& WithPlaintext(Aws::Utils::CryptoBuffer&& value) { SetPlaintext(std::move(value)); return *this;}
 

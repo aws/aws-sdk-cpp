@@ -146,7 +146,7 @@ namespace Model
     /**
      * <p>The algorithm you will use to encrypt the key material before importing it
      * with <a>ImportKeyMaterial</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
      * the Key Material</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */
@@ -155,7 +155,7 @@ namespace Model
     /**
      * <p>The algorithm you will use to encrypt the key material before importing it
      * with <a>ImportKeyMaterial</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
      * the Key Material</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */
@@ -164,7 +164,7 @@ namespace Model
     /**
      * <p>The algorithm you will use to encrypt the key material before importing it
      * with <a>ImportKeyMaterial</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
      * the Key Material</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */
@@ -173,7 +173,7 @@ namespace Model
     /**
      * <p>The algorithm you will use to encrypt the key material before importing it
      * with <a>ImportKeyMaterial</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
      * the Key Material</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */
@@ -182,7 +182,7 @@ namespace Model
     /**
      * <p>The algorithm you will use to encrypt the key material before importing it
      * with <a>ImportKeyMaterial</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
      * the Key Material</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */
@@ -191,7 +191,7 @@ namespace Model
     /**
      * <p>The algorithm you will use to encrypt the key material before importing it
      * with <a>ImportKeyMaterial</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
      * the Key Material</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */

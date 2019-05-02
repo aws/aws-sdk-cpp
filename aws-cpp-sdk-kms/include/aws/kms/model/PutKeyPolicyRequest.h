@@ -182,7 +182,7 @@ namespace Model
      * subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk
      * that the CMK becomes unmanageable. For more information, refer to the scenario
      * in the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section of the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p>Each statement in the key policy must contain one
      * or more principals. The principals in the key policy must exist and be visible
@@ -190,7 +190,7 @@ namespace Model
      * role), you might need to enforce a delay before including the new principal in a
      * key policy because the new principal might not be immediately visible to AWS
      * KMS. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>AWS Identity and
      * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy size limit
      * is 32 kilobytes (32768 bytes).</p>
@@ -205,7 +205,7 @@ namespace Model
      * subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk
      * that the CMK becomes unmanageable. For more information, refer to the scenario
      * in the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section of the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p>Each statement in the key policy must contain one
      * or more principals. The principals in the key policy must exist and be visible
@@ -213,7 +213,7 @@ namespace Model
      * role), you might need to enforce a delay before including the new principal in a
      * key policy because the new principal might not be immediately visible to AWS
      * KMS. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>AWS Identity and
      * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy size limit
      * is 32 kilobytes (32768 bytes).</p>
@@ -228,7 +228,7 @@ namespace Model
      * subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk
      * that the CMK becomes unmanageable. For more information, refer to the scenario
      * in the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section of the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p>Each statement in the key policy must contain one
      * or more principals. The principals in the key policy must exist and be visible
@@ -236,7 +236,7 @@ namespace Model
      * role), you might need to enforce a delay before including the new principal in a
      * key policy because the new principal might not be immediately visible to AWS
      * KMS. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>AWS Identity and
      * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy size limit
      * is 32 kilobytes (32768 bytes).</p>
@@ -251,7 +251,7 @@ namespace Model
      * subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk
      * that the CMK becomes unmanageable. For more information, refer to the scenario
      * in the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section of the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p>Each statement in the key policy must contain one
      * or more principals. The principals in the key policy must exist and be visible
@@ -259,7 +259,7 @@ namespace Model
      * role), you might need to enforce a delay before including the new principal in a
      * key policy because the new principal might not be immediately visible to AWS
      * KMS. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>AWS Identity and
      * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy size limit
      * is 32 kilobytes (32768 bytes).</p>
@@ -274,7 +274,7 @@ namespace Model
      * subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk
      * that the CMK becomes unmanageable. For more information, refer to the scenario
      * in the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section of the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p>Each statement in the key policy must contain one
      * or more principals. The principals in the key policy must exist and be visible
@@ -282,7 +282,7 @@ namespace Model
      * role), you might need to enforce a delay before including the new principal in a
      * key policy because the new principal might not be immediately visible to AWS
      * KMS. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>AWS Identity and
      * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy size limit
      * is 32 kilobytes (32768 bytes).</p>
@@ -297,7 +297,7 @@ namespace Model
      * subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk
      * that the CMK becomes unmanageable. For more information, refer to the scenario
      * in the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section of the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p>Each statement in the key policy must contain one
      * or more principals. The principals in the key policy must exist and be visible
@@ -305,7 +305,7 @@ namespace Model
      * role), you might need to enforce a delay before including the new principal in a
      * key policy because the new principal might not be immediately visible to AWS
      * KMS. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>AWS Identity and
      * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy size limit
      * is 32 kilobytes (32768 bytes).</p>
@@ -320,7 +320,7 @@ namespace Model
      * subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk
      * that the CMK becomes unmanageable. For more information, refer to the scenario
      * in the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section of the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p>Each statement in the key policy must contain one
      * or more principals. The principals in the key policy must exist and be visible
@@ -328,7 +328,7 @@ namespace Model
      * role), you might need to enforce a delay before including the new principal in a
      * key policy because the new principal might not be immediately visible to AWS
      * KMS. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>AWS Identity and
      * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy size limit
      * is 32 kilobytes (32768 bytes).</p>
@@ -343,7 +343,7 @@ namespace Model
      * subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk
      * that the CMK becomes unmanageable. For more information, refer to the scenario
      * in the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section of the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p>Each statement in the key policy must contain one
      * or more principals. The principals in the key policy must exist and be visible
@@ -351,7 +351,7 @@ namespace Model
      * role), you might need to enforce a delay before including the new principal in a
      * key policy because the new principal might not be immediately visible to AWS
      * KMS. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>AWS Identity and
      * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy size limit
      * is 32 kilobytes (32768 bytes).</p>
@@ -364,7 +364,7 @@ namespace Model
      * <important> <p>Setting this value to true increases the risk that the CMK
      * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
      * more information, refer to the scenario in the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </important> <p>Use this parameter only when you intend to
      * prevent the principal that is making the request from making a subsequent
@@ -378,7 +378,7 @@ namespace Model
      * <important> <p>Setting this value to true increases the risk that the CMK
      * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
      * more information, refer to the scenario in the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </important> <p>Use this parameter only when you intend to
      * prevent the principal that is making the request from making a subsequent
@@ -392,7 +392,7 @@ namespace Model
      * <important> <p>Setting this value to true increases the risk that the CMK
      * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
      * more information, refer to the scenario in the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </important> <p>Use this parameter only when you intend to
      * prevent the principal that is making the request from making a subsequent
@@ -406,7 +406,7 @@ namespace Model
      * <important> <p>Setting this value to true increases the risk that the CMK
      * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
      * more information, refer to the scenario in the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </important> <p>Use this parameter only when you intend to
      * prevent the principal that is making the request from making a subsequent

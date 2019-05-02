@@ -139,7 +139,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
      * Key Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS
      * General Reference</i>.</p>
      */
@@ -147,7 +147,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
      * Key Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS
      * General Reference</i>.</p>
      */
@@ -155,7 +155,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
      * Key Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS
      * General Reference</i>.</p>
      */
@@ -163,7 +163,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
      * Key Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS
      * General Reference</i>.</p>
      */
@@ -171,7 +171,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
      * Key Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS
      * General Reference</i>.</p>
      */
@@ -179,7 +179,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
      * Key Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS
      * General Reference</i>.</p>
      */
@@ -187,7 +187,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
      * Key Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS
      * General Reference</i>.</p>
      */
@@ -195,7 +195,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS
      * Key Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS
      * General Reference</i>.</p>
      */
@@ -300,44 +300,44 @@ namespace Model
 
 
     /**
-     * <p>The cryptographic operations for which you can use the CMK. Currently the
-     * only allowed value is <code>ENCRYPT_DECRYPT</code>, which means you can use the
-     * CMK for the <a>Encrypt</a> and <a>Decrypt</a> operations.</p>
+     * <p>The cryptographic operations for which you can use the CMK. The only valid
+     * value is <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to
+     * encrypt and decrypt data.</p>
      */
     inline const KeyUsageType& GetKeyUsage() const{ return m_keyUsage; }
 
     /**
-     * <p>The cryptographic operations for which you can use the CMK. Currently the
-     * only allowed value is <code>ENCRYPT_DECRYPT</code>, which means you can use the
-     * CMK for the <a>Encrypt</a> and <a>Decrypt</a> operations.</p>
+     * <p>The cryptographic operations for which you can use the CMK. The only valid
+     * value is <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to
+     * encrypt and decrypt data.</p>
      */
     inline bool KeyUsageHasBeenSet() const { return m_keyUsageHasBeenSet; }
 
     /**
-     * <p>The cryptographic operations for which you can use the CMK. Currently the
-     * only allowed value is <code>ENCRYPT_DECRYPT</code>, which means you can use the
-     * CMK for the <a>Encrypt</a> and <a>Decrypt</a> operations.</p>
+     * <p>The cryptographic operations for which you can use the CMK. The only valid
+     * value is <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to
+     * encrypt and decrypt data.</p>
      */
     inline void SetKeyUsage(const KeyUsageType& value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
 
     /**
-     * <p>The cryptographic operations for which you can use the CMK. Currently the
-     * only allowed value is <code>ENCRYPT_DECRYPT</code>, which means you can use the
-     * CMK for the <a>Encrypt</a> and <a>Decrypt</a> operations.</p>
+     * <p>The cryptographic operations for which you can use the CMK. The only valid
+     * value is <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to
+     * encrypt and decrypt data.</p>
      */
     inline void SetKeyUsage(KeyUsageType&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = std::move(value); }
 
     /**
-     * <p>The cryptographic operations for which you can use the CMK. Currently the
-     * only allowed value is <code>ENCRYPT_DECRYPT</code>, which means you can use the
-     * CMK for the <a>Encrypt</a> and <a>Decrypt</a> operations.</p>
+     * <p>The cryptographic operations for which you can use the CMK. The only valid
+     * value is <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to
+     * encrypt and decrypt data.</p>
      */
     inline KeyMetadata& WithKeyUsage(const KeyUsageType& value) { SetKeyUsage(value); return *this;}
 
     /**
-     * <p>The cryptographic operations for which you can use the CMK. Currently the
-     * only allowed value is <code>ENCRYPT_DECRYPT</code>, which means you can use the
-     * CMK for the <a>Encrypt</a> and <a>Decrypt</a> operations.</p>
+     * <p>The cryptographic operations for which you can use the CMK. The only valid
+     * value is <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to
+     * encrypt and decrypt data.</p>
      */
     inline KeyMetadata& WithKeyUsage(KeyUsageType&& value) { SetKeyUsage(std::move(value)); return *this;}
 
@@ -345,7 +345,7 @@ namespace Model
     /**
      * <p>The state of the CMK.</p> <p>For more information about how key state affects
      * the use of a CMK, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
      * Management Service Developer Guide</i>.</p>
      */
@@ -354,7 +354,7 @@ namespace Model
     /**
      * <p>The state of the CMK.</p> <p>For more information about how key state affects
      * the use of a CMK, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
      * Management Service Developer Guide</i>.</p>
      */
@@ -363,7 +363,7 @@ namespace Model
     /**
      * <p>The state of the CMK.</p> <p>For more information about how key state affects
      * the use of a CMK, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
      * Management Service Developer Guide</i>.</p>
      */
@@ -372,7 +372,7 @@ namespace Model
     /**
      * <p>The state of the CMK.</p> <p>For more information about how key state affects
      * the use of a CMK, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
      * Management Service Developer Guide</i>.</p>
      */
@@ -381,7 +381,7 @@ namespace Model
     /**
      * <p>The state of the CMK.</p> <p>For more information about how key state affects
      * the use of a CMK, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
      * Management Service Developer Guide</i>.</p>
      */
@@ -390,7 +390,7 @@ namespace Model
     /**
      * <p>The state of the CMK.</p> <p>For more information about how key state affects
      * the use of a CMK, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
      * Management Service Developer Guide</i>.</p>
      */
@@ -552,7 +552,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> that contains the CMK. This value is present only when the CMK is
      * created in a custom key store.</p>
      */
@@ -560,7 +560,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> that contains the CMK. This value is present only when the CMK is
      * created in a custom key store.</p>
      */
@@ -568,7 +568,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> that contains the CMK. This value is present only when the CMK is
      * created in a custom key store.</p>
      */
@@ -576,7 +576,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> that contains the CMK. This value is present only when the CMK is
      * created in a custom key store.</p>
      */
@@ -584,7 +584,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> that contains the CMK. This value is present only when the CMK is
      * created in a custom key store.</p>
      */
@@ -592,7 +592,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> that contains the CMK. This value is present only when the CMK is
      * created in a custom key store.</p>
      */
@@ -600,7 +600,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> that contains the CMK. This value is present only when the CMK is
      * created in a custom key store.</p>
      */
@@ -608,7 +608,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> that contains the CMK. This value is present only when the CMK is
      * created in a custom key store.</p>
      */
@@ -618,7 +618,7 @@ namespace Model
     /**
      * <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for
      * the CMK. When you create a CMK in a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>, AWS KMS creates the key material for the CMK in the associated
      * AWS CloudHSM cluster. This value is present only when the CMK is created in a
      * custom key store.</p>
@@ -628,7 +628,7 @@ namespace Model
     /**
      * <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for
      * the CMK. When you create a CMK in a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>, AWS KMS creates the key material for the CMK in the associated
      * AWS CloudHSM cluster. This value is present only when the CMK is created in a
      * custom key store.</p>
@@ -638,7 +638,7 @@ namespace Model
     /**
      * <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for
      * the CMK. When you create a CMK in a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>, AWS KMS creates the key material for the CMK in the associated
      * AWS CloudHSM cluster. This value is present only when the CMK is created in a
      * custom key store.</p>
@@ -648,7 +648,7 @@ namespace Model
     /**
      * <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for
      * the CMK. When you create a CMK in a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>, AWS KMS creates the key material for the CMK in the associated
      * AWS CloudHSM cluster. This value is present only when the CMK is created in a
      * custom key store.</p>
@@ -658,7 +658,7 @@ namespace Model
     /**
      * <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for
      * the CMK. When you create a CMK in a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>, AWS KMS creates the key material for the CMK in the associated
      * AWS CloudHSM cluster. This value is present only when the CMK is created in a
      * custom key store.</p>
@@ -668,7 +668,7 @@ namespace Model
     /**
      * <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for
      * the CMK. When you create a CMK in a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>, AWS KMS creates the key material for the CMK in the associated
      * AWS CloudHSM cluster. This value is present only when the CMK is created in a
      * custom key store.</p>
@@ -678,7 +678,7 @@ namespace Model
     /**
      * <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for
      * the CMK. When you create a CMK in a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>, AWS KMS creates the key material for the CMK in the associated
      * AWS CloudHSM cluster. This value is present only when the CMK is created in a
      * custom key store.</p>
@@ -688,7 +688,7 @@ namespace Model
     /**
      * <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for
      * the CMK. When you create a CMK in a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>, AWS KMS creates the key material for the CMK in the associated
      * AWS CloudHSM cluster. This value is present only when the CMK is created in a
      * custom key store.</p>
@@ -740,49 +740,49 @@ namespace Model
 
 
     /**
-     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
-     * information about the difference, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
+     * or AWS managed. For more information about the difference, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline const KeyManagerType& GetKeyManager() const{ return m_keyManager; }
 
     /**
-     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
-     * information about the difference, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
+     * or AWS managed. For more information about the difference, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline bool KeyManagerHasBeenSet() const { return m_keyManagerHasBeenSet; }
 
     /**
-     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
-     * information about the difference, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
+     * or AWS managed. For more information about the difference, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetKeyManager(const KeyManagerType& value) { m_keyManagerHasBeenSet = true; m_keyManager = value; }
 
     /**
-     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
-     * information about the difference, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
+     * or AWS managed. For more information about the difference, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetKeyManager(KeyManagerType&& value) { m_keyManagerHasBeenSet = true; m_keyManager = std::move(value); }
 
     /**
-     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
-     * information about the difference, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
+     * or AWS managed. For more information about the difference, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline KeyMetadata& WithKeyManager(const KeyManagerType& value) { SetKeyManager(value); return *this;}
 
     /**
-     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
-     * information about the difference, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
+     * or AWS managed. For more information about the difference, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline KeyMetadata& WithKeyManager(KeyManagerType&& value) { SetKeyManager(std::move(value)); return *this;}

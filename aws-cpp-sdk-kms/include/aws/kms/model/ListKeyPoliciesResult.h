@@ -44,50 +44,42 @@ namespace Model
 
 
     /**
-     * <p>A list of key policy names. Currently, there is only one key policy per CMK
-     * and it is always named <code>default</code>.</p>
+     * <p>A list of key policy names. The only valid value is <code>default</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
 
     /**
-     * <p>A list of key policy names. Currently, there is only one key policy per CMK
-     * and it is always named <code>default</code>.</p>
+     * <p>A list of key policy names. The only valid value is <code>default</code>.</p>
      */
     inline void SetPolicyNames(const Aws::Vector<Aws::String>& value) { m_policyNames = value; }
 
     /**
-     * <p>A list of key policy names. Currently, there is only one key policy per CMK
-     * and it is always named <code>default</code>.</p>
+     * <p>A list of key policy names. The only valid value is <code>default</code>.</p>
      */
     inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNames = std::move(value); }
 
     /**
-     * <p>A list of key policy names. Currently, there is only one key policy per CMK
-     * and it is always named <code>default</code>.</p>
+     * <p>A list of key policy names. The only valid value is <code>default</code>.</p>
      */
     inline ListKeyPoliciesResult& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
 
     /**
-     * <p>A list of key policy names. Currently, there is only one key policy per CMK
-     * and it is always named <code>default</code>.</p>
+     * <p>A list of key policy names. The only valid value is <code>default</code>.</p>
      */
     inline ListKeyPoliciesResult& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(std::move(value)); return *this;}
 
     /**
-     * <p>A list of key policy names. Currently, there is only one key policy per CMK
-     * and it is always named <code>default</code>.</p>
+     * <p>A list of key policy names. The only valid value is <code>default</code>.</p>
      */
     inline ListKeyPoliciesResult& AddPolicyNames(const Aws::String& value) { m_policyNames.push_back(value); return *this; }
 
     /**
-     * <p>A list of key policy names. Currently, there is only one key policy per CMK
-     * and it is always named <code>default</code>.</p>
+     * <p>A list of key policy names. The only valid value is <code>default</code>.</p>
      */
     inline ListKeyPoliciesResult& AddPolicyNames(Aws::String&& value) { m_policyNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of key policy names. Currently, there is only one key policy per CMK
-     * and it is always named <code>default</code>.</p>
+     * <p>A list of key policy names. The only valid value is <code>default</code>.</p>
      */
     inline ListKeyPoliciesResult& AddPolicyNames(const char* value) { m_policyNames.push_back(value); return *this; }
 
@@ -138,7 +130,7 @@ namespace Model
     /**
      * <p>A flag that indicates whether there are more items in the list. When this
      * value is true, the list in this response is truncated. To get more items, pass
-     * the value of the <code>NextMarker</code> element in this response to the
+     * the value of the <code>NextMarker</code> element in thisresponse to the
      * <code>Marker</code> parameter in a subsequent request.</p>
      */
     inline bool GetTruncated() const{ return m_truncated; }
@@ -146,7 +138,7 @@ namespace Model
     /**
      * <p>A flag that indicates whether there are more items in the list. When this
      * value is true, the list in this response is truncated. To get more items, pass
-     * the value of the <code>NextMarker</code> element in this response to the
+     * the value of the <code>NextMarker</code> element in thisresponse to the
      * <code>Marker</code> parameter in a subsequent request.</p>
      */
     inline void SetTruncated(bool value) { m_truncated = value; }
@@ -154,7 +146,7 @@ namespace Model
     /**
      * <p>A flag that indicates whether there are more items in the list. When this
      * value is true, the list in this response is truncated. To get more items, pass
-     * the value of the <code>NextMarker</code> element in this response to the
+     * the value of the <code>NextMarker</code> element in thisresponse to the
      * <code>Marker</code> parameter in a subsequent request.</p>
      */
     inline ListKeyPoliciesResult& WithTruncated(bool value) { SetTruncated(value); return *this;}

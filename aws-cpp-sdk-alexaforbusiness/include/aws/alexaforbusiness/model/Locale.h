@@ -14,32 +14,27 @@
 */
 
 #pragma once
-#include <aws/kms/KMS_EXPORTS.h>
+#include <aws/alexaforbusiness/AlexaForBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace KMS
+namespace AlexaForBusiness
 {
 namespace Model
 {
-  enum class ConnectionErrorCodeType
+  enum class Locale
   {
     NOT_SET,
-    INVALID_CREDENTIALS,
-    CLUSTER_NOT_FOUND,
-    NETWORK_ERRORS,
-    INTERNAL_ERROR,
-    INSUFFICIENT_CLOUDHSM_HSMS,
-    USER_LOCKED_OUT
+    en_US
   };
 
-namespace ConnectionErrorCodeTypeMapper
+namespace LocaleMapper
 {
-AWS_KMS_API ConnectionErrorCodeType GetConnectionErrorCodeTypeForName(const Aws::String& name);
+AWS_ALEXAFORBUSINESS_API Locale GetLocaleForName(const Aws::String& name);
 
-AWS_KMS_API Aws::String GetNameForConnectionErrorCodeType(ConnectionErrorCodeType value);
-} // namespace ConnectionErrorCodeTypeMapper
+AWS_ALEXAFORBUSINESS_API Aws::String GetNameForLocale(Locale value);
+} // namespace LocaleMapper
 } // namespace Model
-} // namespace KMS
+} // namespace AlexaForBusiness
 } // namespace Aws

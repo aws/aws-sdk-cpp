@@ -45,31 +45,31 @@ namespace Model
 
     /**
      * <p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encdoded. Otherwise, it is not encoded.</p>
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetCiphertextBlob() const{ return m_ciphertextBlob; }
 
     /**
      * <p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encdoded. Otherwise, it is not encoded.</p>
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlob = value; }
 
     /**
      * <p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encdoded. Otherwise, it is not encoded.</p>
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlob = std::move(value); }
 
     /**
      * <p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encdoded. Otherwise, it is not encoded.</p>
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline EncryptResult& WithCiphertextBlob(const Aws::Utils::ByteBuffer& value) { SetCiphertextBlob(value); return *this;}
 
     /**
      * <p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encdoded. Otherwise, it is not encoded.</p>
+     * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
     inline EncryptResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(std::move(value)); return *this;}
 

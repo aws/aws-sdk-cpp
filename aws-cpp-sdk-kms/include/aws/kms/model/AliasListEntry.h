@@ -48,42 +48,50 @@ namespace Model
 
 
     /**
-     * <p>String that contains the alias.</p>
+     * <p>String that contains the alias. This value begins with
+     * <code>alias/</code>.</p>
      */
     inline const Aws::String& GetAliasName() const{ return m_aliasName; }
 
     /**
-     * <p>String that contains the alias.</p>
+     * <p>String that contains the alias. This value begins with
+     * <code>alias/</code>.</p>
      */
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
 
     /**
-     * <p>String that contains the alias.</p>
+     * <p>String that contains the alias. This value begins with
+     * <code>alias/</code>.</p>
      */
     inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
 
     /**
-     * <p>String that contains the alias.</p>
+     * <p>String that contains the alias. This value begins with
+     * <code>alias/</code>.</p>
      */
     inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
 
     /**
-     * <p>String that contains the alias.</p>
+     * <p>String that contains the alias. This value begins with
+     * <code>alias/</code>.</p>
      */
     inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
 
     /**
-     * <p>String that contains the alias.</p>
+     * <p>String that contains the alias. This value begins with
+     * <code>alias/</code>.</p>
      */
     inline AliasListEntry& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
 
     /**
-     * <p>String that contains the alias.</p>
+     * <p>String that contains the alias. This value begins with
+     * <code>alias/</code>.</p>
      */
     inline AliasListEntry& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
 
     /**
-     * <p>String that contains the alias.</p>
+     * <p>String that contains the alias. This value begins with
+     * <code>alias/</code>.</p>
      */
     inline AliasListEntry& WithAliasName(const char* value) { SetAliasName(value); return *this;}
 
