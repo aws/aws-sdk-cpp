@@ -80,11 +80,12 @@ namespace Aws
             long connectTimeoutMs;
             /**
              * Enable TCP keep-alive. Default true;
-             * No-op for WinINet and IXMLHTTPRequest2 client.
+             * No-op for WinHTTP, WinINet and IXMLHTTPRequest2 client.
              */
             bool enableTcpKeepAlive;
             /**
-             * Interval to send a keep-alive packet over the connection. Default 30 s. Minimal 15 s.
+             * Interval to send a keep-alive packet over the connection. Default 30 seconds. Minimum 15 seconds.
+             * WinHTTP & libcurl support this option.
              * No-op for WinINet and IXMLHTTPRequest2 client.
              */
             unsigned long tcpKeepAliveIntervalMs;
