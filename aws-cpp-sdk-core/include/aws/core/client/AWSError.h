@@ -57,6 +57,11 @@ namespace Aws
             {}
 
             /**
+             * Copy assignment operator
+             */
+            AWSError& operator=(const AWSError<ERROR_TYPE>&) = default;
+
+            /**
              * Gets underlying errorType.
              */
             inline const ERROR_TYPE GetErrorType() const { return m_errorType; }
