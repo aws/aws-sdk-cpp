@@ -15,36 +15,37 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
 namespace MediaLive
 {
 namespace Model
 {
-  enum class ChannelState
+  /**
+   * Placeholder documentation for DeleteScheduleResponse<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteScheduleResponse">AWS
+   * API Reference</a></p>
+   */
+  class AWS_MEDIALIVE_API DeleteScheduleResult
   {
-    NOT_SET,
-    CREATING,
-    CREATE_FAILED,
-    IDLE,
-    STARTING,
-    RUNNING,
-    RECOVERING,
-    STOPPING,
-    DELETING,
-    DELETED,
-    UPDATING,
-    UPDATE_FAILED
+  public:
+    DeleteScheduleResult();
+    DeleteScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
   };
 
-namespace ChannelStateMapper
-{
-AWS_MEDIALIVE_API ChannelState GetChannelStateForName(const Aws::String& name);
-
-AWS_MEDIALIVE_API Aws::String GetNameForChannelState(ChannelState value);
-} // namespace ChannelStateMapper
 } // namespace Model
 } // namespace MediaLive
 } // namespace Aws

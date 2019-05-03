@@ -48,6 +48,7 @@
 #include <aws/workmail/model/DescribeUserRequest.h>
 #include <aws/workmail/model/DisassociateDelegateFromResourceRequest.h>
 #include <aws/workmail/model/DisassociateMemberFromGroupRequest.h>
+#include <aws/workmail/model/GetMailboxDetailsRequest.h>
 #include <aws/workmail/model/ListAliasesRequest.h>
 #include <aws/workmail/model/ListGroupMembersRequest.h>
 #include <aws/workmail/model/ListGroupsRequest.h>
@@ -59,6 +60,7 @@
 #include <aws/workmail/model/PutMailboxPermissionsRequest.h>
 #include <aws/workmail/model/RegisterToWorkMailRequest.h>
 #include <aws/workmail/model/ResetPasswordRequest.h>
+#include <aws/workmail/model/UpdateMailboxQuotaRequest.h>
 #include <aws/workmail/model/UpdatePrimaryEmailAddressRequest.h>
 #include <aws/workmail/model/UpdateResourceRequest.h>
 
@@ -763,6 +765,41 @@ void WorkMailClient::DisassociateMemberFromGroupAsyncHelper(const DisassociateMe
   handler(this, request, DisassociateMemberFromGroup(request), context);
 }
 
+GetMailboxDetailsOutcome WorkMailClient::GetMailboxDetails(const GetMailboxDetailsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetMailboxDetailsOutcome(GetMailboxDetailsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetMailboxDetailsOutcome(outcome.GetError());
+  }
+}
+
+GetMailboxDetailsOutcomeCallable WorkMailClient::GetMailboxDetailsCallable(const GetMailboxDetailsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMailboxDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMailboxDetails(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::GetMailboxDetailsAsync(const GetMailboxDetailsRequest& request, const GetMailboxDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMailboxDetailsAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::GetMailboxDetailsAsyncHelper(const GetMailboxDetailsRequest& request, const GetMailboxDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMailboxDetails(request), context);
+}
+
 ListAliasesOutcome WorkMailClient::ListAliases(const ListAliasesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1146,6 +1183,41 @@ void WorkMailClient::ResetPasswordAsync(const ResetPasswordRequest& request, con
 void WorkMailClient::ResetPasswordAsyncHelper(const ResetPasswordRequest& request, const ResetPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ResetPassword(request), context);
+}
+
+UpdateMailboxQuotaOutcome WorkMailClient::UpdateMailboxQuota(const UpdateMailboxQuotaRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateMailboxQuotaOutcome(UpdateMailboxQuotaResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateMailboxQuotaOutcome(outcome.GetError());
+  }
+}
+
+UpdateMailboxQuotaOutcomeCallable WorkMailClient::UpdateMailboxQuotaCallable(const UpdateMailboxQuotaRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateMailboxQuotaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMailboxQuota(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::UpdateMailboxQuotaAsync(const UpdateMailboxQuotaRequest& request, const UpdateMailboxQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateMailboxQuotaAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::UpdateMailboxQuotaAsyncHelper(const UpdateMailboxQuotaRequest& request, const UpdateMailboxQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateMailboxQuota(request), context);
 }
 
 UpdatePrimaryEmailAddressOutcome WorkMailClient::UpdatePrimaryEmailAddress(const UpdatePrimaryEmailAddressRequest& request) const

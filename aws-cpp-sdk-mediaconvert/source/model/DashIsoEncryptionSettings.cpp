@@ -29,11 +29,15 @@ namespace Model
 {
 
 DashIsoEncryptionSettings::DashIsoEncryptionSettings() : 
+    m_playbackDeviceCompatibility(DashIsoPlaybackDeviceCompatibility::NOT_SET),
+    m_playbackDeviceCompatibilityHasBeenSet(false),
     m_spekeKeyProviderHasBeenSet(false)
 {
 }
 
 DashIsoEncryptionSettings::DashIsoEncryptionSettings(JsonView jsonValue) : 
+    m_playbackDeviceCompatibility(DashIsoPlaybackDeviceCompatibility::NOT_SET),
+    m_playbackDeviceCompatibilityHasBeenSet(false),
     m_spekeKeyProviderHasBeenSet(false)
 {
   *this = jsonValue;
@@ -41,6 +45,13 @@ DashIsoEncryptionSettings::DashIsoEncryptionSettings(JsonView jsonValue) :
 
 DashIsoEncryptionSettings& DashIsoEncryptionSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("playbackDeviceCompatibility"))
+  {
+    m_playbackDeviceCompatibility = DashIsoPlaybackDeviceCompatibilityMapper::GetDashIsoPlaybackDeviceCompatibilityForName(jsonValue.GetString("playbackDeviceCompatibility"));
+
+    m_playbackDeviceCompatibilityHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("spekeKeyProvider"))
   {
     m_spekeKeyProvider = jsonValue.GetObject("spekeKeyProvider");
@@ -54,6 +65,11 @@ DashIsoEncryptionSettings& DashIsoEncryptionSettings::operator =(JsonView jsonVa
 JsonValue DashIsoEncryptionSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_playbackDeviceCompatibilityHasBeenSet)
+  {
+   payload.WithString("playbackDeviceCompatibility", DashIsoPlaybackDeviceCompatibilityMapper::GetNameForDashIsoPlaybackDeviceCompatibility(m_playbackDeviceCompatibility));
+  }
 
   if(m_spekeKeyProviderHasBeenSet)
   {

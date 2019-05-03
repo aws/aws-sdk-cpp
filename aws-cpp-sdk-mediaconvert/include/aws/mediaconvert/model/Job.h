@@ -62,38 +62,38 @@ namespace Model
 
 
     /**
-     * Accelerated transcoding is currently in private preview. Contact AWS for more
-     * information.
+     * Accelerated transcoding can significantly speed up jobs with long, visually
+     * complex content.
      */
     inline const AccelerationSettings& GetAccelerationSettings() const{ return m_accelerationSettings; }
 
     /**
-     * Accelerated transcoding is currently in private preview. Contact AWS for more
-     * information.
+     * Accelerated transcoding can significantly speed up jobs with long, visually
+     * complex content.
      */
     inline bool AccelerationSettingsHasBeenSet() const { return m_accelerationSettingsHasBeenSet; }
 
     /**
-     * Accelerated transcoding is currently in private preview. Contact AWS for more
-     * information.
+     * Accelerated transcoding can significantly speed up jobs with long, visually
+     * complex content.
      */
     inline void SetAccelerationSettings(const AccelerationSettings& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = value; }
 
     /**
-     * Accelerated transcoding is currently in private preview. Contact AWS for more
-     * information.
+     * Accelerated transcoding can significantly speed up jobs with long, visually
+     * complex content.
      */
     inline void SetAccelerationSettings(AccelerationSettings&& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = std::move(value); }
 
     /**
-     * Accelerated transcoding is currently in private preview. Contact AWS for more
-     * information.
+     * Accelerated transcoding can significantly speed up jobs with long, visually
+     * complex content.
      */
     inline Job& WithAccelerationSettings(const AccelerationSettings& value) { SetAccelerationSettings(value); return *this;}
 
     /**
-     * Accelerated transcoding is currently in private preview. Contact AWS for more
-     * information.
+     * Accelerated transcoding can significantly speed up jobs with long, visually
+     * complex content.
      */
     inline Job& WithAccelerationSettings(AccelerationSettings&& value) { SetAccelerationSettings(std::move(value)); return *this;}
 

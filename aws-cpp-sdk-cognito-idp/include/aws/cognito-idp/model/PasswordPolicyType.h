@@ -169,6 +169,19 @@ namespace Model
      */
     inline PasswordPolicyType& WithRequireSymbols(bool value) { SetRequireSymbols(value); return *this;}
 
+
+    
+    inline int GetTemporaryPasswordValidityDays() const{ return m_temporaryPasswordValidityDays; }
+
+    
+    inline bool TemporaryPasswordValidityDaysHasBeenSet() const { return m_temporaryPasswordValidityDaysHasBeenSet; }
+
+    
+    inline void SetTemporaryPasswordValidityDays(int value) { m_temporaryPasswordValidityDaysHasBeenSet = true; m_temporaryPasswordValidityDays = value; }
+
+    
+    inline PasswordPolicyType& WithTemporaryPasswordValidityDays(int value) { SetTemporaryPasswordValidityDays(value); return *this;}
+
   private:
 
     int m_minimumLength;
@@ -185,6 +198,9 @@ namespace Model
 
     bool m_requireSymbols;
     bool m_requireSymbolsHasBeenSet;
+
+    int m_temporaryPasswordValidityDays;
+    bool m_temporaryPasswordValidityDaysHasBeenSet;
   };
 
 } // namespace Model

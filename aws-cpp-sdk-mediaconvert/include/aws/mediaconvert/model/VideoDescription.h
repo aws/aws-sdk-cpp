@@ -118,44 +118,44 @@ namespace Model
 
 
     /**
-     * The anti-alias filter is automatically applied to all outputs. The service no
-     * longer accepts the value DISABLED for AntiAlias. If you specify that in your
-     * job, the service will ignore the setting.
+     * The service automatically applies the anti-alias filter to all outputs. The
+     * service no longer accepts the value DISABLED for AntiAlias. If you specify that
+     * in your job, the service will ignore the setting.
      */
     inline const AntiAlias& GetAntiAlias() const{ return m_antiAlias; }
 
     /**
-     * The anti-alias filter is automatically applied to all outputs. The service no
-     * longer accepts the value DISABLED for AntiAlias. If you specify that in your
-     * job, the service will ignore the setting.
+     * The service automatically applies the anti-alias filter to all outputs. The
+     * service no longer accepts the value DISABLED for AntiAlias. If you specify that
+     * in your job, the service will ignore the setting.
      */
     inline bool AntiAliasHasBeenSet() const { return m_antiAliasHasBeenSet; }
 
     /**
-     * The anti-alias filter is automatically applied to all outputs. The service no
-     * longer accepts the value DISABLED for AntiAlias. If you specify that in your
-     * job, the service will ignore the setting.
+     * The service automatically applies the anti-alias filter to all outputs. The
+     * service no longer accepts the value DISABLED for AntiAlias. If you specify that
+     * in your job, the service will ignore the setting.
      */
     inline void SetAntiAlias(const AntiAlias& value) { m_antiAliasHasBeenSet = true; m_antiAlias = value; }
 
     /**
-     * The anti-alias filter is automatically applied to all outputs. The service no
-     * longer accepts the value DISABLED for AntiAlias. If you specify that in your
-     * job, the service will ignore the setting.
+     * The service automatically applies the anti-alias filter to all outputs. The
+     * service no longer accepts the value DISABLED for AntiAlias. If you specify that
+     * in your job, the service will ignore the setting.
      */
     inline void SetAntiAlias(AntiAlias&& value) { m_antiAliasHasBeenSet = true; m_antiAlias = std::move(value); }
 
     /**
-     * The anti-alias filter is automatically applied to all outputs. The service no
-     * longer accepts the value DISABLED for AntiAlias. If you specify that in your
-     * job, the service will ignore the setting.
+     * The service automatically applies the anti-alias filter to all outputs. The
+     * service no longer accepts the value DISABLED for AntiAlias. If you specify that
+     * in your job, the service will ignore the setting.
      */
     inline VideoDescription& WithAntiAlias(const AntiAlias& value) { SetAntiAlias(value); return *this;}
 
     /**
-     * The anti-alias filter is automatically applied to all outputs. The service no
-     * longer accepts the value DISABLED for AntiAlias. If you specify that in your
-     * job, the service will ignore the setting.
+     * The service automatically applies the anti-alias filter to all outputs. The
+     * service no longer accepts the value DISABLED for AntiAlias. If you specify that
+     * in your job, the service will ignore the setting.
      */
     inline VideoDescription& WithAntiAlias(AntiAlias&& value) { SetAntiAlias(std::move(value)); return *this;}
 

@@ -51,6 +51,7 @@
 #include <aws/cognito-idp/model/AdminResetUserPasswordRequest.h>
 #include <aws/cognito-idp/model/AdminRespondToAuthChallengeRequest.h>
 #include <aws/cognito-idp/model/AdminSetUserMFAPreferenceRequest.h>
+#include <aws/cognito-idp/model/AdminSetUserPasswordRequest.h>
 #include <aws/cognito-idp/model/AdminSetUserSettingsRequest.h>
 #include <aws/cognito-idp/model/AdminUpdateAuthEventFeedbackRequest.h>
 #include <aws/cognito-idp/model/AdminUpdateDeviceStatusRequest.h>
@@ -934,6 +935,41 @@ void CognitoIdentityProviderClient::AdminSetUserMFAPreferenceAsync(const AdminSe
 void CognitoIdentityProviderClient::AdminSetUserMFAPreferenceAsyncHelper(const AdminSetUserMFAPreferenceRequest& request, const AdminSetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AdminSetUserMFAPreference(request), context);
+}
+
+AdminSetUserPasswordOutcome CognitoIdentityProviderClient::AdminSetUserPassword(const AdminSetUserPasswordRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AdminSetUserPasswordOutcome(AdminSetUserPasswordResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AdminSetUserPasswordOutcome(outcome.GetError());
+  }
+}
+
+AdminSetUserPasswordOutcomeCallable CognitoIdentityProviderClient::AdminSetUserPasswordCallable(const AdminSetUserPasswordRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AdminSetUserPasswordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AdminSetUserPassword(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::AdminSetUserPasswordAsync(const AdminSetUserPasswordRequest& request, const AdminSetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AdminSetUserPasswordAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::AdminSetUserPasswordAsyncHelper(const AdminSetUserPasswordRequest& request, const AdminSetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AdminSetUserPassword(request), context);
 }
 
 AdminSetUserSettingsOutcome CognitoIdentityProviderClient::AdminSetUserSettings(const AdminSetUserSettingsRequest& request) const

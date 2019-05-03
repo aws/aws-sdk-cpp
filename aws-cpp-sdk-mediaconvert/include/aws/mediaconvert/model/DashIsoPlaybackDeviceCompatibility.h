@@ -14,37 +14,28 @@
 */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace MediaLive
+namespace MediaConvert
 {
 namespace Model
 {
-  enum class ChannelState
+  enum class DashIsoPlaybackDeviceCompatibility
   {
     NOT_SET,
-    CREATING,
-    CREATE_FAILED,
-    IDLE,
-    STARTING,
-    RUNNING,
-    RECOVERING,
-    STOPPING,
-    DELETING,
-    DELETED,
-    UPDATING,
-    UPDATE_FAILED
+    CENC_V1,
+    UNENCRYPTED_SEI
   };
 
-namespace ChannelStateMapper
+namespace DashIsoPlaybackDeviceCompatibilityMapper
 {
-AWS_MEDIALIVE_API ChannelState GetChannelStateForName(const Aws::String& name);
+AWS_MEDIACONVERT_API DashIsoPlaybackDeviceCompatibility GetDashIsoPlaybackDeviceCompatibilityForName(const Aws::String& name);
 
-AWS_MEDIALIVE_API Aws::String GetNameForChannelState(ChannelState value);
-} // namespace ChannelStateMapper
+AWS_MEDIACONVERT_API Aws::String GetNameForDashIsoPlaybackDeviceCompatibility(DashIsoPlaybackDeviceCompatibility value);
+} // namespace DashIsoPlaybackDeviceCompatibilityMapper
 } // namespace Model
-} // namespace MediaLive
+} // namespace MediaConvert
 } // namespace Aws

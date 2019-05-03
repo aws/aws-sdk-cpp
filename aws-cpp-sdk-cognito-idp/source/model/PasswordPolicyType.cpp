@@ -38,7 +38,9 @@ PasswordPolicyType::PasswordPolicyType() :
     m_requireNumbers(false),
     m_requireNumbersHasBeenSet(false),
     m_requireSymbols(false),
-    m_requireSymbolsHasBeenSet(false)
+    m_requireSymbolsHasBeenSet(false),
+    m_temporaryPasswordValidityDays(0),
+    m_temporaryPasswordValidityDaysHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ PasswordPolicyType::PasswordPolicyType(JsonView jsonValue) :
     m_requireNumbers(false),
     m_requireNumbersHasBeenSet(false),
     m_requireSymbols(false),
-    m_requireSymbolsHasBeenSet(false)
+    m_requireSymbolsHasBeenSet(false),
+    m_temporaryPasswordValidityDays(0),
+    m_temporaryPasswordValidityDaysHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -94,6 +98,13 @@ PasswordPolicyType& PasswordPolicyType::operator =(JsonView jsonValue)
     m_requireSymbolsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TemporaryPasswordValidityDays"))
+  {
+    m_temporaryPasswordValidityDays = jsonValue.GetInteger("TemporaryPasswordValidityDays");
+
+    m_temporaryPasswordValidityDaysHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -128,6 +139,12 @@ JsonValue PasswordPolicyType::Jsonize() const
   if(m_requireSymbolsHasBeenSet)
   {
    payload.WithBool("RequireSymbols", m_requireSymbols);
+
+  }
+
+  if(m_temporaryPasswordValidityDaysHasBeenSet)
+  {
+   payload.WithInteger("TemporaryPasswordValidityDays", m_temporaryPasswordValidityDays);
 
   }
 

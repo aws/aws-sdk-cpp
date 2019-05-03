@@ -39,6 +39,8 @@ namespace Aws
         static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+        static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
 
 
         ChannelState GetChannelStateForName(const Aws::String& name)
@@ -80,6 +82,14 @@ namespace Aws
           {
             return ChannelState::DELETED;
           }
+          else if (hashCode == UPDATING_HASH)
+          {
+            return ChannelState::UPDATING;
+          }
+          else if (hashCode == UPDATE_FAILED_HASH)
+          {
+            return ChannelState::UPDATE_FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -112,6 +122,10 @@ namespace Aws
             return "DELETING";
           case ChannelState::DELETED:
             return "DELETED";
+          case ChannelState::UPDATING:
+            return "UPDATING";
+          case ChannelState::UPDATE_FAILED:
+            return "UPDATE_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

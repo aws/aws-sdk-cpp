@@ -38,6 +38,7 @@
 #include <aws/cognito-idp/model/AdminResetUserPasswordResult.h>
 #include <aws/cognito-idp/model/AdminRespondToAuthChallengeResult.h>
 #include <aws/cognito-idp/model/AdminSetUserMFAPreferenceResult.h>
+#include <aws/cognito-idp/model/AdminSetUserPasswordResult.h>
 #include <aws/cognito-idp/model/AdminSetUserSettingsResult.h>
 #include <aws/cognito-idp/model/AdminUpdateAuthEventFeedbackResult.h>
 #include <aws/cognito-idp/model/AdminUpdateDeviceStatusResult.h>
@@ -171,6 +172,7 @@ namespace Model
         class AdminResetUserPasswordRequest;
         class AdminRespondToAuthChallengeRequest;
         class AdminSetUserMFAPreferenceRequest;
+        class AdminSetUserPasswordRequest;
         class AdminSetUserSettingsRequest;
         class AdminUpdateAuthEventFeedbackRequest;
         class AdminUpdateDeviceStatusRequest;
@@ -271,6 +273,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AdminResetUserPasswordResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminResetUserPasswordOutcome;
         typedef Aws::Utils::Outcome<AdminRespondToAuthChallengeResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminRespondToAuthChallengeOutcome;
         typedef Aws::Utils::Outcome<AdminSetUserMFAPreferenceResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminSetUserMFAPreferenceOutcome;
+        typedef Aws::Utils::Outcome<AdminSetUserPasswordResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminSetUserPasswordOutcome;
         typedef Aws::Utils::Outcome<AdminSetUserSettingsResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminSetUserSettingsOutcome;
         typedef Aws::Utils::Outcome<AdminUpdateAuthEventFeedbackResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminUpdateAuthEventFeedbackOutcome;
         typedef Aws::Utils::Outcome<AdminUpdateDeviceStatusResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminUpdateDeviceStatusOutcome;
@@ -371,6 +374,7 @@ namespace Model
         typedef std::future<AdminResetUserPasswordOutcome> AdminResetUserPasswordOutcomeCallable;
         typedef std::future<AdminRespondToAuthChallengeOutcome> AdminRespondToAuthChallengeOutcomeCallable;
         typedef std::future<AdminSetUserMFAPreferenceOutcome> AdminSetUserMFAPreferenceOutcomeCallable;
+        typedef std::future<AdminSetUserPasswordOutcome> AdminSetUserPasswordOutcomeCallable;
         typedef std::future<AdminSetUserSettingsOutcome> AdminSetUserSettingsOutcomeCallable;
         typedef std::future<AdminUpdateAuthEventFeedbackOutcome> AdminUpdateAuthEventFeedbackOutcomeCallable;
         typedef std::future<AdminUpdateDeviceStatusOutcome> AdminUpdateDeviceStatusOutcomeCallable;
@@ -474,6 +478,7 @@ namespace Model
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminResetUserPasswordRequest&, const Model::AdminResetUserPasswordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminResetUserPasswordResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminRespondToAuthChallengeRequest&, const Model::AdminRespondToAuthChallengeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminRespondToAuthChallengeResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminSetUserMFAPreferenceRequest&, const Model::AdminSetUserMFAPreferenceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminSetUserMFAPreferenceResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminSetUserPasswordRequest&, const Model::AdminSetUserPasswordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminSetUserPasswordResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminSetUserSettingsRequest&, const Model::AdminSetUserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminSetUserSettingsResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminUpdateAuthEventFeedbackRequest&, const Model::AdminUpdateAuthEventFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminUpdateAuthEventFeedbackResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminUpdateDeviceStatusRequest&, const Model::AdminUpdateDeviceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminUpdateDeviceStatusResponseReceivedHandler;
@@ -1347,6 +1352,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AdminSetUserMFAPreferenceAsync(const Model::AdminSetUserMFAPreferenceRequest& request, const AdminSetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::AdminSetUserPasswordOutcome AdminSetUserPassword(const Model::AdminSetUserPasswordRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AdminSetUserPasswordOutcomeCallable AdminSetUserPasswordCallable(const Model::AdminSetUserPasswordRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AdminSetUserPasswordAsync(const Model::AdminSetUserPasswordRequest& request, const AdminSetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets all the user settings for a specified user name. Works on any user.</p>
@@ -3687,6 +3711,7 @@ namespace Model
         void AdminResetUserPasswordAsyncHelper(const Model::AdminResetUserPasswordRequest& request, const AdminResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AdminRespondToAuthChallengeAsyncHelper(const Model::AdminRespondToAuthChallengeRequest& request, const AdminRespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AdminSetUserMFAPreferenceAsyncHelper(const Model::AdminSetUserMFAPreferenceRequest& request, const AdminSetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AdminSetUserPasswordAsyncHelper(const Model::AdminSetUserPasswordRequest& request, const AdminSetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AdminSetUserSettingsAsyncHelper(const Model::AdminSetUserSettingsRequest& request, const AdminSetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AdminUpdateAuthEventFeedbackAsyncHelper(const Model::AdminUpdateAuthEventFeedbackRequest& request, const AdminUpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AdminUpdateDeviceStatusAsyncHelper(const Model::AdminUpdateDeviceStatusRequest& request, const AdminUpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -49,38 +49,50 @@ namespace Model
 
 
     /**
-     * This is a beta feature. If you are interested in using this feature, please
-     * contact AWS customer support.
+     * Accelerated transcoding can significantly speed up jobs with long, visually
+     * complex content. Outputs that use this feature incur pro-tier pricing. For
+     * information about feature limitations, see the AWS Elemental MediaConvert User
+     * Guide.
      */
     inline const AccelerationSettings& GetAccelerationSettings() const{ return m_accelerationSettings; }
 
     /**
-     * This is a beta feature. If you are interested in using this feature, please
-     * contact AWS customer support.
+     * Accelerated transcoding can significantly speed up jobs with long, visually
+     * complex content. Outputs that use this feature incur pro-tier pricing. For
+     * information about feature limitations, see the AWS Elemental MediaConvert User
+     * Guide.
      */
     inline bool AccelerationSettingsHasBeenSet() const { return m_accelerationSettingsHasBeenSet; }
 
     /**
-     * This is a beta feature. If you are interested in using this feature, please
-     * contact AWS customer support.
+     * Accelerated transcoding can significantly speed up jobs with long, visually
+     * complex content. Outputs that use this feature incur pro-tier pricing. For
+     * information about feature limitations, see the AWS Elemental MediaConvert User
+     * Guide.
      */
     inline void SetAccelerationSettings(const AccelerationSettings& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = value; }
 
     /**
-     * This is a beta feature. If you are interested in using this feature, please
-     * contact AWS customer support.
+     * Accelerated transcoding can significantly speed up jobs with long, visually
+     * complex content. Outputs that use this feature incur pro-tier pricing. For
+     * information about feature limitations, see the AWS Elemental MediaConvert User
+     * Guide.
      */
     inline void SetAccelerationSettings(AccelerationSettings&& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = std::move(value); }
 
     /**
-     * This is a beta feature. If you are interested in using this feature, please
-     * contact AWS customer support.
+     * Accelerated transcoding can significantly speed up jobs with long, visually
+     * complex content. Outputs that use this feature incur pro-tier pricing. For
+     * information about feature limitations, see the AWS Elemental MediaConvert User
+     * Guide.
      */
     inline CreateJobRequest& WithAccelerationSettings(const AccelerationSettings& value) { SetAccelerationSettings(value); return *this;}
 
     /**
-     * This is a beta feature. If you are interested in using this feature, please
-     * contact AWS customer support.
+     * Accelerated transcoding can significantly speed up jobs with long, visually
+     * complex content. Outputs that use this feature incur pro-tier pricing. For
+     * information about feature limitations, see the AWS Elemental MediaConvert User
+     * Guide.
      */
     inline CreateJobRequest& WithAccelerationSettings(AccelerationSettings&& value) { SetAccelerationSettings(std::move(value)); return *this;}
 

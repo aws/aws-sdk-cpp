@@ -39,6 +39,7 @@
 #include <aws/workmail/model/DescribeUserResult.h>
 #include <aws/workmail/model/DisassociateDelegateFromResourceResult.h>
 #include <aws/workmail/model/DisassociateMemberFromGroupResult.h>
+#include <aws/workmail/model/GetMailboxDetailsResult.h>
 #include <aws/workmail/model/ListAliasesResult.h>
 #include <aws/workmail/model/ListGroupMembersResult.h>
 #include <aws/workmail/model/ListGroupsResult.h>
@@ -50,6 +51,7 @@
 #include <aws/workmail/model/PutMailboxPermissionsResult.h>
 #include <aws/workmail/model/RegisterToWorkMailResult.h>
 #include <aws/workmail/model/ResetPasswordResult.h>
+#include <aws/workmail/model/UpdateMailboxQuotaResult.h>
 #include <aws/workmail/model/UpdatePrimaryEmailAddressResult.h>
 #include <aws/workmail/model/UpdateResourceResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -110,6 +112,7 @@ namespace Model
         class DescribeUserRequest;
         class DisassociateDelegateFromResourceRequest;
         class DisassociateMemberFromGroupRequest;
+        class GetMailboxDetailsRequest;
         class ListAliasesRequest;
         class ListGroupMembersRequest;
         class ListGroupsRequest;
@@ -121,6 +124,7 @@ namespace Model
         class PutMailboxPermissionsRequest;
         class RegisterToWorkMailRequest;
         class ResetPasswordRequest;
+        class UpdateMailboxQuotaRequest;
         class UpdatePrimaryEmailAddressRequest;
         class UpdateResourceRequest;
 
@@ -142,6 +146,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeUserResult, Aws::Client::AWSError<WorkMailErrors>> DescribeUserOutcome;
         typedef Aws::Utils::Outcome<DisassociateDelegateFromResourceResult, Aws::Client::AWSError<WorkMailErrors>> DisassociateDelegateFromResourceOutcome;
         typedef Aws::Utils::Outcome<DisassociateMemberFromGroupResult, Aws::Client::AWSError<WorkMailErrors>> DisassociateMemberFromGroupOutcome;
+        typedef Aws::Utils::Outcome<GetMailboxDetailsResult, Aws::Client::AWSError<WorkMailErrors>> GetMailboxDetailsOutcome;
         typedef Aws::Utils::Outcome<ListAliasesResult, Aws::Client::AWSError<WorkMailErrors>> ListAliasesOutcome;
         typedef Aws::Utils::Outcome<ListGroupMembersResult, Aws::Client::AWSError<WorkMailErrors>> ListGroupMembersOutcome;
         typedef Aws::Utils::Outcome<ListGroupsResult, Aws::Client::AWSError<WorkMailErrors>> ListGroupsOutcome;
@@ -153,6 +158,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutMailboxPermissionsResult, Aws::Client::AWSError<WorkMailErrors>> PutMailboxPermissionsOutcome;
         typedef Aws::Utils::Outcome<RegisterToWorkMailResult, Aws::Client::AWSError<WorkMailErrors>> RegisterToWorkMailOutcome;
         typedef Aws::Utils::Outcome<ResetPasswordResult, Aws::Client::AWSError<WorkMailErrors>> ResetPasswordOutcome;
+        typedef Aws::Utils::Outcome<UpdateMailboxQuotaResult, Aws::Client::AWSError<WorkMailErrors>> UpdateMailboxQuotaOutcome;
         typedef Aws::Utils::Outcome<UpdatePrimaryEmailAddressResult, Aws::Client::AWSError<WorkMailErrors>> UpdatePrimaryEmailAddressOutcome;
         typedef Aws::Utils::Outcome<UpdateResourceResult, Aws::Client::AWSError<WorkMailErrors>> UpdateResourceOutcome;
 
@@ -174,6 +180,7 @@ namespace Model
         typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
         typedef std::future<DisassociateDelegateFromResourceOutcome> DisassociateDelegateFromResourceOutcomeCallable;
         typedef std::future<DisassociateMemberFromGroupOutcome> DisassociateMemberFromGroupOutcomeCallable;
+        typedef std::future<GetMailboxDetailsOutcome> GetMailboxDetailsOutcomeCallable;
         typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
         typedef std::future<ListGroupMembersOutcome> ListGroupMembersOutcomeCallable;
         typedef std::future<ListGroupsOutcome> ListGroupsOutcomeCallable;
@@ -185,6 +192,7 @@ namespace Model
         typedef std::future<PutMailboxPermissionsOutcome> PutMailboxPermissionsOutcomeCallable;
         typedef std::future<RegisterToWorkMailOutcome> RegisterToWorkMailOutcomeCallable;
         typedef std::future<ResetPasswordOutcome> ResetPasswordOutcomeCallable;
+        typedef std::future<UpdateMailboxQuotaOutcome> UpdateMailboxQuotaOutcomeCallable;
         typedef std::future<UpdatePrimaryEmailAddressOutcome> UpdatePrimaryEmailAddressOutcomeCallable;
         typedef std::future<UpdateResourceOutcome> UpdateResourceOutcomeCallable;
 } // namespace Model
@@ -209,6 +217,7 @@ namespace Model
     typedef std::function<void(const WorkMailClient*, const Model::DescribeUserRequest&, const Model::DescribeUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DisassociateDelegateFromResourceRequest&, const Model::DisassociateDelegateFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDelegateFromResourceResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DisassociateMemberFromGroupRequest&, const Model::DisassociateMemberFromGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateMemberFromGroupResponseReceivedHandler;
+    typedef std::function<void(const WorkMailClient*, const Model::GetMailboxDetailsRequest&, const Model::GetMailboxDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMailboxDetailsResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ListAliasesRequest&, const Model::ListAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAliasesResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ListGroupMembersRequest&, const Model::ListGroupMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupMembersResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ListGroupsRequest&, const Model::ListGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupsResponseReceivedHandler;
@@ -220,6 +229,7 @@ namespace Model
     typedef std::function<void(const WorkMailClient*, const Model::PutMailboxPermissionsRequest&, const Model::PutMailboxPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMailboxPermissionsResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::RegisterToWorkMailRequest&, const Model::RegisterToWorkMailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterToWorkMailResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ResetPasswordRequest&, const Model::ResetPasswordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetPasswordResponseReceivedHandler;
+    typedef std::function<void(const WorkMailClient*, const Model::UpdateMailboxQuotaRequest&, const Model::UpdateMailboxQuotaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMailboxQuotaResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::UpdatePrimaryEmailAddressRequest&, const Model::UpdatePrimaryEmailAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePrimaryEmailAddressResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::UpdateResourceRequest&, const Model::UpdateResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceResponseReceivedHandler;
 
@@ -772,6 +782,34 @@ namespace Model
         virtual void DisassociateMemberFromGroupAsync(const Model::DisassociateMemberFromGroupRequest& request, const DisassociateMemberFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Requests a user's mailbox details for a specified organization and
+         * user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailboxDetails">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMailboxDetailsOutcome GetMailboxDetails(const Model::GetMailboxDetailsRequest& request) const;
+
+        /**
+         * <p>Requests a user's mailbox details for a specified organization and
+         * user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailboxDetails">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMailboxDetailsOutcomeCallable GetMailboxDetailsCallable(const Model::GetMailboxDetailsRequest& request) const;
+
+        /**
+         * <p>Requests a user's mailbox details for a specified organization and
+         * user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailboxDetails">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMailboxDetailsAsync(const Model::GetMailboxDetailsRequest& request, const GetMailboxDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a paginated call to list the aliases associated with a given
          * entity.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAliases">AWS
@@ -1101,6 +1139,34 @@ namespace Model
         virtual void ResetPasswordAsync(const Model::ResetPasswordRequest& request, const ResetPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates a user's current mailbox quota for a specified organization and
+         * user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMailboxQuota">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMailboxQuotaOutcome UpdateMailboxQuota(const Model::UpdateMailboxQuotaRequest& request) const;
+
+        /**
+         * <p>Updates a user's current mailbox quota for a specified organization and
+         * user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMailboxQuota">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateMailboxQuotaOutcomeCallable UpdateMailboxQuotaCallable(const Model::UpdateMailboxQuotaRequest& request) const;
+
+        /**
+         * <p>Updates a user's current mailbox quota for a specified organization and
+         * user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMailboxQuota">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateMailboxQuotaAsync(const Model::UpdateMailboxQuotaRequest& request, const UpdateMailboxQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the primary email for a user, group, or resource. The current email
          * is moved into the list of aliases (or swapped between an existing alias and the
          * current primary email), and the email provided in the input is promoted as the
@@ -1191,6 +1257,7 @@ namespace Model
         void DescribeUserAsyncHelper(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateDelegateFromResourceAsyncHelper(const Model::DisassociateDelegateFromResourceRequest& request, const DisassociateDelegateFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateMemberFromGroupAsyncHelper(const Model::DisassociateMemberFromGroupRequest& request, const DisassociateMemberFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMailboxDetailsAsyncHelper(const Model::GetMailboxDetailsRequest& request, const GetMailboxDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAliasesAsyncHelper(const Model::ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGroupMembersAsyncHelper(const Model::ListGroupMembersRequest& request, const ListGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGroupsAsyncHelper(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1202,6 +1269,7 @@ namespace Model
         void PutMailboxPermissionsAsyncHelper(const Model::PutMailboxPermissionsRequest& request, const PutMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterToWorkMailAsyncHelper(const Model::RegisterToWorkMailRequest& request, const RegisterToWorkMailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetPasswordAsyncHelper(const Model::ResetPasswordRequest& request, const ResetPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateMailboxQuotaAsyncHelper(const Model::UpdateMailboxQuotaRequest& request, const UpdateMailboxQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePrimaryEmailAddressAsyncHelper(const Model::UpdatePrimaryEmailAddressRequest& request, const UpdatePrimaryEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResourceAsyncHelper(const Model::UpdateResourceRequest& request, const UpdateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

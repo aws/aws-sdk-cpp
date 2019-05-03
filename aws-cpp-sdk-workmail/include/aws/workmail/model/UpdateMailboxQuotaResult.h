@@ -14,37 +14,33 @@
 */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workmail/WorkMail_EXPORTS.h>
 
 namespace Aws
 {
-namespace MediaLive
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace WorkMail
 {
 namespace Model
 {
-  enum class ChannelState
+  class AWS_WORKMAIL_API UpdateMailboxQuotaResult
   {
-    NOT_SET,
-    CREATING,
-    CREATE_FAILED,
-    IDLE,
-    STARTING,
-    RUNNING,
-    RECOVERING,
-    STOPPING,
-    DELETING,
-    DELETED,
-    UPDATING,
-    UPDATE_FAILED
+  public:
+    UpdateMailboxQuotaResult();
+    UpdateMailboxQuotaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateMailboxQuotaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
   };
 
-namespace ChannelStateMapper
-{
-AWS_MEDIALIVE_API ChannelState GetChannelStateForName(const Aws::String& name);
-
-AWS_MEDIALIVE_API Aws::String GetNameForChannelState(ChannelState value);
-} // namespace ChannelStateMapper
 } // namespace Model
-} // namespace MediaLive
+} // namespace WorkMail
 } // namespace Aws
