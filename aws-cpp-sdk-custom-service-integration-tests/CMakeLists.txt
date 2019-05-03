@@ -13,17 +13,13 @@
 # permissions and limitations under the License.
 #
 
-cmake_minimum_required (VERSION 2.8.12)
+cmake_minimum_required (VERSION 3.1)
 
-find_package(AWSSDK)
-find_package(aws-cpp-sdk-core)
+project(aws-cpp-sdk-custom-service-integration-tests)
+
+find_package(AWSSDK REQUIRED COMPONENTS core)
 find_package(testing-resources)
 find_package(aws-cpp-sdk-custom-service)
-add_project(aws-cpp-sdk-custom-service-integration-tests
-    "Tests for the Custom Service: Pet Store" 
-    aws-cpp-sdk-custom-service
-    testing-resources
-    aws-cpp-sdk-core)
 
 # Headers are included in the source so that they show up in Visual Studio.
 # They are included elsewhere for consistency.
@@ -37,7 +33,7 @@ endif()
 enable_testing()
 
 if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
-    add_library(${PROJECT_NAME} ${LIBTYPE} ${AWS_CUSTOM_SERVICE_INTEGRATION_TESTS_SRC})
+    add_library(${PROJECT_NAME} ${AWS_CUSTOM_SERVICE_INTEGRATION_TESTS_SRC})
 else()
     add_executable(${PROJECT_NAME} ${AWS_CUSTOM_SERVICE_INTEGRATION_TESTS_SRC})
 endif()
@@ -45,4 +41,4 @@ endif()
 set_compiler_flags(${PROJECT_NAME})
 set_compiler_warnings(${PROJECT_NAME})
 
-target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
+target_link_libraries(${PROJECT_NAME} ${AWSSDK_LINK_LIBRARIES} aws-cpp-sdk-custom-service testing-resources)

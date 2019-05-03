@@ -1,10 +1,28 @@
 #set($metadata = $serviceModel.metadata)
 #if($metadata.standalone)
-cmake_minimum_required (VERSION 2.8.12)
+cmake_minimum_required (VERSION 3.1)
 
-find_package(AWSSDK)
-find_package(aws-cpp-sdk-core)
-add_project(aws-cpp-sdk-${metadata.projectName} "C++ SDK for the ${metadata.projectName} service" aws-cpp-sdk-core)
+project(aws-cpp-sdk-custom-service)
+find_package(AWSSDK REQUIRED COMPONENTS core)
+
+if(CMAKE_HOST_APPLE)
+    set(CMAKE_MACOSX_RPATH TRUE)
+endif()
+
+set(BINARY_DIRECTORY "bin")
+set(LIBRARY_DIRECTORY "lib")
+set(INCLUDE_DIRECTORY "include")
+if(BUILD_SHARED_LIBS)
+    set(ARCHIVE_DIRECTORY "bin")
+    set(LIBTYPE SHARED)
+    message(STATUS "Building custom service as shared objects")
+else()
+    set(ARCHIVE_DIRECTORY "lib")
+    set(LIBTYPE STATIC)
+    message(STATUS "Building custom service as static objects")
+endif()
+
+set(PROJECT_VERSION 1.0)
 #else
 add_project(aws-cpp-sdk-${metadata.projectName} "C++ SDK for the AWS ${metadata.projectName} service" aws-cpp-sdk-core)
 #end
@@ -76,7 +94,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     $<INSTALL_INTERFACE:include>)
 
 #if($metadata.standalone)
-target_link_libraries(${PROJECT_NAME} PRIVATE ${AWSSDK_PLATFORM_DEPS} ${PROJECT_LIBS})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${AWSSDK_LINK_LIBRARIES})
 
 if(USE_WINDOWS_DLL_SEMANTICS)
     target_compile_definitions(${PROJECT_NAME} PUBLIC "USE_WINDOWS_DLL_SEMANTICS")
@@ -114,6 +132,7 @@ install (FILES ${cmakeVarStart}AWS_${projectNameCaps}_HEADERS} DESTINATION ${INC
 install (FILES ${cmakeVarStart}AWS_${projectNameCaps}_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/${metadata.projectName}/model)
 
 #if($metadata.standalone)
+include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
     "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake"
     VERSION ${PROJECT_VERSION}
