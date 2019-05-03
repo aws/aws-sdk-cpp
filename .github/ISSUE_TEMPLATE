@@ -1,7 +1,9 @@
 ### What platform/OS are you using?
 
+### Which version of the SDK?
+
 ### What compiler are you using? what version?
 
-### What's your CMake arguments?
+### What are your CMake arguments?
 
 ### Can you provide a TRACE level log? (sanitize any sensitive information)
