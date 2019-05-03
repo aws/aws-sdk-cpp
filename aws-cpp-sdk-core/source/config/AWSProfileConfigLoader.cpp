@@ -37,7 +37,7 @@ namespace Aws
             {
                 AWS_LOGSTREAM_INFO(CONFIG_LOADER_TAG, "Successfully reloaded configuration.");
                 m_lastLoadTime = DateTime::Now();
-                AWS_LOGSTREAM_TRACE(CONFIG_LOADER_TAG, "reloaded config at " 
+                AWS_LOGSTREAM_TRACE(CONFIG_LOADER_TAG, "reloaded config at "
                         << m_lastLoadTime.ToGmtString(DateFormat::ISO_8601));
                 return true;
             }
@@ -53,7 +53,7 @@ namespace Aws
                 AWS_LOGSTREAM_INFO(CONFIG_LOADER_TAG, "Successfully persisted configuration.");
                 m_profiles = profiles;
                 m_lastLoadTime = DateTime::Now();
-                AWS_LOGSTREAM_TRACE(CONFIG_LOADER_TAG, "persisted config at " 
+                AWS_LOGSTREAM_TRACE(CONFIG_LOADER_TAG, "persisted config at "
                         << m_lastLoadTime.ToGmtString(DateFormat::ISO_8601));
                 return true;
             }
@@ -62,19 +62,19 @@ namespace Aws
             return false;
         }
 
-        static const char* const REGION_KEY = "region";
-        static const char* const ACCESS_KEY_ID_KEY = "aws_access_key_id";
-        static const char* const SECRET_KEY_KEY = "aws_secret_access_key";
-        static const char* const SESSION_TOKEN_KEY = "aws_session_token";
-        static const char* const ROLE_ARN_KEY = "role_arn";
-        static const char* const EXTERNAL_ID_KEY = "external_id";
-        static const char* const CREDENTIAL_PROCESS_COMMAND = "credential_process";
-        static const char* const SOURCE_PROFILE_KEY = "source_profile";
-        static const char* const PROFILE_PREFIX = "profile ";
-        static const char EQ = '=';
-        static const char LEFT_BRACKET = '[';
-        static const char RIGHT_BRACKET = ']';
-        static const char* const PARSER_TAG = "Aws::Config::ConfigFileProfileFSM";
+        static const char REGION_KEY[]                       = "region";
+        static const char ACCESS_KEY_ID_KEY[]                = "aws_access_key_id";
+        static const char SECRET_KEY_KEY[]                   = "aws_secret_access_key";
+        static const char SESSION_TOKEN_KEY[]                = "aws_session_token";
+        static const char ROLE_ARN_KEY[]                     = "role_arn";
+        static const char EXTERNAL_ID_KEY[]                  = "external_id";
+        static const char CREDENTIAL_PROCESS_COMMAND[]       = "credential_process";
+        static const char SOURCE_PROFILE_KEY[]               = "source_profile";
+        static const char PROFILE_PREFIX[]                   = "profile ";
+        static const char EQ                                 = '=';
+        static const char LEFT_BRACKET                       = '[';
+        static const char RIGHT_BRACKET                      = ']';
+        static const char PARSER_TAG[]                       = "Aws::Config::ConfigFileProfileFSM";
 
         class ConfigFileProfileFSM
         {
@@ -178,7 +178,7 @@ namespace Aws
                         if (sessionTokenIter != m_profileKeyValuePairs.end())
                         {
                             sessionToken = sessionTokenIter->second;
-                        }                        
+                        }
 
                         profile.SetCredentials(Aws::Auth::AWSCredentials(accessKey, secretKey, sessionToken));
                     }

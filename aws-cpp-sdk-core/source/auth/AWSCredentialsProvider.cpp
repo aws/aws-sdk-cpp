@@ -47,11 +47,11 @@ static const char AWS_PROFILE_ENV_VAR[] = "AWS_PROFILE";
 static const char AWS_PROFILE_DEFAULT_ENV_VAR[] = "AWS_DEFAULT_PROFILE";
 
 static const char AWS_CREDENTIALS_FILE[] = "AWS_SHARED_CREDENTIALS_FILE";
-static const char AWS_CONFIG_FILE[] = "AWS_CONFIG_FILE";
+extern const char AWS_CONFIG_FILE[] = "AWS_CONFIG_FILE";
 
-static const char PROFILE_DIRECTORY[] = ".aws";
+extern const char PROFILE_DIRECTORY[] = ".aws";
 static const char DEFAULT_CREDENTIALS_FILE[] = "credentials";
-static const char DEFAULT_CONFIG_FILE[] = "config";
+extern const char DEFAULT_CONFIG_FILE[] = "config";
 
 
 static const int EXPIRATION_GRACE_PERIOD = 5 * 1000;
@@ -113,7 +113,7 @@ Aws::String Aws::Auth::GetConfigProfileFilename()
     }
     else
     {
-        return Aws::FileSystem::GetHomeDirectory() + PATH_DELIM + PROFILE_DIRECTORY + PATH_DELIM + DEFAULT_CONFIG_FILE;
+        return Aws::FileSystem::GetHomeDirectory() + PROFILE_DIRECTORY + PATH_DELIM + DEFAULT_CONFIG_FILE;
     }
 }
 
@@ -129,7 +129,7 @@ Aws::String ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilena
     }
     else
     {
-        return Aws::FileSystem::GetHomeDirectory() + PATH_DELIM + PROFILE_DIRECTORY + PATH_DELIM + DEFAULT_CREDENTIALS_FILE;
+        return Aws::FileSystem::GetHomeDirectory() + PROFILE_DIRECTORY + PATH_DELIM + DEFAULT_CREDENTIALS_FILE;
     }
 }
 
@@ -148,7 +148,6 @@ Aws::String ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory()
 }
 
 ProfileConfigFileAWSCredentialsProvider::ProfileConfigFileAWSCredentialsProvider(long refreshRateMs) :
-        m_configFileLoader(GetConfigProfileFilename(), true),
         m_credentialsFileLoader(GetCredentialsProfileFilename()),
         m_loadFrequencyMs(refreshRateMs)
 {
@@ -174,7 +173,6 @@ ProfileConfigFileAWSCredentialsProvider::ProfileConfigFileAWSCredentialsProvider
 
 ProfileConfigFileAWSCredentialsProvider::ProfileConfigFileAWSCredentialsProvider(const char* profile, long refreshRateMs) :
         m_profileToUse(profile),
-        m_configFileLoader(GetConfigProfileFilename(), true),
         m_credentialsFileLoader(GetCredentialsProfileFilename()),
         m_loadFrequencyMs(refreshRateMs)
 {
@@ -194,22 +192,13 @@ AWSCredentials ProfileConfigFileAWSCredentialsProvider::GetAWSCredentials()
         return credsFileProfileIter->second.GetCredentials();
     }
 
-    auto configFileProfileIter = m_configFileLoader.GetProfiles().find(m_profileToUse);
-    if(configFileProfileIter != m_configFileLoader.GetProfiles().end())
-    {
-        return configFileProfileIter->second.GetCredentials();
-    }
-
     return AWSCredentials();
 }
 
 
 void ProfileConfigFileAWSCredentialsProvider::Reload()
 {
-    if (!m_credentialsFileLoader.Load())
-    {
-        m_configFileLoader.Load();
-    }
+    m_credentialsFileLoader.Load();
     AWSCredentialsProvider::Reload();
 }
 
@@ -221,7 +210,6 @@ void ProfileConfigFileAWSCredentialsProvider::RefreshIfExpired()
        return;
     }
 
-    //fall-back to config file.
     guard.UpgradeToWriterLock();
     if (!IsTimeToRefresh(m_loadFrequencyMs)) // double-checked lock to avoid refreshing twice
     {

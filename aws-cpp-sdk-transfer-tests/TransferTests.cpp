@@ -305,7 +305,7 @@ protected:
     static void SetUpTestCase()
     {
         // Create a client
-        ClientConfiguration config;
+        ClientConfiguration config("default");
         config.scheme = Scheme::HTTP;
         config.connectTimeoutMs = 3000;
         config.requestTimeoutMs = 60000;
@@ -314,10 +314,17 @@ protected:
         m_s3Client = Aws::MakeShared<MockS3Client>(ALLOCATION_TAG, config);
 
         DeleteBucket(GetTestBucketName());
-        
+
         CreateBucketRequest createBucket;
         createBucket.WithBucket(GetTestBucketName())
             .WithACL(BucketCannedACL::private_);
+
+        if (config.region != Aws::Region::US_EAST_1)
+        {
+            CreateBucketConfiguration createBucketConfiguration;
+            createBucketConfiguration.WithLocationConstraint(BucketLocationConstraintMapper::GetBucketLocationConstraintForName(config.region));
+            createBucket.WithCreateBucketConfiguration(createBucketConfiguration);
+        }
 
         auto createBucketOutcome = m_s3Client->CreateBucket(createBucket);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());

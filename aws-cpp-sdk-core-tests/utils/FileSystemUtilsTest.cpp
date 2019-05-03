@@ -32,6 +32,7 @@ TEST(FileTest, HomeDirectory)
     auto homeDirectory = Aws::FileSystem::GetHomeDirectory();
 
     ASSERT_TRUE(homeDirectory.size() > 0);
+    ASSERT_EQ(Aws::FileSystem::PATH_DELIM, homeDirectory.back());
 }
 
 TEST(FileTest, TestInvalidDirectoryPath)

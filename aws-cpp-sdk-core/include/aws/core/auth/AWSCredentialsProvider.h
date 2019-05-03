@@ -136,7 +136,7 @@ namespace Aws
         /**
         * Reads credentials profile from the default Profile Config File. Refreshes at set interval for credential rotation.
         * Looks for environment variables AWS_SHARED_CREDENTIALS_FILE and AWS_PROFILE. If they aren't found, then it defaults
-        * to ~/.aws/credentials and default; if nothing is found at that location, it will look for ~/.aws/config.
+        * to the default profile in ~/.aws/credentials.
         * Optionally a user can specify the profile and it will override the environment variable
         * and defaults. To alter the file this pulls from, then the user should alter the AWS_SHARED_CREDENTIALS_FILE variable.
         */
@@ -180,7 +180,6 @@ namespace Aws
             void RefreshIfExpired();
 
             Aws::String m_profileToUse;
-            Aws::Config::AWSConfigFileProfileConfigLoader m_configFileLoader;
             Aws::Config::AWSConfigFileProfileConfigLoader m_credentialsFileLoader;
             long m_loadFrequencyMs;
         };

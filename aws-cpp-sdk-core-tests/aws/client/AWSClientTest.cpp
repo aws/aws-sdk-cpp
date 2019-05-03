@@ -24,6 +24,9 @@
 #include <aws/testing/mocks/http/MockHttpClient.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
 #include <aws/testing/mocks/aws/client/MockAWSClient.h>
+#include <aws/testing/platform/PlatformTesting.h>
+#include <aws/core/platform/FileSystem.h>
+#include <fstream>
 
 using Aws::Utils::DateTime;
 using Aws::Utils::DateFormat;
@@ -327,3 +330,53 @@ TEST(AWSClientTest, TestOverflowContainer)
     ASSERT_STREQ(enumValue, container->RetrieveOverflow(hashcode).c_str());
 }
 
+TEST(AWSClientTest, TestClientConfigurationWithNonExistentProfile)
+{
+    // create a config file with profile named Dijkstra
+    Aws::String configFileName = Aws::Auth::GetConfigProfileFilename() + "Test";
+    Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1/*overwrite*/);
+
+    Aws::OFStream configFileNew(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFileNew << "[Dijkstra]" << std::endl;
+    configFileNew << "region = " << Aws::Region::US_WEST_2 << std::endl;
+
+    configFileNew.flush();
+    configFileNew.close();
+
+    Aws::Client::ClientConfiguration config("Edsger");
+    EXPECT_EQ(Aws::Region::US_EAST_1, config.region);
+
+    // cleanup
+    Aws::Environment::UnSetEnv("AWS_CONFIG_FILE");
+    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+}
+
+TEST(AWSClientTest, TestClientConfigurationWithNonExistentConfigFile)
+{
+    Aws::Environment::SetEnv("AWS_CONFIG_FILE", "WhatAreTheChances", 1/*overwrite*/);
+
+    Aws::Client::ClientConfiguration config("default");
+    EXPECT_EQ(Aws::Region::US_EAST_1, config.region);
+    Aws::Environment::UnSetEnv("AWS_CONFIG_FILE");
+}
+
+TEST(AWSClientTest, TestClientConfigurationSetsRegionToProfile)
+{
+    // create a config file with profile named Dijkstra
+    Aws::String configFileName = Aws::Auth::GetConfigProfileFilename() + "Test";
+    Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1/*overwrite*/);
+
+    Aws::OFStream configFileNew(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFileNew << "[Dijkstra]" << std::endl;
+    configFileNew << "region = " << Aws::Region::US_WEST_2 << std::endl;
+
+    configFileNew.flush();
+    configFileNew.close();
+
+    Aws::Client::ClientConfiguration config("Dijkstra");
+    EXPECT_EQ(Aws::Region::US_WEST_2, config.region);
+
+    // cleanup
+    Aws::Environment::UnSetEnv("AWS_CONFIG_FILE");
+    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+}

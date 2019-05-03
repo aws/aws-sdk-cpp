@@ -48,6 +48,13 @@ namespace Aws
         struct AWS_CORE_API ClientConfiguration
         {
             ClientConfiguration();
+
+            /**
+             * Create a configuration based on settings in the aws configuration file for the given profile name.
+             * The configuration file location can be set via the environment variable AWS_CONFIG_FILE
+             */
+            ClientConfiguration(const char* profileName);
+
             /**
              * User Agent string user for http calls. This is filled in for you in the constructor. Don't override this unless you have a really good reason.
              */
