@@ -234,6 +234,12 @@ namespace Aws
             static double ComputeCurrentTimestampInAmazonFormat();
 
             /**
+             * Calculates the current time in GMT with millisecond precision using the format
+             * "Year-month-day hours:minutes:seconds.milliseconds"
+             */
+            static Aws::String CalculateGmtTimeWithMsPrecision();
+
+            /**
              * Compute the difference between two timestamps.
              */
             static std::chrono::milliseconds Diff(const DateTime& a, const DateTime& b);

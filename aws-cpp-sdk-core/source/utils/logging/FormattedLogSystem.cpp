@@ -62,7 +62,7 @@ static Aws::String CreateLogPrefixLine(LogLevel logLevel, const char* tag)
             break;
     }
 
-    ss << DateTime::CalculateGmtTimestampAsString("%Y-%m-%d %H:%M:%S") << " " << tag << " [" << std::this_thread::get_id() << "] ";
+    ss << DateTime::Now().CalculateGmtTimeWithMsPrecision() << " " << tag << " [" << std::this_thread::get_id() << "] ";
 
     return ss.str();
 }

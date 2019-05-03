@@ -1005,7 +1005,7 @@ Aws::String DateTime::ToGmtString(DateFormat format) const
 }
 
 Aws::String DateTime::ToGmtString(const char* formatStr) const
-{    
+{
     struct tm gmtTimeStamp = ConvertTimestampToGmtStruct();
 
     char formattedString[100];
@@ -1092,6 +1092,31 @@ Aws::String DateTime::CalculateGmtTimestampAsString(const char* formatStr)
 {
     DateTime now = Now();
     return now.ToGmtString(formatStr);
+}
+
+Aws::String DateTime::CalculateGmtTimeWithMsPrecision()
+{
+    auto now = DateTime::Now();
+    struct tm gmtTimeStamp = now.ConvertTimestampToGmtStruct();
+
+    char formattedString[100];
+    auto len = std::strftime(formattedString, sizeof(formattedString), "%Y-%m-%d %H:%M:%S", &gmtTimeStamp);
+    if (len)
+    {
+        auto ms = now.Millis();
+        ms = ms - ms / 1000 * 1000; // calculate the milliseconds as fraction.
+        formattedString[len++] = '.';
+        int divisor = 100;
+        while(divisor)
+        {
+            auto digit = ms / divisor;
+            formattedString[len++] = char('0' + digit);
+            ms = ms - divisor * digit;
+            divisor /= 10;
+        }
+        formattedString[len] = '\0';
+    }
+    return formattedString;
 }
 
 int DateTime::CalculateCurrentHour()
