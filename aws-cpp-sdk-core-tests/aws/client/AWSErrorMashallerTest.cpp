@@ -74,7 +74,7 @@ static Aws::UniquePtr<Aws::Http::HttpResponse> BuildHttpResponse(const Aws::Stri
         response->AddHeader(ERROR_TYPE_HEADER, exception);
     }
 
-    return std::move(response);
+    return response;
 }
 
 static Aws::UniquePtr<Aws::Http::HttpResponse> BuildHttpXmlResponse(const Aws::String& exception, const Aws::String& message, int style = SingularErrorNode)
@@ -113,7 +113,7 @@ static Aws::UniquePtr<Aws::Http::HttpResponse> BuildHttpXmlResponse(const Aws::S
     {
         *ss << "</Errors> </OtherRoot>";
     }
-    return std::move(response);
+    return response;
 }
 
 TEST(XmlErrorMarshallerTest, TestXmlErrorPayload)
