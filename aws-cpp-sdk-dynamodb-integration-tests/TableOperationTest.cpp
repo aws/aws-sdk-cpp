@@ -54,17 +54,20 @@ using namespace Aws::DynamoDB::Model;
 #define TEST_TABLE_PREFIX  "IntegrationTest_"
 
 //fill these in before running the test.
-static const char* HASH_KEY_NAME = "HashKey";
-static const char* ENDPOINT_OVERRIDE = ""; // Use localhost:8000 for DynamoDb Local
+static const char HASH_KEY_NAME[] = "HashKey";
+static const char ENDPOINT_OVERRIDE[] = ""; // Use localhost:8000 for DynamoDb Local
 
-static const char* BASE_SIMPLE_TABLE = "Simple";
-static const char* BASE_CRUD_TEST_TABLE = "Crud";
-static const char* BASE_CRUD_CALLBACKS_TEST_TABLE = "Crud_WithCallbacks";
-static const char* BASE_THROTTLED_TEST_TABLE = "Throttled";
-static const char* BASE_LIMITER_TEST_TABLE = "Limiter";
-static const char* BASE_ATTRIBUTEVALUE_TEST_TABLE = "AttributeValue";
+static const char BASE_SIMPLE_TABLE[] = "Simple";
+static const char BASE_THROUGHPUT_TABLE[] = "Throughput";
+static const char BASE_CONDITION_TABLE[] = "ConditionCheck";
+static const char BASE_VALIDATION_TABLE[] = "Validation";
+static const char BASE_CRUD_TEST_TABLE[] = "Crud";
+static const char BASE_CRUD_CALLBACKS_TEST_TABLE[] = "Crud_WithCallbacks";
+static const char BASE_THROTTLED_TEST_TABLE[] = "Throttled";
+static const char BASE_LIMITER_TEST_TABLE[] = "Limiter";
+static const char BASE_ATTRIBUTEVALUE_TEST_TABLE[] = "AttributeValue";
 
-static const char* ALLOCATION_TAG = "TableOperationTest";
+static const char ALLOCATION_TAG[] = "TableOperationTest";
 
 namespace {
 
@@ -193,8 +196,6 @@ protected:
         m_limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 200000);
         SetUpClient(Aws::Http::TransferLibType::DEFAULT_CLIENT);
         DYNAMODB_INTEGRATION_TEST_ID = Aws::String(Aws::Utils::UUID::RandomUUID()).c_str();
-        // delete all tables, just in case
-        DeleteAllTables();
     }
 
     static void TearDownTestCase()
@@ -207,6 +208,9 @@ protected:
     static void DeleteAllTables()
     {
         DeleteTable(BuildTableName(BASE_SIMPLE_TABLE));
+        DeleteTable(BuildTableName(BASE_THROUGHPUT_TABLE));
+        DeleteTable(BuildTableName(BASE_CONDITION_TABLE));
+        DeleteTable(BuildTableName(BASE_VALIDATION_TABLE));
         DeleteTable(BuildTableName(BASE_CRUD_TEST_TABLE));
         DeleteTable(BuildTableName(BASE_CRUD_CALLBACKS_TEST_TABLE));
         DeleteTable(BuildTableName(BASE_THROTTLED_TEST_TABLE));
@@ -251,31 +255,7 @@ protected:
         deleteTableRequest.SetTableName(tableName);
 
         DeleteTableOutcome deleteTableOutcome = m_client->DeleteTable(deleteTableRequest);
-
-        if (!deleteTableOutcome.IsSuccess())
-        {
-            // It's okay if the table has already beed deleted
-            EXPECT_EQ(DynamoDBErrors::RESOURCE_NOT_FOUND, deleteTableOutcome.GetError().GetErrorType());
-            return;
-        }
-
-        DescribeTableRequest describeTableRequest;
-        describeTableRequest.SetTableName(tableName);
-        bool shouldContinue = true;
-        while (shouldContinue) 
-        {
-            DescribeTableOutcome outcome = m_client->DescribeTable(describeTableRequest);
-            if (outcome.IsSuccess())
-            {
-                EXPECT_EQ(TableStatus::DELETING, outcome.GetResult().GetTable().GetTableStatus());
-                std::this_thread::sleep_for(std::chrono::seconds(1));
-            }
-            else
-            {
-                EXPECT_EQ(DynamoDBErrors::RESOURCE_NOT_FOUND, outcome.GetError().GetErrorType());
-                break;
-            }
-        }
+        ASSERT_TRUE(deleteTableOutcome.IsSuccess());
     }
 
     DescribeTableResult WaitUntilActive(const Aws::String tableName)
@@ -310,7 +290,6 @@ TEST_F(TableOperationTest, TestListTable)
 {
     AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestListTable")
 
-    DeleteAllTables();
     Aws::String simpleTableName = BuildTableName(BASE_SIMPLE_TABLE);
     CreateTable(simpleTableName, 10, 10);
 
@@ -346,7 +325,7 @@ TEST_F(TableOperationTest, TestUpdateThroughput)
 {
     AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestUpdateThroughput")
 
-    Aws::String simpleTableName = BuildTableName(BASE_SIMPLE_TABLE);
+    Aws::String simpleTableName = BuildTableName(BASE_THROUGHPUT_TABLE);
     CreateTable(simpleTableName, 10, 10);
 
     // Update the table and make sure it works.
@@ -370,7 +349,7 @@ TEST_F(TableOperationTest, TestConditionalCheckFailure)
 {
     AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestConditionalCheckFailure")
 
-    Aws::String simpleTableName = BuildTableName(BASE_SIMPLE_TABLE);
+    Aws::String simpleTableName = BuildTableName(BASE_CONDITION_TABLE);
     CreateTable(simpleTableName, 10, 10);
 
     AttributeValue homer;
@@ -409,7 +388,7 @@ TEST_F(TableOperationTest, TestValidationError)
 {
     AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestValidationError")
 
-    Aws::String simpleTableName = BuildTableName(BASE_SIMPLE_TABLE);
+    Aws::String simpleTableName = BuildTableName(BASE_VALIDATION_TABLE);
     CreateTable(simpleTableName, 10, 10);
 
     AttributeValue hashKeyAttribute;

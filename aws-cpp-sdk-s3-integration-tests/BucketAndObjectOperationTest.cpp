@@ -497,7 +497,6 @@ namespace
     TEST_F(BucketAndObjectOperationTest, TestInterrupt)
     {
         Aws::String fullBucketName = CalculateBucketName(BASE_INTERRUPT_TESTING_BUCKET.c_str());
-
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
@@ -507,7 +506,7 @@ namespace
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
 
-        WaitForBucketToPropagate(fullBucketName);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -565,10 +564,6 @@ namespace
     TEST_F(BucketAndObjectOperationTest, TestBucketCreationAndListing)
     {
         Aws::String fullBucketName = CalculateBucketName(BASE_CREATE_BUCKET_TEST_NAME.c_str());
-        HeadBucketRequest headBucketRequest;
-        headBucketRequest.SetBucket(fullBucketName);
-        HeadBucketOutcome headBucketOutcome = Client->HeadBucket(headBucketRequest);
-        ASSERT_FALSE(headBucketOutcome.IsSuccess());
 
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
@@ -606,11 +601,6 @@ namespace
     TEST_F(BucketAndObjectOperationTest, TestBucketLocation)
     {
         Aws::String fullBucketName = CalculateBucketName(BASE_LOCATION_BUCKET_TEST_NAME.c_str());
-        HeadBucketRequest headBucketRequest;
-        headBucketRequest.SetBucket(fullBucketName);
-        HeadBucketOutcome headBucketOutcome = oregonClient->HeadBucket(headBucketRequest);
-        ASSERT_FALSE(headBucketOutcome.IsSuccess());
-
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
         CreateBucketConfiguration bucketConfiguration;

@@ -313,8 +313,6 @@ protected:
         config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 5);
         m_s3Client = Aws::MakeShared<MockS3Client>(ALLOCATION_TAG, config);
 
-        DeleteBucket(GetTestBucketName());
-
         CreateBucketRequest createBucket;
         createBucket.WithBucket(GetTestBucketName())
             .WithACL(BucketCannedACL::private_);
@@ -486,8 +484,6 @@ protected:
 
         m_s3Client = nullptr;
     } 
-
-
 };
 
 std::shared_ptr<MockS3Client> TransferTests::m_s3Client(nullptr);

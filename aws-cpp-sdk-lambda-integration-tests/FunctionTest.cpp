@@ -52,6 +52,7 @@
 #include <aws/access-management/AccessManagementClient.h>
 #include <aws/cognito-identity/CognitoIdentityClient.h>
 #include <aws/testing/TestingEnvironment.h>
+#include <aws/core/utils/UUID.h>
 
 using namespace Aws::Auth;
 using namespace Aws::Http;
@@ -64,29 +65,15 @@ using namespace Aws::IAM;
 using namespace Aws::IAM::Model;
 using namespace Aws::CognitoIdentity;
 
-
-#define TEST_FUNCTION_PREFIX  "IntegrationTest_"
-static const char* BASE_KINESIS_STREAM_NAME = "AWSNativeSDKIntegrationTest";
-
-//fill these in before running the test.
-static const char* BASE_SIMPLE_FUNCTION = TEST_FUNCTION_PREFIX "Simple";
-static const char* BASE_HANDLED_ERROR_FUNCTION = TEST_FUNCTION_PREFIX "HandledError";
-
-static const char* SIMPLE_FUNCTION_CODE = RESOURCES_DIR "/succeed.zip";
-static const char* HANDLED_ERROR_FUNCTION_CODE = RESOURCES_DIR "/handled.zip";
-
-static const char* ALLOCATION_TAG = "FunctionTest";
-
-static const char* BASE_IAM_ROLE_NAME = "AWSNativeSDKLambdaIntegrationTestRole";
-
-
 namespace {
 
-// role + functions only; policy can be shared since it's permanent and read only
-Aws::String BuildResourceName(const char* baseName)
-{
-    return Aws::Testing::GetAwsResourcePrefix() + baseName;
-}
+static const char BASE_KINESIS_STREAM_NAME[] = "AWSNativeSDKIntegrationTest";
+static const char BASE_SIMPLE_FUNCTION[] = "TestSimple";
+static const char BASE_HANDLED_ERROR_FUNCTION[] = "TestHandledError";
+static const char SIMPLE_FUNCTION_CODE[] = RESOURCES_DIR "/succeed.zip";
+static const char HANDLED_ERROR_FUNCTION_CODE[] = RESOURCES_DIR "/handled.zip";
+static const char ALLOCATION_TAG[] = "FunctionTest";
+static const char BASE_IAM_ROLE_NAME[] = "AWSNativeSDKLambdaIntegrationTestRole";
 
 class FunctionTest : public ::testing::Test {
 
@@ -98,8 +85,13 @@ public:
     static std::shared_ptr<Aws::IAM::IAMClient> m_iamClient;
     static std::shared_ptr<Aws::AccessManagement::AccessManagementClient> m_accessManagementClient;
     static std::map<Aws::String, Aws::String> functionArnMapping;
+    Aws::String m_UUID;
 
 protected:
+    Aws::String BuildResourceName(const char* baseName)
+    {
+        return Aws::Testing::GetAwsResourcePrefix() + baseName + m_UUID;
+    }
 
     static Aws::String MakeFilePath(const Aws::String& localFile)
     {
@@ -108,6 +100,17 @@ protected:
         #else
             return localFile;
         #endif
+    }
+
+    void SetUp()
+    {
+        m_UUID = Aws::Utils::UUID::RandomUUID();
+        CreateFunction(BuildResourceName(BASE_SIMPLE_FUNCTION), SIMPLE_FUNCTION_CODE);
+    }
+
+    void TearDown()
+    {
+        DeleteFunction(BuildResourceName(BASE_SIMPLE_FUNCTION)); 
     }
 
     static void SetUpTestCase()
@@ -133,15 +136,10 @@ protected:
         auto cognitoClient = Aws::MakeShared<CognitoIdentityClient>(ALLOCATION_TAG);
         m_accessManagementClient = Aws::MakeShared<Aws::AccessManagement::AccessManagementClient>(ALLOCATION_TAG, m_iamClient, cognitoClient);
         m_accessManagementClient->GetRole(BASE_IAM_ROLE_NAME, *m_role);
-
-        // delete all functions, just in case
-        DeleteAllFunctions();
-        CreateAllFunctions();
     }
 
     static void TearDownTestCase()
     {
-        DeleteAllFunctions();
         // Return the memory claimed for static variables to memory manager before shutting down memory manager.
         // Otherwise there will be double free crash.
         functionArnMapping.clear();
@@ -151,18 +149,6 @@ protected:
         m_role = nullptr;
         m_iamClient = nullptr;
         m_accessManagementClient = nullptr;
-    }
-
-    static void CreateAllFunctions()
-    {
-        CreateFunction(BuildResourceName(BASE_SIMPLE_FUNCTION), SIMPLE_FUNCTION_CODE);
-        CreateFunction(BuildResourceName(BASE_HANDLED_ERROR_FUNCTION), HANDLED_ERROR_FUNCTION_CODE);
-    }
-
-    static void DeleteAllFunctions()
-    {
-        DeleteFunction(BuildResourceName(BASE_SIMPLE_FUNCTION));
-        DeleteFunction(BuildResourceName(BASE_HANDLED_ERROR_FUNCTION));
     }
 
     enum class ResourceStatusType
@@ -212,38 +198,35 @@ protected:
     {
         DeleteFunctionRequest deleteFunctionRequest;
         deleteFunctionRequest.SetFunctionName(functionName);
-
         bool done = false;
-        while(!done)
-        {
-            DeleteFunctionOutcome deleteFunctionOutcome = m_client->DeleteFunction(deleteFunctionRequest);
-            if (deleteFunctionOutcome.IsSuccess())
-            {
-                done = true;
-            }
-            else
-            {
-                //Look at the specific error, from here:  http://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunction.html
-                //Some we will want to handle by aborting, others we can continue to spin on.
-                auto errCode = deleteFunctionOutcome.GetError().GetErrorType();
-                switch (errCode)
-                {
-                case LambdaErrors::RESOURCE_NOT_FOUND:
-                    //The function was already deleted or not present.
-                    done = true;
-                    break;
-                case LambdaErrors::TOO_MANY_REQUESTS:
-                    //This is OK; Keep spinning.
-                    break;
-                default:
-                    //Something bad happened, and we can't commit to this being successful.
-                    FAIL();
-                    break;
-                }
-            }
+        while(!done)    
+        {    
+            DeleteFunctionOutcome deleteFunctionOutcome = m_client->DeleteFunction(deleteFunctionRequest);    
+            if (deleteFunctionOutcome.IsSuccess())    
+            {    
+                done = true;    
+            }    
+            else    
+            {    
+                //Look at the specific error, from here:  http://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunction.html    
+                //Some we will want to handle by aborting, others we can continue to spin on.    
+                auto errCode = deleteFunctionOutcome.GetError().GetErrorType();    
+                switch (errCode)    
+                {    
+                    case LambdaErrors::RESOURCE_NOT_FOUND:    
+                        //The function was already deleted or not present.    
+                        done = true;    
+                        break;    
+                    case LambdaErrors::TOO_MANY_REQUESTS:    
+                        //This is OK; Keep spinning.    
+                        break;    
+                    default:    
+                        //Something bad happened, and we can't commit to this being successful.    
+                        FAIL();    
+                        break;    
+                }    
+            }    
         }
-
-        WaitForFunctionStatus(functionName, ResourceStatusType::NOT_FOUND);
     }
 
     static void CreateFunction(Aws::String functionName,Aws::String zipLocation)
@@ -286,7 +269,6 @@ std::shared_ptr<Aws::IAM::Model::Role> FunctionTest::m_role(nullptr);
 std::shared_ptr<Aws::IAM::IAMClient> FunctionTest::m_iamClient(nullptr);
 std::shared_ptr< Aws::AccessManagement::AccessManagementClient > FunctionTest::m_accessManagementClient(nullptr);
 std::map<Aws::String, Aws::String> FunctionTest::functionArnMapping;
-
 
 TEST_F(FunctionTest, TestListFunction)
 {
@@ -420,6 +402,8 @@ TEST_F(FunctionTest, TestInvokeSync)
 
 TEST_F(FunctionTest, TestInvokeSyncHandledFunctionError)
 {
+    CreateFunction(BuildResourceName(BASE_HANDLED_ERROR_FUNCTION), HANDLED_ERROR_FUNCTION_CODE);
+
     InvokeRequest invokeRequest;
     invokeRequest.SetFunctionName(BuildResourceName(BASE_HANDLED_ERROR_FUNCTION));
     invokeRequest.SetInvocationType(InvocationType::RequestResponse);
@@ -440,6 +424,7 @@ TEST_F(FunctionTest, TestInvokeSyncHandledFunctionError)
     //This is the same as the last test, but we should have a FunctionError
     EXPECT_EQ("Handled", result.GetFunctionError());
 
+    DeleteFunction(BuildResourceName(BASE_HANDLED_ERROR_FUNCTION));
 }
 
 TEST_F(FunctionTest, TestPermissions)
