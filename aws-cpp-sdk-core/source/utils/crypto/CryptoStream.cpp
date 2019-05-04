@@ -54,6 +54,7 @@ namespace Aws
 
             void SymmetricCryptoStream::Finalize()
             {
+                assert(m_cryptoBuf);
                 m_cryptoBuf->Finalize();
             }
         }

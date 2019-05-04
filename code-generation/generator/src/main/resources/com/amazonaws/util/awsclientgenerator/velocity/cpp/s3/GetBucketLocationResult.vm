@@ -12,11 +12,13 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketLocationResult::GetBucketLocationResult()
+GetBucketLocationResult::GetBucketLocationResult():
+    m_locationConstraint(BucketLocationConstraint::NOT_SET)
 {
 }
 
-GetBucketLocationResult::GetBucketLocationResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketLocationResult::GetBucketLocationResult(const AmazonWebServiceResult<XmlDocument>& result):
+    m_locationConstraint(BucketLocationConstraint::NOT_SET)
 {
     *this = result;
 }

@@ -29,18 +29,34 @@ namespace Aws
     namespace Net
     {
         static const char ALLOC_TAG[] = "SimpleUDP";
-        static void BuildLocalAddrInfoIPV4(sockaddr_in* addrinfo, short port)
+        static sockaddr_in BuildLocalAddrInfoIPV4(short port)
         {
-            addrinfo->sin_family = AF_INET;
-            addrinfo->sin_port = htons(port);
-            inet_pton(AF_INET, "127.0.0.1", &addrinfo->sin_addr);
+#if (__GNUC__ == 4) && !defined(__clang__)
+    AWS_SUPPRESS_WARNING("-Wmissing-field-initializers",
+            sockaddr_in addrinfo {};
+    );
+#else
+            sockaddr_in addrinfo {};
+#endif
+            addrinfo.sin_family = AF_INET;
+            addrinfo.sin_port = htons(port);
+            inet_pton(AF_INET, "127.0.0.1", &addrinfo.sin_addr);
+            return addrinfo;
         }
 
-        static void BuildLocalAddrInfoIPV6(sockaddr_in6* addrinfo, short port)
+        static sockaddr_in6 BuildLocalAddrInfoIPV6(short port)
         {
-            addrinfo->sin6_family = AF_INET6;
-            addrinfo->sin6_port = htons(port);
-            inet_pton(AF_INET6, "::1", &addrinfo->sin6_addr);
+#if (__GNUC__ == 4) && !defined(__clang__)
+    AWS_SUPPRESS_WARNING("-Wmissing-field-initializers",
+            sockaddr_in6 addrinfo {};
+    );
+#else
+            sockaddr_in6 addrinfo {};
+#endif
+            addrinfo.sin6_family = AF_INET6;
+            addrinfo.sin6_port = htons(port);
+            inet_pton(AF_INET6, "::1", &addrinfo.sin6_addr);
+            return addrinfo;
         }
 
         SimpleUDP::SimpleUDP(int addressFamily, size_t sendBufSize, size_t receiveBufSize, bool nonBlocking):
@@ -113,14 +129,12 @@ namespace Aws
             int ret;
             if (m_addressFamily == AF_INET6)
             {
-                sockaddr_in6 addrinfo;
-                BuildLocalAddrInfoIPV6(&addrinfo, port);
+                sockaddr_in6 addrinfo = BuildLocalAddrInfoIPV6(port);
                 ret = connect(GetUnderlyingSocket(), reinterpret_cast<sockaddr*>(&addrinfo), sizeof(sockaddr_in6));
             }
             else
             {
-                sockaddr_in addrinfo;
-                BuildLocalAddrInfoIPV4(&addrinfo, port);
+                sockaddr_in addrinfo = BuildLocalAddrInfoIPV4(port);
                 ret = connect(GetUnderlyingSocket(), reinterpret_cast<sockaddr*>(&addrinfo), sizeof(sockaddr_in));
             }
             m_connected = ret ? false : true;
@@ -136,14 +150,12 @@ namespace Aws
         {
             if (m_addressFamily == AF_INET6)
             {
-                sockaddr_in6 addrinfo;
-                BuildLocalAddrInfoIPV6(&addrinfo, port);
+                sockaddr_in6 addrinfo = BuildLocalAddrInfoIPV6(port);
                 return bind(GetUnderlyingSocket(), reinterpret_cast<sockaddr*>(&addrinfo), sizeof(sockaddr_in6));
             }
             else
             {
-                sockaddr_in addrinfo;
-                BuildLocalAddrInfoIPV4(&addrinfo, port);
+                sockaddr_in addrinfo = BuildLocalAddrInfoIPV4(port);
                 return bind(GetUnderlyingSocket(), reinterpret_cast<sockaddr*>(&addrinfo), sizeof(sockaddr_in));
             }
         }
@@ -173,14 +185,12 @@ namespace Aws
             }
             else if (m_addressFamily == AF_INET6)
             {
-                sockaddr_in6 addrinfo;
-                BuildLocalAddrInfoIPV6(&addrinfo, port);
+                sockaddr_in6 addrinfo = BuildLocalAddrInfoIPV6(port);
                 return sendto(GetUnderlyingSocket(), data, dataLen, 0, reinterpret_cast<sockaddr*>(&addrinfo), sizeof(sockaddr_in6));
             }
             else
             {
-                sockaddr_in addrinfo;
-                BuildLocalAddrInfoIPV4(&addrinfo, port);
+                sockaddr_in addrinfo = BuildLocalAddrInfoIPV4(port);
                 return sendto(GetUnderlyingSocket(), data, dataLen, 0, reinterpret_cast<sockaddr*>(&addrinfo), sizeof(sockaddr_in));
             }
         }

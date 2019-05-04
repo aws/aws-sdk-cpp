@@ -28,7 +28,7 @@ namespace Aws
     class AmazonWebServiceResult
     {
     public:
-        AmazonWebServiceResult() {}
+        AmazonWebServiceResult() : m_responseCode(Http::HttpResponseCode::REQUEST_NOT_MADE) {}
 
         /**
          * Sets payload, header collection and a response code.
