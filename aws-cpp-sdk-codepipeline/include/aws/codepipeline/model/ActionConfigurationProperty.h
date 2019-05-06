@@ -134,86 +134,90 @@ namespace Model
 
     /**
      * <p>Whether the configuration property is secret. Secrets are hidden from all
-     * calls except for GetJobDetails, GetThirdPartyJobDetails, PollForJobs, and
-     * PollForThirdPartyJobs.</p> <p>When updating a pipeline, passing * * * * *
-     * without changing any other values of the action will preserve the prior value of
-     * the secret.</p>
+     * calls except for <code>GetJobDetails</code>,
+     * <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and
+     * <code>PollForThirdPartyJobs</code>.</p> <p>When updating a pipeline, passing * *
+     * * * * without changing any other values of the action will preserve the prior
+     * value of the secret.</p>
      */
     inline bool GetSecret() const{ return m_secret; }
 
     /**
      * <p>Whether the configuration property is secret. Secrets are hidden from all
-     * calls except for GetJobDetails, GetThirdPartyJobDetails, PollForJobs, and
-     * PollForThirdPartyJobs.</p> <p>When updating a pipeline, passing * * * * *
-     * without changing any other values of the action will preserve the prior value of
-     * the secret.</p>
+     * calls except for <code>GetJobDetails</code>,
+     * <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and
+     * <code>PollForThirdPartyJobs</code>.</p> <p>When updating a pipeline, passing * *
+     * * * * without changing any other values of the action will preserve the prior
+     * value of the secret.</p>
      */
     inline bool SecretHasBeenSet() const { return m_secretHasBeenSet; }
 
     /**
      * <p>Whether the configuration property is secret. Secrets are hidden from all
-     * calls except for GetJobDetails, GetThirdPartyJobDetails, PollForJobs, and
-     * PollForThirdPartyJobs.</p> <p>When updating a pipeline, passing * * * * *
-     * without changing any other values of the action will preserve the prior value of
-     * the secret.</p>
+     * calls except for <code>GetJobDetails</code>,
+     * <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and
+     * <code>PollForThirdPartyJobs</code>.</p> <p>When updating a pipeline, passing * *
+     * * * * without changing any other values of the action will preserve the prior
+     * value of the secret.</p>
      */
     inline void SetSecret(bool value) { m_secretHasBeenSet = true; m_secret = value; }
 
     /**
      * <p>Whether the configuration property is secret. Secrets are hidden from all
-     * calls except for GetJobDetails, GetThirdPartyJobDetails, PollForJobs, and
-     * PollForThirdPartyJobs.</p> <p>When updating a pipeline, passing * * * * *
-     * without changing any other values of the action will preserve the prior value of
-     * the secret.</p>
+     * calls except for <code>GetJobDetails</code>,
+     * <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and
+     * <code>PollForThirdPartyJobs</code>.</p> <p>When updating a pipeline, passing * *
+     * * * * without changing any other values of the action will preserve the prior
+     * value of the secret.</p>
      */
     inline ActionConfigurationProperty& WithSecret(bool value) { SetSecret(value); return *this;}
 
 
     /**
-     * <p>Indicates that the property will be used in conjunction with PollForJobs.
-     * When creating a custom action, an action can have up to one queryable property.
-     * If it has one, that property must be both required and not secret.</p> <p>If you
-     * create a pipeline with a custom action type, and that custom action contains a
-     * queryable property, the value for that configuration property is subject to
-     * additional restrictions. The value must be less than or equal to twenty (20)
-     * characters. The value can contain only alphanumeric characters, underscores, and
-     * hyphens.</p>
+     * <p>Indicates that the property will be used in conjunction with
+     * <code>PollForJobs</code>. When creating a custom action, an action can have up
+     * to one queryable property. If it has one, that property must be both required
+     * and not secret.</p> <p>If you create a pipeline with a custom action type, and
+     * that custom action contains a queryable property, the value for that
+     * configuration property is subject to additional restrictions. The value must be
+     * less than or equal to twenty (20) characters. The value can contain only
+     * alphanumeric characters, underscores, and hyphens.</p>
      */
     inline bool GetQueryable() const{ return m_queryable; }
 
     /**
-     * <p>Indicates that the property will be used in conjunction with PollForJobs.
-     * When creating a custom action, an action can have up to one queryable property.
-     * If it has one, that property must be both required and not secret.</p> <p>If you
-     * create a pipeline with a custom action type, and that custom action contains a
-     * queryable property, the value for that configuration property is subject to
-     * additional restrictions. The value must be less than or equal to twenty (20)
-     * characters. The value can contain only alphanumeric characters, underscores, and
-     * hyphens.</p>
+     * <p>Indicates that the property will be used in conjunction with
+     * <code>PollForJobs</code>. When creating a custom action, an action can have up
+     * to one queryable property. If it has one, that property must be both required
+     * and not secret.</p> <p>If you create a pipeline with a custom action type, and
+     * that custom action contains a queryable property, the value for that
+     * configuration property is subject to additional restrictions. The value must be
+     * less than or equal to twenty (20) characters. The value can contain only
+     * alphanumeric characters, underscores, and hyphens.</p>
      */
     inline bool QueryableHasBeenSet() const { return m_queryableHasBeenSet; }
 
     /**
-     * <p>Indicates that the property will be used in conjunction with PollForJobs.
-     * When creating a custom action, an action can have up to one queryable property.
-     * If it has one, that property must be both required and not secret.</p> <p>If you
-     * create a pipeline with a custom action type, and that custom action contains a
-     * queryable property, the value for that configuration property is subject to
-     * additional restrictions. The value must be less than or equal to twenty (20)
-     * characters. The value can contain only alphanumeric characters, underscores, and
-     * hyphens.</p>
+     * <p>Indicates that the property will be used in conjunction with
+     * <code>PollForJobs</code>. When creating a custom action, an action can have up
+     * to one queryable property. If it has one, that property must be both required
+     * and not secret.</p> <p>If you create a pipeline with a custom action type, and
+     * that custom action contains a queryable property, the value for that
+     * configuration property is subject to additional restrictions. The value must be
+     * less than or equal to twenty (20) characters. The value can contain only
+     * alphanumeric characters, underscores, and hyphens.</p>
      */
     inline void SetQueryable(bool value) { m_queryableHasBeenSet = true; m_queryable = value; }
 
     /**
-     * <p>Indicates that the property will be used in conjunction with PollForJobs.
-     * When creating a custom action, an action can have up to one queryable property.
-     * If it has one, that property must be both required and not secret.</p> <p>If you
-     * create a pipeline with a custom action type, and that custom action contains a
-     * queryable property, the value for that configuration property is subject to
-     * additional restrictions. The value must be less than or equal to twenty (20)
-     * characters. The value can contain only alphanumeric characters, underscores, and
-     * hyphens.</p>
+     * <p>Indicates that the property will be used in conjunction with
+     * <code>PollForJobs</code>. When creating a custom action, an action can have up
+     * to one queryable property. If it has one, that property must be both required
+     * and not secret.</p> <p>If you create a pipeline with a custom action type, and
+     * that custom action contains a queryable property, the value for that
+     * configuration property is subject to additional restrictions. The value must be
+     * less than or equal to twenty (20) characters. The value can contain only
+     * alphanumeric characters, underscores, and hyphens.</p>
      */
     inline ActionConfigurationProperty& WithQueryable(bool value) { SetQueryable(value); return *this;}
 

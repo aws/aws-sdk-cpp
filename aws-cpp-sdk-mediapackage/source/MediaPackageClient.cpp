@@ -116,6 +116,7 @@ void MediaPackageClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CreateChannelOutcome MediaPackageClient::CreateChannel(const CreateChannelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

@@ -105,6 +105,7 @@ void PricingClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 DescribeServicesOutcome PricingClient::DescribeServices(const DescribeServicesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

@@ -28,28 +28,20 @@ namespace Amplify
 namespace AmplifyErrorMapper
 {
 
-static const int DEPENDENT_SERVICE_FAILURE_HASH = HashingUtils::HashString("DependentServiceFailureException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int DEPENDENT_SERVICE_FAILURE_HASH = HashingUtils::HashString("DependentServiceFailureException");
+static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == DEPENDENT_SERVICE_FAILURE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AmplifyErrors::DEPENDENT_SERVICE_FAILURE), false);
-  }
-  else if (hashCode == NOT_FOUND_HASH)
+  if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AmplifyErrors::NOT_FOUND), false);
-  }
-  else if (hashCode == BAD_REQUEST_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AmplifyErrors::BAD_REQUEST), false);
   }
   else if (hashCode == UNAUTHORIZED_HASH)
   {
@@ -58,6 +50,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AmplifyErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == DEPENDENT_SERVICE_FAILURE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AmplifyErrors::DEPENDENT_SERVICE_FAILURE), false);
+  }
+  else if (hashCode == BAD_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AmplifyErrors::BAD_REQUEST), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

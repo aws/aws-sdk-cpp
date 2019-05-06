@@ -119,6 +119,7 @@ void MediaConnectClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 AddFlowOutputsOutcome MediaConnectClient::AddFlowOutputs(const AddFlowOutputsRequest& request) const
 {
   if (!request.FlowArnHasBeenSet())

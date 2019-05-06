@@ -138,6 +138,7 @@ void LexModelBuildingServiceClient::OverrideEndpoint(const Aws::String& endpoint
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CreateBotVersionOutcome LexModelBuildingServiceClient::CreateBotVersion(const CreateBotVersionRequest& request) const
 {
   if (!request.NameHasBeenSet())

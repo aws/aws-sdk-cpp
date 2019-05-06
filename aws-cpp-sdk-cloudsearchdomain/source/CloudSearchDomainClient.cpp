@@ -105,6 +105,7 @@ void CloudSearchDomainClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 SearchOutcome CloudSearchDomainClient::Search(const SearchRequest& request) const
 {
   if (!request.QueryHasBeenSet())

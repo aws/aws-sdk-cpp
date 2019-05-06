@@ -104,6 +104,7 @@ void LexRuntimeServiceClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 PostContentOutcome LexRuntimeServiceClient::PostContent(const PostContentRequest& request) const
 {
   if (!request.BotNameHasBeenSet())

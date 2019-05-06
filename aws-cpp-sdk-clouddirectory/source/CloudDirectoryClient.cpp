@@ -168,6 +168,7 @@ void CloudDirectoryClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 AddFacetToObjectOutcome CloudDirectoryClient::AddFacetToObject(const AddFacetToObjectRequest& request) const
 {
   if (!request.DirectoryArnHasBeenSet())

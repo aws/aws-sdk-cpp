@@ -106,6 +106,7 @@ void IoTJobsDataPlaneClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 DescribeJobExecutionOutcome IoTJobsDataPlaneClient::DescribeJobExecution(const DescribeJobExecutionRequest& request) const
 {
   if (!request.JobIdHasBeenSet())

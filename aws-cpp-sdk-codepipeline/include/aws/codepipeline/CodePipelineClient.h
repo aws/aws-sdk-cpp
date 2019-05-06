@@ -64,7 +64,6 @@ namespace Http
 namespace Utils
 {
   template< typename R, typename E> class Outcome;
-
 namespace Threading
 {
   class Executor;
@@ -244,8 +243,12 @@ namespace Model
    * <li> <p> <a>GetPipelineExecution</a>, which returns information about a specific
    * execution of a pipeline.</p> </li> <li> <p> <a>GetPipelineState</a>, which
    * returns information about the current state of the stages and actions of a
-   * pipeline.</p> </li> <li> <p> <a>ListPipelines</a>, which gets a summary of all
-   * of the pipelines associated with your account.</p> </li> <li> <p>
+   * pipeline.</p> </li> <li> <p> <a>ListActionExecutions</a>, which returns
+   * action-level details for past executions. The details include full stage and
+   * action-level details, including individual action duration, status, any errors
+   * which occurred during the execution, and input and output artifact location
+   * details.</p> </li> <li> <p> <a>ListPipelines</a>, which gets a summary of all of
+   * the pipelines associated with your account.</p> </li> <li> <p>
    * <a>ListPipelineExecutions</a>, which gets a summary of the most recent
    * executions for a pipeline.</p> </li> <li> <p> <a>StartPipelineExecution</a>,
    * which runs the the most recent revision of an artifact through the pipeline.</p>
@@ -444,26 +447,28 @@ namespace Model
         virtual void CreatePipelineAsync(const Model::CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Marks a custom action as deleted. PollForJobs for the custom action will fail
-         * after the action is marked for deletion. Only used for custom actions.</p>
-         * <important> <p>To re-create a custom action after it has been deleted you must
-         * use a string in the version field that has never been used before. This string
-         * can be an incremented version number, for example. To restore a deleted custom
-         * action, use a JSON file that is identical to the deleted action, including the
-         * original string in the version field.</p> </important><p><h3>See Also:</h3>   <a
+         * <p>Marks a custom action as deleted. <code>PollForJobs</code> for the custom
+         * action will fail after the action is marked for deletion. Only used for custom
+         * actions.</p> <important> <p>To re-create a custom action after it has been
+         * deleted you must use a string in the version field that has never been used
+         * before. This string can be an incremented version number, for example. To
+         * restore a deleted custom action, use a JSON file that is identical to the
+         * deleted action, including the original string in the version field.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteCustomActionTypeOutcome DeleteCustomActionType(const Model::DeleteCustomActionTypeRequest& request) const;
 
         /**
-         * <p>Marks a custom action as deleted. PollForJobs for the custom action will fail
-         * after the action is marked for deletion. Only used for custom actions.</p>
-         * <important> <p>To re-create a custom action after it has been deleted you must
-         * use a string in the version field that has never been used before. This string
-         * can be an incremented version number, for example. To restore a deleted custom
-         * action, use a JSON file that is identical to the deleted action, including the
-         * original string in the version field.</p> </important><p><h3>See Also:</h3>   <a
+         * <p>Marks a custom action as deleted. <code>PollForJobs</code> for the custom
+         * action will fail after the action is marked for deletion. Only used for custom
+         * actions.</p> <important> <p>To re-create a custom action after it has been
+         * deleted you must use a string in the version field that has never been used
+         * before. This string can be an incremented version number, for example. To
+         * restore a deleted custom action, use a JSON file that is identical to the
+         * deleted action, including the original string in the version field.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType">AWS
          * API Reference</a></p>
          *
@@ -472,13 +477,14 @@ namespace Model
         virtual Model::DeleteCustomActionTypeOutcomeCallable DeleteCustomActionTypeCallable(const Model::DeleteCustomActionTypeRequest& request) const;
 
         /**
-         * <p>Marks a custom action as deleted. PollForJobs for the custom action will fail
-         * after the action is marked for deletion. Only used for custom actions.</p>
-         * <important> <p>To re-create a custom action after it has been deleted you must
-         * use a string in the version field that has never been used before. This string
-         * can be an incremented version number, for example. To restore a deleted custom
-         * action, use a JSON file that is identical to the deleted action, including the
-         * original string in the version field.</p> </important><p><h3>See Also:</h3>   <a
+         * <p>Marks a custom action as deleted. <code>PollForJobs</code> for the custom
+         * action will fail after the action is marked for deletion. Only used for custom
+         * actions.</p> <important> <p>To re-create a custom action after it has been
+         * deleted you must use a string in the version field that has never been used
+         * before. This string can be an incremented version number, for example. To
+         * restore a deleted custom action, use a JSON file that is identical to the
+         * deleted action, including the original string in the version field.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType">AWS
          * API Reference</a></p>
          *
@@ -742,9 +748,9 @@ namespace Model
 
         /**
          * <p>Returns information about the state of a pipeline, including the stages and
-         * actions.</p> <note> <p>Values returned in the revisionId and revisionUrl fields
-         * indicate the source revision information, such as the commit ID, for the current
-         * state.</p> </note><p><h3>See Also:</h3>   <a
+         * actions.</p> <note> <p>Values returned in the <code>revisionId</code> and
+         * <code>revisionUrl</code> fields indicate the source revision information, such
+         * as the commit ID, for the current state.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">AWS
          * API Reference</a></p>
          */
@@ -752,9 +758,9 @@ namespace Model
 
         /**
          * <p>Returns information about the state of a pipeline, including the stages and
-         * actions.</p> <note> <p>Values returned in the revisionId and revisionUrl fields
-         * indicate the source revision information, such as the commit ID, for the current
-         * state.</p> </note><p><h3>See Also:</h3>   <a
+         * actions.</p> <note> <p>Values returned in the <code>revisionId</code> and
+         * <code>revisionUrl</code> fields indicate the source revision information, such
+         * as the commit ID, for the current state.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">AWS
          * API Reference</a></p>
          *
@@ -764,9 +770,9 @@ namespace Model
 
         /**
          * <p>Returns information about the state of a pipeline, including the stages and
-         * actions.</p> <note> <p>Values returned in the revisionId and revisionUrl fields
-         * indicate the source revision information, such as the commit ID, for the current
-         * state.</p> </note><p><h3>See Also:</h3>   <a
+         * actions.</p> <note> <p>Values returned in the <code>revisionId</code> and
+         * <code>revisionUrl</code> fields indicate the source revision information, such
+         * as the commit ID, for the current state.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">AWS
          * API Reference</a></p>
          *
@@ -959,13 +965,14 @@ namespace Model
 
         /**
          * <p>Returns information about any jobs for AWS CodePipeline to act upon.
-         * PollForJobs is only valid for action types with "Custom" in the owner field. If
-         * the action type contains "AWS" or "ThirdParty" in the owner field, the
-         * PollForJobs action returns an error.</p> <important> <p>When this API is called,
-         * AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to
-         * store artifacts for the pipeline, if the action requires access to that Amazon
-         * S3 bucket for input or output artifacts. Additionally, this API returns any
-         * secret values defined for the action.</p> </important><p><h3>See Also:</h3>   <a
+         * <code>PollForJobs</code> is only valid for action types with "Custom" in the
+         * owner field. If the action type contains "AWS" or "ThirdParty" in the owner
+         * field, the <code>PollForJobs</code> action returns an error.</p> <important>
+         * <p>When this API is called, AWS CodePipeline returns temporary credentials for
+         * the Amazon S3 bucket used to store artifacts for the pipeline, if the action
+         * requires access to that Amazon S3 bucket for input or output artifacts.
+         * Additionally, this API returns any secret values defined for the action.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">AWS
          * API Reference</a></p>
          */
@@ -973,13 +980,14 @@ namespace Model
 
         /**
          * <p>Returns information about any jobs for AWS CodePipeline to act upon.
-         * PollForJobs is only valid for action types with "Custom" in the owner field. If
-         * the action type contains "AWS" or "ThirdParty" in the owner field, the
-         * PollForJobs action returns an error.</p> <important> <p>When this API is called,
-         * AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to
-         * store artifacts for the pipeline, if the action requires access to that Amazon
-         * S3 bucket for input or output artifacts. Additionally, this API returns any
-         * secret values defined for the action.</p> </important><p><h3>See Also:</h3>   <a
+         * <code>PollForJobs</code> is only valid for action types with "Custom" in the
+         * owner field. If the action type contains "AWS" or "ThirdParty" in the owner
+         * field, the <code>PollForJobs</code> action returns an error.</p> <important>
+         * <p>When this API is called, AWS CodePipeline returns temporary credentials for
+         * the Amazon S3 bucket used to store artifacts for the pipeline, if the action
+         * requires access to that Amazon S3 bucket for input or output artifacts.
+         * Additionally, this API returns any secret values defined for the action.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">AWS
          * API Reference</a></p>
          *
@@ -989,13 +997,14 @@ namespace Model
 
         /**
          * <p>Returns information about any jobs for AWS CodePipeline to act upon.
-         * PollForJobs is only valid for action types with "Custom" in the owner field. If
-         * the action type contains "AWS" or "ThirdParty" in the owner field, the
-         * PollForJobs action returns an error.</p> <important> <p>When this API is called,
-         * AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to
-         * store artifacts for the pipeline, if the action requires access to that Amazon
-         * S3 bucket for input or output artifacts. Additionally, this API returns any
-         * secret values defined for the action.</p> </important><p><h3>See Also:</h3>   <a
+         * <code>PollForJobs</code> is only valid for action types with "Custom" in the
+         * owner field. If the action type contains "AWS" or "ThirdParty" in the owner
+         * field, the <code>PollForJobs</code> action returns an error.</p> <important>
+         * <p>When this API is called, AWS CodePipeline returns temporary credentials for
+         * the Amazon S3 bucket used to store artifacts for the pipeline, if the action
+         * requires access to that Amazon S3 bucket for input or output artifacts.
+         * Additionally, this API returns any secret values defined for the action.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">AWS
          * API Reference</a></p>
          *
@@ -1346,9 +1355,10 @@ namespace Model
 
         /**
          * <p>Updates a specified pipeline with edits or changes to its structure. Use a
-         * JSON file with the pipeline structure in conjunction with UpdatePipeline to
-         * provide the full structure of the pipeline. Updating the pipeline increases the
-         * version number of the pipeline by 1.</p><p><h3>See Also:</h3>   <a
+         * JSON file with the pipeline structure in conjunction with
+         * <code>UpdatePipeline</code> to provide the full structure of the pipeline.
+         * Updating the pipeline increases the version number of the pipeline by
+         * 1.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline">AWS
          * API Reference</a></p>
          */
@@ -1356,9 +1366,10 @@ namespace Model
 
         /**
          * <p>Updates a specified pipeline with edits or changes to its structure. Use a
-         * JSON file with the pipeline structure in conjunction with UpdatePipeline to
-         * provide the full structure of the pipeline. Updating the pipeline increases the
-         * version number of the pipeline by 1.</p><p><h3>See Also:</h3>   <a
+         * JSON file with the pipeline structure in conjunction with
+         * <code>UpdatePipeline</code> to provide the full structure of the pipeline.
+         * Updating the pipeline increases the version number of the pipeline by
+         * 1.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline">AWS
          * API Reference</a></p>
          *
@@ -1368,9 +1379,10 @@ namespace Model
 
         /**
          * <p>Updates a specified pipeline with edits or changes to its structure. Use a
-         * JSON file with the pipeline structure in conjunction with UpdatePipeline to
-         * provide the full structure of the pipeline. Updating the pipeline increases the
-         * version number of the pipeline by 1.</p><p><h3>See Also:</h3>   <a
+         * JSON file with the pipeline structure in conjunction with
+         * <code>UpdatePipeline</code> to provide the full structure of the pipeline.
+         * Updating the pipeline increases the version number of the pipeline by
+         * 1.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline">AWS
          * API Reference</a></p>
          *
@@ -1378,11 +1390,10 @@ namespace Model
          */
         virtual void UpdatePipelineAsync(const Model::UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        /**Async helpers**/
         void AcknowledgeJobAsyncHelper(const Model::AcknowledgeJobRequest& request, const AcknowledgeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AcknowledgeThirdPartyJobAsyncHelper(const Model::AcknowledgeThirdPartyJobRequest& request, const AcknowledgeThirdPartyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCustomActionTypeAsyncHelper(const Model::CreateCustomActionTypeRequest& request, const CreateCustomActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

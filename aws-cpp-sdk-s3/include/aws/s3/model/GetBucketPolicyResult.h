@@ -55,7 +55,7 @@ namespace Model
      * <p>The bucket policy as a JSON document.</p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_policy = Aws::Utils::Stream::ResponseStream(body); }
-    
+
   private:
 
   Aws::Utils::Stream::ResponseStream m_policy;

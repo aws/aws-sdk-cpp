@@ -28,18 +28,26 @@ namespace CostExplorer
 namespace CostExplorerErrorMapper
 {
 
+static const int REQUEST_CHANGED_HASH = HashingUtils::HashString("RequestChangedException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int BILL_EXPIRATION_HASH = HashingUtils::HashString("BillExpirationException");
 static const int DATA_UNAVAILABLE_HASH = HashingUtils::HashString("DataUnavailableException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int REQUEST_CHANGED_HASH = HashingUtils::HashString("RequestChangedException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == BILL_EXPIRATION_HASH)
+  if (hashCode == REQUEST_CHANGED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::REQUEST_CHANGED), false);
+  }
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == BILL_EXPIRATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::BILL_EXPIRATION), false);
   }
@@ -50,14 +58,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::INVALID_NEXT_TOKEN), false);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == REQUEST_CHANGED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::REQUEST_CHANGED), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

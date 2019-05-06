@@ -28,29 +28,33 @@ namespace MediaConvert
 namespace MediaConvertErrorMapper
 {
 
-static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
+static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
+static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerErrorException");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == FORBIDDEN_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConvertErrors::FORBIDDEN), false);
-  }
-  else if (hashCode == CONFLICT_HASH)
+  if (hashCode == CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConvertErrors::CONFLICT), false);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConvertErrors::NOT_FOUND), false);
+  }
+  else if (hashCode == FORBIDDEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConvertErrors::FORBIDDEN), false);
+  }
+  else if (hashCode == TOO_MANY_REQUESTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConvertErrors::TOO_MANY_REQUESTS), false);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {
@@ -59,10 +63,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_SERVER_ERROR_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConvertErrors::INTERNAL_SERVER_ERROR), false);
-  }
-  else if (hashCode == TOO_MANY_REQUESTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConvertErrors::TOO_MANY_REQUESTS), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

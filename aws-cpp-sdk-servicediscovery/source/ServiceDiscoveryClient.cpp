@@ -131,6 +131,7 @@ void ServiceDiscoveryClient::OverrideEndpoint(const Aws::String& endpoint)
       m_baseUri = endpoint;
   }
 }
+
 CreateHttpNamespaceOutcome ServiceDiscoveryClient::CreateHttpNamespace(const CreateHttpNamespaceRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;

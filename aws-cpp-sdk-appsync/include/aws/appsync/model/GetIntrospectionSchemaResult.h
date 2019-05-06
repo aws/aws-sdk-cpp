@@ -59,7 +59,7 @@ namespace Model
      * documentation</a>.</p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_schema = Aws::Utils::Stream::ResponseStream(body); }
-    
+
   private:
 
   Aws::Utils::Stream::ResponseStream m_schema;

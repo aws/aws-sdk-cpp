@@ -56,7 +56,7 @@ namespace Model
      * <p> Stream containing the synthesized speech. </p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_audioStream = Aws::Utils::Stream::ResponseStream(body); }
-    
+
 
     /**
      * <p> Specifies the type audio stream. This should reflect the

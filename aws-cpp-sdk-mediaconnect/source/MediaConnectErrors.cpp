@@ -28,31 +28,35 @@ namespace MediaConnect
 namespace MediaConnectErrorMapper
 {
 
-static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int CREATE_FLOW420_HASH = HashingUtils::HashString("CreateFlow420Exception");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
+static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
+static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerErrorException");
 static const int GRANT_FLOW_ENTITLEMENTS420_HASH = HashingUtils::HashString("GrantFlowEntitlements420Exception");
 static const int ADD_FLOW_OUTPUTS420_HASH = HashingUtils::HashString("AddFlowOutputs420Exception");
-static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == FORBIDDEN_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConnectErrors::FORBIDDEN), false);
-  }
-  else if (hashCode == CREATE_FLOW420_HASH)
+  if (hashCode == CREATE_FLOW420_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConnectErrors::CREATE_FLOW420), false);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConnectErrors::NOT_FOUND), false);
+  }
+  else if (hashCode == FORBIDDEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConnectErrors::FORBIDDEN), false);
+  }
+  else if (hashCode == TOO_MANY_REQUESTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConnectErrors::TOO_MANY_REQUESTS), false);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {
@@ -69,10 +73,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ADD_FLOW_OUTPUTS420_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConnectErrors::ADD_FLOW_OUTPUTS420), false);
-  }
-  else if (hashCode == TOO_MANY_REQUESTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConnectErrors::TOO_MANY_REQUESTS), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -34,7 +34,7 @@ namespace Model
   {
   public:
     CreateUserRequest();
-    
+
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
@@ -162,82 +162,66 @@ namespace Model
 
 
     /**
-     * <p>The name of the user to create.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-. User names are not
-     * distinguished by case. For example, you cannot create users named both
-     * "TESTUSER" and "testuser".</p>
+     * <p>The name of the user to create.</p> <p>IAM user, group, role, and policy
+     * names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and
+     * "myresource".</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The name of the user to create.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-. User names are not
-     * distinguished by case. For example, you cannot create users named both
-     * "TESTUSER" and "testuser".</p>
+     * <p>The name of the user to create.</p> <p>IAM user, group, role, and policy
+     * names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and
+     * "myresource".</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
-     * <p>The name of the user to create.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-. User names are not
-     * distinguished by case. For example, you cannot create users named both
-     * "TESTUSER" and "testuser".</p>
+     * <p>The name of the user to create.</p> <p>IAM user, group, role, and policy
+     * names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and
+     * "myresource".</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The name of the user to create.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-. User names are not
-     * distinguished by case. For example, you cannot create users named both
-     * "TESTUSER" and "testuser".</p>
+     * <p>The name of the user to create.</p> <p>IAM user, group, role, and policy
+     * names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and
+     * "myresource".</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>The name of the user to create.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-. User names are not
-     * distinguished by case. For example, you cannot create users named both
-     * "TESTUSER" and "testuser".</p>
+     * <p>The name of the user to create.</p> <p>IAM user, group, role, and policy
+     * names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and
+     * "myresource".</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The name of the user to create.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-. User names are not
-     * distinguished by case. For example, you cannot create users named both
-     * "TESTUSER" and "testuser".</p>
+     * <p>The name of the user to create.</p> <p>IAM user, group, role, and policy
+     * names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and
+     * "myresource".</p>
      */
     inline CreateUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The name of the user to create.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-. User names are not
-     * distinguished by case. For example, you cannot create users named both
-     * "TESTUSER" and "testuser".</p>
+     * <p>The name of the user to create.</p> <p>IAM user, group, role, and policy
+     * names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and
+     * "myresource".</p>
      */
     inline CreateUserRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the user to create.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-. User names are not
-     * distinguished by case. For example, you cannot create users named both
-     * "TESTUSER" and "testuser".</p>
+     * <p>The name of the user to create.</p> <p>IAM user, group, role, and policy
+     * names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and
+     * "myresource".</p>
      */
     inline CreateUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 

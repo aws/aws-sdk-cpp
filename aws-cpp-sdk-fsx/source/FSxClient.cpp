@@ -113,6 +113,7 @@ void FSxClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CreateBackupOutcome FSxClient::CreateBackup(const CreateBackupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

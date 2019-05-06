@@ -28,10 +28,10 @@ namespace Backup
 namespace BackupErrorMapper
 {
 
-static const int MISSING_PARAMETER_VALUE_HASH = HashingUtils::HashString("MissingParameterValueException");
-static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
 static const int DEPENDENCY_FAILURE_HASH = HashingUtils::HashString("DependencyFailureException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
+static const int MISSING_PARAMETER_VALUE_HASH = HashingUtils::HashString("MissingParameterValueException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
 
@@ -39,21 +39,21 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == MISSING_PARAMETER_VALUE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupErrors::MISSING_PARAMETER_VALUE), false);
-  }
-  else if (hashCode == ALREADY_EXISTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupErrors::ALREADY_EXISTS), false);
-  }
-  else if (hashCode == DEPENDENCY_FAILURE_HASH)
+  if (hashCode == DEPENDENCY_FAILURE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupErrors::DEPENDENCY_FAILURE), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupErrors::ALREADY_EXISTS), false);
+  }
+  else if (hashCode == MISSING_PARAMETER_VALUE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupErrors::MISSING_PARAMETER_VALUE), false);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {

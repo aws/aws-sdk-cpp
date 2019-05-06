@@ -122,6 +122,7 @@ void XRayClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 BatchGetTracesOutcome XRayClient::BatchGetTraces(const BatchGetTracesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

@@ -111,6 +111,7 @@ void PollyClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 DeleteLexiconOutcome PollyClient::DeleteLexicon(const DeleteLexiconRequest& request) const
 {
   if (!request.NameHasBeenSet())

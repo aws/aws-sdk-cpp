@@ -34,6 +34,7 @@ PublishRequest::PublishRequest() :
 {
 }
 
+
 void PublishRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

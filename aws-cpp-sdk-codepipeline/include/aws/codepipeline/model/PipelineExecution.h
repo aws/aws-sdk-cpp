@@ -222,42 +222,50 @@ namespace Model
 
 
     /**
-     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
+     * <p>A list of <code>ArtifactRevision</code> objects included in a pipeline
+     * execution.</p>
      */
     inline const Aws::Vector<ArtifactRevision>& GetArtifactRevisions() const{ return m_artifactRevisions; }
 
     /**
-     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
+     * <p>A list of <code>ArtifactRevision</code> objects included in a pipeline
+     * execution.</p>
      */
     inline bool ArtifactRevisionsHasBeenSet() const { return m_artifactRevisionsHasBeenSet; }
 
     /**
-     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
+     * <p>A list of <code>ArtifactRevision</code> objects included in a pipeline
+     * execution.</p>
      */
     inline void SetArtifactRevisions(const Aws::Vector<ArtifactRevision>& value) { m_artifactRevisionsHasBeenSet = true; m_artifactRevisions = value; }
 
     /**
-     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
+     * <p>A list of <code>ArtifactRevision</code> objects included in a pipeline
+     * execution.</p>
      */
     inline void SetArtifactRevisions(Aws::Vector<ArtifactRevision>&& value) { m_artifactRevisionsHasBeenSet = true; m_artifactRevisions = std::move(value); }
 
     /**
-     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
+     * <p>A list of <code>ArtifactRevision</code> objects included in a pipeline
+     * execution.</p>
      */
     inline PipelineExecution& WithArtifactRevisions(const Aws::Vector<ArtifactRevision>& value) { SetArtifactRevisions(value); return *this;}
 
     /**
-     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
+     * <p>A list of <code>ArtifactRevision</code> objects included in a pipeline
+     * execution.</p>
      */
     inline PipelineExecution& WithArtifactRevisions(Aws::Vector<ArtifactRevision>&& value) { SetArtifactRevisions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
+     * <p>A list of <code>ArtifactRevision</code> objects included in a pipeline
+     * execution.</p>
      */
     inline PipelineExecution& AddArtifactRevisions(const ArtifactRevision& value) { m_artifactRevisionsHasBeenSet = true; m_artifactRevisions.push_back(value); return *this; }
 
     /**
-     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
+     * <p>A list of <code>ArtifactRevision</code> objects included in a pipeline
+     * execution.</p>
      */
     inline PipelineExecution& AddArtifactRevisions(ArtifactRevision&& value) { m_artifactRevisionsHasBeenSet = true; m_artifactRevisions.push_back(std::move(value)); return *this; }
 

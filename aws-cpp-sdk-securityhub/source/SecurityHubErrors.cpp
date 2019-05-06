@@ -28,36 +28,36 @@ namespace SecurityHub
 namespace SecurityHubErrorMapper
 {
 
-static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int INVALID_ACCESS_HASH = HashingUtils::HashString("InvalidAccessException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
+static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_CONFLICT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::RESOURCE_CONFLICT), false);
-  }
-  else if (hashCode == INVALID_INPUT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::INVALID_INPUT), false);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == INTERNAL_HASH)
+  if (hashCode == INTERNAL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::INTERNAL), false);
   }
   else if (hashCode == INVALID_ACCESS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::INVALID_ACCESS), false);
+  }
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == RESOURCE_CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::RESOURCE_CONFLICT), false);
+  }
+  else if (hashCode == INVALID_INPUT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecurityHubErrors::INVALID_INPUT), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

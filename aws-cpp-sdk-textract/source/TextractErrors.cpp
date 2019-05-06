@@ -28,26 +28,22 @@ namespace Textract
 namespace TextractErrorMapper
 {
 
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int UNSUPPORTED_DOCUMENT_HASH = HashingUtils::HashString("UnsupportedDocumentException");
 static const int BAD_DOCUMENT_HASH = HashingUtils::HashString("BadDocumentException");
-static const int INVALID_S3_OBJECT_HASH = HashingUtils::HashString("InvalidS3ObjectException");
+static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int DOCUMENT_TOO_LARGE_HASH = HashingUtils::HashString("DocumentTooLargeException");
 static const int INVALID_JOB_ID_HASH = HashingUtils::HashString("InvalidJobIdException");
 static const int PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString("ProvisionedThroughputExceededException");
+static const int INVALID_S3_OBJECT_HASH = HashingUtils::HashString("InvalidS3ObjectException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_PARAMETER_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::INVALID_PARAMETER), false);
-  }
-  else if (hashCode == UNSUPPORTED_DOCUMENT_HASH)
+  if (hashCode == UNSUPPORTED_DOCUMENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::UNSUPPORTED_DOCUMENT), false);
   }
@@ -55,9 +51,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::BAD_DOCUMENT), false);
   }
-  else if (hashCode == INVALID_S3_OBJECT_HASH)
+  else if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::INVALID_S3_OBJECT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::INVALID_PARAMETER), false);
   }
   else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH)
   {
@@ -78,6 +74,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == PROVISIONED_THROUGHPUT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::PROVISIONED_THROUGHPUT_EXCEEDED), false);
+  }
+  else if (hashCode == INVALID_S3_OBJECT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::INVALID_S3_OBJECT), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

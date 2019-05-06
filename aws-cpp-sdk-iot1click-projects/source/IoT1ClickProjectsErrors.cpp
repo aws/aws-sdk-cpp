@@ -29,8 +29,8 @@ namespace IoT1ClickProjectsErrorMapper
 {
 
 static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
+static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -41,13 +41,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoT1ClickProjectsErrors::RESOURCE_CONFLICT), false);
   }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoT1ClickProjectsErrors::INVALID_REQUEST), false);
-  }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoT1ClickProjectsErrors::TOO_MANY_REQUESTS), false);
+  }
+  else if (hashCode == INVALID_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoT1ClickProjectsErrors::INVALID_REQUEST), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -28,10 +28,10 @@ namespace IoTDataPlane
 namespace IoTDataPlaneErrorMapper
 {
 
-static const int METHOD_NOT_ALLOWED_HASH = HashingUtils::HashString("MethodNotAllowedException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int UNSUPPORTED_DOCUMENT_ENCODING_HASH = HashingUtils::HashString("UnsupportedDocumentEncodingException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
+static const int UNSUPPORTED_DOCUMENT_ENCODING_HASH = HashingUtils::HashString("UnsupportedDocumentEncodingException");
+static const int METHOD_NOT_ALLOWED_HASH = HashingUtils::HashString("MethodNotAllowedException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 static const int REQUEST_ENTITY_TOO_LARGE_HASH = HashingUtils::HashString("RequestEntityTooLargeException");
 
@@ -40,21 +40,21 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == METHOD_NOT_ALLOWED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTDataPlaneErrors::METHOD_NOT_ALLOWED), false);
-  }
-  else if (hashCode == CONFLICT_HASH)
+  if (hashCode == CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTDataPlaneErrors::CONFLICT), false);
+  }
+  else if (hashCode == UNAUTHORIZED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTDataPlaneErrors::UNAUTHORIZED), false);
   }
   else if (hashCode == UNSUPPORTED_DOCUMENT_ENCODING_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTDataPlaneErrors::UNSUPPORTED_DOCUMENT_ENCODING), false);
   }
-  else if (hashCode == UNAUTHORIZED_HASH)
+  else if (hashCode == METHOD_NOT_ALLOWED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTDataPlaneErrors::UNAUTHORIZED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTDataPlaneErrors::METHOD_NOT_ALLOWED), false);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {

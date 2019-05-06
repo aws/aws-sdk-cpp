@@ -28,32 +28,44 @@ namespace ACM
 namespace ACMErrorMapper
 {
 
-static const int REQUEST_IN_PROGRESS_HASH = HashingUtils::HashString("RequestInProgressException");
-static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
+static const int INVALID_ARGS_HASH = HashingUtils::HashString("InvalidArgsException");
 static const int INVALID_DOMAIN_VALIDATION_OPTIONS_HASH = HashingUtils::HashString("InvalidDomainValidationOptionsException");
+static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
+static const int REQUEST_IN_PROGRESS_HASH = HashingUtils::HashString("RequestInProgressException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTagException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
 static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int INVALID_ARGS_HASH = HashingUtils::HashString("InvalidArgsException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == REQUEST_IN_PROGRESS_HASH)
+  if (hashCode == INVALID_ARGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::REQUEST_IN_PROGRESS), false);
-  }
-  else if (hashCode == TOO_MANY_TAGS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::TOO_MANY_TAGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_ARGS), false);
   }
   else if (hashCode == INVALID_DOMAIN_VALIDATION_OPTIONS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_DOMAIN_VALIDATION_OPTIONS), false);
+  }
+  else if (hashCode == INVALID_ARN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_ARN), false);
+  }
+  else if (hashCode == REQUEST_IN_PROGRESS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::REQUEST_IN_PROGRESS), false);
+  }
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == TOO_MANY_TAGS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::TOO_MANY_TAGS), false);
   }
   else if (hashCode == INVALID_TAG_HASH)
   {
@@ -63,21 +75,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::RESOURCE_IN_USE), false);
   }
-  else if (hashCode == INVALID_ARN_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_ARN), false);
-  }
   else if (hashCode == INVALID_STATE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_STATE), false);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == INVALID_ARGS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_ARGS), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

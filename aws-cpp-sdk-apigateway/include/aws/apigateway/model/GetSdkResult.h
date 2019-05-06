@@ -136,7 +136,7 @@ namespace Model
      * SDK.</p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
-    
+
   private:
 
     Aws::String m_contentType;

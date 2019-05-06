@@ -30,8 +30,8 @@ namespace TranscribeServiceErrorMapper
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -46,13 +46,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TranscribeServiceErrors::NOT_FOUND), false);
   }
-  else if (hashCode == BAD_REQUEST_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(TranscribeServiceErrors::BAD_REQUEST), false);
-  }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TranscribeServiceErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == BAD_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TranscribeServiceErrors::BAD_REQUEST), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

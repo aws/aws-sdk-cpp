@@ -110,6 +110,7 @@ void PinpointSMSVoiceClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CreateConfigurationSetOutcome PinpointSMSVoiceClient::CreateConfigurationSet(const CreateConfigurationSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

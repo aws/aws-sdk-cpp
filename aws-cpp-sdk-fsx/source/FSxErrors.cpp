@@ -28,73 +28,33 @@ namespace FSx
 namespace FSxErrorMapper
 {
 
-static const int INVALID_IMPORT_PATH_HASH = HashingUtils::HashString("InvalidImportPath");
-static const int INVALID_NETWORK_SETTINGS_HASH = HashingUtils::HashString("InvalidNetworkSettings");
 static const int INCOMPATIBLE_PARAMETER_HASH = HashingUtils::HashString("IncompatibleParameterError");
 static const int INVALID_EXPORT_PATH_HASH = HashingUtils::HashString("InvalidExportPath");
-static const int FILE_SYSTEM_NOT_FOUND_HASH = HashingUtils::HashString("FileSystemNotFound");
-static const int BACKUP_RESTORING_HASH = HashingUtils::HashString("BackupRestoring");
-static const int NOT_SERVICE_RESOURCE_HASH = HashingUtils::HashString("NotServiceResourceError");
-static const int SERVICE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ServiceLimitExceeded");
-static const int RESOURCE_DOES_NOT_SUPPORT_TAGGING_HASH = HashingUtils::HashString("ResourceDoesNotSupportTagging");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequest");
-static const int ACTIVE_DIRECTORY_HASH = HashingUtils::HashString("ActiveDirectoryError");
-static const int MISSING_FILE_SYSTEM_CONFIGURATION_HASH = HashingUtils::HashString("MissingFileSystemConfiguration");
 static const int BACKUP_IN_PROGRESS_HASH = HashingUtils::HashString("BackupInProgress");
 static const int BACKUP_NOT_FOUND_HASH = HashingUtils::HashString("BackupNotFound");
+static const int BACKUP_RESTORING_HASH = HashingUtils::HashString("BackupRestoring");
+static const int SERVICE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ServiceLimitExceeded");
+static const int ACTIVE_DIRECTORY_HASH = HashingUtils::HashString("ActiveDirectoryError");
+static const int FILE_SYSTEM_NOT_FOUND_HASH = HashingUtils::HashString("FileSystemNotFound");
+static const int INVALID_NETWORK_SETTINGS_HASH = HashingUtils::HashString("InvalidNetworkSettings");
+static const int NOT_SERVICE_RESOURCE_HASH = HashingUtils::HashString("NotServiceResourceError");
+static const int RESOURCE_DOES_NOT_SUPPORT_TAGGING_HASH = HashingUtils::HashString("ResourceDoesNotSupportTagging");
+static const int INVALID_IMPORT_PATH_HASH = HashingUtils::HashString("InvalidImportPath");
+static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequest");
+static const int MISSING_FILE_SYSTEM_CONFIGURATION_HASH = HashingUtils::HashString("MissingFileSystemConfiguration");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_IMPORT_PATH_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_IMPORT_PATH), false);
-  }
-  else if (hashCode == INVALID_NETWORK_SETTINGS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_NETWORK_SETTINGS), false);
-  }
-  else if (hashCode == INCOMPATIBLE_PARAMETER_HASH)
+  if (hashCode == INCOMPATIBLE_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INCOMPATIBLE_PARAMETER), false);
   }
   else if (hashCode == INVALID_EXPORT_PATH_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_EXPORT_PATH), false);
-  }
-  else if (hashCode == FILE_SYSTEM_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::FILE_SYSTEM_NOT_FOUND), false);
-  }
-  else if (hashCode == BACKUP_RESTORING_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BACKUP_RESTORING), false);
-  }
-  else if (hashCode == NOT_SERVICE_RESOURCE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::NOT_SERVICE_RESOURCE), false);
-  }
-  else if (hashCode == SERVICE_LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::SERVICE_LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == RESOURCE_DOES_NOT_SUPPORT_TAGGING_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::RESOURCE_DOES_NOT_SUPPORT_TAGGING), false);
-  }
-  else if (hashCode == BAD_REQUEST_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BAD_REQUEST), false);
-  }
-  else if (hashCode == ACTIVE_DIRECTORY_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::ACTIVE_DIRECTORY), false);
-  }
-  else if (hashCode == MISSING_FILE_SYSTEM_CONFIGURATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::MISSING_FILE_SYSTEM_CONFIGURATION), false);
   }
   else if (hashCode == BACKUP_IN_PROGRESS_HASH)
   {
@@ -103,6 +63,46 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == BACKUP_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BACKUP_NOT_FOUND), false);
+  }
+  else if (hashCode == BACKUP_RESTORING_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BACKUP_RESTORING), false);
+  }
+  else if (hashCode == SERVICE_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::SERVICE_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == ACTIVE_DIRECTORY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::ACTIVE_DIRECTORY), false);
+  }
+  else if (hashCode == FILE_SYSTEM_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::FILE_SYSTEM_NOT_FOUND), false);
+  }
+  else if (hashCode == INVALID_NETWORK_SETTINGS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_NETWORK_SETTINGS), false);
+  }
+  else if (hashCode == NOT_SERVICE_RESOURCE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::NOT_SERVICE_RESOURCE), false);
+  }
+  else if (hashCode == RESOURCE_DOES_NOT_SUPPORT_TAGGING_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::RESOURCE_DOES_NOT_SUPPORT_TAGGING), false);
+  }
+  else if (hashCode == INVALID_IMPORT_PATH_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_IMPORT_PATH), false);
+  }
+  else if (hashCode == BAD_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BAD_REQUEST), false);
+  }
+  else if (hashCode == MISSING_FILE_SYSTEM_CONFIGURATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::MISSING_FILE_SYSTEM_CONFIGURATION), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

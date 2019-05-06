@@ -28,33 +28,21 @@ namespace PinpointSMSVoice
 namespace PinpointSMSVoiceErrorMapper
 {
 
-static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
-static const int INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("InternalServiceErrorException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
+static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
+static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
+static const int INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("InternalServiceErrorException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == ALREADY_EXISTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointSMSVoiceErrors::ALREADY_EXISTS), false);
-  }
-  else if (hashCode == NOT_FOUND_HASH)
+  if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointSMSVoiceErrors::NOT_FOUND), false);
-  }
-  else if (hashCode == BAD_REQUEST_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointSMSVoiceErrors::BAD_REQUEST), false);
-  }
-  else if (hashCode == INTERNAL_SERVICE_ERROR_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointSMSVoiceErrors::INTERNAL_SERVICE_ERROR), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
@@ -63,6 +51,18 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointSMSVoiceErrors::TOO_MANY_REQUESTS), false);
+  }
+  else if (hashCode == ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointSMSVoiceErrors::ALREADY_EXISTS), false);
+  }
+  else if (hashCode == BAD_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointSMSVoiceErrors::BAD_REQUEST), false);
+  }
+  else if (hashCode == INTERNAL_SERVICE_ERROR_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointSMSVoiceErrors::INTERNAL_SERVICE_ERROR), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

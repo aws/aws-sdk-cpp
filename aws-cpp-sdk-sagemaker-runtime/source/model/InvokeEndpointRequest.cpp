@@ -33,6 +33,7 @@ InvokeEndpointRequest::InvokeEndpointRequest() :
 }
 
 
+
 Aws::Http::HeaderValueCollection InvokeEndpointRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;

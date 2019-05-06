@@ -103,6 +103,7 @@ void ApiGatewayManagementApiClient::OverrideEndpoint(const Aws::String& endpoint
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 PostToConnectionOutcome ApiGatewayManagementApiClient::PostToConnection(const PostToConnectionRequest& request) const
 {
   if (!request.ConnectionIdHasBeenSet())

@@ -103,6 +103,7 @@ void SageMakerRuntimeClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 InvokeEndpointOutcome SageMakerRuntimeClient::InvokeEndpoint(const InvokeEndpointRequest& request) const
 {
   if (!request.EndpointNameHasBeenSet())

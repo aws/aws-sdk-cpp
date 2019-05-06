@@ -112,6 +112,7 @@ void ApplicationAutoScalingClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 DeleteScalingPolicyOutcome ApplicationAutoScalingClient::DeleteScalingPolicy(const DeleteScalingPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

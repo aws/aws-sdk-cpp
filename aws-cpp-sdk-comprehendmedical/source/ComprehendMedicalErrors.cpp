@@ -29,10 +29,10 @@ namespace ComprehendMedicalErrorMapper
 {
 
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int TEXT_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TextSizeLimitExceededException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 static const int INVALID_ENCODING_HASH = HashingUtils::HashString("InvalidEncodingException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
+static const int TEXT_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TextSizeLimitExceededException");
+static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -43,14 +43,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendMedicalErrors::INTERNAL_SERVER), false);
   }
-  else if (hashCode == TEXT_SIZE_LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendMedicalErrors::TEXT_SIZE_LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendMedicalErrors::INVALID_REQUEST), false);
-  }
   else if (hashCode == INVALID_ENCODING_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendMedicalErrors::INVALID_ENCODING), false);
@@ -58,6 +50,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendMedicalErrors::TOO_MANY_REQUESTS), false);
+  }
+  else if (hashCode == TEXT_SIZE_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendMedicalErrors::TEXT_SIZE_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == INVALID_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendMedicalErrors::INVALID_REQUEST), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -62,7 +62,7 @@ namespace Model
      * <p>The job data, either archive data or inventory data.</p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
-    
+
 
     /**
      * <p>The checksum of the data in the response. This header is returned only when

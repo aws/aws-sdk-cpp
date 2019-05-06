@@ -29,8 +29,8 @@ namespace MediaStoreDataErrorMapper
 {
 
 static const int REQUESTED_RANGE_NOT_SATISFIABLE_HASH = HashingUtils::HashString("RequestedRangeNotSatisfiableException");
-static const int OBJECT_NOT_FOUND_HASH = HashingUtils::HashString("ObjectNotFoundException");
 static const int CONTAINER_NOT_FOUND_HASH = HashingUtils::HashString("ContainerNotFoundException");
+static const int OBJECT_NOT_FOUND_HASH = HashingUtils::HashString("ObjectNotFoundException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -41,13 +41,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreDataErrors::REQUESTED_RANGE_NOT_SATISFIABLE), false);
   }
-  else if (hashCode == OBJECT_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreDataErrors::OBJECT_NOT_FOUND), false);
-  }
   else if (hashCode == CONTAINER_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreDataErrors::CONTAINER_NOT_FOUND), false);
+  }
+  else if (hashCode == OBJECT_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreDataErrors::OBJECT_NOT_FOUND), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

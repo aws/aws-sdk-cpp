@@ -28,26 +28,22 @@ namespace MediaLive
 namespace MediaLiveErrorMapper
 {
 
-static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int BAD_GATEWAY_HASH = HashingUtils::HashString("BadGatewayException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int UNPROCESSABLE_ENTITY_HASH = HashingUtils::HashString("UnprocessableEntityException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
-static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerErrorException");
+static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int GATEWAY_TIMEOUT_HASH = HashingUtils::HashString("GatewayTimeoutException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
+static const int UNPROCESSABLE_ENTITY_HASH = HashingUtils::HashString("UnprocessableEntityException");
+static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
+static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerErrorException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == FORBIDDEN_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::FORBIDDEN), false);
-  }
-  else if (hashCode == BAD_GATEWAY_HASH)
+  if (hashCode == BAD_GATEWAY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::BAD_GATEWAY), false);
   }
@@ -55,21 +51,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::CONFLICT), false);
   }
-  else if (hashCode == UNPROCESSABLE_ENTITY_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::UNPROCESSABLE_ENTITY), false);
-  }
   else if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::NOT_FOUND), false);
   }
-  else if (hashCode == BAD_REQUEST_HASH)
+  else if (hashCode == FORBIDDEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::BAD_REQUEST), false);
-  }
-  else if (hashCode == INTERNAL_SERVER_ERROR_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::INTERNAL_SERVER_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::FORBIDDEN), false);
   }
   else if (hashCode == GATEWAY_TIMEOUT_HASH)
   {
@@ -78,6 +66,18 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::TOO_MANY_REQUESTS), false);
+  }
+  else if (hashCode == UNPROCESSABLE_ENTITY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::UNPROCESSABLE_ENTITY), false);
+  }
+  else if (hashCode == BAD_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::BAD_REQUEST), false);
+  }
+  else if (hashCode == INTERNAL_SERVER_ERROR_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaLiveErrors::INTERNAL_SERVER_ERROR), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

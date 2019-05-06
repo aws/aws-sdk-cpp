@@ -123,6 +123,7 @@ void CognitoIdentityClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CreateIdentityPoolOutcome CognitoIdentityClient::CreateIdentityPool(const CreateIdentityPoolRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

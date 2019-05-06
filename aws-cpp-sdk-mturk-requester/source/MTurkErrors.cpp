@@ -28,21 +28,21 @@ namespace MTurk
 namespace MTurkErrorMapper
 {
 
-static const int REQUEST_HASH = HashingUtils::HashString("RequestError");
 static const int SERVICE_FAULT_HASH = HashingUtils::HashString("ServiceFault");
+static const int REQUEST_HASH = HashingUtils::HashString("RequestError");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == REQUEST_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MTurkErrors::REQUEST), false);
-  }
-  else if (hashCode == SERVICE_FAULT_HASH)
+  if (hashCode == SERVICE_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MTurkErrors::SERVICE_FAULT), false);
+  }
+  else if (hashCode == REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MTurkErrors::REQUEST), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

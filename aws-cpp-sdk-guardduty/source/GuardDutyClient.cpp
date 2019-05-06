@@ -144,6 +144,7 @@ void GuardDutyClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 AcceptInvitationOutcome GuardDutyClient::AcceptInvitation(const AcceptInvitationRequest& request) const
 {
   if (!request.DetectorIdHasBeenSet())

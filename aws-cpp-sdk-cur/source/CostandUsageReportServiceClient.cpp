@@ -105,6 +105,7 @@ void CostandUsageReportServiceClient::OverrideEndpoint(const Aws::String& endpoi
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 DeleteReportDefinitionOutcome CostandUsageReportServiceClient::DeleteReportDefinition(const DeleteReportDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

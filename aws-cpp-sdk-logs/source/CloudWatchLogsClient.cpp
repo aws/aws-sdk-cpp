@@ -141,6 +141,7 @@ void CloudWatchLogsClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 AssociateKmsKeyOutcome CloudWatchLogsClient::AssociateKmsKey(const AssociateKmsKeyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

@@ -301,38 +301,38 @@ namespace Model
 
 
     /**
-     * <p> The status of the action execution. Status categories are InProgress,
-     * Succeeded, and Failed.</p>
+     * <p> The status of the action execution. Status categories are
+     * <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
      */
     inline const ActionExecutionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p> The status of the action execution. Status categories are InProgress,
-     * Succeeded, and Failed.</p>
+     * <p> The status of the action execution. Status categories are
+     * <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p> The status of the action execution. Status categories are InProgress,
-     * Succeeded, and Failed.</p>
+     * <p> The status of the action execution. Status categories are
+     * <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
      */
     inline void SetStatus(const ActionExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p> The status of the action execution. Status categories are InProgress,
-     * Succeeded, and Failed.</p>
+     * <p> The status of the action execution. Status categories are
+     * <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
      */
     inline void SetStatus(ActionExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p> The status of the action execution. Status categories are InProgress,
-     * Succeeded, and Failed.</p>
+     * <p> The status of the action execution. Status categories are
+     * <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
      */
     inline ActionExecutionDetail& WithStatus(const ActionExecutionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> The status of the action execution. Status categories are InProgress,
-     * Succeeded, and Failed.</p>
+     * <p> The status of the action execution. Status categories are
+     * <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
      */
     inline ActionExecutionDetail& WithStatus(ActionExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 

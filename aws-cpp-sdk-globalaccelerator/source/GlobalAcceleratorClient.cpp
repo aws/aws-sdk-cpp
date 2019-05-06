@@ -119,6 +119,7 @@ void GlobalAcceleratorClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CreateAcceleratorOutcome GlobalAcceleratorClient::CreateAccelerator(const CreateAcceleratorRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

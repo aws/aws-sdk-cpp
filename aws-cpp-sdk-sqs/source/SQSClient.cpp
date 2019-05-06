@@ -123,6 +123,7 @@ void SQSClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 AddPermissionOutcome SQSClient::AddPermission(const AddPermissionRequest& request) const
 {
   XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);

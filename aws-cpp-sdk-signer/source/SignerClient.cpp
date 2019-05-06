@@ -111,6 +111,7 @@ void SignerClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CancelSigningProfileOutcome SignerClient::CancelSigningProfile(const CancelSigningProfileRequest& request) const
 {
   if (!request.ProfileNameHasBeenSet())

@@ -28,24 +28,20 @@ namespace DeviceFarm
 namespace DeviceFarmErrorMapper
 {
 
-static const int SERVICE_ACCOUNT_HASH = HashingUtils::HashString("ServiceAccountException");
 static const int IDEMPOTENCY_HASH = HashingUtils::HashString("IdempotencyException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int ARGUMENT_HASH = HashingUtils::HashString("ArgumentException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int SERVICE_ACCOUNT_HASH = HashingUtils::HashString("ServiceAccountException");
 static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
 static const int NOT_ELIGIBLE_HASH = HashingUtils::HashString("NotEligibleException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == SERVICE_ACCOUNT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::SERVICE_ACCOUNT), false);
-  }
-  else if (hashCode == IDEMPOTENCY_HASH)
+  if (hashCode == IDEMPOTENCY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::IDEMPOTENCY), false);
   }
@@ -57,6 +53,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::ARGUMENT), false);
   }
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == SERVICE_ACCOUNT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::SERVICE_ACCOUNT), false);
+  }
   else if (hashCode == INVALID_OPERATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::INVALID_OPERATION), false);
@@ -64,10 +68,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == NOT_ELIGIBLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::NOT_ELIGIBLE), false);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::LIMIT_EXCEEDED), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

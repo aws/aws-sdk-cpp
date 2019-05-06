@@ -62,7 +62,7 @@ namespace Model
      * Data Formats—Inference</a>.</p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
-    
+
 
     /**
      * <p>The MIME type of the inference returned in the response body.</p>

@@ -136,6 +136,7 @@ void RekognitionClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CompareFacesOutcome RekognitionClient::CompareFaces(const CompareFacesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

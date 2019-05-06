@@ -60,7 +60,7 @@ namespace Model
      * <p>The state information, in JSON format.</p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_payload = Aws::Utils::Stream::ResponseStream(body); }
-    
+
   private:
 
   Aws::Utils::Stream::ResponseStream m_payload;

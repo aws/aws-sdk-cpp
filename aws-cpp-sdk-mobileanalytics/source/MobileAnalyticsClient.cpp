@@ -103,6 +103,7 @@ void MobileAnalyticsClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 PutEventsOutcome MobileAnalyticsClient::PutEvents(const PutEventsRequest& request) const
 {
   if (!request.ClientContextHasBeenSet())

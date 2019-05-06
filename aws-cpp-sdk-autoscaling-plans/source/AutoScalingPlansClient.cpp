@@ -108,6 +108,7 @@ void AutoScalingPlansClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CreateScalingPlanOutcome AutoScalingPlansClient::CreateScalingPlan(const CreateScalingPlanRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

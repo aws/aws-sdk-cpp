@@ -118,6 +118,7 @@ void OpsWorksCMClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 AssociateNodeOutcome OpsWorksCMClient::AssociateNode(const AssociateNodeRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

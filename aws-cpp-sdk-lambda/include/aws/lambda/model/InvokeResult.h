@@ -188,7 +188,7 @@ namespace Model
      * <p>The response from the function, or an error object.</p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_payload = Aws::Utils::Stream::ResponseStream(body); }
-    
+
 
     /**
      * <p>The version of the function that executed. When you invoke a function with an

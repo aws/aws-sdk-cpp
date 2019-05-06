@@ -115,6 +115,7 @@ void ServerlessApplicationRepositoryClient::OverrideEndpoint(const Aws::String& 
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CreateApplicationOutcome ServerlessApplicationRepositoryClient::CreateApplication(const CreateApplicationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

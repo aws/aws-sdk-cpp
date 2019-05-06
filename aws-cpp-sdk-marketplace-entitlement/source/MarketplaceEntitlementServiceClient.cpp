@@ -103,6 +103,7 @@ void MarketplaceEntitlementServiceClient::OverrideEndpoint(const Aws::String& en
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 GetEntitlementsOutcome MarketplaceEntitlementServiceClient::GetEntitlements(const GetEntitlementsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

@@ -173,6 +173,7 @@ void StorageGatewayClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 ActivateGatewayOutcome StorageGatewayClient::ActivateGateway(const ActivateGatewayRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

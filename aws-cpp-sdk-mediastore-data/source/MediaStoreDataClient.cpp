@@ -107,6 +107,7 @@ void MediaStoreDataClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 DeleteObjectOutcome MediaStoreDataClient::DeleteObject(const DeleteObjectRequest& request) const
 {
   if (!request.PathHasBeenSet())

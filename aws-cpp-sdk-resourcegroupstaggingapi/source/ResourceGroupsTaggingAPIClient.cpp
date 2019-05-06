@@ -107,6 +107,7 @@ void ResourceGroupsTaggingAPIClient::OverrideEndpoint(const Aws::String& endpoin
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 GetResourcesOutcome ResourceGroupsTaggingAPIClient::GetResources(const GetResourcesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

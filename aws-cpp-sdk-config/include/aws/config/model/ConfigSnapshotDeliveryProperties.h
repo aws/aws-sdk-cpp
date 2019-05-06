@@ -35,17 +35,14 @@ namespace Model
 
   /**
    * <p>Provides options for how often AWS Config delivers configuration snapshots to
-   * the Amazon S3 bucket in your delivery channel.</p> <note> <p>If you want to
-   * create a rule that triggers evaluations for your resources when AWS Config
-   * delivers the configuration snapshot, see the following:</p> </note> <p>The
-   * frequency for a rule that triggers evaluations for your resources when AWS
-   * Config delivers the configuration snapshot is set by one of two values,
-   * depending on which is less frequent:</p> <ul> <li> <p>The value for the
-   * <code>deliveryFrequency</code> parameter within the delivery channel
-   * configuration, which sets how often AWS Config delivers configuration snapshots.
-   * This value also sets how often AWS Config invokes evaluations for AWS Config
-   * rules.</p> </li> <li> <p>The value for the
-   * <code>MaximumExecutionFrequency</code> parameter, which sets the maximum
+   * the Amazon S3 bucket in your delivery channel.</p> <p>The frequency for a rule
+   * that triggers evaluations for your resources when AWS Config delivers the
+   * configuration snapshot is set by one of two values, depending on which is less
+   * frequent:</p> <ul> <li> <p>The value for the <code>deliveryFrequency</code>
+   * parameter within the delivery channel configuration, which sets how often AWS
+   * Config delivers configuration snapshots. This value also sets how often AWS
+   * Config invokes evaluations for AWS Config rules.</p> </li> <li> <p>The value for
+   * the <code>MaximumExecutionFrequency</code> parameter, which sets the maximum
    * frequency with which AWS Config invokes evaluations for the rule. For more
    * information, see <a>ConfigRule</a>.</p> </li> </ul> <p>If the
    * <code>deliveryFrequency</code> value is less frequent than the

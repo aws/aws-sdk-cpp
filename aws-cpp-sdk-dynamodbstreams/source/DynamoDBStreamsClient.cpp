@@ -106,6 +106,7 @@ void DynamoDBStreamsClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 DescribeStreamOutcome DynamoDBStreamsClient::DescribeStream(const DescribeStreamRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

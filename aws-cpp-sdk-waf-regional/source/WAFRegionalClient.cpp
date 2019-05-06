@@ -179,6 +179,7 @@ void WAFRegionalClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 AssociateWebACLOutcome WAFRegionalClient::AssociateWebACL(const AssociateWebACLRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

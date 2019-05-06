@@ -122,37 +122,58 @@ namespace Model
 
 
     /**
-     * <p>The policy document.</p>
+     * <p>The policy document.</p> <p>IAM stores policies in JSON format. However,
+     * resources that were created using AWS CloudFormation templates can be formatted
+     * in YAML. AWS CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
     /**
-     * <p>The policy document.</p>
+     * <p>The policy document.</p> <p>IAM stores policies in JSON format. However,
+     * resources that were created using AWS CloudFormation templates can be formatted
+     * in YAML. AWS CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.</p>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocument = value; }
 
     /**
-     * <p>The policy document.</p>
+     * <p>The policy document.</p> <p>IAM stores policies in JSON format. However,
+     * resources that were created using AWS CloudFormation templates can be formatted
+     * in YAML. AWS CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.</p>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocument = std::move(value); }
 
     /**
-     * <p>The policy document.</p>
+     * <p>The policy document.</p> <p>IAM stores policies in JSON format. However,
+     * resources that were created using AWS CloudFormation templates can be formatted
+     * in YAML. AWS CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.</p>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocument.assign(value); }
 
     /**
-     * <p>The policy document.</p>
+     * <p>The policy document.</p> <p>IAM stores policies in JSON format. However,
+     * resources that were created using AWS CloudFormation templates can be formatted
+     * in YAML. AWS CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.</p>
      */
     inline GetGroupPolicyResult& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
     /**
-     * <p>The policy document.</p>
+     * <p>The policy document.</p> <p>IAM stores policies in JSON format. However,
+     * resources that were created using AWS CloudFormation templates can be formatted
+     * in YAML. AWS CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.</p>
      */
     inline GetGroupPolicyResult& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
 
     /**
-     * <p>The policy document.</p>
+     * <p>The policy document.</p> <p>IAM stores policies in JSON format. However,
+     * resources that were created using AWS CloudFormation templates can be formatted
+     * in YAML. AWS CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.</p>
      */
     inline GetGroupPolicyResult& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 

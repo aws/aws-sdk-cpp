@@ -29,11 +29,11 @@ namespace MobileErrorMapper
 {
 
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int ACCOUNT_ACTION_REQUIRED_HASH = HashingUtils::HashString("AccountActionRequiredException");
+static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -43,10 +43,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MobileErrors::NOT_FOUND), false);
-  }
-  else if (hashCode == BAD_REQUEST_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MobileErrors::BAD_REQUEST), false);
   }
   else if (hashCode == UNAUTHORIZED_HASH)
   {
@@ -63,6 +59,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ACCOUNT_ACTION_REQUIRED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MobileErrors::ACCOUNT_ACTION_REQUIRED), false);
+  }
+  else if (hashCode == BAD_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MobileErrors::BAD_REQUEST), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -28,10 +28,10 @@ namespace CloudHSMV2
 namespace CloudHSMV2ErrorMapper
 {
 
+static const int CLOUD_HSM_INVALID_REQUEST_HASH = HashingUtils::HashString("CloudHsmInvalidRequestException");
 static const int CLOUD_HSM_INTERNAL_FAILURE_HASH = HashingUtils::HashString("CloudHsmInternalFailureException");
 static const int CLOUD_HSM_SERVICE_HASH = HashingUtils::HashString("CloudHsmServiceException");
 static const int CLOUD_HSM_ACCESS_DENIED_HASH = HashingUtils::HashString("CloudHsmAccessDeniedException");
-static const int CLOUD_HSM_INVALID_REQUEST_HASH = HashingUtils::HashString("CloudHsmInvalidRequestException");
 static const int CLOUD_HSM_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("CloudHsmResourceNotFoundException");
 
 
@@ -39,7 +39,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CLOUD_HSM_INTERNAL_FAILURE_HASH)
+  if (hashCode == CLOUD_HSM_INVALID_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudHSMV2Errors::CLOUD_HSM_INVALID_REQUEST), false);
+  }
+  else if (hashCode == CLOUD_HSM_INTERNAL_FAILURE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudHSMV2Errors::CLOUD_HSM_INTERNAL_FAILURE), false);
   }
@@ -50,10 +54,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CLOUD_HSM_ACCESS_DENIED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudHSMV2Errors::CLOUD_HSM_ACCESS_DENIED), false);
-  }
-  else if (hashCode == CLOUD_HSM_INVALID_REQUEST_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudHSMV2Errors::CLOUD_HSM_INVALID_REQUEST), false);
   }
   else if (hashCode == CLOUD_HSM_RESOURCE_NOT_FOUND_HASH)
   {

@@ -50,106 +50,106 @@ namespace Model
 
     /**
      * <p>The property used to configure acceptance of webhooks within a specific IP
-     * range. For IP, only the AllowedIPRange property must be set, and this property
-     * must be set to a valid CIDR range.</p>
+     * range. For IP, only the <code>AllowedIPRange</code> property must be set, and
+     * this property must be set to a valid CIDR range.</p>
      */
     inline const Aws::String& GetAllowedIPRange() const{ return m_allowedIPRange; }
 
     /**
      * <p>The property used to configure acceptance of webhooks within a specific IP
-     * range. For IP, only the AllowedIPRange property must be set, and this property
-     * must be set to a valid CIDR range.</p>
+     * range. For IP, only the <code>AllowedIPRange</code> property must be set, and
+     * this property must be set to a valid CIDR range.</p>
      */
     inline bool AllowedIPRangeHasBeenSet() const { return m_allowedIPRangeHasBeenSet; }
 
     /**
      * <p>The property used to configure acceptance of webhooks within a specific IP
-     * range. For IP, only the AllowedIPRange property must be set, and this property
-     * must be set to a valid CIDR range.</p>
+     * range. For IP, only the <code>AllowedIPRange</code> property must be set, and
+     * this property must be set to a valid CIDR range.</p>
      */
     inline void SetAllowedIPRange(const Aws::String& value) { m_allowedIPRangeHasBeenSet = true; m_allowedIPRange = value; }
 
     /**
      * <p>The property used to configure acceptance of webhooks within a specific IP
-     * range. For IP, only the AllowedIPRange property must be set, and this property
-     * must be set to a valid CIDR range.</p>
+     * range. For IP, only the <code>AllowedIPRange</code> property must be set, and
+     * this property must be set to a valid CIDR range.</p>
      */
     inline void SetAllowedIPRange(Aws::String&& value) { m_allowedIPRangeHasBeenSet = true; m_allowedIPRange = std::move(value); }
 
     /**
      * <p>The property used to configure acceptance of webhooks within a specific IP
-     * range. For IP, only the AllowedIPRange property must be set, and this property
-     * must be set to a valid CIDR range.</p>
+     * range. For IP, only the <code>AllowedIPRange</code> property must be set, and
+     * this property must be set to a valid CIDR range.</p>
      */
     inline void SetAllowedIPRange(const char* value) { m_allowedIPRangeHasBeenSet = true; m_allowedIPRange.assign(value); }
 
     /**
      * <p>The property used to configure acceptance of webhooks within a specific IP
-     * range. For IP, only the AllowedIPRange property must be set, and this property
-     * must be set to a valid CIDR range.</p>
+     * range. For IP, only the <code>AllowedIPRange</code> property must be set, and
+     * this property must be set to a valid CIDR range.</p>
      */
     inline WebhookAuthConfiguration& WithAllowedIPRange(const Aws::String& value) { SetAllowedIPRange(value); return *this;}
 
     /**
      * <p>The property used to configure acceptance of webhooks within a specific IP
-     * range. For IP, only the AllowedIPRange property must be set, and this property
-     * must be set to a valid CIDR range.</p>
+     * range. For IP, only the <code>AllowedIPRange</code> property must be set, and
+     * this property must be set to a valid CIDR range.</p>
      */
     inline WebhookAuthConfiguration& WithAllowedIPRange(Aws::String&& value) { SetAllowedIPRange(std::move(value)); return *this;}
 
     /**
      * <p>The property used to configure acceptance of webhooks within a specific IP
-     * range. For IP, only the AllowedIPRange property must be set, and this property
-     * must be set to a valid CIDR range.</p>
+     * range. For IP, only the <code>AllowedIPRange</code> property must be set, and
+     * this property must be set to a valid CIDR range.</p>
      */
     inline WebhookAuthConfiguration& WithAllowedIPRange(const char* value) { SetAllowedIPRange(value); return *this;}
 
 
     /**
      * <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only
-     * the SecretToken property must be set.</p>
+     * the <code>SecretToken</code> property must be set.</p>
      */
     inline const Aws::String& GetSecretToken() const{ return m_secretToken; }
 
     /**
      * <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only
-     * the SecretToken property must be set.</p>
+     * the <code>SecretToken</code> property must be set.</p>
      */
     inline bool SecretTokenHasBeenSet() const { return m_secretTokenHasBeenSet; }
 
     /**
      * <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only
-     * the SecretToken property must be set.</p>
+     * the <code>SecretToken</code> property must be set.</p>
      */
     inline void SetSecretToken(const Aws::String& value) { m_secretTokenHasBeenSet = true; m_secretToken = value; }
 
     /**
      * <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only
-     * the SecretToken property must be set.</p>
+     * the <code>SecretToken</code> property must be set.</p>
      */
     inline void SetSecretToken(Aws::String&& value) { m_secretTokenHasBeenSet = true; m_secretToken = std::move(value); }
 
     /**
      * <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only
-     * the SecretToken property must be set.</p>
+     * the <code>SecretToken</code> property must be set.</p>
      */
     inline void SetSecretToken(const char* value) { m_secretTokenHasBeenSet = true; m_secretToken.assign(value); }
 
     /**
      * <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only
-     * the SecretToken property must be set.</p>
+     * the <code>SecretToken</code> property must be set.</p>
      */
     inline WebhookAuthConfiguration& WithSecretToken(const Aws::String& value) { SetSecretToken(value); return *this;}
 
     /**
      * <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only
-     * the SecretToken property must be set.</p>
+     * the <code>SecretToken</code> property must be set.</p>
      */
     inline WebhookAuthConfiguration& WithSecretToken(Aws::String&& value) { SetSecretToken(std::move(value)); return *this;}
 
     /**
      * <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only
-     * the SecretToken property must be set.</p>
+     * the <code>SecretToken</code> property must be set.</p>
      */
     inline WebhookAuthConfiguration& WithSecretToken(const char* value) { SetSecretToken(value); return *this;}
 

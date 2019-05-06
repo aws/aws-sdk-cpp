@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>This object contains regions to setup the aggregator and an IAM role to
+   * <p>This object contains regions to set up the aggregator and an IAM role to
    * retrieve organization details.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationAggregationSource">AWS
    * API Reference</a></p>
@@ -50,49 +50,49 @@ namespace Model
 
 
     /**
-     * <p>ARN of the IAM role used to retreive AWS Organization details associated with
+     * <p>ARN of the IAM role used to retrieve AWS Organization details associated with
      * the aggregator account.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>ARN of the IAM role used to retreive AWS Organization details associated with
+     * <p>ARN of the IAM role used to retrieve AWS Organization details associated with
      * the aggregator account.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>ARN of the IAM role used to retreive AWS Organization details associated with
+     * <p>ARN of the IAM role used to retrieve AWS Organization details associated with
      * the aggregator account.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>ARN of the IAM role used to retreive AWS Organization details associated with
+     * <p>ARN of the IAM role used to retrieve AWS Organization details associated with
      * the aggregator account.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>ARN of the IAM role used to retreive AWS Organization details associated with
+     * <p>ARN of the IAM role used to retrieve AWS Organization details associated with
      * the aggregator account.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>ARN of the IAM role used to retreive AWS Organization details associated with
+     * <p>ARN of the IAM role used to retrieve AWS Organization details associated with
      * the aggregator account.</p>
      */
     inline OrganizationAggregationSource& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>ARN of the IAM role used to retreive AWS Organization details associated with
+     * <p>ARN of the IAM role used to retrieve AWS Organization details associated with
      * the aggregator account.</p>
      */
     inline OrganizationAggregationSource& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of the IAM role used to retreive AWS Organization details associated with
+     * <p>ARN of the IAM role used to retrieve AWS Organization details associated with
      * the aggregator account.</p>
      */
     inline OrganizationAggregationSource& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}

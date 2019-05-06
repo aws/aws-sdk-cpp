@@ -28,28 +28,32 @@ namespace KinesisAnalytics
 namespace KinesisAnalyticsErrorMapper
 {
 
-static const int INVALID_APPLICATION_CONFIGURATION_HASH = HashingUtils::HashString("InvalidApplicationConfigurationException");
-static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
+static const int RESOURCE_PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString("ResourceProvisionedThroughputExceededException");
+static const int CODE_VALIDATION_HASH = HashingUtils::HashString("CodeValidationException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int UNABLE_TO_DETECT_SCHEMA_HASH = HashingUtils::HashString("UnableToDetectSchemaException");
-static const int RESOURCE_PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString("ResourceProvisionedThroughputExceededException");
 static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
-static const int CODE_VALIDATION_HASH = HashingUtils::HashString("CodeValidationException");
+static const int INVALID_APPLICATION_CONFIGURATION_HASH = HashingUtils::HashString("InvalidApplicationConfigurationException");
+static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
+static const int UNABLE_TO_DETECT_SCHEMA_HASH = HashingUtils::HashString("UnableToDetectSchemaException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_APPLICATION_CONFIGURATION_HASH)
+  if (hashCode == RESOURCE_PROVISIONED_THROUGHPUT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::INVALID_APPLICATION_CONFIGURATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::RESOURCE_PROVISIONED_THROUGHPUT_EXCEEDED), false);
   }
-  else if (hashCode == INVALID_ARGUMENT_HASH)
+  else if (hashCode == CODE_VALIDATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::INVALID_ARGUMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::CODE_VALIDATION), false);
+  }
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::LIMIT_EXCEEDED), false);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
@@ -59,25 +63,21 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::RESOURCE_IN_USE), false);
   }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == UNABLE_TO_DETECT_SCHEMA_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::UNABLE_TO_DETECT_SCHEMA), false);
-  }
-  else if (hashCode == RESOURCE_PROVISIONED_THROUGHPUT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::RESOURCE_PROVISIONED_THROUGHPUT_EXCEEDED), false);
-  }
   else if (hashCode == UNSUPPORTED_OPERATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::UNSUPPORTED_OPERATION), false);
   }
-  else if (hashCode == CODE_VALIDATION_HASH)
+  else if (hashCode == INVALID_APPLICATION_CONFIGURATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::CODE_VALIDATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::INVALID_APPLICATION_CONFIGURATION), false);
+  }
+  else if (hashCode == INVALID_ARGUMENT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::INVALID_ARGUMENT), false);
+  }
+  else if (hashCode == UNABLE_TO_DETECT_SCHEMA_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::UNABLE_TO_DETECT_SCHEMA), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

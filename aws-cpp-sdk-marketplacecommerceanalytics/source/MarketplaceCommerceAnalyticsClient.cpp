@@ -104,6 +104,7 @@ void MarketplaceCommerceAnalyticsClient::OverrideEndpoint(const Aws::String& end
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 GenerateDataSetOutcome MarketplaceCommerceAnalyticsClient::GenerateDataSet(const GenerateDataSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

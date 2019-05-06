@@ -28,33 +28,29 @@ namespace Inspector
 namespace InspectorErrorMapper
 {
 
-static const int ASSESSMENT_RUN_IN_PROGRESS_HASH = HashingUtils::HashString("AssessmentRunInProgressException");
+static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int AGENTS_ALREADY_RUNNING_ASSESSMENT_HASH = HashingUtils::HashString("AgentsAlreadyRunningAssessmentException");
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
 static const int PREVIEW_GENERATION_IN_PROGRESS_HASH = HashingUtils::HashString("PreviewGenerationInProgressException");
 static const int UNSUPPORTED_FEATURE_HASH = HashingUtils::HashString("UnsupportedFeatureException");
-static const int INVALID_CROSS_ACCOUNT_ROLE_HASH = HashingUtils::HashString("InvalidCrossAccountRoleException");
 static const int NO_SUCH_ENTITY_HASH = HashingUtils::HashString("NoSuchEntityException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
+static const int ASSESSMENT_RUN_IN_PROGRESS_HASH = HashingUtils::HashString("AssessmentRunInProgressException");
+static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
 static const int SERVICE_TEMPORARILY_UNAVAILABLE_HASH = HashingUtils::HashString("ServiceTemporarilyUnavailableException");
+static const int INVALID_CROSS_ACCOUNT_ROLE_HASH = HashingUtils::HashString("InvalidCrossAccountRoleException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == ASSESSMENT_RUN_IN_PROGRESS_HASH)
+  if (hashCode == INTERNAL_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::ASSESSMENT_RUN_IN_PROGRESS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INTERNAL), false);
   }
   else if (hashCode == AGENTS_ALREADY_RUNNING_ASSESSMENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::AGENTS_ALREADY_RUNNING_ASSESSMENT), false);
-  }
-  else if (hashCode == INVALID_INPUT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INVALID_INPUT), false);
   }
   else if (hashCode == PREVIEW_GENERATION_IN_PROGRESS_HASH)
   {
@@ -64,10 +60,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::UNSUPPORTED_FEATURE), false);
   }
-  else if (hashCode == INVALID_CROSS_ACCOUNT_ROLE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INVALID_CROSS_ACCOUNT_ROLE), false);
-  }
   else if (hashCode == NO_SUCH_ENTITY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::NO_SUCH_ENTITY), false);
@@ -76,13 +68,21 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::LIMIT_EXCEEDED), false);
   }
-  else if (hashCode == INTERNAL_HASH)
+  else if (hashCode == ASSESSMENT_RUN_IN_PROGRESS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INTERNAL), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::ASSESSMENT_RUN_IN_PROGRESS), false);
+  }
+  else if (hashCode == INVALID_INPUT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INVALID_INPUT), false);
   }
   else if (hashCode == SERVICE_TEMPORARILY_UNAVAILABLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::SERVICE_TEMPORARILY_UNAVAILABLE), false);
+  }
+  else if (hashCode == INVALID_CROSS_ACCOUNT_ROLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INVALID_CROSS_ACCOUNT_ROLE), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

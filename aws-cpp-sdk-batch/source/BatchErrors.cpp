@@ -28,21 +28,21 @@ namespace Batch
 namespace BatchErrorMapper
 {
 
-static const int SERVER_HASH = HashingUtils::HashString("ServerException");
 static const int CLIENT_HASH = HashingUtils::HashString("ClientException");
+static const int SERVER_HASH = HashingUtils::HashString("ServerException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == SERVER_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BatchErrors::SERVER), false);
-  }
-  else if (hashCode == CLIENT_HASH)
+  if (hashCode == CLIENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BatchErrors::CLIENT), false);
+  }
+  else if (hashCode == SERVER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BatchErrors::SERVER), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

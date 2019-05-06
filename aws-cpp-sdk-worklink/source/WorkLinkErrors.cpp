@@ -28,22 +28,18 @@ namespace WorkLink
 namespace WorkLinkErrorMapper
 {
 
-static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerErrorException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
+static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerErrorException");
+static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INTERNAL_SERVER_ERROR_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkLinkErrors::INTERNAL_SERVER_ERROR), false);
-  }
-  else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
+  if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkLinkErrors::RESOURCE_ALREADY_EXISTS), false);
   }
@@ -51,13 +47,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkLinkErrors::UNAUTHORIZED), false);
   }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkLinkErrors::INVALID_REQUEST), false);
-  }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkLinkErrors::TOO_MANY_REQUESTS), false);
+  }
+  else if (hashCode == INTERNAL_SERVER_ERROR_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkLinkErrors::INTERNAL_SERVER_ERROR), false);
+  }
+  else if (hashCode == INVALID_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkLinkErrors::INVALID_REQUEST), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

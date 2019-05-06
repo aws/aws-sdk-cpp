@@ -123,6 +123,7 @@ void ConnectClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CreateUserOutcome ConnectClient::CreateUser(const CreateUserRequest& request) const
 {
   if (!request.InstanceIdHasBeenSet())

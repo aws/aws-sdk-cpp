@@ -57,7 +57,7 @@ namespace Model
      * <p>The bytes of the object. </p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
-    
+
 
     /**
      * <p>An optional <code>CacheControl</code> header that allows the caller to

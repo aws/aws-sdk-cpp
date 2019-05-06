@@ -35,8 +35,8 @@ namespace CodePipeline
 namespace Model
 {
   /**
-   * <p>Represents the output of a GetJobDetails action.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Represents the output of a <code>GetJobDetails</code> action.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetailsOutput">AWS
    * API Reference</a></p>
    */
@@ -50,36 +50,36 @@ namespace Model
 
     /**
      * <p>The details of the job.</p> <note> <p>If AWSSessionCredentials is used, a
-     * long-running job can call GetJobDetails again to obtain new credentials.</p>
-     * </note>
+     * long-running job can call <code>GetJobDetails</code> again to obtain new
+     * credentials.</p> </note>
      */
     inline const JobDetails& GetJobDetails() const{ return m_jobDetails; }
 
     /**
      * <p>The details of the job.</p> <note> <p>If AWSSessionCredentials is used, a
-     * long-running job can call GetJobDetails again to obtain new credentials.</p>
-     * </note>
+     * long-running job can call <code>GetJobDetails</code> again to obtain new
+     * credentials.</p> </note>
      */
     inline void SetJobDetails(const JobDetails& value) { m_jobDetails = value; }
 
     /**
      * <p>The details of the job.</p> <note> <p>If AWSSessionCredentials is used, a
-     * long-running job can call GetJobDetails again to obtain new credentials.</p>
-     * </note>
+     * long-running job can call <code>GetJobDetails</code> again to obtain new
+     * credentials.</p> </note>
      */
     inline void SetJobDetails(JobDetails&& value) { m_jobDetails = std::move(value); }
 
     /**
      * <p>The details of the job.</p> <note> <p>If AWSSessionCredentials is used, a
-     * long-running job can call GetJobDetails again to obtain new credentials.</p>
-     * </note>
+     * long-running job can call <code>GetJobDetails</code> again to obtain new
+     * credentials.</p> </note>
      */
     inline GetJobDetailsResult& WithJobDetails(const JobDetails& value) { SetJobDetails(value); return *this;}
 
     /**
      * <p>The details of the job.</p> <note> <p>If AWSSessionCredentials is used, a
-     * long-running job can call GetJobDetails again to obtain new credentials.</p>
-     * </note>
+     * long-running job can call <code>GetJobDetails</code> again to obtain new
+     * credentials.</p> </note>
      */
     inline GetJobDetailsResult& WithJobDetails(JobDetails&& value) { SetJobDetails(std::move(value)); return *this;}
 

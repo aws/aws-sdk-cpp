@@ -28,39 +28,23 @@ namespace PinpointEmail
 namespace PinpointEmailErrorMapper
 {
 
-static const int SENDING_PAUSED_HASH = HashingUtils::HashString("SendingPausedException");
-static const int ACCOUNT_SUSPENDED_HASH = HashingUtils::HashString("AccountSuspendedException");
-static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int MESSAGE_REJECTED_HASH = HashingUtils::HashString("MessageRejected");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
+static const int SENDING_PAUSED_HASH = HashingUtils::HashString("SendingPausedException");
 static const int MAIL_FROM_DOMAIN_NOT_VERIFIED_HASH = HashingUtils::HashString("MailFromDomainNotVerifiedException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
+static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
+static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
+static const int ACCOUNT_SUSPENDED_HASH = HashingUtils::HashString("AccountSuspendedException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == SENDING_PAUSED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointEmailErrors::SENDING_PAUSED), false);
-  }
-  else if (hashCode == ACCOUNT_SUSPENDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointEmailErrors::ACCOUNT_SUSPENDED), false);
-  }
-  else if (hashCode == ALREADY_EXISTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointEmailErrors::ALREADY_EXISTS), false);
-  }
-  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointEmailErrors::CONCURRENT_MODIFICATION), false);
-  }
-  else if (hashCode == NOT_FOUND_HASH)
+  if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointEmailErrors::NOT_FOUND), false);
   }
@@ -68,9 +52,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointEmailErrors::MESSAGE_REJECTED), false);
   }
-  else if (hashCode == BAD_REQUEST_HASH)
+  else if (hashCode == SENDING_PAUSED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointEmailErrors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointEmailErrors::SENDING_PAUSED), false);
   }
   else if (hashCode == MAIL_FROM_DOMAIN_NOT_VERIFIED_HASH)
   {
@@ -80,9 +64,25 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointEmailErrors::LIMIT_EXCEEDED), false);
   }
+  else if (hashCode == ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointEmailErrors::ALREADY_EXISTS), false);
+  }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointEmailErrors::TOO_MANY_REQUESTS), false);
+  }
+  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointEmailErrors::CONCURRENT_MODIFICATION), false);
+  }
+  else if (hashCode == BAD_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointEmailErrors::BAD_REQUEST), false);
+  }
+  else if (hashCode == ACCOUNT_SUSPENDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointEmailErrors::ACCOUNT_SUSPENDED), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

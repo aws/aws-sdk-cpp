@@ -118,6 +118,7 @@ void ElasticTranscoderClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CancelJobOutcome ElasticTranscoderClient::CancelJob(const CancelJobRequest& request) const
 {
   if (!request.IdHasBeenSet())

@@ -118,6 +118,7 @@ void QuickSightClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CreateGroupOutcome QuickSightClient::CreateGroup(const CreateGroupRequest& request) const
 {
   if (!request.AwsAccountIdHasBeenSet())

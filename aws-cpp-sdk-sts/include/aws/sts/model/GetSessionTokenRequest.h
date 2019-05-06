@@ -32,7 +32,7 @@ namespace Model
   {
   public:
     GetSessionTokenRequest();
-    
+
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
@@ -49,9 +49,9 @@ namespace Model
     /**
      * <p>The duration, in seconds, that the credentials should remain valid.
      * Acceptable durations for IAM user sessions range from 900 seconds (15 minutes)
-     * to 129600 seconds (36 hours), with 43200 seconds (12 hours) as the default.
-     * Sessions for AWS account owners are restricted to a maximum of 3600 seconds (one
-     * hour). If the duration is longer than one hour, the session for AWS account
+     * to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default.
+     * Sessions for AWS account owners are restricted to a maximum of 3,600 seconds
+     * (one hour). If the duration is longer than one hour, the session for AWS account
      * owners defaults to one hour.</p>
      */
     inline int GetDurationSeconds() const{ return m_durationSeconds; }
@@ -59,9 +59,9 @@ namespace Model
     /**
      * <p>The duration, in seconds, that the credentials should remain valid.
      * Acceptable durations for IAM user sessions range from 900 seconds (15 minutes)
-     * to 129600 seconds (36 hours), with 43200 seconds (12 hours) as the default.
-     * Sessions for AWS account owners are restricted to a maximum of 3600 seconds (one
-     * hour). If the duration is longer than one hour, the session for AWS account
+     * to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default.
+     * Sessions for AWS account owners are restricted to a maximum of 3,600 seconds
+     * (one hour). If the duration is longer than one hour, the session for AWS account
      * owners defaults to one hour.</p>
      */
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
@@ -69,9 +69,9 @@ namespace Model
     /**
      * <p>The duration, in seconds, that the credentials should remain valid.
      * Acceptable durations for IAM user sessions range from 900 seconds (15 minutes)
-     * to 129600 seconds (36 hours), with 43200 seconds (12 hours) as the default.
-     * Sessions for AWS account owners are restricted to a maximum of 3600 seconds (one
-     * hour). If the duration is longer than one hour, the session for AWS account
+     * to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default.
+     * Sessions for AWS account owners are restricted to a maximum of 3,600 seconds
+     * (one hour). If the duration is longer than one hour, the session for AWS account
      * owners defaults to one hour.</p>
      */
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
@@ -79,9 +79,9 @@ namespace Model
     /**
      * <p>The duration, in seconds, that the credentials should remain valid.
      * Acceptable durations for IAM user sessions range from 900 seconds (15 minutes)
-     * to 129600 seconds (36 hours), with 43200 seconds (12 hours) as the default.
-     * Sessions for AWS account owners are restricted to a maximum of 3600 seconds (one
-     * hour). If the duration is longer than one hour, the session for AWS account
+     * to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default.
+     * Sessions for AWS account owners are restricted to a maximum of 3,600 seconds
+     * (one hour). If the duration is longer than one hour, the session for AWS account
      * owners defaults to one hour.</p>
      */
     inline GetSessionTokenRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
@@ -95,7 +95,7 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The regex used to validated this parameter is a string of
+     * credentials. </p> <p>The regex used to validate this parameter is a string of
      * characters consisting of upper- and lower-case alphanumeric characters with no
      * spaces. You can also include underscores or any of the following characters:
      * =,.@:/-</p>
@@ -110,7 +110,7 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The regex used to validated this parameter is a string of
+     * credentials. </p> <p>The regex used to validate this parameter is a string of
      * characters consisting of upper- and lower-case alphanumeric characters with no
      * spaces. You can also include underscores or any of the following characters:
      * =,.@:/-</p>
@@ -125,7 +125,7 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The regex used to validated this parameter is a string of
+     * credentials. </p> <p>The regex used to validate this parameter is a string of
      * characters consisting of upper- and lower-case alphanumeric characters with no
      * spaces. You can also include underscores or any of the following characters:
      * =,.@:/-</p>
@@ -140,7 +140,7 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The regex used to validated this parameter is a string of
+     * credentials. </p> <p>The regex used to validate this parameter is a string of
      * characters consisting of upper- and lower-case alphanumeric characters with no
      * spaces. You can also include underscores or any of the following characters:
      * =,.@:/-</p>
@@ -155,7 +155,7 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The regex used to validated this parameter is a string of
+     * credentials. </p> <p>The regex used to validate this parameter is a string of
      * characters consisting of upper- and lower-case alphanumeric characters with no
      * spaces. You can also include underscores or any of the following characters:
      * =,.@:/-</p>
@@ -170,7 +170,7 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The regex used to validated this parameter is a string of
+     * credentials. </p> <p>The regex used to validate this parameter is a string of
      * characters consisting of upper- and lower-case alphanumeric characters with no
      * spaces. You can also include underscores or any of the following characters:
      * =,.@:/-</p>
@@ -185,7 +185,7 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The regex used to validated this parameter is a string of
+     * credentials. </p> <p>The regex used to validate this parameter is a string of
      * characters consisting of upper- and lower-case alphanumeric characters with no
      * spaces. You can also include underscores or any of the following characters:
      * =,.@:/-</p>
@@ -200,7 +200,7 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The regex used to validated this parameter is a string of
+     * credentials. </p> <p>The regex used to validate this parameter is a string of
      * characters consisting of upper- and lower-case alphanumeric characters with no
      * spaces. You can also include underscores or any of the following characters:
      * =,.@:/-</p>
@@ -211,88 +211,88 @@ namespace Model
     /**
      * <p>The value provided by the MFA device, if MFA is required. If any policy
      * requires the IAM user to submit an MFA code, specify this value. If MFA
-     * authentication is required, and the user does not provide a code when requesting
-     * a set of temporary security credentials, the user will receive an "access
-     * denied" response when requesting resources that require MFA authentication.</p>
-     * <p>The format for this parameter, as described by its regex pattern, is a
-     * sequence of six numeric digits.</p>
+     * authentication is required, the user must provide a code when requesting a set
+     * of temporary security credentials. A user who fails to provide the code receives
+     * an "access denied" response when requesting resources that require MFA
+     * authentication.</p> <p>The format for this parameter, as described by its regex
+     * pattern, is a sequence of six numeric digits.</p>
      */
     inline const Aws::String& GetTokenCode() const{ return m_tokenCode; }
 
     /**
      * <p>The value provided by the MFA device, if MFA is required. If any policy
      * requires the IAM user to submit an MFA code, specify this value. If MFA
-     * authentication is required, and the user does not provide a code when requesting
-     * a set of temporary security credentials, the user will receive an "access
-     * denied" response when requesting resources that require MFA authentication.</p>
-     * <p>The format for this parameter, as described by its regex pattern, is a
-     * sequence of six numeric digits.</p>
+     * authentication is required, the user must provide a code when requesting a set
+     * of temporary security credentials. A user who fails to provide the code receives
+     * an "access denied" response when requesting resources that require MFA
+     * authentication.</p> <p>The format for this parameter, as described by its regex
+     * pattern, is a sequence of six numeric digits.</p>
      */
     inline bool TokenCodeHasBeenSet() const { return m_tokenCodeHasBeenSet; }
 
     /**
      * <p>The value provided by the MFA device, if MFA is required. If any policy
      * requires the IAM user to submit an MFA code, specify this value. If MFA
-     * authentication is required, and the user does not provide a code when requesting
-     * a set of temporary security credentials, the user will receive an "access
-     * denied" response when requesting resources that require MFA authentication.</p>
-     * <p>The format for this parameter, as described by its regex pattern, is a
-     * sequence of six numeric digits.</p>
+     * authentication is required, the user must provide a code when requesting a set
+     * of temporary security credentials. A user who fails to provide the code receives
+     * an "access denied" response when requesting resources that require MFA
+     * authentication.</p> <p>The format for this parameter, as described by its regex
+     * pattern, is a sequence of six numeric digits.</p>
      */
     inline void SetTokenCode(const Aws::String& value) { m_tokenCodeHasBeenSet = true; m_tokenCode = value; }
 
     /**
      * <p>The value provided by the MFA device, if MFA is required. If any policy
      * requires the IAM user to submit an MFA code, specify this value. If MFA
-     * authentication is required, and the user does not provide a code when requesting
-     * a set of temporary security credentials, the user will receive an "access
-     * denied" response when requesting resources that require MFA authentication.</p>
-     * <p>The format for this parameter, as described by its regex pattern, is a
-     * sequence of six numeric digits.</p>
+     * authentication is required, the user must provide a code when requesting a set
+     * of temporary security credentials. A user who fails to provide the code receives
+     * an "access denied" response when requesting resources that require MFA
+     * authentication.</p> <p>The format for this parameter, as described by its regex
+     * pattern, is a sequence of six numeric digits.</p>
      */
     inline void SetTokenCode(Aws::String&& value) { m_tokenCodeHasBeenSet = true; m_tokenCode = std::move(value); }
 
     /**
      * <p>The value provided by the MFA device, if MFA is required. If any policy
      * requires the IAM user to submit an MFA code, specify this value. If MFA
-     * authentication is required, and the user does not provide a code when requesting
-     * a set of temporary security credentials, the user will receive an "access
-     * denied" response when requesting resources that require MFA authentication.</p>
-     * <p>The format for this parameter, as described by its regex pattern, is a
-     * sequence of six numeric digits.</p>
+     * authentication is required, the user must provide a code when requesting a set
+     * of temporary security credentials. A user who fails to provide the code receives
+     * an "access denied" response when requesting resources that require MFA
+     * authentication.</p> <p>The format for this parameter, as described by its regex
+     * pattern, is a sequence of six numeric digits.</p>
      */
     inline void SetTokenCode(const char* value) { m_tokenCodeHasBeenSet = true; m_tokenCode.assign(value); }
 
     /**
      * <p>The value provided by the MFA device, if MFA is required. If any policy
      * requires the IAM user to submit an MFA code, specify this value. If MFA
-     * authentication is required, and the user does not provide a code when requesting
-     * a set of temporary security credentials, the user will receive an "access
-     * denied" response when requesting resources that require MFA authentication.</p>
-     * <p>The format for this parameter, as described by its regex pattern, is a
-     * sequence of six numeric digits.</p>
+     * authentication is required, the user must provide a code when requesting a set
+     * of temporary security credentials. A user who fails to provide the code receives
+     * an "access denied" response when requesting resources that require MFA
+     * authentication.</p> <p>The format for this parameter, as described by its regex
+     * pattern, is a sequence of six numeric digits.</p>
      */
     inline GetSessionTokenRequest& WithTokenCode(const Aws::String& value) { SetTokenCode(value); return *this;}
 
     /**
      * <p>The value provided by the MFA device, if MFA is required. If any policy
      * requires the IAM user to submit an MFA code, specify this value. If MFA
-     * authentication is required, and the user does not provide a code when requesting
-     * a set of temporary security credentials, the user will receive an "access
-     * denied" response when requesting resources that require MFA authentication.</p>
-     * <p>The format for this parameter, as described by its regex pattern, is a
-     * sequence of six numeric digits.</p>
+     * authentication is required, the user must provide a code when requesting a set
+     * of temporary security credentials. A user who fails to provide the code receives
+     * an "access denied" response when requesting resources that require MFA
+     * authentication.</p> <p>The format for this parameter, as described by its regex
+     * pattern, is a sequence of six numeric digits.</p>
      */
     inline GetSessionTokenRequest& WithTokenCode(Aws::String&& value) { SetTokenCode(std::move(value)); return *this;}
 
     /**
      * <p>The value provided by the MFA device, if MFA is required. If any policy
      * requires the IAM user to submit an MFA code, specify this value. If MFA
-     * authentication is required, and the user does not provide a code when requesting
-     * a set of temporary security credentials, the user will receive an "access
-     * denied" response when requesting resources that require MFA authentication.</p>
-     * <p>The format for this parameter, as described by its regex pattern, is a
-     * sequence of six numeric digits.</p>
+     * authentication is required, the user must provide a code when requesting a set
+     * of temporary security credentials. A user who fails to provide the code receives
+     * an "access denied" response when requesting resources that require MFA
+     * authentication.</p> <p>The format for this parameter, as described by its regex
+     * pattern, is a sequence of six numeric digits.</p>
      */
     inline GetSessionTokenRequest& WithTokenCode(const char* value) { SetTokenCode(value); return *this;}
 

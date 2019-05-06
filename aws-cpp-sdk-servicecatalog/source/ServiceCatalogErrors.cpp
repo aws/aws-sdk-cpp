@@ -28,22 +28,34 @@ namespace ServiceCatalog
 namespace ServiceCatalogErrorMapper
 {
 
+static const int TAG_OPTION_NOT_MIGRATED_HASH = HashingUtils::HashString("TagOptionNotMigratedException");
 static const int OPERATION_NOT_SUPPORTED_HASH = HashingUtils::HashString("OperationNotSupportedException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int DUPLICATE_RESOURCE_HASH = HashingUtils::HashString("DuplicateResourceException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int INVALID_PARAMETERS_HASH = HashingUtils::HashString("InvalidParametersException");
 static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int DUPLICATE_RESOURCE_HASH = HashingUtils::HashString("DuplicateResourceException");
-static const int TAG_OPTION_NOT_MIGRATED_HASH = HashingUtils::HashString("TagOptionNotMigratedException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == OPERATION_NOT_SUPPORTED_HASH)
+  if (hashCode == TAG_OPTION_NOT_MIGRATED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceCatalogErrors::TAG_OPTION_NOT_MIGRATED), false);
+  }
+  else if (hashCode == OPERATION_NOT_SUPPORTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceCatalogErrors::OPERATION_NOT_SUPPORTED), false);
+  }
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceCatalogErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == DUPLICATE_RESOURCE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceCatalogErrors::DUPLICATE_RESOURCE), false);
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {
@@ -56,18 +68,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_STATE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceCatalogErrors::INVALID_STATE), false);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceCatalogErrors::LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == DUPLICATE_RESOURCE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceCatalogErrors::DUPLICATE_RESOURCE), false);
-  }
-  else if (hashCode == TAG_OPTION_NOT_MIGRATED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceCatalogErrors::TAG_OPTION_NOT_MIGRATED), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -142,7 +142,7 @@ namespace Model
      * stream</p> </li> <li> <p>5000 - Internal error</p> </li> </ul>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_payload = Aws::Utils::Stream::ResponseStream(body); }
-    
+
   private:
 
     Aws::String m_contentType;

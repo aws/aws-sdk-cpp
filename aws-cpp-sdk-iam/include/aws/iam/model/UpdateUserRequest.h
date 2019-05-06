@@ -32,7 +32,7 @@ namespace Model
   {
   public:
     UpdateUserRequest();
-    
+
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
@@ -210,73 +210,65 @@ namespace Model
 
     /**
      * <p>New name for the user. Include this parameter only if you're changing the
-     * user's name.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * user's name.</p> <p>IAM user, group, role, and policy names must be unique
+     * within the account. Names are not distinguished by case. For example, you cannot
+     * create resources named both "MyResource" and "myresource".</p>
      */
     inline const Aws::String& GetNewUserName() const{ return m_newUserName; }
 
     /**
      * <p>New name for the user. Include this parameter only if you're changing the
-     * user's name.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * user's name.</p> <p>IAM user, group, role, and policy names must be unique
+     * within the account. Names are not distinguished by case. For example, you cannot
+     * create resources named both "MyResource" and "myresource".</p>
      */
     inline bool NewUserNameHasBeenSet() const { return m_newUserNameHasBeenSet; }
 
     /**
      * <p>New name for the user. Include this parameter only if you're changing the
-     * user's name.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * user's name.</p> <p>IAM user, group, role, and policy names must be unique
+     * within the account. Names are not distinguished by case. For example, you cannot
+     * create resources named both "MyResource" and "myresource".</p>
      */
     inline void SetNewUserName(const Aws::String& value) { m_newUserNameHasBeenSet = true; m_newUserName = value; }
 
     /**
      * <p>New name for the user. Include this parameter only if you're changing the
-     * user's name.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * user's name.</p> <p>IAM user, group, role, and policy names must be unique
+     * within the account. Names are not distinguished by case. For example, you cannot
+     * create resources named both "MyResource" and "myresource".</p>
      */
     inline void SetNewUserName(Aws::String&& value) { m_newUserNameHasBeenSet = true; m_newUserName = std::move(value); }
 
     /**
      * <p>New name for the user. Include this parameter only if you're changing the
-     * user's name.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * user's name.</p> <p>IAM user, group, role, and policy names must be unique
+     * within the account. Names are not distinguished by case. For example, you cannot
+     * create resources named both "MyResource" and "myresource".</p>
      */
     inline void SetNewUserName(const char* value) { m_newUserNameHasBeenSet = true; m_newUserName.assign(value); }
 
     /**
      * <p>New name for the user. Include this parameter only if you're changing the
-     * user's name.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * user's name.</p> <p>IAM user, group, role, and policy names must be unique
+     * within the account. Names are not distinguished by case. For example, you cannot
+     * create resources named both "MyResource" and "myresource".</p>
      */
     inline UpdateUserRequest& WithNewUserName(const Aws::String& value) { SetNewUserName(value); return *this;}
 
     /**
      * <p>New name for the user. Include this parameter only if you're changing the
-     * user's name.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * user's name.</p> <p>IAM user, group, role, and policy names must be unique
+     * within the account. Names are not distinguished by case. For example, you cannot
+     * create resources named both "MyResource" and "myresource".</p>
      */
     inline UpdateUserRequest& WithNewUserName(Aws::String&& value) { SetNewUserName(std::move(value)); return *this;}
 
     /**
      * <p>New name for the user. Include this parameter only if you're changing the
-     * user's name.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * user's name.</p> <p>IAM user, group, role, and policy names must be unique
+     * within the account. Names are not distinguished by case. For example, you cannot
+     * create resources named both "MyResource" and "myresource".</p>
      */
     inline UpdateUserRequest& WithNewUserName(const char* value) { SetNewUserName(value); return *this;}
 

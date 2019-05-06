@@ -45,6 +45,7 @@ UploadPartRequest::UploadPartRequest() :
 {
 }
 
+
 void UploadPartRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

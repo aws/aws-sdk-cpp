@@ -28,27 +28,39 @@ namespace CognitoSync
 namespace CognitoSyncErrorMapper
 {
 
-static const int LAMBDA_THROTTLED_HASH = HashingUtils::HashString("LambdaThrottled");
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameter");
-static const int INVALID_CONFIGURATION_HASH = HashingUtils::HashString("InvalidConfiguration");
-static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflict");
-static const int ALREADY_STREAMED_HASH = HashingUtils::HashString("AlreadyStreamed");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModification");
-static const int INVALID_LAMBDA_FUNCTION_OUTPUT_HASH = HashingUtils::HashString("InvalidLambdaFunctionOutput");
-static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedError");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalError");
 static const int DUPLICATE_REQUEST_HASH = HashingUtils::HashString("DuplicateRequest");
+static const int ALREADY_STREAMED_HASH = HashingUtils::HashString("AlreadyStreamed");
+static const int INVALID_LAMBDA_FUNCTION_OUTPUT_HASH = HashingUtils::HashString("InvalidLambdaFunctionOutput");
+static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameter");
+static const int INVALID_CONFIGURATION_HASH = HashingUtils::HashString("InvalidConfiguration");
+static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedError");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
+static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflict");
+static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModification");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequests");
+static const int LAMBDA_THROTTLED_HASH = HashingUtils::HashString("LambdaThrottled");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == LAMBDA_THROTTLED_HASH)
+  if (hashCode == INTERNAL_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::LAMBDA_THROTTLED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::INTERNAL_ERROR), true);
+  }
+  else if (hashCode == DUPLICATE_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::DUPLICATE_REQUEST), false);
+  }
+  else if (hashCode == ALREADY_STREAMED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::ALREADY_STREAMED), false);
+  }
+  else if (hashCode == INVALID_LAMBDA_FUNCTION_OUTPUT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::INVALID_LAMBDA_FUNCTION_OUTPUT), false);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
@@ -58,22 +70,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::INVALID_CONFIGURATION), false);
   }
-  else if (hashCode == RESOURCE_CONFLICT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::RESOURCE_CONFLICT), false);
-  }
-  else if (hashCode == ALREADY_STREAMED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::ALREADY_STREAMED), false);
-  }
-  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::CONCURRENT_MODIFICATION), false);
-  }
-  else if (hashCode == INVALID_LAMBDA_FUNCTION_OUTPUT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::INVALID_LAMBDA_FUNCTION_OUTPUT), false);
-  }
   else if (hashCode == NOT_AUTHORIZED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::NOT_AUTHORIZED), false);
@@ -82,17 +78,21 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::LIMIT_EXCEEDED), false);
   }
-  else if (hashCode == INTERNAL_ERROR_HASH)
+  else if (hashCode == RESOURCE_CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::INTERNAL_ERROR), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::RESOURCE_CONFLICT), false);
   }
-  else if (hashCode == DUPLICATE_REQUEST_HASH)
+  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::DUPLICATE_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::CONCURRENT_MODIFICATION), false);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::TOO_MANY_REQUESTS), false);
+  }
+  else if (hashCode == LAMBDA_THROTTLED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::LAMBDA_THROTTLED), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -115,6 +115,7 @@ void IoT1ClickDevicesServiceClient::OverrideEndpoint(const Aws::String& endpoint
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 ClaimDevicesByClaimCodeOutcome IoT1ClickDevicesServiceClient::ClaimDevicesByClaimCode(const ClaimDevicesByClaimCodeRequest& request) const
 {
   if (!request.ClaimCodeHasBeenSet())

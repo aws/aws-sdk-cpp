@@ -106,6 +106,7 @@ void IoTDataPlaneClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 DeleteThingShadowOutcome IoTDataPlaneClient::DeleteThingShadow(const DeleteThingShadowRequest& request) const
 {
   if (!request.ThingNameHasBeenSet())

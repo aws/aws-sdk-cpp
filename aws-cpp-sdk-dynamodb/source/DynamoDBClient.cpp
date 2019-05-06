@@ -147,6 +147,7 @@ void DynamoDBClient::OverrideEndpoint(const Aws::String& endpoint)
   }
   m_enableEndpointDiscovery = false;
 }
+
 BatchGetItemOutcome DynamoDBClient::BatchGetItem(const BatchGetItemRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

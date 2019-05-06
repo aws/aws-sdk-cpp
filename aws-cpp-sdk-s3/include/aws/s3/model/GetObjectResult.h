@@ -64,7 +64,7 @@ namespace Model
      * <p>Object data.</p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
-    
+
 
     /**
      * <p>Specifies whether the object retrieved was (true) or was not (false) a Delete

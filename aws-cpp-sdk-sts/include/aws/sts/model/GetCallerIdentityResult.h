@@ -52,9 +52,9 @@ namespace Model
 
     /**
      * <p>The unique identifier of the calling entity. The exact value depends on the
-     * type of entity making the call. The values returned are those listed in the
-     * <b>aws:userid</b> column in the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
+     * type of entity that is making the call. The values returned are those listed in
+     * the <b>aws:userid</b> column in the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
      * table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User
      * Guide</i>.</p>
      */
@@ -62,9 +62,9 @@ namespace Model
 
     /**
      * <p>The unique identifier of the calling entity. The exact value depends on the
-     * type of entity making the call. The values returned are those listed in the
-     * <b>aws:userid</b> column in the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
+     * type of entity that is making the call. The values returned are those listed in
+     * the <b>aws:userid</b> column in the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
      * table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User
      * Guide</i>.</p>
      */
@@ -72,9 +72,9 @@ namespace Model
 
     /**
      * <p>The unique identifier of the calling entity. The exact value depends on the
-     * type of entity making the call. The values returned are those listed in the
-     * <b>aws:userid</b> column in the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
+     * type of entity that is making the call. The values returned are those listed in
+     * the <b>aws:userid</b> column in the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
      * table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User
      * Guide</i>.</p>
      */
@@ -82,9 +82,9 @@ namespace Model
 
     /**
      * <p>The unique identifier of the calling entity. The exact value depends on the
-     * type of entity making the call. The values returned are those listed in the
-     * <b>aws:userid</b> column in the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
+     * type of entity that is making the call. The values returned are those listed in
+     * the <b>aws:userid</b> column in the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
      * table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User
      * Guide</i>.</p>
      */
@@ -92,9 +92,9 @@ namespace Model
 
     /**
      * <p>The unique identifier of the calling entity. The exact value depends on the
-     * type of entity making the call. The values returned are those listed in the
-     * <b>aws:userid</b> column in the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
+     * type of entity that is making the call. The values returned are those listed in
+     * the <b>aws:userid</b> column in the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
      * table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User
      * Guide</i>.</p>
      */
@@ -102,9 +102,9 @@ namespace Model
 
     /**
      * <p>The unique identifier of the calling entity. The exact value depends on the
-     * type of entity making the call. The values returned are those listed in the
-     * <b>aws:userid</b> column in the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
+     * type of entity that is making the call. The values returned are those listed in
+     * the <b>aws:userid</b> column in the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
      * table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User
      * Guide</i>.</p>
      */
@@ -112,9 +112,9 @@ namespace Model
 
     /**
      * <p>The unique identifier of the calling entity. The exact value depends on the
-     * type of entity making the call. The values returned are those listed in the
-     * <b>aws:userid</b> column in the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
+     * type of entity that is making the call. The values returned are those listed in
+     * the <b>aws:userid</b> column in the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal
      * table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User
      * Guide</i>.</p>
      */

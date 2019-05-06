@@ -195,6 +195,7 @@ void S3Client::OverrideEndpoint(const Aws::String& endpoint)
       m_baseUri = endpoint;
   }
 }
+
 AbortMultipartUploadOutcome S3Client::AbortMultipartUpload(const AbortMultipartUploadRequest& request) const
 {
   if (!request.BucketHasBeenSet())

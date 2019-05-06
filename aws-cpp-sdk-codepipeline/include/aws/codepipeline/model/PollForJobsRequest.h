@@ -29,7 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a PollForJobs action.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the input of a <code>PollForJobs</code> action.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobsInput">AWS
    * API Reference</a></p>
    */
@@ -37,7 +38,7 @@ namespace Model
   {
   public:
     PollForJobsRequest();
-    
+
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,

@@ -35,6 +35,7 @@ UploadMultipartPartRequest::UploadMultipartPartRequest() :
 }
 
 
+
 Aws::Http::HeaderValueCollection UploadMultipartPartRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;

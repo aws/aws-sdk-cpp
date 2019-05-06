@@ -158,6 +158,7 @@ void ApiGatewayV2Client::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CreateApiOutcome ApiGatewayV2Client::CreateApi(const CreateApiRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

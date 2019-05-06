@@ -28,25 +28,25 @@ namespace SMS
 namespace SMSErrorMapper
 {
 
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
+static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermittedException");
 static const int REPLICATION_RUN_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ReplicationRunLimitExceededException");
 static const int NO_CONNECTORS_AVAILABLE_HASH = HashingUtils::HashString("NoConnectorsAvailableException");
-static const int TEMPORARILY_UNAVAILABLE_HASH = HashingUtils::HashString("TemporarilyUnavailableException");
-static const int UNAUTHORIZED_OPERATION_HASH = HashingUtils::HashString("UnauthorizedOperationException");
-static const int REPLICATION_JOB_NOT_FOUND_HASH = HashingUtils::HashString("ReplicationJobNotFoundException");
-static const int REPLICATION_JOB_ALREADY_EXISTS_HASH = HashingUtils::HashString("ReplicationJobAlreadyExistsException");
-static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermittedException");
 static const int MISSING_REQUIRED_PARAMETER_HASH = HashingUtils::HashString("MissingRequiredParameterException");
 static const int SERVER_CANNOT_BE_REPLICATED_HASH = HashingUtils::HashString("ServerCannotBeReplicatedException");
+static const int TEMPORARILY_UNAVAILABLE_HASH = HashingUtils::HashString("TemporarilyUnavailableException");
+static const int UNAUTHORIZED_OPERATION_HASH = HashingUtils::HashString("UnauthorizedOperationException");
+static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
+static const int REPLICATION_JOB_ALREADY_EXISTS_HASH = HashingUtils::HashString("ReplicationJobAlreadyExistsException");
+static const int REPLICATION_JOB_NOT_FOUND_HASH = HashingUtils::HashString("ReplicationJobNotFoundException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_PARAMETER_HASH)
+  if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::OPERATION_NOT_PERMITTED), false);
   }
   else if (hashCode == REPLICATION_RUN_LIMIT_EXCEEDED_HASH)
   {
@@ -56,6 +56,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::NO_CONNECTORS_AVAILABLE), false);
   }
+  else if (hashCode == MISSING_REQUIRED_PARAMETER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::MISSING_REQUIRED_PARAMETER), false);
+  }
+  else if (hashCode == SERVER_CANNOT_BE_REPLICATED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::SERVER_CANNOT_BE_REPLICATED), false);
+  }
   else if (hashCode == TEMPORARILY_UNAVAILABLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::TEMPORARILY_UNAVAILABLE), false);
@@ -64,25 +72,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::UNAUTHORIZED_OPERATION), false);
   }
-  else if (hashCode == REPLICATION_JOB_NOT_FOUND_HASH)
+  else if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::REPLICATION_JOB_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::INVALID_PARAMETER), false);
   }
   else if (hashCode == REPLICATION_JOB_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::REPLICATION_JOB_ALREADY_EXISTS), false);
   }
-  else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
+  else if (hashCode == REPLICATION_JOB_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::OPERATION_NOT_PERMITTED), false);
-  }
-  else if (hashCode == MISSING_REQUIRED_PARAMETER_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::MISSING_REQUIRED_PARAMETER), false);
-  }
-  else if (hashCode == SERVER_CANNOT_BE_REPLICATED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::SERVER_CANNOT_BE_REPLICATED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::REPLICATION_JOB_NOT_FOUND), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

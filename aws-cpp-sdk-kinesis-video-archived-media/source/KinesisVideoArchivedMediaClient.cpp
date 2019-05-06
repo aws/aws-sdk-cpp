@@ -105,6 +105,7 @@ void KinesisVideoArchivedMediaClient::OverrideEndpoint(const Aws::String& endpoi
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 GetHLSStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetHLSStreamingSessionURL(const GetHLSStreamingSessionURLRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

@@ -32,7 +32,7 @@ namespace Model
   {
   public:
     UpdateAssumeRolePolicyRequest();
-    
+
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
@@ -120,98 +120,122 @@ namespace Model
 
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>The policy that grants an entity permission to assume the role.</p> <p>You
+     * must provide policies in JSON format in IAM. However, for AWS CloudFormation
+     * templates formatted in YAML, you can provide the policy in JSON or YAML format.
+     * AWS CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> used to validate this parameter is a string of characters consisting
+     * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
+     * the space character (\u0020) through the end of the ASCII character range</p>
+     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
+     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>The policy that grants an entity permission to assume the role.</p> <p>You
+     * must provide policies in JSON format in IAM. However, for AWS CloudFormation
+     * templates formatted in YAML, you can provide the policy in JSON or YAML format.
+     * AWS CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> used to validate this parameter is a string of characters consisting
+     * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
+     * the space character (\u0020) through the end of the ASCII character range</p>
+     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
+     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>The policy that grants an entity permission to assume the role.</p> <p>You
+     * must provide policies in JSON format in IAM. However, for AWS CloudFormation
+     * templates formatted in YAML, you can provide the policy in JSON or YAML format.
+     * AWS CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> used to validate this parameter is a string of characters consisting
+     * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
+     * the space character (\u0020) through the end of the ASCII character range</p>
+     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
+     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>The policy that grants an entity permission to assume the role.</p> <p>You
+     * must provide policies in JSON format in IAM. However, for AWS CloudFormation
+     * templates formatted in YAML, you can provide the policy in JSON or YAML format.
+     * AWS CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> used to validate this parameter is a string of characters consisting
+     * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
+     * the space character (\u0020) through the end of the ASCII character range</p>
+     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
+     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>The policy that grants an entity permission to assume the role.</p> <p>You
+     * must provide policies in JSON format in IAM. However, for AWS CloudFormation
+     * templates formatted in YAML, you can provide the policy in JSON or YAML format.
+     * AWS CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> used to validate this parameter is a string of characters consisting
+     * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
+     * the space character (\u0020) through the end of the ASCII character range</p>
+     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
+     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>The policy that grants an entity permission to assume the role.</p> <p>You
+     * must provide policies in JSON format in IAM. However, for AWS CloudFormation
+     * templates formatted in YAML, you can provide the policy in JSON or YAML format.
+     * AWS CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> used to validate this parameter is a string of characters consisting
+     * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
+     * the space character (\u0020) through the end of the ASCII character range</p>
+     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
+     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline UpdateAssumeRolePolicyRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>The policy that grants an entity permission to assume the role.</p> <p>You
+     * must provide policies in JSON format in IAM. However, for AWS CloudFormation
+     * templates formatted in YAML, you can provide the policy in JSON or YAML format.
+     * AWS CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> used to validate this parameter is a string of characters consisting
+     * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
+     * the space character (\u0020) through the end of the ASCII character range</p>
+     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
+     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline UpdateAssumeRolePolicyRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>The policy that grants an entity permission to assume the role.</p> <p>You
+     * must provide policies in JSON format in IAM. However, for AWS CloudFormation
+     * templates formatted in YAML, you can provide the policy in JSON or YAML format.
+     * AWS CloudFormation always converts a YAML policy to JSON format before
+     * submitting it to IAM.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> used to validate this parameter is a string of characters consisting
+     * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
+     * the space character (\u0020) through the end of the ASCII character range</p>
+     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
+     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline UpdateAssumeRolePolicyRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 

@@ -30,12 +30,12 @@ namespace CloudWatchLogsErrorMapper
 
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int OPERATION_ABORTED_HASH = HashingUtils::HashString("OperationAbortedException");
-static const int INVALID_SEQUENCE_TOKEN_HASH = HashingUtils::HashString("InvalidSequenceTokenException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
-static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
+static const int INVALID_SEQUENCE_TOKEN_HASH = HashingUtils::HashString("InvalidSequenceTokenException");
 static const int DATA_ALREADY_ACCEPTED_HASH = HashingUtils::HashString("DataAlreadyAcceptedException");
 static const int MALFORMED_QUERY_HASH = HashingUtils::HashString("MalformedQueryException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -50,17 +50,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::OPERATION_ABORTED), false);
   }
-  else if (hashCode == INVALID_SEQUENCE_TOKEN_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::INVALID_SEQUENCE_TOKEN), false);
-  }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::RESOURCE_ALREADY_EXISTS), false);
   }
-  else if (hashCode == INVALID_OPERATION_HASH)
+  else if (hashCode == INVALID_SEQUENCE_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::INVALID_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::INVALID_SEQUENCE_TOKEN), false);
   }
   else if (hashCode == DATA_ALREADY_ACCEPTED_HASH)
   {
@@ -73,6 +69,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == INVALID_OPERATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::INVALID_OPERATION), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -35,6 +35,7 @@ PutBucketPolicyRequest::PutBucketPolicyRequest() :
 {
 }
 
+
 void PutBucketPolicyRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

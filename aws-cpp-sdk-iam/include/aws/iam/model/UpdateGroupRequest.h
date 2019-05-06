@@ -32,7 +32,7 @@ namespace Model
   {
   public:
     UpdateGroupRequest();
-    
+
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
@@ -210,73 +210,65 @@ namespace Model
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * name.</p> <p>IAM user, group, role, and policy names must be unique within the
+     * account. Names are not distinguished by case. For example, you cannot create
+     * resources named both "MyResource" and "myresource".</p>
      */
     inline const Aws::String& GetNewGroupName() const{ return m_newGroupName; }
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * name.</p> <p>IAM user, group, role, and policy names must be unique within the
+     * account. Names are not distinguished by case. For example, you cannot create
+     * resources named both "MyResource" and "myresource".</p>
      */
     inline bool NewGroupNameHasBeenSet() const { return m_newGroupNameHasBeenSet; }
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * name.</p> <p>IAM user, group, role, and policy names must be unique within the
+     * account. Names are not distinguished by case. For example, you cannot create
+     * resources named both "MyResource" and "myresource".</p>
      */
     inline void SetNewGroupName(const Aws::String& value) { m_newGroupNameHasBeenSet = true; m_newGroupName = value; }
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * name.</p> <p>IAM user, group, role, and policy names must be unique within the
+     * account. Names are not distinguished by case. For example, you cannot create
+     * resources named both "MyResource" and "myresource".</p>
      */
     inline void SetNewGroupName(Aws::String&& value) { m_newGroupNameHasBeenSet = true; m_newGroupName = std::move(value); }
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * name.</p> <p>IAM user, group, role, and policy names must be unique within the
+     * account. Names are not distinguished by case. For example, you cannot create
+     * resources named both "MyResource" and "myresource".</p>
      */
     inline void SetNewGroupName(const char* value) { m_newGroupNameHasBeenSet = true; m_newGroupName.assign(value); }
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * name.</p> <p>IAM user, group, role, and policy names must be unique within the
+     * account. Names are not distinguished by case. For example, you cannot create
+     * resources named both "MyResource" and "myresource".</p>
      */
     inline UpdateGroupRequest& WithNewGroupName(const Aws::String& value) { SetNewGroupName(value); return *this;}
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * name.</p> <p>IAM user, group, role, and policy names must be unique within the
+     * account. Names are not distinguished by case. For example, you cannot create
+     * resources named both "MyResource" and "myresource".</p>
      */
     inline UpdateGroupRequest& WithNewGroupName(Aws::String&& value) { SetNewGroupName(std::move(value)); return *this;}
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * name.</p> <p>IAM user, group, role, and policy names must be unique within the
+     * account. Names are not distinguished by case. For example, you cannot create
+     * resources named both "MyResource" and "myresource".</p>
      */
     inline UpdateGroupRequest& WithNewGroupName(const char* value) { SetNewGroupName(value); return *this;}
 

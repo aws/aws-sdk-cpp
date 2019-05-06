@@ -30,10 +30,10 @@ namespace LexModelBuildingServiceErrorMapper
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 static const int PRECONDITION_FAILED_HASH = HashingUtils::HashString("PreconditionFailedException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
+static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -48,14 +48,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::NOT_FOUND), false);
   }
-  else if (hashCode == RESOURCE_IN_USE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::RESOURCE_IN_USE), false);
-  }
-  else if (hashCode == BAD_REQUEST_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::BAD_REQUEST), false);
-  }
   else if (hashCode == PRECONDITION_FAILED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::PRECONDITION_FAILED), false);
@@ -63,6 +55,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == RESOURCE_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::RESOURCE_IN_USE), false);
+  }
+  else if (hashCode == BAD_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::BAD_REQUEST), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

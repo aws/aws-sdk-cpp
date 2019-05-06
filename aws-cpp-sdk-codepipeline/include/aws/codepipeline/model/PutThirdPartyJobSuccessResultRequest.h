@@ -29,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a PutThirdPartyJobSuccessResult action.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the input of a <code>PutThirdPartyJobSuccessResult</code>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobSuccessResultInput">AWS
    * API Reference</a></p>
    */
@@ -38,7 +38,7 @@ namespace Model
   {
   public:
     PutThirdPartyJobSuccessResultRequest();
-    
+
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
@@ -52,49 +52,49 @@ namespace Model
 
     /**
      * <p>The ID of the job that successfully completed. This is the same ID returned
-     * from PollForThirdPartyJobs.</p>
+     * from <code>PollForThirdPartyJobs</code>.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
     /**
      * <p>The ID of the job that successfully completed. This is the same ID returned
-     * from PollForThirdPartyJobs.</p>
+     * from <code>PollForThirdPartyJobs</code>.</p>
      */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
      * <p>The ID of the job that successfully completed. This is the same ID returned
-     * from PollForThirdPartyJobs.</p>
+     * from <code>PollForThirdPartyJobs</code>.</p>
      */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
      * <p>The ID of the job that successfully completed. This is the same ID returned
-     * from PollForThirdPartyJobs.</p>
+     * from <code>PollForThirdPartyJobs</code>.</p>
      */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
      * <p>The ID of the job that successfully completed. This is the same ID returned
-     * from PollForThirdPartyJobs.</p>
+     * from <code>PollForThirdPartyJobs</code>.</p>
      */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
 
     /**
      * <p>The ID of the job that successfully completed. This is the same ID returned
-     * from PollForThirdPartyJobs.</p>
+     * from <code>PollForThirdPartyJobs</code>.</p>
      */
     inline PutThirdPartyJobSuccessResultRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
 
     /**
      * <p>The ID of the job that successfully completed. This is the same ID returned
-     * from PollForThirdPartyJobs.</p>
+     * from <code>PollForThirdPartyJobs</code>.</p>
      */
     inline PutThirdPartyJobSuccessResultRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the job that successfully completed. This is the same ID returned
-     * from PollForThirdPartyJobs.</p>
+     * from <code>PollForThirdPartyJobs</code>.</p>
      */
     inline PutThirdPartyJobSuccessResultRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
 

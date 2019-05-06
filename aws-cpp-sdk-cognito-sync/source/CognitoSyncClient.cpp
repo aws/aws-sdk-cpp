@@ -119,6 +119,7 @@ void CognitoSyncClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 BulkPublishOutcome CognitoSyncClient::BulkPublish(const BulkPublishRequest& request) const
 {
   if (!request.IdentityPoolIdHasBeenSet())

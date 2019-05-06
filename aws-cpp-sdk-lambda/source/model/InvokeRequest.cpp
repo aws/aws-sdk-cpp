@@ -38,6 +38,7 @@ InvokeRequest::InvokeRequest() :
 {
 }
 
+
 void InvokeRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

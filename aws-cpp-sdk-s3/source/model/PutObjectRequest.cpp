@@ -66,6 +66,7 @@ PutObjectRequest::PutObjectRequest() :
 {
 }
 
+
 void PutObjectRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

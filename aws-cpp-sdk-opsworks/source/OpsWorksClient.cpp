@@ -174,6 +174,7 @@ void OpsWorksClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 AssignInstanceOutcome OpsWorksClient::AssignInstance(const AssignInstanceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

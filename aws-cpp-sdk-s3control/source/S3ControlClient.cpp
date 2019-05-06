@@ -119,6 +119,7 @@ void S3ControlClient::OverrideEndpoint(const Aws::String& endpoint)
       m_baseUri = endpoint;
   }
 }
+
 CreateJobOutcome S3ControlClient::CreateJob(const CreateJobRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())

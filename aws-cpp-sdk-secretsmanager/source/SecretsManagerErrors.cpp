@@ -28,27 +28,23 @@ namespace SecretsManager
 namespace SecretsManagerErrorMapper
 {
 
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int RESOURCE_EXISTS_HASH = HashingUtils::HashString("ResourceExistsException");
 static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocumentException");
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceError");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int ENCRYPTION_FAILURE_HASH = HashingUtils::HashString("EncryptionFailure");
 static const int DECRYPTION_FAILURE_HASH = HashingUtils::HashString("DecryptionFailure");
 static const int PRECONDITION_NOT_MET_HASH = HashingUtils::HashString("PreconditionNotMetException");
+static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
+static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static const int ENCRYPTION_FAILURE_HASH = HashingUtils::HashString("EncryptionFailure");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_PARAMETER_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::INVALID_PARAMETER), false);
-  }
-  else if (hashCode == RESOURCE_EXISTS_HASH)
+  if (hashCode == RESOURCE_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::RESOURCE_EXISTS), false);
   }
@@ -60,21 +56,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::INTERNAL_SERVICE), false);
   }
-  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
+  else if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::INVALID_NEXT_TOKEN), false);
-  }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::INVALID_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::INVALID_PARAMETER), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == ENCRYPTION_FAILURE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::ENCRYPTION_FAILURE), false);
   }
   else if (hashCode == DECRYPTION_FAILURE_HASH)
   {
@@ -83,6 +71,18 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == PRECONDITION_NOT_MET_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::PRECONDITION_NOT_MET), false);
+  }
+  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::INVALID_NEXT_TOKEN), false);
+  }
+  else if (hashCode == INVALID_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::INVALID_REQUEST), false);
+  }
+  else if (hashCode == ENCRYPTION_FAILURE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::ENCRYPTION_FAILURE), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

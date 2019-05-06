@@ -124,6 +124,7 @@ void SFNClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CreateActivityOutcome SFNClient::CreateActivity(const CreateActivityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

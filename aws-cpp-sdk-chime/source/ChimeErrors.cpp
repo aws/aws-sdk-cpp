@@ -28,35 +28,39 @@ namespace Chime
 namespace ChimeErrorMapper
 {
 
-static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int THROTTLED_CLIENT_HASH = HashingUtils::HashString("ThrottledClientException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
+static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailureException");
+static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
+static const int THROTTLED_CLIENT_HASH = HashingUtils::HashString("ThrottledClientException");
 static const int UNPROCESSABLE_ENTITY_HASH = HashingUtils::HashString("UnprocessableEntityException");
 static const int UNAUTHORIZED_CLIENT_HASH = HashingUtils::HashString("UnauthorizedClientException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
-static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailureException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == FORBIDDEN_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeErrors::FORBIDDEN), false);
-  }
-  else if (hashCode == CONFLICT_HASH)
+  if (hashCode == CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeErrors::CONFLICT), false);
-  }
-  else if (hashCode == THROTTLED_CLIENT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeErrors::THROTTLED_CLIENT), false);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeErrors::NOT_FOUND), false);
+  }
+  else if (hashCode == SERVICE_FAILURE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeErrors::SERVICE_FAILURE), false);
+  }
+  else if (hashCode == FORBIDDEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeErrors::FORBIDDEN), false);
+  }
+  else if (hashCode == THROTTLED_CLIENT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeErrors::THROTTLED_CLIENT), false);
   }
   else if (hashCode == UNPROCESSABLE_ENTITY_HASH)
   {
@@ -69,10 +73,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == BAD_REQUEST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeErrors::BAD_REQUEST), false);
-  }
-  else if (hashCode == SERVICE_FAILURE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeErrors::SERVICE_FAILURE), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

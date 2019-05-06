@@ -28,24 +28,20 @@ namespace Cloud9
 namespace Cloud9ErrorMapper
 {
 
-static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
-static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerErrorException");
+static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
+static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
+static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerErrorException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == FORBIDDEN_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::FORBIDDEN), false);
-  }
-  else if (hashCode == CONFLICT_HASH)
+  if (hashCode == CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::CONFLICT), false);
   }
@@ -53,13 +49,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::NOT_FOUND), false);
   }
-  else if (hashCode == BAD_REQUEST_HASH)
+  else if (hashCode == FORBIDDEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::BAD_REQUEST), false);
-  }
-  else if (hashCode == INTERNAL_SERVER_ERROR_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::INTERNAL_SERVER_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::FORBIDDEN), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
@@ -68,6 +60,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::TOO_MANY_REQUESTS), false);
+  }
+  else if (hashCode == BAD_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::BAD_REQUEST), false);
+  }
+  else if (hashCode == INTERNAL_SERVER_ERROR_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Cloud9Errors::INTERNAL_SERVER_ERROR), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

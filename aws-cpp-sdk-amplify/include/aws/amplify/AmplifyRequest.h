@@ -27,7 +27,6 @@ namespace Amplify
   {
   public:
     virtual ~AmplifyRequest () {}
-    virtual Aws::String SerializePayload() const override = 0;
 
     void AddParametersToRequest(Aws::Http::HttpRequest& httpRequest) const { AWS_UNREFERENCED_PARAM(httpRequest); }
 

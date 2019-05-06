@@ -125,6 +125,7 @@ void ApplicationDiscoveryServiceClient::OverrideEndpoint(const Aws::String& endp
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 AssociateConfigurationItemsToApplicationOutcome ApplicationDiscoveryServiceClient::AssociateConfigurationItemsToApplication(const AssociateConfigurationItemsToApplicationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

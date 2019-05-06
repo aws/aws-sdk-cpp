@@ -28,24 +28,20 @@ namespace KinesisVideoMedia
 namespace KinesisVideoMediaErrorMapper
 {
 
-static const int CLIENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ClientLimitExceededException");
-static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
+static const int INVALID_ENDPOINT_HASH = HashingUtils::HashString("InvalidEndpointException");
 static const int CONNECTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ConnectionLimitExceededException");
 static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
-static const int INVALID_ENDPOINT_HASH = HashingUtils::HashString("InvalidEndpointException");
+static const int CLIENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ClientLimitExceededException");
+static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CLIENT_LIMIT_EXCEEDED_HASH)
+  if (hashCode == INVALID_ENDPOINT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoMediaErrors::CLIENT_LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == INVALID_ARGUMENT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoMediaErrors::INVALID_ARGUMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoMediaErrors::INVALID_ENDPOINT), false);
   }
   else if (hashCode == CONNECTION_LIMIT_EXCEEDED_HASH)
   {
@@ -55,9 +51,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoMediaErrors::NOT_AUTHORIZED), false);
   }
-  else if (hashCode == INVALID_ENDPOINT_HASH)
+  else if (hashCode == CLIENT_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoMediaErrors::INVALID_ENDPOINT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoMediaErrors::CLIENT_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == INVALID_ARGUMENT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoMediaErrors::INVALID_ARGUMENT), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

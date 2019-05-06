@@ -37,8 +37,8 @@ namespace CodePipeline
 namespace Model
 {
   /**
-   * <p>Represents the output of a ListPipelineExecutions action.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the output of a <code>ListPipelineExecutions</code>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutionsOutput">AWS
    * API Reference</a></p>
    */
@@ -87,51 +87,51 @@ namespace Model
 
 
     /**
-     * <p>A token that can be used in the next ListPipelineExecutions call. To view all
-     * items in the list, continue to call this operation with each subsequent token
-     * until no more nextToken values are returned.</p>
+     * <p>A token that can be used in the next <code>ListPipelineExecutions</code>
+     * call. To view all items in the list, continue to call this operation with each
+     * subsequent token until no more nextToken values are returned.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token that can be used in the next ListPipelineExecutions call. To view all
-     * items in the list, continue to call this operation with each subsequent token
-     * until no more nextToken values are returned.</p>
+     * <p>A token that can be used in the next <code>ListPipelineExecutions</code>
+     * call. To view all items in the list, continue to call this operation with each
+     * subsequent token until no more nextToken values are returned.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>A token that can be used in the next ListPipelineExecutions call. To view all
-     * items in the list, continue to call this operation with each subsequent token
-     * until no more nextToken values are returned.</p>
+     * <p>A token that can be used in the next <code>ListPipelineExecutions</code>
+     * call. To view all items in the list, continue to call this operation with each
+     * subsequent token until no more nextToken values are returned.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>A token that can be used in the next ListPipelineExecutions call. To view all
-     * items in the list, continue to call this operation with each subsequent token
-     * until no more nextToken values are returned.</p>
+     * <p>A token that can be used in the next <code>ListPipelineExecutions</code>
+     * call. To view all items in the list, continue to call this operation with each
+     * subsequent token until no more nextToken values are returned.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>A token that can be used in the next ListPipelineExecutions call. To view all
-     * items in the list, continue to call this operation with each subsequent token
-     * until no more nextToken values are returned.</p>
+     * <p>A token that can be used in the next <code>ListPipelineExecutions</code>
+     * call. To view all items in the list, continue to call this operation with each
+     * subsequent token until no more nextToken values are returned.</p>
      */
     inline ListPipelineExecutionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token that can be used in the next ListPipelineExecutions call. To view all
-     * items in the list, continue to call this operation with each subsequent token
-     * until no more nextToken values are returned.</p>
+     * <p>A token that can be used in the next <code>ListPipelineExecutions</code>
+     * call. To view all items in the list, continue to call this operation with each
+     * subsequent token until no more nextToken values are returned.</p>
      */
     inline ListPipelineExecutionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token that can be used in the next ListPipelineExecutions call. To view all
-     * items in the list, continue to call this operation with each subsequent token
-     * until no more nextToken values are returned.</p>
+     * <p>A token that can be used in the next <code>ListPipelineExecutions</code>
+     * call. To view all items in the list, continue to call this operation with each
+     * subsequent token until no more nextToken values are returned.</p>
      */
     inline ListPipelineExecutionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

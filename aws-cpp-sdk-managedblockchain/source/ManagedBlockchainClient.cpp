@@ -120,6 +120,7 @@ void ManagedBlockchainClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CreateMemberOutcome ManagedBlockchainClient::CreateMember(const CreateMemberRequest& request) const
 {
   if (!request.NetworkIdHasBeenSet())

@@ -120,6 +120,7 @@ void SnowballClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CancelClusterOutcome SnowballClient::CancelCluster(const CancelClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

@@ -35,8 +35,8 @@ namespace CodePipeline
 namespace Model
 {
   /**
-   * <p>Represents the output of a GetPipelineExecution action.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the output of a <code>GetPipelineExecution</code>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineExecutionOutput">AWS
    * API Reference</a></p>
    */

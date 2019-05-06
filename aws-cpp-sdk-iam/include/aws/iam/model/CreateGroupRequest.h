@@ -32,7 +32,7 @@ namespace Model
   {
   public:
     CreateGroupRequest();
-    
+
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
@@ -161,89 +161,65 @@ namespace Model
 
     /**
      * <p>The name of the group to create. Do not include the path in this value.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-. The group name must
-     * be unique within the account. Group names are not distinguished by case. For
-     * example, you cannot create groups named both "ADMINS" and "admins".</p>
+     * <p>IAM user, group, role, and policy names must be unique within the account.
+     * Names are not distinguished by case. For example, you cannot create resources
+     * named both "MyResource" and "myresource".</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
      * <p>The name of the group to create. Do not include the path in this value.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-. The group name must
-     * be unique within the account. Group names are not distinguished by case. For
-     * example, you cannot create groups named both "ADMINS" and "admins".</p>
+     * <p>IAM user, group, role, and policy names must be unique within the account.
+     * Names are not distinguished by case. For example, you cannot create resources
+     * named both "MyResource" and "myresource".</p>
      */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
      * <p>The name of the group to create. Do not include the path in this value.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-. The group name must
-     * be unique within the account. Group names are not distinguished by case. For
-     * example, you cannot create groups named both "ADMINS" and "admins".</p>
+     * <p>IAM user, group, role, and policy names must be unique within the account.
+     * Names are not distinguished by case. For example, you cannot create resources
+     * named both "MyResource" and "myresource".</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
      * <p>The name of the group to create. Do not include the path in this value.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-. The group name must
-     * be unique within the account. Group names are not distinguished by case. For
-     * example, you cannot create groups named both "ADMINS" and "admins".</p>
+     * <p>IAM user, group, role, and policy names must be unique within the account.
+     * Names are not distinguished by case. For example, you cannot create resources
+     * named both "MyResource" and "myresource".</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>The name of the group to create. Do not include the path in this value.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-. The group name must
-     * be unique within the account. Group names are not distinguished by case. For
-     * example, you cannot create groups named both "ADMINS" and "admins".</p>
+     * <p>IAM user, group, role, and policy names must be unique within the account.
+     * Names are not distinguished by case. For example, you cannot create resources
+     * named both "MyResource" and "myresource".</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
      * <p>The name of the group to create. Do not include the path in this value.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-. The group name must
-     * be unique within the account. Group names are not distinguished by case. For
-     * example, you cannot create groups named both "ADMINS" and "admins".</p>
+     * <p>IAM user, group, role, and policy names must be unique within the account.
+     * Names are not distinguished by case. For example, you cannot create resources
+     * named both "MyResource" and "myresource".</p>
      */
     inline CreateGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
      * <p>The name of the group to create. Do not include the path in this value.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-. The group name must
-     * be unique within the account. Group names are not distinguished by case. For
-     * example, you cannot create groups named both "ADMINS" and "admins".</p>
+     * <p>IAM user, group, role, and policy names must be unique within the account.
+     * Names are not distinguished by case. For example, you cannot create resources
+     * named both "MyResource" and "myresource".</p>
      */
     inline CreateGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the group to create. Do not include the path in this value.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-. The group name must
-     * be unique within the account. Group names are not distinguished by case. For
-     * example, you cannot create groups named both "ADMINS" and "admins".</p>
+     * <p>IAM user, group, role, and policy names must be unique within the account.
+     * Names are not distinguished by case. For example, you cannot create resources
+     * named both "MyResource" and "myresource".</p>
      */
     inline CreateGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 

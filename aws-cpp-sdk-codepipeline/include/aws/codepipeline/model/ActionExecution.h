@@ -162,65 +162,65 @@ namespace Model
 
     /**
      * <p>The system-generated token used to identify a unique approval request. The
-     * token for each open approval request can be obtained using the GetPipelineState
-     * command and is used to validate that the approval request corresponding to this
-     * token is still valid.</p>
+     * token for each open approval request can be obtained using the
+     * <code>GetPipelineState</code> command and is used to validate that the approval
+     * request corresponding to this token is still valid.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
 
     /**
      * <p>The system-generated token used to identify a unique approval request. The
-     * token for each open approval request can be obtained using the GetPipelineState
-     * command and is used to validate that the approval request corresponding to this
-     * token is still valid.</p>
+     * token for each open approval request can be obtained using the
+     * <code>GetPipelineState</code> command and is used to validate that the approval
+     * request corresponding to this token is still valid.</p>
      */
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
      * <p>The system-generated token used to identify a unique approval request. The
-     * token for each open approval request can be obtained using the GetPipelineState
-     * command and is used to validate that the approval request corresponding to this
-     * token is still valid.</p>
+     * token for each open approval request can be obtained using the
+     * <code>GetPipelineState</code> command and is used to validate that the approval
+     * request corresponding to this token is still valid.</p>
      */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
 
     /**
      * <p>The system-generated token used to identify a unique approval request. The
-     * token for each open approval request can be obtained using the GetPipelineState
-     * command and is used to validate that the approval request corresponding to this
-     * token is still valid.</p>
+     * token for each open approval request can be obtained using the
+     * <code>GetPipelineState</code> command and is used to validate that the approval
+     * request corresponding to this token is still valid.</p>
      */
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
 
     /**
      * <p>The system-generated token used to identify a unique approval request. The
-     * token for each open approval request can be obtained using the GetPipelineState
-     * command and is used to validate that the approval request corresponding to this
-     * token is still valid.</p>
+     * token for each open approval request can be obtained using the
+     * <code>GetPipelineState</code> command and is used to validate that the approval
+     * request corresponding to this token is still valid.</p>
      */
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
 
     /**
      * <p>The system-generated token used to identify a unique approval request. The
-     * token for each open approval request can be obtained using the GetPipelineState
-     * command and is used to validate that the approval request corresponding to this
-     * token is still valid.</p>
+     * token for each open approval request can be obtained using the
+     * <code>GetPipelineState</code> command and is used to validate that the approval
+     * request corresponding to this token is still valid.</p>
      */
     inline ActionExecution& WithToken(const Aws::String& value) { SetToken(value); return *this;}
 
     /**
      * <p>The system-generated token used to identify a unique approval request. The
-     * token for each open approval request can be obtained using the GetPipelineState
-     * command and is used to validate that the approval request corresponding to this
-     * token is still valid.</p>
+     * token for each open approval request can be obtained using the
+     * <code>GetPipelineState</code> command and is used to validate that the approval
+     * request corresponding to this token is still valid.</p>
      */
     inline ActionExecution& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
 
     /**
      * <p>The system-generated token used to identify a unique approval request. The
-     * token for each open approval request can be obtained using the GetPipelineState
-     * command and is used to validate that the approval request corresponding to this
-     * token is still valid.</p>
+     * token for each open approval request can be obtained using the
+     * <code>GetPipelineState</code> command and is used to validate that the approval
+     * request corresponding to this token is still valid.</p>
      */
     inline ActionExecution& WithToken(const char* value) { SetToken(value); return *this;}
 

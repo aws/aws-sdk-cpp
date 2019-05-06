@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>The details of a job sent in response to a GetThirdPartyJobDetails
-   * request.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of a job sent in response to a
+   * <code>GetThirdPartyJobDetails</code> request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ThirdPartyJobDetails">AWS
    * API Reference</a></p>
    */

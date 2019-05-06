@@ -148,6 +148,7 @@ void DatabaseMigrationServiceClient::OverrideEndpoint(const Aws::String& endpoin
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 AddTagsToResourceOutcome DatabaseMigrationServiceClient::AddTagsToResource(const AddTagsToResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

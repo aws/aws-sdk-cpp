@@ -36,7 +36,7 @@ namespace Model
   {
   public:
     DescribeConfigRuleEvaluationStatusRequest();
-    
+
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
@@ -164,7 +164,7 @@ namespace Model
     /**
      * <p>The number of rule evaluation results that you want returned.</p> <p>This
      * parameter is required if the rule limit for your account is more than the
-     * default of 50 rules.</p> <p>For information about requesting a rule limit
+     * default of 150 rules.</p> <p>For information about requesting a rule limit
      * increase, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
      * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p>
@@ -174,7 +174,7 @@ namespace Model
     /**
      * <p>The number of rule evaluation results that you want returned.</p> <p>This
      * parameter is required if the rule limit for your account is more than the
-     * default of 50 rules.</p> <p>For information about requesting a rule limit
+     * default of 150 rules.</p> <p>For information about requesting a rule limit
      * increase, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
      * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p>
@@ -184,7 +184,7 @@ namespace Model
     /**
      * <p>The number of rule evaluation results that you want returned.</p> <p>This
      * parameter is required if the rule limit for your account is more than the
-     * default of 50 rules.</p> <p>For information about requesting a rule limit
+     * default of 150 rules.</p> <p>For information about requesting a rule limit
      * increase, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
      * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p>
@@ -194,7 +194,7 @@ namespace Model
     /**
      * <p>The number of rule evaluation results that you want returned.</p> <p>This
      * parameter is required if the rule limit for your account is more than the
-     * default of 50 rules.</p> <p>For information about requesting a rule limit
+     * default of 150 rules.</p> <p>For information about requesting a rule limit
      * increase, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
      * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p>

@@ -37,6 +37,7 @@ PutRestApiRequest::PutRestApiRequest() :
 {
 }
 
+
 void PutRestApiRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

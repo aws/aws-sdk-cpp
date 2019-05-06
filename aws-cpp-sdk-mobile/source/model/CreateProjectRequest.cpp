@@ -34,6 +34,7 @@ CreateProjectRequest::CreateProjectRequest() :
 {
 }
 
+
 void CreateProjectRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

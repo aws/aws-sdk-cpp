@@ -34,6 +34,7 @@ ImportRestApiRequest::ImportRestApiRequest() :
 {
 }
 
+
 void ImportRestApiRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

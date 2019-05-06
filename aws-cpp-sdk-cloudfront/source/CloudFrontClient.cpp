@@ -148,6 +148,7 @@ void CloudFrontClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CreateCloudFrontOriginAccessIdentity2018_11_05Outcome CloudFrontClient::CreateCloudFrontOriginAccessIdentity2018_11_05(const CreateCloudFrontOriginAccessIdentity2018_11_05Request& request) const
 {
   Aws::Http::URI uri = m_uri;

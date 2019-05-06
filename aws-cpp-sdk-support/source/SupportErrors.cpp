@@ -28,27 +28,39 @@ namespace Support
 namespace SupportErrorMapper
 {
 
+static const int CASE_ID_NOT_FOUND_HASH = HashingUtils::HashString("CaseIdNotFound");
 static const int CASE_CREATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CaseCreationLimitExceeded");
 static const int ATTACHMENT_SET_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AttachmentSetSizeLimitExceeded");
+static const int ATTACHMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AttachmentLimitExceeded");
+static const int ATTACHMENT_ID_NOT_FOUND_HASH = HashingUtils::HashString("AttachmentIdNotFound");
 static const int ATTACHMENT_SET_ID_NOT_FOUND_HASH = HashingUtils::HashString("AttachmentSetIdNotFound");
 static const int ATTACHMENT_SET_EXPIRED_HASH = HashingUtils::HashString("AttachmentSetExpired");
 static const int DESCRIBE_ATTACHMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DescribeAttachmentLimitExceeded");
-static const int ATTACHMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AttachmentLimitExceeded");
-static const int CASE_ID_NOT_FOUND_HASH = HashingUtils::HashString("CaseIdNotFound");
-static const int ATTACHMENT_ID_NOT_FOUND_HASH = HashingUtils::HashString("AttachmentIdNotFound");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CASE_CREATION_LIMIT_EXCEEDED_HASH)
+  if (hashCode == CASE_ID_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SupportErrors::CASE_ID_NOT_FOUND), false);
+  }
+  else if (hashCode == CASE_CREATION_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SupportErrors::CASE_CREATION_LIMIT_EXCEEDED), false);
   }
   else if (hashCode == ATTACHMENT_SET_SIZE_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SupportErrors::ATTACHMENT_SET_SIZE_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == ATTACHMENT_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SupportErrors::ATTACHMENT_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == ATTACHMENT_ID_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SupportErrors::ATTACHMENT_ID_NOT_FOUND), false);
   }
   else if (hashCode == ATTACHMENT_SET_ID_NOT_FOUND_HASH)
   {
@@ -61,18 +73,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DESCRIBE_ATTACHMENT_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SupportErrors::DESCRIBE_ATTACHMENT_LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == ATTACHMENT_LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SupportErrors::ATTACHMENT_LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == CASE_ID_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SupportErrors::CASE_ID_NOT_FOUND), false);
-  }
-  else if (hashCode == ATTACHMENT_ID_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SupportErrors::ATTACHMENT_ID_NOT_FOUND), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

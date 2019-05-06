@@ -222,6 +222,7 @@ void APIGatewayClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 CreateApiKeyOutcome APIGatewayClient::CreateApiKey(const CreateApiKeyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

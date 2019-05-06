@@ -747,7 +747,7 @@ namespace Model
      * to the user. Then Amazon Lex sends that message in the response. </p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_audioStream = Aws::Utils::Stream::ResponseStream(body); }
-    
+
   private:
 
     Aws::String m_contentType;

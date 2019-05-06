@@ -106,6 +106,7 @@ void MarketplaceMeteringClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 BatchMeterUsageOutcome MarketplaceMeteringClient::BatchMeterUsage(const BatchMeterUsageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;

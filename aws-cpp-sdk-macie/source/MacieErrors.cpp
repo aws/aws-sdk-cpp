@@ -28,26 +28,26 @@ namespace Macie
 namespace MacieErrorMapper
 {
 
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_INPUT_HASH)
+  if (hashCode == INTERNAL_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MacieErrors::INVALID_INPUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MacieErrors::INTERNAL), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MacieErrors::LIMIT_EXCEEDED), false);
   }
-  else if (hashCode == INTERNAL_HASH)
+  else if (hashCode == INVALID_INPUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MacieErrors::INTERNAL), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MacieErrors::INVALID_INPUT), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

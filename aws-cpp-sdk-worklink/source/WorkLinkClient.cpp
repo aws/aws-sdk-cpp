@@ -129,6 +129,7 @@ void WorkLinkClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+
 AssociateDomainOutcome WorkLinkClient::AssociateDomain(const AssociateDomainRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
