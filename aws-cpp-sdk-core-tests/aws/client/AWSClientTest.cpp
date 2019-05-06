@@ -26,6 +26,8 @@
 #include <aws/testing/mocks/aws/client/MockAWSClient.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/platform/FileSystem.h>
+#include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/platform/Environment.h>
 #include <fstream>
 
 using Aws::Utils::DateTime;
@@ -102,6 +104,31 @@ protected:
         }
         mockHttpClient->AddResponseToReturn(httpResponse);
     }
+};
+
+class AWSConfigTestSuite : public ::testing::Test
+{
+protected:
+    Aws::String m_storedAwsConfigFileEnvVar;
+
+    void SetUp()
+    {
+        m_storedAwsConfigFileEnvVar = Aws::Environment::GetEnv("AWS_CONFIG_FILE");
+        auto profileDirectory = Aws::Auth::ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+        Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
+    }
+
+    void TearDown()
+    {
+        if(m_storedAwsConfigFileEnvVar.empty())
+        {
+            Aws::Environment::UnSetEnv("AWS_CONFIG_FILE");
+        }
+        else
+        {
+            Aws::Environment::SetEnv("AWS_CONFIG_FILE", m_storedAwsConfigFileEnvVar.c_str(), 1/*override*/);
+        }
+     }
 };
 
 TEST_F(AWSClientTestSuite, TestClockSkewOutsideAcceptableRange)
@@ -244,7 +271,7 @@ TEST(AWSClientTest, TestBuildHttpRequestWithHeadersOnly)
     ASSERT_EQ("testValue2", finalHeaders["test2"]);
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
     ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
-	}
+}
 
 TEST(AWSClientTest, TestBuildHttpRequestWithHeadersAndBody)
 {
@@ -330,7 +357,7 @@ TEST(AWSClientTest, TestOverflowContainer)
     ASSERT_STREQ(enumValue, container->RetrieveOverflow(hashcode).c_str());
 }
 
-TEST(AWSClientTest, TestClientConfigurationWithNonExistentProfile)
+TEST_F(AWSConfigTestSuite, TestClientConfigurationWithNonExistentProfile)
 {
     // create a config file with profile named Dijkstra
     Aws::String configFileName = Aws::Auth::GetConfigProfileFilename() + "Test";
@@ -351,7 +378,7 @@ TEST(AWSClientTest, TestClientConfigurationWithNonExistentProfile)
     Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
 }
 
-TEST(AWSClientTest, TestClientConfigurationWithNonExistentConfigFile)
+TEST_F(AWSConfigTestSuite, TestClientConfigurationWithNonExistentConfigFile)
 {
     Aws::Environment::SetEnv("AWS_CONFIG_FILE", "WhatAreTheChances", 1/*overwrite*/);
 
@@ -360,7 +387,7 @@ TEST(AWSClientTest, TestClientConfigurationWithNonExistentConfigFile)
     Aws::Environment::UnSetEnv("AWS_CONFIG_FILE");
 }
 
-TEST(AWSClientTest, TestClientConfigurationSetsRegionToProfile)
+TEST_F(AWSConfigTestSuite, TestClientConfigurationSetsRegionToProfile)
 {
     // create a config file with profile named Dijkstra
     Aws::String configFileName = Aws::Auth::GetConfigProfileFilename() + "Test";
