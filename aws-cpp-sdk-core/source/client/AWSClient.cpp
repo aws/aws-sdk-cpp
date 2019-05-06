@@ -306,13 +306,13 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpReque
     if (DoesResponseGenerateError(httpResponse))
     {
         AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
-		auto err = BuildAWSError(httpResponse);
-		auto ip = httpRequest->GetResolvedRemoteHost();
-		if (!ip.empty())
-		{
-			err.SetMessage(err.GetMessage() + " with address : " + ip);
-		}
-		return HttpResponseOutcome(err);
+        auto err = BuildAWSError(httpResponse);
+        auto ip = httpRequest->GetResolvedRemoteHost();
+        if (!ip.empty())
+        {
+            err.SetMessage(err.GetMessage() + " with address : " + ip);
+        }
+        return HttpResponseOutcome(err);
     }
 
     AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned successful response.");

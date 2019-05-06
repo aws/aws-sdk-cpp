@@ -108,8 +108,6 @@ protected:
 
     virtual void TearDown()
     {
-        // delete queues, just in case
-        DeleteAllTestQueues();
         sqsClient = nullptr;
     }
 
