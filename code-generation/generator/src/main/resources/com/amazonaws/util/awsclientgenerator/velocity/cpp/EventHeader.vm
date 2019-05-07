@@ -35,7 +35,7 @@ namespace Model
   class $typeInfo.exportValue $typeInfo.className
   {
   public:
-    ${typeInfo.className}();
+    ${typeInfo.className}() = default;
     ${typeInfo.className}(Aws::Vector<unsigned char>&& value) { ${memberVariableName} = std::move(value); }
 
     $memberDocumentation

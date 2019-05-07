@@ -267,7 +267,7 @@ namespace
         const char payloadString[] = "Amazon Web Services, Inc.";
         Event::Message msg;
         msg.InsertEventHeader(":message-type", Aws::String("event"));
-        msg.WriteEventPayload(reinterpret_cast<const unsigned char*>(payloadString), sizeof(payloadString));
+        msg.WriteEventPayload(payloadString);
         io.WriteEvent(msg);
 
         io.flush();

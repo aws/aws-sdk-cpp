@@ -62,11 +62,12 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
 #set($streamModelName = '')
 #foreach($entity in $operation.request.shape.members.entrySet())
 #if($entity.value.shape.isEventStream())
-#set($streamModelName = ${entity.value.shape.name})
+#set($streamModelName = ${entity.key})
+#set($streamModelType = ${entity.value.shape.name})
 #break
 #end
 #end
-  auto eventEncoderStream = Aws::MakeShared<Model::$streamModelName>(ALLOCATION_TAG);
+  auto eventEncoderStream = Aws::MakeShared<Model::$streamModelType>(ALLOCATION_TAG);
   eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
   request.Set$streamModelName(eventEncoderStream); // this becomes the body of the request
   // TODO: pass the signer pointer right away instead of doing another lookup by name

@@ -90,9 +90,9 @@ namespace Aws
                 /**
                  * Set event payload.
                  */
-                inline void WriteEventPayload(const unsigned char* data, size_t length) { m_eventPayload.insert(m_eventPayload.end(), data, data + length); }
-
+                void WriteEventPayload(const unsigned char* data, size_t length);
                 void WriteEventPayload(const Aws::Vector<unsigned char>& bits);
+                void WriteEventPayload(const Aws::String& bits);
                 /**
                  * Get the byte array of the payload with transferring ownership.
                  */

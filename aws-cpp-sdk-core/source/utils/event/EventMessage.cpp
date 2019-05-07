@@ -73,7 +73,17 @@ namespace Aws
                 m_eventPayload.clear();
             }
 
+            void Message::WriteEventPayload(const unsigned char* data, size_t length)
+            {
+                std::copy(data, data + length, std::back_inserter(m_eventPayload));
+            }
+
             void Message::WriteEventPayload(const Aws::Vector<unsigned char>& bits)
+            {
+                std::copy(bits.cbegin(), bits.cend(), std::back_inserter(m_eventPayload));
+            }
+
+            void Message::WriteEventPayload(const Aws::String& bits)
             {
                 std::copy(bits.cbegin(), bits.cend(), std::back_inserter(m_eventPayload));
             }

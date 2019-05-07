@@ -51,6 +51,8 @@ public class JsonCppClientGenerator extends CppClientGenerator {
     protected SdkFileEntry generateModelHeaderFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
 
         Shape shape = shapeEntry.getValue();
+        if (shape.isResult() && shape.hasEventStreamMembers())
+            return null;
         //we only want to override json related stuff.
         if (shape.isRequest() || shape.isEnum() || shape.hasEventPayloadMembers() && shape.hasBlobMembers()) {
             return super.generateModelHeaderFile(serviceModel, shapeEntry);
@@ -86,6 +88,9 @@ public class JsonCppClientGenerator extends CppClientGenerator {
     @Override
     protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
         Shape shape = shapeEntry.getValue();
+        if (shape.isResult() && shape.hasEventStreamMembers())
+            return null;
+
         if (shape.isEnum() || (shape.hasNestedEventPayloadMembers() && !shape.isRequest())) {
             // event-stream input shapes do their serialization via the encoder; So skip generating code for those.
             return super.generateModelSourceFile(serviceModel, shapeEntry);

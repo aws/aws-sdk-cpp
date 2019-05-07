@@ -46,7 +46,7 @@ namespace Model
        msg.InsertEventHeader(":content-type", Aws::String("text/plain"));
 #end
 ## handle other kinds of payload as they come
-       msg.WriteEventPayload(value.Get${eventPayloadMember.value.shape.name}());
+       msg.WriteEventPayload(value.Get${eventPayloadMember.key}());
 #break
 #end
 #end
