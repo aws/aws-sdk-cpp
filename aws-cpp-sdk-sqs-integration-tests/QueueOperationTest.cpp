@@ -156,7 +156,7 @@ protected:
     Aws::String GetAwsAccountId()
     {
         auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, GetConfig());
-        auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, GetConfig());
+        auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG);
         Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
         return accessManagementClient.GetAccountId();
     }
