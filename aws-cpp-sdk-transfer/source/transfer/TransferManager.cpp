@@ -71,7 +71,7 @@ namespace Aws
             assert(m_transferConfig.transferExecutor);
             for (uint64_t i = 0; i < m_transferConfig.transferBufferMaxHeapSize; i += m_transferConfig.bufferSize)
             {
-                m_bufferManager.PutResource(Aws::NewArray<unsigned char>((m_transferConfig.bufferSize), CLASS_TAG));
+                m_bufferManager.PutResource(Aws::NewArray<unsigned char>(static_cast<size_t>(m_transferConfig.bufferSize), CLASS_TAG));
             }
         }
 
