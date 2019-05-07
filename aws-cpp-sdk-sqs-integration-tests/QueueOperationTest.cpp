@@ -56,58 +56,60 @@ using namespace Aws::Utils::Json;
 namespace
 {
 #define TEST_QUEUE_PREFIX "Test_"
-static const char BASE_SIMPLE_QUEUE_NAME[] = TEST_QUEUE_PREFIX "Simple";
-static const char BASE_SEND_RECEIVE_QUEUE_NAME[] = TEST_QUEUE_PREFIX "SendReceive";
-static const char BASE_ATTRIBUTES_QUEUE_NAME[] = TEST_QUEUE_PREFIX "Attributes";
-static const char BASE_PERMISSIONS_QUEUE_NAME[] = TEST_QUEUE_PREFIX "Permissions";
-static const char BASE_DEAD_LETTER_QUEUE_NAME[] = TEST_QUEUE_PREFIX "DeadLetter";
-static const char BASE_DEAD_LETTER_SOURCE_QUEUE_NAME[] = TEST_QUEUE_PREFIX "DeadLetterSource";
+static const char BASE_SIMPLE_QUEUE_NAME[]                          = TEST_QUEUE_PREFIX "Simple";
+static const char BASE_SEND_RECEIVE_QUEUE_NAME[]                    = TEST_QUEUE_PREFIX "SendReceive";
+static const char BASE_ATTRIBUTES_QUEUE_NAME[]                      = TEST_QUEUE_PREFIX "Attributes";
+static const char BASE_PERMISSIONS_QUEUE_NAME[]                     = TEST_QUEUE_PREFIX "Permissions";
+static const char BASE_DEAD_LETTER_QUEUE_NAME[]                     = TEST_QUEUE_PREFIX "DeadLetter";
+static const char BASE_DEAD_LETTER_SOURCE_QUEUE_NAME[]              = TEST_QUEUE_PREFIX "DeadLetterSource";
 static const char BASE_CHANGE_MESSAGE_VISIBILITY_BATCH_QUEUE_NAME[] = TEST_QUEUE_PREFIX "ChangeMsgVisBatch";
-static const char ALLOCATION_TAG[] = "QueueOperationTest";
+static const char ALLOCATION_TAG[]                                  = "QueueOperationTest";
 
 class QueueOperationTest : public ::testing::Test
 {
 
 public:
-    std::shared_ptr<SQSClient> sqsClient;
-    Aws::String m_accountId;
-    Aws::String m_resourceUUID;
+    static std::shared_ptr<SQSClient> sqsClient;
 
 protected:
 
     Aws::String BuildResourceName(const char* baseName)
     {
-        return Aws::Testing::GetAwsResourcePrefix() + m_resourceUUID + baseName;
+        return Aws::Testing::GetAwsResourcePrefix() + GetRandomUUID() + baseName;
     }
 
-    Aws::String BuildResourcePrefix()
+    static Aws::String BuildResourcePrefix()
     {
-        return Aws::Testing::GetAwsResourcePrefix() + m_resourceUUID + TEST_QUEUE_PREFIX;
+        return Aws::Testing::GetAwsResourcePrefix() + GetRandomUUID() + TEST_QUEUE_PREFIX;
     }
 
-    virtual void SetUp()
+    // the entire reason for this function is workaround the memory-allocator being initialized after static variables.
+    static Aws::String GetRandomUUID()
     {
-        ClientConfiguration config;
-        config.scheme = Scheme::HTTPS;
-        config.region = Region::US_EAST_1;
+        static const Aws::Utils::UUID m_resourceUUID = Aws::Utils::UUID::RandomUUID();
+        return m_resourceUUID;
+    }
+
+    static ClientConfiguration GetConfig()
+    {
+        ClientConfiguration config("default");
 
 #if USE_PROXY_FOR_TESTS
         config.scheme = Scheme::HTTP;
         config.proxyHost = PROXY_HOST;
         config.proxyPort = PROXY_PORT;
 #endif
-        sqsClient = Aws::MakeShared<SQSClient>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config);
-        
-        auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, config);
-
-        auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, config);
-        Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
-        m_accountId = accessManagementClient.GetAccountId();
-        m_resourceUUID = Aws::Utils::UUID::RandomUUID();
+        return config;
     }
 
-    virtual void TearDown()
+    static void SetUpTestCase()
     {
+        sqsClient = Aws::MakeShared<SQSClient>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), GetConfig());
+    }
+
+    static void TearDownTestCase()
+    {
+        DeleteAllTestQueues();
         sqsClient = nullptr;
     }
 
@@ -126,15 +128,15 @@ protected:
             }
             if (outcome.GetError().GetErrorType() != SQSErrors::QUEUE_DELETED_RECENTLY)
             {
-                return "";
+                return {};
             }
             std::this_thread::sleep_for(std::chrono::seconds(10));
         }
 
-        return "";
+        return {};
     }
 
-    void DeleteAllTestQueues()
+    static void DeleteAllTestQueues()
     {
         ListQueuesRequest listQueueRequest;
         listQueueRequest.WithQueueNamePrefix(BuildResourcePrefix());
@@ -150,13 +152,25 @@ protected:
             ASSERT_TRUE(deleteQueueOutcome.IsSuccess());
         }
     }
+
+    Aws::String GetAwsAccountId()
+    {
+        auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, GetConfig());
+        auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, GetConfig());
+        Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
+        return accessManagementClient.GetAccountId();
+    }
 };
+
+std::shared_ptr<SQSClient> QueueOperationTest::sqsClient(nullptr);
+
 } // anonymous namespace
 
-TEST_F(QueueOperationTest, TestCreateAndDeleteQueue)
+TEST_F(QueueOperationTest, TestCreateQueue)
 {
     CreateQueueRequest createQueueRequest;
     createQueueRequest.SetQueueName(BuildResourceName(BASE_SIMPLE_QUEUE_NAME));
+
     CreateQueueOutcome createQueueOutcome;
     bool shouldContinue = true;
     while (shouldContinue)
@@ -184,32 +198,27 @@ TEST_F(QueueOperationTest, TestCreateAndDeleteQueue)
     SQSErrors error = createQueueOutcome.GetError().GetErrorType();
     EXPECT_TRUE(SQSErrors::QUEUE_NAME_EXISTS == error || SQSErrors::QUEUE_DELETED_RECENTLY == error);
 
-    // This call in eventually consistent (sometimes over 1 min), so try it a few times    
-    for (int attempt = 0; ; attempt++)    
-    {    
-        ListQueuesRequest listQueueRequest;    
-        listQueueRequest.WithQueueNamePrefix(BuildResourcePrefix());    
 
-        ListQueuesOutcome listQueuesOutcome = sqsClient->ListQueues(listQueueRequest);    
-        if (listQueuesOutcome.IsSuccess())    
-        {    
-            ListQueuesResult listQueuesResult = listQueuesOutcome.GetResult();    
-            if (listQueuesResult.GetQueueUrls().size() == 1)    
-            {    
-                EXPECT_EQ(queueUrl, listQueuesResult.GetQueueUrls()[0]);    
-                EXPECT_TRUE(listQueuesResult.GetResponseMetadata().GetRequestId().length() > 0);    
-                break; // success!    
-            }    
-        }    
-        if (attempt >= 10) FAIL();    
-        std::this_thread::sleep_for(std::chrono::seconds(3));    
+    // This call is eventually consistent (sometimes over 1 min), so try it a few times
+    for (int attempt = 0; ; attempt++)
+    {
+        ListQueuesRequest listQueueRequest;
+        listQueueRequest.WithQueueNamePrefix(BuildResourcePrefix());
+
+        ListQueuesOutcome listQueuesOutcome = sqsClient->ListQueues(listQueueRequest);
+        if (listQueuesOutcome.IsSuccess())
+        {
+            ListQueuesResult listQueuesResult = listQueuesOutcome.GetResult();
+            if (listQueuesResult.GetQueueUrls().size() == 1)
+            {
+                EXPECT_EQ(queueUrl, listQueuesResult.GetQueueUrls()[0]);
+                EXPECT_TRUE(listQueuesResult.GetResponseMetadata().GetRequestId().length() > 0);
+                break; // success!
+            }
+        }
+        if (attempt >= 10) FAIL();
+        std::this_thread::sleep_for(std::chrono::seconds(10));
     }
-
-    DeleteQueueRequest deleteQueueRequest;
-    deleteQueueRequest.WithQueueUrl(queueUrl);
-
-    DeleteQueueOutcome deleteQueueOutcome = sqsClient->DeleteQueue(deleteQueueRequest);
-    ASSERT_TRUE(deleteQueueOutcome.IsSuccess());
 }
 
 TEST_F(QueueOperationTest, TestSendReceiveDelete)
@@ -267,12 +276,6 @@ TEST_F(QueueOperationTest, TestSendReceiveDelete)
 
     receiveMessageOutcome = sqsClient->ReceiveMessage(receiveMessageRequest);
     EXPECT_EQ(0uL, receiveMessageOutcome.GetResult().GetMessages().size());
-
-    DeleteQueueRequest deleteQueueRequest;
-    deleteQueueRequest.WithQueueUrl(queueUrl);
-
-    DeleteQueueOutcome deleteQueueOutcome = sqsClient->DeleteQueue(deleteQueueRequest);
-    ASSERT_TRUE(deleteQueueOutcome.IsSuccess());
 }
 
 
@@ -303,12 +306,6 @@ TEST_F(QueueOperationTest, TestQueueAttributes)
     ASSERT_TRUE(queueAttributesOutcome.IsSuccess());
     EXPECT_EQ("45", queueAttributesOutcome.GetResult().GetAttributes().find(QueueAttributeName::DelaySeconds)->second);
     EXPECT_EQ("42", queueAttributesOutcome.GetResult().GetAttributes().find(QueueAttributeName::VisibilityTimeout)->second);
-
-    DeleteQueueRequest deleteQueueRequest;
-    deleteQueueRequest.WithQueueUrl(queueUrl);
-
-    DeleteQueueOutcome deleteQueueOutcome = sqsClient->DeleteQueue(deleteQueueRequest);
-    ASSERT_TRUE(deleteQueueOutcome.IsSuccess());
 }
 
 TEST_F(QueueOperationTest, TestPermissions)
@@ -318,7 +315,7 @@ TEST_F(QueueOperationTest, TestPermissions)
     ASSERT_TRUE(queueUrl.find(queueName) != Aws::String::npos);
 
     AddPermissionRequest addPermissionRequest;
-    addPermissionRequest.AddAWSAccountIds(m_accountId).AddActions("ReceiveMessage").WithLabel("Test").WithQueueUrl(
+    addPermissionRequest.AddAWSAccountIds(GetAwsAccountId()).AddActions("ReceiveMessage").WithLabel("Test").WithQueueUrl(
             queueUrl);
     AddPermissionOutcome permissionOutcome = sqsClient->AddPermission(addPermissionRequest);
     ASSERT_TRUE(permissionOutcome.IsSuccess());
@@ -334,7 +331,7 @@ TEST_F(QueueOperationTest, TestPermissions)
     auto policyView = policy.View();
     EXPECT_EQ(addPermissionRequest.GetLabel(), policyView.GetArray("Statement")[0].GetString("Sid"));
     Aws::StringStream expectedValue;
-    expectedValue << "arn:aws:iam::" << m_accountId << ":root";
+    expectedValue << "arn:aws:iam::" << GetAwsAccountId() << ":root";
     EXPECT_EQ(expectedValue.str(), policyView.GetArray("Statement")[0].GetObject("Principal").GetString("AWS"));
     EXPECT_EQ("SQS:ReceiveMessage", policyView.GetArray("Statement")[0].GetString("Action"));
 
@@ -347,12 +344,6 @@ TEST_F(QueueOperationTest, TestPermissions)
     ASSERT_TRUE(queueAttributesOutcome.IsSuccess());
 
     EXPECT_TRUE(queueAttributesOutcome.GetResult().GetAttributes().find(QueueAttributeName::Policy) == queueAttributesOutcome.GetResult().GetAttributes().end());
-
-    DeleteQueueRequest deleteQueueRequest;
-    deleteQueueRequest.WithQueueUrl(queueUrl);
-
-    DeleteQueueOutcome deleteQueueOutcome = sqsClient->DeleteQueue(deleteQueueRequest);
-    ASSERT_TRUE(deleteQueueOutcome.IsSuccess());
 }
 
 TEST_F(QueueOperationTest, TestListDeadLetterSourceQueues)
@@ -406,16 +397,6 @@ TEST_F(QueueOperationTest, TestListDeadLetterSourceQueues)
 
     ASSERT_TRUE(found);
     EXPECT_EQ(queueUrl, listDeadLetterQueuesOutcome.GetResult().GetQueueUrls()[0]);
-
-    DeleteQueueRequest deleteQueueRequest;
-    deleteQueueRequest.WithQueueUrl(queueUrl);
-
-    DeleteQueueOutcome deleteQueueOutcome = sqsClient->DeleteQueue(deleteQueueRequest);
-    ASSERT_TRUE(deleteQueueOutcome.IsSuccess());
-
-    deleteQueueRequest.WithQueueUrl(deadLetterQueueUrl);
-    deleteQueueOutcome = sqsClient->DeleteQueue(deleteQueueRequest);
-    ASSERT_TRUE(deleteQueueOutcome.IsSuccess());
 }
 
 TEST_F(QueueOperationTest, ChangeMessageVisibilityBatch)
@@ -489,10 +470,4 @@ TEST_F(QueueOperationTest, ChangeMessageVisibilityBatch)
     EXPECT_EQ("InvalidParameterValue", batchResultErrorEntry.GetCode());
     EXPECT_TRUE(batchResultErrorEntry.GetSenderFault());
   }
-
-  DeleteQueueRequest deleteQueueRequest;
-  deleteQueueRequest.WithQueueUrl(queueUrl);
-
-  auto deleteQueueOutcome = sqsClient->DeleteQueue(deleteQueueRequest);
-  ASSERT_TRUE(deleteQueueOutcome.IsSuccess());
 }
