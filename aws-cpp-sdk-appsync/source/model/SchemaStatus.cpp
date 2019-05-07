@@ -33,6 +33,9 @@ namespace Aws
         static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
+        static const int NOT_APPLICABLE_HASH = HashingUtils::HashString("NOT_APPLICABLE");
 
 
         SchemaStatus GetSchemaStatusForName(const Aws::String& name)
@@ -49,6 +52,18 @@ namespace Aws
           else if (hashCode == DELETING_HASH)
           {
             return SchemaStatus::DELETING;
+          }
+          else if (hashCode == FAILED_HASH)
+          {
+            return SchemaStatus::FAILED;
+          }
+          else if (hashCode == SUCCESS_HASH)
+          {
+            return SchemaStatus::SUCCESS;
+          }
+          else if (hashCode == NOT_APPLICABLE_HASH)
+          {
+            return SchemaStatus::NOT_APPLICABLE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +85,12 @@ namespace Aws
             return "ACTIVE";
           case SchemaStatus::DELETING:
             return "DELETING";
+          case SchemaStatus::FAILED:
+            return "FAILED";
+          case SchemaStatus::SUCCESS:
+            return "SUCCESS";
+          case SchemaStatus::NOT_APPLICABLE:
+            return "NOT_APPLICABLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

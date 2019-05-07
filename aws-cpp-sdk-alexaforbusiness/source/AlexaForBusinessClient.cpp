@@ -50,6 +50,7 @@
 #include <aws/alexaforbusiness/model/DeleteConferenceProviderRequest.h>
 #include <aws/alexaforbusiness/model/DeleteContactRequest.h>
 #include <aws/alexaforbusiness/model/DeleteDeviceRequest.h>
+#include <aws/alexaforbusiness/model/DeleteDeviceUsageDataRequest.h>
 #include <aws/alexaforbusiness/model/DeleteGatewayGroupRequest.h>
 #include <aws/alexaforbusiness/model/DeleteProfileRequest.h>
 #include <aws/alexaforbusiness/model/DeleteRoomRequest.h>
@@ -887,6 +888,41 @@ void AlexaForBusinessClient::DeleteDeviceAsync(const DeleteDeviceRequest& reques
 void AlexaForBusinessClient::DeleteDeviceAsyncHelper(const DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteDevice(request), context);
+}
+
+DeleteDeviceUsageDataOutcome AlexaForBusinessClient::DeleteDeviceUsageData(const DeleteDeviceUsageDataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteDeviceUsageDataOutcome(DeleteDeviceUsageDataResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteDeviceUsageDataOutcome(outcome.GetError());
+  }
+}
+
+DeleteDeviceUsageDataOutcomeCallable AlexaForBusinessClient::DeleteDeviceUsageDataCallable(const DeleteDeviceUsageDataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDeviceUsageDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDeviceUsageData(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::DeleteDeviceUsageDataAsync(const DeleteDeviceUsageDataRequest& request, const DeleteDeviceUsageDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDeviceUsageDataAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::DeleteDeviceUsageDataAsyncHelper(const DeleteDeviceUsageDataRequest& request, const DeleteDeviceUsageDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDeviceUsageData(request), context);
 }
 
 DeleteGatewayGroupOutcome AlexaForBusinessClient::DeleteGatewayGroup(const DeleteGatewayGroupRequest& request) const

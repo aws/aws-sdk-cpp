@@ -120,6 +120,31 @@ namespace Model
      */
     inline GetIntrospectionSchemaRequest& WithFormat(OutputType&& value) { SetFormat(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A flag that specifies whether the schema introspection should contain
+     * directives.</p>
+     */
+    inline bool GetIncludeDirectives() const{ return m_includeDirectives; }
+
+    /**
+     * <p>A flag that specifies whether the schema introspection should contain
+     * directives.</p>
+     */
+    inline bool IncludeDirectivesHasBeenSet() const { return m_includeDirectivesHasBeenSet; }
+
+    /**
+     * <p>A flag that specifies whether the schema introspection should contain
+     * directives.</p>
+     */
+    inline void SetIncludeDirectives(bool value) { m_includeDirectivesHasBeenSet = true; m_includeDirectives = value; }
+
+    /**
+     * <p>A flag that specifies whether the schema introspection should contain
+     * directives.</p>
+     */
+    inline GetIntrospectionSchemaRequest& WithIncludeDirectives(bool value) { SetIncludeDirectives(value); return *this;}
+
   private:
 
     Aws::String m_apiId;
@@ -127,6 +152,9 @@ namespace Model
 
     OutputType m_format;
     bool m_formatHasBeenSet;
+
+    bool m_includeDirectives;
+    bool m_includeDirectivesHasBeenSet;
   };
 
 } // namespace Model

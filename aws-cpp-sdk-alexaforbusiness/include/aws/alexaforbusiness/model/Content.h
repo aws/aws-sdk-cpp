@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>The content definition. It can contain only one text, SSML, or audio list
+   * <p>The content definition. This can contain only one text, SSML, or audio list
    * object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/Content">AWS
    * API Reference</a></p>

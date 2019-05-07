@@ -21,6 +21,8 @@
 #include <aws/appsync/model/AuthenticationType.h>
 #include <aws/appsync/model/UserPoolConfig.h>
 #include <aws/appsync/model/OpenIDConnectConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appsync/model/AdditionalAuthenticationProvider.h>
 #include <utility>
 
 namespace Aws
@@ -263,6 +265,55 @@ namespace Model
      */
     inline UpdateGraphqlApiRequest& WithOpenIDConnectConfig(OpenIDConnectConfig&& value) { SetOpenIDConnectConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+     * API.</p>
+     */
+    inline const Aws::Vector<AdditionalAuthenticationProvider>& GetAdditionalAuthenticationProviders() const{ return m_additionalAuthenticationProviders; }
+
+    /**
+     * <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+     * API.</p>
+     */
+    inline bool AdditionalAuthenticationProvidersHasBeenSet() const { return m_additionalAuthenticationProvidersHasBeenSet; }
+
+    /**
+     * <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+     * API.</p>
+     */
+    inline void SetAdditionalAuthenticationProviders(const Aws::Vector<AdditionalAuthenticationProvider>& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders = value; }
+
+    /**
+     * <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+     * API.</p>
+     */
+    inline void SetAdditionalAuthenticationProviders(Aws::Vector<AdditionalAuthenticationProvider>&& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders = std::move(value); }
+
+    /**
+     * <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+     * API.</p>
+     */
+    inline UpdateGraphqlApiRequest& WithAdditionalAuthenticationProviders(const Aws::Vector<AdditionalAuthenticationProvider>& value) { SetAdditionalAuthenticationProviders(value); return *this;}
+
+    /**
+     * <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+     * API.</p>
+     */
+    inline UpdateGraphqlApiRequest& WithAdditionalAuthenticationProviders(Aws::Vector<AdditionalAuthenticationProvider>&& value) { SetAdditionalAuthenticationProviders(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+     * API.</p>
+     */
+    inline UpdateGraphqlApiRequest& AddAdditionalAuthenticationProviders(const AdditionalAuthenticationProvider& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders.push_back(value); return *this; }
+
+    /**
+     * <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+     * API.</p>
+     */
+    inline UpdateGraphqlApiRequest& AddAdditionalAuthenticationProviders(AdditionalAuthenticationProvider&& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_apiId;
@@ -282,6 +333,9 @@ namespace Model
 
     OpenIDConnectConfig m_openIDConnectConfig;
     bool m_openIDConnectConfigHasBeenSet;
+
+    Aws::Vector<AdditionalAuthenticationProvider> m_additionalAuthenticationProviders;
+    bool m_additionalAuthenticationProvidersHasBeenSet;
   };
 
 } // namespace Model

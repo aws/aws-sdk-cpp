@@ -524,26 +524,63 @@ namespace Model
 
 
     /**
+     * <p>The number of patches beyond the supported limit of
+     * <code>NotApplicableCount</code> that are not reported by name to Systems Manager
+     * Inventory.</p>
+     */
+    inline int GetUnreportedNotApplicableCount() const{ return m_unreportedNotApplicableCount; }
+
+    /**
+     * <p>The number of patches beyond the supported limit of
+     * <code>NotApplicableCount</code> that are not reported by name to Systems Manager
+     * Inventory.</p>
+     */
+    inline bool UnreportedNotApplicableCountHasBeenSet() const { return m_unreportedNotApplicableCountHasBeenSet; }
+
+    /**
+     * <p>The number of patches beyond the supported limit of
+     * <code>NotApplicableCount</code> that are not reported by name to Systems Manager
+     * Inventory.</p>
+     */
+    inline void SetUnreportedNotApplicableCount(int value) { m_unreportedNotApplicableCountHasBeenSet = true; m_unreportedNotApplicableCount = value; }
+
+    /**
+     * <p>The number of patches beyond the supported limit of
+     * <code>NotApplicableCount</code> that are not reported by name to Systems Manager
+     * Inventory.</p>
+     */
+    inline InstancePatchState& WithUnreportedNotApplicableCount(int value) { SetUnreportedNotApplicableCount(value); return *this;}
+
+
+    /**
      * <p>The number of patches from the patch baseline that aren't applicable for the
-     * instance and hence aren't installed on the instance.</p>
+     * instance and therefore aren't installed on the instance. This number may be
+     * truncated if the list of patch names is very large. The number of patches beyond
+     * this limit are reported in <code>UnreportedNotApplicableCount</code>.</p>
      */
     inline int GetNotApplicableCount() const{ return m_notApplicableCount; }
 
     /**
      * <p>The number of patches from the patch baseline that aren't applicable for the
-     * instance and hence aren't installed on the instance.</p>
+     * instance and therefore aren't installed on the instance. This number may be
+     * truncated if the list of patch names is very large. The number of patches beyond
+     * this limit are reported in <code>UnreportedNotApplicableCount</code>.</p>
      */
     inline bool NotApplicableCountHasBeenSet() const { return m_notApplicableCountHasBeenSet; }
 
     /**
      * <p>The number of patches from the patch baseline that aren't applicable for the
-     * instance and hence aren't installed on the instance.</p>
+     * instance and therefore aren't installed on the instance. This number may be
+     * truncated if the list of patch names is very large. The number of patches beyond
+     * this limit are reported in <code>UnreportedNotApplicableCount</code>.</p>
      */
     inline void SetNotApplicableCount(int value) { m_notApplicableCountHasBeenSet = true; m_notApplicableCount = value; }
 
     /**
      * <p>The number of patches from the patch baseline that aren't applicable for the
-     * instance and hence aren't installed on the instance.</p>
+     * instance and therefore aren't installed on the instance. This number may be
+     * truncated if the list of patch names is very large. The number of patches beyond
+     * this limit are reported in <code>UnreportedNotApplicableCount</code>.</p>
      */
     inline InstancePatchState& WithNotApplicableCount(int value) { SetNotApplicableCount(value); return *this;}
 
@@ -680,6 +717,9 @@ namespace Model
 
     int m_failedCount;
     bool m_failedCountHasBeenSet;
+
+    int m_unreportedNotApplicableCount;
+    bool m_unreportedNotApplicableCountHasBeenSet;
 
     int m_notApplicableCount;
     bool m_notApplicableCountHasBeenSet;

@@ -21,6 +21,8 @@
 #include <aws/appsync/model/UserPoolConfig.h>
 #include <aws/appsync/model/OpenIDConnectConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appsync/model/AdditionalAuthenticationProvider.h>
 #include <utility>
 
 namespace Aws
@@ -364,6 +366,121 @@ namespace Model
      */
     inline GraphqlApi& AddUris(const char* key, const char* value) { m_urisHasBeenSet = true; m_uris.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline GraphqlApi& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline GraphqlApi& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline GraphqlApi& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline GraphqlApi& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline GraphqlApi& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline GraphqlApi& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline GraphqlApi& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline GraphqlApi& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline GraphqlApi& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+     * API.</p>
+     */
+    inline const Aws::Vector<AdditionalAuthenticationProvider>& GetAdditionalAuthenticationProviders() const{ return m_additionalAuthenticationProviders; }
+
+    /**
+     * <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+     * API.</p>
+     */
+    inline bool AdditionalAuthenticationProvidersHasBeenSet() const { return m_additionalAuthenticationProvidersHasBeenSet; }
+
+    /**
+     * <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+     * API.</p>
+     */
+    inline void SetAdditionalAuthenticationProviders(const Aws::Vector<AdditionalAuthenticationProvider>& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders = value; }
+
+    /**
+     * <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+     * API.</p>
+     */
+    inline void SetAdditionalAuthenticationProviders(Aws::Vector<AdditionalAuthenticationProvider>&& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders = std::move(value); }
+
+    /**
+     * <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+     * API.</p>
+     */
+    inline GraphqlApi& WithAdditionalAuthenticationProviders(const Aws::Vector<AdditionalAuthenticationProvider>& value) { SetAdditionalAuthenticationProviders(value); return *this;}
+
+    /**
+     * <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+     * API.</p>
+     */
+    inline GraphqlApi& WithAdditionalAuthenticationProviders(Aws::Vector<AdditionalAuthenticationProvider>&& value) { SetAdditionalAuthenticationProviders(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+     * API.</p>
+     */
+    inline GraphqlApi& AddAdditionalAuthenticationProviders(const AdditionalAuthenticationProvider& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders.push_back(value); return *this; }
+
+    /**
+     * <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+     * API.</p>
+     */
+    inline GraphqlApi& AddAdditionalAuthenticationProviders(AdditionalAuthenticationProvider&& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -389,6 +506,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_uris;
     bool m_urisHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
+
+    Aws::Vector<AdditionalAuthenticationProvider> m_additionalAuthenticationProviders;
+    bool m_additionalAuthenticationProvidersHasBeenSet;
   };
 
 } // namespace Model

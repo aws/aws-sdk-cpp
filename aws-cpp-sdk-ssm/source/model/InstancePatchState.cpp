@@ -45,6 +45,8 @@ InstancePatchState::InstancePatchState() :
     m_missingCountHasBeenSet(false),
     m_failedCount(0),
     m_failedCountHasBeenSet(false),
+    m_unreportedNotApplicableCount(0),
+    m_unreportedNotApplicableCountHasBeenSet(false),
     m_notApplicableCount(0),
     m_notApplicableCountHasBeenSet(false),
     m_operationStartTimeHasBeenSet(false),
@@ -71,6 +73,8 @@ InstancePatchState::InstancePatchState(JsonView jsonValue) :
     m_missingCountHasBeenSet(false),
     m_failedCount(0),
     m_failedCountHasBeenSet(false),
+    m_unreportedNotApplicableCount(0),
+    m_unreportedNotApplicableCountHasBeenSet(false),
     m_notApplicableCount(0),
     m_notApplicableCountHasBeenSet(false),
     m_operationStartTimeHasBeenSet(false),
@@ -158,6 +162,13 @@ InstancePatchState& InstancePatchState::operator =(JsonView jsonValue)
     m_failedCount = jsonValue.GetInteger("FailedCount");
 
     m_failedCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UnreportedNotApplicableCount"))
+  {
+    m_unreportedNotApplicableCount = jsonValue.GetInteger("UnreportedNotApplicableCount");
+
+    m_unreportedNotApplicableCountHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("NotApplicableCount"))
@@ -258,6 +269,12 @@ JsonValue InstancePatchState::Jsonize() const
   if(m_failedCountHasBeenSet)
   {
    payload.WithInteger("FailedCount", m_failedCount);
+
+  }
+
+  if(m_unreportedNotApplicableCountHasBeenSet)
+  {
+   payload.WithInteger("UnreportedNotApplicableCount", m_unreportedNotApplicableCount);
 
   }
 

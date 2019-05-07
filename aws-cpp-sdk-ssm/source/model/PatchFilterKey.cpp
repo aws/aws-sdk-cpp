@@ -30,7 +30,9 @@ namespace Aws
       namespace PatchFilterKeyMapper
       {
 
+        static const int PATCH_SET_HASH = HashingUtils::HashString("PATCH_SET");
         static const int PRODUCT_HASH = HashingUtils::HashString("PRODUCT");
+        static const int PRODUCT_FAMILY_HASH = HashingUtils::HashString("PRODUCT_FAMILY");
         static const int CLASSIFICATION_HASH = HashingUtils::HashString("CLASSIFICATION");
         static const int MSRC_SEVERITY_HASH = HashingUtils::HashString("MSRC_SEVERITY");
         static const int PATCH_ID_HASH = HashingUtils::HashString("PATCH_ID");
@@ -42,9 +44,17 @@ namespace Aws
         PatchFilterKey GetPatchFilterKeyForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == PRODUCT_HASH)
+          if (hashCode == PATCH_SET_HASH)
+          {
+            return PatchFilterKey::PATCH_SET;
+          }
+          else if (hashCode == PRODUCT_HASH)
           {
             return PatchFilterKey::PRODUCT;
+          }
+          else if (hashCode == PRODUCT_FAMILY_HASH)
+          {
+            return PatchFilterKey::PRODUCT_FAMILY;
           }
           else if (hashCode == CLASSIFICATION_HASH)
           {
@@ -84,8 +94,12 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PatchFilterKey::PATCH_SET:
+            return "PATCH_SET";
           case PatchFilterKey::PRODUCT:
             return "PRODUCT";
+          case PatchFilterKey::PRODUCT_FAMILY:
+            return "PRODUCT_FAMILY";
           case PatchFilterKey::CLASSIFICATION:
             return "CLASSIFICATION";
           case PatchFilterKey::MSRC_SEVERITY:

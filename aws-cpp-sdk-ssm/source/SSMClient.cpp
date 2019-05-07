@@ -82,6 +82,7 @@
 #include <aws/ssm/model/DescribePatchBaselinesRequest.h>
 #include <aws/ssm/model/DescribePatchGroupStateRequest.h>
 #include <aws/ssm/model/DescribePatchGroupsRequest.h>
+#include <aws/ssm/model/DescribePatchPropertiesRequest.h>
 #include <aws/ssm/model/DescribeSessionsRequest.h>
 #include <aws/ssm/model/GetAutomationExecutionRequest.h>
 #include <aws/ssm/model/GetCommandInvocationRequest.h>
@@ -2035,6 +2036,41 @@ void SSMClient::DescribePatchGroupsAsync(const DescribePatchGroupsRequest& reque
 void SSMClient::DescribePatchGroupsAsyncHelper(const DescribePatchGroupsRequest& request, const DescribePatchGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribePatchGroups(request), context);
+}
+
+DescribePatchPropertiesOutcome SSMClient::DescribePatchProperties(const DescribePatchPropertiesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribePatchPropertiesOutcome(DescribePatchPropertiesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribePatchPropertiesOutcome(outcome.GetError());
+  }
+}
+
+DescribePatchPropertiesOutcomeCallable SSMClient::DescribePatchPropertiesCallable(const DescribePatchPropertiesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePatchPropertiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePatchProperties(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::DescribePatchPropertiesAsync(const DescribePatchPropertiesRequest& request, const DescribePatchPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePatchPropertiesAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::DescribePatchPropertiesAsyncHelper(const DescribePatchPropertiesRequest& request, const DescribePatchPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePatchProperties(request), context);
 }
 
 DescribeSessionsOutcome SSMClient::DescribeSessions(const DescribeSessionsRequest& request) const

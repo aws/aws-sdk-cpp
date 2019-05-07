@@ -172,6 +172,28 @@ namespace Model
      */
     inline DescribePatchGroupStateResult& WithInstancesWithNotApplicablePatches(int value) { SetInstancesWithNotApplicablePatches(value); return *this;}
 
+
+    /**
+     * <p>The number of instances with <code>NotApplicable</code> patches beyond the
+     * supported limit, which are not reported by name to Systems Manager
+     * Inventory.</p>
+     */
+    inline int GetInstancesWithUnreportedNotApplicablePatches() const{ return m_instancesWithUnreportedNotApplicablePatches; }
+
+    /**
+     * <p>The number of instances with <code>NotApplicable</code> patches beyond the
+     * supported limit, which are not reported by name to Systems Manager
+     * Inventory.</p>
+     */
+    inline void SetInstancesWithUnreportedNotApplicablePatches(int value) { m_instancesWithUnreportedNotApplicablePatches = value; }
+
+    /**
+     * <p>The number of instances with <code>NotApplicable</code> patches beyond the
+     * supported limit, which are not reported by name to Systems Manager
+     * Inventory.</p>
+     */
+    inline DescribePatchGroupStateResult& WithInstancesWithUnreportedNotApplicablePatches(int value) { SetInstancesWithUnreportedNotApplicablePatches(value); return *this;}
+
   private:
 
     int m_instances;
@@ -187,6 +209,8 @@ namespace Model
     int m_instancesWithFailedPatches;
 
     int m_instancesWithNotApplicablePatches;
+
+    int m_instancesWithUnreportedNotApplicablePatches;
   };
 
 } // namespace Model

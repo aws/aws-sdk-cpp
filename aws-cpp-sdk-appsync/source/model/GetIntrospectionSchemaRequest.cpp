@@ -28,7 +28,9 @@ using namespace Aws::Http;
 GetIntrospectionSchemaRequest::GetIntrospectionSchemaRequest() : 
     m_apiIdHasBeenSet(false),
     m_format(OutputType::NOT_SET),
-    m_formatHasBeenSet(false)
+    m_formatHasBeenSet(false),
+    m_includeDirectives(false),
+    m_includeDirectivesHasBeenSet(false)
 {
 }
 
@@ -44,6 +46,13 @@ void GetIntrospectionSchemaRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << OutputTypeMapper::GetNameForOutputType(m_format);
       uri.AddQueryStringParameter("format", ss.str());
+      ss.str("");
+    }
+
+    if(m_includeDirectivesHasBeenSet)
+    {
+      ss << m_includeDirectives;
+      uri.AddQueryStringParameter("includeDirectives", ss.str());
       ss.str("");
     }
 

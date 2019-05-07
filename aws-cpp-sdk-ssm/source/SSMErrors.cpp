@@ -86,6 +86,7 @@ static const int PARAMETER_MAX_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashS
 static const int AUTOMATION_STEP_NOT_FOUND_HASH = HashingUtils::HashString("AutomationStepNotFoundException");
 static const int RESOURCE_DATA_SYNC_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceDataSyncAlreadyExistsException");
 static const int INVALID_RESULT_ATTRIBUTE_HASH = HashingUtils::HashString("InvalidResultAttributeException");
+static const int UNSUPPORTED_FEATURE_REQUIRED_HASH = HashingUtils::HashString("UnsupportedFeatureRequiredException");
 static const int STATUS_UNCHANGED_HASH = HashingUtils::HashString("StatusUnchanged");
 static const int DUPLICATE_INSTANCE_ID_HASH = HashingUtils::HashString("DuplicateInstanceId");
 static const int DUPLICATE_DOCUMENT_CONTENT_HASH = HashingUtils::HashString("DuplicateDocumentContent");
@@ -369,6 +370,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_RESULT_ATTRIBUTE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_RESULT_ATTRIBUTE), false);
+  }
+  else if (hashCode == UNSUPPORTED_FEATURE_REQUIRED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_FEATURE_REQUIRED), false);
   }
   else if (hashCode == STATUS_UNCHANGED_HASH)
   {

@@ -41,6 +41,7 @@
 #include <aws/alexaforbusiness/model/DeleteConferenceProviderResult.h>
 #include <aws/alexaforbusiness/model/DeleteContactResult.h>
 #include <aws/alexaforbusiness/model/DeleteDeviceResult.h>
+#include <aws/alexaforbusiness/model/DeleteDeviceUsageDataResult.h>
 #include <aws/alexaforbusiness/model/DeleteGatewayGroupResult.h>
 #include <aws/alexaforbusiness/model/DeleteProfileResult.h>
 #include <aws/alexaforbusiness/model/DeleteRoomResult.h>
@@ -166,6 +167,7 @@ namespace Model
         class DeleteConferenceProviderRequest;
         class DeleteContactRequest;
         class DeleteDeviceRequest;
+        class DeleteDeviceUsageDataRequest;
         class DeleteGatewayGroupRequest;
         class DeleteProfileRequest;
         class DeleteRoomRequest;
@@ -253,6 +255,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteConferenceProviderResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteConferenceProviderOutcome;
         typedef Aws::Utils::Outcome<DeleteContactResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteContactOutcome;
         typedef Aws::Utils::Outcome<DeleteDeviceResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteDeviceOutcome;
+        typedef Aws::Utils::Outcome<DeleteDeviceUsageDataResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteDeviceUsageDataOutcome;
         typedef Aws::Utils::Outcome<DeleteGatewayGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteGatewayGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteProfileOutcome;
         typedef Aws::Utils::Outcome<DeleteRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteRoomOutcome;
@@ -340,6 +343,7 @@ namespace Model
         typedef std::future<DeleteConferenceProviderOutcome> DeleteConferenceProviderOutcomeCallable;
         typedef std::future<DeleteContactOutcome> DeleteContactOutcomeCallable;
         typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
+        typedef std::future<DeleteDeviceUsageDataOutcome> DeleteDeviceUsageDataOutcomeCallable;
         typedef std::future<DeleteGatewayGroupOutcome> DeleteGatewayGroupOutcomeCallable;
         typedef std::future<DeleteProfileOutcome> DeleteProfileOutcomeCallable;
         typedef std::future<DeleteRoomOutcome> DeleteRoomOutcomeCallable;
@@ -430,6 +434,7 @@ namespace Model
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteConferenceProviderRequest&, const Model::DeleteConferenceProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConferenceProviderResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteContactRequest&, const Model::DeleteContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteDeviceRequest&, const Model::DeleteDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeviceResponseReceivedHandler;
+    typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteDeviceUsageDataRequest&, const Model::DeleteDeviceUsageDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeviceUsageDataResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteGatewayGroupRequest&, const Model::DeleteGatewayGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGatewayGroupResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteProfileRequest&, const Model::DeleteProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteRoomRequest&, const Model::DeleteRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRoomResponseReceivedHandler;
@@ -1085,6 +1090,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>When this action is called for a specified shared device, it allows
+         * authorized users to delete the device's entire previous history of voice input
+         * data and associated response data. This action can be called once every 24 hours
+         * for a specific shared device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDeviceUsageDataOutcome DeleteDeviceUsageData(const Model::DeleteDeviceUsageDataRequest& request) const;
+
+        /**
+         * <p>When this action is called for a specified shared device, it allows
+         * authorized users to delete the device's entire previous history of voice input
+         * data and associated response data. This action can be called once every 24 hours
+         * for a specific shared device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteDeviceUsageDataOutcomeCallable DeleteDeviceUsageDataCallable(const Model::DeleteDeviceUsageDataRequest& request) const;
+
+        /**
+         * <p>When this action is called for a specified shared device, it allows
+         * authorized users to delete the device's entire previous history of voice input
+         * data and associated response data. This action can be called once every 24 hours
+         * for a specific shared device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteDeviceUsageDataAsync(const Model::DeleteDeviceUsageDataRequest& request, const DeleteDeviceUsageDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a gateway group.</p><p><h3>See Also:</h3>   <a
@@ -2467,8 +2506,7 @@ namespace Model
 
         /**
          * <p>Triggers an asynchronous flow to send text, SSML, or audio announcements to
-         * multiple rooms, identified by a search, such as filter. </p><p><h3>See
-         * Also:</h3>   <a
+         * rooms that are identified by a search or filter. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendAnnouncement">AWS
          * API Reference</a></p>
          */
@@ -2476,8 +2514,7 @@ namespace Model
 
         /**
          * <p>Triggers an asynchronous flow to send text, SSML, or audio announcements to
-         * multiple rooms, identified by a search, such as filter. </p><p><h3>See
-         * Also:</h3>   <a
+         * rooms that are identified by a search or filter. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendAnnouncement">AWS
          * API Reference</a></p>
          *
@@ -2487,8 +2524,7 @@ namespace Model
 
         /**
          * <p>Triggers an asynchronous flow to send text, SSML, or audio announcements to
-         * multiple rooms, identified by a search, such as filter. </p><p><h3>See
-         * Also:</h3>   <a
+         * rooms that are identified by a search or filter. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendAnnouncement">AWS
          * API Reference</a></p>
          *
@@ -2934,6 +2970,7 @@ namespace Model
         void DeleteConferenceProviderAsyncHelper(const Model::DeleteConferenceProviderRequest& request, const DeleteConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteContactAsyncHelper(const Model::DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDeviceAsyncHelper(const Model::DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteDeviceUsageDataAsyncHelper(const Model::DeleteDeviceUsageDataRequest& request, const DeleteDeviceUsageDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGatewayGroupAsyncHelper(const Model::DeleteGatewayGroupRequest& request, const DeleteGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProfileAsyncHelper(const Model::DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRoomAsyncHelper(const Model::DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -44,32 +44,32 @@ namespace Model
 
 
     /**
-     * <p>The current state of the schema (PROCESSING, ACTIVE, or DELETING). Once the
-     * schema is in the ACTIVE state, you can add data.</p>
+     * <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or
+     * NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
      */
     inline const SchemaStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current state of the schema (PROCESSING, ACTIVE, or DELETING). Once the
-     * schema is in the ACTIVE state, you can add data.</p>
+     * <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or
+     * NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
      */
     inline void SetStatus(const SchemaStatus& value) { m_status = value; }
 
     /**
-     * <p>The current state of the schema (PROCESSING, ACTIVE, or DELETING). Once the
-     * schema is in the ACTIVE state, you can add data.</p>
+     * <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or
+     * NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
      */
     inline void SetStatus(SchemaStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The current state of the schema (PROCESSING, ACTIVE, or DELETING). Once the
-     * schema is in the ACTIVE state, you can add data.</p>
+     * <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or
+     * NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
      */
     inline GetSchemaCreationStatusResult& WithStatus(const SchemaStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current state of the schema (PROCESSING, ACTIVE, or DELETING). Once the
-     * schema is in the ACTIVE state, you can add data.</p>
+     * <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or
+     * NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
      */
     inline GetSchemaCreationStatusResult& WithStatus(SchemaStatus&& value) { SetStatus(std::move(value)); return *this;}
 

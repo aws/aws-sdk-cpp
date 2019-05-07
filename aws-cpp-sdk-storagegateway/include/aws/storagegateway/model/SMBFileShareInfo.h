@@ -506,6 +506,79 @@ namespace Model
 
 
     /**
+     * <p>A list of users or groups in the Active Directory that have administrator
+     * rights to the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAdminUserList() const{ return m_adminUserList; }
+
+    /**
+     * <p>A list of users or groups in the Active Directory that have administrator
+     * rights to the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
+     */
+    inline bool AdminUserListHasBeenSet() const { return m_adminUserListHasBeenSet; }
+
+    /**
+     * <p>A list of users or groups in the Active Directory that have administrator
+     * rights to the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
+     */
+    inline void SetAdminUserList(const Aws::Vector<Aws::String>& value) { m_adminUserListHasBeenSet = true; m_adminUserList = value; }
+
+    /**
+     * <p>A list of users or groups in the Active Directory that have administrator
+     * rights to the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
+     */
+    inline void SetAdminUserList(Aws::Vector<Aws::String>&& value) { m_adminUserListHasBeenSet = true; m_adminUserList = std::move(value); }
+
+    /**
+     * <p>A list of users or groups in the Active Directory that have administrator
+     * rights to the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
+     */
+    inline SMBFileShareInfo& WithAdminUserList(const Aws::Vector<Aws::String>& value) { SetAdminUserList(value); return *this;}
+
+    /**
+     * <p>A list of users or groups in the Active Directory that have administrator
+     * rights to the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
+     */
+    inline SMBFileShareInfo& WithAdminUserList(Aws::Vector<Aws::String>&& value) { SetAdminUserList(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of users or groups in the Active Directory that have administrator
+     * rights to the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
+     */
+    inline SMBFileShareInfo& AddAdminUserList(const Aws::String& value) { m_adminUserListHasBeenSet = true; m_adminUserList.push_back(value); return *this; }
+
+    /**
+     * <p>A list of users or groups in the Active Directory that have administrator
+     * rights to the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
+     */
+    inline SMBFileShareInfo& AddAdminUserList(Aws::String&& value) { m_adminUserListHasBeenSet = true; m_adminUserList.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of users or groups in the Active Directory that have administrator
+     * rights to the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
+     */
+    inline SMBFileShareInfo& AddAdminUserList(const char* value) { m_adminUserListHasBeenSet = true; m_adminUserList.push_back(value); return *this; }
+
+
+    /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
      * the file share. A group must be prefixed with the @ character. For example
      * <code>@group1</code>. Can only be set if Authentication is set to
@@ -786,6 +859,9 @@ namespace Model
 
     bool m_sMBACLEnabled;
     bool m_sMBACLEnabledHasBeenSet;
+
+    Aws::Vector<Aws::String> m_adminUserList;
+    bool m_adminUserListHasBeenSet;
 
     Aws::Vector<Aws::String> m_validUserList;
     bool m_validUserListHasBeenSet;

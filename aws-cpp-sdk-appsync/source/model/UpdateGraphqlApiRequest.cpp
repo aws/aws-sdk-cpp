@@ -29,7 +29,8 @@ UpdateGraphqlApiRequest::UpdateGraphqlApiRequest() :
     m_authenticationType(AuthenticationType::NOT_SET),
     m_authenticationTypeHasBeenSet(false),
     m_userPoolConfigHasBeenSet(false),
-    m_openIDConnectConfigHasBeenSet(false)
+    m_openIDConnectConfigHasBeenSet(false),
+    m_additionalAuthenticationProvidersHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,17 @@ Aws::String UpdateGraphqlApiRequest::SerializePayload() const
   if(m_openIDConnectConfigHasBeenSet)
   {
    payload.WithObject("openIDConnectConfig", m_openIDConnectConfig.Jsonize());
+
+  }
+
+  if(m_additionalAuthenticationProvidersHasBeenSet)
+  {
+   Array<JsonValue> additionalAuthenticationProvidersJsonList(m_additionalAuthenticationProviders.size());
+   for(unsigned additionalAuthenticationProvidersIndex = 0; additionalAuthenticationProvidersIndex < additionalAuthenticationProvidersJsonList.GetLength(); ++additionalAuthenticationProvidersIndex)
+   {
+     additionalAuthenticationProvidersJsonList[additionalAuthenticationProvidersIndex].AsObject(m_additionalAuthenticationProviders[additionalAuthenticationProvidersIndex].Jsonize());
+   }
+   payload.WithArray("additionalAuthenticationProviders", std::move(additionalAuthenticationProvidersJsonList));
 
   }
 

@@ -28,7 +28,10 @@ namespace Model
     NOT_SET,
     PROCESSING,
     ACTIVE,
-    DELETING
+    DELETING,
+    FAILED,
+    SUCCESS,
+    NOT_APPLICABLE
   };
 
 namespace SchemaStatusMapper

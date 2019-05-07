@@ -37,7 +37,9 @@ GraphqlApi::GraphqlApi() :
     m_userPoolConfigHasBeenSet(false),
     m_openIDConnectConfigHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_urisHasBeenSet(false)
+    m_urisHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_additionalAuthenticationProvidersHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ GraphqlApi::GraphqlApi(JsonView jsonValue) :
     m_userPoolConfigHasBeenSet(false),
     m_openIDConnectConfigHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_urisHasBeenSet(false)
+    m_urisHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_additionalAuthenticationProvidersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -116,6 +120,26 @@ GraphqlApi& GraphqlApi::operator =(JsonView jsonValue)
     m_urisHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("additionalAuthenticationProviders"))
+  {
+    Array<JsonView> additionalAuthenticationProvidersJsonList = jsonValue.GetArray("additionalAuthenticationProviders");
+    for(unsigned additionalAuthenticationProvidersIndex = 0; additionalAuthenticationProvidersIndex < additionalAuthenticationProvidersJsonList.GetLength(); ++additionalAuthenticationProvidersIndex)
+    {
+      m_additionalAuthenticationProviders.push_back(additionalAuthenticationProvidersJsonList[additionalAuthenticationProvidersIndex].AsObject());
+    }
+    m_additionalAuthenticationProvidersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -172,6 +196,28 @@ JsonValue GraphqlApi::Jsonize() const
      urisJsonMap.WithString(urisItem.first, urisItem.second);
    }
    payload.WithObject("uris", std::move(urisJsonMap));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_additionalAuthenticationProvidersHasBeenSet)
+  {
+   Array<JsonValue> additionalAuthenticationProvidersJsonList(m_additionalAuthenticationProviders.size());
+   for(unsigned additionalAuthenticationProvidersIndex = 0; additionalAuthenticationProvidersIndex < additionalAuthenticationProvidersJsonList.GetLength(); ++additionalAuthenticationProvidersIndex)
+   {
+     additionalAuthenticationProvidersJsonList[additionalAuthenticationProvidersIndex].AsObject(m_additionalAuthenticationProviders[additionalAuthenticationProvidersIndex].Jsonize());
+   }
+   payload.WithArray("additionalAuthenticationProviders", std::move(additionalAuthenticationProvidersJsonList));
 
   }
 

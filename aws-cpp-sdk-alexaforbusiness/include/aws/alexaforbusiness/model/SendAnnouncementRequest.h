@@ -143,26 +143,26 @@ namespace Model
 
 
     /**
-     * <p>The time to live for an announcement. If delivery doesn't occur within this
-     * time, the announcement will not be delivered.</p>
+     * <p>The time to live for an announcement. Default is 300. If delivery doesn't
+     * occur within this time, the announcement is not delivered.</p>
      */
     inline int GetTimeToLiveInSeconds() const{ return m_timeToLiveInSeconds; }
 
     /**
-     * <p>The time to live for an announcement. If delivery doesn't occur within this
-     * time, the announcement will not be delivered.</p>
+     * <p>The time to live for an announcement. Default is 300. If delivery doesn't
+     * occur within this time, the announcement is not delivered.</p>
      */
     inline bool TimeToLiveInSecondsHasBeenSet() const { return m_timeToLiveInSecondsHasBeenSet; }
 
     /**
-     * <p>The time to live for an announcement. If delivery doesn't occur within this
-     * time, the announcement will not be delivered.</p>
+     * <p>The time to live for an announcement. Default is 300. If delivery doesn't
+     * occur within this time, the announcement is not delivered.</p>
      */
     inline void SetTimeToLiveInSeconds(int value) { m_timeToLiveInSecondsHasBeenSet = true; m_timeToLiveInSeconds = value; }
 
     /**
-     * <p>The time to live for an announcement. If delivery doesn't occur within this
-     * time, the announcement will not be delivered.</p>
+     * <p>The time to live for an announcement. Default is 300. If delivery doesn't
+     * occur within this time, the announcement is not delivered.</p>
      */
     inline SendAnnouncementRequest& WithTimeToLiveInSeconds(int value) { SetTimeToLiveInSeconds(value); return *this;}
 

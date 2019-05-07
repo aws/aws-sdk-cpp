@@ -26,7 +26,9 @@ namespace Model
   enum class PatchFilterKey
   {
     NOT_SET,
+    PATCH_SET,
     PRODUCT,
+    PRODUCT_FAMILY,
     CLASSIFICATION,
     MSRC_SEVERITY,
     PATCH_ID,

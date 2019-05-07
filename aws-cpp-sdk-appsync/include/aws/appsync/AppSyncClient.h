@@ -46,8 +46,11 @@
 #include <aws/appsync/model/ListGraphqlApisResult.h>
 #include <aws/appsync/model/ListResolversResult.h>
 #include <aws/appsync/model/ListResolversByFunctionResult.h>
+#include <aws/appsync/model/ListTagsForResourceResult.h>
 #include <aws/appsync/model/ListTypesResult.h>
 #include <aws/appsync/model/StartSchemaCreationResult.h>
+#include <aws/appsync/model/TagResourceResult.h>
+#include <aws/appsync/model/UntagResourceResult.h>
 #include <aws/appsync/model/UpdateApiKeyResult.h>
 #include <aws/appsync/model/UpdateDataSourceResult.h>
 #include <aws/appsync/model/UpdateFunctionResult.h>
@@ -118,8 +121,11 @@ namespace Model
         class ListGraphqlApisRequest;
         class ListResolversRequest;
         class ListResolversByFunctionRequest;
+        class ListTagsForResourceRequest;
         class ListTypesRequest;
         class StartSchemaCreationRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateApiKeyRequest;
         class UpdateDataSourceRequest;
         class UpdateFunctionRequest;
@@ -152,8 +158,11 @@ namespace Model
         typedef Aws::Utils::Outcome<ListGraphqlApisResult, Aws::Client::AWSError<AppSyncErrors>> ListGraphqlApisOutcome;
         typedef Aws::Utils::Outcome<ListResolversResult, Aws::Client::AWSError<AppSyncErrors>> ListResolversOutcome;
         typedef Aws::Utils::Outcome<ListResolversByFunctionResult, Aws::Client::AWSError<AppSyncErrors>> ListResolversByFunctionOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<AppSyncErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListTypesResult, Aws::Client::AWSError<AppSyncErrors>> ListTypesOutcome;
         typedef Aws::Utils::Outcome<StartSchemaCreationResult, Aws::Client::AWSError<AppSyncErrors>> StartSchemaCreationOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<AppSyncErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<AppSyncErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateApiKeyResult, Aws::Client::AWSError<AppSyncErrors>> UpdateApiKeyOutcome;
         typedef Aws::Utils::Outcome<UpdateDataSourceResult, Aws::Client::AWSError<AppSyncErrors>> UpdateDataSourceOutcome;
         typedef Aws::Utils::Outcome<UpdateFunctionResult, Aws::Client::AWSError<AppSyncErrors>> UpdateFunctionOutcome;
@@ -186,8 +195,11 @@ namespace Model
         typedef std::future<ListGraphqlApisOutcome> ListGraphqlApisOutcomeCallable;
         typedef std::future<ListResolversOutcome> ListResolversOutcomeCallable;
         typedef std::future<ListResolversByFunctionOutcome> ListResolversByFunctionOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListTypesOutcome> ListTypesOutcomeCallable;
         typedef std::future<StartSchemaCreationOutcome> StartSchemaCreationOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateApiKeyOutcome> UpdateApiKeyOutcomeCallable;
         typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
         typedef std::future<UpdateFunctionOutcome> UpdateFunctionOutcomeCallable;
@@ -223,8 +235,11 @@ namespace Model
     typedef std::function<void(const AppSyncClient*, const Model::ListGraphqlApisRequest&, const Model::ListGraphqlApisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGraphqlApisResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::ListResolversRequest&, const Model::ListResolversOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResolversResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::ListResolversByFunctionRequest&, const Model::ListResolversByFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResolversByFunctionResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::ListTypesRequest&, const Model::ListTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTypesResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::StartSchemaCreationRequest&, const Model::StartSchemaCreationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSchemaCreationResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateApiKeyRequest&, const Model::UpdateApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApiKeyResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateDataSourceRequest&, const Model::UpdateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSourceResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateFunctionRequest&, const Model::UpdateFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFunctionResponseReceivedHandler;
@@ -927,6 +942,31 @@ namespace Model
         virtual void ListResolversByFunctionAsync(const Model::ListResolversByFunctionRequest& request, const ListResolversByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the tags for a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists the tags for a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists the tags for a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the types for a given API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTypes">AWS
          * API Reference</a></p>
@@ -978,6 +1018,56 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartSchemaCreationAsync(const Model::StartSchemaCreationRequest& request, const StartSchemaCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Tags a resource with user-supplied tags.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Tags a resource with user-supplied tags.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Tags a resource with user-supplied tags.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Untags a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Untags a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Untags a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an API key.</p><p><h3>See Also:</h3>   <a
@@ -1158,8 +1248,11 @@ namespace Model
         void ListGraphqlApisAsyncHelper(const Model::ListGraphqlApisRequest& request, const ListGraphqlApisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResolversAsyncHelper(const Model::ListResolversRequest& request, const ListResolversResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResolversByFunctionAsyncHelper(const Model::ListResolversByFunctionRequest& request, const ListResolversByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTypesAsyncHelper(const Model::ListTypesRequest& request, const ListTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartSchemaCreationAsyncHelper(const Model::StartSchemaCreationRequest& request, const StartSchemaCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApiKeyAsyncHelper(const Model::UpdateApiKeyRequest& request, const UpdateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDataSourceAsyncHelper(const Model::UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFunctionAsyncHelper(const Model::UpdateFunctionRequest& request, const UpdateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
