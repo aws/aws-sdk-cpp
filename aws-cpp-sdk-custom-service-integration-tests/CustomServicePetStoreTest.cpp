@@ -40,6 +40,11 @@ namespace
             return m_defaultSigner;
         }
 
+        void AddSigner(std::shared_ptr<Aws::Client::AWSAuthSigner>&)
+        {
+            // no-op
+        }
+
     private:
         std::shared_ptr<Aws::Client::AWSAuthSigner> m_defaultSigner;
     };
