@@ -274,38 +274,38 @@ namespace Model
 
 
     /**
-     * <p>A filter that returns only endpoint configurations created after the
-     * specified time (timestamp).</p>
+     * <p>A filter that returns only endpoint configurations with a creation time
+     * greater than or equal to the specified time (timestamp).</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimeAfter() const{ return m_creationTimeAfter; }
 
     /**
-     * <p>A filter that returns only endpoint configurations created after the
-     * specified time (timestamp).</p>
+     * <p>A filter that returns only endpoint configurations with a creation time
+     * greater than or equal to the specified time (timestamp).</p>
      */
     inline bool CreationTimeAfterHasBeenSet() const { return m_creationTimeAfterHasBeenSet; }
 
     /**
-     * <p>A filter that returns only endpoint configurations created after the
-     * specified time (timestamp).</p>
+     * <p>A filter that returns only endpoint configurations with a creation time
+     * greater than or equal to the specified time (timestamp).</p>
      */
     inline void SetCreationTimeAfter(const Aws::Utils::DateTime& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = value; }
 
     /**
-     * <p>A filter that returns only endpoint configurations created after the
-     * specified time (timestamp).</p>
+     * <p>A filter that returns only endpoint configurations with a creation time
+     * greater than or equal to the specified time (timestamp).</p>
      */
     inline void SetCreationTimeAfter(Aws::Utils::DateTime&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::move(value); }
 
     /**
-     * <p>A filter that returns only endpoint configurations created after the
-     * specified time (timestamp).</p>
+     * <p>A filter that returns only endpoint configurations with a creation time
+     * greater than or equal to the specified time (timestamp).</p>
      */
     inline ListEndpointConfigsRequest& WithCreationTimeAfter(const Aws::Utils::DateTime& value) { SetCreationTimeAfter(value); return *this;}
 
     /**
-     * <p>A filter that returns only endpoint configurations created after the
-     * specified time (timestamp).</p>
+     * <p>A filter that returns only endpoint configurations with a creation time
+     * greater than or equal to the specified time (timestamp).</p>
      */
     inline ListEndpointConfigsRequest& WithCreationTimeAfter(Aws::Utils::DateTime&& value) { SetCreationTimeAfter(std::move(value)); return *this;}
 

@@ -29,7 +29,8 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_runtimeEnvironmentHasBeenSet(false),
     m_serviceExecutionRoleHasBeenSet(false),
     m_applicationConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false)
+    m_cloudWatchLoggingOptionsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,17 @@ Aws::String CreateApplicationRequest::SerializePayload() const
      cloudWatchLoggingOptionsJsonList[cloudWatchLoggingOptionsIndex].AsObject(m_cloudWatchLoggingOptions[cloudWatchLoggingOptionsIndex].Jsonize());
    }
    payload.WithArray("CloudWatchLoggingOptions", std::move(cloudWatchLoggingOptionsJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

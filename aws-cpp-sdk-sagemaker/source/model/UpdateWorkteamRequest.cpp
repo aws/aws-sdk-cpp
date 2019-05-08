@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 UpdateWorkteamRequest::UpdateWorkteamRequest() : 
     m_workteamNameHasBeenSet(false),
     m_memberDefinitionsHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_notificationConfigurationHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,12 @@ Aws::String UpdateWorkteamRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_notificationConfigurationHasBeenSet)
+  {
+   payload.WithObject("NotificationConfiguration", m_notificationConfiguration.Jsonize());
 
   }
 

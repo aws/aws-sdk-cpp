@@ -212,38 +212,50 @@ namespace Model
 
 
     /**
-     * <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
-     * before discovering the schema of the records.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
+     * to use to preprocess the records before discovering the schema of the
+     * records.</p>
      */
     inline const InputProcessingConfiguration& GetInputProcessingConfiguration() const{ return m_inputProcessingConfiguration; }
 
     /**
-     * <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
-     * before discovering the schema of the records.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
+     * to use to preprocess the records before discovering the schema of the
+     * records.</p>
      */
     inline bool InputProcessingConfigurationHasBeenSet() const { return m_inputProcessingConfigurationHasBeenSet; }
 
     /**
-     * <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
-     * before discovering the schema of the records.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
+     * to use to preprocess the records before discovering the schema of the
+     * records.</p>
      */
     inline void SetInputProcessingConfiguration(const InputProcessingConfiguration& value) { m_inputProcessingConfigurationHasBeenSet = true; m_inputProcessingConfiguration = value; }
 
     /**
-     * <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
-     * before discovering the schema of the records.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
+     * to use to preprocess the records before discovering the schema of the
+     * records.</p>
      */
     inline void SetInputProcessingConfiguration(InputProcessingConfiguration&& value) { m_inputProcessingConfigurationHasBeenSet = true; m_inputProcessingConfiguration = std::move(value); }
 
     /**
-     * <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
-     * before discovering the schema of the records.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
+     * to use to preprocess the records before discovering the schema of the
+     * records.</p>
      */
     inline DiscoverInputSchemaRequest& WithInputProcessingConfiguration(const InputProcessingConfiguration& value) { SetInputProcessingConfiguration(value); return *this;}
 
     /**
-     * <p>The <a>InputProcessingConfiguration</a> to use to preprocess the records
-     * before discovering the schema of the records.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
+     * to use to preprocess the records before discovering the schema of the
+     * records.</p>
      */
     inline DiscoverInputSchemaRequest& WithInputProcessingConfiguration(InputProcessingConfiguration&& value) { SetInputProcessingConfiguration(std::move(value)); return *this;}
 

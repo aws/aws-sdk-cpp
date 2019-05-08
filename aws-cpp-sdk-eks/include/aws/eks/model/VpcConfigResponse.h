@@ -203,7 +203,7 @@ namespace Model
     /**
      * <p>This parameter indicates whether the Amazon EKS public API server endpoint is
      * enabled. If the Amazon EKS public API server endpoint is disabled, your
-     * cluster's Kubernetes API server can only receive requests that originate from
+     * cluster's Kubernetes API server can receive only requests that originate from
      * within the cluster VPC. </p>
      */
     inline bool GetEndpointPublicAccess() const{ return m_endpointPublicAccess; }
@@ -211,7 +211,7 @@ namespace Model
     /**
      * <p>This parameter indicates whether the Amazon EKS public API server endpoint is
      * enabled. If the Amazon EKS public API server endpoint is disabled, your
-     * cluster's Kubernetes API server can only receive requests that originate from
+     * cluster's Kubernetes API server can receive only requests that originate from
      * within the cluster VPC. </p>
      */
     inline bool EndpointPublicAccessHasBeenSet() const { return m_endpointPublicAccessHasBeenSet; }
@@ -219,7 +219,7 @@ namespace Model
     /**
      * <p>This parameter indicates whether the Amazon EKS public API server endpoint is
      * enabled. If the Amazon EKS public API server endpoint is disabled, your
-     * cluster's Kubernetes API server can only receive requests that originate from
+     * cluster's Kubernetes API server can receive only requests that originate from
      * within the cluster VPC. </p>
      */
     inline void SetEndpointPublicAccess(bool value) { m_endpointPublicAccessHasBeenSet = true; m_endpointPublicAccess = value; }
@@ -227,7 +227,7 @@ namespace Model
     /**
      * <p>This parameter indicates whether the Amazon EKS public API server endpoint is
      * enabled. If the Amazon EKS public API server endpoint is disabled, your
-     * cluster's Kubernetes API server can only receive requests that originate from
+     * cluster's Kubernetes API server can receive only requests that originate from
      * within the cluster VPC. </p>
      */
     inline VpcConfigResponse& WithEndpointPublicAccess(bool value) { SetEndpointPublicAccess(value); return *this;}
@@ -236,32 +236,32 @@ namespace Model
     /**
      * <p>This parameter indicates whether the Amazon EKS private API server endpoint
      * is enabled. If the Amazon EKS private API server endpoint is enabled, Kubernetes
-     * API requests that originate from within your cluster's VPC will use the private
-     * VPC endpoint instead of traversing the internet.</p>
+     * API requests that originate from within your cluster's VPC use the private VPC
+     * endpoint instead of traversing the internet.</p>
      */
     inline bool GetEndpointPrivateAccess() const{ return m_endpointPrivateAccess; }
 
     /**
      * <p>This parameter indicates whether the Amazon EKS private API server endpoint
      * is enabled. If the Amazon EKS private API server endpoint is enabled, Kubernetes
-     * API requests that originate from within your cluster's VPC will use the private
-     * VPC endpoint instead of traversing the internet.</p>
+     * API requests that originate from within your cluster's VPC use the private VPC
+     * endpoint instead of traversing the internet.</p>
      */
     inline bool EndpointPrivateAccessHasBeenSet() const { return m_endpointPrivateAccessHasBeenSet; }
 
     /**
      * <p>This parameter indicates whether the Amazon EKS private API server endpoint
      * is enabled. If the Amazon EKS private API server endpoint is enabled, Kubernetes
-     * API requests that originate from within your cluster's VPC will use the private
-     * VPC endpoint instead of traversing the internet.</p>
+     * API requests that originate from within your cluster's VPC use the private VPC
+     * endpoint instead of traversing the internet.</p>
      */
     inline void SetEndpointPrivateAccess(bool value) { m_endpointPrivateAccessHasBeenSet = true; m_endpointPrivateAccess = value; }
 
     /**
      * <p>This parameter indicates whether the Amazon EKS private API server endpoint
      * is enabled. If the Amazon EKS private API server endpoint is enabled, Kubernetes
-     * API requests that originate from within your cluster's VPC will use the private
-     * VPC endpoint instead of traversing the internet.</p>
+     * API requests that originate from within your cluster's VPC use the private VPC
+     * endpoint instead of traversing the internet.</p>
      */
     inline VpcConfigResponse& WithEndpointPrivateAccess(bool value) { SetEndpointPrivateAccess(value); return *this;}
 

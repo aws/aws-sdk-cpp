@@ -241,6 +241,27 @@ namespace Model
      */
     inline LabelingJobForWorkteamSummary& WithLabelCounters(LabelCountersForWorkteam&& value) { SetLabelCounters(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configured number of workers per data object.</p>
+     */
+    inline int GetNumberOfHumanWorkersPerDataObject() const{ return m_numberOfHumanWorkersPerDataObject; }
+
+    /**
+     * <p>The configured number of workers per data object.</p>
+     */
+    inline bool NumberOfHumanWorkersPerDataObjectHasBeenSet() const { return m_numberOfHumanWorkersPerDataObjectHasBeenSet; }
+
+    /**
+     * <p>The configured number of workers per data object.</p>
+     */
+    inline void SetNumberOfHumanWorkersPerDataObject(int value) { m_numberOfHumanWorkersPerDataObjectHasBeenSet = true; m_numberOfHumanWorkersPerDataObject = value; }
+
+    /**
+     * <p>The configured number of workers per data object.</p>
+     */
+    inline LabelingJobForWorkteamSummary& WithNumberOfHumanWorkersPerDataObject(int value) { SetNumberOfHumanWorkersPerDataObject(value); return *this;}
+
   private:
 
     Aws::String m_labelingJobName;
@@ -257,6 +278,9 @@ namespace Model
 
     LabelCountersForWorkteam m_labelCounters;
     bool m_labelCountersHasBeenSet;
+
+    int m_numberOfHumanWorkersPerDataObject;
+    bool m_numberOfHumanWorkersPerDataObjectHasBeenSet;
   };
 
 } // namespace Model

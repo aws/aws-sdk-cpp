@@ -268,25 +268,33 @@ namespace Model
 
     /**
      * <p>Set to <code>true</code> to remove the notebook instance lifecycle
-     * configuration currently associated with the notebook instance.</p>
+     * configuration currently associated with the notebook instance. This operation is
+     * idempotent. If you specify a lifecycle configuration that is not associated with
+     * the notebook instance when you call this method, it does not throw an error.</p>
      */
     inline bool GetDisassociateLifecycleConfig() const{ return m_disassociateLifecycleConfig; }
 
     /**
      * <p>Set to <code>true</code> to remove the notebook instance lifecycle
-     * configuration currently associated with the notebook instance.</p>
+     * configuration currently associated with the notebook instance. This operation is
+     * idempotent. If you specify a lifecycle configuration that is not associated with
+     * the notebook instance when you call this method, it does not throw an error.</p>
      */
     inline bool DisassociateLifecycleConfigHasBeenSet() const { return m_disassociateLifecycleConfigHasBeenSet; }
 
     /**
      * <p>Set to <code>true</code> to remove the notebook instance lifecycle
-     * configuration currently associated with the notebook instance.</p>
+     * configuration currently associated with the notebook instance. This operation is
+     * idempotent. If you specify a lifecycle configuration that is not associated with
+     * the notebook instance when you call this method, it does not throw an error.</p>
      */
     inline void SetDisassociateLifecycleConfig(bool value) { m_disassociateLifecycleConfigHasBeenSet = true; m_disassociateLifecycleConfig = value; }
 
     /**
      * <p>Set to <code>true</code> to remove the notebook instance lifecycle
-     * configuration currently associated with the notebook instance.</p>
+     * configuration currently associated with the notebook instance. This operation is
+     * idempotent. If you specify a lifecycle configuration that is not associated with
+     * the notebook instance when you call this method, it does not throw an error.</p>
      */
     inline UpdateNotebookInstanceRequest& WithDisassociateLifecycleConfig(bool value) { SetDisassociateLifecycleConfig(value); return *this;}
 
@@ -614,75 +622,99 @@ namespace Model
 
     /**
      * <p>A list of the Elastic Inference (EI) instance types to remove from this
-     * notebook instance.</p>
+     * notebook instance. This operation is idempotent. If you specify an accelerator
+     * type that is not associated with the notebook instance when you call this
+     * method, it does not throw an error.</p>
      */
     inline bool GetDisassociateAcceleratorTypes() const{ return m_disassociateAcceleratorTypes; }
 
     /**
      * <p>A list of the Elastic Inference (EI) instance types to remove from this
-     * notebook instance.</p>
+     * notebook instance. This operation is idempotent. If you specify an accelerator
+     * type that is not associated with the notebook instance when you call this
+     * method, it does not throw an error.</p>
      */
     inline bool DisassociateAcceleratorTypesHasBeenSet() const { return m_disassociateAcceleratorTypesHasBeenSet; }
 
     /**
      * <p>A list of the Elastic Inference (EI) instance types to remove from this
-     * notebook instance.</p>
+     * notebook instance. This operation is idempotent. If you specify an accelerator
+     * type that is not associated with the notebook instance when you call this
+     * method, it does not throw an error.</p>
      */
     inline void SetDisassociateAcceleratorTypes(bool value) { m_disassociateAcceleratorTypesHasBeenSet = true; m_disassociateAcceleratorTypes = value; }
 
     /**
      * <p>A list of the Elastic Inference (EI) instance types to remove from this
-     * notebook instance.</p>
+     * notebook instance. This operation is idempotent. If you specify an accelerator
+     * type that is not associated with the notebook instance when you call this
+     * method, it does not throw an error.</p>
      */
     inline UpdateNotebookInstanceRequest& WithDisassociateAcceleratorTypes(bool value) { SetDisassociateAcceleratorTypes(value); return *this;}
 
 
     /**
      * <p>The name or URL of the default Git repository to remove from this notebook
-     * instance.</p>
+     * instance. This operation is idempotent. If you specify a Git repository that is
+     * not associated with the notebook instance when you call this method, it does not
+     * throw an error.</p>
      */
     inline bool GetDisassociateDefaultCodeRepository() const{ return m_disassociateDefaultCodeRepository; }
 
     /**
      * <p>The name or URL of the default Git repository to remove from this notebook
-     * instance.</p>
+     * instance. This operation is idempotent. If you specify a Git repository that is
+     * not associated with the notebook instance when you call this method, it does not
+     * throw an error.</p>
      */
     inline bool DisassociateDefaultCodeRepositoryHasBeenSet() const { return m_disassociateDefaultCodeRepositoryHasBeenSet; }
 
     /**
      * <p>The name or URL of the default Git repository to remove from this notebook
-     * instance.</p>
+     * instance. This operation is idempotent. If you specify a Git repository that is
+     * not associated with the notebook instance when you call this method, it does not
+     * throw an error.</p>
      */
     inline void SetDisassociateDefaultCodeRepository(bool value) { m_disassociateDefaultCodeRepositoryHasBeenSet = true; m_disassociateDefaultCodeRepository = value; }
 
     /**
      * <p>The name or URL of the default Git repository to remove from this notebook
-     * instance.</p>
+     * instance. This operation is idempotent. If you specify a Git repository that is
+     * not associated with the notebook instance when you call this method, it does not
+     * throw an error.</p>
      */
     inline UpdateNotebookInstanceRequest& WithDisassociateDefaultCodeRepository(bool value) { SetDisassociateDefaultCodeRepository(value); return *this;}
 
 
     /**
      * <p>A list of names or URLs of the default Git repositories to remove from this
-     * notebook instance.</p>
+     * notebook instance. This operation is idempotent. If you specify a Git repository
+     * that is not associated with the notebook instance when you call this method, it
+     * does not throw an error.</p>
      */
     inline bool GetDisassociateAdditionalCodeRepositories() const{ return m_disassociateAdditionalCodeRepositories; }
 
     /**
      * <p>A list of names or URLs of the default Git repositories to remove from this
-     * notebook instance.</p>
+     * notebook instance. This operation is idempotent. If you specify a Git repository
+     * that is not associated with the notebook instance when you call this method, it
+     * does not throw an error.</p>
      */
     inline bool DisassociateAdditionalCodeRepositoriesHasBeenSet() const { return m_disassociateAdditionalCodeRepositoriesHasBeenSet; }
 
     /**
      * <p>A list of names or URLs of the default Git repositories to remove from this
-     * notebook instance.</p>
+     * notebook instance. This operation is idempotent. If you specify a Git repository
+     * that is not associated with the notebook instance when you call this method, it
+     * does not throw an error.</p>
      */
     inline void SetDisassociateAdditionalCodeRepositories(bool value) { m_disassociateAdditionalCodeRepositoriesHasBeenSet = true; m_disassociateAdditionalCodeRepositories = value; }
 
     /**
      * <p>A list of names or URLs of the default Git repositories to remove from this
-     * notebook instance.</p>
+     * notebook instance. This operation is idempotent. If you specify a Git repository
+     * that is not associated with the notebook instance when you call this method, it
+     * does not throw an error.</p>
      */
     inline UpdateNotebookInstanceRequest& WithDisassociateAdditionalCodeRepositories(bool value) { SetDisassociateAdditionalCodeRepositories(value); return *this;}
 

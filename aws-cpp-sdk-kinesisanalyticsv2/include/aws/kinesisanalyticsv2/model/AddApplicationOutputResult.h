@@ -101,49 +101,49 @@ namespace Model
 
     /**
      * <p>Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>. </p>
      */
     inline const Aws::Vector<OutputDescription>& GetOutputDescriptions() const{ return m_outputDescriptions; }
 
     /**
      * <p>Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>. </p>
      */
     inline void SetOutputDescriptions(const Aws::Vector<OutputDescription>& value) { m_outputDescriptions = value; }
 
     /**
      * <p>Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>. </p>
      */
     inline void SetOutputDescriptions(Aws::Vector<OutputDescription>&& value) { m_outputDescriptions = std::move(value); }
 
     /**
      * <p>Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>. </p>
      */
     inline AddApplicationOutputResult& WithOutputDescriptions(const Aws::Vector<OutputDescription>& value) { SetOutputDescriptions(value); return *this;}
 
     /**
      * <p>Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>. </p>
      */
     inline AddApplicationOutputResult& WithOutputDescriptions(Aws::Vector<OutputDescription>&& value) { SetOutputDescriptions(std::move(value)); return *this;}
 
     /**
      * <p>Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>. </p>
      */
     inline AddApplicationOutputResult& AddOutputDescriptions(const OutputDescription& value) { m_outputDescriptions.push_back(value); return *this; }
 
     /**
      * <p>Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>. </p>
      */
     inline AddApplicationOutputResult& AddOutputDescriptions(OutputDescription&& value) { m_outputDescriptions.push_back(std::move(value)); return *this; }

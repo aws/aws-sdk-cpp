@@ -180,37 +180,37 @@ namespace Model
 
     /**
      * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>JAVA-8-FLINK-1.5</code>).</p>
+     * <code>FLINK-1_6</code>).</p>
      */
     inline const RuntimeEnvironment& GetRuntimeEnvironment() const{ return m_runtimeEnvironment; }
 
     /**
      * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>JAVA-8-FLINK-1.5</code>).</p>
+     * <code>FLINK-1_6</code>).</p>
      */
     inline bool RuntimeEnvironmentHasBeenSet() const { return m_runtimeEnvironmentHasBeenSet; }
 
     /**
      * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>JAVA-8-FLINK-1.5</code>).</p>
+     * <code>FLINK-1_6</code>).</p>
      */
     inline void SetRuntimeEnvironment(const RuntimeEnvironment& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = value; }
 
     /**
      * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>JAVA-8-FLINK-1.5</code>).</p>
+     * <code>FLINK-1_6</code>).</p>
      */
     inline void SetRuntimeEnvironment(RuntimeEnvironment&& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = std::move(value); }
 
     /**
      * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>JAVA-8-FLINK-1.5</code>).</p>
+     * <code>FLINK-1_6</code>).</p>
      */
     inline ApplicationDetail& WithRuntimeEnvironment(const RuntimeEnvironment& value) { SetRuntimeEnvironment(value); return *this;}
 
     /**
      * <p>The runtime environment for the application (<code>SQL-1.0</code> or
-     * <code>JAVA-8-FLINK-1.5</code>).</p>
+     * <code>FLINK-1_6</code>).</p>
      */
     inline ApplicationDetail& WithRuntimeEnvironment(RuntimeEnvironment&& value) { SetRuntimeEnvironment(std::move(value)); return *this;}
 

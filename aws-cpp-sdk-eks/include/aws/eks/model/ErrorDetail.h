@@ -52,97 +52,97 @@ namespace Model
 
     /**
      * <p>A brief description of the error. </p> <ul> <li> <p> <b>SubnetNotFound</b>:
-     * One of the subnets associated with the cluster could not be found.</p> </li>
-     * <li> <p> <b>SecurityGroupNotFound</b>: One of the security groups associated
-     * with the cluster could not be found.</p> </li> <li> <p> <b>EniLimitReached</b>:
-     * You have reached the elastic network interface limit for your account.</p> </li>
-     * <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster does not
-     * have any free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You do not
-     * have permissions to perform the specified operation.</p> </li> <li> <p>
-     * <b>OperationNotPermitted</b>: The service role associated with the cluster does
-     * not have the required access permissions for Amazon EKS.</p> </li> <li> <p>
-     * <b>VpcIdNotFound</b>: The VPC associated with the cluster could not be
-     * found.</p> </li> </ul>
+     * We couldn't find one of the subnets associated with the cluster.</p> </li> <li>
+     * <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups
+     * associated with the cluster.</p> </li> <li> <p> <b>EniLimitReached</b>: You have
+     * reached the elastic network interface limit for your account.</p> </li> <li> <p>
+     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any
+     * free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You don't have
+     * permissions to perform the specified operation.</p> </li> <li> <p>
+     * <b>OperationNotPermitted</b>: The service role associated with the cluster
+     * doesn't have the required access permissions for Amazon EKS.</p> </li> <li> <p>
+     * <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p>
+     * </li> </ul>
      */
     inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
 
     /**
      * <p>A brief description of the error. </p> <ul> <li> <p> <b>SubnetNotFound</b>:
-     * One of the subnets associated with the cluster could not be found.</p> </li>
-     * <li> <p> <b>SecurityGroupNotFound</b>: One of the security groups associated
-     * with the cluster could not be found.</p> </li> <li> <p> <b>EniLimitReached</b>:
-     * You have reached the elastic network interface limit for your account.</p> </li>
-     * <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster does not
-     * have any free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You do not
-     * have permissions to perform the specified operation.</p> </li> <li> <p>
-     * <b>OperationNotPermitted</b>: The service role associated with the cluster does
-     * not have the required access permissions for Amazon EKS.</p> </li> <li> <p>
-     * <b>VpcIdNotFound</b>: The VPC associated with the cluster could not be
-     * found.</p> </li> </ul>
+     * We couldn't find one of the subnets associated with the cluster.</p> </li> <li>
+     * <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups
+     * associated with the cluster.</p> </li> <li> <p> <b>EniLimitReached</b>: You have
+     * reached the elastic network interface limit for your account.</p> </li> <li> <p>
+     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any
+     * free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You don't have
+     * permissions to perform the specified operation.</p> </li> <li> <p>
+     * <b>OperationNotPermitted</b>: The service role associated with the cluster
+     * doesn't have the required access permissions for Amazon EKS.</p> </li> <li> <p>
+     * <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p>
+     * </li> </ul>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>A brief description of the error. </p> <ul> <li> <p> <b>SubnetNotFound</b>:
-     * One of the subnets associated with the cluster could not be found.</p> </li>
-     * <li> <p> <b>SecurityGroupNotFound</b>: One of the security groups associated
-     * with the cluster could not be found.</p> </li> <li> <p> <b>EniLimitReached</b>:
-     * You have reached the elastic network interface limit for your account.</p> </li>
-     * <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster does not
-     * have any free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You do not
-     * have permissions to perform the specified operation.</p> </li> <li> <p>
-     * <b>OperationNotPermitted</b>: The service role associated with the cluster does
-     * not have the required access permissions for Amazon EKS.</p> </li> <li> <p>
-     * <b>VpcIdNotFound</b>: The VPC associated with the cluster could not be
-     * found.</p> </li> </ul>
+     * We couldn't find one of the subnets associated with the cluster.</p> </li> <li>
+     * <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups
+     * associated with the cluster.</p> </li> <li> <p> <b>EniLimitReached</b>: You have
+     * reached the elastic network interface limit for your account.</p> </li> <li> <p>
+     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any
+     * free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You don't have
+     * permissions to perform the specified operation.</p> </li> <li> <p>
+     * <b>OperationNotPermitted</b>: The service role associated with the cluster
+     * doesn't have the required access permissions for Amazon EKS.</p> </li> <li> <p>
+     * <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p>
+     * </li> </ul>
      */
     inline void SetErrorCode(const ErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
      * <p>A brief description of the error. </p> <ul> <li> <p> <b>SubnetNotFound</b>:
-     * One of the subnets associated with the cluster could not be found.</p> </li>
-     * <li> <p> <b>SecurityGroupNotFound</b>: One of the security groups associated
-     * with the cluster could not be found.</p> </li> <li> <p> <b>EniLimitReached</b>:
-     * You have reached the elastic network interface limit for your account.</p> </li>
-     * <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster does not
-     * have any free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You do not
-     * have permissions to perform the specified operation.</p> </li> <li> <p>
-     * <b>OperationNotPermitted</b>: The service role associated with the cluster does
-     * not have the required access permissions for Amazon EKS.</p> </li> <li> <p>
-     * <b>VpcIdNotFound</b>: The VPC associated with the cluster could not be
-     * found.</p> </li> </ul>
+     * We couldn't find one of the subnets associated with the cluster.</p> </li> <li>
+     * <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups
+     * associated with the cluster.</p> </li> <li> <p> <b>EniLimitReached</b>: You have
+     * reached the elastic network interface limit for your account.</p> </li> <li> <p>
+     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any
+     * free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You don't have
+     * permissions to perform the specified operation.</p> </li> <li> <p>
+     * <b>OperationNotPermitted</b>: The service role associated with the cluster
+     * doesn't have the required access permissions for Amazon EKS.</p> </li> <li> <p>
+     * <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p>
+     * </li> </ul>
      */
     inline void SetErrorCode(ErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
      * <p>A brief description of the error. </p> <ul> <li> <p> <b>SubnetNotFound</b>:
-     * One of the subnets associated with the cluster could not be found.</p> </li>
-     * <li> <p> <b>SecurityGroupNotFound</b>: One of the security groups associated
-     * with the cluster could not be found.</p> </li> <li> <p> <b>EniLimitReached</b>:
-     * You have reached the elastic network interface limit for your account.</p> </li>
-     * <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster does not
-     * have any free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You do not
-     * have permissions to perform the specified operation.</p> </li> <li> <p>
-     * <b>OperationNotPermitted</b>: The service role associated with the cluster does
-     * not have the required access permissions for Amazon EKS.</p> </li> <li> <p>
-     * <b>VpcIdNotFound</b>: The VPC associated with the cluster could not be
-     * found.</p> </li> </ul>
+     * We couldn't find one of the subnets associated with the cluster.</p> </li> <li>
+     * <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups
+     * associated with the cluster.</p> </li> <li> <p> <b>EniLimitReached</b>: You have
+     * reached the elastic network interface limit for your account.</p> </li> <li> <p>
+     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any
+     * free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You don't have
+     * permissions to perform the specified operation.</p> </li> <li> <p>
+     * <b>OperationNotPermitted</b>: The service role associated with the cluster
+     * doesn't have the required access permissions for Amazon EKS.</p> </li> <li> <p>
+     * <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p>
+     * </li> </ul>
      */
     inline ErrorDetail& WithErrorCode(const ErrorCode& value) { SetErrorCode(value); return *this;}
 
     /**
      * <p>A brief description of the error. </p> <ul> <li> <p> <b>SubnetNotFound</b>:
-     * One of the subnets associated with the cluster could not be found.</p> </li>
-     * <li> <p> <b>SecurityGroupNotFound</b>: One of the security groups associated
-     * with the cluster could not be found.</p> </li> <li> <p> <b>EniLimitReached</b>:
-     * You have reached the elastic network interface limit for your account.</p> </li>
-     * <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster does not
-     * have any free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You do not
-     * have permissions to perform the specified operation.</p> </li> <li> <p>
-     * <b>OperationNotPermitted</b>: The service role associated with the cluster does
-     * not have the required access permissions for Amazon EKS.</p> </li> <li> <p>
-     * <b>VpcIdNotFound</b>: The VPC associated with the cluster could not be
-     * found.</p> </li> </ul>
+     * We couldn't find one of the subnets associated with the cluster.</p> </li> <li>
+     * <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups
+     * associated with the cluster.</p> </li> <li> <p> <b>EniLimitReached</b>: You have
+     * reached the elastic network interface limit for your account.</p> </li> <li> <p>
+     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any
+     * free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You don't have
+     * permissions to perform the specified operation.</p> </li> <li> <p>
+     * <b>OperationNotPermitted</b>: The service role associated with the cluster
+     * doesn't have the required access permissions for Amazon EKS.</p> </li> <li> <p>
+     * <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p>
+     * </li> </ul>
      */
     inline ErrorDetail& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
 

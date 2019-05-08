@@ -33,7 +33,9 @@ LabelingJobForWorkteamSummary::LabelingJobForWorkteamSummary() :
     m_jobReferenceCodeHasBeenSet(false),
     m_workRequesterAccountIdHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_labelCountersHasBeenSet(false)
+    m_labelCountersHasBeenSet(false),
+    m_numberOfHumanWorkersPerDataObject(0),
+    m_numberOfHumanWorkersPerDataObjectHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ LabelingJobForWorkteamSummary::LabelingJobForWorkteamSummary(JsonView jsonValue)
     m_jobReferenceCodeHasBeenSet(false),
     m_workRequesterAccountIdHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_labelCountersHasBeenSet(false)
+    m_labelCountersHasBeenSet(false),
+    m_numberOfHumanWorkersPerDataObject(0),
+    m_numberOfHumanWorkersPerDataObjectHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,6 +88,13 @@ LabelingJobForWorkteamSummary& LabelingJobForWorkteamSummary::operator =(JsonVie
     m_labelCountersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NumberOfHumanWorkersPerDataObject"))
+  {
+    m_numberOfHumanWorkersPerDataObject = jsonValue.GetInteger("NumberOfHumanWorkersPerDataObject");
+
+    m_numberOfHumanWorkersPerDataObjectHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -117,6 +128,12 @@ JsonValue LabelingJobForWorkteamSummary::Jsonize() const
   if(m_labelCountersHasBeenSet)
   {
    payload.WithObject("LabelCounters", m_labelCounters.Jsonize());
+
+  }
+
+  if(m_numberOfHumanWorkersPerDataObjectHasBeenSet)
+  {
+   payload.WithInteger("NumberOfHumanWorkersPerDataObject", m_numberOfHumanWorkersPerDataObject);
 
   }
 

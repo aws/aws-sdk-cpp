@@ -41,9 +41,14 @@ namespace Model
 {
 
   /**
-   * <p>Provides a description of the application, including the application Amazon
-   * Resource Name (ARN), status, latest version, and input and output
-   * configuration.</p><p><h3>See Also:</h3>   <a
+   * <note> <p>This documentation is for version 1 of the Amazon Kinesis Data
+   * Analytics API, which only supports SQL applications. Version 2 of the API
+   * supports SQL and Java applications. For more information about version 2, see <a
+   * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics
+   * API V2 Documentation</a>.</p> </note> <p>Provides a description of the
+   * application, including the application Amazon Resource Name (ARN), status,
+   * latest version, and input and output configuration.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ApplicationDetail">AWS
    * API Reference</a></p>
    */
@@ -274,56 +279,56 @@ namespace Model
 
     /**
      * <p>Describes the application input configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>. </p>
      */
     inline const Aws::Vector<InputDescription>& GetInputDescriptions() const{ return m_inputDescriptions; }
 
     /**
      * <p>Describes the application input configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>. </p>
      */
     inline bool InputDescriptionsHasBeenSet() const { return m_inputDescriptionsHasBeenSet; }
 
     /**
      * <p>Describes the application input configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>. </p>
      */
     inline void SetInputDescriptions(const Aws::Vector<InputDescription>& value) { m_inputDescriptionsHasBeenSet = true; m_inputDescriptions = value; }
 
     /**
      * <p>Describes the application input configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>. </p>
      */
     inline void SetInputDescriptions(Aws::Vector<InputDescription>&& value) { m_inputDescriptionsHasBeenSet = true; m_inputDescriptions = std::move(value); }
 
     /**
      * <p>Describes the application input configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>. </p>
      */
     inline ApplicationDetail& WithInputDescriptions(const Aws::Vector<InputDescription>& value) { SetInputDescriptions(value); return *this;}
 
     /**
      * <p>Describes the application input configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>. </p>
      */
     inline ApplicationDetail& WithInputDescriptions(Aws::Vector<InputDescription>&& value) { SetInputDescriptions(std::move(value)); return *this;}
 
     /**
      * <p>Describes the application input configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>. </p>
      */
     inline ApplicationDetail& AddInputDescriptions(const InputDescription& value) { m_inputDescriptionsHasBeenSet = true; m_inputDescriptions.push_back(value); return *this; }
 
     /**
      * <p>Describes the application input configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>. </p>
      */
     inline ApplicationDetail& AddInputDescriptions(InputDescription&& value) { m_inputDescriptionsHasBeenSet = true; m_inputDescriptions.push_back(std::move(value)); return *this; }
@@ -331,56 +336,56 @@ namespace Model
 
     /**
      * <p>Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>. </p>
      */
     inline const Aws::Vector<OutputDescription>& GetOutputDescriptions() const{ return m_outputDescriptions; }
 
     /**
      * <p>Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>. </p>
      */
     inline bool OutputDescriptionsHasBeenSet() const { return m_outputDescriptionsHasBeenSet; }
 
     /**
      * <p>Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>. </p>
      */
     inline void SetOutputDescriptions(const Aws::Vector<OutputDescription>& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions = value; }
 
     /**
      * <p>Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>. </p>
      */
     inline void SetOutputDescriptions(Aws::Vector<OutputDescription>&& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions = std::move(value); }
 
     /**
      * <p>Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>. </p>
      */
     inline ApplicationDetail& WithOutputDescriptions(const Aws::Vector<OutputDescription>& value) { SetOutputDescriptions(value); return *this;}
 
     /**
      * <p>Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>. </p>
      */
     inline ApplicationDetail& WithOutputDescriptions(Aws::Vector<OutputDescription>&& value) { SetOutputDescriptions(std::move(value)); return *this;}
 
     /**
      * <p>Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>. </p>
      */
     inline ApplicationDetail& AddOutputDescriptions(const OutputDescription& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions.push_back(value); return *this; }
 
     /**
      * <p>Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>. </p>
      */
     inline ApplicationDetail& AddOutputDescriptions(OutputDescription&& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions.push_back(std::move(value)); return *this; }
@@ -389,7 +394,7 @@ namespace Model
     /**
      * <p>Describes reference data sources configured for the application. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>. </p>
      */
     inline const Aws::Vector<ReferenceDataSourceDescription>& GetReferenceDataSourceDescriptions() const{ return m_referenceDataSourceDescriptions; }
@@ -397,7 +402,7 @@ namespace Model
     /**
      * <p>Describes reference data sources configured for the application. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>. </p>
      */
     inline bool ReferenceDataSourceDescriptionsHasBeenSet() const { return m_referenceDataSourceDescriptionsHasBeenSet; }
@@ -405,7 +410,7 @@ namespace Model
     /**
      * <p>Describes reference data sources configured for the application. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>. </p>
      */
     inline void SetReferenceDataSourceDescriptions(const Aws::Vector<ReferenceDataSourceDescription>& value) { m_referenceDataSourceDescriptionsHasBeenSet = true; m_referenceDataSourceDescriptions = value; }
@@ -413,7 +418,7 @@ namespace Model
     /**
      * <p>Describes reference data sources configured for the application. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>. </p>
      */
     inline void SetReferenceDataSourceDescriptions(Aws::Vector<ReferenceDataSourceDescription>&& value) { m_referenceDataSourceDescriptionsHasBeenSet = true; m_referenceDataSourceDescriptions = std::move(value); }
@@ -421,7 +426,7 @@ namespace Model
     /**
      * <p>Describes reference data sources configured for the application. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>. </p>
      */
     inline ApplicationDetail& WithReferenceDataSourceDescriptions(const Aws::Vector<ReferenceDataSourceDescription>& value) { SetReferenceDataSourceDescriptions(value); return *this;}
@@ -429,7 +434,7 @@ namespace Model
     /**
      * <p>Describes reference data sources configured for the application. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>. </p>
      */
     inline ApplicationDetail& WithReferenceDataSourceDescriptions(Aws::Vector<ReferenceDataSourceDescription>&& value) { SetReferenceDataSourceDescriptions(std::move(value)); return *this;}
@@ -437,7 +442,7 @@ namespace Model
     /**
      * <p>Describes reference data sources configured for the application. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>. </p>
      */
     inline ApplicationDetail& AddReferenceDataSourceDescriptions(const ReferenceDataSourceDescription& value) { m_referenceDataSourceDescriptionsHasBeenSet = true; m_referenceDataSourceDescriptions.push_back(value); return *this; }
@@ -445,7 +450,7 @@ namespace Model
     /**
      * <p>Describes reference data sources configured for the application. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>. </p>
      */
     inline ApplicationDetail& AddReferenceDataSourceDescriptions(ReferenceDataSourceDescription&& value) { m_referenceDataSourceDescriptionsHasBeenSet = true; m_referenceDataSourceDescriptions.push_back(std::move(value)); return *this; }
@@ -455,7 +460,7 @@ namespace Model
      * <p>Describes the CloudWatch log streams that are configured to receive
      * application messages. For more information about using CloudWatch log streams
      * with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
      * with Amazon CloudWatch Logs</a>. </p>
      */
     inline const Aws::Vector<CloudWatchLoggingOptionDescription>& GetCloudWatchLoggingOptionDescriptions() const{ return m_cloudWatchLoggingOptionDescriptions; }
@@ -464,7 +469,7 @@ namespace Model
      * <p>Describes the CloudWatch log streams that are configured to receive
      * application messages. For more information about using CloudWatch log streams
      * with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
      * with Amazon CloudWatch Logs</a>. </p>
      */
     inline bool CloudWatchLoggingOptionDescriptionsHasBeenSet() const { return m_cloudWatchLoggingOptionDescriptionsHasBeenSet; }
@@ -473,7 +478,7 @@ namespace Model
      * <p>Describes the CloudWatch log streams that are configured to receive
      * application messages. For more information about using CloudWatch log streams
      * with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
      * with Amazon CloudWatch Logs</a>. </p>
      */
     inline void SetCloudWatchLoggingOptionDescriptions(const Aws::Vector<CloudWatchLoggingOptionDescription>& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions = value; }
@@ -482,7 +487,7 @@ namespace Model
      * <p>Describes the CloudWatch log streams that are configured to receive
      * application messages. For more information about using CloudWatch log streams
      * with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
      * with Amazon CloudWatch Logs</a>. </p>
      */
     inline void SetCloudWatchLoggingOptionDescriptions(Aws::Vector<CloudWatchLoggingOptionDescription>&& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions = std::move(value); }
@@ -491,7 +496,7 @@ namespace Model
      * <p>Describes the CloudWatch log streams that are configured to receive
      * application messages. For more information about using CloudWatch log streams
      * with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
      * with Amazon CloudWatch Logs</a>. </p>
      */
     inline ApplicationDetail& WithCloudWatchLoggingOptionDescriptions(const Aws::Vector<CloudWatchLoggingOptionDescription>& value) { SetCloudWatchLoggingOptionDescriptions(value); return *this;}
@@ -500,7 +505,7 @@ namespace Model
      * <p>Describes the CloudWatch log streams that are configured to receive
      * application messages. For more information about using CloudWatch log streams
      * with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
      * with Amazon CloudWatch Logs</a>. </p>
      */
     inline ApplicationDetail& WithCloudWatchLoggingOptionDescriptions(Aws::Vector<CloudWatchLoggingOptionDescription>&& value) { SetCloudWatchLoggingOptionDescriptions(std::move(value)); return *this;}
@@ -509,7 +514,7 @@ namespace Model
      * <p>Describes the CloudWatch log streams that are configured to receive
      * application messages. For more information about using CloudWatch log streams
      * with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
      * with Amazon CloudWatch Logs</a>. </p>
      */
     inline ApplicationDetail& AddCloudWatchLoggingOptionDescriptions(const CloudWatchLoggingOptionDescription& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions.push_back(value); return *this; }
@@ -518,7 +523,7 @@ namespace Model
      * <p>Describes the CloudWatch log streams that are configured to receive
      * application messages. For more information about using CloudWatch log streams
      * with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
      * with Amazon CloudWatch Logs</a>. </p>
      */
     inline ApplicationDetail& AddCloudWatchLoggingOptionDescriptions(CloudWatchLoggingOptionDescription&& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions.push_back(std::move(value)); return *this; }

@@ -35,9 +35,9 @@ namespace Model
 
   /**
    * <p>An object that contains the Amazon Resource Name (ARN) of the <a
-   * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
-   * is used to preprocess records in the stream, and the ARN of the IAM role that is
-   * used to access the AWS Lambda expression.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used
+   * to preprocess records in the stream, and the ARN of the IAM role that is used to
+   * access the AWS Lambda expression.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputLambdaProcessorDescription">AWS
    * API Reference</a></p>
    */
@@ -51,50 +51,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the <a href="https://aws.amazon.com/documentation/lambda/">AWS
-     * Lambda</a> function that is used to preprocess the records in the stream.</p>
+     * <p>The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>
+     * function that is used to preprocess the records in the stream.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
 
     /**
-     * <p>The ARN of the <a href="https://aws.amazon.com/documentation/lambda/">AWS
-     * Lambda</a> function that is used to preprocess the records in the stream.</p>
+     * <p>The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>
+     * function that is used to preprocess the records in the stream.</p>
      */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
 
     /**
-     * <p>The ARN of the <a href="https://aws.amazon.com/documentation/lambda/">AWS
-     * Lambda</a> function that is used to preprocess the records in the stream.</p>
+     * <p>The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>
+     * function that is used to preprocess the records in the stream.</p>
      */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
-     * <p>The ARN of the <a href="https://aws.amazon.com/documentation/lambda/">AWS
-     * Lambda</a> function that is used to preprocess the records in the stream.</p>
+     * <p>The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>
+     * function that is used to preprocess the records in the stream.</p>
      */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
 
     /**
-     * <p>The ARN of the <a href="https://aws.amazon.com/documentation/lambda/">AWS
-     * Lambda</a> function that is used to preprocess the records in the stream.</p>
+     * <p>The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>
+     * function that is used to preprocess the records in the stream.</p>
      */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
 
     /**
-     * <p>The ARN of the <a href="https://aws.amazon.com/documentation/lambda/">AWS
-     * Lambda</a> function that is used to preprocess the records in the stream.</p>
+     * <p>The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>
+     * function that is used to preprocess the records in the stream.</p>
      */
     inline InputLambdaProcessorDescription& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
 
     /**
-     * <p>The ARN of the <a href="https://aws.amazon.com/documentation/lambda/">AWS
-     * Lambda</a> function that is used to preprocess the records in the stream.</p>
+     * <p>The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>
+     * function that is used to preprocess the records in the stream.</p>
      */
     inline InputLambdaProcessorDescription& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the <a href="https://aws.amazon.com/documentation/lambda/">AWS
-     * Lambda</a> function that is used to preprocess the records in the stream.</p>
+     * <p>The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>
+     * function that is used to preprocess the records in the stream.</p>
      */
     inline InputLambdaProcessorDescription& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
 

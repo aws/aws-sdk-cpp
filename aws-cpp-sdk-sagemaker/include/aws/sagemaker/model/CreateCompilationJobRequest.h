@@ -97,12 +97,12 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon
-     * SageMaker to perform tasks on your behalf. </p> <p>During model compilation,
-     * Amazon SageMaker needs your permission to:</p> <ul> <li> <p>Read input data from
-     * an S3 bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li>
-     * <li> <p>Write logs to Amazon CloudWatch Logs</p> </li> <li> <p>Publish metrics
-     * to Amazon CloudWatch</p> </li> </ul> <p>You grant permissions for all of these
+     * <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
+     * to perform tasks on your behalf. </p> <p>During model compilation, Amazon
+     * SageMaker needs your permission to:</p> <ul> <li> <p>Read input data from an S3
+     * bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li> <li>
+     * <p>Write logs to Amazon CloudWatch Logs</p> </li> <li> <p>Publish metrics to
+     * Amazon CloudWatch</p> </li> </ul> <p>You grant permissions for all of these
      * tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this
      * API must have the <code>iam:PassRole</code> permission. For more information,
      * see <a
@@ -112,12 +112,12 @@ namespace Model
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon
-     * SageMaker to perform tasks on your behalf. </p> <p>During model compilation,
-     * Amazon SageMaker needs your permission to:</p> <ul> <li> <p>Read input data from
-     * an S3 bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li>
-     * <li> <p>Write logs to Amazon CloudWatch Logs</p> </li> <li> <p>Publish metrics
-     * to Amazon CloudWatch</p> </li> </ul> <p>You grant permissions for all of these
+     * <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
+     * to perform tasks on your behalf. </p> <p>During model compilation, Amazon
+     * SageMaker needs your permission to:</p> <ul> <li> <p>Read input data from an S3
+     * bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li> <li>
+     * <p>Write logs to Amazon CloudWatch Logs</p> </li> <li> <p>Publish metrics to
+     * Amazon CloudWatch</p> </li> </ul> <p>You grant permissions for all of these
      * tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this
      * API must have the <code>iam:PassRole</code> permission. For more information,
      * see <a
@@ -127,12 +127,12 @@ namespace Model
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon
-     * SageMaker to perform tasks on your behalf. </p> <p>During model compilation,
-     * Amazon SageMaker needs your permission to:</p> <ul> <li> <p>Read input data from
-     * an S3 bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li>
-     * <li> <p>Write logs to Amazon CloudWatch Logs</p> </li> <li> <p>Publish metrics
-     * to Amazon CloudWatch</p> </li> </ul> <p>You grant permissions for all of these
+     * <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
+     * to perform tasks on your behalf. </p> <p>During model compilation, Amazon
+     * SageMaker needs your permission to:</p> <ul> <li> <p>Read input data from an S3
+     * bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li> <li>
+     * <p>Write logs to Amazon CloudWatch Logs</p> </li> <li> <p>Publish metrics to
+     * Amazon CloudWatch</p> </li> </ul> <p>You grant permissions for all of these
      * tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this
      * API must have the <code>iam:PassRole</code> permission. For more information,
      * see <a
@@ -142,12 +142,12 @@ namespace Model
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon
-     * SageMaker to perform tasks on your behalf. </p> <p>During model compilation,
-     * Amazon SageMaker needs your permission to:</p> <ul> <li> <p>Read input data from
-     * an S3 bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li>
-     * <li> <p>Write logs to Amazon CloudWatch Logs</p> </li> <li> <p>Publish metrics
-     * to Amazon CloudWatch</p> </li> </ul> <p>You grant permissions for all of these
+     * <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
+     * to perform tasks on your behalf. </p> <p>During model compilation, Amazon
+     * SageMaker needs your permission to:</p> <ul> <li> <p>Read input data from an S3
+     * bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li> <li>
+     * <p>Write logs to Amazon CloudWatch Logs</p> </li> <li> <p>Publish metrics to
+     * Amazon CloudWatch</p> </li> </ul> <p>You grant permissions for all of these
      * tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this
      * API must have the <code>iam:PassRole</code> permission. For more information,
      * see <a
@@ -157,12 +157,12 @@ namespace Model
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon
-     * SageMaker to perform tasks on your behalf. </p> <p>During model compilation,
-     * Amazon SageMaker needs your permission to:</p> <ul> <li> <p>Read input data from
-     * an S3 bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li>
-     * <li> <p>Write logs to Amazon CloudWatch Logs</p> </li> <li> <p>Publish metrics
-     * to Amazon CloudWatch</p> </li> </ul> <p>You grant permissions for all of these
+     * <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
+     * to perform tasks on your behalf. </p> <p>During model compilation, Amazon
+     * SageMaker needs your permission to:</p> <ul> <li> <p>Read input data from an S3
+     * bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li> <li>
+     * <p>Write logs to Amazon CloudWatch Logs</p> </li> <li> <p>Publish metrics to
+     * Amazon CloudWatch</p> </li> </ul> <p>You grant permissions for all of these
      * tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this
      * API must have the <code>iam:PassRole</code> permission. For more information,
      * see <a
@@ -172,12 +172,12 @@ namespace Model
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon
-     * SageMaker to perform tasks on your behalf. </p> <p>During model compilation,
-     * Amazon SageMaker needs your permission to:</p> <ul> <li> <p>Read input data from
-     * an S3 bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li>
-     * <li> <p>Write logs to Amazon CloudWatch Logs</p> </li> <li> <p>Publish metrics
-     * to Amazon CloudWatch</p> </li> </ul> <p>You grant permissions for all of these
+     * <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
+     * to perform tasks on your behalf. </p> <p>During model compilation, Amazon
+     * SageMaker needs your permission to:</p> <ul> <li> <p>Read input data from an S3
+     * bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li> <li>
+     * <p>Write logs to Amazon CloudWatch Logs</p> </li> <li> <p>Publish metrics to
+     * Amazon CloudWatch</p> </li> </ul> <p>You grant permissions for all of these
      * tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this
      * API must have the <code>iam:PassRole</code> permission. For more information,
      * see <a
@@ -187,12 +187,12 @@ namespace Model
     inline CreateCompilationJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon
-     * SageMaker to perform tasks on your behalf. </p> <p>During model compilation,
-     * Amazon SageMaker needs your permission to:</p> <ul> <li> <p>Read input data from
-     * an S3 bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li>
-     * <li> <p>Write logs to Amazon CloudWatch Logs</p> </li> <li> <p>Publish metrics
-     * to Amazon CloudWatch</p> </li> </ul> <p>You grant permissions for all of these
+     * <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
+     * to perform tasks on your behalf. </p> <p>During model compilation, Amazon
+     * SageMaker needs your permission to:</p> <ul> <li> <p>Read input data from an S3
+     * bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li> <li>
+     * <p>Write logs to Amazon CloudWatch Logs</p> </li> <li> <p>Publish metrics to
+     * Amazon CloudWatch</p> </li> </ul> <p>You grant permissions for all of these
      * tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this
      * API must have the <code>iam:PassRole</code> permission. For more information,
      * see <a
@@ -202,12 +202,12 @@ namespace Model
     inline CreateCompilationJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon
-     * SageMaker to perform tasks on your behalf. </p> <p>During model compilation,
-     * Amazon SageMaker needs your permission to:</p> <ul> <li> <p>Read input data from
-     * an S3 bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li>
-     * <li> <p>Write logs to Amazon CloudWatch Logs</p> </li> <li> <p>Publish metrics
-     * to Amazon CloudWatch</p> </li> </ul> <p>You grant permissions for all of these
+     * <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
+     * to perform tasks on your behalf. </p> <p>During model compilation, Amazon
+     * SageMaker needs your permission to:</p> <ul> <li> <p>Read input data from an S3
+     * bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li> <li>
+     * <p>Write logs to Amazon CloudWatch Logs</p> </li> <li> <p>Publish metrics to
+     * Amazon CloudWatch</p> </li> </ul> <p>You grant permissions for all of these
      * tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this
      * API must have the <code>iam:PassRole</code> permission. For more information,
      * see <a

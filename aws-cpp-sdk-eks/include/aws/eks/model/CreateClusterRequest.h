@@ -87,50 +87,50 @@ namespace Model
 
 
     /**
-     * <p>The desired Kubernetes version for your cluster. If you do not specify a
-     * value here, the latest version available in Amazon EKS is used.</p>
+     * <p>The desired Kubernetes version for your cluster. If you don't specify a value
+     * here, the latest version available in Amazon EKS is used.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The desired Kubernetes version for your cluster. If you do not specify a
-     * value here, the latest version available in Amazon EKS is used.</p>
+     * <p>The desired Kubernetes version for your cluster. If you don't specify a value
+     * here, the latest version available in Amazon EKS is used.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>The desired Kubernetes version for your cluster. If you do not specify a
-     * value here, the latest version available in Amazon EKS is used.</p>
+     * <p>The desired Kubernetes version for your cluster. If you don't specify a value
+     * here, the latest version available in Amazon EKS is used.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The desired Kubernetes version for your cluster. If you do not specify a
-     * value here, the latest version available in Amazon EKS is used.</p>
+     * <p>The desired Kubernetes version for your cluster. If you don't specify a value
+     * here, the latest version available in Amazon EKS is used.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The desired Kubernetes version for your cluster. If you do not specify a
-     * value here, the latest version available in Amazon EKS is used.</p>
+     * <p>The desired Kubernetes version for your cluster. If you don't specify a value
+     * here, the latest version available in Amazon EKS is used.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The desired Kubernetes version for your cluster. If you do not specify a
-     * value here, the latest version available in Amazon EKS is used.</p>
+     * <p>The desired Kubernetes version for your cluster. If you don't specify a value
+     * here, the latest version available in Amazon EKS is used.</p>
      */
     inline CreateClusterRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The desired Kubernetes version for your cluster. If you do not specify a
-     * value here, the latest version available in Amazon EKS is used.</p>
+     * <p>The desired Kubernetes version for your cluster. If you don't specify a value
+     * here, the latest version available in Amazon EKS is used.</p>
      */
     inline CreateClusterRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The desired Kubernetes version for your cluster. If you do not specify a
-     * value here, the latest version available in Amazon EKS is used.</p>
+     * <p>The desired Kubernetes version for your cluster. If you don't specify a value
+     * here, the latest version available in Amazon EKS is used.</p>
      */
     inline CreateClusterRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -216,7 +216,7 @@ namespace Model
      * VPC Considerations</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You may specify up to five security groups, but we
+     * specify at least two subnets. You can specify up to five security groups, but we
      * recommend that you use a dedicated security group for your cluster control
      * plane.</p>
      */
@@ -230,7 +230,7 @@ namespace Model
      * VPC Considerations</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You may specify up to five security groups, but we
+     * specify at least two subnets. You can specify up to five security groups, but we
      * recommend that you use a dedicated security group for your cluster control
      * plane.</p>
      */
@@ -244,7 +244,7 @@ namespace Model
      * VPC Considerations</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You may specify up to five security groups, but we
+     * specify at least two subnets. You can specify up to five security groups, but we
      * recommend that you use a dedicated security group for your cluster control
      * plane.</p>
      */
@@ -258,7 +258,7 @@ namespace Model
      * VPC Considerations</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You may specify up to five security groups, but we
+     * specify at least two subnets. You can specify up to five security groups, but we
      * recommend that you use a dedicated security group for your cluster control
      * plane.</p>
      */
@@ -272,7 +272,7 @@ namespace Model
      * VPC Considerations</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You may specify up to five security groups, but we
+     * specify at least two subnets. You can specify up to five security groups, but we
      * recommend that you use a dedicated security group for your cluster control
      * plane.</p>
      */
@@ -286,7 +286,7 @@ namespace Model
      * VPC Considerations</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You may specify up to five security groups, but we
+     * specify at least two subnets. You can specify up to five security groups, but we
      * recommend that you use a dedicated security group for your cluster control
      * plane.</p>
      */
@@ -295,7 +295,7 @@ namespace Model
 
     /**
      * <p>Enable or disable exporting the Kubernetes control plane logs for your
-     * cluster to CloudWatch Logs. By default, cluster control plane logs are not
+     * cluster to CloudWatch Logs. By default, cluster control plane logs aren't
      * exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
      * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
@@ -308,7 +308,7 @@ namespace Model
 
     /**
      * <p>Enable or disable exporting the Kubernetes control plane logs for your
-     * cluster to CloudWatch Logs. By default, cluster control plane logs are not
+     * cluster to CloudWatch Logs. By default, cluster control plane logs aren't
      * exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
      * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
@@ -321,7 +321,7 @@ namespace Model
 
     /**
      * <p>Enable or disable exporting the Kubernetes control plane logs for your
-     * cluster to CloudWatch Logs. By default, cluster control plane logs are not
+     * cluster to CloudWatch Logs. By default, cluster control plane logs aren't
      * exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
      * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
@@ -334,7 +334,7 @@ namespace Model
 
     /**
      * <p>Enable or disable exporting the Kubernetes control plane logs for your
-     * cluster to CloudWatch Logs. By default, cluster control plane logs are not
+     * cluster to CloudWatch Logs. By default, cluster control plane logs aren't
      * exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
      * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
@@ -347,7 +347,7 @@ namespace Model
 
     /**
      * <p>Enable or disable exporting the Kubernetes control plane logs for your
-     * cluster to CloudWatch Logs. By default, cluster control plane logs are not
+     * cluster to CloudWatch Logs. By default, cluster control plane logs aren't
      * exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
      * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
@@ -360,7 +360,7 @@ namespace Model
 
     /**
      * <p>Enable or disable exporting the Kubernetes control plane logs for your
-     * cluster to CloudWatch Logs. By default, cluster control plane logs are not
+     * cluster to CloudWatch Logs. By default, cluster control plane logs aren't
      * exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
      * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>

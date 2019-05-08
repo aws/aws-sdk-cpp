@@ -18,6 +18,7 @@
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/NotificationConfiguration.h>
 #include <aws/sagemaker/model/MemberDefinition.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -219,6 +220,43 @@ namespace Model
 
 
     /**
+     * <p>Configures notification of workers regarding available or expiring work
+     * items.</p>
+     */
+    inline const NotificationConfiguration& GetNotificationConfiguration() const{ return m_notificationConfiguration; }
+
+    /**
+     * <p>Configures notification of workers regarding available or expiring work
+     * items.</p>
+     */
+    inline bool NotificationConfigurationHasBeenSet() const { return m_notificationConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configures notification of workers regarding available or expiring work
+     * items.</p>
+     */
+    inline void SetNotificationConfiguration(const NotificationConfiguration& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = value; }
+
+    /**
+     * <p>Configures notification of workers regarding available or expiring work
+     * items.</p>
+     */
+    inline void SetNotificationConfiguration(NotificationConfiguration&& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = std::move(value); }
+
+    /**
+     * <p>Configures notification of workers regarding available or expiring work
+     * items.</p>
+     */
+    inline CreateWorkteamRequest& WithNotificationConfiguration(const NotificationConfiguration& value) { SetNotificationConfiguration(value); return *this;}
+
+    /**
+     * <p>Configures notification of workers regarding available or expiring work
+     * items.</p>
+     */
+    inline CreateWorkteamRequest& WithNotificationConfiguration(NotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p/>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -268,6 +306,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    NotificationConfiguration m_notificationConfiguration;
+    bool m_notificationConfigurationHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

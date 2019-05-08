@@ -99,33 +99,41 @@ namespace Model
 
     /**
      * <p>Version of the application to which you want to add the output configuration.
-     * You can use the <a>DescribeApplication</a> operation to get the current
-     * application version. If the version specified is not the current version, the
-     * <code>ConcurrentModificationException</code> is returned. </p>
+     * You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to get the current application version. If the version specified is
+     * not the current version, the <code>ConcurrentModificationException</code> is
+     * returned. </p>
      */
     inline long long GetCurrentApplicationVersionId() const{ return m_currentApplicationVersionId; }
 
     /**
      * <p>Version of the application to which you want to add the output configuration.
-     * You can use the <a>DescribeApplication</a> operation to get the current
-     * application version. If the version specified is not the current version, the
-     * <code>ConcurrentModificationException</code> is returned. </p>
+     * You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to get the current application version. If the version specified is
+     * not the current version, the <code>ConcurrentModificationException</code> is
+     * returned. </p>
      */
     inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
 
     /**
      * <p>Version of the application to which you want to add the output configuration.
-     * You can use the <a>DescribeApplication</a> operation to get the current
-     * application version. If the version specified is not the current version, the
-     * <code>ConcurrentModificationException</code> is returned. </p>
+     * You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to get the current application version. If the version specified is
+     * not the current version, the <code>ConcurrentModificationException</code> is
+     * returned. </p>
      */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
      * <p>Version of the application to which you want to add the output configuration.
-     * You can use the <a>DescribeApplication</a> operation to get the current
-     * application version. If the version specified is not the current version, the
-     * <code>ConcurrentModificationException</code> is returned. </p>
+     * You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to get the current application version. If the version specified is
+     * not the current version, the <code>ConcurrentModificationException</code> is
+     * returned. </p>
      */
     inline AddApplicationOutputRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
 

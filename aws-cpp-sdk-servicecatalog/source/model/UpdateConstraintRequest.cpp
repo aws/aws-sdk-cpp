@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 UpdateConstraintRequest::UpdateConstraintRequest() : 
     m_acceptLanguageHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_parametersHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,12 @@ Aws::String UpdateConstraintRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_parametersHasBeenSet)
+  {
+   payload.WithString("Parameters", m_parameters);
 
   }
 

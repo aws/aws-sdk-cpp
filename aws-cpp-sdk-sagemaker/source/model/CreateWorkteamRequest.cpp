@@ -26,6 +26,7 @@ CreateWorkteamRequest::CreateWorkteamRequest() :
     m_workteamNameHasBeenSet(false),
     m_memberDefinitionsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_notificationConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -54,6 +55,12 @@ Aws::String CreateWorkteamRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_notificationConfigurationHasBeenSet)
+  {
+   payload.WithObject("NotificationConfiguration", m_notificationConfiguration.Jsonize());
 
   }
 

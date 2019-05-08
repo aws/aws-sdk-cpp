@@ -18,6 +18,7 @@
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/NotificationConfiguration.h>
 #include <aws/sagemaker/model/MemberDefinition.h>
 #include <utility>
 
@@ -176,6 +177,37 @@ namespace Model
      */
     inline UpdateWorkteamRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>Configures SNS topic notifications for available or expiring work items</p>
+     */
+    inline const NotificationConfiguration& GetNotificationConfiguration() const{ return m_notificationConfiguration; }
+
+    /**
+     * <p>Configures SNS topic notifications for available or expiring work items</p>
+     */
+    inline bool NotificationConfigurationHasBeenSet() const { return m_notificationConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configures SNS topic notifications for available or expiring work items</p>
+     */
+    inline void SetNotificationConfiguration(const NotificationConfiguration& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = value; }
+
+    /**
+     * <p>Configures SNS topic notifications for available or expiring work items</p>
+     */
+    inline void SetNotificationConfiguration(NotificationConfiguration&& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = std::move(value); }
+
+    /**
+     * <p>Configures SNS topic notifications for available or expiring work items</p>
+     */
+    inline UpdateWorkteamRequest& WithNotificationConfiguration(const NotificationConfiguration& value) { SetNotificationConfiguration(value); return *this;}
+
+    /**
+     * <p>Configures SNS topic notifications for available or expiring work items</p>
+     */
+    inline UpdateWorkteamRequest& WithNotificationConfiguration(NotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_workteamName;
@@ -186,6 +218,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    NotificationConfiguration m_notificationConfiguration;
+    bool m_notificationConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -244,7 +244,7 @@ namespace Model
     /**
      * <p>Describes the data format when records are written to the destination. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>.</p>
      */
     inline const DestinationSchema& GetDestinationSchemaUpdate() const{ return m_destinationSchemaUpdate; }
@@ -252,7 +252,7 @@ namespace Model
     /**
      * <p>Describes the data format when records are written to the destination. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>.</p>
      */
     inline bool DestinationSchemaUpdateHasBeenSet() const { return m_destinationSchemaUpdateHasBeenSet; }
@@ -260,7 +260,7 @@ namespace Model
     /**
      * <p>Describes the data format when records are written to the destination. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>.</p>
      */
     inline void SetDestinationSchemaUpdate(const DestinationSchema& value) { m_destinationSchemaUpdateHasBeenSet = true; m_destinationSchemaUpdate = value; }
@@ -268,7 +268,7 @@ namespace Model
     /**
      * <p>Describes the data format when records are written to the destination. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>.</p>
      */
     inline void SetDestinationSchemaUpdate(DestinationSchema&& value) { m_destinationSchemaUpdateHasBeenSet = true; m_destinationSchemaUpdate = std::move(value); }
@@ -276,7 +276,7 @@ namespace Model
     /**
      * <p>Describes the data format when records are written to the destination. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>.</p>
      */
     inline OutputUpdate& WithDestinationSchemaUpdate(const DestinationSchema& value) { SetDestinationSchemaUpdate(value); return *this;}
@@ -284,7 +284,7 @@ namespace Model
     /**
      * <p>Describes the data format when records are written to the destination. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>.</p>
      */
     inline OutputUpdate& WithDestinationSchemaUpdate(DestinationSchema&& value) { SetDestinationSchemaUpdate(std::move(value)); return *this;}

@@ -39,8 +39,11 @@
 #include <aws/kinesisanalyticsv2/model/DiscoverInputSchemaResult.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationSnapshotsResult.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationsResult.h>
+#include <aws/kinesisanalyticsv2/model/ListTagsForResourceResult.h>
 #include <aws/kinesisanalyticsv2/model/StartApplicationResult.h>
 #include <aws/kinesisanalyticsv2/model/StopApplicationResult.h>
+#include <aws/kinesisanalyticsv2/model/TagResourceResult.h>
+#include <aws/kinesisanalyticsv2/model/UntagResourceResult.h>
 #include <aws/kinesisanalyticsv2/model/UpdateApplicationResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -99,8 +102,11 @@ namespace Model
         class DiscoverInputSchemaRequest;
         class ListApplicationSnapshotsRequest;
         class ListApplicationsRequest;
+        class ListTagsForResourceRequest;
         class StartApplicationRequest;
         class StopApplicationRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateApplicationRequest;
 
         typedef Aws::Utils::Outcome<AddApplicationCloudWatchLoggingOptionResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> AddApplicationCloudWatchLoggingOptionOutcome;
@@ -121,8 +127,11 @@ namespace Model
         typedef Aws::Utils::Outcome<DiscoverInputSchemaResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DiscoverInputSchemaOutcome;
         typedef Aws::Utils::Outcome<ListApplicationSnapshotsResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> ListApplicationSnapshotsOutcome;
         typedef Aws::Utils::Outcome<ListApplicationsResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> ListApplicationsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<StartApplicationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> StartApplicationOutcome;
         typedef Aws::Utils::Outcome<StopApplicationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> StopApplicationOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateApplicationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> UpdateApplicationOutcome;
 
         typedef std::future<AddApplicationCloudWatchLoggingOptionOutcome> AddApplicationCloudWatchLoggingOptionOutcomeCallable;
@@ -143,8 +152,11 @@ namespace Model
         typedef std::future<DiscoverInputSchemaOutcome> DiscoverInputSchemaOutcomeCallable;
         typedef std::future<ListApplicationSnapshotsOutcome> ListApplicationSnapshotsOutcomeCallable;
         typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<StartApplicationOutcome> StartApplicationOutcomeCallable;
         typedef std::future<StopApplicationOutcome> StopApplicationOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
 } // namespace Model
 
@@ -168,12 +180,19 @@ namespace Model
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DiscoverInputSchemaRequest&, const Model::DiscoverInputSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DiscoverInputSchemaResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListApplicationSnapshotsRequest&, const Model::ListApplicationSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationSnapshotsResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
+    typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::StartApplicationRequest&, const Model::StartApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartApplicationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::StopApplicationRequest&, const Model::StopApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopApplicationResponseReceivedHandler;
+    typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
 
   /**
-   * <p>Documentation for Kinesis Data Analytics API v2</p>
+   * <p>Amazon Kinesis Data Analytics is a fully managed service that you can use to
+   * process and analyze streaming data using SQL or Java. The service enables you to
+   * quickly author and run SQL or Java code against streaming sources to perform
+   * time series analytics, feed real-time dashboards, and create real-time
+   * metrics.</p>
    */
   class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : public Aws::Client::AWSJsonClient
   {
@@ -425,10 +444,8 @@ namespace Model
         /**
          * <p>Creates an Amazon Kinesis Data Analytics application. For information about
          * creating a Kinesis Data Analytics application, see <a
-         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/Java/creating-app.html">Creating
-         * an Application</a>. </p> <note> <p>SQL is not enabled for this private beta
-         * release. Using SQL parameters (such as <a>SqlApplicationConfiguration</a>) will
-         * result in an error.</p> </note><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
+         * an Application</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplication">AWS
          * API Reference</a></p>
          */
@@ -437,10 +454,8 @@ namespace Model
         /**
          * <p>Creates an Amazon Kinesis Data Analytics application. For information about
          * creating a Kinesis Data Analytics application, see <a
-         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/Java/creating-app.html">Creating
-         * an Application</a>. </p> <note> <p>SQL is not enabled for this private beta
-         * release. Using SQL parameters (such as <a>SqlApplicationConfiguration</a>) will
-         * result in an error.</p> </note><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
+         * an Application</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplication">AWS
          * API Reference</a></p>
          *
@@ -451,10 +466,8 @@ namespace Model
         /**
          * <p>Creates an Amazon Kinesis Data Analytics application. For information about
          * creating a Kinesis Data Analytics application, see <a
-         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/Java/creating-app.html">Creating
-         * an Application</a>. </p> <note> <p>SQL is not enabled for this private beta
-         * release. Using SQL parameters (such as <a>SqlApplicationConfiguration</a>) will
-         * result in an error.</p> </note><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
+         * an Application</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplication">AWS
          * API Reference</a></p>
          *
@@ -850,11 +863,37 @@ namespace Model
         virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the list of key-value tags assigned to the
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Retrieves the list of key-value tags assigned to the
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Retrieves the list of key-value tags assigned to the
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts the specified Amazon Kinesis Data Analytics application. After
          * creating an application, you must exclusively call this operation to start your
-         * application.</p> <note> <p>SQL is not enabled for this private beta. Using SQL
-         * parameters (such as <a>RunConfiguration$SqlRunConfigurations</a>) will result in
-         * an error.</p> </note><p><h3>See Also:</h3>   <a
+         * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StartApplication">AWS
          * API Reference</a></p>
          */
@@ -863,9 +902,7 @@ namespace Model
         /**
          * <p>Starts the specified Amazon Kinesis Data Analytics application. After
          * creating an application, you must exclusively call this operation to start your
-         * application.</p> <note> <p>SQL is not enabled for this private beta. Using SQL
-         * parameters (such as <a>RunConfiguration$SqlRunConfigurations</a>) will result in
-         * an error.</p> </note><p><h3>See Also:</h3>   <a
+         * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StartApplication">AWS
          * API Reference</a></p>
          *
@@ -876,9 +913,7 @@ namespace Model
         /**
          * <p>Starts the specified Amazon Kinesis Data Analytics application. After
          * creating an application, you must exclusively call this operation to start your
-         * application.</p> <note> <p>SQL is not enabled for this private beta. Using SQL
-         * parameters (such as <a>RunConfiguration$SqlRunConfigurations</a>) will result in
-         * an error.</p> </note><p><h3>See Also:</h3>   <a
+         * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StartApplication">AWS
          * API Reference</a></p>
          *
@@ -918,13 +953,70 @@ namespace Model
         virtual void StopApplicationAsync(const Model::StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Adds one or more key-value tags to a Kinesis Analytics application. Note that
+         * the maximum number of application tags includes system tags. The maximum number
+         * of user-defined application tags is 50.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds one or more key-value tags to a Kinesis Analytics application. Note that
+         * the maximum number of application tags includes system tags. The maximum number
+         * of user-defined application tags is 50.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds one or more key-value tags to a Kinesis Analytics application. Note that
+         * the maximum number of application tags includes system tags. The maximum number
+         * of user-defined application tags is 50.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes one or more tags from a Kinesis Analytics application.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes one or more tags from a Kinesis Analytics application.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes one or more tags from a Kinesis Analytics application.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing Amazon Kinesis Data Analytics application. Using this
          * operation, you can update application code, input configuration, and output
          * configuration. </p> <p>Kinesis Data Analytics updates the
-         * <code>ApplicationVersionId</code> each time you update your application. </p>
-         * <note> <p>SQL is not enabled for this private beta. Using SQL parameters (such
-         * as <a>SqlApplicationConfigurationUpdate</a>) will result in an error.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <code>ApplicationVersionId</code> each time you update your application.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplication">AWS
          * API Reference</a></p>
          */
@@ -934,10 +1026,8 @@ namespace Model
          * <p>Updates an existing Amazon Kinesis Data Analytics application. Using this
          * operation, you can update application code, input configuration, and output
          * configuration. </p> <p>Kinesis Data Analytics updates the
-         * <code>ApplicationVersionId</code> each time you update your application. </p>
-         * <note> <p>SQL is not enabled for this private beta. Using SQL parameters (such
-         * as <a>SqlApplicationConfigurationUpdate</a>) will result in an error.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <code>ApplicationVersionId</code> each time you update your application.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplication">AWS
          * API Reference</a></p>
          *
@@ -949,10 +1039,8 @@ namespace Model
          * <p>Updates an existing Amazon Kinesis Data Analytics application. Using this
          * operation, you can update application code, input configuration, and output
          * configuration. </p> <p>Kinesis Data Analytics updates the
-         * <code>ApplicationVersionId</code> each time you update your application. </p>
-         * <note> <p>SQL is not enabled for this private beta. Using SQL parameters (such
-         * as <a>SqlApplicationConfigurationUpdate</a>) will result in an error.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <code>ApplicationVersionId</code> each time you update your application.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplication">AWS
          * API Reference</a></p>
          *
@@ -982,8 +1070,11 @@ namespace Model
         void DiscoverInputSchemaAsyncHelper(const Model::DiscoverInputSchemaRequest& request, const DiscoverInputSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListApplicationSnapshotsAsyncHelper(const Model::ListApplicationSnapshotsRequest& request, const ListApplicationSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartApplicationAsyncHelper(const Model::StartApplicationRequest& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopApplicationAsyncHelper(const Model::StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

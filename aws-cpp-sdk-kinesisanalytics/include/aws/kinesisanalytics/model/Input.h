@@ -42,7 +42,7 @@ namespace Model
    * <p>When you configure the application input, you specify the streaming source,
    * the in-application stream name that is created, and the mapping between the two.
    * For more information, see <a
-   * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+   * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
    * Application Input</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/Input">AWS
    * API Reference</a></p>
@@ -130,50 +130,62 @@ namespace Model
 
 
     /**
-     * <p>The <a>InputProcessingConfiguration</a> for the input. An input processor
-     * transforms records as they are received from the stream, before the
-     * application's SQL code executes. Currently, the only input processing
-     * configuration available is <a>InputLambdaProcessor</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
+     * for the input. An input processor transforms records as they are received from
+     * the stream, before the application's SQL code executes. Currently, the only
+     * input processing configuration available is <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
      */
     inline const InputProcessingConfiguration& GetInputProcessingConfiguration() const{ return m_inputProcessingConfiguration; }
 
     /**
-     * <p>The <a>InputProcessingConfiguration</a> for the input. An input processor
-     * transforms records as they are received from the stream, before the
-     * application's SQL code executes. Currently, the only input processing
-     * configuration available is <a>InputLambdaProcessor</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
+     * for the input. An input processor transforms records as they are received from
+     * the stream, before the application's SQL code executes. Currently, the only
+     * input processing configuration available is <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
      */
     inline bool InputProcessingConfigurationHasBeenSet() const { return m_inputProcessingConfigurationHasBeenSet; }
 
     /**
-     * <p>The <a>InputProcessingConfiguration</a> for the input. An input processor
-     * transforms records as they are received from the stream, before the
-     * application's SQL code executes. Currently, the only input processing
-     * configuration available is <a>InputLambdaProcessor</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
+     * for the input. An input processor transforms records as they are received from
+     * the stream, before the application's SQL code executes. Currently, the only
+     * input processing configuration available is <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
      */
     inline void SetInputProcessingConfiguration(const InputProcessingConfiguration& value) { m_inputProcessingConfigurationHasBeenSet = true; m_inputProcessingConfiguration = value; }
 
     /**
-     * <p>The <a>InputProcessingConfiguration</a> for the input. An input processor
-     * transforms records as they are received from the stream, before the
-     * application's SQL code executes. Currently, the only input processing
-     * configuration available is <a>InputLambdaProcessor</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
+     * for the input. An input processor transforms records as they are received from
+     * the stream, before the application's SQL code executes. Currently, the only
+     * input processing configuration available is <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
      */
     inline void SetInputProcessingConfiguration(InputProcessingConfiguration&& value) { m_inputProcessingConfigurationHasBeenSet = true; m_inputProcessingConfiguration = std::move(value); }
 
     /**
-     * <p>The <a>InputProcessingConfiguration</a> for the input. An input processor
-     * transforms records as they are received from the stream, before the
-     * application's SQL code executes. Currently, the only input processing
-     * configuration available is <a>InputLambdaProcessor</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
+     * for the input. An input processor transforms records as they are received from
+     * the stream, before the application's SQL code executes. Currently, the only
+     * input processing configuration available is <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
      */
     inline Input& WithInputProcessingConfiguration(const InputProcessingConfiguration& value) { SetInputProcessingConfiguration(value); return *this;}
 
     /**
-     * <p>The <a>InputProcessingConfiguration</a> for the input. An input processor
-     * transforms records as they are received from the stream, before the
-     * application's SQL code executes. Currently, the only input processing
-     * configuration available is <a>InputLambdaProcessor</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
+     * for the input. An input processor transforms records as they are received from
+     * the stream, before the application's SQL code executes. Currently, the only
+     * input processing configuration available is <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
      */
     inline Input& WithInputProcessingConfiguration(InputProcessingConfiguration&& value) { SetInputProcessingConfiguration(std::move(value)); return *this;}
 
@@ -291,7 +303,7 @@ namespace Model
     /**
      * <p>Describes the number of in-application streams to create. </p> <p>Data from
      * your source is routed to these in-application input streams.</p> <p> (see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>.</p>
      */
     inline const InputParallelism& GetInputParallelism() const{ return m_inputParallelism; }
@@ -299,7 +311,7 @@ namespace Model
     /**
      * <p>Describes the number of in-application streams to create. </p> <p>Data from
      * your source is routed to these in-application input streams.</p> <p> (see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>.</p>
      */
     inline bool InputParallelismHasBeenSet() const { return m_inputParallelismHasBeenSet; }
@@ -307,7 +319,7 @@ namespace Model
     /**
      * <p>Describes the number of in-application streams to create. </p> <p>Data from
      * your source is routed to these in-application input streams.</p> <p> (see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>.</p>
      */
     inline void SetInputParallelism(const InputParallelism& value) { m_inputParallelismHasBeenSet = true; m_inputParallelism = value; }
@@ -315,7 +327,7 @@ namespace Model
     /**
      * <p>Describes the number of in-application streams to create. </p> <p>Data from
      * your source is routed to these in-application input streams.</p> <p> (see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>.</p>
      */
     inline void SetInputParallelism(InputParallelism&& value) { m_inputParallelismHasBeenSet = true; m_inputParallelism = std::move(value); }
@@ -323,7 +335,7 @@ namespace Model
     /**
      * <p>Describes the number of in-application streams to create. </p> <p>Data from
      * your source is routed to these in-application input streams.</p> <p> (see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>.</p>
      */
     inline Input& WithInputParallelism(const InputParallelism& value) { SetInputParallelism(value); return *this;}
@@ -331,7 +343,7 @@ namespace Model
     /**
      * <p>Describes the number of in-application streams to create. </p> <p>Data from
      * your source is routed to these in-application input streams.</p> <p> (see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>.</p>
      */
     inline Input& WithInputParallelism(InputParallelism&& value) { SetInputParallelism(std::move(value)); return *this;}

@@ -52,57 +52,65 @@ namespace Model
 
     /**
      * <p>ID of the reference data source. This is the ID that Amazon Kinesis Analytics
-     * assigns when you add the reference data source to your application using the
-     * <a>AddApplicationReferenceDataSource</a> operation.</p>
+     * assigns when you add the reference data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>
+     * operation.</p>
      */
     inline const Aws::String& GetReferenceId() const{ return m_referenceId; }
 
     /**
      * <p>ID of the reference data source. This is the ID that Amazon Kinesis Analytics
-     * assigns when you add the reference data source to your application using the
-     * <a>AddApplicationReferenceDataSource</a> operation.</p>
+     * assigns when you add the reference data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>
+     * operation.</p>
      */
     inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }
 
     /**
      * <p>ID of the reference data source. This is the ID that Amazon Kinesis Analytics
-     * assigns when you add the reference data source to your application using the
-     * <a>AddApplicationReferenceDataSource</a> operation.</p>
+     * assigns when you add the reference data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>
+     * operation.</p>
      */
     inline void SetReferenceId(const Aws::String& value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
 
     /**
      * <p>ID of the reference data source. This is the ID that Amazon Kinesis Analytics
-     * assigns when you add the reference data source to your application using the
-     * <a>AddApplicationReferenceDataSource</a> operation.</p>
+     * assigns when you add the reference data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>
+     * operation.</p>
      */
     inline void SetReferenceId(Aws::String&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::move(value); }
 
     /**
      * <p>ID of the reference data source. This is the ID that Amazon Kinesis Analytics
-     * assigns when you add the reference data source to your application using the
-     * <a>AddApplicationReferenceDataSource</a> operation.</p>
+     * assigns when you add the reference data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>
+     * operation.</p>
      */
     inline void SetReferenceId(const char* value) { m_referenceIdHasBeenSet = true; m_referenceId.assign(value); }
 
     /**
      * <p>ID of the reference data source. This is the ID that Amazon Kinesis Analytics
-     * assigns when you add the reference data source to your application using the
-     * <a>AddApplicationReferenceDataSource</a> operation.</p>
+     * assigns when you add the reference data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>
+     * operation.</p>
      */
     inline ReferenceDataSourceDescription& WithReferenceId(const Aws::String& value) { SetReferenceId(value); return *this;}
 
     /**
      * <p>ID of the reference data source. This is the ID that Amazon Kinesis Analytics
-     * assigns when you add the reference data source to your application using the
-     * <a>AddApplicationReferenceDataSource</a> operation.</p>
+     * assigns when you add the reference data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>
+     * operation.</p>
      */
     inline ReferenceDataSourceDescription& WithReferenceId(Aws::String&& value) { SetReferenceId(std::move(value)); return *this;}
 
     /**
      * <p>ID of the reference data source. This is the ID that Amazon Kinesis Analytics
-     * assigns when you add the reference data source to your application using the
-     * <a>AddApplicationReferenceDataSource</a> operation.</p>
+     * assigns when you add the reference data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>
+     * operation.</p>
      */
     inline ReferenceDataSourceDescription& WithReferenceId(const char* value) { SetReferenceId(value); return *this;}
 

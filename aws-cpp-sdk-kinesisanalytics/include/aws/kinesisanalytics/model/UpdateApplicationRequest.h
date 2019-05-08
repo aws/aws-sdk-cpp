@@ -87,26 +87,30 @@ namespace Model
 
 
     /**
-     * <p>The current application version ID. You can use the
-     * <a>DescribeApplication</a> operation to get this value.</p>
+     * <p>The current application version ID. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to get this value.</p>
      */
     inline long long GetCurrentApplicationVersionId() const{ return m_currentApplicationVersionId; }
 
     /**
-     * <p>The current application version ID. You can use the
-     * <a>DescribeApplication</a> operation to get this value.</p>
+     * <p>The current application version ID. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to get this value.</p>
      */
     inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
 
     /**
-     * <p>The current application version ID. You can use the
-     * <a>DescribeApplication</a> operation to get this value.</p>
+     * <p>The current application version ID. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to get this value.</p>
      */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
-     * <p>The current application version ID. You can use the
-     * <a>DescribeApplication</a> operation to get this value.</p>
+     * <p>The current application version ID. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to get this value.</p>
      */
     inline UpdateApplicationRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
 

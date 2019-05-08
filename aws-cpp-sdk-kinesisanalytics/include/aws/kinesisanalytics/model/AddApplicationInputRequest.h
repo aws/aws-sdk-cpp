@@ -99,60 +99,76 @@ namespace Model
 
     /**
      * <p>Current version of your Amazon Kinesis Analytics application. You can use the
-     * <a>DescribeApplication</a> operation to find the current application
-     * version.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to find the current application version.</p>
      */
     inline long long GetCurrentApplicationVersionId() const{ return m_currentApplicationVersionId; }
 
     /**
      * <p>Current version of your Amazon Kinesis Analytics application. You can use the
-     * <a>DescribeApplication</a> operation to find the current application
-     * version.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to find the current application version.</p>
      */
     inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
 
     /**
      * <p>Current version of your Amazon Kinesis Analytics application. You can use the
-     * <a>DescribeApplication</a> operation to find the current application
-     * version.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to find the current application version.</p>
      */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
      * <p>Current version of your Amazon Kinesis Analytics application. You can use the
-     * <a>DescribeApplication</a> operation to find the current application
-     * version.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to find the current application version.</p>
      */
     inline AddApplicationInputRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
 
 
     /**
-     * <p>The <a>Input</a> to add.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a>
+     * to add.</p>
      */
     inline const Input& GetInput() const{ return m_input; }
 
     /**
-     * <p>The <a>Input</a> to add.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a>
+     * to add.</p>
      */
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
 
     /**
-     * <p>The <a>Input</a> to add.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a>
+     * to add.</p>
      */
     inline void SetInput(const Input& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
-     * <p>The <a>Input</a> to add.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a>
+     * to add.</p>
      */
     inline void SetInput(Input&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
-     * <p>The <a>Input</a> to add.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a>
+     * to add.</p>
      */
     inline AddApplicationInputRequest& WithInput(const Input& value) { SetInput(value); return *this;}
 
     /**
-     * <p>The <a>Input</a> to add.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a>
+     * to add.</p>
      */
     inline AddApplicationInputRequest& WithInput(Input&& value) { SetInput(std::move(value)); return *this;}
 

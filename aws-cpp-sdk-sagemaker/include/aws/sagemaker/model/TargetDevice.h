@@ -26,6 +26,7 @@ namespace Model
   enum class TargetDevice
   {
     NOT_SET,
+    lambda,
     ml_m4,
     ml_m5,
     ml_c4,
@@ -34,6 +35,7 @@ namespace Model
     ml_p3,
     jetson_tx1,
     jetson_tx2,
+    jetson_nano,
     rasp3b,
     deeplens,
     rk3399,

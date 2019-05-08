@@ -463,9 +463,10 @@ namespace Model
         /**
          * <p>Adds or overwrites one or more tags for the specified Amazon SageMaker
          * resource. You can add tags to notebook instances, training jobs, hyperparameter
-         * tuning jobs, models, endpoint configurations, and endpoints.</p> <p>Each tag
-         * consists of a key and an optional value. Tag keys must be unique per resource.
-         * For more information about tags, see For more information, see <a
+         * tuning jobs, batch transform jobs, models, labeling jobs, work teams, endpoint
+         * configurations, and endpoints.</p> <p>Each tag consists of a key and an optional
+         * value. Tag keys must be unique per resource. For more information about tags,
+         * see For more information, see <a
          * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
          * Tagging Strategies</a>.</p> <note> <p>Tags that you add to a hyperparameter
          * tuning job by calling this API are also added to any training jobs that the
@@ -484,9 +485,10 @@ namespace Model
         /**
          * <p>Adds or overwrites one or more tags for the specified Amazon SageMaker
          * resource. You can add tags to notebook instances, training jobs, hyperparameter
-         * tuning jobs, models, endpoint configurations, and endpoints.</p> <p>Each tag
-         * consists of a key and an optional value. Tag keys must be unique per resource.
-         * For more information about tags, see For more information, see <a
+         * tuning jobs, batch transform jobs, models, labeling jobs, work teams, endpoint
+         * configurations, and endpoints.</p> <p>Each tag consists of a key and an optional
+         * value. Tag keys must be unique per resource. For more information about tags,
+         * see For more information, see <a
          * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
          * Tagging Strategies</a>.</p> <note> <p>Tags that you add to a hyperparameter
          * tuning job by calling this API are also added to any training jobs that the
@@ -507,9 +509,10 @@ namespace Model
         /**
          * <p>Adds or overwrites one or more tags for the specified Amazon SageMaker
          * resource. You can add tags to notebook instances, training jobs, hyperparameter
-         * tuning jobs, models, endpoint configurations, and endpoints.</p> <p>Each tag
-         * consists of a key and an optional value. Tag keys must be unique per resource.
-         * For more information about tags, see For more information, see <a
+         * tuning jobs, batch transform jobs, models, labeling jobs, work teams, endpoint
+         * configurations, and endpoints.</p> <p>Each tag consists of a key and an optional
+         * value. Tag keys must be unique per resource. For more information about tags,
+         * see For more information, see <a
          * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
          * Tagging Strategies</a>.</p> <note> <p>Tags that you add to a hyperparameter
          * tuning job by calling this API are also added to any training jobs that the
@@ -686,14 +689,17 @@ namespace Model
          * models. You create the endpoint configuration with the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
          * API. </p> <note> <p> Use this API only for hosting models using Amazon SageMaker
-         * hosting services. </p> </note> <p>The endpoint name must be unique within an AWS
-         * Region in your AWS account. </p> <p>When it receives the request, Amazon
-         * SageMaker creates the endpoint, launches the resources (ML compute instances),
-         * and deploys the model(s) on them. </p> <p>When Amazon SageMaker receives the
-         * request, it sets the endpoint status to <code>Creating</code>. After it creates
-         * the endpoint, it sets the status to <code>InService</code>. Amazon SageMaker can
-         * then process incoming requests for inferences. To check the status of an
-         * endpoint, use the <a
+         * hosting services. </p> <p> You must not delete an <code>EndpointConfig</code> in
+         * use by an endpoint that is live or while the <code>UpdateEndpoint</code> or
+         * <code>CreateEndpoint</code> operations are being performed on the endpoint. To
+         * update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
+         * </note> <p>The endpoint name must be unique within an AWS Region in your AWS
+         * account. </p> <p>When it receives the request, Amazon SageMaker creates the
+         * endpoint, launches the resources (ML compute instances), and deploys the
+         * model(s) on them. </p> <p>When Amazon SageMaker receives the request, it sets
+         * the endpoint status to <code>Creating</code>. After it creates the endpoint, it
+         * sets the status to <code>InService</code>. Amazon SageMaker can then process
+         * incoming requests for inferences. To check the status of an endpoint, use the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
          * API.</p> <p>For an example, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise 1:
@@ -717,14 +723,17 @@ namespace Model
          * models. You create the endpoint configuration with the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
          * API. </p> <note> <p> Use this API only for hosting models using Amazon SageMaker
-         * hosting services. </p> </note> <p>The endpoint name must be unique within an AWS
-         * Region in your AWS account. </p> <p>When it receives the request, Amazon
-         * SageMaker creates the endpoint, launches the resources (ML compute instances),
-         * and deploys the model(s) on them. </p> <p>When Amazon SageMaker receives the
-         * request, it sets the endpoint status to <code>Creating</code>. After it creates
-         * the endpoint, it sets the status to <code>InService</code>. Amazon SageMaker can
-         * then process incoming requests for inferences. To check the status of an
-         * endpoint, use the <a
+         * hosting services. </p> <p> You must not delete an <code>EndpointConfig</code> in
+         * use by an endpoint that is live or while the <code>UpdateEndpoint</code> or
+         * <code>CreateEndpoint</code> operations are being performed on the endpoint. To
+         * update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
+         * </note> <p>The endpoint name must be unique within an AWS Region in your AWS
+         * account. </p> <p>When it receives the request, Amazon SageMaker creates the
+         * endpoint, launches the resources (ML compute instances), and deploys the
+         * model(s) on them. </p> <p>When Amazon SageMaker receives the request, it sets
+         * the endpoint status to <code>Creating</code>. After it creates the endpoint, it
+         * sets the status to <code>InService</code>. Amazon SageMaker can then process
+         * incoming requests for inferences. To check the status of an endpoint, use the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
          * API.</p> <p>For an example, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise 1:
@@ -750,14 +759,17 @@ namespace Model
          * models. You create the endpoint configuration with the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
          * API. </p> <note> <p> Use this API only for hosting models using Amazon SageMaker
-         * hosting services. </p> </note> <p>The endpoint name must be unique within an AWS
-         * Region in your AWS account. </p> <p>When it receives the request, Amazon
-         * SageMaker creates the endpoint, launches the resources (ML compute instances),
-         * and deploys the model(s) on them. </p> <p>When Amazon SageMaker receives the
-         * request, it sets the endpoint status to <code>Creating</code>. After it creates
-         * the endpoint, it sets the status to <code>InService</code>. Amazon SageMaker can
-         * then process incoming requests for inferences. To check the status of an
-         * endpoint, use the <a
+         * hosting services. </p> <p> You must not delete an <code>EndpointConfig</code> in
+         * use by an endpoint that is live or while the <code>UpdateEndpoint</code> or
+         * <code>CreateEndpoint</code> operations are being performed on the endpoint. To
+         * update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
+         * </note> <p>The endpoint name must be unique within an AWS Region in your AWS
+         * account. </p> <p>When it receives the request, Amazon SageMaker creates the
+         * endpoint, launches the resources (ML compute instances), and deploys the
+         * model(s) on them. </p> <p>When Amazon SageMaker receives the request, it sets
+         * the endpoint status to <code>Creating</code>. After it creates the endpoint, it
+         * sets the status to <code>InService</code>. Amazon SageMaker can then process
+         * incoming requests for inferences. To check the status of an endpoint, use the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
          * API.</p> <p>For an example, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise 1:
@@ -1297,7 +1309,10 @@ namespace Model
          * addresses that you want to have access to the notebook instance. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-ip-filter.html">Limit
-         * Access to a Notebook Instance by IP Address</a>.</p><p><h3>See Also:</h3>   <a
+         * Access to a Notebook Instance by IP Address</a>.</p> <note> <p>The URL that you
+         * get from a call to is valid only for 5 minutes. If you try to use the URL after
+         * the 5-minute limit expires, you are directed to the AWS console sign-in
+         * page.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>
          */
@@ -1318,7 +1333,10 @@ namespace Model
          * addresses that you want to have access to the notebook instance. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-ip-filter.html">Limit
-         * Access to a Notebook Instance by IP Address</a>.</p><p><h3>See Also:</h3>   <a
+         * Access to a Notebook Instance by IP Address</a>.</p> <note> <p>The URL that you
+         * get from a call to is valid only for 5 minutes. If you try to use the URL after
+         * the 5-minute limit expires, you are directed to the AWS console sign-in
+         * page.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>
          *
@@ -1341,7 +1359,10 @@ namespace Model
          * addresses that you want to have access to the notebook instance. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-ip-filter.html">Limit
-         * Access to a Notebook Instance by IP Address</a>.</p><p><h3>See Also:</h3>   <a
+         * Access to a Notebook Instance by IP Address</a>.</p> <note> <p>The URL that you
+         * get from a call to is valid only for 5 minutes. If you try to use the URL after
+         * the 5-minute limit expires, you are directed to the AWS console sign-in
+         * page.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>
          *
@@ -3091,9 +3112,10 @@ namespace Model
         /**
          * <p>Terminates the ML compute instance. Before terminating the instance, Amazon
          * SageMaker disconnects the ML storage volume from it. Amazon SageMaker preserves
-         * the ML storage volume. </p> <p>To access data on the ML storage volume for a
-         * notebook instance that has been terminated, call the
-         * <code>StartNotebookInstance</code> API. <code>StartNotebookInstance</code>
+         * the ML storage volume. Amazon SageMaker stops charging you for the ML compute
+         * instance when you call <code>StopNotebookInstance</code>.</p> <p>To access data
+         * on the ML storage volume for a notebook instance that has been terminated, call
+         * the <code>StartNotebookInstance</code> API. <code>StartNotebookInstance</code>
          * launches another ML compute instance, configures it, and attaches the preserved
          * ML storage volume so you can continue your work. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopNotebookInstance">AWS
@@ -3104,9 +3126,10 @@ namespace Model
         /**
          * <p>Terminates the ML compute instance. Before terminating the instance, Amazon
          * SageMaker disconnects the ML storage volume from it. Amazon SageMaker preserves
-         * the ML storage volume. </p> <p>To access data on the ML storage volume for a
-         * notebook instance that has been terminated, call the
-         * <code>StartNotebookInstance</code> API. <code>StartNotebookInstance</code>
+         * the ML storage volume. Amazon SageMaker stops charging you for the ML compute
+         * instance when you call <code>StopNotebookInstance</code>.</p> <p>To access data
+         * on the ML storage volume for a notebook instance that has been terminated, call
+         * the <code>StartNotebookInstance</code> API. <code>StartNotebookInstance</code>
          * launches another ML compute instance, configures it, and attaches the preserved
          * ML storage volume so you can continue your work. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopNotebookInstance">AWS
@@ -3119,9 +3142,10 @@ namespace Model
         /**
          * <p>Terminates the ML compute instance. Before terminating the instance, Amazon
          * SageMaker disconnects the ML storage volume from it. Amazon SageMaker preserves
-         * the ML storage volume. </p> <p>To access data on the ML storage volume for a
-         * notebook instance that has been terminated, call the
-         * <code>StartNotebookInstance</code> API. <code>StartNotebookInstance</code>
+         * the ML storage volume. Amazon SageMaker stops charging you for the ML compute
+         * instance when you call <code>StopNotebookInstance</code>.</p> <p>To access data
+         * on the ML storage volume for a notebook instance that has been terminated, call
+         * the <code>StartNotebookInstance</code> API. <code>StartNotebookInstance</code>
          * launches another ML compute instance, configures it, and attaches the preserved
          * ML storage volume so you can continue your work. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopNotebookInstance">AWS
@@ -3251,9 +3275,11 @@ namespace Model
          * sets the status to <code>InService</code>. To check the status of an endpoint,
          * use the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-         * API. </p> <note> <p>You cannot update an endpoint with the current
-         * <code>EndpointConfig</code>. To update an endpoint, you must create a new
-         * <code>EndpointConfig</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * API. </p> <note> <p>You must not delete an <code>EndpointConfig</code> in use by
+         * an endpoint that is live or while the <code>UpdateEndpoint</code> or
+         * <code>CreateEndpoint</code> operations are being performed on the endpoint. To
+         * update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">AWS
          * API Reference</a></p>
          */
@@ -3268,9 +3294,11 @@ namespace Model
          * sets the status to <code>InService</code>. To check the status of an endpoint,
          * use the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-         * API. </p> <note> <p>You cannot update an endpoint with the current
-         * <code>EndpointConfig</code>. To update an endpoint, you must create a new
-         * <code>EndpointConfig</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * API. </p> <note> <p>You must not delete an <code>EndpointConfig</code> in use by
+         * an endpoint that is live or while the <code>UpdateEndpoint</code> or
+         * <code>CreateEndpoint</code> operations are being performed on the endpoint. To
+         * update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">AWS
          * API Reference</a></p>
          *
@@ -3287,9 +3315,11 @@ namespace Model
          * sets the status to <code>InService</code>. To check the status of an endpoint,
          * use the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-         * API. </p> <note> <p>You cannot update an endpoint with the current
-         * <code>EndpointConfig</code>. To update an endpoint, you must create a new
-         * <code>EndpointConfig</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * API. </p> <note> <p>You must not delete an <code>EndpointConfig</code> in use by
+         * an endpoint that is live or while the <code>UpdateEndpoint</code> or
+         * <code>CreateEndpoint</code> operations are being performed on the endpoint. To
+         * update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">AWS
          * API Reference</a></p>
          *
@@ -3343,8 +3373,7 @@ namespace Model
         /**
          * <p>Updates a notebook instance. NotebookInstance updates include upgrading or
          * downgrading the ML compute instance used for your notebook instance to
-         * accommodate changes in your workload requirements. You can also update the VPC
-         * security groups.</p><p><h3>See Also:</h3>   <a
+         * accommodate changes in your workload requirements.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstance">AWS
          * API Reference</a></p>
          */
@@ -3353,8 +3382,7 @@ namespace Model
         /**
          * <p>Updates a notebook instance. NotebookInstance updates include upgrading or
          * downgrading the ML compute instance used for your notebook instance to
-         * accommodate changes in your workload requirements. You can also update the VPC
-         * security groups.</p><p><h3>See Also:</h3>   <a
+         * accommodate changes in your workload requirements.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstance">AWS
          * API Reference</a></p>
          *
@@ -3365,8 +3393,7 @@ namespace Model
         /**
          * <p>Updates a notebook instance. NotebookInstance updates include upgrading or
          * downgrading the ML compute instance used for your notebook instance to
-         * accommodate changes in your workload requirements. You can also update the VPC
-         * security groups.</p><p><h3>See Also:</h3>   <a
+         * accommodate changes in your workload requirements.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstance">AWS
          * API Reference</a></p>
          *

@@ -30,6 +30,7 @@ namespace Aws
       namespace TargetDeviceMapper
       {
 
+        static const int lambda_HASH = HashingUtils::HashString("lambda");
         static const int ml_m4_HASH = HashingUtils::HashString("ml_m4");
         static const int ml_m5_HASH = HashingUtils::HashString("ml_m5");
         static const int ml_c4_HASH = HashingUtils::HashString("ml_c4");
@@ -38,6 +39,7 @@ namespace Aws
         static const int ml_p3_HASH = HashingUtils::HashString("ml_p3");
         static const int jetson_tx1_HASH = HashingUtils::HashString("jetson_tx1");
         static const int jetson_tx2_HASH = HashingUtils::HashString("jetson_tx2");
+        static const int jetson_nano_HASH = HashingUtils::HashString("jetson_nano");
         static const int rasp3b_HASH = HashingUtils::HashString("rasp3b");
         static const int deeplens_HASH = HashingUtils::HashString("deeplens");
         static const int rk3399_HASH = HashingUtils::HashString("rk3399");
@@ -47,7 +49,11 @@ namespace Aws
         TargetDevice GetTargetDeviceForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ml_m4_HASH)
+          if (hashCode == lambda_HASH)
+          {
+            return TargetDevice::lambda;
+          }
+          else if (hashCode == ml_m4_HASH)
           {
             return TargetDevice::ml_m4;
           }
@@ -79,6 +85,10 @@ namespace Aws
           {
             return TargetDevice::jetson_tx2;
           }
+          else if (hashCode == jetson_nano_HASH)
+          {
+            return TargetDevice::jetson_nano;
+          }
           else if (hashCode == rasp3b_HASH)
           {
             return TargetDevice::rasp3b;
@@ -109,6 +119,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetDevice::lambda:
+            return "lambda";
           case TargetDevice::ml_m4:
             return "ml_m4";
           case TargetDevice::ml_m5:
@@ -125,6 +137,8 @@ namespace Aws
             return "jetson_tx1";
           case TargetDevice::jetson_tx2:
             return "jetson_tx2";
+          case TargetDevice::jetson_nano:
+            return "jetson_nano";
           case TargetDevice::rasp3b:
             return "rasp3b";
           case TargetDevice::deeplens:

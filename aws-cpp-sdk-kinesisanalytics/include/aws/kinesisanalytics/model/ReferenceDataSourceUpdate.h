@@ -54,50 +54,58 @@ namespace Model
 
 
     /**
-     * <p>ID of the reference data source being updated. You can use the
-     * <a>DescribeApplication</a> operation to get this value.</p>
+     * <p>ID of the reference data source being updated. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to get this value.</p>
      */
     inline const Aws::String& GetReferenceId() const{ return m_referenceId; }
 
     /**
-     * <p>ID of the reference data source being updated. You can use the
-     * <a>DescribeApplication</a> operation to get this value.</p>
+     * <p>ID of the reference data source being updated. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to get this value.</p>
      */
     inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }
 
     /**
-     * <p>ID of the reference data source being updated. You can use the
-     * <a>DescribeApplication</a> operation to get this value.</p>
+     * <p>ID of the reference data source being updated. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to get this value.</p>
      */
     inline void SetReferenceId(const Aws::String& value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
 
     /**
-     * <p>ID of the reference data source being updated. You can use the
-     * <a>DescribeApplication</a> operation to get this value.</p>
+     * <p>ID of the reference data source being updated. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to get this value.</p>
      */
     inline void SetReferenceId(Aws::String&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::move(value); }
 
     /**
-     * <p>ID of the reference data source being updated. You can use the
-     * <a>DescribeApplication</a> operation to get this value.</p>
+     * <p>ID of the reference data source being updated. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to get this value.</p>
      */
     inline void SetReferenceId(const char* value) { m_referenceIdHasBeenSet = true; m_referenceId.assign(value); }
 
     /**
-     * <p>ID of the reference data source being updated. You can use the
-     * <a>DescribeApplication</a> operation to get this value.</p>
+     * <p>ID of the reference data source being updated. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to get this value.</p>
      */
     inline ReferenceDataSourceUpdate& WithReferenceId(const Aws::String& value) { SetReferenceId(value); return *this;}
 
     /**
-     * <p>ID of the reference data source being updated. You can use the
-     * <a>DescribeApplication</a> operation to get this value.</p>
+     * <p>ID of the reference data source being updated. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to get this value.</p>
      */
     inline ReferenceDataSourceUpdate& WithReferenceId(Aws::String&& value) { SetReferenceId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the reference data source being updated. You can use the
-     * <a>DescribeApplication</a> operation to get this value.</p>
+     * <p>ID of the reference data source being updated. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+     * operation to get this value.</p>
      */
     inline ReferenceDataSourceUpdate& WithReferenceId(const char* value) { SetReferenceId(value); return *this;}
 

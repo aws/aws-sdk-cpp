@@ -159,33 +159,53 @@ namespace Model
 
     /**
      * <p>The maximum number of parallel requests that can be sent to each instance in
-     * a transform job. The default value is <code>1</code>. To allow Amazon SageMaker
-     * to determine the appropriate number for <code>MaxConcurrentTransforms</code>,
-     * set the value to <code>0</code>.</p>
+     * a transform job. If <code>MaxConcurrentTransforms</code> is set to
+     * <code>0</code> or left unset, Amazon SageMaker checks the optional
+     * execution-parameters to determine the optimal settings for your chosen
+     * algorithm. If the execution-parameters endpoint is not enabled, the default
+     * value is <code>1</code>. For more information on execution-parameters, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
+     * Containers Serve Requests</a>. For built-in algorithms, you don't need to set a
+     * value for <code>MaxConcurrentTransforms</code>.</p>
      */
     inline int GetMaxConcurrentTransforms() const{ return m_maxConcurrentTransforms; }
 
     /**
      * <p>The maximum number of parallel requests that can be sent to each instance in
-     * a transform job. The default value is <code>1</code>. To allow Amazon SageMaker
-     * to determine the appropriate number for <code>MaxConcurrentTransforms</code>,
-     * set the value to <code>0</code>.</p>
+     * a transform job. If <code>MaxConcurrentTransforms</code> is set to
+     * <code>0</code> or left unset, Amazon SageMaker checks the optional
+     * execution-parameters to determine the optimal settings for your chosen
+     * algorithm. If the execution-parameters endpoint is not enabled, the default
+     * value is <code>1</code>. For more information on execution-parameters, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
+     * Containers Serve Requests</a>. For built-in algorithms, you don't need to set a
+     * value for <code>MaxConcurrentTransforms</code>.</p>
      */
     inline bool MaxConcurrentTransformsHasBeenSet() const { return m_maxConcurrentTransformsHasBeenSet; }
 
     /**
      * <p>The maximum number of parallel requests that can be sent to each instance in
-     * a transform job. The default value is <code>1</code>. To allow Amazon SageMaker
-     * to determine the appropriate number for <code>MaxConcurrentTransforms</code>,
-     * set the value to <code>0</code>.</p>
+     * a transform job. If <code>MaxConcurrentTransforms</code> is set to
+     * <code>0</code> or left unset, Amazon SageMaker checks the optional
+     * execution-parameters to determine the optimal settings for your chosen
+     * algorithm. If the execution-parameters endpoint is not enabled, the default
+     * value is <code>1</code>. For more information on execution-parameters, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
+     * Containers Serve Requests</a>. For built-in algorithms, you don't need to set a
+     * value for <code>MaxConcurrentTransforms</code>.</p>
      */
     inline void SetMaxConcurrentTransforms(int value) { m_maxConcurrentTransformsHasBeenSet = true; m_maxConcurrentTransforms = value; }
 
     /**
      * <p>The maximum number of parallel requests that can be sent to each instance in
-     * a transform job. The default value is <code>1</code>. To allow Amazon SageMaker
-     * to determine the appropriate number for <code>MaxConcurrentTransforms</code>,
-     * set the value to <code>0</code>.</p>
+     * a transform job. If <code>MaxConcurrentTransforms</code> is set to
+     * <code>0</code> or left unset, Amazon SageMaker checks the optional
+     * execution-parameters to determine the optimal settings for your chosen
+     * algorithm. If the execution-parameters endpoint is not enabled, the default
+     * value is <code>1</code>. For more information on execution-parameters, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
+     * Containers Serve Requests</a>. For built-in algorithms, you don't need to set a
+     * value for <code>MaxConcurrentTransforms</code>.</p>
      */
     inline CreateTransformJobRequest& WithMaxConcurrentTransforms(int value) { SetMaxConcurrentTransforms(value); return *this;}
 

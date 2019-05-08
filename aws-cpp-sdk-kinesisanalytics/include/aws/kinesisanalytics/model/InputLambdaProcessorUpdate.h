@@ -34,8 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents an update to the <a>InputLambdaProcessor</a> that is used to
-   * preprocess the records in the stream.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents an update to the <a
+   * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>
+   * that is used to preprocess the records in the stream.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputLambdaProcessorUpdate">AWS
    * API Reference</a></p>
    */
@@ -50,57 +52,97 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the new <a
-     * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
-     * is used to preprocess the records in the stream.</p>
+     * href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function that is used
+     * to preprocess the records in the stream.</p> <note> <p>To specify an earlier
+     * version of the Lambda function than the latest, include the Lambda function
+     * version in the Lambda function ARN. For more information about Lambda ARNs, see
+     * <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+     * ARNs: AWS Lambda</a> </p> </note>
      */
     inline const Aws::String& GetResourceARNUpdate() const{ return m_resourceARNUpdate; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the new <a
-     * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
-     * is used to preprocess the records in the stream.</p>
+     * href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function that is used
+     * to preprocess the records in the stream.</p> <note> <p>To specify an earlier
+     * version of the Lambda function than the latest, include the Lambda function
+     * version in the Lambda function ARN. For more information about Lambda ARNs, see
+     * <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+     * ARNs: AWS Lambda</a> </p> </note>
      */
     inline bool ResourceARNUpdateHasBeenSet() const { return m_resourceARNUpdateHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the new <a
-     * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
-     * is used to preprocess the records in the stream.</p>
+     * href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function that is used
+     * to preprocess the records in the stream.</p> <note> <p>To specify an earlier
+     * version of the Lambda function than the latest, include the Lambda function
+     * version in the Lambda function ARN. For more information about Lambda ARNs, see
+     * <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+     * ARNs: AWS Lambda</a> </p> </note>
      */
     inline void SetResourceARNUpdate(const Aws::String& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the new <a
-     * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
-     * is used to preprocess the records in the stream.</p>
+     * href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function that is used
+     * to preprocess the records in the stream.</p> <note> <p>To specify an earlier
+     * version of the Lambda function than the latest, include the Lambda function
+     * version in the Lambda function ARN. For more information about Lambda ARNs, see
+     * <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+     * ARNs: AWS Lambda</a> </p> </note>
      */
     inline void SetResourceARNUpdate(Aws::String&& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the new <a
-     * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
-     * is used to preprocess the records in the stream.</p>
+     * href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function that is used
+     * to preprocess the records in the stream.</p> <note> <p>To specify an earlier
+     * version of the Lambda function than the latest, include the Lambda function
+     * version in the Lambda function ARN. For more information about Lambda ARNs, see
+     * <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+     * ARNs: AWS Lambda</a> </p> </note>
      */
     inline void SetResourceARNUpdate(const char* value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the new <a
-     * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
-     * is used to preprocess the records in the stream.</p>
+     * href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function that is used
+     * to preprocess the records in the stream.</p> <note> <p>To specify an earlier
+     * version of the Lambda function than the latest, include the Lambda function
+     * version in the Lambda function ARN. For more information about Lambda ARNs, see
+     * <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+     * ARNs: AWS Lambda</a> </p> </note>
      */
     inline InputLambdaProcessorUpdate& WithResourceARNUpdate(const Aws::String& value) { SetResourceARNUpdate(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the new <a
-     * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
-     * is used to preprocess the records in the stream.</p>
+     * href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function that is used
+     * to preprocess the records in the stream.</p> <note> <p>To specify an earlier
+     * version of the Lambda function than the latest, include the Lambda function
+     * version in the Lambda function ARN. For more information about Lambda ARNs, see
+     * <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+     * ARNs: AWS Lambda</a> </p> </note>
      */
     inline InputLambdaProcessorUpdate& WithResourceARNUpdate(Aws::String&& value) { SetResourceARNUpdate(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the new <a
-     * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
-     * is used to preprocess the records in the stream.</p>
+     * href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function that is used
+     * to preprocess the records in the stream.</p> <note> <p>To specify an earlier
+     * version of the Lambda function than the latest, include the Lambda function
+     * version in the Lambda function ARN. For more information about Lambda ARNs, see
+     * <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
+     * ARNs: AWS Lambda</a> </p> </note>
      */
     inline InputLambdaProcessorUpdate& WithResourceARNUpdate(const char* value) { SetResourceARNUpdate(value); return *this;}
 

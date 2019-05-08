@@ -54,7 +54,9 @@ namespace Model
      * batch transform. </p> <p>If you choose <code>ManifestFile</code>,
      * <code>S3Uri</code> identifies an object that is a manifest file containing a
      * list of object keys that you want Amazon SageMaker to use for batch transform.
-     * </p>
+     * </p> <p>The following values are compatible: <code>ManifestFile</code>,
+     * <code>S3Prefix</code> </p> <p>The following value is not compatible:
+     * <code>AugmentedManifestFile</code> </p>
      */
     inline const S3DataType& GetS3DataType() const{ return m_s3DataType; }
 
@@ -64,7 +66,9 @@ namespace Model
      * batch transform. </p> <p>If you choose <code>ManifestFile</code>,
      * <code>S3Uri</code> identifies an object that is a manifest file containing a
      * list of object keys that you want Amazon SageMaker to use for batch transform.
-     * </p>
+     * </p> <p>The following values are compatible: <code>ManifestFile</code>,
+     * <code>S3Prefix</code> </p> <p>The following value is not compatible:
+     * <code>AugmentedManifestFile</code> </p>
      */
     inline bool S3DataTypeHasBeenSet() const { return m_s3DataTypeHasBeenSet; }
 
@@ -74,7 +78,9 @@ namespace Model
      * batch transform. </p> <p>If you choose <code>ManifestFile</code>,
      * <code>S3Uri</code> identifies an object that is a manifest file containing a
      * list of object keys that you want Amazon SageMaker to use for batch transform.
-     * </p>
+     * </p> <p>The following values are compatible: <code>ManifestFile</code>,
+     * <code>S3Prefix</code> </p> <p>The following value is not compatible:
+     * <code>AugmentedManifestFile</code> </p>
      */
     inline void SetS3DataType(const S3DataType& value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = value; }
 
@@ -84,7 +90,9 @@ namespace Model
      * batch transform. </p> <p>If you choose <code>ManifestFile</code>,
      * <code>S3Uri</code> identifies an object that is a manifest file containing a
      * list of object keys that you want Amazon SageMaker to use for batch transform.
-     * </p>
+     * </p> <p>The following values are compatible: <code>ManifestFile</code>,
+     * <code>S3Prefix</code> </p> <p>The following value is not compatible:
+     * <code>AugmentedManifestFile</code> </p>
      */
     inline void SetS3DataType(S3DataType&& value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = std::move(value); }
 
@@ -94,7 +102,9 @@ namespace Model
      * batch transform. </p> <p>If you choose <code>ManifestFile</code>,
      * <code>S3Uri</code> identifies an object that is a manifest file containing a
      * list of object keys that you want Amazon SageMaker to use for batch transform.
-     * </p>
+     * </p> <p>The following values are compatible: <code>ManifestFile</code>,
+     * <code>S3Prefix</code> </p> <p>The following value is not compatible:
+     * <code>AugmentedManifestFile</code> </p>
      */
     inline TransformS3DataSource& WithS3DataType(const S3DataType& value) { SetS3DataType(value); return *this;}
 
@@ -104,7 +114,9 @@ namespace Model
      * batch transform. </p> <p>If you choose <code>ManifestFile</code>,
      * <code>S3Uri</code> identifies an object that is a manifest file containing a
      * list of object keys that you want Amazon SageMaker to use for batch transform.
-     * </p>
+     * </p> <p>The following values are compatible: <code>ManifestFile</code>,
+     * <code>S3Prefix</code> </p> <p>The following value is not compatible:
+     * <code>AugmentedManifestFile</code> </p>
      */
     inline TransformS3DataSource& WithS3DataType(S3DataType&& value) { SetS3DataType(std::move(value)); return *this;}
 

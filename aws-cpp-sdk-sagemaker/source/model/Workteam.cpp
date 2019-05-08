@@ -36,7 +36,8 @@ Workteam::Workteam() :
     m_descriptionHasBeenSet(false),
     m_subDomainHasBeenSet(false),
     m_createDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false)
+    m_lastUpdatedDateHasBeenSet(false),
+    m_notificationConfigurationHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ Workteam::Workteam(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_subDomainHasBeenSet(false),
     m_createDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false)
+    m_lastUpdatedDateHasBeenSet(false),
+    m_notificationConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -117,6 +119,13 @@ Workteam& Workteam::operator =(JsonView jsonValue)
     m_lastUpdatedDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NotificationConfiguration"))
+  {
+    m_notificationConfiguration = jsonValue.GetObject("NotificationConfiguration");
+
+    m_notificationConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -178,6 +187,12 @@ JsonValue Workteam::Jsonize() const
   if(m_lastUpdatedDateHasBeenSet)
   {
    payload.WithDouble("LastUpdatedDate", m_lastUpdatedDate.SecondsWithMSPrecision());
+  }
+
+  if(m_notificationConfigurationHasBeenSet)
+  {
+   payload.WithObject("NotificationConfiguration", m_notificationConfiguration.Jsonize());
+
   }
 
   return payload;

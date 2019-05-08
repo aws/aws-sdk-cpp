@@ -49,56 +49,56 @@ namespace Model
 
 
     /**
-     * <p>The base64 encoded certificate data required to communicate with your
+     * <p>The Base64-encoded certificate data required to communicate with your
      * cluster. Add this to the <code>certificate-authority-data</code> section of the
      * <code>kubeconfig</code> file for your cluster.</p>
      */
     inline const Aws::String& GetData() const{ return m_data; }
 
     /**
-     * <p>The base64 encoded certificate data required to communicate with your
+     * <p>The Base64-encoded certificate data required to communicate with your
      * cluster. Add this to the <code>certificate-authority-data</code> section of the
      * <code>kubeconfig</code> file for your cluster.</p>
      */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
-     * <p>The base64 encoded certificate data required to communicate with your
+     * <p>The Base64-encoded certificate data required to communicate with your
      * cluster. Add this to the <code>certificate-authority-data</code> section of the
      * <code>kubeconfig</code> file for your cluster.</p>
      */
     inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
-     * <p>The base64 encoded certificate data required to communicate with your
+     * <p>The Base64-encoded certificate data required to communicate with your
      * cluster. Add this to the <code>certificate-authority-data</code> section of the
      * <code>kubeconfig</code> file for your cluster.</p>
      */
     inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
-     * <p>The base64 encoded certificate data required to communicate with your
+     * <p>The Base64-encoded certificate data required to communicate with your
      * cluster. Add this to the <code>certificate-authority-data</code> section of the
      * <code>kubeconfig</code> file for your cluster.</p>
      */
     inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
 
     /**
-     * <p>The base64 encoded certificate data required to communicate with your
+     * <p>The Base64-encoded certificate data required to communicate with your
      * cluster. Add this to the <code>certificate-authority-data</code> section of the
      * <code>kubeconfig</code> file for your cluster.</p>
      */
     inline Certificate& WithData(const Aws::String& value) { SetData(value); return *this;}
 
     /**
-     * <p>The base64 encoded certificate data required to communicate with your
+     * <p>The Base64-encoded certificate data required to communicate with your
      * cluster. Add this to the <code>certificate-authority-data</code> section of the
      * <code>kubeconfig</code> file for your cluster.</p>
      */
     inline Certificate& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
 
     /**
-     * <p>The base64 encoded certificate data required to communicate with your
+     * <p>The Base64-encoded certificate data required to communicate with your
      * cluster. Add this to the <code>certificate-authority-data</code> section of the
      * <code>kubeconfig</code> file for your cluster.</p>
      */

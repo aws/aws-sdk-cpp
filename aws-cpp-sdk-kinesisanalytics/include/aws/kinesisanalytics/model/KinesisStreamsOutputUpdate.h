@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * <p> When updating an output configuration using the <a>UpdateApplication</a>
+   * <p> When updating an output configuration using the <a
+   * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a>
    * operation, provides information about an Amazon Kinesis stream configured as the
    * destination. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/KinesisStreamsOutputUpdate">AWS

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/sagemaker/model/NotificationConfiguration.h>
 #include <aws/sagemaker/model/MemberDefinition.h>
 #include <utility>
 
@@ -370,6 +371,25 @@ namespace Model
      */
     inline Workteam& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 
+
+    
+    inline const NotificationConfiguration& GetNotificationConfiguration() const{ return m_notificationConfiguration; }
+
+    
+    inline bool NotificationConfigurationHasBeenSet() const { return m_notificationConfigurationHasBeenSet; }
+
+    
+    inline void SetNotificationConfiguration(const NotificationConfiguration& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = value; }
+
+    
+    inline void SetNotificationConfiguration(NotificationConfiguration&& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = std::move(value); }
+
+    
+    inline Workteam& WithNotificationConfiguration(const NotificationConfiguration& value) { SetNotificationConfiguration(value); return *this;}
+
+    
+    inline Workteam& WithNotificationConfiguration(NotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_workteamName;
@@ -395,6 +415,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedDate;
     bool m_lastUpdatedDateHasBeenSet;
+
+    NotificationConfiguration m_notificationConfiguration;
+    bool m_notificationConfigurationHasBeenSet;
   };
 
 } // namespace Model
