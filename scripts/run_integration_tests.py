@@ -12,13 +12,9 @@
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
 #
-import os
-import stat
-
-
 import argparse
 import os
-import shutil
+import stat
 import subprocess
 import platform
 
@@ -26,12 +22,10 @@ def ParseArguments():
     argMap = {}
 
     parser = argparse.ArgumentParser(description="AWSNativeSDK Run all Integration Tests")
-    parser.add_argument("--buildDir", action="store")
-    parser.add_argument("--configuration", action="store")
+    parser.add_argument("--testDir", action="store")
 
     args = vars( parser.parse_args() )
-    argMap[ "buildDir" ] = args[ "buildDir" ] or "./build"
-    argMap[ "configuration" ] = args[ "configuration" ] or "Debug"
+    argMap[ "testDir" ] = args[ "testDir" ] or "./build"
     
     return argMap
 
@@ -42,15 +36,8 @@ def AddExecutableBit(file):
 def Main():
     arguments = ParseArguments()
 
-    configDir = ""
-    testDir = ""
-    exeExtension = ""
-
-    #Visual Studio puts executables into a configuration sub-dir, so append that.
-    if platform.system() == "Windows":
-        configDir = arguments["configuration"]
-        testDir = "bin"
-        exeExtension = ".exe"
+    testHasParentDir = platform.system() != "Windows"
+    exeExtension = ".exe" if platform.system() == "Windows" else ""
 
     testList = [ "aws-cpp-sdk-transcribestreaming-integration-tests",
                  "aws-cpp-sdk-dynamodb-integration-tests",
@@ -65,9 +52,10 @@ def Main():
                  "aws-cpp-sdk-ec2-integration-tests" ]
 
     for testName in testList:
-        testExe = arguments["buildDir"] + "/" + (testDir if testDir else testName) + "/" + configDir + "/" + testName + exeExtension
+        testExe = os.path.join(arguments[ "testDir" ], testName if testHasParentDir else "", testName) + exeExtension
         # when build with BUILD_ONLY, not all test binaries will be generated.
         if not os.path.isfile(testExe):
+            print("Test: \"{}\" doesn't exist, skipped.".format(testExe))
             continue
         prefix = "--aws_resource_prefix=" + platform.system().lower()
         print("testExe = " + testExe)
