@@ -14,11 +14,9 @@ set(LIBRARY_DIRECTORY "lib")
 set(INCLUDE_DIRECTORY "include")
 if(BUILD_SHARED_LIBS)
     set(ARCHIVE_DIRECTORY "bin")
-    set(LIBTYPE SHARED)
     message(STATUS "Building custom service as shared objects")
 else()
     set(ARCHIVE_DIRECTORY "lib")
-    set(LIBTYPE STATIC)
     message(STATUS "Building custom service as static objects")
 endif()
 
@@ -79,7 +77,7 @@ set(${projectNameCaps}_INCLUDES
     "${cmakeVarStart}CMAKE_CURRENT_SOURCE_DIR}/include/"
 )
 
-add_library(${PROJECT_NAME} ${cmakeVarStart}LIBTYPE} ${cmakeVarStart}${projectNameCaps}_SRC})
+add_library(${PROJECT_NAME} ${cmakeVarStart}${projectNameCaps}_SRC})
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 set_compiler_flags(${PROJECT_NAME})

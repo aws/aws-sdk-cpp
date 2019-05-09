@@ -19,7 +19,7 @@ endif()
 enable_testing()
 
 if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
-    add_library(${PROJECT_NAME} ${LIBTYPE} ${TRANSFER_TEST_SRC})
+    add_library(${PROJECT_NAME} ${TRANSFER_TEST_SRC})
 else()
     add_executable(${PROJECT_NAME} ${TRANSFER_TEST_SRC})
 endif()

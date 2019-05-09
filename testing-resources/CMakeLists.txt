@@ -101,7 +101,7 @@ if(PLATFORM_WINDOWS)
     add_definitions("-DDISABLE_HOME_DIR_REDIRECT")
 endif()
 
-add_library(${PROJECT_NAME} ${LIBTYPE} ${TestingResources_SRC})
+add_library(${PROJECT_NAME} ${TestingResources_SRC})
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 set_compiler_flags(${PROJECT_NAME})

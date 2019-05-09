@@ -107,7 +107,7 @@ if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
     add_definitions("-DAWS_TEXT_TO_SPEECH_EXPORTS")
 endif()
 
-add_library(${PROJECT_NAME} ${LIBTYPE} ${ALL_TEXT_TO_SPEECH})
+add_library(${PROJECT_NAME} ${ALL_TEXT_TO_SPEECH})
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 set_compiler_flags(${PROJECT_NAME})

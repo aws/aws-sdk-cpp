@@ -38,7 +38,7 @@ if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
     add_definitions("-DAWS_QUEUES_EXPORTS")
 endif()
 
-add_library(${PROJECT_NAME} ${LIBTYPE} ${QUEUES_SRC})
+add_library(${PROJECT_NAME} ${QUEUES_SRC})
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 set_compiler_flags(${PROJECT_NAME})

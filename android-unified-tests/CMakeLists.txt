@@ -81,10 +81,9 @@ else()
 endif()
 
 
-SET(LIBTYPE SHARED)
 SET(SUFFIX so)
 
-add_library(android-unified-tests ${LIBTYPE} ${AWS_UNIFIED_INTEGRATION_TESTS_SRC})
+add_library(android-unified-tests ${AWS_UNIFIED_INTEGRATION_TESTS_SRC})
 
 set_compiler_flags(${PROJECT_NAME})
 set_compiler_warnings(${PROJECT_NAME})

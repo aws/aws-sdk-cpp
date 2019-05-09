@@ -17,7 +17,7 @@ endif()
 enable_testing()
 
 if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
-    add_library(${PROJECT_NAME} ${LIBTYPE} ${AWS_DYNAMO_INTEGRATION_TESTS_SRC})
+    add_library(${PROJECT_NAME} ${AWS_DYNAMO_INTEGRATION_TESTS_SRC})
 else()
     add_executable(${PROJECT_NAME} ${AWS_DYNAMO_INTEGRATION_TESTS_SRC})
 endif()

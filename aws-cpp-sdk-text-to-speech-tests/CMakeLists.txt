@@ -25,7 +25,7 @@ if (AUTORUN_UNIT_TESTS)
 endif()
 
 if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
-    add_library(${PROJECT_NAME} ${LIBTYPE} ${TEXT_TO_SPEECH_TEST_SRC})
+    add_library(${PROJECT_NAME} ${TEXT_TO_SPEECH_TEST_SRC})
 else()
     add_executable(${PROJECT_NAME} ${TEXT_TO_SPEECH_TEST_SRC})
 endif()
