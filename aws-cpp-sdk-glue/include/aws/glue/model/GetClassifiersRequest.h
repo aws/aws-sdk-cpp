@@ -45,22 +45,22 @@ namespace Model
 
 
     /**
-     * <p>Size of the list to return (optional).</p>
+     * <p>The size of the list to return (optional).</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Size of the list to return (optional).</p>
+     * <p>The size of the list to return (optional).</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Size of the list to return (optional).</p>
+     * <p>The size of the list to return (optional).</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Size of the list to return (optional).</p>
+     * <p>The size of the list to return (optional).</p>
      */
     inline GetClassifiersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -89,50 +89,50 @@ namespace Model
 
 
     /**
-     * <p>The IAM role (or ARN of an IAM role) used by the new crawler to access
-     * customer resources.</p>
+     * <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the
+     * new crawler to access customer resources.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
-     * <p>The IAM role (or ARN of an IAM role) used by the new crawler to access
-     * customer resources.</p>
+     * <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the
+     * new crawler to access customer resources.</p>
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
-     * <p>The IAM role (or ARN of an IAM role) used by the new crawler to access
-     * customer resources.</p>
+     * <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the
+     * new crawler to access customer resources.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>The IAM role (or ARN of an IAM role) used by the new crawler to access
-     * customer resources.</p>
+     * <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the
+     * new crawler to access customer resources.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
-     * <p>The IAM role (or ARN of an IAM role) used by the new crawler to access
-     * customer resources.</p>
+     * <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the
+     * new crawler to access customer resources.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
-     * <p>The IAM role (or ARN of an IAM role) used by the new crawler to access
-     * customer resources.</p>
+     * <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the
+     * new crawler to access customer resources.</p>
      */
     inline UpdateCrawlerRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
-     * <p>The IAM role (or ARN of an IAM role) used by the new crawler to access
-     * customer resources.</p>
+     * <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the
+     * new crawler to access customer resources.</p>
      */
     inline UpdateCrawlerRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role (or ARN of an IAM role) used by the new crawler to access
-     * customer resources.</p>
+     * <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the
+     * new crawler to access customer resources.</p>
      */
     inline UpdateCrawlerRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
@@ -259,66 +259,74 @@ namespace Model
 
 
     /**
-     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * <p>A <code>cron</code> expression used to specify the schedule. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+     * 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline const Aws::String& GetSchedule() const{ return m_schedule; }
 
     /**
-     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * <p>A <code>cron</code> expression used to specify the schedule. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+     * 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
     /**
-     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * <p>A <code>cron</code> expression used to specify the schedule. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+     * 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline void SetSchedule(const Aws::String& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
     /**
-     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * <p>A <code>cron</code> expression used to specify the schedule. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+     * 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline void SetSchedule(Aws::String&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
     /**
-     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * <p>A <code>cron</code> expression used to specify the schedule. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+     * 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline void SetSchedule(const char* value) { m_scheduleHasBeenSet = true; m_schedule.assign(value); }
 
     /**
-     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * <p>A <code>cron</code> expression used to specify the schedule. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+     * 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline UpdateCrawlerRequest& WithSchedule(const Aws::String& value) { SetSchedule(value); return *this;}
 
     /**
-     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * <p>A <code>cron</code> expression used to specify the schedule. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+     * 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline UpdateCrawlerRequest& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
 
     /**
-     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * <p>A <code>cron</code> expression used to specify the schedule. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+     * 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline UpdateCrawlerRequest& WithSchedule(const char* value) { SetSchedule(value); return *this;}
 
@@ -429,95 +437,95 @@ namespace Model
 
 
     /**
-     * <p>Policy for the crawler's update and deletion behavior.</p>
+     * <p>The policy for the crawler's update and deletion behavior.</p>
      */
     inline const SchemaChangePolicy& GetSchemaChangePolicy() const{ return m_schemaChangePolicy; }
 
     /**
-     * <p>Policy for the crawler's update and deletion behavior.</p>
+     * <p>The policy for the crawler's update and deletion behavior.</p>
      */
     inline bool SchemaChangePolicyHasBeenSet() const { return m_schemaChangePolicyHasBeenSet; }
 
     /**
-     * <p>Policy for the crawler's update and deletion behavior.</p>
+     * <p>The policy for the crawler's update and deletion behavior.</p>
      */
     inline void SetSchemaChangePolicy(const SchemaChangePolicy& value) { m_schemaChangePolicyHasBeenSet = true; m_schemaChangePolicy = value; }
 
     /**
-     * <p>Policy for the crawler's update and deletion behavior.</p>
+     * <p>The policy for the crawler's update and deletion behavior.</p>
      */
     inline void SetSchemaChangePolicy(SchemaChangePolicy&& value) { m_schemaChangePolicyHasBeenSet = true; m_schemaChangePolicy = std::move(value); }
 
     /**
-     * <p>Policy for the crawler's update and deletion behavior.</p>
+     * <p>The policy for the crawler's update and deletion behavior.</p>
      */
     inline UpdateCrawlerRequest& WithSchemaChangePolicy(const SchemaChangePolicy& value) { SetSchemaChangePolicy(value); return *this;}
 
     /**
-     * <p>Policy for the crawler's update and deletion behavior.</p>
+     * <p>The policy for the crawler's update and deletion behavior.</p>
      */
     inline UpdateCrawlerRequest& WithSchemaChangePolicy(SchemaChangePolicy&& value) { SetSchemaChangePolicy(std::move(value)); return *this;}
 
 
     /**
-     * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a crawler's behavior. For more information, see <a
+     * <p>The crawler configuration information. This versioned JSON string allows
+     * users to specify aspects of a crawler's behavior. For more information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
      * a Crawler</a>.</p>
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a crawler's behavior. For more information, see <a
+     * <p>The crawler configuration information. This versioned JSON string allows
+     * users to specify aspects of a crawler's behavior. For more information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
      * a Crawler</a>.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
-     * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a crawler's behavior. For more information, see <a
+     * <p>The crawler configuration information. This versioned JSON string allows
+     * users to specify aspects of a crawler's behavior. For more information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
      * a Crawler</a>.</p>
      */
     inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
-     * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a crawler's behavior. For more information, see <a
+     * <p>The crawler configuration information. This versioned JSON string allows
+     * users to specify aspects of a crawler's behavior. For more information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
      * a Crawler</a>.</p>
      */
     inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
-     * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a crawler's behavior. For more information, see <a
+     * <p>The crawler configuration information. This versioned JSON string allows
+     * users to specify aspects of a crawler's behavior. For more information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
      * a Crawler</a>.</p>
      */
     inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
 
     /**
-     * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a crawler's behavior. For more information, see <a
+     * <p>The crawler configuration information. This versioned JSON string allows
+     * users to specify aspects of a crawler's behavior. For more information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
      * a Crawler</a>.</p>
      */
     inline UpdateCrawlerRequest& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a crawler's behavior. For more information, see <a
+     * <p>The crawler configuration information. This versioned JSON string allows
+     * users to specify aspects of a crawler's behavior. For more information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
      * a Crawler</a>.</p>
      */
     inline UpdateCrawlerRequest& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
 
     /**
-     * <p>Crawler configuration information. This versioned JSON string allows users to
-     * specify aspects of a crawler's behavior. For more information, see <a
+     * <p>The crawler configuration information. This versioned JSON string allows
+     * users to specify aspects of a crawler's behavior. For more information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
      * a Crawler</a>.</p>
      */
@@ -525,50 +533,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used by this
-     * Crawler.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used by
+     * this crawler.</p>
      */
     inline const Aws::String& GetCrawlerSecurityConfiguration() const{ return m_crawlerSecurityConfiguration; }
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used by this
-     * Crawler.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used by
+     * this crawler.</p>
      */
     inline bool CrawlerSecurityConfigurationHasBeenSet() const { return m_crawlerSecurityConfigurationHasBeenSet; }
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used by this
-     * Crawler.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used by
+     * this crawler.</p>
      */
     inline void SetCrawlerSecurityConfiguration(const Aws::String& value) { m_crawlerSecurityConfigurationHasBeenSet = true; m_crawlerSecurityConfiguration = value; }
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used by this
-     * Crawler.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used by
+     * this crawler.</p>
      */
     inline void SetCrawlerSecurityConfiguration(Aws::String&& value) { m_crawlerSecurityConfigurationHasBeenSet = true; m_crawlerSecurityConfiguration = std::move(value); }
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used by this
-     * Crawler.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used by
+     * this crawler.</p>
      */
     inline void SetCrawlerSecurityConfiguration(const char* value) { m_crawlerSecurityConfigurationHasBeenSet = true; m_crawlerSecurityConfiguration.assign(value); }
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used by this
-     * Crawler.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used by
+     * this crawler.</p>
      */
     inline UpdateCrawlerRequest& WithCrawlerSecurityConfiguration(const Aws::String& value) { SetCrawlerSecurityConfiguration(value); return *this;}
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used by this
-     * Crawler.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used by
+     * this crawler.</p>
      */
     inline UpdateCrawlerRequest& WithCrawlerSecurityConfiguration(Aws::String&& value) { SetCrawlerSecurityConfiguration(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used by this
-     * Crawler.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used by
+     * this crawler.</p>
      */
     inline UpdateCrawlerRequest& WithCrawlerSecurityConfiguration(const char* value) { SetCrawlerSecurityConfiguration(value); return *this;}
 

@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Crawler policy for update and deletion behavior.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>A policy that specifies update and deletion behaviors for the
+   * crawler.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SchemaChangePolicy">AWS
    * API Reference</a></p>
    */

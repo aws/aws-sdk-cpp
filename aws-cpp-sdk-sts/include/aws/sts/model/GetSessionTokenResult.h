@@ -54,9 +54,7 @@ namespace Model
      * <p>The temporary security credentials, which include an access key ID, a secret
      * access key, and a security (or session) token.</p> <note> <p>The size of the
      * security token that STS API operations return is not fixed. We strongly
-     * recommend that you make no assumptions about the maximum size. As of this
-     * writing, the typical size is less than 4096 bytes, but that can vary. Also,
-     * future updates to AWS might require larger sizes.</p> </note>
+     * recommend that you make no assumptions about the maximum size.</p> </note>
      */
     inline const Credentials& GetCredentials() const{ return m_credentials; }
 
@@ -64,9 +62,7 @@ namespace Model
      * <p>The temporary security credentials, which include an access key ID, a secret
      * access key, and a security (or session) token.</p> <note> <p>The size of the
      * security token that STS API operations return is not fixed. We strongly
-     * recommend that you make no assumptions about the maximum size. As of this
-     * writing, the typical size is less than 4096 bytes, but that can vary. Also,
-     * future updates to AWS might require larger sizes.</p> </note>
+     * recommend that you make no assumptions about the maximum size.</p> </note>
      */
     inline void SetCredentials(const Credentials& value) { m_credentials = value; }
 
@@ -74,9 +70,7 @@ namespace Model
      * <p>The temporary security credentials, which include an access key ID, a secret
      * access key, and a security (or session) token.</p> <note> <p>The size of the
      * security token that STS API operations return is not fixed. We strongly
-     * recommend that you make no assumptions about the maximum size. As of this
-     * writing, the typical size is less than 4096 bytes, but that can vary. Also,
-     * future updates to AWS might require larger sizes.</p> </note>
+     * recommend that you make no assumptions about the maximum size.</p> </note>
      */
     inline void SetCredentials(Credentials&& value) { m_credentials = std::move(value); }
 
@@ -84,9 +78,7 @@ namespace Model
      * <p>The temporary security credentials, which include an access key ID, a secret
      * access key, and a security (or session) token.</p> <note> <p>The size of the
      * security token that STS API operations return is not fixed. We strongly
-     * recommend that you make no assumptions about the maximum size. As of this
-     * writing, the typical size is less than 4096 bytes, but that can vary. Also,
-     * future updates to AWS might require larger sizes.</p> </note>
+     * recommend that you make no assumptions about the maximum size.</p> </note>
      */
     inline GetSessionTokenResult& WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
 
@@ -94,9 +86,7 @@ namespace Model
      * <p>The temporary security credentials, which include an access key ID, a secret
      * access key, and a security (or session) token.</p> <note> <p>The size of the
      * security token that STS API operations return is not fixed. We strongly
-     * recommend that you make no assumptions about the maximum size. As of this
-     * writing, the typical size is less than 4096 bytes, but that can vary. Also,
-     * future updates to AWS might require larger sizes.</p> </note>
+     * recommend that you make no assumptions about the maximum size.</p> </note>
      */
     inline GetSessionTokenResult& WithCredentials(Credentials&& value) { SetCredentials(std::move(value)); return *this;}
 

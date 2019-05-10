@@ -58,91 +58,91 @@ namespace Model
 
 
     /**
-     * <p>The crawler name.</p>
+     * <p>The name of the crawler.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The crawler name.</p>
+     * <p>The name of the crawler.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The crawler name.</p>
+     * <p>The name of the crawler.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The crawler name.</p>
+     * <p>The name of the crawler.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The crawler name.</p>
+     * <p>The name of the crawler.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The crawler name.</p>
+     * <p>The name of the crawler.</p>
      */
     inline Crawler& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The crawler name.</p>
+     * <p>The name of the crawler.</p>
      */
     inline Crawler& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The crawler name.</p>
+     * <p>The name of the crawler.</p>
      */
     inline Crawler& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The IAM role (or ARN of an IAM role) used to access customer resources, such
-     * as data in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer
+     * resources, such as Amazon Simple Storage Service (Amazon S3) data.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
-     * <p>The IAM role (or ARN of an IAM role) used to access customer resources, such
-     * as data in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer
+     * resources, such as Amazon Simple Storage Service (Amazon S3) data.</p>
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
-     * <p>The IAM role (or ARN of an IAM role) used to access customer resources, such
-     * as data in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer
+     * resources, such as Amazon Simple Storage Service (Amazon S3) data.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>The IAM role (or ARN of an IAM role) used to access customer resources, such
-     * as data in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer
+     * resources, such as Amazon Simple Storage Service (Amazon S3) data.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
-     * <p>The IAM role (or ARN of an IAM role) used to access customer resources, such
-     * as data in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer
+     * resources, such as Amazon Simple Storage Service (Amazon S3) data.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
-     * <p>The IAM role (or ARN of an IAM role) used to access customer resources, such
-     * as data in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer
+     * resources, such as Amazon Simple Storage Service (Amazon S3) data.</p>
      */
     inline Crawler& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
-     * <p>The IAM role (or ARN of an IAM role) used to access customer resources, such
-     * as data in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer
+     * resources, such as Amazon Simple Storage Service (Amazon S3) data.</p>
      */
     inline Crawler& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role (or ARN of an IAM role) used to access customer resources, such
-     * as data in Amazon S3.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer
+     * resources, such as Amazon Simple Storage Service (Amazon S3) data.</p>
      */
     inline Crawler& WithRole(const char* value) { SetRole(value); return *this;}
 
@@ -179,42 +179,42 @@ namespace Model
 
 
     /**
-     * <p>The database where metadata is written by this crawler.</p>
+     * <p>The name of the database in which the crawler's output is stored.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
-     * <p>The database where metadata is written by this crawler.</p>
+     * <p>The name of the database in which the crawler's output is stored.</p>
      */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
-     * <p>The database where metadata is written by this crawler.</p>
+     * <p>The name of the database in which the crawler's output is stored.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
-     * <p>The database where metadata is written by this crawler.</p>
+     * <p>The name of the database in which the crawler's output is stored.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
-     * <p>The database where metadata is written by this crawler.</p>
+     * <p>The name of the database in which the crawler's output is stored.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
-     * <p>The database where metadata is written by this crawler.</p>
+     * <p>The name of the database in which the crawler's output is stored.</p>
      */
     inline Crawler& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
-     * <p>The database where metadata is written by this crawler.</p>
+     * <p>The name of the database in which the crawler's output is stored.</p>
      */
     inline Crawler& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p>The database where metadata is written by this crawler.</p>
+     * <p>The name of the database in which the crawler's output is stored.</p>
      */
     inline Crawler& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
@@ -261,78 +261,87 @@ namespace Model
 
 
     /**
-     * <p>A list of custom classifiers associated with the crawler.</p>
+     * <p>A list of UTF-8 strings that specify the custom classifiers that are
+     * associated with the crawler.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClassifiers() const{ return m_classifiers; }
 
     /**
-     * <p>A list of custom classifiers associated with the crawler.</p>
+     * <p>A list of UTF-8 strings that specify the custom classifiers that are
+     * associated with the crawler.</p>
      */
     inline bool ClassifiersHasBeenSet() const { return m_classifiersHasBeenSet; }
 
     /**
-     * <p>A list of custom classifiers associated with the crawler.</p>
+     * <p>A list of UTF-8 strings that specify the custom classifiers that are
+     * associated with the crawler.</p>
      */
     inline void SetClassifiers(const Aws::Vector<Aws::String>& value) { m_classifiersHasBeenSet = true; m_classifiers = value; }
 
     /**
-     * <p>A list of custom classifiers associated with the crawler.</p>
+     * <p>A list of UTF-8 strings that specify the custom classifiers that are
+     * associated with the crawler.</p>
      */
     inline void SetClassifiers(Aws::Vector<Aws::String>&& value) { m_classifiersHasBeenSet = true; m_classifiers = std::move(value); }
 
     /**
-     * <p>A list of custom classifiers associated with the crawler.</p>
+     * <p>A list of UTF-8 strings that specify the custom classifiers that are
+     * associated with the crawler.</p>
      */
     inline Crawler& WithClassifiers(const Aws::Vector<Aws::String>& value) { SetClassifiers(value); return *this;}
 
     /**
-     * <p>A list of custom classifiers associated with the crawler.</p>
+     * <p>A list of UTF-8 strings that specify the custom classifiers that are
+     * associated with the crawler.</p>
      */
     inline Crawler& WithClassifiers(Aws::Vector<Aws::String>&& value) { SetClassifiers(std::move(value)); return *this;}
 
     /**
-     * <p>A list of custom classifiers associated with the crawler.</p>
+     * <p>A list of UTF-8 strings that specify the custom classifiers that are
+     * associated with the crawler.</p>
      */
     inline Crawler& AddClassifiers(const Aws::String& value) { m_classifiersHasBeenSet = true; m_classifiers.push_back(value); return *this; }
 
     /**
-     * <p>A list of custom classifiers associated with the crawler.</p>
+     * <p>A list of UTF-8 strings that specify the custom classifiers that are
+     * associated with the crawler.</p>
      */
     inline Crawler& AddClassifiers(Aws::String&& value) { m_classifiersHasBeenSet = true; m_classifiers.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of custom classifiers associated with the crawler.</p>
+     * <p>A list of UTF-8 strings that specify the custom classifiers that are
+     * associated with the crawler.</p>
      */
     inline Crawler& AddClassifiers(const char* value) { m_classifiersHasBeenSet = true; m_classifiers.push_back(value); return *this; }
 
 
     /**
-     * <p>Sets the behavior when the crawler finds a changed or deleted object.</p>
+     * <p>The policy that specifies update and delete behaviors for the crawler.</p>
      */
     inline const SchemaChangePolicy& GetSchemaChangePolicy() const{ return m_schemaChangePolicy; }
 
     /**
-     * <p>Sets the behavior when the crawler finds a changed or deleted object.</p>
+     * <p>The policy that specifies update and delete behaviors for the crawler.</p>
      */
     inline bool SchemaChangePolicyHasBeenSet() const { return m_schemaChangePolicyHasBeenSet; }
 
     /**
-     * <p>Sets the behavior when the crawler finds a changed or deleted object.</p>
+     * <p>The policy that specifies update and delete behaviors for the crawler.</p>
      */
     inline void SetSchemaChangePolicy(const SchemaChangePolicy& value) { m_schemaChangePolicyHasBeenSet = true; m_schemaChangePolicy = value; }
 
     /**
-     * <p>Sets the behavior when the crawler finds a changed or deleted object.</p>
+     * <p>The policy that specifies update and delete behaviors for the crawler.</p>
      */
     inline void SetSchemaChangePolicy(SchemaChangePolicy&& value) { m_schemaChangePolicyHasBeenSet = true; m_schemaChangePolicy = std::move(value); }
 
     /**
-     * <p>Sets the behavior when the crawler finds a changed or deleted object.</p>
+     * <p>The policy that specifies update and delete behaviors for the crawler.</p>
      */
     inline Crawler& WithSchemaChangePolicy(const SchemaChangePolicy& value) { SetSchemaChangePolicy(value); return *this;}
 
     /**
-     * <p>Sets the behavior when the crawler finds a changed or deleted object.</p>
+     * <p>The policy that specifies update and delete behaviors for the crawler.</p>
      */
     inline Crawler& WithSchemaChangePolicy(SchemaChangePolicy&& value) { SetSchemaChangePolicy(std::move(value)); return *this;}
 
@@ -466,63 +475,63 @@ namespace Model
 
 
     /**
-     * <p>The time when the crawler was created.</p>
+     * <p>The time that the crawler was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The time when the crawler was created.</p>
+     * <p>The time that the crawler was created.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>The time when the crawler was created.</p>
+     * <p>The time that the crawler was created.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The time when the crawler was created.</p>
+     * <p>The time that the crawler was created.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The time when the crawler was created.</p>
+     * <p>The time that the crawler was created.</p>
      */
     inline Crawler& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The time when the crawler was created.</p>
+     * <p>The time that the crawler was created.</p>
      */
     inline Crawler& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time the crawler was last updated.</p>
+     * <p>The time that the crawler was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
     /**
-     * <p>The time the crawler was last updated.</p>
+     * <p>The time that the crawler was last updated.</p>
      */
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
 
     /**
-     * <p>The time the crawler was last updated.</p>
+     * <p>The time that the crawler was last updated.</p>
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
-     * <p>The time the crawler was last updated.</p>
+     * <p>The time that the crawler was last updated.</p>
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
 
     /**
-     * <p>The time the crawler was last updated.</p>
+     * <p>The time that the crawler was last updated.</p>
      */
     inline Crawler& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
     /**
-     * <p>The time the crawler was last updated.</p>
+     * <p>The time that the crawler was last updated.</p>
      */
     inline Crawler& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
 
@@ -651,50 +660,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used by this
-     * Crawler.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used by
+     * this crawler.</p>
      */
     inline const Aws::String& GetCrawlerSecurityConfiguration() const{ return m_crawlerSecurityConfiguration; }
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used by this
-     * Crawler.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used by
+     * this crawler.</p>
      */
     inline bool CrawlerSecurityConfigurationHasBeenSet() const { return m_crawlerSecurityConfigurationHasBeenSet; }
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used by this
-     * Crawler.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used by
+     * this crawler.</p>
      */
     inline void SetCrawlerSecurityConfiguration(const Aws::String& value) { m_crawlerSecurityConfigurationHasBeenSet = true; m_crawlerSecurityConfiguration = value; }
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used by this
-     * Crawler.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used by
+     * this crawler.</p>
      */
     inline void SetCrawlerSecurityConfiguration(Aws::String&& value) { m_crawlerSecurityConfigurationHasBeenSet = true; m_crawlerSecurityConfiguration = std::move(value); }
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used by this
-     * Crawler.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used by
+     * this crawler.</p>
      */
     inline void SetCrawlerSecurityConfiguration(const char* value) { m_crawlerSecurityConfigurationHasBeenSet = true; m_crawlerSecurityConfiguration.assign(value); }
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used by this
-     * Crawler.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used by
+     * this crawler.</p>
      */
     inline Crawler& WithCrawlerSecurityConfiguration(const Aws::String& value) { SetCrawlerSecurityConfiguration(value); return *this;}
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used by this
-     * Crawler.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used by
+     * this crawler.</p>
      */
     inline Crawler& WithCrawlerSecurityConfiguration(Aws::String&& value) { SetCrawlerSecurityConfiguration(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used by this
-     * Crawler.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used by
+     * this crawler.</p>
      */
     inline Crawler& WithCrawlerSecurityConfiguration(const char* value) { SetCrawlerSecurityConfiguration(value); return *this;}
 

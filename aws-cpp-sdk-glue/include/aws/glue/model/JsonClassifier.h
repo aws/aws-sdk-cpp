@@ -90,63 +90,63 @@ namespace Model
 
 
     /**
-     * <p>The time this classifier was registered.</p>
+     * <p>The time that this classifier was registered.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The time this classifier was registered.</p>
+     * <p>The time that this classifier was registered.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>The time this classifier was registered.</p>
+     * <p>The time that this classifier was registered.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The time this classifier was registered.</p>
+     * <p>The time that this classifier was registered.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The time this classifier was registered.</p>
+     * <p>The time that this classifier was registered.</p>
      */
     inline JsonClassifier& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The time this classifier was registered.</p>
+     * <p>The time that this classifier was registered.</p>
      */
     inline JsonClassifier& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time this classifier was last updated.</p>
+     * <p>The time that this classifier was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
     /**
-     * <p>The time this classifier was last updated.</p>
+     * <p>The time that this classifier was last updated.</p>
      */
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
 
     /**
-     * <p>The time this classifier was last updated.</p>
+     * <p>The time that this classifier was last updated.</p>
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
-     * <p>The time this classifier was last updated.</p>
+     * <p>The time that this classifier was last updated.</p>
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
 
     /**
-     * <p>The time this classifier was last updated.</p>
+     * <p>The time that this classifier was last updated.</p>
      */
     inline JsonClassifier& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
     /**
-     * <p>The time this classifier was last updated.</p>
+     * <p>The time that this classifier was last updated.</p>
      */
     inline JsonClassifier& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
 
@@ -174,7 +174,8 @@ namespace Model
 
     /**
      * <p>A <code>JsonPath</code> string defining the JSON data for the classifier to
-     * classify. AWS Glue supports a subset of JsonPath, as described in <a
+     * classify. AWS Glue supports a subset of <code>JsonPath</code>, as described in
+     * <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing
      * JsonPath Custom Classifiers</a>.</p>
      */
@@ -182,7 +183,8 @@ namespace Model
 
     /**
      * <p>A <code>JsonPath</code> string defining the JSON data for the classifier to
-     * classify. AWS Glue supports a subset of JsonPath, as described in <a
+     * classify. AWS Glue supports a subset of <code>JsonPath</code>, as described in
+     * <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing
      * JsonPath Custom Classifiers</a>.</p>
      */
@@ -190,7 +192,8 @@ namespace Model
 
     /**
      * <p>A <code>JsonPath</code> string defining the JSON data for the classifier to
-     * classify. AWS Glue supports a subset of JsonPath, as described in <a
+     * classify. AWS Glue supports a subset of <code>JsonPath</code>, as described in
+     * <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing
      * JsonPath Custom Classifiers</a>.</p>
      */
@@ -198,7 +201,8 @@ namespace Model
 
     /**
      * <p>A <code>JsonPath</code> string defining the JSON data for the classifier to
-     * classify. AWS Glue supports a subset of JsonPath, as described in <a
+     * classify. AWS Glue supports a subset of <code>JsonPath</code>, as described in
+     * <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing
      * JsonPath Custom Classifiers</a>.</p>
      */
@@ -206,7 +210,8 @@ namespace Model
 
     /**
      * <p>A <code>JsonPath</code> string defining the JSON data for the classifier to
-     * classify. AWS Glue supports a subset of JsonPath, as described in <a
+     * classify. AWS Glue supports a subset of <code>JsonPath</code>, as described in
+     * <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing
      * JsonPath Custom Classifiers</a>.</p>
      */
@@ -214,7 +219,8 @@ namespace Model
 
     /**
      * <p>A <code>JsonPath</code> string defining the JSON data for the classifier to
-     * classify. AWS Glue supports a subset of JsonPath, as described in <a
+     * classify. AWS Glue supports a subset of <code>JsonPath</code>, as described in
+     * <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing
      * JsonPath Custom Classifiers</a>.</p>
      */
@@ -222,7 +228,8 @@ namespace Model
 
     /**
      * <p>A <code>JsonPath</code> string defining the JSON data for the classifier to
-     * classify. AWS Glue supports a subset of JsonPath, as described in <a
+     * classify. AWS Glue supports a subset of <code>JsonPath</code>, as described in
+     * <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing
      * JsonPath Custom Classifiers</a>.</p>
      */
@@ -230,7 +237,8 @@ namespace Model
 
     /**
      * <p>A <code>JsonPath</code> string defining the JSON data for the classifier to
-     * classify. AWS Glue supports a subset of JsonPath, as described in <a
+     * classify. AWS Glue supports a subset of <code>JsonPath</code>, as described in
+     * <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing
      * JsonPath Custom Classifiers</a>.</p>
      */

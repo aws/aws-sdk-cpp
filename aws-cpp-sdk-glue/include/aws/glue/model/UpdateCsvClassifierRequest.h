@@ -134,49 +134,49 @@ namespace Model
 
     /**
      * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
+     * It must be different from the column delimiter.</p>
      */
     inline const Aws::String& GetQuoteSymbol() const{ return m_quoteSymbol; }
 
     /**
      * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
+     * It must be different from the column delimiter.</p>
      */
     inline bool QuoteSymbolHasBeenSet() const { return m_quoteSymbolHasBeenSet; }
 
     /**
      * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
+     * It must be different from the column delimiter.</p>
      */
     inline void SetQuoteSymbol(const Aws::String& value) { m_quoteSymbolHasBeenSet = true; m_quoteSymbol = value; }
 
     /**
      * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
+     * It must be different from the column delimiter.</p>
      */
     inline void SetQuoteSymbol(Aws::String&& value) { m_quoteSymbolHasBeenSet = true; m_quoteSymbol = std::move(value); }
 
     /**
      * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
+     * It must be different from the column delimiter.</p>
      */
     inline void SetQuoteSymbol(const char* value) { m_quoteSymbolHasBeenSet = true; m_quoteSymbol.assign(value); }
 
     /**
      * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
+     * It must be different from the column delimiter.</p>
      */
     inline UpdateCsvClassifierRequest& WithQuoteSymbol(const Aws::String& value) { SetQuoteSymbol(value); return *this;}
 
     /**
      * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
+     * It must be different from the column delimiter.</p>
      */
     inline UpdateCsvClassifierRequest& WithQuoteSymbol(Aws::String&& value) { SetQuoteSymbol(std::move(value)); return *this;}
 
     /**
      * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
+     * It must be different from the column delimiter.</p>
      */
     inline UpdateCsvClassifierRequest& WithQuoteSymbol(const char* value) { SetQuoteSymbol(value); return *this;}
 

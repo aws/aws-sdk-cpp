@@ -953,7 +953,7 @@ namespace Model
         virtual void BatchStopJobRunAsync(const Model::BatchStopJobRunRequest& request, const BatchStopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a classifier in the user's account. This may be a
+         * <p>Creates a classifier in the user's account. This can be a
          * <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a
          * <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which
          * field of the request is present.</p><p><h3>See Also:</h3>   <a
@@ -963,7 +963,7 @@ namespace Model
         virtual Model::CreateClassifierOutcome CreateClassifier(const Model::CreateClassifierRequest& request) const;
 
         /**
-         * <p>Creates a classifier in the user's account. This may be a
+         * <p>Creates a classifier in the user's account. This can be a
          * <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a
          * <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which
          * field of the request is present.</p><p><h3>See Also:</h3>   <a
@@ -975,7 +975,7 @@ namespace Model
         virtual Model::CreateClassifierOutcomeCallable CreateClassifierCallable(const Model::CreateClassifierRequest& request) const;
 
         /**
-         * <p>Creates a classifier in the user's account. This may be a
+         * <p>Creates a classifier in the user's account. This can be a
          * <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a
          * <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which
          * field of the request is present.</p><p><h3>See Also:</h3>   <a
@@ -1017,8 +1017,8 @@ namespace Model
         /**
          * <p>Creates a new crawler with specified targets, role, configuration, and
          * optional schedule. At least one crawl target must be specified, in the
-         * <i>s3Targets</i> field, the <i>jdbcTargets</i> field, or the
-         * <i>DynamoDBTargets</i> field.</p><p><h3>See Also:</h3>   <a
+         * <code>s3Targets</code> field, the <code>jdbcTargets</code> field, or the
+         * <code>DynamoDBTargets</code> field.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCrawler">AWS
          * API Reference</a></p>
          */
@@ -1027,8 +1027,8 @@ namespace Model
         /**
          * <p>Creates a new crawler with specified targets, role, configuration, and
          * optional schedule. At least one crawl target must be specified, in the
-         * <i>s3Targets</i> field, the <i>jdbcTargets</i> field, or the
-         * <i>DynamoDBTargets</i> field.</p><p><h3>See Also:</h3>   <a
+         * <code>s3Targets</code> field, the <code>jdbcTargets</code> field, or the
+         * <code>DynamoDBTargets</code> field.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCrawler">AWS
          * API Reference</a></p>
          *
@@ -1039,8 +1039,8 @@ namespace Model
         /**
          * <p>Creates a new crawler with specified targets, role, configuration, and
          * optional schedule. At least one crawl target must be specified, in the
-         * <i>s3Targets</i> field, the <i>jdbcTargets</i> field, or the
-         * <i>DynamoDBTargets</i> field.</p><p><h3>See Also:</h3>   <a
+         * <code>s3Targets</code> field, the <code>jdbcTargets</code> field, or the
+         * <code>DynamoDBTargets</code> field.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCrawler">AWS
          * API Reference</a></p>
          *
@@ -1330,16 +1330,16 @@ namespace Model
         virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a specified crawler from the Data Catalog, unless the crawler state
-         * is <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a specified crawler from the AWS Glue Data Catalog, unless the
+         * crawler state is <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCrawler">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteCrawlerOutcome DeleteCrawler(const Model::DeleteCrawlerRequest& request) const;
 
         /**
-         * <p>Removes a specified crawler from the Data Catalog, unless the crawler state
-         * is <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a specified crawler from the AWS Glue Data Catalog, unless the
+         * crawler state is <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCrawler">AWS
          * API Reference</a></p>
          *
@@ -1348,8 +1348,8 @@ namespace Model
         virtual Model::DeleteCrawlerOutcomeCallable DeleteCrawlerCallable(const Model::DeleteCrawlerRequest& request) const;
 
         /**
-         * <p>Removes a specified crawler from the Data Catalog, unless the crawler state
-         * is <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a specified crawler from the AWS Glue Data Catalog, unless the
+         * crawler state is <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCrawler">AWS
          * API Reference</a></p>
          *

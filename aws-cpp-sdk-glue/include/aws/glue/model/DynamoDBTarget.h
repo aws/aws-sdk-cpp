@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a DynamoDB table to crawl.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies an Amazon DynamoDB table to crawl.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DynamoDBTarget">AWS
    * API Reference</a></p>
    */

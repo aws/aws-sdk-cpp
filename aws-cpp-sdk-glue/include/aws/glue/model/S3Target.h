@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a data store in Amazon S3.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a data store in Amazon Simple Storage Service (Amazon
+   * S3).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/S3Target">AWS API
    * Reference</a></p>
    */

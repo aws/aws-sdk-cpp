@@ -131,63 +131,63 @@ namespace Model
 
 
     /**
-     * <p>The time this classifier was registered.</p>
+     * <p>The time that this classifier was registered.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The time this classifier was registered.</p>
+     * <p>The time that this classifier was registered.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>The time this classifier was registered.</p>
+     * <p>The time that this classifier was registered.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The time this classifier was registered.</p>
+     * <p>The time that this classifier was registered.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The time this classifier was registered.</p>
+     * <p>The time that this classifier was registered.</p>
      */
     inline XMLClassifier& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The time this classifier was registered.</p>
+     * <p>The time that this classifier was registered.</p>
      */
     inline XMLClassifier& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time this classifier was last updated.</p>
+     * <p>The time that this classifier was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
     /**
-     * <p>The time this classifier was last updated.</p>
+     * <p>The time that this classifier was last updated.</p>
      */
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
 
     /**
-     * <p>The time this classifier was last updated.</p>
+     * <p>The time that this classifier was last updated.</p>
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
-     * <p>The time this classifier was last updated.</p>
+     * <p>The time that this classifier was last updated.</p>
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
 
     /**
-     * <p>The time this classifier was last updated.</p>
+     * <p>The time that this classifier was last updated.</p>
      */
     inline XMLClassifier& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
     /**
-     * <p>The time this classifier was last updated.</p>
+     * <p>The time that this classifier was last updated.</p>
      */
     inline XMLClassifier& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
 
@@ -215,81 +215,81 @@ namespace Model
 
     /**
      * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. Note that this cannot identify a self-closing element
-     * (closed by <code>/&gt;</code>). An empty row element that contains only
-     * attributes can be parsed as long as it ends with a closing tag (for example,
-     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
-     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
+     * document being parsed. This can't identify a self-closing element (closed by
+     * <code>/&gt;</code>). An empty row element that contains only attributes can be
+     * parsed as long as it ends with a closing tag (for example, <code>&lt;row
+     * item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row
+     * item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
     inline const Aws::String& GetRowTag() const{ return m_rowTag; }
 
     /**
      * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. Note that this cannot identify a self-closing element
-     * (closed by <code>/&gt;</code>). An empty row element that contains only
-     * attributes can be parsed as long as it ends with a closing tag (for example,
-     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
-     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
+     * document being parsed. This can't identify a self-closing element (closed by
+     * <code>/&gt;</code>). An empty row element that contains only attributes can be
+     * parsed as long as it ends with a closing tag (for example, <code>&lt;row
+     * item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row
+     * item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
     inline bool RowTagHasBeenSet() const { return m_rowTagHasBeenSet; }
 
     /**
      * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. Note that this cannot identify a self-closing element
-     * (closed by <code>/&gt;</code>). An empty row element that contains only
-     * attributes can be parsed as long as it ends with a closing tag (for example,
-     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
-     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
+     * document being parsed. This can't identify a self-closing element (closed by
+     * <code>/&gt;</code>). An empty row element that contains only attributes can be
+     * parsed as long as it ends with a closing tag (for example, <code>&lt;row
+     * item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row
+     * item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
     inline void SetRowTag(const Aws::String& value) { m_rowTagHasBeenSet = true; m_rowTag = value; }
 
     /**
      * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. Note that this cannot identify a self-closing element
-     * (closed by <code>/&gt;</code>). An empty row element that contains only
-     * attributes can be parsed as long as it ends with a closing tag (for example,
-     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
-     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
+     * document being parsed. This can't identify a self-closing element (closed by
+     * <code>/&gt;</code>). An empty row element that contains only attributes can be
+     * parsed as long as it ends with a closing tag (for example, <code>&lt;row
+     * item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row
+     * item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
     inline void SetRowTag(Aws::String&& value) { m_rowTagHasBeenSet = true; m_rowTag = std::move(value); }
 
     /**
      * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. Note that this cannot identify a self-closing element
-     * (closed by <code>/&gt;</code>). An empty row element that contains only
-     * attributes can be parsed as long as it ends with a closing tag (for example,
-     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
-     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
+     * document being parsed. This can't identify a self-closing element (closed by
+     * <code>/&gt;</code>). An empty row element that contains only attributes can be
+     * parsed as long as it ends with a closing tag (for example, <code>&lt;row
+     * item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row
+     * item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
     inline void SetRowTag(const char* value) { m_rowTagHasBeenSet = true; m_rowTag.assign(value); }
 
     /**
      * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. Note that this cannot identify a self-closing element
-     * (closed by <code>/&gt;</code>). An empty row element that contains only
-     * attributes can be parsed as long as it ends with a closing tag (for example,
-     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
-     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
+     * document being parsed. This can't identify a self-closing element (closed by
+     * <code>/&gt;</code>). An empty row element that contains only attributes can be
+     * parsed as long as it ends with a closing tag (for example, <code>&lt;row
+     * item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row
+     * item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
     inline XMLClassifier& WithRowTag(const Aws::String& value) { SetRowTag(value); return *this;}
 
     /**
      * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. Note that this cannot identify a self-closing element
-     * (closed by <code>/&gt;</code>). An empty row element that contains only
-     * attributes can be parsed as long as it ends with a closing tag (for example,
-     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
-     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
+     * document being parsed. This can't identify a self-closing element (closed by
+     * <code>/&gt;</code>). An empty row element that contains only attributes can be
+     * parsed as long as it ends with a closing tag (for example, <code>&lt;row
+     * item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row
+     * item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
     inline XMLClassifier& WithRowTag(Aws::String&& value) { SetRowTag(std::move(value)); return *this;}
 
     /**
      * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. Note that this cannot identify a self-closing element
-     * (closed by <code>/&gt;</code>). An empty row element that contains only
-     * attributes can be parsed as long as it ends with a closing tag (for example,
-     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
-     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
+     * document being parsed. This can't identify a self-closing element (closed by
+     * <code>/&gt;</code>). An empty row element that contains only attributes can be
+     * parsed as long as it ends with a closing tag (for example, <code>&lt;row
+     * item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row
+     * item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
     inline XMLClassifier& WithRowTag(const char* value) { SetRowTag(value); return *this;}
 

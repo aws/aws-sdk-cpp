@@ -162,32 +162,32 @@ namespace Model
 
 
     /**
-     * <p>Parameters for the mapping.</p>
+     * <p>The parameters for the mapping.</p>
      */
     inline const Location& GetLocation() const{ return m_location; }
 
     /**
-     * <p>Parameters for the mapping.</p>
+     * <p>The parameters for the mapping.</p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p>Parameters for the mapping.</p>
+     * <p>The parameters for the mapping.</p>
      */
     inline void SetLocation(const Location& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>Parameters for the mapping.</p>
+     * <p>The parameters for the mapping.</p>
      */
     inline void SetLocation(Location&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>Parameters for the mapping.</p>
+     * <p>The parameters for the mapping.</p>
      */
     inline GetPlanRequest& WithLocation(const Location& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>Parameters for the mapping.</p>
+     * <p>The parameters for the mapping.</p>
      */
     inline GetPlanRequest& WithLocation(Location&& value) { SetLocation(std::move(value)); return *this;}
 

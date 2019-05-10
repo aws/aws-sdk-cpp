@@ -49,7 +49,7 @@ set(ECS_INCLUDES
     "${CMAKE_CURRENT_SOURCE_DIR}/include/"
 )
 
-add_library(${PROJECT_NAME} ${LIBTYPE} ${ECS_SRC})
+add_library(${PROJECT_NAME} ${ECS_SRC})
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 set_compiler_flags(${PROJECT_NAME})

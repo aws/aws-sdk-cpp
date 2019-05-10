@@ -38,13 +38,13 @@ namespace Model
 
   /**
    * <p>Classifiers are triggered during a crawl task. A classifier checks whether a
-   * given file is in a format it can handle, and if it is, the classifier creates a
+   * given file is in a format it can handle. If it is, the classifier creates a
    * schema in the form of a <code>StructType</code> object that matches that data
-   * format.</p> <p>You can use the standard classifiers that AWS Glue supplies, or
+   * format.</p> <p>You can use the standard classifiers that AWS Glue provides, or
    * you can write your own classifiers to best categorize your data sources and
    * specify the appropriate schemas to use for them. A classifier can be a
    * <code>grok</code> classifier, an <code>XML</code> classifier, a
-   * <code>JSON</code> classifier, or a custom <code>CSV</code> classifier as
+   * <code>JSON</code> classifier, or a custom <code>CSV</code> classifier, as
    * specified in one of the fields in the <code>Classifier</code>
    * object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Classifier">AWS API
@@ -60,125 +60,125 @@ namespace Model
 
 
     /**
-     * <p>A <code>GrokClassifier</code> object.</p>
+     * <p>A classifier that uses <code>grok</code>.</p>
      */
     inline const GrokClassifier& GetGrokClassifier() const{ return m_grokClassifier; }
 
     /**
-     * <p>A <code>GrokClassifier</code> object.</p>
+     * <p>A classifier that uses <code>grok</code>.</p>
      */
     inline bool GrokClassifierHasBeenSet() const { return m_grokClassifierHasBeenSet; }
 
     /**
-     * <p>A <code>GrokClassifier</code> object.</p>
+     * <p>A classifier that uses <code>grok</code>.</p>
      */
     inline void SetGrokClassifier(const GrokClassifier& value) { m_grokClassifierHasBeenSet = true; m_grokClassifier = value; }
 
     /**
-     * <p>A <code>GrokClassifier</code> object.</p>
+     * <p>A classifier that uses <code>grok</code>.</p>
      */
     inline void SetGrokClassifier(GrokClassifier&& value) { m_grokClassifierHasBeenSet = true; m_grokClassifier = std::move(value); }
 
     /**
-     * <p>A <code>GrokClassifier</code> object.</p>
+     * <p>A classifier that uses <code>grok</code>.</p>
      */
     inline Classifier& WithGrokClassifier(const GrokClassifier& value) { SetGrokClassifier(value); return *this;}
 
     /**
-     * <p>A <code>GrokClassifier</code> object.</p>
+     * <p>A classifier that uses <code>grok</code>.</p>
      */
     inline Classifier& WithGrokClassifier(GrokClassifier&& value) { SetGrokClassifier(std::move(value)); return *this;}
 
 
     /**
-     * <p>An <code>XMLClassifier</code> object.</p>
+     * <p>A classifier for XML content.</p>
      */
     inline const XMLClassifier& GetXMLClassifier() const{ return m_xMLClassifier; }
 
     /**
-     * <p>An <code>XMLClassifier</code> object.</p>
+     * <p>A classifier for XML content.</p>
      */
     inline bool XMLClassifierHasBeenSet() const { return m_xMLClassifierHasBeenSet; }
 
     /**
-     * <p>An <code>XMLClassifier</code> object.</p>
+     * <p>A classifier for XML content.</p>
      */
     inline void SetXMLClassifier(const XMLClassifier& value) { m_xMLClassifierHasBeenSet = true; m_xMLClassifier = value; }
 
     /**
-     * <p>An <code>XMLClassifier</code> object.</p>
+     * <p>A classifier for XML content.</p>
      */
     inline void SetXMLClassifier(XMLClassifier&& value) { m_xMLClassifierHasBeenSet = true; m_xMLClassifier = std::move(value); }
 
     /**
-     * <p>An <code>XMLClassifier</code> object.</p>
+     * <p>A classifier for XML content.</p>
      */
     inline Classifier& WithXMLClassifier(const XMLClassifier& value) { SetXMLClassifier(value); return *this;}
 
     /**
-     * <p>An <code>XMLClassifier</code> object.</p>
+     * <p>A classifier for XML content.</p>
      */
     inline Classifier& WithXMLClassifier(XMLClassifier&& value) { SetXMLClassifier(std::move(value)); return *this;}
 
 
     /**
-     * <p>A <code>JsonClassifier</code> object.</p>
+     * <p>A classifier for JSON content.</p>
      */
     inline const JsonClassifier& GetJsonClassifier() const{ return m_jsonClassifier; }
 
     /**
-     * <p>A <code>JsonClassifier</code> object.</p>
+     * <p>A classifier for JSON content.</p>
      */
     inline bool JsonClassifierHasBeenSet() const { return m_jsonClassifierHasBeenSet; }
 
     /**
-     * <p>A <code>JsonClassifier</code> object.</p>
+     * <p>A classifier for JSON content.</p>
      */
     inline void SetJsonClassifier(const JsonClassifier& value) { m_jsonClassifierHasBeenSet = true; m_jsonClassifier = value; }
 
     /**
-     * <p>A <code>JsonClassifier</code> object.</p>
+     * <p>A classifier for JSON content.</p>
      */
     inline void SetJsonClassifier(JsonClassifier&& value) { m_jsonClassifierHasBeenSet = true; m_jsonClassifier = std::move(value); }
 
     /**
-     * <p>A <code>JsonClassifier</code> object.</p>
+     * <p>A classifier for JSON content.</p>
      */
     inline Classifier& WithJsonClassifier(const JsonClassifier& value) { SetJsonClassifier(value); return *this;}
 
     /**
-     * <p>A <code>JsonClassifier</code> object.</p>
+     * <p>A classifier for JSON content.</p>
      */
     inline Classifier& WithJsonClassifier(JsonClassifier&& value) { SetJsonClassifier(std::move(value)); return *this;}
 
 
     /**
-     * <p>A <code>CSVClassifier</code> object.</p>
+     * <p>A classifier for comma-separated values (CSV).</p>
      */
     inline const CsvClassifier& GetCsvClassifier() const{ return m_csvClassifier; }
 
     /**
-     * <p>A <code>CSVClassifier</code> object.</p>
+     * <p>A classifier for comma-separated values (CSV).</p>
      */
     inline bool CsvClassifierHasBeenSet() const { return m_csvClassifierHasBeenSet; }
 
     /**
-     * <p>A <code>CSVClassifier</code> object.</p>
+     * <p>A classifier for comma-separated values (CSV).</p>
      */
     inline void SetCsvClassifier(const CsvClassifier& value) { m_csvClassifierHasBeenSet = true; m_csvClassifier = value; }
 
     /**
-     * <p>A <code>CSVClassifier</code> object.</p>
+     * <p>A classifier for comma-separated values (CSV).</p>
      */
     inline void SetCsvClassifier(CsvClassifier&& value) { m_csvClassifierHasBeenSet = true; m_csvClassifier = std::move(value); }
 
     /**
-     * <p>A <code>CSVClassifier</code> object.</p>
+     * <p>A classifier for comma-separated values (CSV).</p>
      */
     inline Classifier& WithCsvClassifier(const CsvClassifier& value) { SetCsvClassifier(value); return *this;}
 
     /**
-     * <p>A <code>CSVClassifier</code> object.</p>
+     * <p>A classifier for comma-separated values (CSV).</p>
      */
     inline Classifier& WithCsvClassifier(CsvClassifier&& value) { SetCsvClassifier(std::move(value)); return *this;}
 

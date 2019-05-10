@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 AssumeRoleRequest::AssumeRoleRequest() : 
     m_roleArnHasBeenSet(false),
     m_roleSessionNameHasBeenSet(false),
+    m_policyArnsHasBeenSet(false),
     m_policyHasBeenSet(false),
     m_durationSeconds(0),
     m_durationSecondsHasBeenSet(false),
@@ -44,6 +45,16 @@ Aws::String AssumeRoleRequest::SerializePayload() const
   if(m_roleSessionNameHasBeenSet)
   {
     ss << "RoleSessionName=" << StringUtils::URLEncode(m_roleSessionName.c_str()) << "&";
+  }
+
+  if(m_policyArnsHasBeenSet)
+  {
+    unsigned policyArnsCount = 1;
+    for(auto& item : m_policyArns)
+    {
+      item.OutputToStream(ss, "PolicyArns.member.", policyArnsCount, "");
+      policyArnsCount++;
+    }
   }
 
   if(m_policyHasBeenSet)

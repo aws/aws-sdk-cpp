@@ -24,6 +24,7 @@ AssumeRoleWithSAMLRequest::AssumeRoleWithSAMLRequest() :
     m_roleArnHasBeenSet(false),
     m_principalArnHasBeenSet(false),
     m_sAMLAssertionHasBeenSet(false),
+    m_policyArnsHasBeenSet(false),
     m_policyHasBeenSet(false),
     m_durationSeconds(0),
     m_durationSecondsHasBeenSet(false)
@@ -47,6 +48,16 @@ Aws::String AssumeRoleWithSAMLRequest::SerializePayload() const
   if(m_sAMLAssertionHasBeenSet)
   {
     ss << "SAMLAssertion=" << StringUtils::URLEncode(m_sAMLAssertion.c_str()) << "&";
+  }
+
+  if(m_policyArnsHasBeenSet)
+  {
+    unsigned policyArnsCount = 1;
+    for(auto& item : m_policyArns)
+    {
+      item.OutputToStream(ss, "PolicyArns.member.", policyArnsCount, "");
+      policyArnsCount++;
+    }
   }
 
   if(m_policyHasBeenSet)

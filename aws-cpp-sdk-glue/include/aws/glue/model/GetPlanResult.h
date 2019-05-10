@@ -79,37 +79,37 @@ namespace Model
 
 
     /**
-     * <p>Scala code to perform the mapping.</p>
+     * <p>The Scala code to perform the mapping.</p>
      */
     inline const Aws::String& GetScalaCode() const{ return m_scalaCode; }
 
     /**
-     * <p>Scala code to perform the mapping.</p>
+     * <p>The Scala code to perform the mapping.</p>
      */
     inline void SetScalaCode(const Aws::String& value) { m_scalaCode = value; }
 
     /**
-     * <p>Scala code to perform the mapping.</p>
+     * <p>The Scala code to perform the mapping.</p>
      */
     inline void SetScalaCode(Aws::String&& value) { m_scalaCode = std::move(value); }
 
     /**
-     * <p>Scala code to perform the mapping.</p>
+     * <p>The Scala code to perform the mapping.</p>
      */
     inline void SetScalaCode(const char* value) { m_scalaCode.assign(value); }
 
     /**
-     * <p>Scala code to perform the mapping.</p>
+     * <p>The Scala code to perform the mapping.</p>
      */
     inline GetPlanResult& WithScalaCode(const Aws::String& value) { SetScalaCode(value); return *this;}
 
     /**
-     * <p>Scala code to perform the mapping.</p>
+     * <p>The Scala code to perform the mapping.</p>
      */
     inline GetPlanResult& WithScalaCode(Aws::String&& value) { SetScalaCode(std::move(value)); return *this;}
 
     /**
-     * <p>Scala code to perform the mapping.</p>
+     * <p>The Scala code to perform the mapping.</p>
      */
     inline GetPlanResult& WithScalaCode(const char* value) { SetScalaCode(value); return *this;}
 

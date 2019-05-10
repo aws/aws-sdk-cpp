@@ -25,6 +25,7 @@ AssumeRoleWithWebIdentityRequest::AssumeRoleWithWebIdentityRequest() :
     m_roleSessionNameHasBeenSet(false),
     m_webIdentityTokenHasBeenSet(false),
     m_providerIdHasBeenSet(false),
+    m_policyArnsHasBeenSet(false),
     m_policyHasBeenSet(false),
     m_durationSeconds(0),
     m_durationSecondsHasBeenSet(false)
@@ -53,6 +54,16 @@ Aws::String AssumeRoleWithWebIdentityRequest::SerializePayload() const
   if(m_providerIdHasBeenSet)
   {
     ss << "ProviderId=" << StringUtils::URLEncode(m_providerId.c_str()) << "&";
+  }
+
+  if(m_policyArnsHasBeenSet)
+  {
+    unsigned policyArnsCount = 1;
+    for(auto& item : m_policyArns)
+    {
+      item.OutputToStream(ss, "PolicyArns.member.", policyArnsCount, "");
+      policyArnsCount++;
+    }
   }
 
   if(m_policyHasBeenSet)

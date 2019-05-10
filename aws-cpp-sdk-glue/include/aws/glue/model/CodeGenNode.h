@@ -91,42 +91,42 @@ namespace Model
 
 
     /**
-     * <p>The type of node this is.</p>
+     * <p>The type of node that this is.</p>
      */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
 
     /**
-     * <p>The type of node this is.</p>
+     * <p>The type of node that this is.</p>
      */
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
 
     /**
-     * <p>The type of node this is.</p>
+     * <p>The type of node that this is.</p>
      */
     inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
     /**
-     * <p>The type of node this is.</p>
+     * <p>The type of node that this is.</p>
      */
     inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
     /**
-     * <p>The type of node this is.</p>
+     * <p>The type of node that this is.</p>
      */
     inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
 
     /**
-     * <p>The type of node this is.</p>
+     * <p>The type of node that this is.</p>
      */
     inline CodeGenNode& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
 
     /**
-     * <p>The type of node this is.</p>
+     * <p>The type of node that this is.</p>
      */
     inline CodeGenNode& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of node this is.</p>
+     * <p>The type of node that this is.</p>
      */
     inline CodeGenNode& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 

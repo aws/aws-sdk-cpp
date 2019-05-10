@@ -93,63 +93,63 @@ namespace Model
 
 
     /**
-     * <p>The time this classifier was registered.</p>
+     * <p>The time that this classifier was registered.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The time this classifier was registered.</p>
+     * <p>The time that this classifier was registered.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>The time this classifier was registered.</p>
+     * <p>The time that this classifier was registered.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The time this classifier was registered.</p>
+     * <p>The time that this classifier was registered.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The time this classifier was registered.</p>
+     * <p>The time that this classifier was registered.</p>
      */
     inline CsvClassifier& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The time this classifier was registered.</p>
+     * <p>The time that this classifier was registered.</p>
      */
     inline CsvClassifier& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time this classifier was last updated.</p>
+     * <p>The time that this classifier was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
     /**
-     * <p>The time this classifier was last updated.</p>
+     * <p>The time that this classifier was last updated.</p>
      */
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
 
     /**
-     * <p>The time this classifier was last updated.</p>
+     * <p>The time that this classifier was last updated.</p>
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
-     * <p>The time this classifier was last updated.</p>
+     * <p>The time that this classifier was last updated.</p>
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
 
     /**
-     * <p>The time this classifier was last updated.</p>
+     * <p>The time that this classifier was last updated.</p>
      */
     inline CsvClassifier& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
     /**
-     * <p>The time this classifier was last updated.</p>
+     * <p>The time that this classifier was last updated.</p>
      */
     inline CsvClassifier& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
 
@@ -218,49 +218,49 @@ namespace Model
 
     /**
      * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
+     * It must be different from the column delimiter.</p>
      */
     inline const Aws::String& GetQuoteSymbol() const{ return m_quoteSymbol; }
 
     /**
      * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
+     * It must be different from the column delimiter.</p>
      */
     inline bool QuoteSymbolHasBeenSet() const { return m_quoteSymbolHasBeenSet; }
 
     /**
      * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
+     * It must be different from the column delimiter.</p>
      */
     inline void SetQuoteSymbol(const Aws::String& value) { m_quoteSymbolHasBeenSet = true; m_quoteSymbol = value; }
 
     /**
      * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
+     * It must be different from the column delimiter.</p>
      */
     inline void SetQuoteSymbol(Aws::String&& value) { m_quoteSymbolHasBeenSet = true; m_quoteSymbol = std::move(value); }
 
     /**
      * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
+     * It must be different from the column delimiter.</p>
      */
     inline void SetQuoteSymbol(const char* value) { m_quoteSymbolHasBeenSet = true; m_quoteSymbol.assign(value); }
 
     /**
      * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
+     * It must be different from the column delimiter.</p>
      */
     inline CsvClassifier& WithQuoteSymbol(const Aws::String& value) { SetQuoteSymbol(value); return *this;}
 
     /**
      * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
+     * It must be different from the column delimiter.</p>
      */
     inline CsvClassifier& WithQuoteSymbol(Aws::String&& value) { SetQuoteSymbol(std::move(value)); return *this;}
 
     /**
      * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
+     * It must be different from the column delimiter.</p>
      */
     inline CsvClassifier& WithQuoteSymbol(const char* value) { SetQuoteSymbol(value); return *this;}
 
@@ -344,25 +344,25 @@ namespace Model
 
     /**
      * <p>Specifies not to trim values before identifying the type of column values.
-     * The default value is true.</p>
+     * The default value is <code>true</code>.</p>
      */
     inline bool GetDisableValueTrimming() const{ return m_disableValueTrimming; }
 
     /**
      * <p>Specifies not to trim values before identifying the type of column values.
-     * The default value is true.</p>
+     * The default value is <code>true</code>.</p>
      */
     inline bool DisableValueTrimmingHasBeenSet() const { return m_disableValueTrimmingHasBeenSet; }
 
     /**
      * <p>Specifies not to trim values before identifying the type of column values.
-     * The default value is true.</p>
+     * The default value is <code>true</code>.</p>
      */
     inline void SetDisableValueTrimming(bool value) { m_disableValueTrimmingHasBeenSet = true; m_disableValueTrimming = value; }
 
     /**
      * <p>Specifies not to trim values before identifying the type of column values.
-     * The default value is true.</p>
+     * The default value is <code>true</code>.</p>
      */
     inline CsvClassifier& WithDisableValueTrimming(bool value) { SetDisableValueTrimming(value); return *this;}
 

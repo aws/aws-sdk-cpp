@@ -81,42 +81,42 @@ namespace Model
 
 
     /**
-     * <p>A list of names of crawlers not found.</p>
+     * <p>A list of names of crawlers that were not found.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCrawlersNotFound() const{ return m_crawlersNotFound; }
 
     /**
-     * <p>A list of names of crawlers not found.</p>
+     * <p>A list of names of crawlers that were not found.</p>
      */
     inline void SetCrawlersNotFound(const Aws::Vector<Aws::String>& value) { m_crawlersNotFound = value; }
 
     /**
-     * <p>A list of names of crawlers not found.</p>
+     * <p>A list of names of crawlers that were not found.</p>
      */
     inline void SetCrawlersNotFound(Aws::Vector<Aws::String>&& value) { m_crawlersNotFound = std::move(value); }
 
     /**
-     * <p>A list of names of crawlers not found.</p>
+     * <p>A list of names of crawlers that were not found.</p>
      */
     inline BatchGetCrawlersResult& WithCrawlersNotFound(const Aws::Vector<Aws::String>& value) { SetCrawlersNotFound(value); return *this;}
 
     /**
-     * <p>A list of names of crawlers not found.</p>
+     * <p>A list of names of crawlers that were not found.</p>
      */
     inline BatchGetCrawlersResult& WithCrawlersNotFound(Aws::Vector<Aws::String>&& value) { SetCrawlersNotFound(std::move(value)); return *this;}
 
     /**
-     * <p>A list of names of crawlers not found.</p>
+     * <p>A list of names of crawlers that were not found.</p>
      */
     inline BatchGetCrawlersResult& AddCrawlersNotFound(const Aws::String& value) { m_crawlersNotFound.push_back(value); return *this; }
 
     /**
-     * <p>A list of names of crawlers not found.</p>
+     * <p>A list of names of crawlers that were not found.</p>
      */
     inline BatchGetCrawlersResult& AddCrawlersNotFound(Aws::String&& value) { m_crawlersNotFound.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of names of crawlers not found.</p>
+     * <p>A list of names of crawlers that were not found.</p>
      */
     inline BatchGetCrawlersResult& AddCrawlersNotFound(const char* value) { m_crawlersNotFound.push_back(value); return *this; }
 
