@@ -29,6 +29,7 @@ namespace Aws
             extern AWS_CORE_API const char MESSAGE_TYPE_HEADER[];
             extern AWS_CORE_API const char ERROR_CODE_HEADER[];
             extern AWS_CORE_API const char ERROR_MESSAGE_HEADER[];
+            extern AWS_CORE_API const char EXCEPTION_TYPE_HEADER[];
 
             /**
              * A typical message in event stream consists of two parts: Prelude and Data, as well as the prelude CRC and message CRC.
@@ -42,7 +43,8 @@ namespace Aws
                 {
                     UNKNOWN,
                     EVENT,
-                    REQUEST_LEVEL_ERROR
+                    REQUEST_LEVEL_ERROR,
+                    REQUEST_LEVEL_EXCEPTION
                 };
 
                 static MessageType GetMessageTypeForName(const Aws::String& name);

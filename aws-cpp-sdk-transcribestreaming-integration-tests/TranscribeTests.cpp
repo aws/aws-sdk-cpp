@@ -57,6 +57,7 @@ public:
 
 TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
 {
+    const char EXPECTED_MESSAGE[] = "But what if somebody decides to break it? Careful that you keep adequate coverage.";
     Aws::String transcribedResult;
     StartStreamTranscriptionHandler handler;
     handler.SetTranscriptEventCallback([&transcribedResult](const TranscriptEvent& ev)
@@ -76,11 +77,18 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
         transcribedResult = alternatives.back().GetTranscript();
     });
 
-    handler.SetOnErrorCallback([](const Aws::Client::AWSError<TranscribeStreamingServiceErrors>& ) { FAIL(); });
-    handler.SetBadRequestExceptionCallback([](const BadRequestException& ) { FAIL(); });
-    handler.SetLimitExceededExceptionCallback([](const LimitExceededException& ) { FAIL(); });
-    handler.SetInternalFailureExceptionCallback([](const InternalFailureException& ) { FAIL(); });
-    handler.SetConflictExceptionCallback([](const ConflictException& ) { FAIL(); });
+    handler.SetOnErrorCallback([&transcribedResult](const Aws::Client::AWSError<TranscribeStreamingServiceErrors>& )
+    {
+        // we will receive an error because the request was abruptly shutdown (via stream.Close()).
+        // However, we cannot delay the call to closing the stream, because HTTP clients such as libcurl buffer the
+        // requests before sending them over the wire, so it will keep BUFFER_SIZE bytes in its memory if we don't
+        // signal the completion of the stream (by closing it).
+        // To discern between that case and a true error, we check if we have received any text back from the service.
+        if(transcribedResult.empty())
+        {
+            FAIL();
+        }
+    });
 
     StartStreamTranscriptionRequest request;
     request.SetMediaSampleRateHertz(8000);
@@ -103,6 +111,7 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
                 break;
             }
         }
+        stream.WriteAudioEvent({}); // per the spec, we have to send an empty event (i.e. without a payload) at the end.
         stream.flush();
         stream.Close();
     };
@@ -118,7 +127,7 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
 
     m_client.StartStreamTranscriptionAsync(request, OnStreamReady, OnResponseCallback, nullptr/*context*/);
     semaphore.WaitOne();
-    ASSERT_EQ(0u, transcribedResult.find("But what if somebody decides to break it? Careful that you keep adequate coverage."));
+    ASSERT_EQ(0u, transcribedResult.find(EXPECTED_MESSAGE));
 }
 
 #endif

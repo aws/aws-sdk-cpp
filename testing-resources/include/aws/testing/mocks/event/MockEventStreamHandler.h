@@ -44,9 +44,10 @@ public:
     };
 
     MockEventStreamHandler() : EventStreamHandler(),
-        m_onPayloadSegmentCount(0), m_onCompletePayloadCount(0), m_onPreludeReceivedCount(0), m_onHeaderReceivedCount(0), m_requestLevelErrorsCount(0),
-        m_onRecordsCount(0), m_onContCount(0), m_onProgressCount(0), m_onStatsCount(0),  m_onEndCount(0),
-        m_internalErrorsCount(0), m_error(Aws::Utils::Event::EventStreamErrors::EVENT_STREAM_NO_ERROR), m_errorMessage("")
+        m_onPayloadSegmentCount(0), m_onCompletePayloadCount(0), m_onPreludeReceivedCount(0),
+        m_onHeaderReceivedCount(0), m_requestLevelErrorsCount(0), m_requestLevelExceptionsCount(0), m_onRecordsCount(0),
+        m_onContCount(0), m_onProgressCount(0), m_onStatsCount(0),  m_onEndCount(0), m_internalErrorsCount(0),
+        m_error(Aws::Utils::Event::EventStreamErrors::EVENT_STREAM_NO_ERROR), m_errorMessage("")
     {
     }
 
@@ -97,6 +98,9 @@ public:
             break;
         case Aws::Utils::Event::Message::MessageType::REQUEST_LEVEL_ERROR:
             m_requestLevelErrorsCount++;
+            break;
+        case Aws::Utils::Event::Message::MessageType::REQUEST_LEVEL_EXCEPTION:
+            m_requestLevelExceptionsCount++;
             break;
         default:
             AWS_LOGSTREAM_WARN(MOCK_EVENT_STREAM_HANDLER_CLASS_TAG, "Unexpected message type: " << headers[Aws::Utils::Event::MESSAGE_TYPE_HEADER].GetEventHeaderValueAsString());
@@ -157,6 +161,7 @@ public:
     size_t m_onPreludeReceivedCount;
     size_t m_onHeaderReceivedCount;
     size_t m_requestLevelErrorsCount;
+    size_t m_requestLevelExceptionsCount;
 
     size_t m_onRecordsCount;
     size_t m_onContCount;

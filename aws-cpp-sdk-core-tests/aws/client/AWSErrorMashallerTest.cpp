@@ -23,10 +23,10 @@
 #include <memory>
 
 using namespace Aws::Client;
-AWS_CORE_API extern const char* MESSAGE_LOWER_CASE;
-AWS_CORE_API extern const char* MESSAGE_CAMEL_CASE;
-AWS_CORE_API extern const char* ERROR_TYPE_HEADER;
-AWS_CORE_API extern const char* TYPE;
+AWS_CORE_API extern const char MESSAGE_LOWER_CASE[];
+AWS_CORE_API extern const char MESSAGE_CAMEL_CASE[];
+AWS_CORE_API extern const char ERROR_TYPE_HEADER[];
+AWS_CORE_API extern const char TYPE[];
 
 enum JsonErrorResponseStyle
 {

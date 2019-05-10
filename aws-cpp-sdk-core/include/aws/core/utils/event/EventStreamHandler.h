@@ -63,10 +63,10 @@ namespace Aws
                     m_internalError = EventStreamErrors::EVENT_STREAM_NO_ERROR;
                     m_headersBytesReceived = 0;
                     m_payloadBytesReceived = 0;
-                    
+
                     m_message.Reset();
                 }
-                
+
                 /**
                  * Set internal Event Stream Errors, which is associated with errors in aws-c-event-stream library.
                  */

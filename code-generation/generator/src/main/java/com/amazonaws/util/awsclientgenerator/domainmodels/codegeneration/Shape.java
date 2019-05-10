@@ -51,6 +51,7 @@ public class Shape {
     private String timestampFormat;
     private boolean eventStream;
     private boolean event;
+    private boolean exception;
     private boolean sensitive;
 
     public boolean isMap() {

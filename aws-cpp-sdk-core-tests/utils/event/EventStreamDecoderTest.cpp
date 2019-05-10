@@ -155,6 +155,7 @@ namespace
         ASSERT_EQ(1u, handler.m_onPreludeReceivedCount);
         ASSERT_EQ(3u, handler.m_onHeaderReceivedCount);
         ASSERT_EQ(0u, handler.m_requestLevelErrorsCount);
+        ASSERT_EQ(0u, handler.m_requestLevelExceptionsCount);
         ASSERT_EQ(0u, handler.m_internalErrorsCount);
 
         ASSERT_EQ(1u, handler.m_onRecordsCount);
@@ -186,6 +187,7 @@ namespace
         ASSERT_EQ(1u, handler.m_onPreludeReceivedCount);
         ASSERT_EQ(2u, handler.m_onHeaderReceivedCount);
         ASSERT_EQ(0u, handler.m_requestLevelErrorsCount);
+        ASSERT_EQ(0u, handler.m_requestLevelExceptionsCount);
         ASSERT_EQ(0u, handler.m_internalErrorsCount);
 
         ASSERT_EQ(0u, handler.m_onRecordsCount);
@@ -225,6 +227,7 @@ namespace
         ASSERT_EQ(1u, handler.m_onPreludeReceivedCount);
         ASSERT_EQ(3u, handler.m_onHeaderReceivedCount);
         ASSERT_EQ(0u, handler.m_requestLevelErrorsCount);
+        ASSERT_EQ(0u, handler.m_requestLevelExceptionsCount);
         ASSERT_EQ(0u, handler.m_internalErrorsCount);
 
         ASSERT_EQ(0u, handler.m_onRecordsCount);
@@ -264,6 +267,7 @@ namespace
         ASSERT_EQ(1u, handler.m_onPreludeReceivedCount);
         ASSERT_EQ(3u, handler.m_onHeaderReceivedCount);
         ASSERT_EQ(0u, handler.m_requestLevelErrorsCount);
+        ASSERT_EQ(0u, handler.m_requestLevelExceptionsCount);
         ASSERT_EQ(0u, handler.m_internalErrorsCount);
 
         ASSERT_EQ(0u, handler.m_onRecordsCount);
@@ -295,6 +299,7 @@ namespace
         ASSERT_EQ(1u, handler.m_onPreludeReceivedCount);
         ASSERT_EQ(2u, handler.m_onHeaderReceivedCount);
         ASSERT_EQ(0u, handler.m_requestLevelErrorsCount);
+        ASSERT_EQ(0u, handler.m_requestLevelExceptionsCount);
         ASSERT_EQ(0u, handler.m_internalErrorsCount);
 
         ASSERT_EQ(0u, handler.m_onRecordsCount);
@@ -327,6 +332,7 @@ namespace
         ASSERT_EQ(1u, handler.m_onPreludeReceivedCount);
         ASSERT_EQ(3u, handler.m_onHeaderReceivedCount);
         ASSERT_EQ(1u, handler.m_requestLevelErrorsCount);
+        ASSERT_EQ(0u, handler.m_requestLevelExceptionsCount);
         ASSERT_EQ(0u, handler.m_internalErrorsCount);
 
         ASSERT_EQ(0u, handler.m_onRecordsCount);
@@ -336,6 +342,40 @@ namespace
         ASSERT_EQ(0u, handler.m_onEndCount);
 
         aws_event_stream_message_clean_up(&requestLevelErrorMessage);
+    }
+
+    TEST(EventStreamDecoderTest, RequestLevelExceptionTest)
+    {
+        MockEventStreamHandler handler;
+        MockEventStreamDecoder decoder(&handler);
+
+        aws_event_stream_message requestLevelExceptionMessage;
+        Aws::Http::HeaderValueCollection headers;
+        headers.insert(Aws::Http::HeaderValuePair(":message-type", "exception"));
+        headers.insert(Aws::Http::HeaderValuePair(":exception-type", "NotFeelWellException"));
+        headers.insert(Aws::Http::HeaderValuePair(":content-type", "application/json"));
+        auto payload = R"({"message":"Service is under the weather."})";
+        GenerateEventStreamMessage(&requestLevelExceptionMessage, headers, payload);
+
+        const uint8_t* data_raw = aws_event_stream_message_buffer(&requestLevelExceptionMessage);
+        ByteBuffer data(data_raw, aws_event_stream_message_total_length(&requestLevelExceptionMessage));
+        decoder.Pump(data);
+
+        ASSERT_EQ(1u, handler.m_onPayloadSegmentCount);
+        ASSERT_EQ(1u, handler.m_onCompletePayloadCount);
+        ASSERT_EQ(1u, handler.m_onPreludeReceivedCount);
+        ASSERT_EQ(3u, handler.m_onHeaderReceivedCount);
+        ASSERT_EQ(1u, handler.m_requestLevelExceptionsCount);
+        ASSERT_EQ(0u, handler.m_requestLevelErrorsCount);
+        ASSERT_EQ(0u, handler.m_internalErrorsCount);
+
+        ASSERT_EQ(0u, handler.m_onRecordsCount);
+        ASSERT_EQ(0u, handler.m_onContCount);
+        ASSERT_EQ(0u, handler.m_onProgressCount);
+        ASSERT_EQ(0u, handler.m_onStatsCount);
+        ASSERT_EQ(0u, handler.m_onEndCount);
+
+        aws_event_stream_message_clean_up(&requestLevelExceptionMessage);
     }
 
     TEST(EventStreamDecoderTest, IncompleteAndMultipleMessagesTest)
@@ -369,6 +409,7 @@ namespace
         ASSERT_EQ(1u, handler.m_onPreludeReceivedCount);
         ASSERT_EQ(0u, handler.m_onHeaderReceivedCount);
         ASSERT_EQ(0u, handler.m_requestLevelErrorsCount);
+        ASSERT_EQ(0u, handler.m_requestLevelExceptionsCount);
         ASSERT_EQ(0u, handler.m_internalErrorsCount);
 
         ASSERT_EQ(0u, handler.m_onRecordsCount);
@@ -388,6 +429,7 @@ namespace
         ASSERT_EQ(1u, handler.m_onPreludeReceivedCount);
         ASSERT_EQ(3u, handler.m_onHeaderReceivedCount);
         ASSERT_EQ(0u, handler.m_requestLevelErrorsCount);
+        ASSERT_EQ(0u, handler.m_requestLevelExceptionsCount);
         ASSERT_EQ(0u, handler.m_internalErrorsCount);
 
         ASSERT_EQ(0u, handler.m_onRecordsCount);
@@ -407,6 +449,7 @@ namespace
         ASSERT_EQ(1u, handler.m_onPreludeReceivedCount);
         ASSERT_EQ(3u, handler.m_onHeaderReceivedCount);
         ASSERT_EQ(0u, handler.m_requestLevelErrorsCount);
+        ASSERT_EQ(0u, handler.m_requestLevelExceptionsCount);
         ASSERT_EQ(0u, handler.m_internalErrorsCount);
 
         ASSERT_EQ(0u, handler.m_onRecordsCount);
@@ -426,6 +469,7 @@ namespace
         ASSERT_EQ(1u, handler.m_onPreludeReceivedCount);
         ASSERT_EQ(3u, handler.m_onHeaderReceivedCount);
         ASSERT_EQ(0u, handler.m_requestLevelErrorsCount);
+        ASSERT_EQ(0u, handler.m_requestLevelExceptionsCount);
         ASSERT_EQ(0u, handler.m_internalErrorsCount);
 
         ASSERT_EQ(1u, handler.m_onRecordsCount);
@@ -445,6 +489,7 @@ namespace
         ASSERT_EQ(1u + 1u, handler.m_onPreludeReceivedCount);
         ASSERT_EQ(3u + 2u, handler.m_onHeaderReceivedCount);
         ASSERT_EQ(0u + 0u, handler.m_requestLevelErrorsCount);
+        ASSERT_EQ(0u + 0u, handler.m_requestLevelExceptionsCount);
         ASSERT_EQ(0u + 0u, handler.m_internalErrorsCount);
 
         ASSERT_EQ(1u + 0u, handler.m_onRecordsCount);
@@ -478,6 +523,7 @@ namespace
         ASSERT_EQ(1u, handler.m_onPreludeReceivedCount);
         ASSERT_EQ(0u, handler.m_onHeaderReceivedCount);
         ASSERT_EQ(0u, handler.m_requestLevelErrorsCount);
+        ASSERT_EQ(0u, handler.m_requestLevelExceptionsCount);
         ASSERT_EQ(1u, handler.m_internalErrorsCount);
 
         ASSERT_EQ(0u, handler.m_onRecordsCount);

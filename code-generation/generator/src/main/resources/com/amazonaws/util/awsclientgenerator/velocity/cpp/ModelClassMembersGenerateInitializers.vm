@@ -43,6 +43,10 @@
 #set($index = $index + 1)
 #end
 #end
-#if($operation.result.shape.hasEventStreamMembers())
+#if($shape.request && $operation.result.shape.hasEventStreamMembers())
+#if($initializerCount > 0)
 #set($initializers = "${initializers},${nl}    m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))")
+#else
+#set($initializers = " : m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))")
+#end
 #end

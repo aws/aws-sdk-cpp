@@ -29,9 +29,11 @@ namespace Aws
             const char MESSAGE_TYPE_HEADER[] = ":message-type";
             const char ERROR_CODE_HEADER[] = ":error-code";
             const char ERROR_MESSAGE_HEADER[] = ":error-message";
+            const char EXCEPTION_TYPE_HEADER[] = ":exception-type";
 
             static const int EVENT_HASH = HashingUtils::HashString("event");
             static const int ERROR_HASH = HashingUtils::HashString("error");
+            static const int EXCEPTION_HASH = HashingUtils::HashString("exception");
 
             Message::MessageType Message::GetMessageTypeForName(const Aws::String& name)
             {
@@ -43,6 +45,10 @@ namespace Aws
                 else if (hashCode == ERROR_HASH)
                 {
                     return MessageType::REQUEST_LEVEL_ERROR;
+                }
+                else if (hashCode == EXCEPTION_HASH)
+                {
+                    return MessageType::REQUEST_LEVEL_EXCEPTION;
                 }
                 else
                 {
@@ -58,6 +64,8 @@ namespace Aws
                     return "event";
                 case MessageType::REQUEST_LEVEL_ERROR:
                     return "error";
+                case MessageType::REQUEST_LEVEL_EXCEPTION:
+                    return "exception";
                 default:
                     return "unknown";
                 }

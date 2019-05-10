@@ -12,7 +12,7 @@
 
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #set($eventShape = $eventMemberEntry.value.shape)
-#if(!$eventShape.members.isEmpty())
+#if(!$eventShape.members.isEmpty() && !$eventShape.isException())
 \#include <aws/${metadata.projectName}/model/${eventShape.name}.h>
 #end
 #end
@@ -26,7 +26,9 @@ namespace Model
     enum class ${operation.name}EventType
     {
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
+#if(!$eventMemberEntry.value.shape.isException())
         ${eventMemberEntry.key.toUpperCase()},
+#end
 #end
         UNKNOWN
     };
@@ -35,6 +37,9 @@ namespace Model
     {
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #set($eventShape = $eventMemberEntry.value.shape)
+#if($eventShape.isException())
+## skip exceptions
+#else
 #if(!${eventShape.members.isEmpty()})
 #if(${eventShape.hasBlobMembers()})
         typedef std::function<void(${eventShape.name}&)> ${eventShape.name}Callback;
@@ -45,36 +50,33 @@ namespace Model
         typedef std::function<void()> ${eventShape.name}Callback;
 #end
 #end
+#end
         typedef std::function<void(const Aws::Client::AWSError<${metadata.classNamePrefix}Errors>& error)> ErrorCallback;
-        
+
     public:
         ${operation.name}Handler();
-        ${operation.name}Handler& operator=(const ${operation.name}Handler& handler)
-        {
-#foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
-#set($eventShapeName = $eventMemberEntry.value.shape.name)
-            m_on${eventShapeName} = handler.m_on${eventShapeName};
-#end
-            m_onError = handler.m_onError;
-            return *this;
-        }
-
+        ${operation.name}Handler& operator=(const ${operation.name}Handler& handler) = default;
 
         virtual void OnEvent() override;
 
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
+#if(!$eventMemberEntry.value.shape.isException())
 #set($eventShapeName = $eventMemberEntry.value.shape.name)
         inline void Set${eventShapeName}Callback(const ${eventShapeName}Callback& callback) { m_on${eventShapeName} = callback; }
+#end
 #end
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
     private:
         void HandleEventInMessage();
         void HandleErrorInMessage();
+        void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #set($eventShapeName = $eventMemberEntry.value.shape.name)
+#if(!$eventMemberEntry.value.shape.isException())
         ${eventShapeName}Callback m_on${eventShapeName};
+#end
 #end
         ErrorCallback m_onError;
     };

@@ -28,11 +28,11 @@ using namespace Aws::Http;
 using namespace Aws::Utils;
 using namespace Aws::Client;
 
-static const char* AWS_ERROR_MARSHALLER_LOG_TAG = "AWSErrorMarshaller";
-AWS_CORE_API const char* MESSAGE_LOWER_CASE = "message";
-AWS_CORE_API const char* MESSAGE_CAMEL_CASE = "Message";
-AWS_CORE_API const char* ERROR_TYPE_HEADER = "x-amzn-ErrorType";
-AWS_CORE_API const char* TYPE = "__type";
+static const char AWS_ERROR_MARSHALLER_LOG_TAG[] = "AWSErrorMarshaller";
+AWS_CORE_API extern const char MESSAGE_LOWER_CASE[]     = "message";
+AWS_CORE_API extern const char MESSAGE_CAMEL_CASE[]     = "Message";
+AWS_CORE_API extern const char ERROR_TYPE_HEADER[]      = "x-amzn-ErrorType";
+AWS_CORE_API extern const char TYPE[]                   = "__type";
 
 AWSError<CoreErrors> JsonErrorMarshaller::Marshall(const Aws::Http::HttpResponse& httpResponse) const
 {
