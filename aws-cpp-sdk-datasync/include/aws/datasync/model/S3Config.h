@@ -35,11 +35,11 @@ namespace Model
 
   /**
    * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-   * (IAM) role that is used to access an Amazon S3 bucket. For detailed information
-   * about using such a role, see <a
-   * href="https://alpha-aws-docs.aws.amazon.com/sync-service/latest/userguide/create-locations-cli.html#create-location-s3-cli">Components
-   * and Terminology</a> in the <i>AWS DataSync User Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   * (IAM) role that is used to access an Amazon S3 bucket.</p> <p>For detailed
+   * information about using such a role, see
+   * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location"
+   * (Creating a Location for Amazon S3) in the <i>AWS DataSync User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/S3Config">AWS
    * API Reference</a></p>
    */

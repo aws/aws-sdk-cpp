@@ -18,6 +18,8 @@
 #include <aws/datasync/DataSyncRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datasync/model/Options.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datasync/model/FilterRule.h>
 #include <utility>
 
 namespace Aws
@@ -107,6 +109,63 @@ namespace Model
     
     inline StartTaskExecutionRequest& WithOverrideOptions(Options&& value) { SetOverrideOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p/> <p>A filter that determines which files to include in the transfer during a
+     * task execution based on the specified pattern in the filter. When multiple
+     * include filters are set, they are interpreted as an OR.</p>
+     */
+    inline const Aws::Vector<FilterRule>& GetIncludes() const{ return m_includes; }
+
+    /**
+     * <p/> <p>A filter that determines which files to include in the transfer during a
+     * task execution based on the specified pattern in the filter. When multiple
+     * include filters are set, they are interpreted as an OR.</p>
+     */
+    inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }
+
+    /**
+     * <p/> <p>A filter that determines which files to include in the transfer during a
+     * task execution based on the specified pattern in the filter. When multiple
+     * include filters are set, they are interpreted as an OR.</p>
+     */
+    inline void SetIncludes(const Aws::Vector<FilterRule>& value) { m_includesHasBeenSet = true; m_includes = value; }
+
+    /**
+     * <p/> <p>A filter that determines which files to include in the transfer during a
+     * task execution based on the specified pattern in the filter. When multiple
+     * include filters are set, they are interpreted as an OR.</p>
+     */
+    inline void SetIncludes(Aws::Vector<FilterRule>&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
+
+    /**
+     * <p/> <p>A filter that determines which files to include in the transfer during a
+     * task execution based on the specified pattern in the filter. When multiple
+     * include filters are set, they are interpreted as an OR.</p>
+     */
+    inline StartTaskExecutionRequest& WithIncludes(const Aws::Vector<FilterRule>& value) { SetIncludes(value); return *this;}
+
+    /**
+     * <p/> <p>A filter that determines which files to include in the transfer during a
+     * task execution based on the specified pattern in the filter. When multiple
+     * include filters are set, they are interpreted as an OR.</p>
+     */
+    inline StartTaskExecutionRequest& WithIncludes(Aws::Vector<FilterRule>&& value) { SetIncludes(std::move(value)); return *this;}
+
+    /**
+     * <p/> <p>A filter that determines which files to include in the transfer during a
+     * task execution based on the specified pattern in the filter. When multiple
+     * include filters are set, they are interpreted as an OR.</p>
+     */
+    inline StartTaskExecutionRequest& AddIncludes(const FilterRule& value) { m_includesHasBeenSet = true; m_includes.push_back(value); return *this; }
+
+    /**
+     * <p/> <p>A filter that determines which files to include in the transfer during a
+     * task execution based on the specified pattern in the filter. When multiple
+     * include filters are set, they are interpreted as an OR.</p>
+     */
+    inline StartTaskExecutionRequest& AddIncludes(FilterRule&& value) { m_includesHasBeenSet = true; m_includes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_taskArn;
@@ -114,6 +173,9 @@ namespace Model
 
     Options m_overrideOptions;
     bool m_overrideOptionsHasBeenSet;
+
+    Aws::Vector<FilterRule> m_includes;
+    bool m_includesHasBeenSet;
   };
 
 } // namespace Model

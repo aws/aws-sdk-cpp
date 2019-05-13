@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 StartTaskExecutionRequest::StartTaskExecutionRequest() : 
     m_taskArnHasBeenSet(false),
-    m_overrideOptionsHasBeenSet(false)
+    m_overrideOptionsHasBeenSet(false),
+    m_includesHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,17 @@ Aws::String StartTaskExecutionRequest::SerializePayload() const
   if(m_overrideOptionsHasBeenSet)
   {
    payload.WithObject("OverrideOptions", m_overrideOptions.Jsonize());
+
+  }
+
+  if(m_includesHasBeenSet)
+  {
+   Array<JsonValue> includesJsonList(m_includes.size());
+   for(unsigned includesIndex = 0; includesIndex < includesJsonList.GetLength(); ++includesIndex)
+   {
+     includesJsonList[includesIndex].AsObject(m_includes[includesIndex].Jsonize());
+   }
+   payload.WithArray("Includes", std::move(includesJsonList));
 
   }
 

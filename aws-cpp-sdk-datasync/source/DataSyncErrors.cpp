@@ -28,6 +28,7 @@ namespace DataSync
 namespace DataSyncErrorMapper
 {
 
+static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
 
@@ -35,7 +36,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_REQUEST_HASH)
+  if (hashCode == INTERNAL_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DataSyncErrors::INTERNAL), false);
+  }
+  else if (hashCode == INVALID_REQUEST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DataSyncErrors::INVALID_REQUEST), false);
   }

@@ -25,7 +25,9 @@ using namespace Aws::Utils;
 UpdateTaskRequest::UpdateTaskRequest() : 
     m_taskArnHasBeenSet(false),
     m_optionsHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_excludesHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_cloudWatchLogGroupArnHasBeenSet(false)
 {
 }
 
@@ -45,9 +47,26 @@ Aws::String UpdateTaskRequest::SerializePayload() const
 
   }
 
+  if(m_excludesHasBeenSet)
+  {
+   Array<JsonValue> excludesJsonList(m_excludes.size());
+   for(unsigned excludesIndex = 0; excludesIndex < excludesJsonList.GetLength(); ++excludesIndex)
+   {
+     excludesJsonList[excludesIndex].AsObject(m_excludes[excludesIndex].Jsonize());
+   }
+   payload.WithArray("Excludes", std::move(excludesJsonList));
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_cloudWatchLogGroupArnHasBeenSet)
+  {
+   payload.WithString("CloudWatchLogGroupArn", m_cloudWatchLogGroupArn);
 
   }
 

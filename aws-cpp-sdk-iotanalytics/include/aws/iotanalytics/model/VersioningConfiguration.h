@@ -31,6 +31,12 @@ namespace IoTAnalytics
 namespace Model
 {
 
+  /**
+   * <p>Information about the versioning of data set contents.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/VersioningConfiguration">AWS
+   * API Reference</a></p>
+   */
   class AWS_IOTANALYTICS_API VersioningConfiguration
   {
   public:

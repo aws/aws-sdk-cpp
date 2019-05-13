@@ -56,6 +56,12 @@ DescribeLocationNfsResult& DescribeLocationNfsResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("MountOptions"))
+  {
+    m_mountOptions = jsonValue.GetObject("MountOptions");
+
+  }
+
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");

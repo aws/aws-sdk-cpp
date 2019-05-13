@@ -237,7 +237,7 @@ namespace Model
          * you allow the task execution to complete, file content on the destination is
          * complete and consistent. This applies to other unexpected failures that
          * interrupt a task execution. In all of these cases, AWS DataSync successfully
-         * complete the transfer when you start the next task execution. </p><p><h3>See
+         * complete the transfer when you start the next task execution.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CancelTaskExecution">AWS
          * API Reference</a></p>
@@ -252,7 +252,7 @@ namespace Model
          * you allow the task execution to complete, file content on the destination is
          * complete and consistent. This applies to other unexpected failures that
          * interrupt a task execution. In all of these cases, AWS DataSync successfully
-         * complete the transfer when you start the next task execution. </p><p><h3>See
+         * complete the transfer when you start the next task execution.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CancelTaskExecution">AWS
          * API Reference</a></p>
@@ -269,7 +269,7 @@ namespace Model
          * you allow the task execution to complete, file content on the destination is
          * complete and consistent. This applies to other unexpected failures that
          * interrupt a task execution. In all of these cases, AWS DataSync successfully
-         * complete the transfer when you start the next task execution. </p><p><h3>See
+         * complete the transfer when you start the next task execution.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CancelTaskExecution">AWS
          * API Reference</a></p>
@@ -287,9 +287,10 @@ namespace Model
          * this AWS Region. </p> <p>You can use an agent for more than one location. If a
          * task uses multiple agents, all of them need to have status AVAILABLE for the
          * task to run. If you use multiple agents for a source location, the status of all
-         * the agents must be AVAILABLE for the task to run. For more information, see <a
-         * href="https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent">Activating
-         * a Sync Agent</a> in the <i>AWS DataSync User Guide.</i> </p> <p>Agents are
+         * the agents must be AVAILABLE for the task to run. </p> <p>For more information,
+         * see
+         * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
+         * (Activating an Agent) in the <i>AWS DataSync User Guide.</i> </p> <p>Agents are
          * automatically updated by AWS on a regular basis, using a mechanism that ensures
          * minimal interruption to your tasks.</p> <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateAgent">AWS
@@ -306,9 +307,10 @@ namespace Model
          * this AWS Region. </p> <p>You can use an agent for more than one location. If a
          * task uses multiple agents, all of them need to have status AVAILABLE for the
          * task to run. If you use multiple agents for a source location, the status of all
-         * the agents must be AVAILABLE for the task to run. For more information, see <a
-         * href="https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent">Activating
-         * a Sync Agent</a> in the <i>AWS DataSync User Guide.</i> </p> <p>Agents are
+         * the agents must be AVAILABLE for the task to run. </p> <p>For more information,
+         * see
+         * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
+         * (Activating an Agent) in the <i>AWS DataSync User Guide.</i> </p> <p>Agents are
          * automatically updated by AWS on a regular basis, using a mechanism that ensures
          * minimal interruption to your tasks.</p> <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateAgent">AWS
@@ -327,9 +329,10 @@ namespace Model
          * this AWS Region. </p> <p>You can use an agent for more than one location. If a
          * task uses multiple agents, all of them need to have status AVAILABLE for the
          * task to run. If you use multiple agents for a source location, the status of all
-         * the agents must be AVAILABLE for the task to run. For more information, see <a
-         * href="https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent">Activating
-         * a Sync Agent</a> in the <i>AWS DataSync User Guide.</i> </p> <p>Agents are
+         * the agents must be AVAILABLE for the task to run. </p> <p>For more information,
+         * see
+         * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
+         * (Activating an Agent) in the <i>AWS DataSync User Guide.</i> </p> <p>Agents are
          * automatically updated by AWS on a regular basis, using a mechanism that ensures
          * minimal interruption to your tasks.</p> <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateAgent">AWS
@@ -401,9 +404,9 @@ namespace Model
          * (IAM) role that has the required permissions. You can set up the required
          * permissions by creating an IAM policy that grants the required permissions and
          * attaching the policy to the role. An example of such a policy is shown in the
-         * examples section. For more information, see <a
-         * href="https://docs.aws.amazon.com/sync-service/latest/userguide/configuring-s3-locations.html">Configuring
-         * Amazon S3 Location Settings</a> in the <i>AWS DataSync User
+         * examples section.</p> <p>For more information, see
+         * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location"
+         * (Configuring Amazon S3 Location Settings) in the <i>AWS DataSync User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">AWS
          * API Reference</a></p>
@@ -416,9 +419,9 @@ namespace Model
          * (IAM) role that has the required permissions. You can set up the required
          * permissions by creating an IAM policy that grants the required permissions and
          * attaching the policy to the role. An example of such a policy is shown in the
-         * examples section. For more information, see <a
-         * href="https://docs.aws.amazon.com/sync-service/latest/userguide/configuring-s3-locations.html">Configuring
-         * Amazon S3 Location Settings</a> in the <i>AWS DataSync User
+         * examples section.</p> <p>For more information, see
+         * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location"
+         * (Configuring Amazon S3 Location Settings) in the <i>AWS DataSync User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">AWS
          * API Reference</a></p>
@@ -433,9 +436,9 @@ namespace Model
          * (IAM) role that has the required permissions. You can set up the required
          * permissions by creating an IAM policy that grants the required permissions and
          * attaching the policy to the role. An example of such a policy is shown in the
-         * examples section. For more information, see <a
-         * href="https://docs.aws.amazon.com/sync-service/latest/userguide/configuring-s3-locations.html">Configuring
-         * Amazon S3 Location Settings</a> in the <i>AWS DataSync User
+         * examples section.</p> <p>For more information, see
+         * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location"
+         * (Configuring Amazon S3 Location Settings) in the <i>AWS DataSync User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">AWS
          * API Reference</a></p>
@@ -446,22 +449,19 @@ namespace Model
 
         /**
          * <p>Creates a task. A task is a set of two locations (source and destination) and
-         * a set of default <code>OverrideOptions</code> that you use to control the
-         * behavior of a task. If you don't specify default values for <code>Options</code>
-         * when you create a task, AWS DataSync populates them with safe service
-         * defaults.</p> <p>When you initially create a task, it enters the INITIALIZING
-         * status and then the CREATING status. In CREATING status, AWS DataSync attempts
-         * to mount the source Network File System (NFS) location. The task transitions to
-         * the AVAILABLE status without waiting for the destination location to mount.
-         * Instead, AWS DataSync mounts a destination before every task execution and then
-         * unmounts it after every task execution. </p> <p>If an agent that is associated
-         * with a source (NFS) location goes offline, the task transitions to the
-         * UNAVAILABLE status. If the status of the task remains in the CREATING status for
-         * more than a few minutes, it means that your agent might be having trouble
-         * mounting the source NFS file system. Check the task's <code>ErrorCode</code> and
-         * <code>ErrorDetail</code>. Mount issues are often caused by either a
-         * misconfigured firewall or a mistyped NFS server host name.</p><p><h3>See
-         * Also:</h3>   <a
+         * a set of Options that you use to control the behavior of a task. If you don't
+         * specify Options when you create a task, AWS DataSync populates them with service
+         * defaults.</p> <p>When you create a task, it first enters the CREATING state.
+         * During CREATING AWS DataSync attempts to mount the on-premises Network File
+         * System (NFS) location. The task transitions to the AVAILABLE state without
+         * waiting for the AWS location to become mounted. If required, AWS DataSync mounts
+         * the AWS location before each task execution.</p> <p>If an agent that is
+         * associated with a source (NFS) location goes offline, the task transitions to
+         * the UNAVAILABLE status. If the status of the task remains in the CREATING status
+         * for more than a few minutes, it means that your agent might be having trouble
+         * mounting the source NFS file system. Check the task's ErrorCode and ErrorDetail.
+         * Mount issues are often caused by either a misconfigured firewall or a mistyped
+         * NFS server host name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateTask">AWS
          * API Reference</a></p>
          */
@@ -469,22 +469,19 @@ namespace Model
 
         /**
          * <p>Creates a task. A task is a set of two locations (source and destination) and
-         * a set of default <code>OverrideOptions</code> that you use to control the
-         * behavior of a task. If you don't specify default values for <code>Options</code>
-         * when you create a task, AWS DataSync populates them with safe service
-         * defaults.</p> <p>When you initially create a task, it enters the INITIALIZING
-         * status and then the CREATING status. In CREATING status, AWS DataSync attempts
-         * to mount the source Network File System (NFS) location. The task transitions to
-         * the AVAILABLE status without waiting for the destination location to mount.
-         * Instead, AWS DataSync mounts a destination before every task execution and then
-         * unmounts it after every task execution. </p> <p>If an agent that is associated
-         * with a source (NFS) location goes offline, the task transitions to the
-         * UNAVAILABLE status. If the status of the task remains in the CREATING status for
-         * more than a few minutes, it means that your agent might be having trouble
-         * mounting the source NFS file system. Check the task's <code>ErrorCode</code> and
-         * <code>ErrorDetail</code>. Mount issues are often caused by either a
-         * misconfigured firewall or a mistyped NFS server host name.</p><p><h3>See
-         * Also:</h3>   <a
+         * a set of Options that you use to control the behavior of a task. If you don't
+         * specify Options when you create a task, AWS DataSync populates them with service
+         * defaults.</p> <p>When you create a task, it first enters the CREATING state.
+         * During CREATING AWS DataSync attempts to mount the on-premises Network File
+         * System (NFS) location. The task transitions to the AVAILABLE state without
+         * waiting for the AWS location to become mounted. If required, AWS DataSync mounts
+         * the AWS location before each task execution.</p> <p>If an agent that is
+         * associated with a source (NFS) location goes offline, the task transitions to
+         * the UNAVAILABLE status. If the status of the task remains in the CREATING status
+         * for more than a few minutes, it means that your agent might be having trouble
+         * mounting the source NFS file system. Check the task's ErrorCode and ErrorDetail.
+         * Mount issues are often caused by either a misconfigured firewall or a mistyped
+         * NFS server host name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateTask">AWS
          * API Reference</a></p>
          *
@@ -494,22 +491,19 @@ namespace Model
 
         /**
          * <p>Creates a task. A task is a set of two locations (source and destination) and
-         * a set of default <code>OverrideOptions</code> that you use to control the
-         * behavior of a task. If you don't specify default values for <code>Options</code>
-         * when you create a task, AWS DataSync populates them with safe service
-         * defaults.</p> <p>When you initially create a task, it enters the INITIALIZING
-         * status and then the CREATING status. In CREATING status, AWS DataSync attempts
-         * to mount the source Network File System (NFS) location. The task transitions to
-         * the AVAILABLE status without waiting for the destination location to mount.
-         * Instead, AWS DataSync mounts a destination before every task execution and then
-         * unmounts it after every task execution. </p> <p>If an agent that is associated
-         * with a source (NFS) location goes offline, the task transitions to the
-         * UNAVAILABLE status. If the status of the task remains in the CREATING status for
-         * more than a few minutes, it means that your agent might be having trouble
-         * mounting the source NFS file system. Check the task's <code>ErrorCode</code> and
-         * <code>ErrorDetail</code>. Mount issues are often caused by either a
-         * misconfigured firewall or a mistyped NFS server host name.</p><p><h3>See
-         * Also:</h3>   <a
+         * a set of Options that you use to control the behavior of a task. If you don't
+         * specify Options when you create a task, AWS DataSync populates them with service
+         * defaults.</p> <p>When you create a task, it first enters the CREATING state.
+         * During CREATING AWS DataSync attempts to mount the on-premises Network File
+         * System (NFS) location. The task transitions to the AVAILABLE state without
+         * waiting for the AWS location to become mounted. If required, AWS DataSync mounts
+         * the AWS location before each task execution.</p> <p>If an agent that is
+         * associated with a source (NFS) location goes offline, the task transitions to
+         * the UNAVAILABLE status. If the status of the task remains in the CREATING status
+         * for more than a few minutes, it means that your agent might be having trouble
+         * mounting the source NFS file system. Check the task's ErrorCode and ErrorDetail.
+         * Mount issues are often caused by either a misconfigured firewall or a mistyped
+         * NFS server host name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateTask">AWS
          * API Reference</a></p>
          *
@@ -521,9 +515,7 @@ namespace Model
          * <p>Deletes an agent. To specify which agent to delete, use the Amazon Resource
          * Name (ARN) of the agent in your request. The operation disassociates the agent
          * from your AWS account. However, it doesn't delete the agent virtual machine (VM)
-         * from your on-premises environment.</p> <note> <p>After you delete an agent, you
-         * can't reactivate it and you longer pay software charges for it.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * from your on-premises environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteAgent">AWS
          * API Reference</a></p>
          */
@@ -533,9 +525,7 @@ namespace Model
          * <p>Deletes an agent. To specify which agent to delete, use the Amazon Resource
          * Name (ARN) of the agent in your request. The operation disassociates the agent
          * from your AWS account. However, it doesn't delete the agent virtual machine (VM)
-         * from your on-premises environment.</p> <note> <p>After you delete an agent, you
-         * can't reactivate it and you longer pay software charges for it.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * from your on-premises environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteAgent">AWS
          * API Reference</a></p>
          *
@@ -547,9 +537,7 @@ namespace Model
          * <p>Deletes an agent. To specify which agent to delete, use the Amazon Resource
          * Name (ARN) of the agent in your request. The operation disassociates the agent
          * from your AWS account. However, it doesn't delete the agent virtual machine (VM)
-         * from your on-premises environment.</p> <note> <p>After you delete an agent, you
-         * can't reactivate it and you longer pay software charges for it.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * from your on-premises environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteAgent">AWS
          * API Reference</a></p>
          *
@@ -948,10 +936,10 @@ namespace Model
          * <code>TaskExecution</code> at a time.</p> <p> <code>TaskExecution</code> has the
          * following transition phases: INITIALIZING | PREPARING | TRANSFERRING | VERIFYING
          * | SUCCESS/FAILURE. </p> <p>For detailed information, see <i>Task Execution</i>
-         * in <a
-         * href="https://docs.aws.amazon.com/sync-service/latest/userguide/how-awssync-works.html#terminology">Components
-         * and Terminology</a> in the <i>AWS DataSync User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * in
+         * "https://docs.aws.amazon.com/datasync/latest/userguide/how-datasync-works.html#terminology"
+         * (Components and Terminology) in the <i>AWS DataSync User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartTaskExecution">AWS
          * API Reference</a></p>
          */
@@ -963,10 +951,10 @@ namespace Model
          * <code>TaskExecution</code> at a time.</p> <p> <code>TaskExecution</code> has the
          * following transition phases: INITIALIZING | PREPARING | TRANSFERRING | VERIFYING
          * | SUCCESS/FAILURE. </p> <p>For detailed information, see <i>Task Execution</i>
-         * in <a
-         * href="https://docs.aws.amazon.com/sync-service/latest/userguide/how-awssync-works.html#terminology">Components
-         * and Terminology</a> in the <i>AWS DataSync User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * in
+         * "https://docs.aws.amazon.com/datasync/latest/userguide/how-datasync-works.html#terminology"
+         * (Components and Terminology) in the <i>AWS DataSync User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartTaskExecution">AWS
          * API Reference</a></p>
          *
@@ -980,10 +968,10 @@ namespace Model
          * <code>TaskExecution</code> at a time.</p> <p> <code>TaskExecution</code> has the
          * following transition phases: INITIALIZING | PREPARING | TRANSFERRING | VERIFYING
          * | SUCCESS/FAILURE. </p> <p>For detailed information, see <i>Task Execution</i>
-         * in <a
-         * href="https://docs.aws.amazon.com/sync-service/latest/userguide/how-awssync-works.html#terminology">Components
-         * and Terminology</a> in the <i>AWS DataSync User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * in
+         * "https://docs.aws.amazon.com/datasync/latest/userguide/how-datasync-works.html#terminology"
+         * (Components and Terminology) in the <i>AWS DataSync User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartTaskExecution">AWS
          * API Reference</a></p>
          *

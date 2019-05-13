@@ -18,6 +18,8 @@
 #include <aws/datasync/DataSyncRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datasync/model/Options.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datasync/model/FilterRule.h>
 #include <utility>
 
 namespace Aws
@@ -117,6 +119,63 @@ namespace Model
 
 
     /**
+     * <p/> <p>A filter that determines which files to exclude from a task based on the
+     * specified pattern in the filter. Transfers all files in the task’s subdirectory,
+     * except files that match the filter that is set. </p>
+     */
+    inline const Aws::Vector<FilterRule>& GetExcludes() const{ return m_excludes; }
+
+    /**
+     * <p/> <p>A filter that determines which files to exclude from a task based on the
+     * specified pattern in the filter. Transfers all files in the task’s subdirectory,
+     * except files that match the filter that is set. </p>
+     */
+    inline bool ExcludesHasBeenSet() const { return m_excludesHasBeenSet; }
+
+    /**
+     * <p/> <p>A filter that determines which files to exclude from a task based on the
+     * specified pattern in the filter. Transfers all files in the task’s subdirectory,
+     * except files that match the filter that is set. </p>
+     */
+    inline void SetExcludes(const Aws::Vector<FilterRule>& value) { m_excludesHasBeenSet = true; m_excludes = value; }
+
+    /**
+     * <p/> <p>A filter that determines which files to exclude from a task based on the
+     * specified pattern in the filter. Transfers all files in the task’s subdirectory,
+     * except files that match the filter that is set. </p>
+     */
+    inline void SetExcludes(Aws::Vector<FilterRule>&& value) { m_excludesHasBeenSet = true; m_excludes = std::move(value); }
+
+    /**
+     * <p/> <p>A filter that determines which files to exclude from a task based on the
+     * specified pattern in the filter. Transfers all files in the task’s subdirectory,
+     * except files that match the filter that is set. </p>
+     */
+    inline UpdateTaskRequest& WithExcludes(const Aws::Vector<FilterRule>& value) { SetExcludes(value); return *this;}
+
+    /**
+     * <p/> <p>A filter that determines which files to exclude from a task based on the
+     * specified pattern in the filter. Transfers all files in the task’s subdirectory,
+     * except files that match the filter that is set. </p>
+     */
+    inline UpdateTaskRequest& WithExcludes(Aws::Vector<FilterRule>&& value) { SetExcludes(std::move(value)); return *this;}
+
+    /**
+     * <p/> <p>A filter that determines which files to exclude from a task based on the
+     * specified pattern in the filter. Transfers all files in the task’s subdirectory,
+     * except files that match the filter that is set. </p>
+     */
+    inline UpdateTaskRequest& AddExcludes(const FilterRule& value) { m_excludesHasBeenSet = true; m_excludes.push_back(value); return *this; }
+
+    /**
+     * <p/> <p>A filter that determines which files to exclude from a task based on the
+     * specified pattern in the filter. Transfers all files in the task’s subdirectory,
+     * except files that match the filter that is set. </p>
+     */
+    inline UpdateTaskRequest& AddExcludes(FilterRule&& value) { m_excludesHasBeenSet = true; m_excludes.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The name of the task to update.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -156,6 +215,55 @@ namespace Model
      */
     inline UpdateTaskRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource name of the CloudWatch
+     * LogGroup.</p>
+     */
+    inline const Aws::String& GetCloudWatchLogGroupArn() const{ return m_cloudWatchLogGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource name of the CloudWatch
+     * LogGroup.</p>
+     */
+    inline bool CloudWatchLogGroupArnHasBeenSet() const { return m_cloudWatchLogGroupArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource name of the CloudWatch
+     * LogGroup.</p>
+     */
+    inline void SetCloudWatchLogGroupArn(const Aws::String& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource name of the CloudWatch
+     * LogGroup.</p>
+     */
+    inline void SetCloudWatchLogGroupArn(Aws::String&& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource name of the CloudWatch
+     * LogGroup.</p>
+     */
+    inline void SetCloudWatchLogGroupArn(const char* value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource name of the CloudWatch
+     * LogGroup.</p>
+     */
+    inline UpdateTaskRequest& WithCloudWatchLogGroupArn(const Aws::String& value) { SetCloudWatchLogGroupArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource name of the CloudWatch
+     * LogGroup.</p>
+     */
+    inline UpdateTaskRequest& WithCloudWatchLogGroupArn(Aws::String&& value) { SetCloudWatchLogGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource name of the CloudWatch
+     * LogGroup.</p>
+     */
+    inline UpdateTaskRequest& WithCloudWatchLogGroupArn(const char* value) { SetCloudWatchLogGroupArn(value); return *this;}
+
   private:
 
     Aws::String m_taskArn;
@@ -164,8 +272,14 @@ namespace Model
     Options m_options;
     bool m_optionsHasBeenSet;
 
+    Aws::Vector<FilterRule> m_excludes;
+    bool m_excludesHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_cloudWatchLogGroupArn;
+    bool m_cloudWatchLogGroupArnHasBeenSet;
   };
 
 } // namespace Model

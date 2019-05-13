@@ -88,6 +88,15 @@ DescribeTaskResult& DescribeTaskResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("Excludes"))
+  {
+    Array<JsonView> excludesJsonList = jsonValue.GetArray("Excludes");
+    for(unsigned excludesIndex = 0; excludesIndex < excludesJsonList.GetLength(); ++excludesIndex)
+    {
+      m_excludes.push_back(excludesJsonList[excludesIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");

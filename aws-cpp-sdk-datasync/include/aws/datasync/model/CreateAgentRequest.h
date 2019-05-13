@@ -57,9 +57,9 @@ namespace Model
      * your agent in the query string parameter <code>activationKey</code>. It might
      * also include other activation-related parameters; however, these are merely
      * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent. For more information, see <a
-     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent">Activating
-     * a Sync Agent</a> in the <i>AWS DataSync User Guide.</i> </p>
+     * configuration of your agent.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
+     * (Activating a Agent) in the <i>AWS DataSync User Guide.</i> </p>
      */
     inline const Aws::String& GetActivationKey() const{ return m_activationKey; }
 
@@ -71,9 +71,9 @@ namespace Model
      * your agent in the query string parameter <code>activationKey</code>. It might
      * also include other activation-related parameters; however, these are merely
      * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent. For more information, see <a
-     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent">Activating
-     * a Sync Agent</a> in the <i>AWS DataSync User Guide.</i> </p>
+     * configuration of your agent.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
+     * (Activating a Agent) in the <i>AWS DataSync User Guide.</i> </p>
      */
     inline bool ActivationKeyHasBeenSet() const { return m_activationKeyHasBeenSet; }
 
@@ -85,9 +85,9 @@ namespace Model
      * your agent in the query string parameter <code>activationKey</code>. It might
      * also include other activation-related parameters; however, these are merely
      * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent. For more information, see <a
-     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent">Activating
-     * a Sync Agent</a> in the <i>AWS DataSync User Guide.</i> </p>
+     * configuration of your agent.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
+     * (Activating a Agent) in the <i>AWS DataSync User Guide.</i> </p>
      */
     inline void SetActivationKey(const Aws::String& value) { m_activationKeyHasBeenSet = true; m_activationKey = value; }
 
@@ -99,9 +99,9 @@ namespace Model
      * your agent in the query string parameter <code>activationKey</code>. It might
      * also include other activation-related parameters; however, these are merely
      * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent. For more information, see <a
-     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent">Activating
-     * a Sync Agent</a> in the <i>AWS DataSync User Guide.</i> </p>
+     * configuration of your agent.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
+     * (Activating a Agent) in the <i>AWS DataSync User Guide.</i> </p>
      */
     inline void SetActivationKey(Aws::String&& value) { m_activationKeyHasBeenSet = true; m_activationKey = std::move(value); }
 
@@ -113,9 +113,9 @@ namespace Model
      * your agent in the query string parameter <code>activationKey</code>. It might
      * also include other activation-related parameters; however, these are merely
      * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent. For more information, see <a
-     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent">Activating
-     * a Sync Agent</a> in the <i>AWS DataSync User Guide.</i> </p>
+     * configuration of your agent.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
+     * (Activating a Agent) in the <i>AWS DataSync User Guide.</i> </p>
      */
     inline void SetActivationKey(const char* value) { m_activationKeyHasBeenSet = true; m_activationKey.assign(value); }
 
@@ -127,9 +127,9 @@ namespace Model
      * your agent in the query string parameter <code>activationKey</code>. It might
      * also include other activation-related parameters; however, these are merely
      * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent. For more information, see <a
-     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent">Activating
-     * a Sync Agent</a> in the <i>AWS DataSync User Guide.</i> </p>
+     * configuration of your agent.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
+     * (Activating a Agent) in the <i>AWS DataSync User Guide.</i> </p>
      */
     inline CreateAgentRequest& WithActivationKey(const Aws::String& value) { SetActivationKey(value); return *this;}
 
@@ -141,9 +141,9 @@ namespace Model
      * your agent in the query string parameter <code>activationKey</code>. It might
      * also include other activation-related parameters; however, these are merely
      * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent. For more information, see <a
-     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent">Activating
-     * a Sync Agent</a> in the <i>AWS DataSync User Guide.</i> </p>
+     * configuration of your agent.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
+     * (Activating a Agent) in the <i>AWS DataSync User Guide.</i> </p>
      */
     inline CreateAgentRequest& WithActivationKey(Aws::String&& value) { SetActivationKey(std::move(value)); return *this;}
 
@@ -155,9 +155,9 @@ namespace Model
      * your agent in the query string parameter <code>activationKey</code>. It might
      * also include other activation-related parameters; however, these are merely
      * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent. For more information, see <a
-     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent">Activating
-     * a Sync Agent</a> in the <i>AWS DataSync User Guide.</i> </p>
+     * configuration of your agent.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
+     * (Activating a Agent) in the <i>AWS DataSync User Guide.</i> </p>
      */
     inline CreateAgentRequest& WithActivationKey(const char* value) { SetActivationKey(value); return *this;}
 
@@ -212,74 +212,74 @@ namespace Model
 
 
     /**
-     * <p>The key-value pair that represents the tag you want to associate with the
-     * agent. The value can be an empty string. This value helps you manage, filter,
-     * and search for your agents.</p> <note> <p>Valid characters for key and value are
-     * letters, spaces, and numbers representable in UTF-8 format, and the following
-     * special characters: + - = . _ : / @. </p> </note>
+     * <p>The key-value pair that represents the tag that you want to associate with
+     * the agent. The value can be an empty string. This value helps you manage,
+     * filter, and search for your agents.</p> <note> <p>Valid characters for key and
+     * value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @. </p> </note>
      */
     inline const Aws::Vector<TagListEntry>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The key-value pair that represents the tag you want to associate with the
-     * agent. The value can be an empty string. This value helps you manage, filter,
-     * and search for your agents.</p> <note> <p>Valid characters for key and value are
-     * letters, spaces, and numbers representable in UTF-8 format, and the following
-     * special characters: + - = . _ : / @. </p> </note>
+     * <p>The key-value pair that represents the tag that you want to associate with
+     * the agent. The value can be an empty string. This value helps you manage,
+     * filter, and search for your agents.</p> <note> <p>Valid characters for key and
+     * value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @. </p> </note>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The key-value pair that represents the tag you want to associate with the
-     * agent. The value can be an empty string. This value helps you manage, filter,
-     * and search for your agents.</p> <note> <p>Valid characters for key and value are
-     * letters, spaces, and numbers representable in UTF-8 format, and the following
-     * special characters: + - = . _ : / @. </p> </note>
+     * <p>The key-value pair that represents the tag that you want to associate with
+     * the agent. The value can be an empty string. This value helps you manage,
+     * filter, and search for your agents.</p> <note> <p>Valid characters for key and
+     * value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @. </p> </note>
      */
     inline void SetTags(const Aws::Vector<TagListEntry>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The key-value pair that represents the tag you want to associate with the
-     * agent. The value can be an empty string. This value helps you manage, filter,
-     * and search for your agents.</p> <note> <p>Valid characters for key and value are
-     * letters, spaces, and numbers representable in UTF-8 format, and the following
-     * special characters: + - = . _ : / @. </p> </note>
+     * <p>The key-value pair that represents the tag that you want to associate with
+     * the agent. The value can be an empty string. This value helps you manage,
+     * filter, and search for your agents.</p> <note> <p>Valid characters for key and
+     * value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @. </p> </note>
      */
     inline void SetTags(Aws::Vector<TagListEntry>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The key-value pair that represents the tag you want to associate with the
-     * agent. The value can be an empty string. This value helps you manage, filter,
-     * and search for your agents.</p> <note> <p>Valid characters for key and value are
-     * letters, spaces, and numbers representable in UTF-8 format, and the following
-     * special characters: + - = . _ : / @. </p> </note>
+     * <p>The key-value pair that represents the tag that you want to associate with
+     * the agent. The value can be an empty string. This value helps you manage,
+     * filter, and search for your agents.</p> <note> <p>Valid characters for key and
+     * value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @. </p> </note>
      */
     inline CreateAgentRequest& WithTags(const Aws::Vector<TagListEntry>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The key-value pair that represents the tag you want to associate with the
-     * agent. The value can be an empty string. This value helps you manage, filter,
-     * and search for your agents.</p> <note> <p>Valid characters for key and value are
-     * letters, spaces, and numbers representable in UTF-8 format, and the following
-     * special characters: + - = . _ : / @. </p> </note>
+     * <p>The key-value pair that represents the tag that you want to associate with
+     * the agent. The value can be an empty string. This value helps you manage,
+     * filter, and search for your agents.</p> <note> <p>Valid characters for key and
+     * value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @. </p> </note>
      */
     inline CreateAgentRequest& WithTags(Aws::Vector<TagListEntry>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The key-value pair that represents the tag you want to associate with the
-     * agent. The value can be an empty string. This value helps you manage, filter,
-     * and search for your agents.</p> <note> <p>Valid characters for key and value are
-     * letters, spaces, and numbers representable in UTF-8 format, and the following
-     * special characters: + - = . _ : / @. </p> </note>
+     * <p>The key-value pair that represents the tag that you want to associate with
+     * the agent. The value can be an empty string. This value helps you manage,
+     * filter, and search for your agents.</p> <note> <p>Valid characters for key and
+     * value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @. </p> </note>
      */
     inline CreateAgentRequest& AddTags(const TagListEntry& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The key-value pair that represents the tag you want to associate with the
-     * agent. The value can be an empty string. This value helps you manage, filter,
-     * and search for your agents.</p> <note> <p>Valid characters for key and value are
-     * letters, spaces, and numbers representable in UTF-8 format, and the following
-     * special characters: + - = . _ : / @. </p> </note>
+     * <p>The key-value pair that represents the tag that you want to associate with
+     * the agent. The value can be an empty string. This value helps you manage,
+     * filter, and search for your agents.</p> <note> <p>Valid characters for key and
+     * value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @. </p> </note>
      */
     inline CreateAgentRequest& AddTags(TagListEntry&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

@@ -17,6 +17,7 @@
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datasync/model/OnPremConfig.h>
+#include <aws/datasync/model/NfsMountOptions.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -138,6 +139,32 @@ namespace Model
 
 
     /**
+     * <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+     */
+    inline const NfsMountOptions& GetMountOptions() const{ return m_mountOptions; }
+
+    /**
+     * <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+     */
+    inline void SetMountOptions(const NfsMountOptions& value) { m_mountOptions = value; }
+
+    /**
+     * <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+     */
+    inline void SetMountOptions(NfsMountOptions&& value) { m_mountOptions = std::move(value); }
+
+    /**
+     * <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+     */
+    inline DescribeLocationNfsResult& WithMountOptions(const NfsMountOptions& value) { SetMountOptions(value); return *this;}
+
+    /**
+     * <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+     */
+    inline DescribeLocationNfsResult& WithMountOptions(NfsMountOptions&& value) { SetMountOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p>The time that the NFS location was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
@@ -169,6 +196,8 @@ namespace Model
     Aws::String m_locationUri;
 
     OnPremConfig m_onPremConfig;
+
+    NfsMountOptions m_mountOptions;
 
     Aws::Utils::DateTime m_creationTime;
   };

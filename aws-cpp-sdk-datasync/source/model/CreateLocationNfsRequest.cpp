@@ -26,6 +26,7 @@ CreateLocationNfsRequest::CreateLocationNfsRequest() :
     m_subdirectoryHasBeenSet(false),
     m_serverHostnameHasBeenSet(false),
     m_onPremConfigHasBeenSet(false),
+    m_mountOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -49,6 +50,12 @@ Aws::String CreateLocationNfsRequest::SerializePayload() const
   if(m_onPremConfigHasBeenSet)
   {
    payload.WithObject("OnPremConfig", m_onPremConfig.Jsonize());
+
+  }
+
+  if(m_mountOptionsHasBeenSet)
+  {
+   payload.WithObject("MountOptions", m_mountOptions.Jsonize());
 
   }
 

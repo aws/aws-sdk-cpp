@@ -18,8 +18,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datasync/model/TaskExecutionStatus.h>
 #include <aws/datasync/model/Options.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/datasync/model/TaskExecutionResultDetail.h>
+#include <aws/datasync/model/FilterRule.h>
 #include <utility>
 
 namespace Aws
@@ -56,9 +58,9 @@ namespace Model
      * <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code>
      * for the task that was executed. </p> <p>For example, a
      * <code>TaskExecution</code> value with the ARN
-     * <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
+     * <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
      * executed the task with the ARN
-     * <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2</code>.
+     * <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.
      * </p>
      */
     inline const Aws::String& GetTaskExecutionArn() const{ return m_taskExecutionArn; }
@@ -68,9 +70,9 @@ namespace Model
      * <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code>
      * for the task that was executed. </p> <p>For example, a
      * <code>TaskExecution</code> value with the ARN
-     * <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
+     * <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
      * executed the task with the ARN
-     * <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2</code>.
+     * <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.
      * </p>
      */
     inline void SetTaskExecutionArn(const Aws::String& value) { m_taskExecutionArn = value; }
@@ -80,9 +82,9 @@ namespace Model
      * <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code>
      * for the task that was executed. </p> <p>For example, a
      * <code>TaskExecution</code> value with the ARN
-     * <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
+     * <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
      * executed the task with the ARN
-     * <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2</code>.
+     * <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.
      * </p>
      */
     inline void SetTaskExecutionArn(Aws::String&& value) { m_taskExecutionArn = std::move(value); }
@@ -92,9 +94,9 @@ namespace Model
      * <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code>
      * for the task that was executed. </p> <p>For example, a
      * <code>TaskExecution</code> value with the ARN
-     * <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
+     * <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
      * executed the task with the ARN
-     * <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2</code>.
+     * <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.
      * </p>
      */
     inline void SetTaskExecutionArn(const char* value) { m_taskExecutionArn.assign(value); }
@@ -104,9 +106,9 @@ namespace Model
      * <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code>
      * for the task that was executed. </p> <p>For example, a
      * <code>TaskExecution</code> value with the ARN
-     * <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
+     * <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
      * executed the task with the ARN
-     * <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2</code>.
+     * <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.
      * </p>
      */
     inline DescribeTaskExecutionResult& WithTaskExecutionArn(const Aws::String& value) { SetTaskExecutionArn(value); return *this;}
@@ -116,9 +118,9 @@ namespace Model
      * <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code>
      * for the task that was executed. </p> <p>For example, a
      * <code>TaskExecution</code> value with the ARN
-     * <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
+     * <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
      * executed the task with the ARN
-     * <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2</code>.
+     * <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.
      * </p>
      */
     inline DescribeTaskExecutionResult& WithTaskExecutionArn(Aws::String&& value) { SetTaskExecutionArn(std::move(value)); return *this;}
@@ -128,46 +130,51 @@ namespace Model
      * <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code>
      * for the task that was executed. </p> <p>For example, a
      * <code>TaskExecution</code> value with the ARN
-     * <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
+     * <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
      * executed the task with the ARN
-     * <code>arn:aws:sync:us-east-1:209870788375:task/task-0208075f79cedf4a2</code>.
+     * <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.
      * </p>
      */
     inline DescribeTaskExecutionResult& WithTaskExecutionArn(const char* value) { SetTaskExecutionArn(value); return *this;}
 
 
     /**
-     * <p>The status of the task. For detailed information about sync statuses, see <a
-     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/understand-sync-task-statuses.html">Understanding
-     * Sync Task Statuses</a>.</p>
+     * <p>The status of the task execution. </p> <p>For detailed information about task
+     * execution statuses, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
+     * (Understanding Task Statuses).</p>
      */
     inline const TaskExecutionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the task. For detailed information about sync statuses, see <a
-     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/understand-sync-task-statuses.html">Understanding
-     * Sync Task Statuses</a>.</p>
+     * <p>The status of the task execution. </p> <p>For detailed information about task
+     * execution statuses, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
+     * (Understanding Task Statuses).</p>
      */
     inline void SetStatus(const TaskExecutionStatus& value) { m_status = value; }
 
     /**
-     * <p>The status of the task. For detailed information about sync statuses, see <a
-     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/understand-sync-task-statuses.html">Understanding
-     * Sync Task Statuses</a>.</p>
+     * <p>The status of the task execution. </p> <p>For detailed information about task
+     * execution statuses, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
+     * (Understanding Task Statuses).</p>
      */
     inline void SetStatus(TaskExecutionStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The status of the task. For detailed information about sync statuses, see <a
-     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/understand-sync-task-statuses.html">Understanding
-     * Sync Task Statuses</a>.</p>
+     * <p>The status of the task execution. </p> <p>For detailed information about task
+     * execution statuses, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
+     * (Understanding Task Statuses).</p>
      */
     inline DescribeTaskExecutionResult& WithStatus(const TaskExecutionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the task. For detailed information about sync statuses, see <a
-     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/understand-sync-task-statuses.html">Understanding
-     * Sync Task Statuses</a>.</p>
+     * <p>The status of the task execution. </p> <p>For detailed information about task
+     * execution statuses, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
+     * (Understanding Task Statuses).</p>
      */
     inline DescribeTaskExecutionResult& WithStatus(TaskExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -186,6 +193,106 @@ namespace Model
 
     
     inline DescribeTaskExecutionResult& WithOptions(Options&& value) { SetOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p/> <p>Specifies that the task execution excludes files from the transfer based
+     * on the specified pattern in the filter. Transfers all files in the task’s
+     * subdirectory, except files that match the filter that is set. </p>
+     */
+    inline const Aws::Vector<FilterRule>& GetExcludes() const{ return m_excludes; }
+
+    /**
+     * <p/> <p>Specifies that the task execution excludes files from the transfer based
+     * on the specified pattern in the filter. Transfers all files in the task’s
+     * subdirectory, except files that match the filter that is set. </p>
+     */
+    inline void SetExcludes(const Aws::Vector<FilterRule>& value) { m_excludes = value; }
+
+    /**
+     * <p/> <p>Specifies that the task execution excludes files from the transfer based
+     * on the specified pattern in the filter. Transfers all files in the task’s
+     * subdirectory, except files that match the filter that is set. </p>
+     */
+    inline void SetExcludes(Aws::Vector<FilterRule>&& value) { m_excludes = std::move(value); }
+
+    /**
+     * <p/> <p>Specifies that the task execution excludes files from the transfer based
+     * on the specified pattern in the filter. Transfers all files in the task’s
+     * subdirectory, except files that match the filter that is set. </p>
+     */
+    inline DescribeTaskExecutionResult& WithExcludes(const Aws::Vector<FilterRule>& value) { SetExcludes(value); return *this;}
+
+    /**
+     * <p/> <p>Specifies that the task execution excludes files from the transfer based
+     * on the specified pattern in the filter. Transfers all files in the task’s
+     * subdirectory, except files that match the filter that is set. </p>
+     */
+    inline DescribeTaskExecutionResult& WithExcludes(Aws::Vector<FilterRule>&& value) { SetExcludes(std::move(value)); return *this;}
+
+    /**
+     * <p/> <p>Specifies that the task execution excludes files from the transfer based
+     * on the specified pattern in the filter. Transfers all files in the task’s
+     * subdirectory, except files that match the filter that is set. </p>
+     */
+    inline DescribeTaskExecutionResult& AddExcludes(const FilterRule& value) { m_excludes.push_back(value); return *this; }
+
+    /**
+     * <p/> <p>Specifies that the task execution excludes files from the transfer based
+     * on the specified pattern in the filter. Transfers all files in the task’s
+     * subdirectory, except files that match the filter that is set. </p>
+     */
+    inline DescribeTaskExecutionResult& AddExcludes(FilterRule&& value) { m_excludes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p/> <p>Specifies that the task execution excludes files in the transfer based
+     * on the specified pattern in the filter. When multiple include filters are set,
+     * they are interpreted as an OR. </p>
+     */
+    inline const Aws::Vector<FilterRule>& GetIncludes() const{ return m_includes; }
+
+    /**
+     * <p/> <p>Specifies that the task execution excludes files in the transfer based
+     * on the specified pattern in the filter. When multiple include filters are set,
+     * they are interpreted as an OR. </p>
+     */
+    inline void SetIncludes(const Aws::Vector<FilterRule>& value) { m_includes = value; }
+
+    /**
+     * <p/> <p>Specifies that the task execution excludes files in the transfer based
+     * on the specified pattern in the filter. When multiple include filters are set,
+     * they are interpreted as an OR. </p>
+     */
+    inline void SetIncludes(Aws::Vector<FilterRule>&& value) { m_includes = std::move(value); }
+
+    /**
+     * <p/> <p>Specifies that the task execution excludes files in the transfer based
+     * on the specified pattern in the filter. When multiple include filters are set,
+     * they are interpreted as an OR. </p>
+     */
+    inline DescribeTaskExecutionResult& WithIncludes(const Aws::Vector<FilterRule>& value) { SetIncludes(value); return *this;}
+
+    /**
+     * <p/> <p>Specifies that the task execution excludes files in the transfer based
+     * on the specified pattern in the filter. When multiple include filters are set,
+     * they are interpreted as an OR. </p>
+     */
+    inline DescribeTaskExecutionResult& WithIncludes(Aws::Vector<FilterRule>&& value) { SetIncludes(std::move(value)); return *this;}
+
+    /**
+     * <p/> <p>Specifies that the task execution excludes files in the transfer based
+     * on the specified pattern in the filter. When multiple include filters are set,
+     * they are interpreted as an OR. </p>
+     */
+    inline DescribeTaskExecutionResult& AddIncludes(const FilterRule& value) { m_includes.push_back(value); return *this; }
+
+    /**
+     * <p/> <p>Specifies that the task execution excludes files in the transfer based
+     * on the specified pattern in the filter. When multiple include filters are set,
+     * they are interpreted as an OR. </p>
+     */
+    inline DescribeTaskExecutionResult& AddIncludes(FilterRule&& value) { m_includes.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -365,6 +472,10 @@ namespace Model
     TaskExecutionStatus m_status;
 
     Options m_options;
+
+    Aws::Vector<FilterRule> m_excludes;
+
+    Aws::Vector<FilterRule> m_includes;
 
     Aws::Utils::DateTime m_startTime;
 

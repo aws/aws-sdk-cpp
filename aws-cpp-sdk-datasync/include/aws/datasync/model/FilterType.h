@@ -14,42 +14,27 @@
 */
 
 #pragma once
-#include <aws/lambda/Lambda_EXPORTS.h>
+#include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace Lambda
+namespace DataSync
 {
 namespace Model
 {
-  enum class Runtime
+  enum class FilterType
   {
     NOT_SET,
-    nodejs,
-    nodejs4_3,
-    nodejs6_10,
-    nodejs8_10,
-    nodejs10_x,
-    java8,
-    python2_7,
-    python3_6,
-    python3_7,
-    dotnetcore1_0,
-    dotnetcore2_0,
-    dotnetcore2_1,
-    nodejs4_3_edge,
-    go1_x,
-    ruby2_5,
-    provided
+    SIMPLE_PATTERN
   };
 
-namespace RuntimeMapper
+namespace FilterTypeMapper
 {
-AWS_LAMBDA_API Runtime GetRuntimeForName(const Aws::String& name);
+AWS_DATASYNC_API FilterType GetFilterTypeForName(const Aws::String& name);
 
-AWS_LAMBDA_API Aws::String GetNameForRuntime(Runtime value);
-} // namespace RuntimeMapper
+AWS_DATASYNC_API Aws::String GetNameForFilterType(FilterType value);
+} // namespace FilterTypeMapper
 } // namespace Model
-} // namespace Lambda
+} // namespace DataSync
 } // namespace Aws

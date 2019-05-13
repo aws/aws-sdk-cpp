@@ -29,12 +29,14 @@ namespace Model
 {
 
 DatasetContentDeliveryDestination::DatasetContentDeliveryDestination() : 
-    m_iotEventsDestinationConfigurationHasBeenSet(false)
+    m_iotEventsDestinationConfigurationHasBeenSet(false),
+    m_s3DestinationConfigurationHasBeenSet(false)
 {
 }
 
 DatasetContentDeliveryDestination::DatasetContentDeliveryDestination(JsonView jsonValue) : 
-    m_iotEventsDestinationConfigurationHasBeenSet(false)
+    m_iotEventsDestinationConfigurationHasBeenSet(false),
+    m_s3DestinationConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ DatasetContentDeliveryDestination& DatasetContentDeliveryDestination::operator =
     m_iotEventsDestinationConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("s3DestinationConfiguration"))
+  {
+    m_s3DestinationConfiguration = jsonValue.GetObject("s3DestinationConfiguration");
+
+    m_s3DestinationConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue DatasetContentDeliveryDestination::Jsonize() const
   if(m_iotEventsDestinationConfigurationHasBeenSet)
   {
    payload.WithObject("iotEventsDestinationConfiguration", m_iotEventsDestinationConfiguration.Jsonize());
+
+  }
+
+  if(m_s3DestinationConfigurationHasBeenSet)
+  {
+   payload.WithObject("s3DestinationConfiguration", m_s3DestinationConfiguration.Jsonize());
 
   }
 

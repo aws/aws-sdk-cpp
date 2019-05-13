@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 #include <aws/iotanalytics/model/IotEventsDestinationConfiguration.h>
+#include <aws/iotanalytics/model/S3DestinationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -84,10 +85,44 @@ namespace Model
      */
     inline DatasetContentDeliveryDestination& WithIotEventsDestinationConfiguration(IotEventsDestinationConfiguration&& value) { SetIotEventsDestinationConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Configuration information for delivery of data set contents to Amazon S3.</p>
+     */
+    inline const S3DestinationConfiguration& GetS3DestinationConfiguration() const{ return m_s3DestinationConfiguration; }
+
+    /**
+     * <p>Configuration information for delivery of data set contents to Amazon S3.</p>
+     */
+    inline bool S3DestinationConfigurationHasBeenSet() const { return m_s3DestinationConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration information for delivery of data set contents to Amazon S3.</p>
+     */
+    inline void SetS3DestinationConfiguration(const S3DestinationConfiguration& value) { m_s3DestinationConfigurationHasBeenSet = true; m_s3DestinationConfiguration = value; }
+
+    /**
+     * <p>Configuration information for delivery of data set contents to Amazon S3.</p>
+     */
+    inline void SetS3DestinationConfiguration(S3DestinationConfiguration&& value) { m_s3DestinationConfigurationHasBeenSet = true; m_s3DestinationConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration information for delivery of data set contents to Amazon S3.</p>
+     */
+    inline DatasetContentDeliveryDestination& WithS3DestinationConfiguration(const S3DestinationConfiguration& value) { SetS3DestinationConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration information for delivery of data set contents to Amazon S3.</p>
+     */
+    inline DatasetContentDeliveryDestination& WithS3DestinationConfiguration(S3DestinationConfiguration&& value) { SetS3DestinationConfiguration(std::move(value)); return *this;}
+
   private:
 
     IotEventsDestinationConfiguration m_iotEventsDestinationConfiguration;
     bool m_iotEventsDestinationConfigurationHasBeenSet;
+
+    S3DestinationConfiguration m_s3DestinationConfiguration;
+    bool m_s3DestinationConfigurationHasBeenSet;
   };
 
 } // namespace Model
