@@ -53,7 +53,7 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
 #if($operation.result && $operation.result.shape.hasEventStreamMembers())
   request.GetEventStreamDecoder().Reset();
   request.SetResponseStreamFactory(
-      [&] { return Aws::New<Aws::Utils::Event::EventStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
+      [&] { return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
 #else
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_${operation.http.method}, ${operation.request.shape.signerName});

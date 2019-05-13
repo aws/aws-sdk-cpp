@@ -235,7 +235,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
     protected SdkFileEntry generateEventStreamHandlerSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
         Shape shape = shapeEntry.getValue();
         if (shape.isRequest()) {
-            Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/RequestEventStreamHandlerSource.vm", StandardCharsets.UTF_8.name());
+            Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlRequestEventStreamHandlerSource.vm", StandardCharsets.UTF_8.name());
             VelocityContext context = createContext(serviceModel);
 
             for (Map.Entry<String, Operation> opEntry : serviceModel.getOperations().entrySet()) {

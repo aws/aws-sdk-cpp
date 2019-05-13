@@ -9,6 +9,18 @@
 \#include $header
 #end
 \#include <aws/core/utils/event/EventStream.h>
+#foreach($entry in $shape.members.entrySet())
+#if($entry.value.shape.isEvent())
+#foreach($eventMemberEntry in $entry.value.shape.members.entrySet())
+#if($eventMemberEntry.value.isEventPayload())
+#if($eventMemberEntry.value.shape.isStructure())
+\#include <aws/core/utils/json/JsonSerializer.h>
+#end
+#break
+#end
+#end
+#end
+#end
 
 namespace Aws
 {
@@ -38,15 +50,18 @@ namespace Model
        Aws::Utils::Event::Message msg;
        msg.InsertEventHeader(":message-type", Aws::String("event"));
        msg.InsertEventHeader(":event-type", Aws::String("${entry.value.shape.name}"));
-#foreach($eventPayloadMember in $entry.value.shape.members.entrySet())
-#if($eventPayloadMember.value.isEventPayload())
-#if($eventPayloadMember.value.shape.isBlob())
+#foreach($eventMemberEntry in $entry.value.shape.members.entrySet())
+#if($eventMemberEntry.value.isEventPayload())
+#if($eventMemberEntry.value.shape.isBlob())
        msg.InsertEventHeader(":content-type", Aws::String("application/octet-stream"));
-#elseif($eventPayloadMember.value.shape.isString())
+       msg.WriteEventPayload(value.Get${eventMemberEntry.key}());
+#elseif($eventMemberEntry.value.shape.isString())
        msg.InsertEventHeader(":content-type", Aws::String("text/plain"));
+       msg.WriteEventPayload(value.Get${eventMemberEntry.key}());
+#elseif($eventMemberEntry.value.shape.isStructure())
+       msg.InsertEventHeader(":content-type", Aws::String("application/json"));
+       msg.WriteEventPayload(value.Jsonize().View().WriteCompact());
 #end
-## handle other kinds of payload as they come
-       msg.WriteEventPayload(value.Get${eventPayloadMember.key}());
 #break
 #end
 #end

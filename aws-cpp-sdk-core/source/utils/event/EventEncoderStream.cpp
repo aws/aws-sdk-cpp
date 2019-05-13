@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-#include <aws/core/utils/event/EventStream.h>
+#include <aws/core/utils/event/EventEncoderStream.h>
 #include <iostream>
 
 namespace Aws
@@ -21,13 +21,6 @@ namespace Aws
     {
         namespace Event
         {
-            EventStream::EventStream(EventStreamDecoder& decoder, size_t bufferSize) :
-                Aws::IOStream(&m_eventStreamBuf),
-                m_eventStreamBuf(decoder, bufferSize)
-
-            {
-            }
-
             EventEncoderStream::EventEncoderStream(size_t bufferSize) :
                 Aws::IOStream(&m_streambuf),
                 m_streambuf(bufferSize)

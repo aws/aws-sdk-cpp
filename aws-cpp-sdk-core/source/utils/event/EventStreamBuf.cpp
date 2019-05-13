@@ -21,6 +21,8 @@ namespace Aws
     {
         namespace Event
         {
+            const size_t DEFAULT_BUF_SIZE = 1024;
+
             EventStreamBuf::EventStreamBuf(EventStreamDecoder& decoder, size_t bufferLength) :
                 m_byteBuffer(bufferLength),
                 m_bufferLength(bufferLength),

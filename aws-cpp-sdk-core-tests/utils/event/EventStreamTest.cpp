@@ -87,7 +87,7 @@ namespace
 
         const uint8_t* data_raw = aws_event_stream_message_buffer(&eventStreamMessage);
         {
-            EventStream stream(decoder);
+            EventDecoderStream stream(decoder);
             stream.write(reinterpret_cast<const char*>(data_raw), aws_event_stream_message_total_length(&eventStreamMessage));
         }
 
@@ -107,7 +107,7 @@ namespace
         MockEventStreamDecoder decoder(&handler);
 
         const uint8_t* data_raw = aws_event_stream_message_buffer(&eventStreamMessage);
-        EventStream stream(decoder);
+        EventDecoderStream stream(decoder);
 
         size_t preludeLength = 4/*total byte-length*/ + 4/*headers byte-length*/ + 4/*prelude crc*/;
         size_t headersLength = aws_event_stream_message_headers_len(&eventStreamMessage);
@@ -152,7 +152,7 @@ namespace
 
         const uint8_t* data_raw = aws_event_stream_message_buffer(&eventStreamMessage);
         size_t totalLength = aws_event_stream_message_total_length(&eventStreamMessage);
-        EventStream stream(decoder, totalLength / 2);
+        EventDecoderStream stream(decoder, totalLength / 2);
 
         stream.write(reinterpret_cast<const char*>(data_raw), totalLength);
         stream.flush();
@@ -172,7 +172,7 @@ namespace
         MockEventStreamHandler handler;
         MockEventStreamDecoder decoder(&handler);
 
-        EventStream stream(decoder);
+        EventDecoderStream stream(decoder);
         stream.write(ERROR_RAW, sizeof(ERROR_RAW));
         stream.flush();
 
@@ -196,7 +196,7 @@ namespace
         MockEventStreamHandler handler;
         MockEventStreamDecoder decoder(&handler);
 
-        auto stream = Aws::New<EventStream>(ALLOCATION_TAG, decoder);
+        auto stream = Aws::New<EventDecoderStream>(ALLOCATION_TAG, decoder);
         stream->write(ERROR_RAW, sizeof(ERROR_RAW));
         stream->flush();
 
@@ -282,7 +282,7 @@ namespace
         // verify that we get the same message out
         MockHandler handler;
         EventStreamDecoder decoder(&handler);
-        EventStream s(decoder);
+        EventDecoderStream s(decoder);
         s.write(output, io.gcount());
         s.flush();
         ASSERT_EQ(1u, handler.m_payloads.size()); // this verifies we received the signed message

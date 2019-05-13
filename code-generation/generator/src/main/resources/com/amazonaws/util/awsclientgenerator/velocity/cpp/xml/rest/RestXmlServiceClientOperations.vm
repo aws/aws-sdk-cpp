@@ -65,7 +65,7 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
 #if($operation.result && $operation.result.shape.hasEventStreamMembers())
   request.GetEventStreamDecoder().Reset();
   request.SetResponseStreamFactory(
-      [&] { return Aws::New<Aws::Utils::Event::EventStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
+      [&] { return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
   XmlOutcome outcome = MakeRequestWithEventStream(uri, request, HttpMethod::HTTP_${operation.http.method});
 #elseif($operation.result && $operation.result.shape.hasStreamMembers())

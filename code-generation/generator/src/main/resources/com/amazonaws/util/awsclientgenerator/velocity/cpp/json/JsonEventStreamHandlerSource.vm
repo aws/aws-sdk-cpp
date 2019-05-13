@@ -126,8 +126,7 @@ namespace Model
                 break;
             }
 
-            ${eventShape.name} ev{json.View()};
-            m_on${eventShape.name}(ev);
+            m_on${eventShape.name}(${eventShape.name}{json.View()});
             break;
         }
 #else
@@ -176,7 +175,7 @@ namespace Model
             JsonValue exceptionPayload(GetEventPayloadAsString());
             if (!exceptionPayload.WasParseSuccessful())
             {
-                AWS_LOGSTREAM_ERROR(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG, "Unable to de-serialize error from the response in JSON format.");
+                AWS_LOGSTREAM_ERROR(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG, "Unable to generate a proper ${eventShape.name} object from the response in JSON format.");
                 auto contentTypeIter = headers.find(Aws::Utils::Event::CONTENT_TYPE_HEADER);
                 if (contentTypeIter != headers.end())
                 {
@@ -239,7 +238,6 @@ namespace ${operation.name}EventMapper
     ${operation.name}EventType Get${operation.name}EventTypeForName(const Aws::String& name)
     {
         int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
-        (void)(hashCode);
 #set($elseText = "")
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #if(!$eventMemberEntry.value.shape.isException())

@@ -209,7 +209,6 @@ namespace ${operation.name}EventMapper
     ${operation.name}EventType Get${operation.name}EventTypeForName(const Aws::String& name)
     {
         int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
-        (void)(hashCode);
 #set($elseText = "")
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #if(!$eventMemberEntry.value.shape.isException())

@@ -46,11 +46,11 @@ namespace Aws
                 {
                     if(which == std::ios_base::in)
                     { 
-                        return seekpos((gptr() - (char*)m_underlyingBuffer) + off, which);
+                        return seekpos((gptr() - reinterpret_cast<char*>(m_underlyingBuffer)) + off, which);
                     }
                     else
                     {
-                        return seekpos((pptr() - (char*)m_underlyingBuffer) + off, which);
+                        return seekpos((pptr() - reinterpret_cast<char*>(m_underlyingBuffer)) + off, which);
                     }
                 }
 

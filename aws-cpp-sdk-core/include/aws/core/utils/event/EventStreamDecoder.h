@@ -35,7 +35,7 @@ namespace Aws
                 /**
                  * Whether or not the decoder is in good state. Return false if the decoder encounters errors.
                  */
-                inline operator bool() const { return *m_eventStreamHandler; }
+                inline explicit operator bool() const { return *m_eventStreamHandler; }
 
                 /**
                  * A wrapper of aws_event_stream_streaming_decoder_pump in aws-c-event-stream.

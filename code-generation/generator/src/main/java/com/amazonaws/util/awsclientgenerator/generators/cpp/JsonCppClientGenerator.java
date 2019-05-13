@@ -26,7 +26,8 @@ import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
 import java.nio.charset.StandardCharsets;
-import java.util.Map;
+import java.util.HashMap;
+import java.util.Map;;
 
 public class JsonCppClientGenerator extends CppClientGenerator {
 
@@ -51,8 +52,12 @@ public class JsonCppClientGenerator extends CppClientGenerator {
     protected SdkFileEntry generateModelHeaderFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
 
         Shape shape = shapeEntry.getValue();
+        if (shape.isException())
+            return null;
+
         if (shape.isResult() && shape.hasEventStreamMembers())
             return null;
+
         //we only want to override json related stuff.
         if (shape.isRequest() || shape.isEnum() || shape.hasEventPayloadMembers() && shape.hasBlobMembers()) {
             return super.generateModelHeaderFile(serviceModel, shapeEntry);
@@ -91,7 +96,18 @@ public class JsonCppClientGenerator extends CppClientGenerator {
         if (shape.isResult() && shape.hasEventStreamMembers())
             return null;
 
-        if (shape.isEnum() || (shape.hasNestedEventPayloadMembers() && !shape.isRequest())) {
+        // if the shape is an event and has a single blob member then we don't need a source file, because the whole
+        // class is implemented in the header file. See EventHeader.vm
+        if (shape.isEvent() && shape.getMembers().size() == 1 && shape.hasBlobMembers())
+            return null;
+
+        if (shape.isException())
+            return null;
+
+        if (shape.isEventStream())
+            return null;
+
+        if (shape.isEnum()) {
             // event-stream input shapes do their serialization via the encoder; So skip generating code for those.
             return super.generateModelSourceFile(serviceModel, shapeEntry);
         }
@@ -102,6 +118,9 @@ public class JsonCppClientGenerator extends CppClientGenerator {
 
             if (shape.isRequest() && (shape.hasStreamMembers() || shape.hasEventStreamMembers())) {
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/StreamRequestSource.vm", StandardCharsets.UTF_8.name());
+                HashMap<String, String> headersMap = new HashMap<>(10);
+                headersMap.put("Aws::Http::CONTENT_TYPE_HEADER", "Aws::AMZN_EVENTSTREAM_CONTENT_TYPE");
+                context.put("requestSpecificHeaders", headersMap);
             }
             else if (shape.isRequest()) {
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonRequestSource.vm", StandardCharsets.UTF_8.name());

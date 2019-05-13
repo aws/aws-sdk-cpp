@@ -25,7 +25,7 @@ namespace Aws
     {
         namespace Event
         {
-            static const size_t DEFAULT_BUF_SIZE = 1024;
+            extern AWS_CORE_API const size_t DEFAULT_BUF_SIZE;
 
             /**
              * Derived from std::streambuf, used as the underlying buffer for EventStream.

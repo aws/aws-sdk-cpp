@@ -54,7 +54,9 @@ Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeader
 #foreach($headerEntry in $metadata.additionalHeaders.entrySet())
   headers.insert(Aws::Http::HeaderValuePair("${headerEntry.key}", "${headerEntry.value}"));
 #end
-
+#end
+#foreach($headerEntry in $requestSpecificHeaders.entrySet())
+  headers.emplace(${headerEntry.key}, ${headerEntry.value});
 #end
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassHeaderMembersSource.vm")

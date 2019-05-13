@@ -21,69 +21,69 @@
 using namespace Aws::Utils;
 using namespace Aws::Utils::Stream;
 
-static const char bufferStr[] = "This is an internal buffer.";
-static const char replacementBuf[] = "Boom, I ruined your st";
-static const char concatStr[] = "This Boom, I ruined your st";
-static const char shortenedBuffer[] = "This is an internal buf";
+static char bufferStr[] = "This is an internal buffer.";
+static char replacementBuf[] = "Boom, I ruined your st";
+static char concatStr[] = "This Boom, I ruined your st";
+static char shortenedBuffer[] = "This is an internal buf";
 
 //Fill in a buffer and make sure we read the same exact thing back
 //for the stream
 TEST(PreallocatedStreamBufTest, TestStreamReadFromPrefilledBuffer)
 {
-    PreallocatedStreamBuf streamBuf((unsigned char*)bufferStr, sizeof(bufferStr));
+    PreallocatedStreamBuf streamBuf(reinterpret_cast<unsigned char*>(bufferStr), sizeof(bufferStr));
     Aws::IOStream ioStream(&streamBuf);
 
     Array<uint8_t> readBuf(sizeof(bufferStr));
-    ioStream.read((char*)readBuf.GetUnderlyingData(), readBuf.GetLength());
+    ioStream.read(reinterpret_cast<char*>(readBuf.GetUnderlyingData()), readBuf.GetLength());
     ASSERT_EQ(sizeof(bufferStr), static_cast<size_t>(ioStream.gcount()));
-    ASSERT_STREQ(bufferStr, (const char*)readBuf.GetUnderlyingData());
+    ASSERT_STREQ(bufferStr, reinterpret_cast<const char*>(readBuf.GetUnderlyingData()));
 }
 
 //test read seeking from the beginning
 TEST(PreallocatedStreamBufTest, TestStreamReadSeekBeg)
 {
-    PreallocatedStreamBuf streamBuf((unsigned char*)bufferStr, sizeof(bufferStr));
+    PreallocatedStreamBuf streamBuf(reinterpret_cast<unsigned char*>(bufferStr), sizeof(bufferStr));
     Aws::IOStream ioStream(&streamBuf);
 
     ioStream.seekg(5, std::ios_base::beg);
     Array<uint8_t> readBuf(strlen(bufferStr) + 1 - 5);
-    ioStream.read((char*)readBuf.GetUnderlyingData(), readBuf.GetLength());
+    ioStream.read(reinterpret_cast<char*>(readBuf.GetUnderlyingData()), readBuf.GetLength());
     ASSERT_EQ(sizeof(bufferStr) - 5, static_cast<size_t>(ioStream.gcount()));
-    ASSERT_STREQ(bufferStr + 5, (const char*)readBuf.GetUnderlyingData());
+    ASSERT_STREQ(bufferStr + 5, reinterpret_cast<const char*>(readBuf.GetUnderlyingData()));
 }
 
 //test read seeking from current pos.
 TEST(PreallocatedStreamBufTest, TestStreamReadSeekCur)
 {
-    PreallocatedStreamBuf streamBuf((unsigned char*)bufferStr, sizeof(bufferStr));
+    PreallocatedStreamBuf streamBuf(reinterpret_cast<unsigned char*>(bufferStr), sizeof(bufferStr));
     Aws::IOStream ioStream(&streamBuf);
 
     ioStream.seekg(5, std::ios_base::cur);
     Array<uint8_t> readBuf(sizeof(bufferStr) - 5);
-    ioStream.read((char*)readBuf.GetUnderlyingData(), readBuf.GetLength());
+    ioStream.read(reinterpret_cast<char*>(readBuf.GetUnderlyingData()), readBuf.GetLength());
     ASSERT_EQ(sizeof(bufferStr) - 5, static_cast<size_t>(ioStream.gcount()));
-    ASSERT_STREQ(bufferStr + 5, (const char*)readBuf.GetUnderlyingData());
+    ASSERT_STREQ(bufferStr + 5, reinterpret_cast<const char*>(readBuf.GetUnderlyingData()));
 }
 
 //test read seeking from the end.
 TEST(PreallocatedStreamBufTest, TestStreamReadSeekEnd)
 {
-    PreallocatedStreamBuf streamBuf((unsigned char*)bufferStr, sizeof(bufferStr));
+    PreallocatedStreamBuf streamBuf(reinterpret_cast<unsigned char*>(bufferStr), sizeof(bufferStr));
     Aws::IOStream ioStream(&streamBuf);
 
     auto seekPos = sizeof(bufferStr) - 5;
     ioStream.seekg(seekPos, std::ios_base::end);
     Array<uint8_t> readBuf(sizeof(bufferStr) - 5);
-    ioStream.read((char*)readBuf.GetUnderlyingData(), readBuf.GetLength());
+    ioStream.read(reinterpret_cast<char*>(readBuf.GetUnderlyingData()), readBuf.GetLength());
     ASSERT_EQ(sizeof(bufferStr) - 5, static_cast<size_t>(ioStream.gcount()));
-    ASSERT_STREQ(bufferStr + 5, (const char*)readBuf.GetUnderlyingData());
+    ASSERT_STREQ(bufferStr + 5, reinterpret_cast<const char*>(readBuf.GetUnderlyingData()));
 }
 
 //test write seeking from the beginning.
 TEST(PreallocatedStreamBufTest, TestStreamWriteSeekBeg)
 {
     char bufferStrLocal[] = "This is an internal buffer.";
-    PreallocatedStreamBuf streamBuf((unsigned char*)bufferStrLocal, sizeof(bufferStrLocal));
+    PreallocatedStreamBuf streamBuf(reinterpret_cast<unsigned char*>(bufferStrLocal), sizeof(bufferStrLocal));
     Aws::IOStream ioStream(&streamBuf);
 
     ioStream.seekp(5, std::ios_base::beg);
@@ -96,7 +96,7 @@ TEST(PreallocatedStreamBufTest, TestStreamWriteSeekBeg)
 TEST(PreallocatedStreamBufTest, TestStreamWriteSeekCur)
 {
     char bufferStrLocal[] = "This is an internal buffer.";
-    PreallocatedStreamBuf streamBuf((unsigned char*)bufferStrLocal, sizeof(bufferStrLocal));
+    PreallocatedStreamBuf streamBuf(reinterpret_cast<unsigned char*>(bufferStrLocal), sizeof(bufferStrLocal));
     Aws::IOStream ioStream(&streamBuf);
 
     ioStream.seekp(5, std::ios_base::cur);
@@ -109,7 +109,7 @@ TEST(PreallocatedStreamBufTest, TestStreamWriteSeekCur)
 TEST(PreallocatedStreamBufTest, TestStreamWriteSeekEnd)
 {
     char bufferStrLocal[] = "This is an internal buffer.";
-    PreallocatedStreamBuf streamBuf((unsigned char*)bufferStrLocal, sizeof(bufferStrLocal));
+    PreallocatedStreamBuf streamBuf(reinterpret_cast<unsigned char*>(bufferStrLocal), sizeof(bufferStrLocal));
     Aws::IOStream ioStream(&streamBuf);
 
     auto seekPos = strlen(bufferStrLocal) + 1 - 5;
@@ -123,21 +123,21 @@ TEST(PreallocatedStreamBufTest, TestStreamWriteSeekEnd)
 //buffer size, that max stream size is honored instead of the buffer length for reads
 TEST(PreallocatedStreamBufTest, TestStreamReadHonorsSizeLimitShorterThanBuffer)
 {
-    PreallocatedStreamBuf streamBuf((unsigned char*)bufferStr, sizeof(bufferStr) - 5);
+    PreallocatedStreamBuf streamBuf(reinterpret_cast<unsigned char*>(bufferStr), sizeof(bufferStr) - 5);
     Aws::IOStream ioStream(&streamBuf);
 
     Array<uint8_t> readBuf(sizeof(bufferStr));
     readBuf[sizeof(bufferStr) - 5] = 0;
 
-    ioStream.read((char*)readBuf.GetUnderlyingData(), readBuf.GetLength());
+    ioStream.read(reinterpret_cast<char*>(readBuf.GetUnderlyingData()), readBuf.GetLength());
 
     ASSERT_EQ(sizeof(bufferStr) - 5, static_cast<size_t>(ioStream.gcount()));
-    ASSERT_STREQ(shortenedBuffer, (const char*)readBuf.GetUnderlyingData());
+    ASSERT_STREQ(shortenedBuffer, reinterpret_cast<const char*>(readBuf.GetUnderlyingData()));
 }
 
 TEST(PreallocatedStreamBufTest, TestZeroLengthSeekFromEnd)
 {
-    PreallocatedStreamBuf streamBuf((unsigned char*)bufferStr, sizeof(bufferStr));
+    PreallocatedStreamBuf streamBuf(reinterpret_cast<unsigned char*>(bufferStr), sizeof(bufferStr));
     Aws::IOStream ioStream(&streamBuf);
 
     ioStream.seekg(0, std::ios_base::end);
