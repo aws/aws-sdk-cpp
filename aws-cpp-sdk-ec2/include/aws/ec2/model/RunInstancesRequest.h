@@ -424,66 +424,90 @@ namespace Model
 
 
     /**
-     * <p>The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important> <p>If you do not
-     * specify a key pair, you can't connect to the instance unless you choose an AMI
-     * that is configured to allow users another way to log in.</p> </important>
+     * <p>The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
+     * <important> <p>If you do not specify a key pair, you can't connect to the
+     * instance unless you choose an AMI that is configured to allow users another way
+     * to log in.</p> </important>
      */
     inline const Aws::String& GetKeyName() const{ return m_keyName; }
 
     /**
-     * <p>The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important> <p>If you do not
-     * specify a key pair, you can't connect to the instance unless you choose an AMI
-     * that is configured to allow users another way to log in.</p> </important>
+     * <p>The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
+     * <important> <p>If you do not specify a key pair, you can't connect to the
+     * instance unless you choose an AMI that is configured to allow users another way
+     * to log in.</p> </important>
      */
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
 
     /**
-     * <p>The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important> <p>If you do not
-     * specify a key pair, you can't connect to the instance unless you choose an AMI
-     * that is configured to allow users another way to log in.</p> </important>
+     * <p>The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
+     * <important> <p>If you do not specify a key pair, you can't connect to the
+     * instance unless you choose an AMI that is configured to allow users another way
+     * to log in.</p> </important>
      */
     inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
 
     /**
-     * <p>The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important> <p>If you do not
-     * specify a key pair, you can't connect to the instance unless you choose an AMI
-     * that is configured to allow users another way to log in.</p> </important>
+     * <p>The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
+     * <important> <p>If you do not specify a key pair, you can't connect to the
+     * instance unless you choose an AMI that is configured to allow users another way
+     * to log in.</p> </important>
      */
     inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
 
     /**
-     * <p>The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important> <p>If you do not
-     * specify a key pair, you can't connect to the instance unless you choose an AMI
-     * that is configured to allow users another way to log in.</p> </important>
+     * <p>The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
+     * <important> <p>If you do not specify a key pair, you can't connect to the
+     * instance unless you choose an AMI that is configured to allow users another way
+     * to log in.</p> </important>
      */
     inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
 
     /**
-     * <p>The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important> <p>If you do not
-     * specify a key pair, you can't connect to the instance unless you choose an AMI
-     * that is configured to allow users another way to log in.</p> </important>
+     * <p>The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
+     * <important> <p>If you do not specify a key pair, you can't connect to the
+     * instance unless you choose an AMI that is configured to allow users another way
+     * to log in.</p> </important>
      */
     inline RunInstancesRequest& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
 
     /**
-     * <p>The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important> <p>If you do not
-     * specify a key pair, you can't connect to the instance unless you choose an AMI
-     * that is configured to allow users another way to log in.</p> </important>
+     * <p>The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
+     * <important> <p>If you do not specify a key pair, you can't connect to the
+     * instance unless you choose an AMI that is configured to allow users another way
+     * to log in.</p> </important>
      */
     inline RunInstancesRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the key pair. You can create a key pair using
-     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important> <p>If you do not
-     * specify a key pair, you can't connect to the instance unless you choose an AMI
-     * that is configured to allow users another way to log in.</p> </important>
+     * <p>The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
+     * <important> <p>If you do not specify a key pair, you can't connect to the
+     * instance unless you choose an AMI that is configured to allow users another way
+     * to log in.</p> </important>
      */
     inline RunInstancesRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
@@ -742,147 +766,147 @@ namespace Model
 
 
     /**
-     * <p>The IDs of the security groups. You can create a security group using
-     * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p> <p>You cannot specify this option and the network interfaces option
-     * in the same request.</p>
+     * <p>The IDs of the security groups. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
+     * <p>If you specify a network interface, you must specify any security groups as
+     * part of the network interface.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
-     * <p>The IDs of the security groups. You can create a security group using
-     * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p> <p>You cannot specify this option and the network interfaces option
-     * in the same request.</p>
+     * <p>The IDs of the security groups. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
+     * <p>If you specify a network interface, you must specify any security groups as
+     * part of the network interface.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
-     * <p>The IDs of the security groups. You can create a security group using
-     * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p> <p>You cannot specify this option and the network interfaces option
-     * in the same request.</p>
+     * <p>The IDs of the security groups. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
+     * <p>If you specify a network interface, you must specify any security groups as
+     * part of the network interface.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
-     * <p>The IDs of the security groups. You can create a security group using
-     * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p> <p>You cannot specify this option and the network interfaces option
-     * in the same request.</p>
+     * <p>The IDs of the security groups. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
+     * <p>If you specify a network interface, you must specify any security groups as
+     * part of the network interface.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
-     * <p>The IDs of the security groups. You can create a security group using
-     * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p> <p>You cannot specify this option and the network interfaces option
-     * in the same request.</p>
+     * <p>The IDs of the security groups. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
+     * <p>If you specify a network interface, you must specify any security groups as
+     * part of the network interface.</p>
      */
     inline RunInstancesRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>The IDs of the security groups. You can create a security group using
-     * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p> <p>You cannot specify this option and the network interfaces option
-     * in the same request.</p>
+     * <p>The IDs of the security groups. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
+     * <p>If you specify a network interface, you must specify any security groups as
+     * part of the network interface.</p>
      */
     inline RunInstancesRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the security groups. You can create a security group using
-     * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p> <p>You cannot specify this option and the network interfaces option
-     * in the same request.</p>
+     * <p>The IDs of the security groups. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
+     * <p>If you specify a network interface, you must specify any security groups as
+     * part of the network interface.</p>
      */
     inline RunInstancesRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the security groups. You can create a security group using
-     * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p> <p>You cannot specify this option and the network interfaces option
-     * in the same request.</p>
+     * <p>The IDs of the security groups. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
+     * <p>If you specify a network interface, you must specify any security groups as
+     * part of the network interface.</p>
      */
     inline RunInstancesRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of the security groups. You can create a security group using
-     * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p> <p>You cannot specify this option and the network interfaces option
-     * in the same request.</p>
+     * <p>The IDs of the security groups. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
+     * <p>If you specify a network interface, you must specify any security groups as
+     * part of the network interface.</p>
      */
     inline RunInstancesRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
 
     /**
      * <p>[EC2-Classic, default VPC] The names of the security groups. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>You cannot specify this
-     * option and the network interfaces option in the same request.</p> <p>Default:
-     * Amazon EC2 uses the default security group.</p>
+     * VPC, you must use security group IDs instead.</p> <p>If you specify a network
+     * interface, you must specify any security groups as part of the network
+     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
      * <p>[EC2-Classic, default VPC] The names of the security groups. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>You cannot specify this
-     * option and the network interfaces option in the same request.</p> <p>Default:
-     * Amazon EC2 uses the default security group.</p>
+     * VPC, you must use security group IDs instead.</p> <p>If you specify a network
+     * interface, you must specify any security groups as part of the network
+     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
      * <p>[EC2-Classic, default VPC] The names of the security groups. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>You cannot specify this
-     * option and the network interfaces option in the same request.</p> <p>Default:
-     * Amazon EC2 uses the default security group.</p>
+     * VPC, you must use security group IDs instead.</p> <p>If you specify a network
+     * interface, you must specify any security groups as part of the network
+     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
      * <p>[EC2-Classic, default VPC] The names of the security groups. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>You cannot specify this
-     * option and the network interfaces option in the same request.</p> <p>Default:
-     * Amazon EC2 uses the default security group.</p>
+     * VPC, you must use security group IDs instead.</p> <p>If you specify a network
+     * interface, you must specify any security groups as part of the network
+     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
      * <p>[EC2-Classic, default VPC] The names of the security groups. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>You cannot specify this
-     * option and the network interfaces option in the same request.</p> <p>Default:
-     * Amazon EC2 uses the default security group.</p>
+     * VPC, you must use security group IDs instead.</p> <p>If you specify a network
+     * interface, you must specify any security groups as part of the network
+     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
      */
     inline RunInstancesRequest& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
      * <p>[EC2-Classic, default VPC] The names of the security groups. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>You cannot specify this
-     * option and the network interfaces option in the same request.</p> <p>Default:
-     * Amazon EC2 uses the default security group.</p>
+     * VPC, you must use security group IDs instead.</p> <p>If you specify a network
+     * interface, you must specify any security groups as part of the network
+     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
      */
     inline RunInstancesRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-Classic, default VPC] The names of the security groups. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>You cannot specify this
-     * option and the network interfaces option in the same request.</p> <p>Default:
-     * Amazon EC2 uses the default security group.</p>
+     * VPC, you must use security group IDs instead.</p> <p>If you specify a network
+     * interface, you must specify any security groups as part of the network
+     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
      */
     inline RunInstancesRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
      * <p>[EC2-Classic, default VPC] The names of the security groups. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>You cannot specify this
-     * option and the network interfaces option in the same request.</p> <p>Default:
-     * Amazon EC2 uses the default security group.</p>
+     * VPC, you must use security group IDs instead.</p> <p>If you specify a network
+     * interface, you must specify any security groups as part of the network
+     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
      */
     inline RunInstancesRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>[EC2-Classic, default VPC] The names of the security groups. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>You cannot specify this
-     * option and the network interfaces option in the same request.</p> <p>Default:
-     * Amazon EC2 uses the default security group.</p>
+     * VPC, you must use security group IDs instead.</p> <p>If you specify a network
+     * interface, you must specify any security groups as part of the network
+     * interface.</p> <p>Default: Amazon EC2 uses the default security group.</p>
      */
     inline RunInstancesRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
@@ -1134,44 +1158,44 @@ namespace Model
     /**
      * <p>If you set this parameter to <code>true</code>, you can't terminate the
      * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
-     * change this attribute to <code>false</code> after launch, use
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
-     * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you
-     * can terminate the instance by running the shutdown command from the
-     * instance.</p> <p>Default: <code>false</code> </p>
+     * change this attribute to <code>false</code> after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
+     * Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown
+     * command from the instance.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetDisableApiTermination() const{ return m_disableApiTermination; }
 
     /**
      * <p>If you set this parameter to <code>true</code>, you can't terminate the
      * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
-     * change this attribute to <code>false</code> after launch, use
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
-     * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you
-     * can terminate the instance by running the shutdown command from the
-     * instance.</p> <p>Default: <code>false</code> </p>
+     * change this attribute to <code>false</code> after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
+     * Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown
+     * command from the instance.</p> <p>Default: <code>false</code> </p>
      */
     inline bool DisableApiTerminationHasBeenSet() const { return m_disableApiTerminationHasBeenSet; }
 
     /**
      * <p>If you set this parameter to <code>true</code>, you can't terminate the
      * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
-     * change this attribute to <code>false</code> after launch, use
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
-     * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you
-     * can terminate the instance by running the shutdown command from the
-     * instance.</p> <p>Default: <code>false</code> </p>
+     * change this attribute to <code>false</code> after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
+     * Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown
+     * command from the instance.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetDisableApiTermination(bool value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = value; }
 
     /**
      * <p>If you set this parameter to <code>true</code>, you can't terminate the
      * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
-     * change this attribute to <code>false</code> after launch, use
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
-     * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you
-     * can terminate the instance by running the shutdown command from the
-     * instance.</p> <p>Default: <code>false</code> </p>
+     * change this attribute to <code>false</code> after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
+     * Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown
+     * command from the instance.</p> <p>Default: <code>false</code> </p>
      */
     inline RunInstancesRequest& WithDisableApiTermination(bool value) { SetDisableApiTermination(value); return *this;}
 
@@ -1325,42 +1349,58 @@ namespace Model
 
 
     /**
-     * <p>The network interfaces to associate with the instance.</p>
+     * <p>The network interfaces to associate with the instance. If you specify a
+     * network interface, you must specify any security groups as part of the network
+     * interface.</p>
      */
     inline const Aws::Vector<InstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
     /**
-     * <p>The network interfaces to associate with the instance.</p>
+     * <p>The network interfaces to associate with the instance. If you specify a
+     * network interface, you must specify any security groups as part of the network
+     * interface.</p>
      */
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
-     * <p>The network interfaces to associate with the instance.</p>
+     * <p>The network interfaces to associate with the instance. If you specify a
+     * network interface, you must specify any security groups as part of the network
+     * interface.</p>
      */
     inline void SetNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
 
     /**
-     * <p>The network interfaces to associate with the instance.</p>
+     * <p>The network interfaces to associate with the instance. If you specify a
+     * network interface, you must specify any security groups as part of the network
+     * interface.</p>
      */
     inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
 
     /**
-     * <p>The network interfaces to associate with the instance.</p>
+     * <p>The network interfaces to associate with the instance. If you specify a
+     * network interface, you must specify any security groups as part of the network
+     * interface.</p>
      */
     inline RunInstancesRequest& WithNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
-     * <p>The network interfaces to associate with the instance.</p>
+     * <p>The network interfaces to associate with the instance. If you specify a
+     * network interface, you must specify any security groups as part of the network
+     * interface.</p>
      */
     inline RunInstancesRequest& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
-     * <p>The network interfaces to associate with the instance.</p>
+     * <p>The network interfaces to associate with the instance. If you specify a
+     * network interface, you must specify any security groups as part of the network
+     * interface.</p>
      */
     inline RunInstancesRequest& AddNetworkInterfaces(const InstanceNetworkInterfaceSpecification& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
     /**
-     * <p>The network interfaces to associate with the instance.</p>
+     * <p>The network interfaces to associate with the instance. If you specify a
+     * network interface, you must specify any security groups as part of the network
+     * interface.</p>
      */
     inline RunInstancesRequest& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 
@@ -1596,7 +1636,8 @@ namespace Model
      * <p>The tags to apply to the resources during launch. You can only tag instances
      * and volumes on launch. The specified tags are applied to all instances or
      * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.</p>
+     * created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
@@ -1604,7 +1645,8 @@ namespace Model
      * <p>The tags to apply to the resources during launch. You can only tag instances
      * and volumes on launch. The specified tags are applied to all instances or
      * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.</p>
+     * created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
@@ -1612,7 +1654,8 @@ namespace Model
      * <p>The tags to apply to the resources during launch. You can only tag instances
      * and volumes on launch. The specified tags are applied to all instances or
      * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.</p>
+     * created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
@@ -1620,7 +1663,8 @@ namespace Model
      * <p>The tags to apply to the resources during launch. You can only tag instances
      * and volumes on launch. The specified tags are applied to all instances or
      * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.</p>
+     * created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
@@ -1628,7 +1672,8 @@ namespace Model
      * <p>The tags to apply to the resources during launch. You can only tag instances
      * and volumes on launch. The specified tags are applied to all instances or
      * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.</p>
+     * created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RunInstancesRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
 
@@ -1636,7 +1681,8 @@ namespace Model
      * <p>The tags to apply to the resources during launch. You can only tag instances
      * and volumes on launch. The specified tags are applied to all instances or
      * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.</p>
+     * created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RunInstancesRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
@@ -1644,7 +1690,8 @@ namespace Model
      * <p>The tags to apply to the resources during launch. You can only tag instances
      * and volumes on launch. The specified tags are applied to all instances or
      * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.</p>
+     * created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RunInstancesRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
@@ -1652,7 +1699,8 @@ namespace Model
      * <p>The tags to apply to the resources during launch. You can only tag instances
      * and volumes on launch. The specified tags are applied to all instances or
      * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.</p>
+     * created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RunInstancesRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
@@ -1758,8 +1806,9 @@ namespace Model
     /**
      * <p>The credit option for CPU usage of the T2 or T3 instance. Valid values are
      * <code>standard</code> and <code>unlimited</code>. To change this attribute after
-     * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
-     * <a
+     * launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
+     * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
@@ -1770,8 +1819,9 @@ namespace Model
     /**
      * <p>The credit option for CPU usage of the T2 or T3 instance. Valid values are
      * <code>standard</code> and <code>unlimited</code>. To change this attribute after
-     * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
-     * <a
+     * launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
+     * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
@@ -1782,8 +1832,9 @@ namespace Model
     /**
      * <p>The credit option for CPU usage of the T2 or T3 instance. Valid values are
      * <code>standard</code> and <code>unlimited</code>. To change this attribute after
-     * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
-     * <a
+     * launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
+     * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
@@ -1794,8 +1845,9 @@ namespace Model
     /**
      * <p>The credit option for CPU usage of the T2 or T3 instance. Valid values are
      * <code>standard</code> and <code>unlimited</code>. To change this attribute after
-     * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
-     * <a
+     * launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
+     * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
@@ -1806,8 +1858,9 @@ namespace Model
     /**
      * <p>The credit option for CPU usage of the T2 or T3 instance. Valid values are
      * <code>standard</code> and <code>unlimited</code>. To change this attribute after
-     * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
-     * <a
+     * launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
+     * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
@@ -1818,8 +1871,9 @@ namespace Model
     /**
      * <p>The credit option for CPU usage of the T2 or T3 instance. Valid values are
      * <code>standard</code> and <code>unlimited</code>. To change this attribute after
-     * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
-     * <a
+     * launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
+     * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or

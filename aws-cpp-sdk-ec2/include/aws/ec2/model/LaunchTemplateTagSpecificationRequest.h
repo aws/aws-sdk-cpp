@@ -54,42 +54,48 @@ namespace Model
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
      * tagging on creation are <code>instance</code> and <code>volume</code>. To tag a
-     * resource after it has been created, see <a>CreateTags</a>.</p>
+     * resource after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
      * tagging on creation are <code>instance</code> and <code>volume</code>. To tag a
-     * resource after it has been created, see <a>CreateTags</a>.</p>
+     * resource after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
      * tagging on creation are <code>instance</code> and <code>volume</code>. To tag a
-     * resource after it has been created, see <a>CreateTags</a>.</p>
+     * resource after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
      * tagging on creation are <code>instance</code> and <code>volume</code>. To tag a
-     * resource after it has been created, see <a>CreateTags</a>.</p>
+     * resource after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
      * tagging on creation are <code>instance</code> and <code>volume</code>. To tag a
-     * resource after it has been created, see <a>CreateTags</a>.</p>
+     * resource after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline LaunchTemplateTagSpecificationRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
      * tagging on creation are <code>instance</code> and <code>volume</code>. To tag a
-     * resource after it has been created, see <a>CreateTags</a>.</p>
+     * resource after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline LaunchTemplateTagSpecificationRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

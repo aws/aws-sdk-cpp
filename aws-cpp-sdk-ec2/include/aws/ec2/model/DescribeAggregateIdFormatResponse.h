@@ -45,23 +45,23 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether all resource types in the region are configured to use
+     * <p>Indicates whether all resource types in the Region are configured to use
      * longer IDs. This value is only <code>true</code> if all users are configured to
-     * use longer IDs for all resources types in the region.</p>
+     * use longer IDs for all resources types in the Region.</p>
      */
     inline bool GetUseLongIdsAggregated() const{ return m_useLongIdsAggregated; }
 
     /**
-     * <p>Indicates whether all resource types in the region are configured to use
+     * <p>Indicates whether all resource types in the Region are configured to use
      * longer IDs. This value is only <code>true</code> if all users are configured to
-     * use longer IDs for all resources types in the region.</p>
+     * use longer IDs for all resources types in the Region.</p>
      */
     inline void SetUseLongIdsAggregated(bool value) { m_useLongIdsAggregated = value; }
 
     /**
-     * <p>Indicates whether all resource types in the region are configured to use
+     * <p>Indicates whether all resource types in the Region are configured to use
      * longer IDs. This value is only <code>true</code> if all users are configured to
-     * use longer IDs for all resources types in the region.</p>
+     * use longer IDs for all resources types in the Region.</p>
      */
     inline DescribeAggregateIdFormatResponse& WithUseLongIdsAggregated(bool value) { SetUseLongIdsAggregated(value); return *this;}
 

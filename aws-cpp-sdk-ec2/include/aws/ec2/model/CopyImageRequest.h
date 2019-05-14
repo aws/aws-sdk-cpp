@@ -123,42 +123,42 @@ namespace Model
 
 
     /**
-     * <p>A description for the new AMI in the destination region.</p>
+     * <p>A description for the new AMI in the destination Region.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description for the new AMI in the destination region.</p>
+     * <p>A description for the new AMI in the destination Region.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description for the new AMI in the destination region.</p>
+     * <p>A description for the new AMI in the destination Region.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description for the new AMI in the destination region.</p>
+     * <p>A description for the new AMI in the destination Region.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description for the new AMI in the destination region.</p>
+     * <p>A description for the new AMI in the destination Region.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description for the new AMI in the destination region.</p>
+     * <p>A description for the new AMI in the destination Region.</p>
      */
     inline CopyImageRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description for the new AMI in the destination region.</p>
+     * <p>A description for the new AMI in the destination Region.</p>
      */
     inline CopyImageRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description for the new AMI in the destination region.</p>
+     * <p>A description for the new AMI in the destination Region.</p>
      */
     inline CopyImageRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -216,23 +216,23 @@ namespace Model
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
      * identifier may be provided in any of the following formats: </p> <ul> <li>
      * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS
+     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
      * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
      * alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
      * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the region of the CMK, the AWS account ID of the CMK
+     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
      * owner, the <code>key</code> namespace, and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p> </li> <li> <p>ARN using key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS
+     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
      * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
      * alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>. </p>
      * </li> </ul> <p>AWS parses <code>KmsKeyId</code> asynchronously, meaning that the
      * action you call may appear to complete even though you provided an invalid
      * identifier. This action will eventually report failure. </p> <p>The specified
-     * CMK must exist in the region that the snapshot is being copied to. </p>
+     * CMK must exist in the Region that the snapshot is being copied to. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -244,23 +244,23 @@ namespace Model
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
      * identifier may be provided in any of the following formats: </p> <ul> <li>
      * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS
+     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
      * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
      * alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
      * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the region of the CMK, the AWS account ID of the CMK
+     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
      * owner, the <code>key</code> namespace, and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p> </li> <li> <p>ARN using key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS
+     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
      * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
      * alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>. </p>
      * </li> </ul> <p>AWS parses <code>KmsKeyId</code> asynchronously, meaning that the
      * action you call may appear to complete even though you provided an invalid
      * identifier. This action will eventually report failure. </p> <p>The specified
-     * CMK must exist in the region that the snapshot is being copied to. </p>
+     * CMK must exist in the Region that the snapshot is being copied to. </p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
@@ -272,23 +272,23 @@ namespace Model
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
      * identifier may be provided in any of the following formats: </p> <ul> <li>
      * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS
+     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
      * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
      * alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
      * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the region of the CMK, the AWS account ID of the CMK
+     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
      * owner, the <code>key</code> namespace, and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p> </li> <li> <p>ARN using key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS
+     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
      * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
      * alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>. </p>
      * </li> </ul> <p>AWS parses <code>KmsKeyId</code> asynchronously, meaning that the
      * action you call may appear to complete even though you provided an invalid
      * identifier. This action will eventually report failure. </p> <p>The specified
-     * CMK must exist in the region that the snapshot is being copied to. </p>
+     * CMK must exist in the Region that the snapshot is being copied to. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -300,23 +300,23 @@ namespace Model
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
      * identifier may be provided in any of the following formats: </p> <ul> <li>
      * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS
+     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
      * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
      * alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
      * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the region of the CMK, the AWS account ID of the CMK
+     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
      * owner, the <code>key</code> namespace, and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p> </li> <li> <p>ARN using key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS
+     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
      * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
      * alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>. </p>
      * </li> </ul> <p>AWS parses <code>KmsKeyId</code> asynchronously, meaning that the
      * action you call may appear to complete even though you provided an invalid
      * identifier. This action will eventually report failure. </p> <p>The specified
-     * CMK must exist in the region that the snapshot is being copied to. </p>
+     * CMK must exist in the Region that the snapshot is being copied to. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
@@ -328,23 +328,23 @@ namespace Model
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
      * identifier may be provided in any of the following formats: </p> <ul> <li>
      * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS
+     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
      * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
      * alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
      * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the region of the CMK, the AWS account ID of the CMK
+     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
      * owner, the <code>key</code> namespace, and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p> </li> <li> <p>ARN using key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS
+     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
      * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
      * alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>. </p>
      * </li> </ul> <p>AWS parses <code>KmsKeyId</code> asynchronously, meaning that the
      * action you call may appear to complete even though you provided an invalid
      * identifier. This action will eventually report failure. </p> <p>The specified
-     * CMK must exist in the region that the snapshot is being copied to. </p>
+     * CMK must exist in the Region that the snapshot is being copied to. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -356,23 +356,23 @@ namespace Model
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
      * identifier may be provided in any of the following formats: </p> <ul> <li>
      * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS
+     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
      * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
      * alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
      * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the region of the CMK, the AWS account ID of the CMK
+     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
      * owner, the <code>key</code> namespace, and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p> </li> <li> <p>ARN using key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS
+     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
      * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
      * alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>. </p>
      * </li> </ul> <p>AWS parses <code>KmsKeyId</code> asynchronously, meaning that the
      * action you call may appear to complete even though you provided an invalid
      * identifier. This action will eventually report failure. </p> <p>The specified
-     * CMK must exist in the region that the snapshot is being copied to. </p>
+     * CMK must exist in the Region that the snapshot is being copied to. </p>
      */
     inline CopyImageRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -384,23 +384,23 @@ namespace Model
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
      * identifier may be provided in any of the following formats: </p> <ul> <li>
      * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS
+     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
      * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
      * alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
      * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the region of the CMK, the AWS account ID of the CMK
+     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
      * owner, the <code>key</code> namespace, and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p> </li> <li> <p>ARN using key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS
+     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
      * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
      * alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>. </p>
      * </li> </ul> <p>AWS parses <code>KmsKeyId</code> asynchronously, meaning that the
      * action you call may appear to complete even though you provided an invalid
      * identifier. This action will eventually report failure. </p> <p>The specified
-     * CMK must exist in the region that the snapshot is being copied to. </p>
+     * CMK must exist in the Region that the snapshot is being copied to. </p>
      */
     inline CopyImageRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -412,64 +412,64 @@ namespace Model
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
      * identifier may be provided in any of the following formats: </p> <ul> <li>
      * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS
+     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
      * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
      * alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
      * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the region of the CMK, the AWS account ID of the CMK
+     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
      * owner, the <code>key</code> namespace, and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p> </li> <li> <p>ARN using key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS
+     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
      * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
      * alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>. </p>
      * </li> </ul> <p>AWS parses <code>KmsKeyId</code> asynchronously, meaning that the
      * action you call may appear to complete even though you provided an invalid
      * identifier. This action will eventually report failure. </p> <p>The specified
-     * CMK must exist in the region that the snapshot is being copied to. </p>
+     * CMK must exist in the Region that the snapshot is being copied to. </p>
      */
     inline CopyImageRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>The name of the new AMI in the destination region.</p>
+     * <p>The name of the new AMI in the destination Region.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the new AMI in the destination region.</p>
+     * <p>The name of the new AMI in the destination Region.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the new AMI in the destination region.</p>
+     * <p>The name of the new AMI in the destination Region.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the new AMI in the destination region.</p>
+     * <p>The name of the new AMI in the destination Region.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the new AMI in the destination region.</p>
+     * <p>The name of the new AMI in the destination Region.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the new AMI in the destination region.</p>
+     * <p>The name of the new AMI in the destination Region.</p>
      */
     inline CopyImageRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the new AMI in the destination region.</p>
+     * <p>The name of the new AMI in the destination Region.</p>
      */
     inline CopyImageRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the new AMI in the destination region.</p>
+     * <p>The name of the new AMI in the destination Region.</p>
      */
     inline CopyImageRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -516,42 +516,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the region that contains the AMI to copy.</p>
+     * <p>The name of the Region that contains the AMI to copy.</p>
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
 
     /**
-     * <p>The name of the region that contains the AMI to copy.</p>
+     * <p>The name of the Region that contains the AMI to copy.</p>
      */
     inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
 
     /**
-     * <p>The name of the region that contains the AMI to copy.</p>
+     * <p>The name of the Region that contains the AMI to copy.</p>
      */
     inline void SetSourceRegion(const Aws::String& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
 
     /**
-     * <p>The name of the region that contains the AMI to copy.</p>
+     * <p>The name of the Region that contains the AMI to copy.</p>
      */
     inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
 
     /**
-     * <p>The name of the region that contains the AMI to copy.</p>
+     * <p>The name of the Region that contains the AMI to copy.</p>
      */
     inline void SetSourceRegion(const char* value) { m_sourceRegionHasBeenSet = true; m_sourceRegion.assign(value); }
 
     /**
-     * <p>The name of the region that contains the AMI to copy.</p>
+     * <p>The name of the Region that contains the AMI to copy.</p>
      */
     inline CopyImageRequest& WithSourceRegion(const Aws::String& value) { SetSourceRegion(value); return *this;}
 
     /**
-     * <p>The name of the region that contains the AMI to copy.</p>
+     * <p>The name of the Region that contains the AMI to copy.</p>
      */
     inline CopyImageRequest& WithSourceRegion(Aws::String&& value) { SetSourceRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the region that contains the AMI to copy.</p>
+     * <p>The name of the Region that contains the AMI to copy.</p>
      */
     inline CopyImageRequest& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
 

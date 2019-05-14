@@ -42,7 +42,8 @@ EntitiesDetectionJobProperties::EntitiesDetectionJobProperties() :
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false)
+    m_volumeKmsKeyIdHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ EntitiesDetectionJobProperties::EntitiesDetectionJobProperties(JsonView jsonValu
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false)
+    m_volumeKmsKeyIdHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -151,6 +153,13 @@ EntitiesDetectionJobProperties& EntitiesDetectionJobProperties::operator =(JsonV
     m_volumeKmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("VpcConfig");
+
+    m_vpcConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -223,6 +232,12 @@ JsonValue EntitiesDetectionJobProperties::Jsonize() const
   if(m_volumeKmsKeyIdHasBeenSet)
   {
    payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
 
   }
 

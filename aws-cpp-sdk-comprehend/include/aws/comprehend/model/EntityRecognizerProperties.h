@@ -21,6 +21,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/comprehend/model/EntityRecognizerInputDataConfig.h>
 #include <aws/comprehend/model/EntityRecognizerMetadata.h>
+#include <aws/comprehend/model/VpcConfig.h>
 #include <utility>
 
 namespace Aws
@@ -534,6 +535,61 @@ namespace Model
      */
     inline EntityRecognizerProperties& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
+     * containing the resources you are using for your custom entity recognizer. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * VPC</a>. </p>
+     */
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
+     * containing the resources you are using for your custom entity recognizer. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * VPC</a>. </p>
+     */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    /**
+     * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
+     * containing the resources you are using for your custom entity recognizer. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * VPC</a>. </p>
+     */
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
+     * containing the resources you are using for your custom entity recognizer. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * VPC</a>. </p>
+     */
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    /**
+     * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
+     * containing the resources you are using for your custom entity recognizer. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * VPC</a>. </p>
+     */
+    inline EntityRecognizerProperties& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
+     * containing the resources you are using for your custom entity recognizer. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * VPC</a>. </p>
+     */
+    inline EntityRecognizerProperties& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_entityRecognizerArn;
@@ -571,6 +627,9 @@ namespace Model
 
     Aws::String m_volumeKmsKeyId;
     bool m_volumeKmsKeyIdHasBeenSet;
+
+    VpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet;
   };
 
 } // namespace Model

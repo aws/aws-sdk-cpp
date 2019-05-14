@@ -32,6 +32,7 @@ static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailureException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
+static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
 static const int THROTTLED_CLIENT_HASH = HashingUtils::HashString("ThrottledClientException");
 static const int UNPROCESSABLE_ENTITY_HASH = HashingUtils::HashString("UnprocessableEntityException");
 static const int UNAUTHORIZED_CLIENT_HASH = HashingUtils::HashString("UnauthorizedClientException");
@@ -57,6 +58,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == FORBIDDEN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeErrors::FORBIDDEN), false);
+  }
+  else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeErrors::RESOURCE_LIMIT_EXCEEDED), false);
   }
   else if (hashCode == THROTTLED_CLIENT_HASH)
   {

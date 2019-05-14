@@ -43,8 +43,11 @@ namespace Model
 {
 
   /**
-   * <p>Describes the launch specification for one or more Spot
-   * Instances.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the launch specification for one or more Spot Instances. If you
+   * include On-Demand capacity in your fleet request, you can't use
+   * <code>SpotFleetLaunchSpecification</code>; you must use <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotFleetLaunchSpecification">AWS
    * API Reference</a></p>
    */
@@ -158,66 +161,74 @@ namespace Model
 
 
     /**
-     * <p>One or more block device mapping entries. You can't specify both a snapshot
-     * ID and an encryption value. This is because only blank volumes can be encrypted
-     * on creation. If a snapshot is the basis for a volume, it is not blank and its
-     * encryption status is used for the volume encryption status.</p>
+     * <p>One or more block devices that are mapped to the Spot instances. You can't
+     * specify both a snapshot ID and an encryption value. This is because only blank
+     * volumes can be encrypted on creation. If a snapshot is the basis for a volume,
+     * it is not blank and its encryption status is used for the volume encryption
+     * status.</p>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>One or more block device mapping entries. You can't specify both a snapshot
-     * ID and an encryption value. This is because only blank volumes can be encrypted
-     * on creation. If a snapshot is the basis for a volume, it is not blank and its
-     * encryption status is used for the volume encryption status.</p>
+     * <p>One or more block devices that are mapped to the Spot instances. You can't
+     * specify both a snapshot ID and an encryption value. This is because only blank
+     * volumes can be encrypted on creation. If a snapshot is the basis for a volume,
+     * it is not blank and its encryption status is used for the volume encryption
+     * status.</p>
      */
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
     /**
-     * <p>One or more block device mapping entries. You can't specify both a snapshot
-     * ID and an encryption value. This is because only blank volumes can be encrypted
-     * on creation. If a snapshot is the basis for a volume, it is not blank and its
-     * encryption status is used for the volume encryption status.</p>
+     * <p>One or more block devices that are mapped to the Spot instances. You can't
+     * specify both a snapshot ID and an encryption value. This is because only blank
+     * volumes can be encrypted on creation. If a snapshot is the basis for a volume,
+     * it is not blank and its encryption status is used for the volume encryption
+     * status.</p>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>One or more block device mapping entries. You can't specify both a snapshot
-     * ID and an encryption value. This is because only blank volumes can be encrypted
-     * on creation. If a snapshot is the basis for a volume, it is not blank and its
-     * encryption status is used for the volume encryption status.</p>
+     * <p>One or more block devices that are mapped to the Spot instances. You can't
+     * specify both a snapshot ID and an encryption value. This is because only blank
+     * volumes can be encrypted on creation. If a snapshot is the basis for a volume,
+     * it is not blank and its encryption status is used for the volume encryption
+     * status.</p>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
-     * <p>One or more block device mapping entries. You can't specify both a snapshot
-     * ID and an encryption value. This is because only blank volumes can be encrypted
-     * on creation. If a snapshot is the basis for a volume, it is not blank and its
-     * encryption status is used for the volume encryption status.</p>
+     * <p>One or more block devices that are mapped to the Spot instances. You can't
+     * specify both a snapshot ID and an encryption value. This is because only blank
+     * volumes can be encrypted on creation. If a snapshot is the basis for a volume,
+     * it is not blank and its encryption status is used for the volume encryption
+     * status.</p>
      */
     inline SpotFleetLaunchSpecification& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>One or more block device mapping entries. You can't specify both a snapshot
-     * ID and an encryption value. This is because only blank volumes can be encrypted
-     * on creation. If a snapshot is the basis for a volume, it is not blank and its
-     * encryption status is used for the volume encryption status.</p>
+     * <p>One or more block devices that are mapped to the Spot instances. You can't
+     * specify both a snapshot ID and an encryption value. This is because only blank
+     * volumes can be encrypted on creation. If a snapshot is the basis for a volume,
+     * it is not blank and its encryption status is used for the volume encryption
+     * status.</p>
      */
     inline SpotFleetLaunchSpecification& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
-     * <p>One or more block device mapping entries. You can't specify both a snapshot
-     * ID and an encryption value. This is because only blank volumes can be encrypted
-     * on creation. If a snapshot is the basis for a volume, it is not blank and its
-     * encryption status is used for the volume encryption status.</p>
+     * <p>One or more block devices that are mapped to the Spot instances. You can't
+     * specify both a snapshot ID and an encryption value. This is because only blank
+     * volumes can be encrypted on creation. If a snapshot is the basis for a volume,
+     * it is not blank and its encryption status is used for the volume encryption
+     * status.</p>
      */
     inline SpotFleetLaunchSpecification& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>One or more block device mapping entries. You can't specify both a snapshot
-     * ID and an encryption value. This is because only blank volumes can be encrypted
-     * on creation. If a snapshot is the basis for a volume, it is not blank and its
-     * encryption status is used for the volume encryption status.</p>
+     * <p>One or more block devices that are mapped to the Spot instances. You can't
+     * specify both a snapshot ID and an encryption value. This is because only blank
+     * volumes can be encrypted on creation. If a snapshot is the basis for a volume,
+     * it is not blank and its encryption status is used for the volume encryption
+     * status.</p>
      */
     inline SpotFleetLaunchSpecification& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
@@ -556,42 +567,66 @@ namespace Model
 
 
     /**
-     * <p>The ID of the RAM disk.</p>
+     * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
+     * Check the kernel requirements for information about whether you need to specify
+     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
+     * search for the kernel ID.</p>
      */
     inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
 
     /**
-     * <p>The ID of the RAM disk.</p>
+     * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
+     * Check the kernel requirements for information about whether you need to specify
+     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
+     * search for the kernel ID.</p>
      */
     inline bool RamdiskIdHasBeenSet() const { return m_ramdiskIdHasBeenSet; }
 
     /**
-     * <p>The ID of the RAM disk.</p>
+     * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
+     * Check the kernel requirements for information about whether you need to specify
+     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
+     * search for the kernel ID.</p>
      */
     inline void SetRamdiskId(const Aws::String& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
 
     /**
-     * <p>The ID of the RAM disk.</p>
+     * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
+     * Check the kernel requirements for information about whether you need to specify
+     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
+     * search for the kernel ID.</p>
      */
     inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::move(value); }
 
     /**
-     * <p>The ID of the RAM disk.</p>
+     * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
+     * Check the kernel requirements for information about whether you need to specify
+     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
+     * search for the kernel ID.</p>
      */
     inline void SetRamdiskId(const char* value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId.assign(value); }
 
     /**
-     * <p>The ID of the RAM disk.</p>
+     * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
+     * Check the kernel requirements for information about whether you need to specify
+     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
+     * search for the kernel ID.</p>
      */
     inline SpotFleetLaunchSpecification& WithRamdiskId(const Aws::String& value) { SetRamdiskId(value); return *this;}
 
     /**
-     * <p>The ID of the RAM disk.</p>
+     * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
+     * Check the kernel requirements for information about whether you need to specify
+     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
+     * search for the kernel ID.</p>
      */
     inline SpotFleetLaunchSpecification& WithRamdiskId(Aws::String&& value) { SetRamdiskId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the RAM disk.</p>
+     * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
+     * Check the kernel requirements for information about whether you need to specify
+     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
+     * search for the kernel ID.</p>
      */
     inline SpotFleetLaunchSpecification& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
 
@@ -719,83 +754,83 @@ namespace Model
 
 
     /**
-     * <p>The Base64-encoded user data to make available to the instances.</p>
+     * <p>The Base64-encoded user data that instances use when starting up.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The Base64-encoded user data to make available to the instances.</p>
+     * <p>The Base64-encoded user data that instances use when starting up.</p>
      */
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
-     * <p>The Base64-encoded user data to make available to the instances.</p>
+     * <p>The Base64-encoded user data that instances use when starting up.</p>
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The Base64-encoded user data to make available to the instances.</p>
+     * <p>The Base64-encoded user data that instances use when starting up.</p>
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
-     * <p>The Base64-encoded user data to make available to the instances.</p>
+     * <p>The Base64-encoded user data that instances use when starting up.</p>
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
-     * <p>The Base64-encoded user data to make available to the instances.</p>
+     * <p>The Base64-encoded user data that instances use when starting up.</p>
      */
     inline SpotFleetLaunchSpecification& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The Base64-encoded user data to make available to the instances.</p>
+     * <p>The Base64-encoded user data that instances use when starting up.</p>
      */
     inline SpotFleetLaunchSpecification& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
-     * <p>The Base64-encoded user data to make available to the instances.</p>
+     * <p>The Base64-encoded user data that instances use when starting up.</p>
      */
     inline SpotFleetLaunchSpecification& WithUserData(const char* value) { SetUserData(value); return *this;}
 
 
     /**
      * <p>The number of units provided by the specified instance type. These are the
-     * same units that you chose to set the target capacity in terms (instances or a
-     * performance characteristic such as vCPUs, memory, or I/O).</p> <p>If the target
-     * capacity divided by this value is not a whole number, we round the number of
-     * instances to the next whole number. If this value is not specified, the default
-     * is 1.</p>
+     * same units that you chose to set the target capacity in terms of instances, or a
+     * performance characteristic such as vCPUs, memory, or I/O.</p> <p>If the target
+     * capacity divided by this value is not a whole number, Amazon EC2 rounds the
+     * number of instances to the next whole number. If this value is not specified,
+     * the default is 1.</p>
      */
     inline double GetWeightedCapacity() const{ return m_weightedCapacity; }
 
     /**
      * <p>The number of units provided by the specified instance type. These are the
-     * same units that you chose to set the target capacity in terms (instances or a
-     * performance characteristic such as vCPUs, memory, or I/O).</p> <p>If the target
-     * capacity divided by this value is not a whole number, we round the number of
-     * instances to the next whole number. If this value is not specified, the default
-     * is 1.</p>
+     * same units that you chose to set the target capacity in terms of instances, or a
+     * performance characteristic such as vCPUs, memory, or I/O.</p> <p>If the target
+     * capacity divided by this value is not a whole number, Amazon EC2 rounds the
+     * number of instances to the next whole number. If this value is not specified,
+     * the default is 1.</p>
      */
     inline bool WeightedCapacityHasBeenSet() const { return m_weightedCapacityHasBeenSet; }
 
     /**
      * <p>The number of units provided by the specified instance type. These are the
-     * same units that you chose to set the target capacity in terms (instances or a
-     * performance characteristic such as vCPUs, memory, or I/O).</p> <p>If the target
-     * capacity divided by this value is not a whole number, we round the number of
-     * instances to the next whole number. If this value is not specified, the default
-     * is 1.</p>
+     * same units that you chose to set the target capacity in terms of instances, or a
+     * performance characteristic such as vCPUs, memory, or I/O.</p> <p>If the target
+     * capacity divided by this value is not a whole number, Amazon EC2 rounds the
+     * number of instances to the next whole number. If this value is not specified,
+     * the default is 1.</p>
      */
     inline void SetWeightedCapacity(double value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = value; }
 
     /**
      * <p>The number of units provided by the specified instance type. These are the
-     * same units that you chose to set the target capacity in terms (instances or a
-     * performance characteristic such as vCPUs, memory, or I/O).</p> <p>If the target
-     * capacity divided by this value is not a whole number, we round the number of
-     * instances to the next whole number. If this value is not specified, the default
-     * is 1.</p>
+     * same units that you chose to set the target capacity in terms of instances, or a
+     * performance characteristic such as vCPUs, memory, or I/O.</p> <p>If the target
+     * capacity divided by this value is not a whole number, Amazon EC2 rounds the
+     * number of instances to the next whole number. If this value is not specified,
+     * the default is 1.</p>
      */
     inline SpotFleetLaunchSpecification& WithWeightedCapacity(double value) { SetWeightedCapacity(value); return *this;}
 

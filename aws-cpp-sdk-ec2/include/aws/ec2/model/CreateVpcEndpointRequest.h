@@ -494,7 +494,7 @@ namespace Model
     /**
      * <p>(Interface endpoint) Indicate whether to associate a private hosted zone with
      * the specified VPC. The private hosted zone contains a record set for the default
-     * public DNS name for the service for the region (for example,
+     * public DNS name for the service for the Region (for example,
      * <code>kinesis.us-east-1.amazonaws.com</code>) which resolves to the private IP
      * addresses of the endpoint network interfaces in the VPC. This enables you to
      * make requests to the default public DNS name for the service instead of the
@@ -509,7 +509,7 @@ namespace Model
     /**
      * <p>(Interface endpoint) Indicate whether to associate a private hosted zone with
      * the specified VPC. The private hosted zone contains a record set for the default
-     * public DNS name for the service for the region (for example,
+     * public DNS name for the service for the Region (for example,
      * <code>kinesis.us-east-1.amazonaws.com</code>) which resolves to the private IP
      * addresses of the endpoint network interfaces in the VPC. This enables you to
      * make requests to the default public DNS name for the service instead of the
@@ -524,7 +524,7 @@ namespace Model
     /**
      * <p>(Interface endpoint) Indicate whether to associate a private hosted zone with
      * the specified VPC. The private hosted zone contains a record set for the default
-     * public DNS name for the service for the region (for example,
+     * public DNS name for the service for the Region (for example,
      * <code>kinesis.us-east-1.amazonaws.com</code>) which resolves to the private IP
      * addresses of the endpoint network interfaces in the VPC. This enables you to
      * make requests to the default public DNS name for the service instead of the
@@ -539,7 +539,7 @@ namespace Model
     /**
      * <p>(Interface endpoint) Indicate whether to associate a private hosted zone with
      * the specified VPC. The private hosted zone contains a record set for the default
-     * public DNS name for the service for the region (for example,
+     * public DNS name for the service for the Region (for example,
      * <code>kinesis.us-east-1.amazonaws.com</code>) which resolves to the private IP
      * addresses of the endpoint network interfaces in the VPC. This enables you to
      * make requests to the default public DNS name for the service instead of the

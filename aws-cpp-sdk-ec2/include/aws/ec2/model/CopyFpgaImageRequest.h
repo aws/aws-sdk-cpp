@@ -203,42 +203,42 @@ namespace Model
 
 
     /**
-     * <p>The region that contains the source AFI.</p>
+     * <p>The Region that contains the source AFI.</p>
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
 
     /**
-     * <p>The region that contains the source AFI.</p>
+     * <p>The Region that contains the source AFI.</p>
      */
     inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
 
     /**
-     * <p>The region that contains the source AFI.</p>
+     * <p>The Region that contains the source AFI.</p>
      */
     inline void SetSourceRegion(const Aws::String& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
 
     /**
-     * <p>The region that contains the source AFI.</p>
+     * <p>The Region that contains the source AFI.</p>
      */
     inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
 
     /**
-     * <p>The region that contains the source AFI.</p>
+     * <p>The Region that contains the source AFI.</p>
      */
     inline void SetSourceRegion(const char* value) { m_sourceRegionHasBeenSet = true; m_sourceRegion.assign(value); }
 
     /**
-     * <p>The region that contains the source AFI.</p>
+     * <p>The Region that contains the source AFI.</p>
      */
     inline CopyFpgaImageRequest& WithSourceRegion(const Aws::String& value) { SetSourceRegion(value); return *this;}
 
     /**
-     * <p>The region that contains the source AFI.</p>
+     * <p>The Region that contains the source AFI.</p>
      */
     inline CopyFpgaImageRequest& WithSourceRegion(Aws::String&& value) { SetSourceRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The region that contains the source AFI.</p>
+     * <p>The Region that contains the source AFI.</p>
      */
     inline CopyFpgaImageRequest& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
 

@@ -19,6 +19,7 @@
 #include <aws/comprehend/model/InputDataConfig.h>
 #include <aws/comprehend/model/OutputDataConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/comprehend/model/VpcConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -360,6 +361,61 @@ namespace Model
      */
     inline StartDominantLanguageDetectionJobRequest& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>Configuration parameters for an optional private Virtual Private Cloud (VPC)
+     * containing the resources you are using for your dominant language detection job.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * VPC</a>. </p>
+     */
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>Configuration parameters for an optional private Virtual Private Cloud (VPC)
+     * containing the resources you are using for your dominant language detection job.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * VPC</a>. </p>
+     */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration parameters for an optional private Virtual Private Cloud (VPC)
+     * containing the resources you are using for your dominant language detection job.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * VPC</a>. </p>
+     */
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>Configuration parameters for an optional private Virtual Private Cloud (VPC)
+     * containing the resources you are using for your dominant language detection job.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * VPC</a>. </p>
+     */
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>Configuration parameters for an optional private Virtual Private Cloud (VPC)
+     * containing the resources you are using for your dominant language detection job.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * VPC</a>. </p>
+     */
+    inline StartDominantLanguageDetectionJobRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>Configuration parameters for an optional private Virtual Private Cloud (VPC)
+     * containing the resources you are using for your dominant language detection job.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+     * VPC</a>. </p>
+     */
+    inline StartDominantLanguageDetectionJobRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
   private:
 
     InputDataConfig m_inputDataConfig;
@@ -379,6 +435,9 @@ namespace Model
 
     Aws::String m_volumeKmsKeyId;
     bool m_volumeKmsKeyIdHasBeenSet;
+
+    VpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet;
   };
 
 } // namespace Model

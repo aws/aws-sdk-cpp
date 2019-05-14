@@ -29,6 +29,7 @@
 #include <aws/chime/model/BatchUpdatePhoneNumberResult.h>
 #include <aws/chime/model/BatchUpdateUserResult.h>
 #include <aws/chime/model/CreateAccountResult.h>
+#include <aws/chime/model/CreateBotResult.h>
 #include <aws/chime/model/CreatePhoneNumberOrderResult.h>
 #include <aws/chime/model/CreateVoiceConnectorResult.h>
 #include <aws/chime/model/DeleteAccountResult.h>
@@ -36,6 +37,8 @@
 #include <aws/chime/model/DisassociatePhoneNumbersFromVoiceConnectorResult.h>
 #include <aws/chime/model/GetAccountResult.h>
 #include <aws/chime/model/GetAccountSettingsResult.h>
+#include <aws/chime/model/GetBotResult.h>
+#include <aws/chime/model/GetEventsConfigurationResult.h>
 #include <aws/chime/model/GetGlobalSettingsResult.h>
 #include <aws/chime/model/GetPhoneNumberResult.h>
 #include <aws/chime/model/GetPhoneNumberOrderResult.h>
@@ -47,19 +50,23 @@
 #include <aws/chime/model/GetVoiceConnectorTerminationHealthResult.h>
 #include <aws/chime/model/InviteUsersResult.h>
 #include <aws/chime/model/ListAccountsResult.h>
+#include <aws/chime/model/ListBotsResult.h>
 #include <aws/chime/model/ListPhoneNumberOrdersResult.h>
 #include <aws/chime/model/ListPhoneNumbersResult.h>
 #include <aws/chime/model/ListUsersResult.h>
 #include <aws/chime/model/ListVoiceConnectorTerminationCredentialsResult.h>
 #include <aws/chime/model/ListVoiceConnectorsResult.h>
 #include <aws/chime/model/LogoutUserResult.h>
+#include <aws/chime/model/PutEventsConfigurationResult.h>
 #include <aws/chime/model/PutVoiceConnectorOriginationResult.h>
 #include <aws/chime/model/PutVoiceConnectorTerminationResult.h>
+#include <aws/chime/model/RegenerateSecurityTokenResult.h>
 #include <aws/chime/model/ResetPersonalPINResult.h>
 #include <aws/chime/model/RestorePhoneNumberResult.h>
 #include <aws/chime/model/SearchAvailablePhoneNumbersResult.h>
 #include <aws/chime/model/UpdateAccountResult.h>
 #include <aws/chime/model/UpdateAccountSettingsResult.h>
+#include <aws/chime/model/UpdateBotResult.h>
 #include <aws/chime/model/UpdatePhoneNumberResult.h>
 #include <aws/chime/model/UpdateUserResult.h>
 #include <aws/chime/model/UpdateVoiceConnectorResult.h>
@@ -111,9 +118,11 @@ namespace Model
         class BatchUpdatePhoneNumberRequest;
         class BatchUpdateUserRequest;
         class CreateAccountRequest;
+        class CreateBotRequest;
         class CreatePhoneNumberOrderRequest;
         class CreateVoiceConnectorRequest;
         class DeleteAccountRequest;
+        class DeleteEventsConfigurationRequest;
         class DeletePhoneNumberRequest;
         class DeleteVoiceConnectorRequest;
         class DeleteVoiceConnectorOriginationRequest;
@@ -123,6 +132,8 @@ namespace Model
         class DisassociatePhoneNumbersFromVoiceConnectorRequest;
         class GetAccountRequest;
         class GetAccountSettingsRequest;
+        class GetBotRequest;
+        class GetEventsConfigurationRequest;
         class GetPhoneNumberRequest;
         class GetPhoneNumberOrderRequest;
         class GetUserRequest;
@@ -133,20 +144,24 @@ namespace Model
         class GetVoiceConnectorTerminationHealthRequest;
         class InviteUsersRequest;
         class ListAccountsRequest;
+        class ListBotsRequest;
         class ListPhoneNumberOrdersRequest;
         class ListPhoneNumbersRequest;
         class ListUsersRequest;
         class ListVoiceConnectorTerminationCredentialsRequest;
         class ListVoiceConnectorsRequest;
         class LogoutUserRequest;
+        class PutEventsConfigurationRequest;
         class PutVoiceConnectorOriginationRequest;
         class PutVoiceConnectorTerminationRequest;
         class PutVoiceConnectorTerminationCredentialsRequest;
+        class RegenerateSecurityTokenRequest;
         class ResetPersonalPINRequest;
         class RestorePhoneNumberRequest;
         class SearchAvailablePhoneNumbersRequest;
         class UpdateAccountRequest;
         class UpdateAccountSettingsRequest;
+        class UpdateBotRequest;
         class UpdateGlobalSettingsRequest;
         class UpdatePhoneNumberRequest;
         class UpdateUserRequest;
@@ -161,9 +176,11 @@ namespace Model
         typedef Aws::Utils::Outcome<BatchUpdatePhoneNumberResult, Aws::Client::AWSError<ChimeErrors>> BatchUpdatePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<BatchUpdateUserResult, Aws::Client::AWSError<ChimeErrors>> BatchUpdateUserOutcome;
         typedef Aws::Utils::Outcome<CreateAccountResult, Aws::Client::AWSError<ChimeErrors>> CreateAccountOutcome;
+        typedef Aws::Utils::Outcome<CreateBotResult, Aws::Client::AWSError<ChimeErrors>> CreateBotOutcome;
         typedef Aws::Utils::Outcome<CreatePhoneNumberOrderResult, Aws::Client::AWSError<ChimeErrors>> CreatePhoneNumberOrderOutcome;
         typedef Aws::Utils::Outcome<CreateVoiceConnectorResult, Aws::Client::AWSError<ChimeErrors>> CreateVoiceConnectorOutcome;
         typedef Aws::Utils::Outcome<DeleteAccountResult, Aws::Client::AWSError<ChimeErrors>> DeleteAccountOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteEventsConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeletePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteVoiceConnectorOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteVoiceConnectorOriginationOutcome;
@@ -173,6 +190,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociatePhoneNumbersFromVoiceConnectorResult, Aws::Client::AWSError<ChimeErrors>> DisassociatePhoneNumbersFromVoiceConnectorOutcome;
         typedef Aws::Utils::Outcome<GetAccountResult, Aws::Client::AWSError<ChimeErrors>> GetAccountOutcome;
         typedef Aws::Utils::Outcome<GetAccountSettingsResult, Aws::Client::AWSError<ChimeErrors>> GetAccountSettingsOutcome;
+        typedef Aws::Utils::Outcome<GetBotResult, Aws::Client::AWSError<ChimeErrors>> GetBotOutcome;
+        typedef Aws::Utils::Outcome<GetEventsConfigurationResult, Aws::Client::AWSError<ChimeErrors>> GetEventsConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetGlobalSettingsResult, Aws::Client::AWSError<ChimeErrors>> GetGlobalSettingsOutcome;
         typedef Aws::Utils::Outcome<GetPhoneNumberResult, Aws::Client::AWSError<ChimeErrors>> GetPhoneNumberOutcome;
         typedef Aws::Utils::Outcome<GetPhoneNumberOrderResult, Aws::Client::AWSError<ChimeErrors>> GetPhoneNumberOrderOutcome;
@@ -184,20 +203,24 @@ namespace Model
         typedef Aws::Utils::Outcome<GetVoiceConnectorTerminationHealthResult, Aws::Client::AWSError<ChimeErrors>> GetVoiceConnectorTerminationHealthOutcome;
         typedef Aws::Utils::Outcome<InviteUsersResult, Aws::Client::AWSError<ChimeErrors>> InviteUsersOutcome;
         typedef Aws::Utils::Outcome<ListAccountsResult, Aws::Client::AWSError<ChimeErrors>> ListAccountsOutcome;
+        typedef Aws::Utils::Outcome<ListBotsResult, Aws::Client::AWSError<ChimeErrors>> ListBotsOutcome;
         typedef Aws::Utils::Outcome<ListPhoneNumberOrdersResult, Aws::Client::AWSError<ChimeErrors>> ListPhoneNumberOrdersOutcome;
         typedef Aws::Utils::Outcome<ListPhoneNumbersResult, Aws::Client::AWSError<ChimeErrors>> ListPhoneNumbersOutcome;
         typedef Aws::Utils::Outcome<ListUsersResult, Aws::Client::AWSError<ChimeErrors>> ListUsersOutcome;
         typedef Aws::Utils::Outcome<ListVoiceConnectorTerminationCredentialsResult, Aws::Client::AWSError<ChimeErrors>> ListVoiceConnectorTerminationCredentialsOutcome;
         typedef Aws::Utils::Outcome<ListVoiceConnectorsResult, Aws::Client::AWSError<ChimeErrors>> ListVoiceConnectorsOutcome;
         typedef Aws::Utils::Outcome<LogoutUserResult, Aws::Client::AWSError<ChimeErrors>> LogoutUserOutcome;
+        typedef Aws::Utils::Outcome<PutEventsConfigurationResult, Aws::Client::AWSError<ChimeErrors>> PutEventsConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutVoiceConnectorOriginationResult, Aws::Client::AWSError<ChimeErrors>> PutVoiceConnectorOriginationOutcome;
         typedef Aws::Utils::Outcome<PutVoiceConnectorTerminationResult, Aws::Client::AWSError<ChimeErrors>> PutVoiceConnectorTerminationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> PutVoiceConnectorTerminationCredentialsOutcome;
+        typedef Aws::Utils::Outcome<RegenerateSecurityTokenResult, Aws::Client::AWSError<ChimeErrors>> RegenerateSecurityTokenOutcome;
         typedef Aws::Utils::Outcome<ResetPersonalPINResult, Aws::Client::AWSError<ChimeErrors>> ResetPersonalPINOutcome;
         typedef Aws::Utils::Outcome<RestorePhoneNumberResult, Aws::Client::AWSError<ChimeErrors>> RestorePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<SearchAvailablePhoneNumbersResult, Aws::Client::AWSError<ChimeErrors>> SearchAvailablePhoneNumbersOutcome;
         typedef Aws::Utils::Outcome<UpdateAccountResult, Aws::Client::AWSError<ChimeErrors>> UpdateAccountOutcome;
         typedef Aws::Utils::Outcome<UpdateAccountSettingsResult, Aws::Client::AWSError<ChimeErrors>> UpdateAccountSettingsOutcome;
+        typedef Aws::Utils::Outcome<UpdateBotResult, Aws::Client::AWSError<ChimeErrors>> UpdateBotOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> UpdateGlobalSettingsOutcome;
         typedef Aws::Utils::Outcome<UpdatePhoneNumberResult, Aws::Client::AWSError<ChimeErrors>> UpdatePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<UpdateUserResult, Aws::Client::AWSError<ChimeErrors>> UpdateUserOutcome;
@@ -212,9 +235,11 @@ namespace Model
         typedef std::future<BatchUpdatePhoneNumberOutcome> BatchUpdatePhoneNumberOutcomeCallable;
         typedef std::future<BatchUpdateUserOutcome> BatchUpdateUserOutcomeCallable;
         typedef std::future<CreateAccountOutcome> CreateAccountOutcomeCallable;
+        typedef std::future<CreateBotOutcome> CreateBotOutcomeCallable;
         typedef std::future<CreatePhoneNumberOrderOutcome> CreatePhoneNumberOrderOutcomeCallable;
         typedef std::future<CreateVoiceConnectorOutcome> CreateVoiceConnectorOutcomeCallable;
         typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
+        typedef std::future<DeleteEventsConfigurationOutcome> DeleteEventsConfigurationOutcomeCallable;
         typedef std::future<DeletePhoneNumberOutcome> DeletePhoneNumberOutcomeCallable;
         typedef std::future<DeleteVoiceConnectorOutcome> DeleteVoiceConnectorOutcomeCallable;
         typedef std::future<DeleteVoiceConnectorOriginationOutcome> DeleteVoiceConnectorOriginationOutcomeCallable;
@@ -224,6 +249,8 @@ namespace Model
         typedef std::future<DisassociatePhoneNumbersFromVoiceConnectorOutcome> DisassociatePhoneNumbersFromVoiceConnectorOutcomeCallable;
         typedef std::future<GetAccountOutcome> GetAccountOutcomeCallable;
         typedef std::future<GetAccountSettingsOutcome> GetAccountSettingsOutcomeCallable;
+        typedef std::future<GetBotOutcome> GetBotOutcomeCallable;
+        typedef std::future<GetEventsConfigurationOutcome> GetEventsConfigurationOutcomeCallable;
         typedef std::future<GetGlobalSettingsOutcome> GetGlobalSettingsOutcomeCallable;
         typedef std::future<GetPhoneNumberOutcome> GetPhoneNumberOutcomeCallable;
         typedef std::future<GetPhoneNumberOrderOutcome> GetPhoneNumberOrderOutcomeCallable;
@@ -235,20 +262,24 @@ namespace Model
         typedef std::future<GetVoiceConnectorTerminationHealthOutcome> GetVoiceConnectorTerminationHealthOutcomeCallable;
         typedef std::future<InviteUsersOutcome> InviteUsersOutcomeCallable;
         typedef std::future<ListAccountsOutcome> ListAccountsOutcomeCallable;
+        typedef std::future<ListBotsOutcome> ListBotsOutcomeCallable;
         typedef std::future<ListPhoneNumberOrdersOutcome> ListPhoneNumberOrdersOutcomeCallable;
         typedef std::future<ListPhoneNumbersOutcome> ListPhoneNumbersOutcomeCallable;
         typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
         typedef std::future<ListVoiceConnectorTerminationCredentialsOutcome> ListVoiceConnectorTerminationCredentialsOutcomeCallable;
         typedef std::future<ListVoiceConnectorsOutcome> ListVoiceConnectorsOutcomeCallable;
         typedef std::future<LogoutUserOutcome> LogoutUserOutcomeCallable;
+        typedef std::future<PutEventsConfigurationOutcome> PutEventsConfigurationOutcomeCallable;
         typedef std::future<PutVoiceConnectorOriginationOutcome> PutVoiceConnectorOriginationOutcomeCallable;
         typedef std::future<PutVoiceConnectorTerminationOutcome> PutVoiceConnectorTerminationOutcomeCallable;
         typedef std::future<PutVoiceConnectorTerminationCredentialsOutcome> PutVoiceConnectorTerminationCredentialsOutcomeCallable;
+        typedef std::future<RegenerateSecurityTokenOutcome> RegenerateSecurityTokenOutcomeCallable;
         typedef std::future<ResetPersonalPINOutcome> ResetPersonalPINOutcomeCallable;
         typedef std::future<RestorePhoneNumberOutcome> RestorePhoneNumberOutcomeCallable;
         typedef std::future<SearchAvailablePhoneNumbersOutcome> SearchAvailablePhoneNumbersOutcomeCallable;
         typedef std::future<UpdateAccountOutcome> UpdateAccountOutcomeCallable;
         typedef std::future<UpdateAccountSettingsOutcome> UpdateAccountSettingsOutcomeCallable;
+        typedef std::future<UpdateBotOutcome> UpdateBotOutcomeCallable;
         typedef std::future<UpdateGlobalSettingsOutcome> UpdateGlobalSettingsOutcomeCallable;
         typedef std::future<UpdatePhoneNumberOutcome> UpdatePhoneNumberOutcomeCallable;
         typedef std::future<UpdateUserOutcome> UpdateUserOutcomeCallable;
@@ -266,9 +297,11 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::BatchUpdatePhoneNumberRequest&, const Model::BatchUpdatePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdatePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::BatchUpdateUserRequest&, const Model::BatchUpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateAccountRequest&, const Model::CreateAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccountResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::CreateBotRequest&, const Model::CreateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBotResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreatePhoneNumberOrderRequest&, const Model::CreatePhoneNumberOrderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePhoneNumberOrderResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateVoiceConnectorRequest&, const Model::CreateVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVoiceConnectorResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteAccountRequest&, const Model::DeleteAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DeleteEventsConfigurationRequest&, const Model::DeleteEventsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventsConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeletePhoneNumberRequest&, const Model::DeletePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorRequest&, const Model::DeleteVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorOriginationRequest&, const Model::DeleteVoiceConnectorOriginationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorOriginationResponseReceivedHandler;
@@ -278,6 +311,8 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::DisassociatePhoneNumbersFromVoiceConnectorRequest&, const Model::DisassociatePhoneNumbersFromVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociatePhoneNumbersFromVoiceConnectorResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetAccountRequest&, const Model::GetAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetAccountSettingsRequest&, const Model::GetAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountSettingsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::GetBotRequest&, const Model::GetBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBotResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::GetEventsConfigurationRequest&, const Model::GetEventsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventsConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetGlobalSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGlobalSettingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetPhoneNumberRequest&, const Model::GetPhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetPhoneNumberOrderRequest&, const Model::GetPhoneNumberOrderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberOrderResponseReceivedHandler;
@@ -289,20 +324,24 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::GetVoiceConnectorTerminationHealthRequest&, const Model::GetVoiceConnectorTerminationHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorTerminationHealthResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::InviteUsersRequest&, const Model::InviteUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InviteUsersResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListAccountsRequest&, const Model::ListAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListBotsRequest&, const Model::ListBotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListPhoneNumberOrdersRequest&, const Model::ListPhoneNumberOrdersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumberOrdersResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListPhoneNumbersRequest&, const Model::ListPhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumbersResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListVoiceConnectorTerminationCredentialsRequest&, const Model::ListVoiceConnectorTerminationCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVoiceConnectorTerminationCredentialsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListVoiceConnectorsRequest&, const Model::ListVoiceConnectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVoiceConnectorsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::LogoutUserRequest&, const Model::LogoutUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > LogoutUserResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::PutEventsConfigurationRequest&, const Model::PutEventsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventsConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorOriginationRequest&, const Model::PutVoiceConnectorOriginationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorOriginationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorTerminationRequest&, const Model::PutVoiceConnectorTerminationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorTerminationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorTerminationCredentialsRequest&, const Model::PutVoiceConnectorTerminationCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorTerminationCredentialsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::RegenerateSecurityTokenRequest&, const Model::RegenerateSecurityTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegenerateSecurityTokenResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ResetPersonalPINRequest&, const Model::ResetPersonalPINOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetPersonalPINResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::RestorePhoneNumberRequest&, const Model::RestorePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestorePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::SearchAvailablePhoneNumbersRequest&, const Model::SearchAvailablePhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAvailablePhoneNumbersResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateAccountRequest&, const Model::UpdateAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateAccountSettingsRequest&, const Model::UpdateAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountSettingsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::UpdateBotRequest&, const Model::UpdateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBotResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateGlobalSettingsRequest&, const Model::UpdateGlobalSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlobalSettingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdatePhoneNumberRequest&, const Model::UpdatePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserResponseReceivedHandler;
@@ -469,9 +508,9 @@ namespace Model
          * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
          * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
          * Guide</i>.</p> <p>Users suspended from a <code>Team</code> account are
-         * dissociated from the account, but they can continue to use Amazon Chime as free
-         * users. To remove the suspension from suspended <code>Team</code> account users,
-         * invite them to the <code>Team</code> account again. You can use the
+         * dissasociated from the account, but they can continue to use Amazon Chime as
+         * free users. To remove the suspension from suspended <code>Team</code> account
+         * users, invite them to the <code>Team</code> account again. You can use the
          * <a>InviteUsers</a> action to do so.</p> <p>Users suspended from an
          * <code>EnterpriseLWA</code> account are immediately signed out of Amazon Chime
          * and can no longer sign in. To remove the suspension from suspended
@@ -490,9 +529,9 @@ namespace Model
          * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
          * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
          * Guide</i>.</p> <p>Users suspended from a <code>Team</code> account are
-         * dissociated from the account, but they can continue to use Amazon Chime as free
-         * users. To remove the suspension from suspended <code>Team</code> account users,
-         * invite them to the <code>Team</code> account again. You can use the
+         * dissasociated from the account, but they can continue to use Amazon Chime as
+         * free users. To remove the suspension from suspended <code>Team</code> account
+         * users, invite them to the <code>Team</code> account again. You can use the
          * <a>InviteUsers</a> action to do so.</p> <p>Users suspended from an
          * <code>EnterpriseLWA</code> account are immediately signed out of Amazon Chime
          * and can no longer sign in. To remove the suspension from suspended
@@ -513,9 +552,9 @@ namespace Model
          * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
          * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
          * Guide</i>.</p> <p>Users suspended from a <code>Team</code> account are
-         * dissociated from the account, but they can continue to use Amazon Chime as free
-         * users. To remove the suspension from suspended <code>Team</code> account users,
-         * invite them to the <code>Team</code> account again. You can use the
+         * dissasociated from the account, but they can continue to use Amazon Chime as
+         * free users. To remove the suspension from suspended <code>Team</code> account
+         * users, invite them to the <code>Team</code> account again. You can use the
          * <a>InviteUsers</a> action to do so.</p> <p>Users suspended from an
          * <code>EnterpriseLWA</code> account are immediately signed out of Amazon Chime
          * and can no longer sign in. To remove the suspension from suspended
@@ -681,6 +720,34 @@ namespace Model
         virtual void CreateAccountAsync(const Model::CreateAccountRequest& request, const CreateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a bot for an Amazon Chime Enterprise account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateBot">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::CreateBotOutcome CreateBot(const Model::CreateBotRequest& request) const;
+
+        /**
+         * <p>Creates a bot for an Amazon Chime Enterprise account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateBot">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateBotOutcomeCallable CreateBotCallable(const Model::CreateBotRequest& request) const;
+
+        /**
+         * <p>Creates a bot for an Amazon Chime Enterprise account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateBot">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateBotAsync(const Model::CreateBotRequest& request, const CreateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an order for phone numbers to be provisioned. Choose from Amazon
          * Chime Business Calling and Amazon Chime Voice Connector product
          * types.</p><p><h3>See Also:</h3>   <a
@@ -799,6 +866,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAccountAsync(const Model::DeleteAccountRequest& request, const DeleteAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the events configuration that allows a bot to receive outgoing
+         * events.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteEventsConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEventsConfigurationOutcome DeleteEventsConfiguration(const Model::DeleteEventsConfigurationRequest& request) const;
+
+        /**
+         * <p>Deletes the events configuration that allows a bot to receive outgoing
+         * events.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteEventsConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteEventsConfigurationOutcomeCallable DeleteEventsConfigurationCallable(const Model::DeleteEventsConfigurationRequest& request) const;
+
+        /**
+         * <p>Deletes the events configuration that allows a bot to receive outgoing
+         * events.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteEventsConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteEventsConfigurationAsync(const Model::DeleteEventsConfigurationRequest& request, const DeleteEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Moves the specified phone number into the <b>Deletion queue</b>. A phone
@@ -1072,6 +1167,65 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAccountSettingsAsync(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves details for the specified bot, such as bot email address, bot type,
+         * status, and display name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetBot">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::GetBotOutcome GetBot(const Model::GetBotRequest& request) const;
+
+        /**
+         * <p>Retrieves details for the specified bot, such as bot email address, bot type,
+         * status, and display name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetBot">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetBotOutcomeCallable GetBotCallable(const Model::GetBotRequest& request) const;
+
+        /**
+         * <p>Retrieves details for the specified bot, such as bot email address, bot type,
+         * status, and display name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetBot">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetBotAsync(const Model::GetBotRequest& request, const GetBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets details for an events configuration that allows a bot to receive
+         * outgoing events, such as an HTTPS endpoint or Lambda function ARN.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetEventsConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEventsConfigurationOutcome GetEventsConfiguration(const Model::GetEventsConfigurationRequest& request) const;
+
+        /**
+         * <p>Gets details for an events configuration that allows a bot to receive
+         * outgoing events, such as an HTTPS endpoint or Lambda function ARN.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetEventsConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetEventsConfigurationOutcomeCallable GetEventsConfigurationCallable(const Model::GetEventsConfigurationRequest& request) const;
+
+        /**
+         * <p>Gets details for an events configuration that allows a bot to receive
+         * outgoing events, such as an HTTPS endpoint or Lambda function ARN.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetEventsConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetEventsConfigurationAsync(const Model::GetEventsConfigurationRequest& request, const GetEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves global settings for the administrator's AWS account, such as Amazon
@@ -1408,6 +1562,34 @@ namespace Model
         virtual void ListAccountsAsync(const Model::ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the bots associated with the administrator's Amazon Chime Enterprise
+         * account ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListBots">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::ListBotsOutcome ListBots(const Model::ListBotsRequest& request) const;
+
+        /**
+         * <p>Lists the bots associated with the administrator's Amazon Chime Enterprise
+         * account ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListBots">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListBotsOutcomeCallable ListBotsCallable(const Model::ListBotsRequest& request) const;
+
+        /**
+         * <p>Lists the bots associated with the administrator's Amazon Chime Enterprise
+         * account ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListBots">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListBotsAsync(const Model::ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the phone number orders for the administrator's Amazon Chime
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListPhoneNumberOrders">AWS
@@ -1579,6 +1761,37 @@ namespace Model
         virtual void LogoutUserAsync(const Model::LogoutUserRequest& request, const LogoutUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates an events configuration that allows a bot to receive outgoing events
+         * sent by Amazon Chime. Choose either an HTTPS endpoint or a Lambda function ARN.
+         * For more information, see <a>Bot</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutEventsConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutEventsConfigurationOutcome PutEventsConfiguration(const Model::PutEventsConfigurationRequest& request) const;
+
+        /**
+         * <p>Creates an events configuration that allows a bot to receive outgoing events
+         * sent by Amazon Chime. Choose either an HTTPS endpoint or a Lambda function ARN.
+         * For more information, see <a>Bot</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutEventsConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutEventsConfigurationOutcomeCallable PutEventsConfigurationCallable(const Model::PutEventsConfigurationRequest& request) const;
+
+        /**
+         * <p>Creates an events configuration that allows a bot to receive outgoing events
+         * sent by Amazon Chime. Choose either an HTTPS endpoint or a Lambda function ARN.
+         * For more information, see <a>Bot</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutEventsConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutEventsConfigurationAsync(const Model::PutEventsConfigurationRequest& request, const PutEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds origination settings for the specified Amazon Chime Voice
          * Connector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorOrigination">AWS
@@ -1661,6 +1874,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutVoiceConnectorTerminationCredentialsAsync(const Model::PutVoiceConnectorTerminationCredentialsRequest& request, const PutVoiceConnectorTerminationCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Regenerates the security token for a bot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RegenerateSecurityToken">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegenerateSecurityTokenOutcome RegenerateSecurityToken(const Model::RegenerateSecurityTokenRequest& request) const;
+
+        /**
+         * <p>Regenerates the security token for a bot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RegenerateSecurityToken">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RegenerateSecurityTokenOutcomeCallable RegenerateSecurityTokenCallable(const Model::RegenerateSecurityTokenRequest& request) const;
+
+        /**
+         * <p>Regenerates the security token for a bot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RegenerateSecurityToken">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RegenerateSecurityTokenAsync(const Model::RegenerateSecurityTokenRequest& request, const RegenerateSecurityTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resets the personal meeting PIN for the specified user on an Amazon Chime
@@ -1816,6 +2054,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateAccountSettingsAsync(const Model::UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the status of the specified bot, such as starting or stopping the bot
+         * from running in your Amazon Chime Enterprise account.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateBot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateBotOutcome UpdateBot(const Model::UpdateBotRequest& request) const;
+
+        /**
+         * <p>Updates the status of the specified bot, such as starting or stopping the bot
+         * from running in your Amazon Chime Enterprise account.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateBot">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateBotOutcomeCallable UpdateBotCallable(const Model::UpdateBotRequest& request) const;
+
+        /**
+         * <p>Updates the status of the specified bot, such as starting or stopping the bot
+         * from running in your Amazon Chime Enterprise account.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateBot">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateBotAsync(const Model::UpdateBotRequest& request, const UpdateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates global settings for the administrator's AWS account, such as Amazon
@@ -1975,9 +2241,11 @@ namespace Model
         void BatchUpdatePhoneNumberAsyncHelper(const Model::BatchUpdatePhoneNumberRequest& request, const BatchUpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchUpdateUserAsyncHelper(const Model::BatchUpdateUserRequest& request, const BatchUpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAccountAsyncHelper(const Model::CreateAccountRequest& request, const CreateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateBotAsyncHelper(const Model::CreateBotRequest& request, const CreateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePhoneNumberOrderAsyncHelper(const Model::CreatePhoneNumberOrderRequest& request, const CreatePhoneNumberOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVoiceConnectorAsyncHelper(const Model::CreateVoiceConnectorRequest& request, const CreateVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAccountAsyncHelper(const Model::DeleteAccountRequest& request, const DeleteAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteEventsConfigurationAsyncHelper(const Model::DeleteEventsConfigurationRequest& request, const DeleteEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePhoneNumberAsyncHelper(const Model::DeletePhoneNumberRequest& request, const DeletePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVoiceConnectorAsyncHelper(const Model::DeleteVoiceConnectorRequest& request, const DeleteVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVoiceConnectorOriginationAsyncHelper(const Model::DeleteVoiceConnectorOriginationRequest& request, const DeleteVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1987,6 +2255,8 @@ namespace Model
         void DisassociatePhoneNumbersFromVoiceConnectorAsyncHelper(const Model::DisassociatePhoneNumbersFromVoiceConnectorRequest& request, const DisassociatePhoneNumbersFromVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccountAsyncHelper(const Model::GetAccountRequest& request, const GetAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccountSettingsAsyncHelper(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetBotAsyncHelper(const Model::GetBotRequest& request, const GetBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetEventsConfigurationAsyncHelper(const Model::GetEventsConfigurationRequest& request, const GetEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGlobalSettingsAsyncHelper(const GetGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPhoneNumberAsyncHelper(const Model::GetPhoneNumberRequest& request, const GetPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPhoneNumberOrderAsyncHelper(const Model::GetPhoneNumberOrderRequest& request, const GetPhoneNumberOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1998,20 +2268,24 @@ namespace Model
         void GetVoiceConnectorTerminationHealthAsyncHelper(const Model::GetVoiceConnectorTerminationHealthRequest& request, const GetVoiceConnectorTerminationHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InviteUsersAsyncHelper(const Model::InviteUsersRequest& request, const InviteUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccountsAsyncHelper(const Model::ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListBotsAsyncHelper(const Model::ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPhoneNumberOrdersAsyncHelper(const Model::ListPhoneNumberOrdersRequest& request, const ListPhoneNumberOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPhoneNumbersAsyncHelper(const Model::ListPhoneNumbersRequest& request, const ListPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVoiceConnectorTerminationCredentialsAsyncHelper(const Model::ListVoiceConnectorTerminationCredentialsRequest& request, const ListVoiceConnectorTerminationCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVoiceConnectorsAsyncHelper(const Model::ListVoiceConnectorsRequest& request, const ListVoiceConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void LogoutUserAsyncHelper(const Model::LogoutUserRequest& request, const LogoutUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutEventsConfigurationAsyncHelper(const Model::PutEventsConfigurationRequest& request, const PutEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutVoiceConnectorOriginationAsyncHelper(const Model::PutVoiceConnectorOriginationRequest& request, const PutVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutVoiceConnectorTerminationAsyncHelper(const Model::PutVoiceConnectorTerminationRequest& request, const PutVoiceConnectorTerminationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutVoiceConnectorTerminationCredentialsAsyncHelper(const Model::PutVoiceConnectorTerminationCredentialsRequest& request, const PutVoiceConnectorTerminationCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RegenerateSecurityTokenAsyncHelper(const Model::RegenerateSecurityTokenRequest& request, const RegenerateSecurityTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetPersonalPINAsyncHelper(const Model::ResetPersonalPINRequest& request, const ResetPersonalPINResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestorePhoneNumberAsyncHelper(const Model::RestorePhoneNumberRequest& request, const RestorePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchAvailablePhoneNumbersAsyncHelper(const Model::SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAccountAsyncHelper(const Model::UpdateAccountRequest& request, const UpdateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAccountSettingsAsyncHelper(const Model::UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateBotAsyncHelper(const Model::UpdateBotRequest& request, const UpdateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGlobalSettingsAsyncHelper(const Model::UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePhoneNumberAsyncHelper(const Model::UpdatePhoneNumberRequest& request, const UpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserAsyncHelper(const Model::UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

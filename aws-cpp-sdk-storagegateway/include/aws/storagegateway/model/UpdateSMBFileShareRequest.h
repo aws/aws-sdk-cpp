@@ -390,28 +390,36 @@ namespace Model
     /**
      * <p>Set this value to "true to enable ACL (access control list) on the SMB file
      * share. Set it to "false" to map file and directory permissions to the POSIX
-     * permissions.</p>
+     * permissions.</p> <p>For more information, see
+     * https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.htmlin the
+     * Storage Gateway User Guide.</p>
      */
     inline bool GetSMBACLEnabled() const{ return m_sMBACLEnabled; }
 
     /**
      * <p>Set this value to "true to enable ACL (access control list) on the SMB file
      * share. Set it to "false" to map file and directory permissions to the POSIX
-     * permissions.</p>
+     * permissions.</p> <p>For more information, see
+     * https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.htmlin the
+     * Storage Gateway User Guide.</p>
      */
     inline bool SMBACLEnabledHasBeenSet() const { return m_sMBACLEnabledHasBeenSet; }
 
     /**
      * <p>Set this value to "true to enable ACL (access control list) on the SMB file
      * share. Set it to "false" to map file and directory permissions to the POSIX
-     * permissions.</p>
+     * permissions.</p> <p>For more information, see
+     * https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.htmlin the
+     * Storage Gateway User Guide.</p>
      */
     inline void SetSMBACLEnabled(bool value) { m_sMBACLEnabledHasBeenSet = true; m_sMBACLEnabled = value; }
 
     /**
      * <p>Set this value to "true to enable ACL (access control list) on the SMB file
      * share. Set it to "false" to map file and directory permissions to the POSIX
-     * permissions.</p>
+     * permissions.</p> <p>For more information, see
+     * https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.htmlin the
+     * Storage Gateway User Guide.</p>
      */
     inline UpdateSMBFileShareRequest& WithSMBACLEnabled(bool value) { SetSMBACLEnabled(value); return *this;}
 

@@ -168,30 +168,30 @@ namespace Model
 
 
     /**
-     * <p>The index of the device on the instance for the network interface attachment.
-     * If you are specifying a network interface in a <a>RunInstances</a> request, you
-     * must provide the device index.</p>
+     * <p>The position of the network interface in the attachment order. A primary
+     * network interface has a device index of 0.</p> <p>If you specify a network
+     * interface when launching an instance, you must specify the device index.</p>
      */
     inline int GetDeviceIndex() const{ return m_deviceIndex; }
 
     /**
-     * <p>The index of the device on the instance for the network interface attachment.
-     * If you are specifying a network interface in a <a>RunInstances</a> request, you
-     * must provide the device index.</p>
+     * <p>The position of the network interface in the attachment order. A primary
+     * network interface has a device index of 0.</p> <p>If you specify a network
+     * interface when launching an instance, you must specify the device index.</p>
      */
     inline bool DeviceIndexHasBeenSet() const { return m_deviceIndexHasBeenSet; }
 
     /**
-     * <p>The index of the device on the instance for the network interface attachment.
-     * If you are specifying a network interface in a <a>RunInstances</a> request, you
-     * must provide the device index.</p>
+     * <p>The position of the network interface in the attachment order. A primary
+     * network interface has a device index of 0.</p> <p>If you specify a network
+     * interface when launching an instance, you must specify the device index.</p>
      */
     inline void SetDeviceIndex(int value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
 
     /**
-     * <p>The index of the device on the instance for the network interface attachment.
-     * If you are specifying a network interface in a <a>RunInstances</a> request, you
-     * must provide the device index.</p>
+     * <p>The position of the network interface in the attachment order. A primary
+     * network interface has a device index of 0.</p> <p>If you specify a network
+     * interface when launching an instance, you must specify the device index.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithDeviceIndex(int value) { SetDeviceIndex(value); return *this;}
 
@@ -397,56 +397,72 @@ namespace Model
     /**
      * <p>The private IPv4 address of the network interface. Applies only if creating a
      * network interface when launching an instance. You cannot specify this option if
-     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     * you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     * request.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
 
     /**
      * <p>The private IPv4 address of the network interface. Applies only if creating a
      * network interface when launching an instance. You cannot specify this option if
-     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     * you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     * request.</p>
      */
     inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
 
     /**
      * <p>The private IPv4 address of the network interface. Applies only if creating a
      * network interface when launching an instance. You cannot specify this option if
-     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     * you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     * request.</p>
      */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
      * <p>The private IPv4 address of the network interface. Applies only if creating a
      * network interface when launching an instance. You cannot specify this option if
-     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     * you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     * request.</p>
      */
     inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
 
     /**
      * <p>The private IPv4 address of the network interface. Applies only if creating a
      * network interface when launching an instance. You cannot specify this option if
-     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     * you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     * request.</p>
      */
     inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
 
     /**
      * <p>The private IPv4 address of the network interface. Applies only if creating a
      * network interface when launching an instance. You cannot specify this option if
-     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     * you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     * request.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
      * <p>The private IPv4 address of the network interface. Applies only if creating a
      * network interface when launching an instance. You cannot specify this option if
-     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     * you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     * request.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>The private IPv4 address of the network interface. Applies only if creating a
      * network interface when launching an instance. You cannot specify this option if
-     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     * you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     * request.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
@@ -454,7 +470,8 @@ namespace Model
     /**
      * <p>One or more private IPv4 addresses to assign to the network interface. Only
      * one private IPv4 address can be designated as primary. You cannot specify this
-     * option if you're launching more than one instance in a <a>RunInstances</a>
+     * option if you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
      * request.</p>
      */
     inline const Aws::Vector<PrivateIpAddressSpecification>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
@@ -462,7 +479,8 @@ namespace Model
     /**
      * <p>One or more private IPv4 addresses to assign to the network interface. Only
      * one private IPv4 address can be designated as primary. You cannot specify this
-     * option if you're launching more than one instance in a <a>RunInstances</a>
+     * option if you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
      * request.</p>
      */
     inline bool PrivateIpAddressesHasBeenSet() const { return m_privateIpAddressesHasBeenSet; }
@@ -470,7 +488,8 @@ namespace Model
     /**
      * <p>One or more private IPv4 addresses to assign to the network interface. Only
      * one private IPv4 address can be designated as primary. You cannot specify this
-     * option if you're launching more than one instance in a <a>RunInstances</a>
+     * option if you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
      * request.</p>
      */
     inline void SetPrivateIpAddresses(const Aws::Vector<PrivateIpAddressSpecification>& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
@@ -478,7 +497,8 @@ namespace Model
     /**
      * <p>One or more private IPv4 addresses to assign to the network interface. Only
      * one private IPv4 address can be designated as primary. You cannot specify this
-     * option if you're launching more than one instance in a <a>RunInstances</a>
+     * option if you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
      * request.</p>
      */
     inline void SetPrivateIpAddresses(Aws::Vector<PrivateIpAddressSpecification>&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = std::move(value); }
@@ -486,7 +506,8 @@ namespace Model
     /**
      * <p>One or more private IPv4 addresses to assign to the network interface. Only
      * one private IPv4 address can be designated as primary. You cannot specify this
-     * option if you're launching more than one instance in a <a>RunInstances</a>
+     * option if you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
      * request.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddresses(const Aws::Vector<PrivateIpAddressSpecification>& value) { SetPrivateIpAddresses(value); return *this;}
@@ -494,7 +515,8 @@ namespace Model
     /**
      * <p>One or more private IPv4 addresses to assign to the network interface. Only
      * one private IPv4 address can be designated as primary. You cannot specify this
-     * option if you're launching more than one instance in a <a>RunInstances</a>
+     * option if you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
      * request.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddresses(Aws::Vector<PrivateIpAddressSpecification>&& value) { SetPrivateIpAddresses(std::move(value)); return *this;}
@@ -502,7 +524,8 @@ namespace Model
     /**
      * <p>One or more private IPv4 addresses to assign to the network interface. Only
      * one private IPv4 address can be designated as primary. You cannot specify this
-     * option if you're launching more than one instance in a <a>RunInstances</a>
+     * option if you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
      * request.</p>
      */
     inline InstanceNetworkInterfaceSpecification& AddPrivateIpAddresses(const PrivateIpAddressSpecification& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
@@ -510,7 +533,8 @@ namespace Model
     /**
      * <p>One or more private IPv4 addresses to assign to the network interface. Only
      * one private IPv4 address can be designated as primary. You cannot specify this
-     * option if you're launching more than one instance in a <a>RunInstances</a>
+     * option if you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
      * request.</p>
      */
     inline InstanceNetworkInterfaceSpecification& AddPrivateIpAddresses(PrivateIpAddressSpecification&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(std::move(value)); return *this; }
@@ -520,7 +544,9 @@ namespace Model
      * <p>The number of secondary private IPv4 addresses. You can't specify this option
      * and specify more than one private IP address using the private IP addresses
      * option. You cannot specify this option if you're launching more than one
-     * instance in a <a>RunInstances</a> request.</p>
+     * instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     * request.</p>
      */
     inline int GetSecondaryPrivateIpAddressCount() const{ return m_secondaryPrivateIpAddressCount; }
 
@@ -528,7 +554,9 @@ namespace Model
      * <p>The number of secondary private IPv4 addresses. You can't specify this option
      * and specify more than one private IP address using the private IP addresses
      * option. You cannot specify this option if you're launching more than one
-     * instance in a <a>RunInstances</a> request.</p>
+     * instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     * request.</p>
      */
     inline bool SecondaryPrivateIpAddressCountHasBeenSet() const { return m_secondaryPrivateIpAddressCountHasBeenSet; }
 
@@ -536,7 +564,9 @@ namespace Model
      * <p>The number of secondary private IPv4 addresses. You can't specify this option
      * and specify more than one private IP address using the private IP addresses
      * option. You cannot specify this option if you're launching more than one
-     * instance in a <a>RunInstances</a> request.</p>
+     * instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     * request.</p>
      */
     inline void SetSecondaryPrivateIpAddressCount(int value) { m_secondaryPrivateIpAddressCountHasBeenSet = true; m_secondaryPrivateIpAddressCount = value; }
 
@@ -544,7 +574,9 @@ namespace Model
      * <p>The number of secondary private IPv4 addresses. You can't specify this option
      * and specify more than one private IP address using the private IP addresses
      * option. You cannot specify this option if you're launching more than one
-     * instance in a <a>RunInstances</a> request.</p>
+     * instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     * request.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithSecondaryPrivateIpAddressCount(int value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
 

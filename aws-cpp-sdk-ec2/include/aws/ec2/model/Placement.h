@@ -53,56 +53,56 @@ namespace Model
     /**
      * <p>The Availability Zone of the instance.</p> <p>If not specified, an
      * Availability Zone will be automatically chosen for you based on the load
-     * balancing criteria for the region.</p>
+     * balancing criteria for the Region.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
      * <p>The Availability Zone of the instance.</p> <p>If not specified, an
      * Availability Zone will be automatically chosen for you based on the load
-     * balancing criteria for the region.</p>
+     * balancing criteria for the Region.</p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone of the instance.</p> <p>If not specified, an
      * Availability Zone will be automatically chosen for you based on the load
-     * balancing criteria for the region.</p>
+     * balancing criteria for the Region.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The Availability Zone of the instance.</p> <p>If not specified, an
      * Availability Zone will be automatically chosen for you based on the load
-     * balancing criteria for the region.</p>
+     * balancing criteria for the Region.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone of the instance.</p> <p>If not specified, an
      * Availability Zone will be automatically chosen for you based on the load
-     * balancing criteria for the region.</p>
+     * balancing criteria for the Region.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
      * <p>The Availability Zone of the instance.</p> <p>If not specified, an
      * Availability Zone will be automatically chosen for you based on the load
-     * balancing criteria for the region.</p>
+     * balancing criteria for the Region.</p>
      */
     inline Placement& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The Availability Zone of the instance.</p> <p>If not specified, an
      * Availability Zone will be automatically chosen for you based on the load
-     * balancing criteria for the region.</p>
+     * balancing criteria for the Region.</p>
      */
     inline Placement& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone of the instance.</p> <p>If not specified, an
      * Availability Zone will be automatically chosen for you based on the load
-     * balancing criteria for the region.</p>
+     * balancing criteria for the Region.</p>
      */
     inline Placement& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
@@ -274,48 +274,54 @@ namespace Model
     /**
      * <p>The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.</p>
+     * hardware. The <code>host</code> tenancy is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     * command.</p>
      */
     inline const Tenancy& GetTenancy() const{ return m_tenancy; }
 
     /**
      * <p>The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.</p>
+     * hardware. The <code>host</code> tenancy is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     * command.</p>
      */
     inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
 
     /**
      * <p>The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.</p>
+     * hardware. The <code>host</code> tenancy is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     * command.</p>
      */
     inline void SetTenancy(const Tenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
 
     /**
      * <p>The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.</p>
+     * hardware. The <code>host</code> tenancy is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     * command.</p>
      */
     inline void SetTenancy(Tenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
 
     /**
      * <p>The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.</p>
+     * hardware. The <code>host</code> tenancy is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     * command.</p>
      */
     inline Placement& WithTenancy(const Tenancy& value) { SetTenancy(value); return *this;}
 
     /**
      * <p>The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.</p>
+     * hardware. The <code>host</code> tenancy is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     * command.</p>
      */
     inline Placement& WithTenancy(Tenancy&& value) { SetTenancy(std::move(value)); return *this;}
 

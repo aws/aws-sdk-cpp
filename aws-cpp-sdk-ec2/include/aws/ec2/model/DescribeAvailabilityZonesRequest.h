@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>message</code> - Information about the
      * Availability Zone.</p> </li> <li> <p> <code>region-name</code> - The name of the
-     * region for the Availability Zone (for example, <code>us-east-1</code>).</p>
+     * Region for the Availability Zone (for example, <code>us-east-1</code>).</p>
      * </li> <li> <p> <code>state</code> - The state of the Availability Zone
      * (<code>available</code> | <code>information</code> | <code>impaired</code> |
      * <code>unavailable</code>).</p> </li> <li> <p> <code>zone-id</code> - The ID of
@@ -64,7 +64,7 @@ namespace Model
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>message</code> - Information about the
      * Availability Zone.</p> </li> <li> <p> <code>region-name</code> - The name of the
-     * region for the Availability Zone (for example, <code>us-east-1</code>).</p>
+     * Region for the Availability Zone (for example, <code>us-east-1</code>).</p>
      * </li> <li> <p> <code>state</code> - The state of the Availability Zone
      * (<code>available</code> | <code>information</code> | <code>impaired</code> |
      * <code>unavailable</code>).</p> </li> <li> <p> <code>zone-id</code> - The ID of
@@ -77,7 +77,7 @@ namespace Model
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>message</code> - Information about the
      * Availability Zone.</p> </li> <li> <p> <code>region-name</code> - The name of the
-     * region for the Availability Zone (for example, <code>us-east-1</code>).</p>
+     * Region for the Availability Zone (for example, <code>us-east-1</code>).</p>
      * </li> <li> <p> <code>state</code> - The state of the Availability Zone
      * (<code>available</code> | <code>information</code> | <code>impaired</code> |
      * <code>unavailable</code>).</p> </li> <li> <p> <code>zone-id</code> - The ID of
@@ -90,7 +90,7 @@ namespace Model
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>message</code> - Information about the
      * Availability Zone.</p> </li> <li> <p> <code>region-name</code> - The name of the
-     * region for the Availability Zone (for example, <code>us-east-1</code>).</p>
+     * Region for the Availability Zone (for example, <code>us-east-1</code>).</p>
      * </li> <li> <p> <code>state</code> - The state of the Availability Zone
      * (<code>available</code> | <code>information</code> | <code>impaired</code> |
      * <code>unavailable</code>).</p> </li> <li> <p> <code>zone-id</code> - The ID of
@@ -103,7 +103,7 @@ namespace Model
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>message</code> - Information about the
      * Availability Zone.</p> </li> <li> <p> <code>region-name</code> - The name of the
-     * region for the Availability Zone (for example, <code>us-east-1</code>).</p>
+     * Region for the Availability Zone (for example, <code>us-east-1</code>).</p>
      * </li> <li> <p> <code>state</code> - The state of the Availability Zone
      * (<code>available</code> | <code>information</code> | <code>impaired</code> |
      * <code>unavailable</code>).</p> </li> <li> <p> <code>zone-id</code> - The ID of
@@ -116,7 +116,7 @@ namespace Model
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>message</code> - Information about the
      * Availability Zone.</p> </li> <li> <p> <code>region-name</code> - The name of the
-     * region for the Availability Zone (for example, <code>us-east-1</code>).</p>
+     * Region for the Availability Zone (for example, <code>us-east-1</code>).</p>
      * </li> <li> <p> <code>state</code> - The state of the Availability Zone
      * (<code>available</code> | <code>information</code> | <code>impaired</code> |
      * <code>unavailable</code>).</p> </li> <li> <p> <code>zone-id</code> - The ID of
@@ -129,7 +129,7 @@ namespace Model
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>message</code> - Information about the
      * Availability Zone.</p> </li> <li> <p> <code>region-name</code> - The name of the
-     * region for the Availability Zone (for example, <code>us-east-1</code>).</p>
+     * Region for the Availability Zone (for example, <code>us-east-1</code>).</p>
      * </li> <li> <p> <code>state</code> - The state of the Availability Zone
      * (<code>available</code> | <code>information</code> | <code>impaired</code> |
      * <code>unavailable</code>).</p> </li> <li> <p> <code>zone-id</code> - The ID of
@@ -142,7 +142,7 @@ namespace Model
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>message</code> - Information about the
      * Availability Zone.</p> </li> <li> <p> <code>region-name</code> - The name of the
-     * region for the Availability Zone (for example, <code>us-east-1</code>).</p>
+     * Region for the Availability Zone (for example, <code>us-east-1</code>).</p>
      * </li> <li> <p> <code>state</code> - The state of the Availability Zone
      * (<code>available</code> | <code>information</code> | <code>impaired</code> |
      * <code>unavailable</code>).</p> </li> <li> <p> <code>zone-id</code> - The ID of

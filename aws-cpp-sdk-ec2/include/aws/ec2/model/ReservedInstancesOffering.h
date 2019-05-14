@@ -542,37 +542,37 @@ namespace Model
 
 
     /**
-     * <p>Whether the Reserved Instance is applied to instances in a region or an
+     * <p>Whether the Reserved Instance is applied to instances in a Region or an
      * Availability Zone.</p>
      */
     inline const Scope& GetScope() const{ return m_scope; }
 
     /**
-     * <p>Whether the Reserved Instance is applied to instances in a region or an
+     * <p>Whether the Reserved Instance is applied to instances in a Region or an
      * Availability Zone.</p>
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
-     * <p>Whether the Reserved Instance is applied to instances in a region or an
+     * <p>Whether the Reserved Instance is applied to instances in a Region or an
      * Availability Zone.</p>
      */
     inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p>Whether the Reserved Instance is applied to instances in a region or an
+     * <p>Whether the Reserved Instance is applied to instances in a Region or an
      * Availability Zone.</p>
      */
     inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
-     * <p>Whether the Reserved Instance is applied to instances in a region or an
+     * <p>Whether the Reserved Instance is applied to instances in a Region or an
      * Availability Zone.</p>
      */
     inline ReservedInstancesOffering& WithScope(const Scope& value) { SetScope(value); return *this;}
 
     /**
-     * <p>Whether the Reserved Instance is applied to instances in a region or an
+     * <p>Whether the Reserved Instance is applied to instances in a Region or an
      * Availability Zone.</p>
      */
     inline ReservedInstancesOffering& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}

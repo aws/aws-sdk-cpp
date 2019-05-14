@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Information about the regions.</p>
+     * <p>Information about the Regions.</p>
      */
     inline const Aws::Vector<Region>& GetRegions() const{ return m_regions; }
 
     /**
-     * <p>Information about the regions.</p>
+     * <p>Information about the Regions.</p>
      */
     inline void SetRegions(const Aws::Vector<Region>& value) { m_regions = value; }
 
     /**
-     * <p>Information about the regions.</p>
+     * <p>Information about the Regions.</p>
      */
     inline void SetRegions(Aws::Vector<Region>&& value) { m_regions = std::move(value); }
 
     /**
-     * <p>Information about the regions.</p>
+     * <p>Information about the Regions.</p>
      */
     inline DescribeRegionsResponse& WithRegions(const Aws::Vector<Region>& value) { SetRegions(value); return *this;}
 
     /**
-     * <p>Information about the regions.</p>
+     * <p>Information about the Regions.</p>
      */
     inline DescribeRegionsResponse& WithRegions(Aws::Vector<Region>&& value) { SetRegions(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the regions.</p>
+     * <p>Information about the Regions.</p>
      */
     inline DescribeRegionsResponse& AddRegions(const Region& value) { m_regions.push_back(value); return *this; }
 
     /**
-     * <p>Information about the regions.</p>
+     * <p>Information about the Regions.</p>
      */
     inline DescribeRegionsResponse& AddRegions(Region&& value) { m_regions.push_back(std::move(value)); return *this; }
 

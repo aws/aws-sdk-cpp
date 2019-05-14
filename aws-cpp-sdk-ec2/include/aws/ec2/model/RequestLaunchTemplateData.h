@@ -290,42 +290,50 @@ namespace Model
 
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces. If you specify a network interface, you must
+     * specify any security groups as part of the network interface.</p>
      */
     inline const Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces. If you specify a network interface, you must
+     * specify any security groups as part of the network interface.</p>
      */
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces. If you specify a network interface, you must
+     * specify any security groups as part of the network interface.</p>
      */
     inline void SetNetworkInterfaces(const Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces. If you specify a network interface, you must
+     * specify any security groups as part of the network interface.</p>
      */
     inline void SetNetworkInterfaces(Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces. If you specify a network interface, you must
+     * specify any security groups as part of the network interface.</p>
      */
     inline RequestLaunchTemplateData& WithNetworkInterfaces(const Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces. If you specify a network interface, you must
+     * specify any security groups as part of the network interface.</p>
      */
     inline RequestLaunchTemplateData& WithNetworkInterfaces(Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces. If you specify a network interface, you must
+     * specify any security groups as part of the network interface.</p>
      */
     inline RequestLaunchTemplateData& AddNetworkInterfaces(const LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces. If you specify a network interface, you must
+     * specify any security groups as part of the network interface.</p>
      */
     inline RequestLaunchTemplateData& AddNetworkInterfaces(LaunchTemplateInstanceNetworkInterfaceSpecificationRequest&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 
@@ -811,7 +819,8 @@ namespace Model
      * <p>The tags to apply to the resources during launch. You can only tag instances
      * and volumes on launch. The specified tags are applied to all instances or
      * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.</p>
+     * created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline const Aws::Vector<LaunchTemplateTagSpecificationRequest>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
@@ -819,7 +828,8 @@ namespace Model
      * <p>The tags to apply to the resources during launch. You can only tag instances
      * and volumes on launch. The specified tags are applied to all instances or
      * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.</p>
+     * created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
@@ -827,7 +837,8 @@ namespace Model
      * <p>The tags to apply to the resources during launch. You can only tag instances
      * and volumes on launch. The specified tags are applied to all instances or
      * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.</p>
+     * created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<LaunchTemplateTagSpecificationRequest>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
@@ -835,7 +846,8 @@ namespace Model
      * <p>The tags to apply to the resources during launch. You can only tag instances
      * and volumes on launch. The specified tags are applied to all instances or
      * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.</p>
+     * created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<LaunchTemplateTagSpecificationRequest>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
@@ -843,7 +855,8 @@ namespace Model
      * <p>The tags to apply to the resources during launch. You can only tag instances
      * and volumes on launch. The specified tags are applied to all instances or
      * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.</p>
+     * created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RequestLaunchTemplateData& WithTagSpecifications(const Aws::Vector<LaunchTemplateTagSpecificationRequest>& value) { SetTagSpecifications(value); return *this;}
 
@@ -851,7 +864,8 @@ namespace Model
      * <p>The tags to apply to the resources during launch. You can only tag instances
      * and volumes on launch. The specified tags are applied to all instances or
      * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.</p>
+     * created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RequestLaunchTemplateData& WithTagSpecifications(Aws::Vector<LaunchTemplateTagSpecificationRequest>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
@@ -859,7 +873,8 @@ namespace Model
      * <p>The tags to apply to the resources during launch. You can only tag instances
      * and volumes on launch. The specified tags are applied to all instances or
      * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.</p>
+     * created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RequestLaunchTemplateData& AddTagSpecifications(const LaunchTemplateTagSpecificationRequest& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
@@ -867,7 +882,8 @@ namespace Model
      * <p>The tags to apply to the resources during launch. You can only tag instances
      * and volumes on launch. The specified tags are applied to all instances or
      * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.</p>
+     * created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RequestLaunchTemplateData& AddTagSpecifications(LaunchTemplateTagSpecificationRequest&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
@@ -955,65 +971,74 @@ namespace Model
 
 
     /**
-     * <p>One or more security group IDs. You can create a security group using
-     * <a>CreateSecurityGroup</a>. You cannot specify both a security group ID and
-     * security name in the same request.</p>
+     * <p>One or more security group IDs. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
+     * You cannot specify both a security group ID and security name in the same
+     * request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
-     * <p>One or more security group IDs. You can create a security group using
-     * <a>CreateSecurityGroup</a>. You cannot specify both a security group ID and
-     * security name in the same request.</p>
+     * <p>One or more security group IDs. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
+     * You cannot specify both a security group ID and security name in the same
+     * request.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
-     * <p>One or more security group IDs. You can create a security group using
-     * <a>CreateSecurityGroup</a>. You cannot specify both a security group ID and
-     * security name in the same request.</p>
+     * <p>One or more security group IDs. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
+     * You cannot specify both a security group ID and security name in the same
+     * request.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
-     * <p>One or more security group IDs. You can create a security group using
-     * <a>CreateSecurityGroup</a>. You cannot specify both a security group ID and
-     * security name in the same request.</p>
+     * <p>One or more security group IDs. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
+     * You cannot specify both a security group ID and security name in the same
+     * request.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
-     * <p>One or more security group IDs. You can create a security group using
-     * <a>CreateSecurityGroup</a>. You cannot specify both a security group ID and
-     * security name in the same request.</p>
+     * <p>One or more security group IDs. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
+     * You cannot specify both a security group ID and security name in the same
+     * request.</p>
      */
     inline RequestLaunchTemplateData& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>One or more security group IDs. You can create a security group using
-     * <a>CreateSecurityGroup</a>. You cannot specify both a security group ID and
-     * security name in the same request.</p>
+     * <p>One or more security group IDs. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
+     * You cannot specify both a security group ID and security name in the same
+     * request.</p>
      */
     inline RequestLaunchTemplateData& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more security group IDs. You can create a security group using
-     * <a>CreateSecurityGroup</a>. You cannot specify both a security group ID and
-     * security name in the same request.</p>
+     * <p>One or more security group IDs. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
+     * You cannot specify both a security group ID and security name in the same
+     * request.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more security group IDs. You can create a security group using
-     * <a>CreateSecurityGroup</a>. You cannot specify both a security group ID and
-     * security name in the same request.</p>
+     * <p>One or more security group IDs. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
+     * You cannot specify both a security group ID and security name in the same
+     * request.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more security group IDs. You can create a security group using
-     * <a>CreateSecurityGroup</a>. You cannot specify both a security group ID and
-     * security name in the same request.</p>
+     * <p>One or more security group IDs. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
+     * You cannot specify both a security group ID and security name in the same
+     * request.</p>
      */
     inline RequestLaunchTemplateData& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
