@@ -323,9 +323,9 @@ def Main():
         customCmakeParams += "-DREGENERATE_CLIENTS=1 "
 
     if customMemoryManagement == "0":
-        customCmakeParams += "-DCUSTOM_MEMORY_MANAGEMENT=0 "
+        customCmakeParams += "-DCUSTOM_MEMORY_MANAGEMENT=OFF "
     else:
-        customCmakeParams += "-DCUSTOM_MEMORY_MANAGEMENT=1 "
+        customCmakeParams += "-DCUSTOM_MEMORY_MANAGEMENT=ON "
 
     if enableRtti == "0":
         customCmakeParams += "-DENABLE_RTTI=OFF "

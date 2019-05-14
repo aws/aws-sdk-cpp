@@ -156,11 +156,11 @@ Allows you to build any arbitrary clients based on the api definition. Simply pl
 This argument will wipe out all generated code and generate the client directories from the code-generation/api-definitions folder. To use this argument, you need to have python 2.7, java, jdk1.8, and maven installed in your executable path. Example: -DREGENERATE_CLIENTS=1
 
 ##### CUSTOM_MEMORY_MANAGEMENT  
-To use a custom memory manager, set the value to 1. You can install a custom allocator, and all STL types will use the custom allocation interface. If the value is set to 0, you still might want to use the STL template types to help with DLL safety on Windows.
+To use a custom memory manager, set the value to ON. You can install a custom allocator, and all STL types will use the custom allocation interface. If the value is set to OFF, you still might want to use the STL template types to help with DLL safety on Windows.
 
 If static linking is enabled, custom memory management defaults to off. If dynamic linking is enabled, custom memory management defaults to on and avoids cross-DLL allocation and deallocation.
 
-Note: To prevent linker mismatch errors, you must use the same value (0 or 1) throughout your build system.
+Note: To prevent linker mismatch errors, you must use the same value (ON or OFF) throughout your build system.
 
 ##### TARGET_ARCH
 To cross compile or build for a mobile platform, you must specify the target platform. By default the build detects the host operating system and builds for that operating system.

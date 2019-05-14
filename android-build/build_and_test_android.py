@@ -223,7 +223,7 @@ def BuildNative(abi, clean, buildDir, jniDir, installDir, buildType, buildShared
 
         subprocess.check_call( [ "cmake", 
                                  link_type_line,
-                                 "-DCUSTOM_MEMORY_MANAGEMENT=1",
+                                 "-DCUSTOM_MEMORY_MANAGEMENT=ON",
                                  "-DTARGET_ARCH=ANDROID", 
                                  "-DANDROID_ABI=" + abi, 
                                  "-DANDROID_STL=" + stl,

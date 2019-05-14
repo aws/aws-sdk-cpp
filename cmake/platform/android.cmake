@@ -70,7 +70,7 @@ macro(apply_pre_project_platform_settings)
 
     # android-specific required overrrides
     if (NOT DEFINED CUSTOM_MEMORY_MANAGEMENT)
-        set(CUSTOM_MEMORY_MANAGEMENT "1")
+        set(CUSTOM_MEMORY_MANAGEMENT ON)
     endif()
 
     set(ANDROID_STL_FORCE_FEATURES "OFF")
