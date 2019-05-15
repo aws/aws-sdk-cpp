@@ -42,9 +42,9 @@ namespace Model
 
   /**
    * <p>Contains the details of an Amazon Aurora DB cluster. </p> <p>This data type
-   * is used as a response element in the <a>DescribeDBClusters</a>,
-   * <a>StopDBCluster</a>, and <a>StartDBCluster</a> actions. </p><p><h3>See
-   * Also:</h3>   <a
+   * is used as a response element in the <code>DescribeDBClusters</code>,
+   * <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBCluster">AWS API
    * Reference</a></p>
    */
@@ -93,56 +93,56 @@ namespace Model
 
 
     /**
-     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
-     * can be created in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the DB
+     * cluster can be created.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
     /**
-     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
-     * can be created in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the DB
+     * cluster can be created.</p>
      */
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
-     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
-     * can be created in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the DB
+     * cluster can be created.</p>
      */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
-     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
-     * can be created in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the DB
+     * cluster can be created.</p>
      */
     inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
-     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
-     * can be created in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the DB
+     * cluster can be created.</p>
      */
     inline DBCluster& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
 
     /**
-     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
-     * can be created in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the DB
+     * cluster can be created.</p>
      */
     inline DBCluster& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
-     * can be created in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the DB
+     * cluster can be created.</p>
      */
     inline DBCluster& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
-     * can be created in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the DB
+     * cluster can be created.</p>
      */
     inline DBCluster& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
-     * can be created in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the DB
+     * cluster can be created.</p>
      */
     inline DBCluster& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
@@ -1346,50 +1346,50 @@ namespace Model
 
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
+     * the encrypted DB cluster.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
+     * the encrypted DB cluster.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
+     * the encrypted DB cluster.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
+     * the encrypted DB cluster.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
+     * the encrypted DB cluster.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
+     * the encrypted DB cluster.</p>
      */
     inline DBCluster& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
+     * the encrypted DB cluster.</p>
      */
     inline DBCluster& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
+     * the encrypted DB cluster.</p>
      */
     inline DBCluster& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1558,26 +1558,26 @@ namespace Model
 
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>A value that indicates whether the mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>A value that indicates whether the mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>A value that indicates whether the mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>A value that indicates whether the mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline DBCluster& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 
@@ -1930,37 +1930,37 @@ namespace Model
 
     /**
      * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when this value is set to true. </p>
+     * can't be deleted when deletion protection is enabled. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
      * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when this value is set to true. </p>
+     * can't be deleted when deletion protection is enabled. </p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
      * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when this value is set to true. </p>
+     * can't be deleted when deletion protection is enabled. </p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
      * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when this value is set to true. </p>
+     * can't be deleted when deletion protection is enabled. </p>
      */
     inline DBCluster& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
 
     /**
      * <note> <p>HTTP endpoint functionality is in beta for Aurora Serverless and is
-     * subject to change.</p> </note> <p>Value that is <code>true</code> if the HTTP
-     * endpoint for an Aurora Serverless DB cluster is enabled and <code>false</code>
-     * otherwise.</p> <p>When enabled, the HTTP endpoint provides a connectionless web
-     * service API for running SQL queries on the Aurora Serverless DB cluster. You can
-     * also query your database from inside the RDS console with the query editor.</p>
-     * <p>For more information about Aurora Serverless, see <a
+     * subject to change.</p> </note> <p>A value that indicates whether the HTTP
+     * endpoint for an Aurora Serverless DB cluster is enabled.</p> <p>When enabled,
+     * the HTTP endpoint provides a connectionless web service API for running SQL
+     * queries on the Aurora Serverless DB cluster. You can also query your database
+     * from inside the RDS console with the query editor.</p> <p>For more information
+     * about Aurora Serverless, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
      * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
@@ -1968,12 +1968,12 @@ namespace Model
 
     /**
      * <note> <p>HTTP endpoint functionality is in beta for Aurora Serverless and is
-     * subject to change.</p> </note> <p>Value that is <code>true</code> if the HTTP
-     * endpoint for an Aurora Serverless DB cluster is enabled and <code>false</code>
-     * otherwise.</p> <p>When enabled, the HTTP endpoint provides a connectionless web
-     * service API for running SQL queries on the Aurora Serverless DB cluster. You can
-     * also query your database from inside the RDS console with the query editor.</p>
-     * <p>For more information about Aurora Serverless, see <a
+     * subject to change.</p> </note> <p>A value that indicates whether the HTTP
+     * endpoint for an Aurora Serverless DB cluster is enabled.</p> <p>When enabled,
+     * the HTTP endpoint provides a connectionless web service API for running SQL
+     * queries on the Aurora Serverless DB cluster. You can also query your database
+     * from inside the RDS console with the query editor.</p> <p>For more information
+     * about Aurora Serverless, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
      * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
@@ -1981,12 +1981,12 @@ namespace Model
 
     /**
      * <note> <p>HTTP endpoint functionality is in beta for Aurora Serverless and is
-     * subject to change.</p> </note> <p>Value that is <code>true</code> if the HTTP
-     * endpoint for an Aurora Serverless DB cluster is enabled and <code>false</code>
-     * otherwise.</p> <p>When enabled, the HTTP endpoint provides a connectionless web
-     * service API for running SQL queries on the Aurora Serverless DB cluster. You can
-     * also query your database from inside the RDS console with the query editor.</p>
-     * <p>For more information about Aurora Serverless, see <a
+     * subject to change.</p> </note> <p>A value that indicates whether the HTTP
+     * endpoint for an Aurora Serverless DB cluster is enabled.</p> <p>When enabled,
+     * the HTTP endpoint provides a connectionless web service API for running SQL
+     * queries on the Aurora Serverless DB cluster. You can also query your database
+     * from inside the RDS console with the query editor.</p> <p>For more information
+     * about Aurora Serverless, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
      * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
@@ -1994,12 +1994,12 @@ namespace Model
 
     /**
      * <note> <p>HTTP endpoint functionality is in beta for Aurora Serverless and is
-     * subject to change.</p> </note> <p>Value that is <code>true</code> if the HTTP
-     * endpoint for an Aurora Serverless DB cluster is enabled and <code>false</code>
-     * otherwise.</p> <p>When enabled, the HTTP endpoint provides a connectionless web
-     * service API for running SQL queries on the Aurora Serverless DB cluster. You can
-     * also query your database from inside the RDS console with the query editor.</p>
-     * <p>For more information about Aurora Serverless, see <a
+     * subject to change.</p> </note> <p>A value that indicates whether the HTTP
+     * endpoint for an Aurora Serverless DB cluster is enabled.</p> <p>When enabled,
+     * the HTTP endpoint provides a connectionless web service API for running SQL
+     * queries on the Aurora Serverless DB cluster. You can also query your database
+     * from inside the RDS console with the query editor.</p> <p>For more information
+     * about Aurora Serverless, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
      * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */

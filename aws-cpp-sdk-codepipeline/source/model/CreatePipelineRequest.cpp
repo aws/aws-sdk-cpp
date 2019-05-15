@@ -23,7 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreatePipelineRequest::CreatePipelineRequest() : 
-    m_pipelineHasBeenSet(false)
+    m_pipelineHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,17 @@ Aws::String CreatePipelineRequest::SerializePayload() const
   if(m_pipelineHasBeenSet)
   {
    payload.WithObject("pipeline", m_pipeline.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

@@ -35,7 +35,7 @@ namespace Model
 
   /**
    * <p>The version for an option. Option group option versions are returned by the
-   * <a>DescribeOptionGroupOptions</a> action.</p><p><h3>See Also:</h3>   <a
+   * <code>DescribeOptionGroupOptions</code> action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionVersion">AWS
    * API Reference</a></p>
    */

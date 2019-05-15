@@ -38,12 +38,12 @@ namespace Model
   /**
    * <p>This data type represents the information you need to connect to an Amazon
    * Aurora DB cluster. This data type is used as a response element in the following
-   * actions:</p> <ul> <li> <p> <a>CreateDBClusterEndpoint</a> </p> </li> <li> <p>
-   * <a>DescribeDBClusterEndpoints</a> </p> </li> <li> <p>
-   * <a>ModifyDBClusterEndpoint</a> </p> </li> <li> <p>
-   * <a>DeleteDBClusterEndpoint</a> </p> </li> </ul> <p>For the data structure that
-   * represents Amazon RDS DB instance endpoints, see <a>Endpoint</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * actions:</p> <ul> <li> <p> <code>CreateDBClusterEndpoint</code> </p> </li> <li>
+   * <p> <code>DescribeDBClusterEndpoints</code> </p> </li> <li> <p>
+   * <code>ModifyDBClusterEndpoint</code> </p> </li> <li> <p>
+   * <code>DeleteDBClusterEndpoint</code> </p> </li> </ul> <p>For the data structure
+   * that represents Amazon RDS DB instance endpoints, see
+   * <code>Endpoint</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterEndpoint">AWS
    * API Reference</a></p>
    */

@@ -39,7 +39,7 @@ namespace Model
 {
   /**
    * <p> Contains the result of a successful invocation of the
-   * <a>DescribeDBInstances</a> action. </p><p><h3>See Also:</h3>   <a
+   * <code>DescribeDBInstances</code> action. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBInstanceMessage">AWS
    * API Reference</a></p>
    */
@@ -102,37 +102,37 @@ namespace Model
 
 
     /**
-     * <p> A list of <a>DBInstance</a> instances. </p>
+     * <p> A list of <code>DBInstance</code> instances. </p>
      */
     inline const Aws::Vector<DBInstance>& GetDBInstances() const{ return m_dBInstances; }
 
     /**
-     * <p> A list of <a>DBInstance</a> instances. </p>
+     * <p> A list of <code>DBInstance</code> instances. </p>
      */
     inline void SetDBInstances(const Aws::Vector<DBInstance>& value) { m_dBInstances = value; }
 
     /**
-     * <p> A list of <a>DBInstance</a> instances. </p>
+     * <p> A list of <code>DBInstance</code> instances. </p>
      */
     inline void SetDBInstances(Aws::Vector<DBInstance>&& value) { m_dBInstances = std::move(value); }
 
     /**
-     * <p> A list of <a>DBInstance</a> instances. </p>
+     * <p> A list of <code>DBInstance</code> instances. </p>
      */
     inline DescribeDBInstancesResult& WithDBInstances(const Aws::Vector<DBInstance>& value) { SetDBInstances(value); return *this;}
 
     /**
-     * <p> A list of <a>DBInstance</a> instances. </p>
+     * <p> A list of <code>DBInstance</code> instances. </p>
      */
     inline DescribeDBInstancesResult& WithDBInstances(Aws::Vector<DBInstance>&& value) { SetDBInstances(std::move(value)); return *this;}
 
     /**
-     * <p> A list of <a>DBInstance</a> instances. </p>
+     * <p> A list of <code>DBInstance</code> instances. </p>
      */
     inline DescribeDBInstancesResult& AddDBInstances(const DBInstance& value) { m_dBInstances.push_back(value); return *this; }
 
     /**
-     * <p> A list of <a>DBInstance</a> instances. </p>
+     * <p> A list of <code>DBInstance</code> instances. </p>
      */
     inline DescribeDBInstancesResult& AddDBInstances(DBInstance&& value) { m_dBInstances.push_back(std::move(value)); return *this; }
 

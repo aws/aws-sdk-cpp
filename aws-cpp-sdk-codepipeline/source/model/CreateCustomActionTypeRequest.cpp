@@ -30,7 +30,8 @@ CreateCustomActionTypeRequest::CreateCustomActionTypeRequest() :
     m_settingsHasBeenSet(false),
     m_configurationPropertiesHasBeenSet(false),
     m_inputArtifactDetailsHasBeenSet(false),
-    m_outputArtifactDetailsHasBeenSet(false)
+    m_outputArtifactDetailsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,17 @@ Aws::String CreateCustomActionTypeRequest::SerializePayload() const
   if(m_outputArtifactDetailsHasBeenSet)
   {
    payload.WithObject("outputArtifactDetails", m_outputArtifactDetails.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

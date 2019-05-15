@@ -240,26 +240,22 @@ namespace Model
 
 
     /**
-     * <p>The VPC filter value. Specify this parameter to show only the available VPC
-     * or non-VPC offerings.</p>
+     * <p>A value that indicates whether to show only VPC or non-VPC offerings.</p>
      */
     inline bool GetVpc() const{ return m_vpc; }
 
     /**
-     * <p>The VPC filter value. Specify this parameter to show only the available VPC
-     * or non-VPC offerings.</p>
+     * <p>A value that indicates whether to show only VPC or non-VPC offerings.</p>
      */
     inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
 
     /**
-     * <p>The VPC filter value. Specify this parameter to show only the available VPC
-     * or non-VPC offerings.</p>
+     * <p>A value that indicates whether to show only VPC or non-VPC offerings.</p>
      */
     inline void SetVpc(bool value) { m_vpcHasBeenSet = true; m_vpc = value; }
 
     /**
-     * <p>The VPC filter value. Specify this parameter to show only the available VPC
-     * or non-VPC offerings.</p>
+     * <p>A value that indicates whether to show only VPC or non-VPC offerings.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithVpc(bool value) { SetVpc(value); return *this;}
 

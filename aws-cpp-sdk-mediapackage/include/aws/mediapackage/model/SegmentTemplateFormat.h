@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     NUMBER_WITH_TIMELINE,
-    TIME_WITH_TIMELINE
+    TIME_WITH_TIMELINE,
+    NUMBER_WITH_DURATION
   };
 
 namespace SegmentTemplateFormatMapper

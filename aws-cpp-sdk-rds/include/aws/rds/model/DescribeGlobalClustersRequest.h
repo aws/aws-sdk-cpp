@@ -221,7 +221,7 @@ namespace Model
 
     /**
      * <p> An optional pagination token provided by a previous
-     * <a>DescribeGlobalClusters</a> request. If this parameter is specified, the
+     * <code>DescribeGlobalClusters</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>. </p>
      */
@@ -229,7 +229,7 @@ namespace Model
 
     /**
      * <p> An optional pagination token provided by a previous
-     * <a>DescribeGlobalClusters</a> request. If this parameter is specified, the
+     * <code>DescribeGlobalClusters</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>. </p>
      */
@@ -237,7 +237,7 @@ namespace Model
 
     /**
      * <p> An optional pagination token provided by a previous
-     * <a>DescribeGlobalClusters</a> request. If this parameter is specified, the
+     * <code>DescribeGlobalClusters</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>. </p>
      */
@@ -245,7 +245,7 @@ namespace Model
 
     /**
      * <p> An optional pagination token provided by a previous
-     * <a>DescribeGlobalClusters</a> request. If this parameter is specified, the
+     * <code>DescribeGlobalClusters</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>. </p>
      */
@@ -253,7 +253,7 @@ namespace Model
 
     /**
      * <p> An optional pagination token provided by a previous
-     * <a>DescribeGlobalClusters</a> request. If this parameter is specified, the
+     * <code>DescribeGlobalClusters</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>. </p>
      */
@@ -261,7 +261,7 @@ namespace Model
 
     /**
      * <p> An optional pagination token provided by a previous
-     * <a>DescribeGlobalClusters</a> request. If this parameter is specified, the
+     * <code>DescribeGlobalClusters</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>. </p>
      */
@@ -269,7 +269,7 @@ namespace Model
 
     /**
      * <p> An optional pagination token provided by a previous
-     * <a>DescribeGlobalClusters</a> request. If this parameter is specified, the
+     * <code>DescribeGlobalClusters</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>. </p>
      */
@@ -277,7 +277,7 @@ namespace Model
 
     /**
      * <p> An optional pagination token provided by a previous
-     * <a>DescribeGlobalClusters</a> request. If this parameter is specified, the
+     * <code>DescribeGlobalClusters</code> request. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>. </p>
      */

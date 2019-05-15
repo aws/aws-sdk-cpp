@@ -43,7 +43,8 @@ ServiceConfiguration::ServiceConfiguration() :
     m_managesVpcEndpointsHasBeenSet(false),
     m_networkLoadBalancerArnsHasBeenSet(false),
     m_baseEndpointDnsNamesHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false)
+    m_privateDnsNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ ServiceConfiguration::ServiceConfiguration(const XmlNode& xmlNode) :
     m_managesVpcEndpointsHasBeenSet(false),
     m_networkLoadBalancerArnsHasBeenSet(false),
     m_baseEndpointDnsNamesHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false)
+    m_privateDnsNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -155,6 +157,18 @@ ServiceConfiguration& ServiceConfiguration::operator =(const XmlNode& xmlNode)
       m_privateDnsName = StringUtils::Trim(privateDnsNameNode.GetText().c_str());
       m_privateDnsNameHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -230,6 +244,17 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << index << locationValue << ".PrivateDnsName=" << StringUtils::URLEncode(m_privateDnsName.c_str()) << "&";
   }
 
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
 }
 
 void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -291,6 +316,16 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
   if(m_privateDnsNameHasBeenSet)
   {
       oStream << location << ".PrivateDnsName=" << StringUtils::URLEncode(m_privateDnsName.c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 }
 

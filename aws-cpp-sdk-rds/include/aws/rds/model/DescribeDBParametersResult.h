@@ -39,7 +39,7 @@ namespace Model
 {
   /**
    * <p> Contains the result of a successful invocation of the
-   * <a>DescribeDBParameters</a> action. </p><p><h3>See Also:</h3>   <a
+   * <code>DescribeDBParameters</code> action. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBParameterGroupDetails">AWS
    * API Reference</a></p>
    */
@@ -52,37 +52,37 @@ namespace Model
 
 
     /**
-     * <p> A list of <a>Parameter</a> values. </p>
+     * <p> A list of <code>Parameter</code> values. </p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p> A list of <a>Parameter</a> values. </p>
+     * <p> A list of <code>Parameter</code> values. </p>
      */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parameters = value; }
 
     /**
-     * <p> A list of <a>Parameter</a> values. </p>
+     * <p> A list of <code>Parameter</code> values. </p>
      */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = std::move(value); }
 
     /**
-     * <p> A list of <a>Parameter</a> values. </p>
+     * <p> A list of <code>Parameter</code> values. </p>
      */
     inline DescribeDBParametersResult& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p> A list of <a>Parameter</a> values. </p>
+     * <p> A list of <code>Parameter</code> values. </p>
      */
     inline DescribeDBParametersResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p> A list of <a>Parameter</a> values. </p>
+     * <p> A list of <code>Parameter</code> values. </p>
      */
     inline DescribeDBParametersResult& AddParameters(const Parameter& value) { m_parameters.push_back(value); return *this; }
 
     /**
-     * <p> A list of <a>Parameter</a> values. </p>
+     * <p> A list of <code>Parameter</code> values. </p>
      */
     inline DescribeDBParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
 

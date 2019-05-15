@@ -36,7 +36,9 @@ namespace Model
     fr_FR,
     it_IT,
     ko_KR,
-    es_ES
+    es_ES,
+    en_IN,
+    hi_IN
   };
 
 namespace LanguageCodeMapper

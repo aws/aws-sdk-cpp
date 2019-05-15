@@ -39,7 +39,8 @@ namespace Model
   /**
    * <p>Contains a list of available options for a DB instance.</p> <p> This data
    * type is used as a response element in the
-   * <a>DescribeOrderableDBInstanceOptions</a> action. </p><p><h3>See Also:</h3>   <a
+   * <code>DescribeOrderableDBInstanceOptions</code> action. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OrderableDBInstanceOption">AWS
    * API Reference</a></p>
    */

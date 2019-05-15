@@ -34,7 +34,8 @@ ListWebhookItem::ListWebhookItem() :
     m_errorMessageHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
     m_lastTriggeredHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ ListWebhookItem::ListWebhookItem(JsonView jsonValue) :
     m_errorMessageHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
     m_lastTriggeredHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,6 +95,16 @@ ListWebhookItem& ListWebhookItem::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -132,6 +144,17 @@ JsonValue ListWebhookItem::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

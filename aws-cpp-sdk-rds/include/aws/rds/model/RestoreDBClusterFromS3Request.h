@@ -49,56 +49,56 @@ namespace Model
   public:
 
     /**
-     * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
-     * can be created in.</p>
+     * <p>A list of Availability Zones (AZs) where instances in the restored DB cluster
+     * can be created.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
     /**
-     * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
-     * can be created in.</p>
+     * <p>A list of Availability Zones (AZs) where instances in the restored DB cluster
+     * can be created.</p>
      */
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
-     * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
-     * can be created in.</p>
+     * <p>A list of Availability Zones (AZs) where instances in the restored DB cluster
+     * can be created.</p>
      */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
-     * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
-     * can be created in.</p>
+     * <p>A list of Availability Zones (AZs) where instances in the restored DB cluster
+     * can be created.</p>
      */
     inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
-     * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
-     * can be created in.</p>
+     * <p>A list of Availability Zones (AZs) where instances in the restored DB cluster
+     * can be created.</p>
      */
     inline RestoreDBClusterFromS3Request& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
 
     /**
-     * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
-     * can be created in.</p>
+     * <p>A list of Availability Zones (AZs) where instances in the restored DB cluster
+     * can be created.</p>
      */
     inline RestoreDBClusterFromS3Request& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
-     * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
-     * can be created in.</p>
+     * <p>A list of Availability Zones (AZs) where instances in the restored DB cluster
+     * can be created.</p>
      */
     inline RestoreDBClusterFromS3Request& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
-     * can be created in.</p>
+     * <p>A list of Availability Zones (AZs) where instances in the restored DB cluster
+     * can be created.</p>
      */
     inline RestoreDBClusterFromS3Request& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
-     * can be created in.</p>
+     * <p>A list of Availability Zones (AZs) where instances in the restored DB cluster
+     * can be created.</p>
      */
     inline RestoreDBClusterFromS3Request& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
@@ -1042,22 +1042,22 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the restored DB cluster is encrypted.</p>
+     * <p>A value that indicates whether the restored DB cluster is encrypted.</p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
 
     /**
-     * <p>Specifies whether the restored DB cluster is encrypted.</p>
+     * <p>A value that indicates whether the restored DB cluster is encrypted.</p>
      */
     inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
 
     /**
-     * <p>Specifies whether the restored DB cluster is encrypted.</p>
+     * <p>A value that indicates whether the restored DB cluster is encrypted.</p>
      */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
-     * <p>Specifies whether the restored DB cluster is encrypted.</p>
+     * <p>A value that indicates whether the restored DB cluster is encrypted.</p>
      */
     inline RestoreDBClusterFromS3Request& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
 
@@ -1067,9 +1067,9 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the
-     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
-     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * instead of the ARN for the KM encryption key.</p> <p>If the StorageEncrypted
+     * parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
@@ -1080,9 +1080,9 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the
-     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
-     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * instead of the ARN for the KM encryption key.</p> <p>If the StorageEncrypted
+     * parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
@@ -1093,9 +1093,9 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the
-     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
-     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * instead of the ARN for the KM encryption key.</p> <p>If the StorageEncrypted
+     * parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
@@ -1106,9 +1106,9 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the
-     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
-     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * instead of the ARN for the KM encryption key.</p> <p>If the StorageEncrypted
+     * parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
@@ -1119,9 +1119,9 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the
-     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
-     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * instead of the ARN for the KM encryption key.</p> <p>If the StorageEncrypted
+     * parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
@@ -1132,9 +1132,9 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the
-     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
-     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * instead of the ARN for the KM encryption key.</p> <p>If the StorageEncrypted
+     * parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
@@ -1145,9 +1145,9 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the
-     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
-     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * instead of the ARN for the KM encryption key.</p> <p>If the StorageEncrypted
+     * parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
@@ -1158,9 +1158,9 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the
-     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
-     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * instead of the ARN for the KM encryption key.</p> <p>If the StorageEncrypted
+     * parameter is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
@@ -1168,30 +1168,30 @@ namespace Model
 
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline RestoreDBClusterFromS3Request& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
@@ -1594,55 +1594,55 @@ namespace Model
 
 
     /**
-     * <p>Indicates if the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>Indicates if the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>Indicates if the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>Indicates if the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
      */
     inline RestoreDBClusterFromS3Request& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
 
     /**
-     * <p>True to copy all tags from the restored DB cluster to snapshots of the
-     * restored DB cluster, and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the restored DB cluster
+     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>True to copy all tags from the restored DB cluster to snapshots of the
-     * restored DB cluster, and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the restored DB cluster
+     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
-     * <p>True to copy all tags from the restored DB cluster to snapshots of the
-     * restored DB cluster, and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the restored DB cluster
+     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>True to copy all tags from the restored DB cluster to snapshots of the
-     * restored DB cluster, and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the restored DB cluster
+     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
      */
     inline RestoreDBClusterFromS3Request& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 

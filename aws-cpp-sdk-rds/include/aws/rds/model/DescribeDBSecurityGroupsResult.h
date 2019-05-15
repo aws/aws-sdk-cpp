@@ -39,7 +39,7 @@ namespace Model
 {
   /**
    * <p> Contains the result of a successful invocation of the
-   * <a>DescribeDBSecurityGroups</a> action. </p><p><h3>See Also:</h3>   <a
+   * <code>DescribeDBSecurityGroups</code> action. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSecurityGroupMessage">AWS
    * API Reference</a></p>
    */
@@ -102,37 +102,37 @@ namespace Model
 
 
     /**
-     * <p> A list of <a>DBSecurityGroup</a> instances. </p>
+     * <p> A list of <code>DBSecurityGroup</code> instances. </p>
      */
     inline const Aws::Vector<DBSecurityGroup>& GetDBSecurityGroups() const{ return m_dBSecurityGroups; }
 
     /**
-     * <p> A list of <a>DBSecurityGroup</a> instances. </p>
+     * <p> A list of <code>DBSecurityGroup</code> instances. </p>
      */
     inline void SetDBSecurityGroups(const Aws::Vector<DBSecurityGroup>& value) { m_dBSecurityGroups = value; }
 
     /**
-     * <p> A list of <a>DBSecurityGroup</a> instances. </p>
+     * <p> A list of <code>DBSecurityGroup</code> instances. </p>
      */
     inline void SetDBSecurityGroups(Aws::Vector<DBSecurityGroup>&& value) { m_dBSecurityGroups = std::move(value); }
 
     /**
-     * <p> A list of <a>DBSecurityGroup</a> instances. </p>
+     * <p> A list of <code>DBSecurityGroup</code> instances. </p>
      */
     inline DescribeDBSecurityGroupsResult& WithDBSecurityGroups(const Aws::Vector<DBSecurityGroup>& value) { SetDBSecurityGroups(value); return *this;}
 
     /**
-     * <p> A list of <a>DBSecurityGroup</a> instances. </p>
+     * <p> A list of <code>DBSecurityGroup</code> instances. </p>
      */
     inline DescribeDBSecurityGroupsResult& WithDBSecurityGroups(Aws::Vector<DBSecurityGroup>&& value) { SetDBSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p> A list of <a>DBSecurityGroup</a> instances. </p>
+     * <p> A list of <code>DBSecurityGroup</code> instances. </p>
      */
     inline DescribeDBSecurityGroupsResult& AddDBSecurityGroups(const DBSecurityGroup& value) { m_dBSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p> A list of <a>DBSecurityGroup</a> instances. </p>
+     * <p> A list of <code>DBSecurityGroup</code> instances. </p>
      */
     inline DescribeDBSecurityGroupsResult& AddDBSecurityGroups(DBSecurityGroup&& value) { m_dBSecurityGroups.push_back(std::move(value)); return *this; }
 

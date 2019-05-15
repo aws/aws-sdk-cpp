@@ -216,10 +216,9 @@ namespace Model
      * cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
      * don't specify a <code>SnapshotType</code> value, then both automated and manual
      * DB cluster snapshots are returned. You can include shared DB cluster snapshots
-     * with these results by setting the <code>IncludeShared</code> parameter to
-     * <code>true</code>. You can include public DB cluster snapshots with these
-     * results by setting the <code>IncludePublic</code> parameter to
-     * <code>true</code>.</p> <p>The <code>IncludeShared</code> and
+     * with these results by enabling the <code>IncludeShared</code> parameter. You can
+     * include public DB cluster snapshots with these results by enabling the
+     * <code>IncludePublic</code> parameter.</p> <p>The <code>IncludeShared</code> and
      * <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code>
      * values of <code>manual</code> or <code>automated</code>. The
      * <code>IncludePublic</code> parameter doesn't apply when
@@ -240,10 +239,9 @@ namespace Model
      * cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
      * don't specify a <code>SnapshotType</code> value, then both automated and manual
      * DB cluster snapshots are returned. You can include shared DB cluster snapshots
-     * with these results by setting the <code>IncludeShared</code> parameter to
-     * <code>true</code>. You can include public DB cluster snapshots with these
-     * results by setting the <code>IncludePublic</code> parameter to
-     * <code>true</code>.</p> <p>The <code>IncludeShared</code> and
+     * with these results by enabling the <code>IncludeShared</code> parameter. You can
+     * include public DB cluster snapshots with these results by enabling the
+     * <code>IncludePublic</code> parameter.</p> <p>The <code>IncludeShared</code> and
      * <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code>
      * values of <code>manual</code> or <code>automated</code>. The
      * <code>IncludePublic</code> parameter doesn't apply when
@@ -264,10 +262,9 @@ namespace Model
      * cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
      * don't specify a <code>SnapshotType</code> value, then both automated and manual
      * DB cluster snapshots are returned. You can include shared DB cluster snapshots
-     * with these results by setting the <code>IncludeShared</code> parameter to
-     * <code>true</code>. You can include public DB cluster snapshots with these
-     * results by setting the <code>IncludePublic</code> parameter to
-     * <code>true</code>.</p> <p>The <code>IncludeShared</code> and
+     * with these results by enabling the <code>IncludeShared</code> parameter. You can
+     * include public DB cluster snapshots with these results by enabling the
+     * <code>IncludePublic</code> parameter.</p> <p>The <code>IncludeShared</code> and
      * <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code>
      * values of <code>manual</code> or <code>automated</code>. The
      * <code>IncludePublic</code> parameter doesn't apply when
@@ -288,10 +285,9 @@ namespace Model
      * cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
      * don't specify a <code>SnapshotType</code> value, then both automated and manual
      * DB cluster snapshots are returned. You can include shared DB cluster snapshots
-     * with these results by setting the <code>IncludeShared</code> parameter to
-     * <code>true</code>. You can include public DB cluster snapshots with these
-     * results by setting the <code>IncludePublic</code> parameter to
-     * <code>true</code>.</p> <p>The <code>IncludeShared</code> and
+     * with these results by enabling the <code>IncludeShared</code> parameter. You can
+     * include public DB cluster snapshots with these results by enabling the
+     * <code>IncludePublic</code> parameter.</p> <p>The <code>IncludeShared</code> and
      * <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code>
      * values of <code>manual</code> or <code>automated</code>. The
      * <code>IncludePublic</code> parameter doesn't apply when
@@ -312,10 +308,9 @@ namespace Model
      * cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
      * don't specify a <code>SnapshotType</code> value, then both automated and manual
      * DB cluster snapshots are returned. You can include shared DB cluster snapshots
-     * with these results by setting the <code>IncludeShared</code> parameter to
-     * <code>true</code>. You can include public DB cluster snapshots with these
-     * results by setting the <code>IncludePublic</code> parameter to
-     * <code>true</code>.</p> <p>The <code>IncludeShared</code> and
+     * with these results by enabling the <code>IncludeShared</code> parameter. You can
+     * include public DB cluster snapshots with these results by enabling the
+     * <code>IncludePublic</code> parameter.</p> <p>The <code>IncludeShared</code> and
      * <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code>
      * values of <code>manual</code> or <code>automated</code>. The
      * <code>IncludePublic</code> parameter doesn't apply when
@@ -336,10 +331,9 @@ namespace Model
      * cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
      * don't specify a <code>SnapshotType</code> value, then both automated and manual
      * DB cluster snapshots are returned. You can include shared DB cluster snapshots
-     * with these results by setting the <code>IncludeShared</code> parameter to
-     * <code>true</code>. You can include public DB cluster snapshots with these
-     * results by setting the <code>IncludePublic</code> parameter to
-     * <code>true</code>.</p> <p>The <code>IncludeShared</code> and
+     * with these results by enabling the <code>IncludeShared</code> parameter. You can
+     * include public DB cluster snapshots with these results by enabling the
+     * <code>IncludePublic</code> parameter.</p> <p>The <code>IncludeShared</code> and
      * <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code>
      * values of <code>manual</code> or <code>automated</code>. The
      * <code>IncludePublic</code> parameter doesn't apply when
@@ -360,10 +354,9 @@ namespace Model
      * cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
      * don't specify a <code>SnapshotType</code> value, then both automated and manual
      * DB cluster snapshots are returned. You can include shared DB cluster snapshots
-     * with these results by setting the <code>IncludeShared</code> parameter to
-     * <code>true</code>. You can include public DB cluster snapshots with these
-     * results by setting the <code>IncludePublic</code> parameter to
-     * <code>true</code>.</p> <p>The <code>IncludeShared</code> and
+     * with these results by enabling the <code>IncludeShared</code> parameter. You can
+     * include public DB cluster snapshots with these results by enabling the
+     * <code>IncludePublic</code> parameter.</p> <p>The <code>IncludeShared</code> and
      * <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code>
      * values of <code>manual</code> or <code>automated</code>. The
      * <code>IncludePublic</code> parameter doesn't apply when
@@ -384,10 +377,9 @@ namespace Model
      * cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
      * don't specify a <code>SnapshotType</code> value, then both automated and manual
      * DB cluster snapshots are returned. You can include shared DB cluster snapshots
-     * with these results by setting the <code>IncludeShared</code> parameter to
-     * <code>true</code>. You can include public DB cluster snapshots with these
-     * results by setting the <code>IncludePublic</code> parameter to
-     * <code>true</code>.</p> <p>The <code>IncludeShared</code> and
+     * with these results by enabling the <code>IncludeShared</code> parameter. You can
+     * include public DB cluster snapshots with these results by enabling the
+     * <code>IncludePublic</code> parameter.</p> <p>The <code>IncludeShared</code> and
      * <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code>
      * values of <code>manual</code> or <code>automated</code>. The
      * <code>IncludePublic</code> parameter doesn't apply when
@@ -538,75 +530,75 @@ namespace Model
 
 
     /**
-     * <p>True to include shared manual DB cluster snapshots from other AWS accounts
-     * that this AWS account has been given permission to copy or restore, and
-     * otherwise false. The default is <code>false</code>.</p> <p>You can give an AWS
-     * account permission to restore a manual DB cluster snapshot from another AWS
-     * account by the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     * <p>A value that indicates whether to include shared manual DB cluster snapshots
+     * from other AWS accounts that this AWS account has been given permission to copy
+     * or restore. By default, these snapshots are not included.</p> <p>You can give an
+     * AWS account permission to restore a manual DB cluster snapshot from another AWS
+     * account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
      */
     inline bool GetIncludeShared() const{ return m_includeShared; }
 
     /**
-     * <p>True to include shared manual DB cluster snapshots from other AWS accounts
-     * that this AWS account has been given permission to copy or restore, and
-     * otherwise false. The default is <code>false</code>.</p> <p>You can give an AWS
-     * account permission to restore a manual DB cluster snapshot from another AWS
-     * account by the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     * <p>A value that indicates whether to include shared manual DB cluster snapshots
+     * from other AWS accounts that this AWS account has been given permission to copy
+     * or restore. By default, these snapshots are not included.</p> <p>You can give an
+     * AWS account permission to restore a manual DB cluster snapshot from another AWS
+     * account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
      */
     inline bool IncludeSharedHasBeenSet() const { return m_includeSharedHasBeenSet; }
 
     /**
-     * <p>True to include shared manual DB cluster snapshots from other AWS accounts
-     * that this AWS account has been given permission to copy or restore, and
-     * otherwise false. The default is <code>false</code>.</p> <p>You can give an AWS
-     * account permission to restore a manual DB cluster snapshot from another AWS
-     * account by the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     * <p>A value that indicates whether to include shared manual DB cluster snapshots
+     * from other AWS accounts that this AWS account has been given permission to copy
+     * or restore. By default, these snapshots are not included.</p> <p>You can give an
+     * AWS account permission to restore a manual DB cluster snapshot from another AWS
+     * account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
      */
     inline void SetIncludeShared(bool value) { m_includeSharedHasBeenSet = true; m_includeShared = value; }
 
     /**
-     * <p>True to include shared manual DB cluster snapshots from other AWS accounts
-     * that this AWS account has been given permission to copy or restore, and
-     * otherwise false. The default is <code>false</code>.</p> <p>You can give an AWS
-     * account permission to restore a manual DB cluster snapshot from another AWS
-     * account by the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     * <p>A value that indicates whether to include shared manual DB cluster snapshots
+     * from other AWS accounts that this AWS account has been given permission to copy
+     * or restore. By default, these snapshots are not included.</p> <p>You can give an
+     * AWS account permission to restore a manual DB cluster snapshot from another AWS
+     * account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
      */
     inline DescribeDBClusterSnapshotsRequest& WithIncludeShared(bool value) { SetIncludeShared(value); return *this;}
 
 
     /**
-     * <p>True to include manual DB cluster snapshots that are public and can be copied
-     * or restored by any AWS account, and otherwise false. The default is
-     * <code>false</code>. The default is false.</p> <p>You can share a manual DB
-     * cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
-     * API action.</p>
+     * <p>A value that indicates whether to include manual DB cluster snapshots that
+     * are public and can be copied or restored by any AWS account. By default, the
+     * public snapshots are not included.</p> <p>You can share a manual DB cluster
+     * snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API
+     * action.</p>
      */
     inline bool GetIncludePublic() const{ return m_includePublic; }
 
     /**
-     * <p>True to include manual DB cluster snapshots that are public and can be copied
-     * or restored by any AWS account, and otherwise false. The default is
-     * <code>false</code>. The default is false.</p> <p>You can share a manual DB
-     * cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
-     * API action.</p>
+     * <p>A value that indicates whether to include manual DB cluster snapshots that
+     * are public and can be copied or restored by any AWS account. By default, the
+     * public snapshots are not included.</p> <p>You can share a manual DB cluster
+     * snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API
+     * action.</p>
      */
     inline bool IncludePublicHasBeenSet() const { return m_includePublicHasBeenSet; }
 
     /**
-     * <p>True to include manual DB cluster snapshots that are public and can be copied
-     * or restored by any AWS account, and otherwise false. The default is
-     * <code>false</code>. The default is false.</p> <p>You can share a manual DB
-     * cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
-     * API action.</p>
+     * <p>A value that indicates whether to include manual DB cluster snapshots that
+     * are public and can be copied or restored by any AWS account. By default, the
+     * public snapshots are not included.</p> <p>You can share a manual DB cluster
+     * snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API
+     * action.</p>
      */
     inline void SetIncludePublic(bool value) { m_includePublicHasBeenSet = true; m_includePublic = value; }
 
     /**
-     * <p>True to include manual DB cluster snapshots that are public and can be copied
-     * or restored by any AWS account, and otherwise false. The default is
-     * <code>false</code>. The default is false.</p> <p>You can share a manual DB
-     * cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
-     * API action.</p>
+     * <p>A value that indicates whether to include manual DB cluster snapshots that
+     * are public and can be copied or restored by any AWS account. By default, the
+     * public snapshots are not included.</p> <p>You can share a manual DB cluster
+     * snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API
+     * action.</p>
      */
     inline DescribeDBClusterSnapshotsRequest& WithIncludePublic(bool value) { SetIncludePublic(value); return *this;}
 

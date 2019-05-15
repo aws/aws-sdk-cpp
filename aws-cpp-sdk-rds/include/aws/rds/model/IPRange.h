@@ -35,7 +35,7 @@ namespace Model
 
   /**
    * <p> This data type is used as a response element in the
-   * <a>DescribeDBSecurityGroups</a> action. </p><p><h3>See Also:</h3>   <a
+   * <code>DescribeDBSecurityGroups</code> action. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/IPRange">AWS API
    * Reference</a></p>
    */

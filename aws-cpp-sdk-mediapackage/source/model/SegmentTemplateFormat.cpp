@@ -32,6 +32,7 @@ namespace Aws
 
         static const int NUMBER_WITH_TIMELINE_HASH = HashingUtils::HashString("NUMBER_WITH_TIMELINE");
         static const int TIME_WITH_TIMELINE_HASH = HashingUtils::HashString("TIME_WITH_TIMELINE");
+        static const int NUMBER_WITH_DURATION_HASH = HashingUtils::HashString("NUMBER_WITH_DURATION");
 
 
         SegmentTemplateFormat GetSegmentTemplateFormatForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == TIME_WITH_TIMELINE_HASH)
           {
             return SegmentTemplateFormat::TIME_WITH_TIMELINE;
+          }
+          else if (hashCode == NUMBER_WITH_DURATION_HASH)
+          {
+            return SegmentTemplateFormat::NUMBER_WITH_DURATION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "NUMBER_WITH_TIMELINE";
           case SegmentTemplateFormat::TIME_WITH_TIMELINE:
             return "TIME_WITH_TIMELINE";
+          case SegmentTemplateFormat::NUMBER_WITH_DURATION:
+            return "NUMBER_WITH_DURATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

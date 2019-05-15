@@ -48,7 +48,7 @@ namespace Model
 
   /**
    * <p>Contains the details of an Amazon RDS DB instance. </p> <p>This data type is
-   * used as a response element in the <a>DescribeDBInstances</a> action.
+   * used as a response element in the <code>DescribeDBInstances</code> action.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBInstance">AWS API
    * Reference</a></p>
@@ -548,56 +548,56 @@ namespace Model
 
 
     /**
-     * <p> Provides List of DB security group elements containing only
+     * <p> A list of DB security group elements containing
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
      * subelements. </p>
      */
     inline const Aws::Vector<DBSecurityGroupMembership>& GetDBSecurityGroups() const{ return m_dBSecurityGroups; }
 
     /**
-     * <p> Provides List of DB security group elements containing only
+     * <p> A list of DB security group elements containing
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
      * subelements. </p>
      */
     inline bool DBSecurityGroupsHasBeenSet() const { return m_dBSecurityGroupsHasBeenSet; }
 
     /**
-     * <p> Provides List of DB security group elements containing only
+     * <p> A list of DB security group elements containing
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
      * subelements. </p>
      */
     inline void SetDBSecurityGroups(const Aws::Vector<DBSecurityGroupMembership>& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = value; }
 
     /**
-     * <p> Provides List of DB security group elements containing only
+     * <p> A list of DB security group elements containing
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
      * subelements. </p>
      */
     inline void SetDBSecurityGroups(Aws::Vector<DBSecurityGroupMembership>&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = std::move(value); }
 
     /**
-     * <p> Provides List of DB security group elements containing only
+     * <p> A list of DB security group elements containing
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
      * subelements. </p>
      */
     inline DBInstance& WithDBSecurityGroups(const Aws::Vector<DBSecurityGroupMembership>& value) { SetDBSecurityGroups(value); return *this;}
 
     /**
-     * <p> Provides List of DB security group elements containing only
+     * <p> A list of DB security group elements containing
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
      * subelements. </p>
      */
     inline DBInstance& WithDBSecurityGroups(Aws::Vector<DBSecurityGroupMembership>&& value) { SetDBSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p> Provides List of DB security group elements containing only
+     * <p> A list of DB security group elements containing
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
      * subelements. </p>
      */
     inline DBInstance& AddDBSecurityGroups(const DBSecurityGroupMembership& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p> Provides List of DB security group elements containing only
+     * <p> A list of DB security group elements containing
      * <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code>
      * subelements. </p>
      */
@@ -1856,7 +1856,7 @@ namespace Model
      * instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Copying tags to
      * snapshots is managed by the DB cluster. Setting this value for an Aurora DB
      * instance has no effect on the DB cluster setting. For more information, see
-     * <a>DBCluster</a>.</p>
+     * <code>DBCluster</code>.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
@@ -1865,7 +1865,7 @@ namespace Model
      * instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Copying tags to
      * snapshots is managed by the DB cluster. Setting this value for an Aurora DB
      * instance has no effect on the DB cluster setting. For more information, see
-     * <a>DBCluster</a>.</p>
+     * <code>DBCluster</code>.</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
@@ -1874,7 +1874,7 @@ namespace Model
      * instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Copying tags to
      * snapshots is managed by the DB cluster. Setting this value for an Aurora DB
      * instance has no effect on the DB cluster setting. For more information, see
-     * <a>DBCluster</a>.</p>
+     * <code>DBCluster</code>.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
@@ -1883,7 +1883,7 @@ namespace Model
      * instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Copying tags to
      * snapshots is managed by the DB cluster. Setting this value for an Aurora DB
      * instance has no effect on the DB cluster setting. For more information, see
-     * <a>DBCluster</a>.</p>
+     * <code>DBCluster</code>.</p>
      */
     inline DBInstance& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
@@ -2435,7 +2435,8 @@ namespace Model
 
     /**
      * <p>Indicates if the DB instance has deletion protection enabled. The database
-     * can't be deleted when this value is set to true. For more information, see <a
+     * can't be deleted when deletion protection is enabled. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
@@ -2443,7 +2444,8 @@ namespace Model
 
     /**
      * <p>Indicates if the DB instance has deletion protection enabled. The database
-     * can't be deleted when this value is set to true. For more information, see <a
+     * can't be deleted when deletion protection is enabled. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
@@ -2451,7 +2453,8 @@ namespace Model
 
     /**
      * <p>Indicates if the DB instance has deletion protection enabled. The database
-     * can't be deleted when this value is set to true. For more information, see <a
+     * can't be deleted when deletion protection is enabled. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
@@ -2459,7 +2462,8 @@ namespace Model
 
     /**
      * <p>Indicates if the DB instance has deletion protection enabled. The database
-     * can't be deleted when this value is set to true. For more information, see <a
+     * can't be deleted when deletion protection is enabled. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */

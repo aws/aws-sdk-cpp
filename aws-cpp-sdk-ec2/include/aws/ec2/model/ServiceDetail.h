@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ServiceTypeDetail.h>
+#include <aws/ec2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -90,6 +91,47 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service.</p>
      */
     inline ServiceDetail& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+
+
+    /**
+     * <p>The ID of the endpoint service.</p>
+     */
+    inline const Aws::String& GetServiceId() const{ return m_serviceId; }
+
+    /**
+     * <p>The ID of the endpoint service.</p>
+     */
+    inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the endpoint service.</p>
+     */
+    inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
+
+    /**
+     * <p>The ID of the endpoint service.</p>
+     */
+    inline void SetServiceId(Aws::String&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::move(value); }
+
+    /**
+     * <p>The ID of the endpoint service.</p>
+     */
+    inline void SetServiceId(const char* value) { m_serviceIdHasBeenSet = true; m_serviceId.assign(value); }
+
+    /**
+     * <p>The ID of the endpoint service.</p>
+     */
+    inline ServiceDetail& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
+
+    /**
+     * <p>The ID of the endpoint service.</p>
+     */
+    inline ServiceDetail& WithServiceId(Aws::String&& value) { SetServiceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the endpoint service.</p>
+     */
+    inline ServiceDetail& WithServiceId(const char* value) { SetServiceId(value); return *this;}
 
 
     /**
@@ -377,10 +419,54 @@ namespace Model
      */
     inline ServiceDetail& WithManagesVpcEndpoints(bool value) { SetManagesVpcEndpoints(value); return *this;}
 
+
+    /**
+     * <p>Any tags assigned to the service.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the service.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Any tags assigned to the service.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Any tags assigned to the service.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Any tags assigned to the service.</p>
+     */
+    inline ServiceDetail& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Any tags assigned to the service.</p>
+     */
+    inline ServiceDetail& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags assigned to the service.</p>
+     */
+    inline ServiceDetail& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Any tags assigned to the service.</p>
+     */
+    inline ServiceDetail& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet;
+
+    Aws::String m_serviceId;
+    bool m_serviceIdHasBeenSet;
 
     Aws::Vector<ServiceTypeDetail> m_serviceType;
     bool m_serviceTypeHasBeenSet;
@@ -405,6 +491,9 @@ namespace Model
 
     bool m_managesVpcEndpoints;
     bool m_managesVpcEndpointsHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

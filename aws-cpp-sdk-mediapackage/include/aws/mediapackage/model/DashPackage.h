@@ -369,56 +369,62 @@ rounded to the
 
 
     /**
-     * Determines the type of SegmentTimeline included in the Media Presentation
+     * Determines the type of SegmentTemplate included in the Media Presentation
      * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
      * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
      * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
-     * $Time$ media URLs.
+     * $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included
+     * in each SegmentTemplate, with $Number$ media URLs.
      */
     inline const SegmentTemplateFormat& GetSegmentTemplateFormat() const{ return m_segmentTemplateFormat; }
 
     /**
-     * Determines the type of SegmentTimeline included in the Media Presentation
+     * Determines the type of SegmentTemplate included in the Media Presentation
      * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
      * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
      * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
-     * $Time$ media URLs.
+     * $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included
+     * in each SegmentTemplate, with $Number$ media URLs.
      */
     inline bool SegmentTemplateFormatHasBeenSet() const { return m_segmentTemplateFormatHasBeenSet; }
 
     /**
-     * Determines the type of SegmentTimeline included in the Media Presentation
+     * Determines the type of SegmentTemplate included in the Media Presentation
      * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
      * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
      * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
-     * $Time$ media URLs.
+     * $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included
+     * in each SegmentTemplate, with $Number$ media URLs.
      */
     inline void SetSegmentTemplateFormat(const SegmentTemplateFormat& value) { m_segmentTemplateFormatHasBeenSet = true; m_segmentTemplateFormat = value; }
 
     /**
-     * Determines the type of SegmentTimeline included in the Media Presentation
+     * Determines the type of SegmentTemplate included in the Media Presentation
      * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
      * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
      * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
-     * $Time$ media URLs.
+     * $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included
+     * in each SegmentTemplate, with $Number$ media URLs.
      */
     inline void SetSegmentTemplateFormat(SegmentTemplateFormat&& value) { m_segmentTemplateFormatHasBeenSet = true; m_segmentTemplateFormat = std::move(value); }
 
     /**
-     * Determines the type of SegmentTimeline included in the Media Presentation
+     * Determines the type of SegmentTemplate included in the Media Presentation
      * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
      * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
      * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
-     * $Time$ media URLs.
+     * $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included
+     * in each SegmentTemplate, with $Number$ media URLs.
      */
     inline DashPackage& WithSegmentTemplateFormat(const SegmentTemplateFormat& value) { SetSegmentTemplateFormat(value); return *this;}
 
     /**
-     * Determines the type of SegmentTimeline included in the Media Presentation
+     * Determines the type of SegmentTemplate included in the Media Presentation
      * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
      * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
      * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
-     * $Time$ media URLs.
+     * $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included
+     * in each SegmentTemplate, with $Number$ media URLs.
      */
     inline DashPackage& WithSegmentTemplateFormat(SegmentTemplateFormat&& value) { SetSegmentTemplateFormat(std::move(value)); return *this;}
 

@@ -39,7 +39,7 @@ namespace Model
 {
   /**
    * <p> Contains the result of a successful invocation of the
-   * <a>DescribeDBParameterGroups</a> action. </p><p><h3>See Also:</h3>   <a
+   * <code>DescribeDBParameterGroups</code> action. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBParameterGroupsMessage">AWS
    * API Reference</a></p>
    */
@@ -102,37 +102,37 @@ namespace Model
 
 
     /**
-     * <p> A list of <a>DBParameterGroup</a> instances. </p>
+     * <p> A list of <code>DBParameterGroup</code> instances. </p>
      */
     inline const Aws::Vector<DBParameterGroup>& GetDBParameterGroups() const{ return m_dBParameterGroups; }
 
     /**
-     * <p> A list of <a>DBParameterGroup</a> instances. </p>
+     * <p> A list of <code>DBParameterGroup</code> instances. </p>
      */
     inline void SetDBParameterGroups(const Aws::Vector<DBParameterGroup>& value) { m_dBParameterGroups = value; }
 
     /**
-     * <p> A list of <a>DBParameterGroup</a> instances. </p>
+     * <p> A list of <code>DBParameterGroup</code> instances. </p>
      */
     inline void SetDBParameterGroups(Aws::Vector<DBParameterGroup>&& value) { m_dBParameterGroups = std::move(value); }
 
     /**
-     * <p> A list of <a>DBParameterGroup</a> instances. </p>
+     * <p> A list of <code>DBParameterGroup</code> instances. </p>
      */
     inline DescribeDBParameterGroupsResult& WithDBParameterGroups(const Aws::Vector<DBParameterGroup>& value) { SetDBParameterGroups(value); return *this;}
 
     /**
-     * <p> A list of <a>DBParameterGroup</a> instances. </p>
+     * <p> A list of <code>DBParameterGroup</code> instances. </p>
      */
     inline DescribeDBParameterGroupsResult& WithDBParameterGroups(Aws::Vector<DBParameterGroup>&& value) { SetDBParameterGroups(std::move(value)); return *this;}
 
     /**
-     * <p> A list of <a>DBParameterGroup</a> instances. </p>
+     * <p> A list of <code>DBParameterGroup</code> instances. </p>
      */
     inline DescribeDBParameterGroupsResult& AddDBParameterGroups(const DBParameterGroup& value) { m_dBParameterGroups.push_back(value); return *this; }
 
     /**
-     * <p> A list of <a>DBParameterGroup</a> instances. </p>
+     * <p> A list of <code>DBParameterGroup</code> instances. </p>
      */
     inline DescribeDBParameterGroupsResult& AddDBParameterGroups(DBParameterGroup&& value) { m_dBParameterGroups.push_back(std::move(value)); return *this; }
 

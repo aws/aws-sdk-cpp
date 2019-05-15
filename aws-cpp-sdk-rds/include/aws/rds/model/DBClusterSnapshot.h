@@ -37,8 +37,8 @@ namespace Model
 
   /**
    * <p>Contains the details for an Amazon RDS DB cluster snapshot </p> <p>This data
-   * type is used as a response element in the <a>DescribeDBClusterSnapshots</a>
-   * action. </p><p><h3>See Also:</h3>   <a
+   * type is used as a response element in the
+   * <code>DescribeDBClusterSnapshots</code> action. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterSnapshot">AWS
    * API Reference</a></p>
    */
@@ -54,56 +54,56 @@ namespace Model
 
 
     /**
-     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
-     * snapshot can be restored in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the DB
+     * cluster snapshot can be restored.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
     /**
-     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
-     * snapshot can be restored in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the DB
+     * cluster snapshot can be restored.</p>
      */
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
-     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
-     * snapshot can be restored in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the DB
+     * cluster snapshot can be restored.</p>
      */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
-     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
-     * snapshot can be restored in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the DB
+     * cluster snapshot can be restored.</p>
      */
     inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
-     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
-     * snapshot can be restored in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the DB
+     * cluster snapshot can be restored.</p>
      */
     inline DBClusterSnapshot& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
 
     /**
-     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
-     * snapshot can be restored in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the DB
+     * cluster snapshot can be restored.</p>
      */
     inline DBClusterSnapshot& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
-     * snapshot can be restored in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the DB
+     * cluster snapshot can be restored.</p>
      */
     inline DBClusterSnapshot& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
-     * snapshot can be restored in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the DB
+     * cluster snapshot can be restored.</p>
      */
     inline DBClusterSnapshot& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
-     * snapshot can be restored in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the DB
+     * cluster snapshot can be restored.</p>
      */
     inline DBClusterSnapshot& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 

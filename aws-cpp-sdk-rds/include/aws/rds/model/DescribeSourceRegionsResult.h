@@ -39,7 +39,7 @@ namespace Model
 {
   /**
    * <p>Contains the result of a successful invocation of the
-   * <a>DescribeSourceRegions</a> action.</p><p><h3>See Also:</h3>   <a
+   * <code>DescribeSourceRegions</code> action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SourceRegionMessage">AWS
    * API Reference</a></p>
    */

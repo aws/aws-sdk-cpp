@@ -39,7 +39,7 @@ namespace Model
 {
   /**
    * <p> Contains the result of a successful invocation of the
-   * <a>DescribeDBSnapshots</a> action. </p><p><h3>See Also:</h3>   <a
+   * <code>DescribeDBSnapshots</code> action. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSnapshotMessage">AWS
    * API Reference</a></p>
    */
@@ -102,37 +102,37 @@ namespace Model
 
 
     /**
-     * <p> A list of <a>DBSnapshot</a> instances. </p>
+     * <p> A list of <code>DBSnapshot</code> instances. </p>
      */
     inline const Aws::Vector<DBSnapshot>& GetDBSnapshots() const{ return m_dBSnapshots; }
 
     /**
-     * <p> A list of <a>DBSnapshot</a> instances. </p>
+     * <p> A list of <code>DBSnapshot</code> instances. </p>
      */
     inline void SetDBSnapshots(const Aws::Vector<DBSnapshot>& value) { m_dBSnapshots = value; }
 
     /**
-     * <p> A list of <a>DBSnapshot</a> instances. </p>
+     * <p> A list of <code>DBSnapshot</code> instances. </p>
      */
     inline void SetDBSnapshots(Aws::Vector<DBSnapshot>&& value) { m_dBSnapshots = std::move(value); }
 
     /**
-     * <p> A list of <a>DBSnapshot</a> instances. </p>
+     * <p> A list of <code>DBSnapshot</code> instances. </p>
      */
     inline DescribeDBSnapshotsResult& WithDBSnapshots(const Aws::Vector<DBSnapshot>& value) { SetDBSnapshots(value); return *this;}
 
     /**
-     * <p> A list of <a>DBSnapshot</a> instances. </p>
+     * <p> A list of <code>DBSnapshot</code> instances. </p>
      */
     inline DescribeDBSnapshotsResult& WithDBSnapshots(Aws::Vector<DBSnapshot>&& value) { SetDBSnapshots(std::move(value)); return *this;}
 
     /**
-     * <p> A list of <a>DBSnapshot</a> instances. </p>
+     * <p> A list of <code>DBSnapshot</code> instances. </p>
      */
     inline DescribeDBSnapshotsResult& AddDBSnapshots(const DBSnapshot& value) { m_dBSnapshots.push_back(value); return *this; }
 
     /**
-     * <p> A list of <a>DBSnapshot</a> instances. </p>
+     * <p> A list of <code>DBSnapshot</code> instances. </p>
      */
     inline DescribeDBSnapshotsResult& AddDBSnapshots(DBSnapshot&& value) { m_dBSnapshots.push_back(std::move(value)); return *this; }
 

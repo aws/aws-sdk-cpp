@@ -38,8 +38,8 @@ namespace Model
    * <p>Contains the name and values of a manual DB cluster snapshot attribute.</p>
    * <p>Manual DB cluster snapshot attributes are used to authorize other AWS
    * accounts to restore a manual DB cluster snapshot. For more information, see the
-   * <a>ModifyDBClusterSnapshotAttribute</a> API action.</p><p><h3>See Also:</h3>  
-   * <a
+   * <code>ModifyDBClusterSnapshotAttribute</code> API action.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterSnapshotAttribute">AWS
    * API Reference</a></p>
    */
@@ -58,7 +58,8 @@ namespace Model
      * <p>The name of the manual DB cluster snapshot attribute.</p> <p>The attribute
      * named <code>restore</code> refers to the list of AWS accounts that have
      * permission to copy or restore the manual DB cluster snapshot. For more
-     * information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     * information, see the <code>ModifyDBClusterSnapshotAttribute</code> API
+     * action.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
@@ -66,7 +67,8 @@ namespace Model
      * <p>The name of the manual DB cluster snapshot attribute.</p> <p>The attribute
      * named <code>restore</code> refers to the list of AWS accounts that have
      * permission to copy or restore the manual DB cluster snapshot. For more
-     * information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     * information, see the <code>ModifyDBClusterSnapshotAttribute</code> API
+     * action.</p>
      */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
@@ -74,7 +76,8 @@ namespace Model
      * <p>The name of the manual DB cluster snapshot attribute.</p> <p>The attribute
      * named <code>restore</code> refers to the list of AWS accounts that have
      * permission to copy or restore the manual DB cluster snapshot. For more
-     * information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     * information, see the <code>ModifyDBClusterSnapshotAttribute</code> API
+     * action.</p>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
@@ -82,7 +85,8 @@ namespace Model
      * <p>The name of the manual DB cluster snapshot attribute.</p> <p>The attribute
      * named <code>restore</code> refers to the list of AWS accounts that have
      * permission to copy or restore the manual DB cluster snapshot. For more
-     * information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     * information, see the <code>ModifyDBClusterSnapshotAttribute</code> API
+     * action.</p>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
@@ -90,7 +94,8 @@ namespace Model
      * <p>The name of the manual DB cluster snapshot attribute.</p> <p>The attribute
      * named <code>restore</code> refers to the list of AWS accounts that have
      * permission to copy or restore the manual DB cluster snapshot. For more
-     * information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     * information, see the <code>ModifyDBClusterSnapshotAttribute</code> API
+     * action.</p>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
@@ -98,7 +103,8 @@ namespace Model
      * <p>The name of the manual DB cluster snapshot attribute.</p> <p>The attribute
      * named <code>restore</code> refers to the list of AWS accounts that have
      * permission to copy or restore the manual DB cluster snapshot. For more
-     * information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     * information, see the <code>ModifyDBClusterSnapshotAttribute</code> API
+     * action.</p>
      */
     inline DBClusterSnapshotAttribute& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
@@ -106,7 +112,8 @@ namespace Model
      * <p>The name of the manual DB cluster snapshot attribute.</p> <p>The attribute
      * named <code>restore</code> refers to the list of AWS accounts that have
      * permission to copy or restore the manual DB cluster snapshot. For more
-     * information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     * information, see the <code>ModifyDBClusterSnapshotAttribute</code> API
+     * action.</p>
      */
     inline DBClusterSnapshotAttribute& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
@@ -114,7 +121,8 @@ namespace Model
      * <p>The name of the manual DB cluster snapshot attribute.</p> <p>The attribute
      * named <code>restore</code> refers to the list of AWS accounts that have
      * permission to copy or restore the manual DB cluster snapshot. For more
-     * information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     * information, see the <code>ModifyDBClusterSnapshotAttribute</code> API
+     * action.</p>
      */
     inline DBClusterSnapshotAttribute& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 

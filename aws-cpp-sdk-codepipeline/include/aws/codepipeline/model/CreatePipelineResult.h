@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/model/PipelineDeclaration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codepipeline/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -78,9 +80,47 @@ namespace Model
      */
     inline CreatePipelineResult& WithPipeline(PipelineDeclaration&& value) { SetPipeline(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the tags applied to the pipeline.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Specifies the tags applied to the pipeline.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+
+    /**
+     * <p>Specifies the tags applied to the pipeline.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>Specifies the tags applied to the pipeline.</p>
+     */
+    inline CreatePipelineResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Specifies the tags applied to the pipeline.</p>
+     */
+    inline CreatePipelineResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the tags applied to the pipeline.</p>
+     */
+    inline CreatePipelineResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the tags applied to the pipeline.</p>
+     */
+    inline CreatePipelineResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     PipelineDeclaration m_pipeline;
+
+    Aws::Vector<Tag> m_tags;
   };
 
 } // namespace Model

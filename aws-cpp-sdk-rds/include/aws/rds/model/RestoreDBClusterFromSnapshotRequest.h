@@ -53,56 +53,56 @@ namespace Model
   public:
 
     /**
-     * <p>Provides the list of Amazon EC2 Availability Zones that instances in the
-     * restored DB cluster can be created in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the restored
+     * DB cluster can be created.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
     /**
-     * <p>Provides the list of Amazon EC2 Availability Zones that instances in the
-     * restored DB cluster can be created in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the restored
+     * DB cluster can be created.</p>
      */
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
-     * <p>Provides the list of Amazon EC2 Availability Zones that instances in the
-     * restored DB cluster can be created in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the restored
+     * DB cluster can be created.</p>
      */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
-     * <p>Provides the list of Amazon EC2 Availability Zones that instances in the
-     * restored DB cluster can be created in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the restored
+     * DB cluster can be created.</p>
      */
     inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
-     * <p>Provides the list of Amazon EC2 Availability Zones that instances in the
-     * restored DB cluster can be created in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the restored
+     * DB cluster can be created.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
 
     /**
-     * <p>Provides the list of Amazon EC2 Availability Zones that instances in the
-     * restored DB cluster can be created in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the restored
+     * DB cluster can be created.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the list of Amazon EC2 Availability Zones that instances in the
-     * restored DB cluster can be created in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the restored
+     * DB cluster can be created.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>Provides the list of Amazon EC2 Availability Zones that instances in the
-     * restored DB cluster can be created in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the restored
+     * DB cluster can be created.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Provides the list of Amazon EC2 Availability Zones that instances in the
-     * restored DB cluster can be created in.</p>
+     * <p>Provides the list of Availability Zones (AZs) where instances in the restored
+     * DB cluster can be created.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
@@ -744,30 +744,30 @@ namespace Model
 
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
@@ -1068,55 +1068,55 @@ namespace Model
 
 
     /**
-     * <p>Indicates if the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>Indicates if the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>Indicates if the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>Indicates if the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
 
     /**
-     * <p>True to copy all tags from the restored DB cluster to snapshots of the
-     * restored DB cluster, and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the restored DB cluster
+     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>True to copy all tags from the restored DB cluster to snapshots of the
-     * restored DB cluster, and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the restored DB cluster
+     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
-     * <p>True to copy all tags from the restored DB cluster to snapshots of the
-     * restored DB cluster, and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the restored DB cluster
+     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>True to copy all tags from the restored DB cluster to snapshots of the
-     * restored DB cluster, and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the restored DB cluster
+     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 

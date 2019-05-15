@@ -37,7 +37,7 @@ namespace Model
 
   /**
    * <p>This data type is used as a response element in the
-   * <a>DescribeDBClusterBacktracks</a> action.</p><p><h3>See Also:</h3>   <a
+   * <code>DescribeDBClusterBacktracks</code> action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterBacktrack">AWS
    * API Reference</a></p>
    */

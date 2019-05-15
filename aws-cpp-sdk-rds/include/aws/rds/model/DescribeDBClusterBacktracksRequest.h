@@ -223,8 +223,7 @@ namespace Model
      * <code>applying</code> </p> </li> <li> <p> <code>completed</code> </p> </li> <li>
      * <p> <code>failed</code> </p> </li> <li> <p> <code>pending</code> </p> </li>
      * </ul> <p>The results list includes information about only the backtracks
-     * identified by these values. For more information about backtrack status values,
-     * see <a>DBClusterBacktrack</a>.</p> </li> </ul>
+     * identified by these values.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -238,8 +237,7 @@ namespace Model
      * <code>applying</code> </p> </li> <li> <p> <code>completed</code> </p> </li> <li>
      * <p> <code>failed</code> </p> </li> <li> <p> <code>pending</code> </p> </li>
      * </ul> <p>The results list includes information about only the backtracks
-     * identified by these values. For more information about backtrack status values,
-     * see <a>DBClusterBacktrack</a>.</p> </li> </ul>
+     * identified by these values.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -253,8 +251,7 @@ namespace Model
      * <code>applying</code> </p> </li> <li> <p> <code>completed</code> </p> </li> <li>
      * <p> <code>failed</code> </p> </li> <li> <p> <code>pending</code> </p> </li>
      * </ul> <p>The results list includes information about only the backtracks
-     * identified by these values. For more information about backtrack status values,
-     * see <a>DBClusterBacktrack</a>.</p> </li> </ul>
+     * identified by these values.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -268,8 +265,7 @@ namespace Model
      * <code>applying</code> </p> </li> <li> <p> <code>completed</code> </p> </li> <li>
      * <p> <code>failed</code> </p> </li> <li> <p> <code>pending</code> </p> </li>
      * </ul> <p>The results list includes information about only the backtracks
-     * identified by these values. For more information about backtrack status values,
-     * see <a>DBClusterBacktrack</a>.</p> </li> </ul>
+     * identified by these values.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -283,8 +279,7 @@ namespace Model
      * <code>applying</code> </p> </li> <li> <p> <code>completed</code> </p> </li> <li>
      * <p> <code>failed</code> </p> </li> <li> <p> <code>pending</code> </p> </li>
      * </ul> <p>The results list includes information about only the backtracks
-     * identified by these values. For more information about backtrack status values,
-     * see <a>DBClusterBacktrack</a>.</p> </li> </ul>
+     * identified by these values.</p> </li> </ul>
      */
     inline DescribeDBClusterBacktracksRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -298,8 +293,7 @@ namespace Model
      * <code>applying</code> </p> </li> <li> <p> <code>completed</code> </p> </li> <li>
      * <p> <code>failed</code> </p> </li> <li> <p> <code>pending</code> </p> </li>
      * </ul> <p>The results list includes information about only the backtracks
-     * identified by these values. For more information about backtrack status values,
-     * see <a>DBClusterBacktrack</a>.</p> </li> </ul>
+     * identified by these values.</p> </li> </ul>
      */
     inline DescribeDBClusterBacktracksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -313,8 +307,7 @@ namespace Model
      * <code>applying</code> </p> </li> <li> <p> <code>completed</code> </p> </li> <li>
      * <p> <code>failed</code> </p> </li> <li> <p> <code>pending</code> </p> </li>
      * </ul> <p>The results list includes information about only the backtracks
-     * identified by these values. For more information about backtrack status values,
-     * see <a>DBClusterBacktrack</a>.</p> </li> </ul>
+     * identified by these values.</p> </li> </ul>
      */
     inline DescribeDBClusterBacktracksRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -328,8 +321,7 @@ namespace Model
      * <code>applying</code> </p> </li> <li> <p> <code>completed</code> </p> </li> <li>
      * <p> <code>failed</code> </p> </li> <li> <p> <code>pending</code> </p> </li>
      * </ul> <p>The results list includes information about only the backtracks
-     * identified by these values. For more information about backtrack status values,
-     * see <a>DBClusterBacktrack</a>.</p> </li> </ul>
+     * identified by these values.</p> </li> </ul>
      */
     inline DescribeDBClusterBacktracksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
@@ -369,65 +361,65 @@ namespace Model
 
     /**
      * <p> An optional pagination token provided by a previous
-     * <a>DescribeDBClusterBacktracks</a> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>DescribeDBClusterBacktracks</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value
+     * specified by <code>MaxRecords</code>. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p> An optional pagination token provided by a previous
-     * <a>DescribeDBClusterBacktracks</a> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>DescribeDBClusterBacktracks</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value
+     * specified by <code>MaxRecords</code>. </p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p> An optional pagination token provided by a previous
-     * <a>DescribeDBClusterBacktracks</a> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>DescribeDBClusterBacktracks</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value
+     * specified by <code>MaxRecords</code>. </p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p> An optional pagination token provided by a previous
-     * <a>DescribeDBClusterBacktracks</a> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>DescribeDBClusterBacktracks</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value
+     * specified by <code>MaxRecords</code>. </p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p> An optional pagination token provided by a previous
-     * <a>DescribeDBClusterBacktracks</a> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>DescribeDBClusterBacktracks</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value
+     * specified by <code>MaxRecords</code>. </p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
      * <p> An optional pagination token provided by a previous
-     * <a>DescribeDBClusterBacktracks</a> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>DescribeDBClusterBacktracks</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value
+     * specified by <code>MaxRecords</code>. </p>
      */
     inline DescribeDBClusterBacktracksRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous
-     * <a>DescribeDBClusterBacktracks</a> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>DescribeDBClusterBacktracks</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value
+     * specified by <code>MaxRecords</code>. </p>
      */
     inline DescribeDBClusterBacktracksRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous
-     * <a>DescribeDBClusterBacktracks</a> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>. </p>
+     * <code>DescribeDBClusterBacktracks</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value
+     * specified by <code>MaxRecords</code>. </p>
      */
     inline DescribeDBClusterBacktracksRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 

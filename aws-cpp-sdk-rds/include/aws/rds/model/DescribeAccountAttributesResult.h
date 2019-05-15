@@ -51,50 +51,50 @@ namespace Model
 
 
     /**
-     * <p>A list of <a>AccountQuota</a> objects. Within this list, each quota has a
-     * name, a count of usage toward the quota maximum, and a maximum value for the
+     * <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has
+     * a name, a count of usage toward the quota maximum, and a maximum value for the
      * quota.</p>
      */
     inline const Aws::Vector<AccountQuota>& GetAccountQuotas() const{ return m_accountQuotas; }
 
     /**
-     * <p>A list of <a>AccountQuota</a> objects. Within this list, each quota has a
-     * name, a count of usage toward the quota maximum, and a maximum value for the
+     * <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has
+     * a name, a count of usage toward the quota maximum, and a maximum value for the
      * quota.</p>
      */
     inline void SetAccountQuotas(const Aws::Vector<AccountQuota>& value) { m_accountQuotas = value; }
 
     /**
-     * <p>A list of <a>AccountQuota</a> objects. Within this list, each quota has a
-     * name, a count of usage toward the quota maximum, and a maximum value for the
+     * <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has
+     * a name, a count of usage toward the quota maximum, and a maximum value for the
      * quota.</p>
      */
     inline void SetAccountQuotas(Aws::Vector<AccountQuota>&& value) { m_accountQuotas = std::move(value); }
 
     /**
-     * <p>A list of <a>AccountQuota</a> objects. Within this list, each quota has a
-     * name, a count of usage toward the quota maximum, and a maximum value for the
+     * <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has
+     * a name, a count of usage toward the quota maximum, and a maximum value for the
      * quota.</p>
      */
     inline DescribeAccountAttributesResult& WithAccountQuotas(const Aws::Vector<AccountQuota>& value) { SetAccountQuotas(value); return *this;}
 
     /**
-     * <p>A list of <a>AccountQuota</a> objects. Within this list, each quota has a
-     * name, a count of usage toward the quota maximum, and a maximum value for the
+     * <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has
+     * a name, a count of usage toward the quota maximum, and a maximum value for the
      * quota.</p>
      */
     inline DescribeAccountAttributesResult& WithAccountQuotas(Aws::Vector<AccountQuota>&& value) { SetAccountQuotas(std::move(value)); return *this;}
 
     /**
-     * <p>A list of <a>AccountQuota</a> objects. Within this list, each quota has a
-     * name, a count of usage toward the quota maximum, and a maximum value for the
+     * <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has
+     * a name, a count of usage toward the quota maximum, and a maximum value for the
      * quota.</p>
      */
     inline DescribeAccountAttributesResult& AddAccountQuotas(const AccountQuota& value) { m_accountQuotas.push_back(value); return *this; }
 
     /**
-     * <p>A list of <a>AccountQuota</a> objects. Within this list, each quota has a
-     * name, a count of usage toward the quota maximum, and a maximum value for the
+     * <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has
+     * a name, a count of usage toward the quota maximum, and a maximum value for the
      * quota.</p>
      */
     inline DescribeAccountAttributesResult& AddAccountQuotas(AccountQuota&& value) { m_accountQuotas.push_back(std::move(value)); return *this; }

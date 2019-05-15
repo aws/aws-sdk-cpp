@@ -39,7 +39,7 @@ namespace Model
 {
   /**
    * <p> Contains the result of a successful invocation of the
-   * <a>DescribeDBSubnetGroups</a> action. </p><p><h3>See Also:</h3>   <a
+   * <code>DescribeDBSubnetGroups</code> action. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSubnetGroupMessage">AWS
    * API Reference</a></p>
    */
@@ -102,37 +102,37 @@ namespace Model
 
 
     /**
-     * <p> A list of <a>DBSubnetGroup</a> instances. </p>
+     * <p> A list of <code>DBSubnetGroup</code> instances. </p>
      */
     inline const Aws::Vector<DBSubnetGroup>& GetDBSubnetGroups() const{ return m_dBSubnetGroups; }
 
     /**
-     * <p> A list of <a>DBSubnetGroup</a> instances. </p>
+     * <p> A list of <code>DBSubnetGroup</code> instances. </p>
      */
     inline void SetDBSubnetGroups(const Aws::Vector<DBSubnetGroup>& value) { m_dBSubnetGroups = value; }
 
     /**
-     * <p> A list of <a>DBSubnetGroup</a> instances. </p>
+     * <p> A list of <code>DBSubnetGroup</code> instances. </p>
      */
     inline void SetDBSubnetGroups(Aws::Vector<DBSubnetGroup>&& value) { m_dBSubnetGroups = std::move(value); }
 
     /**
-     * <p> A list of <a>DBSubnetGroup</a> instances. </p>
+     * <p> A list of <code>DBSubnetGroup</code> instances. </p>
      */
     inline DescribeDBSubnetGroupsResult& WithDBSubnetGroups(const Aws::Vector<DBSubnetGroup>& value) { SetDBSubnetGroups(value); return *this;}
 
     /**
-     * <p> A list of <a>DBSubnetGroup</a> instances. </p>
+     * <p> A list of <code>DBSubnetGroup</code> instances. </p>
      */
     inline DescribeDBSubnetGroupsResult& WithDBSubnetGroups(Aws::Vector<DBSubnetGroup>&& value) { SetDBSubnetGroups(std::move(value)); return *this;}
 
     /**
-     * <p> A list of <a>DBSubnetGroup</a> instances. </p>
+     * <p> A list of <code>DBSubnetGroup</code> instances. </p>
      */
     inline DescribeDBSubnetGroupsResult& AddDBSubnetGroups(const DBSubnetGroup& value) { m_dBSubnetGroups.push_back(value); return *this; }
 
     /**
-     * <p> A list of <a>DBSubnetGroup</a> instances. </p>
+     * <p> A list of <code>DBSubnetGroup</code> instances. </p>
      */
     inline DescribeDBSubnetGroupsResult& AddDBSubnetGroups(DBSubnetGroup&& value) { m_dBSubnetGroups.push_back(std::move(value)); return *this; }
 

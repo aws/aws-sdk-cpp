@@ -23,7 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 PutWebhookRequest::PutWebhookRequest() : 
-    m_webhookHasBeenSet(false)
+    m_webhookHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,17 @@ Aws::String PutWebhookRequest::SerializePayload() const
   if(m_webhookHasBeenSet)
   {
    payload.WithObject("webhook", m_webhook.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

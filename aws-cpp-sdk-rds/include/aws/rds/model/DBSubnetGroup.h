@@ -37,7 +37,7 @@ namespace Model
 
   /**
    * <p>Contains the details of an Amazon RDS DB subnet group. </p> <p>This data type
-   * is used as a response element in the <a>DescribeDBSubnetGroups</a> action.
+   * is used as a response element in the <code>DescribeDBSubnetGroups</code> action.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSubnetGroup">AWS
    * API Reference</a></p>
@@ -218,42 +218,42 @@ namespace Model
 
 
     /**
-     * <p> Contains a list of <a>Subnet</a> elements. </p>
+     * <p> Contains a list of <code>Subnet</code> elements. </p>
      */
     inline const Aws::Vector<Subnet>& GetSubnets() const{ return m_subnets; }
 
     /**
-     * <p> Contains a list of <a>Subnet</a> elements. </p>
+     * <p> Contains a list of <code>Subnet</code> elements. </p>
      */
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
     /**
-     * <p> Contains a list of <a>Subnet</a> elements. </p>
+     * <p> Contains a list of <code>Subnet</code> elements. </p>
      */
     inline void SetSubnets(const Aws::Vector<Subnet>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
-     * <p> Contains a list of <a>Subnet</a> elements. </p>
+     * <p> Contains a list of <code>Subnet</code> elements. </p>
      */
     inline void SetSubnets(Aws::Vector<Subnet>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
     /**
-     * <p> Contains a list of <a>Subnet</a> elements. </p>
+     * <p> Contains a list of <code>Subnet</code> elements. </p>
      */
     inline DBSubnetGroup& WithSubnets(const Aws::Vector<Subnet>& value) { SetSubnets(value); return *this;}
 
     /**
-     * <p> Contains a list of <a>Subnet</a> elements. </p>
+     * <p> Contains a list of <code>Subnet</code> elements. </p>
      */
     inline DBSubnetGroup& WithSubnets(Aws::Vector<Subnet>&& value) { SetSubnets(std::move(value)); return *this;}
 
     /**
-     * <p> Contains a list of <a>Subnet</a> elements. </p>
+     * <p> Contains a list of <code>Subnet</code> elements. </p>
      */
     inline DBSubnetGroup& AddSubnets(const Subnet& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
     /**
-     * <p> Contains a list of <a>Subnet</a> elements. </p>
+     * <p> Contains a list of <code>Subnet</code> elements. </p>
      */
     inline DBSubnetGroup& AddSubnets(Subnet&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 

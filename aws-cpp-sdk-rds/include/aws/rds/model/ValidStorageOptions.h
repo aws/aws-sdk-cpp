@@ -39,8 +39,8 @@ namespace Model
   /**
    * <p>Information about valid modifications that you can make to your DB instance.
    * Contains the result of a successful call to the
-   * <a>DescribeValidDBInstanceModifications</a> action. </p><p><h3>See Also:</h3>  
-   * <a
+   * <code>DescribeValidDBInstanceModifications</code> action. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ValidStorageOptions">AWS
    * API Reference</a></p>
    */

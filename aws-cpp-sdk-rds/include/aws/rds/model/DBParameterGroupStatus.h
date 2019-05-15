@@ -36,10 +36,11 @@ namespace Model
   /**
    * <p>The status of the DB parameter group.</p> <p>This data type is used as a
    * response element in the following actions:</p> <ul> <li> <p>
-   * <a>CreateDBInstance</a> </p> </li> <li> <p> <a>CreateDBInstanceReadReplica</a>
-   * </p> </li> <li> <p> <a>DeleteDBInstance</a> </p> </li> <li> <p>
-   * <a>ModifyDBInstance</a> </p> </li> <li> <p> <a>RebootDBInstance</a> </p> </li>
-   * <li> <p> <a>RestoreDBInstanceFromDBSnapshot</a> </p> </li> </ul><p><h3>See
+   * <code>CreateDBInstance</code> </p> </li> <li> <p>
+   * <code>CreateDBInstanceReadReplica</code> </p> </li> <li> <p>
+   * <code>DeleteDBInstance</code> </p> </li> <li> <p> <code>ModifyDBInstance</code>
+   * </p> </li> <li> <p> <code>RebootDBInstance</code> </p> </li> <li> <p>
+   * <code>RestoreDBInstanceFromDBSnapshot</code> </p> </li> </ul><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBParameterGroupStatus">AWS
    * API Reference</a></p>

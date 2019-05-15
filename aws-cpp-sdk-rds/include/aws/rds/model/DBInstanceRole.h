@@ -102,56 +102,56 @@ namespace Model
     /**
      * <p>The name of the feature associated with the AWS Identity and Access
      * Management (IAM) role. For the list of supported feature names, see
-     * <a>DBEngineVersion</a>. </p>
+     * <code>DBEngineVersion</code>. </p>
      */
     inline const Aws::String& GetFeatureName() const{ return m_featureName; }
 
     /**
      * <p>The name of the feature associated with the AWS Identity and Access
      * Management (IAM) role. For the list of supported feature names, see
-     * <a>DBEngineVersion</a>. </p>
+     * <code>DBEngineVersion</code>. </p>
      */
     inline bool FeatureNameHasBeenSet() const { return m_featureNameHasBeenSet; }
 
     /**
      * <p>The name of the feature associated with the AWS Identity and Access
      * Management (IAM) role. For the list of supported feature names, see
-     * <a>DBEngineVersion</a>. </p>
+     * <code>DBEngineVersion</code>. </p>
      */
     inline void SetFeatureName(const Aws::String& value) { m_featureNameHasBeenSet = true; m_featureName = value; }
 
     /**
      * <p>The name of the feature associated with the AWS Identity and Access
      * Management (IAM) role. For the list of supported feature names, see
-     * <a>DBEngineVersion</a>. </p>
+     * <code>DBEngineVersion</code>. </p>
      */
     inline void SetFeatureName(Aws::String&& value) { m_featureNameHasBeenSet = true; m_featureName = std::move(value); }
 
     /**
      * <p>The name of the feature associated with the AWS Identity and Access
      * Management (IAM) role. For the list of supported feature names, see
-     * <a>DBEngineVersion</a>. </p>
+     * <code>DBEngineVersion</code>. </p>
      */
     inline void SetFeatureName(const char* value) { m_featureNameHasBeenSet = true; m_featureName.assign(value); }
 
     /**
      * <p>The name of the feature associated with the AWS Identity and Access
      * Management (IAM) role. For the list of supported feature names, see
-     * <a>DBEngineVersion</a>. </p>
+     * <code>DBEngineVersion</code>. </p>
      */
     inline DBInstanceRole& WithFeatureName(const Aws::String& value) { SetFeatureName(value); return *this;}
 
     /**
      * <p>The name of the feature associated with the AWS Identity and Access
      * Management (IAM) role. For the list of supported feature names, see
-     * <a>DBEngineVersion</a>. </p>
+     * <code>DBEngineVersion</code>. </p>
      */
     inline DBInstanceRole& WithFeatureName(Aws::String&& value) { SetFeatureName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the feature associated with the AWS Identity and Access
      * Management (IAM) role. For the list of supported feature names, see
-     * <a>DBEngineVersion</a>. </p>
+     * <code>DBEngineVersion</code>. </p>
      */
     inline DBInstanceRole& WithFeatureName(const char* value) { SetFeatureName(value); return *this;}
 

@@ -48,7 +48,8 @@ VpcEndpoint::VpcEndpoint() :
     m_requesterManagedHasBeenSet(false),
     m_networkInterfaceIdsHasBeenSet(false),
     m_dnsEntriesHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false)
+    m_creationTimestampHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ VpcEndpoint::VpcEndpoint(const XmlNode& xmlNode) :
     m_requesterManagedHasBeenSet(false),
     m_networkInterfaceIdsHasBeenSet(false),
     m_dnsEntriesHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false)
+    m_creationTimestampHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -195,6 +197,18 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
       m_creationTimestamp = DateTime(StringUtils::Trim(creationTimestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_creationTimestampHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -296,6 +310,17 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
 }
 
 void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -379,6 +404,16 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_creationTimestampHasBeenSet)
   {
       oStream << location << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 }
 

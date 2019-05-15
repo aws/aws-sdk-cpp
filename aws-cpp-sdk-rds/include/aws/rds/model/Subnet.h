@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p> This data type is used as a response element in the
-   * <a>DescribeDBSubnetGroups</a> action. </p><p><h3>See Also:</h3>   <a
+   * <code>DescribeDBSubnetGroups</code> action. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Subnet">AWS API
    * Reference</a></p>
    */

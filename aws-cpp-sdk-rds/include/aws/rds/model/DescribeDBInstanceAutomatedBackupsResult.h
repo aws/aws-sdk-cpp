@@ -39,7 +39,8 @@ namespace Model
 {
   /**
    * <p> Contains the result of a successful invocation of the
-   * <a>DescribeDBInstanceAutomatedBackups</a> action. </p><p><h3>See Also:</h3>   <a
+   * <code>DescribeDBInstanceAutomatedBackups</code> action. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBInstanceAutomatedBackupMessage">AWS
    * API Reference</a></p>
    */
@@ -102,37 +103,37 @@ namespace Model
 
 
     /**
-     * <p> A list of <a>DBInstanceAutomatedBackup</a> instances. </p>
+     * <p> A list of <code>DBInstanceAutomatedBackup</code> instances. </p>
      */
     inline const Aws::Vector<DBInstanceAutomatedBackup>& GetDBInstanceAutomatedBackups() const{ return m_dBInstanceAutomatedBackups; }
 
     /**
-     * <p> A list of <a>DBInstanceAutomatedBackup</a> instances. </p>
+     * <p> A list of <code>DBInstanceAutomatedBackup</code> instances. </p>
      */
     inline void SetDBInstanceAutomatedBackups(const Aws::Vector<DBInstanceAutomatedBackup>& value) { m_dBInstanceAutomatedBackups = value; }
 
     /**
-     * <p> A list of <a>DBInstanceAutomatedBackup</a> instances. </p>
+     * <p> A list of <code>DBInstanceAutomatedBackup</code> instances. </p>
      */
     inline void SetDBInstanceAutomatedBackups(Aws::Vector<DBInstanceAutomatedBackup>&& value) { m_dBInstanceAutomatedBackups = std::move(value); }
 
     /**
-     * <p> A list of <a>DBInstanceAutomatedBackup</a> instances. </p>
+     * <p> A list of <code>DBInstanceAutomatedBackup</code> instances. </p>
      */
     inline DescribeDBInstanceAutomatedBackupsResult& WithDBInstanceAutomatedBackups(const Aws::Vector<DBInstanceAutomatedBackup>& value) { SetDBInstanceAutomatedBackups(value); return *this;}
 
     /**
-     * <p> A list of <a>DBInstanceAutomatedBackup</a> instances. </p>
+     * <p> A list of <code>DBInstanceAutomatedBackup</code> instances. </p>
      */
     inline DescribeDBInstanceAutomatedBackupsResult& WithDBInstanceAutomatedBackups(Aws::Vector<DBInstanceAutomatedBackup>&& value) { SetDBInstanceAutomatedBackups(std::move(value)); return *this;}
 
     /**
-     * <p> A list of <a>DBInstanceAutomatedBackup</a> instances. </p>
+     * <p> A list of <code>DBInstanceAutomatedBackup</code> instances. </p>
      */
     inline DescribeDBInstanceAutomatedBackupsResult& AddDBInstanceAutomatedBackups(const DBInstanceAutomatedBackup& value) { m_dBInstanceAutomatedBackups.push_back(value); return *this; }
 
     /**
-     * <p> A list of <a>DBInstanceAutomatedBackup</a> instances. </p>
+     * <p> A list of <code>DBInstanceAutomatedBackup</code> instances. </p>
      */
     inline DescribeDBInstanceAutomatedBackupsResult& AddDBInstanceAutomatedBackups(DBInstanceAutomatedBackup&& value) { m_dBInstanceAutomatedBackups.push_back(std::move(value)); return *this; }
 

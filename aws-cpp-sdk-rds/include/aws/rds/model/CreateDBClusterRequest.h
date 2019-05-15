@@ -53,8 +53,8 @@ namespace Model
   public:
 
     /**
-     * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
-     * created in. For information on AWS Regions and Availability Zones, see <a
+     * <p>A list of Availability Zones (AZs) where instances in the DB cluster can be
+     * created. For information on AWS Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
      * the Regions and Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
@@ -62,8 +62,8 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
     /**
-     * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
-     * created in. For information on AWS Regions and Availability Zones, see <a
+     * <p>A list of Availability Zones (AZs) where instances in the DB cluster can be
+     * created. For information on AWS Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
      * the Regions and Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
@@ -71,8 +71,8 @@ namespace Model
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
-     * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
-     * created in. For information on AWS Regions and Availability Zones, see <a
+     * <p>A list of Availability Zones (AZs) where instances in the DB cluster can be
+     * created. For information on AWS Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
      * the Regions and Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
@@ -80,8 +80,8 @@ namespace Model
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
-     * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
-     * created in. For information on AWS Regions and Availability Zones, see <a
+     * <p>A list of Availability Zones (AZs) where instances in the DB cluster can be
+     * created. For information on AWS Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
      * the Regions and Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
@@ -89,8 +89,8 @@ namespace Model
     inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
-     * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
-     * created in. For information on AWS Regions and Availability Zones, see <a
+     * <p>A list of Availability Zones (AZs) where instances in the DB cluster can be
+     * created. For information on AWS Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
      * the Regions and Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
@@ -98,8 +98,8 @@ namespace Model
     inline CreateDBClusterRequest& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
 
     /**
-     * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
-     * created in. For information on AWS Regions and Availability Zones, see <a
+     * <p>A list of Availability Zones (AZs) where instances in the DB cluster can be
+     * created. For information on AWS Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
      * the Regions and Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
@@ -107,8 +107,8 @@ namespace Model
     inline CreateDBClusterRequest& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
-     * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
-     * created in. For information on AWS Regions and Availability Zones, see <a
+     * <p>A list of Availability Zones (AZs) where instances in the DB cluster can be
+     * created. For information on AWS Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
      * the Regions and Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
@@ -116,8 +116,8 @@ namespace Model
     inline CreateDBClusterRequest& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
-     * created in. For information on AWS Regions and Availability Zones, see <a
+     * <p>A list of Availability Zones (AZs) where instances in the DB cluster can be
+     * created. For information on AWS Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
      * the Regions and Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
@@ -125,8 +125,8 @@ namespace Model
     inline CreateDBClusterRequest& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
-     * created in. For information on AWS Regions and Availability Zones, see <a
+     * <p>A list of Availability Zones (AZs) where instances in the DB cluster can be
+     * created. For information on AWS Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
      * the Regions and Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
@@ -135,30 +135,30 @@ namespace Model
 
 
     /**
-     * <p>The number of days for which automated backups are retained. You must specify
-     * a minimum value of 1.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be a value from 1 to 35</p> </li> </ul>
+     * <p>The number of days for which automated backups are retained.</p> <p>Default:
+     * 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 1 to 35</p> </li>
+     * </ul>
      */
     inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
     /**
-     * <p>The number of days for which automated backups are retained. You must specify
-     * a minimum value of 1.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be a value from 1 to 35</p> </li> </ul>
+     * <p>The number of days for which automated backups are retained.</p> <p>Default:
+     * 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 1 to 35</p> </li>
+     * </ul>
      */
     inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
 
     /**
-     * <p>The number of days for which automated backups are retained. You must specify
-     * a minimum value of 1.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be a value from 1 to 35</p> </li> </ul>
+     * <p>The number of days for which automated backups are retained.</p> <p>Default:
+     * 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 1 to 35</p> </li>
+     * </ul>
      */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
-     * <p>The number of days for which automated backups are retained. You must specify
-     * a minimum value of 1.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be a value from 1 to 35</p> </li> </ul>
+     * <p>The number of days for which automated backups are retained.</p> <p>Default:
+     * 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 1 to 35</p> </li>
+     * </ul>
      */
     inline CreateDBClusterRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
@@ -1123,48 +1123,64 @@ namespace Model
     inline CreateDBClusterRequest& WithReplicationSourceIdentifier(const char* value) { SetReplicationSourceIdentifier(value); return *this;}
 
 
-    
+    /**
+     * <p>Tags to assign to the DB cluster.</p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    
+    /**
+     * <p>Tags to assign to the DB cluster.</p>
+     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
-    
+    /**
+     * <p>Tags to assign to the DB cluster.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    
+    /**
+     * <p>Tags to assign to the DB cluster.</p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
-    
+    /**
+     * <p>Tags to assign to the DB cluster.</p>
+     */
     inline CreateDBClusterRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    
+    /**
+     * <p>Tags to assign to the DB cluster.</p>
+     */
     inline CreateDBClusterRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Tags to assign to the DB cluster.</p>
+     */
     inline CreateDBClusterRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Tags to assign to the DB cluster.</p>
+     */
     inline CreateDBClusterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Specifies whether the DB cluster is encrypted.</p>
+     * <p>A value that indicates whether the DB cluster is encrypted.</p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
 
     /**
-     * <p>Specifies whether the DB cluster is encrypted.</p>
+     * <p>A value that indicates whether the DB cluster is encrypted.</p>
      */
     inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
 
     /**
-     * <p>Specifies whether the DB cluster is encrypted.</p>
+     * <p>A value that indicates whether the DB cluster is encrypted.</p>
      */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
-     * <p>Specifies whether the DB cluster is encrypted.</p>
+     * <p>A value that indicates whether the DB cluster is encrypted.</p>
      */
     inline CreateDBClusterRequest& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
 
@@ -1179,7 +1195,7 @@ namespace Model
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
-     * <code>StorageEncrypted</code> parameter is true and
+     * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
@@ -1200,7 +1216,7 @@ namespace Model
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
-     * <code>StorageEncrypted</code> parameter is true and
+     * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
@@ -1221,7 +1237,7 @@ namespace Model
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
-     * <code>StorageEncrypted</code> parameter is true and
+     * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
@@ -1242,7 +1258,7 @@ namespace Model
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
-     * <code>StorageEncrypted</code> parameter is true and
+     * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
@@ -1263,7 +1279,7 @@ namespace Model
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
-     * <code>StorageEncrypted</code> parameter is true and
+     * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
@@ -1284,7 +1300,7 @@ namespace Model
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
-     * <code>StorageEncrypted</code> parameter is true and
+     * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
@@ -1305,7 +1321,7 @@ namespace Model
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
-     * <code>StorageEncrypted</code> parameter is true and
+     * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
@@ -1326,7 +1342,7 @@ namespace Model
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
-     * <code>StorageEncrypted</code> parameter is true and
+     * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
@@ -1588,30 +1604,30 @@ namespace Model
 
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline CreateDBClusterRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
@@ -1827,30 +1843,30 @@ namespace Model
 
 
     /**
-     * <p>Indicates if the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>Indicates if the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>Indicates if the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>Indicates if the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled.</p>
      */
     inline CreateDBClusterRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
@@ -1905,26 +1921,26 @@ namespace Model
 
 
     /**
-     * <p>True to copy all tags from the DB cluster to snapshots of the DB cluster, and
-     * otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the DB cluster to
+     * snapshots of the DB cluster. The default is not to copy them.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>True to copy all tags from the DB cluster to snapshots of the DB cluster, and
-     * otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the DB cluster to
+     * snapshots of the DB cluster. The default is not to copy them.</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
-     * <p>True to copy all tags from the DB cluster to snapshots of the DB cluster, and
-     * otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the DB cluster to
+     * snapshots of the DB cluster. The default is not to copy them.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>True to copy all tags from the DB cluster to snapshots of the DB cluster, and
-     * otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the DB cluster to
+     * snapshots of the DB cluster. The default is not to copy them.</p>
      */
     inline CreateDBClusterRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 

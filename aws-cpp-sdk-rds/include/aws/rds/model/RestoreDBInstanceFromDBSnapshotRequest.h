@@ -317,66 +317,66 @@ namespace Model
 
 
     /**
-     * <p>The EC2 Availability Zone that the DB instance is created in.</p> <p>Default:
-     * A random, system-chosen Availability Zone.</p> <p>Constraint: You can't specify
-     * the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>The Availability Zone (AZ) where the DB instance will be created.</p>
+     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
+     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
+     * a Multi-AZ deployment.</p> <p>Example: <code>us-east-1a</code> </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The EC2 Availability Zone that the DB instance is created in.</p> <p>Default:
-     * A random, system-chosen Availability Zone.</p> <p>Constraint: You can't specify
-     * the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>The Availability Zone (AZ) where the DB instance will be created.</p>
+     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
+     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
+     * a Multi-AZ deployment.</p> <p>Example: <code>us-east-1a</code> </p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
-     * <p>The EC2 Availability Zone that the DB instance is created in.</p> <p>Default:
-     * A random, system-chosen Availability Zone.</p> <p>Constraint: You can't specify
-     * the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>The Availability Zone (AZ) where the DB instance will be created.</p>
+     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
+     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
+     * a Multi-AZ deployment.</p> <p>Example: <code>us-east-1a</code> </p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The EC2 Availability Zone that the DB instance is created in.</p> <p>Default:
-     * A random, system-chosen Availability Zone.</p> <p>Constraint: You can't specify
-     * the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>The Availability Zone (AZ) where the DB instance will be created.</p>
+     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
+     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
+     * a Multi-AZ deployment.</p> <p>Example: <code>us-east-1a</code> </p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The EC2 Availability Zone that the DB instance is created in.</p> <p>Default:
-     * A random, system-chosen Availability Zone.</p> <p>Constraint: You can't specify
-     * the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>The Availability Zone (AZ) where the DB instance will be created.</p>
+     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
+     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
+     * a Multi-AZ deployment.</p> <p>Example: <code>us-east-1a</code> </p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The EC2 Availability Zone that the DB instance is created in.</p> <p>Default:
-     * A random, system-chosen Availability Zone.</p> <p>Constraint: You can't specify
-     * the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>The Availability Zone (AZ) where the DB instance will be created.</p>
+     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
+     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
+     * a Multi-AZ deployment.</p> <p>Example: <code>us-east-1a</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The EC2 Availability Zone that the DB instance is created in.</p> <p>Default:
-     * A random, system-chosen Availability Zone.</p> <p>Constraint: You can't specify
-     * the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>The Availability Zone (AZ) where the DB instance will be created.</p>
+     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
+     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
+     * a Multi-AZ deployment.</p> <p>Example: <code>us-east-1a</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 Availability Zone that the DB instance is created in.</p> <p>Default:
-     * A random, system-chosen Availability Zone.</p> <p>Constraint: You can't specify
-     * the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>The Availability Zone (AZ) where the DB instance will be created.</p>
+     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
+     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
+     * a Multi-AZ deployment.</p> <p>Example: <code>us-east-1a</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
@@ -439,92 +439,96 @@ namespace Model
 
 
     /**
-     * <p>Specifies if the DB instance is a Multi-AZ deployment.</p> <p>Constraint: You
-     * can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.</p>
+     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
+     * <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if
+     * the DB instance is a Multi-AZ deployment.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>Specifies if the DB instance is a Multi-AZ deployment.</p> <p>Constraint: You
-     * can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.</p>
+     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
+     * <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if
+     * the DB instance is a Multi-AZ deployment.</p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p>Specifies if the DB instance is a Multi-AZ deployment.</p> <p>Constraint: You
-     * can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.</p>
+     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
+     * <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if
+     * the DB instance is a Multi-AZ deployment.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>Specifies if the DB instance is a Multi-AZ deployment.</p> <p>Constraint: You
-     * can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.</p>
+     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
+     * <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if
+     * the DB instance is a Multi-AZ deployment.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
 
     /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address. For more information, see
+     * <p>A value that indicates whether the DB instance is publicly accessible. When
+     * the DB instance is publicly accessible, it is an Internet-facing instance with a
+     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
+     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address. For more information, see
+     * <p>A value that indicates whether the DB instance is publicly accessible. When
+     * the DB instance is publicly accessible, it is an Internet-facing instance with a
+     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
+     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address. For more information, see
+     * <p>A value that indicates whether the DB instance is publicly accessible. When
+     * the DB instance is publicly accessible, it is an Internet-facing instance with a
+     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
+     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address. For more information, see
+     * <p>A value that indicates whether the DB instance is publicly accessible. When
+     * the DB instance is publicly accessible, it is an Internet-facing instance with a
+     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
+     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
 
     /**
-     * <p>Indicates that minor version upgrades are applied automatically to the DB
-     * instance during the maintenance window.</p>
+     * <p>A value that indicates whether minor version upgrades are applied
+     * automatically to the DB instance during the maintenance window.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>Indicates that minor version upgrades are applied automatically to the DB
-     * instance during the maintenance window.</p>
+     * <p>A value that indicates whether minor version upgrades are applied
+     * automatically to the DB instance during the maintenance window.</p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>Indicates that minor version upgrades are applied automatically to the DB
-     * instance during the maintenance window.</p>
+     * <p>A value that indicates whether minor version upgrades are applied
+     * automatically to the DB instance during the maintenance window.</p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>Indicates that minor version upgrades are applied automatically to the DB
-     * instance during the maintenance window.</p>
+     * <p>A value that indicates whether minor version upgrades are applied
+     * automatically to the DB instance during the maintenance window.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -908,7 +912,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>gp2</code> </p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
@@ -917,7 +921,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>gp2</code> </p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
@@ -926,7 +930,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
@@ -935,7 +939,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
@@ -944,7 +948,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
@@ -953,7 +957,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>gp2</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
@@ -962,7 +966,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>gp2</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
@@ -971,7 +975,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>gp2</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
@@ -1180,26 +1184,26 @@ namespace Model
 
 
     /**
-     * <p>True to copy all tags from the restored DB instance to snapshots of the
-     * restored DB instance, and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the restored DB instance
+     * to snapshots of the DB instance. By default, tags are not copied.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>True to copy all tags from the restored DB instance to snapshots of the
-     * restored DB instance, and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the restored DB instance
+     * to snapshots of the DB instance. By default, tags are not copied.</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
-     * <p>True to copy all tags from the restored DB instance to snapshots of the
-     * restored DB instance, and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the restored DB instance
+     * to snapshots of the DB instance. By default, tags are not copied.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>True to copy all tags from the restored DB instance to snapshots of the
-     * restored DB instance, and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the restored DB instance
+     * to snapshots of the DB instance. By default, tags are not copied.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
@@ -1254,38 +1258,42 @@ namespace Model
 
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
-     * authentication for the following database engines</p> <ul> <li> <p>For MySQL
-     * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>You can enable IAM database authentication for the following
+     * database engines</p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or
+     * higher</p> </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li>
+     * </ul>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
-     * authentication for the following database engines</p> <ul> <li> <p>For MySQL
-     * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>You can enable IAM database authentication for the following
+     * database engines</p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or
+     * higher</p> </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li>
+     * </ul>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
-     * authentication for the following database engines</p> <ul> <li> <p>For MySQL
-     * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>You can enable IAM database authentication for the following
+     * database engines</p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or
+     * higher</p> </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li>
+     * </ul>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
-     * authentication for the following database engines</p> <ul> <li> <p>For MySQL
-     * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>You can enable IAM database authentication for the following
+     * database engines</p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or
+     * higher</p> </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li>
+     * </ul>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
@@ -1431,26 +1439,26 @@ namespace Model
 
 
     /**
-     * <p>A value that specifies that the DB instance class of the DB instance uses its
-     * default processor features.</p>
+     * <p>A value that indicates whether the DB instance class of the DB instance uses
+     * its default processor features.</p>
      */
     inline bool GetUseDefaultProcessorFeatures() const{ return m_useDefaultProcessorFeatures; }
 
     /**
-     * <p>A value that specifies that the DB instance class of the DB instance uses its
-     * default processor features.</p>
+     * <p>A value that indicates whether the DB instance class of the DB instance uses
+     * its default processor features.</p>
      */
     inline bool UseDefaultProcessorFeaturesHasBeenSet() const { return m_useDefaultProcessorFeaturesHasBeenSet; }
 
     /**
-     * <p>A value that specifies that the DB instance class of the DB instance uses its
-     * default processor features.</p>
+     * <p>A value that indicates whether the DB instance class of the DB instance uses
+     * its default processor features.</p>
      */
     inline void SetUseDefaultProcessorFeatures(bool value) { m_useDefaultProcessorFeaturesHasBeenSet = true; m_useDefaultProcessorFeatures = value; }
 
     /**
-     * <p>A value that specifies that the DB instance class of the DB instance uses its
-     * default processor features.</p>
+     * <p>A value that indicates whether the DB instance class of the DB instance uses
+     * its default processor features.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithUseDefaultProcessorFeatures(bool value) { SetUseDefaultProcessorFeatures(value); return *this;}
 
@@ -1545,36 +1553,36 @@ namespace Model
 
 
     /**
-     * <p>Indicates if the DB instance should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * For more information, see <a
+     * <p>A value that indicates whether the DB instance has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>Indicates if the DB instance should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * For more information, see <a
+     * <p>A value that indicates whether the DB instance has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>Indicates if the DB instance should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * For more information, see <a
+     * <p>A value that indicates whether the DB instance has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>Indicates if the DB instance should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * For more information, see <a
+     * <p>A value that indicates whether the DB instance has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */

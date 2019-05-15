@@ -39,7 +39,7 @@ namespace Model
 {
   /**
    * <p>Contains the result of a successful invocation of the
-   * <a>DescribeDBClusterBacktracks</a> action.</p><p><h3>See Also:</h3>   <a
+   * <code>DescribeDBClusterBacktracks</code> action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterBacktrackMessage">AWS
    * API Reference</a></p>
    */
@@ -53,43 +53,43 @@ namespace Model
 
     /**
      * <p>A pagination token that can be used in a subsequent
-     * <a>DescribeDBClusterBacktracks</a> request.</p>
+     * <code>DescribeDBClusterBacktracks</code> request.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p>A pagination token that can be used in a subsequent
-     * <a>DescribeDBClusterBacktracks</a> request.</p>
+     * <code>DescribeDBClusterBacktracks</code> request.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
      * <p>A pagination token that can be used in a subsequent
-     * <a>DescribeDBClusterBacktracks</a> request.</p>
+     * <code>DescribeDBClusterBacktracks</code> request.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>A pagination token that can be used in a subsequent
-     * <a>DescribeDBClusterBacktracks</a> request.</p>
+     * <code>DescribeDBClusterBacktracks</code> request.</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
      * <p>A pagination token that can be used in a subsequent
-     * <a>DescribeDBClusterBacktracks</a> request.</p>
+     * <code>DescribeDBClusterBacktracks</code> request.</p>
      */
     inline DescribeDBClusterBacktracksResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p>A pagination token that can be used in a subsequent
-     * <a>DescribeDBClusterBacktracks</a> request.</p>
+     * <code>DescribeDBClusterBacktracks</code> request.</p>
      */
     inline DescribeDBClusterBacktracksResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>A pagination token that can be used in a subsequent
-     * <a>DescribeDBClusterBacktracks</a> request.</p>
+     * <code>DescribeDBClusterBacktracks</code> request.</p>
      */
     inline DescribeDBClusterBacktracksResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 

@@ -55,80 +55,80 @@ namespace Model
 
     /**
      * <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB
-     * engine mode.</p> <p>Valid capacity values are <code>2</code>, <code>4</code>,
-     * <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>,
-     * <code>128</code>, and <code>256</code>.</p> <p>The minimum capacity must be less
-     * than or equal to the maximum capacity.</p>
+     * engine mode.</p> <p>Valid capacity values are <code>1</code>, <code>2</code>,
+     * <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
+     * <code>64</code>, <code>128</code>, and <code>256</code>.</p> <p>The minimum
+     * capacity must be less than or equal to the maximum capacity.</p>
      */
     inline int GetMinCapacity() const{ return m_minCapacity; }
 
     /**
      * <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB
-     * engine mode.</p> <p>Valid capacity values are <code>2</code>, <code>4</code>,
-     * <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>,
-     * <code>128</code>, and <code>256</code>.</p> <p>The minimum capacity must be less
-     * than or equal to the maximum capacity.</p>
+     * engine mode.</p> <p>Valid capacity values are <code>1</code>, <code>2</code>,
+     * <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
+     * <code>64</code>, <code>128</code>, and <code>256</code>.</p> <p>The minimum
+     * capacity must be less than or equal to the maximum capacity.</p>
      */
     inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
 
     /**
      * <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB
-     * engine mode.</p> <p>Valid capacity values are <code>2</code>, <code>4</code>,
-     * <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>,
-     * <code>128</code>, and <code>256</code>.</p> <p>The minimum capacity must be less
-     * than or equal to the maximum capacity.</p>
+     * engine mode.</p> <p>Valid capacity values are <code>1</code>, <code>2</code>,
+     * <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
+     * <code>64</code>, <code>128</code>, and <code>256</code>.</p> <p>The minimum
+     * capacity must be less than or equal to the maximum capacity.</p>
      */
     inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
 
     /**
      * <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB
-     * engine mode.</p> <p>Valid capacity values are <code>2</code>, <code>4</code>,
-     * <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>,
-     * <code>128</code>, and <code>256</code>.</p> <p>The minimum capacity must be less
-     * than or equal to the maximum capacity.</p>
+     * engine mode.</p> <p>Valid capacity values are <code>1</code>, <code>2</code>,
+     * <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
+     * <code>64</code>, <code>128</code>, and <code>256</code>.</p> <p>The minimum
+     * capacity must be less than or equal to the maximum capacity.</p>
      */
     inline ScalingConfiguration& WithMinCapacity(int value) { SetMinCapacity(value); return *this;}
 
 
     /**
      * <p>The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB
-     * engine mode.</p> <p>Valid capacity values are <code>2</code>, <code>4</code>,
-     * <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>,
-     * <code>128</code>, and <code>256</code>.</p> <p>The maximum capacity must be
-     * greater than or equal to the minimum capacity.</p>
+     * engine mode.</p> <p>Valid capacity values are <code>1</code>, <code>2</code>,
+     * <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
+     * <code>64</code>, <code>128</code>, and <code>256</code>.</p> <p>The maximum
+     * capacity must be greater than or equal to the minimum capacity.</p>
      */
     inline int GetMaxCapacity() const{ return m_maxCapacity; }
 
     /**
      * <p>The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB
-     * engine mode.</p> <p>Valid capacity values are <code>2</code>, <code>4</code>,
-     * <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>,
-     * <code>128</code>, and <code>256</code>.</p> <p>The maximum capacity must be
-     * greater than or equal to the minimum capacity.</p>
+     * engine mode.</p> <p>Valid capacity values are <code>1</code>, <code>2</code>,
+     * <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
+     * <code>64</code>, <code>128</code>, and <code>256</code>.</p> <p>The maximum
+     * capacity must be greater than or equal to the minimum capacity.</p>
      */
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
 
     /**
      * <p>The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB
-     * engine mode.</p> <p>Valid capacity values are <code>2</code>, <code>4</code>,
-     * <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>,
-     * <code>128</code>, and <code>256</code>.</p> <p>The maximum capacity must be
-     * greater than or equal to the minimum capacity.</p>
+     * engine mode.</p> <p>Valid capacity values are <code>1</code>, <code>2</code>,
+     * <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
+     * <code>64</code>, <code>128</code>, and <code>256</code>.</p> <p>The maximum
+     * capacity must be greater than or equal to the minimum capacity.</p>
      */
     inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
     /**
      * <p>The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB
-     * engine mode.</p> <p>Valid capacity values are <code>2</code>, <code>4</code>,
-     * <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>,
-     * <code>128</code>, and <code>256</code>.</p> <p>The maximum capacity must be
-     * greater than or equal to the minimum capacity.</p>
+     * engine mode.</p> <p>Valid capacity values are <code>1</code>, <code>2</code>,
+     * <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
+     * <code>64</code>, <code>128</code>, and <code>256</code>.</p> <p>The maximum
+     * capacity must be greater than or equal to the minimum capacity.</p>
      */
     inline ScalingConfiguration& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
 
 
     /**
-     * <p>A value that specifies whether to allow or disallow automatic pause for an
+     * <p>A value that indicates whether to allow or disallow automatic pause for an
      * Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be
      * paused only when it's idle (it has no connections).</p> <note> <p>If a DB
      * cluster is paused for more than seven days, the DB cluster might be backed up
@@ -138,7 +138,7 @@ namespace Model
     inline bool GetAutoPause() const{ return m_autoPause; }
 
     /**
-     * <p>A value that specifies whether to allow or disallow automatic pause for an
+     * <p>A value that indicates whether to allow or disallow automatic pause for an
      * Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be
      * paused only when it's idle (it has no connections).</p> <note> <p>If a DB
      * cluster is paused for more than seven days, the DB cluster might be backed up
@@ -148,7 +148,7 @@ namespace Model
     inline bool AutoPauseHasBeenSet() const { return m_autoPauseHasBeenSet; }
 
     /**
-     * <p>A value that specifies whether to allow or disallow automatic pause for an
+     * <p>A value that indicates whether to allow or disallow automatic pause for an
      * Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be
      * paused only when it's idle (it has no connections).</p> <note> <p>If a DB
      * cluster is paused for more than seven days, the DB cluster might be backed up
@@ -158,7 +158,7 @@ namespace Model
     inline void SetAutoPause(bool value) { m_autoPauseHasBeenSet = true; m_autoPause = value; }
 
     /**
-     * <p>A value that specifies whether to allow or disallow automatic pause for an
+     * <p>A value that indicates whether to allow or disallow automatic pause for an
      * Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be
      * paused only when it's idle (it has no connections).</p> <note> <p>If a DB
      * cluster is paused for more than seven days, the DB cluster might be backed up
@@ -197,10 +197,12 @@ namespace Model
      * <p>The action to take when the timeout is reached, either
      * <code>ForceApplyCapacityChange</code> or
      * <code>RollbackCapacityChange</code>.</p> <p>
-     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
-     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
+     * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
      * ignores the capacity change if a scaling point is not found in the timeout
-     * period.</p> <p>For more information, see <a
+     * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
+     * connections that prevent Aurora Serverless from finding a scaling point might be
+     * dropped.</p> </important> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
      * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
@@ -211,10 +213,12 @@ namespace Model
      * <p>The action to take when the timeout is reached, either
      * <code>ForceApplyCapacityChange</code> or
      * <code>RollbackCapacityChange</code>.</p> <p>
-     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
-     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
+     * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
      * ignores the capacity change if a scaling point is not found in the timeout
-     * period.</p> <p>For more information, see <a
+     * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
+     * connections that prevent Aurora Serverless from finding a scaling point might be
+     * dropped.</p> </important> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
      * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
@@ -225,10 +229,12 @@ namespace Model
      * <p>The action to take when the timeout is reached, either
      * <code>ForceApplyCapacityChange</code> or
      * <code>RollbackCapacityChange</code>.</p> <p>
-     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
-     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
+     * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
      * ignores the capacity change if a scaling point is not found in the timeout
-     * period.</p> <p>For more information, see <a
+     * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
+     * connections that prevent Aurora Serverless from finding a scaling point might be
+     * dropped.</p> </important> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
      * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
@@ -239,10 +245,12 @@ namespace Model
      * <p>The action to take when the timeout is reached, either
      * <code>ForceApplyCapacityChange</code> or
      * <code>RollbackCapacityChange</code>.</p> <p>
-     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
-     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
+     * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
      * ignores the capacity change if a scaling point is not found in the timeout
-     * period.</p> <p>For more information, see <a
+     * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
+     * connections that prevent Aurora Serverless from finding a scaling point might be
+     * dropped.</p> </important> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
      * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
@@ -253,10 +261,12 @@ namespace Model
      * <p>The action to take when the timeout is reached, either
      * <code>ForceApplyCapacityChange</code> or
      * <code>RollbackCapacityChange</code>.</p> <p>
-     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
-     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
+     * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
      * ignores the capacity change if a scaling point is not found in the timeout
-     * period.</p> <p>For more information, see <a
+     * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
+     * connections that prevent Aurora Serverless from finding a scaling point might be
+     * dropped.</p> </important> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
      * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
@@ -267,10 +277,12 @@ namespace Model
      * <p>The action to take when the timeout is reached, either
      * <code>ForceApplyCapacityChange</code> or
      * <code>RollbackCapacityChange</code>.</p> <p>
-     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
-     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
+     * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
      * ignores the capacity change if a scaling point is not found in the timeout
-     * period.</p> <p>For more information, see <a
+     * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
+     * connections that prevent Aurora Serverless from finding a scaling point might be
+     * dropped.</p> </important> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
      * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
@@ -281,10 +293,12 @@ namespace Model
      * <p>The action to take when the timeout is reached, either
      * <code>ForceApplyCapacityChange</code> or
      * <code>RollbackCapacityChange</code>.</p> <p>
-     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
-     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
+     * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
      * ignores the capacity change if a scaling point is not found in the timeout
-     * period.</p> <p>For more information, see <a
+     * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
+     * connections that prevent Aurora Serverless from finding a scaling point might be
+     * dropped.</p> </important> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
      * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>
@@ -295,10 +309,12 @@ namespace Model
      * <p>The action to take when the timeout is reached, either
      * <code>ForceApplyCapacityChange</code> or
      * <code>RollbackCapacityChange</code>.</p> <p>
-     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the
-     * specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code>
+     * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
+     * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
      * ignores the capacity change if a scaling point is not found in the timeout
-     * period.</p> <p>For more information, see <a
+     * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
+     * connections that prevent Aurora Serverless from finding a scaling point might be
+     * dropped.</p> </important> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
      * Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User
      * Guide</i>.</p>

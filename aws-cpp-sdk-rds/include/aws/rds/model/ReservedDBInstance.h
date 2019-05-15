@@ -38,9 +38,9 @@ namespace Model
 
   /**
    * <p> This data type is used as a response element in the
-   * <a>DescribeReservedDBInstances</a> and
-   * <a>PurchaseReservedDBInstancesOffering</a> actions. </p><p><h3>See Also:</h3>  
-   * <a
+   * <code>DescribeReservedDBInstances</code> and
+   * <code>PurchaseReservedDBInstancesOffering</code> actions. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ReservedDBInstance">AWS
    * API Reference</a></p>
    */
