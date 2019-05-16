@@ -1261,10 +1261,10 @@ namespace
         bool isStatsEventReceived = false;
 
         SelectObjectContentHandler handler;
-        handler.SetRecordsEventCallback([&](RecordsEvent& recordsEvent)
+        handler.SetRecordsEventCallback([&](const RecordsEvent& recordsEvent)
         {
             isRecordsEventReceived = true;
-            auto recordsVector = recordsEvent.GetPayloadWithOwnership();
+            auto recordsVector = recordsEvent.GetPayload();
             Aws::String records(recordsVector.begin(), recordsVector.end());
             ASSERT_STREQ(firstColumn.c_str(), records.c_str());
         });

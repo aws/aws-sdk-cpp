@@ -41,11 +41,7 @@ namespace Model
 ## skip exceptions
 #else
 #if(!${eventShape.members.isEmpty()})
-#if(${eventShape.hasBlobMembers()})
-        typedef std::function<void(${eventShape.name}&)> ${eventShape.name}Callback;
-#else
         typedef std::function<void(const ${eventShape.name}&)> ${eventShape.name}Callback;
-#end
 #else
         typedef std::function<void()> ${eventShape.name}Callback;
 #end
