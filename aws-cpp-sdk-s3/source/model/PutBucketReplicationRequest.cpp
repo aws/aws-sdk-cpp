@@ -30,6 +30,7 @@ PutBucketReplicationRequest::PutBucketReplicationRequest() :
     m_bucketHasBeenSet(false),
     m_contentMD5HasBeenSet(false),
     m_replicationConfigurationHasBeenSet(false),
+    m_tokenHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -80,6 +81,13 @@ Aws::Http::HeaderValueCollection PutBucketReplicationRequest::GetRequestSpecific
   {
     ss << m_contentMD5;
     headers.emplace("content-md5",  ss.str());
+    ss.str("");
+  }
+
+  if(m_tokenHasBeenSet)
+  {
+    ss << m_token;
+    headers.emplace("x-amz-bucket-object-lock-token",  ss.str());
     ss.str("");
   }
 

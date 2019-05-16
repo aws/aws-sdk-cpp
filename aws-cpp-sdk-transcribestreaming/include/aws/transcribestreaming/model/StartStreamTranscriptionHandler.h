@@ -21,10 +21,6 @@
 #include <aws/transcribestreaming/TranscribeStreamingServiceErrors.h>
 
 #include <aws/transcribestreaming/model/TranscriptEvent.h>
-#include <aws/transcribestreaming/model/BadRequestException.h>
-#include <aws/transcribestreaming/model/LimitExceededException.h>
-#include <aws/transcribestreaming/model/InternalFailureException.h>
-#include <aws/transcribestreaming/model/ConflictException.h>
 
 namespace Aws
 {
@@ -35,54 +31,29 @@ namespace Model
     enum class StartStreamTranscriptionEventType
     {
         TRANSCRIPTEVENT,
-        BADREQUESTEXCEPTION,
-        LIMITEXCEEDEDEXCEPTION,
-        INTERNALFAILUREEXCEPTION,
-        CONFLICTEXCEPTION,
         UNKNOWN
     };
 
     class AWS_TRANSCRIBESTREAMINGSERVICE_API StartStreamTranscriptionHandler : public Aws::Utils::Event::EventStreamHandler
     {
         typedef std::function<void(const TranscriptEvent&)> TranscriptEventCallback;
-        typedef std::function<void(const BadRequestException&)> BadRequestExceptionCallback;
-        typedef std::function<void(const LimitExceededException&)> LimitExceededExceptionCallback;
-        typedef std::function<void(const InternalFailureException&)> InternalFailureExceptionCallback;
-        typedef std::function<void(const ConflictException&)> ConflictExceptionCallback;
         typedef std::function<void(const Aws::Client::AWSError<TranscribeStreamingServiceErrors>& error)> ErrorCallback;
-        
+
     public:
         StartStreamTranscriptionHandler();
-        StartStreamTranscriptionHandler& operator=(const StartStreamTranscriptionHandler& handler)
-        {
-            m_onTranscriptEvent = handler.m_onTranscriptEvent;
-            m_onBadRequestException = handler.m_onBadRequestException;
-            m_onLimitExceededException = handler.m_onLimitExceededException;
-            m_onInternalFailureException = handler.m_onInternalFailureException;
-            m_onConflictException = handler.m_onConflictException;
-            m_onError = handler.m_onError;
-            return *this;
-        }
-
+        StartStreamTranscriptionHandler& operator=(const StartStreamTranscriptionHandler& handler) = default;
 
         virtual void OnEvent() override;
 
         inline void SetTranscriptEventCallback(const TranscriptEventCallback& callback) { m_onTranscriptEvent = callback; }
-        inline void SetBadRequestExceptionCallback(const BadRequestExceptionCallback& callback) { m_onBadRequestException = callback; }
-        inline void SetLimitExceededExceptionCallback(const LimitExceededExceptionCallback& callback) { m_onLimitExceededException = callback; }
-        inline void SetInternalFailureExceptionCallback(const InternalFailureExceptionCallback& callback) { m_onInternalFailureException = callback; }
-        inline void SetConflictExceptionCallback(const ConflictExceptionCallback& callback) { m_onConflictException = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
     private:
         void HandleEventInMessage();
         void HandleErrorInMessage();
+        void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
         TranscriptEventCallback m_onTranscriptEvent;
-        BadRequestExceptionCallback m_onBadRequestException;
-        LimitExceededExceptionCallback m_onLimitExceededException;
-        InternalFailureExceptionCallback m_onInternalFailureException;
-        ConflictExceptionCallback m_onConflictException;
         ErrorCallback m_onError;
     };
 

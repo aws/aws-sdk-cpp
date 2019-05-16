@@ -53,6 +53,7 @@ void InvokeRequest::AddQueryStringParameters(URI& uri) const
 Aws::Http::HeaderValueCollection InvokeRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_EVENTSTREAM_CONTENT_TYPE);
   Aws::StringStream ss;
   if(m_invocationTypeHasBeenSet)
   {

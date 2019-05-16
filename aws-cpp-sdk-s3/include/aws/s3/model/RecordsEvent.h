@@ -32,7 +32,7 @@ namespace Model
   class AWS_S3_API RecordsEvent
   {
   public:
-    RecordsEvent();
+    RecordsEvent() = default;
     RecordsEvent(Aws::Vector<unsigned char>&& value) { m_payload = std::move(value); }
 
     /**

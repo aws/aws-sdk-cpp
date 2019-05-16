@@ -36,7 +36,7 @@ namespace Model
 
     SelectObjectContentHandler::SelectObjectContentHandler() : EventStreamHandler()
     {
-        m_onRecordsEvent = [&](RecordsEvent&)
+        m_onRecordsEvent = [&](const RecordsEvent&)
         {
             AWS_LOGSTREAM_TRACE(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG, "RecordsEvent received.");
         };
@@ -80,7 +80,7 @@ namespace Model
             return;
         }
 
-        auto headers = GetEventHeaders();
+        const auto& headers = GetEventHeaders();
         auto messageTypeHeaderIter = headers.find(MESSAGE_TYPE_HEADER);
         if (messageTypeHeaderIter == headers.end())
         {
@@ -94,6 +94,7 @@ namespace Model
             HandleEventInMessage();
             break;
         case Message::MessageType::REQUEST_LEVEL_ERROR:
+        case Message::MessageType::REQUEST_LEVEL_EXCEPTION:
         {
             HandleErrorInMessage();
             break;
@@ -107,7 +108,7 @@ namespace Model
 
     void SelectObjectContentHandler::HandleEventInMessage()
     {
-        auto headers = GetEventHeaders();
+        const auto& headers = GetEventHeaders();
         auto eventTypeHeaderIter = headers.find(EVENT_TYPE_HEADER);
         if (eventTypeHeaderIter == headers.end())
         {
@@ -154,37 +155,46 @@ namespace Model
             break;
         default:
             AWS_LOGSTREAM_WARN(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG,
-                "Unexpected event type: " << headers[EVENT_TYPE_HEADER].GetEventHeaderValueAsString());
+                "Unexpected event type: " << eventTypeHeaderIter->second.GetEventHeaderValueAsString());
             break;
         }
     }
 
     void SelectObjectContentHandler::HandleErrorInMessage()
     {
-        auto headers = GetEventHeaders();
-        Aws::String errorCode = "";
-        Aws::String errorMessage = "";
-        auto errorCodeHeaderIter = headers.find(ERROR_CODE_HEADER);
-        if (errorCodeHeaderIter == headers.end())
+        const auto& headers = GetEventHeaders();
+        Aws::String errorCode;
+        Aws::String errorMessage;
+        auto errorHeaderIter = headers.find(ERROR_CODE_HEADER);
+        if (errorHeaderIter == headers.end())
         {
-            AWS_LOGSTREAM_WARN(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG,
-                "Header: " << ERROR_CODE_HEADER << " not found in the message.");
-        }
-        else
-        {
-            errorCode = errorCodeHeaderIter->second.GetEventHeaderValueAsString();
-        }
-        auto errorMessageHeaderIter = headers.find(ERROR_MESSAGE_HEADER);
-        if (errorMessageHeaderIter == headers.end())
-        {
-            AWS_LOGSTREAM_WARN(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG,
-                "Header: " << ERROR_MESSAGE_HEADER << " not found in the message.");
-        }
-        else
-        {
-            errorMessage = errorMessageHeaderIter->second.GetEventHeaderValueAsString();
+            errorHeaderIter = headers.find(EXCEPTION_TYPE_HEADER);
+            if (errorHeaderIter == headers.end())
+            {
+                AWS_LOGSTREAM_WARN(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG,
+                        "Error type was not found in the event message.");
+                return;
+            }
         }
 
+        errorCode = errorHeaderIter->second.GetEventHeaderValueAsString();
+        errorHeaderIter = headers.find(ERROR_MESSAGE_HEADER);
+        if (errorHeaderIter == headers.end())
+        {
+            errorHeaderIter = headers.find(EXCEPTION_TYPE_HEADER);
+            if (errorHeaderIter == headers.end())
+            {
+                AWS_LOGSTREAM_WARN(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG,
+                        "Error description was not found in the event message.");
+                return;
+            }
+        }
+        errorMessage = errorHeaderIter->second.GetEventHeaderValueAsString();
+        MarshallError(errorCode, errorMessage);
+    }
+
+    void SelectObjectContentHandler::MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage)
+    {
         S3ErrorMarshaller errorMarshaller;
         AWSError<CoreErrors> error;
 

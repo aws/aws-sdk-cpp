@@ -153,6 +153,47 @@ namespace Model
     inline PutBucketReplicationRequest& WithReplicationConfiguration(ReplicationConfiguration&& value) { SetReplicationConfiguration(std::move(value)); return *this;}
 
 
+    /**
+     * <p/>
+     */
+    inline const Aws::String& GetToken() const{ return m_token; }
+
+    /**
+     * <p/>
+     */
+    inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
+
+    /**
+     * <p/>
+     */
+    inline PutBucketReplicationRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline PutBucketReplicationRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline PutBucketReplicationRequest& WithToken(const char* value) { SetToken(value); return *this;}
+
+
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
 
@@ -202,6 +243,9 @@ namespace Model
 
     ReplicationConfiguration m_replicationConfiguration;
     bool m_replicationConfigurationHasBeenSet;
+
+    Aws::String m_token;
+    bool m_tokenHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet;

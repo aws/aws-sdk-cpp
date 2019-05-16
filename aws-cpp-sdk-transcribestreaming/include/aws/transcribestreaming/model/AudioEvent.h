@@ -33,7 +33,7 @@ namespace Model
   class AWS_TRANSCRIBESTREAMINGSERVICE_API AudioEvent
   {
   public:
-    AudioEvent();
+    AudioEvent() = default;
     AudioEvent(Aws::Vector<unsigned char>&& value) { m_audioChunk = std::move(value); }
 
     /**
