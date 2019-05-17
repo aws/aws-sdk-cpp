@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the credentials for the service account used by the streaming
-   * instance to connect to the directory.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the credentials for the service account used by the fleet or image
+   * builder to connect to the directory.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ServiceAccountCredentials">AWS
    * API Reference</a></p>
    */

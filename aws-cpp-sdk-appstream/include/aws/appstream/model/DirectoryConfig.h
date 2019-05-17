@@ -37,9 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the configuration information for the directory used to join a
-   * streaming instance to a Microsoft Active Directory domain.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes the configuration information required to join fleets and image
+   * builders to Microsoft Active Directory domains.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DirectoryConfig">AWS
    * API Reference</a></p>
    */
@@ -157,37 +156,37 @@ namespace Model
 
 
     /**
-     * <p>The credentials for the service account used by the streaming instance to
+     * <p>The credentials for the service account used by the fleet or image builder to
      * connect to the directory.</p>
      */
     inline const ServiceAccountCredentials& GetServiceAccountCredentials() const{ return m_serviceAccountCredentials; }
 
     /**
-     * <p>The credentials for the service account used by the streaming instance to
+     * <p>The credentials for the service account used by the fleet or image builder to
      * connect to the directory.</p>
      */
     inline bool ServiceAccountCredentialsHasBeenSet() const { return m_serviceAccountCredentialsHasBeenSet; }
 
     /**
-     * <p>The credentials for the service account used by the streaming instance to
+     * <p>The credentials for the service account used by the fleet or image builder to
      * connect to the directory.</p>
      */
     inline void SetServiceAccountCredentials(const ServiceAccountCredentials& value) { m_serviceAccountCredentialsHasBeenSet = true; m_serviceAccountCredentials = value; }
 
     /**
-     * <p>The credentials for the service account used by the streaming instance to
+     * <p>The credentials for the service account used by the fleet or image builder to
      * connect to the directory.</p>
      */
     inline void SetServiceAccountCredentials(ServiceAccountCredentials&& value) { m_serviceAccountCredentialsHasBeenSet = true; m_serviceAccountCredentials = std::move(value); }
 
     /**
-     * <p>The credentials for the service account used by the streaming instance to
+     * <p>The credentials for the service account used by the fleet or image builder to
      * connect to the directory.</p>
      */
     inline DirectoryConfig& WithServiceAccountCredentials(const ServiceAccountCredentials& value) { SetServiceAccountCredentials(value); return *this;}
 
     /**
-     * <p>The credentials for the service account used by the streaming instance to
+     * <p>The credentials for the service account used by the fleet or image builder to
      * connect to the directory.</p>
      */
     inline DirectoryConfig& WithServiceAccountCredentials(ServiceAccountCredentials&& value) { SetServiceAccountCredentials(std::move(value)); return *this;}

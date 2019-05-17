@@ -91,42 +91,50 @@ namespace Model
 
 
     /**
-     * <p>The email address of the user who is associated with the stack.</p>
+     * <p>The email address of the user who is associated with the stack.</p> <note>
+     * <p>Users' email addresses are case-sensitive.</p> </note>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The email address of the user who is associated with the stack.</p>
+     * <p>The email address of the user who is associated with the stack.</p> <note>
+     * <p>Users' email addresses are case-sensitive.</p> </note>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
-     * <p>The email address of the user who is associated with the stack.</p>
+     * <p>The email address of the user who is associated with the stack.</p> <note>
+     * <p>Users' email addresses are case-sensitive.</p> </note>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The email address of the user who is associated with the stack.</p>
+     * <p>The email address of the user who is associated with the stack.</p> <note>
+     * <p>Users' email addresses are case-sensitive.</p> </note>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>The email address of the user who is associated with the stack.</p>
+     * <p>The email address of the user who is associated with the stack.</p> <note>
+     * <p>Users' email addresses are case-sensitive.</p> </note>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The email address of the user who is associated with the stack.</p>
+     * <p>The email address of the user who is associated with the stack.</p> <note>
+     * <p>Users' email addresses are case-sensitive.</p> </note>
      */
     inline UserStackAssociation& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The email address of the user who is associated with the stack.</p>
+     * <p>The email address of the user who is associated with the stack.</p> <note>
+     * <p>Users' email addresses are case-sensitive.</p> </note>
      */
     inline UserStackAssociation& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The email address of the user who is associated with the stack.</p>
+     * <p>The email address of the user who is associated with the stack.</p> <note>
+     * <p>Users' email addresses are case-sensitive.</p> </note>
      */
     inline UserStackAssociation& WithUserName(const char* value) { SetUserName(value); return *this;}
 

@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a connector to enable persistent storage for users.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes a connector that enables persistent storage for
+   * users.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StorageConnector">AWS
    * API Reference</a></p>
    */

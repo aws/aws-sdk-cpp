@@ -248,63 +248,63 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether a user is connected to the streaming session. </p>
+     * <p>Specifies whether a user is connected to the streaming session.</p>
      */
     inline const SessionConnectionState& GetConnectionState() const{ return m_connectionState; }
 
     /**
-     * <p>Specifies whether a user is connected to the streaming session. </p>
+     * <p>Specifies whether a user is connected to the streaming session.</p>
      */
     inline bool ConnectionStateHasBeenSet() const { return m_connectionStateHasBeenSet; }
 
     /**
-     * <p>Specifies whether a user is connected to the streaming session. </p>
+     * <p>Specifies whether a user is connected to the streaming session.</p>
      */
     inline void SetConnectionState(const SessionConnectionState& value) { m_connectionStateHasBeenSet = true; m_connectionState = value; }
 
     /**
-     * <p>Specifies whether a user is connected to the streaming session. </p>
+     * <p>Specifies whether a user is connected to the streaming session.</p>
      */
     inline void SetConnectionState(SessionConnectionState&& value) { m_connectionStateHasBeenSet = true; m_connectionState = std::move(value); }
 
     /**
-     * <p>Specifies whether a user is connected to the streaming session. </p>
+     * <p>Specifies whether a user is connected to the streaming session.</p>
      */
     inline Session& WithConnectionState(const SessionConnectionState& value) { SetConnectionState(value); return *this;}
 
     /**
-     * <p>Specifies whether a user is connected to the streaming session. </p>
+     * <p>Specifies whether a user is connected to the streaming session.</p>
      */
     inline Session& WithConnectionState(SessionConnectionState&& value) { SetConnectionState(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time when a streaming instance is dedicated for the user. </p>
+     * <p>The time when a streaming instance is dedicated for the user.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The time when a streaming instance is dedicated for the user. </p>
+     * <p>The time when a streaming instance is dedicated for the user.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The time when a streaming instance is dedicated for the user. </p>
+     * <p>The time when a streaming instance is dedicated for the user.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The time when a streaming instance is dedicated for the user. </p>
+     * <p>The time when a streaming instance is dedicated for the user.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The time when a streaming instance is dedicated for the user. </p>
+     * <p>The time when a streaming instance is dedicated for the user.</p>
      */
     inline Session& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The time when a streaming instance is dedicated for the user. </p>
+     * <p>The time when a streaming instance is dedicated for the user.</p>
      */
     inline Session& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
@@ -384,49 +384,37 @@ namespace Model
 
     /**
      * <p>The authentication method. The user is authenticated using a streaming URL
-     * (<code>API</code>), SAML 2.0 federation (<code>SAML</code>), or the AppStream
-     * 2.0 user pool (<code>USERPOOL</code>). The default is to authenticate users
-     * using a streaming URL. </p>
+     * (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
      */
     inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
 
     /**
      * <p>The authentication method. The user is authenticated using a streaming URL
-     * (<code>API</code>), SAML 2.0 federation (<code>SAML</code>), or the AppStream
-     * 2.0 user pool (<code>USERPOOL</code>). The default is to authenticate users
-     * using a streaming URL. </p>
+     * (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
      */
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
 
     /**
      * <p>The authentication method. The user is authenticated using a streaming URL
-     * (<code>API</code>), SAML 2.0 federation (<code>SAML</code>), or the AppStream
-     * 2.0 user pool (<code>USERPOOL</code>). The default is to authenticate users
-     * using a streaming URL. </p>
+     * (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
      */
     inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
 
     /**
      * <p>The authentication method. The user is authenticated using a streaming URL
-     * (<code>API</code>), SAML 2.0 federation (<code>SAML</code>), or the AppStream
-     * 2.0 user pool (<code>USERPOOL</code>). The default is to authenticate users
-     * using a streaming URL. </p>
+     * (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
      */
     inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
 
     /**
      * <p>The authentication method. The user is authenticated using a streaming URL
-     * (<code>API</code>), SAML 2.0 federation (<code>SAML</code>), or the AppStream
-     * 2.0 user pool (<code>USERPOOL</code>). The default is to authenticate users
-     * using a streaming URL. </p>
+     * (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
      */
     inline Session& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
 
     /**
      * <p>The authentication method. The user is authenticated using a streaming URL
-     * (<code>API</code>), SAML 2.0 federation (<code>SAML</code>), or the AppStream
-     * 2.0 user pool (<code>USERPOOL</code>). The default is to authenticate users
-     * using a streaming URL. </p>
+     * (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
      */
     inline Session& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
 

@@ -40,7 +40,9 @@ CreateFleetRequest::CreateFleetRequest() :
     m_enableDefaultInternetAccess(false),
     m_enableDefaultInternetAccessHasBeenSet(false),
     m_domainJoinInfoHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_idleDisconnectTimeoutInSeconds(0),
+    m_idleDisconnectTimeoutInSecondsHasBeenSet(false)
 {
 }
 
@@ -133,6 +135,12 @@ Aws::String CreateFleetRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_idleDisconnectTimeoutInSecondsHasBeenSet)
+  {
+   payload.WithInteger("IdleDisconnectTimeoutInSeconds", m_idleDisconnectTimeoutInSeconds);
 
   }
 

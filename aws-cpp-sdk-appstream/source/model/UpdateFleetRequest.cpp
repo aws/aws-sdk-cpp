@@ -38,6 +38,8 @@ UpdateFleetRequest::UpdateFleetRequest() :
     m_enableDefaultInternetAccess(false),
     m_enableDefaultInternetAccessHasBeenSet(false),
     m_domainJoinInfoHasBeenSet(false),
+    m_idleDisconnectTimeoutInSeconds(0),
+    m_idleDisconnectTimeoutInSecondsHasBeenSet(false),
     m_attributesToDeleteHasBeenSet(false)
 {
 }
@@ -115,6 +117,12 @@ Aws::String UpdateFleetRequest::SerializePayload() const
   if(m_domainJoinInfoHasBeenSet)
   {
    payload.WithObject("DomainJoinInfo", m_domainJoinInfo.Jsonize());
+
+  }
+
+  if(m_idleDisconnectTimeoutInSecondsHasBeenSet)
+  {
+   payload.WithInteger("IdleDisconnectTimeoutInSeconds", m_idleDisconnectTimeoutInSeconds);
 
   }
 

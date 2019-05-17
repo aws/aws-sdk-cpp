@@ -455,58 +455,82 @@ namespace Model
 
 
     /**
-     * <p>The maximum time that a streaming session can run, in seconds. Specify a
-     * value between 600 and 360000.</p>
+     * <p>The maximum amount of time that a streaming session can remain active, in
+     * seconds. If users are still connected to a streaming instance five minutes
+     * before this limit is reached, they are prompted to save any open documents
+     * before being disconnected. After this time elapses, the instance is terminated
+     * and replaced by a new instance.</p> <p>Specify a value between 600 and
+     * 360000.</p>
      */
     inline int GetMaxUserDurationInSeconds() const{ return m_maxUserDurationInSeconds; }
 
     /**
-     * <p>The maximum time that a streaming session can run, in seconds. Specify a
-     * value between 600 and 360000.</p>
+     * <p>The maximum amount of time that a streaming session can remain active, in
+     * seconds. If users are still connected to a streaming instance five minutes
+     * before this limit is reached, they are prompted to save any open documents
+     * before being disconnected. After this time elapses, the instance is terminated
+     * and replaced by a new instance.</p> <p>Specify a value between 600 and
+     * 360000.</p>
      */
     inline bool MaxUserDurationInSecondsHasBeenSet() const { return m_maxUserDurationInSecondsHasBeenSet; }
 
     /**
-     * <p>The maximum time that a streaming session can run, in seconds. Specify a
-     * value between 600 and 360000.</p>
+     * <p>The maximum amount of time that a streaming session can remain active, in
+     * seconds. If users are still connected to a streaming instance five minutes
+     * before this limit is reached, they are prompted to save any open documents
+     * before being disconnected. After this time elapses, the instance is terminated
+     * and replaced by a new instance.</p> <p>Specify a value between 600 and
+     * 360000.</p>
      */
     inline void SetMaxUserDurationInSeconds(int value) { m_maxUserDurationInSecondsHasBeenSet = true; m_maxUserDurationInSeconds = value; }
 
     /**
-     * <p>The maximum time that a streaming session can run, in seconds. Specify a
-     * value between 600 and 360000.</p>
+     * <p>The maximum amount of time that a streaming session can remain active, in
+     * seconds. If users are still connected to a streaming instance five minutes
+     * before this limit is reached, they are prompted to save any open documents
+     * before being disconnected. After this time elapses, the instance is terminated
+     * and replaced by a new instance.</p> <p>Specify a value between 600 and
+     * 360000.</p>
      */
     inline CreateFleetRequest& WithMaxUserDurationInSeconds(int value) { SetMaxUserDurationInSeconds(value); return *this;}
 
 
     /**
-     * <p>The time after disconnection when a session is considered to have ended, in
-     * seconds. If a user who was disconnected reconnects within this time interval,
-     * the user is connected to their previous session. Specify a value between 60 and
+     * <p>The amount of time that a streaming session remains active after users
+     * disconnect. If users try to reconnect to the streaming session after a
+     * disconnection or network interruption within this time interval, they are
+     * connected to their previous session. Otherwise, they are connected to a new
+     * session with a new streaming instance. </p> <p>Specify a value between 60 and
      * 360000.</p>
      */
     inline int GetDisconnectTimeoutInSeconds() const{ return m_disconnectTimeoutInSeconds; }
 
     /**
-     * <p>The time after disconnection when a session is considered to have ended, in
-     * seconds. If a user who was disconnected reconnects within this time interval,
-     * the user is connected to their previous session. Specify a value between 60 and
+     * <p>The amount of time that a streaming session remains active after users
+     * disconnect. If users try to reconnect to the streaming session after a
+     * disconnection or network interruption within this time interval, they are
+     * connected to their previous session. Otherwise, they are connected to a new
+     * session with a new streaming instance. </p> <p>Specify a value between 60 and
      * 360000.</p>
      */
     inline bool DisconnectTimeoutInSecondsHasBeenSet() const { return m_disconnectTimeoutInSecondsHasBeenSet; }
 
     /**
-     * <p>The time after disconnection when a session is considered to have ended, in
-     * seconds. If a user who was disconnected reconnects within this time interval,
-     * the user is connected to their previous session. Specify a value between 60 and
+     * <p>The amount of time that a streaming session remains active after users
+     * disconnect. If users try to reconnect to the streaming session after a
+     * disconnection or network interruption within this time interval, they are
+     * connected to their previous session. Otherwise, they are connected to a new
+     * session with a new streaming instance. </p> <p>Specify a value between 60 and
      * 360000.</p>
      */
     inline void SetDisconnectTimeoutInSeconds(int value) { m_disconnectTimeoutInSecondsHasBeenSet = true; m_disconnectTimeoutInSeconds = value; }
 
     /**
-     * <p>The time after disconnection when a session is considered to have ended, in
-     * seconds. If a user who was disconnected reconnects within this time interval,
-     * the user is connected to their previous session. Specify a value between 60 and
+     * <p>The amount of time that a streaming session remains active after users
+     * disconnect. If users try to reconnect to the streaming session after a
+     * disconnection or network interruption within this time interval, they are
+     * connected to their previous session. Otherwise, they are connected to a new
+     * session with a new streaming instance. </p> <p>Specify a value between 60 and
      * 360000.</p>
      */
     inline CreateFleetRequest& WithDisconnectTimeoutInSeconds(int value) { SetDisconnectTimeoutInSeconds(value); return *this;}
@@ -656,7 +680,9 @@ namespace Model
      * <p>The tags to associate with the fleet. A tag is a key-value pair, and the
      * value is optional. For example, Environment=Test. If you do not specify a value,
      * Environment=. </p> <p>If you do not specify a value, the value is set to an
-     * empty string.</p> <p>For more information, see <a
+     * empty string.</p> <p>Generally allowed characters are: letters, numbers, and
+     * spaces representable in UTF-8, and the following special characters: </p> <p>_ .
+     * : / = + \ - @</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
      * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
@@ -666,7 +692,9 @@ namespace Model
      * <p>The tags to associate with the fleet. A tag is a key-value pair, and the
      * value is optional. For example, Environment=Test. If you do not specify a value,
      * Environment=. </p> <p>If you do not specify a value, the value is set to an
-     * empty string.</p> <p>For more information, see <a
+     * empty string.</p> <p>Generally allowed characters are: letters, numbers, and
+     * spaces representable in UTF-8, and the following special characters: </p> <p>_ .
+     * : / = + \ - @</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
      * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
@@ -676,7 +704,9 @@ namespace Model
      * <p>The tags to associate with the fleet. A tag is a key-value pair, and the
      * value is optional. For example, Environment=Test. If you do not specify a value,
      * Environment=. </p> <p>If you do not specify a value, the value is set to an
-     * empty string.</p> <p>For more information, see <a
+     * empty string.</p> <p>Generally allowed characters are: letters, numbers, and
+     * spaces representable in UTF-8, and the following special characters: </p> <p>_ .
+     * : / = + \ - @</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
      * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
@@ -686,7 +716,9 @@ namespace Model
      * <p>The tags to associate with the fleet. A tag is a key-value pair, and the
      * value is optional. For example, Environment=Test. If you do not specify a value,
      * Environment=. </p> <p>If you do not specify a value, the value is set to an
-     * empty string.</p> <p>For more information, see <a
+     * empty string.</p> <p>Generally allowed characters are: letters, numbers, and
+     * spaces representable in UTF-8, and the following special characters: </p> <p>_ .
+     * : / = + \ - @</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
      * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
@@ -696,7 +728,9 @@ namespace Model
      * <p>The tags to associate with the fleet. A tag is a key-value pair, and the
      * value is optional. For example, Environment=Test. If you do not specify a value,
      * Environment=. </p> <p>If you do not specify a value, the value is set to an
-     * empty string.</p> <p>For more information, see <a
+     * empty string.</p> <p>Generally allowed characters are: letters, numbers, and
+     * spaces representable in UTF-8, and the following special characters: </p> <p>_ .
+     * : / = + \ - @</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
      * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
@@ -706,7 +740,9 @@ namespace Model
      * <p>The tags to associate with the fleet. A tag is a key-value pair, and the
      * value is optional. For example, Environment=Test. If you do not specify a value,
      * Environment=. </p> <p>If you do not specify a value, the value is set to an
-     * empty string.</p> <p>For more information, see <a
+     * empty string.</p> <p>Generally allowed characters are: letters, numbers, and
+     * spaces representable in UTF-8, and the following special characters: </p> <p>_ .
+     * : / = + \ - @</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
      * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
@@ -716,7 +752,9 @@ namespace Model
      * <p>The tags to associate with the fleet. A tag is a key-value pair, and the
      * value is optional. For example, Environment=Test. If you do not specify a value,
      * Environment=. </p> <p>If you do not specify a value, the value is set to an
-     * empty string.</p> <p>For more information, see <a
+     * empty string.</p> <p>Generally allowed characters are: letters, numbers, and
+     * spaces representable in UTF-8, and the following special characters: </p> <p>_ .
+     * : / = + \ - @</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
      * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
@@ -726,7 +764,9 @@ namespace Model
      * <p>The tags to associate with the fleet. A tag is a key-value pair, and the
      * value is optional. For example, Environment=Test. If you do not specify a value,
      * Environment=. </p> <p>If you do not specify a value, the value is set to an
-     * empty string.</p> <p>For more information, see <a
+     * empty string.</p> <p>Generally allowed characters are: letters, numbers, and
+     * spaces representable in UTF-8, and the following special characters: </p> <p>_ .
+     * : / = + \ - @</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
      * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
@@ -736,7 +776,9 @@ namespace Model
      * <p>The tags to associate with the fleet. A tag is a key-value pair, and the
      * value is optional. For example, Environment=Test. If you do not specify a value,
      * Environment=. </p> <p>If you do not specify a value, the value is set to an
-     * empty string.</p> <p>For more information, see <a
+     * empty string.</p> <p>Generally allowed characters are: letters, numbers, and
+     * spaces representable in UTF-8, and the following special characters: </p> <p>_ .
+     * : / = + \ - @</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
      * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
@@ -746,7 +788,9 @@ namespace Model
      * <p>The tags to associate with the fleet. A tag is a key-value pair, and the
      * value is optional. For example, Environment=Test. If you do not specify a value,
      * Environment=. </p> <p>If you do not specify a value, the value is set to an
-     * empty string.</p> <p>For more information, see <a
+     * empty string.</p> <p>Generally allowed characters are: letters, numbers, and
+     * spaces representable in UTF-8, and the following special characters: </p> <p>_ .
+     * : / = + \ - @</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
      * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
@@ -756,7 +800,9 @@ namespace Model
      * <p>The tags to associate with the fleet. A tag is a key-value pair, and the
      * value is optional. For example, Environment=Test. If you do not specify a value,
      * Environment=. </p> <p>If you do not specify a value, the value is set to an
-     * empty string.</p> <p>For more information, see <a
+     * empty string.</p> <p>Generally allowed characters are: letters, numbers, and
+     * spaces representable in UTF-8, and the following special characters: </p> <p>_ .
+     * : / = + \ - @</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
      * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
@@ -766,7 +812,9 @@ namespace Model
      * <p>The tags to associate with the fleet. A tag is a key-value pair, and the
      * value is optional. For example, Environment=Test. If you do not specify a value,
      * Environment=. </p> <p>If you do not specify a value, the value is set to an
-     * empty string.</p> <p>For more information, see <a
+     * empty string.</p> <p>Generally allowed characters are: letters, numbers, and
+     * spaces representable in UTF-8, and the following special characters: </p> <p>_ .
+     * : / = + \ - @</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
      * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
@@ -776,11 +824,110 @@ namespace Model
      * <p>The tags to associate with the fleet. A tag is a key-value pair, and the
      * value is optional. For example, Environment=Test. If you do not specify a value,
      * Environment=. </p> <p>If you do not specify a value, the value is set to an
-     * empty string.</p> <p>For more information, see <a
+     * empty string.</p> <p>Generally allowed characters are: letters, numbers, and
+     * spaces representable in UTF-8, and the following special characters: </p> <p>_ .
+     * : / = + \ - @</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
      * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
     inline CreateFleetRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The amount of time that users can be idle (inactive) before they are
+     * disconnected from their streaming session and the
+     * <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified
+     * before they are disconnected due to inactivity. If they try to reconnect to the
+     * streaming session before the time interval specified in
+     * <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
+     * previous session. Users are considered idle when they stop providing keyboard or
+     * mouse input during their streaming session. File uploads and downloads, audio
+     * in, audio out, and pixels changing do not qualify as user activity. If users
+     * continue to be idle after the time interval in
+     * <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+     * <p>To prevent users from being disconnected due to inactivity, specify a value
+     * of 0. Otherwise, specify a value between 60 and 3600. The default value is
+     * 900.</p> <note> <p>If you enable this feature, we recommend that you specify a
+     * value that corresponds exactly to a whole number of minutes (for example, 60,
+     * 120, and 180). If you don't do this, the value is rounded to the nearest minute.
+     * For example, if you specify a value of 70, users are disconnected after 1 minute
+     * of inactivity. If you specify a value that is at the midpoint between two
+     * different minutes, the value is rounded up. For example, if you specify a value
+     * of 90, users are disconnected after 2 minutes of inactivity. </p> </note>
+     */
+    inline int GetIdleDisconnectTimeoutInSeconds() const{ return m_idleDisconnectTimeoutInSeconds; }
+
+    /**
+     * <p>The amount of time that users can be idle (inactive) before they are
+     * disconnected from their streaming session and the
+     * <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified
+     * before they are disconnected due to inactivity. If they try to reconnect to the
+     * streaming session before the time interval specified in
+     * <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
+     * previous session. Users are considered idle when they stop providing keyboard or
+     * mouse input during their streaming session. File uploads and downloads, audio
+     * in, audio out, and pixels changing do not qualify as user activity. If users
+     * continue to be idle after the time interval in
+     * <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+     * <p>To prevent users from being disconnected due to inactivity, specify a value
+     * of 0. Otherwise, specify a value between 60 and 3600. The default value is
+     * 900.</p> <note> <p>If you enable this feature, we recommend that you specify a
+     * value that corresponds exactly to a whole number of minutes (for example, 60,
+     * 120, and 180). If you don't do this, the value is rounded to the nearest minute.
+     * For example, if you specify a value of 70, users are disconnected after 1 minute
+     * of inactivity. If you specify a value that is at the midpoint between two
+     * different minutes, the value is rounded up. For example, if you specify a value
+     * of 90, users are disconnected after 2 minutes of inactivity. </p> </note>
+     */
+    inline bool IdleDisconnectTimeoutInSecondsHasBeenSet() const { return m_idleDisconnectTimeoutInSecondsHasBeenSet; }
+
+    /**
+     * <p>The amount of time that users can be idle (inactive) before they are
+     * disconnected from their streaming session and the
+     * <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified
+     * before they are disconnected due to inactivity. If they try to reconnect to the
+     * streaming session before the time interval specified in
+     * <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
+     * previous session. Users are considered idle when they stop providing keyboard or
+     * mouse input during their streaming session. File uploads and downloads, audio
+     * in, audio out, and pixels changing do not qualify as user activity. If users
+     * continue to be idle after the time interval in
+     * <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+     * <p>To prevent users from being disconnected due to inactivity, specify a value
+     * of 0. Otherwise, specify a value between 60 and 3600. The default value is
+     * 900.</p> <note> <p>If you enable this feature, we recommend that you specify a
+     * value that corresponds exactly to a whole number of minutes (for example, 60,
+     * 120, and 180). If you don't do this, the value is rounded to the nearest minute.
+     * For example, if you specify a value of 70, users are disconnected after 1 minute
+     * of inactivity. If you specify a value that is at the midpoint between two
+     * different minutes, the value is rounded up. For example, if you specify a value
+     * of 90, users are disconnected after 2 minutes of inactivity. </p> </note>
+     */
+    inline void SetIdleDisconnectTimeoutInSeconds(int value) { m_idleDisconnectTimeoutInSecondsHasBeenSet = true; m_idleDisconnectTimeoutInSeconds = value; }
+
+    /**
+     * <p>The amount of time that users can be idle (inactive) before they are
+     * disconnected from their streaming session and the
+     * <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified
+     * before they are disconnected due to inactivity. If they try to reconnect to the
+     * streaming session before the time interval specified in
+     * <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
+     * previous session. Users are considered idle when they stop providing keyboard or
+     * mouse input during their streaming session. File uploads and downloads, audio
+     * in, audio out, and pixels changing do not qualify as user activity. If users
+     * continue to be idle after the time interval in
+     * <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+     * <p>To prevent users from being disconnected due to inactivity, specify a value
+     * of 0. Otherwise, specify a value between 60 and 3600. The default value is
+     * 900.</p> <note> <p>If you enable this feature, we recommend that you specify a
+     * value that corresponds exactly to a whole number of minutes (for example, 60,
+     * 120, and 180). If you don't do this, the value is rounded to the nearest minute.
+     * For example, if you specify a value of 70, users are disconnected after 1 minute
+     * of inactivity. If you specify a value that is at the midpoint between two
+     * different minutes, the value is rounded up. For example, if you specify a value
+     * of 90, users are disconnected after 2 minutes of inactivity. </p> </note>
+     */
+    inline CreateFleetRequest& WithIdleDisconnectTimeoutInSeconds(int value) { SetIdleDisconnectTimeoutInSeconds(value); return *this;}
 
   private:
 
@@ -825,6 +972,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    int m_idleDisconnectTimeoutInSeconds;
+    bool m_idleDisconnectTimeoutInSecondsHasBeenSet;
   };
 
 } // namespace Model

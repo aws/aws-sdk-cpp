@@ -244,49 +244,43 @@ namespace Model
 
     /**
      * <p>The authentication method. Specify <code>API</code> for a user authenticated
-     * using a streaming URL, <code>SAML</code> for a SAML 2.0-federated user, or
-     * <code>USERPOOL</code> for a user in the AppStream 2.0 user pool. The default is
-     * to authenticate users using a streaming URL.</p>
+     * using a streaming URL or <code>SAML</code> for a SAML federated user. The
+     * default is to authenticate users using a streaming URL.</p>
      */
     inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
 
     /**
      * <p>The authentication method. Specify <code>API</code> for a user authenticated
-     * using a streaming URL, <code>SAML</code> for a SAML 2.0-federated user, or
-     * <code>USERPOOL</code> for a user in the AppStream 2.0 user pool. The default is
-     * to authenticate users using a streaming URL.</p>
+     * using a streaming URL or <code>SAML</code> for a SAML federated user. The
+     * default is to authenticate users using a streaming URL.</p>
      */
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
 
     /**
      * <p>The authentication method. Specify <code>API</code> for a user authenticated
-     * using a streaming URL, <code>SAML</code> for a SAML 2.0-federated user, or
-     * <code>USERPOOL</code> for a user in the AppStream 2.0 user pool. The default is
-     * to authenticate users using a streaming URL.</p>
+     * using a streaming URL or <code>SAML</code> for a SAML federated user. The
+     * default is to authenticate users using a streaming URL.</p>
      */
     inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
 
     /**
      * <p>The authentication method. Specify <code>API</code> for a user authenticated
-     * using a streaming URL, <code>SAML</code> for a SAML 2.0-federated user, or
-     * <code>USERPOOL</code> for a user in the AppStream 2.0 user pool. The default is
-     * to authenticate users using a streaming URL.</p>
+     * using a streaming URL or <code>SAML</code> for a SAML federated user. The
+     * default is to authenticate users using a streaming URL.</p>
      */
     inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
 
     /**
      * <p>The authentication method. Specify <code>API</code> for a user authenticated
-     * using a streaming URL, <code>SAML</code> for a SAML 2.0-federated user, or
-     * <code>USERPOOL</code> for a user in the AppStream 2.0 user pool. The default is
-     * to authenticate users using a streaming URL.</p>
+     * using a streaming URL or <code>SAML</code> for a SAML federated user. The
+     * default is to authenticate users using a streaming URL.</p>
      */
     inline DescribeSessionsRequest& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
 
     /**
      * <p>The authentication method. Specify <code>API</code> for a user authenticated
-     * using a streaming URL, <code>SAML</code> for a SAML 2.0-federated user, or
-     * <code>USERPOOL</code> for a user in the AppStream 2.0 user pool. The default is
-     * to authenticate users using a streaming URL.</p>
+     * using a streaming URL or <code>SAML</code> for a SAML federated user. The
+     * default is to authenticate users using a streaming URL.</p>
      */
     inline DescribeSessionsRequest& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
 

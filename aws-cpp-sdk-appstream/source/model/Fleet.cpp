@@ -50,7 +50,9 @@ Fleet::Fleet() :
     m_fleetErrorsHasBeenSet(false),
     m_enableDefaultInternetAccess(false),
     m_enableDefaultInternetAccessHasBeenSet(false),
-    m_domainJoinInfoHasBeenSet(false)
+    m_domainJoinInfoHasBeenSet(false),
+    m_idleDisconnectTimeoutInSeconds(0),
+    m_idleDisconnectTimeoutInSecondsHasBeenSet(false)
 {
 }
 
@@ -76,7 +78,9 @@ Fleet::Fleet(JsonView jsonValue) :
     m_fleetErrorsHasBeenSet(false),
     m_enableDefaultInternetAccess(false),
     m_enableDefaultInternetAccessHasBeenSet(false),
-    m_domainJoinInfoHasBeenSet(false)
+    m_domainJoinInfoHasBeenSet(false),
+    m_idleDisconnectTimeoutInSeconds(0),
+    m_idleDisconnectTimeoutInSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -205,6 +209,13 @@ Fleet& Fleet::operator =(JsonView jsonValue)
     m_domainJoinInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IdleDisconnectTimeoutInSeconds"))
+  {
+    m_idleDisconnectTimeoutInSeconds = jsonValue.GetInteger("IdleDisconnectTimeoutInSeconds");
+
+    m_idleDisconnectTimeoutInSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -313,6 +324,12 @@ JsonValue Fleet::Jsonize() const
   if(m_domainJoinInfoHasBeenSet)
   {
    payload.WithObject("DomainJoinInfo", m_domainJoinInfo.Jsonize());
+
+  }
+
+  if(m_idleDisconnectTimeoutInSecondsHasBeenSet)
+  {
+   payload.WithInteger("IdleDisconnectTimeoutInSeconds", m_idleDisconnectTimeoutInSeconds);
 
   }
 

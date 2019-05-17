@@ -31,6 +31,7 @@
 #include <aws/appstream/model/CreateImageBuilderStreamingURLResult.h>
 #include <aws/appstream/model/CreateStackResult.h>
 #include <aws/appstream/model/CreateStreamingURLResult.h>
+#include <aws/appstream/model/CreateUsageReportSubscriptionResult.h>
 #include <aws/appstream/model/CreateUserResult.h>
 #include <aws/appstream/model/DeleteDirectoryConfigResult.h>
 #include <aws/appstream/model/DeleteFleetResult.h>
@@ -38,6 +39,7 @@
 #include <aws/appstream/model/DeleteImageBuilderResult.h>
 #include <aws/appstream/model/DeleteImagePermissionsResult.h>
 #include <aws/appstream/model/DeleteStackResult.h>
+#include <aws/appstream/model/DeleteUsageReportSubscriptionResult.h>
 #include <aws/appstream/model/DeleteUserResult.h>
 #include <aws/appstream/model/DescribeDirectoryConfigsResult.h>
 #include <aws/appstream/model/DescribeFleetsResult.h>
@@ -46,6 +48,7 @@
 #include <aws/appstream/model/DescribeImagesResult.h>
 #include <aws/appstream/model/DescribeSessionsResult.h>
 #include <aws/appstream/model/DescribeStacksResult.h>
+#include <aws/appstream/model/DescribeUsageReportSubscriptionsResult.h>
 #include <aws/appstream/model/DescribeUserStackAssociationsResult.h>
 #include <aws/appstream/model/DescribeUsersResult.h>
 #include <aws/appstream/model/DisableUserResult.h>
@@ -114,6 +117,7 @@ namespace Model
         class CreateImageBuilderStreamingURLRequest;
         class CreateStackRequest;
         class CreateStreamingURLRequest;
+        class CreateUsageReportSubscriptionRequest;
         class CreateUserRequest;
         class DeleteDirectoryConfigRequest;
         class DeleteFleetRequest;
@@ -121,6 +125,7 @@ namespace Model
         class DeleteImageBuilderRequest;
         class DeleteImagePermissionsRequest;
         class DeleteStackRequest;
+        class DeleteUsageReportSubscriptionRequest;
         class DeleteUserRequest;
         class DescribeDirectoryConfigsRequest;
         class DescribeFleetsRequest;
@@ -129,6 +134,7 @@ namespace Model
         class DescribeImagesRequest;
         class DescribeSessionsRequest;
         class DescribeStacksRequest;
+        class DescribeUsageReportSubscriptionsRequest;
         class DescribeUserStackAssociationsRequest;
         class DescribeUsersRequest;
         class DisableUserRequest;
@@ -159,6 +165,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateImageBuilderStreamingURLResult, Aws::Client::AWSError<AppStreamErrors>> CreateImageBuilderStreamingURLOutcome;
         typedef Aws::Utils::Outcome<CreateStackResult, Aws::Client::AWSError<AppStreamErrors>> CreateStackOutcome;
         typedef Aws::Utils::Outcome<CreateStreamingURLResult, Aws::Client::AWSError<AppStreamErrors>> CreateStreamingURLOutcome;
+        typedef Aws::Utils::Outcome<CreateUsageReportSubscriptionResult, Aws::Client::AWSError<AppStreamErrors>> CreateUsageReportSubscriptionOutcome;
         typedef Aws::Utils::Outcome<CreateUserResult, Aws::Client::AWSError<AppStreamErrors>> CreateUserOutcome;
         typedef Aws::Utils::Outcome<DeleteDirectoryConfigResult, Aws::Client::AWSError<AppStreamErrors>> DeleteDirectoryConfigOutcome;
         typedef Aws::Utils::Outcome<DeleteFleetResult, Aws::Client::AWSError<AppStreamErrors>> DeleteFleetOutcome;
@@ -166,6 +173,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteImageBuilderResult, Aws::Client::AWSError<AppStreamErrors>> DeleteImageBuilderOutcome;
         typedef Aws::Utils::Outcome<DeleteImagePermissionsResult, Aws::Client::AWSError<AppStreamErrors>> DeleteImagePermissionsOutcome;
         typedef Aws::Utils::Outcome<DeleteStackResult, Aws::Client::AWSError<AppStreamErrors>> DeleteStackOutcome;
+        typedef Aws::Utils::Outcome<DeleteUsageReportSubscriptionResult, Aws::Client::AWSError<AppStreamErrors>> DeleteUsageReportSubscriptionOutcome;
         typedef Aws::Utils::Outcome<DeleteUserResult, Aws::Client::AWSError<AppStreamErrors>> DeleteUserOutcome;
         typedef Aws::Utils::Outcome<DescribeDirectoryConfigsResult, Aws::Client::AWSError<AppStreamErrors>> DescribeDirectoryConfigsOutcome;
         typedef Aws::Utils::Outcome<DescribeFleetsResult, Aws::Client::AWSError<AppStreamErrors>> DescribeFleetsOutcome;
@@ -174,6 +182,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeImagesResult, Aws::Client::AWSError<AppStreamErrors>> DescribeImagesOutcome;
         typedef Aws::Utils::Outcome<DescribeSessionsResult, Aws::Client::AWSError<AppStreamErrors>> DescribeSessionsOutcome;
         typedef Aws::Utils::Outcome<DescribeStacksResult, Aws::Client::AWSError<AppStreamErrors>> DescribeStacksOutcome;
+        typedef Aws::Utils::Outcome<DescribeUsageReportSubscriptionsResult, Aws::Client::AWSError<AppStreamErrors>> DescribeUsageReportSubscriptionsOutcome;
         typedef Aws::Utils::Outcome<DescribeUserStackAssociationsResult, Aws::Client::AWSError<AppStreamErrors>> DescribeUserStackAssociationsOutcome;
         typedef Aws::Utils::Outcome<DescribeUsersResult, Aws::Client::AWSError<AppStreamErrors>> DescribeUsersOutcome;
         typedef Aws::Utils::Outcome<DisableUserResult, Aws::Client::AWSError<AppStreamErrors>> DisableUserOutcome;
@@ -204,6 +213,7 @@ namespace Model
         typedef std::future<CreateImageBuilderStreamingURLOutcome> CreateImageBuilderStreamingURLOutcomeCallable;
         typedef std::future<CreateStackOutcome> CreateStackOutcomeCallable;
         typedef std::future<CreateStreamingURLOutcome> CreateStreamingURLOutcomeCallable;
+        typedef std::future<CreateUsageReportSubscriptionOutcome> CreateUsageReportSubscriptionOutcomeCallable;
         typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
         typedef std::future<DeleteDirectoryConfigOutcome> DeleteDirectoryConfigOutcomeCallable;
         typedef std::future<DeleteFleetOutcome> DeleteFleetOutcomeCallable;
@@ -211,6 +221,7 @@ namespace Model
         typedef std::future<DeleteImageBuilderOutcome> DeleteImageBuilderOutcomeCallable;
         typedef std::future<DeleteImagePermissionsOutcome> DeleteImagePermissionsOutcomeCallable;
         typedef std::future<DeleteStackOutcome> DeleteStackOutcomeCallable;
+        typedef std::future<DeleteUsageReportSubscriptionOutcome> DeleteUsageReportSubscriptionOutcomeCallable;
         typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
         typedef std::future<DescribeDirectoryConfigsOutcome> DescribeDirectoryConfigsOutcomeCallable;
         typedef std::future<DescribeFleetsOutcome> DescribeFleetsOutcomeCallable;
@@ -219,6 +230,7 @@ namespace Model
         typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
         typedef std::future<DescribeSessionsOutcome> DescribeSessionsOutcomeCallable;
         typedef std::future<DescribeStacksOutcome> DescribeStacksOutcomeCallable;
+        typedef std::future<DescribeUsageReportSubscriptionsOutcome> DescribeUsageReportSubscriptionsOutcomeCallable;
         typedef std::future<DescribeUserStackAssociationsOutcome> DescribeUserStackAssociationsOutcomeCallable;
         typedef std::future<DescribeUsersOutcome> DescribeUsersOutcomeCallable;
         typedef std::future<DisableUserOutcome> DisableUserOutcomeCallable;
@@ -252,6 +264,7 @@ namespace Model
     typedef std::function<void(const AppStreamClient*, const Model::CreateImageBuilderStreamingURLRequest&, const Model::CreateImageBuilderStreamingURLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageBuilderStreamingURLResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateStackRequest&, const Model::CreateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateStreamingURLRequest&, const Model::CreateStreamingURLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamingURLResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::CreateUsageReportSubscriptionRequest&, const Model::CreateUsageReportSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUsageReportSubscriptionResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DeleteDirectoryConfigRequest&, const Model::DeleteDirectoryConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDirectoryConfigResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DeleteFleetRequest&, const Model::DeleteFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFleetResponseReceivedHandler;
@@ -259,6 +272,7 @@ namespace Model
     typedef std::function<void(const AppStreamClient*, const Model::DeleteImageBuilderRequest&, const Model::DeleteImageBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImageBuilderResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DeleteImagePermissionsRequest&, const Model::DeleteImagePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImagePermissionsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DeleteStackRequest&, const Model::DeleteStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStackResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::DeleteUsageReportSubscriptionRequest&, const Model::DeleteUsageReportSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUsageReportSubscriptionResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeDirectoryConfigsRequest&, const Model::DescribeDirectoryConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDirectoryConfigsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeFleetsRequest&, const Model::DescribeFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetsResponseReceivedHandler;
@@ -267,6 +281,7 @@ namespace Model
     typedef std::function<void(const AppStreamClient*, const Model::DescribeImagesRequest&, const Model::DescribeImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImagesResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeSessionsRequest&, const Model::DescribeSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSessionsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeStacksRequest&, const Model::DescribeStacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStacksResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::DescribeUsageReportSubscriptionsRequest&, const Model::DescribeUsageReportSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUsageReportSubscriptionsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeUserStackAssociationsRequest&, const Model::DescribeUserStackAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserStackAssociationsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeUsersRequest&, const Model::DescribeUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUsersResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DisableUserRequest&, const Model::DisableUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableUserResponseReceivedHandler;
@@ -289,13 +304,13 @@ namespace Model
 
   /**
    * <fullname>Amazon AppStream 2.0</fullname> <p>This is the <i>Amazon AppStream 2.0
-   * API Reference</i>. This reference provides descriptions and syntax for each of
-   * the actions and data types in AppStream 2.0. AppStream 2.0 is a fully managed
-   * application streaming service. You centrally manage your desktop applications on
-   * AppStream 2.0 and securely deliver them to any computer. AppStream 2.0 manages
-   * the AWS resources required to host and run your applications, scales
-   * automatically, and provides access to your users on demand.</p> <p>To learn more
-   * about AppStream 2.0, see the following resources:</p> <ul> <li> <p> <a
+   * API Reference</i>. It provides descriptions and syntax for each of the actions
+   * and data types in AppStream 2.0. AppStream 2.0 is a fully managed application
+   * streaming service. You centrally manage your desktop applications on AppStream
+   * 2.0 and securely deliver them to any computer. AppStream 2.0 manages the AWS
+   * resources required to host and run your applications, scales automatically, and
+   * provides access to your users on demand.</p> <p>To learn more about AppStream
+   * 2.0, see the following resources:</p> <ul> <li> <p> <a
    * href="http://aws.amazon.com/appstream2">Amazon AppStream 2.0 product page</a>
    * </p> </li> <li> <p> <a
    * href="http://aws.amazon.com/documentation/appstream2">Amazon AppStream 2.0
@@ -450,8 +465,8 @@ namespace Model
 
         /**
          * <p>Creates a Directory Config object in AppStream 2.0. This object includes the
-         * information required to join streaming instances to an Active Directory
-         * domain.</p><p><h3>See Also:</h3>   <a
+         * configuration information required to join fleets and image builders to
+         * Microsoft Active Directory domains.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">AWS
          * API Reference</a></p>
          */
@@ -459,8 +474,8 @@ namespace Model
 
         /**
          * <p>Creates a Directory Config object in AppStream 2.0. This object includes the
-         * information required to join streaming instances to an Active Directory
-         * domain.</p><p><h3>See Also:</h3>   <a
+         * configuration information required to join fleets and image builders to
+         * Microsoft Active Directory domains.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">AWS
          * API Reference</a></p>
          *
@@ -470,8 +485,8 @@ namespace Model
 
         /**
          * <p>Creates a Directory Config object in AppStream 2.0. This object includes the
-         * information required to join streaming instances to an Active Directory
-         * domain.</p><p><h3>See Also:</h3>   <a
+         * configuration information required to join fleets and image builders to
+         * Microsoft Active Directory domains.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">AWS
          * API Reference</a></p>
          *
@@ -630,6 +645,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateStreamingURLAsync(const Model::CreateStreamingURLRequest& request, const CreateStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a usage report subscription. Usage reports are generated
+         * daily.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUsageReportSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateUsageReportSubscriptionOutcome CreateUsageReportSubscription(const Model::CreateUsageReportSubscriptionRequest& request) const;
+
+        /**
+         * <p>Creates a usage report subscription. Usage reports are generated
+         * daily.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUsageReportSubscription">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateUsageReportSubscriptionOutcomeCallable CreateUsageReportSubscriptionCallable(const Model::CreateUsageReportSubscriptionRequest& request) const;
+
+        /**
+         * <p>Creates a usage report subscription. Usage reports are generated
+         * daily.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUsageReportSubscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateUsageReportSubscriptionAsync(const Model::CreateUsageReportSubscriptionRequest& request, const CreateUsageReportSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new user in the user pool.</p><p><h3>See Also:</h3>   <a
@@ -837,6 +880,31 @@ namespace Model
         virtual void DeleteStackAsync(const Model::DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disables usage report generation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUsageReportSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteUsageReportSubscriptionOutcome DeleteUsageReportSubscription(const Model::DeleteUsageReportSubscriptionRequest& request) const;
+
+        /**
+         * <p>Disables usage report generation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUsageReportSubscription">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteUsageReportSubscriptionOutcomeCallable DeleteUsageReportSubscriptionCallable(const Model::DeleteUsageReportSubscriptionRequest& request) const;
+
+        /**
+         * <p>Disables usage report generation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUsageReportSubscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteUsageReportSubscriptionAsync(const Model::DeleteUsageReportSubscriptionRequest& request, const DeleteUsageReportSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a user from the user pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUser">AWS
          * API Reference</a></p>
@@ -865,10 +933,10 @@ namespace Model
          * <p>Retrieves a list that describes one or more specified Directory Config
          * objects for AppStream 2.0, if the names for these objects are provided.
          * Otherwise, all Directory Config objects in the account are described. These
-         * objects include the information required to join streaming instances to an
-         * Active Directory domain. </p> <p>Although the response syntax in this topic
-         * includes the account password, this password is not returned in the actual
-         * response.</p><p><h3>See Also:</h3>   <a
+         * objects include the configuration information required to join fleets and image
+         * builders to Microsoft Active Directory domains. </p> <p>Although the response
+         * syntax in this topic includes the account password, this password is not
+         * returned in the actual response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">AWS
          * API Reference</a></p>
          */
@@ -878,10 +946,10 @@ namespace Model
          * <p>Retrieves a list that describes one or more specified Directory Config
          * objects for AppStream 2.0, if the names for these objects are provided.
          * Otherwise, all Directory Config objects in the account are described. These
-         * objects include the information required to join streaming instances to an
-         * Active Directory domain. </p> <p>Although the response syntax in this topic
-         * includes the account password, this password is not returned in the actual
-         * response.</p><p><h3>See Also:</h3>   <a
+         * objects include the configuration information required to join fleets and image
+         * builders to Microsoft Active Directory domains. </p> <p>Although the response
+         * syntax in this topic includes the account password, this password is not
+         * returned in the actual response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">AWS
          * API Reference</a></p>
          *
@@ -893,10 +961,10 @@ namespace Model
          * <p>Retrieves a list that describes one or more specified Directory Config
          * objects for AppStream 2.0, if the names for these objects are provided.
          * Otherwise, all Directory Config objects in the account are described. These
-         * objects include the information required to join streaming instances to an
-         * Active Directory domain. </p> <p>Although the response syntax in this topic
-         * includes the account password, this password is not returned in the actual
-         * response.</p><p><h3>See Also:</h3>   <a
+         * objects include the configuration information required to join fleets and image
+         * builders to Microsoft Active Directory domains. </p> <p>Although the response
+         * syntax in this topic includes the account password, this password is not
+         * returned in the actual response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">AWS
          * API Reference</a></p>
          *
@@ -1026,22 +1094,22 @@ namespace Model
         virtual void DescribeImagesAsync(const Model::DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a list that describes the active streaming sessions for a specified
-         * stack and fleet. If a value for <code>UserId</code> is provided for the stack
-         * and fleet, only streaming sessions for that user are described. If an
-         * authentication type is not provided, the default is to authenticate users using
-         * a streaming URL.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes the streaming sessions for a specified stack
+         * and fleet. If a UserId is provided for the stack and fleet, only streaming
+         * sessions for that user are described. If an authentication type is not provided,
+         * the default is to authenticate users using a streaming URL.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeSessionsOutcome DescribeSessions(const Model::DescribeSessionsRequest& request) const;
 
         /**
-         * <p>Retrieves a list that describes the active streaming sessions for a specified
-         * stack and fleet. If a value for <code>UserId</code> is provided for the stack
-         * and fleet, only streaming sessions for that user are described. If an
-         * authentication type is not provided, the default is to authenticate users using
-         * a streaming URL.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes the streaming sessions for a specified stack
+         * and fleet. If a UserId is provided for the stack and fleet, only streaming
+         * sessions for that user are described. If an authentication type is not provided,
+         * the default is to authenticate users using a streaming URL.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">AWS
          * API Reference</a></p>
          *
@@ -1050,11 +1118,11 @@ namespace Model
         virtual Model::DescribeSessionsOutcomeCallable DescribeSessionsCallable(const Model::DescribeSessionsRequest& request) const;
 
         /**
-         * <p>Retrieves a list that describes the active streaming sessions for a specified
-         * stack and fleet. If a value for <code>UserId</code> is provided for the stack
-         * and fleet, only streaming sessions for that user are described. If an
-         * authentication type is not provided, the default is to authenticate users using
-         * a streaming URL.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes the streaming sessions for a specified stack
+         * and fleet. If a UserId is provided for the stack and fleet, only streaming
+         * sessions for that user are described. If an authentication type is not provided,
+         * the default is to authenticate users using a streaming URL.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">AWS
          * API Reference</a></p>
          *
@@ -1092,6 +1160,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeStacksAsync(const Model::DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a list that describes one or more usage report
+         * subscriptions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsageReportSubscriptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeUsageReportSubscriptionsOutcome DescribeUsageReportSubscriptions(const Model::DescribeUsageReportSubscriptionsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list that describes one or more usage report
+         * subscriptions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsageReportSubscriptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeUsageReportSubscriptionsOutcomeCallable DescribeUsageReportSubscriptionsCallable(const Model::DescribeUsageReportSubscriptionsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list that describes one or more usage report
+         * subscriptions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsageReportSubscriptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeUsageReportSubscriptionsAsync(const Model::DescribeUsageReportSubscriptionsRequest& request, const DescribeUsageReportSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list that describes the UserStackAssociation objects. You must
@@ -1566,8 +1662,8 @@ namespace Model
 
         /**
          * <p>Updates the specified Directory Config object in AppStream 2.0. This object
-         * includes the information required to join streaming instances to an Active
-         * Directory domain.</p><p><h3>See Also:</h3>   <a
+         * includes the configuration information required to join fleets and image
+         * builders to Microsoft Active Directory domains.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">AWS
          * API Reference</a></p>
          */
@@ -1575,8 +1671,8 @@ namespace Model
 
         /**
          * <p>Updates the specified Directory Config object in AppStream 2.0. This object
-         * includes the information required to join streaming instances to an Active
-         * Directory domain.</p><p><h3>See Also:</h3>   <a
+         * includes the configuration information required to join fleets and image
+         * builders to Microsoft Active Directory domains.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">AWS
          * API Reference</a></p>
          *
@@ -1586,8 +1682,8 @@ namespace Model
 
         /**
          * <p>Updates the specified Directory Config object in AppStream 2.0. This object
-         * includes the information required to join streaming instances to an Active
-         * Directory domain.</p><p><h3>See Also:</h3>   <a
+         * includes the configuration information required to join fleets and image
+         * builders to Microsoft Active Directory domains.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">AWS
          * API Reference</a></p>
          *
@@ -1599,9 +1695,10 @@ namespace Model
          * <p>Updates the specified fleet.</p> <p>If the fleet is in the
          * <code>STOPPED</code> state, you can update any attribute except the fleet name.
          * If the fleet is in the <code>RUNNING</code> state, you can update the
-         * <code>DisplayName</code> and <code>ComputeCapacity</code> attributes. If the
-         * fleet is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't
-         * update it.</p><p><h3>See Also:</h3>   <a
+         * <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>,
+         * <code>ImageName</code>, and <code>DisconnectTimeoutInSeconds</code> attributes.
+         * If the fleet is in the <code>STARTING</code> or <code>STOPPING</code> state, you
+         * can't update it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">AWS
          * API Reference</a></p>
          */
@@ -1611,9 +1708,10 @@ namespace Model
          * <p>Updates the specified fleet.</p> <p>If the fleet is in the
          * <code>STOPPED</code> state, you can update any attribute except the fleet name.
          * If the fleet is in the <code>RUNNING</code> state, you can update the
-         * <code>DisplayName</code> and <code>ComputeCapacity</code> attributes. If the
-         * fleet is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't
-         * update it.</p><p><h3>See Also:</h3>   <a
+         * <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>,
+         * <code>ImageName</code>, and <code>DisconnectTimeoutInSeconds</code> attributes.
+         * If the fleet is in the <code>STARTING</code> or <code>STOPPING</code> state, you
+         * can't update it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">AWS
          * API Reference</a></p>
          *
@@ -1625,9 +1723,10 @@ namespace Model
          * <p>Updates the specified fleet.</p> <p>If the fleet is in the
          * <code>STOPPED</code> state, you can update any attribute except the fleet name.
          * If the fleet is in the <code>RUNNING</code> state, you can update the
-         * <code>DisplayName</code> and <code>ComputeCapacity</code> attributes. If the
-         * fleet is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't
-         * update it.</p><p><h3>See Also:</h3>   <a
+         * <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>,
+         * <code>ImageName</code>, and <code>DisconnectTimeoutInSeconds</code> attributes.
+         * If the fleet is in the <code>STARTING</code> or <code>STOPPING</code> state, you
+         * can't update it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">AWS
          * API Reference</a></p>
          *
@@ -1705,6 +1804,7 @@ namespace Model
         void CreateImageBuilderStreamingURLAsyncHelper(const Model::CreateImageBuilderStreamingURLRequest& request, const CreateImageBuilderStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStackAsyncHelper(const Model::CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStreamingURLAsyncHelper(const Model::CreateStreamingURLRequest& request, const CreateStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateUsageReportSubscriptionAsyncHelper(const Model::CreateUsageReportSubscriptionRequest& request, const CreateUsageReportSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserAsyncHelper(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDirectoryConfigAsyncHelper(const Model::DeleteDirectoryConfigRequest& request, const DeleteDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFleetAsyncHelper(const Model::DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1712,6 +1812,7 @@ namespace Model
         void DeleteImageBuilderAsyncHelper(const Model::DeleteImageBuilderRequest& request, const DeleteImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteImagePermissionsAsyncHelper(const Model::DeleteImagePermissionsRequest& request, const DeleteImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStackAsyncHelper(const Model::DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteUsageReportSubscriptionAsyncHelper(const Model::DeleteUsageReportSubscriptionRequest& request, const DeleteUsageReportSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDirectoryConfigsAsyncHelper(const Model::DescribeDirectoryConfigsRequest& request, const DescribeDirectoryConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFleetsAsyncHelper(const Model::DescribeFleetsRequest& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1720,6 +1821,7 @@ namespace Model
         void DescribeImagesAsyncHelper(const Model::DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSessionsAsyncHelper(const Model::DescribeSessionsRequest& request, const DescribeSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStacksAsyncHelper(const Model::DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeUsageReportSubscriptionsAsyncHelper(const Model::DescribeUsageReportSubscriptionsRequest& request, const DescribeUsageReportSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserStackAssociationsAsyncHelper(const Model::DescribeUserStackAssociationsRequest& request, const DescribeUserStackAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUsersAsyncHelper(const Model::DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableUserAsyncHelper(const Model::DisableUserRequest& request, const DisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

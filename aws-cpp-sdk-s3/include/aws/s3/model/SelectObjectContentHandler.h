@@ -42,7 +42,7 @@ namespace Model
 
     class AWS_S3_API SelectObjectContentHandler : public Aws::Utils::Event::EventStreamHandler
     {
-        typedef std::function<void(RecordsEvent&)> RecordsEventCallback;
+        typedef std::function<void(const RecordsEvent&)> RecordsEventCallback;
         typedef std::function<void(const StatsEvent&)> StatsEventCallback;
         typedef std::function<void(const ProgressEvent&)> ProgressEventCallback;
         typedef std::function<void()> ContinuationEventCallback;
