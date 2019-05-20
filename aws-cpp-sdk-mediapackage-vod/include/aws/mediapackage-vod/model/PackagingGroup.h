@@ -1,0 +1,142 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace MediaPackageVod
+{
+namespace Model
+{
+
+  /**
+   * A MediaPackage VOD PackagingGroup resource.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/PackagingGroup">AWS
+   * API Reference</a></p>
+   */
+  class AWS_MEDIAPACKAGEVOD_API PackagingGroup
+  {
+  public:
+    PackagingGroup();
+    PackagingGroup(Aws::Utils::Json::JsonView jsonValue);
+    PackagingGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * The ARN of the PackagingGroup.
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * The ARN of the PackagingGroup.
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * The ARN of the PackagingGroup.
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * The ARN of the PackagingGroup.
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * The ARN of the PackagingGroup.
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * The ARN of the PackagingGroup.
+     */
+    inline PackagingGroup& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * The ARN of the PackagingGroup.
+     */
+    inline PackagingGroup& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * The ARN of the PackagingGroup.
+     */
+    inline PackagingGroup& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * The ID of the PackagingGroup.
+     */
+    inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * The ID of the PackagingGroup.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * The ID of the PackagingGroup.
+     */
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /**
+     * The ID of the PackagingGroup.
+     */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
+
+    /**
+     * The ID of the PackagingGroup.
+     */
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+
+    /**
+     * The ID of the PackagingGroup.
+     */
+    inline PackagingGroup& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /**
+     * The ID of the PackagingGroup.
+     */
+    inline PackagingGroup& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+
+    /**
+     * The ID of the PackagingGroup.
+     */
+    inline PackagingGroup& WithId(const char* value) { SetId(value); return *this;}
+
+  private:
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
+
+    Aws::String m_id;
+    bool m_idHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace MediaPackageVod
+} // namespace Aws

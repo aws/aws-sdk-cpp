@@ -30,6 +30,7 @@ namespace Model
 
 BrokerSoftwareInfo::BrokerSoftwareInfo() : 
     m_configurationArnHasBeenSet(false),
+    m_configurationRevision(0),
     m_configurationRevisionHasBeenSet(false),
     m_kafkaVersionHasBeenSet(false)
 {
@@ -37,6 +38,7 @@ BrokerSoftwareInfo::BrokerSoftwareInfo() :
 
 BrokerSoftwareInfo::BrokerSoftwareInfo(JsonView jsonValue) : 
     m_configurationArnHasBeenSet(false),
+    m_configurationRevision(0),
     m_configurationRevisionHasBeenSet(false),
     m_kafkaVersionHasBeenSet(false)
 {
@@ -54,7 +56,7 @@ BrokerSoftwareInfo& BrokerSoftwareInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("configurationRevision"))
   {
-    m_configurationRevision = jsonValue.GetString("configurationRevision");
+    m_configurationRevision = jsonValue.GetInt64("configurationRevision");
 
     m_configurationRevisionHasBeenSet = true;
   }
@@ -81,7 +83,7 @@ JsonValue BrokerSoftwareInfo::Jsonize() const
 
   if(m_configurationRevisionHasBeenSet)
   {
-   payload.WithString("configurationRevision", m_configurationRevision);
+   payload.WithInt64("configurationRevision", m_configurationRevision);
 
   }
 

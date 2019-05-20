@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 CreateClusterRequest::CreateClusterRequest() : 
     m_brokerNodeGroupInfoHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
+    m_configurationInfoHasBeenSet(false),
     m_encryptionInfoHasBeenSet(false),
     m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
     m_enhancedMonitoringHasBeenSet(false),
@@ -47,6 +48,12 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_clusterNameHasBeenSet)
   {
    payload.WithString("clusterName", m_clusterName);
+
+  }
+
+  if(m_configurationInfoHasBeenSet)
+  {
+   payload.WithObject("configurationInfo", m_configurationInfo.Jsonize());
 
   }
 

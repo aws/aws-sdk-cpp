@@ -92,7 +92,7 @@ namespace Model
     /**
      * <p>The revision of the configuration to use.</p>
      */
-    inline const Aws::String& GetConfigurationRevision() const{ return m_configurationRevision; }
+    inline long long GetConfigurationRevision() const{ return m_configurationRevision; }
 
     /**
      * <p>The revision of the configuration to use.</p>
@@ -102,32 +102,12 @@ namespace Model
     /**
      * <p>The revision of the configuration to use.</p>
      */
-    inline void SetConfigurationRevision(const Aws::String& value) { m_configurationRevisionHasBeenSet = true; m_configurationRevision = value; }
+    inline void SetConfigurationRevision(long long value) { m_configurationRevisionHasBeenSet = true; m_configurationRevision = value; }
 
     /**
      * <p>The revision of the configuration to use.</p>
      */
-    inline void SetConfigurationRevision(Aws::String&& value) { m_configurationRevisionHasBeenSet = true; m_configurationRevision = std::move(value); }
-
-    /**
-     * <p>The revision of the configuration to use.</p>
-     */
-    inline void SetConfigurationRevision(const char* value) { m_configurationRevisionHasBeenSet = true; m_configurationRevision.assign(value); }
-
-    /**
-     * <p>The revision of the configuration to use.</p>
-     */
-    inline BrokerSoftwareInfo& WithConfigurationRevision(const Aws::String& value) { SetConfigurationRevision(value); return *this;}
-
-    /**
-     * <p>The revision of the configuration to use.</p>
-     */
-    inline BrokerSoftwareInfo& WithConfigurationRevision(Aws::String&& value) { SetConfigurationRevision(std::move(value)); return *this;}
-
-    /**
-     * <p>The revision of the configuration to use.</p>
-     */
-    inline BrokerSoftwareInfo& WithConfigurationRevision(const char* value) { SetConfigurationRevision(value); return *this;}
+    inline BrokerSoftwareInfo& WithConfigurationRevision(long long value) { SetConfigurationRevision(value); return *this;}
 
 
     /**
@@ -175,7 +155,7 @@ namespace Model
     Aws::String m_configurationArn;
     bool m_configurationArnHasBeenSet;
 
-    Aws::String m_configurationRevision;
+    long long m_configurationRevision;
     bool m_configurationRevisionHasBeenSet;
 
     Aws::String m_kafkaVersion;

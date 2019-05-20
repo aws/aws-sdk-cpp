@@ -18,6 +18,7 @@
 #include <aws/kafka/KafkaRequest.h>
 #include <aws/kafka/model/BrokerNodeGroupInfo.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kafka/model/ConfigurationInfo.h>
 #include <aws/kafka/model/EncryptionInfo.h>
 #include <aws/kafka/model/EnhancedMonitoring.h>
 #include <utility>
@@ -115,6 +116,37 @@ namespace Model
      * <p>The name of the cluster.</p>
      */
     inline CreateClusterRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+
+
+    /**
+     * <p>Comprises of the Configuration to be used on Kafka brokers in a cluster.</p>
+     */
+    inline const ConfigurationInfo& GetConfigurationInfo() const{ return m_configurationInfo; }
+
+    /**
+     * <p>Comprises of the Configuration to be used on Kafka brokers in a cluster.</p>
+     */
+    inline bool ConfigurationInfoHasBeenSet() const { return m_configurationInfoHasBeenSet; }
+
+    /**
+     * <p>Comprises of the Configuration to be used on Kafka brokers in a cluster.</p>
+     */
+    inline void SetConfigurationInfo(const ConfigurationInfo& value) { m_configurationInfoHasBeenSet = true; m_configurationInfo = value; }
+
+    /**
+     * <p>Comprises of the Configuration to be used on Kafka brokers in a cluster.</p>
+     */
+    inline void SetConfigurationInfo(ConfigurationInfo&& value) { m_configurationInfoHasBeenSet = true; m_configurationInfo = std::move(value); }
+
+    /**
+     * <p>Comprises of the Configuration to be used on Kafka brokers in a cluster.</p>
+     */
+    inline CreateClusterRequest& WithConfigurationInfo(const ConfigurationInfo& value) { SetConfigurationInfo(value); return *this;}
+
+    /**
+     * <p>Comprises of the Configuration to be used on Kafka brokers in a cluster.</p>
+     */
+    inline CreateClusterRequest& WithConfigurationInfo(ConfigurationInfo&& value) { SetConfigurationInfo(std::move(value)); return *this;}
 
 
     /**
@@ -253,6 +285,9 @@ namespace Model
 
     Aws::String m_clusterName;
     bool m_clusterNameHasBeenSet;
+
+    ConfigurationInfo m_configurationInfo;
+    bool m_configurationInfoHasBeenSet;
 
     EncryptionInfo m_encryptionInfo;
     bool m_encryptionInfoHasBeenSet;

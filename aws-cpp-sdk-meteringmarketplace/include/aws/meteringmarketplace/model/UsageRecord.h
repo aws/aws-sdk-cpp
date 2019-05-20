@@ -51,44 +51,44 @@ namespace Model
 
 
     /**
-     * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
-     * of the timestamp will be ignored.</p> <p>Your application can meter usage for up
-     * to one hour in the past.</p>
+     * <p>Timestamp, in UTC, for which the usage is being reported.</p> <p>Your
+     * application can meter usage for up to one hour in the past. Make sure the
+     * timestamp value is not before the start of the software usage.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
-     * of the timestamp will be ignored.</p> <p>Your application can meter usage for up
-     * to one hour in the past.</p>
+     * <p>Timestamp, in UTC, for which the usage is being reported.</p> <p>Your
+     * application can meter usage for up to one hour in the past. Make sure the
+     * timestamp value is not before the start of the software usage.</p>
      */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
-     * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
-     * of the timestamp will be ignored.</p> <p>Your application can meter usage for up
-     * to one hour in the past.</p>
+     * <p>Timestamp, in UTC, for which the usage is being reported.</p> <p>Your
+     * application can meter usage for up to one hour in the past. Make sure the
+     * timestamp value is not before the start of the software usage.</p>
      */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
-     * of the timestamp will be ignored.</p> <p>Your application can meter usage for up
-     * to one hour in the past.</p>
+     * <p>Timestamp, in UTC, for which the usage is being reported.</p> <p>Your
+     * application can meter usage for up to one hour in the past. Make sure the
+     * timestamp value is not before the start of the software usage.</p>
      */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
-     * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
-     * of the timestamp will be ignored.</p> <p>Your application can meter usage for up
-     * to one hour in the past.</p>
+     * <p>Timestamp, in UTC, for which the usage is being reported.</p> <p>Your
+     * application can meter usage for up to one hour in the past. Make sure the
+     * timestamp value is not before the start of the software usage.</p>
      */
     inline UsageRecord& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
-     * of the timestamp will be ignored.</p> <p>Your application can meter usage for up
-     * to one hour in the past.</p>
+     * <p>Timestamp, in UTC, for which the usage is being reported.</p> <p>Your
+     * application can meter usage for up to one hour in the past. Make sure the
+     * timestamp value is not before the start of the software usage.</p>
      */
     inline UsageRecord& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
