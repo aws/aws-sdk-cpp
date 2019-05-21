@@ -152,7 +152,7 @@ elseif(ENABLE_WINDOWS_CLIENT)
         }" WINHTTP_HAS_H2)
 
         set(CMAKE_REQUIRED_LIBRARIES "Wininet.lib")
-        check_cxx_source_compiles("
+        check_cxx_source_runs("
         #include <Windows.h>
         #include <WinInet.h>
         int main() {
