@@ -23,22 +23,18 @@ namespace AlexaForBusiness
 {
 namespace Model
 {
-  enum class DeviceStatus
+  enum class NetworkEapMethod
   {
     NOT_SET,
-    READY,
-    PENDING,
-    WAS_OFFLINE,
-    DEREGISTERED,
-    FAILED
+    EAP_TLS
   };
 
-namespace DeviceStatusMapper
+namespace NetworkEapMethodMapper
 {
-AWS_ALEXAFORBUSINESS_API DeviceStatus GetDeviceStatusForName(const Aws::String& name);
+AWS_ALEXAFORBUSINESS_API NetworkEapMethod GetNetworkEapMethodForName(const Aws::String& name);
 
-AWS_ALEXAFORBUSINESS_API Aws::String GetNameForDeviceStatus(DeviceStatus value);
-} // namespace DeviceStatusMapper
+AWS_ALEXAFORBUSINESS_API Aws::String GetNameForNetworkEapMethod(NetworkEapMethod value);
+} // namespace NetworkEapMethodMapper
 } // namespace Model
 } // namespace AlexaForBusiness
 } // namespace Aws

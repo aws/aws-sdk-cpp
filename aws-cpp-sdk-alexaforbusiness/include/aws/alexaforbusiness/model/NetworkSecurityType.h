@@ -23,22 +23,22 @@ namespace AlexaForBusiness
 {
 namespace Model
 {
-  enum class DeviceStatus
+  enum class NetworkSecurityType
   {
     NOT_SET,
-    READY,
-    PENDING,
-    WAS_OFFLINE,
-    DEREGISTERED,
-    FAILED
+    OPEN,
+    WEP,
+    WPA_PSK,
+    WPA2_PSK,
+    WPA2_ENTERPRISE
   };
 
-namespace DeviceStatusMapper
+namespace NetworkSecurityTypeMapper
 {
-AWS_ALEXAFORBUSINESS_API DeviceStatus GetDeviceStatusForName(const Aws::String& name);
+AWS_ALEXAFORBUSINESS_API NetworkSecurityType GetNetworkSecurityTypeForName(const Aws::String& name);
 
-AWS_ALEXAFORBUSINESS_API Aws::String GetNameForDeviceStatus(DeviceStatus value);
-} // namespace DeviceStatusMapper
+AWS_ALEXAFORBUSINESS_API Aws::String GetNameForNetworkSecurityType(NetworkSecurityType value);
+} // namespace NetworkSecurityTypeMapper
 } // namespace Model
 } // namespace AlexaForBusiness
 } // namespace Aws

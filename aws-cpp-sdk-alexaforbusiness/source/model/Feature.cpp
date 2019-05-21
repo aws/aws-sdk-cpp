@@ -35,6 +35,8 @@ namespace Aws
         static const int NOTIFICATIONS_HASH = HashingUtils::HashString("NOTIFICATIONS");
         static const int LISTS_HASH = HashingUtils::HashString("LISTS");
         static const int SKILLS_HASH = HashingUtils::HashString("SKILLS");
+        static const int NETWORK_PROFILE_HASH = HashingUtils::HashString("NETWORK_PROFILE");
+        static const int SETTINGS_HASH = HashingUtils::HashString("SETTINGS");
         static const int ALL_HASH = HashingUtils::HashString("ALL");
 
 
@@ -60,6 +62,14 @@ namespace Aws
           else if (hashCode == SKILLS_HASH)
           {
             return Feature::SKILLS;
+          }
+          else if (hashCode == NETWORK_PROFILE_HASH)
+          {
+            return Feature::NETWORK_PROFILE;
+          }
+          else if (hashCode == SETTINGS_HASH)
+          {
+            return Feature::SETTINGS;
           }
           else if (hashCode == ALL_HASH)
           {
@@ -89,6 +99,10 @@ namespace Aws
             return "LISTS";
           case Feature::SKILLS:
             return "SKILLS";
+          case Feature::NETWORK_PROFILE:
+            return "NETWORK_PROFILE";
+          case Feature::SETTINGS:
+            return "SETTINGS";
           case Feature::ALL:
             return "ALL";
           default:

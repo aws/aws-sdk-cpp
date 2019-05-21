@@ -15,30 +15,32 @@
 
 #pragma once
 #include <aws/alexaforbusiness/AlexaForBusiness_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
 namespace AlexaForBusiness
 {
 namespace Model
 {
-  enum class DeviceStatus
+  class AWS_ALEXAFORBUSINESS_API DeleteNetworkProfileResult
   {
-    NOT_SET,
-    READY,
-    PENDING,
-    WAS_OFFLINE,
-    DEREGISTERED,
-    FAILED
+  public:
+    DeleteNetworkProfileResult();
+    DeleteNetworkProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteNetworkProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
   };
 
-namespace DeviceStatusMapper
-{
-AWS_ALEXAFORBUSINESS_API DeviceStatus GetDeviceStatusForName(const Aws::String& name);
-
-AWS_ALEXAFORBUSINESS_API Aws::String GetNameForDeviceStatus(DeviceStatus value);
-} // namespace DeviceStatusMapper
 } // namespace Model
 } // namespace AlexaForBusiness
 } // namespace Aws

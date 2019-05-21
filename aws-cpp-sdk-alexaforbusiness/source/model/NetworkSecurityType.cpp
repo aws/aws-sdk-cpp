@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/alexaforbusiness/model/DeviceStatus.h>
+#include <aws/alexaforbusiness/model/NetworkSecurityType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -27,63 +27,63 @@ namespace Aws
   {
     namespace Model
     {
-      namespace DeviceStatusMapper
+      namespace NetworkSecurityTypeMapper
       {
 
-        static const int READY_HASH = HashingUtils::HashString("READY");
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int WAS_OFFLINE_HASH = HashingUtils::HashString("WAS_OFFLINE");
-        static const int DEREGISTERED_HASH = HashingUtils::HashString("DEREGISTERED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int OPEN_HASH = HashingUtils::HashString("OPEN");
+        static const int WEP_HASH = HashingUtils::HashString("WEP");
+        static const int WPA_PSK_HASH = HashingUtils::HashString("WPA_PSK");
+        static const int WPA2_PSK_HASH = HashingUtils::HashString("WPA2_PSK");
+        static const int WPA2_ENTERPRISE_HASH = HashingUtils::HashString("WPA2_ENTERPRISE");
 
 
-        DeviceStatus GetDeviceStatusForName(const Aws::String& name)
+        NetworkSecurityType GetNetworkSecurityTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == READY_HASH)
+          if (hashCode == OPEN_HASH)
           {
-            return DeviceStatus::READY;
+            return NetworkSecurityType::OPEN;
           }
-          else if (hashCode == PENDING_HASH)
+          else if (hashCode == WEP_HASH)
           {
-            return DeviceStatus::PENDING;
+            return NetworkSecurityType::WEP;
           }
-          else if (hashCode == WAS_OFFLINE_HASH)
+          else if (hashCode == WPA_PSK_HASH)
           {
-            return DeviceStatus::WAS_OFFLINE;
+            return NetworkSecurityType::WPA_PSK;
           }
-          else if (hashCode == DEREGISTERED_HASH)
+          else if (hashCode == WPA2_PSK_HASH)
           {
-            return DeviceStatus::DEREGISTERED;
+            return NetworkSecurityType::WPA2_PSK;
           }
-          else if (hashCode == FAILED_HASH)
+          else if (hashCode == WPA2_ENTERPRISE_HASH)
           {
-            return DeviceStatus::FAILED;
+            return NetworkSecurityType::WPA2_ENTERPRISE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<DeviceStatus>(hashCode);
+            return static_cast<NetworkSecurityType>(hashCode);
           }
 
-          return DeviceStatus::NOT_SET;
+          return NetworkSecurityType::NOT_SET;
         }
 
-        Aws::String GetNameForDeviceStatus(DeviceStatus enumValue)
+        Aws::String GetNameForNetworkSecurityType(NetworkSecurityType enumValue)
         {
           switch(enumValue)
           {
-          case DeviceStatus::READY:
-            return "READY";
-          case DeviceStatus::PENDING:
-            return "PENDING";
-          case DeviceStatus::WAS_OFFLINE:
-            return "WAS_OFFLINE";
-          case DeviceStatus::DEREGISTERED:
-            return "DEREGISTERED";
-          case DeviceStatus::FAILED:
-            return "FAILED";
+          case NetworkSecurityType::OPEN:
+            return "OPEN";
+          case NetworkSecurityType::WEP:
+            return "WEP";
+          case NetworkSecurityType::WPA_PSK:
+            return "WPA_PSK";
+          case NetworkSecurityType::WPA2_PSK:
+            return "WPA2_PSK";
+          case NetworkSecurityType::WPA2_ENTERPRISE:
+            return "WPA2_ENTERPRISE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -95,7 +95,7 @@ namespace Aws
           }
         }
 
-      } // namespace DeviceStatusMapper
+      } // namespace NetworkSecurityTypeMapper
     } // namespace Model
   } // namespace AlexaForBusiness
 } // namespace Aws

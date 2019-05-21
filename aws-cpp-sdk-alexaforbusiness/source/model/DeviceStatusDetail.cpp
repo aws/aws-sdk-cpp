@@ -29,12 +29,16 @@ namespace Model
 {
 
 DeviceStatusDetail::DeviceStatusDetail() : 
+    m_feature(Feature::NOT_SET),
+    m_featureHasBeenSet(false),
     m_code(DeviceStatusDetailCode::NOT_SET),
     m_codeHasBeenSet(false)
 {
 }
 
 DeviceStatusDetail::DeviceStatusDetail(JsonView jsonValue) : 
+    m_feature(Feature::NOT_SET),
+    m_featureHasBeenSet(false),
     m_code(DeviceStatusDetailCode::NOT_SET),
     m_codeHasBeenSet(false)
 {
@@ -43,6 +47,13 @@ DeviceStatusDetail::DeviceStatusDetail(JsonView jsonValue) :
 
 DeviceStatusDetail& DeviceStatusDetail::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Feature"))
+  {
+    m_feature = FeatureMapper::GetFeatureForName(jsonValue.GetString("Feature"));
+
+    m_featureHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Code"))
   {
     m_code = DeviceStatusDetailCodeMapper::GetDeviceStatusDetailCodeForName(jsonValue.GetString("Code"));
@@ -56,6 +67,11 @@ DeviceStatusDetail& DeviceStatusDetail::operator =(JsonView jsonValue)
 JsonValue DeviceStatusDetail::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_featureHasBeenSet)
+  {
+   payload.WithString("Feature", FeatureMapper::GetNameForFeature(m_feature));
+  }
 
   if(m_codeHasBeenSet)
   {

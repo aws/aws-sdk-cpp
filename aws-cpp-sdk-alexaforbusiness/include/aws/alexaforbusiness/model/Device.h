@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/alexaforbusiness/model/DeviceStatus.h>
 #include <aws/alexaforbusiness/model/DeviceStatusInfo.h>
+#include <aws/alexaforbusiness/model/DeviceNetworkProfileInfo.h>
 #include <utility>
 
 namespace Aws
@@ -403,6 +404,37 @@ namespace Model
      */
     inline Device& WithDeviceStatusInfo(DeviceStatusInfo&& value) { SetDeviceStatusInfo(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Detailed information about a device's network profile.</p>
+     */
+    inline const DeviceNetworkProfileInfo& GetNetworkProfileInfo() const{ return m_networkProfileInfo; }
+
+    /**
+     * <p>Detailed information about a device's network profile.</p>
+     */
+    inline bool NetworkProfileInfoHasBeenSet() const { return m_networkProfileInfoHasBeenSet; }
+
+    /**
+     * <p>Detailed information about a device's network profile.</p>
+     */
+    inline void SetNetworkProfileInfo(const DeviceNetworkProfileInfo& value) { m_networkProfileInfoHasBeenSet = true; m_networkProfileInfo = value; }
+
+    /**
+     * <p>Detailed information about a device's network profile.</p>
+     */
+    inline void SetNetworkProfileInfo(DeviceNetworkProfileInfo&& value) { m_networkProfileInfoHasBeenSet = true; m_networkProfileInfo = std::move(value); }
+
+    /**
+     * <p>Detailed information about a device's network profile.</p>
+     */
+    inline Device& WithNetworkProfileInfo(const DeviceNetworkProfileInfo& value) { SetNetworkProfileInfo(value); return *this;}
+
+    /**
+     * <p>Detailed information about a device's network profile.</p>
+     */
+    inline Device& WithNetworkProfileInfo(DeviceNetworkProfileInfo&& value) { SetNetworkProfileInfo(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deviceArn;
@@ -431,6 +463,9 @@ namespace Model
 
     DeviceStatusInfo m_deviceStatusInfo;
     bool m_deviceStatusInfoHasBeenSet;
+
+    DeviceNetworkProfileInfo m_networkProfileInfo;
+    bool m_networkProfileInfoHasBeenSet;
   };
 
 } // namespace Model

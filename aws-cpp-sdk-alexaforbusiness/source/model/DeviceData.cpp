@@ -37,6 +37,8 @@ DeviceData::DeviceData() :
     m_macAddressHasBeenSet(false),
     m_deviceStatus(DeviceStatus::NOT_SET),
     m_deviceStatusHasBeenSet(false),
+    m_networkProfileArnHasBeenSet(false),
+    m_networkProfileNameHasBeenSet(false),
     m_roomArnHasBeenSet(false),
     m_roomNameHasBeenSet(false),
     m_deviceStatusInfoHasBeenSet(false)
@@ -52,6 +54,8 @@ DeviceData::DeviceData(JsonView jsonValue) :
     m_macAddressHasBeenSet(false),
     m_deviceStatus(DeviceStatus::NOT_SET),
     m_deviceStatusHasBeenSet(false),
+    m_networkProfileArnHasBeenSet(false),
+    m_networkProfileNameHasBeenSet(false),
     m_roomArnHasBeenSet(false),
     m_roomNameHasBeenSet(false),
     m_deviceStatusInfoHasBeenSet(false)
@@ -108,6 +112,20 @@ DeviceData& DeviceData::operator =(JsonView jsonValue)
     m_deviceStatus = DeviceStatusMapper::GetDeviceStatusForName(jsonValue.GetString("DeviceStatus"));
 
     m_deviceStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetworkProfileArn"))
+  {
+    m_networkProfileArn = jsonValue.GetString("NetworkProfileArn");
+
+    m_networkProfileArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetworkProfileName"))
+  {
+    m_networkProfileName = jsonValue.GetString("NetworkProfileName");
+
+    m_networkProfileNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RoomArn"))
@@ -177,6 +195,18 @@ JsonValue DeviceData::Jsonize() const
   if(m_deviceStatusHasBeenSet)
   {
    payload.WithString("DeviceStatus", DeviceStatusMapper::GetNameForDeviceStatus(m_deviceStatus));
+  }
+
+  if(m_networkProfileArnHasBeenSet)
+  {
+   payload.WithString("NetworkProfileArn", m_networkProfileArn);
+
+  }
+
+  if(m_networkProfileNameHasBeenSet)
+  {
+   payload.WithString("NetworkProfileName", m_networkProfileName);
+
   }
 
   if(m_roomArnHasBeenSet)

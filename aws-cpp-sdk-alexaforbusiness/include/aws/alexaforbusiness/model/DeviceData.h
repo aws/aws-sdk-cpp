@@ -327,6 +327,88 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the network profile associated with a device.</p>
+     */
+    inline const Aws::String& GetNetworkProfileArn() const{ return m_networkProfileArn; }
+
+    /**
+     * <p>The ARN of the network profile associated with a device.</p>
+     */
+    inline bool NetworkProfileArnHasBeenSet() const { return m_networkProfileArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the network profile associated with a device.</p>
+     */
+    inline void SetNetworkProfileArn(const Aws::String& value) { m_networkProfileArnHasBeenSet = true; m_networkProfileArn = value; }
+
+    /**
+     * <p>The ARN of the network profile associated with a device.</p>
+     */
+    inline void SetNetworkProfileArn(Aws::String&& value) { m_networkProfileArnHasBeenSet = true; m_networkProfileArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the network profile associated with a device.</p>
+     */
+    inline void SetNetworkProfileArn(const char* value) { m_networkProfileArnHasBeenSet = true; m_networkProfileArn.assign(value); }
+
+    /**
+     * <p>The ARN of the network profile associated with a device.</p>
+     */
+    inline DeviceData& WithNetworkProfileArn(const Aws::String& value) { SetNetworkProfileArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the network profile associated with a device.</p>
+     */
+    inline DeviceData& WithNetworkProfileArn(Aws::String&& value) { SetNetworkProfileArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the network profile associated with a device.</p>
+     */
+    inline DeviceData& WithNetworkProfileArn(const char* value) { SetNetworkProfileArn(value); return *this;}
+
+
+    /**
+     * <p>The name of the network profile associated with a device.</p>
+     */
+    inline const Aws::String& GetNetworkProfileName() const{ return m_networkProfileName; }
+
+    /**
+     * <p>The name of the network profile associated with a device.</p>
+     */
+    inline bool NetworkProfileNameHasBeenSet() const { return m_networkProfileNameHasBeenSet; }
+
+    /**
+     * <p>The name of the network profile associated with a device.</p>
+     */
+    inline void SetNetworkProfileName(const Aws::String& value) { m_networkProfileNameHasBeenSet = true; m_networkProfileName = value; }
+
+    /**
+     * <p>The name of the network profile associated with a device.</p>
+     */
+    inline void SetNetworkProfileName(Aws::String&& value) { m_networkProfileNameHasBeenSet = true; m_networkProfileName = std::move(value); }
+
+    /**
+     * <p>The name of the network profile associated with a device.</p>
+     */
+    inline void SetNetworkProfileName(const char* value) { m_networkProfileNameHasBeenSet = true; m_networkProfileName.assign(value); }
+
+    /**
+     * <p>The name of the network profile associated with a device.</p>
+     */
+    inline DeviceData& WithNetworkProfileName(const Aws::String& value) { SetNetworkProfileName(value); return *this;}
+
+    /**
+     * <p>The name of the network profile associated with a device.</p>
+     */
+    inline DeviceData& WithNetworkProfileName(Aws::String&& value) { SetNetworkProfileName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the network profile associated with a device.</p>
+     */
+    inline DeviceData& WithNetworkProfileName(const char* value) { SetNetworkProfileName(value); return *this;}
+
+
+    /**
      * <p>The room ARN associated with a device.</p>
      */
     inline const Aws::String& GetRoomArn() const{ return m_roomArn; }
@@ -460,6 +542,12 @@ namespace Model
 
     DeviceStatus m_deviceStatus;
     bool m_deviceStatusHasBeenSet;
+
+    Aws::String m_networkProfileArn;
+    bool m_networkProfileArnHasBeenSet;
+
+    Aws::String m_networkProfileName;
+    bool m_networkProfileNameHasBeenSet;
 
     Aws::String m_roomArn;
     bool m_roomArnHasBeenSet;

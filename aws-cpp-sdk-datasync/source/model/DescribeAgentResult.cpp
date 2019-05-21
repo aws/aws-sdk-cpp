@@ -70,6 +70,18 @@ DescribeAgentResult& DescribeAgentResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("EndpointOptions"))
+  {
+    m_endpointOptions = jsonValue.GetObject("EndpointOptions");
+
+  }
+
+  if(jsonValue.ValueExists("PrivateLinkConfig"))
+  {
+    m_privateLinkConfig = jsonValue.GetObject("PrivateLinkConfig");
+
+  }
+
 
 
   return *this;

@@ -23,6 +23,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/alexaforbusiness/model/ApproveSkillResult.h>
 #include <aws/alexaforbusiness/model/AssociateContactWithAddressBookResult.h>
+#include <aws/alexaforbusiness/model/AssociateDeviceWithNetworkProfileResult.h>
 #include <aws/alexaforbusiness/model/AssociateDeviceWithRoomResult.h>
 #include <aws/alexaforbusiness/model/AssociateSkillGroupWithRoomResult.h>
 #include <aws/alexaforbusiness/model/AssociateSkillWithSkillGroupResult.h>
@@ -32,6 +33,7 @@
 #include <aws/alexaforbusiness/model/CreateConferenceProviderResult.h>
 #include <aws/alexaforbusiness/model/CreateContactResult.h>
 #include <aws/alexaforbusiness/model/CreateGatewayGroupResult.h>
+#include <aws/alexaforbusiness/model/CreateNetworkProfileResult.h>
 #include <aws/alexaforbusiness/model/CreateProfileResult.h>
 #include <aws/alexaforbusiness/model/CreateRoomResult.h>
 #include <aws/alexaforbusiness/model/CreateSkillGroupResult.h>
@@ -43,6 +45,7 @@
 #include <aws/alexaforbusiness/model/DeleteDeviceResult.h>
 #include <aws/alexaforbusiness/model/DeleteDeviceUsageDataResult.h>
 #include <aws/alexaforbusiness/model/DeleteGatewayGroupResult.h>
+#include <aws/alexaforbusiness/model/DeleteNetworkProfileResult.h>
 #include <aws/alexaforbusiness/model/DeleteProfileResult.h>
 #include <aws/alexaforbusiness/model/DeleteRoomResult.h>
 #include <aws/alexaforbusiness/model/DeleteRoomSkillParameterResult.h>
@@ -63,6 +66,7 @@
 #include <aws/alexaforbusiness/model/GetGatewayResult.h>
 #include <aws/alexaforbusiness/model/GetGatewayGroupResult.h>
 #include <aws/alexaforbusiness/model/GetInvitationConfigurationResult.h>
+#include <aws/alexaforbusiness/model/GetNetworkProfileResult.h>
 #include <aws/alexaforbusiness/model/GetProfileResult.h>
 #include <aws/alexaforbusiness/model/GetRoomResult.h>
 #include <aws/alexaforbusiness/model/GetRoomSkillParameterResult.h>
@@ -88,6 +92,7 @@
 #include <aws/alexaforbusiness/model/SearchAddressBooksResult.h>
 #include <aws/alexaforbusiness/model/SearchContactsResult.h>
 #include <aws/alexaforbusiness/model/SearchDevicesResult.h>
+#include <aws/alexaforbusiness/model/SearchNetworkProfilesResult.h>
 #include <aws/alexaforbusiness/model/SearchProfilesResult.h>
 #include <aws/alexaforbusiness/model/SearchRoomsResult.h>
 #include <aws/alexaforbusiness/model/SearchSkillGroupsResult.h>
@@ -105,6 +110,7 @@
 #include <aws/alexaforbusiness/model/UpdateDeviceResult.h>
 #include <aws/alexaforbusiness/model/UpdateGatewayResult.h>
 #include <aws/alexaforbusiness/model/UpdateGatewayGroupResult.h>
+#include <aws/alexaforbusiness/model/UpdateNetworkProfileResult.h>
 #include <aws/alexaforbusiness/model/UpdateProfileResult.h>
 #include <aws/alexaforbusiness/model/UpdateRoomResult.h>
 #include <aws/alexaforbusiness/model/UpdateSkillGroupResult.h>
@@ -149,6 +155,7 @@ namespace Model
 {
         class ApproveSkillRequest;
         class AssociateContactWithAddressBookRequest;
+        class AssociateDeviceWithNetworkProfileRequest;
         class AssociateDeviceWithRoomRequest;
         class AssociateSkillGroupWithRoomRequest;
         class AssociateSkillWithSkillGroupRequest;
@@ -158,6 +165,7 @@ namespace Model
         class CreateConferenceProviderRequest;
         class CreateContactRequest;
         class CreateGatewayGroupRequest;
+        class CreateNetworkProfileRequest;
         class CreateProfileRequest;
         class CreateRoomRequest;
         class CreateSkillGroupRequest;
@@ -169,6 +177,7 @@ namespace Model
         class DeleteDeviceRequest;
         class DeleteDeviceUsageDataRequest;
         class DeleteGatewayGroupRequest;
+        class DeleteNetworkProfileRequest;
         class DeleteProfileRequest;
         class DeleteRoomRequest;
         class DeleteRoomSkillParameterRequest;
@@ -189,6 +198,7 @@ namespace Model
         class GetGatewayRequest;
         class GetGatewayGroupRequest;
         class GetInvitationConfigurationRequest;
+        class GetNetworkProfileRequest;
         class GetProfileRequest;
         class GetRoomRequest;
         class GetRoomSkillParameterRequest;
@@ -214,6 +224,7 @@ namespace Model
         class SearchAddressBooksRequest;
         class SearchContactsRequest;
         class SearchDevicesRequest;
+        class SearchNetworkProfilesRequest;
         class SearchProfilesRequest;
         class SearchRoomsRequest;
         class SearchSkillGroupsRequest;
@@ -231,12 +242,14 @@ namespace Model
         class UpdateDeviceRequest;
         class UpdateGatewayRequest;
         class UpdateGatewayGroupRequest;
+        class UpdateNetworkProfileRequest;
         class UpdateProfileRequest;
         class UpdateRoomRequest;
         class UpdateSkillGroupRequest;
 
         typedef Aws::Utils::Outcome<ApproveSkillResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ApproveSkillOutcome;
         typedef Aws::Utils::Outcome<AssociateContactWithAddressBookResult, Aws::Client::AWSError<AlexaForBusinessErrors>> AssociateContactWithAddressBookOutcome;
+        typedef Aws::Utils::Outcome<AssociateDeviceWithNetworkProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> AssociateDeviceWithNetworkProfileOutcome;
         typedef Aws::Utils::Outcome<AssociateDeviceWithRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> AssociateDeviceWithRoomOutcome;
         typedef Aws::Utils::Outcome<AssociateSkillGroupWithRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> AssociateSkillGroupWithRoomOutcome;
         typedef Aws::Utils::Outcome<AssociateSkillWithSkillGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> AssociateSkillWithSkillGroupOutcome;
@@ -246,6 +259,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateConferenceProviderResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateConferenceProviderOutcome;
         typedef Aws::Utils::Outcome<CreateContactResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateContactOutcome;
         typedef Aws::Utils::Outcome<CreateGatewayGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateGatewayGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateNetworkProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateNetworkProfileOutcome;
         typedef Aws::Utils::Outcome<CreateProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateProfileOutcome;
         typedef Aws::Utils::Outcome<CreateRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateRoomOutcome;
         typedef Aws::Utils::Outcome<CreateSkillGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateSkillGroupOutcome;
@@ -257,6 +271,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteDeviceResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteDeviceOutcome;
         typedef Aws::Utils::Outcome<DeleteDeviceUsageDataResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteDeviceUsageDataOutcome;
         typedef Aws::Utils::Outcome<DeleteGatewayGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteGatewayGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteNetworkProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteNetworkProfileOutcome;
         typedef Aws::Utils::Outcome<DeleteProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteProfileOutcome;
         typedef Aws::Utils::Outcome<DeleteRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteRoomOutcome;
         typedef Aws::Utils::Outcome<DeleteRoomSkillParameterResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteRoomSkillParameterOutcome;
@@ -277,6 +292,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetGatewayResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetGatewayOutcome;
         typedef Aws::Utils::Outcome<GetGatewayGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetGatewayGroupOutcome;
         typedef Aws::Utils::Outcome<GetInvitationConfigurationResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetInvitationConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetNetworkProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetNetworkProfileOutcome;
         typedef Aws::Utils::Outcome<GetProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetProfileOutcome;
         typedef Aws::Utils::Outcome<GetRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetRoomOutcome;
         typedef Aws::Utils::Outcome<GetRoomSkillParameterResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetRoomSkillParameterOutcome;
@@ -302,6 +318,7 @@ namespace Model
         typedef Aws::Utils::Outcome<SearchAddressBooksResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SearchAddressBooksOutcome;
         typedef Aws::Utils::Outcome<SearchContactsResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SearchContactsOutcome;
         typedef Aws::Utils::Outcome<SearchDevicesResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SearchDevicesOutcome;
+        typedef Aws::Utils::Outcome<SearchNetworkProfilesResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SearchNetworkProfilesOutcome;
         typedef Aws::Utils::Outcome<SearchProfilesResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SearchProfilesOutcome;
         typedef Aws::Utils::Outcome<SearchRoomsResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SearchRoomsOutcome;
         typedef Aws::Utils::Outcome<SearchSkillGroupsResult, Aws::Client::AWSError<AlexaForBusinessErrors>> SearchSkillGroupsOutcome;
@@ -319,12 +336,14 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateDeviceResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateDeviceOutcome;
         typedef Aws::Utils::Outcome<UpdateGatewayResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateGatewayOutcome;
         typedef Aws::Utils::Outcome<UpdateGatewayGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateGatewayGroupOutcome;
+        typedef Aws::Utils::Outcome<UpdateNetworkProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateNetworkProfileOutcome;
         typedef Aws::Utils::Outcome<UpdateProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateProfileOutcome;
         typedef Aws::Utils::Outcome<UpdateRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateRoomOutcome;
         typedef Aws::Utils::Outcome<UpdateSkillGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateSkillGroupOutcome;
 
         typedef std::future<ApproveSkillOutcome> ApproveSkillOutcomeCallable;
         typedef std::future<AssociateContactWithAddressBookOutcome> AssociateContactWithAddressBookOutcomeCallable;
+        typedef std::future<AssociateDeviceWithNetworkProfileOutcome> AssociateDeviceWithNetworkProfileOutcomeCallable;
         typedef std::future<AssociateDeviceWithRoomOutcome> AssociateDeviceWithRoomOutcomeCallable;
         typedef std::future<AssociateSkillGroupWithRoomOutcome> AssociateSkillGroupWithRoomOutcomeCallable;
         typedef std::future<AssociateSkillWithSkillGroupOutcome> AssociateSkillWithSkillGroupOutcomeCallable;
@@ -334,6 +353,7 @@ namespace Model
         typedef std::future<CreateConferenceProviderOutcome> CreateConferenceProviderOutcomeCallable;
         typedef std::future<CreateContactOutcome> CreateContactOutcomeCallable;
         typedef std::future<CreateGatewayGroupOutcome> CreateGatewayGroupOutcomeCallable;
+        typedef std::future<CreateNetworkProfileOutcome> CreateNetworkProfileOutcomeCallable;
         typedef std::future<CreateProfileOutcome> CreateProfileOutcomeCallable;
         typedef std::future<CreateRoomOutcome> CreateRoomOutcomeCallable;
         typedef std::future<CreateSkillGroupOutcome> CreateSkillGroupOutcomeCallable;
@@ -345,6 +365,7 @@ namespace Model
         typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
         typedef std::future<DeleteDeviceUsageDataOutcome> DeleteDeviceUsageDataOutcomeCallable;
         typedef std::future<DeleteGatewayGroupOutcome> DeleteGatewayGroupOutcomeCallable;
+        typedef std::future<DeleteNetworkProfileOutcome> DeleteNetworkProfileOutcomeCallable;
         typedef std::future<DeleteProfileOutcome> DeleteProfileOutcomeCallable;
         typedef std::future<DeleteRoomOutcome> DeleteRoomOutcomeCallable;
         typedef std::future<DeleteRoomSkillParameterOutcome> DeleteRoomSkillParameterOutcomeCallable;
@@ -365,6 +386,7 @@ namespace Model
         typedef std::future<GetGatewayOutcome> GetGatewayOutcomeCallable;
         typedef std::future<GetGatewayGroupOutcome> GetGatewayGroupOutcomeCallable;
         typedef std::future<GetInvitationConfigurationOutcome> GetInvitationConfigurationOutcomeCallable;
+        typedef std::future<GetNetworkProfileOutcome> GetNetworkProfileOutcomeCallable;
         typedef std::future<GetProfileOutcome> GetProfileOutcomeCallable;
         typedef std::future<GetRoomOutcome> GetRoomOutcomeCallable;
         typedef std::future<GetRoomSkillParameterOutcome> GetRoomSkillParameterOutcomeCallable;
@@ -390,6 +412,7 @@ namespace Model
         typedef std::future<SearchAddressBooksOutcome> SearchAddressBooksOutcomeCallable;
         typedef std::future<SearchContactsOutcome> SearchContactsOutcomeCallable;
         typedef std::future<SearchDevicesOutcome> SearchDevicesOutcomeCallable;
+        typedef std::future<SearchNetworkProfilesOutcome> SearchNetworkProfilesOutcomeCallable;
         typedef std::future<SearchProfilesOutcome> SearchProfilesOutcomeCallable;
         typedef std::future<SearchRoomsOutcome> SearchRoomsOutcomeCallable;
         typedef std::future<SearchSkillGroupsOutcome> SearchSkillGroupsOutcomeCallable;
@@ -407,6 +430,7 @@ namespace Model
         typedef std::future<UpdateDeviceOutcome> UpdateDeviceOutcomeCallable;
         typedef std::future<UpdateGatewayOutcome> UpdateGatewayOutcomeCallable;
         typedef std::future<UpdateGatewayGroupOutcome> UpdateGatewayGroupOutcomeCallable;
+        typedef std::future<UpdateNetworkProfileOutcome> UpdateNetworkProfileOutcomeCallable;
         typedef std::future<UpdateProfileOutcome> UpdateProfileOutcomeCallable;
         typedef std::future<UpdateRoomOutcome> UpdateRoomOutcomeCallable;
         typedef std::future<UpdateSkillGroupOutcome> UpdateSkillGroupOutcomeCallable;
@@ -416,6 +440,7 @@ namespace Model
 
     typedef std::function<void(const AlexaForBusinessClient*, const Model::ApproveSkillRequest&, const Model::ApproveSkillOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ApproveSkillResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::AssociateContactWithAddressBookRequest&, const Model::AssociateContactWithAddressBookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateContactWithAddressBookResponseReceivedHandler;
+    typedef std::function<void(const AlexaForBusinessClient*, const Model::AssociateDeviceWithNetworkProfileRequest&, const Model::AssociateDeviceWithNetworkProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDeviceWithNetworkProfileResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::AssociateDeviceWithRoomRequest&, const Model::AssociateDeviceWithRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDeviceWithRoomResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::AssociateSkillGroupWithRoomRequest&, const Model::AssociateSkillGroupWithRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSkillGroupWithRoomResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::AssociateSkillWithSkillGroupRequest&, const Model::AssociateSkillWithSkillGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSkillWithSkillGroupResponseReceivedHandler;
@@ -425,6 +450,7 @@ namespace Model
     typedef std::function<void(const AlexaForBusinessClient*, const Model::CreateConferenceProviderRequest&, const Model::CreateConferenceProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConferenceProviderResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::CreateContactRequest&, const Model::CreateContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::CreateGatewayGroupRequest&, const Model::CreateGatewayGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGatewayGroupResponseReceivedHandler;
+    typedef std::function<void(const AlexaForBusinessClient*, const Model::CreateNetworkProfileRequest&, const Model::CreateNetworkProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkProfileResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::CreateProfileRequest&, const Model::CreateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProfileResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::CreateRoomRequest&, const Model::CreateRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRoomResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::CreateSkillGroupRequest&, const Model::CreateSkillGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSkillGroupResponseReceivedHandler;
@@ -436,6 +462,7 @@ namespace Model
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteDeviceRequest&, const Model::DeleteDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeviceResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteDeviceUsageDataRequest&, const Model::DeleteDeviceUsageDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeviceUsageDataResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteGatewayGroupRequest&, const Model::DeleteGatewayGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGatewayGroupResponseReceivedHandler;
+    typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteNetworkProfileRequest&, const Model::DeleteNetworkProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkProfileResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteProfileRequest&, const Model::DeleteProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteRoomRequest&, const Model::DeleteRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRoomResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteRoomSkillParameterRequest&, const Model::DeleteRoomSkillParameterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRoomSkillParameterResponseReceivedHandler;
@@ -456,6 +483,7 @@ namespace Model
     typedef std::function<void(const AlexaForBusinessClient*, const Model::GetGatewayRequest&, const Model::GetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGatewayResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::GetGatewayGroupRequest&, const Model::GetGatewayGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGatewayGroupResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::GetInvitationConfigurationRequest&, const Model::GetInvitationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInvitationConfigurationResponseReceivedHandler;
+    typedef std::function<void(const AlexaForBusinessClient*, const Model::GetNetworkProfileRequest&, const Model::GetNetworkProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNetworkProfileResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::GetProfileRequest&, const Model::GetProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProfileResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::GetRoomRequest&, const Model::GetRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRoomResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::GetRoomSkillParameterRequest&, const Model::GetRoomSkillParameterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRoomSkillParameterResponseReceivedHandler;
@@ -481,6 +509,7 @@ namespace Model
     typedef std::function<void(const AlexaForBusinessClient*, const Model::SearchAddressBooksRequest&, const Model::SearchAddressBooksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAddressBooksResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::SearchContactsRequest&, const Model::SearchContactsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchContactsResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::SearchDevicesRequest&, const Model::SearchDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchDevicesResponseReceivedHandler;
+    typedef std::function<void(const AlexaForBusinessClient*, const Model::SearchNetworkProfilesRequest&, const Model::SearchNetworkProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchNetworkProfilesResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::SearchProfilesRequest&, const Model::SearchProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchProfilesResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::SearchRoomsRequest&, const Model::SearchRoomsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchRoomsResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::SearchSkillGroupsRequest&, const Model::SearchSkillGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchSkillGroupsResponseReceivedHandler;
@@ -498,6 +527,7 @@ namespace Model
     typedef std::function<void(const AlexaForBusinessClient*, const Model::UpdateDeviceRequest&, const Model::UpdateDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::UpdateGatewayRequest&, const Model::UpdateGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGatewayResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::UpdateGatewayGroupRequest&, const Model::UpdateGatewayGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGatewayGroupResponseReceivedHandler;
+    typedef std::function<void(const AlexaForBusinessClient*, const Model::UpdateNetworkProfileRequest&, const Model::UpdateNetworkProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNetworkProfileResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::UpdateProfileRequest&, const Model::UpdateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProfileResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::UpdateRoomRequest&, const Model::UpdateRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoomResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::UpdateSkillGroupRequest&, const Model::UpdateSkillGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSkillGroupResponseReceivedHandler;
@@ -598,6 +628,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateContactWithAddressBookAsync(const Model::AssociateContactWithAddressBookRequest& request, const AssociateContactWithAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates a device with the specified network profile.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateDeviceWithNetworkProfileOutcome AssociateDeviceWithNetworkProfile(const Model::AssociateDeviceWithNetworkProfileRequest& request) const;
+
+        /**
+         * <p>Associates a device with the specified network profile.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateDeviceWithNetworkProfileOutcomeCallable AssociateDeviceWithNetworkProfileCallable(const Model::AssociateDeviceWithNetworkProfileRequest& request) const;
+
+        /**
+         * <p>Associates a device with the specified network profile.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateDeviceWithNetworkProfileAsync(const Model::AssociateDeviceWithNetworkProfileRequest& request, const AssociateDeviceWithNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a device with a given room. This applies all the settings from the
@@ -855,6 +913,34 @@ namespace Model
         virtual void CreateGatewayGroupAsync(const Model::CreateGatewayGroupRequest& request, const CreateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a network profile with the specified details.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateNetworkProfileOutcome CreateNetworkProfile(const Model::CreateNetworkProfileRequest& request) const;
+
+        /**
+         * <p>Creates a network profile with the specified details.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateNetworkProfileOutcomeCallable CreateNetworkProfileCallable(const Model::CreateNetworkProfileRequest& request) const;
+
+        /**
+         * <p>Creates a network profile with the specified details.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateNetworkProfileAsync(const Model::CreateNetworkProfileRequest& request, const CreateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a new room profile with the specified details.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateProfile">AWS
@@ -1094,8 +1180,8 @@ namespace Model
         /**
          * <p>When this action is called for a specified shared device, it allows
          * authorized users to delete the device's entire previous history of voice input
-         * data and associated response data. This action can be called once every 24 hours
-         * for a specific shared device.</p><p><h3>See Also:</h3>   <a
+         * data. This action can be called once every 24 hours for a specific shared
+         * device. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">AWS
          * API Reference</a></p>
          */
@@ -1104,8 +1190,8 @@ namespace Model
         /**
          * <p>When this action is called for a specified shared device, it allows
          * authorized users to delete the device's entire previous history of voice input
-         * data and associated response data. This action can be called once every 24 hours
-         * for a specific shared device.</p><p><h3>See Also:</h3>   <a
+         * data. This action can be called once every 24 hours for a specific shared
+         * device. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">AWS
          * API Reference</a></p>
          *
@@ -1116,8 +1202,8 @@ namespace Model
         /**
          * <p>When this action is called for a specified shared device, it allows
          * authorized users to delete the device's entire previous history of voice input
-         * data and associated response data. This action can be called once every 24 hours
-         * for a specific shared device.</p><p><h3>See Also:</h3>   <a
+         * data. This action can be called once every 24 hours for a specific shared
+         * device. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">AWS
          * API Reference</a></p>
          *
@@ -1149,6 +1235,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteGatewayGroupAsync(const Model::DeleteGatewayGroupRequest& request, const DeleteGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a network profile by the network profile ARN.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteNetworkProfileOutcome DeleteNetworkProfile(const Model::DeleteNetworkProfileRequest& request) const;
+
+        /**
+         * <p>Deletes a network profile by the network profile ARN.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteNetworkProfileOutcomeCallable DeleteNetworkProfileCallable(const Model::DeleteNetworkProfileRequest& request) const;
+
+        /**
+         * <p>Deletes a network profile by the network profile ARN.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteNetworkProfileAsync(const Model::DeleteNetworkProfileRequest& request, const DeleteNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a room profile by the profile ARN.</p><p><h3>See Also:</h3>   <a
@@ -1685,6 +1799,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetInvitationConfigurationAsync(const Model::GetInvitationConfigurationRequest& request, const GetInvitationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the network profile details by the network profile ARN.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetNetworkProfileOutcome GetNetworkProfile(const Model::GetNetworkProfileRequest& request) const;
+
+        /**
+         * <p>Gets the network profile details by the network profile ARN.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetNetworkProfileOutcomeCallable GetNetworkProfileCallable(const Model::GetNetworkProfileRequest& request) const;
+
+        /**
+         * <p>Gets the network profile details by the network profile ARN.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetNetworkProfileAsync(const Model::GetNetworkProfileRequest& request, const GetNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the details of a room profile by profile ARN.</p><p><h3>See Also:</h3>  
@@ -2393,6 +2535,34 @@ namespace Model
         virtual void SearchDevicesAsync(const Model::SearchDevicesRequest& request, const SearchDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Searches network profiles and lists the ones that meet a set of filter and
+         * sort criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchNetworkProfilesOutcome SearchNetworkProfiles(const Model::SearchNetworkProfilesRequest& request) const;
+
+        /**
+         * <p>Searches network profiles and lists the ones that meet a set of filter and
+         * sort criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchNetworkProfilesOutcomeCallable SearchNetworkProfilesCallable(const Model::SearchNetworkProfilesRequest& request) const;
+
+        /**
+         * <p>Searches network profiles and lists the ones that meet a set of filter and
+         * sort criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchNetworkProfilesAsync(const Model::SearchNetworkProfilesRequest& request, const SearchNetworkProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Searches room profiles and lists the ones that meet a set of filter
          * criteria.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchProfiles">AWS
@@ -2564,18 +2734,32 @@ namespace Model
         virtual void SendInvitationAsync(const Model::SendInvitationRequest& request, const SendInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Resets a device and its account to the known default settings, by clearing
-         * all information and settings set by previous users.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Resets a device and its account to the known default settings. This clears
+         * all information and settings set by previous users in the following ways:</p>
+         * <ul> <li> <p>Bluetooth - This unpairs all bluetooth devices paired with your
+         * echo device.</p> </li> <li> <p>Volume - This resets the echo device's volume to
+         * the default value.</p> </li> <li> <p>Notifications - This clears all
+         * notifications from your echo device.</p> </li> <li> <p>Lists - This clears all
+         * to-do items from your echo device.</p> </li> <li> <p>Settings - This internally
+         * syncs the room's profile (if the device is assigned to a room), contacts,
+         * address books, delegation access for account linking, and communications (if
+         * enabled on the room profile).</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync">AWS
          * API Reference</a></p>
          */
         virtual Model::StartDeviceSyncOutcome StartDeviceSync(const Model::StartDeviceSyncRequest& request) const;
 
         /**
-         * <p>Resets a device and its account to the known default settings, by clearing
-         * all information and settings set by previous users.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Resets a device and its account to the known default settings. This clears
+         * all information and settings set by previous users in the following ways:</p>
+         * <ul> <li> <p>Bluetooth - This unpairs all bluetooth devices paired with your
+         * echo device.</p> </li> <li> <p>Volume - This resets the echo device's volume to
+         * the default value.</p> </li> <li> <p>Notifications - This clears all
+         * notifications from your echo device.</p> </li> <li> <p>Lists - This clears all
+         * to-do items from your echo device.</p> </li> <li> <p>Settings - This internally
+         * syncs the room's profile (if the device is assigned to a room), contacts,
+         * address books, delegation access for account linking, and communications (if
+         * enabled on the room profile).</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync">AWS
          * API Reference</a></p>
          *
@@ -2584,9 +2768,16 @@ namespace Model
         virtual Model::StartDeviceSyncOutcomeCallable StartDeviceSyncCallable(const Model::StartDeviceSyncRequest& request) const;
 
         /**
-         * <p>Resets a device and its account to the known default settings, by clearing
-         * all information and settings set by previous users.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Resets a device and its account to the known default settings. This clears
+         * all information and settings set by previous users in the following ways:</p>
+         * <ul> <li> <p>Bluetooth - This unpairs all bluetooth devices paired with your
+         * echo device.</p> </li> <li> <p>Volume - This resets the echo device's volume to
+         * the default value.</p> </li> <li> <p>Notifications - This clears all
+         * notifications from your echo device.</p> </li> <li> <p>Lists - This clears all
+         * to-do items from your echo device.</p> </li> <li> <p>Settings - This internally
+         * syncs the room's profile (if the device is assigned to a room), contacts,
+         * address books, delegation access for account linking, and communications (if
+         * enabled on the room profile).</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync">AWS
          * API Reference</a></p>
          *
@@ -2869,6 +3060,34 @@ namespace Model
         virtual void UpdateGatewayGroupAsync(const Model::UpdateGatewayGroupRequest& request, const UpdateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates a network profile by the network profile ARN.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateNetworkProfileOutcome UpdateNetworkProfile(const Model::UpdateNetworkProfileRequest& request) const;
+
+        /**
+         * <p>Updates a network profile by the network profile ARN.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateNetworkProfileOutcomeCallable UpdateNetworkProfileCallable(const Model::UpdateNetworkProfileRequest& request) const;
+
+        /**
+         * <p>Updates a network profile by the network profile ARN.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateNetworkProfileAsync(const Model::UpdateNetworkProfileRequest& request, const UpdateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing room profile by room profile ARN.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateProfile">AWS
@@ -2952,6 +3171,7 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void ApproveSkillAsyncHelper(const Model::ApproveSkillRequest& request, const ApproveSkillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateContactWithAddressBookAsyncHelper(const Model::AssociateContactWithAddressBookRequest& request, const AssociateContactWithAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateDeviceWithNetworkProfileAsyncHelper(const Model::AssociateDeviceWithNetworkProfileRequest& request, const AssociateDeviceWithNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateDeviceWithRoomAsyncHelper(const Model::AssociateDeviceWithRoomRequest& request, const AssociateDeviceWithRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateSkillGroupWithRoomAsyncHelper(const Model::AssociateSkillGroupWithRoomRequest& request, const AssociateSkillGroupWithRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateSkillWithSkillGroupAsyncHelper(const Model::AssociateSkillWithSkillGroupRequest& request, const AssociateSkillWithSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2961,6 +3181,7 @@ namespace Model
         void CreateConferenceProviderAsyncHelper(const Model::CreateConferenceProviderRequest& request, const CreateConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateContactAsyncHelper(const Model::CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGatewayGroupAsyncHelper(const Model::CreateGatewayGroupRequest& request, const CreateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateNetworkProfileAsyncHelper(const Model::CreateNetworkProfileRequest& request, const CreateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProfileAsyncHelper(const Model::CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRoomAsyncHelper(const Model::CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSkillGroupAsyncHelper(const Model::CreateSkillGroupRequest& request, const CreateSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2972,6 +3193,7 @@ namespace Model
         void DeleteDeviceAsyncHelper(const Model::DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDeviceUsageDataAsyncHelper(const Model::DeleteDeviceUsageDataRequest& request, const DeleteDeviceUsageDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGatewayGroupAsyncHelper(const Model::DeleteGatewayGroupRequest& request, const DeleteGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteNetworkProfileAsyncHelper(const Model::DeleteNetworkProfileRequest& request, const DeleteNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProfileAsyncHelper(const Model::DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRoomAsyncHelper(const Model::DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRoomSkillParameterAsyncHelper(const Model::DeleteRoomSkillParameterRequest& request, const DeleteRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2992,6 +3214,7 @@ namespace Model
         void GetGatewayAsyncHelper(const Model::GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGatewayGroupAsyncHelper(const Model::GetGatewayGroupRequest& request, const GetGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetInvitationConfigurationAsyncHelper(const Model::GetInvitationConfigurationRequest& request, const GetInvitationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetNetworkProfileAsyncHelper(const Model::GetNetworkProfileRequest& request, const GetNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetProfileAsyncHelper(const Model::GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRoomAsyncHelper(const Model::GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRoomSkillParameterAsyncHelper(const Model::GetRoomSkillParameterRequest& request, const GetRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3017,6 +3240,7 @@ namespace Model
         void SearchAddressBooksAsyncHelper(const Model::SearchAddressBooksRequest& request, const SearchAddressBooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchContactsAsyncHelper(const Model::SearchContactsRequest& request, const SearchContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchDevicesAsyncHelper(const Model::SearchDevicesRequest& request, const SearchDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SearchNetworkProfilesAsyncHelper(const Model::SearchNetworkProfilesRequest& request, const SearchNetworkProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchProfilesAsyncHelper(const Model::SearchProfilesRequest& request, const SearchProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchRoomsAsyncHelper(const Model::SearchRoomsRequest& request, const SearchRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchSkillGroupsAsyncHelper(const Model::SearchSkillGroupsRequest& request, const SearchSkillGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3034,6 +3258,7 @@ namespace Model
         void UpdateDeviceAsyncHelper(const Model::UpdateDeviceRequest& request, const UpdateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGatewayAsyncHelper(const Model::UpdateGatewayRequest& request, const UpdateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGatewayGroupAsyncHelper(const Model::UpdateGatewayGroupRequest& request, const UpdateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateNetworkProfileAsyncHelper(const Model::UpdateNetworkProfileRequest& request, const UpdateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProfileAsyncHelper(const Model::UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRoomAsyncHelper(const Model::UpdateRoomRequest& request, const UpdateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSkillGroupAsyncHelper(const Model::UpdateSkillGroupRequest& request, const UpdateSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

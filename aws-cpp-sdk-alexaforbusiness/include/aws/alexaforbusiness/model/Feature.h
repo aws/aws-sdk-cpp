@@ -31,6 +31,8 @@ namespace Model
     NOTIFICATIONS,
     LISTS,
     SKILLS,
+    NETWORK_PROFILE,
+    SETTINGS,
     ALL
   };
 

@@ -32,6 +32,7 @@
 #include <aws/alexaforbusiness/AlexaForBusinessErrorMarshaller.h>
 #include <aws/alexaforbusiness/model/ApproveSkillRequest.h>
 #include <aws/alexaforbusiness/model/AssociateContactWithAddressBookRequest.h>
+#include <aws/alexaforbusiness/model/AssociateDeviceWithNetworkProfileRequest.h>
 #include <aws/alexaforbusiness/model/AssociateDeviceWithRoomRequest.h>
 #include <aws/alexaforbusiness/model/AssociateSkillGroupWithRoomRequest.h>
 #include <aws/alexaforbusiness/model/AssociateSkillWithSkillGroupRequest.h>
@@ -41,6 +42,7 @@
 #include <aws/alexaforbusiness/model/CreateConferenceProviderRequest.h>
 #include <aws/alexaforbusiness/model/CreateContactRequest.h>
 #include <aws/alexaforbusiness/model/CreateGatewayGroupRequest.h>
+#include <aws/alexaforbusiness/model/CreateNetworkProfileRequest.h>
 #include <aws/alexaforbusiness/model/CreateProfileRequest.h>
 #include <aws/alexaforbusiness/model/CreateRoomRequest.h>
 #include <aws/alexaforbusiness/model/CreateSkillGroupRequest.h>
@@ -52,6 +54,7 @@
 #include <aws/alexaforbusiness/model/DeleteDeviceRequest.h>
 #include <aws/alexaforbusiness/model/DeleteDeviceUsageDataRequest.h>
 #include <aws/alexaforbusiness/model/DeleteGatewayGroupRequest.h>
+#include <aws/alexaforbusiness/model/DeleteNetworkProfileRequest.h>
 #include <aws/alexaforbusiness/model/DeleteProfileRequest.h>
 #include <aws/alexaforbusiness/model/DeleteRoomRequest.h>
 #include <aws/alexaforbusiness/model/DeleteRoomSkillParameterRequest.h>
@@ -72,6 +75,7 @@
 #include <aws/alexaforbusiness/model/GetGatewayRequest.h>
 #include <aws/alexaforbusiness/model/GetGatewayGroupRequest.h>
 #include <aws/alexaforbusiness/model/GetInvitationConfigurationRequest.h>
+#include <aws/alexaforbusiness/model/GetNetworkProfileRequest.h>
 #include <aws/alexaforbusiness/model/GetProfileRequest.h>
 #include <aws/alexaforbusiness/model/GetRoomRequest.h>
 #include <aws/alexaforbusiness/model/GetRoomSkillParameterRequest.h>
@@ -97,6 +101,7 @@
 #include <aws/alexaforbusiness/model/SearchAddressBooksRequest.h>
 #include <aws/alexaforbusiness/model/SearchContactsRequest.h>
 #include <aws/alexaforbusiness/model/SearchDevicesRequest.h>
+#include <aws/alexaforbusiness/model/SearchNetworkProfilesRequest.h>
 #include <aws/alexaforbusiness/model/SearchProfilesRequest.h>
 #include <aws/alexaforbusiness/model/SearchRoomsRequest.h>
 #include <aws/alexaforbusiness/model/SearchSkillGroupsRequest.h>
@@ -114,6 +119,7 @@
 #include <aws/alexaforbusiness/model/UpdateDeviceRequest.h>
 #include <aws/alexaforbusiness/model/UpdateGatewayRequest.h>
 #include <aws/alexaforbusiness/model/UpdateGatewayGroupRequest.h>
+#include <aws/alexaforbusiness/model/UpdateNetworkProfileRequest.h>
 #include <aws/alexaforbusiness/model/UpdateProfileRequest.h>
 #include <aws/alexaforbusiness/model/UpdateRoomRequest.h>
 #include <aws/alexaforbusiness/model/UpdateSkillGroupRequest.h>
@@ -258,6 +264,41 @@ void AlexaForBusinessClient::AssociateContactWithAddressBookAsync(const Associat
 void AlexaForBusinessClient::AssociateContactWithAddressBookAsyncHelper(const AssociateContactWithAddressBookRequest& request, const AssociateContactWithAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateContactWithAddressBook(request), context);
+}
+
+AssociateDeviceWithNetworkProfileOutcome AlexaForBusinessClient::AssociateDeviceWithNetworkProfile(const AssociateDeviceWithNetworkProfileRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AssociateDeviceWithNetworkProfileOutcome(AssociateDeviceWithNetworkProfileResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateDeviceWithNetworkProfileOutcome(outcome.GetError());
+  }
+}
+
+AssociateDeviceWithNetworkProfileOutcomeCallable AlexaForBusinessClient::AssociateDeviceWithNetworkProfileCallable(const AssociateDeviceWithNetworkProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateDeviceWithNetworkProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateDeviceWithNetworkProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::AssociateDeviceWithNetworkProfileAsync(const AssociateDeviceWithNetworkProfileRequest& request, const AssociateDeviceWithNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateDeviceWithNetworkProfileAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::AssociateDeviceWithNetworkProfileAsyncHelper(const AssociateDeviceWithNetworkProfileRequest& request, const AssociateDeviceWithNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateDeviceWithNetworkProfile(request), context);
 }
 
 AssociateDeviceWithRoomOutcome AlexaForBusinessClient::AssociateDeviceWithRoom(const AssociateDeviceWithRoomRequest& request) const
@@ -573,6 +614,41 @@ void AlexaForBusinessClient::CreateGatewayGroupAsync(const CreateGatewayGroupReq
 void AlexaForBusinessClient::CreateGatewayGroupAsyncHelper(const CreateGatewayGroupRequest& request, const CreateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateGatewayGroup(request), context);
+}
+
+CreateNetworkProfileOutcome AlexaForBusinessClient::CreateNetworkProfile(const CreateNetworkProfileRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateNetworkProfileOutcome(CreateNetworkProfileResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateNetworkProfileOutcome(outcome.GetError());
+  }
+}
+
+CreateNetworkProfileOutcomeCallable AlexaForBusinessClient::CreateNetworkProfileCallable(const CreateNetworkProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateNetworkProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNetworkProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::CreateNetworkProfileAsync(const CreateNetworkProfileRequest& request, const CreateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateNetworkProfileAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::CreateNetworkProfileAsyncHelper(const CreateNetworkProfileRequest& request, const CreateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateNetworkProfile(request), context);
 }
 
 CreateProfileOutcome AlexaForBusinessClient::CreateProfile(const CreateProfileRequest& request) const
@@ -958,6 +1034,41 @@ void AlexaForBusinessClient::DeleteGatewayGroupAsync(const DeleteGatewayGroupReq
 void AlexaForBusinessClient::DeleteGatewayGroupAsyncHelper(const DeleteGatewayGroupRequest& request, const DeleteGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteGatewayGroup(request), context);
+}
+
+DeleteNetworkProfileOutcome AlexaForBusinessClient::DeleteNetworkProfile(const DeleteNetworkProfileRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteNetworkProfileOutcome(DeleteNetworkProfileResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteNetworkProfileOutcome(outcome.GetError());
+  }
+}
+
+DeleteNetworkProfileOutcomeCallable AlexaForBusinessClient::DeleteNetworkProfileCallable(const DeleteNetworkProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteNetworkProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNetworkProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::DeleteNetworkProfileAsync(const DeleteNetworkProfileRequest& request, const DeleteNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteNetworkProfileAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::DeleteNetworkProfileAsyncHelper(const DeleteNetworkProfileRequest& request, const DeleteNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteNetworkProfile(request), context);
 }
 
 DeleteProfileOutcome AlexaForBusinessClient::DeleteProfile(const DeleteProfileRequest& request) const
@@ -1658,6 +1769,41 @@ void AlexaForBusinessClient::GetInvitationConfigurationAsync(const GetInvitation
 void AlexaForBusinessClient::GetInvitationConfigurationAsyncHelper(const GetInvitationConfigurationRequest& request, const GetInvitationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetInvitationConfiguration(request), context);
+}
+
+GetNetworkProfileOutcome AlexaForBusinessClient::GetNetworkProfile(const GetNetworkProfileRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetNetworkProfileOutcome(GetNetworkProfileResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetNetworkProfileOutcome(outcome.GetError());
+  }
+}
+
+GetNetworkProfileOutcomeCallable AlexaForBusinessClient::GetNetworkProfileCallable(const GetNetworkProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetNetworkProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNetworkProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::GetNetworkProfileAsync(const GetNetworkProfileRequest& request, const GetNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkProfileAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::GetNetworkProfileAsyncHelper(const GetNetworkProfileRequest& request, const GetNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetNetworkProfile(request), context);
 }
 
 GetProfileOutcome AlexaForBusinessClient::GetProfile(const GetProfileRequest& request) const
@@ -2535,6 +2681,41 @@ void AlexaForBusinessClient::SearchDevicesAsyncHelper(const SearchDevicesRequest
   handler(this, request, SearchDevices(request), context);
 }
 
+SearchNetworkProfilesOutcome AlexaForBusinessClient::SearchNetworkProfiles(const SearchNetworkProfilesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return SearchNetworkProfilesOutcome(SearchNetworkProfilesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SearchNetworkProfilesOutcome(outcome.GetError());
+  }
+}
+
+SearchNetworkProfilesOutcomeCallable AlexaForBusinessClient::SearchNetworkProfilesCallable(const SearchNetworkProfilesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchNetworkProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchNetworkProfiles(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::SearchNetworkProfilesAsync(const SearchNetworkProfilesRequest& request, const SearchNetworkProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchNetworkProfilesAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::SearchNetworkProfilesAsyncHelper(const SearchNetworkProfilesRequest& request, const SearchNetworkProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchNetworkProfiles(request), context);
+}
+
 SearchProfilesOutcome AlexaForBusinessClient::SearchProfiles(const SearchProfilesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -3128,6 +3309,41 @@ void AlexaForBusinessClient::UpdateGatewayGroupAsync(const UpdateGatewayGroupReq
 void AlexaForBusinessClient::UpdateGatewayGroupAsyncHelper(const UpdateGatewayGroupRequest& request, const UpdateGatewayGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateGatewayGroup(request), context);
+}
+
+UpdateNetworkProfileOutcome AlexaForBusinessClient::UpdateNetworkProfile(const UpdateNetworkProfileRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateNetworkProfileOutcome(UpdateNetworkProfileResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateNetworkProfileOutcome(outcome.GetError());
+  }
+}
+
+UpdateNetworkProfileOutcomeCallable AlexaForBusinessClient::UpdateNetworkProfileCallable(const UpdateNetworkProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateNetworkProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNetworkProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::UpdateNetworkProfileAsync(const UpdateNetworkProfileRequest& request, const UpdateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateNetworkProfileAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::UpdateNetworkProfileAsyncHelper(const UpdateNetworkProfileRequest& request, const UpdateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateNetworkProfile(request), context);
 }
 
 UpdateProfileOutcome AlexaForBusinessClient::UpdateProfile(const UpdateProfileRequest& request) const
