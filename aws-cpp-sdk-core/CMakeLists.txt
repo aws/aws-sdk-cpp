@@ -22,7 +22,7 @@ endif()
 # If building shared libraries, custom memory management enabled is the default, otherwise regular memory management is the default.
 # We make custom memory management the default on shared library builds because it is safer and much more difficult to accidentally
 # allocate in one DLLs heap while freeing in another (which will lead to runtime crashes)
-if(CUSTOM_MEMORY_MANAGEMENT OR (BUILD_SHARED_LIBS AND NOT CUSTOM_MEMORY_MANAGEMENT))
+if(CUSTOM_MEMORY_MANAGEMENT OR (BUILD_SHARED_LIBS AND NOT DEFINED CUSTOM_MEMORY_MANAGEMENT))
     set(USE_AWS_MEMORY_MANAGEMENT ON)
     message(STATUS "Custom memory management enabled; stl objects now using custom allocators")
 else()
