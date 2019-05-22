@@ -31,6 +31,7 @@ namespace Model
 Budget::Budget() : 
     m_budgetNameHasBeenSet(false),
     m_budgetLimitHasBeenSet(false),
+    m_plannedBudgetLimitsHasBeenSet(false),
     m_costFiltersHasBeenSet(false),
     m_costTypesHasBeenSet(false),
     m_timeUnit(TimeUnit::NOT_SET),
@@ -46,6 +47,7 @@ Budget::Budget() :
 Budget::Budget(JsonView jsonValue) : 
     m_budgetNameHasBeenSet(false),
     m_budgetLimitHasBeenSet(false),
+    m_plannedBudgetLimitsHasBeenSet(false),
     m_costFiltersHasBeenSet(false),
     m_costTypesHasBeenSet(false),
     m_timeUnit(TimeUnit::NOT_SET),
@@ -73,6 +75,16 @@ Budget& Budget::operator =(JsonView jsonValue)
     m_budgetLimit = jsonValue.GetObject("BudgetLimit");
 
     m_budgetLimitHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PlannedBudgetLimits"))
+  {
+    Aws::Map<Aws::String, JsonView> plannedBudgetLimitsJsonMap = jsonValue.GetObject("PlannedBudgetLimits").GetAllObjects();
+    for(auto& plannedBudgetLimitsItem : plannedBudgetLimitsJsonMap)
+    {
+      m_plannedBudgetLimits[plannedBudgetLimitsItem.first] = plannedBudgetLimitsItem.second.AsObject();
+    }
+    m_plannedBudgetLimitsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CostFilters"))
@@ -150,6 +162,17 @@ JsonValue Budget::Jsonize() const
   if(m_budgetLimitHasBeenSet)
   {
    payload.WithObject("BudgetLimit", m_budgetLimit.Jsonize());
+
+  }
+
+  if(m_plannedBudgetLimitsHasBeenSet)
+  {
+   JsonValue plannedBudgetLimitsJsonMap;
+   for(auto& plannedBudgetLimitsItem : m_plannedBudgetLimits)
+   {
+     plannedBudgetLimitsJsonMap.WithObject(plannedBudgetLimitsItem.first, plannedBudgetLimitsItem.second.Jsonize());
+   }
+   payload.WithObject("PlannedBudgetLimits", std::move(plannedBudgetLimitsJsonMap));
 
   }
 

@@ -215,14 +215,10 @@ namespace Model
      * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
      * identifier may be provided in any of the following formats: </p> <ul> <li>
-     * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
+     * <p>Key ID</p> </li> <li> <p>ARN using key ID. The ID ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
-     * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
-     * alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
-     * owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     * account ID of the CMK owner, the <code>key</code> namespace, and then the CMK
+     * ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p> </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
@@ -243,14 +239,10 @@ namespace Model
      * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
      * identifier may be provided in any of the following formats: </p> <ul> <li>
-     * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
+     * <p>Key ID</p> </li> <li> <p>ARN using key ID. The ID ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
-     * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
-     * alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
-     * owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     * account ID of the CMK owner, the <code>key</code> namespace, and then the CMK
+     * ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p> </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
@@ -271,14 +263,10 @@ namespace Model
      * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
      * identifier may be provided in any of the following formats: </p> <ul> <li>
-     * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
+     * <p>Key ID</p> </li> <li> <p>ARN using key ID. The ID ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
-     * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
-     * alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
-     * owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     * account ID of the CMK owner, the <code>key</code> namespace, and then the CMK
+     * ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p> </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
@@ -299,14 +287,10 @@ namespace Model
      * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
      * identifier may be provided in any of the following formats: </p> <ul> <li>
-     * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
+     * <p>Key ID</p> </li> <li> <p>ARN using key ID. The ID ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
-     * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
-     * alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
-     * owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     * account ID of the CMK owner, the <code>key</code> namespace, and then the CMK
+     * ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p> </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
@@ -327,14 +311,10 @@ namespace Model
      * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
      * identifier may be provided in any of the following formats: </p> <ul> <li>
-     * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
+     * <p>Key ID</p> </li> <li> <p>ARN using key ID. The ID ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
-     * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
-     * alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
-     * owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     * account ID of the CMK owner, the <code>key</code> namespace, and then the CMK
+     * ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p> </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
@@ -355,14 +335,10 @@ namespace Model
      * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
      * identifier may be provided in any of the following formats: </p> <ul> <li>
-     * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
+     * <p>Key ID</p> </li> <li> <p>ARN using key ID. The ID ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
-     * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
-     * alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
-     * owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     * account ID of the CMK owner, the <code>key</code> namespace, and then the CMK
+     * ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p> </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
@@ -383,14 +359,10 @@ namespace Model
      * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
      * identifier may be provided in any of the following formats: </p> <ul> <li>
-     * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
+     * <p>Key ID</p> </li> <li> <p>ARN using key ID. The ID ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
-     * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
-     * alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
-     * owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     * account ID of the CMK owner, the <code>key</code> namespace, and then the CMK
+     * ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p> </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
@@ -411,14 +383,10 @@ namespace Model
      * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
      * identifier may be provided in any of the following formats: </p> <ul> <li>
-     * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
+     * <p>Key ID</p> </li> <li> <p>ARN using key ID. The ID ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
-     * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
-     * alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
-     * owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     * account ID of the CMK owner, the <code>key</code> namespace, and then the CMK
+     * ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p> </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS

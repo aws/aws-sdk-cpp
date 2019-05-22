@@ -68,6 +68,7 @@
 #include <aws/devicefarm/model/ListRunsResult.h>
 #include <aws/devicefarm/model/ListSamplesResult.h>
 #include <aws/devicefarm/model/ListSuitesResult.h>
+#include <aws/devicefarm/model/ListTagsForResourceResult.h>
 #include <aws/devicefarm/model/ListTestsResult.h>
 #include <aws/devicefarm/model/ListUniqueProblemsResult.h>
 #include <aws/devicefarm/model/ListUploadsResult.h>
@@ -78,6 +79,8 @@
 #include <aws/devicefarm/model/StopJobResult.h>
 #include <aws/devicefarm/model/StopRemoteAccessSessionResult.h>
 #include <aws/devicefarm/model/StopRunResult.h>
+#include <aws/devicefarm/model/TagResourceResult.h>
+#include <aws/devicefarm/model/UntagResourceResult.h>
 #include <aws/devicefarm/model/UpdateDeviceInstanceResult.h>
 #include <aws/devicefarm/model/UpdateDevicePoolResult.h>
 #include <aws/devicefarm/model/UpdateInstanceProfileResult.h>
@@ -171,6 +174,7 @@ namespace Model
         class ListRunsRequest;
         class ListSamplesRequest;
         class ListSuitesRequest;
+        class ListTagsForResourceRequest;
         class ListTestsRequest;
         class ListUniqueProblemsRequest;
         class ListUploadsRequest;
@@ -181,6 +185,8 @@ namespace Model
         class StopJobRequest;
         class StopRemoteAccessSessionRequest;
         class StopRunRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateDeviceInstanceRequest;
         class UpdateDevicePoolRequest;
         class UpdateInstanceProfileRequest;
@@ -236,6 +242,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListRunsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListRunsOutcome;
         typedef Aws::Utils::Outcome<ListSamplesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListSamplesOutcome;
         typedef Aws::Utils::Outcome<ListSuitesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListSuitesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<DeviceFarmErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListTestsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListTestsOutcome;
         typedef Aws::Utils::Outcome<ListUniqueProblemsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListUniqueProblemsOutcome;
         typedef Aws::Utils::Outcome<ListUploadsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListUploadsOutcome;
@@ -246,6 +253,8 @@ namespace Model
         typedef Aws::Utils::Outcome<StopJobResult, Aws::Client::AWSError<DeviceFarmErrors>> StopJobOutcome;
         typedef Aws::Utils::Outcome<StopRemoteAccessSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> StopRemoteAccessSessionOutcome;
         typedef Aws::Utils::Outcome<StopRunResult, Aws::Client::AWSError<DeviceFarmErrors>> StopRunOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<DeviceFarmErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<DeviceFarmErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDeviceInstanceResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateDeviceInstanceOutcome;
         typedef Aws::Utils::Outcome<UpdateDevicePoolResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateDevicePoolOutcome;
         typedef Aws::Utils::Outcome<UpdateInstanceProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateInstanceProfileOutcome;
@@ -301,6 +310,7 @@ namespace Model
         typedef std::future<ListRunsOutcome> ListRunsOutcomeCallable;
         typedef std::future<ListSamplesOutcome> ListSamplesOutcomeCallable;
         typedef std::future<ListSuitesOutcome> ListSuitesOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListTestsOutcome> ListTestsOutcomeCallable;
         typedef std::future<ListUniqueProblemsOutcome> ListUniqueProblemsOutcomeCallable;
         typedef std::future<ListUploadsOutcome> ListUploadsOutcomeCallable;
@@ -311,6 +321,8 @@ namespace Model
         typedef std::future<StopJobOutcome> StopJobOutcomeCallable;
         typedef std::future<StopRemoteAccessSessionOutcome> StopRemoteAccessSessionOutcomeCallable;
         typedef std::future<StopRunOutcome> StopRunOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDeviceInstanceOutcome> UpdateDeviceInstanceOutcomeCallable;
         typedef std::future<UpdateDevicePoolOutcome> UpdateDevicePoolOutcomeCallable;
         typedef std::future<UpdateInstanceProfileOutcome> UpdateInstanceProfileOutcomeCallable;
@@ -369,6 +381,7 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::ListRunsRequest&, const Model::ListRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRunsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListSamplesRequest&, const Model::ListSamplesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSamplesResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListSuitesRequest&, const Model::ListSuitesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSuitesResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListTestsRequest&, const Model::ListTestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTestsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListUniqueProblemsRequest&, const Model::ListUniqueProblemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUniqueProblemsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListUploadsRequest&, const Model::ListUploadsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUploadsResponseReceivedHandler;
@@ -379,6 +392,8 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::StopJobRequest&, const Model::StopJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopJobResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::StopRemoteAccessSessionRequest&, const Model::StopRemoteAccessSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopRemoteAccessSessionResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::StopRunRequest&, const Model::StopRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopRunResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateDeviceInstanceRequest&, const Model::UpdateDeviceInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceInstanceResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateDevicePoolRequest&, const Model::UpdateDevicePoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDevicePoolResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateInstanceProfileRequest&, const Model::UpdateInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceProfileResponseReceivedHandler;
@@ -1747,6 +1762,31 @@ namespace Model
         virtual void ListSuitesAsync(const Model::ListSuitesRequest& request, const ListSuitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>List the tags for an AWS Device Farm resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>List the tags for an AWS Device Farm resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>List the tags for an AWS Device Farm resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about tests in a given test suite.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests">AWS
@@ -2078,6 +2118,68 @@ namespace Model
         virtual void StopRunAsync(const Model::StopRunRequest& request, const StopRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>. If existing tags on a resource are not specified in
+         * the request parameters, they are not changed. When a resource is deleted, the
+         * tags associated with that resource are deleted as well.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>. If existing tags on a resource are not specified in
+         * the request parameters, they are not changed. When a resource is deleted, the
+         * tags associated with that resource are deleted as well.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>. If existing tags on a resource are not specified in
+         * the request parameters, they are not changed. When a resource is deleted, the
+         * tags associated with that resource are deleted as well.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Deletes the specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Deletes the specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates information about an existing private device instance.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDeviceInstance">AWS
@@ -2327,6 +2429,7 @@ namespace Model
         void ListRunsAsyncHelper(const Model::ListRunsRequest& request, const ListRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSamplesAsyncHelper(const Model::ListSamplesRequest& request, const ListSamplesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSuitesAsyncHelper(const Model::ListSuitesRequest& request, const ListSuitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTestsAsyncHelper(const Model::ListTestsRequest& request, const ListTestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUniqueProblemsAsyncHelper(const Model::ListUniqueProblemsRequest& request, const ListUniqueProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUploadsAsyncHelper(const Model::ListUploadsRequest& request, const ListUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2337,6 +2440,8 @@ namespace Model
         void StopJobAsyncHelper(const Model::StopJobRequest& request, const StopJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopRemoteAccessSessionAsyncHelper(const Model::StopRemoteAccessSessionRequest& request, const StopRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopRunAsyncHelper(const Model::StopRunRequest& request, const StopRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDeviceInstanceAsyncHelper(const Model::UpdateDeviceInstanceRequest& request, const UpdateDeviceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDevicePoolAsyncHelper(const Model::UpdateDevicePoolRequest& request, const UpdateDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateInstanceProfileAsyncHelper(const Model::UpdateInstanceProfileRequest& request, const UpdateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

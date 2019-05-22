@@ -27,6 +27,8 @@ AuthorizeClientVpnIngressRequest::AuthorizeClientVpnIngressRequest() :
     m_authorizeAllGroups(false),
     m_authorizeAllGroupsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -59,6 +61,11 @@ Aws::String AuthorizeClientVpnIngressRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
   if(m_dryRunHasBeenSet)

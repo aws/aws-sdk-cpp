@@ -27,7 +27,8 @@ CreateUsagePlanRequest::CreateUsagePlanRequest() :
     m_descriptionHasBeenSet(false),
     m_apiStagesHasBeenSet(false),
     m_throttleHasBeenSet(false),
-    m_quotaHasBeenSet(false)
+    m_quotaHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,17 @@ Aws::String CreateUsagePlanRequest::SerializePayload() const
   if(m_quotaHasBeenSet)
   {
    payload.WithObject("quota", m_quota.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

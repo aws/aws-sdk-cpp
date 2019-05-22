@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 CreateVpcLinkRequest::CreateVpcLinkRequest() : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_targetArnsHasBeenSet(false)
+    m_targetArnsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,17 @@ Aws::String CreateVpcLinkRequest::SerializePayload() const
      targetArnsJsonList[targetArnsIndex].AsString(m_targetArns[targetArnsIndex]);
    }
    payload.WithArray("targetArns", std::move(targetArnsJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

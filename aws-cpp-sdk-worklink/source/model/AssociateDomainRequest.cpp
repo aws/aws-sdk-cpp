@@ -25,8 +25,8 @@ using namespace Aws::Utils;
 AssociateDomainRequest::AssociateDomainRequest() : 
     m_fleetArnHasBeenSet(false),
     m_domainNameHasBeenSet(false),
-    m_acmCertificateArnHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+    m_displayNameHasBeenSet(false),
+    m_acmCertificateArnHasBeenSet(false)
 {
 }
 
@@ -46,15 +46,15 @@ Aws::String AssociateDomainRequest::SerializePayload() const
 
   }
 
-  if(m_acmCertificateArnHasBeenSet)
-  {
-   payload.WithString("AcmCertificateArn", m_acmCertificateArn);
-
-  }
-
   if(m_displayNameHasBeenSet)
   {
    payload.WithString("DisplayName", m_displayName);
+
+  }
+
+  if(m_acmCertificateArnHasBeenSet)
+  {
+   payload.WithString("AcmCertificateArn", m_acmCertificateArn);
 
   }
 

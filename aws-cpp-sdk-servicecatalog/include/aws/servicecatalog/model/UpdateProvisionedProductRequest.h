@@ -107,49 +107,49 @@ namespace Model
 
 
     /**
-     * <p>The updated name of the provisioned product. You cannot specify both
+     * <p>The name of the provisioned product. You cannot specify both
      * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline const Aws::String& GetProvisionedProductName() const{ return m_provisionedProductName; }
 
     /**
-     * <p>The updated name of the provisioned product. You cannot specify both
+     * <p>The name of the provisioned product. You cannot specify both
      * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline bool ProvisionedProductNameHasBeenSet() const { return m_provisionedProductNameHasBeenSet; }
 
     /**
-     * <p>The updated name of the provisioned product. You cannot specify both
+     * <p>The name of the provisioned product. You cannot specify both
      * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline void SetProvisionedProductName(const Aws::String& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = value; }
 
     /**
-     * <p>The updated name of the provisioned product. You cannot specify both
+     * <p>The name of the provisioned product. You cannot specify both
      * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline void SetProvisionedProductName(Aws::String&& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = std::move(value); }
 
     /**
-     * <p>The updated name of the provisioned product. You cannot specify both
+     * <p>The name of the provisioned product. You cannot specify both
      * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline void SetProvisionedProductName(const char* value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName.assign(value); }
 
     /**
-     * <p>The updated name of the provisioned product. You cannot specify both
+     * <p>The name of the provisioned product. You cannot specify both
      * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline UpdateProvisionedProductRequest& WithProvisionedProductName(const Aws::String& value) { SetProvisionedProductName(value); return *this;}
 
     /**
-     * <p>The updated name of the provisioned product. You cannot specify both
+     * <p>The name of the provisioned product. You cannot specify both
      * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline UpdateProvisionedProductRequest& WithProvisionedProductName(Aws::String&& value) { SetProvisionedProductName(std::move(value)); return *this;}
 
     /**
-     * <p>The updated name of the provisioned product. You cannot specify both
+     * <p>The name of the provisioned product. You cannot specify both
      * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline UpdateProvisionedProductRequest& WithProvisionedProductName(const char* value) { SetProvisionedProductName(value); return *this;}

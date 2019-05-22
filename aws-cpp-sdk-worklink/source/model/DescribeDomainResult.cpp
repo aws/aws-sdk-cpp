@@ -40,6 +40,12 @@ DescribeDomainResult::DescribeDomainResult(const Aws::AmazonWebServiceResult<Jso
 DescribeDomainResult& DescribeDomainResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("DomainName"))
+  {
+    m_domainName = jsonValue.GetString("DomainName");
+
+  }
+
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
@@ -55,6 +61,12 @@ DescribeDomainResult& DescribeDomainResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("DomainStatus"))
   {
     m_domainStatus = DomainStatusMapper::GetDomainStatusForName(jsonValue.GetString("DomainStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("AcmCertificateArn"))
+  {
+    m_acmCertificateArn = jsonValue.GetString("AcmCertificateArn");
 
   }
 

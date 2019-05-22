@@ -31,7 +31,8 @@ CreateApiKeyRequest::CreateApiKeyRequest() :
     m_generateDistinctIdHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_stageKeysHasBeenSet(false),
-    m_customerIdHasBeenSet(false)
+    m_customerIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,17 @@ Aws::String CreateApiKeyRequest::SerializePayload() const
   if(m_customerIdHasBeenSet)
   {
    payload.WithString("customerId", m_customerId);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

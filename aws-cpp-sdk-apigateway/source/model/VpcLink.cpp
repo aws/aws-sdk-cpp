@@ -35,7 +35,8 @@ VpcLink::VpcLink() :
     m_targetArnsHasBeenSet(false),
     m_status(VpcLinkStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+    m_statusMessageHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ VpcLink::VpcLink(JsonView jsonValue) :
     m_targetArnsHasBeenSet(false),
     m_status(VpcLinkStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+    m_statusMessageHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +100,16 @@ VpcLink& VpcLink::operator =(JsonView jsonValue)
     m_statusMessageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -142,6 +154,17 @@ JsonValue VpcLink::Jsonize() const
   if(m_statusMessageHasBeenSet)
   {
    payload.WithString("statusMessage", m_statusMessage);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

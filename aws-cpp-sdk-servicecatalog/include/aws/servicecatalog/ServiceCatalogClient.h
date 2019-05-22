@@ -98,6 +98,7 @@
 #include <aws/servicecatalog/model/UpdatePortfolioResult.h>
 #include <aws/servicecatalog/model/UpdateProductResult.h>
 #include <aws/servicecatalog/model/UpdateProvisionedProductResult.h>
+#include <aws/servicecatalog/model/UpdateProvisionedProductPropertiesResult.h>
 #include <aws/servicecatalog/model/UpdateProvisioningArtifactResult.h>
 #include <aws/servicecatalog/model/UpdateServiceActionResult.h>
 #include <aws/servicecatalog/model/UpdateTagOptionResult.h>
@@ -217,6 +218,7 @@ namespace Model
         class UpdatePortfolioRequest;
         class UpdateProductRequest;
         class UpdateProvisionedProductRequest;
+        class UpdateProvisionedProductPropertiesRequest;
         class UpdateProvisioningArtifactRequest;
         class UpdateServiceActionRequest;
         class UpdateTagOptionRequest;
@@ -298,6 +300,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdatePortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> UpdatePortfolioOutcome;
         typedef Aws::Utils::Outcome<UpdateProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> UpdateProductOutcome;
         typedef Aws::Utils::Outcome<UpdateProvisionedProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> UpdateProvisionedProductOutcome;
+        typedef Aws::Utils::Outcome<UpdateProvisionedProductPropertiesResult, Aws::Client::AWSError<ServiceCatalogErrors>> UpdateProvisionedProductPropertiesOutcome;
         typedef Aws::Utils::Outcome<UpdateProvisioningArtifactResult, Aws::Client::AWSError<ServiceCatalogErrors>> UpdateProvisioningArtifactOutcome;
         typedef Aws::Utils::Outcome<UpdateServiceActionResult, Aws::Client::AWSError<ServiceCatalogErrors>> UpdateServiceActionOutcome;
         typedef Aws::Utils::Outcome<UpdateTagOptionResult, Aws::Client::AWSError<ServiceCatalogErrors>> UpdateTagOptionOutcome;
@@ -379,6 +382,7 @@ namespace Model
         typedef std::future<UpdatePortfolioOutcome> UpdatePortfolioOutcomeCallable;
         typedef std::future<UpdateProductOutcome> UpdateProductOutcomeCallable;
         typedef std::future<UpdateProvisionedProductOutcome> UpdateProvisionedProductOutcomeCallable;
+        typedef std::future<UpdateProvisionedProductPropertiesOutcome> UpdateProvisionedProductPropertiesOutcomeCallable;
         typedef std::future<UpdateProvisioningArtifactOutcome> UpdateProvisioningArtifactOutcomeCallable;
         typedef std::future<UpdateServiceActionOutcome> UpdateServiceActionOutcomeCallable;
         typedef std::future<UpdateTagOptionOutcome> UpdateTagOptionOutcomeCallable;
@@ -463,6 +467,7 @@ namespace Model
     typedef std::function<void(const ServiceCatalogClient*, const Model::UpdatePortfolioRequest&, const Model::UpdatePortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePortfolioResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::UpdateProductRequest&, const Model::UpdateProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProductResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::UpdateProvisionedProductRequest&, const Model::UpdateProvisionedProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProvisionedProductResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::UpdateProvisionedProductPropertiesRequest&, const Model::UpdateProvisionedProductPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProvisionedProductPropertiesResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::UpdateProvisioningArtifactRequest&, const Model::UpdateProvisioningArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProvisioningArtifactResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::UpdateServiceActionRequest&, const Model::UpdateServiceActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceActionResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::UpdateTagOptionRequest&, const Model::UpdateTagOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTagOptionResponseReceivedHandler;
@@ -1562,7 +1567,12 @@ namespace Model
          * <p>Gets information about the specified request operation.</p> <p>Use this
          * operation after calling a request operation (for example,
          * <a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>, or
-         * <a>UpdateProvisionedProduct</a>). </p><p><h3>See Also:</h3>   <a
+         * <a>UpdateProvisionedProduct</a>). </p> <note> <p>If a provisioned product was
+         * transferred to a new owner using <a>UpdateProvisionedProductProperties</a>, the
+         * new owner will be able to describe all past records for that product. The
+         * previous owner will no longer be able to describe the records, but will be able
+         * to use <a>ListRecordHistory</a> to see the product's history from when he was
+         * the owner.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord">AWS
          * API Reference</a></p>
          */
@@ -1572,7 +1582,12 @@ namespace Model
          * <p>Gets information about the specified request operation.</p> <p>Use this
          * operation after calling a request operation (for example,
          * <a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>, or
-         * <a>UpdateProvisionedProduct</a>). </p><p><h3>See Also:</h3>   <a
+         * <a>UpdateProvisionedProduct</a>). </p> <note> <p>If a provisioned product was
+         * transferred to a new owner using <a>UpdateProvisionedProductProperties</a>, the
+         * new owner will be able to describe all past records for that product. The
+         * previous owner will no longer be able to describe the records, but will be able
+         * to use <a>ListRecordHistory</a> to see the product's history from when he was
+         * the owner.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord">AWS
          * API Reference</a></p>
          *
@@ -1584,7 +1599,12 @@ namespace Model
          * <p>Gets information about the specified request operation.</p> <p>Use this
          * operation after calling a request operation (for example,
          * <a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>, or
-         * <a>UpdateProvisionedProduct</a>). </p><p><h3>See Also:</h3>   <a
+         * <a>UpdateProvisionedProduct</a>). </p> <note> <p>If a provisioned product was
+         * transferred to a new owner using <a>UpdateProvisionedProductProperties</a>, the
+         * new owner will be able to describe all past records for that product. The
+         * previous owner will no longer be able to describe the records, but will be able
+         * to use <a>ListRecordHistory</a> to see the product's history from when he was
+         * the owner.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord">AWS
          * API Reference</a></p>
          *
@@ -2776,6 +2796,34 @@ namespace Model
         virtual void UpdateProvisionedProductAsync(const Model::UpdateProvisionedProductRequest& request, const UpdateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Requests updates to the properties of the specified provisioned
+         * product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProductProperties">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateProvisionedProductPropertiesOutcome UpdateProvisionedProductProperties(const Model::UpdateProvisionedProductPropertiesRequest& request) const;
+
+        /**
+         * <p>Requests updates to the properties of the specified provisioned
+         * product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProductProperties">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateProvisionedProductPropertiesOutcomeCallable UpdateProvisionedProductPropertiesCallable(const Model::UpdateProvisionedProductPropertiesRequest& request) const;
+
+        /**
+         * <p>Requests updates to the properties of the specified provisioned
+         * product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProductProperties">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateProvisionedProductPropertiesAsync(const Model::UpdateProvisionedProductPropertiesRequest& request, const UpdateProvisionedProductPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the specified provisioning artifact (also known as a version) for the
          * specified product.</p> <p>You cannot update a provisioning artifact for a
          * product that was shared with you.</p><p><h3>See Also:</h3>   <a
@@ -2937,6 +2985,7 @@ namespace Model
         void UpdatePortfolioAsyncHelper(const Model::UpdatePortfolioRequest& request, const UpdatePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProductAsyncHelper(const Model::UpdateProductRequest& request, const UpdateProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProvisionedProductAsyncHelper(const Model::UpdateProvisionedProductRequest& request, const UpdateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateProvisionedProductPropertiesAsyncHelper(const Model::UpdateProvisionedProductPropertiesRequest& request, const UpdateProvisionedProductPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProvisioningArtifactAsyncHelper(const Model::UpdateProvisioningArtifactRequest& request, const UpdateProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateServiceActionAsyncHelper(const Model::UpdateServiceActionRequest& request, const UpdateServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTagOptionAsyncHelper(const Model::UpdateTagOptionRequest& request, const UpdateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

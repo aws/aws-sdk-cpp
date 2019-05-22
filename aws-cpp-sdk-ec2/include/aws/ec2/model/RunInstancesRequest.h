@@ -131,50 +131,58 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AMI. An AMI is required to launch an instance and must be
-     * specified here or in a launch template.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * ID is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
 
     /**
-     * <p>The ID of the AMI. An AMI is required to launch an instance and must be
-     * specified here or in a launch template.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * ID is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AMI. An AMI is required to launch an instance and must be
-     * specified here or in a launch template.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * ID is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
-     * <p>The ID of the AMI. An AMI is required to launch an instance and must be
-     * specified here or in a launch template.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * ID is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
-     * <p>The ID of the AMI. An AMI is required to launch an instance and must be
-     * specified here or in a launch template.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * ID is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
 
     /**
-     * <p>The ID of the AMI. An AMI is required to launch an instance and must be
-     * specified here or in a launch template.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * ID is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline RunInstancesRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
 
     /**
-     * <p>The ID of the AMI. An AMI is required to launch an instance and must be
-     * specified here or in a launch template.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * ID is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline RunInstancesRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AMI. An AMI is required to launch an instance and must be
-     * specified here or in a launch template.</p>
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * ID is required to launch an instance and must be specified here or in a launch
+     * template.</p>
      */
     inline RunInstancesRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
 
@@ -1158,44 +1166,44 @@ namespace Model
     /**
      * <p>If you set this parameter to <code>true</code>, you can't terminate the
      * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
-     * change this attribute to <code>false</code> after launch, use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
-     * Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
-     * <code>terminate</code>, you can terminate the instance by running the shutdown
-     * command from the instance.</p> <p>Default: <code>false</code> </p>
+     * change this attribute to <code>false</code> after launch, use
+     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
+     * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you
+     * can terminate the instance by running the shutdown command from the
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetDisableApiTermination() const{ return m_disableApiTermination; }
 
     /**
      * <p>If you set this parameter to <code>true</code>, you can't terminate the
      * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
-     * change this attribute to <code>false</code> after launch, use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
-     * Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
-     * <code>terminate</code>, you can terminate the instance by running the shutdown
-     * command from the instance.</p> <p>Default: <code>false</code> </p>
+     * change this attribute to <code>false</code> after launch, use
+     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
+     * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you
+     * can terminate the instance by running the shutdown command from the
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline bool DisableApiTerminationHasBeenSet() const { return m_disableApiTerminationHasBeenSet; }
 
     /**
      * <p>If you set this parameter to <code>true</code>, you can't terminate the
      * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
-     * change this attribute to <code>false</code> after launch, use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
-     * Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
-     * <code>terminate</code>, you can terminate the instance by running the shutdown
-     * command from the instance.</p> <p>Default: <code>false</code> </p>
+     * change this attribute to <code>false</code> after launch, use
+     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
+     * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you
+     * can terminate the instance by running the shutdown command from the
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetDisableApiTermination(bool value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = value; }
 
     /**
      * <p>If you set this parameter to <code>true</code>, you can't terminate the
      * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
-     * change this attribute to <code>false</code> after launch, use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
-     * Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
-     * <code>terminate</code>, you can terminate the instance by running the shutdown
-     * command from the instance.</p> <p>Default: <code>false</code> </p>
+     * change this attribute to <code>false</code> after launch, use
+     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
+     * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you
+     * can terminate the instance by running the shutdown command from the
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline RunInstancesRequest& WithDisableApiTermination(bool value) { SetDisableApiTermination(value); return *this;}
 

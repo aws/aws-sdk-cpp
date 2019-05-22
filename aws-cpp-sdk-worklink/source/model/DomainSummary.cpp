@@ -30,19 +30,19 @@ namespace Model
 
 DomainSummary::DomainSummary() : 
     m_domainNameHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_domainStatus(DomainStatus::NOT_SET),
-    m_domainStatusHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+    m_domainStatusHasBeenSet(false)
 {
 }
 
 DomainSummary::DomainSummary(JsonView jsonValue) : 
     m_domainNameHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_domainStatus(DomainStatus::NOT_SET),
-    m_domainStatusHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+    m_domainStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -54,6 +54,13 @@ DomainSummary& DomainSummary::operator =(JsonView jsonValue)
     m_domainName = jsonValue.GetString("DomainName");
 
     m_domainNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DisplayName"))
+  {
+    m_displayName = jsonValue.GetString("DisplayName");
+
+    m_displayNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreatedTime"))
@@ -70,13 +77,6 @@ DomainSummary& DomainSummary::operator =(JsonView jsonValue)
     m_domainStatusHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("DisplayName"))
-  {
-    m_displayName = jsonValue.GetString("DisplayName");
-
-    m_displayNameHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -90,6 +90,12 @@ JsonValue DomainSummary::Jsonize() const
 
   }
 
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("DisplayName", m_displayName);
+
+  }
+
   if(m_createdTimeHasBeenSet)
   {
    payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
@@ -98,12 +104,6 @@ JsonValue DomainSummary::Jsonize() const
   if(m_domainStatusHasBeenSet)
   {
    payload.WithString("DomainStatus", DomainStatusMapper::GetNameForDomainStatus(m_domainStatus));
-  }
-
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("DisplayName", m_displayName);
-
   }
 
   return payload;

@@ -45,6 +45,42 @@ namespace Model
 
 
     /**
+     * <p>The name of the domain.</p>
+     */
+    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
+    /**
+     * <p>The name of the domain.</p>
+     */
+    inline void SetDomainName(const Aws::String& value) { m_domainName = value; }
+
+    /**
+     * <p>The name of the domain.</p>
+     */
+    inline void SetDomainName(Aws::String&& value) { m_domainName = std::move(value); }
+
+    /**
+     * <p>The name of the domain.</p>
+     */
+    inline void SetDomainName(const char* value) { m_domainName.assign(value); }
+
+    /**
+     * <p>The name of the domain.</p>
+     */
+    inline DescribeDomainResult& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
+
+    /**
+     * <p>The name of the domain.</p>
+     */
+    inline DescribeDomainResult& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the domain.</p>
+     */
+    inline DescribeDomainResult& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
+
+    /**
      * <p>The name to display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
@@ -131,13 +167,60 @@ namespace Model
      */
     inline DescribeDomainResult& WithDomainStatus(DomainStatus&& value) { SetDomainStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN of an issued ACM certificate that is valid for the domain being
+     * associated.</p>
+     */
+    inline const Aws::String& GetAcmCertificateArn() const{ return m_acmCertificateArn; }
+
+    /**
+     * <p>The ARN of an issued ACM certificate that is valid for the domain being
+     * associated.</p>
+     */
+    inline void SetAcmCertificateArn(const Aws::String& value) { m_acmCertificateArn = value; }
+
+    /**
+     * <p>The ARN of an issued ACM certificate that is valid for the domain being
+     * associated.</p>
+     */
+    inline void SetAcmCertificateArn(Aws::String&& value) { m_acmCertificateArn = std::move(value); }
+
+    /**
+     * <p>The ARN of an issued ACM certificate that is valid for the domain being
+     * associated.</p>
+     */
+    inline void SetAcmCertificateArn(const char* value) { m_acmCertificateArn.assign(value); }
+
+    /**
+     * <p>The ARN of an issued ACM certificate that is valid for the domain being
+     * associated.</p>
+     */
+    inline DescribeDomainResult& WithAcmCertificateArn(const Aws::String& value) { SetAcmCertificateArn(value); return *this;}
+
+    /**
+     * <p>The ARN of an issued ACM certificate that is valid for the domain being
+     * associated.</p>
+     */
+    inline DescribeDomainResult& WithAcmCertificateArn(Aws::String&& value) { SetAcmCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of an issued ACM certificate that is valid for the domain being
+     * associated.</p>
+     */
+    inline DescribeDomainResult& WithAcmCertificateArn(const char* value) { SetAcmCertificateArn(value); return *this;}
+
   private:
+
+    Aws::String m_domainName;
 
     Aws::String m_displayName;
 
     Aws::Utils::DateTime m_createdTime;
 
     DomainStatus m_domainStatus;
+
+    Aws::String m_acmCertificateArn;
   };
 
 } // namespace Model

@@ -61,56 +61,56 @@ namespace Model
 
 
     /**
-     * <p>The name of a budget. The name must be unique within accounts. The
+     * <p>The name of a budget. The name must be unique within an account. The
      * <code>:</code> and <code>\</code> characters aren't allowed in
      * <code>BudgetName</code>.</p>
      */
     inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
 
     /**
-     * <p>The name of a budget. The name must be unique within accounts. The
+     * <p>The name of a budget. The name must be unique within an account. The
      * <code>:</code> and <code>\</code> characters aren't allowed in
      * <code>BudgetName</code>.</p>
      */
     inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
 
     /**
-     * <p>The name of a budget. The name must be unique within accounts. The
+     * <p>The name of a budget. The name must be unique within an account. The
      * <code>:</code> and <code>\</code> characters aren't allowed in
      * <code>BudgetName</code>.</p>
      */
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
 
     /**
-     * <p>The name of a budget. The name must be unique within accounts. The
+     * <p>The name of a budget. The name must be unique within an account. The
      * <code>:</code> and <code>\</code> characters aren't allowed in
      * <code>BudgetName</code>.</p>
      */
     inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
 
     /**
-     * <p>The name of a budget. The name must be unique within accounts. The
+     * <p>The name of a budget. The name must be unique within an account. The
      * <code>:</code> and <code>\</code> characters aren't allowed in
      * <code>BudgetName</code>.</p>
      */
     inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
 
     /**
-     * <p>The name of a budget. The name must be unique within accounts. The
+     * <p>The name of a budget. The name must be unique within an account. The
      * <code>:</code> and <code>\</code> characters aren't allowed in
      * <code>BudgetName</code>.</p>
      */
     inline Budget& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
 
     /**
-     * <p>The name of a budget. The name must be unique within accounts. The
+     * <p>The name of a budget. The name must be unique within an account. The
      * <code>:</code> and <code>\</code> characters aren't allowed in
      * <code>BudgetName</code>.</p>
      */
     inline Budget& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a budget. The name must be unique within accounts. The
+     * <p>The name of a budget. The name must be unique within an account. The
      * <code>:</code> and <code>\</code> characters aren't allowed in
      * <code>BudgetName</code>.</p>
      */
@@ -122,7 +122,9 @@ namespace Model
      * to track with your budget.</p> <p> <code>BudgetLimit</code> is required for cost
      * or usage budgets, but optional for RI utilization or coverage budgets. RI
      * utilization or coverage budgets default to <code>100</code>, which is the only
-     * valid value for RI utilization or coverage budgets.</p>
+     * valid value for RI utilization or coverage budgets. You can't use
+     * <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
+     * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
      */
     inline const Spend& GetBudgetLimit() const{ return m_budgetLimit; }
 
@@ -131,7 +133,9 @@ namespace Model
      * to track with your budget.</p> <p> <code>BudgetLimit</code> is required for cost
      * or usage budgets, but optional for RI utilization or coverage budgets. RI
      * utilization or coverage budgets default to <code>100</code>, which is the only
-     * valid value for RI utilization or coverage budgets.</p>
+     * valid value for RI utilization or coverage budgets. You can't use
+     * <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
+     * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
      */
     inline bool BudgetLimitHasBeenSet() const { return m_budgetLimitHasBeenSet; }
 
@@ -140,7 +144,9 @@ namespace Model
      * to track with your budget.</p> <p> <code>BudgetLimit</code> is required for cost
      * or usage budgets, but optional for RI utilization or coverage budgets. RI
      * utilization or coverage budgets default to <code>100</code>, which is the only
-     * valid value for RI utilization or coverage budgets.</p>
+     * valid value for RI utilization or coverage budgets. You can't use
+     * <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
+     * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
      */
     inline void SetBudgetLimit(const Spend& value) { m_budgetLimitHasBeenSet = true; m_budgetLimit = value; }
 
@@ -149,7 +155,9 @@ namespace Model
      * to track with your budget.</p> <p> <code>BudgetLimit</code> is required for cost
      * or usage budgets, but optional for RI utilization or coverage budgets. RI
      * utilization or coverage budgets default to <code>100</code>, which is the only
-     * valid value for RI utilization or coverage budgets.</p>
+     * valid value for RI utilization or coverage budgets. You can't use
+     * <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
+     * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
      */
     inline void SetBudgetLimit(Spend&& value) { m_budgetLimitHasBeenSet = true; m_budgetLimit = std::move(value); }
 
@@ -158,7 +166,9 @@ namespace Model
      * to track with your budget.</p> <p> <code>BudgetLimit</code> is required for cost
      * or usage budgets, but optional for RI utilization or coverage budgets. RI
      * utilization or coverage budgets default to <code>100</code>, which is the only
-     * valid value for RI utilization or coverage budgets.</p>
+     * valid value for RI utilization or coverage budgets. You can't use
+     * <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
+     * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
      */
     inline Budget& WithBudgetLimit(const Spend& value) { SetBudgetLimit(value); return *this;}
 
@@ -167,128 +177,491 @@ namespace Model
      * to track with your budget.</p> <p> <code>BudgetLimit</code> is required for cost
      * or usage budgets, but optional for RI utilization or coverage budgets. RI
      * utilization or coverage budgets default to <code>100</code>, which is the only
-     * valid value for RI utilization or coverage budgets.</p>
+     * valid value for RI utilization or coverage budgets. You can't use
+     * <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
+     * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
      */
     inline Budget& WithBudgetLimit(Spend&& value) { SetBudgetLimit(std::move(value)); return *this;}
 
 
     /**
-     * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
-     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
-     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
-     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
-     * Service</p> </li> </ul>
+     * <p>A map containing multiple <code>BudgetLimit</code>, including current or
+     * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
+     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
+     * values. This must start from the current month and include the next 11 months.
+     * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
+     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
+     * increments. This must start from the current quarter and include the next 3
+     * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
+     * epoch seconds. </p> <p>If the planned budget expires before 12 months for
+     * monthly or 4 quarters for quarterly, provide the
+     * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
+     * <p>If the budget begins at a date in the future, provide
+     * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
+     * <p>After all of the <code>BudgetLimit</code> values in
+     * <code>PlannedBudgetLimits</code> are used, the budget continues to use the last
+     * limit as the <code>BudgetLimit</code>. At that point, the planned budget
+     * provides the same experience as a fixed budget. </p> <p>
+     * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
+     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * representing the current month or quarter limit present in
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
+     * <code>PlannedBudgetLimits</code>. Budgets created without
+     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
+     * no <code>PlannedBudgetLimits</code>.</p>
+     */
+    inline const Aws::Map<Aws::String, Spend>& GetPlannedBudgetLimits() const{ return m_plannedBudgetLimits; }
+
+    /**
+     * <p>A map containing multiple <code>BudgetLimit</code>, including current or
+     * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
+     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
+     * values. This must start from the current month and include the next 11 months.
+     * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
+     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
+     * increments. This must start from the current quarter and include the next 3
+     * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
+     * epoch seconds. </p> <p>If the planned budget expires before 12 months for
+     * monthly or 4 quarters for quarterly, provide the
+     * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
+     * <p>If the budget begins at a date in the future, provide
+     * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
+     * <p>After all of the <code>BudgetLimit</code> values in
+     * <code>PlannedBudgetLimits</code> are used, the budget continues to use the last
+     * limit as the <code>BudgetLimit</code>. At that point, the planned budget
+     * provides the same experience as a fixed budget. </p> <p>
+     * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
+     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * representing the current month or quarter limit present in
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
+     * <code>PlannedBudgetLimits</code>. Budgets created without
+     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
+     * no <code>PlannedBudgetLimits</code>.</p>
+     */
+    inline bool PlannedBudgetLimitsHasBeenSet() const { return m_plannedBudgetLimitsHasBeenSet; }
+
+    /**
+     * <p>A map containing multiple <code>BudgetLimit</code>, including current or
+     * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
+     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
+     * values. This must start from the current month and include the next 11 months.
+     * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
+     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
+     * increments. This must start from the current quarter and include the next 3
+     * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
+     * epoch seconds. </p> <p>If the planned budget expires before 12 months for
+     * monthly or 4 quarters for quarterly, provide the
+     * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
+     * <p>If the budget begins at a date in the future, provide
+     * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
+     * <p>After all of the <code>BudgetLimit</code> values in
+     * <code>PlannedBudgetLimits</code> are used, the budget continues to use the last
+     * limit as the <code>BudgetLimit</code>. At that point, the planned budget
+     * provides the same experience as a fixed budget. </p> <p>
+     * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
+     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * representing the current month or quarter limit present in
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
+     * <code>PlannedBudgetLimits</code>. Budgets created without
+     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
+     * no <code>PlannedBudgetLimits</code>.</p>
+     */
+    inline void SetPlannedBudgetLimits(const Aws::Map<Aws::String, Spend>& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits = value; }
+
+    /**
+     * <p>A map containing multiple <code>BudgetLimit</code>, including current or
+     * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
+     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
+     * values. This must start from the current month and include the next 11 months.
+     * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
+     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
+     * increments. This must start from the current quarter and include the next 3
+     * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
+     * epoch seconds. </p> <p>If the planned budget expires before 12 months for
+     * monthly or 4 quarters for quarterly, provide the
+     * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
+     * <p>If the budget begins at a date in the future, provide
+     * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
+     * <p>After all of the <code>BudgetLimit</code> values in
+     * <code>PlannedBudgetLimits</code> are used, the budget continues to use the last
+     * limit as the <code>BudgetLimit</code>. At that point, the planned budget
+     * provides the same experience as a fixed budget. </p> <p>
+     * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
+     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * representing the current month or quarter limit present in
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
+     * <code>PlannedBudgetLimits</code>. Budgets created without
+     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
+     * no <code>PlannedBudgetLimits</code>.</p>
+     */
+    inline void SetPlannedBudgetLimits(Aws::Map<Aws::String, Spend>&& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits = std::move(value); }
+
+    /**
+     * <p>A map containing multiple <code>BudgetLimit</code>, including current or
+     * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
+     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
+     * values. This must start from the current month and include the next 11 months.
+     * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
+     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
+     * increments. This must start from the current quarter and include the next 3
+     * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
+     * epoch seconds. </p> <p>If the planned budget expires before 12 months for
+     * monthly or 4 quarters for quarterly, provide the
+     * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
+     * <p>If the budget begins at a date in the future, provide
+     * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
+     * <p>After all of the <code>BudgetLimit</code> values in
+     * <code>PlannedBudgetLimits</code> are used, the budget continues to use the last
+     * limit as the <code>BudgetLimit</code>. At that point, the planned budget
+     * provides the same experience as a fixed budget. </p> <p>
+     * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
+     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * representing the current month or quarter limit present in
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
+     * <code>PlannedBudgetLimits</code>. Budgets created without
+     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
+     * no <code>PlannedBudgetLimits</code>.</p>
+     */
+    inline Budget& WithPlannedBudgetLimits(const Aws::Map<Aws::String, Spend>& value) { SetPlannedBudgetLimits(value); return *this;}
+
+    /**
+     * <p>A map containing multiple <code>BudgetLimit</code>, including current or
+     * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
+     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
+     * values. This must start from the current month and include the next 11 months.
+     * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
+     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
+     * increments. This must start from the current quarter and include the next 3
+     * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
+     * epoch seconds. </p> <p>If the planned budget expires before 12 months for
+     * monthly or 4 quarters for quarterly, provide the
+     * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
+     * <p>If the budget begins at a date in the future, provide
+     * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
+     * <p>After all of the <code>BudgetLimit</code> values in
+     * <code>PlannedBudgetLimits</code> are used, the budget continues to use the last
+     * limit as the <code>BudgetLimit</code>. At that point, the planned budget
+     * provides the same experience as a fixed budget. </p> <p>
+     * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
+     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * representing the current month or quarter limit present in
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
+     * <code>PlannedBudgetLimits</code>. Budgets created without
+     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
+     * no <code>PlannedBudgetLimits</code>.</p>
+     */
+    inline Budget& WithPlannedBudgetLimits(Aws::Map<Aws::String, Spend>&& value) { SetPlannedBudgetLimits(std::move(value)); return *this;}
+
+    /**
+     * <p>A map containing multiple <code>BudgetLimit</code>, including current or
+     * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
+     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
+     * values. This must start from the current month and include the next 11 months.
+     * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
+     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
+     * increments. This must start from the current quarter and include the next 3
+     * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
+     * epoch seconds. </p> <p>If the planned budget expires before 12 months for
+     * monthly or 4 quarters for quarterly, provide the
+     * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
+     * <p>If the budget begins at a date in the future, provide
+     * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
+     * <p>After all of the <code>BudgetLimit</code> values in
+     * <code>PlannedBudgetLimits</code> are used, the budget continues to use the last
+     * limit as the <code>BudgetLimit</code>. At that point, the planned budget
+     * provides the same experience as a fixed budget. </p> <p>
+     * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
+     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * representing the current month or quarter limit present in
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
+     * <code>PlannedBudgetLimits</code>. Budgets created without
+     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
+     * no <code>PlannedBudgetLimits</code>.</p>
+     */
+    inline Budget& AddPlannedBudgetLimits(const Aws::String& key, const Spend& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map containing multiple <code>BudgetLimit</code>, including current or
+     * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
+     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
+     * values. This must start from the current month and include the next 11 months.
+     * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
+     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
+     * increments. This must start from the current quarter and include the next 3
+     * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
+     * epoch seconds. </p> <p>If the planned budget expires before 12 months for
+     * monthly or 4 quarters for quarterly, provide the
+     * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
+     * <p>If the budget begins at a date in the future, provide
+     * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
+     * <p>After all of the <code>BudgetLimit</code> values in
+     * <code>PlannedBudgetLimits</code> are used, the budget continues to use the last
+     * limit as the <code>BudgetLimit</code>. At that point, the planned budget
+     * provides the same experience as a fixed budget. </p> <p>
+     * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
+     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * representing the current month or quarter limit present in
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
+     * <code>PlannedBudgetLimits</code>. Budgets created without
+     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
+     * no <code>PlannedBudgetLimits</code>.</p>
+     */
+    inline Budget& AddPlannedBudgetLimits(Aws::String&& key, const Spend& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map containing multiple <code>BudgetLimit</code>, including current or
+     * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
+     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
+     * values. This must start from the current month and include the next 11 months.
+     * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
+     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
+     * increments. This must start from the current quarter and include the next 3
+     * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
+     * epoch seconds. </p> <p>If the planned budget expires before 12 months for
+     * monthly or 4 quarters for quarterly, provide the
+     * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
+     * <p>If the budget begins at a date in the future, provide
+     * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
+     * <p>After all of the <code>BudgetLimit</code> values in
+     * <code>PlannedBudgetLimits</code> are used, the budget continues to use the last
+     * limit as the <code>BudgetLimit</code>. At that point, the planned budget
+     * provides the same experience as a fixed budget. </p> <p>
+     * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
+     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * representing the current month or quarter limit present in
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
+     * <code>PlannedBudgetLimits</code>. Budgets created without
+     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
+     * no <code>PlannedBudgetLimits</code>.</p>
+     */
+    inline Budget& AddPlannedBudgetLimits(const Aws::String& key, Spend&& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map containing multiple <code>BudgetLimit</code>, including current or
+     * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
+     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
+     * values. This must start from the current month and include the next 11 months.
+     * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
+     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
+     * increments. This must start from the current quarter and include the next 3
+     * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
+     * epoch seconds. </p> <p>If the planned budget expires before 12 months for
+     * monthly or 4 quarters for quarterly, provide the
+     * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
+     * <p>If the budget begins at a date in the future, provide
+     * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
+     * <p>After all of the <code>BudgetLimit</code> values in
+     * <code>PlannedBudgetLimits</code> are used, the budget continues to use the last
+     * limit as the <code>BudgetLimit</code>. At that point, the planned budget
+     * provides the same experience as a fixed budget. </p> <p>
+     * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
+     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * representing the current month or quarter limit present in
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
+     * <code>PlannedBudgetLimits</code>. Budgets created without
+     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
+     * no <code>PlannedBudgetLimits</code>.</p>
+     */
+    inline Budget& AddPlannedBudgetLimits(Aws::String&& key, Spend&& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map containing multiple <code>BudgetLimit</code>, including current or
+     * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
+     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
+     * values. This must start from the current month and include the next 11 months.
+     * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
+     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
+     * increments. This must start from the current quarter and include the next 3
+     * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
+     * epoch seconds. </p> <p>If the planned budget expires before 12 months for
+     * monthly or 4 quarters for quarterly, provide the
+     * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
+     * <p>If the budget begins at a date in the future, provide
+     * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
+     * <p>After all of the <code>BudgetLimit</code> values in
+     * <code>PlannedBudgetLimits</code> are used, the budget continues to use the last
+     * limit as the <code>BudgetLimit</code>. At that point, the planned budget
+     * provides the same experience as a fixed budget. </p> <p>
+     * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
+     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * representing the current month or quarter limit present in
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
+     * <code>PlannedBudgetLimits</code>. Budgets created without
+     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
+     * no <code>PlannedBudgetLimits</code>.</p>
+     */
+    inline Budget& AddPlannedBudgetLimits(const char* key, Spend&& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map containing multiple <code>BudgetLimit</code>, including current or
+     * future limits.</p> <p> <code>PlannedBudgetLimits</code> is available for cost or
+     * usage budget and supports monthly and quarterly <code>TimeUnit</code>. </p>
+     * <p>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code>
+     * values. This must start from the current month and include the next 11 months.
+     * The <code>key</code> is the start of the month, <code>UTC</code> in epoch
+     * seconds. </p> <p>For quarterly budgets, provide 4 quarters of
+     * <code>PlannedBudgetLimits</code> value entries in standard calendar quarter
+     * increments. This must start from the current quarter and include the next 3
+     * quarters. The <code>key</code> is the start of the quarter, <code>UTC</code> in
+     * epoch seconds. </p> <p>If the planned budget expires before 12 months for
+     * monthly or 4 quarters for quarterly, provide the
+     * <code>PlannedBudgetLimits</code> values only for the remaining periods.</p>
+     * <p>If the budget begins at a date in the future, provide
+     * <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
+     * <p>After all of the <code>BudgetLimit</code> values in
+     * <code>PlannedBudgetLimits</code> are used, the budget continues to use the last
+     * limit as the <code>BudgetLimit</code>. At that point, the planned budget
+     * provides the same experience as a fixed budget. </p> <p>
+     * <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
+     * <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code>
+     * representing the current month or quarter limit present in
+     * <code>PlannedBudgetLimits</code>. This only applies to budgets created with
+     * <code>PlannedBudgetLimits</code>. Budgets created without
+     * <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>, and
+     * no <code>PlannedBudgetLimits</code>.</p>
+     */
+    inline Budget& AddPlannedBudgetLimits(const char* key, const Spend& value) { m_plannedBudgetLimitsHasBeenSet = true; m_plannedBudgetLimits.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
+     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
+     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
+     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
+     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
+     * </ul>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetCostFilters() const{ return m_costFilters; }
 
     /**
-     * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
-     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
-     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
-     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
-     * Service</p> </li> </ul>
+     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
+     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
+     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
+     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
+     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
+     * </ul>
      */
     inline bool CostFiltersHasBeenSet() const { return m_costFiltersHasBeenSet; }
 
     /**
-     * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
-     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
-     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
-     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
-     * Service</p> </li> </ul>
+     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
+     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
+     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
+     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
+     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
+     * </ul>
      */
     inline void SetCostFilters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_costFiltersHasBeenSet = true; m_costFilters = value; }
 
     /**
-     * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
-     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
-     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
-     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
-     * Service</p> </li> </ul>
+     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
+     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
+     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
+     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
+     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
+     * </ul>
      */
     inline void SetCostFilters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_costFiltersHasBeenSet = true; m_costFilters = std::move(value); }
 
     /**
-     * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
-     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
-     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
-     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
-     * Service</p> </li> </ul>
+     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
+     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
+     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
+     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
+     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
+     * </ul>
      */
     inline Budget& WithCostFilters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetCostFilters(value); return *this;}
 
     /**
-     * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
-     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
-     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
-     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
-     * Service</p> </li> </ul>
+     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
+     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
+     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
+     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
+     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
+     * </ul>
      */
     inline Budget& WithCostFilters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetCostFilters(std::move(value)); return *this;}
 
     /**
-     * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
-     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
-     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
-     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
-     * Service</p> </li> </ul>
+     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
+     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
+     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
+     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
+     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
+     * </ul>
      */
     inline Budget& AddCostFilters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, value); return *this; }
 
     /**
-     * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
-     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
-     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
-     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
-     * Service</p> </li> </ul>
+     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
+     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
+     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
+     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
+     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
+     * </ul>
      */
     inline Budget& AddCostFilters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
-     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
-     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
-     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
-     * Service</p> </li> </ul>
+     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
+     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
+     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
+     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
+     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
+     * </ul>
      */
     inline Budget& AddCostFilters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
-     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
-     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
-     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
-     * Service</p> </li> </ul>
+     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
+     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
+     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
+     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
+     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
+     * </ul>
      */
     inline Budget& AddCostFilters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
-     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
-     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
-     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
-     * Service</p> </li> </ul>
+     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
+     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
+     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
+     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
+     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
+     * </ul>
      */
     inline Budget& AddCostFilters(const char* key, Aws::Vector<Aws::String>&& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
-     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
-     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
-     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
-     * Service</p> </li> </ul>
+     * <p>The cost filters, such as service or tag, that are applied to a budget.</p>
+     * <p>AWS Budgets supports the following services as a filter for RI budgets:</p>
+     * <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li> <p>Amazon
+     * Redshift</p> </li> <li> <p>Amazon Relational Database Service</p> </li> <li>
+     * <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li>
+     * </ul>
      */
     inline Budget& AddCostFilters(const char* key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, value); return *this; }
 
@@ -514,38 +887,32 @@ namespace Model
 
 
     /**
-     * <p>Whether this budget tracks monetary costs, usage, RI utilization, or RI
-     * coverage.</p>
+     * <p>Whether this budget tracks costs, usage, RI utilization, or RI coverage.</p>
      */
     inline const BudgetType& GetBudgetType() const{ return m_budgetType; }
 
     /**
-     * <p>Whether this budget tracks monetary costs, usage, RI utilization, or RI
-     * coverage.</p>
+     * <p>Whether this budget tracks costs, usage, RI utilization, or RI coverage.</p>
      */
     inline bool BudgetTypeHasBeenSet() const { return m_budgetTypeHasBeenSet; }
 
     /**
-     * <p>Whether this budget tracks monetary costs, usage, RI utilization, or RI
-     * coverage.</p>
+     * <p>Whether this budget tracks costs, usage, RI utilization, or RI coverage.</p>
      */
     inline void SetBudgetType(const BudgetType& value) { m_budgetTypeHasBeenSet = true; m_budgetType = value; }
 
     /**
-     * <p>Whether this budget tracks monetary costs, usage, RI utilization, or RI
-     * coverage.</p>
+     * <p>Whether this budget tracks costs, usage, RI utilization, or RI coverage.</p>
      */
     inline void SetBudgetType(BudgetType&& value) { m_budgetTypeHasBeenSet = true; m_budgetType = std::move(value); }
 
     /**
-     * <p>Whether this budget tracks monetary costs, usage, RI utilization, or RI
-     * coverage.</p>
+     * <p>Whether this budget tracks costs, usage, RI utilization, or RI coverage.</p>
      */
     inline Budget& WithBudgetType(const BudgetType& value) { SetBudgetType(value); return *this;}
 
     /**
-     * <p>Whether this budget tracks monetary costs, usage, RI utilization, or RI
-     * coverage.</p>
+     * <p>Whether this budget tracks costs, usage, RI utilization, or RI coverage.</p>
      */
     inline Budget& WithBudgetType(BudgetType&& value) { SetBudgetType(std::move(value)); return *this;}
 
@@ -587,6 +954,9 @@ namespace Model
 
     Spend m_budgetLimit;
     bool m_budgetLimitHasBeenSet;
+
+    Aws::Map<Aws::String, Spend> m_plannedBudgetLimits;
+    bool m_plannedBudgetLimitsHasBeenSet;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_costFilters;
     bool m_costFiltersHasBeenSet;

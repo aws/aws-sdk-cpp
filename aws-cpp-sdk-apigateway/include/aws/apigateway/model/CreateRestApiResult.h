@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/apigateway/model/ApiKeySourceType.h>
 #include <aws/apigateway/model/EndpointConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -475,6 +476,79 @@ namespace Model
      */
     inline CreateRestApiResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline CreateRestApiResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline CreateRestApiResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline CreateRestApiResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline CreateRestApiResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline CreateRestApiResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline CreateRestApiResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline CreateRestApiResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline CreateRestApiResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline CreateRestApiResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_id;
@@ -498,6 +572,8 @@ namespace Model
     EndpointConfiguration m_endpointConfiguration;
 
     Aws::String m_policy;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
   };
 
 } // namespace Model

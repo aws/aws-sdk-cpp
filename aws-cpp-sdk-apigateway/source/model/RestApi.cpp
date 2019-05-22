@@ -41,7 +41,8 @@ RestApi::RestApi() :
     m_apiKeySource(ApiKeySourceType::NOT_SET),
     m_apiKeySourceHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false),
-    m_policyHasBeenSet(false)
+    m_policyHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ RestApi::RestApi(JsonView jsonValue) :
     m_apiKeySource(ApiKeySourceType::NOT_SET),
     m_apiKeySourceHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false),
-    m_policyHasBeenSet(false)
+    m_policyHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -148,6 +150,16 @@ RestApi& RestApi::operator =(JsonView jsonValue)
     m_policyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -226,6 +238,17 @@ JsonValue RestApi::Jsonize() const
   if(m_policyHasBeenSet)
   {
    payload.WithString("policy", m_policy);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

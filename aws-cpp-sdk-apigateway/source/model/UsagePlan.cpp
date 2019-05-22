@@ -35,7 +35,8 @@ UsagePlan::UsagePlan() :
     m_apiStagesHasBeenSet(false),
     m_throttleHasBeenSet(false),
     m_quotaHasBeenSet(false),
-    m_productCodeHasBeenSet(false)
+    m_productCodeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ UsagePlan::UsagePlan(JsonView jsonValue) :
     m_apiStagesHasBeenSet(false),
     m_throttleHasBeenSet(false),
     m_quotaHasBeenSet(false),
-    m_productCodeHasBeenSet(false)
+    m_productCodeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,6 +107,16 @@ UsagePlan& UsagePlan::operator =(JsonView jsonValue)
     m_productCodeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -156,6 +168,17 @@ JsonValue UsagePlan::Jsonize() const
   if(m_productCodeHasBeenSet)
   {
    payload.WithString("productCode", m_productCode);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

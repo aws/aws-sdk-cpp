@@ -31,7 +31,8 @@ CreateDomainNameRequest::CreateDomainNameRequest() :
     m_certificateArnHasBeenSet(false),
     m_regionalCertificateNameHasBeenSet(false),
     m_regionalCertificateArnHasBeenSet(false),
-    m_endpointConfigurationHasBeenSet(false)
+    m_endpointConfigurationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,17 @@ Aws::String CreateDomainNameRequest::SerializePayload() const
   if(m_endpointConfigurationHasBeenSet)
   {
    payload.WithObject("endpointConfiguration", m_endpointConfiguration.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

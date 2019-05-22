@@ -33,7 +33,8 @@ CreateRestApiRequest::CreateRestApiRequest() :
     m_apiKeySource(ApiKeySourceType::NOT_SET),
     m_apiKeySourceHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false),
-    m_policyHasBeenSet(false)
+    m_policyHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,17 @@ Aws::String CreateRestApiRequest::SerializePayload() const
   if(m_policyHasBeenSet)
   {
    payload.WithString("policy", m_policy);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

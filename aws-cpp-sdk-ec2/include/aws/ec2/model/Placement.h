@@ -274,54 +274,48 @@ namespace Model
     /**
      * <p>The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware. The <code>host</code> tenancy is not supported for the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
-     * command.</p>
+     * hardware. The <code>host</code> tenancy is not supported for the
+     * <a>ImportInstance</a> command.</p>
      */
     inline const Tenancy& GetTenancy() const{ return m_tenancy; }
 
     /**
      * <p>The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware. The <code>host</code> tenancy is not supported for the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
-     * command.</p>
+     * hardware. The <code>host</code> tenancy is not supported for the
+     * <a>ImportInstance</a> command.</p>
      */
     inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
 
     /**
      * <p>The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware. The <code>host</code> tenancy is not supported for the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
-     * command.</p>
+     * hardware. The <code>host</code> tenancy is not supported for the
+     * <a>ImportInstance</a> command.</p>
      */
     inline void SetTenancy(const Tenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
 
     /**
      * <p>The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware. The <code>host</code> tenancy is not supported for the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
-     * command.</p>
+     * hardware. The <code>host</code> tenancy is not supported for the
+     * <a>ImportInstance</a> command.</p>
      */
     inline void SetTenancy(Tenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
 
     /**
      * <p>The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware. The <code>host</code> tenancy is not supported for the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
-     * command.</p>
+     * hardware. The <code>host</code> tenancy is not supported for the
+     * <a>ImportInstance</a> command.</p>
      */
     inline Placement& WithTenancy(const Tenancy& value) { SetTenancy(value); return *this;}
 
     /**
      * <p>The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on single-tenant
-     * hardware. The <code>host</code> tenancy is not supported for the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
-     * command.</p>
+     * hardware. The <code>host</code> tenancy is not supported for the
+     * <a>ImportInstance</a> command.</p>
      */
     inline Placement& WithTenancy(Tenancy&& value) { SetTenancy(std::move(value)); return *this;}
 

@@ -440,56 +440,62 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the network interface is an Elastic Fabric Adapter (EFA).
-     * Only specify this parameter to create an EFA. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
+     * <p>Indicates the type of network interface. To create an Elastic Fabric Adapter
+     * (EFA), specify <code>efa</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA ENI, omit this parameter. </p>
+     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
+     * parameter.</p>
      */
     inline const NetworkInterfaceCreationType& GetInterfaceType() const{ return m_interfaceType; }
 
     /**
-     * <p>Indicates whether the network interface is an Elastic Fabric Adapter (EFA).
-     * Only specify this parameter to create an EFA. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
+     * <p>Indicates the type of network interface. To create an Elastic Fabric Adapter
+     * (EFA), specify <code>efa</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA ENI, omit this parameter. </p>
+     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
+     * parameter.</p>
      */
     inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }
 
     /**
-     * <p>Indicates whether the network interface is an Elastic Fabric Adapter (EFA).
-     * Only specify this parameter to create an EFA. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
+     * <p>Indicates the type of network interface. To create an Elastic Fabric Adapter
+     * (EFA), specify <code>efa</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA ENI, omit this parameter. </p>
+     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
+     * parameter.</p>
      */
     inline void SetInterfaceType(const NetworkInterfaceCreationType& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
 
     /**
-     * <p>Indicates whether the network interface is an Elastic Fabric Adapter (EFA).
-     * Only specify this parameter to create an EFA. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
+     * <p>Indicates the type of network interface. To create an Elastic Fabric Adapter
+     * (EFA), specify <code>efa</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA ENI, omit this parameter. </p>
+     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
+     * parameter.</p>
      */
     inline void SetInterfaceType(NetworkInterfaceCreationType&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = std::move(value); }
 
     /**
-     * <p>Indicates whether the network interface is an Elastic Fabric Adapter (EFA).
-     * Only specify this parameter to create an EFA. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
+     * <p>Indicates the type of network interface. To create an Elastic Fabric Adapter
+     * (EFA), specify <code>efa</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA ENI, omit this parameter. </p>
+     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
+     * parameter.</p>
      */
     inline CreateNetworkInterfaceRequest& WithInterfaceType(const NetworkInterfaceCreationType& value) { SetInterfaceType(value); return *this;}
 
     /**
-     * <p>Indicates whether the network interface is an Elastic Fabric Adapter (EFA).
-     * Only specify this parameter to create an EFA. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
+     * <p>Indicates the type of network interface. To create an Elastic Fabric Adapter
+     * (EFA), specify <code>efa</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA ENI, omit this parameter. </p>
+     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
+     * parameter.</p>
      */
     inline CreateNetworkInterfaceRequest& WithInterfaceType(NetworkInterfaceCreationType&& value) { SetInterfaceType(std::move(value)); return *this;}
 

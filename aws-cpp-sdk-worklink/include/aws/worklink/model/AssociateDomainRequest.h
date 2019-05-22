@@ -125,55 +125,6 @@ namespace Model
 
 
     /**
-     * <p>The ARN of an issued ACM certificate that is valid for the domain being
-     * associated. </p>
-     */
-    inline const Aws::String& GetAcmCertificateArn() const{ return m_acmCertificateArn; }
-
-    /**
-     * <p>The ARN of an issued ACM certificate that is valid for the domain being
-     * associated. </p>
-     */
-    inline bool AcmCertificateArnHasBeenSet() const { return m_acmCertificateArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of an issued ACM certificate that is valid for the domain being
-     * associated. </p>
-     */
-    inline void SetAcmCertificateArn(const Aws::String& value) { m_acmCertificateArnHasBeenSet = true; m_acmCertificateArn = value; }
-
-    /**
-     * <p>The ARN of an issued ACM certificate that is valid for the domain being
-     * associated. </p>
-     */
-    inline void SetAcmCertificateArn(Aws::String&& value) { m_acmCertificateArnHasBeenSet = true; m_acmCertificateArn = std::move(value); }
-
-    /**
-     * <p>The ARN of an issued ACM certificate that is valid for the domain being
-     * associated. </p>
-     */
-    inline void SetAcmCertificateArn(const char* value) { m_acmCertificateArnHasBeenSet = true; m_acmCertificateArn.assign(value); }
-
-    /**
-     * <p>The ARN of an issued ACM certificate that is valid for the domain being
-     * associated. </p>
-     */
-    inline AssociateDomainRequest& WithAcmCertificateArn(const Aws::String& value) { SetAcmCertificateArn(value); return *this;}
-
-    /**
-     * <p>The ARN of an issued ACM certificate that is valid for the domain being
-     * associated. </p>
-     */
-    inline AssociateDomainRequest& WithAcmCertificateArn(Aws::String&& value) { SetAcmCertificateArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of an issued ACM certificate that is valid for the domain being
-     * associated. </p>
-     */
-    inline AssociateDomainRequest& WithAcmCertificateArn(const char* value) { SetAcmCertificateArn(value); return *this;}
-
-
-    /**
      * <p>The name to display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
@@ -213,6 +164,55 @@ namespace Model
      */
     inline AssociateDomainRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
+
+    /**
+     * <p>The ARN of an issued ACM certificate that is valid for the domain being
+     * associated.</p>
+     */
+    inline const Aws::String& GetAcmCertificateArn() const{ return m_acmCertificateArn; }
+
+    /**
+     * <p>The ARN of an issued ACM certificate that is valid for the domain being
+     * associated.</p>
+     */
+    inline bool AcmCertificateArnHasBeenSet() const { return m_acmCertificateArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of an issued ACM certificate that is valid for the domain being
+     * associated.</p>
+     */
+    inline void SetAcmCertificateArn(const Aws::String& value) { m_acmCertificateArnHasBeenSet = true; m_acmCertificateArn = value; }
+
+    /**
+     * <p>The ARN of an issued ACM certificate that is valid for the domain being
+     * associated.</p>
+     */
+    inline void SetAcmCertificateArn(Aws::String&& value) { m_acmCertificateArnHasBeenSet = true; m_acmCertificateArn = std::move(value); }
+
+    /**
+     * <p>The ARN of an issued ACM certificate that is valid for the domain being
+     * associated.</p>
+     */
+    inline void SetAcmCertificateArn(const char* value) { m_acmCertificateArnHasBeenSet = true; m_acmCertificateArn.assign(value); }
+
+    /**
+     * <p>The ARN of an issued ACM certificate that is valid for the domain being
+     * associated.</p>
+     */
+    inline AssociateDomainRequest& WithAcmCertificateArn(const Aws::String& value) { SetAcmCertificateArn(value); return *this;}
+
+    /**
+     * <p>The ARN of an issued ACM certificate that is valid for the domain being
+     * associated.</p>
+     */
+    inline AssociateDomainRequest& WithAcmCertificateArn(Aws::String&& value) { SetAcmCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of an issued ACM certificate that is valid for the domain being
+     * associated.</p>
+     */
+    inline AssociateDomainRequest& WithAcmCertificateArn(const char* value) { SetAcmCertificateArn(value); return *this;}
+
   private:
 
     Aws::String m_fleetArn;
@@ -221,11 +221,11 @@ namespace Model
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
 
-    Aws::String m_acmCertificateArn;
-    bool m_acmCertificateArnHasBeenSet;
-
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
+
+    Aws::String m_acmCertificateArn;
+    bool m_acmCertificateArnHasBeenSet;
   };
 
 } // namespace Model

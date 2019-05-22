@@ -381,23 +381,23 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
      * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
@@ -420,23 +420,23 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
      * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
@@ -459,23 +459,23 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
      * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
@@ -498,23 +498,23 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
      * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General

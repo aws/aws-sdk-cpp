@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/worklink/model/AssociateDomainResult.h>
+#include <aws/worklink/model/AssociateWebsiteAuthorizationProviderResult.h>
 #include <aws/worklink/model/AssociateWebsiteCertificateAuthorityResult.h>
 #include <aws/worklink/model/CreateFleetResult.h>
 #include <aws/worklink/model/DeleteFleetResult.h>
@@ -34,10 +35,12 @@
 #include <aws/worklink/model/DescribeIdentityProviderConfigurationResult.h>
 #include <aws/worklink/model/DescribeWebsiteCertificateAuthorityResult.h>
 #include <aws/worklink/model/DisassociateDomainResult.h>
+#include <aws/worklink/model/DisassociateWebsiteAuthorizationProviderResult.h>
 #include <aws/worklink/model/DisassociateWebsiteCertificateAuthorityResult.h>
 #include <aws/worklink/model/ListDevicesResult.h>
 #include <aws/worklink/model/ListDomainsResult.h>
 #include <aws/worklink/model/ListFleetsResult.h>
+#include <aws/worklink/model/ListWebsiteAuthorizationProvidersResult.h>
 #include <aws/worklink/model/ListWebsiteCertificateAuthoritiesResult.h>
 #include <aws/worklink/model/RestoreDomainAccessResult.h>
 #include <aws/worklink/model/RevokeDomainAccessResult.h>
@@ -88,6 +91,7 @@ namespace WorkLink
 namespace Model
 {
         class AssociateDomainRequest;
+        class AssociateWebsiteAuthorizationProviderRequest;
         class AssociateWebsiteCertificateAuthorityRequest;
         class CreateFleetRequest;
         class DeleteFleetRequest;
@@ -100,10 +104,12 @@ namespace Model
         class DescribeIdentityProviderConfigurationRequest;
         class DescribeWebsiteCertificateAuthorityRequest;
         class DisassociateDomainRequest;
+        class DisassociateWebsiteAuthorizationProviderRequest;
         class DisassociateWebsiteCertificateAuthorityRequest;
         class ListDevicesRequest;
         class ListDomainsRequest;
         class ListFleetsRequest;
+        class ListWebsiteAuthorizationProvidersRequest;
         class ListWebsiteCertificateAuthoritiesRequest;
         class RestoreDomainAccessRequest;
         class RevokeDomainAccessRequest;
@@ -116,6 +122,7 @@ namespace Model
         class UpdateIdentityProviderConfigurationRequest;
 
         typedef Aws::Utils::Outcome<AssociateDomainResult, Aws::Client::AWSError<WorkLinkErrors>> AssociateDomainOutcome;
+        typedef Aws::Utils::Outcome<AssociateWebsiteAuthorizationProviderResult, Aws::Client::AWSError<WorkLinkErrors>> AssociateWebsiteAuthorizationProviderOutcome;
         typedef Aws::Utils::Outcome<AssociateWebsiteCertificateAuthorityResult, Aws::Client::AWSError<WorkLinkErrors>> AssociateWebsiteCertificateAuthorityOutcome;
         typedef Aws::Utils::Outcome<CreateFleetResult, Aws::Client::AWSError<WorkLinkErrors>> CreateFleetOutcome;
         typedef Aws::Utils::Outcome<DeleteFleetResult, Aws::Client::AWSError<WorkLinkErrors>> DeleteFleetOutcome;
@@ -128,10 +135,12 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeIdentityProviderConfigurationResult, Aws::Client::AWSError<WorkLinkErrors>> DescribeIdentityProviderConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeWebsiteCertificateAuthorityResult, Aws::Client::AWSError<WorkLinkErrors>> DescribeWebsiteCertificateAuthorityOutcome;
         typedef Aws::Utils::Outcome<DisassociateDomainResult, Aws::Client::AWSError<WorkLinkErrors>> DisassociateDomainOutcome;
+        typedef Aws::Utils::Outcome<DisassociateWebsiteAuthorizationProviderResult, Aws::Client::AWSError<WorkLinkErrors>> DisassociateWebsiteAuthorizationProviderOutcome;
         typedef Aws::Utils::Outcome<DisassociateWebsiteCertificateAuthorityResult, Aws::Client::AWSError<WorkLinkErrors>> DisassociateWebsiteCertificateAuthorityOutcome;
         typedef Aws::Utils::Outcome<ListDevicesResult, Aws::Client::AWSError<WorkLinkErrors>> ListDevicesOutcome;
         typedef Aws::Utils::Outcome<ListDomainsResult, Aws::Client::AWSError<WorkLinkErrors>> ListDomainsOutcome;
         typedef Aws::Utils::Outcome<ListFleetsResult, Aws::Client::AWSError<WorkLinkErrors>> ListFleetsOutcome;
+        typedef Aws::Utils::Outcome<ListWebsiteAuthorizationProvidersResult, Aws::Client::AWSError<WorkLinkErrors>> ListWebsiteAuthorizationProvidersOutcome;
         typedef Aws::Utils::Outcome<ListWebsiteCertificateAuthoritiesResult, Aws::Client::AWSError<WorkLinkErrors>> ListWebsiteCertificateAuthoritiesOutcome;
         typedef Aws::Utils::Outcome<RestoreDomainAccessResult, Aws::Client::AWSError<WorkLinkErrors>> RestoreDomainAccessOutcome;
         typedef Aws::Utils::Outcome<RevokeDomainAccessResult, Aws::Client::AWSError<WorkLinkErrors>> RevokeDomainAccessOutcome;
@@ -144,6 +153,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateIdentityProviderConfigurationResult, Aws::Client::AWSError<WorkLinkErrors>> UpdateIdentityProviderConfigurationOutcome;
 
         typedef std::future<AssociateDomainOutcome> AssociateDomainOutcomeCallable;
+        typedef std::future<AssociateWebsiteAuthorizationProviderOutcome> AssociateWebsiteAuthorizationProviderOutcomeCallable;
         typedef std::future<AssociateWebsiteCertificateAuthorityOutcome> AssociateWebsiteCertificateAuthorityOutcomeCallable;
         typedef std::future<CreateFleetOutcome> CreateFleetOutcomeCallable;
         typedef std::future<DeleteFleetOutcome> DeleteFleetOutcomeCallable;
@@ -156,10 +166,12 @@ namespace Model
         typedef std::future<DescribeIdentityProviderConfigurationOutcome> DescribeIdentityProviderConfigurationOutcomeCallable;
         typedef std::future<DescribeWebsiteCertificateAuthorityOutcome> DescribeWebsiteCertificateAuthorityOutcomeCallable;
         typedef std::future<DisassociateDomainOutcome> DisassociateDomainOutcomeCallable;
+        typedef std::future<DisassociateWebsiteAuthorizationProviderOutcome> DisassociateWebsiteAuthorizationProviderOutcomeCallable;
         typedef std::future<DisassociateWebsiteCertificateAuthorityOutcome> DisassociateWebsiteCertificateAuthorityOutcomeCallable;
         typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
         typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
         typedef std::future<ListFleetsOutcome> ListFleetsOutcomeCallable;
+        typedef std::future<ListWebsiteAuthorizationProvidersOutcome> ListWebsiteAuthorizationProvidersOutcomeCallable;
         typedef std::future<ListWebsiteCertificateAuthoritiesOutcome> ListWebsiteCertificateAuthoritiesOutcomeCallable;
         typedef std::future<RestoreDomainAccessOutcome> RestoreDomainAccessOutcomeCallable;
         typedef std::future<RevokeDomainAccessOutcome> RevokeDomainAccessOutcomeCallable;
@@ -175,6 +187,7 @@ namespace Model
   class WorkLinkClient;
 
     typedef std::function<void(const WorkLinkClient*, const Model::AssociateDomainRequest&, const Model::AssociateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDomainResponseReceivedHandler;
+    typedef std::function<void(const WorkLinkClient*, const Model::AssociateWebsiteAuthorizationProviderRequest&, const Model::AssociateWebsiteAuthorizationProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateWebsiteAuthorizationProviderResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::AssociateWebsiteCertificateAuthorityRequest&, const Model::AssociateWebsiteCertificateAuthorityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateWebsiteCertificateAuthorityResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::CreateFleetRequest&, const Model::CreateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFleetResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::DeleteFleetRequest&, const Model::DeleteFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFleetResponseReceivedHandler;
@@ -187,10 +200,12 @@ namespace Model
     typedef std::function<void(const WorkLinkClient*, const Model::DescribeIdentityProviderConfigurationRequest&, const Model::DescribeIdentityProviderConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIdentityProviderConfigurationResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::DescribeWebsiteCertificateAuthorityRequest&, const Model::DescribeWebsiteCertificateAuthorityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWebsiteCertificateAuthorityResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::DisassociateDomainRequest&, const Model::DisassociateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDomainResponseReceivedHandler;
+    typedef std::function<void(const WorkLinkClient*, const Model::DisassociateWebsiteAuthorizationProviderRequest&, const Model::DisassociateWebsiteAuthorizationProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateWebsiteAuthorizationProviderResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::DisassociateWebsiteCertificateAuthorityRequest&, const Model::DisassociateWebsiteCertificateAuthorityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateWebsiteCertificateAuthorityResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::ListDevicesRequest&, const Model::ListDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevicesResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::ListFleetsRequest&, const Model::ListFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFleetsResponseReceivedHandler;
+    typedef std::function<void(const WorkLinkClient*, const Model::ListWebsiteAuthorizationProvidersRequest&, const Model::ListWebsiteAuthorizationProvidersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWebsiteAuthorizationProvidersResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::ListWebsiteCertificateAuthoritiesRequest&, const Model::ListWebsiteCertificateAuthoritiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWebsiteCertificateAuthoritiesResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::RestoreDomainAccessRequest&, const Model::RestoreDomainAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreDomainAccessResponseReceivedHandler;
     typedef std::function<void(const WorkLinkClient*, const Model::RevokeDomainAccessRequest&, const Model::RevokeDomainAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeDomainAccessResponseReceivedHandler;
@@ -268,6 +283,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateDomainAsync(const Model::AssociateDomainRequest& request, const AssociateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates a website authorization provider with a specified fleet. This is
+         * used to authorize users against associated websites in the company
+         * network.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateWebsiteAuthorizationProviderOutcome AssociateWebsiteAuthorizationProvider(const Model::AssociateWebsiteAuthorizationProviderRequest& request) const;
+
+        /**
+         * <p>Associates a website authorization provider with a specified fleet. This is
+         * used to authorize users against associated websites in the company
+         * network.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateWebsiteAuthorizationProviderOutcomeCallable AssociateWebsiteAuthorizationProviderCallable(const Model::AssociateWebsiteAuthorizationProviderRequest& request) const;
+
+        /**
+         * <p>Associates a website authorization provider with a specified fleet. This is
+         * used to authorize users against associated websites in the company
+         * network.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateWebsiteAuthorizationProviderAsync(const Model::AssociateWebsiteAuthorizationProviderRequest& request, const AssociateWebsiteAuthorizationProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Imports the root certificate of a certificate authority (CA) used to obtain
@@ -609,6 +655,37 @@ namespace Model
         virtual void DisassociateDomainAsync(const Model::DisassociateDomainRequest& request, const DisassociateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disassociates a website authorization provider from a specified fleet. After
+         * the disassociation, users can't load any associated websites that require this
+         * authorization provider.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateWebsiteAuthorizationProviderOutcome DisassociateWebsiteAuthorizationProvider(const Model::DisassociateWebsiteAuthorizationProviderRequest& request) const;
+
+        /**
+         * <p>Disassociates a website authorization provider from a specified fleet. After
+         * the disassociation, users can't load any associated websites that require this
+         * authorization provider.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateWebsiteAuthorizationProviderOutcomeCallable DisassociateWebsiteAuthorizationProviderCallable(const Model::DisassociateWebsiteAuthorizationProviderRequest& request) const;
+
+        /**
+         * <p>Disassociates a website authorization provider from a specified fleet. After
+         * the disassociation, users can't load any associated websites that require this
+         * authorization provider.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateWebsiteAuthorizationProviderAsync(const Model::DisassociateWebsiteAuthorizationProviderRequest& request, const DisassociateWebsiteAuthorizationProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Removes a certificate authority (CA).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteCertificateAuthority">AWS
          * API Reference</a></p>
@@ -716,6 +793,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListFleetsAsync(const Model::ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a list of website authorization providers associated with a
+         * specified fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListWebsiteAuthorizationProvidersOutcome ListWebsiteAuthorizationProviders(const Model::ListWebsiteAuthorizationProvidersRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of website authorization providers associated with a
+         * specified fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListWebsiteAuthorizationProvidersOutcomeCallable ListWebsiteAuthorizationProvidersCallable(const Model::ListWebsiteAuthorizationProvidersRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of website authorization providers associated with a
+         * specified fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListWebsiteAuthorizationProvidersAsync(const Model::ListWebsiteAuthorizationProvidersRequest& request, const ListWebsiteAuthorizationProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of certificate authorities added for the current account and
@@ -996,6 +1101,7 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AssociateDomainAsyncHelper(const Model::AssociateDomainRequest& request, const AssociateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateWebsiteAuthorizationProviderAsyncHelper(const Model::AssociateWebsiteAuthorizationProviderRequest& request, const AssociateWebsiteAuthorizationProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateWebsiteCertificateAuthorityAsyncHelper(const Model::AssociateWebsiteCertificateAuthorityRequest& request, const AssociateWebsiteCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFleetAsyncHelper(const Model::CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFleetAsyncHelper(const Model::DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1008,10 +1114,12 @@ namespace Model
         void DescribeIdentityProviderConfigurationAsyncHelper(const Model::DescribeIdentityProviderConfigurationRequest& request, const DescribeIdentityProviderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWebsiteCertificateAuthorityAsyncHelper(const Model::DescribeWebsiteCertificateAuthorityRequest& request, const DescribeWebsiteCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateDomainAsyncHelper(const Model::DisassociateDomainRequest& request, const DisassociateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateWebsiteAuthorizationProviderAsyncHelper(const Model::DisassociateWebsiteAuthorizationProviderRequest& request, const DisassociateWebsiteAuthorizationProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateWebsiteCertificateAuthorityAsyncHelper(const Model::DisassociateWebsiteCertificateAuthorityRequest& request, const DisassociateWebsiteCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDevicesAsyncHelper(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDomainsAsyncHelper(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFleetsAsyncHelper(const Model::ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListWebsiteAuthorizationProvidersAsyncHelper(const Model::ListWebsiteAuthorizationProvidersRequest& request, const ListWebsiteAuthorizationProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWebsiteCertificateAuthoritiesAsyncHelper(const Model::ListWebsiteCertificateAuthoritiesRequest& request, const ListWebsiteCertificateAuthoritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreDomainAccessAsyncHelper(const Model::RestoreDomainAccessRequest& request, const RestoreDomainAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RevokeDomainAccessAsyncHelper(const Model::RevokeDomainAccessRequest& request, const RevokeDomainAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

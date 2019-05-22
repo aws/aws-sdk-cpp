@@ -31,6 +31,7 @@
 #include <aws/worklink/WorkLinkEndpoint.h>
 #include <aws/worklink/WorkLinkErrorMarshaller.h>
 #include <aws/worklink/model/AssociateDomainRequest.h>
+#include <aws/worklink/model/AssociateWebsiteAuthorizationProviderRequest.h>
 #include <aws/worklink/model/AssociateWebsiteCertificateAuthorityRequest.h>
 #include <aws/worklink/model/CreateFleetRequest.h>
 #include <aws/worklink/model/DeleteFleetRequest.h>
@@ -43,10 +44,12 @@
 #include <aws/worklink/model/DescribeIdentityProviderConfigurationRequest.h>
 #include <aws/worklink/model/DescribeWebsiteCertificateAuthorityRequest.h>
 #include <aws/worklink/model/DisassociateDomainRequest.h>
+#include <aws/worklink/model/DisassociateWebsiteAuthorizationProviderRequest.h>
 #include <aws/worklink/model/DisassociateWebsiteCertificateAuthorityRequest.h>
 #include <aws/worklink/model/ListDevicesRequest.h>
 #include <aws/worklink/model/ListDomainsRequest.h>
 #include <aws/worklink/model/ListFleetsRequest.h>
+#include <aws/worklink/model/ListWebsiteAuthorizationProvidersRequest.h>
 #include <aws/worklink/model/ListWebsiteCertificateAuthoritiesRequest.h>
 #include <aws/worklink/model/RestoreDomainAccessRequest.h>
 #include <aws/worklink/model/RevokeDomainAccessRequest.h>
@@ -163,6 +166,41 @@ void WorkLinkClient::AssociateDomainAsync(const AssociateDomainRequest& request,
 void WorkLinkClient::AssociateDomainAsyncHelper(const AssociateDomainRequest& request, const AssociateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateDomain(request), context);
+}
+
+AssociateWebsiteAuthorizationProviderOutcome WorkLinkClient::AssociateWebsiteAuthorizationProvider(const AssociateWebsiteAuthorizationProviderRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/associateWebsiteAuthorizationProvider";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AssociateWebsiteAuthorizationProviderOutcome(AssociateWebsiteAuthorizationProviderResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateWebsiteAuthorizationProviderOutcome(outcome.GetError());
+  }
+}
+
+AssociateWebsiteAuthorizationProviderOutcomeCallable WorkLinkClient::AssociateWebsiteAuthorizationProviderCallable(const AssociateWebsiteAuthorizationProviderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateWebsiteAuthorizationProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateWebsiteAuthorizationProvider(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkLinkClient::AssociateWebsiteAuthorizationProviderAsync(const AssociateWebsiteAuthorizationProviderRequest& request, const AssociateWebsiteAuthorizationProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateWebsiteAuthorizationProviderAsyncHelper( request, handler, context ); } );
+}
+
+void WorkLinkClient::AssociateWebsiteAuthorizationProviderAsyncHelper(const AssociateWebsiteAuthorizationProviderRequest& request, const AssociateWebsiteAuthorizationProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateWebsiteAuthorizationProvider(request), context);
 }
 
 AssociateWebsiteCertificateAuthorityOutcome WorkLinkClient::AssociateWebsiteCertificateAuthority(const AssociateWebsiteCertificateAuthorityRequest& request) const
@@ -585,6 +623,41 @@ void WorkLinkClient::DisassociateDomainAsyncHelper(const DisassociateDomainReque
   handler(this, request, DisassociateDomain(request), context);
 }
 
+DisassociateWebsiteAuthorizationProviderOutcome WorkLinkClient::DisassociateWebsiteAuthorizationProvider(const DisassociateWebsiteAuthorizationProviderRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/disassociateWebsiteAuthorizationProvider";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DisassociateWebsiteAuthorizationProviderOutcome(DisassociateWebsiteAuthorizationProviderResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DisassociateWebsiteAuthorizationProviderOutcome(outcome.GetError());
+  }
+}
+
+DisassociateWebsiteAuthorizationProviderOutcomeCallable WorkLinkClient::DisassociateWebsiteAuthorizationProviderCallable(const DisassociateWebsiteAuthorizationProviderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateWebsiteAuthorizationProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateWebsiteAuthorizationProvider(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkLinkClient::DisassociateWebsiteAuthorizationProviderAsync(const DisassociateWebsiteAuthorizationProviderRequest& request, const DisassociateWebsiteAuthorizationProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateWebsiteAuthorizationProviderAsyncHelper( request, handler, context ); } );
+}
+
+void WorkLinkClient::DisassociateWebsiteAuthorizationProviderAsyncHelper(const DisassociateWebsiteAuthorizationProviderRequest& request, const DisassociateWebsiteAuthorizationProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateWebsiteAuthorizationProvider(request), context);
+}
+
 DisassociateWebsiteCertificateAuthorityOutcome WorkLinkClient::DisassociateWebsiteCertificateAuthority(const DisassociateWebsiteCertificateAuthorityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -723,6 +796,41 @@ void WorkLinkClient::ListFleetsAsync(const ListFleetsRequest& request, const Lis
 void WorkLinkClient::ListFleetsAsyncHelper(const ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListFleets(request), context);
+}
+
+ListWebsiteAuthorizationProvidersOutcome WorkLinkClient::ListWebsiteAuthorizationProviders(const ListWebsiteAuthorizationProvidersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/listWebsiteAuthorizationProviders";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListWebsiteAuthorizationProvidersOutcome(ListWebsiteAuthorizationProvidersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListWebsiteAuthorizationProvidersOutcome(outcome.GetError());
+  }
+}
+
+ListWebsiteAuthorizationProvidersOutcomeCallable WorkLinkClient::ListWebsiteAuthorizationProvidersCallable(const ListWebsiteAuthorizationProvidersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListWebsiteAuthorizationProvidersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWebsiteAuthorizationProviders(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkLinkClient::ListWebsiteAuthorizationProvidersAsync(const ListWebsiteAuthorizationProvidersRequest& request, const ListWebsiteAuthorizationProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListWebsiteAuthorizationProvidersAsyncHelper( request, handler, context ); } );
+}
+
+void WorkLinkClient::ListWebsiteAuthorizationProvidersAsyncHelper(const ListWebsiteAuthorizationProvidersRequest& request, const ListWebsiteAuthorizationProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListWebsiteAuthorizationProviders(request), context);
 }
 
 ListWebsiteCertificateAuthoritiesOutcome WorkLinkClient::ListWebsiteCertificateAuthorities(const ListWebsiteCertificateAuthoritiesRequest& request) const

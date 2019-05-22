@@ -53,25 +53,29 @@ namespace Model
 
     /**
      * <p>(Optional) The maximum number of file system tags to return in the response.
-     * Currently, this number is automatically set to 10.</p>
+     * Currently, this number is automatically set to 10, and other values are ignored.
+     * The response is paginated at 10 per page if you have more than 10 tags.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>(Optional) The maximum number of file system tags to return in the response.
-     * Currently, this number is automatically set to 10.</p>
+     * Currently, this number is automatically set to 10, and other values are ignored.
+     * The response is paginated at 10 per page if you have more than 10 tags.</p>
      */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
      * <p>(Optional) The maximum number of file system tags to return in the response.
-     * Currently, this number is automatically set to 10.</p>
+     * Currently, this number is automatically set to 10, and other values are ignored.
+     * The response is paginated at 10 per page if you have more than 10 tags.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
      * <p>(Optional) The maximum number of file system tags to return in the response.
-     * Currently, this number is automatically set to 10.</p>
+     * Currently, this number is automatically set to 10, and other values are ignored.
+     * The response is paginated at 10 per page if you have more than 10 tags.</p>
      */
     inline DescribeTagsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 

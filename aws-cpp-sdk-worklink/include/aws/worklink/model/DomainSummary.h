@@ -91,6 +91,47 @@ namespace Model
 
 
     /**
+     * <p>The name to display.</p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The name to display.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The name to display.</p>
+     */
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    /**
+     * <p>The name to display.</p>
+     */
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+
+    /**
+     * <p>The name to display.</p>
+     */
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+
+    /**
+     * <p>The name to display.</p>
+     */
+    inline DomainSummary& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p>The name to display.</p>
+     */
+    inline DomainSummary& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name to display.</p>
+     */
+    inline DomainSummary& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
+
+    /**
      * <p>The time that the domain was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
@@ -151,60 +192,19 @@ namespace Model
      */
     inline DomainSummary& WithDomainStatus(DomainStatus&& value) { SetDomainStatus(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The name to display.</p>
-     */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-
-    /**
-     * <p>The name to display.</p>
-     */
-    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-
-    /**
-     * <p>The name to display.</p>
-     */
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-
-    /**
-     * <p>The name to display.</p>
-     */
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-
-    /**
-     * <p>The name to display.</p>
-     */
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-
-    /**
-     * <p>The name to display.</p>
-     */
-    inline DomainSummary& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-
-    /**
-     * <p>The name to display.</p>
-     */
-    inline DomainSummary& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name to display.</p>
-     */
-    inline DomainSummary& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
-
   private:
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet;
 
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
 
     DomainStatus m_domainStatus;
     bool m_domainStatusHasBeenSet;
-
-    Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
   };
 
 } // namespace Model

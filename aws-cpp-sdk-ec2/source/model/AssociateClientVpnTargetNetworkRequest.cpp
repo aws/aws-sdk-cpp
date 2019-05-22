@@ -23,6 +23,8 @@ using namespace Aws::Utils;
 AssociateClientVpnTargetNetworkRequest::AssociateClientVpnTargetNetworkRequest() : 
     m_clientVpnEndpointIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -40,6 +42,11 @@ Aws::String AssociateClientVpnTargetNetworkRequest::SerializePayload() const
   if(m_subnetIdHasBeenSet)
   {
     ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
   if(m_dryRunHasBeenSet)

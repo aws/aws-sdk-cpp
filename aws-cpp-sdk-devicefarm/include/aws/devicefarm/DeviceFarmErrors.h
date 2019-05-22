@@ -62,7 +62,10 @@ enum class DeviceFarmErrors
   LIMIT_EXCEEDED,
   NOT_ELIGIBLE,
   NOT_FOUND,
-  SERVICE_ACCOUNT
+  SERVICE_ACCOUNT,
+  TAG_OPERATION,
+  TAG_POLICY,
+  TOO_MANY_TAGS
 };
 namespace DeviceFarmErrorMapper
 {

@@ -107,6 +107,7 @@
 #include <aws/servicecatalog/model/UpdatePortfolioRequest.h>
 #include <aws/servicecatalog/model/UpdateProductRequest.h>
 #include <aws/servicecatalog/model/UpdateProvisionedProductRequest.h>
+#include <aws/servicecatalog/model/UpdateProvisionedProductPropertiesRequest.h>
 #include <aws/servicecatalog/model/UpdateProvisioningArtifactRequest.h>
 #include <aws/servicecatalog/model/UpdateServiceActionRequest.h>
 #include <aws/servicecatalog/model/UpdateTagOptionRequest.h>
@@ -2876,6 +2877,41 @@ void ServiceCatalogClient::UpdateProvisionedProductAsync(const UpdateProvisioned
 void ServiceCatalogClient::UpdateProvisionedProductAsyncHelper(const UpdateProvisionedProductRequest& request, const UpdateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateProvisionedProduct(request), context);
+}
+
+UpdateProvisionedProductPropertiesOutcome ServiceCatalogClient::UpdateProvisionedProductProperties(const UpdateProvisionedProductPropertiesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateProvisionedProductPropertiesOutcome(UpdateProvisionedProductPropertiesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateProvisionedProductPropertiesOutcome(outcome.GetError());
+  }
+}
+
+UpdateProvisionedProductPropertiesOutcomeCallable ServiceCatalogClient::UpdateProvisionedProductPropertiesCallable(const UpdateProvisionedProductPropertiesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateProvisionedProductPropertiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateProvisionedProductProperties(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::UpdateProvisionedProductPropertiesAsync(const UpdateProvisionedProductPropertiesRequest& request, const UpdateProvisionedProductPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateProvisionedProductPropertiesAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::UpdateProvisionedProductPropertiesAsyncHelper(const UpdateProvisionedProductPropertiesRequest& request, const UpdateProvisionedProductPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateProvisionedProductProperties(request), context);
 }
 
 UpdateProvisioningArtifactOutcome ServiceCatalogClient::UpdateProvisioningArtifact(const UpdateProvisioningArtifactRequest& request) const
