@@ -210,6 +210,7 @@
 #include <aws/ec2/model/DescribeVpnGatewaysResponse.h>
 #include <aws/ec2/model/DetachClassicLinkVpcResponse.h>
 #include <aws/ec2/model/DetachVolumeResponse.h>
+#include <aws/ec2/model/DisableEbsEncryptionByDefaultResponse.h>
 #include <aws/ec2/model/DisableTransitGatewayRouteTablePropagationResponse.h>
 #include <aws/ec2/model/DisableVpcClassicLinkResponse.h>
 #include <aws/ec2/model/DisableVpcClassicLinkDnsSupportResponse.h>
@@ -218,6 +219,7 @@
 #include <aws/ec2/model/DisassociateSubnetCidrBlockResponse.h>
 #include <aws/ec2/model/DisassociateTransitGatewayRouteTableResponse.h>
 #include <aws/ec2/model/DisassociateVpcCidrBlockResponse.h>
+#include <aws/ec2/model/EnableEbsEncryptionByDefaultResponse.h>
 #include <aws/ec2/model/EnableTransitGatewayRouteTablePropagationResponse.h>
 #include <aws/ec2/model/EnableVpcClassicLinkResponse.h>
 #include <aws/ec2/model/EnableVpcClassicLinkDnsSupportResponse.h>
@@ -226,6 +228,8 @@
 #include <aws/ec2/model/ExportTransitGatewayRoutesResponse.h>
 #include <aws/ec2/model/GetConsoleOutputResponse.h>
 #include <aws/ec2/model/GetConsoleScreenshotResponse.h>
+#include <aws/ec2/model/GetEbsDefaultKmsKeyIdResponse.h>
+#include <aws/ec2/model/GetEbsEncryptionByDefaultResponse.h>
 #include <aws/ec2/model/GetHostReservationPurchasePreviewResponse.h>
 #include <aws/ec2/model/GetLaunchTemplateDataResponse.h>
 #include <aws/ec2/model/GetPasswordDataResponse.h>
@@ -241,6 +245,7 @@
 #include <aws/ec2/model/ImportVolumeResponse.h>
 #include <aws/ec2/model/ModifyCapacityReservationResponse.h>
 #include <aws/ec2/model/ModifyClientVpnEndpointResponse.h>
+#include <aws/ec2/model/ModifyEbsDefaultKmsKeyIdResponse.h>
 #include <aws/ec2/model/ModifyFleetResponse.h>
 #include <aws/ec2/model/ModifyFpgaImageAttributeResponse.h>
 #include <aws/ec2/model/ModifyHostsResponse.h>
@@ -277,6 +282,7 @@
 #include <aws/ec2/model/ReplaceTransitGatewayRouteResponse.h>
 #include <aws/ec2/model/RequestSpotFleetResponse.h>
 #include <aws/ec2/model/RequestSpotInstancesResponse.h>
+#include <aws/ec2/model/ResetEbsDefaultKmsKeyIdResponse.h>
 #include <aws/ec2/model/ResetFpgaImageAttributeResponse.h>
 #include <aws/ec2/model/RestoreAddressToClassicResponse.h>
 #include <aws/ec2/model/RevokeClientVpnIngressResponse.h>
@@ -561,6 +567,7 @@ namespace Model
         class DetachNetworkInterfaceRequest;
         class DetachVolumeRequest;
         class DetachVpnGatewayRequest;
+        class DisableEbsEncryptionByDefaultRequest;
         class DisableTransitGatewayRouteTablePropagationRequest;
         class DisableVgwRoutePropagationRequest;
         class DisableVpcClassicLinkRequest;
@@ -572,6 +579,7 @@ namespace Model
         class DisassociateSubnetCidrBlockRequest;
         class DisassociateTransitGatewayRouteTableRequest;
         class DisassociateVpcCidrBlockRequest;
+        class EnableEbsEncryptionByDefaultRequest;
         class EnableTransitGatewayRouteTablePropagationRequest;
         class EnableVgwRoutePropagationRequest;
         class EnableVolumeIORequest;
@@ -582,6 +590,8 @@ namespace Model
         class ExportTransitGatewayRoutesRequest;
         class GetConsoleOutputRequest;
         class GetConsoleScreenshotRequest;
+        class GetEbsDefaultKmsKeyIdRequest;
+        class GetEbsEncryptionByDefaultRequest;
         class GetHostReservationPurchasePreviewRequest;
         class GetLaunchTemplateDataRequest;
         class GetPasswordDataRequest;
@@ -597,6 +607,7 @@ namespace Model
         class ImportVolumeRequest;
         class ModifyCapacityReservationRequest;
         class ModifyClientVpnEndpointRequest;
+        class ModifyEbsDefaultKmsKeyIdRequest;
         class ModifyFleetRequest;
         class ModifyFpgaImageAttributeRequest;
         class ModifyHostsRequest;
@@ -647,6 +658,7 @@ namespace Model
         class ReportInstanceStatusRequest;
         class RequestSpotFleetRequest;
         class RequestSpotInstancesRequest;
+        class ResetEbsDefaultKmsKeyIdRequest;
         class ResetFpgaImageAttributeRequest;
         class ResetImageAttributeRequest;
         class ResetInstanceAttributeRequest;
@@ -893,6 +905,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DetachNetworkInterfaceOutcome;
         typedef Aws::Utils::Outcome<DetachVolumeResponse, Aws::Client::AWSError<EC2Errors>> DetachVolumeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DetachVpnGatewayOutcome;
+        typedef Aws::Utils::Outcome<DisableEbsEncryptionByDefaultResponse, Aws::Client::AWSError<EC2Errors>> DisableEbsEncryptionByDefaultOutcome;
         typedef Aws::Utils::Outcome<DisableTransitGatewayRouteTablePropagationResponse, Aws::Client::AWSError<EC2Errors>> DisableTransitGatewayRouteTablePropagationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DisableVgwRoutePropagationOutcome;
         typedef Aws::Utils::Outcome<DisableVpcClassicLinkResponse, Aws::Client::AWSError<EC2Errors>> DisableVpcClassicLinkOutcome;
@@ -904,6 +917,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateSubnetCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> DisassociateSubnetCidrBlockOutcome;
         typedef Aws::Utils::Outcome<DisassociateTransitGatewayRouteTableResponse, Aws::Client::AWSError<EC2Errors>> DisassociateTransitGatewayRouteTableOutcome;
         typedef Aws::Utils::Outcome<DisassociateVpcCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> DisassociateVpcCidrBlockOutcome;
+        typedef Aws::Utils::Outcome<EnableEbsEncryptionByDefaultResponse, Aws::Client::AWSError<EC2Errors>> EnableEbsEncryptionByDefaultOutcome;
         typedef Aws::Utils::Outcome<EnableTransitGatewayRouteTablePropagationResponse, Aws::Client::AWSError<EC2Errors>> EnableTransitGatewayRouteTablePropagationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> EnableVgwRoutePropagationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> EnableVolumeIOOutcome;
@@ -914,6 +928,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ExportTransitGatewayRoutesResponse, Aws::Client::AWSError<EC2Errors>> ExportTransitGatewayRoutesOutcome;
         typedef Aws::Utils::Outcome<GetConsoleOutputResponse, Aws::Client::AWSError<EC2Errors>> GetConsoleOutputOutcome;
         typedef Aws::Utils::Outcome<GetConsoleScreenshotResponse, Aws::Client::AWSError<EC2Errors>> GetConsoleScreenshotOutcome;
+        typedef Aws::Utils::Outcome<GetEbsDefaultKmsKeyIdResponse, Aws::Client::AWSError<EC2Errors>> GetEbsDefaultKmsKeyIdOutcome;
+        typedef Aws::Utils::Outcome<GetEbsEncryptionByDefaultResponse, Aws::Client::AWSError<EC2Errors>> GetEbsEncryptionByDefaultOutcome;
         typedef Aws::Utils::Outcome<GetHostReservationPurchasePreviewResponse, Aws::Client::AWSError<EC2Errors>> GetHostReservationPurchasePreviewOutcome;
         typedef Aws::Utils::Outcome<GetLaunchTemplateDataResponse, Aws::Client::AWSError<EC2Errors>> GetLaunchTemplateDataOutcome;
         typedef Aws::Utils::Outcome<GetPasswordDataResponse, Aws::Client::AWSError<EC2Errors>> GetPasswordDataOutcome;
@@ -929,6 +945,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ImportVolumeResponse, Aws::Client::AWSError<EC2Errors>> ImportVolumeOutcome;
         typedef Aws::Utils::Outcome<ModifyCapacityReservationResponse, Aws::Client::AWSError<EC2Errors>> ModifyCapacityReservationOutcome;
         typedef Aws::Utils::Outcome<ModifyClientVpnEndpointResponse, Aws::Client::AWSError<EC2Errors>> ModifyClientVpnEndpointOutcome;
+        typedef Aws::Utils::Outcome<ModifyEbsDefaultKmsKeyIdResponse, Aws::Client::AWSError<EC2Errors>> ModifyEbsDefaultKmsKeyIdOutcome;
         typedef Aws::Utils::Outcome<ModifyFleetResponse, Aws::Client::AWSError<EC2Errors>> ModifyFleetOutcome;
         typedef Aws::Utils::Outcome<ModifyFpgaImageAttributeResponse, Aws::Client::AWSError<EC2Errors>> ModifyFpgaImageAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifyHostsResponse, Aws::Client::AWSError<EC2Errors>> ModifyHostsOutcome;
@@ -979,6 +996,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ReportInstanceStatusOutcome;
         typedef Aws::Utils::Outcome<RequestSpotFleetResponse, Aws::Client::AWSError<EC2Errors>> RequestSpotFleetOutcome;
         typedef Aws::Utils::Outcome<RequestSpotInstancesResponse, Aws::Client::AWSError<EC2Errors>> RequestSpotInstancesOutcome;
+        typedef Aws::Utils::Outcome<ResetEbsDefaultKmsKeyIdResponse, Aws::Client::AWSError<EC2Errors>> ResetEbsDefaultKmsKeyIdOutcome;
         typedef Aws::Utils::Outcome<ResetFpgaImageAttributeResponse, Aws::Client::AWSError<EC2Errors>> ResetFpgaImageAttributeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ResetImageAttributeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ResetInstanceAttributeOutcome;
@@ -1225,6 +1243,7 @@ namespace Model
         typedef std::future<DetachNetworkInterfaceOutcome> DetachNetworkInterfaceOutcomeCallable;
         typedef std::future<DetachVolumeOutcome> DetachVolumeOutcomeCallable;
         typedef std::future<DetachVpnGatewayOutcome> DetachVpnGatewayOutcomeCallable;
+        typedef std::future<DisableEbsEncryptionByDefaultOutcome> DisableEbsEncryptionByDefaultOutcomeCallable;
         typedef std::future<DisableTransitGatewayRouteTablePropagationOutcome> DisableTransitGatewayRouteTablePropagationOutcomeCallable;
         typedef std::future<DisableVgwRoutePropagationOutcome> DisableVgwRoutePropagationOutcomeCallable;
         typedef std::future<DisableVpcClassicLinkOutcome> DisableVpcClassicLinkOutcomeCallable;
@@ -1236,6 +1255,7 @@ namespace Model
         typedef std::future<DisassociateSubnetCidrBlockOutcome> DisassociateSubnetCidrBlockOutcomeCallable;
         typedef std::future<DisassociateTransitGatewayRouteTableOutcome> DisassociateTransitGatewayRouteTableOutcomeCallable;
         typedef std::future<DisassociateVpcCidrBlockOutcome> DisassociateVpcCidrBlockOutcomeCallable;
+        typedef std::future<EnableEbsEncryptionByDefaultOutcome> EnableEbsEncryptionByDefaultOutcomeCallable;
         typedef std::future<EnableTransitGatewayRouteTablePropagationOutcome> EnableTransitGatewayRouteTablePropagationOutcomeCallable;
         typedef std::future<EnableVgwRoutePropagationOutcome> EnableVgwRoutePropagationOutcomeCallable;
         typedef std::future<EnableVolumeIOOutcome> EnableVolumeIOOutcomeCallable;
@@ -1246,6 +1266,8 @@ namespace Model
         typedef std::future<ExportTransitGatewayRoutesOutcome> ExportTransitGatewayRoutesOutcomeCallable;
         typedef std::future<GetConsoleOutputOutcome> GetConsoleOutputOutcomeCallable;
         typedef std::future<GetConsoleScreenshotOutcome> GetConsoleScreenshotOutcomeCallable;
+        typedef std::future<GetEbsDefaultKmsKeyIdOutcome> GetEbsDefaultKmsKeyIdOutcomeCallable;
+        typedef std::future<GetEbsEncryptionByDefaultOutcome> GetEbsEncryptionByDefaultOutcomeCallable;
         typedef std::future<GetHostReservationPurchasePreviewOutcome> GetHostReservationPurchasePreviewOutcomeCallable;
         typedef std::future<GetLaunchTemplateDataOutcome> GetLaunchTemplateDataOutcomeCallable;
         typedef std::future<GetPasswordDataOutcome> GetPasswordDataOutcomeCallable;
@@ -1261,6 +1283,7 @@ namespace Model
         typedef std::future<ImportVolumeOutcome> ImportVolumeOutcomeCallable;
         typedef std::future<ModifyCapacityReservationOutcome> ModifyCapacityReservationOutcomeCallable;
         typedef std::future<ModifyClientVpnEndpointOutcome> ModifyClientVpnEndpointOutcomeCallable;
+        typedef std::future<ModifyEbsDefaultKmsKeyIdOutcome> ModifyEbsDefaultKmsKeyIdOutcomeCallable;
         typedef std::future<ModifyFleetOutcome> ModifyFleetOutcomeCallable;
         typedef std::future<ModifyFpgaImageAttributeOutcome> ModifyFpgaImageAttributeOutcomeCallable;
         typedef std::future<ModifyHostsOutcome> ModifyHostsOutcomeCallable;
@@ -1311,6 +1334,7 @@ namespace Model
         typedef std::future<ReportInstanceStatusOutcome> ReportInstanceStatusOutcomeCallable;
         typedef std::future<RequestSpotFleetOutcome> RequestSpotFleetOutcomeCallable;
         typedef std::future<RequestSpotInstancesOutcome> RequestSpotInstancesOutcomeCallable;
+        typedef std::future<ResetEbsDefaultKmsKeyIdOutcome> ResetEbsDefaultKmsKeyIdOutcomeCallable;
         typedef std::future<ResetFpgaImageAttributeOutcome> ResetFpgaImageAttributeOutcomeCallable;
         typedef std::future<ResetImageAttributeOutcome> ResetImageAttributeOutcomeCallable;
         typedef std::future<ResetInstanceAttributeOutcome> ResetInstanceAttributeOutcomeCallable;
@@ -1560,6 +1584,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DetachNetworkInterfaceRequest&, const Model::DetachNetworkInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachNetworkInterfaceResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DetachVolumeRequest&, const Model::DetachVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachVolumeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DetachVpnGatewayRequest&, const Model::DetachVpnGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachVpnGatewayResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DisableEbsEncryptionByDefaultRequest&, const Model::DisableEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableEbsEncryptionByDefaultResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableTransitGatewayRouteTablePropagationRequest&, const Model::DisableTransitGatewayRouteTablePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableTransitGatewayRouteTablePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableVgwRoutePropagationRequest&, const Model::DisableVgwRoutePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableVgwRoutePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableVpcClassicLinkRequest&, const Model::DisableVpcClassicLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableVpcClassicLinkResponseReceivedHandler;
@@ -1571,6 +1596,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DisassociateSubnetCidrBlockRequest&, const Model::DisassociateSubnetCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSubnetCidrBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateTransitGatewayRouteTableRequest&, const Model::DisassociateTransitGatewayRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTransitGatewayRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateVpcCidrBlockRequest&, const Model::DisassociateVpcCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateVpcCidrBlockResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::EnableEbsEncryptionByDefaultRequest&, const Model::EnableEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableEbsEncryptionByDefaultResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableTransitGatewayRouteTablePropagationRequest&, const Model::EnableTransitGatewayRouteTablePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableTransitGatewayRouteTablePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableVgwRoutePropagationRequest&, const Model::EnableVgwRoutePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableVgwRoutePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableVolumeIORequest&, const Model::EnableVolumeIOOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableVolumeIOResponseReceivedHandler;
@@ -1581,6 +1607,8 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ExportTransitGatewayRoutesRequest&, const Model::ExportTransitGatewayRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportTransitGatewayRoutesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetConsoleOutputRequest&, const Model::GetConsoleOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConsoleOutputResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetConsoleScreenshotRequest&, const Model::GetConsoleScreenshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConsoleScreenshotResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetEbsDefaultKmsKeyIdRequest&, const Model::GetEbsDefaultKmsKeyIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEbsDefaultKmsKeyIdResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetEbsEncryptionByDefaultRequest&, const Model::GetEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEbsEncryptionByDefaultResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetHostReservationPurchasePreviewRequest&, const Model::GetHostReservationPurchasePreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostReservationPurchasePreviewResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetLaunchTemplateDataRequest&, const Model::GetLaunchTemplateDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLaunchTemplateDataResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetPasswordDataRequest&, const Model::GetPasswordDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPasswordDataResponseReceivedHandler;
@@ -1596,6 +1624,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ImportVolumeRequest&, const Model::ImportVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportVolumeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyCapacityReservationRequest&, const Model::ModifyCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCapacityReservationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyClientVpnEndpointRequest&, const Model::ModifyClientVpnEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClientVpnEndpointResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyEbsDefaultKmsKeyIdRequest&, const Model::ModifyEbsDefaultKmsKeyIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyEbsDefaultKmsKeyIdResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyFleetRequest&, const Model::ModifyFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyFleetResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyFpgaImageAttributeRequest&, const Model::ModifyFpgaImageAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyFpgaImageAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyHostsRequest&, const Model::ModifyHostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyHostsResponseReceivedHandler;
@@ -1646,6 +1675,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ReportInstanceStatusRequest&, const Model::ReportInstanceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReportInstanceStatusResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RequestSpotFleetRequest&, const Model::RequestSpotFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestSpotFleetResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RequestSpotInstancesRequest&, const Model::RequestSpotInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestSpotInstancesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ResetEbsDefaultKmsKeyIdRequest&, const Model::ResetEbsDefaultKmsKeyIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetEbsDefaultKmsKeyIdResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ResetFpgaImageAttributeRequest&, const Model::ResetFpgaImageAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetFpgaImageAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ResetImageAttributeRequest&, const Model::ResetImageAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetImageAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ResetInstanceAttributeRequest&, const Model::ResetInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetInstanceAttributeResponseReceivedHandler;
@@ -5769,9 +5799,9 @@ namespace Model
 
         /**
          * <p>Creates a VPN connection between an existing virtual private gateway and a
-         * VPN customer gateway. The only supported connection type is
-         * <code>ipsec.1</code>.</p> <p>The response includes information that you need to
-         * give to your network administrator to configure your customer gateway.</p>
+         * VPN customer gateway. The supported connection types are <code>ipsec.1</code>
+         * and <code>ipsec.2</code>.</p> <p>The response includes information that you need
+         * to give to your network administrator to configure your customer gateway.</p>
          * <important> <p>We strongly recommend that you use HTTPS when calling this
          * operation because the response contains sensitive cryptographic information for
          * configuring your customer gateway.</p> </important> <p>If you decide to shut
@@ -5790,9 +5820,9 @@ namespace Model
 
         /**
          * <p>Creates a VPN connection between an existing virtual private gateway and a
-         * VPN customer gateway. The only supported connection type is
-         * <code>ipsec.1</code>.</p> <p>The response includes information that you need to
-         * give to your network administrator to configure your customer gateway.</p>
+         * VPN customer gateway. The supported connection types are <code>ipsec.1</code>
+         * and <code>ipsec.2</code>.</p> <p>The response includes information that you need
+         * to give to your network administrator to configure your customer gateway.</p>
          * <important> <p>We strongly recommend that you use HTTPS when calling this
          * operation because the response contains sensitive cryptographic information for
          * configuring your customer gateway.</p> </important> <p>If you decide to shut
@@ -5813,9 +5843,9 @@ namespace Model
 
         /**
          * <p>Creates a VPN connection between an existing virtual private gateway and a
-         * VPN customer gateway. The only supported connection type is
-         * <code>ipsec.1</code>.</p> <p>The response includes information that you need to
-         * give to your network administrator to configure your customer gateway.</p>
+         * VPN customer gateway. The supported connection types are <code>ipsec.1</code>
+         * and <code>ipsec.2</code>.</p> <p>The response includes information that you need
+         * to give to your network administrator to configure your customer gateway.</p>
          * <important> <p>We strongly recommend that you use HTTPS when calling this
          * operation because the response contains sensitive cryptographic information for
          * configuring your customer gateway.</p> </important> <p>If you decide to shut
@@ -11338,6 +11368,49 @@ namespace Model
         virtual void DetachVpnGatewayAsync(const Model::DetachVpnGatewayRequest& request, const DetachVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disables default encryption for EBS volumes that are created in your account
+         * in the current region.</p> <p>Call this API if you have enabled default
+         * encryption using <a>EnableEbsEncryptionByDefault</a> and want to disable default
+         * EBS encryption. Once default EBS encryption is disabled, you can still create an
+         * encrypted volume by setting <i>encrypted</i> to <i>true</i> in the API call that
+         * creates the volume. </p> <p>Disabling default EBS encryption will not change the
+         * encryption status of any of your existing volumes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableEbsEncryptionByDefault">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableEbsEncryptionByDefaultOutcome DisableEbsEncryptionByDefault(const Model::DisableEbsEncryptionByDefaultRequest& request) const;
+
+        /**
+         * <p>Disables default encryption for EBS volumes that are created in your account
+         * in the current region.</p> <p>Call this API if you have enabled default
+         * encryption using <a>EnableEbsEncryptionByDefault</a> and want to disable default
+         * EBS encryption. Once default EBS encryption is disabled, you can still create an
+         * encrypted volume by setting <i>encrypted</i> to <i>true</i> in the API call that
+         * creates the volume. </p> <p>Disabling default EBS encryption will not change the
+         * encryption status of any of your existing volumes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableEbsEncryptionByDefault">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisableEbsEncryptionByDefaultOutcomeCallable DisableEbsEncryptionByDefaultCallable(const Model::DisableEbsEncryptionByDefaultRequest& request) const;
+
+        /**
+         * <p>Disables default encryption for EBS volumes that are created in your account
+         * in the current region.</p> <p>Call this API if you have enabled default
+         * encryption using <a>EnableEbsEncryptionByDefault</a> and want to disable default
+         * EBS encryption. Once default EBS encryption is disabled, you can still create an
+         * encrypted volume by setting <i>encrypted</i> to <i>true</i> in the API call that
+         * creates the volume. </p> <p>Disabling default EBS encryption will not change the
+         * encryption status of any of your existing volumes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableEbsEncryptionByDefault">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisableEbsEncryptionByDefaultAsync(const Model::DisableEbsEncryptionByDefaultRequest& request, const DisableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disables the specified resource attachment from propagating routes to the
          * specified propagation route table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableTransitGatewayRouteTablePropagation">AWS
@@ -11727,6 +11800,94 @@ namespace Model
         virtual void DisassociateVpcCidrBlockAsync(const Model::DisassociateVpcCidrBlockRequest& request, const DisassociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Enables default encryption for EBS volumes that are created in your account
+         * in the current region.</p> <p>Once encryption is enabled with this action, EBS
+         * volumes that are created in your account will always be encrypted even if
+         * encryption is not specified at launch. This setting overrides the
+         * <i>encrypted</i> setting to <i>true</i> in all API calls that create EBS volumes
+         * in your account. A volume will be encrypted even if you specify
+         * <i>encryption</i> to be <i>false</i> in the API call that creates the
+         * volume.</p> <p>If you do not specify a customer master key (CMK) in the API call
+         * that creates the EBS volume, then the volume is encrypted to your AWS account's
+         * default CMK.</p> <p>You can specify a default CMK of your choice using
+         * <a>ModifyEbsDefaultKmsKeyId</a>.</p> <p>Enabling default encryption for EBS
+         * volumes has no effect on existing unencrypted volumes in your account.
+         * Encrypting the data in these requires manual action. You can either create an
+         * encrypted snapshot of an unencrypted volume, or encrypt a copy of an unencrypted
+         * snapshot. Any volume restored from an encrypted snapshot is also encrypted. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
+         * EBS Snapshots</a>.</p> <p>Once EBS encryption by default is enabled, you can no
+         * longer launch older-generation instance types that do not support encryption.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+         * Instance Types</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableEbsEncryptionByDefaultOutcome EnableEbsEncryptionByDefault(const Model::EnableEbsEncryptionByDefaultRequest& request) const;
+
+        /**
+         * <p>Enables default encryption for EBS volumes that are created in your account
+         * in the current region.</p> <p>Once encryption is enabled with this action, EBS
+         * volumes that are created in your account will always be encrypted even if
+         * encryption is not specified at launch. This setting overrides the
+         * <i>encrypted</i> setting to <i>true</i> in all API calls that create EBS volumes
+         * in your account. A volume will be encrypted even if you specify
+         * <i>encryption</i> to be <i>false</i> in the API call that creates the
+         * volume.</p> <p>If you do not specify a customer master key (CMK) in the API call
+         * that creates the EBS volume, then the volume is encrypted to your AWS account's
+         * default CMK.</p> <p>You can specify a default CMK of your choice using
+         * <a>ModifyEbsDefaultKmsKeyId</a>.</p> <p>Enabling default encryption for EBS
+         * volumes has no effect on existing unencrypted volumes in your account.
+         * Encrypting the data in these requires manual action. You can either create an
+         * encrypted snapshot of an unencrypted volume, or encrypt a copy of an unencrypted
+         * snapshot. Any volume restored from an encrypted snapshot is also encrypted. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
+         * EBS Snapshots</a>.</p> <p>Once EBS encryption by default is enabled, you can no
+         * longer launch older-generation instance types that do not support encryption.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+         * Instance Types</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EnableEbsEncryptionByDefaultOutcomeCallable EnableEbsEncryptionByDefaultCallable(const Model::EnableEbsEncryptionByDefaultRequest& request) const;
+
+        /**
+         * <p>Enables default encryption for EBS volumes that are created in your account
+         * in the current region.</p> <p>Once encryption is enabled with this action, EBS
+         * volumes that are created in your account will always be encrypted even if
+         * encryption is not specified at launch. This setting overrides the
+         * <i>encrypted</i> setting to <i>true</i> in all API calls that create EBS volumes
+         * in your account. A volume will be encrypted even if you specify
+         * <i>encryption</i> to be <i>false</i> in the API call that creates the
+         * volume.</p> <p>If you do not specify a customer master key (CMK) in the API call
+         * that creates the EBS volume, then the volume is encrypted to your AWS account's
+         * default CMK.</p> <p>You can specify a default CMK of your choice using
+         * <a>ModifyEbsDefaultKmsKeyId</a>.</p> <p>Enabling default encryption for EBS
+         * volumes has no effect on existing unencrypted volumes in your account.
+         * Encrypting the data in these requires manual action. You can either create an
+         * encrypted snapshot of an unencrypted volume, or encrypt a copy of an unencrypted
+         * snapshot. Any volume restored from an encrypted snapshot is also encrypted. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
+         * EBS Snapshots</a>.</p> <p>Once EBS encryption by default is enabled, you can no
+         * longer launch older-generation instance types that do not support encryption.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+         * Instance Types</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EnableEbsEncryptionByDefaultAsync(const Model::EnableEbsEncryptionByDefaultRequest& request, const EnableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Enables the specified attachment to propagate routes to the specified
          * propagation route table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableTransitGatewayRouteTablePropagation">AWS
@@ -12101,6 +12262,68 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetConsoleScreenshotAsync(const Model::GetConsoleScreenshotRequest& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the default customer master key (CMK) that your account uses to
+         * encrypt EBS volumes if you don’t specify a CMK in the API call. You can change
+         * this default using <a>ModifyEbsDefaultKmsKeyId</a>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsDefaultKmsKeyId">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEbsDefaultKmsKeyIdOutcome GetEbsDefaultKmsKeyId(const Model::GetEbsDefaultKmsKeyIdRequest& request) const;
+
+        /**
+         * <p>Describes the default customer master key (CMK) that your account uses to
+         * encrypt EBS volumes if you don’t specify a CMK in the API call. You can change
+         * this default using <a>ModifyEbsDefaultKmsKeyId</a>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsDefaultKmsKeyId">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetEbsDefaultKmsKeyIdOutcomeCallable GetEbsDefaultKmsKeyIdCallable(const Model::GetEbsDefaultKmsKeyIdRequest& request) const;
+
+        /**
+         * <p>Describes the default customer master key (CMK) that your account uses to
+         * encrypt EBS volumes if you don’t specify a CMK in the API call. You can change
+         * this default using <a>ModifyEbsDefaultKmsKeyId</a>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsDefaultKmsKeyId">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetEbsDefaultKmsKeyIdAsync(const Model::GetEbsDefaultKmsKeyIdRequest& request, const GetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes whether default EBS encryption is enabled for your account in the
+         * current region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsEncryptionByDefault">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEbsEncryptionByDefaultOutcome GetEbsEncryptionByDefault(const Model::GetEbsEncryptionByDefaultRequest& request) const;
+
+        /**
+         * <p>Describes whether default EBS encryption is enabled for your account in the
+         * current region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsEncryptionByDefault">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetEbsEncryptionByDefaultOutcomeCallable GetEbsEncryptionByDefaultCallable(const Model::GetEbsEncryptionByDefaultRequest& request) const;
+
+        /**
+         * <p>Describes whether default EBS encryption is enabled for your account in the
+         * current region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsEncryptionByDefault">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetEbsEncryptionByDefaultAsync(const Model::GetEbsEncryptionByDefaultRequest& request, const GetEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Preview a reservation purchase with configurations that match those of your
@@ -12674,6 +12897,52 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyClientVpnEndpointAsync(const Model::ModifyClientVpnEndpointRequest& request, const ModifyClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Changes the default customer master key (CMK) that your account uses to
+         * encrypt EBS volumes if you don’t specify a CMK in the API call.</p> <p>Your
+         * account has an AWS-managed default CMK that is used for encrypting an EBS volume
+         * when no CMK is specified in the API call that creates the volume. By calling
+         * this API, you can specify a customer-managed CMK to use in place of the
+         * AWS-managed default CMK.</p> <p>Note: Deleting or disabling the custom CMK that
+         * you have specified to act as your default CMK will result in instance-launch
+         * failures.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyEbsDefaultKmsKeyIdOutcome ModifyEbsDefaultKmsKeyId(const Model::ModifyEbsDefaultKmsKeyIdRequest& request) const;
+
+        /**
+         * <p>Changes the default customer master key (CMK) that your account uses to
+         * encrypt EBS volumes if you don’t specify a CMK in the API call.</p> <p>Your
+         * account has an AWS-managed default CMK that is used for encrypting an EBS volume
+         * when no CMK is specified in the API call that creates the volume. By calling
+         * this API, you can specify a customer-managed CMK to use in place of the
+         * AWS-managed default CMK.</p> <p>Note: Deleting or disabling the custom CMK that
+         * you have specified to act as your default CMK will result in instance-launch
+         * failures.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyEbsDefaultKmsKeyIdOutcomeCallable ModifyEbsDefaultKmsKeyIdCallable(const Model::ModifyEbsDefaultKmsKeyIdRequest& request) const;
+
+        /**
+         * <p>Changes the default customer master key (CMK) that your account uses to
+         * encrypt EBS volumes if you don’t specify a CMK in the API call.</p> <p>Your
+         * account has an AWS-managed default CMK that is used for encrypting an EBS volume
+         * when no CMK is specified in the API call that creates the volume. By calling
+         * this API, you can specify a customer-managed CMK to use in place of the
+         * AWS-managed default CMK.</p> <p>Note: Deleting or disabling the custom CMK that
+         * you have specified to act as your default CMK will result in instance-launch
+         * failures.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyEbsDefaultKmsKeyIdAsync(const Model::ModifyEbsDefaultKmsKeyIdRequest& request, const ModifyEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified EC2 Fleet.</p> <p>While the EC2 Fleet is being
@@ -13426,10 +13695,11 @@ namespace Model
         virtual void ModifySnapshotAttributeAsync(const Model::ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the specified Spot Fleet request.</p> <p>While the Spot Fleet
-         * request is being modified, it is in the <code>modifying</code> state.</p> <p>To
-         * scale up your Spot Fleet, increase its target capacity. The Spot Fleet launches
-         * the additional Spot Instances according to the allocation strategy for the Spot
+         * <p>Modifies the specified Spot Fleet request.</p> <p>You can only modify a Spot
+         * Fleet request of type <code>maintain</code>.</p> <p>While the Spot Fleet request
+         * is being modified, it is in the <code>modifying</code> state.</p> <p>To scale up
+         * your Spot Fleet, increase its target capacity. The Spot Fleet launches the
+         * additional Spot Instances according to the allocation strategy for the Spot
          * Fleet request. If the allocation strategy is <code>lowestPrice</code>, the Spot
          * Fleet launches instances using the Spot pool with the lowest price. If the
          * allocation strategy is <code>diversified</code>, the Spot Fleet distributes the
@@ -13451,10 +13721,11 @@ namespace Model
         virtual Model::ModifySpotFleetRequestOutcome ModifySpotFleetRequest(const Model::ModifySpotFleetRequestRequest& request) const;
 
         /**
-         * <p>Modifies the specified Spot Fleet request.</p> <p>While the Spot Fleet
-         * request is being modified, it is in the <code>modifying</code> state.</p> <p>To
-         * scale up your Spot Fleet, increase its target capacity. The Spot Fleet launches
-         * the additional Spot Instances according to the allocation strategy for the Spot
+         * <p>Modifies the specified Spot Fleet request.</p> <p>You can only modify a Spot
+         * Fleet request of type <code>maintain</code>.</p> <p>While the Spot Fleet request
+         * is being modified, it is in the <code>modifying</code> state.</p> <p>To scale up
+         * your Spot Fleet, increase its target capacity. The Spot Fleet launches the
+         * additional Spot Instances according to the allocation strategy for the Spot
          * Fleet request. If the allocation strategy is <code>lowestPrice</code>, the Spot
          * Fleet launches instances using the Spot pool with the lowest price. If the
          * allocation strategy is <code>diversified</code>, the Spot Fleet distributes the
@@ -13478,10 +13749,11 @@ namespace Model
         virtual Model::ModifySpotFleetRequestOutcomeCallable ModifySpotFleetRequestCallable(const Model::ModifySpotFleetRequestRequest& request) const;
 
         /**
-         * <p>Modifies the specified Spot Fleet request.</p> <p>While the Spot Fleet
-         * request is being modified, it is in the <code>modifying</code> state.</p> <p>To
-         * scale up your Spot Fleet, increase its target capacity. The Spot Fleet launches
-         * the additional Spot Instances according to the allocation strategy for the Spot
+         * <p>Modifies the specified Spot Fleet request.</p> <p>You can only modify a Spot
+         * Fleet request of type <code>maintain</code>.</p> <p>While the Spot Fleet request
+         * is being modified, it is in the <code>modifying</code> state.</p> <p>To scale up
+         * your Spot Fleet, increase its target capacity. The Spot Fleet launches the
+         * additional Spot Instances according to the allocation strategy for the Spot
          * Fleet request. If the allocation strategy is <code>lowestPrice</code>, the Spot
          * Fleet launches instances using the Spot pool with the lowest price. If the
          * allocation strategy is <code>diversified</code>, the Spot Fleet distributes the
@@ -15189,6 +15461,64 @@ namespace Model
         virtual void RequestSpotInstancesAsync(const Model::RequestSpotInstancesRequest& request, const RequestSpotInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Resets the account's default customer master key (CMK) to the account's
+         * AWS-managed default CMK. This default CMK is used to encrypt EBS volumes when
+         * you have enabled EBS encryption by default without specifying a CMK in the API
+         * call. If you have not enabled encryption by default, then this CMK is used when
+         * you set the <code>Encrypted</code> parameter to true without specifying a custom
+         * CMK in the API call.</p> <p>Call this API if you have modified the default CMK
+         * that is used for encrypting your EBS volume using
+         * <a>ModifyEbsDefaultKmsKeyId</a> and you want to reset it to the AWS-managed
+         * default CMK. After resetting, you can continue to provide a CMK of your choice
+         * in the API call that creates the volume. However, if no CMK is specified, your
+         * account will encrypt the volume to the AWS-managed default CMK.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetEbsDefaultKmsKeyId">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetEbsDefaultKmsKeyIdOutcome ResetEbsDefaultKmsKeyId(const Model::ResetEbsDefaultKmsKeyIdRequest& request) const;
+
+        /**
+         * <p>Resets the account's default customer master key (CMK) to the account's
+         * AWS-managed default CMK. This default CMK is used to encrypt EBS volumes when
+         * you have enabled EBS encryption by default without specifying a CMK in the API
+         * call. If you have not enabled encryption by default, then this CMK is used when
+         * you set the <code>Encrypted</code> parameter to true without specifying a custom
+         * CMK in the API call.</p> <p>Call this API if you have modified the default CMK
+         * that is used for encrypting your EBS volume using
+         * <a>ModifyEbsDefaultKmsKeyId</a> and you want to reset it to the AWS-managed
+         * default CMK. After resetting, you can continue to provide a CMK of your choice
+         * in the API call that creates the volume. However, if no CMK is specified, your
+         * account will encrypt the volume to the AWS-managed default CMK.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetEbsDefaultKmsKeyId">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResetEbsDefaultKmsKeyIdOutcomeCallable ResetEbsDefaultKmsKeyIdCallable(const Model::ResetEbsDefaultKmsKeyIdRequest& request) const;
+
+        /**
+         * <p>Resets the account's default customer master key (CMK) to the account's
+         * AWS-managed default CMK. This default CMK is used to encrypt EBS volumes when
+         * you have enabled EBS encryption by default without specifying a CMK in the API
+         * call. If you have not enabled encryption by default, then this CMK is used when
+         * you set the <code>Encrypted</code> parameter to true without specifying a custom
+         * CMK in the API call.</p> <p>Call this API if you have modified the default CMK
+         * that is used for encrypting your EBS volume using
+         * <a>ModifyEbsDefaultKmsKeyId</a> and you want to reset it to the AWS-managed
+         * default CMK. After resetting, you can continue to provide a CMK of your choice
+         * in the API call that creates the volume. However, if no CMK is specified, your
+         * account will encrypt the volume to the AWS-managed default CMK.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetEbsDefaultKmsKeyId">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResetEbsDefaultKmsKeyIdAsync(const Model::ResetEbsDefaultKmsKeyIdRequest& request, const ResetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Resets the specified attribute of the specified Amazon FPGA Image (AFI) to
          * its default value. You can only reset the load permission
          * attribute.</p><p><h3>See Also:</h3>   <a
@@ -16562,6 +16892,7 @@ namespace Model
         void DetachNetworkInterfaceAsyncHelper(const Model::DetachNetworkInterfaceRequest& request, const DetachNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachVolumeAsyncHelper(const Model::DetachVolumeRequest& request, const DetachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachVpnGatewayAsyncHelper(const Model::DetachVpnGatewayRequest& request, const DetachVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisableEbsEncryptionByDefaultAsyncHelper(const Model::DisableEbsEncryptionByDefaultRequest& request, const DisableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableTransitGatewayRouteTablePropagationAsyncHelper(const Model::DisableTransitGatewayRouteTablePropagationRequest& request, const DisableTransitGatewayRouteTablePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableVgwRoutePropagationAsyncHelper(const Model::DisableVgwRoutePropagationRequest& request, const DisableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableVpcClassicLinkAsyncHelper(const Model::DisableVpcClassicLinkRequest& request, const DisableVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -16573,6 +16904,7 @@ namespace Model
         void DisassociateSubnetCidrBlockAsyncHelper(const Model::DisassociateSubnetCidrBlockRequest& request, const DisassociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateTransitGatewayRouteTableAsyncHelper(const Model::DisassociateTransitGatewayRouteTableRequest& request, const DisassociateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateVpcCidrBlockAsyncHelper(const Model::DisassociateVpcCidrBlockRequest& request, const DisassociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void EnableEbsEncryptionByDefaultAsyncHelper(const Model::EnableEbsEncryptionByDefaultRequest& request, const EnableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableTransitGatewayRouteTablePropagationAsyncHelper(const Model::EnableTransitGatewayRouteTablePropagationRequest& request, const EnableTransitGatewayRouteTablePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableVgwRoutePropagationAsyncHelper(const Model::EnableVgwRoutePropagationRequest& request, const EnableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableVolumeIOAsyncHelper(const Model::EnableVolumeIORequest& request, const EnableVolumeIOResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -16583,6 +16915,8 @@ namespace Model
         void ExportTransitGatewayRoutesAsyncHelper(const Model::ExportTransitGatewayRoutesRequest& request, const ExportTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConsoleOutputAsyncHelper(const Model::GetConsoleOutputRequest& request, const GetConsoleOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConsoleScreenshotAsyncHelper(const Model::GetConsoleScreenshotRequest& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetEbsDefaultKmsKeyIdAsyncHelper(const Model::GetEbsDefaultKmsKeyIdRequest& request, const GetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetEbsEncryptionByDefaultAsyncHelper(const Model::GetEbsEncryptionByDefaultRequest& request, const GetEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetHostReservationPurchasePreviewAsyncHelper(const Model::GetHostReservationPurchasePreviewRequest& request, const GetHostReservationPurchasePreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLaunchTemplateDataAsyncHelper(const Model::GetLaunchTemplateDataRequest& request, const GetLaunchTemplateDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPasswordDataAsyncHelper(const Model::GetPasswordDataRequest& request, const GetPasswordDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -16598,6 +16932,7 @@ namespace Model
         void ImportVolumeAsyncHelper(const Model::ImportVolumeRequest& request, const ImportVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyCapacityReservationAsyncHelper(const Model::ModifyCapacityReservationRequest& request, const ModifyCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClientVpnEndpointAsyncHelper(const Model::ModifyClientVpnEndpointRequest& request, const ModifyClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyEbsDefaultKmsKeyIdAsyncHelper(const Model::ModifyEbsDefaultKmsKeyIdRequest& request, const ModifyEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyFleetAsyncHelper(const Model::ModifyFleetRequest& request, const ModifyFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyFpgaImageAttributeAsyncHelper(const Model::ModifyFpgaImageAttributeRequest& request, const ModifyFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyHostsAsyncHelper(const Model::ModifyHostsRequest& request, const ModifyHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -16648,6 +16983,7 @@ namespace Model
         void ReportInstanceStatusAsyncHelper(const Model::ReportInstanceStatusRequest& request, const ReportInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RequestSpotFleetAsyncHelper(const Model::RequestSpotFleetRequest& request, const RequestSpotFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RequestSpotInstancesAsyncHelper(const Model::RequestSpotInstancesRequest& request, const RequestSpotInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ResetEbsDefaultKmsKeyIdAsyncHelper(const Model::ResetEbsDefaultKmsKeyIdRequest& request, const ResetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetFpgaImageAttributeAsyncHelper(const Model::ResetFpgaImageAttributeRequest& request, const ResetFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetImageAttributeAsyncHelper(const Model::ResetImageAttributeRequest& request, const ResetImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetInstanceAttributeAsyncHelper(const Model::ResetInstanceAttributeRequest& request, const ResetInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -115,50 +115,38 @@ namespace Model
 
 
     /**
-     * <p>Specify <code>true</code> to indicate that network interfaces created in the
-     * specified subnet should be assigned a public IPv4 address. This includes a
-     * network interface that's created when launching an instance into the subnet (the
-     * instance therefore receives a public IPv4 address).</p>
+     * <p>Specify <code>true</code> to indicate that ENIs attached to instances created
+     * in the specified subnet should be assigned a public IPv4 address.</p>
      */
     inline const AttributeBooleanValue& GetMapPublicIpOnLaunch() const{ return m_mapPublicIpOnLaunch; }
 
     /**
-     * <p>Specify <code>true</code> to indicate that network interfaces created in the
-     * specified subnet should be assigned a public IPv4 address. This includes a
-     * network interface that's created when launching an instance into the subnet (the
-     * instance therefore receives a public IPv4 address).</p>
+     * <p>Specify <code>true</code> to indicate that ENIs attached to instances created
+     * in the specified subnet should be assigned a public IPv4 address.</p>
      */
     inline bool MapPublicIpOnLaunchHasBeenSet() const { return m_mapPublicIpOnLaunchHasBeenSet; }
 
     /**
-     * <p>Specify <code>true</code> to indicate that network interfaces created in the
-     * specified subnet should be assigned a public IPv4 address. This includes a
-     * network interface that's created when launching an instance into the subnet (the
-     * instance therefore receives a public IPv4 address).</p>
+     * <p>Specify <code>true</code> to indicate that ENIs attached to instances created
+     * in the specified subnet should be assigned a public IPv4 address.</p>
      */
     inline void SetMapPublicIpOnLaunch(const AttributeBooleanValue& value) { m_mapPublicIpOnLaunchHasBeenSet = true; m_mapPublicIpOnLaunch = value; }
 
     /**
-     * <p>Specify <code>true</code> to indicate that network interfaces created in the
-     * specified subnet should be assigned a public IPv4 address. This includes a
-     * network interface that's created when launching an instance into the subnet (the
-     * instance therefore receives a public IPv4 address).</p>
+     * <p>Specify <code>true</code> to indicate that ENIs attached to instances created
+     * in the specified subnet should be assigned a public IPv4 address.</p>
      */
     inline void SetMapPublicIpOnLaunch(AttributeBooleanValue&& value) { m_mapPublicIpOnLaunchHasBeenSet = true; m_mapPublicIpOnLaunch = std::move(value); }
 
     /**
-     * <p>Specify <code>true</code> to indicate that network interfaces created in the
-     * specified subnet should be assigned a public IPv4 address. This includes a
-     * network interface that's created when launching an instance into the subnet (the
-     * instance therefore receives a public IPv4 address).</p>
+     * <p>Specify <code>true</code> to indicate that ENIs attached to instances created
+     * in the specified subnet should be assigned a public IPv4 address.</p>
      */
     inline ModifySubnetAttributeRequest& WithMapPublicIpOnLaunch(const AttributeBooleanValue& value) { SetMapPublicIpOnLaunch(value); return *this;}
 
     /**
-     * <p>Specify <code>true</code> to indicate that network interfaces created in the
-     * specified subnet should be assigned a public IPv4 address. This includes a
-     * network interface that's created when launching an instance into the subnet (the
-     * instance therefore receives a public IPv4 address).</p>
+     * <p>Specify <code>true</code> to indicate that ENIs attached to instances created
+     * in the specified subnet should be assigned a public IPv4 address.</p>
      */
     inline ModifySubnetAttributeRequest& WithMapPublicIpOnLaunch(AttributeBooleanValue&& value) { SetMapPublicIpOnLaunch(std::move(value)); return *this;}
 

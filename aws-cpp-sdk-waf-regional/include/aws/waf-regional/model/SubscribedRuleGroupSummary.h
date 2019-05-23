@@ -141,64 +141,80 @@ namespace Model
     /**
      * <p>A friendly name or description for the metrics for this
      * <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z,
-     * a-z, 0-9); the name can't contain whitespace. You can't change the name of the
-     * metric after you create the <code>RuleGroup</code>.</p>
+     * a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     * whitespace or metric names reserved for AWS WAF, including "All" and
+     * "Default_Action." You can't change the name of the metric after you create the
+     * <code>RuleGroup</code>.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
 
     /**
      * <p>A friendly name or description for the metrics for this
      * <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z,
-     * a-z, 0-9); the name can't contain whitespace. You can't change the name of the
-     * metric after you create the <code>RuleGroup</code>.</p>
+     * a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     * whitespace or metric names reserved for AWS WAF, including "All" and
+     * "Default_Action." You can't change the name of the metric after you create the
+     * <code>RuleGroup</code>.</p>
      */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
      * <p>A friendly name or description for the metrics for this
      * <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z,
-     * a-z, 0-9); the name can't contain whitespace. You can't change the name of the
-     * metric after you create the <code>RuleGroup</code>.</p>
+     * a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     * whitespace or metric names reserved for AWS WAF, including "All" and
+     * "Default_Action." You can't change the name of the metric after you create the
+     * <code>RuleGroup</code>.</p>
      */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
      * <p>A friendly name or description for the metrics for this
      * <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z,
-     * a-z, 0-9); the name can't contain whitespace. You can't change the name of the
-     * metric after you create the <code>RuleGroup</code>.</p>
+     * a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     * whitespace or metric names reserved for AWS WAF, including "All" and
+     * "Default_Action." You can't change the name of the metric after you create the
+     * <code>RuleGroup</code>.</p>
      */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
      * <p>A friendly name or description for the metrics for this
      * <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z,
-     * a-z, 0-9); the name can't contain whitespace. You can't change the name of the
-     * metric after you create the <code>RuleGroup</code>.</p>
+     * a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     * whitespace or metric names reserved for AWS WAF, including "All" and
+     * "Default_Action." You can't change the name of the metric after you create the
+     * <code>RuleGroup</code>.</p>
      */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
     /**
      * <p>A friendly name or description for the metrics for this
      * <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z,
-     * a-z, 0-9); the name can't contain whitespace. You can't change the name of the
-     * metric after you create the <code>RuleGroup</code>.</p>
+     * a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     * whitespace or metric names reserved for AWS WAF, including "All" and
+     * "Default_Action." You can't change the name of the metric after you create the
+     * <code>RuleGroup</code>.</p>
      */
     inline SubscribedRuleGroupSummary& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
 
     /**
      * <p>A friendly name or description for the metrics for this
      * <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z,
-     * a-z, 0-9); the name can't contain whitespace. You can't change the name of the
-     * metric after you create the <code>RuleGroup</code>.</p>
+     * a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     * whitespace or metric names reserved for AWS WAF, including "All" and
+     * "Default_Action." You can't change the name of the metric after you create the
+     * <code>RuleGroup</code>.</p>
      */
     inline SubscribedRuleGroupSummary& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
      * <p>A friendly name or description for the metrics for this
      * <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z,
-     * a-z, 0-9); the name can't contain whitespace. You can't change the name of the
-     * metric after you create the <code>RuleGroup</code>.</p>
+     * a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     * whitespace or metric names reserved for AWS WAF, including "All" and
+     * "Default_Action." You can't change the name of the metric after you create the
+     * <code>RuleGroup</code>.</p>
      */
     inline SubscribedRuleGroupSummary& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 

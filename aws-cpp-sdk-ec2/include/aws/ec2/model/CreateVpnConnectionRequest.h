@@ -93,42 +93,42 @@ namespace Model
 
 
     /**
-     * <p>The type of VPN connection (<code>ipsec.1</code>).</p>
+     * <p>The type of VPN connection (<code>ipsec.1</code> | <code>ipsec.2</code>).</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of VPN connection (<code>ipsec.1</code>).</p>
+     * <p>The type of VPN connection (<code>ipsec.1</code> | <code>ipsec.2</code>).</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of VPN connection (<code>ipsec.1</code>).</p>
+     * <p>The type of VPN connection (<code>ipsec.1</code> | <code>ipsec.2</code>).</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of VPN connection (<code>ipsec.1</code>).</p>
+     * <p>The type of VPN connection (<code>ipsec.1</code> | <code>ipsec.2</code>).</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of VPN connection (<code>ipsec.1</code>).</p>
+     * <p>The type of VPN connection (<code>ipsec.1</code> | <code>ipsec.2</code>).</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of VPN connection (<code>ipsec.1</code>).</p>
+     * <p>The type of VPN connection (<code>ipsec.1</code> | <code>ipsec.2</code>).</p>
      */
     inline CreateVpnConnectionRequest& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of VPN connection (<code>ipsec.1</code>).</p>
+     * <p>The type of VPN connection (<code>ipsec.1</code> | <code>ipsec.2</code>).</p>
      */
     inline CreateVpnConnectionRequest& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of VPN connection (<code>ipsec.1</code>).</p>
+     * <p>The type of VPN connection (<code>ipsec.1</code> | <code>ipsec.2</code>).</p>
      */
     inline CreateVpnConnectionRequest& WithType(const char* value) { SetType(value); return *this;}
 

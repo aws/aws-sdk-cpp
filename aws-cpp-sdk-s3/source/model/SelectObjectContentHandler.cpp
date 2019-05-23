@@ -148,11 +148,15 @@ namespace Model
             break;
         }
         case SelectObjectContentEventType::CONT:
+        {
             m_onContinuationEvent();
             break;
+        }
         case SelectObjectContentEventType::END:
+        {
             m_onEndEvent();
             break;
+        }
         default:
             AWS_LOGSTREAM_WARN(SELECTOBJECTCONTENT_HANDLER_CLASS_TAG,
                 "Unexpected event type: " << eventTypeHeaderIter->second.GetEventHeaderValueAsString());

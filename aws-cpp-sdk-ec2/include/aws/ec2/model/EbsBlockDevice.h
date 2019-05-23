@@ -81,7 +81,7 @@ namespace Model
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
      * 64,000IOPS for <code>io1</code> volumes in most Regions. Maximum
-     * <code>io1</code>IOPS of 64,000 is guaranteed only on <a
+     * <code>io1</code> IOPS of 64,000 is guaranteed only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
      * For more information, see <a
@@ -103,7 +103,7 @@ namespace Model
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
      * 64,000IOPS for <code>io1</code> volumes in most Regions. Maximum
-     * <code>io1</code>IOPS of 64,000 is guaranteed only on <a
+     * <code>io1</code> IOPS of 64,000 is guaranteed only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
      * For more information, see <a
@@ -125,7 +125,7 @@ namespace Model
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
      * 64,000IOPS for <code>io1</code> volumes in most Regions. Maximum
-     * <code>io1</code>IOPS of 64,000 is guaranteed only on <a
+     * <code>io1</code> IOPS of 64,000 is guaranteed only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
      * For more information, see <a
@@ -147,7 +147,7 @@ namespace Model
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
      * 64,000IOPS for <code>io1</code> volumes in most Regions. Maximum
-     * <code>io1</code>IOPS of 64,000 is guaranteed only on <a
+     * <code>io1</code> IOPS of 64,000 is guaranteed only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
      * For more information, see <a
@@ -284,68 +284,84 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the encryption state of an EBS volume is to be changed
-     * while being restored from a backing snapshot. The default effect of setting this
-     * parameter to <code>true</code> or leaving it unset depends on the origin,
-     * starting encryption state, and ownership of the volume. Each default case can be
-     * overridden by specifying a customer master key (CMK) as argument to the
-     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> =
-     * <code>true</code>. For a complete list of possible encryption cases, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a>. </p> <p>In no case can you remove encryption from an
-     * encrypted volume.</p> <p>Encrypted volumes can only be attached to instances
-     * that support Amazon EBS encryption. For more information, see <a
+     * <p>Indicates whether the encryption state of an EBS volume is changed while
+     * being restored from a backing snapshot. The default effect of setting the
+     * <code>Encrypted</code> parameter to <code>true</code> through the console, API,
+     * or CLI depends on the volume's origin (new or from a snapshot), starting
+     * encryption state, ownership, and whether <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     * encryption</a> is enabled. Each default case can be overridden by specifying a
+     * customer master key (CMK) with the <code>KmsKeyId</code> parameter in addition
+     * to setting <code>Encrypted</code> to <code>true</code>. For a complete list of
+     * possible encryption cases, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>In no case can you remove encryption from an encrypted volume.</p>
+     * <p>Encrypted volumes can only be attached to instances that support Amazon EBS
+     * encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * Instance Types</a>.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
-     * <p>Indicates whether the encryption state of an EBS volume is to be changed
-     * while being restored from a backing snapshot. The default effect of setting this
-     * parameter to <code>true</code> or leaving it unset depends on the origin,
-     * starting encryption state, and ownership of the volume. Each default case can be
-     * overridden by specifying a customer master key (CMK) as argument to the
-     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> =
-     * <code>true</code>. For a complete list of possible encryption cases, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a>. </p> <p>In no case can you remove encryption from an
-     * encrypted volume.</p> <p>Encrypted volumes can only be attached to instances
-     * that support Amazon EBS encryption. For more information, see <a
+     * <p>Indicates whether the encryption state of an EBS volume is changed while
+     * being restored from a backing snapshot. The default effect of setting the
+     * <code>Encrypted</code> parameter to <code>true</code> through the console, API,
+     * or CLI depends on the volume's origin (new or from a snapshot), starting
+     * encryption state, ownership, and whether <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     * encryption</a> is enabled. Each default case can be overridden by specifying a
+     * customer master key (CMK) with the <code>KmsKeyId</code> parameter in addition
+     * to setting <code>Encrypted</code> to <code>true</code>. For a complete list of
+     * possible encryption cases, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>In no case can you remove encryption from an encrypted volume.</p>
+     * <p>Encrypted volumes can only be attached to instances that support Amazon EBS
+     * encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * Instance Types</a>.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
     /**
-     * <p>Indicates whether the encryption state of an EBS volume is to be changed
-     * while being restored from a backing snapshot. The default effect of setting this
-     * parameter to <code>true</code> or leaving it unset depends on the origin,
-     * starting encryption state, and ownership of the volume. Each default case can be
-     * overridden by specifying a customer master key (CMK) as argument to the
-     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> =
-     * <code>true</code>. For a complete list of possible encryption cases, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a>. </p> <p>In no case can you remove encryption from an
-     * encrypted volume.</p> <p>Encrypted volumes can only be attached to instances
-     * that support Amazon EBS encryption. For more information, see <a
+     * <p>Indicates whether the encryption state of an EBS volume is changed while
+     * being restored from a backing snapshot. The default effect of setting the
+     * <code>Encrypted</code> parameter to <code>true</code> through the console, API,
+     * or CLI depends on the volume's origin (new or from a snapshot), starting
+     * encryption state, ownership, and whether <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     * encryption</a> is enabled. Each default case can be overridden by specifying a
+     * customer master key (CMK) with the <code>KmsKeyId</code> parameter in addition
+     * to setting <code>Encrypted</code> to <code>true</code>. For a complete list of
+     * possible encryption cases, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>In no case can you remove encryption from an encrypted volume.</p>
+     * <p>Encrypted volumes can only be attached to instances that support Amazon EBS
+     * encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * Instance Types</a>.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
-     * <p>Indicates whether the encryption state of an EBS volume is to be changed
-     * while being restored from a backing snapshot. The default effect of setting this
-     * parameter to <code>true</code> or leaving it unset depends on the origin,
-     * starting encryption state, and ownership of the volume. Each default case can be
-     * overridden by specifying a customer master key (CMK) as argument to the
-     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> =
-     * <code>true</code>. For a complete list of possible encryption cases, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a>. </p> <p>In no case can you remove encryption from an
-     * encrypted volume.</p> <p>Encrypted volumes can only be attached to instances
-     * that support Amazon EBS encryption. For more information, see <a
+     * <p>Indicates whether the encryption state of an EBS volume is changed while
+     * being restored from a backing snapshot. The default effect of setting the
+     * <code>Encrypted</code> parameter to <code>true</code> through the console, API,
+     * or CLI depends on the volume's origin (new or from a snapshot), starting
+     * encryption state, ownership, and whether <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     * encryption</a> is enabled. Each default case can be overridden by specifying a
+     * customer master key (CMK) with the <code>KmsKeyId</code> parameter in addition
+     * to setting <code>Encrypted</code> to <code>true</code>. For a complete list of
+     * possible encryption cases, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>In no case can you remove encryption from an encrypted volume.</p>
+     * <p>Encrypted volumes can only be attached to instances that support Amazon EBS
+     * encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * Instance Types</a>.</p>
      */

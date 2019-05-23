@@ -53,71 +53,59 @@ namespace Model
   public:
 
     /**
-     * <p>The Availability Zone in which to create the volume. Use
-     * <a>DescribeAvailabilityZones</a> to list the Availability Zones that are
-     * currently available to you.</p>
+     * <p>The Availability Zone in which to create the volume.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The Availability Zone in which to create the volume. Use
-     * <a>DescribeAvailabilityZones</a> to list the Availability Zones that are
-     * currently available to you.</p>
+     * <p>The Availability Zone in which to create the volume.</p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
-     * <p>The Availability Zone in which to create the volume. Use
-     * <a>DescribeAvailabilityZones</a> to list the Availability Zones that are
-     * currently available to you.</p>
+     * <p>The Availability Zone in which to create the volume.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The Availability Zone in which to create the volume. Use
-     * <a>DescribeAvailabilityZones</a> to list the Availability Zones that are
-     * currently available to you.</p>
+     * <p>The Availability Zone in which to create the volume.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The Availability Zone in which to create the volume. Use
-     * <a>DescribeAvailabilityZones</a> to list the Availability Zones that are
-     * currently available to you.</p>
+     * <p>The Availability Zone in which to create the volume.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The Availability Zone in which to create the volume. Use
-     * <a>DescribeAvailabilityZones</a> to list the Availability Zones that are
-     * currently available to you.</p>
+     * <p>The Availability Zone in which to create the volume.</p>
      */
     inline CreateVolumeRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The Availability Zone in which to create the volume. Use
-     * <a>DescribeAvailabilityZones</a> to list the Availability Zones that are
-     * currently available to you.</p>
+     * <p>The Availability Zone in which to create the volume.</p>
      */
     inline CreateVolumeRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The Availability Zone in which to create the volume. Use
-     * <a>DescribeAvailabilityZones</a> to list the Availability Zones that are
-     * currently available to you.</p>
+     * <p>The Availability Zone in which to create the volume.</p>
      */
     inline CreateVolumeRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
 
     /**
      * <p>Specifies the encryption state of the volume. The default effect of setting
-     * this parameter depends on the volume's source and ownership. Each default case
-     * can be overridden by specifying a customer master key (CMK) with the
-     * <code>KeyKeyId</code> parameter. For a complete list of possible encryption
-     * cases, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a>. </p> <p>Encrypted Amazon EBS volumes may only be attached to
-     * instances that support Amazon EBS encryption. For more information, see <a
+     * the <code>Encrypted</code> parameter to <code>true</code> through the console,
+     * API, or CLI depends on the volume's origin (new or from a snapshot), starting
+     * encryption state, ownership, and whether <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     * encryption</a> is enabled. Each default case can be overridden by specifying a
+     * customer master key (CMK) with the <code>KmsKeyId</code> parameter in addition
+     * to setting <code>Encrypted</code> to <code>true</code>. For a complete list of
+     * possible encryption cases, see <a
+     * href="AWSEC2/latest/UserGuide/EBSEncryption.htm">Amazon EBS Encryption</a>. </p>
+     * <p>Encrypted Amazon EBS volumes may only be attached to instances that support
+     * Amazon EBS encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * Instance Types</a>.</p>
      */
@@ -125,13 +113,17 @@ namespace Model
 
     /**
      * <p>Specifies the encryption state of the volume. The default effect of setting
-     * this parameter depends on the volume's source and ownership. Each default case
-     * can be overridden by specifying a customer master key (CMK) with the
-     * <code>KeyKeyId</code> parameter. For a complete list of possible encryption
-     * cases, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a>. </p> <p>Encrypted Amazon EBS volumes may only be attached to
-     * instances that support Amazon EBS encryption. For more information, see <a
+     * the <code>Encrypted</code> parameter to <code>true</code> through the console,
+     * API, or CLI depends on the volume's origin (new or from a snapshot), starting
+     * encryption state, ownership, and whether <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     * encryption</a> is enabled. Each default case can be overridden by specifying a
+     * customer master key (CMK) with the <code>KmsKeyId</code> parameter in addition
+     * to setting <code>Encrypted</code> to <code>true</code>. For a complete list of
+     * possible encryption cases, see <a
+     * href="AWSEC2/latest/UserGuide/EBSEncryption.htm">Amazon EBS Encryption</a>. </p>
+     * <p>Encrypted Amazon EBS volumes may only be attached to instances that support
+     * Amazon EBS encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * Instance Types</a>.</p>
      */
@@ -139,13 +131,17 @@ namespace Model
 
     /**
      * <p>Specifies the encryption state of the volume. The default effect of setting
-     * this parameter depends on the volume's source and ownership. Each default case
-     * can be overridden by specifying a customer master key (CMK) with the
-     * <code>KeyKeyId</code> parameter. For a complete list of possible encryption
-     * cases, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a>. </p> <p>Encrypted Amazon EBS volumes may only be attached to
-     * instances that support Amazon EBS encryption. For more information, see <a
+     * the <code>Encrypted</code> parameter to <code>true</code> through the console,
+     * API, or CLI depends on the volume's origin (new or from a snapshot), starting
+     * encryption state, ownership, and whether <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     * encryption</a> is enabled. Each default case can be overridden by specifying a
+     * customer master key (CMK) with the <code>KmsKeyId</code> parameter in addition
+     * to setting <code>Encrypted</code> to <code>true</code>. For a complete list of
+     * possible encryption cases, see <a
+     * href="AWSEC2/latest/UserGuide/EBSEncryption.htm">Amazon EBS Encryption</a>. </p>
+     * <p>Encrypted Amazon EBS volumes may only be attached to instances that support
+     * Amazon EBS encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * Instance Types</a>.</p>
      */
@@ -153,13 +149,17 @@ namespace Model
 
     /**
      * <p>Specifies the encryption state of the volume. The default effect of setting
-     * this parameter depends on the volume's source and ownership. Each default case
-     * can be overridden by specifying a customer master key (CMK) with the
-     * <code>KeyKeyId</code> parameter. For a complete list of possible encryption
-     * cases, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a>. </p> <p>Encrypted Amazon EBS volumes may only be attached to
-     * instances that support Amazon EBS encryption. For more information, see <a
+     * the <code>Encrypted</code> parameter to <code>true</code> through the console,
+     * API, or CLI depends on the volume's origin (new or from a snapshot), starting
+     * encryption state, ownership, and whether <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     * encryption</a> is enabled. Each default case can be overridden by specifying a
+     * customer master key (CMK) with the <code>KmsKeyId</code> parameter in addition
+     * to setting <code>Encrypted</code> to <code>true</code>. For a complete list of
+     * possible encryption cases, see <a
+     * href="AWSEC2/latest/UserGuide/EBSEncryption.htm">Amazon EBS Encryption</a>. </p>
+     * <p>Encrypted Amazon EBS volumes may only be attached to instances that support
+     * Amazon EBS encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * Instance Types</a>.</p>
      */
@@ -221,15 +221,14 @@ namespace Model
 
     /**
      * <p>An identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use when creating the encrypted volume. This parameter is only
-     * required if you want to use a non-default CMK; if this parameter is not
-     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
-     * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
-     * identifier may be provided in any of the following formats: </p> <ul> <li>
-     * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
-     * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
-     * alias. For example,
+     * key (CMK) to use to encrypt the volume. This parameter is only required if you
+     * want to use a non-default CMK; if this parameter is not specified, the default
+     * CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set. </p> <p>The CMK identifier may be
+     * provided in any of the following formats: </p> <ul> <li> <p>Key ID</p> </li>
+     * <li> <p>Key alias. The alias ARN contains the <code>arn:aws:kms</code>
+     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
+     * owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
      * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
      * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
@@ -248,15 +247,14 @@ namespace Model
 
     /**
      * <p>An identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use when creating the encrypted volume. This parameter is only
-     * required if you want to use a non-default CMK; if this parameter is not
-     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
-     * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
-     * identifier may be provided in any of the following formats: </p> <ul> <li>
-     * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
-     * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
-     * alias. For example,
+     * key (CMK) to use to encrypt the volume. This parameter is only required if you
+     * want to use a non-default CMK; if this parameter is not specified, the default
+     * CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set. </p> <p>The CMK identifier may be
+     * provided in any of the following formats: </p> <ul> <li> <p>Key ID</p> </li>
+     * <li> <p>Key alias. The alias ARN contains the <code>arn:aws:kms</code>
+     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
+     * owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
      * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
      * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
@@ -275,15 +273,14 @@ namespace Model
 
     /**
      * <p>An identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use when creating the encrypted volume. This parameter is only
-     * required if you want to use a non-default CMK; if this parameter is not
-     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
-     * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
-     * identifier may be provided in any of the following formats: </p> <ul> <li>
-     * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
-     * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
-     * alias. For example,
+     * key (CMK) to use to encrypt the volume. This parameter is only required if you
+     * want to use a non-default CMK; if this parameter is not specified, the default
+     * CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set. </p> <p>The CMK identifier may be
+     * provided in any of the following formats: </p> <ul> <li> <p>Key ID</p> </li>
+     * <li> <p>Key alias. The alias ARN contains the <code>arn:aws:kms</code>
+     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
+     * owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
      * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
      * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
@@ -302,15 +299,14 @@ namespace Model
 
     /**
      * <p>An identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use when creating the encrypted volume. This parameter is only
-     * required if you want to use a non-default CMK; if this parameter is not
-     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
-     * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
-     * identifier may be provided in any of the following formats: </p> <ul> <li>
-     * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
-     * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
-     * alias. For example,
+     * key (CMK) to use to encrypt the volume. This parameter is only required if you
+     * want to use a non-default CMK; if this parameter is not specified, the default
+     * CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set. </p> <p>The CMK identifier may be
+     * provided in any of the following formats: </p> <ul> <li> <p>Key ID</p> </li>
+     * <li> <p>Key alias. The alias ARN contains the <code>arn:aws:kms</code>
+     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
+     * owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
      * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
      * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
@@ -329,15 +325,14 @@ namespace Model
 
     /**
      * <p>An identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use when creating the encrypted volume. This parameter is only
-     * required if you want to use a non-default CMK; if this parameter is not
-     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
-     * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
-     * identifier may be provided in any of the following formats: </p> <ul> <li>
-     * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
-     * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
-     * alias. For example,
+     * key (CMK) to use to encrypt the volume. This parameter is only required if you
+     * want to use a non-default CMK; if this parameter is not specified, the default
+     * CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set. </p> <p>The CMK identifier may be
+     * provided in any of the following formats: </p> <ul> <li> <p>Key ID</p> </li>
+     * <li> <p>Key alias. The alias ARN contains the <code>arn:aws:kms</code>
+     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
+     * owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
      * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
      * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
@@ -356,15 +351,14 @@ namespace Model
 
     /**
      * <p>An identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use when creating the encrypted volume. This parameter is only
-     * required if you want to use a non-default CMK; if this parameter is not
-     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
-     * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
-     * identifier may be provided in any of the following formats: </p> <ul> <li>
-     * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
-     * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
-     * alias. For example,
+     * key (CMK) to use to encrypt the volume. This parameter is only required if you
+     * want to use a non-default CMK; if this parameter is not specified, the default
+     * CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set. </p> <p>The CMK identifier may be
+     * provided in any of the following formats: </p> <ul> <li> <p>Key ID</p> </li>
+     * <li> <p>Key alias. The alias ARN contains the <code>arn:aws:kms</code>
+     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
+     * owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
      * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
      * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
@@ -383,15 +377,14 @@ namespace Model
 
     /**
      * <p>An identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use when creating the encrypted volume. This parameter is only
-     * required if you want to use a non-default CMK; if this parameter is not
-     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
-     * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
-     * identifier may be provided in any of the following formats: </p> <ul> <li>
-     * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
-     * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
-     * alias. For example,
+     * key (CMK) to use to encrypt the volume. This parameter is only required if you
+     * want to use a non-default CMK; if this parameter is not specified, the default
+     * CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set. </p> <p>The CMK identifier may be
+     * provided in any of the following formats: </p> <ul> <li> <p>Key ID</p> </li>
+     * <li> <p>Key alias. The alias ARN contains the <code>arn:aws:kms</code>
+     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
+     * owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
      * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
      * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
@@ -410,15 +403,14 @@ namespace Model
 
     /**
      * <p>An identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use when creating the encrypted volume. This parameter is only
-     * required if you want to use a non-default CMK; if this parameter is not
-     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
-     * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
-     * identifier may be provided in any of the following formats: </p> <ul> <li>
-     * <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN contains the
-     * <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the AWS
-     * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
-     * alias. For example,
+     * key (CMK) to use to encrypt the volume. This parameter is only required if you
+     * want to use a non-default CMK; if this parameter is not specified, the default
+     * CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set. </p> <p>The CMK identifier may be
+     * provided in any of the following formats: </p> <ul> <li> <p>Key ID</p> </li>
+     * <li> <p>Key alias. The alias ARN contains the <code>arn:aws:kms</code>
+     * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
+     * owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
      * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
      * namespace, followed by the Region of the CMK, the AWS account ID of the CMK
@@ -443,8 +435,8 @@ namespace Model
      * <code>standard</code>. If you specify a snapshot, the volume size must be equal
      * to or larger than the snapshot size.</p> <p>Default: If you're creating the
      * volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.</p> <note> <p>At least one of Size or SnapshotId are
-     * required.</p> </note>
+     * snapshot size.</p> <note> <p>At least one of Size or SnapshotId is required.</p>
+     * </note>
      */
     inline int GetSize() const{ return m_size; }
 
@@ -455,8 +447,8 @@ namespace Model
      * <code>standard</code>. If you specify a snapshot, the volume size must be equal
      * to or larger than the snapshot size.</p> <p>Default: If you're creating the
      * volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.</p> <note> <p>At least one of Size or SnapshotId are
-     * required.</p> </note>
+     * snapshot size.</p> <note> <p>At least one of Size or SnapshotId is required.</p>
+     * </note>
      */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
@@ -467,8 +459,8 @@ namespace Model
      * <code>standard</code>. If you specify a snapshot, the volume size must be equal
      * to or larger than the snapshot size.</p> <p>Default: If you're creating the
      * volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.</p> <note> <p>At least one of Size or SnapshotId are
-     * required.</p> </note>
+     * snapshot size.</p> <note> <p>At least one of Size or SnapshotId is required.</p>
+     * </note>
      */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
@@ -479,8 +471,8 @@ namespace Model
      * <code>standard</code>. If you specify a snapshot, the volume size must be equal
      * to or larger than the snapshot size.</p> <p>Default: If you're creating the
      * volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.</p> <note> <p>At least one of Size or SnapshotId are
-     * required.</p> </note>
+     * snapshot size.</p> <note> <p>At least one of Size or SnapshotId is required.</p>
+     * </note>
      */
     inline CreateVolumeRequest& WithSize(int value) { SetSize(value); return *this;}
 

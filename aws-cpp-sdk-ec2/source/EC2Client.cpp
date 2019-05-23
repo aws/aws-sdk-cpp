@@ -253,6 +253,7 @@
 #include <aws/ec2/model/DetachNetworkInterfaceRequest.h>
 #include <aws/ec2/model/DetachVolumeRequest.h>
 #include <aws/ec2/model/DetachVpnGatewayRequest.h>
+#include <aws/ec2/model/DisableEbsEncryptionByDefaultRequest.h>
 #include <aws/ec2/model/DisableTransitGatewayRouteTablePropagationRequest.h>
 #include <aws/ec2/model/DisableVgwRoutePropagationRequest.h>
 #include <aws/ec2/model/DisableVpcClassicLinkRequest.h>
@@ -264,6 +265,7 @@
 #include <aws/ec2/model/DisassociateSubnetCidrBlockRequest.h>
 #include <aws/ec2/model/DisassociateTransitGatewayRouteTableRequest.h>
 #include <aws/ec2/model/DisassociateVpcCidrBlockRequest.h>
+#include <aws/ec2/model/EnableEbsEncryptionByDefaultRequest.h>
 #include <aws/ec2/model/EnableTransitGatewayRouteTablePropagationRequest.h>
 #include <aws/ec2/model/EnableVgwRoutePropagationRequest.h>
 #include <aws/ec2/model/EnableVolumeIORequest.h>
@@ -274,6 +276,8 @@
 #include <aws/ec2/model/ExportTransitGatewayRoutesRequest.h>
 #include <aws/ec2/model/GetConsoleOutputRequest.h>
 #include <aws/ec2/model/GetConsoleScreenshotRequest.h>
+#include <aws/ec2/model/GetEbsDefaultKmsKeyIdRequest.h>
+#include <aws/ec2/model/GetEbsEncryptionByDefaultRequest.h>
 #include <aws/ec2/model/GetHostReservationPurchasePreviewRequest.h>
 #include <aws/ec2/model/GetLaunchTemplateDataRequest.h>
 #include <aws/ec2/model/GetPasswordDataRequest.h>
@@ -289,6 +293,7 @@
 #include <aws/ec2/model/ImportVolumeRequest.h>
 #include <aws/ec2/model/ModifyCapacityReservationRequest.h>
 #include <aws/ec2/model/ModifyClientVpnEndpointRequest.h>
+#include <aws/ec2/model/ModifyEbsDefaultKmsKeyIdRequest.h>
 #include <aws/ec2/model/ModifyFleetRequest.h>
 #include <aws/ec2/model/ModifyFpgaImageAttributeRequest.h>
 #include <aws/ec2/model/ModifyHostsRequest.h>
@@ -339,6 +344,7 @@
 #include <aws/ec2/model/ReportInstanceStatusRequest.h>
 #include <aws/ec2/model/RequestSpotFleetRequest.h>
 #include <aws/ec2/model/RequestSpotInstancesRequest.h>
+#include <aws/ec2/model/ResetEbsDefaultKmsKeyIdRequest.h>
 #include <aws/ec2/model/ResetFpgaImageAttributeRequest.h>
 #include <aws/ec2/model/ResetImageAttributeRequest.h>
 #include <aws/ec2/model/ResetInstanceAttributeRequest.h>
@@ -8240,6 +8246,41 @@ void EC2Client::DetachVpnGatewayAsyncHelper(const DetachVpnGatewayRequest& reque
   handler(this, request, DetachVpnGateway(request), context);
 }
 
+DisableEbsEncryptionByDefaultOutcome EC2Client::DisableEbsEncryptionByDefault(const DisableEbsEncryptionByDefaultRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DisableEbsEncryptionByDefaultOutcome(DisableEbsEncryptionByDefaultResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DisableEbsEncryptionByDefaultOutcome(outcome.GetError());
+  }
+}
+
+DisableEbsEncryptionByDefaultOutcomeCallable EC2Client::DisableEbsEncryptionByDefaultCallable(const DisableEbsEncryptionByDefaultRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisableEbsEncryptionByDefaultOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableEbsEncryptionByDefault(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DisableEbsEncryptionByDefaultAsync(const DisableEbsEncryptionByDefaultRequest& request, const DisableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisableEbsEncryptionByDefaultAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DisableEbsEncryptionByDefaultAsyncHelper(const DisableEbsEncryptionByDefaultRequest& request, const DisableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisableEbsEncryptionByDefault(request), context);
+}
+
 DisableTransitGatewayRouteTablePropagationOutcome EC2Client::DisableTransitGatewayRouteTablePropagation(const DisableTransitGatewayRouteTablePropagationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -8625,6 +8666,41 @@ void EC2Client::DisassociateVpcCidrBlockAsyncHelper(const DisassociateVpcCidrBlo
   handler(this, request, DisassociateVpcCidrBlock(request), context);
 }
 
+EnableEbsEncryptionByDefaultOutcome EC2Client::EnableEbsEncryptionByDefault(const EnableEbsEncryptionByDefaultRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return EnableEbsEncryptionByDefaultOutcome(EnableEbsEncryptionByDefaultResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return EnableEbsEncryptionByDefaultOutcome(outcome.GetError());
+  }
+}
+
+EnableEbsEncryptionByDefaultOutcomeCallable EC2Client::EnableEbsEncryptionByDefaultCallable(const EnableEbsEncryptionByDefaultRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EnableEbsEncryptionByDefaultOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableEbsEncryptionByDefault(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::EnableEbsEncryptionByDefaultAsync(const EnableEbsEncryptionByDefaultRequest& request, const EnableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->EnableEbsEncryptionByDefaultAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::EnableEbsEncryptionByDefaultAsyncHelper(const EnableEbsEncryptionByDefaultRequest& request, const EnableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, EnableEbsEncryptionByDefault(request), context);
+}
+
 EnableTransitGatewayRouteTablePropagationOutcome EC2Client::EnableTransitGatewayRouteTablePropagation(const EnableTransitGatewayRouteTablePropagationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -8973,6 +9049,76 @@ void EC2Client::GetConsoleScreenshotAsync(const GetConsoleScreenshotRequest& req
 void EC2Client::GetConsoleScreenshotAsyncHelper(const GetConsoleScreenshotRequest& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetConsoleScreenshot(request), context);
+}
+
+GetEbsDefaultKmsKeyIdOutcome EC2Client::GetEbsDefaultKmsKeyId(const GetEbsDefaultKmsKeyIdRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetEbsDefaultKmsKeyIdOutcome(GetEbsDefaultKmsKeyIdResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return GetEbsDefaultKmsKeyIdOutcome(outcome.GetError());
+  }
+}
+
+GetEbsDefaultKmsKeyIdOutcomeCallable EC2Client::GetEbsDefaultKmsKeyIdCallable(const GetEbsDefaultKmsKeyIdRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetEbsDefaultKmsKeyIdOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEbsDefaultKmsKeyId(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::GetEbsDefaultKmsKeyIdAsync(const GetEbsDefaultKmsKeyIdRequest& request, const GetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetEbsDefaultKmsKeyIdAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::GetEbsDefaultKmsKeyIdAsyncHelper(const GetEbsDefaultKmsKeyIdRequest& request, const GetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetEbsDefaultKmsKeyId(request), context);
+}
+
+GetEbsEncryptionByDefaultOutcome EC2Client::GetEbsEncryptionByDefault(const GetEbsEncryptionByDefaultRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetEbsEncryptionByDefaultOutcome(GetEbsEncryptionByDefaultResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return GetEbsEncryptionByDefaultOutcome(outcome.GetError());
+  }
+}
+
+GetEbsEncryptionByDefaultOutcomeCallable EC2Client::GetEbsEncryptionByDefaultCallable(const GetEbsEncryptionByDefaultRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetEbsEncryptionByDefaultOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEbsEncryptionByDefault(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::GetEbsEncryptionByDefaultAsync(const GetEbsEncryptionByDefaultRequest& request, const GetEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetEbsEncryptionByDefaultAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::GetEbsEncryptionByDefaultAsyncHelper(const GetEbsEncryptionByDefaultRequest& request, const GetEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetEbsEncryptionByDefault(request), context);
 }
 
 GetHostReservationPurchasePreviewOutcome EC2Client::GetHostReservationPurchasePreview(const GetHostReservationPurchasePreviewRequest& request) const
@@ -9498,6 +9644,41 @@ void EC2Client::ModifyClientVpnEndpointAsync(const ModifyClientVpnEndpointReques
 void EC2Client::ModifyClientVpnEndpointAsyncHelper(const ModifyClientVpnEndpointRequest& request, const ModifyClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyClientVpnEndpoint(request), context);
+}
+
+ModifyEbsDefaultKmsKeyIdOutcome EC2Client::ModifyEbsDefaultKmsKeyId(const ModifyEbsDefaultKmsKeyIdRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyEbsDefaultKmsKeyIdOutcome(ModifyEbsDefaultKmsKeyIdResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyEbsDefaultKmsKeyIdOutcome(outcome.GetError());
+  }
+}
+
+ModifyEbsDefaultKmsKeyIdOutcomeCallable EC2Client::ModifyEbsDefaultKmsKeyIdCallable(const ModifyEbsDefaultKmsKeyIdRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyEbsDefaultKmsKeyIdOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyEbsDefaultKmsKeyId(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::ModifyEbsDefaultKmsKeyIdAsync(const ModifyEbsDefaultKmsKeyIdRequest& request, const ModifyEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyEbsDefaultKmsKeyIdAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::ModifyEbsDefaultKmsKeyIdAsyncHelper(const ModifyEbsDefaultKmsKeyIdRequest& request, const ModifyEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyEbsDefaultKmsKeyId(request), context);
 }
 
 ModifyFleetOutcome EC2Client::ModifyFleet(const ModifyFleetRequest& request) const
@@ -11248,6 +11429,41 @@ void EC2Client::RequestSpotInstancesAsync(const RequestSpotInstancesRequest& req
 void EC2Client::RequestSpotInstancesAsyncHelper(const RequestSpotInstancesRequest& request, const RequestSpotInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RequestSpotInstances(request), context);
+}
+
+ResetEbsDefaultKmsKeyIdOutcome EC2Client::ResetEbsDefaultKmsKeyId(const ResetEbsDefaultKmsKeyIdRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ResetEbsDefaultKmsKeyIdOutcome(ResetEbsDefaultKmsKeyIdResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return ResetEbsDefaultKmsKeyIdOutcome(outcome.GetError());
+  }
+}
+
+ResetEbsDefaultKmsKeyIdOutcomeCallable EC2Client::ResetEbsDefaultKmsKeyIdCallable(const ResetEbsDefaultKmsKeyIdRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ResetEbsDefaultKmsKeyIdOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResetEbsDefaultKmsKeyId(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::ResetEbsDefaultKmsKeyIdAsync(const ResetEbsDefaultKmsKeyIdRequest& request, const ResetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ResetEbsDefaultKmsKeyIdAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::ResetEbsDefaultKmsKeyIdAsyncHelper(const ResetEbsDefaultKmsKeyIdRequest& request, const ResetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ResetEbsDefaultKmsKeyId(request), context);
 }
 
 ResetFpgaImageAttributeOutcome EC2Client::ResetFpgaImageAttribute(const ResetFpgaImageAttributeRequest& request) const

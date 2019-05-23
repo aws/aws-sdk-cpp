@@ -339,50 +339,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AMI, which you can get by using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.</p>
+     * <p>The ID of the AMI.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
 
     /**
-     * <p>The ID of the AMI, which you can get by using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.</p>
+     * <p>The ID of the AMI.</p>
      */
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AMI, which you can get by using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.</p>
+     * <p>The ID of the AMI.</p>
      */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
-     * <p>The ID of the AMI, which you can get by using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.</p>
+     * <p>The ID of the AMI.</p>
      */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
-     * <p>The ID of the AMI, which you can get by using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.</p>
+     * <p>The ID of the AMI.</p>
      */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
 
     /**
-     * <p>The ID of the AMI, which you can get by using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.</p>
+     * <p>The ID of the AMI.</p>
      */
     inline RequestLaunchTemplateData& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
 
     /**
-     * <p>The ID of the AMI, which you can get by using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.</p>
+     * <p>The ID of the AMI.</p>
      */
     inline RequestLaunchTemplateData& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AMI, which you can get by using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.</p>
+     * <p>The ID of the AMI.</p>
      */
     inline RequestLaunchTemplateData& WithImageId(const char* value) { SetImageId(value); return *this;}
 
@@ -655,38 +647,46 @@ namespace Model
 
 
     /**
-     * <p>If set to <code>true</code>, you can't terminate the instance using the
-     * Amazon EC2 console, CLI, or API. To change this attribute to <code>false</code>
-     * after launch, use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
-     * ModifyInstanceAttribute</a>.</p>
+     * <p>If you set this parameter to <code>true</code>, you can't terminate the
+     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
+     * change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
+     * Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown
+     * command from the instance.</p>
      */
     inline bool GetDisableApiTermination() const{ return m_disableApiTermination; }
 
     /**
-     * <p>If set to <code>true</code>, you can't terminate the instance using the
-     * Amazon EC2 console, CLI, or API. To change this attribute to <code>false</code>
-     * after launch, use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
-     * ModifyInstanceAttribute</a>.</p>
+     * <p>If you set this parameter to <code>true</code>, you can't terminate the
+     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
+     * change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
+     * Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown
+     * command from the instance.</p>
      */
     inline bool DisableApiTerminationHasBeenSet() const { return m_disableApiTerminationHasBeenSet; }
 
     /**
-     * <p>If set to <code>true</code>, you can't terminate the instance using the
-     * Amazon EC2 console, CLI, or API. To change this attribute to <code>false</code>
-     * after launch, use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
-     * ModifyInstanceAttribute</a>.</p>
+     * <p>If you set this parameter to <code>true</code>, you can't terminate the
+     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
+     * change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
+     * Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown
+     * command from the instance.</p>
      */
     inline void SetDisableApiTermination(bool value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = value; }
 
     /**
-     * <p>If set to <code>true</code>, you can't terminate the instance using the
-     * Amazon EC2 console, CLI, or API. To change this attribute to <code>false</code>
-     * after launch, use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
-     * ModifyInstanceAttribute</a>.</p>
+     * <p>If you set this parameter to <code>true</code>, you can't terminate the
+     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
+     * change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
+     * Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown
+     * command from the instance.</p>
      */
     inline RequestLaunchTemplateData& WithDisableApiTermination(bool value) { SetDisableApiTermination(value); return *this;}
 
