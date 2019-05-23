@@ -35,6 +35,10 @@ namespace Aws
             static const int ERROR_HASH = HashingUtils::HashString("error");
             static const int EXCEPTION_HASH = HashingUtils::HashString("exception");
 
+            static const int CONTENT_TYPE_APPLICATION_OCTET_STREAM_HASH = HashingUtils::HashString("application/octet-stream");
+            static const int CONTENT_TYPE_APPLICATION_JSON_HASH = HashingUtils::HashString("application/json");
+            static const int CONTENT_TYPE_TEXT_PLAIN_HASH = HashingUtils::HashString("text/plain");
+
             Message::MessageType Message::GetMessageTypeForName(const Aws::String& name)
             {
                 int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
@@ -66,6 +70,42 @@ namespace Aws
                     return "error";
                 case MessageType::REQUEST_LEVEL_EXCEPTION:
                     return "exception";
+                default:
+                    return "unknown";
+                }
+            }
+
+            Message::ContentType Message::GetContentTypeForName(const Aws::String& name)
+            {
+                int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
+                if (hashCode == CONTENT_TYPE_APPLICATION_OCTET_STREAM_HASH)
+                {
+                    return ContentType::APPLICATION_OCTET_STREAM;
+                }
+                else if (hashCode == CONTENT_TYPE_APPLICATION_JSON_HASH)
+                {
+                    return ContentType::APPLICATION_JSON;
+                }
+                else if (hashCode == CONTENT_TYPE_TEXT_PLAIN_HASH)
+                {
+                    return ContentType::TEXT_PLAIN;
+                }
+                else
+                {
+                    return ContentType::UNKNOWN;
+                }
+            }
+
+            Aws::String Message::GetNameForContentType(ContentType value)
+            {
+                switch (value)
+                {
+                case ContentType::APPLICATION_OCTET_STREAM:
+                    return "application/octet-stream";
+                case ContentType::APPLICATION_JSON:
+                    return "application/json";
+                case ContentType::TEXT_PLAIN:
+                    return "text/plain";
                 default:
                     return "unknown";
                 }

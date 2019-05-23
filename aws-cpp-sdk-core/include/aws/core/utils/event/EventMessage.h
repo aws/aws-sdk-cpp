@@ -47,8 +47,20 @@ namespace Aws
                     REQUEST_LEVEL_EXCEPTION
                 };
 
+                enum class ContentType
+                {
+                    UNKNOWN,
+                    APPLICATION_OCTET_STREAM,
+                    APPLICATION_JSON,
+                    TEXT_PLAIN
+                };
+
                 static MessageType GetMessageTypeForName(const Aws::String& name);
                 static Aws::String GetNameForMessageType(MessageType value);
+
+                static ContentType GetContentTypeForName(const Aws::String& name);
+                static Aws::String GetNameForContentType(ContentType value);
+
 
                 /**
                  * Clean up the message, including the metadata, headers and payload received.

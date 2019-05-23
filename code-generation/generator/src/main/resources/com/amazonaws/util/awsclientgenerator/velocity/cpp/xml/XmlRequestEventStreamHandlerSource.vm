@@ -103,16 +103,30 @@ namespace Model
         {
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #set($eventShape = $eventMemberEntry.value.shape)
-#if($eventShape.hasBlobMembers())
+#if($eventShape.isException())
+## skip exceptions
+#else
         case ${operation.name}EventType::${eventMemberEntry.key.toUpperCase()}:
         {
+#if($eventShape.members.size() == 1)
+#foreach($eventShapeMemberEntry in $eventShape.members.entrySet())
+#set($onlyEventMemberKey = $eventShapeMemberEntry.key)
+#set($onlyEventMember = $eventShapeMemberEntry.value.shape)
+#end
+#end
+##the only member is blob member
+#if($eventShape.members.size() == 1 && $onlyEventMember.isBlob())
             ${eventShape.name} event(GetEventPayloadWithOwnership());
             m_on${eventShape.name}(event);
             break;
-        }
+##the only member is plain text
+#elseif($eventShape.members.size() == 1 && $onlyEventMember.isString())
+            ${eventShape.name} event;
+            event.Set${onlyEventMemberKey}(GetEventHeaderValueAsString());
+            m_on${eventShape.name}(event);
+            break;
+##multiple members or the only one member is structure
 #elseif(!$eventShape.members.isEmpty())
-        case ${operation.name}EventType::${eventMemberEntry.key.toUpperCase()}:
-        {
             auto xmlDoc = XmlDocument::CreateFromXmlString(GetEventPayloadAsString());
             if (!xmlDoc.WasParseSuccessful())
             {
@@ -122,11 +136,11 @@ namespace Model
 
             m_on${eventShape.name}(${eventShape.name}(xmlDoc.GetRootElement()));
             break;
-        }
 #else
-        case ${operation.name}EventType::${eventMemberEntry.key.toUpperCase()}:
             m_on${eventShape.name}();
             break;
+#end
+        }
 #end
 #end
         default:

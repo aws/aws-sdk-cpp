@@ -109,16 +109,27 @@ namespace Model
 #if($eventShape.isException())
 ## skip exceptions
 #else
-#if($eventShape.members.size() == 1 && $eventShape.hasBlobMembers())
         case ${operation.name}EventType::${eventMemberEntry.key.toUpperCase()}:
         {
+#if($eventShape.members.size() == 1)
+#foreach($eventShapeMemberEntry in $eventShape.members.entrySet())
+#set($onlyEventMemberKey = $eventShapeMemberEntry.key)
+#set($onlyEventMember = $eventShapeMemberEntry.value.shape)
+#end
+#end
+##the only member is blob member
+#if($eventShape.members.size() == 1 && $onlyEventMember.isBlob())
             ${eventShape.name} event(GetEventPayloadWithOwnership());
             m_on${eventShape.name}(event);
             break;
-        }
+##the only member is plain text
+#elseif($eventShape.members.size() == 1 && $onlyEventMember.isString())
+            ${eventShape.name} event;
+            event.Set${onlyEventMemberKey}(GetEventPayloadAsString());
+            m_on${eventShape.name}(event);
+            break;
+##multiple members or the only one member is structure
 #elseif(!$eventShape.members.isEmpty())
-        case ${operation.name}EventType::${eventMemberEntry.key.toUpperCase()}:
-        {
             JsonValue json(GetEventPayloadAsString());
             if (!json.WasParseSuccessful())
             {
@@ -128,12 +139,11 @@ namespace Model
 
             m_on${eventShape.name}(${eventShape.name}{json.View()});
             break;
-        }
 #else
-        case ${operation.name}EventType::${eventMemberEntry.key.toUpperCase()}:
             m_on${eventShape.name}();
             break;
 #end
+        }
 #end
 #end
         default:
