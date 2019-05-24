@@ -333,6 +333,15 @@ TEST(StringUtilsTest, TestUnicodeURLDecoding)
     ASSERT_STREQ("sample\xE4\xB8\xAD\xE5\x9B\xBD", StringUtils::URLDecode("sample%E4%B8%AD%E5%9B%BD").c_str());
 }
 
+TEST(StringUtilsTest, TestToHexString)
+{
+    ASSERT_STREQ("0", StringUtils::ToHexString(static_cast<uint8_t>(0)).c_str());
+    ASSERT_STREQ("38", StringUtils::ToHexString(static_cast<uint8_t>(56)).c_str());
+    ASSERT_STREQ("237", StringUtils::ToHexString(static_cast<uint16_t>(567)).c_str());
+    ASSERT_STREQ("162E", StringUtils::ToHexString(static_cast<uint32_t>(5678)).c_str());
+    ASSERT_STREQ("DDD5", StringUtils::ToHexString(static_cast<uint64_t>(56789)).c_str());
+}
+
 #ifdef _WIN32
 
 TEST(StringUtilsTest, TestWCharToString)

@@ -170,6 +170,30 @@ namespace Aws
             {
                 return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9');
             }
+
+            /**
+             * Convert an unsigned integer to its hex string in upper case.
+             */
+            template<typename T, class = typename std::enable_if<std::is_unsigned<T>::value>::type>
+            static Aws::String ToHexString(T value)
+            {
+                if (value == 0)
+                {
+                    return "0";
+                }
+
+                Aws::String s;
+                s.reserve(sizeof(value) * 2);
+                T r = value;
+                while (r > 0)
+                {
+                    s += "0123456789ABCDEF"[r & 0xf];
+                    r >>= 4;
+                }
+
+                std::reverse(s.begin(), s.end());
+                return s;
+            }
         };
 
 

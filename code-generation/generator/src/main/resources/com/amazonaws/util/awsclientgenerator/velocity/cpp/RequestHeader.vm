@@ -78,6 +78,11 @@ namespace Model
     bool SignBody() const override { return false; }
 
 #end
+## MediaStore Data is the only service supporting chunked transfer encoding.
+#if($shape.hasStreamMembers() && !$shape.signBody && $shape.members.size() > 0 && $metadata.serviceId.equals("MediaStore Data"))
+    bool IsChunked() const override { return true; }
+
+#end
 #if($operation.result.shape.hasEventStreamMembers())
     /**
      * Underlying Event Stream Decoder.

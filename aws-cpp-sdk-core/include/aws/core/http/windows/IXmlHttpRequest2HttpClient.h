@@ -65,6 +65,11 @@ namespace Aws
              * called CoInit elsewhere in your system.
              */
             static void InitCOM();
+            
+            /**
+             * IXMLHTTPRequest2 doesn't support transfer-encoding:chunked
+             */
+            virtual bool SupportsChunkedTransferEncoding() const override { return false; }
 
         private:
             void MakeRequestInternal(HttpRequest& request,

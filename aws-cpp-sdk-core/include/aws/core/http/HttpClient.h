@@ -70,6 +70,11 @@ namespace Aws
             }
 
             /**
+             * If yes, the http client supports transfer-encoding:chunked.
+             */
+            virtual bool SupportsChunkedTransferEncoding() const { return true; }
+
+            /**
              * Stops all requests in progress and prevents any others from initiating.
              */
             void DisableRequestProcessing();

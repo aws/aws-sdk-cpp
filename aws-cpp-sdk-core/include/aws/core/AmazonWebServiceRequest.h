@@ -71,9 +71,19 @@ namespace Aws
         virtual void PutToPresignedUrl(Aws::Http::URI& uri) const { DumpBodyToUrl(uri); AddQueryStringParameters(uri); }
 
         /**
+         * Defaults to false, if this is set to true, it's a streaming request.
+         */
+        virtual bool IsStreaming() const { return false; }
+
+        /**
          * Defaults to true, if this is set to false, then signers, if they support body signing, will not do so
          */
         virtual bool SignBody() const { return true; }
+
+        /**
+         * Defaults to false, if this is set to true, it supports chunked transfer encoding.
+         */
+        virtual bool IsChunked() const { return false; }
 
         /**
          * Retrieves the factory for creating response streams.

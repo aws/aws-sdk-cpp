@@ -317,7 +317,8 @@ void SetOptCodeForHttpMethod(CURL* requestHandle, const HttpRequest& request)
             }
             break;
         case HttpMethod::HTTP_PUT:
-            if (!request.HasHeader(Aws::Http::CONTENT_LENGTH_HEADER) || request.GetHeaderValue(Aws::Http::CONTENT_LENGTH_HEADER) == "0")
+            if ((!request.HasHeader(Aws::Http::CONTENT_LENGTH_HEADER) || request.GetHeaderValue(Aws::Http::CONTENT_LENGTH_HEADER) == "0") &&
+                 !request.HasHeader(Aws::Http::TRANSFER_ENCODING_HEADER))
             {
                 curl_easy_setopt(requestHandle, CURLOPT_CUSTOMREQUEST, "PUT");
             }
@@ -331,7 +332,8 @@ void SetOptCodeForHttpMethod(CURL* requestHandle, const HttpRequest& request)
             curl_easy_setopt(requestHandle, CURLOPT_NOBODY, 1L);
             break;
         case HttpMethod::HTTP_PATCH:
-            if (!request.HasHeader(Aws::Http::CONTENT_LENGTH_HEADER) || request.GetHeaderValue(Aws::Http::CONTENT_LENGTH_HEADER) == "0")
+            if ((!request.HasHeader(Aws::Http::CONTENT_LENGTH_HEADER)|| request.GetHeaderValue(Aws::Http::CONTENT_LENGTH_HEADER) == "0") &&
+                 !request.HasHeader(Aws::Http::TRANSFER_ENCODING_HEADER))
             {
                 curl_easy_setopt(requestHandle, CURLOPT_CUSTOMREQUEST, "PATCH");
             }
@@ -469,8 +471,11 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
         AWS_LOGSTREAM_TRACE(CURL_HTTP_CLIENT_TAG, headerString);
         headers = curl_slist_append(headers, headerString.c_str());
     }
-
-    headers = curl_slist_append(headers, "transfer-encoding:");
+    
+    if (!request.HasHeader(Http::TRANSFER_ENCODING_HEADER))
+    {
+        headers = curl_slist_append(headers, "transfer-encoding:");
+    }
 
     if (!request.HasHeader(Http::CONTENT_LENGTH_HEADER))
     {

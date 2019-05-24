@@ -43,6 +43,7 @@ namespace Aws
         extern AWS_CORE_API const char* COOKIE_HEADER;
         extern AWS_CORE_API const char* CONTENT_LENGTH_HEADER;
         extern AWS_CORE_API const char* CONTENT_TYPE_HEADER;
+        extern AWS_CORE_API const char* TRANSFER_ENCODING_HEADER;
         extern AWS_CORE_API const char* USER_AGENT_HEADER;
         extern AWS_CORE_API const char* VIA_HEADER;
         extern AWS_CORE_API const char* HOST_HEADER;
@@ -50,6 +51,7 @@ namespace Aws
         extern AWS_CORE_API const char* X_AMZ_EXPIRES_HEADER;
         extern AWS_CORE_API const char* CONTENT_MD5_HEADER;
         extern AWS_CORE_API const char* API_VERSION_HEADER;
+        extern AWS_CORE_API const char* CHUNKED_VALUE;
 
         class HttpRequest;
         class HttpResponse;
@@ -369,6 +371,25 @@ namespace Aws
             inline void SetContentType(const Aws::String& value)
             {
                 SetHeaderValue(CONTENT_TYPE_HEADER, value);
+            }
+
+            inline bool HasTransferEncoding() const
+            {
+                return HasHeader(TRANSFER_ENCODING_HEADER);
+            }
+            /**
+             * Gets transfer-encoding header.
+             */
+            inline const Aws::String& GetTransferEncoding() const
+            {
+                return GetHeaderValue(TRANSFER_ENCODING_HEADER);
+            }
+            /**
+             * Sets transfer-encoding header.
+             */
+            inline void SetTransferEncoding(const Aws::String& value)
+            {
+                SetHeaderValue(TRANSFER_ENCODING_HEADER, value);
             }
 
             inline bool HasUserAgent() const

@@ -196,14 +196,53 @@ void WinHttpSyncHttpClient::DoAddHeaders(void* hHttpRequest, Aws::String& header
         AWS_LOGSTREAM_ERROR(GetLogTag(), "Failed to add HTTP request headers with error code: " << GetLastError());
 }
 
-uint64_t WinHttpSyncHttpClient::DoWriteData(void* hHttpRequest, char* streamBuffer, uint64_t bytesRead) const
+uint64_t WinHttpSyncHttpClient::DoWriteData(void* hHttpRequest, char* streamBuffer, uint64_t bytesRead, bool isChunked) const
 {
     DWORD bytesWritten = 0;
-    if (!WinHttpWriteData(hHttpRequest, streamBuffer, (DWORD)bytesRead, &bytesWritten))
+    uint64_t totalBytesWritten = 0;
+    const char CRLF[] = "\r\n";
+
+    if (isChunked)
+    {
+        Aws::String chunkSizeHexString = StringUtils::ToHexString(bytesRead) + CRLF;
+
+        if (!WinHttpWriteData(hHttpRequest, chunkSizeHexString.c_str(), (DWORD)chunkSizeHexString.size(), &bytesWritten))
+        {
+            return totalBytesWritten;
+        }
+        totalBytesWritten += bytesWritten;
+        if (!WinHttpWriteData(hHttpRequest, streamBuffer, (DWORD)bytesRead, &bytesWritten))
+        {
+            return totalBytesWritten;
+        }
+        totalBytesWritten += bytesWritten;
+        if (!WinHttpWriteData(hHttpRequest, CRLF, (DWORD)(sizeof(CRLF) - 1), &bytesWritten))
+        {
+            return totalBytesWritten;
+        }
+        totalBytesWritten += bytesWritten;
+    }
+    else
+    {
+        if (!WinHttpWriteData(hHttpRequest, streamBuffer, (DWORD)bytesRead, &bytesWritten))
+        {
+            return totalBytesWritten;
+        }
+        totalBytesWritten += bytesWritten;
+    }
+
+    return totalBytesWritten;
+}
+
+uint64_t WinHttpSyncHttpClient::FinalizeWriteData(void* hHttpRequest) const
+{
+    DWORD bytesWritten = 0;
+    const char trailingCRLF[] = "0\r\n\r\n";
+    if (!WinHttpWriteData(hHttpRequest, trailingCRLF, (DWORD)(sizeof(trailingCRLF) - 1), &bytesWritten))
     {
         return 0;
     }
-
+        
     return bytesWritten;
 }
 

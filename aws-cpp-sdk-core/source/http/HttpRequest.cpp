@@ -31,6 +31,7 @@ const char* AWS_AUTHORIZATION_HEADER = "authorization";
 const char* COOKIE_HEADER = "cookie";
 const char* CONTENT_LENGTH_HEADER = "content-length";
 const char* CONTENT_TYPE_HEADER = "content-type";
+const char* TRANSFER_ENCODING_HEADER = "transfer-encoding";
 const char* USER_AGENT_HEADER = "user-agent";
 const char* VIA_HEADER = "via";
 const char* HOST_HEADER = "host";
@@ -38,6 +39,7 @@ const char* AMZ_TARGET_HEADER = "x-amz-target";
 const char* X_AMZ_EXPIRES_HEADER = "X-Amz-Expires";
 const char* CONTENT_MD5_HEADER = "content-md5";
 const char* API_VERSION_HEADER = "x-amz-api-version";
+const char* CHUNKED_VALUE = "chunked";
 
 } // Http
 } // Aws

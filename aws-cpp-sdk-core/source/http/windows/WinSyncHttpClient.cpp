@@ -99,11 +99,12 @@ void WinSyncHttpClient::AddHeadersToRequest(const HttpRequest& request, void* hH
 bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
 {
     bool success = true;
+    bool isChunked = request.HasTransferEncoding() && request.GetTransferEncoding() == Aws::Http::CHUNKED_VALUE;
     auto payloadStream = request.GetContentBody();
     if(payloadStream)
     {
+        uint64_t bytesWritten;
         auto startingPos = payloadStream->tellg();
-
         char streamBuffer[ HTTP_REQUEST_WRITE_BUFFER_LENGTH ];
         bool done = false;
         while(success && !done)
@@ -112,10 +113,10 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
             std::streamsize bytesRead = payloadStream->gcount();
             success = !payloadStream->bad();
             
-            uint64_t bytesWritten = 0;
+            bytesWritten = 0;
             if (bytesRead > 0)
             {
-                bytesWritten = DoWriteData(hHttpRequest, streamBuffer, bytesRead);
+                bytesWritten = DoWriteData(hHttpRequest, streamBuffer, bytesRead, isChunked);
                 if (!bytesWritten)
                 {                    
                     success = false;
@@ -138,7 +139,20 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
             }           
 
             success = success && ContinueRequest(request) && IsRequestProcessingEnabled();
-        }        
+        }
+
+        if (success && isChunked)
+        {
+            bytesWritten = FinalizeWriteData(hHttpRequest);
+            if (!bytesWritten)
+            {
+                success = false;
+            }
+            else if (writeLimiter)
+            {
+                writeLimiter->ApplyAndPayForCost(bytesWritten);
+            }
+        }
 
         payloadStream->clear();
         payloadStream->seekg(startingPos, payloadStream->beg);
