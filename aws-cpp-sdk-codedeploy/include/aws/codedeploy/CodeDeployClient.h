@@ -48,8 +48,11 @@
 #include <aws/codedeploy/model/ListDeploymentsResult.h>
 #include <aws/codedeploy/model/ListGitHubAccountTokenNamesResult.h>
 #include <aws/codedeploy/model/ListOnPremisesInstancesResult.h>
+#include <aws/codedeploy/model/ListTagsForResourceResult.h>
 #include <aws/codedeploy/model/PutLifecycleEventHookExecutionStatusResult.h>
 #include <aws/codedeploy/model/StopDeploymentResult.h>
+#include <aws/codedeploy/model/TagResourceResult.h>
+#include <aws/codedeploy/model/UntagResourceResult.h>
 #include <aws/codedeploy/model/UpdateDeploymentGroupResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -123,11 +126,14 @@ namespace Model
         class ListDeploymentsRequest;
         class ListGitHubAccountTokenNamesRequest;
         class ListOnPremisesInstancesRequest;
+        class ListTagsForResourceRequest;
         class PutLifecycleEventHookExecutionStatusRequest;
         class RegisterApplicationRevisionRequest;
         class RegisterOnPremisesInstanceRequest;
         class RemoveTagsFromOnPremisesInstancesRequest;
         class StopDeploymentRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateApplicationRequest;
         class UpdateDeploymentGroupRequest;
 
@@ -163,11 +169,14 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDeploymentsResult, Aws::Client::AWSError<CodeDeployErrors>> ListDeploymentsOutcome;
         typedef Aws::Utils::Outcome<ListGitHubAccountTokenNamesResult, Aws::Client::AWSError<CodeDeployErrors>> ListGitHubAccountTokenNamesOutcome;
         typedef Aws::Utils::Outcome<ListOnPremisesInstancesResult, Aws::Client::AWSError<CodeDeployErrors>> ListOnPremisesInstancesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CodeDeployErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutLifecycleEventHookExecutionStatusResult, Aws::Client::AWSError<CodeDeployErrors>> PutLifecycleEventHookExecutionStatusOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeDeployErrors>> RegisterApplicationRevisionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeDeployErrors>> RegisterOnPremisesInstanceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeDeployErrors>> RemoveTagsFromOnPremisesInstancesOutcome;
         typedef Aws::Utils::Outcome<StopDeploymentResult, Aws::Client::AWSError<CodeDeployErrors>> StopDeploymentOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<CodeDeployErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<CodeDeployErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeDeployErrors>> UpdateApplicationOutcome;
         typedef Aws::Utils::Outcome<UpdateDeploymentGroupResult, Aws::Client::AWSError<CodeDeployErrors>> UpdateDeploymentGroupOutcome;
 
@@ -203,11 +212,14 @@ namespace Model
         typedef std::future<ListDeploymentsOutcome> ListDeploymentsOutcomeCallable;
         typedef std::future<ListGitHubAccountTokenNamesOutcome> ListGitHubAccountTokenNamesOutcomeCallable;
         typedef std::future<ListOnPremisesInstancesOutcome> ListOnPremisesInstancesOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutLifecycleEventHookExecutionStatusOutcome> PutLifecycleEventHookExecutionStatusOutcomeCallable;
         typedef std::future<RegisterApplicationRevisionOutcome> RegisterApplicationRevisionOutcomeCallable;
         typedef std::future<RegisterOnPremisesInstanceOutcome> RegisterOnPremisesInstanceOutcomeCallable;
         typedef std::future<RemoveTagsFromOnPremisesInstancesOutcome> RemoveTagsFromOnPremisesInstancesOutcomeCallable;
         typedef std::future<StopDeploymentOutcome> StopDeploymentOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
         typedef std::future<UpdateDeploymentGroupOutcome> UpdateDeploymentGroupOutcomeCallable;
 } // namespace Model
@@ -246,11 +258,14 @@ namespace Model
     typedef std::function<void(const CodeDeployClient*, const Model::ListDeploymentsRequest&, const Model::ListDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeploymentsResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::ListGitHubAccountTokenNamesRequest&, const Model::ListGitHubAccountTokenNamesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGitHubAccountTokenNamesResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::ListOnPremisesInstancesRequest&, const Model::ListOnPremisesInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOnPremisesInstancesResponseReceivedHandler;
+    typedef std::function<void(const CodeDeployClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::PutLifecycleEventHookExecutionStatusRequest&, const Model::PutLifecycleEventHookExecutionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLifecycleEventHookExecutionStatusResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::RegisterApplicationRevisionRequest&, const Model::RegisterApplicationRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterApplicationRevisionResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::RegisterOnPremisesInstanceRequest&, const Model::RegisterOnPremisesInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterOnPremisesInstanceResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::RemoveTagsFromOnPremisesInstancesRequest&, const Model::RemoveTagsFromOnPremisesInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromOnPremisesInstancesResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::StopDeploymentRequest&, const Model::StopDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDeploymentResponseReceivedHandler;
+    typedef std::function<void(const CodeDeployClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const CodeDeployClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::UpdateDeploymentGroupRequest&, const Model::UpdateDeploymentGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeploymentGroupResponseReceivedHandler;
 
@@ -367,16 +382,18 @@ namespace Model
         virtual void AddTagsToOnPremisesInstancesAsync(const Model::AddTagsToOnPremisesInstancesRequest& request, const AddTagsToOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about one or more application revisions.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about one or more application revisions. The maximum number
+         * of application revisions that can be returned is 25.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationRevisions">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchGetApplicationRevisionsOutcome BatchGetApplicationRevisions(const Model::BatchGetApplicationRevisionsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more application revisions.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about one or more application revisions. The maximum number
+         * of application revisions that can be returned is 25.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationRevisions">AWS
          * API Reference</a></p>
          *
@@ -385,8 +402,9 @@ namespace Model
         virtual Model::BatchGetApplicationRevisionsOutcomeCallable BatchGetApplicationRevisionsCallable(const Model::BatchGetApplicationRevisionsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more application revisions.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about one or more application revisions. The maximum number
+         * of application revisions that can be returned is 25.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationRevisions">AWS
          * API Reference</a></p>
          *
@@ -395,16 +413,16 @@ namespace Model
         virtual void BatchGetApplicationRevisionsAsync(const Model::BatchGetApplicationRevisionsRequest& request, const BatchGetApplicationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about one or more applications.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets information about one or more applications. The maximum number of
+         * applications that can be returned is 25.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchGetApplicationsOutcome BatchGetApplications(const Model::BatchGetApplicationsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more applications.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets information about one or more applications. The maximum number of
+         * applications that can be returned is 25.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications">AWS
          * API Reference</a></p>
          *
@@ -413,8 +431,8 @@ namespace Model
         virtual Model::BatchGetApplicationsOutcomeCallable BatchGetApplicationsCallable(const Model::BatchGetApplicationsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more applications.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets information about one or more applications. The maximum number of
+         * applications that can be returned is 25.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications">AWS
          * API Reference</a></p>
          *
@@ -451,28 +469,30 @@ namespace Model
         virtual void BatchGetDeploymentGroupsAsync(const Model::BatchGetDeploymentGroupsRequest& request, const BatchGetDeploymentGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns an array of targets associated with a deployment. This method works
-         * with all compute types and should be used instead of the deprecated
-         * <code>BatchGetDeploymentInstances</code>. </p> <p> The type of targets returned
-         * depends on the deployment's compute platform: </p> <ul> <li> <p>
-         * <b>EC2/On-premises</b>: Information about EC2 instance targets. </p> </li> <li>
-         * <p> <b>AWS Lambda</b>: Information about Lambda functions targets. </p> </li>
-         * <li> <p> <b>Amazon ECS</b>: Information about Amazon ECS service targets. </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <p> Returns an array of one or more targets associated with a deployment. This
+         * method works with all compute types and should be used instead of the deprecated
+         * <code>BatchGetDeploymentInstances</code>. The maximum number of targets that can
+         * be returned is 25.</p> <p> The type of targets returned depends on the
+         * deployment's compute platform: </p> <ul> <li> <p> <b>EC2/On-premises</b>:
+         * Information about EC2 instance targets. </p> </li> <li> <p> <b>AWS Lambda</b>:
+         * Information about Lambda functions targets. </p> </li> <li> <p> <b>Amazon
+         * ECS</b>: Information about Amazon ECS service targets. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchGetDeploymentTargetsOutcome BatchGetDeploymentTargets(const Model::BatchGetDeploymentTargetsRequest& request) const;
 
         /**
-         * <p> Returns an array of targets associated with a deployment. This method works
-         * with all compute types and should be used instead of the deprecated
-         * <code>BatchGetDeploymentInstances</code>. </p> <p> The type of targets returned
-         * depends on the deployment's compute platform: </p> <ul> <li> <p>
-         * <b>EC2/On-premises</b>: Information about EC2 instance targets. </p> </li> <li>
-         * <p> <b>AWS Lambda</b>: Information about Lambda functions targets. </p> </li>
-         * <li> <p> <b>Amazon ECS</b>: Information about Amazon ECS service targets. </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <p> Returns an array of one or more targets associated with a deployment. This
+         * method works with all compute types and should be used instead of the deprecated
+         * <code>BatchGetDeploymentInstances</code>. The maximum number of targets that can
+         * be returned is 25.</p> <p> The type of targets returned depends on the
+         * deployment's compute platform: </p> <ul> <li> <p> <b>EC2/On-premises</b>:
+         * Information about EC2 instance targets. </p> </li> <li> <p> <b>AWS Lambda</b>:
+         * Information about Lambda functions targets. </p> </li> <li> <p> <b>Amazon
+         * ECS</b>: Information about Amazon ECS service targets. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets">AWS
          * API Reference</a></p>
          *
@@ -481,14 +501,15 @@ namespace Model
         virtual Model::BatchGetDeploymentTargetsOutcomeCallable BatchGetDeploymentTargetsCallable(const Model::BatchGetDeploymentTargetsRequest& request) const;
 
         /**
-         * <p> Returns an array of targets associated with a deployment. This method works
-         * with all compute types and should be used instead of the deprecated
-         * <code>BatchGetDeploymentInstances</code>. </p> <p> The type of targets returned
-         * depends on the deployment's compute platform: </p> <ul> <li> <p>
-         * <b>EC2/On-premises</b>: Information about EC2 instance targets. </p> </li> <li>
-         * <p> <b>AWS Lambda</b>: Information about Lambda functions targets. </p> </li>
-         * <li> <p> <b>Amazon ECS</b>: Information about Amazon ECS service targets. </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <p> Returns an array of one or more targets associated with a deployment. This
+         * method works with all compute types and should be used instead of the deprecated
+         * <code>BatchGetDeploymentInstances</code>. The maximum number of targets that can
+         * be returned is 25.</p> <p> The type of targets returned depends on the
+         * deployment's compute platform: </p> <ul> <li> <p> <b>EC2/On-premises</b>:
+         * Information about EC2 instance targets. </p> </li> <li> <p> <b>AWS Lambda</b>:
+         * Information about Lambda functions targets. </p> </li> <li> <p> <b>Amazon
+         * ECS</b>: Information about Amazon ECS service targets. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets">AWS
          * API Reference</a></p>
          *
@@ -497,14 +518,16 @@ namespace Model
         virtual void BatchGetDeploymentTargetsAsync(const Model::BatchGetDeploymentTargetsRequest& request, const BatchGetDeploymentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about one or more deployments.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about one or more deployments. The maximum number of
+         * deployments that can be returned is 25.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchGetDeploymentsOutcome BatchGetDeployments(const Model::BatchGetDeploymentsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more deployments.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about one or more deployments. The maximum number of
+         * deployments that can be returned is 25.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments">AWS
          * API Reference</a></p>
          *
@@ -513,7 +536,8 @@ namespace Model
         virtual Model::BatchGetDeploymentsOutcomeCallable BatchGetDeploymentsCallable(const Model::BatchGetDeploymentsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more deployments.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about one or more deployments. The maximum number of
+         * deployments that can be returned is 25.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments">AWS
          * API Reference</a></p>
          *
@@ -522,16 +546,18 @@ namespace Model
         virtual void BatchGetDeploymentsAsync(const Model::BatchGetDeploymentsRequest& request, const BatchGetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about one or more on-premises instances.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about one or more on-premises instances. The maximum number
+         * of on-premises instances that can be returned is 25.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetOnPremisesInstances">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchGetOnPremisesInstancesOutcome BatchGetOnPremisesInstances(const Model::BatchGetOnPremisesInstancesRequest& request) const;
 
         /**
-         * <p>Gets information about one or more on-premises instances.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about one or more on-premises instances. The maximum number
+         * of on-premises instances that can be returned is 25.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetOnPremisesInstances">AWS
          * API Reference</a></p>
          *
@@ -540,8 +566,9 @@ namespace Model
         virtual Model::BatchGetOnPremisesInstancesOutcomeCallable BatchGetOnPremisesInstancesCallable(const Model::BatchGetOnPremisesInstancesRequest& request) const;
 
         /**
-         * <p>Gets information about one or more on-premises instances.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about one or more on-premises instances. The maximum number
+         * of on-premises instances that can be returned is 25.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetOnPremisesInstances">AWS
          * API Reference</a></p>
          *
@@ -1253,6 +1280,37 @@ namespace Model
         virtual void ListOnPremisesInstancesAsync(const Model::ListOnPremisesInstancesRequest& request, const ListOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Returns a list of tags for the resource identified by a specified ARN. Tags
+         * are used to organize and categorize your CodeDeploy resources. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p> Returns a list of tags for the resource identified by a specified ARN. Tags
+         * are used to organize and categorize your CodeDeploy resources. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p> Returns a list of tags for the resource identified by a specified ARN. Tags
+         * are used to organize and categorize your CodeDeploy resources. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Sets the result of a Lambda validation function. The function validates one
          * or both lifecycle events (<code>BeforeAllowTraffic</code> and
          * <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or
@@ -1399,6 +1457,71 @@ namespace Model
         virtual void StopDeploymentAsync(const Model::StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Associates the list of tags in the input <code>Tags</code> parameter with
+         * the resource identified by the <code>ResourceArn</code> input parameter.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p> Associates the list of tags in the input <code>Tags</code> parameter with
+         * the resource identified by the <code>ResourceArn</code> input parameter.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p> Associates the list of tags in the input <code>Tags</code> parameter with
+         * the resource identified by the <code>ResourceArn</code> input parameter.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Disassociates a resource from a list of tags. The resource is identified by
+         * the <code>ResourceArn</code> input parameter. The tags are identfied by the list
+         * of keys in the <code>TagKeys</code> input parameter. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p> Disassociates a resource from a list of tags. The resource is identified by
+         * the <code>ResourceArn</code> input parameter. The tags are identfied by the list
+         * of keys in the <code>TagKeys</code> input parameter. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p> Disassociates a resource from a list of tags. The resource is identified by
+         * the <code>ResourceArn</code> input parameter. The tags are identfied by the list
+         * of keys in the <code>TagKeys</code> input parameter. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Changes the name of an application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplication">AWS
          * API Reference</a></p>
@@ -1484,11 +1607,14 @@ namespace Model
         void ListDeploymentsAsyncHelper(const Model::ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGitHubAccountTokenNamesAsyncHelper(const Model::ListGitHubAccountTokenNamesRequest& request, const ListGitHubAccountTokenNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOnPremisesInstancesAsyncHelper(const Model::ListOnPremisesInstancesRequest& request, const ListOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLifecycleEventHookExecutionStatusAsyncHelper(const Model::PutLifecycleEventHookExecutionStatusRequest& request, const PutLifecycleEventHookExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterApplicationRevisionAsyncHelper(const Model::RegisterApplicationRevisionRequest& request, const RegisterApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterOnPremisesInstanceAsyncHelper(const Model::RegisterOnPremisesInstanceRequest& request, const RegisterOnPremisesInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsFromOnPremisesInstancesAsyncHelper(const Model::RemoveTagsFromOnPremisesInstancesRequest& request, const RemoveTagsFromOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopDeploymentAsyncHelper(const Model::StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDeploymentGroupAsyncHelper(const Model::UpdateDeploymentGroupRequest& request, const UpdateDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

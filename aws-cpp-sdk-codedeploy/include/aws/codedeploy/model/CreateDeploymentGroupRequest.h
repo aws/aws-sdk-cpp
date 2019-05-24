@@ -29,6 +29,7 @@
 #include <aws/codedeploy/model/TagFilter.h>
 #include <aws/codedeploy/model/TriggerConfig.h>
 #include <aws/codedeploy/model/ECSService.h>
+#include <aws/codedeploy/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -860,6 +861,63 @@ namespace Model
      */
     inline CreateDeploymentGroupRequest& WithOnPremisesTagSet(OnPremisesTagSet&& value) { SetOnPremisesTagSet(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The metadata that you apply to CodeDeploy deployment groups to help you
+     * organize and categorize them. Each tag consists of a key and an optional value,
+     * both of which you define. </p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p> The metadata that you apply to CodeDeploy deployment groups to help you
+     * organize and categorize them. Each tag consists of a key and an optional value,
+     * both of which you define. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p> The metadata that you apply to CodeDeploy deployment groups to help you
+     * organize and categorize them. Each tag consists of a key and an optional value,
+     * both of which you define. </p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p> The metadata that you apply to CodeDeploy deployment groups to help you
+     * organize and categorize them. Each tag consists of a key and an optional value,
+     * both of which you define. </p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p> The metadata that you apply to CodeDeploy deployment groups to help you
+     * organize and categorize them. Each tag consists of a key and an optional value,
+     * both of which you define. </p>
+     */
+    inline CreateDeploymentGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p> The metadata that you apply to CodeDeploy deployment groups to help you
+     * organize and categorize them. Each tag consists of a key and an optional value,
+     * both of which you define. </p>
+     */
+    inline CreateDeploymentGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p> The metadata that you apply to CodeDeploy deployment groups to help you
+     * organize and categorize them. Each tag consists of a key and an optional value,
+     * both of which you define. </p>
+     */
+    inline CreateDeploymentGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p> The metadata that you apply to CodeDeploy deployment groups to help you
+     * organize and categorize them. Each tag consists of a key and an optional value,
+     * both of which you define. </p>
+     */
+    inline CreateDeploymentGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_applicationName;
@@ -909,6 +967,9 @@ namespace Model
 
     OnPremisesTagSet m_onPremisesTagSet;
     bool m_onPremisesTagSetHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

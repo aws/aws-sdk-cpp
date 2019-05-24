@@ -19,6 +19,7 @@
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediastore-data/model/StorageClass.h>
+#include <aws/mediastore-data/model/UploadAvailability.h>
 #include <utility>
 
 namespace Aws
@@ -44,6 +45,8 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     bool SignBody() const override { return false; }
+
+    bool IsChunked() const override { return true; }
 
 
     /**
@@ -346,6 +349,73 @@ namespace Model
      */
     inline PutObjectRequest& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates the availability of an object while it is still uploading. If the
+     * value is set to <code>streaming</code>, the object is available for downloading
+     * after some initial buffering but before the object is uploaded completely. If
+     * the value is set to <code>standard</code>, the object is available for
+     * downloading only when it is uploaded completely. The default value for this
+     * header is <code>standard</code>.</p> <p>To use this header, you must also set
+     * the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
+     */
+    inline const UploadAvailability& GetUploadAvailability() const{ return m_uploadAvailability; }
+
+    /**
+     * <p>Indicates the availability of an object while it is still uploading. If the
+     * value is set to <code>streaming</code>, the object is available for downloading
+     * after some initial buffering but before the object is uploaded completely. If
+     * the value is set to <code>standard</code>, the object is available for
+     * downloading only when it is uploaded completely. The default value for this
+     * header is <code>standard</code>.</p> <p>To use this header, you must also set
+     * the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
+     */
+    inline bool UploadAvailabilityHasBeenSet() const { return m_uploadAvailabilityHasBeenSet; }
+
+    /**
+     * <p>Indicates the availability of an object while it is still uploading. If the
+     * value is set to <code>streaming</code>, the object is available for downloading
+     * after some initial buffering but before the object is uploaded completely. If
+     * the value is set to <code>standard</code>, the object is available for
+     * downloading only when it is uploaded completely. The default value for this
+     * header is <code>standard</code>.</p> <p>To use this header, you must also set
+     * the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
+     */
+    inline void SetUploadAvailability(const UploadAvailability& value) { m_uploadAvailabilityHasBeenSet = true; m_uploadAvailability = value; }
+
+    /**
+     * <p>Indicates the availability of an object while it is still uploading. If the
+     * value is set to <code>streaming</code>, the object is available for downloading
+     * after some initial buffering but before the object is uploaded completely. If
+     * the value is set to <code>standard</code>, the object is available for
+     * downloading only when it is uploaded completely. The default value for this
+     * header is <code>standard</code>.</p> <p>To use this header, you must also set
+     * the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
+     */
+    inline void SetUploadAvailability(UploadAvailability&& value) { m_uploadAvailabilityHasBeenSet = true; m_uploadAvailability = std::move(value); }
+
+    /**
+     * <p>Indicates the availability of an object while it is still uploading. If the
+     * value is set to <code>streaming</code>, the object is available for downloading
+     * after some initial buffering but before the object is uploaded completely. If
+     * the value is set to <code>standard</code>, the object is available for
+     * downloading only when it is uploaded completely. The default value for this
+     * header is <code>standard</code>.</p> <p>To use this header, you must also set
+     * the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
+     */
+    inline PutObjectRequest& WithUploadAvailability(const UploadAvailability& value) { SetUploadAvailability(value); return *this;}
+
+    /**
+     * <p>Indicates the availability of an object while it is still uploading. If the
+     * value is set to <code>streaming</code>, the object is available for downloading
+     * after some initial buffering but before the object is uploaded completely. If
+     * the value is set to <code>standard</code>, the object is available for
+     * downloading only when it is uploaded completely. The default value for this
+     * header is <code>standard</code>.</p> <p>To use this header, you must also set
+     * the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
+     */
+    inline PutObjectRequest& WithUploadAvailability(UploadAvailability&& value) { SetUploadAvailability(std::move(value)); return *this;}
+
   private:
 
 
@@ -357,6 +427,9 @@ namespace Model
 
     StorageClass m_storageClass;
     bool m_storageClassHasBeenSet;
+
+    UploadAvailability m_uploadAvailability;
+    bool m_uploadAvailabilityHasBeenSet;
   };
 
 } // namespace Model

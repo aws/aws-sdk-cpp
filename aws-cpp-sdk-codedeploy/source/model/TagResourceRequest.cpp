@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/codedeploy/model/CreateApplicationRequest.h>
+#include <aws/codedeploy/model/TagResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,27 +22,20 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateApplicationRequest::CreateApplicationRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_computePlatform(ComputePlatform::NOT_SET),
-    m_computePlatformHasBeenSet(false),
+TagResourceRequest::TagResourceRequest() : 
+    m_resourceArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
-Aws::String CreateApplicationRequest::SerializePayload() const
+Aws::String TagResourceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_applicationNameHasBeenSet)
+  if(m_resourceArnHasBeenSet)
   {
-   payload.WithString("applicationName", m_applicationName);
+   payload.WithString("ResourceArn", m_resourceArn);
 
-  }
-
-  if(m_computePlatformHasBeenSet)
-  {
-   payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
   }
 
   if(m_tagsHasBeenSet)
@@ -52,17 +45,17 @@ Aws::String CreateApplicationRequest::SerializePayload() const
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
-   payload.WithArray("tags", std::move(tagsJsonList));
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateApplicationRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection TagResourceRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.CreateApplication"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.TagResource"));
   return headers;
 
 }

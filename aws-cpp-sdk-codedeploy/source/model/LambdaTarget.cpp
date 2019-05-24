@@ -35,7 +35,8 @@ LambdaTarget::LambdaTarget() :
     m_status(TargetStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
-    m_lifecycleEventsHasBeenSet(false)
+    m_lifecycleEventsHasBeenSet(false),
+    m_lambdaFunctionInfoHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ LambdaTarget::LambdaTarget(JsonView jsonValue) :
     m_status(TargetStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
-    m_lifecycleEventsHasBeenSet(false)
+    m_lifecycleEventsHasBeenSet(false),
+    m_lambdaFunctionInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +100,13 @@ LambdaTarget& LambdaTarget::operator =(JsonView jsonValue)
     m_lifecycleEventsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lambdaFunctionInfo"))
+  {
+    m_lambdaFunctionInfo = jsonValue.GetObject("lambdaFunctionInfo");
+
+    m_lambdaFunctionInfoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -141,6 +150,12 @@ JsonValue LambdaTarget::Jsonize() const
      lifecycleEventsJsonList[lifecycleEventsIndex].AsObject(m_lifecycleEvents[lifecycleEventsIndex].Jsonize());
    }
    payload.WithArray("lifecycleEvents", std::move(lifecycleEventsJsonList));
+
+  }
+
+  if(m_lambdaFunctionInfoHasBeenSet)
+  {
+   payload.WithObject("lambdaFunctionInfo", m_lambdaFunctionInfo.Jsonize());
 
   }
 

@@ -53,90 +53,130 @@ namespace Model
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p>
+     * account.</p> <note> <p>If <code>applicationName</code> is specified, then
+     * <code>deploymentGroupName</code> must be specified. If it is not specified, then
+     * <code>deploymentGroupName</code> must not be specified. </p> </note>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p>
+     * account.</p> <note> <p>If <code>applicationName</code> is specified, then
+     * <code>deploymentGroupName</code> must be specified. If it is not specified, then
+     * <code>deploymentGroupName</code> must not be specified. </p> </note>
      */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p>
+     * account.</p> <note> <p>If <code>applicationName</code> is specified, then
+     * <code>deploymentGroupName</code> must be specified. If it is not specified, then
+     * <code>deploymentGroupName</code> must not be specified. </p> </note>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p>
+     * account.</p> <note> <p>If <code>applicationName</code> is specified, then
+     * <code>deploymentGroupName</code> must be specified. If it is not specified, then
+     * <code>deploymentGroupName</code> must not be specified. </p> </note>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p>
+     * account.</p> <note> <p>If <code>applicationName</code> is specified, then
+     * <code>deploymentGroupName</code> must be specified. If it is not specified, then
+     * <code>deploymentGroupName</code> must not be specified. </p> </note>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p>
+     * account.</p> <note> <p>If <code>applicationName</code> is specified, then
+     * <code>deploymentGroupName</code> must be specified. If it is not specified, then
+     * <code>deploymentGroupName</code> must not be specified. </p> </note>
      */
     inline ListDeploymentsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p>
+     * account.</p> <note> <p>If <code>applicationName</code> is specified, then
+     * <code>deploymentGroupName</code> must be specified. If it is not specified, then
+     * <code>deploymentGroupName</code> must not be specified. </p> </note>
      */
     inline ListDeploymentsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p>
+     * account.</p> <note> <p>If <code>applicationName</code> is specified, then
+     * <code>deploymentGroupName</code> must be specified. If it is not specified, then
+     * <code>deploymentGroupName</code> must not be specified. </p> </note>
      */
     inline ListDeploymentsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
 
     /**
-     * <p>The name of a deployment group for the specified application.</p>
+     * <p>The name of a deployment group for the specified application.</p> <note>
+     * <p>If <code>deploymentGroupName</code> is specified, then
+     * <code>applicationName</code> must be specified. If it is not specified, then
+     * <code>applicationName</code> must not be specified. </p> </note>
      */
     inline const Aws::String& GetDeploymentGroupName() const{ return m_deploymentGroupName; }
 
     /**
-     * <p>The name of a deployment group for the specified application.</p>
+     * <p>The name of a deployment group for the specified application.</p> <note>
+     * <p>If <code>deploymentGroupName</code> is specified, then
+     * <code>applicationName</code> must be specified. If it is not specified, then
+     * <code>applicationName</code> must not be specified. </p> </note>
      */
     inline bool DeploymentGroupNameHasBeenSet() const { return m_deploymentGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of a deployment group for the specified application.</p>
+     * <p>The name of a deployment group for the specified application.</p> <note>
+     * <p>If <code>deploymentGroupName</code> is specified, then
+     * <code>applicationName</code> must be specified. If it is not specified, then
+     * <code>applicationName</code> must not be specified. </p> </note>
      */
     inline void SetDeploymentGroupName(const Aws::String& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
 
     /**
-     * <p>The name of a deployment group for the specified application.</p>
+     * <p>The name of a deployment group for the specified application.</p> <note>
+     * <p>If <code>deploymentGroupName</code> is specified, then
+     * <code>applicationName</code> must be specified. If it is not specified, then
+     * <code>applicationName</code> must not be specified. </p> </note>
      */
     inline void SetDeploymentGroupName(Aws::String&& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = std::move(value); }
 
     /**
-     * <p>The name of a deployment group for the specified application.</p>
+     * <p>The name of a deployment group for the specified application.</p> <note>
+     * <p>If <code>deploymentGroupName</code> is specified, then
+     * <code>applicationName</code> must be specified. If it is not specified, then
+     * <code>applicationName</code> must not be specified. </p> </note>
      */
     inline void SetDeploymentGroupName(const char* value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName.assign(value); }
 
     /**
-     * <p>The name of a deployment group for the specified application.</p>
+     * <p>The name of a deployment group for the specified application.</p> <note>
+     * <p>If <code>deploymentGroupName</code> is specified, then
+     * <code>applicationName</code> must be specified. If it is not specified, then
+     * <code>applicationName</code> must not be specified. </p> </note>
      */
     inline ListDeploymentsRequest& WithDeploymentGroupName(const Aws::String& value) { SetDeploymentGroupName(value); return *this;}
 
     /**
-     * <p>The name of a deployment group for the specified application.</p>
+     * <p>The name of a deployment group for the specified application.</p> <note>
+     * <p>If <code>deploymentGroupName</code> is specified, then
+     * <code>applicationName</code> must be specified. If it is not specified, then
+     * <code>applicationName</code> must not be specified. </p> </note>
      */
     inline ListDeploymentsRequest& WithDeploymentGroupName(Aws::String&& value) { SetDeploymentGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a deployment group for the specified application.</p>
+     * <p>The name of a deployment group for the specified application.</p> <note>
+     * <p>If <code>deploymentGroupName</code> is specified, then
+     * <code>applicationName</code> must be specified. If it is not specified, then
+     * <code>applicationName</code> must not be specified. </p> </note>
      */
     inline ListDeploymentsRequest& WithDeploymentGroupName(const char* value) { SetDeploymentGroupName(value); return *this;}
 

@@ -38,7 +38,8 @@ CreateDeploymentGroupRequest::CreateDeploymentGroupRequest() :
     m_loadBalancerInfoHasBeenSet(false),
     m_ec2TagSetHasBeenSet(false),
     m_ecsServicesHasBeenSet(false),
-    m_onPremisesTagSetHasBeenSet(false)
+    m_onPremisesTagSetHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,17 @@ Aws::String CreateDeploymentGroupRequest::SerializePayload() const
   if(m_onPremisesTagSetHasBeenSet)
   {
    payload.WithObject("onPremisesTagSet", m_onPremisesTagSet.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

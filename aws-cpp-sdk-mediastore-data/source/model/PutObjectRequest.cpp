@@ -29,7 +29,9 @@ PutObjectRequest::PutObjectRequest() :
     m_pathHasBeenSet(false),
     m_cacheControlHasBeenSet(false),
     m_storageClass(StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false)
+    m_storageClassHasBeenSet(false),
+    m_uploadAvailability(UploadAvailability::NOT_SET),
+    m_uploadAvailabilityHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,11 @@ Aws::Http::HeaderValueCollection PutObjectRequest::GetRequestSpecificHeaders() c
   if(m_storageClassHasBeenSet)
   {
     headers.emplace("x-amz-storage-class", StorageClassMapper::GetNameForStorageClass(m_storageClass));
+  }
+
+  if(m_uploadAvailabilityHasBeenSet)
+  {
+    headers.emplace("x-amz-upload-availability", UploadAvailabilityMapper::GetNameForUploadAvailability(m_uploadAvailability));
   }
 
   return headers;

@@ -231,57 +231,73 @@ namespace Model
 
     /**
      * <p>The range bytes of an object to retrieve. For more information about the
-     * <code>Range</code> header, go to <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
+     * <code>Range</code> header, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.
+     * AWS Elemental MediaStore ignores this header for partially uploaded objects that
+     * have streaming upload availability.</p>
      */
     inline const Aws::String& GetRange() const{ return m_range; }
 
     /**
      * <p>The range bytes of an object to retrieve. For more information about the
-     * <code>Range</code> header, go to <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
+     * <code>Range</code> header, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.
+     * AWS Elemental MediaStore ignores this header for partially uploaded objects that
+     * have streaming upload availability.</p>
      */
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
 
     /**
      * <p>The range bytes of an object to retrieve. For more information about the
-     * <code>Range</code> header, go to <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
+     * <code>Range</code> header, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.
+     * AWS Elemental MediaStore ignores this header for partially uploaded objects that
+     * have streaming upload availability.</p>
      */
     inline void SetRange(const Aws::String& value) { m_rangeHasBeenSet = true; m_range = value; }
 
     /**
      * <p>The range bytes of an object to retrieve. For more information about the
-     * <code>Range</code> header, go to <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
+     * <code>Range</code> header, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.
+     * AWS Elemental MediaStore ignores this header for partially uploaded objects that
+     * have streaming upload availability.</p>
      */
     inline void SetRange(Aws::String&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
 
     /**
      * <p>The range bytes of an object to retrieve. For more information about the
-     * <code>Range</code> header, go to <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
+     * <code>Range</code> header, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.
+     * AWS Elemental MediaStore ignores this header for partially uploaded objects that
+     * have streaming upload availability.</p>
      */
     inline void SetRange(const char* value) { m_rangeHasBeenSet = true; m_range.assign(value); }
 
     /**
      * <p>The range bytes of an object to retrieve. For more information about the
-     * <code>Range</code> header, go to <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
+     * <code>Range</code> header, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.
+     * AWS Elemental MediaStore ignores this header for partially uploaded objects that
+     * have streaming upload availability.</p>
      */
     inline GetObjectRequest& WithRange(const Aws::String& value) { SetRange(value); return *this;}
 
     /**
      * <p>The range bytes of an object to retrieve. For more information about the
-     * <code>Range</code> header, go to <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
+     * <code>Range</code> header, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.
+     * AWS Elemental MediaStore ignores this header for partially uploaded objects that
+     * have streaming upload availability.</p>
      */
     inline GetObjectRequest& WithRange(Aws::String&& value) { SetRange(std::move(value)); return *this;}
 
     /**
      * <p>The range bytes of an object to retrieve. For more information about the
-     * <code>Range</code> header, go to <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
+     * <code>Range</code> header, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.
+     * AWS Elemental MediaStore ignores this header for partially uploaded objects that
+     * have streaming upload availability.</p>
      */
     inline GetObjectRequest& WithRange(const char* value) { SetRange(value); return *this;}
 

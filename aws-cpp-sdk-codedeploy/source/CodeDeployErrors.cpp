@@ -47,6 +47,7 @@ static const int MULTIPLE_IAM_ARNS_PROVIDED_HASH = HashingUtils::HashString("Mul
 static const int DEPLOYMENT_TARGET_DOES_NOT_EXIST_HASH = HashingUtils::HashString("DeploymentTargetDoesNotExistException");
 static const int UNSUPPORTED_ACTION_FOR_DEPLOYMENT_TYPE_HASH = HashingUtils::HashString("UnsupportedActionForDeploymentTypeException");
 static const int GIT_HUB_ACCOUNT_TOKEN_DOES_NOT_EXIST_HASH = HashingUtils::HashString("GitHubAccountTokenDoesNotExistException");
+static const int ARN_NOT_SUPPORTED_HASH = HashingUtils::HashString("ArnNotSupportedException");
 static const int APPLICATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ApplicationDoesNotExistException");
 static const int INVALID_AUTO_SCALING_GROUP_HASH = HashingUtils::HashString("InvalidAutoScalingGroupException");
 static const int TRIGGER_TARGETS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TriggerTargetsLimitExceededException");
@@ -100,6 +101,7 @@ static const int INVALID_DEPLOYMENT_WAIT_TYPE_HASH = HashingUtils::HashString("I
 static const int INVALID_LIFECYCLE_EVENT_HOOK_EXECUTION_STATUS_HASH = HashingUtils::HashString("InvalidLifecycleEventHookExecutionStatusException");
 static const int INVALID_DEPLOYMENT_ID_HASH = HashingUtils::HashString("InvalidDeploymentIdException");
 static const int OPERATION_NOT_SUPPORTED_HASH = HashingUtils::HashString("OperationNotSupportedException");
+static const int RESOURCE_ARN_REQUIRED_HASH = HashingUtils::HashString("ResourceArnRequiredException");
 static const int DEPLOYMENT_GROUP_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DeploymentGroupLimitExceededException");
 static const int INVALID_MINIMUM_HEALTHY_HOST_VALUE_HASH = HashingUtils::HashString("InvalidMinimumHealthyHostValueException");
 static const int INVALID_LOAD_BALANCER_INFO_HASH = HashingUtils::HashString("InvalidLoadBalancerInfoException");
@@ -109,6 +111,7 @@ static const int INVALID_DEPLOYMENT_STYLE_HASH = HashingUtils::HashString("Inval
 static const int INVALID_APPLICATION_NAME_HASH = HashingUtils::HashString("InvalidApplicationNameException");
 static const int BATCH_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("BatchLimitExceededException");
 static const int LIFECYCLE_HOOK_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LifecycleHookLimitExceededException");
+static const int INVALID_TAGS_TO_ADD_HASH = HashingUtils::HashString("InvalidTagsToAddException");
 static const int INVALID_IAM_USER_ARN_HASH = HashingUtils::HashString("InvalidIamUserArnException");
 static const int INVALID_GIT_HUB_ACCOUNT_TOKEN_NAME_HASH = HashingUtils::HashString("InvalidGitHubAccountTokenNameException");
 static const int REVISION_REQUIRED_HASH = HashingUtils::HashString("RevisionRequiredException");
@@ -123,6 +126,7 @@ static const int IAM_ARN_REQUIRED_HASH = HashingUtils::HashString("IamArnRequire
 static const int APPLICATION_NAME_REQUIRED_HASH = HashingUtils::HashString("ApplicationNameRequiredException");
 static const int APPLICATION_ALREADY_EXISTS_HASH = HashingUtils::HashString("ApplicationAlreadyExistsException");
 static const int INVALID_E_C2_TAG_HASH = HashingUtils::HashString("InvalidEC2TagException");
+static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
 static const int INVALID_SORT_ORDER_HASH = HashingUtils::HashString("InvalidSortOrderException");
 static const int DESCRIPTION_TOO_LONG_HASH = HashingUtils::HashString("DescriptionTooLongException");
 static const int ROLE_REQUIRED_HASH = HashingUtils::HashString("RoleRequiredException");
@@ -209,6 +213,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == GIT_HUB_ACCOUNT_TOKEN_DOES_NOT_EXIST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::GIT_HUB_ACCOUNT_TOKEN_DOES_NOT_EXIST), false);
+  }
+  else if (hashCode == ARN_NOT_SUPPORTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::ARN_NOT_SUPPORTED), false);
   }
   else if (hashCode == APPLICATION_DOES_NOT_EXIST_HASH)
   {
@@ -422,6 +430,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::OPERATION_NOT_SUPPORTED), false);
   }
+  else if (hashCode == RESOURCE_ARN_REQUIRED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::RESOURCE_ARN_REQUIRED), false);
+  }
   else if (hashCode == DEPLOYMENT_GROUP_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::DEPLOYMENT_GROUP_LIMIT_EXCEEDED), false);
@@ -457,6 +469,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIFECYCLE_HOOK_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::LIFECYCLE_HOOK_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == INVALID_TAGS_TO_ADD_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_TAGS_TO_ADD), false);
   }
   else if (hashCode == INVALID_IAM_USER_ARN_HASH)
   {
@@ -513,6 +529,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_E_C2_TAG_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_E_C2_TAG), false);
+  }
+  else if (hashCode == INVALID_ARN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_ARN), false);
   }
   else if (hashCode == INVALID_SORT_ORDER_HASH)
   {

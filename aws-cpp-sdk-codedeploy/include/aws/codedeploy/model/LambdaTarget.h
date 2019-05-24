@@ -19,6 +19,7 @@
 #include <aws/codedeploy/model/TargetStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codedeploy/model/LambdaFunctionInfo.h>
 #include <aws/codedeploy/model/LifecycleEvent.h>
 #include <utility>
 
@@ -291,6 +292,43 @@ namespace Model
      */
     inline LambdaTarget& AddLifecycleEvents(LifecycleEvent&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> A <code>LambdaFunctionInfo</code> object that describes a target Lambda
+     * function. </p>
+     */
+    inline const LambdaFunctionInfo& GetLambdaFunctionInfo() const{ return m_lambdaFunctionInfo; }
+
+    /**
+     * <p> A <code>LambdaFunctionInfo</code> object that describes a target Lambda
+     * function. </p>
+     */
+    inline bool LambdaFunctionInfoHasBeenSet() const { return m_lambdaFunctionInfoHasBeenSet; }
+
+    /**
+     * <p> A <code>LambdaFunctionInfo</code> object that describes a target Lambda
+     * function. </p>
+     */
+    inline void SetLambdaFunctionInfo(const LambdaFunctionInfo& value) { m_lambdaFunctionInfoHasBeenSet = true; m_lambdaFunctionInfo = value; }
+
+    /**
+     * <p> A <code>LambdaFunctionInfo</code> object that describes a target Lambda
+     * function. </p>
+     */
+    inline void SetLambdaFunctionInfo(LambdaFunctionInfo&& value) { m_lambdaFunctionInfoHasBeenSet = true; m_lambdaFunctionInfo = std::move(value); }
+
+    /**
+     * <p> A <code>LambdaFunctionInfo</code> object that describes a target Lambda
+     * function. </p>
+     */
+    inline LambdaTarget& WithLambdaFunctionInfo(const LambdaFunctionInfo& value) { SetLambdaFunctionInfo(value); return *this;}
+
+    /**
+     * <p> A <code>LambdaFunctionInfo</code> object that describes a target Lambda
+     * function. </p>
+     */
+    inline LambdaTarget& WithLambdaFunctionInfo(LambdaFunctionInfo&& value) { SetLambdaFunctionInfo(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deploymentId;
@@ -310,6 +348,9 @@ namespace Model
 
     Aws::Vector<LifecycleEvent> m_lifecycleEvents;
     bool m_lifecycleEventsHasBeenSet;
+
+    LambdaFunctionInfo m_lambdaFunctionInfo;
+    bool m_lambdaFunctionInfoHasBeenSet;
   };
 
 } // namespace Model

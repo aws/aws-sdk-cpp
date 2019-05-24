@@ -367,42 +367,74 @@ namespace Model
 
 
     /**
-     * <p>A service role ARN.</p>
+     * <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission
+     * to make calls to AWS services on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
+     * a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p>A service role ARN.</p>
+     * <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission
+     * to make calls to AWS services on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
+     * a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User
+     * Guide</i>.</p>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
-     * <p>A service role ARN.</p>
+     * <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission
+     * to make calls to AWS services on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
+     * a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User
+     * Guide</i>.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
-     * <p>A service role ARN.</p>
+     * <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission
+     * to make calls to AWS services on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
+     * a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User
+     * Guide</i>.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p>A service role ARN.</p>
+     * <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission
+     * to make calls to AWS services on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
+     * a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User
+     * Guide</i>.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
-     * <p>A service role ARN.</p>
+     * <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission
+     * to make calls to AWS services on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
+     * a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User
+     * Guide</i>.</p>
      */
     inline DeploymentGroupInfo& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>A service role ARN.</p>
+     * <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission
+     * to make calls to AWS services on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
+     * a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User
+     * Guide</i>.</p>
      */
     inline DeploymentGroupInfo& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>A service role ARN.</p>
+     * <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission
+     * to make calls to AWS services on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
+     * a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User
+     * Guide</i>.</p>
      */
     inline DeploymentGroupInfo& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
@@ -813,38 +845,38 @@ namespace Model
 
 
     /**
-     * <p>The destination platform type for the deployment group (<code>Lambda</code>
-     * or <code>Server</code>).</p>
+     * <p>The destination platform type for the deployment (<code>Lambda</code>,
+     * <code>Server</code>, or <code>ECS</code>).</p>
      */
     inline const ComputePlatform& GetComputePlatform() const{ return m_computePlatform; }
 
     /**
-     * <p>The destination platform type for the deployment group (<code>Lambda</code>
-     * or <code>Server</code>).</p>
+     * <p>The destination platform type for the deployment (<code>Lambda</code>,
+     * <code>Server</code>, or <code>ECS</code>).</p>
      */
     inline bool ComputePlatformHasBeenSet() const { return m_computePlatformHasBeenSet; }
 
     /**
-     * <p>The destination platform type for the deployment group (<code>Lambda</code>
-     * or <code>Server</code>).</p>
+     * <p>The destination platform type for the deployment (<code>Lambda</code>,
+     * <code>Server</code>, or <code>ECS</code>).</p>
      */
     inline void SetComputePlatform(const ComputePlatform& value) { m_computePlatformHasBeenSet = true; m_computePlatform = value; }
 
     /**
-     * <p>The destination platform type for the deployment group (<code>Lambda</code>
-     * or <code>Server</code>).</p>
+     * <p>The destination platform type for the deployment (<code>Lambda</code>,
+     * <code>Server</code>, or <code>ECS</code>).</p>
      */
     inline void SetComputePlatform(ComputePlatform&& value) { m_computePlatformHasBeenSet = true; m_computePlatform = std::move(value); }
 
     /**
-     * <p>The destination platform type for the deployment group (<code>Lambda</code>
-     * or <code>Server</code>).</p>
+     * <p>The destination platform type for the deployment (<code>Lambda</code>,
+     * <code>Server</code>, or <code>ECS</code>).</p>
      */
     inline DeploymentGroupInfo& WithComputePlatform(const ComputePlatform& value) { SetComputePlatform(value); return *this;}
 
     /**
-     * <p>The destination platform type for the deployment group (<code>Lambda</code>
-     * or <code>Server</code>).</p>
+     * <p>The destination platform type for the deployment (<code>Lambda</code>,
+     * <code>Server</code>, or <code>ECS</code>).</p>
      */
     inline DeploymentGroupInfo& WithComputePlatform(ComputePlatform&& value) { SetComputePlatform(std::move(value)); return *this;}
 

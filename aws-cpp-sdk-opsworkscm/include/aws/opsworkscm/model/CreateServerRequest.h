@@ -102,49 +102,49 @@ namespace Model
 
     /**
      * <p> The configuration management engine to use. Valid values include
-     * <code>Chef</code> and <code>Puppet</code>. </p>
+     * <code>ChefAutomate</code> and <code>Puppet</code>. </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p> The configuration management engine to use. Valid values include
-     * <code>Chef</code> and <code>Puppet</code>. </p>
+     * <code>ChefAutomate</code> and <code>Puppet</code>. </p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p> The configuration management engine to use. Valid values include
-     * <code>Chef</code> and <code>Puppet</code>. </p>
+     * <code>ChefAutomate</code> and <code>Puppet</code>. </p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p> The configuration management engine to use. Valid values include
-     * <code>Chef</code> and <code>Puppet</code>. </p>
+     * <code>ChefAutomate</code> and <code>Puppet</code>. </p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p> The configuration management engine to use. Valid values include
-     * <code>Chef</code> and <code>Puppet</code>. </p>
+     * <code>ChefAutomate</code> and <code>Puppet</code>. </p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p> The configuration management engine to use. Valid values include
-     * <code>Chef</code> and <code>Puppet</code>. </p>
+     * <code>ChefAutomate</code> and <code>Puppet</code>. </p>
      */
     inline CreateServerRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p> The configuration management engine to use. Valid values include
-     * <code>Chef</code> and <code>Puppet</code>. </p>
+     * <code>ChefAutomate</code> and <code>Puppet</code>. </p>
      */
     inline CreateServerRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p> The configuration management engine to use. Valid values include
-     * <code>Chef</code> and <code>Puppet</code>. </p>
+     * <code>ChefAutomate</code> and <code>Puppet</code>. </p>
      */
     inline CreateServerRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -258,200 +258,200 @@ namespace Model
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
      * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
+     * <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
      * corresponding private key is required to access the Chef API. When no
-     * CHEF_PIVOTAL_KEY is set, a private key is generated and returned in the
-     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
-     * password for the administrative user in the Chef Automate GUI. The password
-     * length is a minimum of eight characters, and a maximum of 32. The password can
-     * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
-     * must contain at least one lower case letter, one upper case letter, one number,
-     * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
-     * generated and returned in the response.</p> </li> </ul> <p class="title">
-     * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
-     * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
-     * a password must use ASCII characters.</p> </li> <li> <p>
+     * CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The
+     * password for the administrative user in the Chef Automate web-based dashboard.
+     * The password length is a minimum of eight characters, and a maximum of 32. The
+     * password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_).
+     * The password must contain at least one lower case letter, one upper case letter,
+     * one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is
+     * set, one is generated and returned in the response.</p> </li> </ul> <p
+     * class="title"> <b>Attributes accepted in a Puppet createServer request:</b> </p>
+     * <ul> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet
+     * Enterprise console, a password must use ASCII characters.</p> </li> <li> <p>
      * <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control
      * repository (for example, ssh://git@your.git-repo.com:user/control-repo.git).
      * Specifying an r10k remote opens TCP port 8170.</p> </li> <li> <p>
      * <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository,
-     * add PUPPET_R10K_PRIVATE_KEY to specify an SSH URL and a PEM-encoded private SSH
-     * key.</p> </li> </ul>
+     * add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p> </li>
+     * </ul>
      */
     inline const Aws::Vector<EngineAttribute>& GetEngineAttributes() const{ return m_engineAttributes; }
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
      * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
+     * <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
      * corresponding private key is required to access the Chef API. When no
-     * CHEF_PIVOTAL_KEY is set, a private key is generated and returned in the
-     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
-     * password for the administrative user in the Chef Automate GUI. The password
-     * length is a minimum of eight characters, and a maximum of 32. The password can
-     * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
-     * must contain at least one lower case letter, one upper case letter, one number,
-     * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
-     * generated and returned in the response.</p> </li> </ul> <p class="title">
-     * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
-     * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
-     * a password must use ASCII characters.</p> </li> <li> <p>
+     * CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The
+     * password for the administrative user in the Chef Automate web-based dashboard.
+     * The password length is a minimum of eight characters, and a maximum of 32. The
+     * password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_).
+     * The password must contain at least one lower case letter, one upper case letter,
+     * one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is
+     * set, one is generated and returned in the response.</p> </li> </ul> <p
+     * class="title"> <b>Attributes accepted in a Puppet createServer request:</b> </p>
+     * <ul> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet
+     * Enterprise console, a password must use ASCII characters.</p> </li> <li> <p>
      * <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control
      * repository (for example, ssh://git@your.git-repo.com:user/control-repo.git).
      * Specifying an r10k remote opens TCP port 8170.</p> </li> <li> <p>
      * <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository,
-     * add PUPPET_R10K_PRIVATE_KEY to specify an SSH URL and a PEM-encoded private SSH
-     * key.</p> </li> </ul>
+     * add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p> </li>
+     * </ul>
      */
     inline bool EngineAttributesHasBeenSet() const { return m_engineAttributesHasBeenSet; }
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
      * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
+     * <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
      * corresponding private key is required to access the Chef API. When no
-     * CHEF_PIVOTAL_KEY is set, a private key is generated and returned in the
-     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
-     * password for the administrative user in the Chef Automate GUI. The password
-     * length is a minimum of eight characters, and a maximum of 32. The password can
-     * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
-     * must contain at least one lower case letter, one upper case letter, one number,
-     * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
-     * generated and returned in the response.</p> </li> </ul> <p class="title">
-     * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
-     * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
-     * a password must use ASCII characters.</p> </li> <li> <p>
+     * CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The
+     * password for the administrative user in the Chef Automate web-based dashboard.
+     * The password length is a minimum of eight characters, and a maximum of 32. The
+     * password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_).
+     * The password must contain at least one lower case letter, one upper case letter,
+     * one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is
+     * set, one is generated and returned in the response.</p> </li> </ul> <p
+     * class="title"> <b>Attributes accepted in a Puppet createServer request:</b> </p>
+     * <ul> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet
+     * Enterprise console, a password must use ASCII characters.</p> </li> <li> <p>
      * <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control
      * repository (for example, ssh://git@your.git-repo.com:user/control-repo.git).
      * Specifying an r10k remote opens TCP port 8170.</p> </li> <li> <p>
      * <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository,
-     * add PUPPET_R10K_PRIVATE_KEY to specify an SSH URL and a PEM-encoded private SSH
-     * key.</p> </li> </ul>
+     * add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p> </li>
+     * </ul>
      */
     inline void SetEngineAttributes(const Aws::Vector<EngineAttribute>& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = value; }
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
      * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
+     * <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
      * corresponding private key is required to access the Chef API. When no
-     * CHEF_PIVOTAL_KEY is set, a private key is generated and returned in the
-     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
-     * password for the administrative user in the Chef Automate GUI. The password
-     * length is a minimum of eight characters, and a maximum of 32. The password can
-     * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
-     * must contain at least one lower case letter, one upper case letter, one number,
-     * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
-     * generated and returned in the response.</p> </li> </ul> <p class="title">
-     * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
-     * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
-     * a password must use ASCII characters.</p> </li> <li> <p>
+     * CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The
+     * password for the administrative user in the Chef Automate web-based dashboard.
+     * The password length is a minimum of eight characters, and a maximum of 32. The
+     * password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_).
+     * The password must contain at least one lower case letter, one upper case letter,
+     * one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is
+     * set, one is generated and returned in the response.</p> </li> </ul> <p
+     * class="title"> <b>Attributes accepted in a Puppet createServer request:</b> </p>
+     * <ul> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet
+     * Enterprise console, a password must use ASCII characters.</p> </li> <li> <p>
      * <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control
      * repository (for example, ssh://git@your.git-repo.com:user/control-repo.git).
      * Specifying an r10k remote opens TCP port 8170.</p> </li> <li> <p>
      * <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository,
-     * add PUPPET_R10K_PRIVATE_KEY to specify an SSH URL and a PEM-encoded private SSH
-     * key.</p> </li> </ul>
+     * add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p> </li>
+     * </ul>
      */
     inline void SetEngineAttributes(Aws::Vector<EngineAttribute>&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = std::move(value); }
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
      * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
+     * <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
      * corresponding private key is required to access the Chef API. When no
-     * CHEF_PIVOTAL_KEY is set, a private key is generated and returned in the
-     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
-     * password for the administrative user in the Chef Automate GUI. The password
-     * length is a minimum of eight characters, and a maximum of 32. The password can
-     * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
-     * must contain at least one lower case letter, one upper case letter, one number,
-     * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
-     * generated and returned in the response.</p> </li> </ul> <p class="title">
-     * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
-     * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
-     * a password must use ASCII characters.</p> </li> <li> <p>
+     * CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The
+     * password for the administrative user in the Chef Automate web-based dashboard.
+     * The password length is a minimum of eight characters, and a maximum of 32. The
+     * password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_).
+     * The password must contain at least one lower case letter, one upper case letter,
+     * one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is
+     * set, one is generated and returned in the response.</p> </li> </ul> <p
+     * class="title"> <b>Attributes accepted in a Puppet createServer request:</b> </p>
+     * <ul> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet
+     * Enterprise console, a password must use ASCII characters.</p> </li> <li> <p>
      * <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control
      * repository (for example, ssh://git@your.git-repo.com:user/control-repo.git).
      * Specifying an r10k remote opens TCP port 8170.</p> </li> <li> <p>
      * <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository,
-     * add PUPPET_R10K_PRIVATE_KEY to specify an SSH URL and a PEM-encoded private SSH
-     * key.</p> </li> </ul>
+     * add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p> </li>
+     * </ul>
      */
     inline CreateServerRequest& WithEngineAttributes(const Aws::Vector<EngineAttribute>& value) { SetEngineAttributes(value); return *this;}
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
      * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
+     * <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
      * corresponding private key is required to access the Chef API. When no
-     * CHEF_PIVOTAL_KEY is set, a private key is generated and returned in the
-     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
-     * password for the administrative user in the Chef Automate GUI. The password
-     * length is a minimum of eight characters, and a maximum of 32. The password can
-     * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
-     * must contain at least one lower case letter, one upper case letter, one number,
-     * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
-     * generated and returned in the response.</p> </li> </ul> <p class="title">
-     * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
-     * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
-     * a password must use ASCII characters.</p> </li> <li> <p>
+     * CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The
+     * password for the administrative user in the Chef Automate web-based dashboard.
+     * The password length is a minimum of eight characters, and a maximum of 32. The
+     * password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_).
+     * The password must contain at least one lower case letter, one upper case letter,
+     * one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is
+     * set, one is generated and returned in the response.</p> </li> </ul> <p
+     * class="title"> <b>Attributes accepted in a Puppet createServer request:</b> </p>
+     * <ul> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet
+     * Enterprise console, a password must use ASCII characters.</p> </li> <li> <p>
      * <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control
      * repository (for example, ssh://git@your.git-repo.com:user/control-repo.git).
      * Specifying an r10k remote opens TCP port 8170.</p> </li> <li> <p>
      * <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository,
-     * add PUPPET_R10K_PRIVATE_KEY to specify an SSH URL and a PEM-encoded private SSH
-     * key.</p> </li> </ul>
+     * add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p> </li>
+     * </ul>
      */
     inline CreateServerRequest& WithEngineAttributes(Aws::Vector<EngineAttribute>&& value) { SetEngineAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
      * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
+     * <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
      * corresponding private key is required to access the Chef API. When no
-     * CHEF_PIVOTAL_KEY is set, a private key is generated and returned in the
-     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
-     * password for the administrative user in the Chef Automate GUI. The password
-     * length is a minimum of eight characters, and a maximum of 32. The password can
-     * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
-     * must contain at least one lower case letter, one upper case letter, one number,
-     * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
-     * generated and returned in the response.</p> </li> </ul> <p class="title">
-     * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
-     * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
-     * a password must use ASCII characters.</p> </li> <li> <p>
+     * CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The
+     * password for the administrative user in the Chef Automate web-based dashboard.
+     * The password length is a minimum of eight characters, and a maximum of 32. The
+     * password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_).
+     * The password must contain at least one lower case letter, one upper case letter,
+     * one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is
+     * set, one is generated and returned in the response.</p> </li> </ul> <p
+     * class="title"> <b>Attributes accepted in a Puppet createServer request:</b> </p>
+     * <ul> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet
+     * Enterprise console, a password must use ASCII characters.</p> </li> <li> <p>
      * <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control
      * repository (for example, ssh://git@your.git-repo.com:user/control-repo.git).
      * Specifying an r10k remote opens TCP port 8170.</p> </li> <li> <p>
      * <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository,
-     * add PUPPET_R10K_PRIVATE_KEY to specify an SSH URL and a PEM-encoded private SSH
-     * key.</p> </li> </ul>
+     * add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p> </li>
+     * </ul>
      */
     inline CreateServerRequest& AddEngineAttributes(const EngineAttribute& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(value); return *this; }
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
      * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
+     * <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
      * corresponding private key is required to access the Chef API. When no
-     * CHEF_PIVOTAL_KEY is set, a private key is generated and returned in the
-     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
-     * password for the administrative user in the Chef Automate GUI. The password
-     * length is a minimum of eight characters, and a maximum of 32. The password can
-     * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
-     * must contain at least one lower case letter, one upper case letter, one number,
-     * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
-     * generated and returned in the response.</p> </li> </ul> <p class="title">
-     * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
-     * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
-     * a password must use ASCII characters.</p> </li> <li> <p>
+     * CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The
+     * password for the administrative user in the Chef Automate web-based dashboard.
+     * The password length is a minimum of eight characters, and a maximum of 32. The
+     * password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_).
+     * The password must contain at least one lower case letter, one upper case letter,
+     * one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is
+     * set, one is generated and returned in the response.</p> </li> </ul> <p
+     * class="title"> <b>Attributes accepted in a Puppet createServer request:</b> </p>
+     * <ul> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet
+     * Enterprise console, a password must use ASCII characters.</p> </li> <li> <p>
      * <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control
      * repository (for example, ssh://git@your.git-repo.com:user/control-repo.git).
      * Specifying an r10k remote opens TCP port 8170.</p> </li> <li> <p>
      * <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository,
-     * add PUPPET_R10K_PRIVATE_KEY to specify an SSH URL and a PEM-encoded private SSH
-     * key.</p> </li> </ul>
+     * add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p> </li>
+     * </ul>
      */
     inline CreateServerRequest& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(std::move(value)); return *this; }
 
@@ -640,58 +640,50 @@ namespace Model
 
 
     /**
-     * <p> The Amazon EC2 instance type to use. For example, <code>m4.large</code>.
-     * Recommended instance types include <code>t2.medium</code> and greater,
-     * <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>
+     * <p> The Amazon EC2 instance type to use. For example, <code>m5.large</code>.
+     * </p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p> The Amazon EC2 instance type to use. For example, <code>m4.large</code>.
-     * Recommended instance types include <code>t2.medium</code> and greater,
-     * <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>
+     * <p> The Amazon EC2 instance type to use. For example, <code>m5.large</code>.
+     * </p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p> The Amazon EC2 instance type to use. For example, <code>m4.large</code>.
-     * Recommended instance types include <code>t2.medium</code> and greater,
-     * <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>
+     * <p> The Amazon EC2 instance type to use. For example, <code>m5.large</code>.
+     * </p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p> The Amazon EC2 instance type to use. For example, <code>m4.large</code>.
-     * Recommended instance types include <code>t2.medium</code> and greater,
-     * <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>
+     * <p> The Amazon EC2 instance type to use. For example, <code>m5.large</code>.
+     * </p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p> The Amazon EC2 instance type to use. For example, <code>m4.large</code>.
-     * Recommended instance types include <code>t2.medium</code> and greater,
-     * <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>
+     * <p> The Amazon EC2 instance type to use. For example, <code>m5.large</code>.
+     * </p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p> The Amazon EC2 instance type to use. For example, <code>m4.large</code>.
-     * Recommended instance types include <code>t2.medium</code> and greater,
-     * <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>
+     * <p> The Amazon EC2 instance type to use. For example, <code>m5.large</code>.
+     * </p>
      */
     inline CreateServerRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p> The Amazon EC2 instance type to use. For example, <code>m4.large</code>.
-     * Recommended instance types include <code>t2.medium</code> and greater,
-     * <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>
+     * <p> The Amazon EC2 instance type to use. For example, <code>m5.large</code>.
+     * </p>
      */
     inline CreateServerRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon EC2 instance type to use. For example, <code>m4.large</code>.
-     * Recommended instance types include <code>t2.medium</code> and greater,
-     * <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>
+     * <p> The Amazon EC2 instance type to use. For example, <code>m5.large</code>.
+     * </p>
      */
     inline CreateServerRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 

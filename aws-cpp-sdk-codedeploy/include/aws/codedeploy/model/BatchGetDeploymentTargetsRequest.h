@@ -88,9 +88,10 @@ namespace Model
 
     /**
      * <p> The unique IDs of the deployment targets. The compute platform of the
-     * deployment determines the type of the targets and their formats. </p> <ul> <li>
-     * <p> For deployments that use the EC2/On-premises compute platform, the target
-     * IDs are EC2 or on-premises instances IDs, and their target type is
+     * deployment determines the type of the targets and their formats. The maximum
+     * number of deployment target IDs you can specify is 25.</p> <ul> <li> <p> For
+     * deployments that use the EC2/On-premises compute platform, the target IDs are
+     * EC2 or on-premises instances IDs, and their target type is
      * <code>instanceTarget</code>. </p> </li> <li> <p> For deployments that use the
      * AWS Lambda compute platform, the target IDs are the names of Lambda functions,
      * and their target type is <code>instanceTarget</code>. </p> </li> <li> <p> For
@@ -103,9 +104,10 @@ namespace Model
 
     /**
      * <p> The unique IDs of the deployment targets. The compute platform of the
-     * deployment determines the type of the targets and their formats. </p> <ul> <li>
-     * <p> For deployments that use the EC2/On-premises compute platform, the target
-     * IDs are EC2 or on-premises instances IDs, and their target type is
+     * deployment determines the type of the targets and their formats. The maximum
+     * number of deployment target IDs you can specify is 25.</p> <ul> <li> <p> For
+     * deployments that use the EC2/On-premises compute platform, the target IDs are
+     * EC2 or on-premises instances IDs, and their target type is
      * <code>instanceTarget</code>. </p> </li> <li> <p> For deployments that use the
      * AWS Lambda compute platform, the target IDs are the names of Lambda functions,
      * and their target type is <code>instanceTarget</code>. </p> </li> <li> <p> For
@@ -118,9 +120,10 @@ namespace Model
 
     /**
      * <p> The unique IDs of the deployment targets. The compute platform of the
-     * deployment determines the type of the targets and their formats. </p> <ul> <li>
-     * <p> For deployments that use the EC2/On-premises compute platform, the target
-     * IDs are EC2 or on-premises instances IDs, and their target type is
+     * deployment determines the type of the targets and their formats. The maximum
+     * number of deployment target IDs you can specify is 25.</p> <ul> <li> <p> For
+     * deployments that use the EC2/On-premises compute platform, the target IDs are
+     * EC2 or on-premises instances IDs, and their target type is
      * <code>instanceTarget</code>. </p> </li> <li> <p> For deployments that use the
      * AWS Lambda compute platform, the target IDs are the names of Lambda functions,
      * and their target type is <code>instanceTarget</code>. </p> </li> <li> <p> For
@@ -133,9 +136,10 @@ namespace Model
 
     /**
      * <p> The unique IDs of the deployment targets. The compute platform of the
-     * deployment determines the type of the targets and their formats. </p> <ul> <li>
-     * <p> For deployments that use the EC2/On-premises compute platform, the target
-     * IDs are EC2 or on-premises instances IDs, and their target type is
+     * deployment determines the type of the targets and their formats. The maximum
+     * number of deployment target IDs you can specify is 25.</p> <ul> <li> <p> For
+     * deployments that use the EC2/On-premises compute platform, the target IDs are
+     * EC2 or on-premises instances IDs, and their target type is
      * <code>instanceTarget</code>. </p> </li> <li> <p> For deployments that use the
      * AWS Lambda compute platform, the target IDs are the names of Lambda functions,
      * and their target type is <code>instanceTarget</code>. </p> </li> <li> <p> For
@@ -148,9 +152,10 @@ namespace Model
 
     /**
      * <p> The unique IDs of the deployment targets. The compute platform of the
-     * deployment determines the type of the targets and their formats. </p> <ul> <li>
-     * <p> For deployments that use the EC2/On-premises compute platform, the target
-     * IDs are EC2 or on-premises instances IDs, and their target type is
+     * deployment determines the type of the targets and their formats. The maximum
+     * number of deployment target IDs you can specify is 25.</p> <ul> <li> <p> For
+     * deployments that use the EC2/On-premises compute platform, the target IDs are
+     * EC2 or on-premises instances IDs, and their target type is
      * <code>instanceTarget</code>. </p> </li> <li> <p> For deployments that use the
      * AWS Lambda compute platform, the target IDs are the names of Lambda functions,
      * and their target type is <code>instanceTarget</code>. </p> </li> <li> <p> For
@@ -163,9 +168,10 @@ namespace Model
 
     /**
      * <p> The unique IDs of the deployment targets. The compute platform of the
-     * deployment determines the type of the targets and their formats. </p> <ul> <li>
-     * <p> For deployments that use the EC2/On-premises compute platform, the target
-     * IDs are EC2 or on-premises instances IDs, and their target type is
+     * deployment determines the type of the targets and their formats. The maximum
+     * number of deployment target IDs you can specify is 25.</p> <ul> <li> <p> For
+     * deployments that use the EC2/On-premises compute platform, the target IDs are
+     * EC2 or on-premises instances IDs, and their target type is
      * <code>instanceTarget</code>. </p> </li> <li> <p> For deployments that use the
      * AWS Lambda compute platform, the target IDs are the names of Lambda functions,
      * and their target type is <code>instanceTarget</code>. </p> </li> <li> <p> For
@@ -178,9 +184,10 @@ namespace Model
 
     /**
      * <p> The unique IDs of the deployment targets. The compute platform of the
-     * deployment determines the type of the targets and their formats. </p> <ul> <li>
-     * <p> For deployments that use the EC2/On-premises compute platform, the target
-     * IDs are EC2 or on-premises instances IDs, and their target type is
+     * deployment determines the type of the targets and their formats. The maximum
+     * number of deployment target IDs you can specify is 25.</p> <ul> <li> <p> For
+     * deployments that use the EC2/On-premises compute platform, the target IDs are
+     * EC2 or on-premises instances IDs, and their target type is
      * <code>instanceTarget</code>. </p> </li> <li> <p> For deployments that use the
      * AWS Lambda compute platform, the target IDs are the names of Lambda functions,
      * and their target type is <code>instanceTarget</code>. </p> </li> <li> <p> For
@@ -193,9 +200,10 @@ namespace Model
 
     /**
      * <p> The unique IDs of the deployment targets. The compute platform of the
-     * deployment determines the type of the targets and their formats. </p> <ul> <li>
-     * <p> For deployments that use the EC2/On-premises compute platform, the target
-     * IDs are EC2 or on-premises instances IDs, and their target type is
+     * deployment determines the type of the targets and their formats. The maximum
+     * number of deployment target IDs you can specify is 25.</p> <ul> <li> <p> For
+     * deployments that use the EC2/On-premises compute platform, the target IDs are
+     * EC2 or on-premises instances IDs, and their target type is
      * <code>instanceTarget</code>. </p> </li> <li> <p> For deployments that use the
      * AWS Lambda compute platform, the target IDs are the names of Lambda functions,
      * and their target type is <code>instanceTarget</code>. </p> </li> <li> <p> For
@@ -208,9 +216,10 @@ namespace Model
 
     /**
      * <p> The unique IDs of the deployment targets. The compute platform of the
-     * deployment determines the type of the targets and their formats. </p> <ul> <li>
-     * <p> For deployments that use the EC2/On-premises compute platform, the target
-     * IDs are EC2 or on-premises instances IDs, and their target type is
+     * deployment determines the type of the targets and their formats. The maximum
+     * number of deployment target IDs you can specify is 25.</p> <ul> <li> <p> For
+     * deployments that use the EC2/On-premises compute platform, the target IDs are
+     * EC2 or on-premises instances IDs, and their target type is
      * <code>instanceTarget</code>. </p> </li> <li> <p> For deployments that use the
      * AWS Lambda compute platform, the target IDs are the names of Lambda functions,
      * and their target type is <code>instanceTarget</code>. </p> </li> <li> <p> For

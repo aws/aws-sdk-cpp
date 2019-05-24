@@ -180,14 +180,20 @@ namespace Model
         virtual void DescribeObjectAsync(const Model::DescribeObjectRequest& request, const DescribeObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Downloads the object at the specified path.</p><p><h3>See Also:</h3>   <a
+         * <p>Downloads the object at the specified path. If the object’s upload
+         * availability is set to <code>streaming</code>, AWS Elemental MediaStore
+         * downloads the object even if it’s still uploading the object.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/GetObject">AWS
          * API Reference</a></p>
          */
         virtual Model::GetObjectOutcome GetObject(const Model::GetObjectRequest& request) const;
 
         /**
-         * <p>Downloads the object at the specified path.</p><p><h3>See Also:</h3>   <a
+         * <p>Downloads the object at the specified path. If the object’s upload
+         * availability is set to <code>streaming</code>, AWS Elemental MediaStore
+         * downloads the object even if it’s still uploading the object.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/GetObject">AWS
          * API Reference</a></p>
          *
@@ -196,7 +202,10 @@ namespace Model
         virtual Model::GetObjectOutcomeCallable GetObjectCallable(const Model::GetObjectRequest& request) const;
 
         /**
-         * <p>Downloads the object at the specified path.</p><p><h3>See Also:</h3>   <a
+         * <p>Downloads the object at the specified path. If the object’s upload
+         * availability is set to <code>streaming</code>, AWS Elemental MediaStore
+         * downloads the object even if it’s still uploading the object.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/GetObject">AWS
          * API Reference</a></p>
          *
@@ -233,16 +242,18 @@ namespace Model
         virtual void ListItemsAsync(const Model::ListItemsRequest& request, const ListItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Uploads an object to the specified path. Object sizes are limited to 25
-         * MB.</p><p><h3>See Also:</h3>   <a
+         * <p>Uploads an object to the specified path. Object sizes are limited to 25 MB
+         * for standard upload availability and 10 MB for streaming upload
+         * availability.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/PutObject">AWS
          * API Reference</a></p>
          */
         virtual Model::PutObjectOutcome PutObject(const Model::PutObjectRequest& request) const;
 
         /**
-         * <p>Uploads an object to the specified path. Object sizes are limited to 25
-         * MB.</p><p><h3>See Also:</h3>   <a
+         * <p>Uploads an object to the specified path. Object sizes are limited to 25 MB
+         * for standard upload availability and 10 MB for streaming upload
+         * availability.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/PutObject">AWS
          * API Reference</a></p>
          *
@@ -251,8 +262,9 @@ namespace Model
         virtual Model::PutObjectOutcomeCallable PutObjectCallable(const Model::PutObjectRequest& request) const;
 
         /**
-         * <p>Uploads an object to the specified path. Object sizes are limited to 25
-         * MB.</p><p><h3>See Also:</h3>   <a
+         * <p>Uploads an object to the specified path. Object sizes are limited to 25 MB
+         * for standard upload availability and 10 MB for streaming upload
+         * availability.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/PutObject">AWS
          * API Reference</a></p>
          *

@@ -129,8 +129,8 @@ namespace Model
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
-     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this
+     * <code>m5.large</code>. Valid values are <code>m5.large</code>,
+     * <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this
      * parameter, RestoreServer uses the instance type from the specified backup. </p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
@@ -138,8 +138,8 @@ namespace Model
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
-     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this
+     * <code>m5.large</code>. Valid values are <code>m5.large</code>,
+     * <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this
      * parameter, RestoreServer uses the instance type from the specified backup. </p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
@@ -147,8 +147,8 @@ namespace Model
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
-     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this
+     * <code>m5.large</code>. Valid values are <code>m5.large</code>,
+     * <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this
      * parameter, RestoreServer uses the instance type from the specified backup. </p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
@@ -156,8 +156,8 @@ namespace Model
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
-     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this
+     * <code>m5.large</code>. Valid values are <code>m5.large</code>,
+     * <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this
      * parameter, RestoreServer uses the instance type from the specified backup. </p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
@@ -165,8 +165,8 @@ namespace Model
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
-     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this
+     * <code>m5.large</code>. Valid values are <code>m5.large</code>,
+     * <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this
      * parameter, RestoreServer uses the instance type from the specified backup. </p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
@@ -174,8 +174,8 @@ namespace Model
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
-     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this
+     * <code>m5.large</code>. Valid values are <code>m5.large</code>,
+     * <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this
      * parameter, RestoreServer uses the instance type from the specified backup. </p>
      */
     inline RestoreServerRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
@@ -183,8 +183,8 @@ namespace Model
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
-     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this
+     * <code>m5.large</code>. Valid values are <code>m5.large</code>,
+     * <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this
      * parameter, RestoreServer uses the instance type from the specified backup. </p>
      */
     inline RestoreServerRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
@@ -192,8 +192,8 @@ namespace Model
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
-     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this
+     * <code>m5.large</code>. Valid values are <code>m5.large</code>,
+     * <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this
      * parameter, RestoreServer uses the instance type from the specified backup. </p>
      */
     inline RestoreServerRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
