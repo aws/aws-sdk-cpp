@@ -13,10 +13,11 @@ if [[ $# -lt 1 ]]; then
     exit 1
 fi
 
+branch=""
 cmakeFlags=""
 # default to the current branch
-if [[ ! -v branch ]]; then
-    branch=`git rev-parse --abbrev-ref HEAD`
+if [[ -z $branch ]]; then
+    branch=$(git rev-parse --abbrev-ref HEAD)
 fi
 
 POSITIONAL=()
@@ -46,8 +47,8 @@ set -- "${POSITIONAL[@]}" # restore positional parameters
 
 
 json='{ "branch": "'$branch'", "cmakeFlags": "'$cmakeFlags' "}'
-echo $json >BuildSpec.json
+echo "$json" >BuildSpec.json
 zip -r BuildSpec.zip BuildSpec.json
-aws s3 cp BuildSpec.zip s3://aws-sdk-cpp-dev-pipeline/${buildspecLocation}/BuildSpec.zip
-S3VERSION=`aws s3api head-object --bucket aws-sdk-cpp-dev-pipeline --key ${buildspecLocation}/BuildSpec.zip | awk '/VersionId/{gsub(/[",]/, ""); print $2}'`
+aws s3 cp BuildSpec.zip s3://aws-sdk-cpp-dev-pipeline/"${buildspecLocation}"/BuildSpec.zip
+S3VERSION=$(aws s3api head-object --bucket aws-sdk-cpp-dev-pipeline --key "${buildspecLocation}"/BuildSpec.zip | awk '/VersionId/{gsub(/[",]/, ""); print $2}')
 echo -e "\033[30;42mYour build version ID is ${S3VERSION}\033[0m"
