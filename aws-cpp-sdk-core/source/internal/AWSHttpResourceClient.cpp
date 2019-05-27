@@ -172,7 +172,7 @@ EC2MetadataClient::~EC2MetadataClient()
 
 Aws::String EC2MetadataClient::GetResource(const char* resourcePath) const
 {
-    return GetResource(m_endpoint.c_str(), resourcePath, ""/*authToken*/);
+    return GetResource(m_endpoint.c_str(), resourcePath, nullptr/*authToken*/);
 }
 
 Aws::String EC2MetadataClient::GetDefaultCredentials() const
