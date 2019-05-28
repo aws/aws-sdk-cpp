@@ -31,6 +31,8 @@ namespace Model
 PhoneNumber::PhoneNumber() : 
     m_phoneNumberIdHasBeenSet(false),
     m_e164PhoneNumberHasBeenSet(false),
+    m_type(PhoneNumberType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_productType(PhoneNumberProductType::NOT_SET),
     m_productTypeHasBeenSet(false),
     m_status(PhoneNumberStatus::NOT_SET),
@@ -46,6 +48,8 @@ PhoneNumber::PhoneNumber() :
 PhoneNumber::PhoneNumber(JsonView jsonValue) : 
     m_phoneNumberIdHasBeenSet(false),
     m_e164PhoneNumberHasBeenSet(false),
+    m_type(PhoneNumberType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_productType(PhoneNumberProductType::NOT_SET),
     m_productTypeHasBeenSet(false),
     m_status(PhoneNumberStatus::NOT_SET),
@@ -73,6 +77,13 @@ PhoneNumber& PhoneNumber::operator =(JsonView jsonValue)
     m_e164PhoneNumber = jsonValue.GetString("E164PhoneNumber");
 
     m_e164PhoneNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Type"))
+  {
+    m_type = PhoneNumberTypeMapper::GetPhoneNumberTypeForName(jsonValue.GetString("Type"));
+
+    m_typeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ProductType"))
@@ -144,6 +155,11 @@ JsonValue PhoneNumber::Jsonize() const
   {
    payload.WithString("E164PhoneNumber", m_e164PhoneNumber);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", PhoneNumberTypeMapper::GetNameForPhoneNumberType(m_type));
   }
 
   if(m_productTypeHasBeenSet)

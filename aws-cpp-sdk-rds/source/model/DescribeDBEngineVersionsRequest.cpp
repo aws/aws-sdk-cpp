@@ -33,7 +33,9 @@ DescribeDBEngineVersionsRequest::DescribeDBEngineVersionsRequest() :
     m_listSupportedCharacterSets(false),
     m_listSupportedCharacterSetsHasBeenSet(false),
     m_listSupportedTimezones(false),
-    m_listSupportedTimezonesHasBeenSet(false)
+    m_listSupportedTimezonesHasBeenSet(false),
+    m_includeAll(false),
+    m_includeAllHasBeenSet(false)
 {
 }
 
@@ -89,6 +91,11 @@ Aws::String DescribeDBEngineVersionsRequest::SerializePayload() const
   if(m_listSupportedTimezonesHasBeenSet)
   {
     ss << "ListSupportedTimezones=" << std::boolalpha << m_listSupportedTimezones << "&";
+  }
+
+  if(m_includeAllHasBeenSet)
+  {
+    ss << "IncludeAll=" << std::boolalpha << m_includeAll << "&";
   }
 
   ss << "Version=2014-10-31";

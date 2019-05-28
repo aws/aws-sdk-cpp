@@ -15,12 +15,15 @@
 
 #include <aws/pinpoint-email/model/ListTagsForResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::PinpointEmail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 
 ListTagsForResourceRequest::ListTagsForResourceRequest() : 
     m_resourceArnHasBeenSet(false)
@@ -29,15 +32,7 @@ ListTagsForResourceRequest::ListTagsForResourceRequest() :
 
 Aws::String ListTagsForResourceRequest::SerializePayload() const
 {
-  JsonValue payload;
-
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("ResourceArn", m_resourceArn);
-
-  }
-
-  return payload.View().WriteReadable();
+  return {};
 }
 
 Aws::Http::HeaderValueCollection ListTagsForResourceRequest::GetRequestSpecificHeaders() const
@@ -48,6 +43,17 @@ Aws::Http::HeaderValueCollection ListTagsForResourceRequest::GetRequestSpecificH
 
 }
 
+void ListTagsForResourceRequest::AddQueryStringParameters(URI& uri) const
+{
+    Aws::StringStream ss;
+    if(m_resourceArnHasBeenSet)
+    {
+      ss << m_resourceArn;
+      uri.AddQueryStringParameter("ResourceArn", ss.str());
+      ss.str("");
+    }
+
+}
 
 
 

@@ -51,73 +51,67 @@ namespace Model
 
     /**
      * <p>The current progress status.</p> <dl> <dt>Validating</dt> <dd> <p>Validating
-     * the deployment.</p> </dd> <dt>Downloading/Extracting</dt> <dd> <p>Downloading
-     * and extracting the bundle on the robot.</p> </dd> <dt>Executing pre-launch
-     * script(s)</dt> <dd> <p>Executing pre-launch script(s) if provided.</p> </dd>
-     * <dt>Launching</dt> <dd> <p>Launching the robot application.</p> </dd>
-     * <dt>Executing post-launch script(s)</dt> <dd> <p>Executing post-launch script(s)
-     * if provided.</p> </dd> <dt>Finished</dt> <dd> <p>Deployment is complete.</p>
-     * </dd> </dl>
+     * the deployment.</p> </dd> <dt>DownloadingExtracting</dt> <dd> <p>Downloading and
+     * extracting the bundle on the robot.</p> </dd> <dt>ExecutingPreLaunch</dt> <dd>
+     * <p>Executing pre-launch script(s) if provided.</p> </dd> <dt>Launching</dt> <dd>
+     * <p>Launching the robot application.</p> </dd> <dt>ExecutingPostLaunch</dt> <dd>
+     * <p>Executing post-launch script(s) if provided.</p> </dd> <dt>Finished</dt> <dd>
+     * <p>Deployment is complete.</p> </dd> </dl>
      */
     inline const RobotDeploymentStep& GetCurrentProgress() const{ return m_currentProgress; }
 
     /**
      * <p>The current progress status.</p> <dl> <dt>Validating</dt> <dd> <p>Validating
-     * the deployment.</p> </dd> <dt>Downloading/Extracting</dt> <dd> <p>Downloading
-     * and extracting the bundle on the robot.</p> </dd> <dt>Executing pre-launch
-     * script(s)</dt> <dd> <p>Executing pre-launch script(s) if provided.</p> </dd>
-     * <dt>Launching</dt> <dd> <p>Launching the robot application.</p> </dd>
-     * <dt>Executing post-launch script(s)</dt> <dd> <p>Executing post-launch script(s)
-     * if provided.</p> </dd> <dt>Finished</dt> <dd> <p>Deployment is complete.</p>
-     * </dd> </dl>
+     * the deployment.</p> </dd> <dt>DownloadingExtracting</dt> <dd> <p>Downloading and
+     * extracting the bundle on the robot.</p> </dd> <dt>ExecutingPreLaunch</dt> <dd>
+     * <p>Executing pre-launch script(s) if provided.</p> </dd> <dt>Launching</dt> <dd>
+     * <p>Launching the robot application.</p> </dd> <dt>ExecutingPostLaunch</dt> <dd>
+     * <p>Executing post-launch script(s) if provided.</p> </dd> <dt>Finished</dt> <dd>
+     * <p>Deployment is complete.</p> </dd> </dl>
      */
     inline bool CurrentProgressHasBeenSet() const { return m_currentProgressHasBeenSet; }
 
     /**
      * <p>The current progress status.</p> <dl> <dt>Validating</dt> <dd> <p>Validating
-     * the deployment.</p> </dd> <dt>Downloading/Extracting</dt> <dd> <p>Downloading
-     * and extracting the bundle on the robot.</p> </dd> <dt>Executing pre-launch
-     * script(s)</dt> <dd> <p>Executing pre-launch script(s) if provided.</p> </dd>
-     * <dt>Launching</dt> <dd> <p>Launching the robot application.</p> </dd>
-     * <dt>Executing post-launch script(s)</dt> <dd> <p>Executing post-launch script(s)
-     * if provided.</p> </dd> <dt>Finished</dt> <dd> <p>Deployment is complete.</p>
-     * </dd> </dl>
+     * the deployment.</p> </dd> <dt>DownloadingExtracting</dt> <dd> <p>Downloading and
+     * extracting the bundle on the robot.</p> </dd> <dt>ExecutingPreLaunch</dt> <dd>
+     * <p>Executing pre-launch script(s) if provided.</p> </dd> <dt>Launching</dt> <dd>
+     * <p>Launching the robot application.</p> </dd> <dt>ExecutingPostLaunch</dt> <dd>
+     * <p>Executing post-launch script(s) if provided.</p> </dd> <dt>Finished</dt> <dd>
+     * <p>Deployment is complete.</p> </dd> </dl>
      */
     inline void SetCurrentProgress(const RobotDeploymentStep& value) { m_currentProgressHasBeenSet = true; m_currentProgress = value; }
 
     /**
      * <p>The current progress status.</p> <dl> <dt>Validating</dt> <dd> <p>Validating
-     * the deployment.</p> </dd> <dt>Downloading/Extracting</dt> <dd> <p>Downloading
-     * and extracting the bundle on the robot.</p> </dd> <dt>Executing pre-launch
-     * script(s)</dt> <dd> <p>Executing pre-launch script(s) if provided.</p> </dd>
-     * <dt>Launching</dt> <dd> <p>Launching the robot application.</p> </dd>
-     * <dt>Executing post-launch script(s)</dt> <dd> <p>Executing post-launch script(s)
-     * if provided.</p> </dd> <dt>Finished</dt> <dd> <p>Deployment is complete.</p>
-     * </dd> </dl>
+     * the deployment.</p> </dd> <dt>DownloadingExtracting</dt> <dd> <p>Downloading and
+     * extracting the bundle on the robot.</p> </dd> <dt>ExecutingPreLaunch</dt> <dd>
+     * <p>Executing pre-launch script(s) if provided.</p> </dd> <dt>Launching</dt> <dd>
+     * <p>Launching the robot application.</p> </dd> <dt>ExecutingPostLaunch</dt> <dd>
+     * <p>Executing post-launch script(s) if provided.</p> </dd> <dt>Finished</dt> <dd>
+     * <p>Deployment is complete.</p> </dd> </dl>
      */
     inline void SetCurrentProgress(RobotDeploymentStep&& value) { m_currentProgressHasBeenSet = true; m_currentProgress = std::move(value); }
 
     /**
      * <p>The current progress status.</p> <dl> <dt>Validating</dt> <dd> <p>Validating
-     * the deployment.</p> </dd> <dt>Downloading/Extracting</dt> <dd> <p>Downloading
-     * and extracting the bundle on the robot.</p> </dd> <dt>Executing pre-launch
-     * script(s)</dt> <dd> <p>Executing pre-launch script(s) if provided.</p> </dd>
-     * <dt>Launching</dt> <dd> <p>Launching the robot application.</p> </dd>
-     * <dt>Executing post-launch script(s)</dt> <dd> <p>Executing post-launch script(s)
-     * if provided.</p> </dd> <dt>Finished</dt> <dd> <p>Deployment is complete.</p>
-     * </dd> </dl>
+     * the deployment.</p> </dd> <dt>DownloadingExtracting</dt> <dd> <p>Downloading and
+     * extracting the bundle on the robot.</p> </dd> <dt>ExecutingPreLaunch</dt> <dd>
+     * <p>Executing pre-launch script(s) if provided.</p> </dd> <dt>Launching</dt> <dd>
+     * <p>Launching the robot application.</p> </dd> <dt>ExecutingPostLaunch</dt> <dd>
+     * <p>Executing post-launch script(s) if provided.</p> </dd> <dt>Finished</dt> <dd>
+     * <p>Deployment is complete.</p> </dd> </dl>
      */
     inline ProgressDetail& WithCurrentProgress(const RobotDeploymentStep& value) { SetCurrentProgress(value); return *this;}
 
     /**
      * <p>The current progress status.</p> <dl> <dt>Validating</dt> <dd> <p>Validating
-     * the deployment.</p> </dd> <dt>Downloading/Extracting</dt> <dd> <p>Downloading
-     * and extracting the bundle on the robot.</p> </dd> <dt>Executing pre-launch
-     * script(s)</dt> <dd> <p>Executing pre-launch script(s) if provided.</p> </dd>
-     * <dt>Launching</dt> <dd> <p>Launching the robot application.</p> </dd>
-     * <dt>Executing post-launch script(s)</dt> <dd> <p>Executing post-launch script(s)
-     * if provided.</p> </dd> <dt>Finished</dt> <dd> <p>Deployment is complete.</p>
-     * </dd> </dl>
+     * the deployment.</p> </dd> <dt>DownloadingExtracting</dt> <dd> <p>Downloading and
+     * extracting the bundle on the robot.</p> </dd> <dt>ExecutingPreLaunch</dt> <dd>
+     * <p>Executing pre-launch script(s) if provided.</p> </dd> <dt>Launching</dt> <dd>
+     * <p>Launching the robot application.</p> </dd> <dt>ExecutingPostLaunch</dt> <dd>
+     * <p>Executing post-launch script(s) if provided.</p> </dd> <dt>Finished</dt> <dd>
+     * <p>Deployment is complete.</p> </dd> </dl>
      */
     inline ProgressDetail& WithCurrentProgress(RobotDeploymentStep&& value) { SetCurrentProgress(std::move(value)); return *this;}
 

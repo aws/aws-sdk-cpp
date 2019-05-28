@@ -172,6 +172,43 @@ namespace Model
 
     /**
      * <p>The time, in milliseconds since the epoch, when the simulation job was last
+     * started.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastStartedAt() const{ return m_lastStartedAt; }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the simulation job was last
+     * started.</p>
+     */
+    inline bool LastStartedAtHasBeenSet() const { return m_lastStartedAtHasBeenSet; }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the simulation job was last
+     * started.</p>
+     */
+    inline void SetLastStartedAt(const Aws::Utils::DateTime& value) { m_lastStartedAtHasBeenSet = true; m_lastStartedAt = value; }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the simulation job was last
+     * started.</p>
+     */
+    inline void SetLastStartedAt(Aws::Utils::DateTime&& value) { m_lastStartedAtHasBeenSet = true; m_lastStartedAt = std::move(value); }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the simulation job was last
+     * started.</p>
+     */
+    inline SimulationJob& WithLastStartedAt(const Aws::Utils::DateTime& value) { SetLastStartedAt(value); return *this;}
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the simulation job was last
+     * started.</p>
+     */
+    inline SimulationJob& WithLastStartedAt(Aws::Utils::DateTime&& value) { SetLastStartedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the simulation job was last
      * updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
@@ -443,72 +480,56 @@ namespace Model
     /**
      * <p>The IAM role that allows the simulation instance to call the AWS APIs that
      * are specified in its associated policies on your behalf. This is how credentials
-     * are passed in to your simulation job. See how to <a
-     * href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials">specify
-     * AWS security credentials for your application</a>. </p>
+     * are passed in to your simulation job. </p>
      */
     inline const Aws::String& GetIamRole() const{ return m_iamRole; }
 
     /**
      * <p>The IAM role that allows the simulation instance to call the AWS APIs that
      * are specified in its associated policies on your behalf. This is how credentials
-     * are passed in to your simulation job. See how to <a
-     * href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials">specify
-     * AWS security credentials for your application</a>. </p>
+     * are passed in to your simulation job. </p>
      */
     inline bool IamRoleHasBeenSet() const { return m_iamRoleHasBeenSet; }
 
     /**
      * <p>The IAM role that allows the simulation instance to call the AWS APIs that
      * are specified in its associated policies on your behalf. This is how credentials
-     * are passed in to your simulation job. See how to <a
-     * href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials">specify
-     * AWS security credentials for your application</a>. </p>
+     * are passed in to your simulation job. </p>
      */
     inline void SetIamRole(const Aws::String& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
 
     /**
      * <p>The IAM role that allows the simulation instance to call the AWS APIs that
      * are specified in its associated policies on your behalf. This is how credentials
-     * are passed in to your simulation job. See how to <a
-     * href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials">specify
-     * AWS security credentials for your application</a>. </p>
+     * are passed in to your simulation job. </p>
      */
     inline void SetIamRole(Aws::String&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::move(value); }
 
     /**
      * <p>The IAM role that allows the simulation instance to call the AWS APIs that
      * are specified in its associated policies on your behalf. This is how credentials
-     * are passed in to your simulation job. See how to <a
-     * href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials">specify
-     * AWS security credentials for your application</a>. </p>
+     * are passed in to your simulation job. </p>
      */
     inline void SetIamRole(const char* value) { m_iamRoleHasBeenSet = true; m_iamRole.assign(value); }
 
     /**
      * <p>The IAM role that allows the simulation instance to call the AWS APIs that
      * are specified in its associated policies on your behalf. This is how credentials
-     * are passed in to your simulation job. See how to <a
-     * href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials">specify
-     * AWS security credentials for your application</a>. </p>
+     * are passed in to your simulation job. </p>
      */
     inline SimulationJob& WithIamRole(const Aws::String& value) { SetIamRole(value); return *this;}
 
     /**
      * <p>The IAM role that allows the simulation instance to call the AWS APIs that
      * are specified in its associated policies on your behalf. This is how credentials
-     * are passed in to your simulation job. See how to <a
-     * href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials">specify
-     * AWS security credentials for your application</a>. </p>
+     * are passed in to your simulation job. </p>
      */
     inline SimulationJob& WithIamRole(Aws::String&& value) { SetIamRole(std::move(value)); return *this;}
 
     /**
      * <p>The IAM role that allows the simulation instance to call the AWS APIs that
      * are specified in its associated policies on your behalf. This is how credentials
-     * are passed in to your simulation job. See how to <a
-     * href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials">specify
-     * AWS security credentials for your application</a>. </p>
+     * are passed in to your simulation job. </p>
      */
     inline SimulationJob& WithIamRole(const char* value) { SetIamRole(value); return *this;}
 
@@ -714,6 +735,9 @@ namespace Model
 
     SimulationJobStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::Utils::DateTime m_lastStartedAt;
+    bool m_lastStartedAtHasBeenSet;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
     bool m_lastUpdatedAtHasBeenSet;

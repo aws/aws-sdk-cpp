@@ -467,67 +467,67 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the Read Replica is in a Multi-AZ deployment.
-     * </p> <p>You can create a Read Replica as a Multi-AZ DB instance. RDS creates a
-     * standby of your replica in another Availability Zone for failover support for
-     * the replica. Creating your Read Replica as a Multi-AZ DB instance is independent
-     * of whether the source database is a Multi-AZ DB instance. </p>
+     * <p>Specifies whether the Read Replica is in a Multi-AZ deployment. </p> <p>You
+     * can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of
+     * your replica in another Availability Zone for failover support for the replica.
+     * Creating your Read Replica as a Multi-AZ DB instance is independent of whether
+     * the source database is a Multi-AZ DB instance. </p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>A value that indicates whether the Read Replica is in a Multi-AZ deployment.
-     * </p> <p>You can create a Read Replica as a Multi-AZ DB instance. RDS creates a
-     * standby of your replica in another Availability Zone for failover support for
-     * the replica. Creating your Read Replica as a Multi-AZ DB instance is independent
-     * of whether the source database is a Multi-AZ DB instance. </p>
+     * <p>Specifies whether the Read Replica is in a Multi-AZ deployment. </p> <p>You
+     * can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of
+     * your replica in another Availability Zone for failover support for the replica.
+     * Creating your Read Replica as a Multi-AZ DB instance is independent of whether
+     * the source database is a Multi-AZ DB instance. </p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the Read Replica is in a Multi-AZ deployment.
-     * </p> <p>You can create a Read Replica as a Multi-AZ DB instance. RDS creates a
-     * standby of your replica in another Availability Zone for failover support for
-     * the replica. Creating your Read Replica as a Multi-AZ DB instance is independent
-     * of whether the source database is a Multi-AZ DB instance. </p>
+     * <p>Specifies whether the Read Replica is in a Multi-AZ deployment. </p> <p>You
+     * can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of
+     * your replica in another Availability Zone for failover support for the replica.
+     * Creating your Read Replica as a Multi-AZ DB instance is independent of whether
+     * the source database is a Multi-AZ DB instance. </p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>A value that indicates whether the Read Replica is in a Multi-AZ deployment.
-     * </p> <p>You can create a Read Replica as a Multi-AZ DB instance. RDS creates a
-     * standby of your replica in another Availability Zone for failover support for
-     * the replica. Creating your Read Replica as a Multi-AZ DB instance is independent
-     * of whether the source database is a Multi-AZ DB instance. </p>
+     * <p>Specifies whether the Read Replica is in a Multi-AZ deployment. </p> <p>You
+     * can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of
+     * your replica in another Availability Zone for failover support for the replica.
+     * Creating your Read Replica as a Multi-AZ DB instance is independent of whether
+     * the source database is a Multi-AZ DB instance. </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether minor engine upgrades are applied
-     * automatically to the Read Replica during the maintenance window.</p> <p>Default:
-     * Inherits from the source DB instance</p>
+     * <p>Indicates that minor engine upgrades are applied automatically to the Read
+     * Replica during the maintenance window.</p> <p>Default: Inherits from the source
+     * DB instance</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>A value that indicates whether minor engine upgrades are applied
-     * automatically to the Read Replica during the maintenance window.</p> <p>Default:
-     * Inherits from the source DB instance</p>
+     * <p>Indicates that minor engine upgrades are applied automatically to the Read
+     * Replica during the maintenance window.</p> <p>Default: Inherits from the source
+     * DB instance</p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether minor engine upgrades are applied
-     * automatically to the Read Replica during the maintenance window.</p> <p>Default:
-     * Inherits from the source DB instance</p>
+     * <p>Indicates that minor engine upgrades are applied automatically to the Read
+     * Replica during the maintenance window.</p> <p>Default: Inherits from the source
+     * DB instance</p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>A value that indicates whether minor engine upgrades are applied
-     * automatically to the Read Replica during the maintenance window.</p> <p>Default:
-     * Inherits from the source DB instance</p>
+     * <p>Indicates that minor engine upgrades are applied automatically to the Read
+     * Replica during the maintenance window.</p> <p>Default: Inherits from the source
+     * DB instance</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -607,42 +607,38 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. For more information, see
-     * <a>CreateDBInstance</a>.</p>
+     * <p>Specifies the accessibility options for the DB instance. A value of true
+     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
+     * resolves to a public IP address. A value of false specifies an internal instance
+     * with a DNS name that resolves to a private IP address. For more information, see
+     * <code>CreateDBInstance</code>.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. For more information, see
-     * <a>CreateDBInstance</a>.</p>
+     * <p>Specifies the accessibility options for the DB instance. A value of true
+     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
+     * resolves to a public IP address. A value of false specifies an internal instance
+     * with a DNS name that resolves to a private IP address. For more information, see
+     * <code>CreateDBInstance</code>.</p>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. For more information, see
-     * <a>CreateDBInstance</a>.</p>
+     * <p>Specifies the accessibility options for the DB instance. A value of true
+     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
+     * resolves to a public IP address. A value of false specifies an internal instance
+     * with a DNS name that resolves to a private IP address. For more information, see
+     * <code>CreateDBInstance</code>.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. For more information, see
-     * <a>CreateDBInstance</a>.</p>
+     * <p>Specifies the accessibility options for the DB instance. A value of true
+     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
+     * resolves to a public IP address. A value of false specifies an internal instance
+     * with a DNS name that resolves to a private IP address. For more information, see
+     * <code>CreateDBInstance</code>.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
@@ -878,7 +874,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
@@ -887,7 +883,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
@@ -896,7 +892,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
@@ -905,7 +901,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
@@ -914,7 +910,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
@@ -923,7 +919,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
@@ -932,7 +928,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
@@ -941,32 +937,32 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * is specified, otherwise <code>standard</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether to copy all tags from the Read Replica to
-     * snapshots of the Read Replica. By default, tags are not copied.</p>
+     * <p>True to copy all tags from the Read Replica to snapshots of the Read Replica,
+     * and otherwise false. The default is false.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the Read Replica to
-     * snapshots of the Read Replica. By default, tags are not copied.</p>
+     * <p>True to copy all tags from the Read Replica to snapshots of the Read Replica,
+     * and otherwise false. The default is false.</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the Read Replica to
-     * snapshots of the Read Replica. By default, tags are not copied.</p>
+     * <p>True to copy all tags from the Read Replica to snapshots of the Read Replica,
+     * and otherwise false. The default is false.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the Read Replica to
-     * snapshots of the Read Replica. By default, tags are not copied.</p>
+     * <p>True to copy all tags from the Read Replica to snapshots of the Read Replica,
+     * and otherwise false. The default is false.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
@@ -1556,73 +1552,73 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>You can enable IAM database authentication for the following
-     * database engines</p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or
-     * higher</p> </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li>
-     * <li> <p>Aurora MySQL 5.6 or higher</p> </li> </ul>
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
+     * authentication for the following database engines</p> <ul> <li> <p>For MySQL
+     * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
+     * version 5.7.16 or higher</p> </li> <li> <p>Aurora MySQL 5.6 or higher</p> </li>
+     * </ul> <p>Default: <code>false</code> </p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>You can enable IAM database authentication for the following
-     * database engines</p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or
-     * higher</p> </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li>
-     * <li> <p>Aurora MySQL 5.6 or higher</p> </li> </ul>
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
+     * authentication for the following database engines</p> <ul> <li> <p>For MySQL
+     * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
+     * version 5.7.16 or higher</p> </li> <li> <p>Aurora MySQL 5.6 or higher</p> </li>
+     * </ul> <p>Default: <code>false</code> </p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>You can enable IAM database authentication for the following
-     * database engines</p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or
-     * higher</p> </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li>
-     * <li> <p>Aurora MySQL 5.6 or higher</p> </li> </ul>
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
+     * authentication for the following database engines</p> <ul> <li> <p>For MySQL
+     * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
+     * version 5.7.16 or higher</p> </li> <li> <p>Aurora MySQL 5.6 or higher</p> </li>
+     * </ul> <p>Default: <code>false</code> </p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>You can enable IAM database authentication for the following
-     * database engines</p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or
-     * higher</p> </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li>
-     * <li> <p>Aurora MySQL 5.6 or higher</p> </li> </ul>
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
+     * authentication for the following database engines</p> <ul> <li> <p>For MySQL
+     * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
+     * version 5.7.16 or higher</p> </li> <li> <p>Aurora MySQL 5.6 or higher</p> </li>
+     * </ul> <p>Default: <code>false</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether to enable Performance Insights for the Read
-     * Replica. </p> <p>For more information, see <a
+     * <p>True to enable Performance Insights for the Read Replica, and otherwise
+     * false. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>. </p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
     /**
-     * <p>A value that indicates whether to enable Performance Insights for the Read
-     * Replica. </p> <p>For more information, see <a
+     * <p>True to enable Performance Insights for the Read Replica, and otherwise
+     * false. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>. </p>
      */
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable Performance Insights for the Read
-     * Replica. </p> <p>For more information, see <a
+     * <p>True to enable Performance Insights for the Read Replica, and otherwise
+     * false. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>. </p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
     /**
-     * <p>A value that indicates whether to enable Performance Insights for the Read
-     * Replica. </p> <p>For more information, see <a
+     * <p>True to enable Performance Insights for the Read Replica, and otherwise
+     * false. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>. </p>
      */
@@ -1632,80 +1628,56 @@ namespace Model
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * alias for the KMS encryption key.</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * alias for the KMS encryption key.</p>
      */
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * alias for the KMS encryption key.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * alias for the KMS encryption key.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * alias for the KMS encryption key.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * alias for the KMS encryption key.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * alias for the KMS encryption key.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * alias for the KMS encryption key.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
@@ -1876,61 +1848,61 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p>
+     * <p>A value that specifies that the DB instance class of the DB instance uses its
+     * default processor features.</p>
      */
     inline bool GetUseDefaultProcessorFeatures() const{ return m_useDefaultProcessorFeatures; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p>
+     * <p>A value that specifies that the DB instance class of the DB instance uses its
+     * default processor features.</p>
      */
     inline bool UseDefaultProcessorFeaturesHasBeenSet() const { return m_useDefaultProcessorFeaturesHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p>
+     * <p>A value that specifies that the DB instance class of the DB instance uses its
+     * default processor features.</p>
      */
     inline void SetUseDefaultProcessorFeatures(bool value) { m_useDefaultProcessorFeaturesHasBeenSet = true; m_useDefaultProcessorFeatures = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p>
+     * <p>A value that specifies that the DB instance class of the DB instance uses its
+     * default processor features.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithUseDefaultProcessorFeatures(bool value) { SetUseDefaultProcessorFeatures(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * <p>Indicates if the DB instance should have deletion protection enabled. The
+     * database can't be deleted when this value is set to true. The default is false.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * <p>Indicates if the DB instance should have deletion protection enabled. The
+     * database can't be deleted when this value is set to true. The default is false.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * <p>Indicates if the DB instance should have deletion protection enabled. The
+     * database can't be deleted when this value is set to true. The default is false.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * <p>Indicates if the DB instance should have deletion protection enabled. The
+     * database can't be deleted when this value is set to true. The default is false.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */

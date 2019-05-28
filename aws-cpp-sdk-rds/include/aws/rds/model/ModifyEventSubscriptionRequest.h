@@ -304,22 +304,22 @@ namespace Model
 
 
     /**
-     * <p> A value that indicates whether to activate the subscription. </p>
+     * <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p> A value that indicates whether to activate the subscription. </p>
+     * <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p> A value that indicates whether to activate the subscription. </p>
+     * <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p> A value that indicates whether to activate the subscription. </p>
+     * <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
      */
     inline ModifyEventSubscriptionRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

@@ -213,13 +213,14 @@ namespace Model
      * <code>SnapshotType</code> value, then both automated and manual snapshots are
      * returned. Shared and public DB snapshots are not included in the returned
      * results by default. You can include shared snapshots with these results by
-     * enabling the <code>IncludeShared</code> parameter. You can include public
-     * snapshots with these results by enabling the <code>IncludePublic</code>
-     * parameter.</p> <p>The <code>IncludeShared</code> and <code>IncludePublic</code>
-     * parameters don't apply for <code>SnapshotType</code> values of
-     * <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code>
-     * parameter doesn't apply when <code>SnapshotType</code> is set to
-     * <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.</p> <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply
+     * for <code>SnapshotType</code> values of <code>manual</code> or
+     * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
+     * when <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when
      * <code>SnapshotType</code> is set to <code>public</code>.</p>
      */
     inline const Aws::String& GetSnapshotType() const{ return m_snapshotType; }
@@ -240,13 +241,14 @@ namespace Model
      * <code>SnapshotType</code> value, then both automated and manual snapshots are
      * returned. Shared and public DB snapshots are not included in the returned
      * results by default. You can include shared snapshots with these results by
-     * enabling the <code>IncludeShared</code> parameter. You can include public
-     * snapshots with these results by enabling the <code>IncludePublic</code>
-     * parameter.</p> <p>The <code>IncludeShared</code> and <code>IncludePublic</code>
-     * parameters don't apply for <code>SnapshotType</code> values of
-     * <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code>
-     * parameter doesn't apply when <code>SnapshotType</code> is set to
-     * <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.</p> <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply
+     * for <code>SnapshotType</code> values of <code>manual</code> or
+     * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
+     * when <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when
      * <code>SnapshotType</code> is set to <code>public</code>.</p>
      */
     inline bool SnapshotTypeHasBeenSet() const { return m_snapshotTypeHasBeenSet; }
@@ -267,13 +269,14 @@ namespace Model
      * <code>SnapshotType</code> value, then both automated and manual snapshots are
      * returned. Shared and public DB snapshots are not included in the returned
      * results by default. You can include shared snapshots with these results by
-     * enabling the <code>IncludeShared</code> parameter. You can include public
-     * snapshots with these results by enabling the <code>IncludePublic</code>
-     * parameter.</p> <p>The <code>IncludeShared</code> and <code>IncludePublic</code>
-     * parameters don't apply for <code>SnapshotType</code> values of
-     * <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code>
-     * parameter doesn't apply when <code>SnapshotType</code> is set to
-     * <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.</p> <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply
+     * for <code>SnapshotType</code> values of <code>manual</code> or
+     * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
+     * when <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when
      * <code>SnapshotType</code> is set to <code>public</code>.</p>
      */
     inline void SetSnapshotType(const Aws::String& value) { m_snapshotTypeHasBeenSet = true; m_snapshotType = value; }
@@ -294,13 +297,14 @@ namespace Model
      * <code>SnapshotType</code> value, then both automated and manual snapshots are
      * returned. Shared and public DB snapshots are not included in the returned
      * results by default. You can include shared snapshots with these results by
-     * enabling the <code>IncludeShared</code> parameter. You can include public
-     * snapshots with these results by enabling the <code>IncludePublic</code>
-     * parameter.</p> <p>The <code>IncludeShared</code> and <code>IncludePublic</code>
-     * parameters don't apply for <code>SnapshotType</code> values of
-     * <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code>
-     * parameter doesn't apply when <code>SnapshotType</code> is set to
-     * <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.</p> <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply
+     * for <code>SnapshotType</code> values of <code>manual</code> or
+     * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
+     * when <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when
      * <code>SnapshotType</code> is set to <code>public</code>.</p>
      */
     inline void SetSnapshotType(Aws::String&& value) { m_snapshotTypeHasBeenSet = true; m_snapshotType = std::move(value); }
@@ -321,13 +325,14 @@ namespace Model
      * <code>SnapshotType</code> value, then both automated and manual snapshots are
      * returned. Shared and public DB snapshots are not included in the returned
      * results by default. You can include shared snapshots with these results by
-     * enabling the <code>IncludeShared</code> parameter. You can include public
-     * snapshots with these results by enabling the <code>IncludePublic</code>
-     * parameter.</p> <p>The <code>IncludeShared</code> and <code>IncludePublic</code>
-     * parameters don't apply for <code>SnapshotType</code> values of
-     * <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code>
-     * parameter doesn't apply when <code>SnapshotType</code> is set to
-     * <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.</p> <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply
+     * for <code>SnapshotType</code> values of <code>manual</code> or
+     * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
+     * when <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when
      * <code>SnapshotType</code> is set to <code>public</code>.</p>
      */
     inline void SetSnapshotType(const char* value) { m_snapshotTypeHasBeenSet = true; m_snapshotType.assign(value); }
@@ -348,13 +353,14 @@ namespace Model
      * <code>SnapshotType</code> value, then both automated and manual snapshots are
      * returned. Shared and public DB snapshots are not included in the returned
      * results by default. You can include shared snapshots with these results by
-     * enabling the <code>IncludeShared</code> parameter. You can include public
-     * snapshots with these results by enabling the <code>IncludePublic</code>
-     * parameter.</p> <p>The <code>IncludeShared</code> and <code>IncludePublic</code>
-     * parameters don't apply for <code>SnapshotType</code> values of
-     * <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code>
-     * parameter doesn't apply when <code>SnapshotType</code> is set to
-     * <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.</p> <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply
+     * for <code>SnapshotType</code> values of <code>manual</code> or
+     * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
+     * when <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when
      * <code>SnapshotType</code> is set to <code>public</code>.</p>
      */
     inline DescribeDBSnapshotsRequest& WithSnapshotType(const Aws::String& value) { SetSnapshotType(value); return *this;}
@@ -375,13 +381,14 @@ namespace Model
      * <code>SnapshotType</code> value, then both automated and manual snapshots are
      * returned. Shared and public DB snapshots are not included in the returned
      * results by default. You can include shared snapshots with these results by
-     * enabling the <code>IncludeShared</code> parameter. You can include public
-     * snapshots with these results by enabling the <code>IncludePublic</code>
-     * parameter.</p> <p>The <code>IncludeShared</code> and <code>IncludePublic</code>
-     * parameters don't apply for <code>SnapshotType</code> values of
-     * <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code>
-     * parameter doesn't apply when <code>SnapshotType</code> is set to
-     * <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.</p> <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply
+     * for <code>SnapshotType</code> values of <code>manual</code> or
+     * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
+     * when <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when
      * <code>SnapshotType</code> is set to <code>public</code>.</p>
      */
     inline DescribeDBSnapshotsRequest& WithSnapshotType(Aws::String&& value) { SetSnapshotType(std::move(value)); return *this;}
@@ -402,13 +409,14 @@ namespace Model
      * <code>SnapshotType</code> value, then both automated and manual snapshots are
      * returned. Shared and public DB snapshots are not included in the returned
      * results by default. You can include shared snapshots with these results by
-     * enabling the <code>IncludeShared</code> parameter. You can include public
-     * snapshots with these results by enabling the <code>IncludePublic</code>
-     * parameter.</p> <p>The <code>IncludeShared</code> and <code>IncludePublic</code>
-     * parameters don't apply for <code>SnapshotType</code> values of
-     * <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code>
-     * parameter doesn't apply when <code>SnapshotType</code> is set to
-     * <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.</p> <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply
+     * for <code>SnapshotType</code> values of <code>manual</code> or
+     * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
+     * when <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when
      * <code>SnapshotType</code> is set to <code>public</code>.</p>
      */
     inline DescribeDBSnapshotsRequest& WithSnapshotType(const char* value) { SetSnapshotType(value); return *this;}
@@ -554,71 +562,71 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to include shared manual DB cluster snapshots
-     * from other AWS accounts that this AWS account has been given permission to copy
-     * or restore. By default, these snapshots are not included.</p> <p>You can give an
-     * AWS account permission to restore a manual DB snapshot from another AWS account
-     * by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
+     * <p>True to include shared manual DB snapshots from other AWS accounts that this
+     * AWS account has been given permission to copy or restore, and otherwise false.
+     * The default is <code>false</code>.</p> <p>You can give an AWS account permission
+     * to restore a manual DB snapshot from another AWS account by using the
+     * <code>ModifyDBSnapshotAttribute</code> API action.</p>
      */
     inline bool GetIncludeShared() const{ return m_includeShared; }
 
     /**
-     * <p>A value that indicates whether to include shared manual DB cluster snapshots
-     * from other AWS accounts that this AWS account has been given permission to copy
-     * or restore. By default, these snapshots are not included.</p> <p>You can give an
-     * AWS account permission to restore a manual DB snapshot from another AWS account
-     * by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
+     * <p>True to include shared manual DB snapshots from other AWS accounts that this
+     * AWS account has been given permission to copy or restore, and otherwise false.
+     * The default is <code>false</code>.</p> <p>You can give an AWS account permission
+     * to restore a manual DB snapshot from another AWS account by using the
+     * <code>ModifyDBSnapshotAttribute</code> API action.</p>
      */
     inline bool IncludeSharedHasBeenSet() const { return m_includeSharedHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to include shared manual DB cluster snapshots
-     * from other AWS accounts that this AWS account has been given permission to copy
-     * or restore. By default, these snapshots are not included.</p> <p>You can give an
-     * AWS account permission to restore a manual DB snapshot from another AWS account
-     * by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
+     * <p>True to include shared manual DB snapshots from other AWS accounts that this
+     * AWS account has been given permission to copy or restore, and otherwise false.
+     * The default is <code>false</code>.</p> <p>You can give an AWS account permission
+     * to restore a manual DB snapshot from another AWS account by using the
+     * <code>ModifyDBSnapshotAttribute</code> API action.</p>
      */
     inline void SetIncludeShared(bool value) { m_includeSharedHasBeenSet = true; m_includeShared = value; }
 
     /**
-     * <p>A value that indicates whether to include shared manual DB cluster snapshots
-     * from other AWS accounts that this AWS account has been given permission to copy
-     * or restore. By default, these snapshots are not included.</p> <p>You can give an
-     * AWS account permission to restore a manual DB snapshot from another AWS account
-     * by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
+     * <p>True to include shared manual DB snapshots from other AWS accounts that this
+     * AWS account has been given permission to copy or restore, and otherwise false.
+     * The default is <code>false</code>.</p> <p>You can give an AWS account permission
+     * to restore a manual DB snapshot from another AWS account by using the
+     * <code>ModifyDBSnapshotAttribute</code> API action.</p>
      */
     inline DescribeDBSnapshotsRequest& WithIncludeShared(bool value) { SetIncludeShared(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether to include manual DB cluster snapshots that
-     * are public and can be copied or restored by any AWS account. By default, the
-     * public snapshots are not included.</p> <p>You can share a manual DB snapshot as
-     * public by using the <a>ModifyDBSnapshotAttribute</a> API.</p>
+     * <p>True to include manual DB snapshots that are public and can be copied or
+     * restored by any AWS account, and otherwise false. The default is false.</p>
+     * <p>You can share a manual DB snapshot as public by using the
+     * <code>ModifyDBSnapshotAttribute</code> API.</p>
      */
     inline bool GetIncludePublic() const{ return m_includePublic; }
 
     /**
-     * <p>A value that indicates whether to include manual DB cluster snapshots that
-     * are public and can be copied or restored by any AWS account. By default, the
-     * public snapshots are not included.</p> <p>You can share a manual DB snapshot as
-     * public by using the <a>ModifyDBSnapshotAttribute</a> API.</p>
+     * <p>True to include manual DB snapshots that are public and can be copied or
+     * restored by any AWS account, and otherwise false. The default is false.</p>
+     * <p>You can share a manual DB snapshot as public by using the
+     * <code>ModifyDBSnapshotAttribute</code> API.</p>
      */
     inline bool IncludePublicHasBeenSet() const { return m_includePublicHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to include manual DB cluster snapshots that
-     * are public and can be copied or restored by any AWS account. By default, the
-     * public snapshots are not included.</p> <p>You can share a manual DB snapshot as
-     * public by using the <a>ModifyDBSnapshotAttribute</a> API.</p>
+     * <p>True to include manual DB snapshots that are public and can be copied or
+     * restored by any AWS account, and otherwise false. The default is false.</p>
+     * <p>You can share a manual DB snapshot as public by using the
+     * <code>ModifyDBSnapshotAttribute</code> API.</p>
      */
     inline void SetIncludePublic(bool value) { m_includePublicHasBeenSet = true; m_includePublic = value; }
 
     /**
-     * <p>A value that indicates whether to include manual DB cluster snapshots that
-     * are public and can be copied or restored by any AWS account. By default, the
-     * public snapshots are not included.</p> <p>You can share a manual DB snapshot as
-     * public by using the <a>ModifyDBSnapshotAttribute</a> API.</p>
+     * <p>True to include manual DB snapshots that are public and can be copied or
+     * restored by any AWS account, and otherwise false. The default is false.</p>
+     * <p>You can share a manual DB snapshot as public by using the
+     * <code>ModifyDBSnapshotAttribute</code> API.</p>
      */
     inline DescribeDBSnapshotsRequest& WithIncludePublic(bool value) { SetIncludePublic(value); return *this;}
 

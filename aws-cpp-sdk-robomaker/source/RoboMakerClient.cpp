@@ -31,6 +31,7 @@
 #include <aws/robomaker/RoboMakerEndpoint.h>
 #include <aws/robomaker/RoboMakerErrorMarshaller.h>
 #include <aws/robomaker/model/BatchDescribeSimulationJobRequest.h>
+#include <aws/robomaker/model/CancelDeploymentJobRequest.h>
 #include <aws/robomaker/model/CancelSimulationJobRequest.h>
 #include <aws/robomaker/model/CreateDeploymentJobRequest.h>
 #include <aws/robomaker/model/CreateFleetRequest.h>
@@ -171,6 +172,41 @@ void RoboMakerClient::BatchDescribeSimulationJobAsync(const BatchDescribeSimulat
 void RoboMakerClient::BatchDescribeSimulationJobAsyncHelper(const BatchDescribeSimulationJobRequest& request, const BatchDescribeSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchDescribeSimulationJob(request), context);
+}
+
+CancelDeploymentJobOutcome RoboMakerClient::CancelDeploymentJob(const CancelDeploymentJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/cancelDeploymentJob";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CancelDeploymentJobOutcome(CancelDeploymentJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CancelDeploymentJobOutcome(outcome.GetError());
+  }
+}
+
+CancelDeploymentJobOutcomeCallable RoboMakerClient::CancelDeploymentJobCallable(const CancelDeploymentJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelDeploymentJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelDeploymentJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::CancelDeploymentJobAsync(const CancelDeploymentJobRequest& request, const CancelDeploymentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelDeploymentJobAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::CancelDeploymentJobAsyncHelper(const CancelDeploymentJobRequest& request, const CancelDeploymentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelDeploymentJob(request), context);
 }
 
 CancelSimulationJobOutcome RoboMakerClient::CancelSimulationJob(const CancelSimulationJobRequest& request) const

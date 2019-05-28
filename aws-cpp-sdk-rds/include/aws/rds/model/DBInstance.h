@@ -2435,8 +2435,7 @@ namespace Model
 
     /**
      * <p>Indicates if the DB instance has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. For more information, see
-     * <a
+     * can't be deleted when this value is set to true. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
@@ -2444,8 +2443,7 @@ namespace Model
 
     /**
      * <p>Indicates if the DB instance has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. For more information, see
-     * <a
+     * can't be deleted when this value is set to true. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
@@ -2453,8 +2451,7 @@ namespace Model
 
     /**
      * <p>Indicates if the DB instance has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. For more information, see
-     * <a
+     * can't be deleted when this value is set to true. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
@@ -2462,8 +2459,7 @@ namespace Model
 
     /**
      * <p>Indicates if the DB instance has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. For more information, see
-     * <a
+     * can't be deleted when this value is set to true. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */

@@ -38,11 +38,13 @@
 #include <aws/pinpoint-email/model/GetDedicatedIpsResult.h>
 #include <aws/pinpoint-email/model/GetDeliverabilityDashboardOptionsResult.h>
 #include <aws/pinpoint-email/model/GetDeliverabilityTestReportResult.h>
+#include <aws/pinpoint-email/model/GetDomainDeliverabilityCampaignResult.h>
 #include <aws/pinpoint-email/model/GetDomainStatisticsReportResult.h>
 #include <aws/pinpoint-email/model/GetEmailIdentityResult.h>
 #include <aws/pinpoint-email/model/ListConfigurationSetsResult.h>
 #include <aws/pinpoint-email/model/ListDedicatedIpPoolsResult.h>
 #include <aws/pinpoint-email/model/ListDeliverabilityTestReportsResult.h>
+#include <aws/pinpoint-email/model/ListDomainDeliverabilityCampaignsResult.h>
 #include <aws/pinpoint-email/model/ListEmailIdentitiesResult.h>
 #include <aws/pinpoint-email/model/ListTagsForResourceResult.h>
 #include <aws/pinpoint-email/model/PutAccountDedicatedIpWarmupAttributesResult.h>
@@ -117,11 +119,13 @@ namespace Model
         class GetDedicatedIpsRequest;
         class GetDeliverabilityDashboardOptionsRequest;
         class GetDeliverabilityTestReportRequest;
+        class GetDomainDeliverabilityCampaignRequest;
         class GetDomainStatisticsReportRequest;
         class GetEmailIdentityRequest;
         class ListConfigurationSetsRequest;
         class ListDedicatedIpPoolsRequest;
         class ListDeliverabilityTestReportsRequest;
+        class ListDomainDeliverabilityCampaignsRequest;
         class ListEmailIdentitiesRequest;
         class ListTagsForResourceRequest;
         class PutAccountDedicatedIpWarmupAttributesRequest;
@@ -158,11 +162,13 @@ namespace Model
         typedef Aws::Utils::Outcome<GetDedicatedIpsResult, Aws::Client::AWSError<PinpointEmailErrors>> GetDedicatedIpsOutcome;
         typedef Aws::Utils::Outcome<GetDeliverabilityDashboardOptionsResult, Aws::Client::AWSError<PinpointEmailErrors>> GetDeliverabilityDashboardOptionsOutcome;
         typedef Aws::Utils::Outcome<GetDeliverabilityTestReportResult, Aws::Client::AWSError<PinpointEmailErrors>> GetDeliverabilityTestReportOutcome;
+        typedef Aws::Utils::Outcome<GetDomainDeliverabilityCampaignResult, Aws::Client::AWSError<PinpointEmailErrors>> GetDomainDeliverabilityCampaignOutcome;
         typedef Aws::Utils::Outcome<GetDomainStatisticsReportResult, Aws::Client::AWSError<PinpointEmailErrors>> GetDomainStatisticsReportOutcome;
         typedef Aws::Utils::Outcome<GetEmailIdentityResult, Aws::Client::AWSError<PinpointEmailErrors>> GetEmailIdentityOutcome;
         typedef Aws::Utils::Outcome<ListConfigurationSetsResult, Aws::Client::AWSError<PinpointEmailErrors>> ListConfigurationSetsOutcome;
         typedef Aws::Utils::Outcome<ListDedicatedIpPoolsResult, Aws::Client::AWSError<PinpointEmailErrors>> ListDedicatedIpPoolsOutcome;
         typedef Aws::Utils::Outcome<ListDeliverabilityTestReportsResult, Aws::Client::AWSError<PinpointEmailErrors>> ListDeliverabilityTestReportsOutcome;
+        typedef Aws::Utils::Outcome<ListDomainDeliverabilityCampaignsResult, Aws::Client::AWSError<PinpointEmailErrors>> ListDomainDeliverabilityCampaignsOutcome;
         typedef Aws::Utils::Outcome<ListEmailIdentitiesResult, Aws::Client::AWSError<PinpointEmailErrors>> ListEmailIdentitiesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<PinpointEmailErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutAccountDedicatedIpWarmupAttributesResult, Aws::Client::AWSError<PinpointEmailErrors>> PutAccountDedicatedIpWarmupAttributesOutcome;
@@ -199,11 +205,13 @@ namespace Model
         typedef std::future<GetDedicatedIpsOutcome> GetDedicatedIpsOutcomeCallable;
         typedef std::future<GetDeliverabilityDashboardOptionsOutcome> GetDeliverabilityDashboardOptionsOutcomeCallable;
         typedef std::future<GetDeliverabilityTestReportOutcome> GetDeliverabilityTestReportOutcomeCallable;
+        typedef std::future<GetDomainDeliverabilityCampaignOutcome> GetDomainDeliverabilityCampaignOutcomeCallable;
         typedef std::future<GetDomainStatisticsReportOutcome> GetDomainStatisticsReportOutcomeCallable;
         typedef std::future<GetEmailIdentityOutcome> GetEmailIdentityOutcomeCallable;
         typedef std::future<ListConfigurationSetsOutcome> ListConfigurationSetsOutcomeCallable;
         typedef std::future<ListDedicatedIpPoolsOutcome> ListDedicatedIpPoolsOutcomeCallable;
         typedef std::future<ListDeliverabilityTestReportsOutcome> ListDeliverabilityTestReportsOutcomeCallable;
+        typedef std::future<ListDomainDeliverabilityCampaignsOutcome> ListDomainDeliverabilityCampaignsOutcomeCallable;
         typedef std::future<ListEmailIdentitiesOutcome> ListEmailIdentitiesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutAccountDedicatedIpWarmupAttributesOutcome> PutAccountDedicatedIpWarmupAttributesOutcomeCallable;
@@ -243,11 +251,13 @@ namespace Model
     typedef std::function<void(const PinpointEmailClient*, const Model::GetDedicatedIpsRequest&, const Model::GetDedicatedIpsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDedicatedIpsResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::GetDeliverabilityDashboardOptionsRequest&, const Model::GetDeliverabilityDashboardOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeliverabilityDashboardOptionsResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::GetDeliverabilityTestReportRequest&, const Model::GetDeliverabilityTestReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeliverabilityTestReportResponseReceivedHandler;
+    typedef std::function<void(const PinpointEmailClient*, const Model::GetDomainDeliverabilityCampaignRequest&, const Model::GetDomainDeliverabilityCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainDeliverabilityCampaignResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::GetDomainStatisticsReportRequest&, const Model::GetDomainStatisticsReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainStatisticsReportResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::GetEmailIdentityRequest&, const Model::GetEmailIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEmailIdentityResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::ListConfigurationSetsRequest&, const Model::ListConfigurationSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationSetsResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::ListDedicatedIpPoolsRequest&, const Model::ListDedicatedIpPoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDedicatedIpPoolsResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::ListDeliverabilityTestReportsRequest&, const Model::ListDeliverabilityTestReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeliverabilityTestReportsResponseReceivedHandler;
+    typedef std::function<void(const PinpointEmailClient*, const Model::ListDomainDeliverabilityCampaignsRequest&, const Model::ListDomainDeliverabilityCampaignsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainDeliverabilityCampaignsResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::ListEmailIdentitiesRequest&, const Model::ListEmailIdentitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEmailIdentitiesResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::PutAccountDedicatedIpWarmupAttributesRequest&, const Model::PutAccountDedicatedIpWarmupAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountDedicatedIpWarmupAttributesResponseReceivedHandler;
@@ -268,19 +278,25 @@ namespace Model
     typedef std::function<void(const PinpointEmailClient*, const Model::UpdateConfigurationSetEventDestinationRequest&, const Model::UpdateConfigurationSetEventDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigurationSetEventDestinationResponseReceivedHandler;
 
   /**
-   * <fullname>Amazon Pinpoint Email Service</fullname> <p> This document contains
+   * <fullname>Amazon Pinpoint Email Service</fullname> <p>This document contains
    * reference information for the <a href="https://aws.amazon.com/pinpoint">Amazon
    * Pinpoint</a> Email API, version 1.0. This document is best used in conjunction
    * with the <a
    * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
    * Pinpoint Developer Guide</a>.</p> <p>The Amazon Pinpoint Email API is available
-   * in the US East (N. Virginia), US West (Oregon), EU (Frankfurt), and EU (Ireland)
-   * Regions at the following endpoints:</p> <ul> <li> <p> <b>US East (N.
-   * Virginia)</b>: <code>email.us-east-1.amazonaws.com</code> </p> </li> <li> <p>
-   * <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code> </p> </li>
-   * <li> <p> <b>EU (Frankfurt)</b>: <code>email.eu-central-1.amazonaws.com</code>
-   * </p> </li> <li> <p> <b>EU (Ireland)</b>:
-   * <code>email.eu-west-1.amazonaws.com</code> </p> </li> </ul>
+   * in several AWS Regions and it provides an endpoint for each of these Regions.
+   * For a list of all the Regions and endpoints where the API is currently
+   * available, see <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#pinpoint_region">AWS
+   * Regions and Endpoints</a> in the <i>Amazon Web Services General
+   * Reference</i>.</p> <p>In each Region, AWS maintains multiple Availability Zones.
+   * These Availability Zones are physically isolated from each other, but are united
+   * by private, low-latency, high-throughput, and highly redundant network
+   * connections. These Availability Zones enable us to provide very high levels of
+   * availability and redundancy, while also minimizing latency. To learn more about
+   * the number of Availability Zones that are available in each Region, see <a
+   * href="http://aws.amazon.com/about-aws/global-infrastructure/">AWS Global
+   * Infrastructure</a>.</p>
    */
   class AWS_PINPOINTEMAIL_API PinpointEmailClient : public Aws::Client::AWSJsonClient
   {
@@ -879,30 +895,32 @@ namespace Model
         virtual void GetDedicatedIpsAsync(const Model::GetDedicatedIpsRequest& request, const GetDedicatedIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Show the status of the Deliverability dashboard. When the Deliverability
-         * dashboard is enabled, you gain access to reputation metrics for the domains that
-         * you use to send email using Amazon Pinpoint. You also gain the ability to
+         * <p>Retrieve information about the status of the Deliverability dashboard for
+         * your Amazon Pinpoint account. When the Deliverability dashboard is enabled, you
+         * gain access to reputation, deliverability, and other metrics for the domains
+         * that you use to send email using Amazon Pinpoint. You also gain the ability to
          * perform predictive inbox placement tests.</p> <p>When you use the Deliverability
-         * dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
-         * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability
-         * dashboard after the first day of a calendar month, AWS prorates the monthly
-         * charge based on how many days have elapsed in the current calendar
-         * month.</p><p><h3>See Also:</h3>   <a
+         * dashboard, you pay a monthly subscription charge, in addition to any other fees
+         * that you accrue by using Amazon Pinpoint. For more information about the
+         * features and cost of a Deliverability dashboard subscription, see <a
+         * href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint
+         * Pricing</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityDashboardOptions">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDeliverabilityDashboardOptionsOutcome GetDeliverabilityDashboardOptions(const Model::GetDeliverabilityDashboardOptionsRequest& request) const;
 
         /**
-         * <p>Show the status of the Deliverability dashboard. When the Deliverability
-         * dashboard is enabled, you gain access to reputation metrics for the domains that
-         * you use to send email using Amazon Pinpoint. You also gain the ability to
+         * <p>Retrieve information about the status of the Deliverability dashboard for
+         * your Amazon Pinpoint account. When the Deliverability dashboard is enabled, you
+         * gain access to reputation, deliverability, and other metrics for the domains
+         * that you use to send email using Amazon Pinpoint. You also gain the ability to
          * perform predictive inbox placement tests.</p> <p>When you use the Deliverability
-         * dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
-         * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability
-         * dashboard after the first day of a calendar month, AWS prorates the monthly
-         * charge based on how many days have elapsed in the current calendar
-         * month.</p><p><h3>See Also:</h3>   <a
+         * dashboard, you pay a monthly subscription charge, in addition to any other fees
+         * that you accrue by using Amazon Pinpoint. For more information about the
+         * features and cost of a Deliverability dashboard subscription, see <a
+         * href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint
+         * Pricing</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityDashboardOptions">AWS
          * API Reference</a></p>
          *
@@ -911,15 +929,16 @@ namespace Model
         virtual Model::GetDeliverabilityDashboardOptionsOutcomeCallable GetDeliverabilityDashboardOptionsCallable(const Model::GetDeliverabilityDashboardOptionsRequest& request) const;
 
         /**
-         * <p>Show the status of the Deliverability dashboard. When the Deliverability
-         * dashboard is enabled, you gain access to reputation metrics for the domains that
-         * you use to send email using Amazon Pinpoint. You also gain the ability to
+         * <p>Retrieve information about the status of the Deliverability dashboard for
+         * your Amazon Pinpoint account. When the Deliverability dashboard is enabled, you
+         * gain access to reputation, deliverability, and other metrics for the domains
+         * that you use to send email using Amazon Pinpoint. You also gain the ability to
          * perform predictive inbox placement tests.</p> <p>When you use the Deliverability
-         * dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
-         * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability
-         * dashboard after the first day of a calendar month, AWS prorates the monthly
-         * charge based on how many days have elapsed in the current calendar
-         * month.</p><p><h3>See Also:</h3>   <a
+         * dashboard, you pay a monthly subscription charge, in addition to any other fees
+         * that you accrue by using Amazon Pinpoint. For more information about the
+         * features and cost of a Deliverability dashboard subscription, see <a
+         * href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint
+         * Pricing</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityDashboardOptions">AWS
          * API Reference</a></p>
          *
@@ -954,6 +973,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDeliverabilityTestReportAsync(const Model::GetDeliverabilityTestReportRequest& request, const GetDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieve all the deliverability data for a specific campaign. This data is
+         * available for a campaign only if the campaign sent email by using a domain that
+         * the Deliverability dashboard is enabled for
+         * (<code>PutDeliverabilityDashboardOption</code> operation).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainDeliverabilityCampaign">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDomainDeliverabilityCampaignOutcome GetDomainDeliverabilityCampaign(const Model::GetDomainDeliverabilityCampaignRequest& request) const;
+
+        /**
+         * <p>Retrieve all the deliverability data for a specific campaign. This data is
+         * available for a campaign only if the campaign sent email by using a domain that
+         * the Deliverability dashboard is enabled for
+         * (<code>PutDeliverabilityDashboardOption</code> operation).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainDeliverabilityCampaign">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDomainDeliverabilityCampaignOutcomeCallable GetDomainDeliverabilityCampaignCallable(const Model::GetDomainDeliverabilityCampaignRequest& request) const;
+
+        /**
+         * <p>Retrieve all the deliverability data for a specific campaign. This data is
+         * available for a campaign only if the campaign sent email by using a domain that
+         * the Deliverability dashboard is enabled for
+         * (<code>PutDeliverabilityDashboardOption</code> operation).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainDeliverabilityCampaign">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDomainDeliverabilityCampaignAsync(const Model::GetDomainDeliverabilityCampaignRequest& request, const GetDomainDeliverabilityCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieve inbox placement and engagement rates for the domains that you use to
@@ -1123,6 +1179,43 @@ namespace Model
         virtual void ListDeliverabilityTestReportsAsync(const Model::ListDeliverabilityTestReportsRequest& request, const ListDeliverabilityTestReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieve deliverability data for all the campaigns that used a specific
+         * domain to send email during a specified time range. This data is available for a
+         * domain only if you enabled the Deliverability dashboard
+         * (<code>PutDeliverabilityDashboardOption</code> operation) for the
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDomainDeliverabilityCampaigns">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDomainDeliverabilityCampaignsOutcome ListDomainDeliverabilityCampaigns(const Model::ListDomainDeliverabilityCampaignsRequest& request) const;
+
+        /**
+         * <p>Retrieve deliverability data for all the campaigns that used a specific
+         * domain to send email during a specified time range. This data is available for a
+         * domain only if you enabled the Deliverability dashboard
+         * (<code>PutDeliverabilityDashboardOption</code> operation) for the
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDomainDeliverabilityCampaigns">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDomainDeliverabilityCampaignsOutcomeCallable ListDomainDeliverabilityCampaignsCallable(const Model::ListDomainDeliverabilityCampaignsRequest& request) const;
+
+        /**
+         * <p>Retrieve deliverability data for all the campaigns that used a specific
+         * domain to send email during a specified time range. This data is available for a
+         * domain only if you enabled the Deliverability dashboard
+         * (<code>PutDeliverabilityDashboardOption</code> operation) for the
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDomainDeliverabilityCampaigns">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDomainDeliverabilityCampaignsAsync(const Model::ListDomainDeliverabilityCampaignsRequest& request, const ListDomainDeliverabilityCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of all of the email identities that are associated with your
          * Amazon Pinpoint account. An identity can be either an email address or a domain.
          * This operation returns identities that are verified as well as those that
@@ -1158,7 +1251,7 @@ namespace Model
 
         /**
          * <p>Retrieve a list of the tags (keys and values) that are associated with a
-         * specific resource. A <i>tag</i> is a label that you optionally define and
+         * specified resource. A <i>tag</i> is a label that you optionally define and
          * associate with a resource in Amazon Pinpoint. Each tag consists of a
          * required <i>tag key</i> and an optional associated <i>tag value</i>. A tag key
          * is a general label that acts as a category for more specific tag values. A tag
@@ -1170,7 +1263,7 @@ namespace Model
 
         /**
          * <p>Retrieve a list of the tags (keys and values) that are associated with a
-         * specific resource. A <i>tag</i> is a label that you optionally define and
+         * specified resource. A <i>tag</i> is a label that you optionally define and
          * associate with a resource in Amazon Pinpoint. Each tag consists of a
          * required <i>tag key</i> and an optional associated <i>tag value</i>. A tag key
          * is a general label that acts as a category for more specific tag values. A tag
@@ -1184,7 +1277,7 @@ namespace Model
 
         /**
          * <p>Retrieve a list of the tags (keys and values) that are associated with a
-         * specific resource. A <i>tag</i> is a label that you optionally define and
+         * specified resource. A <i>tag</i> is a label that you optionally define and
          * associate with a resource in Amazon Pinpoint. Each tag consists of a
          * required <i>tag key</i> and an optional associated <i>tag value</i>. A tag key
          * is a general label that acts as a category for more specific tag values. A tag
@@ -1436,30 +1529,32 @@ namespace Model
         virtual void PutDedicatedIpWarmupAttributesAsync(const Model::PutDedicatedIpWarmupAttributesRequest& request, const PutDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enable or disable the Deliverability dashboard. When you enable the
-         * Deliverability dashboard, you gain access to reputation metrics for the domains
-         * that you use to send email using Amazon Pinpoint. You also gain the ability to
-         * perform predictive inbox placement tests.</p> <p>When you use the Deliverability
-         * dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
-         * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability
-         * dashboard after the first day of a calendar month, we prorate the monthly charge
-         * based on how many days have elapsed in the current calendar month.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Enable or disable the Deliverability dashboard for your Amazon Pinpoint
+         * account. When you enable the Deliverability dashboard, you gain access to
+         * reputation, deliverability, and other metrics for the domains that you use to
+         * send email using Amazon Pinpoint. You also gain the ability to perform
+         * predictive inbox placement tests.</p> <p>When you use the Deliverability
+         * dashboard, you pay a monthly subscription charge, in addition to any other fees
+         * that you accrue by using Amazon Pinpoint. For more information about the
+         * features and cost of a Deliverability dashboard subscription, see <a
+         * href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint
+         * Pricing</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOption">AWS
          * API Reference</a></p>
          */
         virtual Model::PutDeliverabilityDashboardOptionOutcome PutDeliverabilityDashboardOption(const Model::PutDeliverabilityDashboardOptionRequest& request) const;
 
         /**
-         * <p>Enable or disable the Deliverability dashboard. When you enable the
-         * Deliverability dashboard, you gain access to reputation metrics for the domains
-         * that you use to send email using Amazon Pinpoint. You also gain the ability to
-         * perform predictive inbox placement tests.</p> <p>When you use the Deliverability
-         * dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
-         * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability
-         * dashboard after the first day of a calendar month, we prorate the monthly charge
-         * based on how many days have elapsed in the current calendar month.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Enable or disable the Deliverability dashboard for your Amazon Pinpoint
+         * account. When you enable the Deliverability dashboard, you gain access to
+         * reputation, deliverability, and other metrics for the domains that you use to
+         * send email using Amazon Pinpoint. You also gain the ability to perform
+         * predictive inbox placement tests.</p> <p>When you use the Deliverability
+         * dashboard, you pay a monthly subscription charge, in addition to any other fees
+         * that you accrue by using Amazon Pinpoint. For more information about the
+         * features and cost of a Deliverability dashboard subscription, see <a
+         * href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint
+         * Pricing</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOption">AWS
          * API Reference</a></p>
          *
@@ -1468,15 +1563,16 @@ namespace Model
         virtual Model::PutDeliverabilityDashboardOptionOutcomeCallable PutDeliverabilityDashboardOptionCallable(const Model::PutDeliverabilityDashboardOptionRequest& request) const;
 
         /**
-         * <p>Enable or disable the Deliverability dashboard. When you enable the
-         * Deliverability dashboard, you gain access to reputation metrics for the domains
-         * that you use to send email using Amazon Pinpoint. You also gain the ability to
-         * perform predictive inbox placement tests.</p> <p>When you use the Deliverability
-         * dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
-         * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability
-         * dashboard after the first day of a calendar month, we prorate the monthly charge
-         * based on how many days have elapsed in the current calendar month.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Enable or disable the Deliverability dashboard for your Amazon Pinpoint
+         * account. When you enable the Deliverability dashboard, you gain access to
+         * reputation, deliverability, and other metrics for the domains that you use to
+         * send email using Amazon Pinpoint. You also gain the ability to perform
+         * predictive inbox placement tests.</p> <p>When you use the Deliverability
+         * dashboard, you pay a monthly subscription charge, in addition to any other fees
+         * that you accrue by using Amazon Pinpoint. For more information about the
+         * features and cost of a Deliverability dashboard subscription, see <a
+         * href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint
+         * Pricing</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOption">AWS
          * API Reference</a></p>
          *
@@ -1648,7 +1744,7 @@ namespace Model
         virtual void SendEmailAsync(const Model::SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Add one or more tags (keys and values) to one or more specified resources. A
+         * <p>Add one or more tags (keys and values) to a specified resource. A
          * <i>tag</i> is a label that you optionally define and associate with a resource
          * in Amazon Pinpoint. Tags can help you categorize and manage resources in
          * different ways, such as by purpose, owner, environment, or other criteria. A
@@ -1663,7 +1759,7 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Add one or more tags (keys and values) to one or more specified resources. A
+         * <p>Add one or more tags (keys and values) to a specified resource. A
          * <i>tag</i> is a label that you optionally define and associate with a resource
          * in Amazon Pinpoint. Tags can help you categorize and manage resources in
          * different ways, such as by purpose, owner, environment, or other criteria. A
@@ -1680,7 +1776,7 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Add one or more tags (keys and values) to one or more specified resources. A
+         * <p>Add one or more tags (keys and values) to a specified resource. A
          * <i>tag</i> is a label that you optionally define and associate with a resource
          * in Amazon Pinpoint. Tags can help you categorize and manage resources in
          * different ways, such as by purpose, owner, environment, or other criteria. A
@@ -1788,11 +1884,13 @@ namespace Model
         void GetDedicatedIpsAsyncHelper(const Model::GetDedicatedIpsRequest& request, const GetDedicatedIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeliverabilityDashboardOptionsAsyncHelper(const Model::GetDeliverabilityDashboardOptionsRequest& request, const GetDeliverabilityDashboardOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeliverabilityTestReportAsyncHelper(const Model::GetDeliverabilityTestReportRequest& request, const GetDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDomainDeliverabilityCampaignAsyncHelper(const Model::GetDomainDeliverabilityCampaignRequest& request, const GetDomainDeliverabilityCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDomainStatisticsReportAsyncHelper(const Model::GetDomainStatisticsReportRequest& request, const GetDomainStatisticsReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEmailIdentityAsyncHelper(const Model::GetEmailIdentityRequest& request, const GetEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConfigurationSetsAsyncHelper(const Model::ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDedicatedIpPoolsAsyncHelper(const Model::ListDedicatedIpPoolsRequest& request, const ListDedicatedIpPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDeliverabilityTestReportsAsyncHelper(const Model::ListDeliverabilityTestReportsRequest& request, const ListDeliverabilityTestReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDomainDeliverabilityCampaignsAsyncHelper(const Model::ListDomainDeliverabilityCampaignsRequest& request, const ListDomainDeliverabilityCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEmailIdentitiesAsyncHelper(const Model::ListEmailIdentitiesRequest& request, const ListEmailIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAccountDedicatedIpWarmupAttributesAsyncHelper(const Model::PutAccountDedicatedIpWarmupAttributesRequest& request, const PutAccountDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

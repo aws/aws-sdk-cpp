@@ -33,6 +33,7 @@ SimulationJob::SimulationJob() :
     m_nameHasBeenSet(false),
     m_status(SimulationJobStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_lastStartedAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_failureBehavior(FailureBehavior::NOT_SET),
     m_failureBehaviorHasBeenSet(false),
@@ -58,6 +59,7 @@ SimulationJob::SimulationJob(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_status(SimulationJobStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_lastStartedAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_failureBehavior(FailureBehavior::NOT_SET),
     m_failureBehaviorHasBeenSet(false),
@@ -100,6 +102,13 @@ SimulationJob& SimulationJob::operator =(JsonView jsonValue)
     m_status = SimulationJobStatusMapper::GetSimulationJobStatusForName(jsonValue.GetString("status"));
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastStartedAt"))
+  {
+    m_lastStartedAt = jsonValue.GetDouble("lastStartedAt");
+
+    m_lastStartedAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lastUpdatedAt"))
@@ -224,6 +233,11 @@ JsonValue SimulationJob::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", SimulationJobStatusMapper::GetNameForSimulationJobStatus(m_status));
+  }
+
+  if(m_lastStartedAtHasBeenSet)
+  {
+   payload.WithDouble("lastStartedAt", m_lastStartedAt.SecondsWithMSPrecision());
   }
 
   if(m_lastUpdatedAtHasBeenSet)

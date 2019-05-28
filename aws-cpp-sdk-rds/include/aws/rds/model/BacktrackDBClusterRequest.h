@@ -205,67 +205,59 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to force the DB cluster to backtrack when
-     * binary logging is enabled. Otherwise, an error occurs when binary logging is
+     * <p>A value that, if specified, forces the DB cluster to backtrack when binary
+     * logging is enabled. Otherwise, an error occurs when binary logging is
      * enabled.</p>
      */
     inline bool GetForce() const{ return m_force; }
 
     /**
-     * <p>A value that indicates whether to force the DB cluster to backtrack when
-     * binary logging is enabled. Otherwise, an error occurs when binary logging is
+     * <p>A value that, if specified, forces the DB cluster to backtrack when binary
+     * logging is enabled. Otherwise, an error occurs when binary logging is
      * enabled.</p>
      */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to force the DB cluster to backtrack when
-     * binary logging is enabled. Otherwise, an error occurs when binary logging is
+     * <p>A value that, if specified, forces the DB cluster to backtrack when binary
+     * logging is enabled. Otherwise, an error occurs when binary logging is
      * enabled.</p>
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
-     * <p>A value that indicates whether to force the DB cluster to backtrack when
-     * binary logging is enabled. Otherwise, an error occurs when binary logging is
+     * <p>A value that, if specified, forces the DB cluster to backtrack when binary
+     * logging is enabled. Otherwise, an error occurs when binary logging is
      * enabled.</p>
      */
     inline BacktrackDBClusterRequest& WithForce(bool value) { SetForce(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether to backtrack the DB cluster to the earliest
-     * possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier
-     * than the earliest backtrack time. When this parameter is disabled and
-     * <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack
-     * time, an error occurs.</p>
+     * <p>If <i>BacktrackTo</i> is set to a timestamp earlier than the earliest
+     * backtrack time, this value backtracks the DB cluster to the earliest possible
+     * backtrack time. Otherwise, an error occurs.</p>
      */
     inline bool GetUseEarliestTimeOnPointInTimeUnavailable() const{ return m_useEarliestTimeOnPointInTimeUnavailable; }
 
     /**
-     * <p>A value that indicates whether to backtrack the DB cluster to the earliest
-     * possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier
-     * than the earliest backtrack time. When this parameter is disabled and
-     * <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack
-     * time, an error occurs.</p>
+     * <p>If <i>BacktrackTo</i> is set to a timestamp earlier than the earliest
+     * backtrack time, this value backtracks the DB cluster to the earliest possible
+     * backtrack time. Otherwise, an error occurs.</p>
      */
     inline bool UseEarliestTimeOnPointInTimeUnavailableHasBeenSet() const { return m_useEarliestTimeOnPointInTimeUnavailableHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to backtrack the DB cluster to the earliest
-     * possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier
-     * than the earliest backtrack time. When this parameter is disabled and
-     * <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack
-     * time, an error occurs.</p>
+     * <p>If <i>BacktrackTo</i> is set to a timestamp earlier than the earliest
+     * backtrack time, this value backtracks the DB cluster to the earliest possible
+     * backtrack time. Otherwise, an error occurs.</p>
      */
     inline void SetUseEarliestTimeOnPointInTimeUnavailable(bool value) { m_useEarliestTimeOnPointInTimeUnavailableHasBeenSet = true; m_useEarliestTimeOnPointInTimeUnavailable = value; }
 
     /**
-     * <p>A value that indicates whether to backtrack the DB cluster to the earliest
-     * possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier
-     * than the earliest backtrack time. When this parameter is disabled and
-     * <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack
-     * time, an error occurs.</p>
+     * <p>If <i>BacktrackTo</i> is set to a timestamp earlier than the earliest
+     * backtrack time, this value backtracks the DB cluster to the earliest possible
+     * backtrack time. Otherwise, an error occurs.</p>
      */
     inline BacktrackDBClusterRequest& WithUseEarliestTimeOnPointInTimeUnavailable(bool value) { SetUseEarliestTimeOnPointInTimeUnavailable(value); return *this;}
 

@@ -101,30 +101,30 @@ namespace Model
 
 
     /**
-     * <p> A value that indicates whether to reset all parameters in the DB parameter
-     * group to default values. By default, all parameters in the DB parameter group
-     * are reset to default values. </p>
+     * <p> Specifies whether (<code>true</code>) or not (<code>false</code>) to reset
+     * all parameters in the DB parameter group to default values. </p> <p>Default:
+     * <code>true</code> </p>
      */
     inline bool GetResetAllParameters() const{ return m_resetAllParameters; }
 
     /**
-     * <p> A value that indicates whether to reset all parameters in the DB parameter
-     * group to default values. By default, all parameters in the DB parameter group
-     * are reset to default values. </p>
+     * <p> Specifies whether (<code>true</code>) or not (<code>false</code>) to reset
+     * all parameters in the DB parameter group to default values. </p> <p>Default:
+     * <code>true</code> </p>
      */
     inline bool ResetAllParametersHasBeenSet() const { return m_resetAllParametersHasBeenSet; }
 
     /**
-     * <p> A value that indicates whether to reset all parameters in the DB parameter
-     * group to default values. By default, all parameters in the DB parameter group
-     * are reset to default values. </p>
+     * <p> Specifies whether (<code>true</code>) or not (<code>false</code>) to reset
+     * all parameters in the DB parameter group to default values. </p> <p>Default:
+     * <code>true</code> </p>
      */
     inline void SetResetAllParameters(bool value) { m_resetAllParametersHasBeenSet = true; m_resetAllParameters = value; }
 
     /**
-     * <p> A value that indicates whether to reset all parameters in the DB parameter
-     * group to default values. By default, all parameters in the DB parameter group
-     * are reset to default values. </p>
+     * <p> Specifies whether (<code>true</code>) or not (<code>false</code>) to reset
+     * all parameters in the DB parameter group to default values. </p> <p>Default:
+     * <code>true</code> </p>
      */
     inline ResetDBParameterGroupRequest& WithResetAllParameters(bool value) { SetResetAllParameters(value); return *this;}
 

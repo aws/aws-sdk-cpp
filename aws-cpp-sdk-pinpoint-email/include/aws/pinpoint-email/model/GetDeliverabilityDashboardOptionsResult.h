@@ -15,6 +15,11 @@
 
 #pragma once
 #include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/pinpoint-email/model/DeliverabilityDashboardAccountStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/pinpoint-email/model/DomainDeliverabilityTrackingOption.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,26 +52,219 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the Deliverability dashboard is enabled. If the value is
-     * <code>true</code>, then the dashboard is enabled.</p>
+     * <p>Specifies whether the Deliverability dashboard is enabled for your Amazon
+     * Pinpoint account. If this value is <code>true</code>, the dashboard is
+     * enabled.</p>
      */
     inline bool GetDashboardEnabled() const{ return m_dashboardEnabled; }
 
     /**
-     * <p>Indicates whether the Deliverability dashboard is enabled. If the value is
-     * <code>true</code>, then the dashboard is enabled.</p>
+     * <p>Specifies whether the Deliverability dashboard is enabled for your Amazon
+     * Pinpoint account. If this value is <code>true</code>, the dashboard is
+     * enabled.</p>
      */
     inline void SetDashboardEnabled(bool value) { m_dashboardEnabled = value; }
 
     /**
-     * <p>Indicates whether the Deliverability dashboard is enabled. If the value is
-     * <code>true</code>, then the dashboard is enabled.</p>
+     * <p>Specifies whether the Deliverability dashboard is enabled for your Amazon
+     * Pinpoint account. If this value is <code>true</code>, the dashboard is
+     * enabled.</p>
      */
     inline GetDeliverabilityDashboardOptionsResult& WithDashboardEnabled(bool value) { SetDashboardEnabled(value); return *this;}
+
+
+    /**
+     * <p>The date, in Unix time format, when your current subscription to the
+     * Deliverability dashboard is scheduled to expire, if your subscription is
+     * scheduled to expire at the end of the current calendar month. This value is null
+     * if you have an active subscription that isn’t due to expire at the end of the
+     * month.</p>
+     */
+    inline const Aws::Utils::DateTime& GetSubscriptionExpiryDate() const{ return m_subscriptionExpiryDate; }
+
+    /**
+     * <p>The date, in Unix time format, when your current subscription to the
+     * Deliverability dashboard is scheduled to expire, if your subscription is
+     * scheduled to expire at the end of the current calendar month. This value is null
+     * if you have an active subscription that isn’t due to expire at the end of the
+     * month.</p>
+     */
+    inline void SetSubscriptionExpiryDate(const Aws::Utils::DateTime& value) { m_subscriptionExpiryDate = value; }
+
+    /**
+     * <p>The date, in Unix time format, when your current subscription to the
+     * Deliverability dashboard is scheduled to expire, if your subscription is
+     * scheduled to expire at the end of the current calendar month. This value is null
+     * if you have an active subscription that isn’t due to expire at the end of the
+     * month.</p>
+     */
+    inline void SetSubscriptionExpiryDate(Aws::Utils::DateTime&& value) { m_subscriptionExpiryDate = std::move(value); }
+
+    /**
+     * <p>The date, in Unix time format, when your current subscription to the
+     * Deliverability dashboard is scheduled to expire, if your subscription is
+     * scheduled to expire at the end of the current calendar month. This value is null
+     * if you have an active subscription that isn’t due to expire at the end of the
+     * month.</p>
+     */
+    inline GetDeliverabilityDashboardOptionsResult& WithSubscriptionExpiryDate(const Aws::Utils::DateTime& value) { SetSubscriptionExpiryDate(value); return *this;}
+
+    /**
+     * <p>The date, in Unix time format, when your current subscription to the
+     * Deliverability dashboard is scheduled to expire, if your subscription is
+     * scheduled to expire at the end of the current calendar month. This value is null
+     * if you have an active subscription that isn’t due to expire at the end of the
+     * month.</p>
+     */
+    inline GetDeliverabilityDashboardOptionsResult& WithSubscriptionExpiryDate(Aws::Utils::DateTime&& value) { SetSubscriptionExpiryDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The current status of your Deliverability dashboard subscription. If this
+     * value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to
+     * expire at the end of the current calendar month.</p>
+     */
+    inline const DeliverabilityDashboardAccountStatus& GetAccountStatus() const{ return m_accountStatus; }
+
+    /**
+     * <p>The current status of your Deliverability dashboard subscription. If this
+     * value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to
+     * expire at the end of the current calendar month.</p>
+     */
+    inline void SetAccountStatus(const DeliverabilityDashboardAccountStatus& value) { m_accountStatus = value; }
+
+    /**
+     * <p>The current status of your Deliverability dashboard subscription. If this
+     * value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to
+     * expire at the end of the current calendar month.</p>
+     */
+    inline void SetAccountStatus(DeliverabilityDashboardAccountStatus&& value) { m_accountStatus = std::move(value); }
+
+    /**
+     * <p>The current status of your Deliverability dashboard subscription. If this
+     * value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to
+     * expire at the end of the current calendar month.</p>
+     */
+    inline GetDeliverabilityDashboardOptionsResult& WithAccountStatus(const DeliverabilityDashboardAccountStatus& value) { SetAccountStatus(value); return *this;}
+
+    /**
+     * <p>The current status of your Deliverability dashboard subscription. If this
+     * value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to
+     * expire at the end of the current calendar month.</p>
+     */
+    inline GetDeliverabilityDashboardOptionsResult& WithAccountStatus(DeliverabilityDashboardAccountStatus&& value) { SetAccountStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and currently has an active Deliverability dashboard subscription that isn’t
+     * scheduled to expire at the end of the current calendar month.</p>
+     */
+    inline const Aws::Vector<DomainDeliverabilityTrackingOption>& GetActiveSubscribedDomains() const{ return m_activeSubscribedDomains; }
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and currently has an active Deliverability dashboard subscription that isn’t
+     * scheduled to expire at the end of the current calendar month.</p>
+     */
+    inline void SetActiveSubscribedDomains(const Aws::Vector<DomainDeliverabilityTrackingOption>& value) { m_activeSubscribedDomains = value; }
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and currently has an active Deliverability dashboard subscription that isn’t
+     * scheduled to expire at the end of the current calendar month.</p>
+     */
+    inline void SetActiveSubscribedDomains(Aws::Vector<DomainDeliverabilityTrackingOption>&& value) { m_activeSubscribedDomains = std::move(value); }
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and currently has an active Deliverability dashboard subscription that isn’t
+     * scheduled to expire at the end of the current calendar month.</p>
+     */
+    inline GetDeliverabilityDashboardOptionsResult& WithActiveSubscribedDomains(const Aws::Vector<DomainDeliverabilityTrackingOption>& value) { SetActiveSubscribedDomains(value); return *this;}
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and currently has an active Deliverability dashboard subscription that isn’t
+     * scheduled to expire at the end of the current calendar month.</p>
+     */
+    inline GetDeliverabilityDashboardOptionsResult& WithActiveSubscribedDomains(Aws::Vector<DomainDeliverabilityTrackingOption>&& value) { SetActiveSubscribedDomains(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and currently has an active Deliverability dashboard subscription that isn’t
+     * scheduled to expire at the end of the current calendar month.</p>
+     */
+    inline GetDeliverabilityDashboardOptionsResult& AddActiveSubscribedDomains(const DomainDeliverabilityTrackingOption& value) { m_activeSubscribedDomains.push_back(value); return *this; }
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and currently has an active Deliverability dashboard subscription that isn’t
+     * scheduled to expire at the end of the current calendar month.</p>
+     */
+    inline GetDeliverabilityDashboardOptionsResult& AddActiveSubscribedDomains(DomainDeliverabilityTrackingOption&& value) { m_activeSubscribedDomains.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and currently has an active Deliverability dashboard subscription that's
+     * scheduled to expire at the end of the current calendar month.</p>
+     */
+    inline const Aws::Vector<DomainDeliverabilityTrackingOption>& GetPendingExpirationSubscribedDomains() const{ return m_pendingExpirationSubscribedDomains; }
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and currently has an active Deliverability dashboard subscription that's
+     * scheduled to expire at the end of the current calendar month.</p>
+     */
+    inline void SetPendingExpirationSubscribedDomains(const Aws::Vector<DomainDeliverabilityTrackingOption>& value) { m_pendingExpirationSubscribedDomains = value; }
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and currently has an active Deliverability dashboard subscription that's
+     * scheduled to expire at the end of the current calendar month.</p>
+     */
+    inline void SetPendingExpirationSubscribedDomains(Aws::Vector<DomainDeliverabilityTrackingOption>&& value) { m_pendingExpirationSubscribedDomains = std::move(value); }
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and currently has an active Deliverability dashboard subscription that's
+     * scheduled to expire at the end of the current calendar month.</p>
+     */
+    inline GetDeliverabilityDashboardOptionsResult& WithPendingExpirationSubscribedDomains(const Aws::Vector<DomainDeliverabilityTrackingOption>& value) { SetPendingExpirationSubscribedDomains(value); return *this;}
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and currently has an active Deliverability dashboard subscription that's
+     * scheduled to expire at the end of the current calendar month.</p>
+     */
+    inline GetDeliverabilityDashboardOptionsResult& WithPendingExpirationSubscribedDomains(Aws::Vector<DomainDeliverabilityTrackingOption>&& value) { SetPendingExpirationSubscribedDomains(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and currently has an active Deliverability dashboard subscription that's
+     * scheduled to expire at the end of the current calendar month.</p>
+     */
+    inline GetDeliverabilityDashboardOptionsResult& AddPendingExpirationSubscribedDomains(const DomainDeliverabilityTrackingOption& value) { m_pendingExpirationSubscribedDomains.push_back(value); return *this; }
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and currently has an active Deliverability dashboard subscription that's
+     * scheduled to expire at the end of the current calendar month.</p>
+     */
+    inline GetDeliverabilityDashboardOptionsResult& AddPendingExpirationSubscribedDomains(DomainDeliverabilityTrackingOption&& value) { m_pendingExpirationSubscribedDomains.push_back(std::move(value)); return *this; }
 
   private:
 
     bool m_dashboardEnabled;
+
+    Aws::Utils::DateTime m_subscriptionExpiryDate;
+
+    DeliverabilityDashboardAccountStatus m_accountStatus;
+
+    Aws::Vector<DomainDeliverabilityTrackingOption> m_activeSubscribedDomains;
+
+    Aws::Vector<DomainDeliverabilityTrackingOption> m_pendingExpirationSubscribedDomains;
   };
 
 } // namespace Model

@@ -41,25 +41,21 @@ namespace Model
    * resource can have as many as 50 tags.</p> <p>Each tag consists of a
    * required <i>tag key</i> and an associated <i>tag value</i>, both of which you
    * define. A tag key is a general label that acts as a category for a more specific
-   * tag value. A tag value acts as a descriptor within a tag key. For example, if
-   * you have two versions of an Amazon Pinpoint project, one for internal testing
-   * and another for external use, you might assign a <code>Stack</code> tag key to
-   * both projects. The value of the <code>Stack</code> tag key might
-   * be <code>Test</code> for one project and <code>Production</code> for the other
-   * project.</p> <p>A tag key can contain as many as 128 characters. A tag value can
-   * contain as many as 256 characters. The characters can be Unicode letters,
-   * digits, white space, or one of the following symbols: _ . : / = + -. The
-   * following additional restrictions apply to tags:</p> <ul> <li> <p>Tag keys and
-   * values are case sensitive.</p> </li> <li> <p>For each associated resource, each
-   * tag key must be unique and it can have only one value.</p> </li> <li>
-   * <p>The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in
-   * any tag keys or values that you define. In addition, you can't edit or remove
-   * tag keys or values that use this prefix. Tags that use this prefix don’t count
-   * against the limit of 50 tags per resource.</p> </li> <li> <p>You can associate
-   * tags with public or shared resources, but the tags are available only for your
-   * AWS account, not any other accounts that share the resource. In addition, the
-   * tags are available only for resources that are located in the specified AWS
-   * Region for your AWS account.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * tag value. A tag value acts as a descriptor within a tag key. A tag key can
+   * contain as many as 128 characters. A tag value can contain as many as 256
+   * characters. The characters can be Unicode letters, digits, white space, or one
+   * of the following symbols: _ . : / = + -. The following additional restrictions
+   * apply to tags:</p> <ul> <li> <p>Tag keys and values are case sensitive.</p>
+   * </li> <li> <p>For each associated resource, each tag key must be unique and it
+   * can have only one value.</p> </li> <li> <p>The <code>aws:</code> prefix is
+   * reserved for use by AWS; you can’t use it in any tag keys or values that you
+   * define. In addition, you can't edit or remove tag keys or values that use this
+   * prefix. Tags that use this prefix don’t count against the limit of 50 tags per
+   * resource.</p> </li> <li> <p>You can associate tags with public or shared
+   * resources, but the tags are available only for your AWS account, not any other
+   * accounts that share the resource. In addition, the tags are available only for
+   * resources that are located in the specified AWS Region for your AWS account.</p>
+   * </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/Tag">AWS
    * API Reference</a></p>
    */

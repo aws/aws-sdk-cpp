@@ -38,7 +38,8 @@ namespace Model
     ko_KR,
     es_ES,
     en_IN,
-    hi_IN
+    hi_IN,
+    ar_SA
   };
 
 namespace LanguageCodeMapper

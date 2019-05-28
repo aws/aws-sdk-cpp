@@ -619,7 +619,9 @@ namespace Model
 
         /**
          * <p>Updates phone number product types. Choose from Amazon Chime Business Calling
-         * and Amazon Chime Voice Connector product types.</p><p><h3>See Also:</h3>   <a
+         * and Amazon Chime Voice Connector product types. For toll-free numbers, you can
+         * use only the Amazon Chime Voice Connector product type.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdatePhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -627,7 +629,9 @@ namespace Model
 
         /**
          * <p>Updates phone number product types. Choose from Amazon Chime Business Calling
-         * and Amazon Chime Voice Connector product types.</p><p><h3>See Also:</h3>   <a
+         * and Amazon Chime Voice Connector product types. For toll-free numbers, you can
+         * use only the Amazon Chime Voice Connector product type.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdatePhoneNumber">AWS
          * API Reference</a></p>
          *
@@ -637,7 +641,9 @@ namespace Model
 
         /**
          * <p>Updates phone number product types. Choose from Amazon Chime Business Calling
-         * and Amazon Chime Voice Connector product types.</p><p><h3>See Also:</h3>   <a
+         * and Amazon Chime Voice Connector product types. For toll-free numbers, you can
+         * use only the Amazon Chime Voice Connector product type.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdatePhoneNumber">AWS
          * API Reference</a></p>
          *
@@ -749,8 +755,9 @@ namespace Model
 
         /**
          * <p>Creates an order for phone numbers to be provisioned. Choose from Amazon
-         * Chime Business Calling and Amazon Chime Voice Connector product
-         * types.</p><p><h3>See Also:</h3>   <a
+         * Chime Business Calling and Amazon Chime Voice Connector product types. For
+         * toll-free numbers, you can use only the Amazon Chime Voice Connector product
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreatePhoneNumberOrder">AWS
          * API Reference</a></p>
          */
@@ -758,8 +765,9 @@ namespace Model
 
         /**
          * <p>Creates an order for phone numbers to be provisioned. Choose from Amazon
-         * Chime Business Calling and Amazon Chime Voice Connector product
-         * types.</p><p><h3>See Also:</h3>   <a
+         * Chime Business Calling and Amazon Chime Voice Connector product types. For
+         * toll-free numbers, you can use only the Amazon Chime Voice Connector product
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreatePhoneNumberOrder">AWS
          * API Reference</a></p>
          *
@@ -769,8 +777,9 @@ namespace Model
 
         /**
          * <p>Creates an order for phone numbers to be provisioned. Choose from Amazon
-         * Chime Business Calling and Amazon Chime Voice Connector product
-         * types.</p><p><h3>See Also:</h3>   <a
+         * Chime Business Calling and Amazon Chime Voice Connector product types. For
+         * toll-free numbers, you can use only the Amazon Chime Voice Connector product
+         * type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreatePhoneNumberOrder">AWS
          * API Reference</a></p>
          *
@@ -2116,7 +2125,8 @@ namespace Model
 
         /**
          * <p>Updates phone number details, such as product type, for the specified phone
-         * number ID.</p><p><h3>See Also:</h3>   <a
+         * number ID. For toll-free numbers, you can use only the Amazon Chime Voice
+         * Connector product type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdatePhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -2124,7 +2134,8 @@ namespace Model
 
         /**
          * <p>Updates phone number details, such as product type, for the specified phone
-         * number ID.</p><p><h3>See Also:</h3>   <a
+         * number ID. For toll-free numbers, you can use only the Amazon Chime Voice
+         * Connector product type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdatePhoneNumber">AWS
          * API Reference</a></p>
          *
@@ -2134,7 +2145,8 @@ namespace Model
 
         /**
          * <p>Updates phone number details, such as product type, for the specified phone
-         * number ID.</p><p><h3>See Also:</h3>   <a
+         * number ID. For toll-free numbers, you can use only the Amazon Chime Voice
+         * Connector product type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdatePhoneNumber">AWS
          * API Reference</a></p>
          *

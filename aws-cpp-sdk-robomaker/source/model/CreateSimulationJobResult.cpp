@@ -60,6 +60,12 @@ CreateSimulationJobResult& CreateSimulationJobResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("lastStartedAt"))
+  {
+    m_lastStartedAt = jsonValue.GetDouble("lastStartedAt");
+
+  }
+
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");

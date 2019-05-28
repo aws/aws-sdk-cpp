@@ -107,63 +107,71 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to skip the creation of a final DB snapshot
-     * before the DB instance is deleted. If skip is specified, no DB snapshot is
-     * created. If skip is not specified, a DB snapshot is created before the DB
-     * instance is deleted. By default, skip is not specified, and the DB snapshot is
-     * created.</p> <p>Note that when a DB instance is in a failure state and has a
-     * status of 'failed', 'incompatible-restore', or 'incompatible-network', it can
-     * only be deleted when skip is specified.</p> <p>Specify skip when deleting a Read
-     * Replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
-     * if skip is not specified.</p> </note>
+     * <p> A value that indicates whether a final DB snapshot is created before the DB
+     * instance is deleted. If <code>true</code> is specified, no DB snapshot is
+     * created. If <code>false</code> is specified, a DB snapshot is created before the
+     * DB instance is deleted. </p> <p>When a DB instance is in a failure state and has
+     * a status of <code>failed</code>, <code>incompatible-restore</code>, or
+     * <code>incompatible-network</code>, you can only delete it when the
+     * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.</p>
+     * <p>Specify <code>true</code> when deleting a Read Replica.</p> <note> <p>The
+     * <code>FinalDBSnapshotIdentifier</code> parameter must be specified if
+     * <code>SkipFinalSnapshot</code> is <code>false</code>.</p> </note> <p>Default:
+     * <code>false</code> </p>
      */
     inline bool GetSkipFinalSnapshot() const{ return m_skipFinalSnapshot; }
 
     /**
-     * <p>A value that indicates whether to skip the creation of a final DB snapshot
-     * before the DB instance is deleted. If skip is specified, no DB snapshot is
-     * created. If skip is not specified, a DB snapshot is created before the DB
-     * instance is deleted. By default, skip is not specified, and the DB snapshot is
-     * created.</p> <p>Note that when a DB instance is in a failure state and has a
-     * status of 'failed', 'incompatible-restore', or 'incompatible-network', it can
-     * only be deleted when skip is specified.</p> <p>Specify skip when deleting a Read
-     * Replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
-     * if skip is not specified.</p> </note>
+     * <p> A value that indicates whether a final DB snapshot is created before the DB
+     * instance is deleted. If <code>true</code> is specified, no DB snapshot is
+     * created. If <code>false</code> is specified, a DB snapshot is created before the
+     * DB instance is deleted. </p> <p>When a DB instance is in a failure state and has
+     * a status of <code>failed</code>, <code>incompatible-restore</code>, or
+     * <code>incompatible-network</code>, you can only delete it when the
+     * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.</p>
+     * <p>Specify <code>true</code> when deleting a Read Replica.</p> <note> <p>The
+     * <code>FinalDBSnapshotIdentifier</code> parameter must be specified if
+     * <code>SkipFinalSnapshot</code> is <code>false</code>.</p> </note> <p>Default:
+     * <code>false</code> </p>
      */
     inline bool SkipFinalSnapshotHasBeenSet() const { return m_skipFinalSnapshotHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to skip the creation of a final DB snapshot
-     * before the DB instance is deleted. If skip is specified, no DB snapshot is
-     * created. If skip is not specified, a DB snapshot is created before the DB
-     * instance is deleted. By default, skip is not specified, and the DB snapshot is
-     * created.</p> <p>Note that when a DB instance is in a failure state and has a
-     * status of 'failed', 'incompatible-restore', or 'incompatible-network', it can
-     * only be deleted when skip is specified.</p> <p>Specify skip when deleting a Read
-     * Replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
-     * if skip is not specified.</p> </note>
+     * <p> A value that indicates whether a final DB snapshot is created before the DB
+     * instance is deleted. If <code>true</code> is specified, no DB snapshot is
+     * created. If <code>false</code> is specified, a DB snapshot is created before the
+     * DB instance is deleted. </p> <p>When a DB instance is in a failure state and has
+     * a status of <code>failed</code>, <code>incompatible-restore</code>, or
+     * <code>incompatible-network</code>, you can only delete it when the
+     * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.</p>
+     * <p>Specify <code>true</code> when deleting a Read Replica.</p> <note> <p>The
+     * <code>FinalDBSnapshotIdentifier</code> parameter must be specified if
+     * <code>SkipFinalSnapshot</code> is <code>false</code>.</p> </note> <p>Default:
+     * <code>false</code> </p>
      */
     inline void SetSkipFinalSnapshot(bool value) { m_skipFinalSnapshotHasBeenSet = true; m_skipFinalSnapshot = value; }
 
     /**
-     * <p>A value that indicates whether to skip the creation of a final DB snapshot
-     * before the DB instance is deleted. If skip is specified, no DB snapshot is
-     * created. If skip is not specified, a DB snapshot is created before the DB
-     * instance is deleted. By default, skip is not specified, and the DB snapshot is
-     * created.</p> <p>Note that when a DB instance is in a failure state and has a
-     * status of 'failed', 'incompatible-restore', or 'incompatible-network', it can
-     * only be deleted when skip is specified.</p> <p>Specify skip when deleting a Read
-     * Replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
-     * if skip is not specified.</p> </note>
+     * <p> A value that indicates whether a final DB snapshot is created before the DB
+     * instance is deleted. If <code>true</code> is specified, no DB snapshot is
+     * created. If <code>false</code> is specified, a DB snapshot is created before the
+     * DB instance is deleted. </p> <p>When a DB instance is in a failure state and has
+     * a status of <code>failed</code>, <code>incompatible-restore</code>, or
+     * <code>incompatible-network</code>, you can only delete it when the
+     * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.</p>
+     * <p>Specify <code>true</code> when deleting a Read Replica.</p> <note> <p>The
+     * <code>FinalDBSnapshotIdentifier</code> parameter must be specified if
+     * <code>SkipFinalSnapshot</code> is <code>false</code>.</p> </note> <p>Default:
+     * <code>false</code> </p>
      */
     inline DeleteDBInstanceRequest& WithSkipFinalSnapshot(bool value) { SetSkipFinalSnapshot(value); return *this;}
 
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     * <note> <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> </note>
+     * <p> The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when
+     * <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
+     * <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code>
+     * parameter to <code>true</code> results in an error.</p> </note>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
@@ -172,10 +180,10 @@ namespace Model
     inline const Aws::String& GetFinalDBSnapshotIdentifier() const{ return m_finalDBSnapshotIdentifier; }
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     * <note> <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> </note>
+     * <p> The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when
+     * <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
+     * <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code>
+     * parameter to <code>true</code> results in an error.</p> </note>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
@@ -184,10 +192,10 @@ namespace Model
     inline bool FinalDBSnapshotIdentifierHasBeenSet() const { return m_finalDBSnapshotIdentifierHasBeenSet; }
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     * <note> <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> </note>
+     * <p> The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when
+     * <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
+     * <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code>
+     * parameter to <code>true</code> results in an error.</p> </note>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
@@ -196,10 +204,10 @@ namespace Model
     inline void SetFinalDBSnapshotIdentifier(const Aws::String& value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier = value; }
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     * <note> <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> </note>
+     * <p> The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when
+     * <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
+     * <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code>
+     * parameter to <code>true</code> results in an error.</p> </note>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
@@ -208,10 +216,10 @@ namespace Model
     inline void SetFinalDBSnapshotIdentifier(Aws::String&& value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier = std::move(value); }
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     * <note> <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> </note>
+     * <p> The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when
+     * <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
+     * <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code>
+     * parameter to <code>true</code> results in an error.</p> </note>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
@@ -220,10 +228,10 @@ namespace Model
     inline void SetFinalDBSnapshotIdentifier(const char* value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier.assign(value); }
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     * <note> <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> </note>
+     * <p> The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when
+     * <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
+     * <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code>
+     * parameter to <code>true</code> results in an error.</p> </note>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
@@ -232,10 +240,10 @@ namespace Model
     inline DeleteDBInstanceRequest& WithFinalDBSnapshotIdentifier(const Aws::String& value) { SetFinalDBSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     * <note> <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> </note>
+     * <p> The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when
+     * <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
+     * <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code>
+     * parameter to <code>true</code> results in an error.</p> </note>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
@@ -244,10 +252,10 @@ namespace Model
     inline DeleteDBInstanceRequest& WithFinalDBSnapshotIdentifier(Aws::String&& value) { SetFinalDBSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     * <note> <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> </note>
+     * <p> The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when
+     * <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
+     * <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code>
+     * parameter to <code>true</code> results in an error.</p> </note>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
@@ -258,29 +266,29 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to remove automated backups immediately after
-     * the DB instance is deleted. This parameter isn't case-sensitive. The default is
-     * to remove automated backups immediately after the DB instance is deleted.</p>
+     * the DB instance is deleted. This parameter isn't case-sensitive. This parameter
+     * defaults to <code>true</code>.</p>
      */
     inline bool GetDeleteAutomatedBackups() const{ return m_deleteAutomatedBackups; }
 
     /**
      * <p>A value that indicates whether to remove automated backups immediately after
-     * the DB instance is deleted. This parameter isn't case-sensitive. The default is
-     * to remove automated backups immediately after the DB instance is deleted.</p>
+     * the DB instance is deleted. This parameter isn't case-sensitive. This parameter
+     * defaults to <code>true</code>.</p>
      */
     inline bool DeleteAutomatedBackupsHasBeenSet() const { return m_deleteAutomatedBackupsHasBeenSet; }
 
     /**
      * <p>A value that indicates whether to remove automated backups immediately after
-     * the DB instance is deleted. This parameter isn't case-sensitive. The default is
-     * to remove automated backups immediately after the DB instance is deleted.</p>
+     * the DB instance is deleted. This parameter isn't case-sensitive. This parameter
+     * defaults to <code>true</code>.</p>
      */
     inline void SetDeleteAutomatedBackups(bool value) { m_deleteAutomatedBackupsHasBeenSet = true; m_deleteAutomatedBackups = value; }
 
     /**
      * <p>A value that indicates whether to remove automated backups immediately after
-     * the DB instance is deleted. This parameter isn't case-sensitive. The default is
-     * to remove automated backups immediately after the DB instance is deleted.</p>
+     * the DB instance is deleted. This parameter isn't case-sensitive. This parameter
+     * defaults to <code>true</code>.</p>
      */
     inline DeleteDBInstanceRequest& WithDeleteAutomatedBackups(bool value) { SetDeleteAutomatedBackups(value); return *this;}
 

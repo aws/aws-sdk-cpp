@@ -1346,50 +1346,50 @@ namespace Model
 
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
+     * encrypted DB cluster.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
+     * encrypted DB cluster.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
+     * encrypted DB cluster.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
+     * encrypted DB cluster.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
+     * encrypted DB cluster.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
+     * encrypted DB cluster.</p>
      */
     inline DBCluster& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
+     * encrypted DB cluster.</p>
      */
     inline DBCluster& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
+     * encrypted DB cluster.</p>
      */
     inline DBCluster& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1558,26 +1558,26 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts is enabled.</p>
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled, and otherwise false.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>A value that indicates whether the mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts is enabled.</p>
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled, and otherwise false.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts is enabled.</p>
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled, and otherwise false.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>A value that indicates whether the mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts is enabled.</p>
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled, and otherwise false.</p>
      */
     inline DBCluster& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 
@@ -1930,37 +1930,37 @@ namespace Model
 
     /**
      * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * can't be deleted when this value is set to true. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
      * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * can't be deleted when this value is set to true. </p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
      * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * can't be deleted when this value is set to true. </p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
      * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * can't be deleted when this value is set to true. </p>
      */
     inline DBCluster& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
 
     /**
      * <note> <p>HTTP endpoint functionality is in beta for Aurora Serverless and is
-     * subject to change.</p> </note> <p>A value that indicates whether the HTTP
-     * endpoint for an Aurora Serverless DB cluster is enabled.</p> <p>When enabled,
-     * the HTTP endpoint provides a connectionless web service API for running SQL
-     * queries on the Aurora Serverless DB cluster. You can also query your database
-     * from inside the RDS console with the query editor.</p> <p>For more information
-     * about Aurora Serverless, see <a
+     * subject to change.</p> </note> <p>Value that is <code>true</code> if the HTTP
+     * endpoint for an Aurora Serverless DB cluster is enabled and <code>false</code>
+     * otherwise.</p> <p>When enabled, the HTTP endpoint provides a connectionless web
+     * service API for running SQL queries on the Aurora Serverless DB cluster. You can
+     * also query your database from inside the RDS console with the query editor.</p>
+     * <p>For more information about Aurora Serverless, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
      * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
@@ -1968,12 +1968,12 @@ namespace Model
 
     /**
      * <note> <p>HTTP endpoint functionality is in beta for Aurora Serverless and is
-     * subject to change.</p> </note> <p>A value that indicates whether the HTTP
-     * endpoint for an Aurora Serverless DB cluster is enabled.</p> <p>When enabled,
-     * the HTTP endpoint provides a connectionless web service API for running SQL
-     * queries on the Aurora Serverless DB cluster. You can also query your database
-     * from inside the RDS console with the query editor.</p> <p>For more information
-     * about Aurora Serverless, see <a
+     * subject to change.</p> </note> <p>Value that is <code>true</code> if the HTTP
+     * endpoint for an Aurora Serverless DB cluster is enabled and <code>false</code>
+     * otherwise.</p> <p>When enabled, the HTTP endpoint provides a connectionless web
+     * service API for running SQL queries on the Aurora Serverless DB cluster. You can
+     * also query your database from inside the RDS console with the query editor.</p>
+     * <p>For more information about Aurora Serverless, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
      * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
@@ -1981,12 +1981,12 @@ namespace Model
 
     /**
      * <note> <p>HTTP endpoint functionality is in beta for Aurora Serverless and is
-     * subject to change.</p> </note> <p>A value that indicates whether the HTTP
-     * endpoint for an Aurora Serverless DB cluster is enabled.</p> <p>When enabled,
-     * the HTTP endpoint provides a connectionless web service API for running SQL
-     * queries on the Aurora Serverless DB cluster. You can also query your database
-     * from inside the RDS console with the query editor.</p> <p>For more information
-     * about Aurora Serverless, see <a
+     * subject to change.</p> </note> <p>Value that is <code>true</code> if the HTTP
+     * endpoint for an Aurora Serverless DB cluster is enabled and <code>false</code>
+     * otherwise.</p> <p>When enabled, the HTTP endpoint provides a connectionless web
+     * service API for running SQL queries on the Aurora Serverless DB cluster. You can
+     * also query your database from inside the RDS console with the query editor.</p>
+     * <p>For more information about Aurora Serverless, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
      * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
@@ -1994,12 +1994,12 @@ namespace Model
 
     /**
      * <note> <p>HTTP endpoint functionality is in beta for Aurora Serverless and is
-     * subject to change.</p> </note> <p>A value that indicates whether the HTTP
-     * endpoint for an Aurora Serverless DB cluster is enabled.</p> <p>When enabled,
-     * the HTTP endpoint provides a connectionless web service API for running SQL
-     * queries on the Aurora Serverless DB cluster. You can also query your database
-     * from inside the RDS console with the query editor.</p> <p>For more information
-     * about Aurora Serverless, see <a
+     * subject to change.</p> </note> <p>Value that is <code>true</code> if the HTTP
+     * endpoint for an Aurora Serverless DB cluster is enabled and <code>false</code>
+     * otherwise.</p> <p>When enabled, the HTTP endpoint provides a connectionless web
+     * service API for running SQL queries on the Aurora Serverless DB cluster. You can
+     * also query your database from inside the RDS console with the query editor.</p>
+     * <p>For more information about Aurora Serverless, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
      * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */

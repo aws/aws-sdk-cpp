@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/chime/model/PhoneNumberType.h>
 #include <aws/chime/model/PhoneNumberProductType.h>
 #include <aws/chime/model/PhoneNumberStatus.h>
 #include <aws/chime/model/PhoneNumberCapabilities.h>
@@ -134,6 +135,37 @@ namespace Model
      * <p>The phone number, in E.164 format.</p>
      */
     inline PhoneNumber& WithE164PhoneNumber(const char* value) { SetE164PhoneNumber(value); return *this;}
+
+
+    /**
+     * <p>The phone number type.</p>
+     */
+    inline const PhoneNumberType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The phone number type.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The phone number type.</p>
+     */
+    inline void SetType(const PhoneNumberType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The phone number type.</p>
+     */
+    inline void SetType(PhoneNumberType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The phone number type.</p>
+     */
+    inline PhoneNumber& WithType(const PhoneNumberType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The phone number type.</p>
+     */
+    inline PhoneNumber& WithType(PhoneNumberType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
@@ -369,6 +401,9 @@ namespace Model
 
     Aws::String m_e164PhoneNumber;
     bool m_e164PhoneNumberHasBeenSet;
+
+    PhoneNumberType m_type;
+    bool m_typeHasBeenSet;
 
     PhoneNumberProductType m_productType;
     bool m_productTypeHasBeenSet;

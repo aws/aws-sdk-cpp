@@ -186,29 +186,29 @@ namespace Model
 
     /**
      * <p> Indicates if the global database cluster has deletion protection enabled.
-     * The global database cluster can't be deleted when deletion protection is
-     * enabled. </p>
+     * The global database cluster can't be deleted when this value is set to true.
+     * </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
      * <p> Indicates if the global database cluster has deletion protection enabled.
-     * The global database cluster can't be deleted when deletion protection is
-     * enabled. </p>
+     * The global database cluster can't be deleted when this value is set to true.
+     * </p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
      * <p> Indicates if the global database cluster has deletion protection enabled.
-     * The global database cluster can't be deleted when deletion protection is
-     * enabled. </p>
+     * The global database cluster can't be deleted when this value is set to true.
+     * </p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
      * <p> Indicates if the global database cluster has deletion protection enabled.
-     * The global database cluster can't be deleted when deletion protection is
-     * enabled. </p>
+     * The global database cluster can't be deleted when this value is set to true.
+     * </p>
      */
     inline ModifyGlobalClusterRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 

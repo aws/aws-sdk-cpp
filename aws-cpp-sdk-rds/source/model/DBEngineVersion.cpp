@@ -46,7 +46,8 @@ DBEngineVersion::DBEngineVersion() :
     m_supportsReadReplica(false),
     m_supportsReadReplicaHasBeenSet(false),
     m_supportedEngineModesHasBeenSet(false),
-    m_supportedFeatureNamesHasBeenSet(false)
+    m_supportedFeatureNamesHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_supportsReadReplica(false),
     m_supportsReadReplicaHasBeenSet(false),
     m_supportedEngineModesHasBeenSet(false),
-    m_supportedFeatureNamesHasBeenSet(false)
+    m_supportedFeatureNamesHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -197,6 +199,12 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
 
       m_supportedFeatureNamesHasBeenSet = true;
     }
+    XmlNode statusNode = resultNode.FirstChild("Status");
+    if(!statusNode.IsNull())
+    {
+      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_statusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -306,6 +314,11 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       }
   }
 
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  }
+
 }
 
 void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -397,6 +410,10 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       {
         oStream << location << ".SupportedFeatureNames.member." << supportedFeatureNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 }
 

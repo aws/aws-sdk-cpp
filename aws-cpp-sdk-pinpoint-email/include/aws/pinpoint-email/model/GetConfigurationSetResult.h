@@ -20,6 +20,8 @@
 #include <aws/pinpoint-email/model/DeliveryOptions.h>
 #include <aws/pinpoint-email/model/ReputationOptions.h>
 #include <aws/pinpoint-email/model/SendingOptions.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/pinpoint-email/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -210,6 +212,49 @@ namespace Model
      */
     inline GetConfigurationSetResult& WithSendingOptions(SendingOptions&& value) { SetSendingOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An array of objects that define the tags (keys and values) that are
+     * associated with the configuration set.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>An array of objects that define the tags (keys and values) that are
+     * associated with the configuration set.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+
+    /**
+     * <p>An array of objects that define the tags (keys and values) that are
+     * associated with the configuration set.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>An array of objects that define the tags (keys and values) that are
+     * associated with the configuration set.</p>
+     */
+    inline GetConfigurationSetResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>An array of objects that define the tags (keys and values) that are
+     * associated with the configuration set.</p>
+     */
+    inline GetConfigurationSetResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of objects that define the tags (keys and values) that are
+     * associated with the configuration set.</p>
+     */
+    inline GetConfigurationSetResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>An array of objects that define the tags (keys and values) that are
+     * associated with the configuration set.</p>
+     */
+    inline GetConfigurationSetResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_configurationSetName;
@@ -221,6 +266,8 @@ namespace Model
     ReputationOptions m_reputationOptions;
 
     SendingOptions m_sendingOptions;
+
+    Aws::Vector<Tag> m_tags;
   };
 
 } // namespace Model

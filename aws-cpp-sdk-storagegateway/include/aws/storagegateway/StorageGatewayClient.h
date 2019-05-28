@@ -26,6 +26,7 @@
 #include <aws/storagegateway/model/AddTagsToResourceResult.h>
 #include <aws/storagegateway/model/AddUploadBufferResult.h>
 #include <aws/storagegateway/model/AddWorkingStorageResult.h>
+#include <aws/storagegateway/model/AssignTapePoolResult.h>
 #include <aws/storagegateway/model/AttachVolumeResult.h>
 #include <aws/storagegateway/model/CancelArchivalResult.h>
 #include <aws/storagegateway/model/CancelRetrievalResult.h>
@@ -136,6 +137,7 @@ namespace Model
         class AddTagsToResourceRequest;
         class AddUploadBufferRequest;
         class AddWorkingStorageRequest;
+        class AssignTapePoolRequest;
         class AttachVolumeRequest;
         class CancelArchivalRequest;
         class CancelRetrievalRequest;
@@ -208,6 +210,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AddTagsToResourceResult, Aws::Client::AWSError<StorageGatewayErrors>> AddTagsToResourceOutcome;
         typedef Aws::Utils::Outcome<AddUploadBufferResult, Aws::Client::AWSError<StorageGatewayErrors>> AddUploadBufferOutcome;
         typedef Aws::Utils::Outcome<AddWorkingStorageResult, Aws::Client::AWSError<StorageGatewayErrors>> AddWorkingStorageOutcome;
+        typedef Aws::Utils::Outcome<AssignTapePoolResult, Aws::Client::AWSError<StorageGatewayErrors>> AssignTapePoolOutcome;
         typedef Aws::Utils::Outcome<AttachVolumeResult, Aws::Client::AWSError<StorageGatewayErrors>> AttachVolumeOutcome;
         typedef Aws::Utils::Outcome<CancelArchivalResult, Aws::Client::AWSError<StorageGatewayErrors>> CancelArchivalOutcome;
         typedef Aws::Utils::Outcome<CancelRetrievalResult, Aws::Client::AWSError<StorageGatewayErrors>> CancelRetrievalOutcome;
@@ -280,6 +283,7 @@ namespace Model
         typedef std::future<AddTagsToResourceOutcome> AddTagsToResourceOutcomeCallable;
         typedef std::future<AddUploadBufferOutcome> AddUploadBufferOutcomeCallable;
         typedef std::future<AddWorkingStorageOutcome> AddWorkingStorageOutcomeCallable;
+        typedef std::future<AssignTapePoolOutcome> AssignTapePoolOutcomeCallable;
         typedef std::future<AttachVolumeOutcome> AttachVolumeOutcomeCallable;
         typedef std::future<CancelArchivalOutcome> CancelArchivalOutcomeCallable;
         typedef std::future<CancelRetrievalOutcome> CancelRetrievalOutcomeCallable;
@@ -355,6 +359,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToResourceResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::AddUploadBufferRequest&, const Model::AddUploadBufferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddUploadBufferResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::AddWorkingStorageRequest&, const Model::AddWorkingStorageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddWorkingStorageResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::AssignTapePoolRequest&, const Model::AssignTapePoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssignTapePoolResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::AttachVolumeRequest&, const Model::AttachVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachVolumeResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CancelArchivalRequest&, const Model::CancelArchivalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelArchivalResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CancelRetrievalRequest&, const Model::CancelRetrievalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelRetrievalResponseReceivedHandler;
@@ -717,6 +722,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AddWorkingStorageAsync(const Model::AddWorkingStorageRequest& request, const AddWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Assigns a tape to a tape pool for archiving. The tape assigned to a pool is
+         * archived in the S3 storage class that is associated with the pool. When you use
+         * your backup application to eject the tape, the tape is archived directly into
+         * the S3 storage class (Glacier or Deep Archive) that corresponds to the pool.</p>
+         * <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssignTapePool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssignTapePoolOutcome AssignTapePool(const Model::AssignTapePoolRequest& request) const;
+
+        /**
+         * <p>Assigns a tape to a tape pool for archiving. The tape assigned to a pool is
+         * archived in the S3 storage class that is associated with the pool. When you use
+         * your backup application to eject the tape, the tape is archived directly into
+         * the S3 storage class (Glacier or Deep Archive) that corresponds to the pool.</p>
+         * <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssignTapePool">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssignTapePoolOutcomeCallable AssignTapePoolCallable(const Model::AssignTapePoolRequest& request) const;
+
+        /**
+         * <p>Assigns a tape to a tape pool for archiving. The tape assigned to a pool is
+         * archived in the S3 storage class that is associated with the pool. When you use
+         * your backup application to eject the tape, the tape is archived directly into
+         * the S3 storage class (Glacier or Deep Archive) that corresponds to the pool.</p>
+         * <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssignTapePool">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssignTapePoolAsync(const Model::AssignTapePoolRequest& request, const AssignTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Connects a volume to an iSCSI connection and then attaches the volume to the
@@ -3592,6 +3634,7 @@ namespace Model
         void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddUploadBufferAsyncHelper(const Model::AddUploadBufferRequest& request, const AddUploadBufferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddWorkingStorageAsyncHelper(const Model::AddWorkingStorageRequest& request, const AddWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssignTapePoolAsyncHelper(const Model::AssignTapePoolRequest& request, const AssignTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AttachVolumeAsyncHelper(const Model::AttachVolumeRequest& request, const AttachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelArchivalAsyncHelper(const Model::CancelArchivalRequest& request, const CancelArchivalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelRetrievalAsyncHelper(const Model::CancelRetrievalRequest& request, const CancelRetrievalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

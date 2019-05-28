@@ -47,11 +47,13 @@
 #include <aws/pinpoint-email/model/GetDedicatedIpsRequest.h>
 #include <aws/pinpoint-email/model/GetDeliverabilityDashboardOptionsRequest.h>
 #include <aws/pinpoint-email/model/GetDeliverabilityTestReportRequest.h>
+#include <aws/pinpoint-email/model/GetDomainDeliverabilityCampaignRequest.h>
 #include <aws/pinpoint-email/model/GetDomainStatisticsReportRequest.h>
 #include <aws/pinpoint-email/model/GetEmailIdentityRequest.h>
 #include <aws/pinpoint-email/model/ListConfigurationSetsRequest.h>
 #include <aws/pinpoint-email/model/ListDedicatedIpPoolsRequest.h>
 #include <aws/pinpoint-email/model/ListDeliverabilityTestReportsRequest.h>
+#include <aws/pinpoint-email/model/ListDomainDeliverabilityCampaignsRequest.h>
 #include <aws/pinpoint-email/model/ListEmailIdentitiesRequest.h>
 #include <aws/pinpoint-email/model/ListTagsForResourceRequest.h>
 #include <aws/pinpoint-email/model/PutAccountDedicatedIpWarmupAttributesRequest.h>
@@ -533,6 +535,11 @@ void PinpointEmailClient::GetAccountAsyncHelper(const GetAccountRequest& request
 
 GetBlacklistReportsOutcome PinpointEmailClient::GetBlacklistReports(const GetBlacklistReportsRequest& request) const
 {
+  if (!request.BlacklistItemNamesHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBlacklistReports", "Required field: BlacklistItemNames, is not set");
+    return GetBlacklistReportsOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BlacklistItemNames]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/email/deliverability-dashboard/blacklist-report";
@@ -801,12 +808,63 @@ void PinpointEmailClient::GetDeliverabilityTestReportAsyncHelper(const GetDelive
   handler(this, request, GetDeliverabilityTestReport(request), context);
 }
 
+GetDomainDeliverabilityCampaignOutcome PinpointEmailClient::GetDomainDeliverabilityCampaign(const GetDomainDeliverabilityCampaignRequest& request) const
+{
+  if (!request.CampaignIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDomainDeliverabilityCampaign", "Required field: CampaignId, is not set");
+    return GetDomainDeliverabilityCampaignOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CampaignId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/email/deliverability-dashboard/campaigns/";
+  ss << request.GetCampaignId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetDomainDeliverabilityCampaignOutcome(GetDomainDeliverabilityCampaignResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetDomainDeliverabilityCampaignOutcome(outcome.GetError());
+  }
+}
+
+GetDomainDeliverabilityCampaignOutcomeCallable PinpointEmailClient::GetDomainDeliverabilityCampaignCallable(const GetDomainDeliverabilityCampaignRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDomainDeliverabilityCampaignOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDomainDeliverabilityCampaign(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointEmailClient::GetDomainDeliverabilityCampaignAsync(const GetDomainDeliverabilityCampaignRequest& request, const GetDomainDeliverabilityCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDomainDeliverabilityCampaignAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointEmailClient::GetDomainDeliverabilityCampaignAsyncHelper(const GetDomainDeliverabilityCampaignRequest& request, const GetDomainDeliverabilityCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDomainDeliverabilityCampaign(request), context);
+}
+
 GetDomainStatisticsReportOutcome PinpointEmailClient::GetDomainStatisticsReport(const GetDomainStatisticsReportRequest& request) const
 {
   if (!request.DomainHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetDomainStatisticsReport", "Required field: Domain, is not set");
     return GetDomainStatisticsReportOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Domain]", false));
+  }
+  if (!request.StartDateHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDomainStatisticsReport", "Required field: StartDate, is not set");
+    return GetDomainStatisticsReportOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StartDate]", false));
+  }
+  if (!request.EndDateHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDomainStatisticsReport", "Required field: EndDate, is not set");
+    return GetDomainStatisticsReportOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndDate]", false));
   }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
@@ -988,6 +1046,58 @@ void PinpointEmailClient::ListDeliverabilityTestReportsAsyncHelper(const ListDel
   handler(this, request, ListDeliverabilityTestReports(request), context);
 }
 
+ListDomainDeliverabilityCampaignsOutcome PinpointEmailClient::ListDomainDeliverabilityCampaigns(const ListDomainDeliverabilityCampaignsRequest& request) const
+{
+  if (!request.StartDateHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDomainDeliverabilityCampaigns", "Required field: StartDate, is not set");
+    return ListDomainDeliverabilityCampaignsOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StartDate]", false));
+  }
+  if (!request.EndDateHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDomainDeliverabilityCampaigns", "Required field: EndDate, is not set");
+    return ListDomainDeliverabilityCampaignsOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndDate]", false));
+  }
+  if (!request.SubscribedDomainHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDomainDeliverabilityCampaigns", "Required field: SubscribedDomain, is not set");
+    return ListDomainDeliverabilityCampaignsOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SubscribedDomain]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/email/deliverability-dashboard/domains/";
+  ss << request.GetSubscribedDomain();
+  ss << "/campaigns";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListDomainDeliverabilityCampaignsOutcome(ListDomainDeliverabilityCampaignsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListDomainDeliverabilityCampaignsOutcome(outcome.GetError());
+  }
+}
+
+ListDomainDeliverabilityCampaignsOutcomeCallable PinpointEmailClient::ListDomainDeliverabilityCampaignsCallable(const ListDomainDeliverabilityCampaignsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDomainDeliverabilityCampaignsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDomainDeliverabilityCampaigns(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointEmailClient::ListDomainDeliverabilityCampaignsAsync(const ListDomainDeliverabilityCampaignsRequest& request, const ListDomainDeliverabilityCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDomainDeliverabilityCampaignsAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointEmailClient::ListDomainDeliverabilityCampaignsAsyncHelper(const ListDomainDeliverabilityCampaignsRequest& request, const ListDomainDeliverabilityCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDomainDeliverabilityCampaigns(request), context);
+}
+
 ListEmailIdentitiesOutcome PinpointEmailClient::ListEmailIdentities(const ListEmailIdentitiesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1025,6 +1135,11 @@ void PinpointEmailClient::ListEmailIdentitiesAsyncHelper(const ListEmailIdentiti
 
 ListTagsForResourceOutcome PinpointEmailClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/email/tags";

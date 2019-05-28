@@ -223,7 +223,7 @@ namespace Model
      * owns the role. You cannot use session policies to grant more permissions than
      * those allowed by the identity-based policy of the role that is being assumed.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::Vector<PolicyDescriptorType>& GetPolicyArns() const{ return m_policyArns; }
@@ -248,7 +248,7 @@ namespace Model
      * owns the role. You cannot use session policies to grant more permissions than
      * those allowed by the identity-based policy of the role that is being assumed.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool PolicyArnsHasBeenSet() const { return m_policyArnsHasBeenSet; }
@@ -273,7 +273,7 @@ namespace Model
      * owns the role. You cannot use session policies to grant more permissions than
      * those allowed by the identity-based policy of the role that is being assumed.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPolicyArns(const Aws::Vector<PolicyDescriptorType>& value) { m_policyArnsHasBeenSet = true; m_policyArns = value; }
@@ -298,7 +298,7 @@ namespace Model
      * owns the role. You cannot use session policies to grant more permissions than
      * those allowed by the identity-based policy of the role that is being assumed.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPolicyArns(Aws::Vector<PolicyDescriptorType>&& value) { m_policyArnsHasBeenSet = true; m_policyArns = std::move(value); }
@@ -323,7 +323,7 @@ namespace Model
      * owns the role. You cannot use session policies to grant more permissions than
      * those allowed by the identity-based policy of the role that is being assumed.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline AssumeRoleWithSAMLRequest& WithPolicyArns(const Aws::Vector<PolicyDescriptorType>& value) { SetPolicyArns(value); return *this;}
@@ -348,7 +348,7 @@ namespace Model
      * owns the role. You cannot use session policies to grant more permissions than
      * those allowed by the identity-based policy of the role that is being assumed.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline AssumeRoleWithSAMLRequest& WithPolicyArns(Aws::Vector<PolicyDescriptorType>&& value) { SetPolicyArns(std::move(value)); return *this;}
@@ -373,7 +373,7 @@ namespace Model
      * owns the role. You cannot use session policies to grant more permissions than
      * those allowed by the identity-based policy of the role that is being assumed.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline AssumeRoleWithSAMLRequest& AddPolicyArns(const PolicyDescriptorType& value) { m_policyArnsHasBeenSet = true; m_policyArns.push_back(value); return *this; }
@@ -398,7 +398,7 @@ namespace Model
      * owns the role. You cannot use session policies to grant more permissions than
      * those allowed by the identity-based policy of the role that is being assumed.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline AssumeRoleWithSAMLRequest& AddPolicyArns(PolicyDescriptorType&& value) { m_policyArnsHasBeenSet = true; m_policyArns.push_back(std::move(value)); return *this; }
@@ -413,7 +413,7 @@ namespace Model
      * resources in the account that owns the role. You cannot use session policies to
      * grant more permissions than those allowed by the identity-based policy of the
      * role that is being assumed. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>. </p> <p>The plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters.
      * The JSON policy characters can be any ASCII character from the space character
@@ -437,7 +437,7 @@ namespace Model
      * resources in the account that owns the role. You cannot use session policies to
      * grant more permissions than those allowed by the identity-based policy of the
      * role that is being assumed. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>. </p> <p>The plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters.
      * The JSON policy characters can be any ASCII character from the space character
@@ -461,7 +461,7 @@ namespace Model
      * resources in the account that owns the role. You cannot use session policies to
      * grant more permissions than those allowed by the identity-based policy of the
      * role that is being assumed. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>. </p> <p>The plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters.
      * The JSON policy characters can be any ASCII character from the space character
@@ -485,7 +485,7 @@ namespace Model
      * resources in the account that owns the role. You cannot use session policies to
      * grant more permissions than those allowed by the identity-based policy of the
      * role that is being assumed. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>. </p> <p>The plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters.
      * The JSON policy characters can be any ASCII character from the space character
@@ -509,7 +509,7 @@ namespace Model
      * resources in the account that owns the role. You cannot use session policies to
      * grant more permissions than those allowed by the identity-based policy of the
      * role that is being assumed. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>. </p> <p>The plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters.
      * The JSON policy characters can be any ASCII character from the space character
@@ -533,7 +533,7 @@ namespace Model
      * resources in the account that owns the role. You cannot use session policies to
      * grant more permissions than those allowed by the identity-based policy of the
      * role that is being assumed. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>. </p> <p>The plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters.
      * The JSON policy characters can be any ASCII character from the space character
@@ -557,7 +557,7 @@ namespace Model
      * resources in the account that owns the role. You cannot use session policies to
      * grant more permissions than those allowed by the identity-based policy of the
      * role that is being assumed. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>. </p> <p>The plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters.
      * The JSON policy characters can be any ASCII character from the space character
@@ -581,7 +581,7 @@ namespace Model
      * resources in the account that owns the role. You cannot use session policies to
      * grant more permissions than those allowed by the identity-based policy of the
      * role that is being assumed. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>. </p> <p>The plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters.
      * The JSON policy characters can be any ASCII character from the space character

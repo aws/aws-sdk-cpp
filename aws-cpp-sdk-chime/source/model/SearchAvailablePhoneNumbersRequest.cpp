@@ -30,6 +30,7 @@ SearchAvailablePhoneNumbersRequest::SearchAvailablePhoneNumbersRequest() :
     m_cityHasBeenSet(false),
     m_countryHasBeenSet(false),
     m_stateHasBeenSet(false),
+    m_tollFreePrefixHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -69,6 +70,13 @@ void SearchAvailablePhoneNumbersRequest::AddQueryStringParameters(URI& uri) cons
     {
       ss << m_state;
       uri.AddQueryStringParameter("state", ss.str());
+      ss.str("");
+    }
+
+    if(m_tollFreePrefixHasBeenSet)
+    {
+      ss << m_tollFreePrefix;
+      uri.AddQueryStringParameter("toll-free-prefix", ss.str());
       ss.str("");
     }
 

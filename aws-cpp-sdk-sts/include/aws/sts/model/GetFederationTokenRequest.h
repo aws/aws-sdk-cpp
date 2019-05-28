@@ -153,7 +153,7 @@ namespace Model
      * This gives you a way to further restrict the permissions for a federated user.
      * You cannot use session policies to grant more permissions than those that are
      * defined in the permissions policy of the IAM user. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters.
      * The JSON policy characters can be any ASCII character from the space character
@@ -184,7 +184,7 @@ namespace Model
      * This gives you a way to further restrict the permissions for a federated user.
      * You cannot use session policies to grant more permissions than those that are
      * defined in the permissions policy of the IAM user. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters.
      * The JSON policy characters can be any ASCII character from the space character
@@ -215,7 +215,7 @@ namespace Model
      * This gives you a way to further restrict the permissions for a federated user.
      * You cannot use session policies to grant more permissions than those that are
      * defined in the permissions policy of the IAM user. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters.
      * The JSON policy characters can be any ASCII character from the space character
@@ -246,7 +246,7 @@ namespace Model
      * This gives you a way to further restrict the permissions for a federated user.
      * You cannot use session policies to grant more permissions than those that are
      * defined in the permissions policy of the IAM user. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters.
      * The JSON policy characters can be any ASCII character from the space character
@@ -277,7 +277,7 @@ namespace Model
      * This gives you a way to further restrict the permissions for a federated user.
      * You cannot use session policies to grant more permissions than those that are
      * defined in the permissions policy of the IAM user. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters.
      * The JSON policy characters can be any ASCII character from the space character
@@ -308,7 +308,7 @@ namespace Model
      * This gives you a way to further restrict the permissions for a federated user.
      * You cannot use session policies to grant more permissions than those that are
      * defined in the permissions policy of the IAM user. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters.
      * The JSON policy characters can be any ASCII character from the space character
@@ -339,7 +339,7 @@ namespace Model
      * This gives you a way to further restrict the permissions for a federated user.
      * You cannot use session policies to grant more permissions than those that are
      * defined in the permissions policy of the IAM user. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters.
      * The JSON policy characters can be any ASCII character from the space character
@@ -370,7 +370,7 @@ namespace Model
      * This gives you a way to further restrict the permissions for a federated user.
      * You cannot use session policies to grant more permissions than those that are
      * defined in the permissions policy of the IAM user. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
      * for both inline and managed session policies shouldn't exceed 2048 characters.
      * The JSON policy characters can be any ASCII character from the space character
@@ -409,7 +409,7 @@ namespace Model
      * the permissions for a federated user. You cannot use session policies to grant
      * more permissions than those that are defined in the permissions policy of the
      * IAM user. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <note> <p>The characters in this
      * parameter count towards the 2048 character session policy guideline. However, an
      * AWS conversion compresses the session policies into a packed binary format that
@@ -442,7 +442,7 @@ namespace Model
      * the permissions for a federated user. You cannot use session policies to grant
      * more permissions than those that are defined in the permissions policy of the
      * IAM user. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <note> <p>The characters in this
      * parameter count towards the 2048 character session policy guideline. However, an
      * AWS conversion compresses the session policies into a packed binary format that
@@ -475,7 +475,7 @@ namespace Model
      * the permissions for a federated user. You cannot use session policies to grant
      * more permissions than those that are defined in the permissions policy of the
      * IAM user. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <note> <p>The characters in this
      * parameter count towards the 2048 character session policy guideline. However, an
      * AWS conversion compresses the session policies into a packed binary format that
@@ -508,7 +508,7 @@ namespace Model
      * the permissions for a federated user. You cannot use session policies to grant
      * more permissions than those that are defined in the permissions policy of the
      * IAM user. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <note> <p>The characters in this
      * parameter count towards the 2048 character session policy guideline. However, an
      * AWS conversion compresses the session policies into a packed binary format that
@@ -541,7 +541,7 @@ namespace Model
      * the permissions for a federated user. You cannot use session policies to grant
      * more permissions than those that are defined in the permissions policy of the
      * IAM user. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <note> <p>The characters in this
      * parameter count towards the 2048 character session policy guideline. However, an
      * AWS conversion compresses the session policies into a packed binary format that
@@ -574,7 +574,7 @@ namespace Model
      * the permissions for a federated user. You cannot use session policies to grant
      * more permissions than those that are defined in the permissions policy of the
      * IAM user. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <note> <p>The characters in this
      * parameter count towards the 2048 character session policy guideline. However, an
      * AWS conversion compresses the session policies into a packed binary format that
@@ -607,7 +607,7 @@ namespace Model
      * the permissions for a federated user. You cannot use session policies to grant
      * more permissions than those that are defined in the permissions policy of the
      * IAM user. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <note> <p>The characters in this
      * parameter count towards the 2048 character session policy guideline. However, an
      * AWS conversion compresses the session policies into a packed binary format that
@@ -640,7 +640,7 @@ namespace Model
      * the permissions for a federated user. You cannot use session policies to grant
      * more permissions than those that are defined in the permissions policy of the
      * IAM user. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <note> <p>The characters in this
      * parameter count towards the 2048 character session policy guideline. However, an
      * AWS conversion compresses the session policies into a packed binary format that

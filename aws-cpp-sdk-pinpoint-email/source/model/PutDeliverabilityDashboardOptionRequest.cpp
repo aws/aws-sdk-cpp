@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 PutDeliverabilityDashboardOptionRequest::PutDeliverabilityDashboardOptionRequest() : 
     m_dashboardEnabled(false),
-    m_dashboardEnabledHasBeenSet(false)
+    m_dashboardEnabledHasBeenSet(false),
+    m_subscribedDomainsHasBeenSet(false)
 {
 }
 
@@ -35,6 +36,17 @@ Aws::String PutDeliverabilityDashboardOptionRequest::SerializePayload() const
   if(m_dashboardEnabledHasBeenSet)
   {
    payload.WithBool("DashboardEnabled", m_dashboardEnabled);
+
+  }
+
+  if(m_subscribedDomainsHasBeenSet)
+  {
+   Array<JsonValue> subscribedDomainsJsonList(m_subscribedDomains.size());
+   for(unsigned subscribedDomainsIndex = 0; subscribedDomainsIndex < subscribedDomainsJsonList.GetLength(); ++subscribedDomainsIndex)
+   {
+     subscribedDomainsJsonList[subscribedDomainsIndex].AsObject(m_subscribedDomains[subscribedDomainsIndex].Jsonize());
+   }
+   payload.WithArray("SubscribedDomains", std::move(subscribedDomainsJsonList));
 
   }
 

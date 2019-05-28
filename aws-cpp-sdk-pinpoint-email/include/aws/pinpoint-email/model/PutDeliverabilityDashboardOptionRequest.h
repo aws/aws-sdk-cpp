@@ -16,6 +16,9 @@
 #pragma once
 #include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
 #include <aws/pinpoint-email/PinpointEmailRequest.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/pinpoint-email/model/DomainDeliverabilityTrackingOption.h>
+#include <utility>
 
 namespace Aws
 {
@@ -25,15 +28,16 @@ namespace Model
 {
 
   /**
-   * <p>A request to enable or disable the Deliverability dashboard. When you enable
-   * the Deliverability dashboard, you gain access to reputation metrics for the
-   * domains that you use to send email using Amazon Pinpoint. You also gain the
-   * ability to perform predictive inbox placement tests.</p> <p>When you use the
-   * Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition
-   * to any other fees that you accrue by using Amazon Pinpoint. If you enable the
-   * Deliverability dashboard after the first day of a calendar month, we prorate the
-   * monthly charge based on how many days have elapsed in the current calendar
-   * month.</p><p><h3>See Also:</h3>   <a
+   * <p>Enable or disable the Deliverability dashboard for your Amazon Pinpoint
+   * account. When you enable the Deliverability dashboard, you gain access to
+   * reputation, deliverability, and other metrics for the domains that you use to
+   * send email using Amazon Pinpoint. You also gain the ability to perform
+   * predictive inbox placement tests.</p> <p>When you use the Deliverability
+   * dashboard, you pay a monthly subscription charge, in addition to any other fees
+   * that you accrue by using Amazon Pinpoint. For more information about the
+   * features and cost of a Deliverability dashboard subscription, see <a
+   * href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint
+   * Pricing</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOptionRequest">AWS
    * API Reference</a></p>
    */
@@ -54,33 +58,89 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the Deliverability dashboard is enabled. If the value is
-     * <code>true</code>, then the dashboard is enabled.</p>
+     * <p>Specifies whether to enable the Deliverability dashboard for your Amazon
+     * Pinpoint account. To enable the dashboard, set this value to
+     * <code>true</code>.</p>
      */
     inline bool GetDashboardEnabled() const{ return m_dashboardEnabled; }
 
     /**
-     * <p>Indicates whether the Deliverability dashboard is enabled. If the value is
-     * <code>true</code>, then the dashboard is enabled.</p>
+     * <p>Specifies whether to enable the Deliverability dashboard for your Amazon
+     * Pinpoint account. To enable the dashboard, set this value to
+     * <code>true</code>.</p>
      */
     inline bool DashboardEnabledHasBeenSet() const { return m_dashboardEnabledHasBeenSet; }
 
     /**
-     * <p>Indicates whether the Deliverability dashboard is enabled. If the value is
-     * <code>true</code>, then the dashboard is enabled.</p>
+     * <p>Specifies whether to enable the Deliverability dashboard for your Amazon
+     * Pinpoint account. To enable the dashboard, set this value to
+     * <code>true</code>.</p>
      */
     inline void SetDashboardEnabled(bool value) { m_dashboardEnabledHasBeenSet = true; m_dashboardEnabled = value; }
 
     /**
-     * <p>Indicates whether the Deliverability dashboard is enabled. If the value is
-     * <code>true</code>, then the dashboard is enabled.</p>
+     * <p>Specifies whether to enable the Deliverability dashboard for your Amazon
+     * Pinpoint account. To enable the dashboard, set this value to
+     * <code>true</code>.</p>
      */
     inline PutDeliverabilityDashboardOptionRequest& WithDashboardEnabled(bool value) { SetDashboardEnabled(value); return *this;}
+
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and enabled the Deliverability dashboard for.</p>
+     */
+    inline const Aws::Vector<DomainDeliverabilityTrackingOption>& GetSubscribedDomains() const{ return m_subscribedDomains; }
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and enabled the Deliverability dashboard for.</p>
+     */
+    inline bool SubscribedDomainsHasBeenSet() const { return m_subscribedDomainsHasBeenSet; }
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and enabled the Deliverability dashboard for.</p>
+     */
+    inline void SetSubscribedDomains(const Aws::Vector<DomainDeliverabilityTrackingOption>& value) { m_subscribedDomainsHasBeenSet = true; m_subscribedDomains = value; }
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and enabled the Deliverability dashboard for.</p>
+     */
+    inline void SetSubscribedDomains(Aws::Vector<DomainDeliverabilityTrackingOption>&& value) { m_subscribedDomainsHasBeenSet = true; m_subscribedDomains = std::move(value); }
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and enabled the Deliverability dashboard for.</p>
+     */
+    inline PutDeliverabilityDashboardOptionRequest& WithSubscribedDomains(const Aws::Vector<DomainDeliverabilityTrackingOption>& value) { SetSubscribedDomains(value); return *this;}
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and enabled the Deliverability dashboard for.</p>
+     */
+    inline PutDeliverabilityDashboardOptionRequest& WithSubscribedDomains(Aws::Vector<DomainDeliverabilityTrackingOption>&& value) { SetSubscribedDomains(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and enabled the Deliverability dashboard for.</p>
+     */
+    inline PutDeliverabilityDashboardOptionRequest& AddSubscribedDomains(const DomainDeliverabilityTrackingOption& value) { m_subscribedDomainsHasBeenSet = true; m_subscribedDomains.push_back(value); return *this; }
+
+    /**
+     * <p>An array of objects, one for each verified domain that you use to send email
+     * and enabled the Deliverability dashboard for.</p>
+     */
+    inline PutDeliverabilityDashboardOptionRequest& AddSubscribedDomains(DomainDeliverabilityTrackingOption&& value) { m_subscribedDomainsHasBeenSet = true; m_subscribedDomains.push_back(std::move(value)); return *this; }
 
   private:
 
     bool m_dashboardEnabled;
     bool m_dashboardEnabledHasBeenSet;
+
+    Aws::Vector<DomainDeliverabilityTrackingOption> m_subscribedDomains;
+    bool m_subscribedDomainsHasBeenSet;
   };
 
 } // namespace Model

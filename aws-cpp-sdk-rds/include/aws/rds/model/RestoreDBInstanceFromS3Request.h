@@ -575,9 +575,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
      * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
-     * Example: <code>us-east-1d</code> </p> <p>Constraint: The
-     * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
-     * a Multi-AZ deployment. The specified Availability Zone must be in the same AWS
+     * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same AWS
      * Region as the current endpoint. </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
@@ -588,9 +588,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
      * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
-     * Example: <code>us-east-1d</code> </p> <p>Constraint: The
-     * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
-     * a Multi-AZ deployment. The specified Availability Zone must be in the same AWS
+     * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same AWS
      * Region as the current endpoint. </p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
@@ -601,9 +601,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
      * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
-     * Example: <code>us-east-1d</code> </p> <p>Constraint: The
-     * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
-     * a Multi-AZ deployment. The specified Availability Zone must be in the same AWS
+     * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same AWS
      * Region as the current endpoint. </p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
@@ -614,9 +614,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
      * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
-     * Example: <code>us-east-1d</code> </p> <p>Constraint: The
-     * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
-     * a Multi-AZ deployment. The specified Availability Zone must be in the same AWS
+     * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same AWS
      * Region as the current endpoint. </p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
@@ -627,9 +627,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
      * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
-     * Example: <code>us-east-1d</code> </p> <p>Constraint: The
-     * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
-     * a Multi-AZ deployment. The specified Availability Zone must be in the same AWS
+     * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same AWS
      * Region as the current endpoint. </p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
@@ -640,9 +640,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
      * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
-     * Example: <code>us-east-1d</code> </p> <p>Constraint: The
-     * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
-     * a Multi-AZ deployment. The specified Availability Zone must be in the same AWS
+     * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same AWS
      * Region as the current endpoint. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
@@ -653,9 +653,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
      * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
-     * Example: <code>us-east-1d</code> </p> <p>Constraint: The
-     * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
-     * a Multi-AZ deployment. The specified Availability Zone must be in the same AWS
+     * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same AWS
      * Region as the current endpoint. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
@@ -666,9 +666,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
      * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
-     * Example: <code>us-east-1d</code> </p> <p>Constraint: The
-     * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
-     * a Multi-AZ deployment. The specified Availability Zone must be in the same AWS
+     * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same AWS
      * Region as the current endpoint. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
@@ -1033,30 +1033,26 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. If
-     * the DB instance is a Multi-AZ deployment, you can't set the
-     * <code>AvailabilityZone</code> parameter. </p>
+     * <p>Specifies whether the DB instance is a Multi-AZ deployment. If MultiAZ is set
+     * to <code>true</code>, you can't set the AvailabilityZone parameter. </p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. If
-     * the DB instance is a Multi-AZ deployment, you can't set the
-     * <code>AvailabilityZone</code> parameter. </p>
+     * <p>Specifies whether the DB instance is a Multi-AZ deployment. If MultiAZ is set
+     * to <code>true</code>, you can't set the AvailabilityZone parameter. </p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. If
-     * the DB instance is a Multi-AZ deployment, you can't set the
-     * <code>AvailabilityZone</code> parameter. </p>
+     * <p>Specifies whether the DB instance is a Multi-AZ deployment. If MultiAZ is set
+     * to <code>true</code>, you can't set the AvailabilityZone parameter. </p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. If
-     * the DB instance is a Multi-AZ deployment, you can't set the
-     * <code>AvailabilityZone</code> parameter. </p>
+     * <p>Specifies whether the DB instance is a Multi-AZ deployment. If MultiAZ is set
+     * to <code>true</code>, you can't set the AvailabilityZone parameter. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
@@ -1127,30 +1123,30 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether minor engine upgrades are applied
-     * automatically to the DB instance during the maintenance window. By default,
-     * minor engine upgrades are not applied automatically. </p>
+     * <p>True to indicate that minor engine upgrades are applied automatically to the
+     * DB instance during the maintenance window, and otherwise false. </p> <p>Default:
+     * <code>true</code> </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>A value that indicates whether minor engine upgrades are applied
-     * automatically to the DB instance during the maintenance window. By default,
-     * minor engine upgrades are not applied automatically. </p>
+     * <p>True to indicate that minor engine upgrades are applied automatically to the
+     * DB instance during the maintenance window, and otherwise false. </p> <p>Default:
+     * <code>true</code> </p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether minor engine upgrades are applied
-     * automatically to the DB instance during the maintenance window. By default,
-     * minor engine upgrades are not applied automatically. </p>
+     * <p>True to indicate that minor engine upgrades are applied automatically to the
+     * DB instance during the maintenance window, and otherwise false. </p> <p>Default:
+     * <code>true</code> </p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>A value that indicates whether minor engine upgrades are applied
-     * automatically to the DB instance during the maintenance window. By default,
-     * minor engine upgrades are not applied automatically. </p>
+     * <p>True to indicate that minor engine upgrades are applied automatically to the
+     * DB instance during the maintenance window, and otherwise false. </p> <p>Default:
+     * <code>true</code> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -1303,42 +1299,38 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. For more information, see
-     * <a>CreateDBInstance</a>.</p>
+     * <p>Specifies the accessibility options for the DB instance. A value of true
+     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
+     * resolves to a public IP address. A value of false specifies an internal instance
+     * with a DNS name that resolves to a private IP address. For more information, see
+     * <code>CreateDBInstance</code>.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. For more information, see
-     * <a>CreateDBInstance</a>.</p>
+     * <p>Specifies the accessibility options for the DB instance. A value of true
+     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
+     * resolves to a public IP address. A value of false specifies an internal instance
+     * with a DNS name that resolves to a private IP address. For more information, see
+     * <code>CreateDBInstance</code>.</p>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. For more information, see
-     * <a>CreateDBInstance</a>.</p>
+     * <p>Specifies the accessibility options for the DB instance. A value of true
+     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
+     * resolves to a public IP address. A value of false specifies an internal instance
+     * with a DNS name that resolves to a private IP address. For more information, see
+     * <code>CreateDBInstance</code>.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible. When
-     * the DB instance is publicly accessible, it is an Internet-facing instance with a
-     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
-     * that resolves to a private IP address. For more information, see
-     * <a>CreateDBInstance</a>.</p>
+     * <p>Specifies the accessibility options for the DB instance. A value of true
+     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
+     * resolves to a public IP address. A value of false specifies an internal instance
+     * with a DNS name that resolves to a private IP address. For more information, see
+     * <code>CreateDBInstance</code>.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
@@ -1413,7 +1405,7 @@ namespace Model
      * <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code>
      * </p> <p>If you specify <code>io1</code>, you must also include a value for the
      * <code>Iops</code> parameter. </p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+     * <code>Iops</code> parameter is specified; otherwise <code>standard</code> </p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
@@ -1422,7 +1414,7 @@ namespace Model
      * <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code>
      * </p> <p>If you specify <code>io1</code>, you must also include a value for the
      * <code>Iops</code> parameter. </p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+     * <code>Iops</code> parameter is specified; otherwise <code>standard</code> </p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
@@ -1431,7 +1423,7 @@ namespace Model
      * <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code>
      * </p> <p>If you specify <code>io1</code>, you must also include a value for the
      * <code>Iops</code> parameter. </p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+     * <code>Iops</code> parameter is specified; otherwise <code>standard</code> </p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
@@ -1440,7 +1432,7 @@ namespace Model
      * <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code>
      * </p> <p>If you specify <code>io1</code>, you must also include a value for the
      * <code>Iops</code> parameter. </p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+     * <code>Iops</code> parameter is specified; otherwise <code>standard</code> </p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
@@ -1449,7 +1441,7 @@ namespace Model
      * <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code>
      * </p> <p>If you specify <code>io1</code>, you must also include a value for the
      * <code>Iops</code> parameter. </p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+     * <code>Iops</code> parameter is specified; otherwise <code>standard</code> </p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
@@ -1458,7 +1450,7 @@ namespace Model
      * <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code>
      * </p> <p>If you specify <code>io1</code>, you must also include a value for the
      * <code>Iops</code> parameter. </p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+     * <code>Iops</code> parameter is specified; otherwise <code>standard</code> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
@@ -1467,7 +1459,7 @@ namespace Model
      * <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code>
      * </p> <p>If you specify <code>io1</code>, you must also include a value for the
      * <code>Iops</code> parameter. </p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+     * <code>Iops</code> parameter is specified; otherwise <code>standard</code> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
@@ -1476,28 +1468,28 @@ namespace Model
      * <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code>
      * </p> <p>If you specify <code>io1</code>, you must also include a value for the
      * <code>Iops</code> parameter. </p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified; otherwise <code>gp2</code> </p>
+     * <code>Iops</code> parameter is specified; otherwise <code>standard</code> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether the new DB instance is encrypted or not. </p>
+     * <p>Specifies whether the new DB instance is encrypted or not. </p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
 
     /**
-     * <p>A value that indicates whether the new DB instance is encrypted or not. </p>
+     * <p>Specifies whether the new DB instance is encrypted or not. </p>
      */
     inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the new DB instance is encrypted or not. </p>
+     * <p>Specifies whether the new DB instance is encrypted or not. </p>
      */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
-     * <p>A value that indicates whether the new DB instance is encrypted or not. </p>
+     * <p>Specifies whether the new DB instance is encrypted or not. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
 
@@ -1508,11 +1500,11 @@ namespace Model
      * are creating a DB instance with the same AWS account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key. </p> <p>If the
-     * <code>StorageEncrypted</code> parameter is enabled, and you do not specify a
-     * value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
-     * default encryption key. AWS KMS creates the default encryption key for your AWS
-     * account. Your AWS account has a different default encryption key for each AWS
-     * Region. </p>
+     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.
+     * </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -1522,11 +1514,11 @@ namespace Model
      * are creating a DB instance with the same AWS account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key. </p> <p>If the
-     * <code>StorageEncrypted</code> parameter is enabled, and you do not specify a
-     * value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
-     * default encryption key. AWS KMS creates the default encryption key for your AWS
-     * account. Your AWS account has a different default encryption key for each AWS
-     * Region. </p>
+     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.
+     * </p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
@@ -1536,11 +1528,11 @@ namespace Model
      * are creating a DB instance with the same AWS account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key. </p> <p>If the
-     * <code>StorageEncrypted</code> parameter is enabled, and you do not specify a
-     * value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
-     * default encryption key. AWS KMS creates the default encryption key for your AWS
-     * account. Your AWS account has a different default encryption key for each AWS
-     * Region. </p>
+     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.
+     * </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -1550,11 +1542,11 @@ namespace Model
      * are creating a DB instance with the same AWS account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key. </p> <p>If the
-     * <code>StorageEncrypted</code> parameter is enabled, and you do not specify a
-     * value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
-     * default encryption key. AWS KMS creates the default encryption key for your AWS
-     * account. Your AWS account has a different default encryption key for each AWS
-     * Region. </p>
+     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.
+     * </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
@@ -1564,11 +1556,11 @@ namespace Model
      * are creating a DB instance with the same AWS account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key. </p> <p>If the
-     * <code>StorageEncrypted</code> parameter is enabled, and you do not specify a
-     * value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
-     * default encryption key. AWS KMS creates the default encryption key for your AWS
-     * account. Your AWS account has a different default encryption key for each AWS
-     * Region. </p>
+     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.
+     * </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -1578,11 +1570,11 @@ namespace Model
      * are creating a DB instance with the same AWS account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key. </p> <p>If the
-     * <code>StorageEncrypted</code> parameter is enabled, and you do not specify a
-     * value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
-     * default encryption key. AWS KMS creates the default encryption key for your AWS
-     * account. Your AWS account has a different default encryption key for each AWS
-     * Region. </p>
+     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.
+     * </p>
      */
     inline RestoreDBInstanceFromS3Request& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -1592,11 +1584,11 @@ namespace Model
      * are creating a DB instance with the same AWS account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key. </p> <p>If the
-     * <code>StorageEncrypted</code> parameter is enabled, and you do not specify a
-     * value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
-     * default encryption key. AWS KMS creates the default encryption key for your AWS
-     * account. Your AWS account has a different default encryption key for each AWS
-     * Region. </p>
+     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.
+     * </p>
      */
     inline RestoreDBInstanceFromS3Request& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -1606,36 +1598,36 @@ namespace Model
      * are creating a DB instance with the same AWS account that owns the KMS
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key. </p> <p>If the
-     * <code>StorageEncrypted</code> parameter is enabled, and you do not specify a
-     * value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your
-     * default encryption key. AWS KMS creates the default encryption key for your AWS
-     * account. Your AWS account has a different default encryption key for each AWS
-     * Region. </p>
+     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.
+     * </p>
      */
     inline RestoreDBInstanceFromS3Request& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether to copy all tags from the DB instance to
-     * snapshots of the DB instance. By default, tags are not copied. </p>
+     * <p>True to copy all tags from the restored DB instance to snapshots of the
+     * restored DB instance, and otherwise false. </p> <p>Default: false. </p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the DB instance to
-     * snapshots of the DB instance. By default, tags are not copied. </p>
+     * <p>True to copy all tags from the restored DB instance to snapshots of the
+     * restored DB instance, and otherwise false. </p> <p>Default: false. </p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the DB instance to
-     * snapshots of the DB instance. By default, tags are not copied. </p>
+     * <p>True to copy all tags from the restored DB instance to snapshots of the
+     * restored DB instance, and otherwise false. </p> <p>Default: false. </p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the DB instance to
-     * snapshots of the DB instance. By default, tags are not copied. </p>
+     * <p>True to copy all tags from the restored DB instance to snapshots of the
+     * restored DB instance, and otherwise false. </p> <p>Default: false. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
@@ -1775,30 +1767,30 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p>
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts, and otherwise false. </p> <p>Default: <code>false</code>
+     * </p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p>
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts, and otherwise false. </p> <p>Default: <code>false</code>
+     * </p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p>
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts, and otherwise false. </p> <p>Default: <code>false</code>
+     * </p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p>
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts, and otherwise false. </p> <p>Default: <code>false</code>
+     * </p>
      */
     inline RestoreDBInstanceFromS3Request& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
@@ -2041,8 +2033,8 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to enable Performance Insights for the DB
-     * instance. </p> <p>For more information, see <a
+     * <p>True to enable Performance Insights for the DB instance, and otherwise false.
+     * </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
      * User Guide</i>. </p>
@@ -2050,8 +2042,8 @@ namespace Model
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
     /**
-     * <p>A value that indicates whether to enable Performance Insights for the DB
-     * instance. </p> <p>For more information, see <a
+     * <p>True to enable Performance Insights for the DB instance, and otherwise false.
+     * </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
      * User Guide</i>. </p>
@@ -2059,8 +2051,8 @@ namespace Model
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable Performance Insights for the DB
-     * instance. </p> <p>For more information, see <a
+     * <p>True to enable Performance Insights for the DB instance, and otherwise false.
+     * </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
      * User Guide</i>. </p>
@@ -2068,8 +2060,8 @@ namespace Model
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
     /**
-     * <p>A value that indicates whether to enable Performance Insights for the DB
-     * instance. </p> <p>For more information, see <a
+     * <p>True to enable Performance Insights for the DB instance, and otherwise false.
+     * </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
      * User Guide</i>. </p>
@@ -2080,80 +2072,56 @@ namespace Model
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), the KMS key identifier, or the KMS
-     * key alias for the KMS encryption key. </p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * key alias for the KMS encryption key. </p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), the KMS key identifier, or the KMS
-     * key alias for the KMS encryption key. </p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * key alias for the KMS encryption key. </p>
      */
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), the KMS key identifier, or the KMS
-     * key alias for the KMS encryption key. </p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * key alias for the KMS encryption key. </p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), the KMS key identifier, or the KMS
-     * key alias for the KMS encryption key. </p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * key alias for the KMS encryption key. </p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), the KMS key identifier, or the KMS
-     * key alias for the KMS encryption key. </p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * key alias for the KMS encryption key. </p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), the KMS key identifier, or the KMS
-     * key alias for the KMS encryption key. </p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * key alias for the KMS encryption key. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), the KMS key identifier, or the KMS
-     * key alias for the KMS encryption key. </p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * key alias for the KMS encryption key. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), the KMS key identifier, or the KMS
-     * key alias for the KMS encryption key. </p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account.
-     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     * key alias for the KMS encryption key. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
@@ -2324,61 +2292,61 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p>
+     * <p>A value that specifies that the DB instance class of the DB instance uses its
+     * default processor features.</p>
      */
     inline bool GetUseDefaultProcessorFeatures() const{ return m_useDefaultProcessorFeatures; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p>
+     * <p>A value that specifies that the DB instance class of the DB instance uses its
+     * default processor features.</p>
      */
     inline bool UseDefaultProcessorFeaturesHasBeenSet() const { return m_useDefaultProcessorFeaturesHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p>
+     * <p>A value that specifies that the DB instance class of the DB instance uses its
+     * default processor features.</p>
      */
     inline void SetUseDefaultProcessorFeatures(bool value) { m_useDefaultProcessorFeaturesHasBeenSet = true; m_useDefaultProcessorFeatures = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p>
+     * <p>A value that specifies that the DB instance class of the DB instance uses its
+     * default processor features.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithUseDefaultProcessorFeatures(bool value) { SetUseDefaultProcessorFeatures(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * <p>Indicates if the DB instance should have deletion protection enabled. The
+     * database can't be deleted when this value is set to true. The default is false.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * <p>Indicates if the DB instance should have deletion protection enabled. The
+     * database can't be deleted when this value is set to true. The default is false.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * <p>Indicates if the DB instance should have deletion protection enabled. The
+     * database can't be deleted when this value is set to true. The default is false.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * <p>Indicates if the DB instance should have deletion protection enabled. The
+     * database can't be deleted when this value is set to true. The default is false.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */

@@ -32,7 +32,8 @@ RobotApplicationSummary::RobotApplicationSummary() :
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+    m_lastUpdatedAtHasBeenSet(false),
+    m_robotSoftwareSuiteHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ RobotApplicationSummary::RobotApplicationSummary(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+    m_lastUpdatedAtHasBeenSet(false),
+    m_robotSoftwareSuiteHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +77,13 @@ RobotApplicationSummary& RobotApplicationSummary::operator =(JsonView jsonValue)
     m_lastUpdatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("robotSoftwareSuite"))
+  {
+    m_robotSoftwareSuite = jsonValue.GetObject("robotSoftwareSuite");
+
+    m_robotSoftwareSuiteHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +112,12 @@ JsonValue RobotApplicationSummary::Jsonize() const
   if(m_lastUpdatedAtHasBeenSet)
   {
    payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_robotSoftwareSuiteHasBeenSet)
+  {
+   payload.WithObject("robotSoftwareSuite", m_robotSoftwareSuite.Jsonize());
+
   }
 
   return payload;

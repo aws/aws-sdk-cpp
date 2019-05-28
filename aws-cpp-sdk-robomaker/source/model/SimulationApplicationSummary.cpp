@@ -32,7 +32,9 @@ SimulationApplicationSummary::SimulationApplicationSummary() :
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+    m_lastUpdatedAtHasBeenSet(false),
+    m_robotSoftwareSuiteHasBeenSet(false),
+    m_simulationSoftwareSuiteHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ SimulationApplicationSummary::SimulationApplicationSummary(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+    m_lastUpdatedAtHasBeenSet(false),
+    m_robotSoftwareSuiteHasBeenSet(false),
+    m_simulationSoftwareSuiteHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +79,20 @@ SimulationApplicationSummary& SimulationApplicationSummary::operator =(JsonView 
     m_lastUpdatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("robotSoftwareSuite"))
+  {
+    m_robotSoftwareSuite = jsonValue.GetObject("robotSoftwareSuite");
+
+    m_robotSoftwareSuiteHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("simulationSoftwareSuite"))
+  {
+    m_simulationSoftwareSuite = jsonValue.GetObject("simulationSoftwareSuite");
+
+    m_simulationSoftwareSuiteHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +121,18 @@ JsonValue SimulationApplicationSummary::Jsonize() const
   if(m_lastUpdatedAtHasBeenSet)
   {
    payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_robotSoftwareSuiteHasBeenSet)
+  {
+   payload.WithObject("robotSoftwareSuite", m_robotSoftwareSuite.Jsonize());
+
+  }
+
+  if(m_simulationSoftwareSuiteHasBeenSet)
+  {
+   payload.WithObject("simulationSoftwareSuite", m_simulationSoftwareSuite.Jsonize());
+
   }
 
   return payload;

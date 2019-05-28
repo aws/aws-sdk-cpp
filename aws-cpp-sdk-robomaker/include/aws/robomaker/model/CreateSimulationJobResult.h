@@ -116,6 +116,37 @@ namespace Model
 
     /**
      * <p>The time, in milliseconds since the epoch, when the simulation job was last
+     * started.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastStartedAt() const{ return m_lastStartedAt; }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the simulation job was last
+     * started.</p>
+     */
+    inline void SetLastStartedAt(const Aws::Utils::DateTime& value) { m_lastStartedAt = value; }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the simulation job was last
+     * started.</p>
+     */
+    inline void SetLastStartedAt(Aws::Utils::DateTime&& value) { m_lastStartedAt = std::move(value); }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the simulation job was last
+     * started.</p>
+     */
+    inline CreateSimulationJobResult& WithLastStartedAt(const Aws::Utils::DateTime& value) { SetLastStartedAt(value); return *this;}
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the simulation job was last
+     * started.</p>
+     */
+    inline CreateSimulationJobResult& WithLastStartedAt(Aws::Utils::DateTime&& value) { SetLastStartedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the simulation job was last
      * updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
@@ -614,6 +645,8 @@ namespace Model
     Aws::String m_arn;
 
     SimulationJobStatus m_status;
+
+    Aws::Utils::DateTime m_lastStartedAt;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
 

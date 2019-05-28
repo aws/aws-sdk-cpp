@@ -18,6 +18,8 @@
 #include <aws/pinpoint-email/model/IdentityType.h>
 #include <aws/pinpoint-email/model/DkimAttributes.h>
 #include <aws/pinpoint-email/model/MailFromAttributes.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/pinpoint-email/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -212,6 +214,49 @@ namespace Model
      */
     inline GetEmailIdentityResult& WithMailFromAttributes(MailFromAttributes&& value) { SetMailFromAttributes(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An array of objects that define the tags (keys and values) that are
+     * associated with the email identity.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>An array of objects that define the tags (keys and values) that are
+     * associated with the email identity.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+
+    /**
+     * <p>An array of objects that define the tags (keys and values) that are
+     * associated with the email identity.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>An array of objects that define the tags (keys and values) that are
+     * associated with the email identity.</p>
+     */
+    inline GetEmailIdentityResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>An array of objects that define the tags (keys and values) that are
+     * associated with the email identity.</p>
+     */
+    inline GetEmailIdentityResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of objects that define the tags (keys and values) that are
+     * associated with the email identity.</p>
+     */
+    inline GetEmailIdentityResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>An array of objects that define the tags (keys and values) that are
+     * associated with the email identity.</p>
+     */
+    inline GetEmailIdentityResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     IdentityType m_identityType;
@@ -223,6 +268,8 @@ namespace Model
     DkimAttributes m_dkimAttributes;
 
     MailFromAttributes m_mailFromAttributes;
+
+    Aws::Vector<Tag> m_tags;
   };
 
 } // namespace Model

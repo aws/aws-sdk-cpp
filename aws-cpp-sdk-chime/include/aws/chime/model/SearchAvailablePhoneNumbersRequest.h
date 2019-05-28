@@ -213,6 +213,47 @@ namespace Model
 
 
     /**
+     * <p>The toll-free prefix that you use to filter results.</p>
+     */
+    inline const Aws::String& GetTollFreePrefix() const{ return m_tollFreePrefix; }
+
+    /**
+     * <p>The toll-free prefix that you use to filter results.</p>
+     */
+    inline bool TollFreePrefixHasBeenSet() const { return m_tollFreePrefixHasBeenSet; }
+
+    /**
+     * <p>The toll-free prefix that you use to filter results.</p>
+     */
+    inline void SetTollFreePrefix(const Aws::String& value) { m_tollFreePrefixHasBeenSet = true; m_tollFreePrefix = value; }
+
+    /**
+     * <p>The toll-free prefix that you use to filter results.</p>
+     */
+    inline void SetTollFreePrefix(Aws::String&& value) { m_tollFreePrefixHasBeenSet = true; m_tollFreePrefix = std::move(value); }
+
+    /**
+     * <p>The toll-free prefix that you use to filter results.</p>
+     */
+    inline void SetTollFreePrefix(const char* value) { m_tollFreePrefixHasBeenSet = true; m_tollFreePrefix.assign(value); }
+
+    /**
+     * <p>The toll-free prefix that you use to filter results.</p>
+     */
+    inline SearchAvailablePhoneNumbersRequest& WithTollFreePrefix(const Aws::String& value) { SetTollFreePrefix(value); return *this;}
+
+    /**
+     * <p>The toll-free prefix that you use to filter results.</p>
+     */
+    inline SearchAvailablePhoneNumbersRequest& WithTollFreePrefix(Aws::String&& value) { SetTollFreePrefix(std::move(value)); return *this;}
+
+    /**
+     * <p>The toll-free prefix that you use to filter results.</p>
+     */
+    inline SearchAvailablePhoneNumbersRequest& WithTollFreePrefix(const char* value) { SetTollFreePrefix(value); return *this;}
+
+
+    /**
      * <p>The maximum number of results to return in a single call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -286,6 +327,9 @@ namespace Model
 
     Aws::String m_state;
     bool m_stateHasBeenSet;
+
+    Aws::String m_tollFreePrefix;
+    bool m_tollFreePrefixHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
