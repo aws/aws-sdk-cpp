@@ -329,7 +329,7 @@ void TaskRoleCredentialsProvider::Reload()
     Json::JsonValue credentialsDoc(credentialsStr);
     if (!credentialsDoc.WasParseSuccessful()) 
     {
-        AWS_LOGSTREAM_ERROR(TASK_ROLE_LOG_TAG, "Failed to parse output from ECSCredentialService with error " << credentialsDoc.GetErrorMessage());
+        AWS_LOGSTREAM_ERROR(TASK_ROLE_LOG_TAG, "Failed to parse output from ECSCredentialService.");
         return;
     }
 

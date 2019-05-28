@@ -331,7 +331,7 @@ namespace Aws
             if (!credentialsDoc.WasParseSuccessful()) 
             {
                 AWS_LOGSTREAM_ERROR(EC2_INSTANCE_PROFILE_LOG_TAG, 
-                        "Failed to parse output from EC2MetadataService with error " << credentialsDoc.GetErrorMessage());
+                        "Failed to parse output from EC2MetadataService.");
                 return false;
             }
             const char* accessKeyId = "AccessKeyId";
