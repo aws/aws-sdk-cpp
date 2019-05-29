@@ -131,49 +131,49 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the master Security Hub account to this member
+     * <p>The AWS account ID of the Security Hub master account to this member
      * account.</p>
      */
     inline const Aws::String& GetMasterId() const{ return m_masterId; }
 
     /**
-     * <p>The AWS account ID of the master Security Hub account to this member
+     * <p>The AWS account ID of the Security Hub master account to this member
      * account.</p>
      */
     inline bool MasterIdHasBeenSet() const { return m_masterIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the master Security Hub account to this member
+     * <p>The AWS account ID of the Security Hub master account to this member
      * account.</p>
      */
     inline void SetMasterId(const Aws::String& value) { m_masterIdHasBeenSet = true; m_masterId = value; }
 
     /**
-     * <p>The AWS account ID of the master Security Hub account to this member
+     * <p>The AWS account ID of the Security Hub master account to this member
      * account.</p>
      */
     inline void SetMasterId(Aws::String&& value) { m_masterIdHasBeenSet = true; m_masterId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the master Security Hub account to this member
+     * <p>The AWS account ID of the Security Hub master account to this member
      * account.</p>
      */
     inline void SetMasterId(const char* value) { m_masterIdHasBeenSet = true; m_masterId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the master Security Hub account to this member
+     * <p>The AWS account ID of the Security Hub master account to this member
      * account.</p>
      */
     inline Member& WithMasterId(const Aws::String& value) { SetMasterId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the master Security Hub account to this member
+     * <p>The AWS account ID of the Security Hub master account to this member
      * account.</p>
      */
     inline Member& WithMasterId(Aws::String&& value) { SetMasterId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the master Security Hub account to this member
+     * <p>The AWS account ID of the Security Hub master account to this member
      * account.</p>
      */
     inline Member& WithMasterId(const char* value) { SetMasterId(value); return *this;}
@@ -229,63 +229,63 @@ namespace Model
 
 
     /**
-     * <p>Time stamp at which the member account was invited to Security Hub.</p>
+     * <p>The timestamp of when the member account was invited to Security Hub.</p>
      */
     inline const Aws::Utils::DateTime& GetInvitedAt() const{ return m_invitedAt; }
 
     /**
-     * <p>Time stamp at which the member account was invited to Security Hub.</p>
+     * <p>The timestamp of when the member account was invited to Security Hub.</p>
      */
     inline bool InvitedAtHasBeenSet() const { return m_invitedAtHasBeenSet; }
 
     /**
-     * <p>Time stamp at which the member account was invited to Security Hub.</p>
+     * <p>The timestamp of when the member account was invited to Security Hub.</p>
      */
     inline void SetInvitedAt(const Aws::Utils::DateTime& value) { m_invitedAtHasBeenSet = true; m_invitedAt = value; }
 
     /**
-     * <p>Time stamp at which the member account was invited to Security Hub.</p>
+     * <p>The timestamp of when the member account was invited to Security Hub.</p>
      */
     inline void SetInvitedAt(Aws::Utils::DateTime&& value) { m_invitedAtHasBeenSet = true; m_invitedAt = std::move(value); }
 
     /**
-     * <p>Time stamp at which the member account was invited to Security Hub.</p>
+     * <p>The timestamp of when the member account was invited to Security Hub.</p>
      */
     inline Member& WithInvitedAt(const Aws::Utils::DateTime& value) { SetInvitedAt(value); return *this;}
 
     /**
-     * <p>Time stamp at which the member account was invited to Security Hub.</p>
+     * <p>The timestamp of when the member account was invited to Security Hub.</p>
      */
     inline Member& WithInvitedAt(Aws::Utils::DateTime&& value) { SetInvitedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>Time stamp at which this member account was updated.</p>
+     * <p>The timestamp of when this member account was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>Time stamp at which this member account was updated.</p>
+     * <p>The timestamp of when this member account was updated.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>Time stamp at which this member account was updated.</p>
+     * <p>The timestamp of when this member account was updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>Time stamp at which this member account was updated.</p>
+     * <p>The timestamp of when this member account was updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>Time stamp at which this member account was updated.</p>
+     * <p>The timestamp of when this member account was updated.</p>
      */
     inline Member& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>Time stamp at which this member account was updated.</p>
+     * <p>The timestamp of when this member account was updated.</p>
      */
     inline Member& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 

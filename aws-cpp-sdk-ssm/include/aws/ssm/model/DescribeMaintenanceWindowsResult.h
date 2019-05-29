@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Information about the Maintenance Windows.</p>
+     * <p>Information about the maintenance windows.</p>
      */
     inline const Aws::Vector<MaintenanceWindowIdentity>& GetWindowIdentities() const{ return m_windowIdentities; }
 
     /**
-     * <p>Information about the Maintenance Windows.</p>
+     * <p>Information about the maintenance windows.</p>
      */
     inline void SetWindowIdentities(const Aws::Vector<MaintenanceWindowIdentity>& value) { m_windowIdentities = value; }
 
     /**
-     * <p>Information about the Maintenance Windows.</p>
+     * <p>Information about the maintenance windows.</p>
      */
     inline void SetWindowIdentities(Aws::Vector<MaintenanceWindowIdentity>&& value) { m_windowIdentities = std::move(value); }
 
     /**
-     * <p>Information about the Maintenance Windows.</p>
+     * <p>Information about the maintenance windows.</p>
      */
     inline DescribeMaintenanceWindowsResult& WithWindowIdentities(const Aws::Vector<MaintenanceWindowIdentity>& value) { SetWindowIdentities(value); return *this;}
 
     /**
-     * <p>Information about the Maintenance Windows.</p>
+     * <p>Information about the maintenance windows.</p>
      */
     inline DescribeMaintenanceWindowsResult& WithWindowIdentities(Aws::Vector<MaintenanceWindowIdentity>&& value) { SetWindowIdentities(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the Maintenance Windows.</p>
+     * <p>Information about the maintenance windows.</p>
      */
     inline DescribeMaintenanceWindowsResult& AddWindowIdentities(const MaintenanceWindowIdentity& value) { m_windowIdentities.push_back(value); return *this; }
 
     /**
-     * <p>Information about the Maintenance Windows.</p>
+     * <p>Information about the maintenance windows.</p>
      */
     inline DescribeMaintenanceWindowsResult& AddWindowIdentities(MaintenanceWindowIdentity&& value) { m_windowIdentities.push_back(std::move(value)); return *this; }
 

@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides a recommendation on how to remediate the issue identified within a
+   * <p>A recommendation on how to remediate the issue identified in a
    * finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Recommendation">AWS
    * API Reference</a></p>

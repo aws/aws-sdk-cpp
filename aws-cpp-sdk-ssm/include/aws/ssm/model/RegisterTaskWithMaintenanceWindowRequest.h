@@ -53,121 +53,121 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Maintenance Window the task should be added to.</p>
+     * <p>The ID of the maintenance window the task should be added to.</p>
      */
     inline const Aws::String& GetWindowId() const{ return m_windowId; }
 
     /**
-     * <p>The ID of the Maintenance Window the task should be added to.</p>
+     * <p>The ID of the maintenance window the task should be added to.</p>
      */
     inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Maintenance Window the task should be added to.</p>
+     * <p>The ID of the maintenance window the task should be added to.</p>
      */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
-     * <p>The ID of the Maintenance Window the task should be added to.</p>
+     * <p>The ID of the maintenance window the task should be added to.</p>
      */
     inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = std::move(value); }
 
     /**
-     * <p>The ID of the Maintenance Window the task should be added to.</p>
+     * <p>The ID of the maintenance window the task should be added to.</p>
      */
     inline void SetWindowId(const char* value) { m_windowIdHasBeenSet = true; m_windowId.assign(value); }
 
     /**
-     * <p>The ID of the Maintenance Window the task should be added to.</p>
+     * <p>The ID of the maintenance window the task should be added to.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window the task should be added to.</p>
+     * <p>The ID of the maintenance window the task should be added to.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window the task should be added to.</p>
+     * <p>The ID of the maintenance window the task should be added to.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
 
     /**
-     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
+     * <p>The targets (either instances or maintenance window targets).</p> <p>Specify
      * instances using the following format: </p> <p>
      * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
+     * </p> <p>Specify maintenance window targets using the following format:</p> <p>
      * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
+     * <p>The targets (either instances or maintenance window targets).</p> <p>Specify
      * instances using the following format: </p> <p>
      * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
+     * </p> <p>Specify maintenance window targets using the following format:</p> <p>
      * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
+     * <p>The targets (either instances or maintenance window targets).</p> <p>Specify
      * instances using the following format: </p> <p>
      * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
+     * </p> <p>Specify maintenance window targets using the following format:</p> <p>
      * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
+     * <p>The targets (either instances or maintenance window targets).</p> <p>Specify
      * instances using the following format: </p> <p>
      * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
+     * </p> <p>Specify maintenance window targets using the following format:</p> <p>
      * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
+     * <p>The targets (either instances or maintenance window targets).</p> <p>Specify
      * instances using the following format: </p> <p>
      * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
+     * </p> <p>Specify maintenance window targets using the following format:</p> <p>
      * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
+     * <p>The targets (either instances or maintenance window targets).</p> <p>Specify
      * instances using the following format: </p> <p>
      * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
+     * </p> <p>Specify maintenance window targets using the following format:</p> <p>
      * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
+     * <p>The targets (either instances or maintenance window targets).</p> <p>Specify
      * instances using the following format: </p> <p>
      * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
+     * </p> <p>Specify maintenance window targets using the following format:</p> <p>
      * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
+     * <p>The targets (either instances or maintenance window targets).</p> <p>Specify
      * instances using the following format: </p> <p>
      * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
+     * </p> <p>Specify maintenance window targets using the following format:</p> <p>
      * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      */
@@ -216,122 +216,130 @@ namespace Model
 
 
     /**
-     * <p>The role to assume when running the Maintenance Window task.</p> <p>If you do
-     * not specify a service role ARN, Systems Manager will use your account's
-     * service-linked role for Systems Manager by default. If no service-linked role
-     * for Systems Manager exists in your account, it will be created when you run
-     * <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role
-     * ARN.</p> <p>For more information, see <a
+     * <p>The ARN of the IAM service role for Systems Manager to assume when running a
+     * maintenance window task. If you do not specify a service role ARN, Systems
+     * Manager uses your account's service-linked role. If no service-linked role for
+     * Systems Manager exists in your account, it is created when you run
+     * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
+     * the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
+     * <ul> <li> <p> <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> and <a
+     * Role Permissions for Systems Manager</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
      * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * Tasks? </a> </p> </li> </ul>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p>The role to assume when running the Maintenance Window task.</p> <p>If you do
-     * not specify a service role ARN, Systems Manager will use your account's
-     * service-linked role for Systems Manager by default. If no service-linked role
-     * for Systems Manager exists in your account, it will be created when you run
-     * <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role
-     * ARN.</p> <p>For more information, see <a
+     * <p>The ARN of the IAM service role for Systems Manager to assume when running a
+     * maintenance window task. If you do not specify a service role ARN, Systems
+     * Manager uses your account's service-linked role. If no service-linked role for
+     * Systems Manager exists in your account, it is created when you run
+     * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
+     * the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
+     * <ul> <li> <p> <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> and <a
+     * Role Permissions for Systems Manager</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
      * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * Tasks? </a> </p> </li> </ul>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
-     * <p>The role to assume when running the Maintenance Window task.</p> <p>If you do
-     * not specify a service role ARN, Systems Manager will use your account's
-     * service-linked role for Systems Manager by default. If no service-linked role
-     * for Systems Manager exists in your account, it will be created when you run
-     * <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role
-     * ARN.</p> <p>For more information, see <a
+     * <p>The ARN of the IAM service role for Systems Manager to assume when running a
+     * maintenance window task. If you do not specify a service role ARN, Systems
+     * Manager uses your account's service-linked role. If no service-linked role for
+     * Systems Manager exists in your account, it is created when you run
+     * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
+     * the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
+     * <ul> <li> <p> <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> and <a
+     * Role Permissions for Systems Manager</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
      * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * Tasks? </a> </p> </li> </ul>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
-     * <p>The role to assume when running the Maintenance Window task.</p> <p>If you do
-     * not specify a service role ARN, Systems Manager will use your account's
-     * service-linked role for Systems Manager by default. If no service-linked role
-     * for Systems Manager exists in your account, it will be created when you run
-     * <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role
-     * ARN.</p> <p>For more information, see <a
+     * <p>The ARN of the IAM service role for Systems Manager to assume when running a
+     * maintenance window task. If you do not specify a service role ARN, Systems
+     * Manager uses your account's service-linked role. If no service-linked role for
+     * Systems Manager exists in your account, it is created when you run
+     * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
+     * the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
+     * <ul> <li> <p> <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> and <a
+     * Role Permissions for Systems Manager</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
      * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * Tasks? </a> </p> </li> </ul>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p>The role to assume when running the Maintenance Window task.</p> <p>If you do
-     * not specify a service role ARN, Systems Manager will use your account's
-     * service-linked role for Systems Manager by default. If no service-linked role
-     * for Systems Manager exists in your account, it will be created when you run
-     * <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role
-     * ARN.</p> <p>For more information, see <a
+     * <p>The ARN of the IAM service role for Systems Manager to assume when running a
+     * maintenance window task. If you do not specify a service role ARN, Systems
+     * Manager uses your account's service-linked role. If no service-linked role for
+     * Systems Manager exists in your account, it is created when you run
+     * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
+     * the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
+     * <ul> <li> <p> <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> and <a
+     * Role Permissions for Systems Manager</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
      * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * Tasks? </a> </p> </li> </ul>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
-     * <p>The role to assume when running the Maintenance Window task.</p> <p>If you do
-     * not specify a service role ARN, Systems Manager will use your account's
-     * service-linked role for Systems Manager by default. If no service-linked role
-     * for Systems Manager exists in your account, it will be created when you run
-     * <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role
-     * ARN.</p> <p>For more information, see <a
+     * <p>The ARN of the IAM service role for Systems Manager to assume when running a
+     * maintenance window task. If you do not specify a service role ARN, Systems
+     * Manager uses your account's service-linked role. If no service-linked role for
+     * Systems Manager exists in your account, it is created when you run
+     * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
+     * the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
+     * <ul> <li> <p> <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> and <a
+     * Role Permissions for Systems Manager</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
      * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * Tasks? </a> </p> </li> </ul>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The role to assume when running the Maintenance Window task.</p> <p>If you do
-     * not specify a service role ARN, Systems Manager will use your account's
-     * service-linked role for Systems Manager by default. If no service-linked role
-     * for Systems Manager exists in your account, it will be created when you run
-     * <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role
-     * ARN.</p> <p>For more information, see <a
+     * <p>The ARN of the IAM service role for Systems Manager to assume when running a
+     * maintenance window task. If you do not specify a service role ARN, Systems
+     * Manager uses your account's service-linked role. If no service-linked role for
+     * Systems Manager exists in your account, it is created when you run
+     * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
+     * the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
+     * <ul> <li> <p> <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> and <a
+     * Role Permissions for Systems Manager</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
      * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * Tasks? </a> </p> </li> </ul>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The role to assume when running the Maintenance Window task.</p> <p>If you do
-     * not specify a service role ARN, Systems Manager will use your account's
-     * service-linked role for Systems Manager by default. If no service-linked role
-     * for Systems Manager exists in your account, it will be created when you run
-     * <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role
-     * ARN.</p> <p>For more information, see <a
+     * <p>The ARN of the IAM service role for Systems Manager to assume when running a
+     * maintenance window task. If you do not specify a service role ARN, Systems
+     * Manager uses your account's service-linked role. If no service-linked role for
+     * Systems Manager exists in your account, it is created when you run
+     * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
+     * the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
+     * <ul> <li> <p> <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> and <a
+     * Role Permissions for Systems Manager</a> </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
      * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * Tasks? </a> </p> </li> </ul>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
@@ -372,7 +380,7 @@ namespace Model
      * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
      * pass to a task when it runs, instead use the <code>Parameters</code> option in
      * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& GetTaskParameters() const{ return m_taskParameters; }
@@ -382,7 +390,7 @@ namespace Model
      * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
      * pass to a task when it runs, instead use the <code>Parameters</code> option in
      * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline bool TaskParametersHasBeenSet() const { return m_taskParametersHasBeenSet; }
@@ -392,7 +400,7 @@ namespace Model
      * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
      * pass to a task when it runs, instead use the <code>Parameters</code> option in
      * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline void SetTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { m_taskParametersHasBeenSet = true; m_taskParameters = value; }
@@ -402,7 +410,7 @@ namespace Model
      * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
      * pass to a task when it runs, instead use the <code>Parameters</code> option in
      * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline void SetTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { m_taskParametersHasBeenSet = true; m_taskParameters = std::move(value); }
@@ -412,7 +420,7 @@ namespace Model
      * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
      * pass to a task when it runs, instead use the <code>Parameters</code> option in
      * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { SetTaskParameters(value); return *this;}
@@ -422,7 +430,7 @@ namespace Model
      * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
      * pass to a task when it runs, instead use the <code>Parameters</code> option in
      * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { SetTaskParameters(std::move(value)); return *this;}
@@ -432,7 +440,7 @@ namespace Model
      * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
      * pass to a task when it runs, instead use the <code>Parameters</code> option in
      * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(const Aws::String& key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, value); return *this; }
@@ -442,7 +450,7 @@ namespace Model
      * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
      * pass to a task when it runs, instead use the <code>Parameters</code> option in
      * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(Aws::String&& key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(std::move(key), value); return *this; }
@@ -452,7 +460,7 @@ namespace Model
      * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
      * pass to a task when it runs, instead use the <code>Parameters</code> option in
      * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(const Aws::String& key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, std::move(value)); return *this; }
@@ -462,7 +470,7 @@ namespace Model
      * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
      * pass to a task when it runs, instead use the <code>Parameters</code> option in
      * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(Aws::String&& key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(std::move(key), std::move(value)); return *this; }
@@ -472,7 +480,7 @@ namespace Model
      * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
      * pass to a task when it runs, instead use the <code>Parameters</code> option in
      * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(const char* key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, std::move(value)); return *this; }
@@ -482,7 +490,7 @@ namespace Model
      * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
      * pass to a task when it runs, instead use the <code>Parameters</code> option in
      * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(const char* key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, value); return *this; }
@@ -526,29 +534,29 @@ namespace Model
 
 
     /**
-     * <p>The priority of the task in the Maintenance Window, the lower the number the
-     * higher the priority. Tasks in a Maintenance Window are scheduled in priority
+     * <p>The priority of the task in the maintenance window, the lower the number the
+     * higher the priority. Tasks in a maintenance window are scheduled in priority
      * order with tasks that have the same priority scheduled in parallel.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p>The priority of the task in the Maintenance Window, the lower the number the
-     * higher the priority. Tasks in a Maintenance Window are scheduled in priority
+     * <p>The priority of the task in the maintenance window, the lower the number the
+     * higher the priority. Tasks in a maintenance window are scheduled in priority
      * order with tasks that have the same priority scheduled in parallel.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * <p>The priority of the task in the Maintenance Window, the lower the number the
-     * higher the priority. Tasks in a Maintenance Window are scheduled in priority
+     * <p>The priority of the task in the maintenance window, the lower the number the
+     * higher the priority. Tasks in a maintenance window are scheduled in priority
      * order with tasks that have the same priority scheduled in parallel.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>The priority of the task in the Maintenance Window, the lower the number the
-     * higher the priority. Tasks in a Maintenance Window are scheduled in priority
+     * <p>The priority of the task in the maintenance window, the lower the number the
+     * higher the priority. Tasks in a maintenance window are scheduled in priority
      * order with tasks that have the same priority scheduled in parallel.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithPriority(int value) { SetPriority(value); return *this;}
@@ -650,7 +658,7 @@ namespace Model
      * deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
@@ -661,7 +669,7 @@ namespace Model
      * deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline bool LoggingInfoHasBeenSet() const { return m_loggingInfoHasBeenSet; }
@@ -672,7 +680,7 @@ namespace Model
      * deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline void SetLoggingInfo(const LoggingInfo& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = value; }
@@ -683,7 +691,7 @@ namespace Model
      * deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline void SetLoggingInfo(LoggingInfo&& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = std::move(value); }
@@ -694,7 +702,7 @@ namespace Model
      * deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithLoggingInfo(const LoggingInfo& value) { SetLoggingInfo(value); return *this;}
@@ -705,7 +713,7 @@ namespace Model
      * deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}

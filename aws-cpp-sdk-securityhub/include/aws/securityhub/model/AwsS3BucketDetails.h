@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>The details of an AWS S3 Bucket.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of an Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketDetails">AWS
    * API Reference</a></p>
    */

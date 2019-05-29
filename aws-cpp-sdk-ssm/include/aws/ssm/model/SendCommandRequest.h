@@ -893,42 +893,50 @@ namespace Model
 
 
     /**
-     * <p>The IAM role that Systems Manager uses to send notifications. </p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for Run Command commands.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p>The IAM role that Systems Manager uses to send notifications. </p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for Run Command commands.</p>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
-     * <p>The IAM role that Systems Manager uses to send notifications. </p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for Run Command commands.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
-     * <p>The IAM role that Systems Manager uses to send notifications. </p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for Run Command commands.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p>The IAM role that Systems Manager uses to send notifications. </p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for Run Command commands.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
-     * <p>The IAM role that Systems Manager uses to send notifications. </p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for Run Command commands.</p>
      */
     inline SendCommandRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The IAM role that Systems Manager uses to send notifications. </p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for Run Command commands.</p>
      */
     inline SendCommandRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role that Systems Manager uses to send notifications. </p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for Run Command commands.</p>
      */
     inline SendCommandRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 

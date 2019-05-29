@@ -1165,22 +1165,22 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the DB cluster is encrypted.</p>
+     * <p>A value that indicates whether the DB cluster is encrypted.</p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
 
     /**
-     * <p>Specifies whether the DB cluster is encrypted.</p>
+     * <p>A value that indicates whether the DB cluster is encrypted.</p>
      */
     inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
 
     /**
-     * <p>Specifies whether the DB cluster is encrypted.</p>
+     * <p>A value that indicates whether the DB cluster is encrypted.</p>
      */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
-     * <p>Specifies whether the DB cluster is encrypted.</p>
+     * <p>A value that indicates whether the DB cluster is encrypted.</p>
      */
     inline CreateDBClusterRequest& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
 
@@ -1195,7 +1195,7 @@ namespace Model
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
-     * <code>StorageEncrypted</code> parameter is true and
+     * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
@@ -1216,7 +1216,7 @@ namespace Model
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
-     * <code>StorageEncrypted</code> parameter is true and
+     * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
@@ -1237,7 +1237,7 @@ namespace Model
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
-     * <code>StorageEncrypted</code> parameter is true and
+     * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
@@ -1258,7 +1258,7 @@ namespace Model
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
-     * <code>StorageEncrypted</code> parameter is true and
+     * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
@@ -1279,7 +1279,7 @@ namespace Model
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
-     * <code>StorageEncrypted</code> parameter is true and
+     * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
@@ -1300,7 +1300,7 @@ namespace Model
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
-     * <code>StorageEncrypted</code> parameter is true and
+     * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
@@ -1321,7 +1321,7 @@ namespace Model
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
-     * <code>StorageEncrypted</code> parameter is true and
+     * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
@@ -1342,7 +1342,7 @@ namespace Model
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
-     * <code>StorageEncrypted</code> parameter is true and
+     * <code>StorageEncrypted</code> parameter is enabled and
      * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
@@ -1604,30 +1604,30 @@ namespace Model
 
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline CreateDBClusterRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
@@ -1843,30 +1843,30 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>Indicates whether the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>Indicates whether the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>Indicates whether the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled.</p>
      */
     inline CreateDBClusterRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
@@ -1921,26 +1921,26 @@ namespace Model
 
 
     /**
-     * <p>True to copy all tags from the DB cluster to snapshots of the DB cluster, and
-     * otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the DB cluster to
+     * snapshots of the DB cluster. The default is not to copy them.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>True to copy all tags from the DB cluster to snapshots of the DB cluster, and
-     * otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the DB cluster to
+     * snapshots of the DB cluster. The default is not to copy them.</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
-     * <p>True to copy all tags from the DB cluster to snapshots of the DB cluster, and
-     * otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the DB cluster to
+     * snapshots of the DB cluster. The default is not to copy them.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>True to copy all tags from the DB cluster to snapshots of the DB cluster, and
-     * otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the DB cluster to
+     * snapshots of the DB cluster. The default is not to copy them.</p>
      */
     inline CreateDBClusterRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 

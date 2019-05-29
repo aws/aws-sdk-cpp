@@ -39,7 +39,7 @@ namespace Model
    * to contain logs, instead use the <code>OutputS3BucketName</code> and
    * <code>OutputS3KeyPrefix</code> options in the
    * <code>TaskInvocationParameters</code> structure. For information about how
-   * Systems Manager handles these options for the supported Maintenance Window task
+   * Systems Manager handles these options for the supported maintenance window task
    * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
    * </note><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LoggingInfo">AWS API

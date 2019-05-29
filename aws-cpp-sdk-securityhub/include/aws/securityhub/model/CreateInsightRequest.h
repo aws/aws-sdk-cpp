@@ -44,92 +44,84 @@ namespace Model
 
 
     /**
-     * <p>The user-defined name that identifies the insight that you want to
-     * create.</p>
+     * <p>The user-defined name that identifies the insight to create.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The user-defined name that identifies the insight that you want to
-     * create.</p>
+     * <p>The user-defined name that identifies the insight to create.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The user-defined name that identifies the insight that you want to
-     * create.</p>
+     * <p>The user-defined name that identifies the insight to create.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The user-defined name that identifies the insight that you want to
-     * create.</p>
+     * <p>The user-defined name that identifies the insight to create.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The user-defined name that identifies the insight that you want to
-     * create.</p>
+     * <p>The user-defined name that identifies the insight to create.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The user-defined name that identifies the insight that you want to
-     * create.</p>
+     * <p>The user-defined name that identifies the insight to create.</p>
      */
     inline CreateInsightRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The user-defined name that identifies the insight that you want to
-     * create.</p>
+     * <p>The user-defined name that identifies the insight to create.</p>
      */
     inline CreateInsightRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The user-defined name that identifies the insight that you want to
-     * create.</p>
+     * <p>The user-defined name that identifies the insight to create.</p>
      */
     inline CreateInsightRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>A collection of attributes that are applied to all active Security
-     * Hub-aggregated findings and that result in a subset of findings that are
+     * <p>A collection of attributes that are applied to all of the active findings
+     * aggregated by Security Hub, and that result in a subset of findings that are
      * included in this insight.</p>
      */
     inline const AwsSecurityFindingFilters& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>A collection of attributes that are applied to all active Security
-     * Hub-aggregated findings and that result in a subset of findings that are
+     * <p>A collection of attributes that are applied to all of the active findings
+     * aggregated by Security Hub, and that result in a subset of findings that are
      * included in this insight.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>A collection of attributes that are applied to all active Security
-     * Hub-aggregated findings and that result in a subset of findings that are
+     * <p>A collection of attributes that are applied to all of the active findings
+     * aggregated by Security Hub, and that result in a subset of findings that are
      * included in this insight.</p>
      */
     inline void SetFilters(const AwsSecurityFindingFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>A collection of attributes that are applied to all active Security
-     * Hub-aggregated findings and that result in a subset of findings that are
+     * <p>A collection of attributes that are applied to all of the active findings
+     * aggregated by Security Hub, and that result in a subset of findings that are
      * included in this insight.</p>
      */
     inline void SetFilters(AwsSecurityFindingFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>A collection of attributes that are applied to all active Security
-     * Hub-aggregated findings and that result in a subset of findings that are
+     * <p>A collection of attributes that are applied to all of the active findings
+     * aggregated by Security Hub, and that result in a subset of findings that are
      * included in this insight.</p>
      */
     inline CreateInsightRequest& WithFilters(const AwsSecurityFindingFilters& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>A collection of attributes that are applied to all active Security
-     * Hub-aggregated findings and that result in a subset of findings that are
+     * <p>A collection of attributes that are applied to all of the active findings
+     * aggregated by Security Hub, and that result in a subset of findings that are
      * included in this insight.</p>
      */
     inline CreateInsightRequest& WithFilters(AwsSecurityFindingFilters&& value) { SetFilters(std::move(value)); return *this;}
@@ -138,56 +130,56 @@ namespace Model
     /**
      * <p>The attribute by which the insight's findings are grouped. This attribute is
      * used as a findings aggregator for the purposes of viewing and managing multiple
-     * related findings under a single operand. </p>
+     * related findings under a single operand.</p>
      */
     inline const Aws::String& GetGroupByAttribute() const{ return m_groupByAttribute; }
 
     /**
      * <p>The attribute by which the insight's findings are grouped. This attribute is
      * used as a findings aggregator for the purposes of viewing and managing multiple
-     * related findings under a single operand. </p>
+     * related findings under a single operand.</p>
      */
     inline bool GroupByAttributeHasBeenSet() const { return m_groupByAttributeHasBeenSet; }
 
     /**
      * <p>The attribute by which the insight's findings are grouped. This attribute is
      * used as a findings aggregator for the purposes of viewing and managing multiple
-     * related findings under a single operand. </p>
+     * related findings under a single operand.</p>
      */
     inline void SetGroupByAttribute(const Aws::String& value) { m_groupByAttributeHasBeenSet = true; m_groupByAttribute = value; }
 
     /**
      * <p>The attribute by which the insight's findings are grouped. This attribute is
      * used as a findings aggregator for the purposes of viewing and managing multiple
-     * related findings under a single operand. </p>
+     * related findings under a single operand.</p>
      */
     inline void SetGroupByAttribute(Aws::String&& value) { m_groupByAttributeHasBeenSet = true; m_groupByAttribute = std::move(value); }
 
     /**
      * <p>The attribute by which the insight's findings are grouped. This attribute is
      * used as a findings aggregator for the purposes of viewing and managing multiple
-     * related findings under a single operand. </p>
+     * related findings under a single operand.</p>
      */
     inline void SetGroupByAttribute(const char* value) { m_groupByAttributeHasBeenSet = true; m_groupByAttribute.assign(value); }
 
     /**
      * <p>The attribute by which the insight's findings are grouped. This attribute is
      * used as a findings aggregator for the purposes of viewing and managing multiple
-     * related findings under a single operand. </p>
+     * related findings under a single operand.</p>
      */
     inline CreateInsightRequest& WithGroupByAttribute(const Aws::String& value) { SetGroupByAttribute(value); return *this;}
 
     /**
      * <p>The attribute by which the insight's findings are grouped. This attribute is
      * used as a findings aggregator for the purposes of viewing and managing multiple
-     * related findings under a single operand. </p>
+     * related findings under a single operand.</p>
      */
     inline CreateInsightRequest& WithGroupByAttribute(Aws::String&& value) { SetGroupByAttribute(std::move(value)); return *this;}
 
     /**
      * <p>The attribute by which the insight's findings are grouped. This attribute is
      * used as a findings aggregator for the purposes of viewing and managing multiple
-     * related findings under a single operand. </p>
+     * related findings under a single operand.</p>
      */
     inline CreateInsightRequest& WithGroupByAttribute(const char* value) { SetGroupByAttribute(value); return *this;}
 

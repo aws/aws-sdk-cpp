@@ -440,26 +440,26 @@ namespace Model
 
 
     /**
-     * <p>True to copy all tags from the source DB snapshot to the target DB snapshot,
-     * and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the source DB snapshot
+     * to the target DB snapshot. By default, tags are not copied.</p>
      */
     inline bool GetCopyTags() const{ return m_copyTags; }
 
     /**
-     * <p>True to copy all tags from the source DB snapshot to the target DB snapshot,
-     * and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the source DB snapshot
+     * to the target DB snapshot. By default, tags are not copied.</p>
      */
     inline bool CopyTagsHasBeenSet() const { return m_copyTagsHasBeenSet; }
 
     /**
-     * <p>True to copy all tags from the source DB snapshot to the target DB snapshot,
-     * and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the source DB snapshot
+     * to the target DB snapshot. By default, tags are not copied.</p>
      */
     inline void SetCopyTags(bool value) { m_copyTagsHasBeenSet = true; m_copyTags = value; }
 
     /**
-     * <p>True to copy all tags from the source DB snapshot to the target DB snapshot,
-     * and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the source DB snapshot
+     * to the target DB snapshot. By default, tags are not copied.</p>
      */
     inline CopyDBSnapshotRequest& WithCopyTags(bool value) { SetCopyTags(value); return *this;}
 

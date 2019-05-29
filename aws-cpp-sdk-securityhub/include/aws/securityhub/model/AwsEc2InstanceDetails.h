@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>The details of an AWS EC2 instance.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of an Amazon EC2 instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2InstanceDetails">AWS
    * API Reference</a></p>
    */
@@ -305,83 +305,83 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the VPC in which the instance was launched.</p>
+     * <p>The identifier of the VPC that the instance was launched in.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>The identifier of the VPC in which the instance was launched.</p>
+     * <p>The identifier of the VPC that the instance was launched in.</p>
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the VPC in which the instance was launched.</p>
+     * <p>The identifier of the VPC that the instance was launched in.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>The identifier of the VPC in which the instance was launched.</p>
+     * <p>The identifier of the VPC that the instance was launched in.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>The identifier of the VPC in which the instance was launched.</p>
+     * <p>The identifier of the VPC that the instance was launched in.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>The identifier of the VPC in which the instance was launched.</p>
+     * <p>The identifier of the VPC that the instance was launched in.</p>
      */
     inline AwsEc2InstanceDetails& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The identifier of the VPC in which the instance was launched.</p>
+     * <p>The identifier of the VPC that the instance was launched in.</p>
      */
     inline AwsEc2InstanceDetails& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the VPC in which the instance was launched.</p>
+     * <p>The identifier of the VPC that the instance was launched in.</p>
      */
     inline AwsEc2InstanceDetails& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
 
     /**
-     * <p>The identifier of the subnet in which the instance was launched.</p>
+     * <p>The identifier of the subnet that the instance was launched in.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>The identifier of the subnet in which the instance was launched.</p>
+     * <p>The identifier of the subnet that the instance was launched in.</p>
      */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the subnet in which the instance was launched.</p>
+     * <p>The identifier of the subnet that the instance was launched in.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>The identifier of the subnet in which the instance was launched.</p>
+     * <p>The identifier of the subnet that the instance was launched in.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
-     * <p>The identifier of the subnet in which the instance was launched.</p>
+     * <p>The identifier of the subnet that the instance was launched in.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>The identifier of the subnet in which the instance was launched.</p>
+     * <p>The identifier of the subnet that the instance was launched in.</p>
      */
     inline AwsEc2InstanceDetails& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The identifier of the subnet in which the instance was launched.</p>
+     * <p>The identifier of the subnet that the instance was launched in.</p>
      */
     inline AwsEc2InstanceDetails& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the subnet in which the instance was launched.</p>
+     * <p>The identifier of the subnet that the instance was launched in.</p>
      */
     inline AwsEc2InstanceDetails& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 

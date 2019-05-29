@@ -92,26 +92,26 @@ namespace Model
 
 
     /**
-     * <p>Value that is <code>true</code> if the cluster member is the primary instance
-     * for the DB cluster and <code>false</code> otherwise.</p>
+     * <p>A value that indicates whehter the cluster member is the primary instance for
+     * the DB cluster.</p>
      */
     inline bool GetIsClusterWriter() const{ return m_isClusterWriter; }
 
     /**
-     * <p>Value that is <code>true</code> if the cluster member is the primary instance
-     * for the DB cluster and <code>false</code> otherwise.</p>
+     * <p>A value that indicates whehter the cluster member is the primary instance for
+     * the DB cluster.</p>
      */
     inline bool IsClusterWriterHasBeenSet() const { return m_isClusterWriterHasBeenSet; }
 
     /**
-     * <p>Value that is <code>true</code> if the cluster member is the primary instance
-     * for the DB cluster and <code>false</code> otherwise.</p>
+     * <p>A value that indicates whehter the cluster member is the primary instance for
+     * the DB cluster.</p>
      */
     inline void SetIsClusterWriter(bool value) { m_isClusterWriterHasBeenSet = true; m_isClusterWriter = value; }
 
     /**
-     * <p>Value that is <code>true</code> if the cluster member is the primary instance
-     * for the DB cluster and <code>false</code> otherwise.</p>
+     * <p>A value that indicates whehter the cluster member is the primary instance for
+     * the DB cluster.</p>
      */
     inline DBClusterMember& WithIsClusterWriter(bool value) { SetIsClusterWriter(value); return *this;}
 

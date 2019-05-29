@@ -49,48 +49,48 @@ namespace Model
     /**
      * <p>The type of resource of which you want to remove a tag.</p> <note> <p>The
      * ManagedInstance type for this API action is only for on-premises managed
-     * instances. You must specify the the name of the managed instance in the
-     * following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
+     * instances. You must specify the name of the managed instance in the following
+     * format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
      */
     inline const ResourceTypeForTagging& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>The type of resource of which you want to remove a tag.</p> <note> <p>The
      * ManagedInstance type for this API action is only for on-premises managed
-     * instances. You must specify the the name of the managed instance in the
-     * following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
+     * instances. You must specify the name of the managed instance in the following
+     * format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The type of resource of which you want to remove a tag.</p> <note> <p>The
      * ManagedInstance type for this API action is only for on-premises managed
-     * instances. You must specify the the name of the managed instance in the
-     * following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
+     * instances. You must specify the name of the managed instance in the following
+     * format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
      */
     inline void SetResourceType(const ResourceTypeForTagging& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>The type of resource of which you want to remove a tag.</p> <note> <p>The
      * ManagedInstance type for this API action is only for on-premises managed
-     * instances. You must specify the the name of the managed instance in the
-     * following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
+     * instances. You must specify the name of the managed instance in the following
+     * format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
      */
     inline void SetResourceType(ResourceTypeForTagging&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of resource of which you want to remove a tag.</p> <note> <p>The
      * ManagedInstance type for this API action is only for on-premises managed
-     * instances. You must specify the the name of the managed instance in the
-     * following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
+     * instances. You must specify the name of the managed instance in the following
+     * format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
      */
     inline RemoveTagsFromResourceRequest& WithResourceType(const ResourceTypeForTagging& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>The type of resource of which you want to remove a tag.</p> <note> <p>The
      * ManagedInstance type for this API action is only for on-premises managed
-     * instances. You must specify the the name of the managed instance in the
-     * following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
+     * instances. You must specify the name of the managed instance in the following
+     * format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
      */
     inline RemoveTagsFromResourceRequest& WithResourceType(ResourceTypeForTagging&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -101,7 +101,7 @@ namespace Model
      * <p>MaintenanceWindow: mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p>
      * <p>For the Document and Parameter values, use the name of the resource.</p>
      * <note> <p>The ManagedInstance type for this API action is only for on-premises
-     * managed instances. You must specify the the name of the managed instance in the
+     * managed instances. You must specify the name of the managed instance in the
      * following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
@@ -112,7 +112,7 @@ namespace Model
      * <p>MaintenanceWindow: mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p>
      * <p>For the Document and Parameter values, use the name of the resource.</p>
      * <note> <p>The ManagedInstance type for this API action is only for on-premises
-     * managed instances. You must specify the the name of the managed instance in the
+     * managed instances. You must specify the name of the managed instance in the
      * following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
@@ -123,7 +123,7 @@ namespace Model
      * <p>MaintenanceWindow: mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p>
      * <p>For the Document and Parameter values, use the name of the resource.</p>
      * <note> <p>The ManagedInstance type for this API action is only for on-premises
-     * managed instances. You must specify the the name of the managed instance in the
+     * managed instances. You must specify the name of the managed instance in the
      * following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
@@ -134,7 +134,7 @@ namespace Model
      * <p>MaintenanceWindow: mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p>
      * <p>For the Document and Parameter values, use the name of the resource.</p>
      * <note> <p>The ManagedInstance type for this API action is only for on-premises
-     * managed instances. You must specify the the name of the managed instance in the
+     * managed instances. You must specify the name of the managed instance in the
      * following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
@@ -145,7 +145,7 @@ namespace Model
      * <p>MaintenanceWindow: mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p>
      * <p>For the Document and Parameter values, use the name of the resource.</p>
      * <note> <p>The ManagedInstance type for this API action is only for on-premises
-     * managed instances. You must specify the the name of the managed instance in the
+     * managed instances. You must specify the name of the managed instance in the
      * following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
@@ -156,7 +156,7 @@ namespace Model
      * <p>MaintenanceWindow: mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p>
      * <p>For the Document and Parameter values, use the name of the resource.</p>
      * <note> <p>The ManagedInstance type for this API action is only for on-premises
-     * managed instances. You must specify the the name of the managed instance in the
+     * managed instances. You must specify the name of the managed instance in the
      * following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
      */
     inline RemoveTagsFromResourceRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
@@ -167,7 +167,7 @@ namespace Model
      * <p>MaintenanceWindow: mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p>
      * <p>For the Document and Parameter values, use the name of the resource.</p>
      * <note> <p>The ManagedInstance type for this API action is only for on-premises
-     * managed instances. You must specify the the name of the managed instance in the
+     * managed instances. You must specify the name of the managed instance in the
      * following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
      */
     inline RemoveTagsFromResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
@@ -178,7 +178,7 @@ namespace Model
      * <p>MaintenanceWindow: mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p>
      * <p>For the Document and Parameter values, use the name of the resource.</p>
      * <note> <p>The ManagedInstance type for this API action is only for on-premises
-     * managed instances. You must specify the the name of the managed instance in the
+     * managed instances. You must specify the name of the managed instance in the
      * following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
      */
     inline RemoveTagsFromResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}

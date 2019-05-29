@@ -49,87 +49,95 @@ namespace Model
 
 
     /**
-     * <p>Paginates results. Set the value of this parameter to NULL on your first call
-     * to the ListEnabledProductsForImport operation. For subsequent calls to the
-     * operation, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
+     * <p>Paginates results. On your first call to the
+     * <code>ListEnabledProductsForImport</code> operation, set the value of this
+     * parameter to <code>NULL</code>. For subsequent calls to the operation, fill
+     * <code>nextToken</code> in the request with the value of <code>NextToken</code>
+     * from the previous response to continue listing data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Paginates results. Set the value of this parameter to NULL on your first call
-     * to the ListEnabledProductsForImport operation. For subsequent calls to the
-     * operation, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
+     * <p>Paginates results. On your first call to the
+     * <code>ListEnabledProductsForImport</code> operation, set the value of this
+     * parameter to <code>NULL</code>. For subsequent calls to the operation, fill
+     * <code>nextToken</code> in the request with the value of <code>NextToken</code>
+     * from the previous response to continue listing data.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Paginates results. Set the value of this parameter to NULL on your first call
-     * to the ListEnabledProductsForImport operation. For subsequent calls to the
-     * operation, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
+     * <p>Paginates results. On your first call to the
+     * <code>ListEnabledProductsForImport</code> operation, set the value of this
+     * parameter to <code>NULL</code>. For subsequent calls to the operation, fill
+     * <code>nextToken</code> in the request with the value of <code>NextToken</code>
+     * from the previous response to continue listing data.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Paginates results. Set the value of this parameter to NULL on your first call
-     * to the ListEnabledProductsForImport operation. For subsequent calls to the
-     * operation, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
+     * <p>Paginates results. On your first call to the
+     * <code>ListEnabledProductsForImport</code> operation, set the value of this
+     * parameter to <code>NULL</code>. For subsequent calls to the operation, fill
+     * <code>nextToken</code> in the request with the value of <code>NextToken</code>
+     * from the previous response to continue listing data.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Paginates results. Set the value of this parameter to NULL on your first call
-     * to the ListEnabledProductsForImport operation. For subsequent calls to the
-     * operation, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
+     * <p>Paginates results. On your first call to the
+     * <code>ListEnabledProductsForImport</code> operation, set the value of this
+     * parameter to <code>NULL</code>. For subsequent calls to the operation, fill
+     * <code>nextToken</code> in the request with the value of <code>NextToken</code>
+     * from the previous response to continue listing data.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Paginates results. Set the value of this parameter to NULL on your first call
-     * to the ListEnabledProductsForImport operation. For subsequent calls to the
-     * operation, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
+     * <p>Paginates results. On your first call to the
+     * <code>ListEnabledProductsForImport</code> operation, set the value of this
+     * parameter to <code>NULL</code>. For subsequent calls to the operation, fill
+     * <code>nextToken</code> in the request with the value of <code>NextToken</code>
+     * from the previous response to continue listing data.</p>
      */
     inline ListEnabledProductsForImportRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Paginates results. Set the value of this parameter to NULL on your first call
-     * to the ListEnabledProductsForImport operation. For subsequent calls to the
-     * operation, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
+     * <p>Paginates results. On your first call to the
+     * <code>ListEnabledProductsForImport</code> operation, set the value of this
+     * parameter to <code>NULL</code>. For subsequent calls to the operation, fill
+     * <code>nextToken</code> in the request with the value of <code>NextToken</code>
+     * from the previous response to continue listing data.</p>
      */
     inline ListEnabledProductsForImportRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Paginates results. Set the value of this parameter to NULL on your first call
-     * to the ListEnabledProductsForImport operation. For subsequent calls to the
-     * operation, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
+     * <p>Paginates results. On your first call to the
+     * <code>ListEnabledProductsForImport</code> operation, set the value of this
+     * parameter to <code>NULL</code>. For subsequent calls to the operation, fill
+     * <code>nextToken</code> in the request with the value of <code>NextToken</code>
+     * from the previous response to continue listing data.</p>
      */
     inline ListEnabledProductsForImportRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>Indicates the maximum number of items that you want in the response.</p>
+     * <p>The maximum number of items that you want in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Indicates the maximum number of items that you want in the response.</p>
+     * <p>The maximum number of items that you want in the response.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Indicates the maximum number of items that you want in the response.</p>
+     * <p>The maximum number of items that you want in the response.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Indicates the maximum number of items that you want in the response.</p>
+     * <p>The maximum number of items that you want in the response.</p>
      */
     inline ListEnabledProductsForImportRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

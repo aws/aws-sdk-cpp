@@ -239,7 +239,7 @@ namespace Model
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary">Understanding
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
      * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
@@ -248,7 +248,7 @@ namespace Model
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary">Understanding
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
      * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
@@ -257,7 +257,7 @@ namespace Model
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary">Understanding
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
      * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
@@ -266,7 +266,7 @@ namespace Model
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary">Understanding
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
      * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
@@ -275,7 +275,7 @@ namespace Model
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary">Understanding
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
      * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
@@ -284,7 +284,7 @@ namespace Model
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary">Understanding
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
      * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */

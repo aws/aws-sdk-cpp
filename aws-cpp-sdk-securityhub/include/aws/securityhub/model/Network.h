@@ -50,32 +50,32 @@ namespace Model
 
 
     /**
-     * <p>Indicates the direction of network traffic associated with a finding.</p>
+     * <p>The direction of network traffic associated with a finding.</p>
      */
     inline const NetworkDirection& GetDirection() const{ return m_direction; }
 
     /**
-     * <p>Indicates the direction of network traffic associated with a finding.</p>
+     * <p>The direction of network traffic associated with a finding.</p>
      */
     inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
 
     /**
-     * <p>Indicates the direction of network traffic associated with a finding.</p>
+     * <p>The direction of network traffic associated with a finding.</p>
      */
     inline void SetDirection(const NetworkDirection& value) { m_directionHasBeenSet = true; m_direction = value; }
 
     /**
-     * <p>Indicates the direction of network traffic associated with a finding.</p>
+     * <p>The direction of network traffic associated with a finding.</p>
      */
     inline void SetDirection(NetworkDirection&& value) { m_directionHasBeenSet = true; m_direction = std::move(value); }
 
     /**
-     * <p>Indicates the direction of network traffic associated with a finding.</p>
+     * <p>The direction of network traffic associated with a finding.</p>
      */
     inline Network& WithDirection(const NetworkDirection& value) { SetDirection(value); return *this;}
 
     /**
-     * <p>Indicates the direction of network traffic associated with a finding.</p>
+     * <p>The direction of network traffic associated with a finding.</p>
      */
     inline Network& WithDirection(NetworkDirection&& value) { SetDirection(std::move(value)); return *this;}
 

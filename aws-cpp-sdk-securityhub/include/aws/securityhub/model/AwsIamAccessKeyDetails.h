@@ -35,8 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>AWS IAM access key details related to a finding.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>IAM access key details related to a finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsIamAccessKeyDetails">AWS
    * API Reference</a></p>
    */

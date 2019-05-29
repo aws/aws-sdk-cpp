@@ -655,8 +655,8 @@ namespace Model
    * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">AWS Systems
    * Manager User Guide</a>.</p> <p>To get started, verify prerequisites and
    * configure managed instances. For more information, see <a
-   * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Systems
-   * Manager Prerequisites</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+   * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting
+   * Up AWS Systems Manager</a> in the <i>AWS Systems Manager User Guide</i>.</p>
    * <p>For information about other API actions you can perform on Amazon EC2
    * instances, see the <a
    * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API
@@ -695,8 +695,8 @@ namespace Model
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. Tags are
-         * metadata that you can assign to your documents, managed instances, Maintenance
-         * Windows, Parameter Store parameters, and patch baselines. Tags enable you to
+         * metadata that you can assign to your documents, managed instances, maintenance
+         * windows, Parameter Store parameters, and patch baselines. Tags enable you to
          * categorize your resources in different ways, for example, by purpose, owner, or
          * environment. Each tag consists of a key and an optional value, both of which you
          * define. For example, you could define a set of tags for your account's managed
@@ -719,8 +719,8 @@ namespace Model
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. Tags are
-         * metadata that you can assign to your documents, managed instances, Maintenance
-         * Windows, Parameter Store parameters, and patch baselines. Tags enable you to
+         * metadata that you can assign to your documents, managed instances, maintenance
+         * windows, Parameter Store parameters, and patch baselines. Tags enable you to
          * categorize your resources in different ways, for example, by purpose, owner, or
          * environment. Each tag consists of a key and an optional value, both of which you
          * define. For example, you could define a set of tags for your account's managed
@@ -745,8 +745,8 @@ namespace Model
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. Tags are
-         * metadata that you can assign to your documents, managed instances, Maintenance
-         * Windows, Parameter Store parameters, and patch baselines. Tags enable you to
+         * metadata that you can assign to your documents, managed instances, maintenance
+         * windows, Parameter Store parameters, and patch baselines. Tags enable you to
          * categorize your resources in different ways, for example, by purpose, owner, or
          * environment. Each tag consists of a key and an optional value, both of which you
          * define. For example, you could define a set of tags for your account's managed
@@ -801,7 +801,7 @@ namespace Model
         virtual void CancelCommandAsync(const Model::CancelCommandRequest& request, const CancelCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops a Maintenance Window execution that is already in progress and cancels
+         * <p>Stops a maintenance window execution that is already in progress and cancels
          * any tasks in the window that have not already starting running. (Tasks already
          * in progress will continue to completion.)</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution">AWS
@@ -810,7 +810,7 @@ namespace Model
         virtual Model::CancelMaintenanceWindowExecutionOutcome CancelMaintenanceWindowExecution(const Model::CancelMaintenanceWindowExecutionRequest& request) const;
 
         /**
-         * <p>Stops a Maintenance Window execution that is already in progress and cancels
+         * <p>Stops a maintenance window execution that is already in progress and cancels
          * any tasks in the window that have not already starting running. (Tasks already
          * in progress will continue to completion.)</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution">AWS
@@ -821,7 +821,7 @@ namespace Model
         virtual Model::CancelMaintenanceWindowExecutionOutcomeCallable CancelMaintenanceWindowExecutionCallable(const Model::CancelMaintenanceWindowExecutionRequest& request) const;
 
         /**
-         * <p>Stops a Maintenance Window execution that is already in progress and cancels
+         * <p>Stops a maintenance window execution that is already in progress and cancels
          * any tasks in the window that have not already starting running. (Tasks already
          * in progress will continue to completion.)</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution">AWS
@@ -837,7 +837,8 @@ namespace Model
          * virtual machine that has been registered with EC2 is called a managed instance.
          * For more information about activations, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-         * Up Systems Manager in Hybrid Environments</a>.</p><p><h3>See Also:</h3>   <a
+         * Up AWS Systems Manager for Hybrid Environments</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          */
@@ -849,7 +850,8 @@ namespace Model
          * virtual machine that has been registered with EC2 is called a managed instance.
          * For more information about activations, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-         * Up Systems Manager in Hybrid Environments</a>.</p><p><h3>See Also:</h3>   <a
+         * Up AWS Systems Manager for Hybrid Environments</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          *
@@ -863,7 +865,8 @@ namespace Model
          * virtual machine that has been registered with EC2 is called a managed instance.
          * For more information about activations, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-         * Up Systems Manager in Hybrid Environments</a>.</p><p><h3>See Also:</h3>   <a
+         * Up AWS Systems Manager for Hybrid Environments</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          *
@@ -989,14 +992,14 @@ namespace Model
         virtual void CreateDocumentAsync(const Model::CreateDocumentRequest& request, const CreateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateMaintenanceWindowOutcome CreateMaintenanceWindow(const Model::CreateMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Creates a new Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -1005,7 +1008,7 @@ namespace Model
         virtual Model::CreateMaintenanceWindowOutcomeCallable CreateMaintenanceWindowCallable(const Model::CreateMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Creates a new Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -1245,14 +1248,14 @@ namespace Model
         virtual void DeleteInventoryAsync(const Model::DeleteInventoryRequest& request, const DeleteInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteMaintenanceWindowOutcome DeleteMaintenanceWindow(const Model::DeleteMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Deletes a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -1261,7 +1264,7 @@ namespace Model
         virtual Model::DeleteMaintenanceWindowOutcomeCallable DeleteMaintenanceWindowCallable(const Model::DeleteMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Deletes a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -1441,14 +1444,14 @@ namespace Model
         virtual void DeregisterPatchBaselineForPatchGroupAsync(const Model::DeregisterPatchBaselineForPatchGroupRequest& request, const DeregisterPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a target from a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a target from a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow">AWS
          * API Reference</a></p>
          */
         virtual Model::DeregisterTargetFromMaintenanceWindowOutcome DeregisterTargetFromMaintenanceWindow(const Model::DeregisterTargetFromMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Removes a target from a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a target from a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -1457,7 +1460,7 @@ namespace Model
         virtual Model::DeregisterTargetFromMaintenanceWindowOutcomeCallable DeregisterTargetFromMaintenanceWindowCallable(const Model::DeregisterTargetFromMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Removes a target from a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a target from a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -1466,14 +1469,14 @@ namespace Model
         virtual void DeregisterTargetFromMaintenanceWindowAsync(const Model::DeregisterTargetFromMaintenanceWindowRequest& request, const DeregisterTargetFromMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a task from a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a task from a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow">AWS
          * API Reference</a></p>
          */
         virtual Model::DeregisterTaskFromMaintenanceWindowOutcome DeregisterTaskFromMaintenanceWindow(const Model::DeregisterTaskFromMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Removes a task from a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a task from a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -1482,7 +1485,7 @@ namespace Model
         virtual Model::DeregisterTaskFromMaintenanceWindowOutcomeCallable DeregisterTaskFromMaintenanceWindowCallable(const Model::DeregisterTaskFromMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Removes a task from a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a task from a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -2019,7 +2022,7 @@ namespace Model
 
         /**
          * <p>Retrieves the individual task executions (one per target) for a particular
-         * task run as part of a Maintenance Window execution.</p><p><h3>See Also:</h3>  
+         * task run as part of a maintenance window execution.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">AWS
          * API Reference</a></p>
@@ -2028,7 +2031,7 @@ namespace Model
 
         /**
          * <p>Retrieves the individual task executions (one per target) for a particular
-         * task run as part of a Maintenance Window execution.</p><p><h3>See Also:</h3>  
+         * task run as part of a maintenance window execution.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">AWS
          * API Reference</a></p>
@@ -2039,7 +2042,7 @@ namespace Model
 
         /**
          * <p>Retrieves the individual task executions (one per target) for a particular
-         * task run as part of a Maintenance Window execution.</p><p><h3>See Also:</h3>  
+         * task run as part of a maintenance window execution.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">AWS
          * API Reference</a></p>
@@ -2049,7 +2052,7 @@ namespace Model
         virtual void DescribeMaintenanceWindowExecutionTaskInvocationsAsync(const Model::DescribeMaintenanceWindowExecutionTaskInvocationsRequest& request, const DescribeMaintenanceWindowExecutionTaskInvocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>For a given Maintenance Window execution, lists the tasks that were
+         * <p>For a given maintenance window execution, lists the tasks that were
          * run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">AWS
          * API Reference</a></p>
@@ -2057,7 +2060,7 @@ namespace Model
         virtual Model::DescribeMaintenanceWindowExecutionTasksOutcome DescribeMaintenanceWindowExecutionTasks(const Model::DescribeMaintenanceWindowExecutionTasksRequest& request) const;
 
         /**
-         * <p>For a given Maintenance Window execution, lists the tasks that were
+         * <p>For a given maintenance window execution, lists the tasks that were
          * run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">AWS
          * API Reference</a></p>
@@ -2067,7 +2070,7 @@ namespace Model
         virtual Model::DescribeMaintenanceWindowExecutionTasksOutcomeCallable DescribeMaintenanceWindowExecutionTasksCallable(const Model::DescribeMaintenanceWindowExecutionTasksRequest& request) const;
 
         /**
-         * <p>For a given Maintenance Window execution, lists the tasks that were
+         * <p>For a given maintenance window execution, lists the tasks that were
          * run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">AWS
          * API Reference</a></p>
@@ -2077,9 +2080,9 @@ namespace Model
         virtual void DescribeMaintenanceWindowExecutionTasksAsync(const Model::DescribeMaintenanceWindowExecutionTasksRequest& request, const DescribeMaintenanceWindowExecutionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the executions of a Maintenance Window. This includes information about
-         * when the Maintenance Window was scheduled to be active, and information about
-         * tasks registered and run with the Maintenance Window.</p><p><h3>See Also:</h3>  
+         * <p>Lists the executions of a maintenance window. This includes information about
+         * when the maintenance window was scheduled to be active, and information about
+         * tasks registered and run with the maintenance window.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions">AWS
          * API Reference</a></p>
@@ -2087,9 +2090,9 @@ namespace Model
         virtual Model::DescribeMaintenanceWindowExecutionsOutcome DescribeMaintenanceWindowExecutions(const Model::DescribeMaintenanceWindowExecutionsRequest& request) const;
 
         /**
-         * <p>Lists the executions of a Maintenance Window. This includes information about
-         * when the Maintenance Window was scheduled to be active, and information about
-         * tasks registered and run with the Maintenance Window.</p><p><h3>See Also:</h3>  
+         * <p>Lists the executions of a maintenance window. This includes information about
+         * when the maintenance window was scheduled to be active, and information about
+         * tasks registered and run with the maintenance window.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions">AWS
          * API Reference</a></p>
@@ -2099,9 +2102,9 @@ namespace Model
         virtual Model::DescribeMaintenanceWindowExecutionsOutcomeCallable DescribeMaintenanceWindowExecutionsCallable(const Model::DescribeMaintenanceWindowExecutionsRequest& request) const;
 
         /**
-         * <p>Lists the executions of a Maintenance Window. This includes information about
-         * when the Maintenance Window was scheduled to be active, and information about
-         * tasks registered and run with the Maintenance Window.</p><p><h3>See Also:</h3>  
+         * <p>Lists the executions of a maintenance window. This includes information about
+         * when the maintenance window was scheduled to be active, and information about
+         * tasks registered and run with the maintenance window.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions">AWS
          * API Reference</a></p>
@@ -2111,16 +2114,16 @@ namespace Model
         virtual void DescribeMaintenanceWindowExecutionsAsync(const Model::DescribeMaintenanceWindowExecutionsRequest& request, const DescribeMaintenanceWindowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about upcoming executions of a Maintenance
-         * Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about upcoming executions of a maintenance
+         * window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowSchedule">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeMaintenanceWindowScheduleOutcome DescribeMaintenanceWindowSchedule(const Model::DescribeMaintenanceWindowScheduleRequest& request) const;
 
         /**
-         * <p>Retrieves information about upcoming executions of a Maintenance
-         * Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about upcoming executions of a maintenance
+         * window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowSchedule">AWS
          * API Reference</a></p>
          *
@@ -2129,8 +2132,8 @@ namespace Model
         virtual Model::DescribeMaintenanceWindowScheduleOutcomeCallable DescribeMaintenanceWindowScheduleCallable(const Model::DescribeMaintenanceWindowScheduleRequest& request) const;
 
         /**
-         * <p>Retrieves information about upcoming executions of a Maintenance
-         * Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about upcoming executions of a maintenance
+         * window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowSchedule">AWS
          * API Reference</a></p>
          *
@@ -2139,7 +2142,7 @@ namespace Model
         virtual void DescribeMaintenanceWindowScheduleAsync(const Model::DescribeMaintenanceWindowScheduleRequest& request, const DescribeMaintenanceWindowScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the targets registered with the Maintenance Window.</p><p><h3>See
+         * <p>Lists the targets registered with the maintenance window.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets">AWS
          * API Reference</a></p>
@@ -2147,7 +2150,7 @@ namespace Model
         virtual Model::DescribeMaintenanceWindowTargetsOutcome DescribeMaintenanceWindowTargets(const Model::DescribeMaintenanceWindowTargetsRequest& request) const;
 
         /**
-         * <p>Lists the targets registered with the Maintenance Window.</p><p><h3>See
+         * <p>Lists the targets registered with the maintenance window.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets">AWS
          * API Reference</a></p>
@@ -2157,7 +2160,7 @@ namespace Model
         virtual Model::DescribeMaintenanceWindowTargetsOutcomeCallable DescribeMaintenanceWindowTargetsCallable(const Model::DescribeMaintenanceWindowTargetsRequest& request) const;
 
         /**
-         * <p>Lists the targets registered with the Maintenance Window.</p><p><h3>See
+         * <p>Lists the targets registered with the maintenance window.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets">AWS
          * API Reference</a></p>
@@ -2167,14 +2170,14 @@ namespace Model
         virtual void DescribeMaintenanceWindowTargetsAsync(const Model::DescribeMaintenanceWindowTargetsRequest& request, const DescribeMaintenanceWindowTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tasks in a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tasks in a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeMaintenanceWindowTasksOutcome DescribeMaintenanceWindowTasks(const Model::DescribeMaintenanceWindowTasksRequest& request) const;
 
         /**
-         * <p>Lists the tasks in a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tasks in a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">AWS
          * API Reference</a></p>
          *
@@ -2183,7 +2186,7 @@ namespace Model
         virtual Model::DescribeMaintenanceWindowTasksOutcomeCallable DescribeMaintenanceWindowTasksCallable(const Model::DescribeMaintenanceWindowTasksRequest& request) const;
 
         /**
-         * <p>Lists the tasks in a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tasks in a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">AWS
          * API Reference</a></p>
          *
@@ -2192,7 +2195,7 @@ namespace Model
         virtual void DescribeMaintenanceWindowTasksAsync(const Model::DescribeMaintenanceWindowTasksRequest& request, const DescribeMaintenanceWindowTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the Maintenance Windows in an AWS account.</p><p><h3>See Also:</h3>
+         * <p>Retrieves the maintenance windows in an AWS account.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">AWS
          * API Reference</a></p>
@@ -2200,7 +2203,7 @@ namespace Model
         virtual Model::DescribeMaintenanceWindowsOutcome DescribeMaintenanceWindows(const Model::DescribeMaintenanceWindowsRequest& request) const;
 
         /**
-         * <p>Retrieves the Maintenance Windows in an AWS account.</p><p><h3>See Also:</h3>
+         * <p>Retrieves the maintenance windows in an AWS account.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">AWS
          * API Reference</a></p>
@@ -2210,7 +2213,7 @@ namespace Model
         virtual Model::DescribeMaintenanceWindowsOutcomeCallable DescribeMaintenanceWindowsCallable(const Model::DescribeMaintenanceWindowsRequest& request) const;
 
         /**
-         * <p>Retrieves the Maintenance Windows in an AWS account.</p><p><h3>See Also:</h3>
+         * <p>Retrieves the maintenance windows in an AWS account.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">AWS
          * API Reference</a></p>
@@ -2220,7 +2223,7 @@ namespace Model
         virtual void DescribeMaintenanceWindowsAsync(const Model::DescribeMaintenanceWindowsRequest& request, const DescribeMaintenanceWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about the Maintenance Windows targets or tasks that an
+         * <p>Retrieves information about the maintenance window targets or tasks that an
          * instance is associated with.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowsForTarget">AWS
          * API Reference</a></p>
@@ -2228,7 +2231,7 @@ namespace Model
         virtual Model::DescribeMaintenanceWindowsForTargetOutcome DescribeMaintenanceWindowsForTarget(const Model::DescribeMaintenanceWindowsForTargetRequest& request) const;
 
         /**
-         * <p>Retrieves information about the Maintenance Windows targets or tasks that an
+         * <p>Retrieves information about the maintenance window targets or tasks that an
          * instance is associated with.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowsForTarget">AWS
          * API Reference</a></p>
@@ -2238,7 +2241,7 @@ namespace Model
         virtual Model::DescribeMaintenanceWindowsForTargetOutcomeCallable DescribeMaintenanceWindowsForTargetCallable(const Model::DescribeMaintenanceWindowsForTargetRequest& request) const;
 
         /**
-         * <p>Retrieves information about the Maintenance Windows targets or tasks that an
+         * <p>Retrieves information about the maintenance window targets or tasks that an
          * instance is associated with.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowsForTarget">AWS
          * API Reference</a></p>
@@ -2712,14 +2715,14 @@ namespace Model
         virtual void GetInventorySchemaAsync(const Model::GetInventorySchemaRequest& request, const GetInventorySchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMaintenanceWindowOutcome GetMaintenanceWindow(const Model::GetMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Retrieves a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -2728,7 +2731,7 @@ namespace Model
         virtual Model::GetMaintenanceWindowOutcomeCallable GetMaintenanceWindowCallable(const Model::GetMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Retrieves a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -2737,7 +2740,7 @@ namespace Model
         virtual void GetMaintenanceWindowAsync(const Model::GetMaintenanceWindowRequest& request, const GetMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves details about a specific task run as part of a Maintenance Window
+         * <p>Retrieves details about a specific task run as part of a maintenance window
          * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">AWS
          * API Reference</a></p>
@@ -2745,7 +2748,7 @@ namespace Model
         virtual Model::GetMaintenanceWindowExecutionOutcome GetMaintenanceWindowExecution(const Model::GetMaintenanceWindowExecutionRequest& request) const;
 
         /**
-         * <p>Retrieves details about a specific task run as part of a Maintenance Window
+         * <p>Retrieves details about a specific task run as part of a maintenance window
          * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">AWS
          * API Reference</a></p>
@@ -2755,7 +2758,7 @@ namespace Model
         virtual Model::GetMaintenanceWindowExecutionOutcomeCallable GetMaintenanceWindowExecutionCallable(const Model::GetMaintenanceWindowExecutionRequest& request) const;
 
         /**
-         * <p>Retrieves details about a specific task run as part of a Maintenance Window
+         * <p>Retrieves details about a specific task run as part of a maintenance window
          * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">AWS
          * API Reference</a></p>
@@ -2765,16 +2768,16 @@ namespace Model
         virtual void GetMaintenanceWindowExecutionAsync(const Model::GetMaintenanceWindowExecutionRequest& request, const GetMaintenanceWindowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the details about a specific task run as part of a Maintenance
-         * Window execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the details about a specific task run as part of a maintenance
+         * window execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMaintenanceWindowExecutionTaskOutcome GetMaintenanceWindowExecutionTask(const Model::GetMaintenanceWindowExecutionTaskRequest& request) const;
 
         /**
-         * <p>Retrieves the details about a specific task run as part of a Maintenance
-         * Window execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the details about a specific task run as part of a maintenance
+         * window execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">AWS
          * API Reference</a></p>
          *
@@ -2783,8 +2786,8 @@ namespace Model
         virtual Model::GetMaintenanceWindowExecutionTaskOutcomeCallable GetMaintenanceWindowExecutionTaskCallable(const Model::GetMaintenanceWindowExecutionTaskRequest& request) const;
 
         /**
-         * <p>Retrieves the details about a specific task run as part of a Maintenance
-         * Window execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the details about a specific task run as part of a maintenance
+         * window execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">AWS
          * API Reference</a></p>
          *
@@ -2794,7 +2797,7 @@ namespace Model
 
         /**
          * <p>Retrieves a task invocation. A task invocation is a specific task running on
-         * a specific target. Maintenance Windows report status for all invocations.
+         * a specific target. maintenance windows report status for all invocations.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">AWS
          * API Reference</a></p>
@@ -2803,7 +2806,7 @@ namespace Model
 
         /**
          * <p>Retrieves a task invocation. A task invocation is a specific task running on
-         * a specific target. Maintenance Windows report status for all invocations.
+         * a specific target. maintenance windows report status for all invocations.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">AWS
          * API Reference</a></p>
@@ -2814,7 +2817,7 @@ namespace Model
 
         /**
          * <p>Retrieves a task invocation. A task invocation is a specific task running on
-         * a specific target. Maintenance Windows report status for all invocations.
+         * a specific target. maintenance windows report status for all invocations.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">AWS
          * API Reference</a></p>
@@ -2824,14 +2827,14 @@ namespace Model
         virtual void GetMaintenanceWindowExecutionTaskInvocationAsync(const Model::GetMaintenanceWindowExecutionTaskInvocationRequest& request, const GetMaintenanceWindowExecutionTaskInvocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tasks in a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tasks in a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMaintenanceWindowTaskOutcome GetMaintenanceWindowTask(const Model::GetMaintenanceWindowTaskRequest& request) const;
 
         /**
-         * <p>Lists the tasks in a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tasks in a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">AWS
          * API Reference</a></p>
          *
@@ -2840,7 +2843,7 @@ namespace Model
         virtual Model::GetMaintenanceWindowTaskOutcomeCallable GetMaintenanceWindowTaskCallable(const Model::GetMaintenanceWindowTaskRequest& request) const;
 
         /**
-         * <p>Lists the tasks in a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tasks in a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">AWS
          * API Reference</a></p>
          *
@@ -3814,14 +3817,14 @@ namespace Model
         virtual void RegisterPatchBaselineForPatchGroupAsync(const Model::RegisterPatchBaselineForPatchGroupRequest& request, const RegisterPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers a target with a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Registers a target with a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterTargetWithMaintenanceWindowOutcome RegisterTargetWithMaintenanceWindow(const Model::RegisterTargetWithMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Registers a target with a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Registers a target with a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -3830,7 +3833,7 @@ namespace Model
         virtual Model::RegisterTargetWithMaintenanceWindowOutcomeCallable RegisterTargetWithMaintenanceWindowCallable(const Model::RegisterTargetWithMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Registers a target with a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Registers a target with a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -3839,14 +3842,14 @@ namespace Model
         virtual void RegisterTargetWithMaintenanceWindowAsync(const Model::RegisterTargetWithMaintenanceWindowRequest& request, const RegisterTargetWithMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a new task to a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds a new task to a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterTaskWithMaintenanceWindowOutcome RegisterTaskWithMaintenanceWindow(const Model::RegisterTaskWithMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Adds a new task to a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds a new task to a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -3855,7 +3858,7 @@ namespace Model
         virtual Model::RegisterTaskWithMaintenanceWindowOutcomeCallable RegisterTaskWithMaintenanceWindowCallable(const Model::RegisterTaskWithMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Adds a new task to a Maintenance Window.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds a new task to a maintenance window.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -4316,7 +4319,7 @@ namespace Model
         virtual void UpdateDocumentDefaultVersionAsync(const Model::UpdateDocumentDefaultVersionRequest& request, const UpdateDocumentDefaultVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing Maintenance Window. Only specified parameters are
+         * <p>Updates an existing maintenance window. Only specified parameters are
          * modified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">AWS
          * API Reference</a></p>
@@ -4324,7 +4327,7 @@ namespace Model
         virtual Model::UpdateMaintenanceWindowOutcome UpdateMaintenanceWindow(const Model::UpdateMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Updates an existing Maintenance Window. Only specified parameters are
+         * <p>Updates an existing maintenance window. Only specified parameters are
          * modified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">AWS
          * API Reference</a></p>
@@ -4334,7 +4337,7 @@ namespace Model
         virtual Model::UpdateMaintenanceWindowOutcomeCallable UpdateMaintenanceWindowCallable(const Model::UpdateMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Updates an existing Maintenance Window. Only specified parameters are
+         * <p>Updates an existing maintenance window. Only specified parameters are
          * modified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">AWS
          * API Reference</a></p>
@@ -4344,7 +4347,7 @@ namespace Model
         virtual void UpdateMaintenanceWindowAsync(const Model::UpdateMaintenanceWindowRequest& request, const UpdateMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the target of an existing Maintenance Window. You can't change the
+         * <p>Modifies the target of an existing maintenance window. You can't change the
          * target type, but you can change the following:</p> <p>The target from being an
          * ID target to a Tag target, or a Tag target to an ID target.</p> <p>IDs for an ID
          * target.</p> <p>Tags for a Tag target.</p> <p>Owner.</p> <p>Name.</p>
@@ -4356,7 +4359,7 @@ namespace Model
         virtual Model::UpdateMaintenanceWindowTargetOutcome UpdateMaintenanceWindowTarget(const Model::UpdateMaintenanceWindowTargetRequest& request) const;
 
         /**
-         * <p>Modifies the target of an existing Maintenance Window. You can't change the
+         * <p>Modifies the target of an existing maintenance window. You can't change the
          * target type, but you can change the following:</p> <p>The target from being an
          * ID target to a Tag target, or a Tag target to an ID target.</p> <p>IDs for an ID
          * target.</p> <p>Tags for a Tag target.</p> <p>Owner.</p> <p>Name.</p>
@@ -4370,7 +4373,7 @@ namespace Model
         virtual Model::UpdateMaintenanceWindowTargetOutcomeCallable UpdateMaintenanceWindowTargetCallable(const Model::UpdateMaintenanceWindowTargetRequest& request) const;
 
         /**
-         * <p>Modifies the target of an existing Maintenance Window. You can't change the
+         * <p>Modifies the target of an existing maintenance window. You can't change the
          * target type, but you can change the following:</p> <p>The target from being an
          * ID target to a Tag target, or a Tag target to an ID target.</p> <p>IDs for an ID
          * target.</p> <p>Tags for a Tag target.</p> <p>Owner.</p> <p>Name.</p>
@@ -4384,7 +4387,7 @@ namespace Model
         virtual void UpdateMaintenanceWindowTargetAsync(const Model::UpdateMaintenanceWindowTargetRequest& request, const UpdateMaintenanceWindowTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies a task assigned to a Maintenance Window. You can't change the task
+         * <p>Modifies a task assigned to a maintenance window. You can't change the task
          * type, but you can change the following values:</p> <ul> <li> <p>TaskARN. For
          * example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to
          * AWS-RunShellScript.</p> </li> <li> <p>ServiceRoleArn</p> </li> <li>
@@ -4401,7 +4404,7 @@ namespace Model
         virtual Model::UpdateMaintenanceWindowTaskOutcome UpdateMaintenanceWindowTask(const Model::UpdateMaintenanceWindowTaskRequest& request) const;
 
         /**
-         * <p>Modifies a task assigned to a Maintenance Window. You can't change the task
+         * <p>Modifies a task assigned to a maintenance window. You can't change the task
          * type, but you can change the following values:</p> <ul> <li> <p>TaskARN. For
          * example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to
          * AWS-RunShellScript.</p> </li> <li> <p>ServiceRoleArn</p> </li> <li>
@@ -4420,7 +4423,7 @@ namespace Model
         virtual Model::UpdateMaintenanceWindowTaskOutcomeCallable UpdateMaintenanceWindowTaskCallable(const Model::UpdateMaintenanceWindowTaskRequest& request) const;
 
         /**
-         * <p>Modifies a task assigned to a Maintenance Window. You can't change the task
+         * <p>Modifies a task assigned to a maintenance window. You can't change the task
          * type, but you can change the following values:</p> <ul> <li> <p>TaskARN. For
          * example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to
          * AWS-RunShellScript.</p> </li> <li> <p>ServiceRoleArn</p> </li> <li>

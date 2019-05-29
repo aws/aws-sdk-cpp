@@ -37,8 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>A resource data type that describes a resource to which the finding
-   * refers.</p><p><h3>See Also:</h3>   <a
+   * <p>A resource data type that describes a resource that the finding refers
+   * to.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Resource">AWS
    * API Reference</a></p>
    */
@@ -52,42 +52,42 @@ namespace Model
 
 
     /**
-     * <p>Specifies the type of the resource for which details are provided.</p>
+     * <p>The type of the resource that details are provided for.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>Specifies the type of the resource for which details are provided.</p>
+     * <p>The type of the resource that details are provided for.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Specifies the type of the resource for which details are provided.</p>
+     * <p>The type of the resource that details are provided for.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Specifies the type of the resource for which details are provided.</p>
+     * <p>The type of the resource that details are provided for.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Specifies the type of the resource for which details are provided.</p>
+     * <p>The type of the resource that details are provided for.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>Specifies the type of the resource for which details are provided.</p>
+     * <p>The type of the resource that details are provided for.</p>
      */
     inline Resource& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>Specifies the type of the resource for which details are provided.</p>
+     * <p>The type of the resource that details are provided for.</p>
      */
     inline Resource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the type of the resource for which details are provided.</p>
+     * <p>The type of the resource that details are provided for.</p>
      */
     inline Resource& WithType(const char* value) { SetType(value); return *this;}
 
@@ -134,73 +134,73 @@ namespace Model
 
 
     /**
-     * <p>The canonical AWS partition name to which the region is assigned.</p>
+     * <p>The canonical AWS partition name that the Region is assigned to.</p>
      */
     inline const Partition& GetPartition() const{ return m_partition; }
 
     /**
-     * <p>The canonical AWS partition name to which the region is assigned.</p>
+     * <p>The canonical AWS partition name that the Region is assigned to.</p>
      */
     inline bool PartitionHasBeenSet() const { return m_partitionHasBeenSet; }
 
     /**
-     * <p>The canonical AWS partition name to which the region is assigned.</p>
+     * <p>The canonical AWS partition name that the Region is assigned to.</p>
      */
     inline void SetPartition(const Partition& value) { m_partitionHasBeenSet = true; m_partition = value; }
 
     /**
-     * <p>The canonical AWS partition name to which the region is assigned.</p>
+     * <p>The canonical AWS partition name that the Region is assigned to.</p>
      */
     inline void SetPartition(Partition&& value) { m_partitionHasBeenSet = true; m_partition = std::move(value); }
 
     /**
-     * <p>The canonical AWS partition name to which the region is assigned.</p>
+     * <p>The canonical AWS partition name that the Region is assigned to.</p>
      */
     inline Resource& WithPartition(const Partition& value) { SetPartition(value); return *this;}
 
     /**
-     * <p>The canonical AWS partition name to which the region is assigned.</p>
+     * <p>The canonical AWS partition name that the Region is assigned to.</p>
      */
     inline Resource& WithPartition(Partition&& value) { SetPartition(std::move(value)); return *this;}
 
 
     /**
-     * <p>The canonical AWS external region name where this resource is located.</p>
+     * <p>The canonical AWS external Region name where this resource is located.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The canonical AWS external region name where this resource is located.</p>
+     * <p>The canonical AWS external Region name where this resource is located.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The canonical AWS external region name where this resource is located.</p>
+     * <p>The canonical AWS external Region name where this resource is located.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The canonical AWS external region name where this resource is located.</p>
+     * <p>The canonical AWS external Region name where this resource is located.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The canonical AWS external region name where this resource is located.</p>
+     * <p>The canonical AWS external Region name where this resource is located.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The canonical AWS external region name where this resource is located.</p>
+     * <p>The canonical AWS external Region name where this resource is located.</p>
      */
     inline Resource& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The canonical AWS external region name where this resource is located.</p>
+     * <p>The canonical AWS external Region name where this resource is located.</p>
      */
     inline Resource& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The canonical AWS external region name where this resource is located.</p>
+     * <p>The canonical AWS external Region name where this resource is located.</p>
      */
     inline Resource& WithRegion(const char* value) { SetRegion(value); return *this;}
 
@@ -285,32 +285,32 @@ namespace Model
 
 
     /**
-     * <p>Provides additional details about the resource.</p>
+     * <p>Additional details about the resource.</p>
      */
     inline const ResourceDetails& GetDetails() const{ return m_details; }
 
     /**
-     * <p>Provides additional details about the resource.</p>
+     * <p>Additional details about the resource.</p>
      */
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
-     * <p>Provides additional details about the resource.</p>
+     * <p>Additional details about the resource.</p>
      */
     inline void SetDetails(const ResourceDetails& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
-     * <p>Provides additional details about the resource.</p>
+     * <p>Additional details about the resource.</p>
      */
     inline void SetDetails(ResourceDetails&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
-     * <p>Provides additional details about the resource.</p>
+     * <p>Additional details about the resource.</p>
      */
     inline Resource& WithDetails(const ResourceDetails& value) { SetDetails(value); return *this;}
 
     /**
-     * <p>Provides additional details about the resource.</p>
+     * <p>Additional details about the resource.</p>
      */
     inline Resource& WithDetails(ResourceDetails&& value) { SetDetails(std::move(value)); return *this;}
 

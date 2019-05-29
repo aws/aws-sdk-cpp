@@ -45,12 +45,12 @@ namespace Model
    * been deprecated. To specify an S3 bucket to contain logs, instead use the
    * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
    * the <code>TaskInvocationParameters</code> structure. For information about how
-   * Systems Manager handles these options for the supported Maintenance Window task
+   * Systems Manager handles these options for the supported maintenance window task
    * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>
    * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
    * to a task when it runs, instead use the <code>Parameters</code> option in the
    * <code>TaskInvocationParameters</code> structure. For information about how
-   * Systems Manager handles these options for the supported Maintenance Window task
+   * Systems Manager handles these options for the supported maintenance window task
    * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Run
    * Command tasks, Systems Manager uses specified values for
    * <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are
@@ -69,42 +69,42 @@ namespace Model
 
 
     /**
-     * <p>Information about the command(s) to run.</p>
+     * <p>Information about the commands to run.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * <p>Information about the command(s) to run.</p>
+     * <p>Information about the commands to run.</p>
      */
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
-     * <p>Information about the command(s) to run.</p>
+     * <p>Information about the commands to run.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p>Information about the command(s) to run.</p>
+     * <p>Information about the commands to run.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
-     * <p>Information about the command(s) to run.</p>
+     * <p>Information about the commands to run.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * <p>Information about the command(s) to run.</p>
+     * <p>Information about the commands to run.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * <p>Information about the command(s) to run.</p>
+     * <p>Information about the commands to run.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the command(s) to run.</p>
+     * <p>Information about the commands to run.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithComment(const char* value) { SetComment(value); return *this;}
 
@@ -370,42 +370,50 @@ namespace Model
 
 
     /**
-     * <p>The IAM service role to assume during task execution.</p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p>The IAM service role to assume during task execution.</p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
-     * <p>The IAM service role to assume during task execution.</p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
-     * <p>The IAM service role to assume during task execution.</p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p>The IAM service role to assume during task execution.</p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
-     * <p>The IAM service role to assume during task execution.</p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The IAM service role to assume during task execution.</p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM service role to assume during task execution.</p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 

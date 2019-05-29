@@ -191,74 +191,70 @@ namespace Model
 
 
     /**
-     * <p>A value that specifies whether the modifications in this request and any
+     * <p>A value that indicates whether the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible, regardless
      * of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If
-     * this parameter is set to <code>false</code>, changes to the DB cluster are
-     * applied during the next maintenance window.</p> <p>The
-     * <code>ApplyImmediately</code> parameter only affects the
-     * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>,
-     * and <code>NewDBClusterIdentifier</code> values. If you set the
-     * <code>ApplyImmediately</code> parameter value to false, then changes to the
+     * this parameter is disabled, changes to the DB cluster are applied during the
+     * next maintenance window.</p> <p>The <code>ApplyImmediately</code> parameter only
+     * affects the <code>EnableIAMDatabaseAuthentication</code>,
+     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values.
+     * If the <code>ApplyImmediately</code> parameter is disabled, then changes to the
      * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>,
      * and <code>NewDBClusterIdentifier</code> values are applied during the next
      * maintenance window. All other changes are applied immediately, regardless of the
-     * value of the <code>ApplyImmediately</code> parameter.</p> <p>Default:
-     * <code>false</code> </p>
+     * value of the <code>ApplyImmediately</code> parameter.</p> <p>By default, this
+     * parameter is disabled.</p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
 
     /**
-     * <p>A value that specifies whether the modifications in this request and any
+     * <p>A value that indicates whether the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible, regardless
      * of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If
-     * this parameter is set to <code>false</code>, changes to the DB cluster are
-     * applied during the next maintenance window.</p> <p>The
-     * <code>ApplyImmediately</code> parameter only affects the
-     * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>,
-     * and <code>NewDBClusterIdentifier</code> values. If you set the
-     * <code>ApplyImmediately</code> parameter value to false, then changes to the
+     * this parameter is disabled, changes to the DB cluster are applied during the
+     * next maintenance window.</p> <p>The <code>ApplyImmediately</code> parameter only
+     * affects the <code>EnableIAMDatabaseAuthentication</code>,
+     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values.
+     * If the <code>ApplyImmediately</code> parameter is disabled, then changes to the
      * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>,
      * and <code>NewDBClusterIdentifier</code> values are applied during the next
      * maintenance window. All other changes are applied immediately, regardless of the
-     * value of the <code>ApplyImmediately</code> parameter.</p> <p>Default:
-     * <code>false</code> </p>
+     * value of the <code>ApplyImmediately</code> parameter.</p> <p>By default, this
+     * parameter is disabled.</p>
      */
     inline bool ApplyImmediatelyHasBeenSet() const { return m_applyImmediatelyHasBeenSet; }
 
     /**
-     * <p>A value that specifies whether the modifications in this request and any
+     * <p>A value that indicates whether the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible, regardless
      * of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If
-     * this parameter is set to <code>false</code>, changes to the DB cluster are
-     * applied during the next maintenance window.</p> <p>The
-     * <code>ApplyImmediately</code> parameter only affects the
-     * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>,
-     * and <code>NewDBClusterIdentifier</code> values. If you set the
-     * <code>ApplyImmediately</code> parameter value to false, then changes to the
+     * this parameter is disabled, changes to the DB cluster are applied during the
+     * next maintenance window.</p> <p>The <code>ApplyImmediately</code> parameter only
+     * affects the <code>EnableIAMDatabaseAuthentication</code>,
+     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values.
+     * If the <code>ApplyImmediately</code> parameter is disabled, then changes to the
      * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>,
      * and <code>NewDBClusterIdentifier</code> values are applied during the next
      * maintenance window. All other changes are applied immediately, regardless of the
-     * value of the <code>ApplyImmediately</code> parameter.</p> <p>Default:
-     * <code>false</code> </p>
+     * value of the <code>ApplyImmediately</code> parameter.</p> <p>By default, this
+     * parameter is disabled.</p>
      */
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
 
     /**
-     * <p>A value that specifies whether the modifications in this request and any
+     * <p>A value that indicates whether the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible, regardless
      * of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If
-     * this parameter is set to <code>false</code>, changes to the DB cluster are
-     * applied during the next maintenance window.</p> <p>The
-     * <code>ApplyImmediately</code> parameter only affects the
-     * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>,
-     * and <code>NewDBClusterIdentifier</code> values. If you set the
-     * <code>ApplyImmediately</code> parameter value to false, then changes to the
+     * this parameter is disabled, changes to the DB cluster are applied during the
+     * next maintenance window.</p> <p>The <code>ApplyImmediately</code> parameter only
+     * affects the <code>EnableIAMDatabaseAuthentication</code>,
+     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values.
+     * If the <code>ApplyImmediately</code> parameter is disabled, then changes to the
      * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>,
      * and <code>NewDBClusterIdentifier</code> values are applied during the next
      * maintenance window. All other changes are applied immediately, regardless of the
-     * value of the <code>ApplyImmediately</code> parameter.</p> <p>Default:
-     * <code>false</code> </p>
+     * value of the <code>ApplyImmediately</code> parameter.</p> <p>By default, this
+     * parameter is disabled.</p>
      */
     inline ModifyDBClusterRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 
@@ -469,13 +465,12 @@ namespace Model
      * <p>A value that indicates that the DB cluster should be associated with the
      * specified option group. Changing this parameter doesn't result in an outage
      * except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. If the parameter change results in an option
-     * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not interrupted.
-     * </p> <p>Permanent options can't be removed from an option group. The option
-     * group can't be removed from a DB cluster once it is associated with a DB
-     * cluster.</p>
+     * maintenance window unless the <code>ApplyImmediately</code> is enabled for this
+     * request. If the parameter change results in an option group that enables OEM,
+     * this change can cause a brief (sub-second) period during which new connections
+     * are rejected but existing connections are not interrupted. </p> <p>Permanent
+     * options can't be removed from an option group. The option group can't be removed
+     * from a DB cluster once it is associated with a DB cluster.</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
@@ -483,13 +478,12 @@ namespace Model
      * <p>A value that indicates that the DB cluster should be associated with the
      * specified option group. Changing this parameter doesn't result in an outage
      * except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. If the parameter change results in an option
-     * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not interrupted.
-     * </p> <p>Permanent options can't be removed from an option group. The option
-     * group can't be removed from a DB cluster once it is associated with a DB
-     * cluster.</p>
+     * maintenance window unless the <code>ApplyImmediately</code> is enabled for this
+     * request. If the parameter change results in an option group that enables OEM,
+     * this change can cause a brief (sub-second) period during which new connections
+     * are rejected but existing connections are not interrupted. </p> <p>Permanent
+     * options can't be removed from an option group. The option group can't be removed
+     * from a DB cluster once it is associated with a DB cluster.</p>
      */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
@@ -497,13 +491,12 @@ namespace Model
      * <p>A value that indicates that the DB cluster should be associated with the
      * specified option group. Changing this parameter doesn't result in an outage
      * except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. If the parameter change results in an option
-     * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not interrupted.
-     * </p> <p>Permanent options can't be removed from an option group. The option
-     * group can't be removed from a DB cluster once it is associated with a DB
-     * cluster.</p>
+     * maintenance window unless the <code>ApplyImmediately</code> is enabled for this
+     * request. If the parameter change results in an option group that enables OEM,
+     * this change can cause a brief (sub-second) period during which new connections
+     * are rejected but existing connections are not interrupted. </p> <p>Permanent
+     * options can't be removed from an option group. The option group can't be removed
+     * from a DB cluster once it is associated with a DB cluster.</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
@@ -511,13 +504,12 @@ namespace Model
      * <p>A value that indicates that the DB cluster should be associated with the
      * specified option group. Changing this parameter doesn't result in an outage
      * except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. If the parameter change results in an option
-     * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not interrupted.
-     * </p> <p>Permanent options can't be removed from an option group. The option
-     * group can't be removed from a DB cluster once it is associated with a DB
-     * cluster.</p>
+     * maintenance window unless the <code>ApplyImmediately</code> is enabled for this
+     * request. If the parameter change results in an option group that enables OEM,
+     * this change can cause a brief (sub-second) period during which new connections
+     * are rejected but existing connections are not interrupted. </p> <p>Permanent
+     * options can't be removed from an option group. The option group can't be removed
+     * from a DB cluster once it is associated with a DB cluster.</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
@@ -525,13 +517,12 @@ namespace Model
      * <p>A value that indicates that the DB cluster should be associated with the
      * specified option group. Changing this parameter doesn't result in an outage
      * except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. If the parameter change results in an option
-     * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not interrupted.
-     * </p> <p>Permanent options can't be removed from an option group. The option
-     * group can't be removed from a DB cluster once it is associated with a DB
-     * cluster.</p>
+     * maintenance window unless the <code>ApplyImmediately</code> is enabled for this
+     * request. If the parameter change results in an option group that enables OEM,
+     * this change can cause a brief (sub-second) period during which new connections
+     * are rejected but existing connections are not interrupted. </p> <p>Permanent
+     * options can't be removed from an option group. The option group can't be removed
+     * from a DB cluster once it is associated with a DB cluster.</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
@@ -539,13 +530,12 @@ namespace Model
      * <p>A value that indicates that the DB cluster should be associated with the
      * specified option group. Changing this parameter doesn't result in an outage
      * except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. If the parameter change results in an option
-     * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not interrupted.
-     * </p> <p>Permanent options can't be removed from an option group. The option
-     * group can't be removed from a DB cluster once it is associated with a DB
-     * cluster.</p>
+     * maintenance window unless the <code>ApplyImmediately</code> is enabled for this
+     * request. If the parameter change results in an option group that enables OEM,
+     * this change can cause a brief (sub-second) period during which new connections
+     * are rejected but existing connections are not interrupted. </p> <p>Permanent
+     * options can't be removed from an option group. The option group can't be removed
+     * from a DB cluster once it is associated with a DB cluster.</p>
      */
     inline ModifyDBClusterRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
@@ -553,13 +543,12 @@ namespace Model
      * <p>A value that indicates that the DB cluster should be associated with the
      * specified option group. Changing this parameter doesn't result in an outage
      * except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. If the parameter change results in an option
-     * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not interrupted.
-     * </p> <p>Permanent options can't be removed from an option group. The option
-     * group can't be removed from a DB cluster once it is associated with a DB
-     * cluster.</p>
+     * maintenance window unless the <code>ApplyImmediately</code> is enabled for this
+     * request. If the parameter change results in an option group that enables OEM,
+     * this change can cause a brief (sub-second) period during which new connections
+     * are rejected but existing connections are not interrupted. </p> <p>Permanent
+     * options can't be removed from an option group. The option group can't be removed
+     * from a DB cluster once it is associated with a DB cluster.</p>
      */
     inline ModifyDBClusterRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
@@ -567,13 +556,12 @@ namespace Model
      * <p>A value that indicates that the DB cluster should be associated with the
      * specified option group. Changing this parameter doesn't result in an outage
      * except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. If the parameter change results in an option
-     * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not interrupted.
-     * </p> <p>Permanent options can't be removed from an option group. The option
-     * group can't be removed from a DB cluster once it is associated with a DB
-     * cluster.</p>
+     * maintenance window unless the <code>ApplyImmediately</code> is enabled for this
+     * request. If the parameter change results in an option group that enables OEM,
+     * this change can cause a brief (sub-second) period during which new connections
+     * are rejected but existing connections are not interrupted. </p> <p>Permanent
+     * options can't be removed from an option group. The option group can't be removed
+     * from a DB cluster once it is associated with a DB cluster.</p>
      */
     inline ModifyDBClusterRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
@@ -805,30 +793,30 @@ namespace Model
 
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline ModifyDBClusterRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
@@ -902,72 +890,64 @@ namespace Model
     /**
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, use the
-     * <code>DescribeDBEngineVersions</code> action.</p>
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>For a list of valid engine versions, use <a>DescribeDBEngineVersions</a>.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, use the
-     * <code>DescribeDBEngineVersions</code> action.</p>
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>For a list of valid engine versions, use <a>DescribeDBEngineVersions</a>.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, use the
-     * <code>DescribeDBEngineVersions</code> action.</p>
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>For a list of valid engine versions, use <a>DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, use the
-     * <code>DescribeDBEngineVersions</code> action.</p>
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>For a list of valid engine versions, use <a>DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, use the
-     * <code>DescribeDBEngineVersions</code> action.</p>
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>For a list of valid engine versions, use <a>DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, use the
-     * <code>DescribeDBEngineVersions</code> action.</p>
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>For a list of valid engine versions, use <a>DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, use the
-     * <code>DescribeDBEngineVersions</code> action.</p>
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>For a list of valid engine versions, use <a>DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, use the
-     * <code>DescribeDBEngineVersions</code> action.</p>
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>For a list of valid engine versions, use <a>DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -1010,26 +990,30 @@ namespace Model
 
 
     /**
-     * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when this value is set to true. </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when this value is set to true. </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when this value is set to true. </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when this value is set to true. </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
      */
     inline ModifyDBClusterRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
@@ -1088,26 +1072,26 @@ namespace Model
 
 
     /**
-     * <p>True to copy all tags from the DB cluster to snapshots of the DB cluster, and
-     * otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the DB cluster to
+     * snapshots of the DB cluster. The default is not to copy them.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>True to copy all tags from the DB cluster to snapshots of the DB cluster, and
-     * otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the DB cluster to
+     * snapshots of the DB cluster. The default is not to copy them.</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
-     * <p>True to copy all tags from the DB cluster to snapshots of the DB cluster, and
-     * otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the DB cluster to
+     * snapshots of the DB cluster. The default is not to copy them.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>True to copy all tags from the DB cluster to snapshots of the DB cluster, and
-     * otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the DB cluster to
+     * snapshots of the DB cluster. The default is not to copy them.</p>
      */
     inline ModifyDBClusterRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 

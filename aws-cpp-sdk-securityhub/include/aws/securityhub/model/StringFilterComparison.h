@@ -27,7 +27,6 @@ namespace Model
   {
     NOT_SET,
     EQUALS,
-    CONTAINS,
     PREFIX
   };
 

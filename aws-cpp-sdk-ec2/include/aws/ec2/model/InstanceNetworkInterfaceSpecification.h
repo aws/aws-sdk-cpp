@@ -636,7 +636,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valide values: <code>interface</code> | <code>efa</code> </p>
+     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
      */
     inline const Aws::String& GetInterfaceType() const{ return m_interfaceType; }
 
@@ -646,7 +646,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valide values: <code>interface</code> | <code>efa</code> </p>
+     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
      */
     inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }
 
@@ -656,7 +656,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valide values: <code>interface</code> | <code>efa</code> </p>
+     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
      */
     inline void SetInterfaceType(const Aws::String& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
 
@@ -666,7 +666,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valide values: <code>interface</code> | <code>efa</code> </p>
+     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
      */
     inline void SetInterfaceType(Aws::String&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = std::move(value); }
 
@@ -676,7 +676,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valide values: <code>interface</code> | <code>efa</code> </p>
+     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
      */
     inline void SetInterfaceType(const char* value) { m_interfaceTypeHasBeenSet = true; m_interfaceType.assign(value); }
 
@@ -686,7 +686,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valide values: <code>interface</code> | <code>efa</code> </p>
+     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
      */
     inline InstanceNetworkInterfaceSpecification& WithInterfaceType(const Aws::String& value) { SetInterfaceType(value); return *this;}
 
@@ -696,7 +696,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valide values: <code>interface</code> | <code>efa</code> </p>
+     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
      */
     inline InstanceNetworkInterfaceSpecification& WithInterfaceType(Aws::String&& value) { SetInterfaceType(std::move(value)); return *this;}
 
@@ -706,7 +706,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valide values: <code>interface</code> | <code>efa</code> </p>
+     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
      */
     inline InstanceNetworkInterfaceSpecification& WithInterfaceType(const char* value) { SetInterfaceType(value); return *this;}
 

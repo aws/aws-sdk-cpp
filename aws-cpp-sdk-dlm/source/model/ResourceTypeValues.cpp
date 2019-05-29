@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int VOLUME_HASH = HashingUtils::HashString("VOLUME");
+        static const int INSTANCE_HASH = HashingUtils::HashString("INSTANCE");
 
 
         ResourceTypeValues GetResourceTypeValuesForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == VOLUME_HASH)
           {
             return ResourceTypeValues::VOLUME;
+          }
+          else if (hashCode == INSTANCE_HASH)
+          {
+            return ResourceTypeValues::INSTANCE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case ResourceTypeValues::VOLUME:
             return "VOLUME";
+          case ResourceTypeValues::INSTANCE:
+            return "INSTANCE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

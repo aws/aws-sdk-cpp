@@ -29,22 +29,35 @@ namespace Model
 {
 
 PolicyDetails::PolicyDetails() : 
+    m_policyType(PolicyTypeValues::NOT_SET),
+    m_policyTypeHasBeenSet(false),
     m_resourceTypesHasBeenSet(false),
     m_targetTagsHasBeenSet(false),
-    m_schedulesHasBeenSet(false)
+    m_schedulesHasBeenSet(false),
+    m_parametersHasBeenSet(false)
 {
 }
 
 PolicyDetails::PolicyDetails(JsonView jsonValue) : 
+    m_policyType(PolicyTypeValues::NOT_SET),
+    m_policyTypeHasBeenSet(false),
     m_resourceTypesHasBeenSet(false),
     m_targetTagsHasBeenSet(false),
-    m_schedulesHasBeenSet(false)
+    m_schedulesHasBeenSet(false),
+    m_parametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("PolicyType"))
+  {
+    m_policyType = PolicyTypeValuesMapper::GetPolicyTypeValuesForName(jsonValue.GetString("PolicyType"));
+
+    m_policyTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ResourceTypes"))
   {
     Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("ResourceTypes");
@@ -75,12 +88,24 @@ PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
     m_schedulesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Parameters"))
+  {
+    m_parameters = jsonValue.GetObject("Parameters");
+
+    m_parametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue PolicyDetails::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_policyTypeHasBeenSet)
+  {
+   payload.WithString("PolicyType", PolicyTypeValuesMapper::GetNameForPolicyTypeValues(m_policyType));
+  }
 
   if(m_resourceTypesHasBeenSet)
   {
@@ -112,6 +137,12 @@ JsonValue PolicyDetails::Jsonize() const
      schedulesJsonList[schedulesIndex].AsObject(m_schedules[schedulesIndex].Jsonize());
    }
    payload.WithArray("Schedules", std::move(schedulesJsonList));
+
+  }
+
+  if(m_parametersHasBeenSet)
+  {
+   payload.WithObject("Parameters", m_parameters.Jsonize());
 
   }
 

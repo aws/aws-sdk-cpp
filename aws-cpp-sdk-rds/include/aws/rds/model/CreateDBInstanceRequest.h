@@ -381,23 +381,23 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
      * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
@@ -420,23 +420,23 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
      * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
@@ -459,23 +459,23 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
      * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
@@ -498,23 +498,23 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
      * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
@@ -1173,8 +1173,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
-     * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
-     * can't be specified if the MultiAZ parameter is set to <code>true</code>. The
+     * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
+     * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
      * specified Availability Zone must be in the same AWS Region as the current
      * endpoint. </p>
      */
@@ -1186,8 +1186,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
-     * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
-     * can't be specified if the MultiAZ parameter is set to <code>true</code>. The
+     * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
+     * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
      * specified Availability Zone must be in the same AWS Region as the current
      * endpoint. </p>
      */
@@ -1199,8 +1199,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
-     * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
-     * can't be specified if the MultiAZ parameter is set to <code>true</code>. The
+     * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
+     * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
      * specified Availability Zone must be in the same AWS Region as the current
      * endpoint. </p>
      */
@@ -1212,8 +1212,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
-     * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
-     * can't be specified if the MultiAZ parameter is set to <code>true</code>. The
+     * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
+     * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
      * specified Availability Zone must be in the same AWS Region as the current
      * endpoint. </p>
      */
@@ -1225,8 +1225,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
-     * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
-     * can't be specified if the MultiAZ parameter is set to <code>true</code>. The
+     * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
+     * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
      * specified Availability Zone must be in the same AWS Region as the current
      * endpoint. </p>
      */
@@ -1238,8 +1238,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
-     * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
-     * can't be specified if the MultiAZ parameter is set to <code>true</code>. The
+     * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
+     * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
      * specified Availability Zone must be in the same AWS Region as the current
      * endpoint. </p>
      */
@@ -1251,8 +1251,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
-     * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
-     * can't be specified if the MultiAZ parameter is set to <code>true</code>. The
+     * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
+     * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
      * specified Availability Zone must be in the same AWS Region as the current
      * endpoint. </p>
      */
@@ -1264,8 +1264,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
-     * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
-     * can't be specified if the MultiAZ parameter is set to <code>true</code>. The
+     * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
+     * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
      * specified Availability Zone must be in the same AWS Region as the current
      * endpoint. </p>
      */
@@ -1759,30 +1759,30 @@ namespace Model
 
 
     /**
-     * <p>A value that specifies whether the DB instance is a Multi-AZ deployment. You
-     * can't set the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * true.</p>
+     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You
+     * can't set the <code>AvailabilityZone</code> parameter if the DB instance is a
+     * Multi-AZ deployment.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>A value that specifies whether the DB instance is a Multi-AZ deployment. You
-     * can't set the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * true.</p>
+     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You
+     * can't set the <code>AvailabilityZone</code> parameter if the DB instance is a
+     * Multi-AZ deployment.</p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p>A value that specifies whether the DB instance is a Multi-AZ deployment. You
-     * can't set the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * true.</p>
+     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You
+     * can't set the <code>AvailabilityZone</code> parameter if the DB instance is a
+     * Multi-AZ deployment.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>A value that specifies whether the DB instance is a Multi-AZ deployment. You
-     * can't set the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * true.</p>
+     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You
+     * can't set the <code>AvailabilityZone</code> parameter if the DB instance is a
+     * Multi-AZ deployment.</p>
      */
     inline CreateDBInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
@@ -1989,26 +1989,30 @@ namespace Model
 
 
     /**
-     * <p>Indicates that minor engine upgrades are applied automatically to the DB
-     * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
+     * <p>A value that indicates whether minor engine upgrades are applied
+     * automatically to the DB instance during the maintenance window. By default,
+     * minor engine upgrades are applied automatically.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>Indicates that minor engine upgrades are applied automatically to the DB
-     * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
+     * <p>A value that indicates whether minor engine upgrades are applied
+     * automatically to the DB instance during the maintenance window. By default,
+     * minor engine upgrades are applied automatically.</p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>Indicates that minor engine upgrades are applied automatically to the DB
-     * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
+     * <p>A value that indicates whether minor engine upgrades are applied
+     * automatically to the DB instance during the maintenance window. By default,
+     * minor engine upgrades are applied automatically.</p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>Indicates that minor engine upgrades are applied automatically to the DB
-     * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
+     * <p>A value that indicates whether minor engine upgrades are applied
+     * automatically to the DB instance during the maintenance window. By default,
+     * minor engine upgrades are applied automatically.</p>
      */
     inline CreateDBInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -2246,12 +2250,13 @@ namespace Model
 
 
     /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether <code>DBSubnetGroupName</code> is
-     * specified.</p> <p>If <code>DBSubnetGroupName</code> is not specified, and
+     * <p>A value that indicates whether the DB instance is publicly accessible. When
+     * the DB instance is publicly accessible, it is an Internet-facing instance with a
+     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
+     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * that resolves to a private IP address.</p> <p>Default: The default behavior
+     * varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+     * <p>If <code>DBSubnetGroupName</code> is not specified, and
      * <code>PubliclyAccessible</code> is not specified, the following applies:</p>
      * <ul> <li> <p>If the default VPC in the target region doesn’t have an Internet
      * gateway attached to it, the DB instance is private.</p> </li> <li> <p>If the
@@ -2266,12 +2271,13 @@ namespace Model
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether <code>DBSubnetGroupName</code> is
-     * specified.</p> <p>If <code>DBSubnetGroupName</code> is not specified, and
+     * <p>A value that indicates whether the DB instance is publicly accessible. When
+     * the DB instance is publicly accessible, it is an Internet-facing instance with a
+     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
+     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * that resolves to a private IP address.</p> <p>Default: The default behavior
+     * varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+     * <p>If <code>DBSubnetGroupName</code> is not specified, and
      * <code>PubliclyAccessible</code> is not specified, the following applies:</p>
      * <ul> <li> <p>If the default VPC in the target region doesn’t have an Internet
      * gateway attached to it, the DB instance is private.</p> </li> <li> <p>If the
@@ -2286,12 +2292,13 @@ namespace Model
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether <code>DBSubnetGroupName</code> is
-     * specified.</p> <p>If <code>DBSubnetGroupName</code> is not specified, and
+     * <p>A value that indicates whether the DB instance is publicly accessible. When
+     * the DB instance is publicly accessible, it is an Internet-facing instance with a
+     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
+     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * that resolves to a private IP address.</p> <p>Default: The default behavior
+     * varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+     * <p>If <code>DBSubnetGroupName</code> is not specified, and
      * <code>PubliclyAccessible</code> is not specified, the following applies:</p>
      * <ul> <li> <p>If the default VPC in the target region doesn’t have an Internet
      * gateway attached to it, the DB instance is private.</p> </li> <li> <p>If the
@@ -2306,12 +2313,13 @@ namespace Model
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether <code>DBSubnetGroupName</code> is
-     * specified.</p> <p>If <code>DBSubnetGroupName</code> is not specified, and
+     * <p>A value that indicates whether the DB instance is publicly accessible. When
+     * the DB instance is publicly accessible, it is an Internet-facing instance with a
+     * publicly resolvable DNS name, which resolves to a public IP address. When the DB
+     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * that resolves to a private IP address.</p> <p>Default: The default behavior
+     * varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
+     * <p>If <code>DBSubnetGroupName</code> is not specified, and
      * <code>PubliclyAccessible</code> is not specified, the following applies:</p>
      * <ul> <li> <p>If the default VPC in the target region doesn’t have an Internet
      * gateway attached to it, the DB instance is private.</p> </li> <li> <p>If the
@@ -2413,7 +2421,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>gp2</code> </p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
@@ -2422,7 +2430,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>gp2</code> </p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
@@ -2431,7 +2439,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
@@ -2440,7 +2448,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
@@ -2449,7 +2457,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
@@ -2458,7 +2466,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>gp2</code> </p>
      */
     inline CreateDBInstanceRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
@@ -2467,7 +2475,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>gp2</code> </p>
      */
     inline CreateDBInstanceRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
@@ -2476,7 +2484,7 @@ namespace Model
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>standard</code> </p>
+     * is specified, otherwise <code>gp2</code> </p>
      */
     inline CreateDBInstanceRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
@@ -2580,30 +2588,30 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the DB instance is encrypted.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>Not applicable. The encryption for DB instances is managed by the DB
-     * cluster.</p> <p>Default: false</p>
+     * <p>A value that indicates whether the DB instance is encrypted. By default, it
+     * is not encrypted.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * encryption for DB instances is managed by the DB cluster.</p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
 
     /**
-     * <p>Specifies whether the DB instance is encrypted.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>Not applicable. The encryption for DB instances is managed by the DB
-     * cluster.</p> <p>Default: false</p>
+     * <p>A value that indicates whether the DB instance is encrypted. By default, it
+     * is not encrypted.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * encryption for DB instances is managed by the DB cluster.</p>
      */
     inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
 
     /**
-     * <p>Specifies whether the DB instance is encrypted.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>Not applicable. The encryption for DB instances is managed by the DB
-     * cluster.</p> <p>Default: false</p>
+     * <p>A value that indicates whether the DB instance is encrypted. By default, it
+     * is not encrypted.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * encryption for DB instances is managed by the DB cluster.</p>
      */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
-     * <p>Specifies whether the DB instance is encrypted.</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>Not applicable. The encryption for DB instances is managed by the DB
-     * cluster.</p> <p>Default: false</p>
+     * <p>A value that indicates whether the DB instance is encrypted. By default, it
+     * is not encrypted.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * encryption for DB instances is managed by the DB cluster.</p>
      */
     inline CreateDBInstanceRequest& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
 
@@ -2615,9 +2623,9 @@ namespace Model
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key.</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The KMS key identifier is managed by the DB cluster. For
-     * more information, see <code>CreateDBCluster</code>.</p> <p>If the
-     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
-     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * more information, see <code>CreateDBCluster</code>.</p> <p>If
+     * <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
@@ -2630,9 +2638,9 @@ namespace Model
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key.</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The KMS key identifier is managed by the DB cluster. For
-     * more information, see <code>CreateDBCluster</code>.</p> <p>If the
-     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
-     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * more information, see <code>CreateDBCluster</code>.</p> <p>If
+     * <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
@@ -2645,9 +2653,9 @@ namespace Model
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key.</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The KMS key identifier is managed by the DB cluster. For
-     * more information, see <code>CreateDBCluster</code>.</p> <p>If the
-     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
-     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * more information, see <code>CreateDBCluster</code>.</p> <p>If
+     * <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
@@ -2660,9 +2668,9 @@ namespace Model
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key.</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The KMS key identifier is managed by the DB cluster. For
-     * more information, see <code>CreateDBCluster</code>.</p> <p>If the
-     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
-     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * more information, see <code>CreateDBCluster</code>.</p> <p>If
+     * <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
@@ -2675,9 +2683,9 @@ namespace Model
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key.</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The KMS key identifier is managed by the DB cluster. For
-     * more information, see <code>CreateDBCluster</code>.</p> <p>If the
-     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
-     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * more information, see <code>CreateDBCluster</code>.</p> <p>If
+     * <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
@@ -2690,9 +2698,9 @@ namespace Model
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key.</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The KMS key identifier is managed by the DB cluster. For
-     * more information, see <code>CreateDBCluster</code>.</p> <p>If the
-     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
-     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * more information, see <code>CreateDBCluster</code>.</p> <p>If
+     * <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
@@ -2705,9 +2713,9 @@ namespace Model
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key.</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The KMS key identifier is managed by the DB cluster. For
-     * more information, see <code>CreateDBCluster</code>.</p> <p>If the
-     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
-     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * more information, see <code>CreateDBCluster</code>.</p> <p>If
+     * <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
@@ -2720,9 +2728,9 @@ namespace Model
      * encryption key used to encrypt the new DB instance, then you can use the KMS key
      * alias instead of the ARN for the KM encryption key.</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The KMS key identifier is managed by the DB cluster. For
-     * more information, see <code>CreateDBCluster</code>.</p> <p>If the
-     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
-     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * more information, see <code>CreateDBCluster</code>.</p> <p>If
+     * <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
@@ -2819,38 +2827,38 @@ namespace Model
 
 
     /**
-     * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
-     * and otherwise false. The default is false.</p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. Copying tags to snapshots is managed by the DB cluster.
-     * Setting this value for an Aurora DB instance has no effect on the DB cluster
-     * setting.</p>
+     * <p>A value that indicates whether to copy tags from the DB instance to snapshots
+     * of the DB instance. By default, tags are not copied.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. Copying tags to snapshots is managed by the
+     * DB cluster. Setting this value for an Aurora DB instance has no effect on the DB
+     * cluster setting.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
-     * and otherwise false. The default is false.</p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. Copying tags to snapshots is managed by the DB cluster.
-     * Setting this value for an Aurora DB instance has no effect on the DB cluster
-     * setting.</p>
+     * <p>A value that indicates whether to copy tags from the DB instance to snapshots
+     * of the DB instance. By default, tags are not copied.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. Copying tags to snapshots is managed by the
+     * DB cluster. Setting this value for an Aurora DB instance has no effect on the DB
+     * cluster setting.</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
-     * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
-     * and otherwise false. The default is false.</p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. Copying tags to snapshots is managed by the DB cluster.
-     * Setting this value for an Aurora DB instance has no effect on the DB cluster
-     * setting.</p>
+     * <p>A value that indicates whether to copy tags from the DB instance to snapshots
+     * of the DB instance. By default, tags are not copied.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. Copying tags to snapshots is managed by the
+     * DB cluster. Setting this value for an Aurora DB instance has no effect on the DB
+     * cluster setting.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
-     * and otherwise false. The default is false.</p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. Copying tags to snapshots is managed by the DB cluster.
-     * Setting this value for an Aurora DB instance has no effect on the DB cluster
-     * setting.</p>
+     * <p>A value that indicates whether to copy tags from the DB instance to snapshots
+     * of the DB instance. By default, tags are not copied.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. Copying tags to snapshots is managed by the
+     * DB cluster. Setting this value for an Aurora DB instance has no effect on the DB
+     * cluster setting.</p>
      */
     inline CreateDBInstanceRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
@@ -3145,53 +3153,53 @@ namespace Model
 
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false. </p> <p>You can enable IAM database
-     * authentication for the following database engines:</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>Not applicable. Mapping AWS IAM accounts to database accounts is managed
-     * by the DB cluster.</p> <p> <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor
-     * version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor version 5.7.16
-     * or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>You can enable IAM database authentication for the following
+     * database engines:</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping
+     * AWS IAM accounts to database accounts is managed by the DB cluster.</p> <p>
+     * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
+     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> </ul>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false. </p> <p>You can enable IAM database
-     * authentication for the following database engines:</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>Not applicable. Mapping AWS IAM accounts to database accounts is managed
-     * by the DB cluster.</p> <p> <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor
-     * version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor version 5.7.16
-     * or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>You can enable IAM database authentication for the following
+     * database engines:</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping
+     * AWS IAM accounts to database accounts is managed by the DB cluster.</p> <p>
+     * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
+     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> </ul>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false. </p> <p>You can enable IAM database
-     * authentication for the following database engines:</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>Not applicable. Mapping AWS IAM accounts to database accounts is managed
-     * by the DB cluster.</p> <p> <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor
-     * version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor version 5.7.16
-     * or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>You can enable IAM database authentication for the following
+     * database engines:</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping
+     * AWS IAM accounts to database accounts is managed by the DB cluster.</p> <p>
+     * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
+     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> </ul>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false. </p> <p>You can enable IAM database
-     * authentication for the following database engines:</p> <p> <b>Amazon Aurora</b>
-     * </p> <p>Not applicable. Mapping AWS IAM accounts to database accounts is managed
-     * by the DB cluster.</p> <p> <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor
-     * version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor version 5.7.16
-     * or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>You can enable IAM database authentication for the following
+     * database engines:</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping
+     * AWS IAM accounts to database accounts is managed by the DB cluster.</p> <p>
+     * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
+     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
 
     /**
-     * <p>True to enable Performance Insights for the DB instance, and otherwise false.
-     * </p> <p>For more information, see <a
+     * <p>A value that indicates whether to enable Performance Insights for the DB
+     * instance. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
      * User Guide</i>. </p>
@@ -3199,8 +3207,8 @@ namespace Model
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
     /**
-     * <p>True to enable Performance Insights for the DB instance, and otherwise false.
-     * </p> <p>For more information, see <a
+     * <p>A value that indicates whether to enable Performance Insights for the DB
+     * instance. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
      * User Guide</i>. </p>
@@ -3208,8 +3216,8 @@ namespace Model
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
 
     /**
-     * <p>True to enable Performance Insights for the DB instance, and otherwise false.
-     * </p> <p>For more information, see <a
+     * <p>A value that indicates whether to enable Performance Insights for the DB
+     * instance. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
      * User Guide</i>. </p>
@@ -3217,8 +3225,8 @@ namespace Model
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
     /**
-     * <p>True to enable Performance Insights for the DB instance, and otherwise false.
-     * </p> <p>For more information, see <a
+     * <p>A value that indicates whether to enable Performance Insights for the DB
+     * instance. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
      * User Guide</i>. </p>
@@ -3229,56 +3237,80 @@ namespace Model
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
      * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * alias for the KMS encryption key.</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
@@ -3449,36 +3481,36 @@ namespace Model
 
 
     /**
-     * <p>Indicates if the DB instance should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * For more information, see <a
+     * <p>A value that indicates whether the DB instance has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>Indicates if the DB instance should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * For more information, see <a
+     * <p>A value that indicates whether the DB instance has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>Indicates if the DB instance should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * For more information, see <a
+     * <p>A value that indicates whether the DB instance has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>Indicates if the DB instance should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * For more information, see <a
+     * <p>A value that indicates whether the DB instance has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */

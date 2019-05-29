@@ -44,47 +44,47 @@ namespace Model
 
 
     /**
-     * <p>The ARNS of the standards subscriptions that you want to disable.</p>
+     * <p>The ARNs of the standards subscriptions that you want to disable.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStandardsSubscriptionArns() const{ return m_standardsSubscriptionArns; }
 
     /**
-     * <p>The ARNS of the standards subscriptions that you want to disable.</p>
+     * <p>The ARNs of the standards subscriptions that you want to disable.</p>
      */
     inline bool StandardsSubscriptionArnsHasBeenSet() const { return m_standardsSubscriptionArnsHasBeenSet; }
 
     /**
-     * <p>The ARNS of the standards subscriptions that you want to disable.</p>
+     * <p>The ARNs of the standards subscriptions that you want to disable.</p>
      */
     inline void SetStandardsSubscriptionArns(const Aws::Vector<Aws::String>& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns = value; }
 
     /**
-     * <p>The ARNS of the standards subscriptions that you want to disable.</p>
+     * <p>The ARNs of the standards subscriptions that you want to disable.</p>
      */
     inline void SetStandardsSubscriptionArns(Aws::Vector<Aws::String>&& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns = std::move(value); }
 
     /**
-     * <p>The ARNS of the standards subscriptions that you want to disable.</p>
+     * <p>The ARNs of the standards subscriptions that you want to disable.</p>
      */
     inline BatchDisableStandardsRequest& WithStandardsSubscriptionArns(const Aws::Vector<Aws::String>& value) { SetStandardsSubscriptionArns(value); return *this;}
 
     /**
-     * <p>The ARNS of the standards subscriptions that you want to disable.</p>
+     * <p>The ARNs of the standards subscriptions that you want to disable.</p>
      */
     inline BatchDisableStandardsRequest& WithStandardsSubscriptionArns(Aws::Vector<Aws::String>&& value) { SetStandardsSubscriptionArns(std::move(value)); return *this;}
 
     /**
-     * <p>The ARNS of the standards subscriptions that you want to disable.</p>
+     * <p>The ARNs of the standards subscriptions that you want to disable.</p>
      */
     inline BatchDisableStandardsRequest& AddStandardsSubscriptionArns(const Aws::String& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns.push_back(value); return *this; }
 
     /**
-     * <p>The ARNS of the standards subscriptions that you want to disable.</p>
+     * <p>The ARNs of the standards subscriptions that you want to disable.</p>
      */
     inline BatchDisableStandardsRequest& AddStandardsSubscriptionArns(Aws::String&& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ARNS of the standards subscriptions that you want to disable.</p>
+     * <p>The ARNs of the standards subscriptions that you want to disable.</p>
      */
     inline BatchDisableStandardsRequest& AddStandardsSubscriptionArns(const char* value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns.push_back(value); return *this; }
 

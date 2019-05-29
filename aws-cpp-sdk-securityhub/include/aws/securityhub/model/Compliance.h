@@ -35,7 +35,7 @@ namespace Model
 
   /**
    * <p>Exclusive to findings that are generated as the result of a check run against
-   * a specific rule in a supported standard (for example, AWS CIS Foundations).
+   * a specific rule in a supported standard (for example, CIS AWS Foundations).
    * Contains compliance-related finding details.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Compliance">AWS
    * API Reference</a></p>
@@ -50,32 +50,32 @@ namespace Model
 
 
     /**
-     * <p>Indicates the result of a compliance check.</p>
+     * <p>The result of a compliance check.</p>
      */
     inline const ComplianceStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Indicates the result of a compliance check.</p>
+     * <p>The result of a compliance check.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Indicates the result of a compliance check.</p>
+     * <p>The result of a compliance check.</p>
      */
     inline void SetStatus(const ComplianceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Indicates the result of a compliance check.</p>
+     * <p>The result of a compliance check.</p>
      */
     inline void SetStatus(ComplianceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Indicates the result of a compliance check.</p>
+     * <p>The result of a compliance check.</p>
      */
     inline Compliance& WithStatus(const ComplianceStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Indicates the result of a compliance check.</p>
+     * <p>The result of a compliance check.</p>
      */
     inline Compliance& WithStatus(ComplianceStatus&& value) { SetStatus(std::move(value)); return *this;}
 

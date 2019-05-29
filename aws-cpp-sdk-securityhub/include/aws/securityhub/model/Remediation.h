@@ -48,37 +48,37 @@ namespace Model
 
 
     /**
-     * <p>Provides a recommendation on how to remediate the issue identified within a
+     * <p>A recommendation on how to remediate the issue identified within a
      * finding.</p>
      */
     inline const Recommendation& GetRecommendation() const{ return m_recommendation; }
 
     /**
-     * <p>Provides a recommendation on how to remediate the issue identified within a
+     * <p>A recommendation on how to remediate the issue identified within a
      * finding.</p>
      */
     inline bool RecommendationHasBeenSet() const { return m_recommendationHasBeenSet; }
 
     /**
-     * <p>Provides a recommendation on how to remediate the issue identified within a
+     * <p>A recommendation on how to remediate the issue identified within a
      * finding.</p>
      */
     inline void SetRecommendation(const Recommendation& value) { m_recommendationHasBeenSet = true; m_recommendation = value; }
 
     /**
-     * <p>Provides a recommendation on how to remediate the issue identified within a
+     * <p>A recommendation on how to remediate the issue identified within a
      * finding.</p>
      */
     inline void SetRecommendation(Recommendation&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::move(value); }
 
     /**
-     * <p>Provides a recommendation on how to remediate the issue identified within a
+     * <p>A recommendation on how to remediate the issue identified within a
      * finding.</p>
      */
     inline Remediation& WithRecommendation(const Recommendation& value) { SetRecommendation(value); return *this;}
 
     /**
-     * <p>Provides a recommendation on how to remediate the issue identified within a
+     * <p>A recommendation on how to remediate the issue identified within a
      * finding.</p>
      */
     inline Remediation& WithRecommendation(Recommendation&& value) { SetRecommendation(std::move(value)); return *this;}

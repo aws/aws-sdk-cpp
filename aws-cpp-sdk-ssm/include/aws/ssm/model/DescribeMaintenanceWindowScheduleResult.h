@@ -45,43 +45,43 @@ namespace Model
 
 
     /**
-     * <p>Information about Maintenance Window executions scheduled for the specified
+     * <p>Information about maintenance window executions scheduled for the specified
      * time range.</p>
      */
     inline const Aws::Vector<ScheduledWindowExecution>& GetScheduledWindowExecutions() const{ return m_scheduledWindowExecutions; }
 
     /**
-     * <p>Information about Maintenance Window executions scheduled for the specified
+     * <p>Information about maintenance window executions scheduled for the specified
      * time range.</p>
      */
     inline void SetScheduledWindowExecutions(const Aws::Vector<ScheduledWindowExecution>& value) { m_scheduledWindowExecutions = value; }
 
     /**
-     * <p>Information about Maintenance Window executions scheduled for the specified
+     * <p>Information about maintenance window executions scheduled for the specified
      * time range.</p>
      */
     inline void SetScheduledWindowExecutions(Aws::Vector<ScheduledWindowExecution>&& value) { m_scheduledWindowExecutions = std::move(value); }
 
     /**
-     * <p>Information about Maintenance Window executions scheduled for the specified
+     * <p>Information about maintenance window executions scheduled for the specified
      * time range.</p>
      */
     inline DescribeMaintenanceWindowScheduleResult& WithScheduledWindowExecutions(const Aws::Vector<ScheduledWindowExecution>& value) { SetScheduledWindowExecutions(value); return *this;}
 
     /**
-     * <p>Information about Maintenance Window executions scheduled for the specified
+     * <p>Information about maintenance window executions scheduled for the specified
      * time range.</p>
      */
     inline DescribeMaintenanceWindowScheduleResult& WithScheduledWindowExecutions(Aws::Vector<ScheduledWindowExecution>&& value) { SetScheduledWindowExecutions(std::move(value)); return *this;}
 
     /**
-     * <p>Information about Maintenance Window executions scheduled for the specified
+     * <p>Information about maintenance window executions scheduled for the specified
      * time range.</p>
      */
     inline DescribeMaintenanceWindowScheduleResult& AddScheduledWindowExecutions(const ScheduledWindowExecution& value) { m_scheduledWindowExecutions.push_back(value); return *this; }
 
     /**
-     * <p>Information about Maintenance Window executions scheduled for the specified
+     * <p>Information about maintenance window executions scheduled for the specified
      * time range.</p>
      */
     inline DescribeMaintenanceWindowScheduleResult& AddScheduledWindowExecutions(ScheduledWindowExecution&& value) { m_scheduledWindowExecutions.push_back(std::move(value)); return *this; }

@@ -49,73 +49,73 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Maintenance Window that was updated.</p>
+     * <p>The ID of the maintenance window that was updated.</p>
      */
     inline const Aws::String& GetWindowId() const{ return m_windowId; }
 
     /**
-     * <p>The ID of the Maintenance Window that was updated.</p>
+     * <p>The ID of the maintenance window that was updated.</p>
      */
     inline void SetWindowId(const Aws::String& value) { m_windowId = value; }
 
     /**
-     * <p>The ID of the Maintenance Window that was updated.</p>
+     * <p>The ID of the maintenance window that was updated.</p>
      */
     inline void SetWindowId(Aws::String&& value) { m_windowId = std::move(value); }
 
     /**
-     * <p>The ID of the Maintenance Window that was updated.</p>
+     * <p>The ID of the maintenance window that was updated.</p>
      */
     inline void SetWindowId(const char* value) { m_windowId.assign(value); }
 
     /**
-     * <p>The ID of the Maintenance Window that was updated.</p>
+     * <p>The ID of the maintenance window that was updated.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window that was updated.</p>
+     * <p>The ID of the maintenance window that was updated.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window that was updated.</p>
+     * <p>The ID of the maintenance window that was updated.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
 
     /**
-     * <p>The task ID of the Maintenance Window that was updated.</p>
+     * <p>The task ID of the maintenance window that was updated.</p>
      */
     inline const Aws::String& GetWindowTaskId() const{ return m_windowTaskId; }
 
     /**
-     * <p>The task ID of the Maintenance Window that was updated.</p>
+     * <p>The task ID of the maintenance window that was updated.</p>
      */
     inline void SetWindowTaskId(const Aws::String& value) { m_windowTaskId = value; }
 
     /**
-     * <p>The task ID of the Maintenance Window that was updated.</p>
+     * <p>The task ID of the maintenance window that was updated.</p>
      */
     inline void SetWindowTaskId(Aws::String&& value) { m_windowTaskId = std::move(value); }
 
     /**
-     * <p>The task ID of the Maintenance Window that was updated.</p>
+     * <p>The task ID of the maintenance window that was updated.</p>
      */
     inline void SetWindowTaskId(const char* value) { m_windowTaskId.assign(value); }
 
     /**
-     * <p>The task ID of the Maintenance Window that was updated.</p>
+     * <p>The task ID of the maintenance window that was updated.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithWindowTaskId(const Aws::String& value) { SetWindowTaskId(value); return *this;}
 
     /**
-     * <p>The task ID of the Maintenance Window that was updated.</p>
+     * <p>The task ID of the maintenance window that was updated.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithWindowTaskId(Aws::String&& value) { SetWindowTaskId(std::move(value)); return *this;}
 
     /**
-     * <p>The task ID of the Maintenance Window that was updated.</p>
+     * <p>The task ID of the maintenance window that was updated.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithWindowTaskId(const char* value) { SetWindowTaskId(value); return *this;}
 
@@ -193,37 +193,44 @@ namespace Model
 
 
     /**
-     * <p>The updated service role ARN value.</p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p>The updated service role ARN value.</p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArn = value; }
 
     /**
-     * <p>The updated service role ARN value.</p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p>The updated service role ARN value.</p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArn.assign(value); }
 
     /**
-     * <p>The updated service role ARN value.</p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The updated service role ARN value.</p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The updated service role ARN value.</p>
+     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
+     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
@@ -233,7 +240,7 @@ namespace Model
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& GetTaskParameters() const{ return m_taskParameters; }
@@ -243,7 +250,7 @@ namespace Model
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline void SetTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { m_taskParameters = value; }
@@ -253,7 +260,7 @@ namespace Model
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline void SetTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { m_taskParameters = std::move(value); }
@@ -263,7 +270,7 @@ namespace Model
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline UpdateMaintenanceWindowTaskResult& WithTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { SetTaskParameters(value); return *this;}
@@ -273,7 +280,7 @@ namespace Model
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline UpdateMaintenanceWindowTaskResult& WithTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { SetTaskParameters(std::move(value)); return *this;}
@@ -283,7 +290,7 @@ namespace Model
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(const Aws::String& key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParameters.emplace(key, value); return *this; }
@@ -293,7 +300,7 @@ namespace Model
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(Aws::String&& key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParameters.emplace(std::move(key), value); return *this; }
@@ -303,7 +310,7 @@ namespace Model
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(const Aws::String& key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParameters.emplace(key, std::move(value)); return *this; }
@@ -313,7 +320,7 @@ namespace Model
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(Aws::String&& key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParameters.emplace(std::move(key), std::move(value)); return *this; }
@@ -323,7 +330,7 @@ namespace Model
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(const char* key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParameters.emplace(key, std::move(value)); return *this; }
@@ -333,7 +340,7 @@ namespace Model
      * been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(const char* key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParameters.emplace(key, value); return *this; }
@@ -459,7 +466,7 @@ namespace Model
      * logs, instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
@@ -470,7 +477,7 @@ namespace Model
      * logs, instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline void SetLoggingInfo(const LoggingInfo& value) { m_loggingInfo = value; }
@@ -481,7 +488,7 @@ namespace Model
      * logs, instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline void SetLoggingInfo(LoggingInfo&& value) { m_loggingInfo = std::move(value); }
@@ -492,7 +499,7 @@ namespace Model
      * logs, instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline UpdateMaintenanceWindowTaskResult& WithLoggingInfo(const LoggingInfo& value) { SetLoggingInfo(value); return *this;}
@@ -503,7 +510,7 @@ namespace Model
      * logs, instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline UpdateMaintenanceWindowTaskResult& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}

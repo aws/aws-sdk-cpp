@@ -45,43 +45,43 @@ namespace Model
 
 
     /**
-     * <p>Information about the Maintenance Window targets and tasks an instance is
+     * <p>Information about the maintenance window targets and tasks an instance is
      * associated with.</p>
      */
     inline const Aws::Vector<MaintenanceWindowIdentityForTarget>& GetWindowIdentities() const{ return m_windowIdentities; }
 
     /**
-     * <p>Information about the Maintenance Window targets and tasks an instance is
+     * <p>Information about the maintenance window targets and tasks an instance is
      * associated with.</p>
      */
     inline void SetWindowIdentities(const Aws::Vector<MaintenanceWindowIdentityForTarget>& value) { m_windowIdentities = value; }
 
     /**
-     * <p>Information about the Maintenance Window targets and tasks an instance is
+     * <p>Information about the maintenance window targets and tasks an instance is
      * associated with.</p>
      */
     inline void SetWindowIdentities(Aws::Vector<MaintenanceWindowIdentityForTarget>&& value) { m_windowIdentities = std::move(value); }
 
     /**
-     * <p>Information about the Maintenance Window targets and tasks an instance is
+     * <p>Information about the maintenance window targets and tasks an instance is
      * associated with.</p>
      */
     inline DescribeMaintenanceWindowsForTargetResult& WithWindowIdentities(const Aws::Vector<MaintenanceWindowIdentityForTarget>& value) { SetWindowIdentities(value); return *this;}
 
     /**
-     * <p>Information about the Maintenance Window targets and tasks an instance is
+     * <p>Information about the maintenance window targets and tasks an instance is
      * associated with.</p>
      */
     inline DescribeMaintenanceWindowsForTargetResult& WithWindowIdentities(Aws::Vector<MaintenanceWindowIdentityForTarget>&& value) { SetWindowIdentities(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the Maintenance Window targets and tasks an instance is
+     * <p>Information about the maintenance window targets and tasks an instance is
      * associated with.</p>
      */
     inline DescribeMaintenanceWindowsForTargetResult& AddWindowIdentities(const MaintenanceWindowIdentityForTarget& value) { m_windowIdentities.push_back(value); return *this; }
 
     /**
-     * <p>Information about the Maintenance Window targets and tasks an instance is
+     * <p>Information about the maintenance window targets and tasks an instance is
      * associated with.</p>
      */
     inline DescribeMaintenanceWindowsForTargetResult& AddWindowIdentities(MaintenanceWindowIdentityForTarget&& value) { m_windowIdentities.push_back(std::move(value)); return *this; }

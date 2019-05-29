@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Maintenance Window the target was removed from.</p>
+     * <p>The ID of the maintenance window the target was removed from.</p>
      */
     inline const Aws::String& GetWindowId() const{ return m_windowId; }
 
     /**
-     * <p>The ID of the Maintenance Window the target was removed from.</p>
+     * <p>The ID of the maintenance window the target was removed from.</p>
      */
     inline void SetWindowId(const Aws::String& value) { m_windowId = value; }
 
     /**
-     * <p>The ID of the Maintenance Window the target was removed from.</p>
+     * <p>The ID of the maintenance window the target was removed from.</p>
      */
     inline void SetWindowId(Aws::String&& value) { m_windowId = std::move(value); }
 
     /**
-     * <p>The ID of the Maintenance Window the target was removed from.</p>
+     * <p>The ID of the maintenance window the target was removed from.</p>
      */
     inline void SetWindowId(const char* value) { m_windowId.assign(value); }
 
     /**
-     * <p>The ID of the Maintenance Window the target was removed from.</p>
+     * <p>The ID of the maintenance window the target was removed from.</p>
      */
     inline DeregisterTargetFromMaintenanceWindowResult& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window the target was removed from.</p>
+     * <p>The ID of the maintenance window the target was removed from.</p>
      */
     inline DeregisterTargetFromMaintenanceWindowResult& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window the target was removed from.</p>
+     * <p>The ID of the maintenance window the target was removed from.</p>
      */
     inline DeregisterTargetFromMaintenanceWindowResult& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 

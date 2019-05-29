@@ -46,76 +46,76 @@ namespace Model
 
 
     /**
-     * <p>Represents the "greater than equal" condition to be applied to a single field
-     * when querying for findings. </p>
+     * <p>The greater-than-equal condition to be applied to a single field when
+     * querying for findings. </p>
      */
     inline double GetGte() const{ return m_gte; }
 
     /**
-     * <p>Represents the "greater than equal" condition to be applied to a single field
-     * when querying for findings. </p>
+     * <p>The greater-than-equal condition to be applied to a single field when
+     * querying for findings. </p>
      */
     inline bool GteHasBeenSet() const { return m_gteHasBeenSet; }
 
     /**
-     * <p>Represents the "greater than equal" condition to be applied to a single field
-     * when querying for findings. </p>
+     * <p>The greater-than-equal condition to be applied to a single field when
+     * querying for findings. </p>
      */
     inline void SetGte(double value) { m_gteHasBeenSet = true; m_gte = value; }
 
     /**
-     * <p>Represents the "greater than equal" condition to be applied to a single field
-     * when querying for findings. </p>
+     * <p>The greater-than-equal condition to be applied to a single field when
+     * querying for findings. </p>
      */
     inline NumberFilter& WithGte(double value) { SetGte(value); return *this;}
 
 
     /**
-     * <p>Represents the "less than equal" condition to be applied to a single field
-     * when querying for findings. </p>
+     * <p>The less-than-equal condition to be applied to a single field when querying
+     * for findings. </p>
      */
     inline double GetLte() const{ return m_lte; }
 
     /**
-     * <p>Represents the "less than equal" condition to be applied to a single field
-     * when querying for findings. </p>
+     * <p>The less-than-equal condition to be applied to a single field when querying
+     * for findings. </p>
      */
     inline bool LteHasBeenSet() const { return m_lteHasBeenSet; }
 
     /**
-     * <p>Represents the "less than equal" condition to be applied to a single field
-     * when querying for findings. </p>
+     * <p>The less-than-equal condition to be applied to a single field when querying
+     * for findings. </p>
      */
     inline void SetLte(double value) { m_lteHasBeenSet = true; m_lte = value; }
 
     /**
-     * <p>Represents the "less than equal" condition to be applied to a single field
-     * when querying for findings. </p>
+     * <p>The less-than-equal condition to be applied to a single field when querying
+     * for findings. </p>
      */
     inline NumberFilter& WithLte(double value) { SetLte(value); return *this;}
 
 
     /**
-     * <p>Represents the "equal to" condition to be applied to a single field when
-     * querying for findings.</p>
+     * <p>The equal-to condition to be applied to a single field when querying for
+     * findings.</p>
      */
     inline double GetEq() const{ return m_eq; }
 
     /**
-     * <p>Represents the "equal to" condition to be applied to a single field when
-     * querying for findings.</p>
+     * <p>The equal-to condition to be applied to a single field when querying for
+     * findings.</p>
      */
     inline bool EqHasBeenSet() const { return m_eqHasBeenSet; }
 
     /**
-     * <p>Represents the "equal to" condition to be applied to a single field when
-     * querying for findings.</p>
+     * <p>The equal-to condition to be applied to a single field when querying for
+     * findings.</p>
      */
     inline void SetEq(double value) { m_eqHasBeenSet = true; m_eq = value; }
 
     /**
-     * <p>Represents the "equal to" condition to be applied to a single field when
-     * querying for findings.</p>
+     * <p>The equal-to condition to be applied to a single field when querying for
+     * findings.</p>
      */
     inline NumberFilter& WithEq(double value) { SetEq(value); return *this;}
 

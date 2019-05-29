@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Maintenance Window execution that has been stopped.</p>
+     * <p>The ID of the maintenance window execution that has been stopped.</p>
      */
     inline const Aws::String& GetWindowExecutionId() const{ return m_windowExecutionId; }
 
     /**
-     * <p>The ID of the Maintenance Window execution that has been stopped.</p>
+     * <p>The ID of the maintenance window execution that has been stopped.</p>
      */
     inline void SetWindowExecutionId(const Aws::String& value) { m_windowExecutionId = value; }
 
     /**
-     * <p>The ID of the Maintenance Window execution that has been stopped.</p>
+     * <p>The ID of the maintenance window execution that has been stopped.</p>
      */
     inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionId = std::move(value); }
 
     /**
-     * <p>The ID of the Maintenance Window execution that has been stopped.</p>
+     * <p>The ID of the maintenance window execution that has been stopped.</p>
      */
     inline void SetWindowExecutionId(const char* value) { m_windowExecutionId.assign(value); }
 
     /**
-     * <p>The ID of the Maintenance Window execution that has been stopped.</p>
+     * <p>The ID of the maintenance window execution that has been stopped.</p>
      */
     inline CancelMaintenanceWindowExecutionResult& WithWindowExecutionId(const Aws::String& value) { SetWindowExecutionId(value); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window execution that has been stopped.</p>
+     * <p>The ID of the maintenance window execution that has been stopped.</p>
      */
     inline CancelMaintenanceWindowExecutionResult& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window execution that has been stopped.</p>
+     * <p>The ID of the maintenance window execution that has been stopped.</p>
      */
     inline CancelMaintenanceWindowExecutionResult& WithWindowExecutionId(const char* value) { SetWindowExecutionId(value); return *this;}
 

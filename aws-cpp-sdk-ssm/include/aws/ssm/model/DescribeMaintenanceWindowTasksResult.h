@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Information about the tasks in the Maintenance Window.</p>
+     * <p>Information about the tasks in the maintenance window.</p>
      */
     inline const Aws::Vector<MaintenanceWindowTask>& GetTasks() const{ return m_tasks; }
 
     /**
-     * <p>Information about the tasks in the Maintenance Window.</p>
+     * <p>Information about the tasks in the maintenance window.</p>
      */
     inline void SetTasks(const Aws::Vector<MaintenanceWindowTask>& value) { m_tasks = value; }
 
     /**
-     * <p>Information about the tasks in the Maintenance Window.</p>
+     * <p>Information about the tasks in the maintenance window.</p>
      */
     inline void SetTasks(Aws::Vector<MaintenanceWindowTask>&& value) { m_tasks = std::move(value); }
 
     /**
-     * <p>Information about the tasks in the Maintenance Window.</p>
+     * <p>Information about the tasks in the maintenance window.</p>
      */
     inline DescribeMaintenanceWindowTasksResult& WithTasks(const Aws::Vector<MaintenanceWindowTask>& value) { SetTasks(value); return *this;}
 
     /**
-     * <p>Information about the tasks in the Maintenance Window.</p>
+     * <p>Information about the tasks in the maintenance window.</p>
      */
     inline DescribeMaintenanceWindowTasksResult& WithTasks(Aws::Vector<MaintenanceWindowTask>&& value) { SetTasks(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the tasks in the Maintenance Window.</p>
+     * <p>Information about the tasks in the maintenance window.</p>
      */
     inline DescribeMaintenanceWindowTasksResult& AddTasks(const MaintenanceWindowTask& value) { m_tasks.push_back(value); return *this; }
 
     /**
-     * <p>Information about the tasks in the Maintenance Window.</p>
+     * <p>Information about the tasks in the maintenance window.</p>
      */
     inline DescribeMaintenanceWindowTasksResult& AddTasks(MaintenanceWindowTask&& value) { m_tasks.push_back(std::move(value)); return *this; }
 

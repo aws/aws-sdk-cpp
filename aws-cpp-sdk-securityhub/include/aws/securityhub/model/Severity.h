@@ -46,25 +46,25 @@ namespace Model
 
 
     /**
-     * <p>The native severity as defined by the security findings provider's solution
+     * <p>The native severity as defined by the security-findings provider's solution
      * that generated the finding.</p>
      */
     inline double GetProduct() const{ return m_product; }
 
     /**
-     * <p>The native severity as defined by the security findings provider's solution
+     * <p>The native severity as defined by the security-findings provider's solution
      * that generated the finding.</p>
      */
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
 
     /**
-     * <p>The native severity as defined by the security findings provider's solution
+     * <p>The native severity as defined by the security-findings provider's solution
      * that generated the finding.</p>
      */
     inline void SetProduct(double value) { m_productHasBeenSet = true; m_product = value; }
 
     /**
-     * <p>The native severity as defined by the security findings provider's solution
+     * <p>The native severity as defined by the security-findings provider's solution
      * that generated the finding.</p>
      */
     inline Severity& WithProduct(double value) { SetProduct(value); return *this;}

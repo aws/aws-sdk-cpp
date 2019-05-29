@@ -33,6 +33,7 @@ Schedule::Schedule() :
     m_copyTags(false),
     m_copyTagsHasBeenSet(false),
     m_tagsToAddHasBeenSet(false),
+    m_variableTagsHasBeenSet(false),
     m_createRuleHasBeenSet(false),
     m_retainRuleHasBeenSet(false)
 {
@@ -43,6 +44,7 @@ Schedule::Schedule(JsonView jsonValue) :
     m_copyTags(false),
     m_copyTagsHasBeenSet(false),
     m_tagsToAddHasBeenSet(false),
+    m_variableTagsHasBeenSet(false),
     m_createRuleHasBeenSet(false),
     m_retainRuleHasBeenSet(false)
 {
@@ -73,6 +75,16 @@ Schedule& Schedule::operator =(JsonView jsonValue)
       m_tagsToAdd.push_back(tagsToAddJsonList[tagsToAddIndex].AsObject());
     }
     m_tagsToAddHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VariableTags"))
+  {
+    Array<JsonView> variableTagsJsonList = jsonValue.GetArray("VariableTags");
+    for(unsigned variableTagsIndex = 0; variableTagsIndex < variableTagsJsonList.GetLength(); ++variableTagsIndex)
+    {
+      m_variableTags.push_back(variableTagsJsonList[variableTagsIndex].AsObject());
+    }
+    m_variableTagsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreateRule"))
@@ -116,6 +128,17 @@ JsonValue Schedule::Jsonize() const
      tagsToAddJsonList[tagsToAddIndex].AsObject(m_tagsToAdd[tagsToAddIndex].Jsonize());
    }
    payload.WithArray("TagsToAdd", std::move(tagsToAddJsonList));
+
+  }
+
+  if(m_variableTagsHasBeenSet)
+  {
+   Array<JsonValue> variableTagsJsonList(m_variableTags.size());
+   for(unsigned variableTagsIndex = 0; variableTagsIndex < variableTagsJsonList.GetLength(); ++variableTagsIndex)
+   {
+     variableTagsJsonList[variableTagsIndex].AsObject(m_variableTags[variableTagsIndex].Jsonize());
+   }
+   payload.WithArray("VariableTags", std::move(variableTagsJsonList));
 
   }
 

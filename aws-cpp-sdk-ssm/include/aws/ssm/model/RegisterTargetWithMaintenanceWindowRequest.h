@@ -49,211 +49,275 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Maintenance Window the target should be registered with.</p>
+     * <p>The ID of the maintenance window the target should be registered with.</p>
      */
     inline const Aws::String& GetWindowId() const{ return m_windowId; }
 
     /**
-     * <p>The ID of the Maintenance Window the target should be registered with.</p>
+     * <p>The ID of the maintenance window the target should be registered with.</p>
      */
     inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Maintenance Window the target should be registered with.</p>
+     * <p>The ID of the maintenance window the target should be registered with.</p>
      */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
-     * <p>The ID of the Maintenance Window the target should be registered with.</p>
+     * <p>The ID of the maintenance window the target should be registered with.</p>
      */
     inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = std::move(value); }
 
     /**
-     * <p>The ID of the Maintenance Window the target should be registered with.</p>
+     * <p>The ID of the maintenance window the target should be registered with.</p>
      */
     inline void SetWindowId(const char* value) { m_windowIdHasBeenSet = true; m_windowId.assign(value); }
 
     /**
-     * <p>The ID of the Maintenance Window the target should be registered with.</p>
+     * <p>The ID of the maintenance window the target should be registered with.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window the target should be registered with.</p>
+     * <p>The ID of the maintenance window the target should be registered with.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window the target should be registered with.</p>
+     * <p>The ID of the maintenance window the target should be registered with.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
 
     /**
-     * <p>The type of target being registered with the Maintenance Window.</p>
+     * <p>The type of target being registered with the maintenance window.</p>
      */
     inline const MaintenanceWindowResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of target being registered with the Maintenance Window.</p>
+     * <p>The type of target being registered with the maintenance window.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of target being registered with the Maintenance Window.</p>
+     * <p>The type of target being registered with the maintenance window.</p>
      */
     inline void SetResourceType(const MaintenanceWindowResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of target being registered with the Maintenance Window.</p>
+     * <p>The type of target being registered with the maintenance window.</p>
      */
     inline void SetResourceType(MaintenanceWindowResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of target being registered with the Maintenance Window.</p>
+     * <p>The type of target being registered with the maintenance window.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithResourceType(const MaintenanceWindowResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of target being registered with the Maintenance Window.</p>
+     * <p>The type of target being registered with the maintenance window.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithResourceType(MaintenanceWindowResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The targets (either instances or tags). </p> <p>Specify instances using the
-     * following format:</p> <p>
-     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify tags using either of the following formats:</p> <p>
-     * <code>Key=tag:&lt;tag-key&gt;,Values=&lt;tag-value-1&gt;,&lt;tag-value-2&gt;</code>
-     * </p> <p> <code>Key=tag-key,Values=&lt;tag-key-1&gt;,&lt;tag-key-2&gt;</code>
-     * </p>
+     * <p>The targets to register with the maintenance window. In other words, the
+     * instances to run commands on when the maintenance window runs.</p> <p>You can
+     * specify targets using either instance IDs or tags that have been applied to
+     * instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
+     * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
+     * <p>
+     * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
+     * </code> </p> <p> <b>Example 3</b>: Use tag-keys applied to instances</p> <p>
+     * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p>
+     * <p>For more information about these examples formats, including the best use
+     * case for each one, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
+     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The targets (either instances or tags). </p> <p>Specify instances using the
-     * following format:</p> <p>
-     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify tags using either of the following formats:</p> <p>
-     * <code>Key=tag:&lt;tag-key&gt;,Values=&lt;tag-value-1&gt;,&lt;tag-value-2&gt;</code>
-     * </p> <p> <code>Key=tag-key,Values=&lt;tag-key-1&gt;,&lt;tag-key-2&gt;</code>
-     * </p>
+     * <p>The targets to register with the maintenance window. In other words, the
+     * instances to run commands on when the maintenance window runs.</p> <p>You can
+     * specify targets using either instance IDs or tags that have been applied to
+     * instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
+     * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
+     * <p>
+     * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
+     * </code> </p> <p> <b>Example 3</b>: Use tag-keys applied to instances</p> <p>
+     * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p>
+     * <p>For more information about these examples formats, including the best use
+     * case for each one, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
+     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>The targets (either instances or tags). </p> <p>Specify instances using the
-     * following format:</p> <p>
-     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify tags using either of the following formats:</p> <p>
-     * <code>Key=tag:&lt;tag-key&gt;,Values=&lt;tag-value-1&gt;,&lt;tag-value-2&gt;</code>
-     * </p> <p> <code>Key=tag-key,Values=&lt;tag-key-1&gt;,&lt;tag-key-2&gt;</code>
-     * </p>
+     * <p>The targets to register with the maintenance window. In other words, the
+     * instances to run commands on when the maintenance window runs.</p> <p>You can
+     * specify targets using either instance IDs or tags that have been applied to
+     * instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
+     * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
+     * <p>
+     * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
+     * </code> </p> <p> <b>Example 3</b>: Use tag-keys applied to instances</p> <p>
+     * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p>
+     * <p>For more information about these examples formats, including the best use
+     * case for each one, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
+     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The targets (either instances or tags). </p> <p>Specify instances using the
-     * following format:</p> <p>
-     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify tags using either of the following formats:</p> <p>
-     * <code>Key=tag:&lt;tag-key&gt;,Values=&lt;tag-value-1&gt;,&lt;tag-value-2&gt;</code>
-     * </p> <p> <code>Key=tag-key,Values=&lt;tag-key-1&gt;,&lt;tag-key-2&gt;</code>
-     * </p>
+     * <p>The targets to register with the maintenance window. In other words, the
+     * instances to run commands on when the maintenance window runs.</p> <p>You can
+     * specify targets using either instance IDs or tags that have been applied to
+     * instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
+     * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
+     * <p>
+     * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
+     * </code> </p> <p> <b>Example 3</b>: Use tag-keys applied to instances</p> <p>
+     * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p>
+     * <p>For more information about these examples formats, including the best use
+     * case for each one, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
+     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The targets (either instances or tags). </p> <p>Specify instances using the
-     * following format:</p> <p>
-     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify tags using either of the following formats:</p> <p>
-     * <code>Key=tag:&lt;tag-key&gt;,Values=&lt;tag-value-1&gt;,&lt;tag-value-2&gt;</code>
-     * </p> <p> <code>Key=tag-key,Values=&lt;tag-key-1&gt;,&lt;tag-key-2&gt;</code>
-     * </p>
+     * <p>The targets to register with the maintenance window. In other words, the
+     * instances to run commands on when the maintenance window runs.</p> <p>You can
+     * specify targets using either instance IDs or tags that have been applied to
+     * instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
+     * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
+     * <p>
+     * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
+     * </code> </p> <p> <b>Example 3</b>: Use tag-keys applied to instances</p> <p>
+     * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p>
+     * <p>For more information about these examples formats, including the best use
+     * case for each one, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
+     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets (either instances or tags). </p> <p>Specify instances using the
-     * following format:</p> <p>
-     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify tags using either of the following formats:</p> <p>
-     * <code>Key=tag:&lt;tag-key&gt;,Values=&lt;tag-value-1&gt;,&lt;tag-value-2&gt;</code>
-     * </p> <p> <code>Key=tag-key,Values=&lt;tag-key-1&gt;,&lt;tag-key-2&gt;</code>
-     * </p>
+     * <p>The targets to register with the maintenance window. In other words, the
+     * instances to run commands on when the maintenance window runs.</p> <p>You can
+     * specify targets using either instance IDs or tags that have been applied to
+     * instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
+     * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
+     * <p>
+     * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
+     * </code> </p> <p> <b>Example 3</b>: Use tag-keys applied to instances</p> <p>
+     * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p>
+     * <p>For more information about these examples formats, including the best use
+     * case for each one, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
+     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The targets (either instances or tags). </p> <p>Specify instances using the
-     * following format:</p> <p>
-     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify tags using either of the following formats:</p> <p>
-     * <code>Key=tag:&lt;tag-key&gt;,Values=&lt;tag-value-1&gt;,&lt;tag-value-2&gt;</code>
-     * </p> <p> <code>Key=tag-key,Values=&lt;tag-key-1&gt;,&lt;tag-key-2&gt;</code>
-     * </p>
+     * <p>The targets to register with the maintenance window. In other words, the
+     * instances to run commands on when the maintenance window runs.</p> <p>You can
+     * specify targets using either instance IDs or tags that have been applied to
+     * instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
+     * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
+     * <p>
+     * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
+     * </code> </p> <p> <b>Example 3</b>: Use tag-keys applied to instances</p> <p>
+     * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p>
+     * <p>For more information about these examples formats, including the best use
+     * case for each one, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
+     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The targets (either instances or tags). </p> <p>Specify instances using the
-     * following format:</p> <p>
-     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
-     * </p> <p>Specify tags using either of the following formats:</p> <p>
-     * <code>Key=tag:&lt;tag-key&gt;,Values=&lt;tag-value-1&gt;,&lt;tag-value-2&gt;</code>
-     * </p> <p> <code>Key=tag-key,Values=&lt;tag-key-1&gt;,&lt;tag-key-2&gt;</code>
-     * </p>
+     * <p>The targets to register with the maintenance window. In other words, the
+     * instances to run commands on when the maintenance window runs.</p> <p>You can
+     * specify targets using either instance IDs or tags that have been applied to
+     * instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
+     * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
+     * <p>
+     * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
+     * </code> </p> <p> <b>Example 3</b>: Use tag-keys applied to instances</p> <p>
+     * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p>
+     * <p>For more information about these examples formats, including the best use
+     * case for each one, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
+     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window.</p>
+     * while running tasks for these targets in this maintenance window.</p>
      */
     inline const Aws::String& GetOwnerInformation() const{ return m_ownerInformation; }
 
     /**
      * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window.</p>
+     * while running tasks for these targets in this maintenance window.</p>
      */
     inline bool OwnerInformationHasBeenSet() const { return m_ownerInformationHasBeenSet; }
 
     /**
      * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window.</p>
+     * while running tasks for these targets in this maintenance window.</p>
      */
     inline void SetOwnerInformation(const Aws::String& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = value; }
 
     /**
      * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window.</p>
+     * while running tasks for these targets in this maintenance window.</p>
      */
     inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = std::move(value); }
 
     /**
      * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window.</p>
+     * while running tasks for these targets in this maintenance window.</p>
      */
     inline void SetOwnerInformation(const char* value) { m_ownerInformationHasBeenSet = true; m_ownerInformation.assign(value); }
 
     /**
      * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window.</p>
+     * while running tasks for these targets in this maintenance window.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithOwnerInformation(const Aws::String& value) { SetOwnerInformation(value); return *this;}
 
     /**
      * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window.</p>
+     * while running tasks for these targets in this maintenance window.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(std::move(value)); return *this;}
 
     /**
      * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this Maintenance Window.</p>
+     * while running tasks for these targets in this maintenance window.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 

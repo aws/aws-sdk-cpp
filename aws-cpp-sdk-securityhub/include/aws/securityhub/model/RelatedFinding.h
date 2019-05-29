@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Related finding's details.</p><p><h3>See Also:</h3>   <a
+   * <p>A related finding's details.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/RelatedFinding">AWS
    * API Reference</a></p>
    */

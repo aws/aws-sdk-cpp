@@ -30,15 +30,15 @@ namespace Aws
       namespace MapFilterComparisonMapper
       {
 
-        static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
+        static const int EQUALS_HASH = HashingUtils::HashString("EQUALS");
 
 
         MapFilterComparison GetMapFilterComparisonForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CONTAINS_HASH)
+          if (hashCode == EQUALS_HASH)
           {
-            return MapFilterComparison::CONTAINS;
+            return MapFilterComparison::EQUALS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -54,8 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case MapFilterComparison::CONTAINS:
-            return "CONTAINS";
+          case MapFilterComparison::EQUALS:
+            return "EQUALS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

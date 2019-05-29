@@ -92,16 +92,28 @@ namespace Model
     inline Schedule& WithName(const char* value) { SetName(value); return *this;}
 
 
-    
+    /**
+     * <p>Copy all user-defined tags on a source volume to snapshots of the volume
+     * created by this policy.</p>
+     */
     inline bool GetCopyTags() const{ return m_copyTags; }
 
-    
+    /**
+     * <p>Copy all user-defined tags on a source volume to snapshots of the volume
+     * created by this policy.</p>
+     */
     inline bool CopyTagsHasBeenSet() const { return m_copyTagsHasBeenSet; }
 
-    
+    /**
+     * <p>Copy all user-defined tags on a source volume to snapshots of the volume
+     * created by this policy.</p>
+     */
     inline void SetCopyTags(bool value) { m_copyTagsHasBeenSet = true; m_copyTags = value; }
 
-    
+    /**
+     * <p>Copy all user-defined tags on a source volume to snapshots of the volume
+     * created by this policy.</p>
+     */
     inline Schedule& WithCopyTags(bool value) { SetCopyTags(value); return *this;}
 
 
@@ -152,6 +164,79 @@ namespace Model
      * addition to the AWS-added lifecycle tags.</p>
      */
     inline Schedule& AddTagsToAdd(Tag&& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A collection of key/value pairs with values determined dynamically when the
+     * policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in
+     * one of the two following formats: <code>$(instance-id)</code> or
+     * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
+     * Management – Instance policies.</p>
+     */
+    inline const Aws::Vector<Tag>& GetVariableTags() const{ return m_variableTags; }
+
+    /**
+     * <p>A collection of key/value pairs with values determined dynamically when the
+     * policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in
+     * one of the two following formats: <code>$(instance-id)</code> or
+     * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
+     * Management – Instance policies.</p>
+     */
+    inline bool VariableTagsHasBeenSet() const { return m_variableTagsHasBeenSet; }
+
+    /**
+     * <p>A collection of key/value pairs with values determined dynamically when the
+     * policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in
+     * one of the two following formats: <code>$(instance-id)</code> or
+     * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
+     * Management – Instance policies.</p>
+     */
+    inline void SetVariableTags(const Aws::Vector<Tag>& value) { m_variableTagsHasBeenSet = true; m_variableTags = value; }
+
+    /**
+     * <p>A collection of key/value pairs with values determined dynamically when the
+     * policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in
+     * one of the two following formats: <code>$(instance-id)</code> or
+     * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
+     * Management – Instance policies.</p>
+     */
+    inline void SetVariableTags(Aws::Vector<Tag>&& value) { m_variableTagsHasBeenSet = true; m_variableTags = std::move(value); }
+
+    /**
+     * <p>A collection of key/value pairs with values determined dynamically when the
+     * policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in
+     * one of the two following formats: <code>$(instance-id)</code> or
+     * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
+     * Management – Instance policies.</p>
+     */
+    inline Schedule& WithVariableTags(const Aws::Vector<Tag>& value) { SetVariableTags(value); return *this;}
+
+    /**
+     * <p>A collection of key/value pairs with values determined dynamically when the
+     * policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in
+     * one of the two following formats: <code>$(instance-id)</code> or
+     * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
+     * Management – Instance policies.</p>
+     */
+    inline Schedule& WithVariableTags(Aws::Vector<Tag>&& value) { SetVariableTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A collection of key/value pairs with values determined dynamically when the
+     * policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in
+     * one of the two following formats: <code>$(instance-id)</code> or
+     * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
+     * Management – Instance policies.</p>
+     */
+    inline Schedule& AddVariableTags(const Tag& value) { m_variableTagsHasBeenSet = true; m_variableTags.push_back(value); return *this; }
+
+    /**
+     * <p>A collection of key/value pairs with values determined dynamically when the
+     * policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in
+     * one of the two following formats: <code>$(instance-id)</code> or
+     * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
+     * Management – Instance policies.</p>
+     */
+    inline Schedule& AddVariableTags(Tag&& value) { m_variableTagsHasBeenSet = true; m_variableTags.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -225,6 +310,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tagsToAdd;
     bool m_tagsToAddHasBeenSet;
+
+    Aws::Vector<Tag> m_variableTags;
+    bool m_variableTagsHasBeenSet;
 
     CreateRule m_createRule;
     bool m_createRuleHasBeenSet;

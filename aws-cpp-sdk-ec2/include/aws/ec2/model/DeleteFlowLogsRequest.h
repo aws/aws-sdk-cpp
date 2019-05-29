@@ -81,47 +81,56 @@ namespace Model
 
 
     /**
-     * <p>One or more flow log IDs.</p>
+     * <p>One or more flow log IDs.</p> <p>Constraint: Maximum of 1000 flow log
+     * IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFlowLogIds() const{ return m_flowLogIds; }
 
     /**
-     * <p>One or more flow log IDs.</p>
+     * <p>One or more flow log IDs.</p> <p>Constraint: Maximum of 1000 flow log
+     * IDs.</p>
      */
     inline bool FlowLogIdsHasBeenSet() const { return m_flowLogIdsHasBeenSet; }
 
     /**
-     * <p>One or more flow log IDs.</p>
+     * <p>One or more flow log IDs.</p> <p>Constraint: Maximum of 1000 flow log
+     * IDs.</p>
      */
     inline void SetFlowLogIds(const Aws::Vector<Aws::String>& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds = value; }
 
     /**
-     * <p>One or more flow log IDs.</p>
+     * <p>One or more flow log IDs.</p> <p>Constraint: Maximum of 1000 flow log
+     * IDs.</p>
      */
     inline void SetFlowLogIds(Aws::Vector<Aws::String>&& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds = std::move(value); }
 
     /**
-     * <p>One or more flow log IDs.</p>
+     * <p>One or more flow log IDs.</p> <p>Constraint: Maximum of 1000 flow log
+     * IDs.</p>
      */
     inline DeleteFlowLogsRequest& WithFlowLogIds(const Aws::Vector<Aws::String>& value) { SetFlowLogIds(value); return *this;}
 
     /**
-     * <p>One or more flow log IDs.</p>
+     * <p>One or more flow log IDs.</p> <p>Constraint: Maximum of 1000 flow log
+     * IDs.</p>
      */
     inline DeleteFlowLogsRequest& WithFlowLogIds(Aws::Vector<Aws::String>&& value) { SetFlowLogIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more flow log IDs.</p>
+     * <p>One or more flow log IDs.</p> <p>Constraint: Maximum of 1000 flow log
+     * IDs.</p>
      */
     inline DeleteFlowLogsRequest& AddFlowLogIds(const Aws::String& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more flow log IDs.</p>
+     * <p>One or more flow log IDs.</p> <p>Constraint: Maximum of 1000 flow log
+     * IDs.</p>
      */
     inline DeleteFlowLogsRequest& AddFlowLogIds(Aws::String&& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more flow log IDs.</p>
+     * <p>One or more flow log IDs.</p> <p>Constraint: Maximum of 1000 flow log
+     * IDs.</p>
      */
     inline DeleteFlowLogsRequest& AddFlowLogIds(const char* value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds.push_back(value); return *this; }
 

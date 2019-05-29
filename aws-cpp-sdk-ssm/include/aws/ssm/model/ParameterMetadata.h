@@ -39,7 +39,7 @@ namespace Model
 {
 
   /**
-   * <p>Metada includes information like the ARN of the last user and the date/time
+   * <p>Metadata includes information like the ARN of the last user and the date/time
    * the parameter was last used.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ParameterMetadata">AWS
    * API Reference</a></p>

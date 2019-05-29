@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN Of the created insight.</p>
+     * <p>The ARN of the insight created.</p>
      */
     inline const Aws::String& GetInsightArn() const{ return m_insightArn; }
 
     /**
-     * <p>The ARN Of the created insight.</p>
+     * <p>The ARN of the insight created.</p>
      */
     inline void SetInsightArn(const Aws::String& value) { m_insightArn = value; }
 
     /**
-     * <p>The ARN Of the created insight.</p>
+     * <p>The ARN of the insight created.</p>
      */
     inline void SetInsightArn(Aws::String&& value) { m_insightArn = std::move(value); }
 
     /**
-     * <p>The ARN Of the created insight.</p>
+     * <p>The ARN of the insight created.</p>
      */
     inline void SetInsightArn(const char* value) { m_insightArn.assign(value); }
 
     /**
-     * <p>The ARN Of the created insight.</p>
+     * <p>The ARN of the insight created.</p>
      */
     inline CreateInsightResult& WithInsightArn(const Aws::String& value) { SetInsightArn(value); return *this;}
 
     /**
-     * <p>The ARN Of the created insight.</p>
+     * <p>The ARN of the insight created.</p>
      */
     inline CreateInsightResult& WithInsightArn(Aws::String&& value) { SetInsightArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN Of the created insight.</p>
+     * <p>The ARN of the insight created.</p>
      */
     inline CreateInsightResult& WithInsightArn(const char* value) { SetInsightArn(value); return *this;}
 

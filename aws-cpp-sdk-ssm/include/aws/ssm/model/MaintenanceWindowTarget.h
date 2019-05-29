@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>The target registered with the Maintenance Window.</p><p><h3>See Also:</h3>  
+   * <p>The target registered with the maintenance window.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowTarget">AWS
    * API Reference</a></p>
@@ -52,42 +52,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Maintenance Window to register the target with.</p>
+     * <p>The ID of the maintenance window to register the target with.</p>
      */
     inline const Aws::String& GetWindowId() const{ return m_windowId; }
 
     /**
-     * <p>The ID of the Maintenance Window to register the target with.</p>
+     * <p>The ID of the maintenance window to register the target with.</p>
      */
     inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Maintenance Window to register the target with.</p>
+     * <p>The ID of the maintenance window to register the target with.</p>
      */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
-     * <p>The ID of the Maintenance Window to register the target with.</p>
+     * <p>The ID of the maintenance window to register the target with.</p>
      */
     inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = std::move(value); }
 
     /**
-     * <p>The ID of the Maintenance Window to register the target with.</p>
+     * <p>The ID of the maintenance window to register the target with.</p>
      */
     inline void SetWindowId(const char* value) { m_windowIdHasBeenSet = true; m_windowId.assign(value); }
 
     /**
-     * <p>The ID of the Maintenance Window to register the target with.</p>
+     * <p>The ID of the maintenance window to register the target with.</p>
      */
     inline MaintenanceWindowTarget& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window to register the target with.</p>
+     * <p>The ID of the maintenance window to register the target with.</p>
      */
     inline MaintenanceWindowTarget& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window to register the target with.</p>
+     * <p>The ID of the maintenance window to register the target with.</p>
      */
     inline MaintenanceWindowTarget& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
@@ -134,32 +134,32 @@ namespace Model
 
 
     /**
-     * <p>The type of target that is being registered with the Maintenance Window.</p>
+     * <p>The type of target that is being registered with the maintenance window.</p>
      */
     inline const MaintenanceWindowResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of target that is being registered with the Maintenance Window.</p>
+     * <p>The type of target that is being registered with the maintenance window.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of target that is being registered with the Maintenance Window.</p>
+     * <p>The type of target that is being registered with the maintenance window.</p>
      */
     inline void SetResourceType(const MaintenanceWindowResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of target that is being registered with the Maintenance Window.</p>
+     * <p>The type of target that is being registered with the maintenance window.</p>
      */
     inline void SetResourceType(MaintenanceWindowResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of target that is being registered with the Maintenance Window.</p>
+     * <p>The type of target that is being registered with the maintenance window.</p>
      */
     inline MaintenanceWindowTarget& WithResourceType(const MaintenanceWindowResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of target that is being registered with the Maintenance Window.</p>
+     * <p>The type of target that is being registered with the maintenance window.</p>
      */
     inline MaintenanceWindowTarget& WithResourceType(MaintenanceWindowResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -239,90 +239,90 @@ namespace Model
 
     /**
      * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this Maintenance Window.</p>
+     * raised while running tasks for these targets in this maintenance window.</p>
      */
     inline const Aws::String& GetOwnerInformation() const{ return m_ownerInformation; }
 
     /**
      * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this Maintenance Window.</p>
+     * raised while running tasks for these targets in this maintenance window.</p>
      */
     inline bool OwnerInformationHasBeenSet() const { return m_ownerInformationHasBeenSet; }
 
     /**
      * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this Maintenance Window.</p>
+     * raised while running tasks for these targets in this maintenance window.</p>
      */
     inline void SetOwnerInformation(const Aws::String& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = value; }
 
     /**
      * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this Maintenance Window.</p>
+     * raised while running tasks for these targets in this maintenance window.</p>
      */
     inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = std::move(value); }
 
     /**
      * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this Maintenance Window.</p>
+     * raised while running tasks for these targets in this maintenance window.</p>
      */
     inline void SetOwnerInformation(const char* value) { m_ownerInformationHasBeenSet = true; m_ownerInformation.assign(value); }
 
     /**
      * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this Maintenance Window.</p>
+     * raised while running tasks for these targets in this maintenance window.</p>
      */
     inline MaintenanceWindowTarget& WithOwnerInformation(const Aws::String& value) { SetOwnerInformation(value); return *this;}
 
     /**
      * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this Maintenance Window.</p>
+     * raised while running tasks for these targets in this maintenance window.</p>
      */
     inline MaintenanceWindowTarget& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(std::move(value)); return *this;}
 
     /**
      * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this Maintenance Window.</p>
+     * raised while running tasks for these targets in this maintenance window.</p>
      */
     inline MaintenanceWindowTarget& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 
 
     /**
-     * <p>The target name.</p>
+     * <p>The name for the maintenance window target.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The target name.</p>
+     * <p>The name for the maintenance window target.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The target name.</p>
+     * <p>The name for the maintenance window target.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The target name.</p>
+     * <p>The name for the maintenance window target.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The target name.</p>
+     * <p>The name for the maintenance window target.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The target name.</p>
+     * <p>The name for the maintenance window target.</p>
      */
     inline MaintenanceWindowTarget& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The target name.</p>
+     * <p>The name for the maintenance window target.</p>
      */
     inline MaintenanceWindowTarget& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The target name.</p>
+     * <p>The name for the maintenance window target.</p>
      */
     inline MaintenanceWindowTarget& WithName(const char* value) { SetName(value); return *this;}
 

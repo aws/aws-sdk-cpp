@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Information about the Maintenance Windows execution.</p>
+     * <p>Information about the maintenance window executions.</p>
      */
     inline const Aws::Vector<MaintenanceWindowExecution>& GetWindowExecutions() const{ return m_windowExecutions; }
 
     /**
-     * <p>Information about the Maintenance Windows execution.</p>
+     * <p>Information about the maintenance window executions.</p>
      */
     inline void SetWindowExecutions(const Aws::Vector<MaintenanceWindowExecution>& value) { m_windowExecutions = value; }
 
     /**
-     * <p>Information about the Maintenance Windows execution.</p>
+     * <p>Information about the maintenance window executions.</p>
      */
     inline void SetWindowExecutions(Aws::Vector<MaintenanceWindowExecution>&& value) { m_windowExecutions = std::move(value); }
 
     /**
-     * <p>Information about the Maintenance Windows execution.</p>
+     * <p>Information about the maintenance window executions.</p>
      */
     inline DescribeMaintenanceWindowExecutionsResult& WithWindowExecutions(const Aws::Vector<MaintenanceWindowExecution>& value) { SetWindowExecutions(value); return *this;}
 
     /**
-     * <p>Information about the Maintenance Windows execution.</p>
+     * <p>Information about the maintenance window executions.</p>
      */
     inline DescribeMaintenanceWindowExecutionsResult& WithWindowExecutions(Aws::Vector<MaintenanceWindowExecution>&& value) { SetWindowExecutions(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the Maintenance Windows execution.</p>
+     * <p>Information about the maintenance window executions.</p>
      */
     inline DescribeMaintenanceWindowExecutionsResult& AddWindowExecutions(const MaintenanceWindowExecution& value) { m_windowExecutions.push_back(value); return *this; }
 
     /**
-     * <p>Information about the Maintenance Windows execution.</p>
+     * <p>Information about the maintenance window executions.</p>
      */
     inline DescribeMaintenanceWindowExecutionsResult& AddWindowExecutions(MaintenanceWindowExecution&& value) { m_windowExecutions.push_back(std::move(value)); return *this; }
 

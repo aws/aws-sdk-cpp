@@ -44,50 +44,50 @@ namespace Model
 
 
     /**
-     * <p>A list of account ID and email address pairs of the accounts that you want to
-     * associate with the master Security Hub account.</p>
+     * <p>A list of account ID and email address pairs of the accounts to associate
+     * with the Security Hub master account.</p>
      */
     inline const Aws::Vector<AccountDetails>& GetAccountDetails() const{ return m_accountDetails; }
 
     /**
-     * <p>A list of account ID and email address pairs of the accounts that you want to
-     * associate with the master Security Hub account.</p>
+     * <p>A list of account ID and email address pairs of the accounts to associate
+     * with the Security Hub master account.</p>
      */
     inline bool AccountDetailsHasBeenSet() const { return m_accountDetailsHasBeenSet; }
 
     /**
-     * <p>A list of account ID and email address pairs of the accounts that you want to
-     * associate with the master Security Hub account.</p>
+     * <p>A list of account ID and email address pairs of the accounts to associate
+     * with the Security Hub master account.</p>
      */
     inline void SetAccountDetails(const Aws::Vector<AccountDetails>& value) { m_accountDetailsHasBeenSet = true; m_accountDetails = value; }
 
     /**
-     * <p>A list of account ID and email address pairs of the accounts that you want to
-     * associate with the master Security Hub account.</p>
+     * <p>A list of account ID and email address pairs of the accounts to associate
+     * with the Security Hub master account.</p>
      */
     inline void SetAccountDetails(Aws::Vector<AccountDetails>&& value) { m_accountDetailsHasBeenSet = true; m_accountDetails = std::move(value); }
 
     /**
-     * <p>A list of account ID and email address pairs of the accounts that you want to
-     * associate with the master Security Hub account.</p>
+     * <p>A list of account ID and email address pairs of the accounts to associate
+     * with the Security Hub master account.</p>
      */
     inline CreateMembersRequest& WithAccountDetails(const Aws::Vector<AccountDetails>& value) { SetAccountDetails(value); return *this;}
 
     /**
-     * <p>A list of account ID and email address pairs of the accounts that you want to
-     * associate with the master Security Hub account.</p>
+     * <p>A list of account ID and email address pairs of the accounts to associate
+     * with the Security Hub master account.</p>
      */
     inline CreateMembersRequest& WithAccountDetails(Aws::Vector<AccountDetails>&& value) { SetAccountDetails(std::move(value)); return *this;}
 
     /**
-     * <p>A list of account ID and email address pairs of the accounts that you want to
-     * associate with the master Security Hub account.</p>
+     * <p>A list of account ID and email address pairs of the accounts to associate
+     * with the Security Hub master account.</p>
      */
     inline CreateMembersRequest& AddAccountDetails(const AccountDetails& value) { m_accountDetailsHasBeenSet = true; m_accountDetails.push_back(value); return *this; }
 
     /**
-     * <p>A list of account ID and email address pairs of the accounts that you want to
-     * associate with the master Security Hub account.</p>
+     * <p>A list of account ID and email address pairs of the accounts to associate
+     * with the Security Hub master account.</p>
      */
     inline CreateMembersRequest& AddAccountDetails(AccountDetails&& value) { m_accountDetailsHasBeenSet = true; m_accountDetails.push_back(std::move(value)); return *this; }
 

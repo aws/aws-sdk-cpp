@@ -46,32 +46,32 @@ namespace Model
 
 
     /**
-     * <p>A collection of attributes that is use for querying findings.</p>
+     * <p>A collection of attributes that is used for querying findings.</p>
      */
     inline const AwsSecurityFindingFilters& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>A collection of attributes that is use for querying findings.</p>
+     * <p>A collection of attributes that is used for querying findings.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>A collection of attributes that is use for querying findings.</p>
+     * <p>A collection of attributes that is used for querying findings.</p>
      */
     inline void SetFilters(const AwsSecurityFindingFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>A collection of attributes that is use for querying findings.</p>
+     * <p>A collection of attributes that is used for querying findings.</p>
      */
     inline void SetFilters(AwsSecurityFindingFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>A collection of attributes that is use for querying findings.</p>
+     * <p>A collection of attributes that is used for querying findings.</p>
      */
     inline GetFindingsRequest& WithFilters(const AwsSecurityFindingFilters& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>A collection of attributes that is use for querying findings.</p>
+     * <p>A collection of attributes that is used for querying findings.</p>
      */
     inline GetFindingsRequest& WithFilters(AwsSecurityFindingFilters&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -118,66 +118,74 @@ namespace Model
 
 
     /**
-     * <p>Paginates results. Set the value of this parameter to NULL on your first call
-     * to the GetFindings operation. For subsequent calls to the operation, fill
-     * nextToken in the request with the value of nextToken from the previous response
-     * to continue listing data.</p>
+     * <p>Paginates results. On your first call to the <code>GetFindings</code>
+     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
+     * calls to the operation, fill <code>nextToken</code> in the request with the
+     * value of <code>nextToken</code> from the previous response to continue listing
+     * data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Paginates results. Set the value of this parameter to NULL on your first call
-     * to the GetFindings operation. For subsequent calls to the operation, fill
-     * nextToken in the request with the value of nextToken from the previous response
-     * to continue listing data.</p>
+     * <p>Paginates results. On your first call to the <code>GetFindings</code>
+     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
+     * calls to the operation, fill <code>nextToken</code> in the request with the
+     * value of <code>nextToken</code> from the previous response to continue listing
+     * data.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Paginates results. Set the value of this parameter to NULL on your first call
-     * to the GetFindings operation. For subsequent calls to the operation, fill
-     * nextToken in the request with the value of nextToken from the previous response
-     * to continue listing data.</p>
+     * <p>Paginates results. On your first call to the <code>GetFindings</code>
+     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
+     * calls to the operation, fill <code>nextToken</code> in the request with the
+     * value of <code>nextToken</code> from the previous response to continue listing
+     * data.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Paginates results. Set the value of this parameter to NULL on your first call
-     * to the GetFindings operation. For subsequent calls to the operation, fill
-     * nextToken in the request with the value of nextToken from the previous response
-     * to continue listing data.</p>
+     * <p>Paginates results. On your first call to the <code>GetFindings</code>
+     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
+     * calls to the operation, fill <code>nextToken</code> in the request with the
+     * value of <code>nextToken</code> from the previous response to continue listing
+     * data.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Paginates results. Set the value of this parameter to NULL on your first call
-     * to the GetFindings operation. For subsequent calls to the operation, fill
-     * nextToken in the request with the value of nextToken from the previous response
-     * to continue listing data.</p>
+     * <p>Paginates results. On your first call to the <code>GetFindings</code>
+     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
+     * calls to the operation, fill <code>nextToken</code> in the request with the
+     * value of <code>nextToken</code> from the previous response to continue listing
+     * data.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Paginates results. Set the value of this parameter to NULL on your first call
-     * to the GetFindings operation. For subsequent calls to the operation, fill
-     * nextToken in the request with the value of nextToken from the previous response
-     * to continue listing data.</p>
+     * <p>Paginates results. On your first call to the <code>GetFindings</code>
+     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
+     * calls to the operation, fill <code>nextToken</code> in the request with the
+     * value of <code>nextToken</code> from the previous response to continue listing
+     * data.</p>
      */
     inline GetFindingsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Paginates results. Set the value of this parameter to NULL on your first call
-     * to the GetFindings operation. For subsequent calls to the operation, fill
-     * nextToken in the request with the value of nextToken from the previous response
-     * to continue listing data.</p>
+     * <p>Paginates results. On your first call to the <code>GetFindings</code>
+     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
+     * calls to the operation, fill <code>nextToken</code> in the request with the
+     * value of <code>nextToken</code> from the previous response to continue listing
+     * data.</p>
      */
     inline GetFindingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Paginates results. Set the value of this parameter to NULL on your first call
-     * to the GetFindings operation. For subsequent calls to the operation, fill
-     * nextToken in the request with the value of nextToken from the previous response
-     * to continue listing data.</p>
+     * <p>Paginates results. On your first call to the <code>GetFindings</code>
+     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
+     * calls to the operation, fill <code>nextToken</code> in the request with the
+     * value of <code>nextToken</code> from the previous response to continue listing
+     * data.</p>
      */
     inline GetFindingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

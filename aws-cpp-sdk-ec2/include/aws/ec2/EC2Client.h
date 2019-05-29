@@ -80,6 +80,7 @@
 #include <aws/ec2/model/CreateRouteTableResponse.h>
 #include <aws/ec2/model/CreateSecurityGroupResponse.h>
 #include <aws/ec2/model/CreateSnapshotResponse.h>
+#include <aws/ec2/model/CreateSnapshotsResponse.h>
 #include <aws/ec2/model/CreateSpotDatafeedSubscriptionResponse.h>
 #include <aws/ec2/model/CreateSubnetResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayResponse.h>
@@ -411,6 +412,7 @@ namespace Model
         class CreateRouteTableRequest;
         class CreateSecurityGroupRequest;
         class CreateSnapshotRequest;
+        class CreateSnapshotsRequest;
         class CreateSpotDatafeedSubscriptionRequest;
         class CreateSubnetRequest;
         class CreateTagsRequest;
@@ -749,6 +751,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateRouteTableResponse, Aws::Client::AWSError<EC2Errors>> CreateRouteTableOutcome;
         typedef Aws::Utils::Outcome<CreateSecurityGroupResponse, Aws::Client::AWSError<EC2Errors>> CreateSecurityGroupOutcome;
         typedef Aws::Utils::Outcome<CreateSnapshotResponse, Aws::Client::AWSError<EC2Errors>> CreateSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CreateSnapshotsResponse, Aws::Client::AWSError<EC2Errors>> CreateSnapshotsOutcome;
         typedef Aws::Utils::Outcome<CreateSpotDatafeedSubscriptionResponse, Aws::Client::AWSError<EC2Errors>> CreateSpotDatafeedSubscriptionOutcome;
         typedef Aws::Utils::Outcome<CreateSubnetResponse, Aws::Client::AWSError<EC2Errors>> CreateSubnetOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> CreateTagsOutcome;
@@ -1087,6 +1090,7 @@ namespace Model
         typedef std::future<CreateRouteTableOutcome> CreateRouteTableOutcomeCallable;
         typedef std::future<CreateSecurityGroupOutcome> CreateSecurityGroupOutcomeCallable;
         typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
+        typedef std::future<CreateSnapshotsOutcome> CreateSnapshotsOutcomeCallable;
         typedef std::future<CreateSpotDatafeedSubscriptionOutcome> CreateSpotDatafeedSubscriptionOutcomeCallable;
         typedef std::future<CreateSubnetOutcome> CreateSubnetOutcomeCallable;
         typedef std::future<CreateTagsOutcome> CreateTagsOutcomeCallable;
@@ -1428,6 +1432,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CreateRouteTableRequest&, const Model::CreateRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateSecurityGroupRequest&, const Model::CreateSecurityGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSecurityGroupResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateSnapshotRequest&, const Model::CreateSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSnapshotResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateSnapshotsRequest&, const Model::CreateSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSnapshotsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateSpotDatafeedSubscriptionRequest&, const Model::CreateSpotDatafeedSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSpotDatafeedSubscriptionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateSubnetRequest&, const Model::CreateSubnetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSubnetResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateTagsRequest&, const Model::CreateTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTagsResponseReceivedHandler;
@@ -2840,14 +2845,14 @@ namespace Model
         /**
          * <p>[VPC only] Adds the specified egress rules to a security group for use with a
          * VPC.</p> <p>An outbound rule permits instances to send traffic to the specified
-         * destination IPv4 or IPv6 CIDR address ranges, or to the specified destination
-         * security groups for the same VPC.</p> <p>You specify a protocol for each rule
-         * (for example, TCP). For the TCP and UDP protocols, you must also specify the
-         * destination port or port range. For the ICMP protocol, you must also specify the
-         * ICMP type and code. You can use -1 for the type or code to mean all types or all
-         * codes.</p> <p>Rule changes are propagated to affected instances as quickly as
-         * possible. However, a small delay might occur.</p> <p>For more information about
-         * VPC security group limits, see <a
+         * IPv4 or IPv6 CIDR address ranges, or to the instances associated with the
+         * specified destination security groups.</p> <p>You specify a protocol for each
+         * rule (for example, TCP). For the TCP and UDP protocols, you must also specify
+         * the destination port or port range. For the ICMP protocol, you must also specify
+         * the ICMP type and code. You can use -1 for the type or code to mean all types or
+         * all codes.</p> <p>Rule changes are propagated to affected instances as quickly
+         * as possible. However, a small delay might occur.</p> <p>For more information
+         * about VPC security group limits, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
          * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">AWS
@@ -2858,14 +2863,14 @@ namespace Model
         /**
          * <p>[VPC only] Adds the specified egress rules to a security group for use with a
          * VPC.</p> <p>An outbound rule permits instances to send traffic to the specified
-         * destination IPv4 or IPv6 CIDR address ranges, or to the specified destination
-         * security groups for the same VPC.</p> <p>You specify a protocol for each rule
-         * (for example, TCP). For the TCP and UDP protocols, you must also specify the
-         * destination port or port range. For the ICMP protocol, you must also specify the
-         * ICMP type and code. You can use -1 for the type or code to mean all types or all
-         * codes.</p> <p>Rule changes are propagated to affected instances as quickly as
-         * possible. However, a small delay might occur.</p> <p>For more information about
-         * VPC security group limits, see <a
+         * IPv4 or IPv6 CIDR address ranges, or to the instances associated with the
+         * specified destination security groups.</p> <p>You specify a protocol for each
+         * rule (for example, TCP). For the TCP and UDP protocols, you must also specify
+         * the destination port or port range. For the ICMP protocol, you must also specify
+         * the ICMP type and code. You can use -1 for the type or code to mean all types or
+         * all codes.</p> <p>Rule changes are propagated to affected instances as quickly
+         * as possible. However, a small delay might occur.</p> <p>For more information
+         * about VPC security group limits, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
          * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">AWS
@@ -2878,14 +2883,14 @@ namespace Model
         /**
          * <p>[VPC only] Adds the specified egress rules to a security group for use with a
          * VPC.</p> <p>An outbound rule permits instances to send traffic to the specified
-         * destination IPv4 or IPv6 CIDR address ranges, or to the specified destination
-         * security groups for the same VPC.</p> <p>You specify a protocol for each rule
-         * (for example, TCP). For the TCP and UDP protocols, you must also specify the
-         * destination port or port range. For the ICMP protocol, you must also specify the
-         * ICMP type and code. You can use -1 for the type or code to mean all types or all
-         * codes.</p> <p>Rule changes are propagated to affected instances as quickly as
-         * possible. However, a small delay might occur.</p> <p>For more information about
-         * VPC security group limits, see <a
+         * IPv4 or IPv6 CIDR address ranges, or to the instances associated with the
+         * specified destination security groups.</p> <p>You specify a protocol for each
+         * rule (for example, TCP). For the TCP and UDP protocols, you must also specify
+         * the destination port or port range. For the ICMP protocol, you must also specify
+         * the ICMP type and code. You can use -1 for the type or code to mean all types or
+         * all codes.</p> <p>Rule changes are propagated to affected instances as quickly
+         * as possible. However, a small delay might occur.</p> <p>For more information
+         * about VPC security group limits, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
          * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">AWS
@@ -2897,14 +2902,14 @@ namespace Model
 
         /**
          * <p>Adds the specified ingress rules to a security group.</p> <p>An inbound rule
-         * permits instances to receive traffic from the specified destination IPv4 or IPv6
-         * CIDR address ranges, or from the specified destination security groups.</p>
-         * <p>You specify a protocol for each rule (for example, TCP). For TCP and UDP, you
-         * must also specify the destination port or port range. For ICMP/ICMPv6, you must
-         * also specify the ICMP/ICMPv6 type and code. You can use -1 to mean all types or
-         * all codes.</p> <p>Rule changes are propagated to instances within the security
-         * group as quickly as possible. However, a small delay might occur.</p> <p>For
-         * more information about VPC security group limits, see <a
+         * permits instances to receive traffic from the specified IPv4 or IPv6 CIDR
+         * address ranges, or from the instances associated with the specified destination
+         * security groups.</p> <p>You specify a protocol for each rule (for example, TCP).
+         * For TCP and UDP, you must also specify the destination port or port range. For
+         * ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type and code. You can use -1
+         * to mean all types or all codes.</p> <p>Rule changes are propagated to instances
+         * within the security group as quickly as possible. However, a small delay might
+         * occur.</p> <p>For more information about VPC security group limits, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
          * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">AWS
@@ -2914,14 +2919,14 @@ namespace Model
 
         /**
          * <p>Adds the specified ingress rules to a security group.</p> <p>An inbound rule
-         * permits instances to receive traffic from the specified destination IPv4 or IPv6
-         * CIDR address ranges, or from the specified destination security groups.</p>
-         * <p>You specify a protocol for each rule (for example, TCP). For TCP and UDP, you
-         * must also specify the destination port or port range. For ICMP/ICMPv6, you must
-         * also specify the ICMP/ICMPv6 type and code. You can use -1 to mean all types or
-         * all codes.</p> <p>Rule changes are propagated to instances within the security
-         * group as quickly as possible. However, a small delay might occur.</p> <p>For
-         * more information about VPC security group limits, see <a
+         * permits instances to receive traffic from the specified IPv4 or IPv6 CIDR
+         * address ranges, or from the instances associated with the specified destination
+         * security groups.</p> <p>You specify a protocol for each rule (for example, TCP).
+         * For TCP and UDP, you must also specify the destination port or port range. For
+         * ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type and code. You can use -1
+         * to mean all types or all codes.</p> <p>Rule changes are propagated to instances
+         * within the security group as quickly as possible. However, a small delay might
+         * occur.</p> <p>For more information about VPC security group limits, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
          * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">AWS
@@ -2933,14 +2938,14 @@ namespace Model
 
         /**
          * <p>Adds the specified ingress rules to a security group.</p> <p>An inbound rule
-         * permits instances to receive traffic from the specified destination IPv4 or IPv6
-         * CIDR address ranges, or from the specified destination security groups.</p>
-         * <p>You specify a protocol for each rule (for example, TCP). For TCP and UDP, you
-         * must also specify the destination port or port range. For ICMP/ICMPv6, you must
-         * also specify the ICMP/ICMPv6 type and code. You can use -1 to mean all types or
-         * all codes.</p> <p>Rule changes are propagated to instances within the security
-         * group as quickly as possible. However, a small delay might occur.</p> <p>For
-         * more information about VPC security group limits, see <a
+         * permits instances to receive traffic from the specified IPv4 or IPv6 CIDR
+         * address ranges, or from the instances associated with the specified destination
+         * security groups.</p> <p>You specify a protocol for each rule (for example, TCP).
+         * For TCP and UDP, you must also specify the destination port or port range. For
+         * ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type and code. You can use -1
+         * to mean all types or all codes.</p> <p>Rule changes are propagated to instances
+         * within the security group as quickly as possible. However, a small delay might
+         * occur.</p> <p>For more information about VPC security group limits, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
          * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">AWS
@@ -5057,6 +5062,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates crash-consistent snapshots of multiple EBS volumes and stores the
+         * data in S3. Volumes are chosen by specifying an instance. Any attached volumes
+         * will produce one snapshot each that is crash-consistent across the instance.
+         * Boot volumes can be excluded by changing the paramaters. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSnapshotsOutcome CreateSnapshots(const Model::CreateSnapshotsRequest& request) const;
+
+        /**
+         * <p>Creates crash-consistent snapshots of multiple EBS volumes and stores the
+         * data in S3. Volumes are chosen by specifying an instance. Any attached volumes
+         * will produce one snapshot each that is crash-consistent across the instance.
+         * Boot volumes can be excluded by changing the paramaters. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateSnapshotsOutcomeCallable CreateSnapshotsCallable(const Model::CreateSnapshotsRequest& request) const;
+
+        /**
+         * <p>Creates crash-consistent snapshots of multiple EBS volumes and stores the
+         * data in S3. Volumes are chosen by specifying an instance. Any attached volumes
+         * will produce one snapshot each that is crash-consistent across the instance.
+         * Boot volumes can be excluded by changing the paramaters. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateSnapshotsAsync(const Model::CreateSnapshotsRequest& request, const CreateSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a data feed for Spot Instances, enabling you to view Spot Instance
@@ -11817,7 +11859,7 @@ namespace Model
          * snapshot. Any volume restored from an encrypted snapshot is also encrypted. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-         * EBS Snapshots</a>.</p> <p>Once EBS encryption by default is enabled, you can no
+         * EBS Snapshots</a>.</p> <p>After EBS encryption by default is enabled, you can no
          * longer launch older-generation instance types that do not support encryption.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
@@ -11845,7 +11887,7 @@ namespace Model
          * snapshot. Any volume restored from an encrypted snapshot is also encrypted. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-         * EBS Snapshots</a>.</p> <p>Once EBS encryption by default is enabled, you can no
+         * EBS Snapshots</a>.</p> <p>After EBS encryption by default is enabled, you can no
          * longer launch older-generation instance types that do not support encryption.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
@@ -11875,7 +11917,7 @@ namespace Model
          * snapshot. Any volume restored from an encrypted snapshot is also encrypted. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-         * EBS Snapshots</a>.</p> <p>Once EBS encryption by default is enabled, you can no
+         * EBS Snapshots</a>.</p> <p>After EBS encryption by default is enabled, you can no
          * longer launch older-generation instance types that do not support encryption.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
@@ -12900,7 +12942,7 @@ namespace Model
 
         /**
          * <p>Changes the default customer master key (CMK) that your account uses to
-         * encrypt EBS volumes if you don’t specify a CMK in the API call.</p> <p>Your
+         * encrypt EBS volumes if you don't specify a CMK in the API call.</p> <p>Your
          * account has an AWS-managed default CMK that is used for encrypting an EBS volume
          * when no CMK is specified in the API call that creates the volume. By calling
          * this API, you can specify a customer-managed CMK to use in place of the
@@ -12914,7 +12956,7 @@ namespace Model
 
         /**
          * <p>Changes the default customer master key (CMK) that your account uses to
-         * encrypt EBS volumes if you don’t specify a CMK in the API call.</p> <p>Your
+         * encrypt EBS volumes if you don't specify a CMK in the API call.</p> <p>Your
          * account has an AWS-managed default CMK that is used for encrypting an EBS volume
          * when no CMK is specified in the API call that creates the volume. By calling
          * this API, you can specify a customer-managed CMK to use in place of the
@@ -12930,7 +12972,7 @@ namespace Model
 
         /**
          * <p>Changes the default customer master key (CMK) that your account uses to
-         * encrypt EBS volumes if you don’t specify a CMK in the API call.</p> <p>Your
+         * encrypt EBS volumes if you don't specify a CMK in the API call.</p> <p>Your
          * account has an AWS-managed default CMK that is used for encrypting an EBS volume
          * when no CMK is specified in the API call that creates the volume. By calling
          * this API, you can specify a customer-managed CMK to use in place of the
@@ -16736,6 +16778,7 @@ namespace Model
         void CreateRouteTableAsyncHelper(const Model::CreateRouteTableRequest& request, const CreateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSecurityGroupAsyncHelper(const Model::CreateSecurityGroupRequest& request, const CreateSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSnapshotAsyncHelper(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateSnapshotsAsyncHelper(const Model::CreateSnapshotsRequest& request, const CreateSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSpotDatafeedSubscriptionAsyncHelper(const Model::CreateSpotDatafeedSubscriptionRequest& request, const CreateSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSubnetAsyncHelper(const Model::CreateSubnetRequest& request, const CreateSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTagsAsyncHelper(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

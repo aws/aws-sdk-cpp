@@ -53,42 +53,74 @@ namespace Model
   public:
 
     /**
-     * <p>The full path to your AMI manifest in Amazon S3 storage.</p>
+     * <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket
+     * must have the <code>aws-exec-read</code> canned access control list (ACL) to
+     * ensure that it can be accessed by Amazon EC2. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetImageLocation() const{ return m_imageLocation; }
 
     /**
-     * <p>The full path to your AMI manifest in Amazon S3 storage.</p>
+     * <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket
+     * must have the <code>aws-exec-read</code> canned access control list (ACL) to
+     * ensure that it can be accessed by Amazon EC2. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
      */
     inline bool ImageLocationHasBeenSet() const { return m_imageLocationHasBeenSet; }
 
     /**
-     * <p>The full path to your AMI manifest in Amazon S3 storage.</p>
+     * <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket
+     * must have the <code>aws-exec-read</code> canned access control list (ACL) to
+     * ensure that it can be accessed by Amazon EC2. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
      */
     inline void SetImageLocation(const Aws::String& value) { m_imageLocationHasBeenSet = true; m_imageLocation = value; }
 
     /**
-     * <p>The full path to your AMI manifest in Amazon S3 storage.</p>
+     * <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket
+     * must have the <code>aws-exec-read</code> canned access control list (ACL) to
+     * ensure that it can be accessed by Amazon EC2. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
      */
     inline void SetImageLocation(Aws::String&& value) { m_imageLocationHasBeenSet = true; m_imageLocation = std::move(value); }
 
     /**
-     * <p>The full path to your AMI manifest in Amazon S3 storage.</p>
+     * <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket
+     * must have the <code>aws-exec-read</code> canned access control list (ACL) to
+     * ensure that it can be accessed by Amazon EC2. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
      */
     inline void SetImageLocation(const char* value) { m_imageLocationHasBeenSet = true; m_imageLocation.assign(value); }
 
     /**
-     * <p>The full path to your AMI manifest in Amazon S3 storage.</p>
+     * <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket
+     * must have the <code>aws-exec-read</code> canned access control list (ACL) to
+     * ensure that it can be accessed by Amazon EC2. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
      */
     inline RegisterImageRequest& WithImageLocation(const Aws::String& value) { SetImageLocation(value); return *this;}
 
     /**
-     * <p>The full path to your AMI manifest in Amazon S3 storage.</p>
+     * <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket
+     * must have the <code>aws-exec-read</code> canned access control list (ACL) to
+     * ensure that it can be accessed by Amazon EC2. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
      */
     inline RegisterImageRequest& WithImageLocation(Aws::String&& value) { SetImageLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The full path to your AMI manifest in Amazon S3 storage.</p>
+     * <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket
+     * must have the <code>aws-exec-read</code> canned access control list (ACL) to
+     * ensure that it can be accessed by Amazon EC2. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
      */
     inline RegisterImageRequest& WithImageLocation(const char* value) { SetImageLocation(value); return *this;}
 

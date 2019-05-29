@@ -26,7 +26,8 @@ namespace Model
   enum class ResourceTypeValues
   {
     NOT_SET,
-    VOLUME
+    VOLUME,
+    INSTANCE
   };
 
 namespace ResourceTypeValuesMapper

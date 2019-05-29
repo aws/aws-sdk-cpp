@@ -95,17 +95,17 @@ namespace Model
 
     /**
      * <p>Specifies the encryption state of the volume. The default effect of setting
-     * the <code>Encrypted</code> parameter to <code>true</code> through the console,
-     * API, or CLI depends on the volume's origin (new or from a snapshot), starting
-     * encryption state, ownership, and whether <a
+     * the <code>Encrypted</code> parameter to <code>true</code> depends on the volume
+     * origin (new or from a snapshot), starting encryption state, ownership, and
+     * whether <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
      * encryption</a> is enabled. Each default case can be overridden by specifying a
-     * customer master key (CMK) with the <code>KmsKeyId</code> parameter in addition
+     * customer master key (CMK) using the <code>KmsKeyId</code> parameter, in addition
      * to setting <code>Encrypted</code> to <code>true</code>. For a complete list of
      * possible encryption cases, see <a
-     * href="AWSEC2/latest/UserGuide/EBSEncryption.htm">Amazon EBS Encryption</a>. </p>
-     * <p>Encrypted Amazon EBS volumes may only be attached to instances that support
-     * Amazon EBS encryption. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a>.</p> <p>Encrypted Amazon EBS volumes may only be attached to
+     * instances that support Amazon EBS encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * Instance Types</a>.</p>
      */
@@ -113,17 +113,17 @@ namespace Model
 
     /**
      * <p>Specifies the encryption state of the volume. The default effect of setting
-     * the <code>Encrypted</code> parameter to <code>true</code> through the console,
-     * API, or CLI depends on the volume's origin (new or from a snapshot), starting
-     * encryption state, ownership, and whether <a
+     * the <code>Encrypted</code> parameter to <code>true</code> depends on the volume
+     * origin (new or from a snapshot), starting encryption state, ownership, and
+     * whether <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
      * encryption</a> is enabled. Each default case can be overridden by specifying a
-     * customer master key (CMK) with the <code>KmsKeyId</code> parameter in addition
+     * customer master key (CMK) using the <code>KmsKeyId</code> parameter, in addition
      * to setting <code>Encrypted</code> to <code>true</code>. For a complete list of
      * possible encryption cases, see <a
-     * href="AWSEC2/latest/UserGuide/EBSEncryption.htm">Amazon EBS Encryption</a>. </p>
-     * <p>Encrypted Amazon EBS volumes may only be attached to instances that support
-     * Amazon EBS encryption. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a>.</p> <p>Encrypted Amazon EBS volumes may only be attached to
+     * instances that support Amazon EBS encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * Instance Types</a>.</p>
      */
@@ -131,17 +131,17 @@ namespace Model
 
     /**
      * <p>Specifies the encryption state of the volume. The default effect of setting
-     * the <code>Encrypted</code> parameter to <code>true</code> through the console,
-     * API, or CLI depends on the volume's origin (new or from a snapshot), starting
-     * encryption state, ownership, and whether <a
+     * the <code>Encrypted</code> parameter to <code>true</code> depends on the volume
+     * origin (new or from a snapshot), starting encryption state, ownership, and
+     * whether <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
      * encryption</a> is enabled. Each default case can be overridden by specifying a
-     * customer master key (CMK) with the <code>KmsKeyId</code> parameter in addition
+     * customer master key (CMK) using the <code>KmsKeyId</code> parameter, in addition
      * to setting <code>Encrypted</code> to <code>true</code>. For a complete list of
      * possible encryption cases, see <a
-     * href="AWSEC2/latest/UserGuide/EBSEncryption.htm">Amazon EBS Encryption</a>. </p>
-     * <p>Encrypted Amazon EBS volumes may only be attached to instances that support
-     * Amazon EBS encryption. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a>.</p> <p>Encrypted Amazon EBS volumes may only be attached to
+     * instances that support Amazon EBS encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * Instance Types</a>.</p>
      */
@@ -149,17 +149,17 @@ namespace Model
 
     /**
      * <p>Specifies the encryption state of the volume. The default effect of setting
-     * the <code>Encrypted</code> parameter to <code>true</code> through the console,
-     * API, or CLI depends on the volume's origin (new or from a snapshot), starting
-     * encryption state, ownership, and whether <a
+     * the <code>Encrypted</code> parameter to <code>true</code> depends on the volume
+     * origin (new or from a snapshot), starting encryption state, ownership, and
+     * whether <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
      * encryption</a> is enabled. Each default case can be overridden by specifying a
-     * customer master key (CMK) with the <code>KmsKeyId</code> parameter in addition
+     * customer master key (CMK) using the <code>KmsKeyId</code> parameter, in addition
      * to setting <code>Encrypted</code> to <code>true</code>. For a complete list of
      * possible encryption cases, see <a
-     * href="AWSEC2/latest/UserGuide/EBSEncryption.htm">Amazon EBS Encryption</a>. </p>
-     * <p>Encrypted Amazon EBS volumes may only be attached to instances that support
-     * Amazon EBS encryption. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a>.</p> <p>Encrypted Amazon EBS volumes may only be attached to
+     * instances that support Amazon EBS encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * Instance Types</a>.</p>
      */

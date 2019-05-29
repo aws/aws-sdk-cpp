@@ -81,50 +81,50 @@ namespace Model
 
 
     /**
-     * <p>A list of parameters that are not formatted correctly or do not run when
-     * executed.</p>
+     * <p>A list of parameters that are not formatted correctly or do not run during an
+     * execution.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInvalidParameters() const{ return m_invalidParameters; }
 
     /**
-     * <p>A list of parameters that are not formatted correctly or do not run when
-     * executed.</p>
+     * <p>A list of parameters that are not formatted correctly or do not run during an
+     * execution.</p>
      */
     inline void SetInvalidParameters(const Aws::Vector<Aws::String>& value) { m_invalidParameters = value; }
 
     /**
-     * <p>A list of parameters that are not formatted correctly or do not run when
-     * executed.</p>
+     * <p>A list of parameters that are not formatted correctly or do not run during an
+     * execution.</p>
      */
     inline void SetInvalidParameters(Aws::Vector<Aws::String>&& value) { m_invalidParameters = std::move(value); }
 
     /**
-     * <p>A list of parameters that are not formatted correctly or do not run when
-     * executed.</p>
+     * <p>A list of parameters that are not formatted correctly or do not run during an
+     * execution.</p>
      */
     inline GetParametersResult& WithInvalidParameters(const Aws::Vector<Aws::String>& value) { SetInvalidParameters(value); return *this;}
 
     /**
-     * <p>A list of parameters that are not formatted correctly or do not run when
-     * executed.</p>
+     * <p>A list of parameters that are not formatted correctly or do not run during an
+     * execution.</p>
      */
     inline GetParametersResult& WithInvalidParameters(Aws::Vector<Aws::String>&& value) { SetInvalidParameters(std::move(value)); return *this;}
 
     /**
-     * <p>A list of parameters that are not formatted correctly or do not run when
-     * executed.</p>
+     * <p>A list of parameters that are not formatted correctly or do not run during an
+     * execution.</p>
      */
     inline GetParametersResult& AddInvalidParameters(const Aws::String& value) { m_invalidParameters.push_back(value); return *this; }
 
     /**
-     * <p>A list of parameters that are not formatted correctly or do not run when
-     * executed.</p>
+     * <p>A list of parameters that are not formatted correctly or do not run during an
+     * execution.</p>
      */
     inline GetParametersResult& AddInvalidParameters(Aws::String&& value) { m_invalidParameters.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of parameters that are not formatted correctly or do not run when
-     * executed.</p>
+     * <p>A list of parameters that are not formatted correctly or do not run during an
+     * execution.</p>
      */
     inline GetParametersResult& AddInvalidParameters(const char* value) { m_invalidParameters.push_back(value); return *this; }
 

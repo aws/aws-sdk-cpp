@@ -44,50 +44,50 @@ namespace Model
 
 
     /**
-     * <p>A list of findings that you want to import. Must be submitted in the
-     * AWSSecurityFinding format.</p>
+     * <p>A list of findings to import. You must submit them in the AwsSecurityFinding
+     * format.</p>
      */
     inline const Aws::Vector<AwsSecurityFinding>& GetFindings() const{ return m_findings; }
 
     /**
-     * <p>A list of findings that you want to import. Must be submitted in the
-     * AWSSecurityFinding format.</p>
+     * <p>A list of findings to import. You must submit them in the AwsSecurityFinding
+     * format.</p>
      */
     inline bool FindingsHasBeenSet() const { return m_findingsHasBeenSet; }
 
     /**
-     * <p>A list of findings that you want to import. Must be submitted in the
-     * AWSSecurityFinding format.</p>
+     * <p>A list of findings to import. You must submit them in the AwsSecurityFinding
+     * format.</p>
      */
     inline void SetFindings(const Aws::Vector<AwsSecurityFinding>& value) { m_findingsHasBeenSet = true; m_findings = value; }
 
     /**
-     * <p>A list of findings that you want to import. Must be submitted in the
-     * AWSSecurityFinding format.</p>
+     * <p>A list of findings to import. You must submit them in the AwsSecurityFinding
+     * format.</p>
      */
     inline void SetFindings(Aws::Vector<AwsSecurityFinding>&& value) { m_findingsHasBeenSet = true; m_findings = std::move(value); }
 
     /**
-     * <p>A list of findings that you want to import. Must be submitted in the
-     * AWSSecurityFinding format.</p>
+     * <p>A list of findings to import. You must submit them in the AwsSecurityFinding
+     * format.</p>
      */
     inline BatchImportFindingsRequest& WithFindings(const Aws::Vector<AwsSecurityFinding>& value) { SetFindings(value); return *this;}
 
     /**
-     * <p>A list of findings that you want to import. Must be submitted in the
-     * AWSSecurityFinding format.</p>
+     * <p>A list of findings to import. You must submit them in the AwsSecurityFinding
+     * format.</p>
      */
     inline BatchImportFindingsRequest& WithFindings(Aws::Vector<AwsSecurityFinding>&& value) { SetFindings(std::move(value)); return *this;}
 
     /**
-     * <p>A list of findings that you want to import. Must be submitted in the
-     * AWSSecurityFinding format.</p>
+     * <p>A list of findings to import. You must submit them in the AwsSecurityFinding
+     * format.</p>
      */
     inline BatchImportFindingsRequest& AddFindings(const AwsSecurityFinding& value) { m_findingsHasBeenSet = true; m_findings.push_back(value); return *this; }
 
     /**
-     * <p>A list of findings that you want to import. Must be submitted in the
-     * AWSSecurityFinding format.</p>
+     * <p>A list of findings to import. You must submit them in the AwsSecurityFinding
+     * format.</p>
      */
     inline BatchImportFindingsRequest& AddFindings(AwsSecurityFinding&& value) { m_findingsHasBeenSet = true; m_findings.push_back(std::move(value)); return *this; }
 

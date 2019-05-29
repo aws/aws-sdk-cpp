@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Information about the targets in the Maintenance Window.</p>
+     * <p>Information about the targets in the maintenance window.</p>
      */
     inline const Aws::Vector<MaintenanceWindowTarget>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>Information about the targets in the Maintenance Window.</p>
+     * <p>Information about the targets in the maintenance window.</p>
      */
     inline void SetTargets(const Aws::Vector<MaintenanceWindowTarget>& value) { m_targets = value; }
 
     /**
-     * <p>Information about the targets in the Maintenance Window.</p>
+     * <p>Information about the targets in the maintenance window.</p>
      */
     inline void SetTargets(Aws::Vector<MaintenanceWindowTarget>&& value) { m_targets = std::move(value); }
 
     /**
-     * <p>Information about the targets in the Maintenance Window.</p>
+     * <p>Information about the targets in the maintenance window.</p>
      */
     inline DescribeMaintenanceWindowTargetsResult& WithTargets(const Aws::Vector<MaintenanceWindowTarget>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>Information about the targets in the Maintenance Window.</p>
+     * <p>Information about the targets in the maintenance window.</p>
      */
     inline DescribeMaintenanceWindowTargetsResult& WithTargets(Aws::Vector<MaintenanceWindowTarget>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the targets in the Maintenance Window.</p>
+     * <p>Information about the targets in the maintenance window.</p>
      */
     inline DescribeMaintenanceWindowTargetsResult& AddTargets(const MaintenanceWindowTarget& value) { m_targets.push_back(value); return *this; }
 
     /**
-     * <p>Information about the targets in the Maintenance Window.</p>
+     * <p>Information about the targets in the maintenance window.</p>
      */
     inline DescribeMaintenanceWindowTargetsResult& AddTargets(MaintenanceWindowTarget&& value) { m_targets.push_back(std::move(value)); return *this; }
 

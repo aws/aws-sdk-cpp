@@ -157,42 +157,42 @@ namespace Model
 
 
     /**
-     * <p>The updated GroupBy attribute that defines this insight.</p>
+     * <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
      */
     inline const Aws::String& GetGroupByAttribute() const{ return m_groupByAttribute; }
 
     /**
-     * <p>The updated GroupBy attribute that defines this insight.</p>
+     * <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
      */
     inline bool GroupByAttributeHasBeenSet() const { return m_groupByAttributeHasBeenSet; }
 
     /**
-     * <p>The updated GroupBy attribute that defines this insight.</p>
+     * <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
      */
     inline void SetGroupByAttribute(const Aws::String& value) { m_groupByAttributeHasBeenSet = true; m_groupByAttribute = value; }
 
     /**
-     * <p>The updated GroupBy attribute that defines this insight.</p>
+     * <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
      */
     inline void SetGroupByAttribute(Aws::String&& value) { m_groupByAttributeHasBeenSet = true; m_groupByAttribute = std::move(value); }
 
     /**
-     * <p>The updated GroupBy attribute that defines this insight.</p>
+     * <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
      */
     inline void SetGroupByAttribute(const char* value) { m_groupByAttributeHasBeenSet = true; m_groupByAttribute.assign(value); }
 
     /**
-     * <p>The updated GroupBy attribute that defines this insight.</p>
+     * <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
      */
     inline UpdateInsightRequest& WithGroupByAttribute(const Aws::String& value) { SetGroupByAttribute(value); return *this;}
 
     /**
-     * <p>The updated GroupBy attribute that defines this insight.</p>
+     * <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
      */
     inline UpdateInsightRequest& WithGroupByAttribute(Aws::String&& value) { SetGroupByAttribute(std::move(value)); return *this;}
 
     /**
-     * <p>The updated GroupBy attribute that defines this insight.</p>
+     * <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
      */
     inline UpdateInsightRequest& WithGroupByAttribute(const char* value) { SetGroupByAttribute(value); return *this;}
 

@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the information about an execution of a Maintenance Window.
+   * <p>Describes the information about an execution of a maintenance window.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowExecution">AWS
    * API Reference</a></p>
@@ -51,83 +51,83 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Maintenance Window.</p>
+     * <p>The ID of the maintenance window.</p>
      */
     inline const Aws::String& GetWindowId() const{ return m_windowId; }
 
     /**
-     * <p>The ID of the Maintenance Window.</p>
+     * <p>The ID of the maintenance window.</p>
      */
     inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Maintenance Window.</p>
+     * <p>The ID of the maintenance window.</p>
      */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
-     * <p>The ID of the Maintenance Window.</p>
+     * <p>The ID of the maintenance window.</p>
      */
     inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = std::move(value); }
 
     /**
-     * <p>The ID of the Maintenance Window.</p>
+     * <p>The ID of the maintenance window.</p>
      */
     inline void SetWindowId(const char* value) { m_windowIdHasBeenSet = true; m_windowId.assign(value); }
 
     /**
-     * <p>The ID of the Maintenance Window.</p>
+     * <p>The ID of the maintenance window.</p>
      */
     inline MaintenanceWindowExecution& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window.</p>
+     * <p>The ID of the maintenance window.</p>
      */
     inline MaintenanceWindowExecution& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window.</p>
+     * <p>The ID of the maintenance window.</p>
      */
     inline MaintenanceWindowExecution& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
 
     /**
-     * <p>The ID of the Maintenance Window execution.</p>
+     * <p>The ID of the maintenance window execution.</p>
      */
     inline const Aws::String& GetWindowExecutionId() const{ return m_windowExecutionId; }
 
     /**
-     * <p>The ID of the Maintenance Window execution.</p>
+     * <p>The ID of the maintenance window execution.</p>
      */
     inline bool WindowExecutionIdHasBeenSet() const { return m_windowExecutionIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Maintenance Window execution.</p>
+     * <p>The ID of the maintenance window execution.</p>
      */
     inline void SetWindowExecutionId(const Aws::String& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = value; }
 
     /**
-     * <p>The ID of the Maintenance Window execution.</p>
+     * <p>The ID of the maintenance window execution.</p>
      */
     inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = std::move(value); }
 
     /**
-     * <p>The ID of the Maintenance Window execution.</p>
+     * <p>The ID of the maintenance window execution.</p>
      */
     inline void SetWindowExecutionId(const char* value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId.assign(value); }
 
     /**
-     * <p>The ID of the Maintenance Window execution.</p>
+     * <p>The ID of the maintenance window execution.</p>
      */
     inline MaintenanceWindowExecution& WithWindowExecutionId(const Aws::String& value) { SetWindowExecutionId(value); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window execution.</p>
+     * <p>The ID of the maintenance window execution.</p>
      */
     inline MaintenanceWindowExecution& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window execution.</p>
+     * <p>The ID of the maintenance window execution.</p>
      */
     inline MaintenanceWindowExecution& WithWindowExecutionId(const char* value) { SetWindowExecutionId(value); return *this;}
 

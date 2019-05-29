@@ -40,6 +40,7 @@
 #include <aws/securityhub/model/DeleteInsightRequest.h>
 #include <aws/securityhub/model/DeleteInvitationsRequest.h>
 #include <aws/securityhub/model/DeleteMembersRequest.h>
+#include <aws/securityhub/model/DescribeProductsRequest.h>
 #include <aws/securityhub/model/DisableImportFindingsForProductRequest.h>
 #include <aws/securityhub/model/DisableSecurityHubRequest.h>
 #include <aws/securityhub/model/DisassociateFromMasterAccountRequest.h>
@@ -57,6 +58,7 @@
 #include <aws/securityhub/model/ListEnabledProductsForImportRequest.h>
 #include <aws/securityhub/model/ListInvitationsRequest.h>
 #include <aws/securityhub/model/ListMembersRequest.h>
+#include <aws/securityhub/model/ListProductSubscribersRequest.h>
 #include <aws/securityhub/model/UpdateFindingsRequest.h>
 #include <aws/securityhub/model/UpdateInsightRequest.h>
 
@@ -486,6 +488,41 @@ void SecurityHubClient::DeleteMembersAsync(const DeleteMembersRequest& request, 
 void SecurityHubClient::DeleteMembersAsyncHelper(const DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteMembers(request), context);
+}
+
+DescribeProductsOutcome SecurityHubClient::DescribeProducts(const DescribeProductsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/products";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeProductsOutcome(DescribeProductsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeProductsOutcome(outcome.GetError());
+  }
+}
+
+DescribeProductsOutcomeCallable SecurityHubClient::DescribeProductsCallable(const DescribeProductsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeProductsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeProducts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::DescribeProductsAsync(const DescribeProductsRequest& request, const DescribeProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeProductsAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::DescribeProductsAsyncHelper(const DescribeProductsRequest& request, const DescribeProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeProducts(request), context);
 }
 
 DisableImportFindingsForProductOutcome SecurityHubClient::DisableImportFindingsForProduct(const DisableImportFindingsForProductRequest& request) const
@@ -1093,6 +1130,41 @@ void SecurityHubClient::ListMembersAsync(const ListMembersRequest& request, cons
 void SecurityHubClient::ListMembersAsyncHelper(const ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListMembers(request), context);
+}
+
+ListProductSubscribersOutcome SecurityHubClient::ListProductSubscribers(const ListProductSubscribersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/productSubscribers/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListProductSubscribersOutcome(ListProductSubscribersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListProductSubscribersOutcome(outcome.GetError());
+  }
+}
+
+ListProductSubscribersOutcomeCallable SecurityHubClient::ListProductSubscribersCallable(const ListProductSubscribersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListProductSubscribersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProductSubscribers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::ListProductSubscribersAsync(const ListProductSubscribersRequest& request, const ListProductSubscribersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListProductSubscribersAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::ListProductSubscribersAsyncHelper(const ListProductSubscribersRequest& request, const ListProductSubscribersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListProductSubscribers(request), context);
 }
 
 UpdateFindingsOutcome SecurityHubClient::UpdateFindings(const UpdateFindingsRequest& request) const

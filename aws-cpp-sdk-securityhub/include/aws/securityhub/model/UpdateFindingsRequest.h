@@ -45,32 +45,38 @@ namespace Model
 
 
     /**
-     * <p>A collection of attributes that specify what findings you want to update.</p>
+     * <p>A collection of attributes that specify which findings you want to
+     * update.</p>
      */
     inline const AwsSecurityFindingFilters& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>A collection of attributes that specify what findings you want to update.</p>
+     * <p>A collection of attributes that specify which findings you want to
+     * update.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>A collection of attributes that specify what findings you want to update.</p>
+     * <p>A collection of attributes that specify which findings you want to
+     * update.</p>
      */
     inline void SetFilters(const AwsSecurityFindingFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>A collection of attributes that specify what findings you want to update.</p>
+     * <p>A collection of attributes that specify which findings you want to
+     * update.</p>
      */
     inline void SetFilters(AwsSecurityFindingFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>A collection of attributes that specify what findings you want to update.</p>
+     * <p>A collection of attributes that specify which findings you want to
+     * update.</p>
      */
     inline UpdateFindingsRequest& WithFilters(const AwsSecurityFindingFilters& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>A collection of attributes that specify what findings you want to update.</p>
+     * <p>A collection of attributes that specify which findings you want to
+     * update.</p>
      */
     inline UpdateFindingsRequest& WithFilters(AwsSecurityFindingFilters&& value) { SetFilters(std::move(value)); return *this;}
 

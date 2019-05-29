@@ -45,42 +45,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Maintenance Window the target should be removed from.</p>
+     * <p>The ID of the maintenance window the target should be removed from.</p>
      */
     inline const Aws::String& GetWindowId() const{ return m_windowId; }
 
     /**
-     * <p>The ID of the Maintenance Window the target should be removed from.</p>
+     * <p>The ID of the maintenance window the target should be removed from.</p>
      */
     inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Maintenance Window the target should be removed from.</p>
+     * <p>The ID of the maintenance window the target should be removed from.</p>
      */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
-     * <p>The ID of the Maintenance Window the target should be removed from.</p>
+     * <p>The ID of the maintenance window the target should be removed from.</p>
      */
     inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = std::move(value); }
 
     /**
-     * <p>The ID of the Maintenance Window the target should be removed from.</p>
+     * <p>The ID of the maintenance window the target should be removed from.</p>
      */
     inline void SetWindowId(const char* value) { m_windowIdHasBeenSet = true; m_windowId.assign(value); }
 
     /**
-     * <p>The ID of the Maintenance Window the target should be removed from.</p>
+     * <p>The ID of the maintenance window the target should be removed from.</p>
      */
     inline DeregisterTargetFromMaintenanceWindowRequest& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window the target should be removed from.</p>
+     * <p>The ID of the maintenance window the target should be removed from.</p>
      */
     inline DeregisterTargetFromMaintenanceWindowRequest& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window the target should be removed from.</p>
+     * <p>The ID of the maintenance window the target should be removed from.</p>
      */
     inline DeregisterTargetFromMaintenanceWindowRequest& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
@@ -129,28 +129,28 @@ namespace Model
     /**
      * <p>The system checks if the target is being referenced by a task. If the target
      * is being referenced, the system returns an error and does not deregister the
-     * target from the Maintenance Window.</p>
+     * target from the maintenance window.</p>
      */
     inline bool GetSafe() const{ return m_safe; }
 
     /**
      * <p>The system checks if the target is being referenced by a task. If the target
      * is being referenced, the system returns an error and does not deregister the
-     * target from the Maintenance Window.</p>
+     * target from the maintenance window.</p>
      */
     inline bool SafeHasBeenSet() const { return m_safeHasBeenSet; }
 
     /**
      * <p>The system checks if the target is being referenced by a task. If the target
      * is being referenced, the system returns an error and does not deregister the
-     * target from the Maintenance Window.</p>
+     * target from the maintenance window.</p>
      */
     inline void SetSafe(bool value) { m_safeHasBeenSet = true; m_safe = value; }
 
     /**
      * <p>The system checks if the target is being referenced by a task. If the target
      * is being referenced, the system returns an error and does not deregister the
-     * target from the Maintenance Window.</p>
+     * target from the maintenance window.</p>
      */
     inline DeregisterTargetFromMaintenanceWindowRequest& WithSafe(bool value) { SetSafe(value); return *this;}
 

@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>The Maintenance Window execution ID.</p>
+     * <p>The maintenance window execution ID.</p>
      */
     inline const Aws::String& GetWindowExecutionId() const{ return m_windowExecutionId; }
 
     /**
-     * <p>The Maintenance Window execution ID.</p>
+     * <p>The maintenance window execution ID.</p>
      */
     inline void SetWindowExecutionId(const Aws::String& value) { m_windowExecutionId = value; }
 
     /**
-     * <p>The Maintenance Window execution ID.</p>
+     * <p>The maintenance window execution ID.</p>
      */
     inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionId = std::move(value); }
 
     /**
-     * <p>The Maintenance Window execution ID.</p>
+     * <p>The maintenance window execution ID.</p>
      */
     inline void SetWindowExecutionId(const char* value) { m_windowExecutionId.assign(value); }
 
     /**
-     * <p>The Maintenance Window execution ID.</p>
+     * <p>The maintenance window execution ID.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithWindowExecutionId(const Aws::String& value) { SetWindowExecutionId(value); return *this;}
 
     /**
-     * <p>The Maintenance Window execution ID.</p>
+     * <p>The maintenance window execution ID.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(std::move(value)); return *this;}
 
     /**
-     * <p>The Maintenance Window execution ID.</p>
+     * <p>The maintenance window execution ID.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithWindowExecutionId(const char* value) { SetWindowExecutionId(value); return *this;}
 
@@ -190,31 +190,31 @@ namespace Model
 
 
     /**
-     * <p>Retrieves the task type for a Maintenance Window. Task types include the
+     * <p>Retrieves the task type for a maintenance window. Task types include the
      * following: LAMBDA, STEP_FUNCTION, AUTOMATION, RUN_COMMAND.</p>
      */
     inline const MaintenanceWindowTaskType& GetTaskType() const{ return m_taskType; }
 
     /**
-     * <p>Retrieves the task type for a Maintenance Window. Task types include the
+     * <p>Retrieves the task type for a maintenance window. Task types include the
      * following: LAMBDA, STEP_FUNCTION, AUTOMATION, RUN_COMMAND.</p>
      */
     inline void SetTaskType(const MaintenanceWindowTaskType& value) { m_taskType = value; }
 
     /**
-     * <p>Retrieves the task type for a Maintenance Window. Task types include the
+     * <p>Retrieves the task type for a maintenance window. Task types include the
      * following: LAMBDA, STEP_FUNCTION, AUTOMATION, RUN_COMMAND.</p>
      */
     inline void SetTaskType(MaintenanceWindowTaskType&& value) { m_taskType = std::move(value); }
 
     /**
-     * <p>Retrieves the task type for a Maintenance Window. Task types include the
+     * <p>Retrieves the task type for a maintenance window. Task types include the
      * following: LAMBDA, STEP_FUNCTION, AUTOMATION, RUN_COMMAND.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithTaskType(const MaintenanceWindowTaskType& value) { SetTaskType(value); return *this;}
 
     /**
-     * <p>Retrieves the task type for a Maintenance Window. Task types include the
+     * <p>Retrieves the task type for a maintenance window. Task types include the
      * following: LAMBDA, STEP_FUNCTION, AUTOMATION, RUN_COMMAND.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithTaskType(MaintenanceWindowTaskType&& value) { SetTaskType(std::move(value)); return *this;}
@@ -379,79 +379,79 @@ namespace Model
 
     /**
      * <p>User-provided value to be included in any CloudWatch events raised while
-     * running tasks for these targets in this Maintenance Window. </p>
+     * running tasks for these targets in this maintenance window. </p>
      */
     inline const Aws::String& GetOwnerInformation() const{ return m_ownerInformation; }
 
     /**
      * <p>User-provided value to be included in any CloudWatch events raised while
-     * running tasks for these targets in this Maintenance Window. </p>
+     * running tasks for these targets in this maintenance window. </p>
      */
     inline void SetOwnerInformation(const Aws::String& value) { m_ownerInformation = value; }
 
     /**
      * <p>User-provided value to be included in any CloudWatch events raised while
-     * running tasks for these targets in this Maintenance Window. </p>
+     * running tasks for these targets in this maintenance window. </p>
      */
     inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformation = std::move(value); }
 
     /**
      * <p>User-provided value to be included in any CloudWatch events raised while
-     * running tasks for these targets in this Maintenance Window. </p>
+     * running tasks for these targets in this maintenance window. </p>
      */
     inline void SetOwnerInformation(const char* value) { m_ownerInformation.assign(value); }
 
     /**
      * <p>User-provided value to be included in any CloudWatch events raised while
-     * running tasks for these targets in this Maintenance Window. </p>
+     * running tasks for these targets in this maintenance window. </p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithOwnerInformation(const Aws::String& value) { SetOwnerInformation(value); return *this;}
 
     /**
      * <p>User-provided value to be included in any CloudWatch events raised while
-     * running tasks for these targets in this Maintenance Window. </p>
+     * running tasks for these targets in this maintenance window. </p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(std::move(value)); return *this;}
 
     /**
      * <p>User-provided value to be included in any CloudWatch events raised while
-     * running tasks for these targets in this Maintenance Window. </p>
+     * running tasks for these targets in this maintenance window. </p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 
 
     /**
-     * <p>The Maintenance Window target ID.</p>
+     * <p>The maintenance window target ID.</p>
      */
     inline const Aws::String& GetWindowTargetId() const{ return m_windowTargetId; }
 
     /**
-     * <p>The Maintenance Window target ID.</p>
+     * <p>The maintenance window target ID.</p>
      */
     inline void SetWindowTargetId(const Aws::String& value) { m_windowTargetId = value; }
 
     /**
-     * <p>The Maintenance Window target ID.</p>
+     * <p>The maintenance window target ID.</p>
      */
     inline void SetWindowTargetId(Aws::String&& value) { m_windowTargetId = std::move(value); }
 
     /**
-     * <p>The Maintenance Window target ID.</p>
+     * <p>The maintenance window target ID.</p>
      */
     inline void SetWindowTargetId(const char* value) { m_windowTargetId.assign(value); }
 
     /**
-     * <p>The Maintenance Window target ID.</p>
+     * <p>The maintenance window target ID.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithWindowTargetId(const Aws::String& value) { SetWindowTargetId(value); return *this;}
 
     /**
-     * <p>The Maintenance Window target ID.</p>
+     * <p>The maintenance window target ID.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithWindowTargetId(Aws::String&& value) { SetWindowTargetId(std::move(value)); return *this;}
 
     /**
-     * <p>The Maintenance Window target ID.</p>
+     * <p>The maintenance window target ID.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithWindowTargetId(const char* value) { SetWindowTargetId(value); return *this;}
 

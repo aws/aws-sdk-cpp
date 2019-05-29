@@ -49,79 +49,79 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Maintenance Window execution that includes the task.</p>
+     * <p>The ID of the maintenance window execution that includes the task.</p>
      */
     inline const Aws::String& GetWindowExecutionId() const{ return m_windowExecutionId; }
 
     /**
-     * <p>The ID of the Maintenance Window execution that includes the task.</p>
+     * <p>The ID of the maintenance window execution that includes the task.</p>
      */
     inline void SetWindowExecutionId(const Aws::String& value) { m_windowExecutionId = value; }
 
     /**
-     * <p>The ID of the Maintenance Window execution that includes the task.</p>
+     * <p>The ID of the maintenance window execution that includes the task.</p>
      */
     inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionId = std::move(value); }
 
     /**
-     * <p>The ID of the Maintenance Window execution that includes the task.</p>
+     * <p>The ID of the maintenance window execution that includes the task.</p>
      */
     inline void SetWindowExecutionId(const char* value) { m_windowExecutionId.assign(value); }
 
     /**
-     * <p>The ID of the Maintenance Window execution that includes the task.</p>
+     * <p>The ID of the maintenance window execution that includes the task.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithWindowExecutionId(const Aws::String& value) { SetWindowExecutionId(value); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window execution that includes the task.</p>
+     * <p>The ID of the maintenance window execution that includes the task.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window execution that includes the task.</p>
+     * <p>The ID of the maintenance window execution that includes the task.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithWindowExecutionId(const char* value) { SetWindowExecutionId(value); return *this;}
 
 
     /**
-     * <p>The ID of the specific task execution in the Maintenance Window task that was
+     * <p>The ID of the specific task execution in the maintenance window task that was
      * retrieved.</p>
      */
     inline const Aws::String& GetTaskExecutionId() const{ return m_taskExecutionId; }
 
     /**
-     * <p>The ID of the specific task execution in the Maintenance Window task that was
+     * <p>The ID of the specific task execution in the maintenance window task that was
      * retrieved.</p>
      */
     inline void SetTaskExecutionId(const Aws::String& value) { m_taskExecutionId = value; }
 
     /**
-     * <p>The ID of the specific task execution in the Maintenance Window task that was
+     * <p>The ID of the specific task execution in the maintenance window task that was
      * retrieved.</p>
      */
     inline void SetTaskExecutionId(Aws::String&& value) { m_taskExecutionId = std::move(value); }
 
     /**
-     * <p>The ID of the specific task execution in the Maintenance Window task that was
+     * <p>The ID of the specific task execution in the maintenance window task that was
      * retrieved.</p>
      */
     inline void SetTaskExecutionId(const char* value) { m_taskExecutionId.assign(value); }
 
     /**
-     * <p>The ID of the specific task execution in the Maintenance Window task that was
+     * <p>The ID of the specific task execution in the maintenance window task that was
      * retrieved.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithTaskExecutionId(const Aws::String& value) { SetTaskExecutionId(value); return *this;}
 
     /**
-     * <p>The ID of the specific task execution in the Maintenance Window task that was
+     * <p>The ID of the specific task execution in the maintenance window task that was
      * retrieved.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithTaskExecutionId(Aws::String&& value) { SetTaskExecutionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the specific task execution in the Maintenance Window task that was
+     * <p>The ID of the specific task execution in the maintenance window task that was
      * retrieved.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithTaskExecutionId(const char* value) { SetTaskExecutionId(value); return *this;}
@@ -230,7 +230,7 @@ namespace Model
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The
      * map has the following format:</p> <p>Key: string, between 1 and 255
      * characters</p> <p>Value: an array of strings, each string is between 1 and 255
@@ -243,7 +243,7 @@ namespace Model
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The
      * map has the following format:</p> <p>Key: string, between 1 and 255
      * characters</p> <p>Value: an array of strings, each string is between 1 and 255
@@ -256,7 +256,7 @@ namespace Model
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The
      * map has the following format:</p> <p>Key: string, between 1 and 255
      * characters</p> <p>Value: an array of strings, each string is between 1 and 255
@@ -269,7 +269,7 @@ namespace Model
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The
      * map has the following format:</p> <p>Key: string, between 1 and 255
      * characters</p> <p>Value: an array of strings, each string is between 1 and 255
@@ -282,7 +282,7 @@ namespace Model
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The
      * map has the following format:</p> <p>Key: string, between 1 and 255
      * characters</p> <p>Value: an array of strings, each string is between 1 and 255
@@ -295,7 +295,7 @@ namespace Model
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The
      * map has the following format:</p> <p>Key: string, between 1 and 255
      * characters</p> <p>Value: an array of strings, each string is between 1 and 255
@@ -308,7 +308,7 @@ namespace Model
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported Maintenance Window task
+     * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The
      * map has the following format:</p> <p>Key: string, between 1 and 255
      * characters</p> <p>Value: an array of strings, each string is between 1 and 255

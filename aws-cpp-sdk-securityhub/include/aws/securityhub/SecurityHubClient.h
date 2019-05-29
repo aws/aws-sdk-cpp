@@ -31,6 +31,7 @@
 #include <aws/securityhub/model/DeleteInsightResult.h>
 #include <aws/securityhub/model/DeleteInvitationsResult.h>
 #include <aws/securityhub/model/DeleteMembersResult.h>
+#include <aws/securityhub/model/DescribeProductsResult.h>
 #include <aws/securityhub/model/DisableImportFindingsForProductResult.h>
 #include <aws/securityhub/model/DisableSecurityHubResult.h>
 #include <aws/securityhub/model/DisassociateFromMasterAccountResult.h>
@@ -48,6 +49,7 @@
 #include <aws/securityhub/model/ListEnabledProductsForImportResult.h>
 #include <aws/securityhub/model/ListInvitationsResult.h>
 #include <aws/securityhub/model/ListMembersResult.h>
+#include <aws/securityhub/model/ListProductSubscribersResult.h>
 #include <aws/securityhub/model/UpdateFindingsResult.h>
 #include <aws/securityhub/model/UpdateInsightResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -99,6 +101,7 @@ namespace Model
         class DeleteInsightRequest;
         class DeleteInvitationsRequest;
         class DeleteMembersRequest;
+        class DescribeProductsRequest;
         class DisableImportFindingsForProductRequest;
         class DisableSecurityHubRequest;
         class DisassociateFromMasterAccountRequest;
@@ -116,6 +119,7 @@ namespace Model
         class ListEnabledProductsForImportRequest;
         class ListInvitationsRequest;
         class ListMembersRequest;
+        class ListProductSubscribersRequest;
         class UpdateFindingsRequest;
         class UpdateInsightRequest;
 
@@ -129,6 +133,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteInsightResult, Aws::Client::AWSError<SecurityHubErrors>> DeleteInsightOutcome;
         typedef Aws::Utils::Outcome<DeleteInvitationsResult, Aws::Client::AWSError<SecurityHubErrors>> DeleteInvitationsOutcome;
         typedef Aws::Utils::Outcome<DeleteMembersResult, Aws::Client::AWSError<SecurityHubErrors>> DeleteMembersOutcome;
+        typedef Aws::Utils::Outcome<DescribeProductsResult, Aws::Client::AWSError<SecurityHubErrors>> DescribeProductsOutcome;
         typedef Aws::Utils::Outcome<DisableImportFindingsForProductResult, Aws::Client::AWSError<SecurityHubErrors>> DisableImportFindingsForProductOutcome;
         typedef Aws::Utils::Outcome<DisableSecurityHubResult, Aws::Client::AWSError<SecurityHubErrors>> DisableSecurityHubOutcome;
         typedef Aws::Utils::Outcome<DisassociateFromMasterAccountResult, Aws::Client::AWSError<SecurityHubErrors>> DisassociateFromMasterAccountOutcome;
@@ -146,6 +151,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListEnabledProductsForImportResult, Aws::Client::AWSError<SecurityHubErrors>> ListEnabledProductsForImportOutcome;
         typedef Aws::Utils::Outcome<ListInvitationsResult, Aws::Client::AWSError<SecurityHubErrors>> ListInvitationsOutcome;
         typedef Aws::Utils::Outcome<ListMembersResult, Aws::Client::AWSError<SecurityHubErrors>> ListMembersOutcome;
+        typedef Aws::Utils::Outcome<ListProductSubscribersResult, Aws::Client::AWSError<SecurityHubErrors>> ListProductSubscribersOutcome;
         typedef Aws::Utils::Outcome<UpdateFindingsResult, Aws::Client::AWSError<SecurityHubErrors>> UpdateFindingsOutcome;
         typedef Aws::Utils::Outcome<UpdateInsightResult, Aws::Client::AWSError<SecurityHubErrors>> UpdateInsightOutcome;
 
@@ -159,6 +165,7 @@ namespace Model
         typedef std::future<DeleteInsightOutcome> DeleteInsightOutcomeCallable;
         typedef std::future<DeleteInvitationsOutcome> DeleteInvitationsOutcomeCallable;
         typedef std::future<DeleteMembersOutcome> DeleteMembersOutcomeCallable;
+        typedef std::future<DescribeProductsOutcome> DescribeProductsOutcomeCallable;
         typedef std::future<DisableImportFindingsForProductOutcome> DisableImportFindingsForProductOutcomeCallable;
         typedef std::future<DisableSecurityHubOutcome> DisableSecurityHubOutcomeCallable;
         typedef std::future<DisassociateFromMasterAccountOutcome> DisassociateFromMasterAccountOutcomeCallable;
@@ -176,6 +183,7 @@ namespace Model
         typedef std::future<ListEnabledProductsForImportOutcome> ListEnabledProductsForImportOutcomeCallable;
         typedef std::future<ListInvitationsOutcome> ListInvitationsOutcomeCallable;
         typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
+        typedef std::future<ListProductSubscribersOutcome> ListProductSubscribersOutcomeCallable;
         typedef std::future<UpdateFindingsOutcome> UpdateFindingsOutcomeCallable;
         typedef std::future<UpdateInsightOutcome> UpdateInsightOutcomeCallable;
 } // namespace Model
@@ -192,6 +200,7 @@ namespace Model
     typedef std::function<void(const SecurityHubClient*, const Model::DeleteInsightRequest&, const Model::DeleteInsightOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInsightResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DeleteInvitationsRequest&, const Model::DeleteInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInvitationsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DeleteMembersRequest&, const Model::DeleteMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMembersResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::DescribeProductsRequest&, const Model::DescribeProductsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProductsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DisableImportFindingsForProductRequest&, const Model::DisableImportFindingsForProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableImportFindingsForProductResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DisableSecurityHubRequest&, const Model::DisableSecurityHubOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableSecurityHubResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DisassociateFromMasterAccountRequest&, const Model::DisassociateFromMasterAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFromMasterAccountResponseReceivedHandler;
@@ -209,19 +218,20 @@ namespace Model
     typedef std::function<void(const SecurityHubClient*, const Model::ListEnabledProductsForImportRequest&, const Model::ListEnabledProductsForImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnabledProductsForImportResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::ListInvitationsRequest&, const Model::ListInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvitationsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::ListMembersRequest&, const Model::ListMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMembersResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::ListProductSubscribersRequest&, const Model::ListProductSubscribersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProductSubscribersResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::UpdateFindingsRequest&, const Model::UpdateFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFindingsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::UpdateInsightRequest&, const Model::UpdateInsightOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInsightResponseReceivedHandler;
 
   /**
    * <p>AWS Security Hub provides you with a comprehensive view of your security
-   * state within AWS and your compliance with the security industry standards and
-   * best practices. Security Hub collects security data from across AWS accounts,
+   * state in AWS and your compliance with the security industry standards and best
+   * practices. Security Hub collects security data from across AWS accounts,
    * services, and supported third-party partners and helps you analyze your security
    * trends and identify the highest priority security issues. For more information,
    * see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">AWS
-   * Security Hub User Guide</a>. </p> <important> <p>Currently, AWS Security Hub is
-   * in Preview release.</p> </important>
+   * Security Hub User Guide</a>. </p> <important> <p>Important: AWS Security Hub is
+   * currently in Preview release.</p> </important>
    */
   class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient
   {
@@ -253,7 +263,7 @@ namespace Model
 
 
         /**
-         * <p>Accepts the invitation to be monitored by a master SecurityHub
+         * <p>Accepts the invitation to be monitored by a Security Hub master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptInvitation">AWS
          * API Reference</a></p>
@@ -261,7 +271,7 @@ namespace Model
         virtual Model::AcceptInvitationOutcome AcceptInvitation(const Model::AcceptInvitationRequest& request) const;
 
         /**
-         * <p>Accepts the invitation to be monitored by a master SecurityHub
+         * <p>Accepts the invitation to be monitored by a Security Hub master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptInvitation">AWS
          * API Reference</a></p>
@@ -271,7 +281,7 @@ namespace Model
         virtual Model::AcceptInvitationOutcomeCallable AcceptInvitationCallable(const Model::AcceptInvitationRequest& request) const;
 
         /**
-         * <p>Accepts the invitation to be monitored by a master SecurityHub
+         * <p>Accepts the invitation to be monitored by a Security Hub master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptInvitation">AWS
          * API Reference</a></p>
@@ -284,7 +294,7 @@ namespace Model
          * <p>Disables the standards specified by the standards subscription ARNs. In the
          * context of Security Hub, supported standards (for example, CIS AWS Foundations)
          * are automated and continuous checks that help determine your compliance status
-         * against security industry (including AWS) best practices. </p><p><h3>See
+         * against security industry (including AWS) best practices.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards">AWS
          * API Reference</a></p>
@@ -295,7 +305,7 @@ namespace Model
          * <p>Disables the standards specified by the standards subscription ARNs. In the
          * context of Security Hub, supported standards (for example, CIS AWS Foundations)
          * are automated and continuous checks that help determine your compliance status
-         * against security industry (including AWS) best practices. </p><p><h3>See
+         * against security industry (including AWS) best practices.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards">AWS
          * API Reference</a></p>
@@ -308,7 +318,7 @@ namespace Model
          * <p>Disables the standards specified by the standards subscription ARNs. In the
          * context of Security Hub, supported standards (for example, CIS AWS Foundations)
          * are automated and continuous checks that help determine your compliance status
-         * against security industry (including AWS) best practices. </p><p><h3>See
+         * against security industry (including AWS) best practices.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards">AWS
          * API Reference</a></p>
@@ -355,16 +365,16 @@ namespace Model
         virtual void BatchEnableStandardsAsync(const Model::BatchEnableStandardsRequest& request, const BatchEnableStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Imports security findings that are generated by the integrated third-party
-         * products into Security Hub.</p><p><h3>See Also:</h3>   <a
+         * <p>Imports security findings generated from an integrated third-party product
+         * into Security Hub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchImportFindingsOutcome BatchImportFindings(const Model::BatchImportFindingsRequest& request) const;
 
         /**
-         * <p>Imports security findings that are generated by the integrated third-party
-         * products into Security Hub.</p><p><h3>See Also:</h3>   <a
+         * <p>Imports security findings generated from an integrated third-party product
+         * into Security Hub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">AWS
          * API Reference</a></p>
          *
@@ -373,8 +383,8 @@ namespace Model
         virtual Model::BatchImportFindingsOutcomeCallable BatchImportFindingsCallable(const Model::BatchImportFindingsRequest& request) const;
 
         /**
-         * <p>Imports security findings that are generated by the integrated third-party
-         * products into Security Hub.</p><p><h3>See Also:</h3>   <a
+         * <p>Imports security findings generated from an integrated third-party product
+         * into Security Hub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">AWS
          * API Reference</a></p>
          *
@@ -414,18 +424,18 @@ namespace Model
         virtual void CreateInsightAsync(const Model::CreateInsightRequest& request, const CreateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates member Security Hub accounts in the current AWS account (which
-         * becomes the master Security Hub account) that has Security Hub
-         * enabled.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates Security Hub member accounts associated with the account used for
+         * this action, which becomes the Security Hub Master account. Security Hub must be
+         * enabled in the account used to make this request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateMembers">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateMembersOutcome CreateMembers(const Model::CreateMembersRequest& request) const;
 
         /**
-         * <p>Creates member Security Hub accounts in the current AWS account (which
-         * becomes the master Security Hub account) that has Security Hub
-         * enabled.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates Security Hub member accounts associated with the account used for
+         * this action, which becomes the Security Hub Master account. Security Hub must be
+         * enabled in the account used to make this request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateMembers">AWS
          * API Reference</a></p>
          *
@@ -434,9 +444,9 @@ namespace Model
         virtual Model::CreateMembersOutcomeCallable CreateMembersCallable(const Model::CreateMembersRequest& request) const;
 
         /**
-         * <p>Creates member Security Hub accounts in the current AWS account (which
-         * becomes the master Security Hub account) that has Security Hub
-         * enabled.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates Security Hub member accounts associated with the account used for
+         * this action, which becomes the Security Hub Master account. Security Hub must be
+         * enabled in the account used to make this request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateMembers">AWS
          * API Reference</a></p>
          *
@@ -445,18 +455,18 @@ namespace Model
         virtual void CreateMembersAsync(const Model::CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Declines invitations that are sent to this AWS account (invitee) by the AWS
-         * accounts (inviters) that are specified by the account IDs. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Declines invitations that are sent to this AWS account (invitee) from the AWS
+         * accounts (inviters) that are specified by the provided
+         * <code>AccountIds</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeclineInvitations">AWS
          * API Reference</a></p>
          */
         virtual Model::DeclineInvitationsOutcome DeclineInvitations(const Model::DeclineInvitationsRequest& request) const;
 
         /**
-         * <p>Declines invitations that are sent to this AWS account (invitee) by the AWS
-         * accounts (inviters) that are specified by the account IDs. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Declines invitations that are sent to this AWS account (invitee) from the AWS
+         * accounts (inviters) that are specified by the provided
+         * <code>AccountIds</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeclineInvitations">AWS
          * API Reference</a></p>
          *
@@ -465,9 +475,9 @@ namespace Model
         virtual Model::DeclineInvitationsOutcomeCallable DeclineInvitationsCallable(const Model::DeclineInvitationsRequest& request) const;
 
         /**
-         * <p>Declines invitations that are sent to this AWS account (invitee) by the AWS
-         * accounts (inviters) that are specified by the account IDs. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Declines invitations that are sent to this AWS account (invitee) from the AWS
+         * accounts (inviters) that are specified by the provided
+         * <code>AccountIds</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeclineInvitations">AWS
          * API Reference</a></p>
          *
@@ -476,7 +486,7 @@ namespace Model
         virtual void DeclineInvitationsAsync(const Model::DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an insight that is specified by the insight ARN.</p><p><h3>See
+         * <p>Deletes the insight specified by the <code>InsightArn</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInsight">AWS
          * API Reference</a></p>
@@ -484,7 +494,7 @@ namespace Model
         virtual Model::DeleteInsightOutcome DeleteInsight(const Model::DeleteInsightRequest& request) const;
 
         /**
-         * <p>Deletes an insight that is specified by the insight ARN.</p><p><h3>See
+         * <p>Deletes the insight specified by the <code>InsightArn</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInsight">AWS
          * API Reference</a></p>
@@ -494,7 +504,7 @@ namespace Model
         virtual Model::DeleteInsightOutcomeCallable DeleteInsightCallable(const Model::DeleteInsightRequest& request) const;
 
         /**
-         * <p>Deletes an insight that is specified by the insight ARN.</p><p><h3>See
+         * <p>Deletes the insight specified by the <code>InsightArn</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInsight">AWS
          * API Reference</a></p>
@@ -504,7 +514,7 @@ namespace Model
         virtual void DeleteInsightAsync(const Model::DeleteInsightRequest& request, const DeleteInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes invitations that are sent to this AWS account (invitee) by the AWS
+         * <p>Deletes invitations that were sent to theis AWS account (invitee) by the AWS
          * accounts (inviters) that are specified by their account IDs. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInvitations">AWS
@@ -513,7 +523,7 @@ namespace Model
         virtual Model::DeleteInvitationsOutcome DeleteInvitations(const Model::DeleteInvitationsRequest& request) const;
 
         /**
-         * <p>Deletes invitations that are sent to this AWS account (invitee) by the AWS
+         * <p>Deletes invitations that were sent to theis AWS account (invitee) by the AWS
          * accounts (inviters) that are specified by their account IDs. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInvitations">AWS
@@ -524,7 +534,7 @@ namespace Model
         virtual Model::DeleteInvitationsOutcomeCallable DeleteInvitationsCallable(const Model::DeleteInvitationsRequest& request) const;
 
         /**
-         * <p>Deletes invitations that are sent to this AWS account (invitee) by the AWS
+         * <p>Deletes invitations that were sent to theis AWS account (invitee) by the AWS
          * accounts (inviters) that are specified by their account IDs. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInvitations">AWS
@@ -535,16 +545,16 @@ namespace Model
         virtual void DeleteInvitationsAsync(const Model::DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the Security Hub member accounts that are specified by the account
-         * IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the Security Hub member accounts that the account IDs
+         * specify.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteMembers">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteMembersOutcome DeleteMembers(const Model::DeleteMembersRequest& request) const;
 
         /**
-         * <p>Deletes the Security Hub member accounts that are specified by the account
-         * IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the Security Hub member accounts that the account IDs
+         * specify.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteMembers">AWS
          * API Reference</a></p>
          *
@@ -553,14 +563,42 @@ namespace Model
         virtual Model::DeleteMembersOutcomeCallable DeleteMembersCallable(const Model::DeleteMembersRequest& request) const;
 
         /**
-         * <p>Deletes the Security Hub member accounts that are specified by the account
-         * IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the Security Hub member accounts that the account IDs
+         * specify.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteMembers">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteMembersAsync(const Model::DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about the products available that you can subscribe
+         * to.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProducts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeProductsOutcome DescribeProducts(const Model::DescribeProductsRequest& request) const;
+
+        /**
+         * <p>Returns information about the products available that you can subscribe
+         * to.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProducts">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeProductsOutcomeCallable DescribeProductsCallable(const Model::DescribeProductsRequest& request) const;
+
+        /**
+         * <p>Returns information about the products available that you can subscribe
+         * to.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProducts">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeProductsAsync(const Model::DescribeProductsRequest& request, const DescribeProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels the subscription that allows a findings-generating solution (product)
@@ -591,14 +629,14 @@ namespace Model
         virtual void DisableImportFindingsForProductAsync(const Model::DisableImportFindingsForProductRequest& request, const DisableImportFindingsForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables the AWS Security Hub Service.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables the Security Hub service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHub">AWS
          * API Reference</a></p>
          */
         virtual Model::DisableSecurityHubOutcome DisableSecurityHub(const Model::DisableSecurityHubRequest& request) const;
 
         /**
-         * <p>Disables the AWS Security Hub Service.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables the Security Hub service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHub">AWS
          * API Reference</a></p>
          *
@@ -607,7 +645,7 @@ namespace Model
         virtual Model::DisableSecurityHubOutcomeCallable DisableSecurityHubCallable(const Model::DisableSecurityHubRequest& request) const;
 
         /**
-         * <p>Disables the AWS Security Hub Service.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables the Security Hub service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHub">AWS
          * API Reference</a></p>
          *
@@ -703,14 +741,14 @@ namespace Model
         virtual void EnableImportFindingsForProductAsync(const Model::EnableImportFindingsForProductRequest& request, const EnableImportFindingsForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables the AWS Security Hub service.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables the Security Hub service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHub">AWS
          * API Reference</a></p>
          */
         virtual Model::EnableSecurityHubOutcome EnableSecurityHub(const Model::EnableSecurityHubRequest& request) const;
 
         /**
-         * <p>Enables the AWS Security Hub service.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables the Security Hub service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHub">AWS
          * API Reference</a></p>
          *
@@ -719,7 +757,7 @@ namespace Model
         virtual Model::EnableSecurityHubOutcomeCallable EnableSecurityHubCallable(const Model::EnableSecurityHubRequest& request) const;
 
         /**
-         * <p>Enables the AWS Security Hub service.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables the Security Hub service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHub">AWS
          * API Reference</a></p>
          *
@@ -753,16 +791,16 @@ namespace Model
         virtual void GetEnabledStandardsAsync(const Model::GetEnabledStandardsRequest& request, const GetEnabledStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists and describes Security Hub-aggregated findings that are specified by
-         * filter attributes.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists and describes Security Hub-aggregated findings that filter attributes
+         * specify.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindings">AWS
          * API Reference</a></p>
          */
         virtual Model::GetFindingsOutcome GetFindings(const Model::GetFindingsRequest& request) const;
 
         /**
-         * <p>Lists and describes Security Hub-aggregated findings that are specified by
-         * filter attributes.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists and describes Security Hub-aggregated findings that filter attributes
+         * specify.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindings">AWS
          * API Reference</a></p>
          *
@@ -771,8 +809,8 @@ namespace Model
         virtual Model::GetFindingsOutcomeCallable GetFindingsCallable(const Model::GetFindingsRequest& request) const;
 
         /**
-         * <p>Lists and describes Security Hub-aggregated findings that are specified by
-         * filter attributes.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists and describes Security Hub-aggregated findings that filter attributes
+         * specify.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindings">AWS
          * API Reference</a></p>
          *
@@ -781,16 +819,16 @@ namespace Model
         virtual void GetFindingsAsync(const Model::GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the results of the Security Hub insight specified by the insight
-         * ARN.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the results of the Security Hub insight that the insight ARN
+         * specifies.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInsightResults">AWS
          * API Reference</a></p>
          */
         virtual Model::GetInsightResultsOutcome GetInsightResults(const Model::GetInsightResultsRequest& request) const;
 
         /**
-         * <p>Lists the results of the Security Hub insight specified by the insight
-         * ARN.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the results of the Security Hub insight that the insight ARN
+         * specifies.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInsightResults">AWS
          * API Reference</a></p>
          *
@@ -799,8 +837,8 @@ namespace Model
         virtual Model::GetInsightResultsOutcomeCallable GetInsightResultsCallable(const Model::GetInsightResultsRequest& request) const;
 
         /**
-         * <p>Lists the results of the Security Hub insight specified by the insight
-         * ARN.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the results of the Security Hub insight that the insight ARN
+         * specifies.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInsightResults">AWS
          * API Reference</a></p>
          *
@@ -809,16 +847,16 @@ namespace Model
         virtual void GetInsightResultsAsync(const Model::GetInsightResultsRequest& request, const GetInsightResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists and describes insights that are specified by insight
-         * ARNs.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists and describes insights that insight ARNs specify.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInsights">AWS
          * API Reference</a></p>
          */
         virtual Model::GetInsightsOutcome GetInsights(const Model::GetInsightsRequest& request) const;
 
         /**
-         * <p>Lists and describes insights that are specified by insight
-         * ARNs.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists and describes insights that insight ARNs specify.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInsights">AWS
          * API Reference</a></p>
          *
@@ -827,8 +865,8 @@ namespace Model
         virtual Model::GetInsightsOutcomeCallable GetInsightsCallable(const Model::GetInsightsRequest& request) const;
 
         /**
-         * <p>Lists and describes insights that are specified by insight
-         * ARNs.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists and describes insights that insight ARNs specify.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInsights">AWS
          * API Reference</a></p>
          *
@@ -896,16 +934,16 @@ namespace Model
         virtual void GetMasterAccountAsync(const Model::GetMasterAccountRequest& request, const GetMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the details on the Security Hub member accounts that are specified by
-         * the account IDs. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the details on the Security Hub member accounts that the account IDs
+         * specify.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMembers">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMembersOutcome GetMembers(const Model::GetMembersRequest& request) const;
 
         /**
-         * <p>Returns the details on the Security Hub member accounts that are specified by
-         * the account IDs. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the details on the Security Hub member accounts that the account IDs
+         * specify.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMembers">AWS
          * API Reference</a></p>
          *
@@ -914,8 +952,8 @@ namespace Model
         virtual Model::GetMembersOutcomeCallable GetMembersCallable(const Model::GetMembersRequest& request) const;
 
         /**
-         * <p>Returns the details on the Security Hub member accounts that are specified by
-         * the account IDs. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the details on the Security Hub member accounts that the account IDs
+         * specify.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMembers">AWS
          * API Reference</a></p>
          *
@@ -958,7 +996,7 @@ namespace Model
         virtual void InviteMembersAsync(const Model::InviteMembersRequest& request, const InviteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all findings-generating solutions (products) whose findings you've
+         * <p>Lists all findings-generating solutions (products) whose findings you have
          * subscribed to receive in Security Hub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListEnabledProductsForImport">AWS
          * API Reference</a></p>
@@ -966,7 +1004,7 @@ namespace Model
         virtual Model::ListEnabledProductsForImportOutcome ListEnabledProductsForImport(const Model::ListEnabledProductsForImportRequest& request) const;
 
         /**
-         * <p>Lists all findings-generating solutions (products) whose findings you've
+         * <p>Lists all findings-generating solutions (products) whose findings you have
          * subscribed to receive in Security Hub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListEnabledProductsForImport">AWS
          * API Reference</a></p>
@@ -976,7 +1014,7 @@ namespace Model
         virtual Model::ListEnabledProductsForImportOutcomeCallable ListEnabledProductsForImportCallable(const Model::ListEnabledProductsForImportRequest& request) const;
 
         /**
-         * <p>Lists all findings-generating solutions (products) whose findings you've
+         * <p>Lists all findings-generating solutions (products) whose findings you have
          * subscribed to receive in Security Hub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListEnabledProductsForImport">AWS
          * API Reference</a></p>
@@ -1042,16 +1080,48 @@ namespace Model
         virtual void ListMembersAsync(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the AWS Security Hub-aggregated findings specified by the filter
-         * attributes.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of account IDs that are subscribed to the
+         * product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListProductSubscribers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListProductSubscribersOutcome ListProductSubscribers(const Model::ListProductSubscribersRequest& request) const;
+
+        /**
+         * <p>Returns a list of account IDs that are subscribed to the
+         * product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListProductSubscribers">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListProductSubscribersOutcomeCallable ListProductSubscribersCallable(const Model::ListProductSubscribersRequest& request) const;
+
+        /**
+         * <p>Returns a list of account IDs that are subscribed to the
+         * product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListProductSubscribers">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListProductSubscribersAsync(const Model::ListProductSubscribersRequest& request, const ListProductSubscribersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the <code>Note</code> and <code>RecordState</code> of the Security
+         * Hub-aggregated findings that the filter attributes specify. Any member account
+         * that can view the finding also sees the update to the finding.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateFindings">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateFindingsOutcome UpdateFindings(const Model::UpdateFindingsRequest& request) const;
 
         /**
-         * <p>Updates the AWS Security Hub-aggregated findings specified by the filter
-         * attributes.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the <code>Note</code> and <code>RecordState</code> of the Security
+         * Hub-aggregated findings that the filter attributes specify. Any member account
+         * that can view the finding also sees the update to the finding.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateFindings">AWS
          * API Reference</a></p>
          *
@@ -1060,8 +1130,10 @@ namespace Model
         virtual Model::UpdateFindingsOutcomeCallable UpdateFindingsCallable(const Model::UpdateFindingsRequest& request) const;
 
         /**
-         * <p>Updates the AWS Security Hub-aggregated findings specified by the filter
-         * attributes.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the <code>Note</code> and <code>RecordState</code> of the Security
+         * Hub-aggregated findings that the filter attributes specify. Any member account
+         * that can view the finding also sees the update to the finding.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateFindings">AWS
          * API Reference</a></p>
          *
@@ -1070,16 +1142,16 @@ namespace Model
         virtual void UpdateFindingsAsync(const Model::UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the AWS Security Hub insight specified by the insight
-         * ARN.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the Security Hub insight that the insight ARN
+         * specifies.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateInsight">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateInsightOutcome UpdateInsight(const Model::UpdateInsightRequest& request) const;
 
         /**
-         * <p>Updates the AWS Security Hub insight specified by the insight
-         * ARN.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the Security Hub insight that the insight ARN
+         * specifies.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateInsight">AWS
          * API Reference</a></p>
          *
@@ -1088,8 +1160,8 @@ namespace Model
         virtual Model::UpdateInsightOutcomeCallable UpdateInsightCallable(const Model::UpdateInsightRequest& request) const;
 
         /**
-         * <p>Updates the AWS Security Hub insight specified by the insight
-         * ARN.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the Security Hub insight that the insight ARN
+         * specifies.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateInsight">AWS
          * API Reference</a></p>
          *
@@ -1111,6 +1183,7 @@ namespace Model
         void DeleteInsightAsyncHelper(const Model::DeleteInsightRequest& request, const DeleteInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInvitationsAsyncHelper(const Model::DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMembersAsyncHelper(const Model::DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeProductsAsyncHelper(const Model::DescribeProductsRequest& request, const DescribeProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableImportFindingsForProductAsyncHelper(const Model::DisableImportFindingsForProductRequest& request, const DisableImportFindingsForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableSecurityHubAsyncHelper(const Model::DisableSecurityHubRequest& request, const DisableSecurityHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateFromMasterAccountAsyncHelper(const Model::DisassociateFromMasterAccountRequest& request, const DisassociateFromMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1128,6 +1201,7 @@ namespace Model
         void ListEnabledProductsForImportAsyncHelper(const Model::ListEnabledProductsForImportRequest& request, const ListEnabledProductsForImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInvitationsAsyncHelper(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMembersAsyncHelper(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListProductSubscribersAsyncHelper(const Model::ListProductSubscribersRequest& request, const ListProductSubscribersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFindingsAsyncHelper(const Model::UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateInsightAsyncHelper(const Model::UpdateInsightRequest& request, const UpdateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

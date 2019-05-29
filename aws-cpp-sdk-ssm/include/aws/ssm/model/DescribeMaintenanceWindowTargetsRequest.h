@@ -47,42 +47,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Maintenance Window whose targets should be retrieved.</p>
+     * <p>The ID of the maintenance window whose targets should be retrieved.</p>
      */
     inline const Aws::String& GetWindowId() const{ return m_windowId; }
 
     /**
-     * <p>The ID of the Maintenance Window whose targets should be retrieved.</p>
+     * <p>The ID of the maintenance window whose targets should be retrieved.</p>
      */
     inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Maintenance Window whose targets should be retrieved.</p>
+     * <p>The ID of the maintenance window whose targets should be retrieved.</p>
      */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
-     * <p>The ID of the Maintenance Window whose targets should be retrieved.</p>
+     * <p>The ID of the maintenance window whose targets should be retrieved.</p>
      */
     inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = std::move(value); }
 
     /**
-     * <p>The ID of the Maintenance Window whose targets should be retrieved.</p>
+     * <p>The ID of the maintenance window whose targets should be retrieved.</p>
      */
     inline void SetWindowId(const char* value) { m_windowIdHasBeenSet = true; m_windowId.assign(value); }
 
     /**
-     * <p>The ID of the Maintenance Window whose targets should be retrieved.</p>
+     * <p>The ID of the maintenance window whose targets should be retrieved.</p>
      */
     inline DescribeMaintenanceWindowTargetsRequest& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window whose targets should be retrieved.</p>
+     * <p>The ID of the maintenance window whose targets should be retrieved.</p>
      */
     inline DescribeMaintenanceWindowTargetsRequest& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Maintenance Window whose targets should be retrieved.</p>
+     * <p>The ID of the maintenance window whose targets should be retrieved.</p>
      */
     inline DescribeMaintenanceWindowTargetsRequest& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 

@@ -220,25 +220,25 @@ namespace Model
 
     /**
      * <p> The deletion protection setting for the new global database. The global
-     * database can't be deleted when this value is set to true. </p>
+     * database can't be deleted when deletion protection is enabled. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
      * <p> The deletion protection setting for the new global database. The global
-     * database can't be deleted when this value is set to true. </p>
+     * database can't be deleted when deletion protection is enabled. </p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
      * <p> The deletion protection setting for the new global database. The global
-     * database can't be deleted when this value is set to true. </p>
+     * database can't be deleted when deletion protection is enabled. </p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
      * <p> The deletion protection setting for the new global database. The global
-     * database can't be deleted when this value is set to true. </p>
+     * database can't be deleted when deletion protection is enabled. </p>
      */
     inline CreateGlobalClusterRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 

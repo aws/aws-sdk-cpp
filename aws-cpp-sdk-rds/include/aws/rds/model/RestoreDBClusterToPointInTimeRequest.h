@@ -277,9 +277,9 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
      * the DB instance</p> </li> <li> <p>Must be specified if
      * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
-     * <p>Can't be specified if <code>UseLatestRestorableTime</code> parameter is
-     * true</p> </li> <li> <p>Can't be specified if <code>RestoreType</code> parameter
-     * is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
+     * <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is
+     * enabled</p> </li> <li> <p>Can't be specified if the <code>RestoreType</code>
+     * parameter is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
      * <code>2015-03-07T23:45:00Z</code> </p>
      */
     inline const Aws::Utils::DateTime& GetRestoreToTime() const{ return m_restoreToTime; }
@@ -290,9 +290,9 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
      * the DB instance</p> </li> <li> <p>Must be specified if
      * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
-     * <p>Can't be specified if <code>UseLatestRestorableTime</code> parameter is
-     * true</p> </li> <li> <p>Can't be specified if <code>RestoreType</code> parameter
-     * is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
+     * <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is
+     * enabled</p> </li> <li> <p>Can't be specified if the <code>RestoreType</code>
+     * parameter is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
      * <code>2015-03-07T23:45:00Z</code> </p>
      */
     inline bool RestoreToTimeHasBeenSet() const { return m_restoreToTimeHasBeenSet; }
@@ -303,9 +303,9 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
      * the DB instance</p> </li> <li> <p>Must be specified if
      * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
-     * <p>Can't be specified if <code>UseLatestRestorableTime</code> parameter is
-     * true</p> </li> <li> <p>Can't be specified if <code>RestoreType</code> parameter
-     * is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
+     * <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is
+     * enabled</p> </li> <li> <p>Can't be specified if the <code>RestoreType</code>
+     * parameter is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
      * <code>2015-03-07T23:45:00Z</code> </p>
      */
     inline void SetRestoreToTime(const Aws::Utils::DateTime& value) { m_restoreToTimeHasBeenSet = true; m_restoreToTime = value; }
@@ -316,9 +316,9 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
      * the DB instance</p> </li> <li> <p>Must be specified if
      * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
-     * <p>Can't be specified if <code>UseLatestRestorableTime</code> parameter is
-     * true</p> </li> <li> <p>Can't be specified if <code>RestoreType</code> parameter
-     * is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
+     * <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is
+     * enabled</p> </li> <li> <p>Can't be specified if the <code>RestoreType</code>
+     * parameter is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
      * <code>2015-03-07T23:45:00Z</code> </p>
      */
     inline void SetRestoreToTime(Aws::Utils::DateTime&& value) { m_restoreToTimeHasBeenSet = true; m_restoreToTime = std::move(value); }
@@ -329,9 +329,9 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
      * the DB instance</p> </li> <li> <p>Must be specified if
      * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
-     * <p>Can't be specified if <code>UseLatestRestorableTime</code> parameter is
-     * true</p> </li> <li> <p>Can't be specified if <code>RestoreType</code> parameter
-     * is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
+     * <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is
+     * enabled</p> </li> <li> <p>Can't be specified if the <code>RestoreType</code>
+     * parameter is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
      * <code>2015-03-07T23:45:00Z</code> </p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithRestoreToTime(const Aws::Utils::DateTime& value) { SetRestoreToTime(value); return *this;}
@@ -342,42 +342,42 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
      * the DB instance</p> </li> <li> <p>Must be specified if
      * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
-     * <p>Can't be specified if <code>UseLatestRestorableTime</code> parameter is
-     * true</p> </li> <li> <p>Can't be specified if <code>RestoreType</code> parameter
-     * is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
+     * <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is
+     * enabled</p> </li> <li> <p>Can't be specified if the <code>RestoreType</code>
+     * parameter is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
      * <code>2015-03-07T23:45:00Z</code> </p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithRestoreToTime(Aws::Utils::DateTime&& value) { SetRestoreToTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>A value that is set to <code>true</code> to restore the DB cluster to the
-     * latest restorable backup time, and <code>false</code> otherwise. </p>
-     * <p>Default: <code>false</code> </p> <p>Constraints: Can't be specified if
+     * <p>A value that indicates whether to restore the DB cluster to the latest
+     * restorable backup time. By default, the DB cluster is not restored to the latest
+     * restorable backup time. </p> <p>Constraints: Can't be specified if
      * <code>RestoreToTime</code> parameter is provided.</p>
      */
     inline bool GetUseLatestRestorableTime() const{ return m_useLatestRestorableTime; }
 
     /**
-     * <p>A value that is set to <code>true</code> to restore the DB cluster to the
-     * latest restorable backup time, and <code>false</code> otherwise. </p>
-     * <p>Default: <code>false</code> </p> <p>Constraints: Can't be specified if
+     * <p>A value that indicates whether to restore the DB cluster to the latest
+     * restorable backup time. By default, the DB cluster is not restored to the latest
+     * restorable backup time. </p> <p>Constraints: Can't be specified if
      * <code>RestoreToTime</code> parameter is provided.</p>
      */
     inline bool UseLatestRestorableTimeHasBeenSet() const { return m_useLatestRestorableTimeHasBeenSet; }
 
     /**
-     * <p>A value that is set to <code>true</code> to restore the DB cluster to the
-     * latest restorable backup time, and <code>false</code> otherwise. </p>
-     * <p>Default: <code>false</code> </p> <p>Constraints: Can't be specified if
+     * <p>A value that indicates whether to restore the DB cluster to the latest
+     * restorable backup time. By default, the DB cluster is not restored to the latest
+     * restorable backup time. </p> <p>Constraints: Can't be specified if
      * <code>RestoreToTime</code> parameter is provided.</p>
      */
     inline void SetUseLatestRestorableTime(bool value) { m_useLatestRestorableTimeHasBeenSet = true; m_useLatestRestorableTime = value; }
 
     /**
-     * <p>A value that is set to <code>true</code> to restore the DB cluster to the
-     * latest restorable backup time, and <code>false</code> otherwise. </p>
-     * <p>Default: <code>false</code> </p> <p>Constraints: Can't be specified if
+     * <p>A value that indicates whether to restore the DB cluster to the latest
+     * restorable backup time. By default, the DB cluster is not restored to the latest
+     * restorable backup time. </p> <p>Constraints: Can't be specified if
      * <code>RestoreToTime</code> parameter is provided.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithUseLatestRestorableTime(bool value) { SetUseLatestRestorableTime(value); return *this;}
@@ -735,30 +735,30 @@ namespace Model
 
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
-     * </p>
+     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
+     * Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
@@ -973,55 +973,55 @@ namespace Model
 
 
     /**
-     * <p>Indicates if the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>Indicates if the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>Indicates if the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>Indicates if the DB cluster should have deletion protection enabled. The
-     * database can't be deleted when this value is set to true. The default is false.
-     * </p>
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
 
     /**
-     * <p>True to copy all tags from the restored DB cluster to snapshots of the
-     * restored DB cluster, and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the restored DB cluster
+     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>True to copy all tags from the restored DB cluster to snapshots of the
-     * restored DB cluster, and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the restored DB cluster
+     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
-     * <p>True to copy all tags from the restored DB cluster to snapshots of the
-     * restored DB cluster, and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the restored DB cluster
+     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>True to copy all tags from the restored DB cluster to snapshots of the
-     * restored DB cluster, and otherwise false. The default is false.</p>
+     * <p>A value that indicates whether to copy all tags from the restored DB cluster
+     * to snapshots of the restored DB cluster. The default is not to copy them.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 

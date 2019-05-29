@@ -31,7 +31,6 @@ namespace Aws
       {
 
         static const int EQUALS_HASH = HashingUtils::HashString("EQUALS");
-        static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
         static const int PREFIX_HASH = HashingUtils::HashString("PREFIX");
 
 
@@ -41,10 +40,6 @@ namespace Aws
           if (hashCode == EQUALS_HASH)
           {
             return StringFilterComparison::EQUALS;
-          }
-          else if (hashCode == CONTAINS_HASH)
-          {
-            return StringFilterComparison::CONTAINS;
           }
           else if (hashCode == PREFIX_HASH)
           {
@@ -66,8 +61,6 @@ namespace Aws
           {
           case StringFilterComparison::EQUALS:
             return "EQUALS";
-          case StringFilterComparison::CONTAINS:
-            return "CONTAINS";
           case StringFilterComparison::PREFIX:
             return "PREFIX";
           default:

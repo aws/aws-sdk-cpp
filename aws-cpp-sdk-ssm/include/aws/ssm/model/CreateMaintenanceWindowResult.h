@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the created Maintenance Window.</p>
+     * <p>The ID of the created maintenance window.</p>
      */
     inline const Aws::String& GetWindowId() const{ return m_windowId; }
 
     /**
-     * <p>The ID of the created Maintenance Window.</p>
+     * <p>The ID of the created maintenance window.</p>
      */
     inline void SetWindowId(const Aws::String& value) { m_windowId = value; }
 
     /**
-     * <p>The ID of the created Maintenance Window.</p>
+     * <p>The ID of the created maintenance window.</p>
      */
     inline void SetWindowId(Aws::String&& value) { m_windowId = std::move(value); }
 
     /**
-     * <p>The ID of the created Maintenance Window.</p>
+     * <p>The ID of the created maintenance window.</p>
      */
     inline void SetWindowId(const char* value) { m_windowId.assign(value); }
 
     /**
-     * <p>The ID of the created Maintenance Window.</p>
+     * <p>The ID of the created maintenance window.</p>
      */
     inline CreateMaintenanceWindowResult& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
 
     /**
-     * <p>The ID of the created Maintenance Window.</p>
+     * <p>The ID of the created maintenance window.</p>
      */
     inline CreateMaintenanceWindowResult& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the created Maintenance Window.</p>
+     * <p>The ID of the created maintenance window.</p>
      */
     inline CreateMaintenanceWindowResult& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 

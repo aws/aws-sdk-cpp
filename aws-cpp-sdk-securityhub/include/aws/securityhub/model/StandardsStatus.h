@@ -29,7 +29,8 @@ namespace Model
     PENDING,
     READY,
     FAILED,
-    DELETING
+    DELETING,
+    INCOMPLETE
   };
 
 namespace StandardsStatusMapper

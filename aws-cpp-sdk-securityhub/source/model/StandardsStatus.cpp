@@ -34,6 +34,7 @@ namespace Aws
         static const int READY_HASH = HashingUtils::HashString("READY");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static const int INCOMPLETE_HASH = HashingUtils::HashString("INCOMPLETE");
 
 
         StandardsStatus GetStandardsStatusForName(const Aws::String& name)
@@ -54,6 +55,10 @@ namespace Aws
           else if (hashCode == DELETING_HASH)
           {
             return StandardsStatus::DELETING;
+          }
+          else if (hashCode == INCOMPLETE_HASH)
+          {
+            return StandardsStatus::INCOMPLETE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,8 @@ namespace Aws
             return "FAILED";
           case StandardsStatus::DELETING:
             return "DELETING";
+          case StandardsStatus::INCOMPLETE:
+            return "INCOMPLETE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
