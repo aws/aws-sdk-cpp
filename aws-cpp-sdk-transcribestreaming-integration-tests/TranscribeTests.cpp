@@ -22,6 +22,7 @@
 #include <aws/core/utils/threading/Semaphore.h>
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/platform/FileSystem.h>
+#include <aws/core/http/HttpTypes.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceClient.h>
 #include <aws/transcribestreaming/model/StartStreamTranscriptionRequest.h>
 #include <aws/transcribestreaming/model/StartStreamTranscriptionHandler.h>
@@ -33,6 +34,7 @@ using namespace Aws::TranscribeStreamingService;
 using namespace Aws::TranscribeStreamingService::Model;
 
 static const char TEST_FILE_NAME[] = "transcribe-test-file.wav";
+const char ALLOC_TAG[] = "TranscribestreamingIntegTest";
 
 class TranscribeStreamingTests : public ::testing::Test
 {
@@ -45,6 +47,13 @@ public:
         Aws::OFStream testFile(TEST_FILE_NAME, std::ios_base::out | std::ios_base::binary | std::ios_base::trunc);
         testFile.write(payload.c_str(), payload.size());
         testFile.close();
+
+        Aws::Client::ClientConfiguration config;
+#ifdef _WIN32
+        // TODO: remove this once we get H2 working with WinHttp client
+        config.httpLibOverride = Aws::Http::TransferLibType::WIN_INET_CLIENT;
+#endif
+        m_client = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, config);
     }
 
     ~TranscribeStreamingTests()
@@ -52,7 +61,7 @@ public:
         Aws::FileSystem::RemoveFileIfExists(TEST_FILE_NAME);
     }
 
-    TranscribeStreamingServiceClient m_client;
+    Aws::UniquePtr<TranscribeStreamingServiceClient> m_client;
 };
 
 TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
@@ -125,7 +134,7 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
         semaphore.ReleaseAll();
     };
 
-    m_client.StartStreamTranscriptionAsync(request, OnStreamReady, OnResponseCallback, nullptr/*context*/);
+    m_client->StartStreamTranscriptionAsync(request, OnStreamReady, OnResponseCallback, nullptr/*context*/);
     semaphore.WaitOne();
     ASSERT_EQ(0u, transcribedResult.find(EXPECTED_MESSAGE));
 }
