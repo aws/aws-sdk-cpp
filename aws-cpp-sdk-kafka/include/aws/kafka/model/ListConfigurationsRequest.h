@@ -49,121 +49,125 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to return in the response. If there are more
-     * results, the response includes a NextToken parameter.</p>
+     * 
+            <p>The maximum number of results to return in the response. If
+     * there are more results, the response includes a NextToken parameter.</p>
+       
+     *  
      */
-    inline const Aws::String& GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return in the response. If there are more
-     * results, the response includes a NextToken parameter.</p>
+     * 
+            <p>The maximum number of results to return in the response. If
+     * there are more results, the response includes a NextToken parameter.</p>
+       
+     *  
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to return in the response. If there are more
-     * results, the response includes a NextToken parameter.</p>
+     * 
+            <p>The maximum number of results to return in the response. If
+     * there are more results, the response includes a NextToken parameter.</p>
+       
+     *  
      */
-    inline void SetMaxResults(const Aws::String& value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return in the response. If there are more
-     * results, the response includes a NextToken parameter.</p>
+     * 
+            <p>The maximum number of results to return in the response. If
+     * there are more results, the response includes a NextToken parameter.</p>
+       
+     *  
      */
-    inline void SetMaxResults(Aws::String&& value) { m_maxResultsHasBeenSet = true; m_maxResults = std::move(value); }
-
-    /**
-     * <p>The maximum number of results to return in the response. If there are more
-     * results, the response includes a NextToken parameter.</p>
-     */
-    inline void SetMaxResults(const char* value) { m_maxResultsHasBeenSet = true; m_maxResults.assign(value); }
-
-    /**
-     * <p>The maximum number of results to return in the response. If there are more
-     * results, the response includes a NextToken parameter.</p>
-     */
-    inline ListConfigurationsRequest& WithMaxResults(const Aws::String& value) { SetMaxResults(value); return *this;}
-
-    /**
-     * <p>The maximum number of results to return in the response. If there are more
-     * results, the response includes a NextToken parameter.</p>
-     */
-    inline ListConfigurationsRequest& WithMaxResults(Aws::String&& value) { SetMaxResults(std::move(value)); return *this;}
-
-    /**
-     * <p>The maximum number of results to return in the response. If there are more
-     * results, the response includes a NextToken parameter.</p>
-     */
-    inline ListConfigurationsRequest& WithMaxResults(const char* value) { SetMaxResults(value); return *this;}
+    inline ListConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>The paginated results marker. When the result of the operation is truncated,
-     * the call returns NextToken in the response. 
- To get the next batch, provide
-     * this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of the operation
+     * is truncated, the call returns NextToken in the response. 
+            To get
+     * the next batch, provide this token in your next request.</p>
+         
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The paginated results marker. When the result of the operation is truncated,
-     * the call returns NextToken in the response. 
- To get the next batch, provide
-     * this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of the operation
+     * is truncated, the call returns NextToken in the response. 
+            To get
+     * the next batch, provide this token in your next request.</p>
+         
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The paginated results marker. When the result of the operation is truncated,
-     * the call returns NextToken in the response. 
- To get the next batch, provide
-     * this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of the operation
+     * is truncated, the call returns NextToken in the response. 
+            To get
+     * the next batch, provide this token in your next request.</p>
+         
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The paginated results marker. When the result of the operation is truncated,
-     * the call returns NextToken in the response. 
- To get the next batch, provide
-     * this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of the operation
+     * is truncated, the call returns NextToken in the response. 
+            To get
+     * the next batch, provide this token in your next request.</p>
+         
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The paginated results marker. When the result of the operation is truncated,
-     * the call returns NextToken in the response. 
- To get the next batch, provide
-     * this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of the operation
+     * is truncated, the call returns NextToken in the response. 
+            To get
+     * the next batch, provide this token in your next request.</p>
+         
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The paginated results marker. When the result of the operation is truncated,
-     * the call returns NextToken in the response. 
- To get the next batch, provide
-     * this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of the operation
+     * is truncated, the call returns NextToken in the response. 
+            To get
+     * the next batch, provide this token in your next request.</p>
+         
      */
     inline ListConfigurationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The paginated results marker. When the result of the operation is truncated,
-     * the call returns NextToken in the response. 
- To get the next batch, provide
-     * this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of the operation
+     * is truncated, the call returns NextToken in the response. 
+            To get
+     * the next batch, provide this token in your next request.</p>
+         
      */
     inline ListConfigurationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The paginated results marker. When the result of the operation is truncated,
-     * the call returns NextToken in the response. 
- To get the next batch, provide
-     * this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of the operation
+     * is truncated, the call returns NextToken in the response. 
+            To get
+     * the next batch, provide this token in your next request.</p>
+         
      */
     inline ListConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
 
-    Aws::String m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
 
     Aws::String m_nextToken;

@@ -20,6 +20,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/rds/model/ScalingConfigurationInfo.h>
+#include <aws/rds/model/ActivityStreamMode.h>
+#include <aws/rds/model/ActivityStreamStatus.h>
 #include <aws/rds/model/DBClusterOptionGroupStatus.h>
 #include <aws/rds/model/DBClusterMember.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
@@ -2007,6 +2009,178 @@ namespace Model
 
 
     /**
+     * <p>The mode of the database activity stream. Database events such as a change or
+     * access generate an activity stream event. The database session can handle these
+     * events either synchronously or asynchronously. </p>
+     */
+    inline const ActivityStreamMode& GetActivityStreamMode() const{ return m_activityStreamMode; }
+
+    /**
+     * <p>The mode of the database activity stream. Database events such as a change or
+     * access generate an activity stream event. The database session can handle these
+     * events either synchronously or asynchronously. </p>
+     */
+    inline bool ActivityStreamModeHasBeenSet() const { return m_activityStreamModeHasBeenSet; }
+
+    /**
+     * <p>The mode of the database activity stream. Database events such as a change or
+     * access generate an activity stream event. The database session can handle these
+     * events either synchronously or asynchronously. </p>
+     */
+    inline void SetActivityStreamMode(const ActivityStreamMode& value) { m_activityStreamModeHasBeenSet = true; m_activityStreamMode = value; }
+
+    /**
+     * <p>The mode of the database activity stream. Database events such as a change or
+     * access generate an activity stream event. The database session can handle these
+     * events either synchronously or asynchronously. </p>
+     */
+    inline void SetActivityStreamMode(ActivityStreamMode&& value) { m_activityStreamModeHasBeenSet = true; m_activityStreamMode = std::move(value); }
+
+    /**
+     * <p>The mode of the database activity stream. Database events such as a change or
+     * access generate an activity stream event. The database session can handle these
+     * events either synchronously or asynchronously. </p>
+     */
+    inline DBCluster& WithActivityStreamMode(const ActivityStreamMode& value) { SetActivityStreamMode(value); return *this;}
+
+    /**
+     * <p>The mode of the database activity stream. Database events such as a change or
+     * access generate an activity stream event. The database session can handle these
+     * events either synchronously or asynchronously. </p>
+     */
+    inline DBCluster& WithActivityStreamMode(ActivityStreamMode&& value) { SetActivityStreamMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The status of the database activity stream.</p>
+     */
+    inline const ActivityStreamStatus& GetActivityStreamStatus() const{ return m_activityStreamStatus; }
+
+    /**
+     * <p>The status of the database activity stream.</p>
+     */
+    inline bool ActivityStreamStatusHasBeenSet() const { return m_activityStreamStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the database activity stream.</p>
+     */
+    inline void SetActivityStreamStatus(const ActivityStreamStatus& value) { m_activityStreamStatusHasBeenSet = true; m_activityStreamStatus = value; }
+
+    /**
+     * <p>The status of the database activity stream.</p>
+     */
+    inline void SetActivityStreamStatus(ActivityStreamStatus&& value) { m_activityStreamStatusHasBeenSet = true; m_activityStreamStatus = std::move(value); }
+
+    /**
+     * <p>The status of the database activity stream.</p>
+     */
+    inline DBCluster& WithActivityStreamStatus(const ActivityStreamStatus& value) { SetActivityStreamStatus(value); return *this;}
+
+    /**
+     * <p>The status of the database activity stream.</p>
+     */
+    inline DBCluster& WithActivityStreamStatus(ActivityStreamStatus&& value) { SetActivityStreamStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The AWS KMS key identifier used for encrypting messages in the database
+     * activity stream.</p>
+     */
+    inline const Aws::String& GetActivityStreamKmsKeyId() const{ return m_activityStreamKmsKeyId; }
+
+    /**
+     * <p>The AWS KMS key identifier used for encrypting messages in the database
+     * activity stream.</p>
+     */
+    inline bool ActivityStreamKmsKeyIdHasBeenSet() const { return m_activityStreamKmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The AWS KMS key identifier used for encrypting messages in the database
+     * activity stream.</p>
+     */
+    inline void SetActivityStreamKmsKeyId(const Aws::String& value) { m_activityStreamKmsKeyIdHasBeenSet = true; m_activityStreamKmsKeyId = value; }
+
+    /**
+     * <p>The AWS KMS key identifier used for encrypting messages in the database
+     * activity stream.</p>
+     */
+    inline void SetActivityStreamKmsKeyId(Aws::String&& value) { m_activityStreamKmsKeyIdHasBeenSet = true; m_activityStreamKmsKeyId = std::move(value); }
+
+    /**
+     * <p>The AWS KMS key identifier used for encrypting messages in the database
+     * activity stream.</p>
+     */
+    inline void SetActivityStreamKmsKeyId(const char* value) { m_activityStreamKmsKeyIdHasBeenSet = true; m_activityStreamKmsKeyId.assign(value); }
+
+    /**
+     * <p>The AWS KMS key identifier used for encrypting messages in the database
+     * activity stream.</p>
+     */
+    inline DBCluster& WithActivityStreamKmsKeyId(const Aws::String& value) { SetActivityStreamKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The AWS KMS key identifier used for encrypting messages in the database
+     * activity stream.</p>
+     */
+    inline DBCluster& WithActivityStreamKmsKeyId(Aws::String&& value) { SetActivityStreamKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS KMS key identifier used for encrypting messages in the database
+     * activity stream.</p>
+     */
+    inline DBCluster& WithActivityStreamKmsKeyId(const char* value) { SetActivityStreamKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p>The name of the Amazon Kinesis data stream used for the database activity
+     * stream.</p>
+     */
+    inline const Aws::String& GetActivityStreamKinesisStreamName() const{ return m_activityStreamKinesisStreamName; }
+
+    /**
+     * <p>The name of the Amazon Kinesis data stream used for the database activity
+     * stream.</p>
+     */
+    inline bool ActivityStreamKinesisStreamNameHasBeenSet() const { return m_activityStreamKinesisStreamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon Kinesis data stream used for the database activity
+     * stream.</p>
+     */
+    inline void SetActivityStreamKinesisStreamName(const Aws::String& value) { m_activityStreamKinesisStreamNameHasBeenSet = true; m_activityStreamKinesisStreamName = value; }
+
+    /**
+     * <p>The name of the Amazon Kinesis data stream used for the database activity
+     * stream.</p>
+     */
+    inline void SetActivityStreamKinesisStreamName(Aws::String&& value) { m_activityStreamKinesisStreamNameHasBeenSet = true; m_activityStreamKinesisStreamName = std::move(value); }
+
+    /**
+     * <p>The name of the Amazon Kinesis data stream used for the database activity
+     * stream.</p>
+     */
+    inline void SetActivityStreamKinesisStreamName(const char* value) { m_activityStreamKinesisStreamNameHasBeenSet = true; m_activityStreamKinesisStreamName.assign(value); }
+
+    /**
+     * <p>The name of the Amazon Kinesis data stream used for the database activity
+     * stream.</p>
+     */
+    inline DBCluster& WithActivityStreamKinesisStreamName(const Aws::String& value) { SetActivityStreamKinesisStreamName(value); return *this;}
+
+    /**
+     * <p>The name of the Amazon Kinesis data stream used for the database activity
+     * stream.</p>
+     */
+    inline DBCluster& WithActivityStreamKinesisStreamName(Aws::String&& value) { SetActivityStreamKinesisStreamName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the Amazon Kinesis data stream used for the database activity
+     * stream.</p>
+     */
+    inline DBCluster& WithActivityStreamKinesisStreamName(const char* value) { SetActivityStreamKinesisStreamName(value); return *this;}
+
+
+    /**
      * <p>Specifies whether tags are copied from the DB cluster to snapshots of the DB
      * cluster.</p>
      */
@@ -2166,6 +2340,18 @@ namespace Model
 
     bool m_httpEndpointEnabled;
     bool m_httpEndpointEnabledHasBeenSet;
+
+    ActivityStreamMode m_activityStreamMode;
+    bool m_activityStreamModeHasBeenSet;
+
+    ActivityStreamStatus m_activityStreamStatus;
+    bool m_activityStreamStatusHasBeenSet;
+
+    Aws::String m_activityStreamKmsKeyId;
+    bool m_activityStreamKmsKeyIdHasBeenSet;
+
+    Aws::String m_activityStreamKinesisStreamName;
+    bool m_activityStreamKinesisStreamNameHasBeenSet;
 
     bool m_copyTagsToSnapshot;
     bool m_copyTagsToSnapshotHasBeenSet;

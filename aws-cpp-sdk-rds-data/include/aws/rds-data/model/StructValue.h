@@ -35,7 +35,7 @@ namespace Model
   class Value;
 
   /**
-   * User Defined Type<p><h3>See Also:</h3>   <a
+   * <p>A structure value returned by a call.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/StructValue">AWS
    * API Reference</a></p>
    */
@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * Struct or UDT
+     * <p>The attributes returned in the record.</p>
      */
     inline const Aws::Vector<Value>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * Struct or UDT
+     * <p>The attributes returned in the record.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
-     * Struct or UDT
+     * <p>The attributes returned in the record.</p>
      */
     inline void SetAttributes(const Aws::Vector<Value>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * Struct or UDT
+     * <p>The attributes returned in the record.</p>
      */
     inline void SetAttributes(Aws::Vector<Value>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * Struct or UDT
+     * <p>The attributes returned in the record.</p>
      */
     inline StructValue& WithAttributes(const Aws::Vector<Value>& value) { SetAttributes(value); return *this;}
 
     /**
-     * Struct or UDT
+     * <p>The attributes returned in the record.</p>
      */
     inline StructValue& WithAttributes(Aws::Vector<Value>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * Struct or UDT
+     * <p>The attributes returned in the record.</p>
      */
     inline StructValue& AddAttributes(const Value& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     /**
-     * Struct or UDT
+     * <p>The attributes returned in the record.</p>
      */
     inline StructValue& AddAttributes(Value&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 

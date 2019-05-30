@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>The data volume encryption details.</p><p><h3>See Also:</h3>   <a
+   * 
+            <p>The data-volume encryption details.</p>
+         <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/EncryptionAtRest">AWS
    * API Reference</a></p>
    */
@@ -48,42 +51,66 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key used for data encryption.</p>
+     * 
+            <p>The ARN of the AWS KMS key for encrypting data at rest. If you
+     * don't specify a KMS key, MSK creates one for you and uses it.</p>
+         
      */
     inline const Aws::String& GetDataVolumeKMSKeyId() const{ return m_dataVolumeKMSKeyId; }
 
     /**
-     * <p>The AWS KMS key used for data encryption.</p>
+     * 
+            <p>The ARN of the AWS KMS key for encrypting data at rest. If you
+     * don't specify a KMS key, MSK creates one for you and uses it.</p>
+         
      */
     inline bool DataVolumeKMSKeyIdHasBeenSet() const { return m_dataVolumeKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key used for data encryption.</p>
+     * 
+            <p>The ARN of the AWS KMS key for encrypting data at rest. If you
+     * don't specify a KMS key, MSK creates one for you and uses it.</p>
+         
      */
     inline void SetDataVolumeKMSKeyId(const Aws::String& value) { m_dataVolumeKMSKeyIdHasBeenSet = true; m_dataVolumeKMSKeyId = value; }
 
     /**
-     * <p>The AWS KMS key used for data encryption.</p>
+     * 
+            <p>The ARN of the AWS KMS key for encrypting data at rest. If you
+     * don't specify a KMS key, MSK creates one for you and uses it.</p>
+         
      */
     inline void SetDataVolumeKMSKeyId(Aws::String&& value) { m_dataVolumeKMSKeyIdHasBeenSet = true; m_dataVolumeKMSKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key used for data encryption.</p>
+     * 
+            <p>The ARN of the AWS KMS key for encrypting data at rest. If you
+     * don't specify a KMS key, MSK creates one for you and uses it.</p>
+         
      */
     inline void SetDataVolumeKMSKeyId(const char* value) { m_dataVolumeKMSKeyIdHasBeenSet = true; m_dataVolumeKMSKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key used for data encryption.</p>
+     * 
+            <p>The ARN of the AWS KMS key for encrypting data at rest. If you
+     * don't specify a KMS key, MSK creates one for you and uses it.</p>
+         
      */
     inline EncryptionAtRest& WithDataVolumeKMSKeyId(const Aws::String& value) { SetDataVolumeKMSKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key used for data encryption.</p>
+     * 
+            <p>The ARN of the AWS KMS key for encrypting data at rest. If you
+     * don't specify a KMS key, MSK creates one for you and uses it.</p>
+         
      */
     inline EncryptionAtRest& WithDataVolumeKMSKeyId(Aws::String&& value) { SetDataVolumeKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key used for data encryption.</p>
+     * 
+            <p>The ARN of the AWS KMS key for encrypting data at rest. If you
+     * don't specify a KMS key, MSK creates one for you and uses it.</p>
+         
      */
     inline EncryptionAtRest& WithDataVolumeKMSKeyId(const char* value) { SetDataVolumeKMSKeyId(value); return *this;}
 

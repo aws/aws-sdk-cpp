@@ -28,16 +28,22 @@ namespace RDSDataService
 namespace RDSDataServiceErrorMapper
 {
 
+static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerErrorException");
+static const int STATEMENT_TIMEOUT_HASH = HashingUtils::HashString("StatementTimeoutException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == FORBIDDEN_HASH)
+  if (hashCode == NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSDataServiceErrors::NOT_FOUND), false);
+  }
+  else if (hashCode == FORBIDDEN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSDataServiceErrors::FORBIDDEN), false);
   }
@@ -48,6 +54,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_SERVER_ERROR_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSDataServiceErrors::INTERNAL_SERVER_ERROR), true);
+  }
+  else if (hashCode == STATEMENT_TIMEOUT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSDataServiceErrors::STATEMENT_TIMEOUT), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

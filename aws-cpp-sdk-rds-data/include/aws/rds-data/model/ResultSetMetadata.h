@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * List of columns and their types.<p><h3>See Also:</h3>   <a
+   * <p>The metadata of the result set returned by a SQL statement.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ResultSetMetadata">AWS
    * API Reference</a></p>
    */
@@ -49,63 +50,63 @@ namespace Model
 
 
     /**
-     * Number of columns
+     * <p>The number of columns in the result set.</p>
      */
     inline long long GetColumnCount() const{ return m_columnCount; }
 
     /**
-     * Number of columns
+     * <p>The number of columns in the result set.</p>
      */
     inline bool ColumnCountHasBeenSet() const { return m_columnCountHasBeenSet; }
 
     /**
-     * Number of columns
+     * <p>The number of columns in the result set.</p>
      */
     inline void SetColumnCount(long long value) { m_columnCountHasBeenSet = true; m_columnCount = value; }
 
     /**
-     * Number of columns
+     * <p>The number of columns in the result set.</p>
      */
     inline ResultSetMetadata& WithColumnCount(long long value) { SetColumnCount(value); return *this;}
 
 
     /**
-     * List of columns and their types
+     * <p>The metadata of the columns in the result set.</p>
      */
     inline const Aws::Vector<ColumnMetadata>& GetColumnMetadata() const{ return m_columnMetadata; }
 
     /**
-     * List of columns and their types
+     * <p>The metadata of the columns in the result set.</p>
      */
     inline bool ColumnMetadataHasBeenSet() const { return m_columnMetadataHasBeenSet; }
 
     /**
-     * List of columns and their types
+     * <p>The metadata of the columns in the result set.</p>
      */
     inline void SetColumnMetadata(const Aws::Vector<ColumnMetadata>& value) { m_columnMetadataHasBeenSet = true; m_columnMetadata = value; }
 
     /**
-     * List of columns and their types
+     * <p>The metadata of the columns in the result set.</p>
      */
     inline void SetColumnMetadata(Aws::Vector<ColumnMetadata>&& value) { m_columnMetadataHasBeenSet = true; m_columnMetadata = std::move(value); }
 
     /**
-     * List of columns and their types
+     * <p>The metadata of the columns in the result set.</p>
      */
     inline ResultSetMetadata& WithColumnMetadata(const Aws::Vector<ColumnMetadata>& value) { SetColumnMetadata(value); return *this;}
 
     /**
-     * List of columns and their types
+     * <p>The metadata of the columns in the result set.</p>
      */
     inline ResultSetMetadata& WithColumnMetadata(Aws::Vector<ColumnMetadata>&& value) { SetColumnMetadata(std::move(value)); return *this;}
 
     /**
-     * List of columns and their types
+     * <p>The metadata of the columns in the result set.</p>
      */
     inline ResultSetMetadata& AddColumnMetadata(const ColumnMetadata& value) { m_columnMetadataHasBeenSet = true; m_columnMetadata.push_back(value); return *this; }
 
     /**
-     * List of columns and their types
+     * <p>The metadata of the columns in the result set.</p>
      */
     inline ResultSetMetadata& AddColumnMetadata(ColumnMetadata&& value) { m_columnMetadataHasBeenSet = true; m_columnMetadata.push_back(std::move(value)); return *this; }
 

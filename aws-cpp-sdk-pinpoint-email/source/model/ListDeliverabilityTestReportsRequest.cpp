@@ -37,14 +37,6 @@ Aws::String ListDeliverabilityTestReportsRequest::SerializePayload() const
   return {};
 }
 
-Aws::Http::HeaderValueCollection ListDeliverabilityTestReportsRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.ListDeliverabilityTestReports"));
-  return headers;
-
-}
-
 void ListDeliverabilityTestReportsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

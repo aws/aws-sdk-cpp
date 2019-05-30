@@ -32,14 +32,6 @@ Aws::String GetDomainDeliverabilityCampaignRequest::SerializePayload() const
   return {};
 }
 
-Aws::Http::HeaderValueCollection GetDomainDeliverabilityCampaignRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.GetDomainDeliverabilityCampaign"));
-  return headers;
-
-}
-
 
 
 

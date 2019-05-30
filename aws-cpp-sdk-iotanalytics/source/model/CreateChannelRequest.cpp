@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 CreateChannelRequest::CreateChannelRequest() : 
     m_channelNameHasBeenSet(false),
+    m_channelStorageHasBeenSet(false),
     m_retentionPeriodHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -36,6 +37,12 @@ Aws::String CreateChannelRequest::SerializePayload() const
   if(m_channelNameHasBeenSet)
   {
    payload.WithString("channelName", m_channelName);
+
+  }
+
+  if(m_channelStorageHasBeenSet)
+  {
+   payload.WithObject("channelStorage", m_channelStorage.Jsonize());
 
   }
 

@@ -37,14 +37,6 @@ Aws::String ListConfigurationSetsRequest::SerializePayload() const
   return {};
 }
 
-Aws::Http::HeaderValueCollection ListConfigurationSetsRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.ListConfigurationSets"));
-  return headers;
-
-}
-
 void ListConfigurationSetsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

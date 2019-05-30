@@ -45,8 +45,6 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
 
     /**
      * <p>A unique string that identifies the predictive inbox placement test.</p>

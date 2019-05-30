@@ -32,6 +32,7 @@ namespace Aws
 
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
@@ -46,6 +47,10 @@ namespace Aws
           else if (hashCode == CREATING_HASH)
           {
             return ClusterState::CREATING;
+          }
+          else if (hashCode == UPDATING_HASH)
+          {
+            return ClusterState::UPDATING;
           }
           else if (hashCode == DELETING_HASH)
           {
@@ -73,6 +78,8 @@ namespace Aws
             return "ACTIVE";
           case ClusterState::CREATING:
             return "CREATING";
+          case ClusterState::UPDATING:
+            return "UPDATING";
           case ClusterState::DELETING:
             return "DELETING";
           case ClusterState::FAILED:

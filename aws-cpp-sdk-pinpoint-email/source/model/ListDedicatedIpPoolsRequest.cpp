@@ -37,14 +37,6 @@ Aws::String ListDedicatedIpPoolsRequest::SerializePayload() const
   return {};
 }
 
-Aws::Http::HeaderValueCollection ListDedicatedIpPoolsRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.ListDedicatedIpPools"));
-  return headers;
-
-}
-
 void ListDedicatedIpPoolsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

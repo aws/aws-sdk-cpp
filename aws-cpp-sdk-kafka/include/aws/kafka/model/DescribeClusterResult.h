@@ -43,27 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The cluster information.</p>
+     * 
+            <p>The cluster information.</p>
+         
      */
     inline const ClusterInfo& GetClusterInfo() const{ return m_clusterInfo; }
 
     /**
-     * <p>The cluster information.</p>
+     * 
+            <p>The cluster information.</p>
+         
      */
     inline void SetClusterInfo(const ClusterInfo& value) { m_clusterInfo = value; }
 
     /**
-     * <p>The cluster information.</p>
+     * 
+            <p>The cluster information.</p>
+         
      */
     inline void SetClusterInfo(ClusterInfo&& value) { m_clusterInfo = std::move(value); }
 
     /**
-     * <p>The cluster information.</p>
+     * 
+            <p>The cluster information.</p>
+         
      */
     inline DescribeClusterResult& WithClusterInfo(const ClusterInfo& value) { SetClusterInfo(value); return *this;}
 
     /**
-     * <p>The cluster information.</p>
+     * 
+            <p>The cluster information.</p>
+         
      */
     inline DescribeClusterResult& WithClusterInfo(ClusterInfo&& value) { SetClusterInfo(std::move(value)); return *this;}
 

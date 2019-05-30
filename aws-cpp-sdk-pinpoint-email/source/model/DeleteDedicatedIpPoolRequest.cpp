@@ -32,14 +32,6 @@ Aws::String DeleteDedicatedIpPoolRequest::SerializePayload() const
   return {};
 }
 
-Aws::Http::HeaderValueCollection DeleteDedicatedIpPoolRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.DeleteDedicatedIpPool"));
-  return headers;
-
-}
-
 
 
 

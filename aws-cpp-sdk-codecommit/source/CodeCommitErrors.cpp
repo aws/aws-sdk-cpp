@@ -46,12 +46,14 @@ static const int INVALID_ACTOR_ARN_HASH = HashingUtils::HashString("InvalidActor
 static const int INVALID_REPOSITORY_TRIGGER_EVENTS_HASH = HashingUtils::HashString("InvalidRepositoryTriggerEventsException");
 static const int COMMIT_DOES_NOT_EXIST_HASH = HashingUtils::HashString("CommitDoesNotExistException");
 static const int BRANCH_DOES_NOT_EXIST_HASH = HashingUtils::HashString("BranchDoesNotExistException");
+static const int TAGS_MAP_REQUIRED_HASH = HashingUtils::HashString("TagsMapRequiredException");
 static const int REPOSITORY_TRIGGER_DESTINATION_ARN_REQUIRED_HASH = HashingUtils::HashString("RepositoryTriggerDestinationArnRequiredException");
 static const int REPOSITORY_TRIGGER_EVENTS_LIST_REQUIRED_HASH = HashingUtils::HashString("RepositoryTriggerEventsListRequiredException");
 static const int REPOSITORY_TRIGGER_BRANCH_NAME_LIST_REQUIRED_HASH = HashingUtils::HashString("RepositoryTriggerBranchNameListRequiredException");
 static const int INVALID_PULL_REQUEST_STATUS_HASH = HashingUtils::HashString("InvalidPullRequestStatusException");
 static const int INVALID_BLOB_ID_HASH = HashingUtils::HashString("InvalidBlobIdException");
 static const int DIRECTORY_NAME_CONFLICTS_WITH_FILE_NAME_HASH = HashingUtils::HashString("DirectoryNameConflictsWithFileNameException");
+static const int TAG_POLICY_HASH = HashingUtils::HashString("TagPolicyException");
 static const int INVALID_COMMIT_HASH = HashingUtils::HashString("InvalidCommitException");
 static const int REPOSITORY_TRIGGER_NAME_REQUIRED_HASH = HashingUtils::HashString("RepositoryTriggerNameRequiredException");
 static const int MAXIMUM_BRANCHES_EXCEEDED_HASH = HashingUtils::HashString("MaximumBranchesExceededException");
@@ -81,6 +83,7 @@ static const int FILE_CONTENT_REQUIRED_HASH = HashingUtils::HashString("FileCont
 static const int SAME_PATH_REQUEST_HASH = HashingUtils::HashString("SamePathRequestException");
 static const int INVALID_DESCRIPTION_HASH = HashingUtils::HashString("InvalidDescriptionException");
 static const int ENCRYPTION_KEY_ACCESS_DENIED_HASH = HashingUtils::HashString("EncryptionKeyAccessDeniedException");
+static const int INVALID_RESOURCE_ARN_HASH = HashingUtils::HashString("InvalidResourceArnException");
 static const int BLOB_ID_REQUIRED_HASH = HashingUtils::HashString("BlobIdRequiredException");
 static const int REPOSITORY_NAMES_REQUIRED_HASH = HashingUtils::HashString("RepositoryNamesRequiredException");
 static const int COMMENT_CONTENT_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CommentContentSizeLimitExceededException");
@@ -100,21 +103,26 @@ static const int INVALID_EMAIL_HASH = HashingUtils::HashString("InvalidEmailExce
 static const int INVALID_DESTINATION_COMMIT_SPECIFIER_HASH = HashingUtils::HashString("InvalidDestinationCommitSpecifierException");
 static const int COMMIT_ID_DOES_NOT_EXIST_HASH = HashingUtils::HashString("CommitIdDoesNotExistException");
 static const int PARENT_COMMIT_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ParentCommitDoesNotExistException");
+static const int TAG_KEYS_LIST_REQUIRED_HASH = HashingUtils::HashString("TagKeysListRequiredException");
 static const int INVALID_ORDER_HASH = HashingUtils::HashString("InvalidOrderException");
 static const int INVALID_REPOSITORY_TRIGGER_CUSTOM_DATA_HASH = HashingUtils::HashString("InvalidRepositoryTriggerCustomDataException");
 static const int INVALID_REFERENCE_NAME_HASH = HashingUtils::HashString("InvalidReferenceNameException");
 static const int PULL_REQUEST_ALREADY_CLOSED_HASH = HashingUtils::HashString("PullRequestAlreadyClosedException");
+static const int INVALID_SYSTEM_TAG_USAGE_HASH = HashingUtils::HashString("InvalidSystemTagUsageException");
+static const int INVALID_TAG_KEYS_LIST_HASH = HashingUtils::HashString("InvalidTagKeysListException");
 static const int COMMENT_ID_REQUIRED_HASH = HashingUtils::HashString("CommentIdRequiredException");
 static const int INVALID_MERGE_OPTION_HASH = HashingUtils::HashString("InvalidMergeOptionException");
 static const int REPOSITORY_NOT_ASSOCIATED_WITH_PULL_REQUEST_HASH = HashingUtils::HashString("RepositoryNotAssociatedWithPullRequestException");
 static const int INVALID_SOURCE_COMMIT_SPECIFIER_HASH = HashingUtils::HashString("InvalidSourceCommitSpecifierException");
 static const int FILE_PATH_CONFLICTS_WITH_SUBMODULE_PATH_HASH = HashingUtils::HashString("FilePathConflictsWithSubmodulePathException");
+static const int RESOURCE_ARN_REQUIRED_HASH = HashingUtils::HashString("ResourceArnRequiredException");
 static const int INVALID_FILE_MODE_HASH = HashingUtils::HashString("InvalidFileModeException");
 static const int INVALID_REPOSITORY_TRIGGER_NAME_HASH = HashingUtils::HashString("InvalidRepositoryTriggerNameException");
 static const int INVALID_TITLE_HASH = HashingUtils::HashString("InvalidTitleException");
 static const int SOURCE_AND_DESTINATION_ARE_SAME_HASH = HashingUtils::HashString("SourceAndDestinationAreSameException");
 static const int PATH_REQUIRED_HASH = HashingUtils::HashString("PathRequiredException");
 static const int INVALID_DELETION_PARAMETER_HASH = HashingUtils::HashString("InvalidDeletionParameterException");
+static const int INVALID_TAGS_MAP_HASH = HashingUtils::HashString("InvalidTagsMapException");
 static const int INVALID_FILE_LOCATION_HASH = HashingUtils::HashString("InvalidFileLocationException");
 static const int INVALID_BRANCH_NAME_HASH = HashingUtils::HashString("InvalidBranchNameException");
 static const int MAXIMUM_FILE_ENTRIES_EXCEEDED_HASH = HashingUtils::HashString("MaximumFileEntriesExceededException");
@@ -122,6 +130,7 @@ static const int MAXIMUM_REPOSITORY_NAMES_EXCEEDED_HASH = HashingUtils::HashStri
 static const int MAXIMUM_OPEN_PULL_REQUESTS_EXCEEDED_HASH = HashingUtils::HashString("MaximumOpenPullRequestsExceededException");
 static const int ENCRYPTION_KEY_NOT_FOUND_HASH = HashingUtils::HashString("EncryptionKeyNotFoundException");
 static const int REFERENCE_NAME_REQUIRED_HASH = HashingUtils::HashString("ReferenceNameRequiredException");
+static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int COMMIT_REQUIRED_HASH = HashingUtils::HashString("CommitRequiredException");
 static const int ENCRYPTION_KEY_UNAVAILABLE_HASH = HashingUtils::HashString("EncryptionKeyUnavailableException");
 static const int COMMENT_DOES_NOT_EXIST_HASH = HashingUtils::HashString("CommentDoesNotExistException");
@@ -252,6 +261,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BRANCH_DOES_NOT_EXIST), false);
     return true;
   }
+  else if (hashCode == TAGS_MAP_REQUIRED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TAGS_MAP_REQUIRED), false);
+    return true;
+  }
   else if (hashCode == REPOSITORY_TRIGGER_DESTINATION_ARN_REQUIRED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_TRIGGER_DESTINATION_ARN_REQUIRED), false);
@@ -280,6 +294,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == DIRECTORY_NAME_CONFLICTS_WITH_FILE_NAME_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::DIRECTORY_NAME_CONFLICTS_WITH_FILE_NAME), false);
+    return true;
+  }
+  else if (hashCode == TAG_POLICY_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TAG_POLICY), false);
     return true;
   }
   else if (hashCode == INVALID_COMMIT_HASH)
@@ -427,6 +446,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ENCRYPTION_KEY_ACCESS_DENIED), false);
     return true;
   }
+  else if (hashCode == INVALID_RESOURCE_ARN_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_RESOURCE_ARN), false);
+    return true;
+  }
   else if (hashCode == BLOB_ID_REQUIRED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BLOB_ID_REQUIRED), false);
@@ -522,6 +546,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PARENT_COMMIT_DOES_NOT_EXIST), false);
     return true;
   }
+  else if (hashCode == TAG_KEYS_LIST_REQUIRED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TAG_KEYS_LIST_REQUIRED), false);
+    return true;
+  }
   else if (hashCode == INVALID_ORDER_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_ORDER), false);
@@ -540,6 +569,16 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == PULL_REQUEST_ALREADY_CLOSED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PULL_REQUEST_ALREADY_CLOSED), false);
+    return true;
+  }
+  else if (hashCode == INVALID_SYSTEM_TAG_USAGE_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_SYSTEM_TAG_USAGE), false);
+    return true;
+  }
+  else if (hashCode == INVALID_TAG_KEYS_LIST_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_TAG_KEYS_LIST), false);
     return true;
   }
   else if (hashCode == COMMENT_ID_REQUIRED_HASH)
@@ -565,6 +604,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == FILE_PATH_CONFLICTS_WITH_SUBMODULE_PATH_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_PATH_CONFLICTS_WITH_SUBMODULE_PATH), false);
+    return true;
+  }
+  else if (hashCode == RESOURCE_ARN_REQUIRED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::RESOURCE_ARN_REQUIRED), false);
     return true;
   }
   else if (hashCode == INVALID_FILE_MODE_HASH)
@@ -595,6 +639,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == INVALID_DELETION_PARAMETER_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_DELETION_PARAMETER), false);
+    return true;
+  }
+  else if (hashCode == INVALID_TAGS_MAP_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_TAGS_MAP), false);
     return true;
   }
   else if (hashCode == INVALID_FILE_LOCATION_HASH)
@@ -630,6 +679,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == REFERENCE_NAME_REQUIRED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REFERENCE_NAME_REQUIRED), false);
+    return true;
+  }
+  else if (hashCode == TOO_MANY_TAGS_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TOO_MANY_TAGS), false);
     return true;
   }
   else if (hashCode == COMMIT_REQUIRED_HASH)
@@ -727,7 +781,12 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PUT_FILE_ENTRY_CONFLICT), false);
     return true;
   }
-  else if (hashCode == AUTHOR_DOES_NOT_EXIST_HASH)
+  return false;
+}
+
+static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
+{
+  if (hashCode == AUTHOR_DOES_NOT_EXIST_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::AUTHOR_DOES_NOT_EXIST), false);
     return true;
@@ -772,12 +831,7 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_CONTENT_AND_SOURCE_FILE_SPECIFIED), false);
     return true;
   }
-  return false;
-}
-
-static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
-{
-  if (hashCode == BEFORE_COMMIT_ID_AND_AFTER_COMMIT_ID_ARE_SAME_HASH)
+  else if (hashCode == BEFORE_COMMIT_ID_AND_AFTER_COMMIT_ID_ARE_SAME_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BEFORE_COMMIT_ID_AND_AFTER_COMMIT_ID_ARE_SAME), false);
     return true;

@@ -45,94 +45,136 @@ namespace Model
 
 
     /**
-     * <p>Information on each of the MSK clusters in the response.</p>
+     * 
+            <p>Information on each of the MSK clusters in the response.</p>
+   
+     *      
      */
     inline const Aws::Vector<ClusterInfo>& GetClusterInfoList() const{ return m_clusterInfoList; }
 
     /**
-     * <p>Information on each of the MSK clusters in the response.</p>
+     * 
+            <p>Information on each of the MSK clusters in the response.</p>
+   
+     *      
      */
     inline void SetClusterInfoList(const Aws::Vector<ClusterInfo>& value) { m_clusterInfoList = value; }
 
     /**
-     * <p>Information on each of the MSK clusters in the response.</p>
+     * 
+            <p>Information on each of the MSK clusters in the response.</p>
+   
+     *      
      */
     inline void SetClusterInfoList(Aws::Vector<ClusterInfo>&& value) { m_clusterInfoList = std::move(value); }
 
     /**
-     * <p>Information on each of the MSK clusters in the response.</p>
+     * 
+            <p>Information on each of the MSK clusters in the response.</p>
+   
+     *      
      */
     inline ListClustersResult& WithClusterInfoList(const Aws::Vector<ClusterInfo>& value) { SetClusterInfoList(value); return *this;}
 
     /**
-     * <p>Information on each of the MSK clusters in the response.</p>
+     * 
+            <p>Information on each of the MSK clusters in the response.</p>
+   
+     *      
      */
     inline ListClustersResult& WithClusterInfoList(Aws::Vector<ClusterInfo>&& value) { SetClusterInfoList(std::move(value)); return *this;}
 
     /**
-     * <p>Information on each of the MSK clusters in the response.</p>
+     * 
+            <p>Information on each of the MSK clusters in the response.</p>
+   
+     *      
      */
     inline ListClustersResult& AddClusterInfoList(const ClusterInfo& value) { m_clusterInfoList.push_back(value); return *this; }
 
     /**
-     * <p>Information on each of the MSK clusters in the response.</p>
+     * 
+            <p>Information on each of the MSK clusters in the response.</p>
+   
+     *      
      */
     inline ListClustersResult& AddClusterInfoList(ClusterInfo&& value) { m_clusterInfoList.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The paginated results marker. When the result of a ListClusters operation is
-     * truncated, the call returns NextToken in the response. 
- To get another batch of
-     * clusters, provide this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of a ListClusters
+     * operation is truncated, the call returns NextToken in the response. 
+           
+     * To get another batch of clusters, provide this token in your next request.</p>
+ 
+     *        
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The paginated results marker. When the result of a ListClusters operation is
-     * truncated, the call returns NextToken in the response. 
- To get another batch of
-     * clusters, provide this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of a ListClusters
+     * operation is truncated, the call returns NextToken in the response. 
+           
+     * To get another batch of clusters, provide this token in your next request.</p>
+ 
+     *        
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The paginated results marker. When the result of a ListClusters operation is
-     * truncated, the call returns NextToken in the response. 
- To get another batch of
-     * clusters, provide this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of a ListClusters
+     * operation is truncated, the call returns NextToken in the response. 
+           
+     * To get another batch of clusters, provide this token in your next request.</p>
+ 
+     *        
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The paginated results marker. When the result of a ListClusters operation is
-     * truncated, the call returns NextToken in the response. 
- To get another batch of
-     * clusters, provide this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of a ListClusters
+     * operation is truncated, the call returns NextToken in the response. 
+           
+     * To get another batch of clusters, provide this token in your next request.</p>
+ 
+     *        
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The paginated results marker. When the result of a ListClusters operation is
-     * truncated, the call returns NextToken in the response. 
- To get another batch of
-     * clusters, provide this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of a ListClusters
+     * operation is truncated, the call returns NextToken in the response. 
+           
+     * To get another batch of clusters, provide this token in your next request.</p>
+ 
+     *        
      */
     inline ListClustersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The paginated results marker. When the result of a ListClusters operation is
-     * truncated, the call returns NextToken in the response. 
- To get another batch of
-     * clusters, provide this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of a ListClusters
+     * operation is truncated, the call returns NextToken in the response. 
+           
+     * To get another batch of clusters, provide this token in your next request.</p>
+ 
+     *        
      */
     inline ListClustersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The paginated results marker. When the result of a ListClusters operation is
-     * truncated, the call returns NextToken in the response. 
- To get another batch of
-     * clusters, provide this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of a ListClusters
+     * operation is truncated, the call returns NextToken in the response. 
+           
+     * To get another batch of clusters, provide this token in your next request.</p>
+ 
+     *        
      */
     inline ListClustersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

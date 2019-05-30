@@ -37,9 +37,11 @@ namespace Model
 {
 
   /**
-   * <p>The node information object.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/NodeInfo">AWS API
-   * Reference</a></p>
+   * 
+            <p>The node information object.</p>
+         <p><h3>See Also:</h3> 
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/NodeInfo">AWS
+   * API Reference</a></p>
    */
   class AWS_KAFKA_API NodeInfo
   {
@@ -51,217 +53,301 @@ namespace Model
 
 
     /**
-     * <p>The start time.</p>
+     * 
+            <p>The start time.</p>
+         
      */
     inline const Aws::String& GetAddedToClusterTime() const{ return m_addedToClusterTime; }
 
     /**
-     * <p>The start time.</p>
+     * 
+            <p>The start time.</p>
+         
      */
     inline bool AddedToClusterTimeHasBeenSet() const { return m_addedToClusterTimeHasBeenSet; }
 
     /**
-     * <p>The start time.</p>
+     * 
+            <p>The start time.</p>
+         
      */
     inline void SetAddedToClusterTime(const Aws::String& value) { m_addedToClusterTimeHasBeenSet = true; m_addedToClusterTime = value; }
 
     /**
-     * <p>The start time.</p>
+     * 
+            <p>The start time.</p>
+         
      */
     inline void SetAddedToClusterTime(Aws::String&& value) { m_addedToClusterTimeHasBeenSet = true; m_addedToClusterTime = std::move(value); }
 
     /**
-     * <p>The start time.</p>
+     * 
+            <p>The start time.</p>
+         
      */
     inline void SetAddedToClusterTime(const char* value) { m_addedToClusterTimeHasBeenSet = true; m_addedToClusterTime.assign(value); }
 
     /**
-     * <p>The start time.</p>
+     * 
+            <p>The start time.</p>
+         
      */
     inline NodeInfo& WithAddedToClusterTime(const Aws::String& value) { SetAddedToClusterTime(value); return *this;}
 
     /**
-     * <p>The start time.</p>
+     * 
+            <p>The start time.</p>
+         
      */
     inline NodeInfo& WithAddedToClusterTime(Aws::String&& value) { SetAddedToClusterTime(std::move(value)); return *this;}
 
     /**
-     * <p>The start time.</p>
+     * 
+            <p>The start time.</p>
+         
      */
     inline NodeInfo& WithAddedToClusterTime(const char* value) { SetAddedToClusterTime(value); return *this;}
 
 
     /**
-     * <p>The broker node info.</p>
+     * 
+            <p>The broker node info.</p>
+         
      */
     inline const BrokerNodeInfo& GetBrokerNodeInfo() const{ return m_brokerNodeInfo; }
 
     /**
-     * <p>The broker node info.</p>
+     * 
+            <p>The broker node info.</p>
+         
      */
     inline bool BrokerNodeInfoHasBeenSet() const { return m_brokerNodeInfoHasBeenSet; }
 
     /**
-     * <p>The broker node info.</p>
+     * 
+            <p>The broker node info.</p>
+         
      */
     inline void SetBrokerNodeInfo(const BrokerNodeInfo& value) { m_brokerNodeInfoHasBeenSet = true; m_brokerNodeInfo = value; }
 
     /**
-     * <p>The broker node info.</p>
+     * 
+            <p>The broker node info.</p>
+         
      */
     inline void SetBrokerNodeInfo(BrokerNodeInfo&& value) { m_brokerNodeInfoHasBeenSet = true; m_brokerNodeInfo = std::move(value); }
 
     /**
-     * <p>The broker node info.</p>
+     * 
+            <p>The broker node info.</p>
+         
      */
     inline NodeInfo& WithBrokerNodeInfo(const BrokerNodeInfo& value) { SetBrokerNodeInfo(value); return *this;}
 
     /**
-     * <p>The broker node info.</p>
+     * 
+            <p>The broker node info.</p>
+         
      */
     inline NodeInfo& WithBrokerNodeInfo(BrokerNodeInfo&& value) { SetBrokerNodeInfo(std::move(value)); return *this;}
 
 
     /**
-     * <p>The instance type.</p>
+     * 
+            <p>The instance type.</p>
+         
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type.</p>
+     * 
+            <p>The instance type.</p>
+         
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type.</p>
+     * 
+            <p>The instance type.</p>
+         
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type.</p>
+     * 
+            <p>The instance type.</p>
+         
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type.</p>
+     * 
+            <p>The instance type.</p>
+         
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The instance type.</p>
+     * 
+            <p>The instance type.</p>
+         
      */
     inline NodeInfo& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type.</p>
+     * 
+            <p>The instance type.</p>
+         
      */
     inline NodeInfo& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The instance type.</p>
+     * 
+            <p>The instance type.</p>
+         
      */
     inline NodeInfo& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the node.</p>
+     * 
+            <p>The Amazon Resource Name (ARN) of the node.</p>
+         
      */
     inline const Aws::String& GetNodeARN() const{ return m_nodeARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the node.</p>
+     * 
+            <p>The Amazon Resource Name (ARN) of the node.</p>
+         
      */
     inline bool NodeARNHasBeenSet() const { return m_nodeARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the node.</p>
+     * 
+            <p>The Amazon Resource Name (ARN) of the node.</p>
+         
      */
     inline void SetNodeARN(const Aws::String& value) { m_nodeARNHasBeenSet = true; m_nodeARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the node.</p>
+     * 
+            <p>The Amazon Resource Name (ARN) of the node.</p>
+         
      */
     inline void SetNodeARN(Aws::String&& value) { m_nodeARNHasBeenSet = true; m_nodeARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the node.</p>
+     * 
+            <p>The Amazon Resource Name (ARN) of the node.</p>
+         
      */
     inline void SetNodeARN(const char* value) { m_nodeARNHasBeenSet = true; m_nodeARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the node.</p>
+     * 
+            <p>The Amazon Resource Name (ARN) of the node.</p>
+         
      */
     inline NodeInfo& WithNodeARN(const Aws::String& value) { SetNodeARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the node.</p>
+     * 
+            <p>The Amazon Resource Name (ARN) of the node.</p>
+         
      */
     inline NodeInfo& WithNodeARN(Aws::String&& value) { SetNodeARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the node.</p>
+     * 
+            <p>The Amazon Resource Name (ARN) of the node.</p>
+         
      */
     inline NodeInfo& WithNodeARN(const char* value) { SetNodeARN(value); return *this;}
 
 
     /**
-     * <p>The node type.</p>
+     * 
+            <p>The node type.</p>
+         
      */
     inline const NodeType& GetNodeType() const{ return m_nodeType; }
 
     /**
-     * <p>The node type.</p>
+     * 
+            <p>The node type.</p>
+         
      */
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
 
     /**
-     * <p>The node type.</p>
+     * 
+            <p>The node type.</p>
+         
      */
     inline void SetNodeType(const NodeType& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
     /**
-     * <p>The node type.</p>
+     * 
+            <p>The node type.</p>
+         
      */
     inline void SetNodeType(NodeType&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
     /**
-     * <p>The node type.</p>
+     * 
+            <p>The node type.</p>
+         
      */
     inline NodeInfo& WithNodeType(const NodeType& value) { SetNodeType(value); return *this;}
 
     /**
-     * <p>The node type.</p>
+     * 
+            <p>The node type.</p>
+         
      */
     inline NodeInfo& WithNodeType(NodeType&& value) { SetNodeType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ZookeeperNodeInfo.</p>
+     * 
+            <p>The ZookeeperNodeInfo.</p>
+         
      */
     inline const ZookeeperNodeInfo& GetZookeeperNodeInfo() const{ return m_zookeeperNodeInfo; }
 
     /**
-     * <p>The ZookeeperNodeInfo.</p>
+     * 
+            <p>The ZookeeperNodeInfo.</p>
+         
      */
     inline bool ZookeeperNodeInfoHasBeenSet() const { return m_zookeeperNodeInfoHasBeenSet; }
 
     /**
-     * <p>The ZookeeperNodeInfo.</p>
+     * 
+            <p>The ZookeeperNodeInfo.</p>
+         
      */
     inline void SetZookeeperNodeInfo(const ZookeeperNodeInfo& value) { m_zookeeperNodeInfoHasBeenSet = true; m_zookeeperNodeInfo = value; }
 
     /**
-     * <p>The ZookeeperNodeInfo.</p>
+     * 
+            <p>The ZookeeperNodeInfo.</p>
+         
      */
     inline void SetZookeeperNodeInfo(ZookeeperNodeInfo&& value) { m_zookeeperNodeInfoHasBeenSet = true; m_zookeeperNodeInfo = std::move(value); }
 
     /**
-     * <p>The ZookeeperNodeInfo.</p>
+     * 
+            <p>The ZookeeperNodeInfo.</p>
+         
      */
     inline NodeInfo& WithZookeeperNodeInfo(const ZookeeperNodeInfo& value) { SetZookeeperNodeInfo(value); return *this;}
 
     /**
-     * <p>The ZookeeperNodeInfo.</p>
+     * 
+            <p>The ZookeeperNodeInfo.</p>
+         
      */
     inline NodeInfo& WithZookeeperNodeInfo(ZookeeperNodeInfo&& value) { SetZookeeperNodeInfo(std::move(value)); return *this;}
 

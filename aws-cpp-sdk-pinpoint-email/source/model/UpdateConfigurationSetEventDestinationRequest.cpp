@@ -42,14 +42,6 @@ Aws::String UpdateConfigurationSetEventDestinationRequest::SerializePayload() co
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateConfigurationSetEventDestinationRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.UpdateConfigurationSetEventDestination"));
-  return headers;
-
-}
-
 
 
 

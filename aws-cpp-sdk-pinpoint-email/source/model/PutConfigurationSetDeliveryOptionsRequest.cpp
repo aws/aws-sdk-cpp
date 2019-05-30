@@ -24,6 +24,8 @@ using namespace Aws::Utils;
 
 PutConfigurationSetDeliveryOptionsRequest::PutConfigurationSetDeliveryOptionsRequest() : 
     m_configurationSetNameHasBeenSet(false),
+    m_tlsPolicy(TlsPolicy::NOT_SET),
+    m_tlsPolicyHasBeenSet(false),
     m_sendingPoolNameHasBeenSet(false)
 {
 }
@@ -32,6 +34,11 @@ Aws::String PutConfigurationSetDeliveryOptionsRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_tlsPolicyHasBeenSet)
+  {
+   payload.WithString("TlsPolicy", TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy));
+  }
+
   if(m_sendingPoolNameHasBeenSet)
   {
    payload.WithString("SendingPoolName", m_sendingPoolName);
@@ -39,14 +46,6 @@ Aws::String PutConfigurationSetDeliveryOptionsRequest::SerializePayload() const
   }
 
   return payload.View().WriteReadable();
-}
-
-Aws::Http::HeaderValueCollection PutConfigurationSetDeliveryOptionsRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.PutConfigurationSetDeliveryOptions"));
-  return headers;
-
 }
 
 

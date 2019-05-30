@@ -17,6 +17,7 @@
 #include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
 #include <aws/pinpoint-email/PinpointEmailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint-email/model/TlsPolicy.h>
 #include <utility>
 
 namespace Aws
@@ -44,8 +45,6 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "PutConfigurationSetDeliveryOptions"; }
 
     Aws::String SerializePayload() const override;
-
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -95,6 +94,43 @@ namespace Model
      * IP pool.</p>
      */
     inline PutConfigurationSetDeliveryOptionsRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+
+
+    /**
+     * <p>Whether Amazon Pinpoint should require that incoming email is delivered over
+     * a connection encrypted with Transport Layer Security (TLS).</p>
+     */
+    inline const TlsPolicy& GetTlsPolicy() const{ return m_tlsPolicy; }
+
+    /**
+     * <p>Whether Amazon Pinpoint should require that incoming email is delivered over
+     * a connection encrypted with Transport Layer Security (TLS).</p>
+     */
+    inline bool TlsPolicyHasBeenSet() const { return m_tlsPolicyHasBeenSet; }
+
+    /**
+     * <p>Whether Amazon Pinpoint should require that incoming email is delivered over
+     * a connection encrypted with Transport Layer Security (TLS).</p>
+     */
+    inline void SetTlsPolicy(const TlsPolicy& value) { m_tlsPolicyHasBeenSet = true; m_tlsPolicy = value; }
+
+    /**
+     * <p>Whether Amazon Pinpoint should require that incoming email is delivered over
+     * a connection encrypted with Transport Layer Security (TLS).</p>
+     */
+    inline void SetTlsPolicy(TlsPolicy&& value) { m_tlsPolicyHasBeenSet = true; m_tlsPolicy = std::move(value); }
+
+    /**
+     * <p>Whether Amazon Pinpoint should require that incoming email is delivered over
+     * a connection encrypted with Transport Layer Security (TLS).</p>
+     */
+    inline PutConfigurationSetDeliveryOptionsRequest& WithTlsPolicy(const TlsPolicy& value) { SetTlsPolicy(value); return *this;}
+
+    /**
+     * <p>Whether Amazon Pinpoint should require that incoming email is delivered over
+     * a connection encrypted with Transport Layer Security (TLS).</p>
+     */
+    inline PutConfigurationSetDeliveryOptionsRequest& WithTlsPolicy(TlsPolicy&& value) { SetTlsPolicy(std::move(value)); return *this;}
 
 
     /**
@@ -149,6 +185,9 @@ namespace Model
 
     Aws::String m_configurationSetName;
     bool m_configurationSetNameHasBeenSet;
+
+    TlsPolicy m_tlsPolicy;
+    bool m_tlsPolicyHasBeenSet;
 
     Aws::String m_sendingPoolName;
     bool m_sendingPoolNameHasBeenSet;

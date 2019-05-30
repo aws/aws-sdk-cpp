@@ -30,7 +30,11 @@
 #include <aws/rds-data/RDSDataServiceClient.h>
 #include <aws/rds-data/RDSDataServiceEndpoint.h>
 #include <aws/rds-data/RDSDataServiceErrorMarshaller.h>
-#include <aws/rds-data/model/ExecuteSqlRequest.h>
+#include <aws/rds-data/model/BatchExecuteStatementRequest.h>
+#include <aws/rds-data/model/BeginTransactionRequest.h>
+#include <aws/rds-data/model/CommitTransactionRequest.h>
+#include <aws/rds-data/model/ExecuteStatementRequest.h>
+#include <aws/rds-data/model/RollbackTransactionRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -104,38 +108,178 @@ void RDSDataServiceClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
-ExecuteSqlOutcome RDSDataServiceClient::ExecuteSql(const ExecuteSqlRequest& request) const
+BatchExecuteStatementOutcome RDSDataServiceClient::BatchExecuteStatement(const BatchExecuteStatementRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/ExecuteSql";
+  ss << "/BatchExecute";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
-    return ExecuteSqlOutcome(ExecuteSqlResult(outcome.GetResult()));
+    return BatchExecuteStatementOutcome(BatchExecuteStatementResult(outcome.GetResult()));
   }
   else
   {
-    return ExecuteSqlOutcome(outcome.GetError());
+    return BatchExecuteStatementOutcome(outcome.GetError());
   }
 }
 
-ExecuteSqlOutcomeCallable RDSDataServiceClient::ExecuteSqlCallable(const ExecuteSqlRequest& request) const
+BatchExecuteStatementOutcomeCallable RDSDataServiceClient::BatchExecuteStatementCallable(const BatchExecuteStatementRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ExecuteSqlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExecuteSql(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< BatchExecuteStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchExecuteStatement(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void RDSDataServiceClient::ExecuteSqlAsync(const ExecuteSqlRequest& request, const ExecuteSqlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RDSDataServiceClient::BatchExecuteStatementAsync(const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExecuteSqlAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->BatchExecuteStatementAsyncHelper( request, handler, context ); } );
 }
 
-void RDSDataServiceClient::ExecuteSqlAsyncHelper(const ExecuteSqlRequest& request, const ExecuteSqlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void RDSDataServiceClient::BatchExecuteStatementAsyncHelper(const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ExecuteSql(request), context);
+  handler(this, request, BatchExecuteStatement(request), context);
+}
+
+BeginTransactionOutcome RDSDataServiceClient::BeginTransaction(const BeginTransactionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/BeginTransaction";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return BeginTransactionOutcome(BeginTransactionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BeginTransactionOutcome(outcome.GetError());
+  }
+}
+
+BeginTransactionOutcomeCallable RDSDataServiceClient::BeginTransactionCallable(const BeginTransactionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BeginTransactionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BeginTransaction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSDataServiceClient::BeginTransactionAsync(const BeginTransactionRequest& request, const BeginTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BeginTransactionAsyncHelper( request, handler, context ); } );
+}
+
+void RDSDataServiceClient::BeginTransactionAsyncHelper(const BeginTransactionRequest& request, const BeginTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BeginTransaction(request), context);
+}
+
+CommitTransactionOutcome RDSDataServiceClient::CommitTransaction(const CommitTransactionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/CommitTransaction";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CommitTransactionOutcome(CommitTransactionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CommitTransactionOutcome(outcome.GetError());
+  }
+}
+
+CommitTransactionOutcomeCallable RDSDataServiceClient::CommitTransactionCallable(const CommitTransactionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CommitTransactionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CommitTransaction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSDataServiceClient::CommitTransactionAsync(const CommitTransactionRequest& request, const CommitTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CommitTransactionAsyncHelper( request, handler, context ); } );
+}
+
+void RDSDataServiceClient::CommitTransactionAsyncHelper(const CommitTransactionRequest& request, const CommitTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CommitTransaction(request), context);
+}
+
+ExecuteStatementOutcome RDSDataServiceClient::ExecuteStatement(const ExecuteStatementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/Execute";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ExecuteStatementOutcome(ExecuteStatementResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ExecuteStatementOutcome(outcome.GetError());
+  }
+}
+
+ExecuteStatementOutcomeCallable RDSDataServiceClient::ExecuteStatementCallable(const ExecuteStatementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExecuteStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExecuteStatement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSDataServiceClient::ExecuteStatementAsync(const ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ExecuteStatementAsyncHelper( request, handler, context ); } );
+}
+
+void RDSDataServiceClient::ExecuteStatementAsyncHelper(const ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ExecuteStatement(request), context);
+}
+
+RollbackTransactionOutcome RDSDataServiceClient::RollbackTransaction(const RollbackTransactionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/RollbackTransaction";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RollbackTransactionOutcome(RollbackTransactionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RollbackTransactionOutcome(outcome.GetError());
+  }
+}
+
+RollbackTransactionOutcomeCallable RDSDataServiceClient::RollbackTransactionCallable(const RollbackTransactionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RollbackTransactionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RollbackTransaction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSDataServiceClient::RollbackTransactionAsync(const RollbackTransactionRequest& request, const RollbackTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RollbackTransactionAsyncHelper( request, handler, context ); } );
+}
+
+void RDSDataServiceClient::RollbackTransactionAsyncHelper(const RollbackTransactionRequest& request, const RollbackTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RollbackTransaction(request), context);
 }
 

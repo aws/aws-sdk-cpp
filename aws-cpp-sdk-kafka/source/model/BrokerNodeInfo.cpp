@@ -34,7 +34,8 @@ BrokerNodeInfo::BrokerNodeInfo() :
     m_brokerIdHasBeenSet(false),
     m_clientSubnetHasBeenSet(false),
     m_clientVpcIpAddressHasBeenSet(false),
-    m_currentBrokerSoftwareInfoHasBeenSet(false)
+    m_currentBrokerSoftwareInfoHasBeenSet(false),
+    m_endpointsHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ BrokerNodeInfo::BrokerNodeInfo(JsonView jsonValue) :
     m_brokerIdHasBeenSet(false),
     m_clientSubnetHasBeenSet(false),
     m_clientVpcIpAddressHasBeenSet(false),
-    m_currentBrokerSoftwareInfoHasBeenSet(false)
+    m_currentBrokerSoftwareInfoHasBeenSet(false),
+    m_endpointsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +88,16 @@ BrokerNodeInfo& BrokerNodeInfo::operator =(JsonView jsonValue)
     m_currentBrokerSoftwareInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("endpoints"))
+  {
+    Array<JsonView> endpointsJsonList = jsonValue.GetArray("endpoints");
+    for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
+    {
+      m_endpoints.push_back(endpointsJsonList[endpointsIndex].AsString());
+    }
+    m_endpointsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -120,6 +132,17 @@ JsonValue BrokerNodeInfo::Jsonize() const
   if(m_currentBrokerSoftwareInfoHasBeenSet)
   {
    payload.WithObject("currentBrokerSoftwareInfo", m_currentBrokerSoftwareInfo.Jsonize());
+
+  }
+
+  if(m_endpointsHasBeenSet)
+  {
+   Array<JsonValue> endpointsJsonList(m_endpoints.size());
+   for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
+   {
+     endpointsJsonList[endpointsIndex].AsString(m_endpoints[endpointsIndex]);
+   }
+   payload.WithArray("endpoints", std::move(endpointsJsonList));
 
   }
 

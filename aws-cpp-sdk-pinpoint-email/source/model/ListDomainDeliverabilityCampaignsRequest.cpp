@@ -40,14 +40,6 @@ Aws::String ListDomainDeliverabilityCampaignsRequest::SerializePayload() const
   return {};
 }
 
-Aws::Http::HeaderValueCollection ListDomainDeliverabilityCampaignsRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.ListDomainDeliverabilityCampaigns"));
-  return headers;
-
-}
-
 void ListDomainDeliverabilityCampaignsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

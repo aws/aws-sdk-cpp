@@ -52,14 +52,6 @@ Aws::String CreateEmailIdentityRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateEmailIdentityRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.CreateEmailIdentity"));
-  return headers;
-
-}
-
 
 
 

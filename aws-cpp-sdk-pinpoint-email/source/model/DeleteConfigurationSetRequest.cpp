@@ -32,14 +32,6 @@ Aws::String DeleteConfigurationSetRequest::SerializePayload() const
   return {};
 }
 
-Aws::Http::HeaderValueCollection DeleteConfigurationSetRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.DeleteConfigurationSet"));
-  return headers;
-
-}
-
 
 
 

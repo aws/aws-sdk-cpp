@@ -34,8 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about storage volumes attached to MSK broker
-   * nodes.</p><p><h3>See Also:</h3>   <a
+   * 
+            <p>Contains information about storage volumes attached to MSK
+   * broker nodes.</p>
+         <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/StorageInfo">AWS
    * API Reference</a></p>
    */
@@ -49,32 +51,44 @@ namespace Model
 
 
     /**
-     * <p>EBS volume information.</p>
+     * 
+            <p>EBS volume information.</p>
+         
      */
     inline const EBSStorageInfo& GetEbsStorageInfo() const{ return m_ebsStorageInfo; }
 
     /**
-     * <p>EBS volume information.</p>
+     * 
+            <p>EBS volume information.</p>
+         
      */
     inline bool EbsStorageInfoHasBeenSet() const { return m_ebsStorageInfoHasBeenSet; }
 
     /**
-     * <p>EBS volume information.</p>
+     * 
+            <p>EBS volume information.</p>
+         
      */
     inline void SetEbsStorageInfo(const EBSStorageInfo& value) { m_ebsStorageInfoHasBeenSet = true; m_ebsStorageInfo = value; }
 
     /**
-     * <p>EBS volume information.</p>
+     * 
+            <p>EBS volume information.</p>
+         
      */
     inline void SetEbsStorageInfo(EBSStorageInfo&& value) { m_ebsStorageInfoHasBeenSet = true; m_ebsStorageInfo = std::move(value); }
 
     /**
-     * <p>EBS volume information.</p>
+     * 
+            <p>EBS volume information.</p>
+         
      */
     inline StorageInfo& WithEbsStorageInfo(const EBSStorageInfo& value) { SetEbsStorageInfo(value); return *this;}
 
     /**
-     * <p>EBS volume information.</p>
+     * 
+            <p>EBS volume information.</p>
+         
      */
     inline StorageInfo& WithEbsStorageInfo(EBSStorageInfo&& value) { SetEbsStorageInfo(std::move(value)); return *this;}
 

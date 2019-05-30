@@ -29,7 +29,9 @@ namespace Model
 {
 
 ClusterInfo::ClusterInfo() : 
+    m_activeOperationArnHasBeenSet(false),
     m_brokerNodeGroupInfoHasBeenSet(false),
+    m_clientAuthenticationHasBeenSet(false),
     m_clusterArnHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -42,12 +44,15 @@ ClusterInfo::ClusterInfo() :
     m_numberOfBrokerNodesHasBeenSet(false),
     m_state(ClusterState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_zookeeperConnectStringHasBeenSet(false)
 {
 }
 
 ClusterInfo::ClusterInfo(JsonView jsonValue) : 
+    m_activeOperationArnHasBeenSet(false),
     m_brokerNodeGroupInfoHasBeenSet(false),
+    m_clientAuthenticationHasBeenSet(false),
     m_clusterArnHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -60,6 +65,7 @@ ClusterInfo::ClusterInfo(JsonView jsonValue) :
     m_numberOfBrokerNodesHasBeenSet(false),
     m_state(ClusterState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_zookeeperConnectStringHasBeenSet(false)
 {
   *this = jsonValue;
@@ -67,11 +73,25 @@ ClusterInfo::ClusterInfo(JsonView jsonValue) :
 
 ClusterInfo& ClusterInfo::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("activeOperationArn"))
+  {
+    m_activeOperationArn = jsonValue.GetString("activeOperationArn");
+
+    m_activeOperationArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("brokerNodeGroupInfo"))
   {
     m_brokerNodeGroupInfo = jsonValue.GetObject("brokerNodeGroupInfo");
 
     m_brokerNodeGroupInfoHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("clientAuthentication"))
+  {
+    m_clientAuthentication = jsonValue.GetObject("clientAuthentication");
+
+    m_clientAuthenticationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("clusterArn"))
@@ -137,6 +157,16 @@ ClusterInfo& ClusterInfo::operator =(JsonView jsonValue)
     m_stateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("zookeeperConnectString"))
   {
     m_zookeeperConnectString = jsonValue.GetString("zookeeperConnectString");
@@ -151,9 +181,21 @@ JsonValue ClusterInfo::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_activeOperationArnHasBeenSet)
+  {
+   payload.WithString("activeOperationArn", m_activeOperationArn);
+
+  }
+
   if(m_brokerNodeGroupInfoHasBeenSet)
   {
    payload.WithObject("brokerNodeGroupInfo", m_brokerNodeGroupInfo.Jsonize());
+
+  }
+
+  if(m_clientAuthenticationHasBeenSet)
+  {
+   payload.WithObject("clientAuthentication", m_clientAuthentication.Jsonize());
 
   }
 
@@ -206,6 +248,17 @@ JsonValue ClusterInfo::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("state", ClusterStateMapper::GetNameForClusterState(m_state));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
   }
 
   if(m_zookeeperConnectStringHasBeenSet)

@@ -32,14 +32,6 @@ Aws::String GetDeliverabilityTestReportRequest::SerializePayload() const
   return {};
 }
 
-Aws::Http::HeaderValueCollection GetDeliverabilityTestReportRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.GetDeliverabilityTestReport"));
-  return headers;
-
-}
-
 
 
 

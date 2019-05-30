@@ -29,12 +29,14 @@ namespace Model
 {
 
 EncryptionInfo::EncryptionInfo() : 
-    m_encryptionAtRestHasBeenSet(false)
+    m_encryptionAtRestHasBeenSet(false),
+    m_encryptionInTransitHasBeenSet(false)
 {
 }
 
 EncryptionInfo::EncryptionInfo(JsonView jsonValue) : 
-    m_encryptionAtRestHasBeenSet(false)
+    m_encryptionAtRestHasBeenSet(false),
+    m_encryptionInTransitHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ EncryptionInfo& EncryptionInfo::operator =(JsonView jsonValue)
     m_encryptionAtRestHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("encryptionInTransit"))
+  {
+    m_encryptionInTransit = jsonValue.GetObject("encryptionInTransit");
+
+    m_encryptionInTransitHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue EncryptionInfo::Jsonize() const
   if(m_encryptionAtRestHasBeenSet)
   {
    payload.WithObject("encryptionAtRest", m_encryptionAtRest.Jsonize());
+
+  }
+
+  if(m_encryptionInTransitHasBeenSet)
+  {
+   payload.WithObject("encryptionInTransit", m_encryptionInTransit.Jsonize());
 
   }
 

@@ -30,6 +30,7 @@ namespace Model
 
 Datastore::Datastore() : 
     m_nameHasBeenSet(false),
+    m_storageHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_status(DatastoreStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -41,6 +42,7 @@ Datastore::Datastore() :
 
 Datastore::Datastore(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
+    m_storageHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_status(DatastoreStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -58,6 +60,13 @@ Datastore& Datastore::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("storage"))
+  {
+    m_storage = jsonValue.GetObject("storage");
+
+    m_storageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("arn"))
@@ -105,6 +114,12 @@ JsonValue Datastore::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_storageHasBeenSet)
+  {
+   payload.WithObject("storage", m_storage.Jsonize());
 
   }
 

@@ -26,6 +26,7 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListConfigurationsRequest::ListConfigurationsRequest() : 
+    m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {

@@ -86,6 +86,7 @@
 #include <aws/servicecatalog/model/ListResourcesForTagOptionResult.h>
 #include <aws/servicecatalog/model/ListServiceActionsResult.h>
 #include <aws/servicecatalog/model/ListServiceActionsForProvisioningArtifactResult.h>
+#include <aws/servicecatalog/model/ListStackInstancesForProvisionedProductResult.h>
 #include <aws/servicecatalog/model/ListTagOptionsResult.h>
 #include <aws/servicecatalog/model/ProvisionProductResult.h>
 #include <aws/servicecatalog/model/RejectPortfolioShareResult.h>
@@ -206,6 +207,7 @@ namespace Model
         class ListResourcesForTagOptionRequest;
         class ListServiceActionsRequest;
         class ListServiceActionsForProvisioningArtifactRequest;
+        class ListStackInstancesForProvisionedProductRequest;
         class ListTagOptionsRequest;
         class ProvisionProductRequest;
         class RejectPortfolioShareRequest;
@@ -288,6 +290,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListResourcesForTagOptionResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListResourcesForTagOptionOutcome;
         typedef Aws::Utils::Outcome<ListServiceActionsResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListServiceActionsOutcome;
         typedef Aws::Utils::Outcome<ListServiceActionsForProvisioningArtifactResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListServiceActionsForProvisioningArtifactOutcome;
+        typedef Aws::Utils::Outcome<ListStackInstancesForProvisionedProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListStackInstancesForProvisionedProductOutcome;
         typedef Aws::Utils::Outcome<ListTagOptionsResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListTagOptionsOutcome;
         typedef Aws::Utils::Outcome<ProvisionProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> ProvisionProductOutcome;
         typedef Aws::Utils::Outcome<RejectPortfolioShareResult, Aws::Client::AWSError<ServiceCatalogErrors>> RejectPortfolioShareOutcome;
@@ -370,6 +373,7 @@ namespace Model
         typedef std::future<ListResourcesForTagOptionOutcome> ListResourcesForTagOptionOutcomeCallable;
         typedef std::future<ListServiceActionsOutcome> ListServiceActionsOutcomeCallable;
         typedef std::future<ListServiceActionsForProvisioningArtifactOutcome> ListServiceActionsForProvisioningArtifactOutcomeCallable;
+        typedef std::future<ListStackInstancesForProvisionedProductOutcome> ListStackInstancesForProvisionedProductOutcomeCallable;
         typedef std::future<ListTagOptionsOutcome> ListTagOptionsOutcomeCallable;
         typedef std::future<ProvisionProductOutcome> ProvisionProductOutcomeCallable;
         typedef std::future<RejectPortfolioShareOutcome> RejectPortfolioShareOutcomeCallable;
@@ -455,6 +459,7 @@ namespace Model
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListResourcesForTagOptionRequest&, const Model::ListResourcesForTagOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourcesForTagOptionResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListServiceActionsRequest&, const Model::ListServiceActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceActionsResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListServiceActionsForProvisioningArtifactRequest&, const Model::ListServiceActionsForProvisioningArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceActionsForProvisioningArtifactResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::ListStackInstancesForProvisionedProductRequest&, const Model::ListStackInstancesForProvisionedProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackInstancesForProvisionedProductResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListTagOptionsRequest&, const Model::ListTagOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagOptionsResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ProvisionProductRequest&, const Model::ProvisionProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionProductResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::RejectPortfolioShareRequest&, const Model::RejectPortfolioShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectPortfolioShareResponseReceivedHandler;
@@ -2424,6 +2429,40 @@ namespace Model
         virtual void ListServiceActionsForProvisioningArtifactAsync(const Model::ListServiceActionsForProvisioningArtifactRequest& request, const ListServiceActionsForProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns summary information about stack instances that are associated with
+         * the specified <code>CFN_STACKSET</code> type provisioned product. You can filter
+         * for stack instances that are associated with a specific AWS account name or
+         * region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListStackInstancesForProvisionedProduct">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStackInstancesForProvisionedProductOutcome ListStackInstancesForProvisionedProduct(const Model::ListStackInstancesForProvisionedProductRequest& request) const;
+
+        /**
+         * <p>Returns summary information about stack instances that are associated with
+         * the specified <code>CFN_STACKSET</code> type provisioned product. You can filter
+         * for stack instances that are associated with a specific AWS account name or
+         * region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListStackInstancesForProvisionedProduct">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListStackInstancesForProvisionedProductOutcomeCallable ListStackInstancesForProvisionedProductCallable(const Model::ListStackInstancesForProvisionedProductRequest& request) const;
+
+        /**
+         * <p>Returns summary information about stack instances that are associated with
+         * the specified <code>CFN_STACKSET</code> type provisioned product. You can filter
+         * for stack instances that are associated with a specific AWS account name or
+         * region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListStackInstancesForProvisionedProduct">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListStackInstancesForProvisionedProductAsync(const Model::ListStackInstancesForProvisionedProductRequest& request, const ListStackInstancesForProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the specified TagOptions or all TagOptions.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListTagOptions">AWS
@@ -2973,6 +3012,7 @@ namespace Model
         void ListResourcesForTagOptionAsyncHelper(const Model::ListResourcesForTagOptionRequest& request, const ListResourcesForTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListServiceActionsAsyncHelper(const Model::ListServiceActionsRequest& request, const ListServiceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListServiceActionsForProvisioningArtifactAsyncHelper(const Model::ListServiceActionsForProvisioningArtifactRequest& request, const ListServiceActionsForProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListStackInstancesForProvisionedProductAsyncHelper(const Model::ListStackInstancesForProvisionedProductRequest& request, const ListStackInstancesForProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagOptionsAsyncHelper(const Model::ListTagOptionsRequest& request, const ListTagOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ProvisionProductAsyncHelper(const Model::ProvisionProductRequest& request, const ProvisionProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RejectPortfolioShareAsyncHelper(const Model::RejectPortfolioShareRequest& request, const RejectPortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

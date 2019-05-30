@@ -28,6 +28,7 @@ namespace Model
     NOT_SET,
     ACTIVE,
     CREATING,
+    UPDATING,
     DELETING,
     FAILED
   };

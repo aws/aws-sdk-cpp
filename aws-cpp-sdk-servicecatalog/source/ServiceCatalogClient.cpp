@@ -95,6 +95,7 @@
 #include <aws/servicecatalog/model/ListResourcesForTagOptionRequest.h>
 #include <aws/servicecatalog/model/ListServiceActionsRequest.h>
 #include <aws/servicecatalog/model/ListServiceActionsForProvisioningArtifactRequest.h>
+#include <aws/servicecatalog/model/ListStackInstancesForProvisionedProductRequest.h>
 #include <aws/servicecatalog/model/ListTagOptionsRequest.h>
 #include <aws/servicecatalog/model/ProvisionProductRequest.h>
 #include <aws/servicecatalog/model/RejectPortfolioShareRequest.h>
@@ -2457,6 +2458,41 @@ void ServiceCatalogClient::ListServiceActionsForProvisioningArtifactAsync(const 
 void ServiceCatalogClient::ListServiceActionsForProvisioningArtifactAsyncHelper(const ListServiceActionsForProvisioningArtifactRequest& request, const ListServiceActionsForProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListServiceActionsForProvisioningArtifact(request), context);
+}
+
+ListStackInstancesForProvisionedProductOutcome ServiceCatalogClient::ListStackInstancesForProvisionedProduct(const ListStackInstancesForProvisionedProductRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListStackInstancesForProvisionedProductOutcome(ListStackInstancesForProvisionedProductResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListStackInstancesForProvisionedProductOutcome(outcome.GetError());
+  }
+}
+
+ListStackInstancesForProvisionedProductOutcomeCallable ServiceCatalogClient::ListStackInstancesForProvisionedProductCallable(const ListStackInstancesForProvisionedProductRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListStackInstancesForProvisionedProductOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStackInstancesForProvisionedProduct(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::ListStackInstancesForProvisionedProductAsync(const ListStackInstancesForProvisionedProductRequest& request, const ListStackInstancesForProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListStackInstancesForProvisionedProductAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::ListStackInstancesForProvisionedProductAsyncHelper(const ListStackInstancesForProvisionedProductRequest& request, const ListStackInstancesForProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListStackInstancesForProvisionedProduct(request), context);
 }
 
 ListTagOptionsOutcome ServiceCatalogClient::ListTagOptions(const ListTagOptionsRequest& request) const

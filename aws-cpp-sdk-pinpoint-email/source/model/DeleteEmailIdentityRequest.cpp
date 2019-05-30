@@ -32,14 +32,6 @@ Aws::String DeleteEmailIdentityRequest::SerializePayload() const
   return {};
 }
 
-Aws::Http::HeaderValueCollection DeleteEmailIdentityRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.DeleteEmailIdentity"));
-  return headers;
-
-}
-
 
 
 

@@ -35,14 +35,6 @@ Aws::String ListTagsForResourceRequest::SerializePayload() const
   return {};
 }
 
-Aws::Http::HeaderValueCollection ListTagsForResourceRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.ListTagsForResource"));
-  return headers;
-
-}
-
 void ListTagsForResourceRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

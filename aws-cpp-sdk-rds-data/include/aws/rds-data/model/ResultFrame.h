@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * Result Frame<p><h3>See Also:</h3>   <a
+   * <p>The result set returned by a SQL statement.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ResultFrame">AWS
    * API Reference</a></p>
    */
@@ -50,73 +50,73 @@ namespace Model
 
 
     /**
-     * ResultSet Metadata.
+     * <p>The records in the result set.</p>
      */
     inline const Aws::Vector<Record>& GetRecords() const{ return m_records; }
 
     /**
-     * ResultSet Metadata.
+     * <p>The records in the result set.</p>
      */
     inline bool RecordsHasBeenSet() const { return m_recordsHasBeenSet; }
 
     /**
-     * ResultSet Metadata.
+     * <p>The records in the result set.</p>
      */
     inline void SetRecords(const Aws::Vector<Record>& value) { m_recordsHasBeenSet = true; m_records = value; }
 
     /**
-     * ResultSet Metadata.
+     * <p>The records in the result set.</p>
      */
     inline void SetRecords(Aws::Vector<Record>&& value) { m_recordsHasBeenSet = true; m_records = std::move(value); }
 
     /**
-     * ResultSet Metadata.
+     * <p>The records in the result set.</p>
      */
     inline ResultFrame& WithRecords(const Aws::Vector<Record>& value) { SetRecords(value); return *this;}
 
     /**
-     * ResultSet Metadata.
+     * <p>The records in the result set.</p>
      */
     inline ResultFrame& WithRecords(Aws::Vector<Record>&& value) { SetRecords(std::move(value)); return *this;}
 
     /**
-     * ResultSet Metadata.
+     * <p>The records in the result set.</p>
      */
     inline ResultFrame& AddRecords(const Record& value) { m_recordsHasBeenSet = true; m_records.push_back(value); return *this; }
 
     /**
-     * ResultSet Metadata.
+     * <p>The records in the result set.</p>
      */
     inline ResultFrame& AddRecords(Record&& value) { m_recordsHasBeenSet = true; m_records.push_back(std::move(value)); return *this; }
 
 
     /**
-     * ResultSet Metadata.
+     * <p>The result-set metadata in the result set.</p>
      */
     inline const ResultSetMetadata& GetResultSetMetadata() const{ return m_resultSetMetadata; }
 
     /**
-     * ResultSet Metadata.
+     * <p>The result-set metadata in the result set.</p>
      */
     inline bool ResultSetMetadataHasBeenSet() const { return m_resultSetMetadataHasBeenSet; }
 
     /**
-     * ResultSet Metadata.
+     * <p>The result-set metadata in the result set.</p>
      */
     inline void SetResultSetMetadata(const ResultSetMetadata& value) { m_resultSetMetadataHasBeenSet = true; m_resultSetMetadata = value; }
 
     /**
-     * ResultSet Metadata.
+     * <p>The result-set metadata in the result set.</p>
      */
     inline void SetResultSetMetadata(ResultSetMetadata&& value) { m_resultSetMetadataHasBeenSet = true; m_resultSetMetadata = std::move(value); }
 
     /**
-     * ResultSet Metadata.
+     * <p>The result-set metadata in the result set.</p>
      */
     inline ResultFrame& WithResultSetMetadata(const ResultSetMetadata& value) { SetResultSetMetadata(value); return *this;}
 
     /**
-     * ResultSet Metadata.
+     * <p>The result-set metadata in the result set.</p>
      */
     inline ResultFrame& WithResultSetMetadata(ResultSetMetadata&& value) { SetResultSetMetadata(std::move(value)); return *this;}
 

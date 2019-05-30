@@ -38,14 +38,6 @@ Aws::String GetDedicatedIpsRequest::SerializePayload() const
   return {};
 }
 
-Aws::Http::HeaderValueCollection GetDedicatedIpsRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.GetDedicatedIps"));
-  return headers;
-
-}
-
 void GetDedicatedIpsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

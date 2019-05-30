@@ -31,14 +31,6 @@ Aws::String GetAccountRequest::SerializePayload() const
   return {};
 }
 
-Aws::Http::HeaderValueCollection GetAccountRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.GetAccount"));
-  return headers;
-
-}
-
 
 
 

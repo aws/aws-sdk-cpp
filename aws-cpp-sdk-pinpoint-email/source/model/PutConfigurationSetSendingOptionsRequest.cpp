@@ -42,14 +42,6 @@ Aws::String PutConfigurationSetSendingOptionsRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutConfigurationSetSendingOptionsRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.PutConfigurationSetSendingOptions"));
-  return headers;
-
-}
-
 
 
 

@@ -54,8 +54,6 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
 
     /**
      * <p>Specifies whether to enable the Deliverability dashboard for your Amazon

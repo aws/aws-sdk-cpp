@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotanalytics/model/DatastoreStorageSummary.h>
 #include <aws/iotanalytics/model/DatastoreStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
@@ -88,6 +89,37 @@ namespace Model
      * <p>The name of the data store.</p>
      */
     inline DatastoreSummary& WithDatastoreName(const char* value) { SetDatastoreName(value); return *this;}
+
+
+    /**
+     * <p>Where data store data is stored.</p>
+     */
+    inline const DatastoreStorageSummary& GetDatastoreStorage() const{ return m_datastoreStorage; }
+
+    /**
+     * <p>Where data store data is stored.</p>
+     */
+    inline bool DatastoreStorageHasBeenSet() const { return m_datastoreStorageHasBeenSet; }
+
+    /**
+     * <p>Where data store data is stored.</p>
+     */
+    inline void SetDatastoreStorage(const DatastoreStorageSummary& value) { m_datastoreStorageHasBeenSet = true; m_datastoreStorage = value; }
+
+    /**
+     * <p>Where data store data is stored.</p>
+     */
+    inline void SetDatastoreStorage(DatastoreStorageSummary&& value) { m_datastoreStorageHasBeenSet = true; m_datastoreStorage = std::move(value); }
+
+    /**
+     * <p>Where data store data is stored.</p>
+     */
+    inline DatastoreSummary& WithDatastoreStorage(const DatastoreStorageSummary& value) { SetDatastoreStorage(value); return *this;}
+
+    /**
+     * <p>Where data store data is stored.</p>
+     */
+    inline DatastoreSummary& WithDatastoreStorage(DatastoreStorageSummary&& value) { SetDatastoreStorage(std::move(value)); return *this;}
 
 
     /**
@@ -186,6 +218,9 @@ namespace Model
 
     Aws::String m_datastoreName;
     bool m_datastoreNameHasBeenSet;
+
+    DatastoreStorageSummary m_datastoreStorage;
+    bool m_datastoreStorageHasBeenSet;
 
     DatastoreStatus m_status;
     bool m_statusHasBeenSet;

@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotanalytics/model/ChannelStorage.h>
 #include <aws/iotanalytics/model/ChannelStatus.h>
 #include <aws/iotanalytics/model/RetentionPeriod.h>
 #include <aws/core/utils/DateTime.h>
@@ -91,6 +92,37 @@ namespace Model
      * <p>The name of the channel.</p>
      */
     inline Channel& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>Where channel data is stored.</p>
+     */
+    inline const ChannelStorage& GetStorage() const{ return m_storage; }
+
+    /**
+     * <p>Where channel data is stored.</p>
+     */
+    inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
+
+    /**
+     * <p>Where channel data is stored.</p>
+     */
+    inline void SetStorage(const ChannelStorage& value) { m_storageHasBeenSet = true; m_storage = value; }
+
+    /**
+     * <p>Where channel data is stored.</p>
+     */
+    inline void SetStorage(ChannelStorage&& value) { m_storageHasBeenSet = true; m_storage = std::move(value); }
+
+    /**
+     * <p>Where channel data is stored.</p>
+     */
+    inline Channel& WithStorage(const ChannelStorage& value) { SetStorage(value); return *this;}
+
+    /**
+     * <p>Where channel data is stored.</p>
+     */
+    inline Channel& WithStorage(ChannelStorage&& value) { SetStorage(std::move(value)); return *this;}
 
 
     /**
@@ -261,6 +293,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    ChannelStorage m_storage;
+    bool m_storageHasBeenSet;
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;

@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Row or Record<p><h3>See Also:</h3>   <a
+   * <p>A record returned by a call.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/Record">AWS API
    * Reference</a></p>
    */
@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * Record
+     * <p>The values returned in the record.</p>
      */
     inline const Aws::Vector<Value>& GetValues() const{ return m_values; }
 
     /**
-     * Record
+     * <p>The values returned in the record.</p>
      */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
-     * Record
+     * <p>The values returned in the record.</p>
      */
     inline void SetValues(const Aws::Vector<Value>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * Record
+     * <p>The values returned in the record.</p>
      */
     inline void SetValues(Aws::Vector<Value>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
-     * Record
+     * <p>The values returned in the record.</p>
      */
     inline Record& WithValues(const Aws::Vector<Value>& value) { SetValues(value); return *this;}
 
     /**
-     * Record
+     * <p>The values returned in the record.</p>
      */
     inline Record& WithValues(Aws::Vector<Value>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
-     * Record
+     * <p>The values returned in the record.</p>
      */
     inline Record& AddValues(const Value& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * Record
+     * <p>The values returned in the record.</p>
      */
     inline Record& AddValues(Value&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 

@@ -35,14 +35,6 @@ Aws::String GetBlacklistReportsRequest::SerializePayload() const
   return {};
 }
 
-Aws::Http::HeaderValueCollection GetBlacklistReportsRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.GetBlacklistReports"));
-  return headers;
-
-}
-
 void GetBlacklistReportsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

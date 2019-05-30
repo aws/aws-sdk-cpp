@@ -42,14 +42,6 @@ Aws::String PutEmailIdentityDkimAttributesRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutEmailIdentityDkimAttributesRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.PutEmailIdentityDkimAttributes"));
-  return headers;
-
-}
-
 
 
 

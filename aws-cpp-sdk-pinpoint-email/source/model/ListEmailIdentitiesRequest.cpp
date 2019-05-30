@@ -37,14 +37,6 @@ Aws::String ListEmailIdentitiesRequest::SerializePayload() const
   return {};
 }
 
-Aws::Http::HeaderValueCollection ListEmailIdentitiesRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.ListEmailIdentities"));
-  return headers;
-
-}
-
 void ListEmailIdentitiesRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

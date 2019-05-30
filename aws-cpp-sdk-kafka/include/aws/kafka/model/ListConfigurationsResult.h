@@ -45,94 +45,129 @@ namespace Model
 
 
     /**
-     * <p>An array of MSK configurations.</p>
+     * 
+            <p>An array of MSK configurations.</p>
+         
      */
     inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
 
     /**
-     * <p>An array of MSK configurations.</p>
+     * 
+            <p>An array of MSK configurations.</p>
+         
      */
     inline void SetConfigurations(const Aws::Vector<Configuration>& value) { m_configurations = value; }
 
     /**
-     * <p>An array of MSK configurations.</p>
+     * 
+            <p>An array of MSK configurations.</p>
+         
      */
     inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurations = std::move(value); }
 
     /**
-     * <p>An array of MSK configurations.</p>
+     * 
+            <p>An array of MSK configurations.</p>
+         
      */
     inline ListConfigurationsResult& WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
 
     /**
-     * <p>An array of MSK configurations.</p>
+     * 
+            <p>An array of MSK configurations.</p>
+         
      */
     inline ListConfigurationsResult& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>An array of MSK configurations.</p>
+     * 
+            <p>An array of MSK configurations.</p>
+         
      */
     inline ListConfigurationsResult& AddConfigurations(const Configuration& value) { m_configurations.push_back(value); return *this; }
 
     /**
-     * <p>An array of MSK configurations.</p>
+     * 
+            <p>An array of MSK configurations.</p>
+         
      */
     inline ListConfigurationsResult& AddConfigurations(Configuration&& value) { m_configurations.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The paginated results marker. When the result of a ListConfigurations
-     * operation is truncated, the call returns NextToken in the response. 
- To get
-     * another batch of configurations, provide this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of a
+     * ListConfigurations operation is truncated, the call returns NextToken in the
+     * response. 
+               To get another batch of configurations, provide this
+     * token in your next request.</p>
+         
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The paginated results marker. When the result of a ListConfigurations
-     * operation is truncated, the call returns NextToken in the response. 
- To get
-     * another batch of configurations, provide this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of a
+     * ListConfigurations operation is truncated, the call returns NextToken in the
+     * response. 
+               To get another batch of configurations, provide this
+     * token in your next request.</p>
+         
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The paginated results marker. When the result of a ListConfigurations
-     * operation is truncated, the call returns NextToken in the response. 
- To get
-     * another batch of configurations, provide this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of a
+     * ListConfigurations operation is truncated, the call returns NextToken in the
+     * response. 
+               To get another batch of configurations, provide this
+     * token in your next request.</p>
+         
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The paginated results marker. When the result of a ListConfigurations
-     * operation is truncated, the call returns NextToken in the response. 
- To get
-     * another batch of configurations, provide this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of a
+     * ListConfigurations operation is truncated, the call returns NextToken in the
+     * response. 
+               To get another batch of configurations, provide this
+     * token in your next request.</p>
+         
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The paginated results marker. When the result of a ListConfigurations
-     * operation is truncated, the call returns NextToken in the response. 
- To get
-     * another batch of configurations, provide this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of a
+     * ListConfigurations operation is truncated, the call returns NextToken in the
+     * response. 
+               To get another batch of configurations, provide this
+     * token in your next request.</p>
+         
      */
     inline ListConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The paginated results marker. When the result of a ListConfigurations
-     * operation is truncated, the call returns NextToken in the response. 
- To get
-     * another batch of configurations, provide this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of a
+     * ListConfigurations operation is truncated, the call returns NextToken in the
+     * response. 
+               To get another batch of configurations, provide this
+     * token in your next request.</p>
+         
      */
     inline ListConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The paginated results marker. When the result of a ListConfigurations
-     * operation is truncated, the call returns NextToken in the response. 
- To get
-     * another batch of configurations, provide this token in your next request.</p>
+     * 
+            <p>The paginated results marker. When the result of a
+     * ListConfigurations operation is truncated, the call returns NextToken in the
+     * response. 
+               To get another batch of configurations, provide this
+     * token in your next request.</p>
+         
      */
     inline ListConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

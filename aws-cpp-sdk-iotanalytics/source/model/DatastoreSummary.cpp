@@ -30,6 +30,7 @@ namespace Model
 
 DatastoreSummary::DatastoreSummary() : 
     m_datastoreNameHasBeenSet(false),
+    m_datastoreStorageHasBeenSet(false),
     m_status(DatastoreStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -39,6 +40,7 @@ DatastoreSummary::DatastoreSummary() :
 
 DatastoreSummary::DatastoreSummary(JsonView jsonValue) : 
     m_datastoreNameHasBeenSet(false),
+    m_datastoreStorageHasBeenSet(false),
     m_status(DatastoreStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -54,6 +56,13 @@ DatastoreSummary& DatastoreSummary::operator =(JsonView jsonValue)
     m_datastoreName = jsonValue.GetString("datastoreName");
 
     m_datastoreNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("datastoreStorage"))
+  {
+    m_datastoreStorage = jsonValue.GetObject("datastoreStorage");
+
+    m_datastoreStorageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -87,6 +96,12 @@ JsonValue DatastoreSummary::Jsonize() const
   if(m_datastoreNameHasBeenSet)
   {
    payload.WithString("datastoreName", m_datastoreName);
+
+  }
+
+  if(m_datastoreStorageHasBeenSet)
+  {
+   payload.WithObject("datastoreStorage", m_datastoreStorage.Jsonize());
 
   }
 

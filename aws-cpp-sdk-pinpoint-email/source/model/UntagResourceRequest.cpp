@@ -36,14 +36,6 @@ Aws::String UntagResourceRequest::SerializePayload() const
   return {};
 }
 
-Aws::Http::HeaderValueCollection UntagResourceRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.UntagResource"));
-  return headers;
-
-}
-
 void UntagResourceRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

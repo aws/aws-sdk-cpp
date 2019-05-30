@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Column Metadata<p><h3>See Also:</h3>   <a
+   * <p>Contains the metadata for a column.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ColumnMetadata">AWS
    * API Reference</a></p>
    */
@@ -48,427 +48,395 @@ namespace Model
 
 
     /**
-     * Homogenous array base SQL type from java.sql.Types.
+     * <p>The type of the column.</p>
      */
     inline int GetArrayBaseColumnType() const{ return m_arrayBaseColumnType; }
 
     /**
-     * Homogenous array base SQL type from java.sql.Types.
+     * <p>The type of the column.</p>
      */
     inline bool ArrayBaseColumnTypeHasBeenSet() const { return m_arrayBaseColumnTypeHasBeenSet; }
 
     /**
-     * Homogenous array base SQL type from java.sql.Types.
+     * <p>The type of the column.</p>
      */
     inline void SetArrayBaseColumnType(int value) { m_arrayBaseColumnTypeHasBeenSet = true; m_arrayBaseColumnType = value; }
 
     /**
-     * Homogenous array base SQL type from java.sql.Types.
+     * <p>The type of the column.</p>
      */
     inline ColumnMetadata& WithArrayBaseColumnType(int value) { SetArrayBaseColumnType(value); return *this;}
 
 
     /**
-     * Whether the designated column is automatically numbered
+     * <p>A value that indicates whether the column increments automatically.</p>
      */
     inline bool GetIsAutoIncrement() const{ return m_isAutoIncrement; }
 
     /**
-     * Whether the designated column is automatically numbered
+     * <p>A value that indicates whether the column increments automatically.</p>
      */
     inline bool IsAutoIncrementHasBeenSet() const { return m_isAutoIncrementHasBeenSet; }
 
     /**
-     * Whether the designated column is automatically numbered
+     * <p>A value that indicates whether the column increments automatically.</p>
      */
     inline void SetIsAutoIncrement(bool value) { m_isAutoIncrementHasBeenSet = true; m_isAutoIncrement = value; }
 
     /**
-     * Whether the designated column is automatically numbered
+     * <p>A value that indicates whether the column increments automatically.</p>
      */
     inline ColumnMetadata& WithIsAutoIncrement(bool value) { SetIsAutoIncrement(value); return *this;}
 
 
     /**
-     * Whether values in the designated column's case matters
+     * <p>A value that indicates whether the column is case-sensitive.</p>
      */
     inline bool GetIsCaseSensitive() const{ return m_isCaseSensitive; }
 
     /**
-     * Whether values in the designated column's case matters
+     * <p>A value that indicates whether the column is case-sensitive.</p>
      */
     inline bool IsCaseSensitiveHasBeenSet() const { return m_isCaseSensitiveHasBeenSet; }
 
     /**
-     * Whether values in the designated column's case matters
+     * <p>A value that indicates whether the column is case-sensitive.</p>
      */
     inline void SetIsCaseSensitive(bool value) { m_isCaseSensitiveHasBeenSet = true; m_isCaseSensitive = value; }
 
     /**
-     * Whether values in the designated column's case matters
+     * <p>A value that indicates whether the column is case-sensitive.</p>
      */
     inline ColumnMetadata& WithIsCaseSensitive(bool value) { SetIsCaseSensitive(value); return *this;}
 
 
     /**
-     * Whether values in the designated column is a cash value
+     * <p>A value that indicates whether the column contains currency values.</p>
      */
     inline bool GetIsCurrency() const{ return m_isCurrency; }
 
     /**
-     * Whether values in the designated column is a cash value
+     * <p>A value that indicates whether the column contains currency values.</p>
      */
     inline bool IsCurrencyHasBeenSet() const { return m_isCurrencyHasBeenSet; }
 
     /**
-     * Whether values in the designated column is a cash value
+     * <p>A value that indicates whether the column contains currency values.</p>
      */
     inline void SetIsCurrency(bool value) { m_isCurrencyHasBeenSet = true; m_isCurrency = value; }
 
     /**
-     * Whether values in the designated column is a cash value
+     * <p>A value that indicates whether the column contains currency values.</p>
      */
     inline ColumnMetadata& WithIsCurrency(bool value) { SetIsCurrency(value); return *this;}
 
 
     /**
-     * Whether values in the designated column are signed numbers
+     * <p>A value that indicates whether an integer column is signed.</p>
      */
     inline bool GetIsSigned() const{ return m_isSigned; }
 
     /**
-     * Whether values in the designated column are signed numbers
+     * <p>A value that indicates whether an integer column is signed.</p>
      */
     inline bool IsSignedHasBeenSet() const { return m_isSignedHasBeenSet; }
 
     /**
-     * Whether values in the designated column are signed numbers
+     * <p>A value that indicates whether an integer column is signed.</p>
      */
     inline void SetIsSigned(bool value) { m_isSignedHasBeenSet = true; m_isSigned = value; }
 
     /**
-     * Whether values in the designated column are signed numbers
+     * <p>A value that indicates whether an integer column is signed.</p>
      */
     inline ColumnMetadata& WithIsSigned(bool value) { SetIsSigned(value); return *this;}
 
 
     /**
-     * Usually specified by the SQL AS. If not specified, return column name.
+     * <p>The label for the column.</p>
      */
     inline const Aws::String& GetLabel() const{ return m_label; }
 
     /**
-     * Usually specified by the SQL AS. If not specified, return column name.
+     * <p>The label for the column.</p>
      */
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
 
     /**
-     * Usually specified by the SQL AS. If not specified, return column name.
+     * <p>The label for the column.</p>
      */
     inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
 
     /**
-     * Usually specified by the SQL AS. If not specified, return column name.
+     * <p>The label for the column.</p>
      */
     inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
 
     /**
-     * Usually specified by the SQL AS. If not specified, return column name.
+     * <p>The label for the column.</p>
      */
     inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
 
     /**
-     * Usually specified by the SQL AS. If not specified, return column name.
+     * <p>The label for the column.</p>
      */
     inline ColumnMetadata& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
 
     /**
-     * Usually specified by the SQL AS. If not specified, return column name.
+     * <p>The label for the column.</p>
      */
     inline ColumnMetadata& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
 
     /**
-     * Usually specified by the SQL AS. If not specified, return column name.
+     * <p>The label for the column.</p>
      */
     inline ColumnMetadata& WithLabel(const char* value) { SetLabel(value); return *this;}
 
 
     /**
-     * Name of the column.
+     * <p>The name of the column.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * Name of the column.
+     * <p>The name of the column.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * Name of the column.
+     * <p>The name of the column.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * Name of the column.
+     * <p>The name of the column.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * Name of the column.
+     * <p>The name of the column.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * Name of the column.
+     * <p>The name of the column.</p>
      */
     inline ColumnMetadata& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * Name of the column.
+     * <p>The name of the column.</p>
      */
     inline ColumnMetadata& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * Name of the column.
+     * <p>The name of the column.</p>
      */
     inline ColumnMetadata& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * Indicates the nullability of values in the designated column. One of
-     * columnNoNulls (0), columnNullable (1), columnNullableUnknown (2)
+     * <p>A value that indicates whether the column is nullable.</p>
      */
     inline int GetNullable() const{ return m_nullable; }
 
     /**
-     * Indicates the nullability of values in the designated column. One of
-     * columnNoNulls (0), columnNullable (1), columnNullableUnknown (2)
+     * <p>A value that indicates whether the column is nullable.</p>
      */
     inline bool NullableHasBeenSet() const { return m_nullableHasBeenSet; }
 
     /**
-     * Indicates the nullability of values in the designated column. One of
-     * columnNoNulls (0), columnNullable (1), columnNullableUnknown (2)
+     * <p>A value that indicates whether the column is nullable.</p>
      */
     inline void SetNullable(int value) { m_nullableHasBeenSet = true; m_nullable = value; }
 
     /**
-     * Indicates the nullability of values in the designated column. One of
-     * columnNoNulls (0), columnNullable (1), columnNullableUnknown (2)
+     * <p>A value that indicates whether the column is nullable.</p>
      */
     inline ColumnMetadata& WithNullable(int value) { SetNullable(value); return *this;}
 
 
     /**
-     * Get the designated column's specified column size.For numeric data, this is the
-     * maximum precision.  For character data, this is the length in characters. For
-     * datetime datatypes, this is the length in characters of the String
-     * representation (assuming the maximum allowed precision of the fractional seconds
-     * component). For binary data, this is the length in bytes.  For the ROWID
-     * datatype, this is the length in bytes. 0 is returned for data types where the
-     * column size is not applicable.
+     * <p>The precision value of a decimal number column.</p>
      */
     inline int GetPrecision() const{ return m_precision; }
 
     /**
-     * Get the designated column's specified column size.For numeric data, this is the
-     * maximum precision.  For character data, this is the length in characters. For
-     * datetime datatypes, this is the length in characters of the String
-     * representation (assuming the maximum allowed precision of the fractional seconds
-     * component). For binary data, this is the length in bytes.  For the ROWID
-     * datatype, this is the length in bytes. 0 is returned for data types where the
-     * column size is not applicable.
+     * <p>The precision value of a decimal number column.</p>
      */
     inline bool PrecisionHasBeenSet() const { return m_precisionHasBeenSet; }
 
     /**
-     * Get the designated column's specified column size.For numeric data, this is the
-     * maximum precision.  For character data, this is the length in characters. For
-     * datetime datatypes, this is the length in characters of the String
-     * representation (assuming the maximum allowed precision of the fractional seconds
-     * component). For binary data, this is the length in bytes.  For the ROWID
-     * datatype, this is the length in bytes. 0 is returned for data types where the
-     * column size is not applicable.
+     * <p>The precision value of a decimal number column.</p>
      */
     inline void SetPrecision(int value) { m_precisionHasBeenSet = true; m_precision = value; }
 
     /**
-     * Get the designated column's specified column size.For numeric data, this is the
-     * maximum precision.  For character data, this is the length in characters. For
-     * datetime datatypes, this is the length in characters of the String
-     * representation (assuming the maximum allowed precision of the fractional seconds
-     * component). For binary data, this is the length in bytes.  For the ROWID
-     * datatype, this is the length in bytes. 0 is returned for data types where the
-     * column size is not applicable.
+     * <p>The precision value of a decimal number column.</p>
      */
     inline ColumnMetadata& WithPrecision(int value) { SetPrecision(value); return *this;}
 
 
     /**
-     * Designated column's number of digits to right of the decimal point. 0 is
-     * returned for data types where the scale is not applicable.
+     * <p>The scale value of a decimal number column.</p>
      */
     inline int GetScale() const{ return m_scale; }
 
     /**
-     * Designated column's number of digits to right of the decimal point. 0 is
-     * returned for data types where the scale is not applicable.
+     * <p>The scale value of a decimal number column.</p>
      */
     inline bool ScaleHasBeenSet() const { return m_scaleHasBeenSet; }
 
     /**
-     * Designated column's number of digits to right of the decimal point. 0 is
-     * returned for data types where the scale is not applicable.
+     * <p>The scale value of a decimal number column.</p>
      */
     inline void SetScale(int value) { m_scaleHasBeenSet = true; m_scale = value; }
 
     /**
-     * Designated column's number of digits to right of the decimal point. 0 is
-     * returned for data types where the scale is not applicable.
+     * <p>The scale value of a decimal number column.</p>
      */
     inline ColumnMetadata& WithScale(int value) { SetScale(value); return *this;}
 
 
     /**
-     * Designated column's table's schema
+     * <p>The name of the schema that owns the table that includes the column.</p>
      */
     inline const Aws::String& GetSchemaName() const{ return m_schemaName; }
 
     /**
-     * Designated column's table's schema
+     * <p>The name of the schema that owns the table that includes the column.</p>
      */
     inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
 
     /**
-     * Designated column's table's schema
+     * <p>The name of the schema that owns the table that includes the column.</p>
      */
     inline void SetSchemaName(const Aws::String& value) { m_schemaNameHasBeenSet = true; m_schemaName = value; }
 
     /**
-     * Designated column's table's schema
+     * <p>The name of the schema that owns the table that includes the column.</p>
      */
     inline void SetSchemaName(Aws::String&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::move(value); }
 
     /**
-     * Designated column's table's schema
+     * <p>The name of the schema that owns the table that includes the column.</p>
      */
     inline void SetSchemaName(const char* value) { m_schemaNameHasBeenSet = true; m_schemaName.assign(value); }
 
     /**
-     * Designated column's table's schema
+     * <p>The name of the schema that owns the table that includes the column.</p>
      */
     inline ColumnMetadata& WithSchemaName(const Aws::String& value) { SetSchemaName(value); return *this;}
 
     /**
-     * Designated column's table's schema
+     * <p>The name of the schema that owns the table that includes the column.</p>
      */
     inline ColumnMetadata& WithSchemaName(Aws::String&& value) { SetSchemaName(std::move(value)); return *this;}
 
     /**
-     * Designated column's table's schema
+     * <p>The name of the schema that owns the table that includes the column.</p>
      */
     inline ColumnMetadata& WithSchemaName(const char* value) { SetSchemaName(value); return *this;}
 
 
     /**
-     * Designated column's table name
+     * <p>The name of the table that includes the column.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
 
     /**
-     * Designated column's table name
+     * <p>The name of the table that includes the column.</p>
      */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
 
     /**
-     * Designated column's table name
+     * <p>The name of the table that includes the column.</p>
      */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
-     * Designated column's table name
+     * <p>The name of the table that includes the column.</p>
      */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
-     * Designated column's table name
+     * <p>The name of the table that includes the column.</p>
      */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
     /**
-     * Designated column's table name
+     * <p>The name of the table that includes the column.</p>
      */
     inline ColumnMetadata& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
 
     /**
-     * Designated column's table name
+     * <p>The name of the table that includes the column.</p>
      */
     inline ColumnMetadata& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
-     * Designated column's table name
+     * <p>The name of the table that includes the column.</p>
      */
     inline ColumnMetadata& WithTableName(const char* value) { SetTableName(value); return *this;}
 
 
     /**
-     * SQL type from java.sql.Types.
+     * <p>The type of the column.</p>
      */
     inline int GetType() const{ return m_type; }
 
     /**
-     * SQL type from java.sql.Types.
+     * <p>The type of the column.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * SQL type from java.sql.Types.
+     * <p>The type of the column.</p>
      */
     inline void SetType(int value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * SQL type from java.sql.Types.
+     * <p>The type of the column.</p>
      */
     inline ColumnMetadata& WithType(int value) { SetType(value); return *this;}
 
 
     /**
-     * Database-specific type name.
+     * <p>The database-specific data type of the column.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
-     * Database-specific type name.
+     * <p>The database-specific data type of the column.</p>
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
-     * Database-specific type name.
+     * <p>The database-specific data type of the column.</p>
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
-     * Database-specific type name.
+     * <p>The database-specific data type of the column.</p>
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
-     * Database-specific type name.
+     * <p>The database-specific data type of the column.</p>
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
-     * Database-specific type name.
+     * <p>The database-specific data type of the column.</p>
      */
     inline ColumnMetadata& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
-     * Database-specific type name.
+     * <p>The database-specific data type of the column.</p>
      */
     inline ColumnMetadata& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
-     * Database-specific type name.
+     * <p>The database-specific data type of the column.</p>
      */
     inline ColumnMetadata& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 

@@ -31,6 +31,7 @@ namespace Model
 ZookeeperNodeInfo::ZookeeperNodeInfo() : 
     m_attachedENIIdHasBeenSet(false),
     m_clientVpcIpAddressHasBeenSet(false),
+    m_endpointsHasBeenSet(false),
     m_zookeeperId(0.0),
     m_zookeeperIdHasBeenSet(false),
     m_zookeeperVersionHasBeenSet(false)
@@ -40,6 +41,7 @@ ZookeeperNodeInfo::ZookeeperNodeInfo() :
 ZookeeperNodeInfo::ZookeeperNodeInfo(JsonView jsonValue) : 
     m_attachedENIIdHasBeenSet(false),
     m_clientVpcIpAddressHasBeenSet(false),
+    m_endpointsHasBeenSet(false),
     m_zookeeperId(0.0),
     m_zookeeperIdHasBeenSet(false),
     m_zookeeperVersionHasBeenSet(false)
@@ -61,6 +63,16 @@ ZookeeperNodeInfo& ZookeeperNodeInfo::operator =(JsonView jsonValue)
     m_clientVpcIpAddress = jsonValue.GetString("clientVpcIpAddress");
 
     m_clientVpcIpAddressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("endpoints"))
+  {
+    Array<JsonView> endpointsJsonList = jsonValue.GetArray("endpoints");
+    for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
+    {
+      m_endpoints.push_back(endpointsJsonList[endpointsIndex].AsString());
+    }
+    m_endpointsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("zookeeperId"))
@@ -93,6 +105,17 @@ JsonValue ZookeeperNodeInfo::Jsonize() const
   if(m_clientVpcIpAddressHasBeenSet)
   {
    payload.WithString("clientVpcIpAddress", m_clientVpcIpAddress);
+
+  }
+
+  if(m_endpointsHasBeenSet)
+  {
+   Array<JsonValue> endpointsJsonList(m_endpoints.size());
+   for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
+   {
+     endpointsJsonList[endpointsIndex].AsString(m_endpoints[endpointsIndex]);
+   }
+   payload.WithArray("endpoints", std::move(endpointsJsonList));
 
   }
 

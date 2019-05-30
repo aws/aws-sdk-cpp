@@ -48,8 +48,6 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
 
     /**
      * <p>The unique identifier for the campaign. Amazon Pinpoint automatically

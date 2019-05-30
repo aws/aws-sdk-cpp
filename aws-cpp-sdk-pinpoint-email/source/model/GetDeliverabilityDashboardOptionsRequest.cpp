@@ -31,14 +31,6 @@ Aws::String GetDeliverabilityDashboardOptionsRequest::SerializePayload() const
   return {};
 }
 
-Aws::Http::HeaderValueCollection GetDeliverabilityDashboardOptionsRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.GetDeliverabilityDashboardOptions"));
-  return headers;
-
-}
-
 
 
 

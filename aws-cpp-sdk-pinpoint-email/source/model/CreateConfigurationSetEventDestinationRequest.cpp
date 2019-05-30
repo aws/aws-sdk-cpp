@@ -48,14 +48,6 @@ Aws::String CreateConfigurationSetEventDestinationRequest::SerializePayload() co
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateConfigurationSetEventDestinationRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.CreateConfigurationSetEventDestination"));
-  return headers;
-
-}
-
 
 
 

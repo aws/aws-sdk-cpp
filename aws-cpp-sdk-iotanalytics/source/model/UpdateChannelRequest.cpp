@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 UpdateChannelRequest::UpdateChannelRequest() : 
     m_channelNameHasBeenSet(false),
+    m_channelStorageHasBeenSet(false),
     m_retentionPeriodHasBeenSet(false)
 {
 }
@@ -31,6 +32,12 @@ UpdateChannelRequest::UpdateChannelRequest() :
 Aws::String UpdateChannelRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_channelStorageHasBeenSet)
+  {
+   payload.WithObject("channelStorage", m_channelStorage.Jsonize());
+
+  }
 
   if(m_retentionPeriodHasBeenSet)
   {

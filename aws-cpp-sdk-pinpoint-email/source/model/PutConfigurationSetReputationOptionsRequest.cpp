@@ -42,14 +42,6 @@ Aws::String PutConfigurationSetReputationOptionsRequest::SerializePayload() cons
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutConfigurationSetReputationOptionsRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.PutConfigurationSetReputationOptions"));
-  return headers;
-
-}
-
 
 
 

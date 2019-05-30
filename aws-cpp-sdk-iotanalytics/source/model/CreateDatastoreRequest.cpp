@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 CreateDatastoreRequest::CreateDatastoreRequest() : 
     m_datastoreNameHasBeenSet(false),
+    m_datastoreStorageHasBeenSet(false),
     m_retentionPeriodHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -36,6 +37,12 @@ Aws::String CreateDatastoreRequest::SerializePayload() const
   if(m_datastoreNameHasBeenSet)
   {
    payload.WithString("datastoreName", m_datastoreName);
+
+  }
+
+  if(m_datastoreStorageHasBeenSet)
+  {
+   payload.WithObject("datastoreStorage", m_datastoreStorage.Jsonize());
 
   }
 

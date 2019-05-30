@@ -29,11 +29,15 @@ namespace Model
 {
 
 DeliveryOptions::DeliveryOptions() : 
+    m_tlsPolicy(TlsPolicy::NOT_SET),
+    m_tlsPolicyHasBeenSet(false),
     m_sendingPoolNameHasBeenSet(false)
 {
 }
 
 DeliveryOptions::DeliveryOptions(JsonView jsonValue) : 
+    m_tlsPolicy(TlsPolicy::NOT_SET),
+    m_tlsPolicyHasBeenSet(false),
     m_sendingPoolNameHasBeenSet(false)
 {
   *this = jsonValue;
@@ -41,6 +45,13 @@ DeliveryOptions::DeliveryOptions(JsonView jsonValue) :
 
 DeliveryOptions& DeliveryOptions::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("TlsPolicy"))
+  {
+    m_tlsPolicy = TlsPolicyMapper::GetTlsPolicyForName(jsonValue.GetString("TlsPolicy"));
+
+    m_tlsPolicyHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("SendingPoolName"))
   {
     m_sendingPoolName = jsonValue.GetString("SendingPoolName");
@@ -54,6 +65,11 @@ DeliveryOptions& DeliveryOptions::operator =(JsonView jsonValue)
 JsonValue DeliveryOptions::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_tlsPolicyHasBeenSet)
+  {
+   payload.WithString("TlsPolicy", TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy));
+  }
 
   if(m_sendingPoolNameHasBeenSet)
   {

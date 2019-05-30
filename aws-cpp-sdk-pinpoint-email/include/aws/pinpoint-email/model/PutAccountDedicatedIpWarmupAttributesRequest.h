@@ -43,8 +43,6 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
 
     /**
      * <p>Enables or disables the automatic warm-up feature for dedicated IP addresses

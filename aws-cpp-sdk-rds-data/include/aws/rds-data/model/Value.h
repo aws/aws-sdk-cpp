@@ -38,7 +38,7 @@ namespace Model
 {
 
   /**
-   * Column value<p><h3>See Also:</h3>   <a
+   * <p>Contains the value of a column.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/Value">AWS API
    * Reference</a></p>
    */
@@ -52,271 +52,271 @@ namespace Model
 
 
     /**
-     * Arbitrarily nested arrays
+     * <p>An array of column values.</p>
      */
     inline const Aws::Vector<Value>& GetArrayValues() const{ return m_arrayValues; }
 
     /**
-     * Arbitrarily nested arrays
+     * <p>An array of column values.</p>
      */
     inline bool ArrayValuesHasBeenSet() const { return m_arrayValuesHasBeenSet; }
 
     /**
-     * Arbitrarily nested arrays
+     * <p>An array of column values.</p>
      */
     inline void SetArrayValues(const Aws::Vector<Value>& value) { m_arrayValuesHasBeenSet = true; m_arrayValues = value; }
 
     /**
-     * Arbitrarily nested arrays
+     * <p>An array of column values.</p>
      */
     inline void SetArrayValues(Aws::Vector<Value>&& value) { m_arrayValuesHasBeenSet = true; m_arrayValues = std::move(value); }
 
     /**
-     * Arbitrarily nested arrays
+     * <p>An array of column values.</p>
      */
     inline Value& WithArrayValues(const Aws::Vector<Value>& value) { SetArrayValues(value); return *this;}
 
     /**
-     * Arbitrarily nested arrays
+     * <p>An array of column values.</p>
      */
     inline Value& WithArrayValues(Aws::Vector<Value>&& value) { SetArrayValues(std::move(value)); return *this;}
 
     /**
-     * Arbitrarily nested arrays
+     * <p>An array of column values.</p>
      */
     inline Value& AddArrayValues(const Value& value) { m_arrayValuesHasBeenSet = true; m_arrayValues.push_back(value); return *this; }
 
     /**
-     * Arbitrarily nested arrays
+     * <p>An array of column values.</p>
      */
     inline Value& AddArrayValues(Value&& value) { m_arrayValuesHasBeenSet = true; m_arrayValues.push_back(std::move(value)); return *this; }
 
 
     /**
-     * Long value
+     * <p>A value for a column of big integer data type.</p>
      */
     inline long long GetBigIntValue() const{ return m_bigIntValue; }
 
     /**
-     * Long value
+     * <p>A value for a column of big integer data type.</p>
      */
     inline bool BigIntValueHasBeenSet() const { return m_bigIntValueHasBeenSet; }
 
     /**
-     * Long value
+     * <p>A value for a column of big integer data type.</p>
      */
     inline void SetBigIntValue(long long value) { m_bigIntValueHasBeenSet = true; m_bigIntValue = value; }
 
     /**
-     * Long value
+     * <p>A value for a column of big integer data type.</p>
      */
     inline Value& WithBigIntValue(long long value) { SetBigIntValue(value); return *this;}
 
 
     /**
-     * Bit value
+     * <p>A value for a column of BIT data type.</p>
      */
     inline bool GetBitValue() const{ return m_bitValue; }
 
     /**
-     * Bit value
+     * <p>A value for a column of BIT data type.</p>
      */
     inline bool BitValueHasBeenSet() const { return m_bitValueHasBeenSet; }
 
     /**
-     * Bit value
+     * <p>A value for a column of BIT data type.</p>
      */
     inline void SetBitValue(bool value) { m_bitValueHasBeenSet = true; m_bitValue = value; }
 
     /**
-     * Bit value
+     * <p>A value for a column of BIT data type.</p>
      */
     inline Value& WithBitValue(bool value) { SetBitValue(value); return *this;}
 
 
     /**
-     * Blob value
+     * <p>A value for a column of BLOB data type.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetBlobValue() const{ return m_blobValue; }
 
     /**
-     * Blob value
+     * <p>A value for a column of BLOB data type.</p>
      */
     inline bool BlobValueHasBeenSet() const { return m_blobValueHasBeenSet; }
 
     /**
-     * Blob value
+     * <p>A value for a column of BLOB data type.</p>
      */
     inline void SetBlobValue(const Aws::Utils::ByteBuffer& value) { m_blobValueHasBeenSet = true; m_blobValue = value; }
 
     /**
-     * Blob value
+     * <p>A value for a column of BLOB data type.</p>
      */
     inline void SetBlobValue(Aws::Utils::ByteBuffer&& value) { m_blobValueHasBeenSet = true; m_blobValue = std::move(value); }
 
     /**
-     * Blob value
+     * <p>A value for a column of BLOB data type.</p>
      */
     inline Value& WithBlobValue(const Aws::Utils::ByteBuffer& value) { SetBlobValue(value); return *this;}
 
     /**
-     * Blob value
+     * <p>A value for a column of BLOB data type.</p>
      */
     inline Value& WithBlobValue(Aws::Utils::ByteBuffer&& value) { SetBlobValue(std::move(value)); return *this;}
 
 
     /**
-     * Double value
+     * <p>A value for a column of double data type.</p>
      */
     inline double GetDoubleValue() const{ return m_doubleValue; }
 
     /**
-     * Double value
+     * <p>A value for a column of double data type.</p>
      */
     inline bool DoubleValueHasBeenSet() const { return m_doubleValueHasBeenSet; }
 
     /**
-     * Double value
+     * <p>A value for a column of double data type.</p>
      */
     inline void SetDoubleValue(double value) { m_doubleValueHasBeenSet = true; m_doubleValue = value; }
 
     /**
-     * Double value
+     * <p>A value for a column of double data type.</p>
      */
     inline Value& WithDoubleValue(double value) { SetDoubleValue(value); return *this;}
 
 
     /**
-     * Integer value
+     * <p>A value for a column of integer data type.</p>
      */
     inline int GetIntValue() const{ return m_intValue; }
 
     /**
-     * Integer value
+     * <p>A value for a column of integer data type.</p>
      */
     inline bool IntValueHasBeenSet() const { return m_intValueHasBeenSet; }
 
     /**
-     * Integer value
+     * <p>A value for a column of integer data type.</p>
      */
     inline void SetIntValue(int value) { m_intValueHasBeenSet = true; m_intValue = value; }
 
     /**
-     * Integer value
+     * <p>A value for a column of integer data type.</p>
      */
     inline Value& WithIntValue(int value) { SetIntValue(value); return *this;}
 
 
     /**
-     * Is column null
+     * <p>A NULL value.</p>
      */
     inline bool GetIsNull() const{ return m_isNull; }
 
     /**
-     * Is column null
+     * <p>A NULL value.</p>
      */
     inline bool IsNullHasBeenSet() const { return m_isNullHasBeenSet; }
 
     /**
-     * Is column null
+     * <p>A NULL value.</p>
      */
     inline void SetIsNull(bool value) { m_isNullHasBeenSet = true; m_isNull = value; }
 
     /**
-     * Is column null
+     * <p>A NULL value.</p>
      */
     inline Value& WithIsNull(bool value) { SetIsNull(value); return *this;}
 
 
     /**
-     * Float value
+     * <p>A value for a column of real data type.</p>
      */
     inline double GetRealValue() const{ return m_realValue; }
 
     /**
-     * Float value
+     * <p>A value for a column of real data type.</p>
      */
     inline bool RealValueHasBeenSet() const { return m_realValueHasBeenSet; }
 
     /**
-     * Float value
+     * <p>A value for a column of real data type.</p>
      */
     inline void SetRealValue(double value) { m_realValueHasBeenSet = true; m_realValue = value; }
 
     /**
-     * Float value
+     * <p>A value for a column of real data type.</p>
      */
     inline Value& WithRealValue(double value) { SetRealValue(value); return *this;}
 
 
     /**
-     * String value
+     * <p>A value for a column of string data type.</p>
      */
     inline const Aws::String& GetStringValue() const{ return m_stringValue; }
 
     /**
-     * String value
+     * <p>A value for a column of string data type.</p>
      */
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
 
     /**
-     * String value
+     * <p>A value for a column of string data type.</p>
      */
     inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
 
     /**
-     * String value
+     * <p>A value for a column of string data type.</p>
      */
     inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
 
     /**
-     * String value
+     * <p>A value for a column of string data type.</p>
      */
     inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
 
     /**
-     * String value
+     * <p>A value for a column of string data type.</p>
      */
     inline Value& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
 
     /**
-     * String value
+     * <p>A value for a column of string data type.</p>
      */
     inline Value& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
 
     /**
-     * String value
+     * <p>A value for a column of string data type.</p>
      */
     inline Value& WithStringValue(const char* value) { SetStringValue(value); return *this;}
 
 
     /**
-     * Struct or UDT
+     * <p>A value for a column of STRUCT data type.</p>
      */
     inline const StructValue& GetStructValue() const{ return m_structValue; }
 
     /**
-     * Struct or UDT
+     * <p>A value for a column of STRUCT data type.</p>
      */
     inline bool StructValueHasBeenSet() const { return m_structValueHasBeenSet; }
 
     /**
-     * Struct or UDT
+     * <p>A value for a column of STRUCT data type.</p>
      */
     inline void SetStructValue(const StructValue& value) { m_structValueHasBeenSet = true; m_structValue = value; }
 
     /**
-     * Struct or UDT
+     * <p>A value for a column of STRUCT data type.</p>
      */
     inline void SetStructValue(StructValue&& value) { m_structValueHasBeenSet = true; m_structValue = std::move(value); }
 
     /**
-     * Struct or UDT
+     * <p>A value for a column of STRUCT data type.</p>
      */
     inline Value& WithStructValue(const StructValue& value) { SetStructValue(value); return *this;}
 
     /**
-     * Struct or UDT
+     * <p>A value for a column of STRUCT data type.</p>
      */
     inline Value& WithStructValue(StructValue&& value) { SetStructValue(std::move(value)); return *this;}
 

@@ -46,6 +46,7 @@
 #include <aws/codecommit/model/ListBranchesResult.h>
 #include <aws/codecommit/model/ListPullRequestsResult.h>
 #include <aws/codecommit/model/ListRepositoriesResult.h>
+#include <aws/codecommit/model/ListTagsForResourceResult.h>
 #include <aws/codecommit/model/MergePullRequestByFastForwardResult.h>
 #include <aws/codecommit/model/PostCommentForComparedCommitResult.h>
 #include <aws/codecommit/model/PostCommentForPullRequestResult.h>
@@ -123,13 +124,16 @@ namespace Model
         class ListBranchesRequest;
         class ListPullRequestsRequest;
         class ListRepositoriesRequest;
+        class ListTagsForResourceRequest;
         class MergePullRequestByFastForwardRequest;
         class PostCommentForComparedCommitRequest;
         class PostCommentForPullRequestRequest;
         class PostCommentReplyRequest;
         class PutFileRequest;
         class PutRepositoryTriggersRequest;
+        class TagResourceRequest;
         class TestRepositoryTriggersRequest;
+        class UntagResourceRequest;
         class UpdateCommentRequest;
         class UpdateDefaultBranchRequest;
         class UpdatePullRequestDescriptionRequest;
@@ -164,13 +168,16 @@ namespace Model
         typedef Aws::Utils::Outcome<ListBranchesResult, Aws::Client::AWSError<CodeCommitErrors>> ListBranchesOutcome;
         typedef Aws::Utils::Outcome<ListPullRequestsResult, Aws::Client::AWSError<CodeCommitErrors>> ListPullRequestsOutcome;
         typedef Aws::Utils::Outcome<ListRepositoriesResult, Aws::Client::AWSError<CodeCommitErrors>> ListRepositoriesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CodeCommitErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<MergePullRequestByFastForwardResult, Aws::Client::AWSError<CodeCommitErrors>> MergePullRequestByFastForwardOutcome;
         typedef Aws::Utils::Outcome<PostCommentForComparedCommitResult, Aws::Client::AWSError<CodeCommitErrors>> PostCommentForComparedCommitOutcome;
         typedef Aws::Utils::Outcome<PostCommentForPullRequestResult, Aws::Client::AWSError<CodeCommitErrors>> PostCommentForPullRequestOutcome;
         typedef Aws::Utils::Outcome<PostCommentReplyResult, Aws::Client::AWSError<CodeCommitErrors>> PostCommentReplyOutcome;
         typedef Aws::Utils::Outcome<PutFileResult, Aws::Client::AWSError<CodeCommitErrors>> PutFileOutcome;
         typedef Aws::Utils::Outcome<PutRepositoryTriggersResult, Aws::Client::AWSError<CodeCommitErrors>> PutRepositoryTriggersOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<TestRepositoryTriggersResult, Aws::Client::AWSError<CodeCommitErrors>> TestRepositoryTriggersOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateCommentResult, Aws::Client::AWSError<CodeCommitErrors>> UpdateCommentOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> UpdateDefaultBranchOutcome;
         typedef Aws::Utils::Outcome<UpdatePullRequestDescriptionResult, Aws::Client::AWSError<CodeCommitErrors>> UpdatePullRequestDescriptionOutcome;
@@ -205,13 +212,16 @@ namespace Model
         typedef std::future<ListBranchesOutcome> ListBranchesOutcomeCallable;
         typedef std::future<ListPullRequestsOutcome> ListPullRequestsOutcomeCallable;
         typedef std::future<ListRepositoriesOutcome> ListRepositoriesOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<MergePullRequestByFastForwardOutcome> MergePullRequestByFastForwardOutcomeCallable;
         typedef std::future<PostCommentForComparedCommitOutcome> PostCommentForComparedCommitOutcomeCallable;
         typedef std::future<PostCommentForPullRequestOutcome> PostCommentForPullRequestOutcomeCallable;
         typedef std::future<PostCommentReplyOutcome> PostCommentReplyOutcomeCallable;
         typedef std::future<PutFileOutcome> PutFileOutcomeCallable;
         typedef std::future<PutRepositoryTriggersOutcome> PutRepositoryTriggersOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<TestRepositoryTriggersOutcome> TestRepositoryTriggersOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateCommentOutcome> UpdateCommentOutcomeCallable;
         typedef std::future<UpdateDefaultBranchOutcome> UpdateDefaultBranchOutcomeCallable;
         typedef std::future<UpdatePullRequestDescriptionOutcome> UpdatePullRequestDescriptionOutcomeCallable;
@@ -249,13 +259,16 @@ namespace Model
     typedef std::function<void(const CodeCommitClient*, const Model::ListBranchesRequest&, const Model::ListBranchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBranchesResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::ListPullRequestsRequest&, const Model::ListPullRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPullRequestsResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::ListRepositoriesRequest&, const Model::ListRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRepositoriesResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::MergePullRequestByFastForwardRequest&, const Model::MergePullRequestByFastForwardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergePullRequestByFastForwardResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::PostCommentForComparedCommitRequest&, const Model::PostCommentForComparedCommitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostCommentForComparedCommitResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::PostCommentForPullRequestRequest&, const Model::PostCommentForPullRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostCommentForPullRequestResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::PostCommentReplyRequest&, const Model::PostCommentReplyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostCommentReplyResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::PutFileRequest&, const Model::PutFileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFileResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::PutRepositoryTriggersRequest&, const Model::PutRepositoryTriggersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRepositoryTriggersResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::TestRepositoryTriggersRequest&, const Model::TestRepositoryTriggersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestRepositoryTriggersResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::UpdateCommentRequest&, const Model::UpdateCommentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCommentResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::UpdateDefaultBranchRequest&, const Model::UpdateDefaultBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDefaultBranchResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::UpdatePullRequestDescriptionRequest&, const Model::UpdatePullRequestDescriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePullRequestDescriptionResponseReceivedHandler;
@@ -332,14 +345,21 @@ namespace Model
    * between two commit specifiers in a repository.</p> </li> <li> <p>
    * <a>PostCommentReply</a>, which creates a reply to a comment.</p> </li> <li> <p>
    * <a>UpdateComment</a>, which updates the content of a comment on a commit in a
-   * repository.</p> </li> </ul> <p>Triggers, by calling the following:</p> <ul> <li>
-   * <p> <a>GetRepositoryTriggers</a>, which returns information about triggers
-   * configured for a repository.</p> </li> <li> <p> <a>PutRepositoryTriggers</a>,
-   * which replaces all triggers for a repository and can be used to create or delete
-   * triggers.</p> </li> <li> <p> <a>TestRepositoryTriggers</a>, which tests the
-   * functionality of a repository trigger by sending data to the trigger target.</p>
-   * </li> </ul> <p>For information about how to use AWS CodeCommit, see the <a
-   * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+   * repository.</p> </li> </ul> <p>Tags used to tag resources in AWS CodeCommit (not
+   * Git tags), by calling the following:</p> <ul> <li> <p>
+   * <a>ListTagsForResource</a>, which gets information about AWS tags for a
+   * specified Amazon Resource Name (ARN) in AWS CodeCommit.</p> </li> <li> <p>
+   * <a>TagResource</a>, which adds or updates tags for a resource in AWS
+   * CodeCommit.</p> </li> <li> <p> <a>UntagResource</a>, which removes tags for a
+   * resource in AWS CodeCommit.</p> </li> </ul> <p>Triggers, by calling the
+   * following:</p> <ul> <li> <p> <a>GetRepositoryTriggers</a>, which returns
+   * information about triggers configured for a repository.</p> </li> <li> <p>
+   * <a>PutRepositoryTriggers</a>, which replaces all triggers for a repository and
+   * can be used to create or delete triggers.</p> </li> <li> <p>
+   * <a>TestRepositoryTriggers</a>, which tests the functionality of a repository
+   * trigger by sending data to the trigger target.</p> </li> </ul> <p>For
+   * information about how to use AWS CodeCommit, see the <a
+   * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
    * CodeCommit User Guide</a>.</p>
    */
   class AWS_CODECOMMIT_API CodeCommitClient : public Aws::Client::AWSJsonClient
@@ -1148,6 +1168,43 @@ namespace Model
         virtual void ListRepositoriesAsync(const Model::ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets information about AWS tags for a specified Amazon Resource Name (ARN) in
+         * AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a
+         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+         * Resources and Operations</a> in the AWS CodeCommit User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Gets information about AWS tags for a specified Amazon Resource Name (ARN) in
+         * AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a
+         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+         * Resources and Operations</a> in the AWS CodeCommit User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Gets information about AWS tags for a specified Amazon Resource Name (ARN) in
+         * AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a
+         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+         * Resources and Operations</a> in the AWS CodeCommit User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Closes a pull request and attempts to merge the source commit of a pull
          * request into the specified destination branch for that pull request at the
          * specified commit using the fast-forward merge option.</p><p><h3>See Also:</h3>  
@@ -1322,6 +1379,43 @@ namespace Model
         virtual void PutRepositoryTriggersAsync(const Model::PutRepositoryTriggersRequest& request, const PutRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Adds or updates tags for a resource in AWS CodeCommit. For a list of valid
+         * resources in AWS CodeCommit, see <a
+         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+         * Resources and Operations</a> in the AWS CodeCommit User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds or updates tags for a resource in AWS CodeCommit. For a list of valid
+         * resources in AWS CodeCommit, see <a
+         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+         * Resources and Operations</a> in the AWS CodeCommit User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds or updates tags for a resource in AWS CodeCommit. For a list of valid
+         * resources in AWS CodeCommit, see <a
+         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+         * Resources and Operations</a> in the AWS CodeCommit User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Tests the functionality of repository triggers by sending information to the
          * trigger target. If real data is available in the repository, the test will send
          * data from the last commit. If no data is available, sample data will be
@@ -1354,6 +1448,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TestRepositoryTriggersAsync(const Model::TestRepositoryTriggersRequest& request, const TestRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes tags for a resource in AWS CodeCommit. For a list of valid resources
+         * in AWS CodeCommit, see <a
+         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+         * Resources and Operations</a> in the AWS CodeCommit User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags for a resource in AWS CodeCommit. For a list of valid resources
+         * in AWS CodeCommit, see <a
+         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+         * Resources and Operations</a> in the AWS CodeCommit User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags for a resource in AWS CodeCommit. For a list of valid resources
+         * in AWS CodeCommit, see <a
+         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
+         * Resources and Operations</a> in the AWS CodeCommit User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Replaces the contents of a comment.</p><p><h3>See Also:</h3>   <a
@@ -1541,7 +1672,7 @@ namespace Model
          * dash, and underscore characters, and cannot include certain characters. The
          * suffix ".git" is prohibited. For a full description of the limits on repository
          * names, see <a
-         * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
+         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
          * in the AWS CodeCommit User Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryName">AWS
          * API Reference</a></p>
@@ -1554,7 +1685,7 @@ namespace Model
          * dash, and underscore characters, and cannot include certain characters. The
          * suffix ".git" is prohibited. For a full description of the limits on repository
          * names, see <a
-         * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
+         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
          * in the AWS CodeCommit User Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryName">AWS
          * API Reference</a></p>
@@ -1569,7 +1700,7 @@ namespace Model
          * dash, and underscore characters, and cannot include certain characters. The
          * suffix ".git" is prohibited. For a full description of the limits on repository
          * names, see <a
-         * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
+         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
          * in the AWS CodeCommit User Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryName">AWS
          * API Reference</a></p>
@@ -1608,13 +1739,16 @@ namespace Model
         void ListBranchesAsyncHelper(const Model::ListBranchesRequest& request, const ListBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPullRequestsAsyncHelper(const Model::ListPullRequestsRequest& request, const ListPullRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRepositoriesAsyncHelper(const Model::ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MergePullRequestByFastForwardAsyncHelper(const Model::MergePullRequestByFastForwardRequest& request, const MergePullRequestByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PostCommentForComparedCommitAsyncHelper(const Model::PostCommentForComparedCommitRequest& request, const PostCommentForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PostCommentForPullRequestAsyncHelper(const Model::PostCommentForPullRequestRequest& request, const PostCommentForPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PostCommentReplyAsyncHelper(const Model::PostCommentReplyRequest& request, const PostCommentReplyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutFileAsyncHelper(const Model::PutFileRequest& request, const PutFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRepositoryTriggersAsyncHelper(const Model::PutRepositoryTriggersRequest& request, const PutRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestRepositoryTriggersAsyncHelper(const Model::TestRepositoryTriggersRequest& request, const TestRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCommentAsyncHelper(const Model::UpdateCommentRequest& request, const UpdateCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDefaultBranchAsyncHelper(const Model::UpdateDefaultBranchRequest& request, const UpdateDefaultBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePullRequestDescriptionAsyncHelper(const Model::UpdatePullRequestDescriptionRequest& request, const UpdatePullRequestDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

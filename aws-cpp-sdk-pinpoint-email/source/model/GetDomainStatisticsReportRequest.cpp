@@ -37,14 +37,6 @@ Aws::String GetDomainStatisticsReportRequest::SerializePayload() const
   return {};
 }
 
-Aws::Http::HeaderValueCollection GetDomainStatisticsReportRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.services.pinpoint.email.GetDomainStatisticsReport"));
-  return headers;
-
-}
-
 void GetDomainStatisticsReportRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;

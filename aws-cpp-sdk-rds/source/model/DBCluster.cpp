@@ -87,6 +87,12 @@ DBCluster::DBCluster() :
     m_deletionProtectionHasBeenSet(false),
     m_httpEndpointEnabled(false),
     m_httpEndpointEnabledHasBeenSet(false),
+    m_activityStreamMode(ActivityStreamMode::NOT_SET),
+    m_activityStreamModeHasBeenSet(false),
+    m_activityStreamStatus(ActivityStreamStatus::NOT_SET),
+    m_activityStreamStatusHasBeenSet(false),
+    m_activityStreamKmsKeyIdHasBeenSet(false),
+    m_activityStreamKinesisStreamNameHasBeenSet(false),
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false)
 {
@@ -149,6 +155,12 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_deletionProtectionHasBeenSet(false),
     m_httpEndpointEnabled(false),
     m_httpEndpointEnabledHasBeenSet(false),
+    m_activityStreamMode(ActivityStreamMode::NOT_SET),
+    m_activityStreamModeHasBeenSet(false),
+    m_activityStreamStatus(ActivityStreamStatus::NOT_SET),
+    m_activityStreamStatusHasBeenSet(false),
+    m_activityStreamKmsKeyIdHasBeenSet(false),
+    m_activityStreamKinesisStreamNameHasBeenSet(false),
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false)
 {
@@ -479,6 +491,30 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_httpEndpointEnabled = StringUtils::ConvertToBool(StringUtils::Trim(httpEndpointEnabledNode.GetText().c_str()).c_str());
       m_httpEndpointEnabledHasBeenSet = true;
     }
+    XmlNode activityStreamModeNode = resultNode.FirstChild("ActivityStreamMode");
+    if(!activityStreamModeNode.IsNull())
+    {
+      m_activityStreamMode = ActivityStreamModeMapper::GetActivityStreamModeForName(StringUtils::Trim(activityStreamModeNode.GetText().c_str()).c_str());
+      m_activityStreamModeHasBeenSet = true;
+    }
+    XmlNode activityStreamStatusNode = resultNode.FirstChild("ActivityStreamStatus");
+    if(!activityStreamStatusNode.IsNull())
+    {
+      m_activityStreamStatus = ActivityStreamStatusMapper::GetActivityStreamStatusForName(StringUtils::Trim(activityStreamStatusNode.GetText().c_str()).c_str());
+      m_activityStreamStatusHasBeenSet = true;
+    }
+    XmlNode activityStreamKmsKeyIdNode = resultNode.FirstChild("ActivityStreamKmsKeyId");
+    if(!activityStreamKmsKeyIdNode.IsNull())
+    {
+      m_activityStreamKmsKeyId = StringUtils::Trim(activityStreamKmsKeyIdNode.GetText().c_str());
+      m_activityStreamKmsKeyIdHasBeenSet = true;
+    }
+    XmlNode activityStreamKinesisStreamNameNode = resultNode.FirstChild("ActivityStreamKinesisStreamName");
+    if(!activityStreamKinesisStreamNameNode.IsNull())
+    {
+      m_activityStreamKinesisStreamName = StringUtils::Trim(activityStreamKinesisStreamNameNode.GetText().c_str());
+      m_activityStreamKinesisStreamNameHasBeenSet = true;
+    }
     XmlNode copyTagsToSnapshotNode = resultNode.FirstChild("CopyTagsToSnapshot");
     if(!copyTagsToSnapshotNode.IsNull())
     {
@@ -759,6 +795,26 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".HttpEndpointEnabled=" << std::boolalpha << m_httpEndpointEnabled << "&";
   }
 
+  if(m_activityStreamModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ActivityStreamMode=" << ActivityStreamModeMapper::GetNameForActivityStreamMode(m_activityStreamMode) << "&";
+  }
+
+  if(m_activityStreamStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ActivityStreamStatus=" << ActivityStreamStatusMapper::GetNameForActivityStreamStatus(m_activityStreamStatus) << "&";
+  }
+
+  if(m_activityStreamKmsKeyIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ActivityStreamKmsKeyId=" << StringUtils::URLEncode(m_activityStreamKmsKeyId.c_str()) << "&";
+  }
+
+  if(m_activityStreamKinesisStreamNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ActivityStreamKinesisStreamName=" << StringUtils::URLEncode(m_activityStreamKinesisStreamName.c_str()) << "&";
+  }
+
   if(m_copyTagsToSnapshotHasBeenSet)
   {
       oStream << location << index << locationValue << ".CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
@@ -989,6 +1045,22 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_httpEndpointEnabledHasBeenSet)
   {
       oStream << location << ".HttpEndpointEnabled=" << std::boolalpha << m_httpEndpointEnabled << "&";
+  }
+  if(m_activityStreamModeHasBeenSet)
+  {
+      oStream << location << ".ActivityStreamMode=" << ActivityStreamModeMapper::GetNameForActivityStreamMode(m_activityStreamMode) << "&";
+  }
+  if(m_activityStreamStatusHasBeenSet)
+  {
+      oStream << location << ".ActivityStreamStatus=" << ActivityStreamStatusMapper::GetNameForActivityStreamStatus(m_activityStreamStatus) << "&";
+  }
+  if(m_activityStreamKmsKeyIdHasBeenSet)
+  {
+      oStream << location << ".ActivityStreamKmsKeyId=" << StringUtils::URLEncode(m_activityStreamKmsKeyId.c_str()) << "&";
+  }
+  if(m_activityStreamKinesisStreamNameHasBeenSet)
+  {
+      oStream << location << ".ActivityStreamKinesisStreamName=" << StringUtils::URLEncode(m_activityStreamKinesisStreamName.c_str()) << "&";
   }
   if(m_copyTagsToSnapshotHasBeenSet)
   {
