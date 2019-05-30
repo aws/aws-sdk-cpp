@@ -42,7 +42,7 @@ static void LogThread(DefaultLogSystem::LogSynchronizationData* syncData, const 
     for(;;)
     {
         std::unique_lock<std::mutex> locker(syncData->m_logQueueMutex);
-        syncData->m_queueSignal.wait(locker, [&](){ return syncData->m_stopLogging.load() == true || syncData->m_queuedLogMessages.size() > 0; } );
+        syncData->m_queueSignal.wait(locker, [&](){ return syncData->m_stopLogging == true || syncData->m_queuedLogMessages.size() > 0; } );
 
         if (syncData->m_stopLogging && syncData->m_queuedLogMessages.size() == 0)
         {
@@ -97,7 +97,7 @@ DefaultLogSystem::~DefaultLogSystem()
 {
     {
         std::lock_guard<std::mutex> locker(m_syncData.m_logQueueMutex);
-        m_syncData.m_stopLogging.store(true);
+        m_syncData.m_stopLogging = true;
     }
 
     m_syncData.m_queueSignal.notify_one();
@@ -118,5 +118,10 @@ void DefaultLogSystem::ProcessFormattedStatement(Aws::String&& statement)
     {
         locker.unlock();
     }
+}
+
+void DefaultLogSystem::Flush()
+{
+    m_syncData.m_queueSignal.notify_one();
 }
 

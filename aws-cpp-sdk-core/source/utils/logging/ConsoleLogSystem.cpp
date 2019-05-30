@@ -25,3 +25,8 @@ void ConsoleLogSystem::ProcessFormattedStatement(Aws::String&& statement)
 {
     std::cout << statement;
 }
+
+void ConsoleLogSystem::Flush()
+{
+    std::cout.flush();
+}

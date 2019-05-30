@@ -50,7 +50,10 @@ namespace Aws
                 * Writes the stream to the output stream.
                 */
                 virtual void LogStream(LogLevel logLevel, const char* tag, const Aws::OStringStream &messageStream) = 0;
-
+                /**
+                 * Writes any buffered messages to the underlying device if the logger supports buffering.
+                 */
+                virtual void Flush() = 0;
             };
 
         } // namespace Logging

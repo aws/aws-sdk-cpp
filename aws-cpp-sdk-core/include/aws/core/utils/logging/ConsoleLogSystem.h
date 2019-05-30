@@ -40,6 +40,11 @@ namespace Aws
 
                 virtual ~ConsoleLogSystem() {}
 
+                /**
+                 * Flushes buffered messages to stdout.
+                 */
+                void Flush() override;
+
             protected:
 
                 virtual void ProcessFormattedStatement(Aws::String&& statement) override;

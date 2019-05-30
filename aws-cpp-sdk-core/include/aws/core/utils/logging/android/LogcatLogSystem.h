@@ -32,11 +32,11 @@ class AWS_CORE_API LogcatLogSystem : public FormattedLogSystem
 
         using Base = FormattedLogSystem;
 
-        LogcatLogSystem(LogLevel logLevel) :
-	    Base(logLevel)
-	{}
+        LogcatLogSystem(LogLevel logLevel) : Base(logLevel) {}
 
         virtual ~LogcatLogSystem() {}
+
+        void Flush() override { /* no-op android NDK does not have a flush api */ }
 
     protected:
 

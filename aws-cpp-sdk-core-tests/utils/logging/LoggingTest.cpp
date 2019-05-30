@@ -64,6 +64,9 @@ void LogAllPossibilities(const char* tag)
     AWS_LOG_TRACE(tag, "test trace level");
     AWS_LOG_TRACE(tag, "test %s format level", "trace");
     AWS_LOGSTREAM_TRACE(tag, "test " << "trace " << "stream level" );
+
+    AWS_LOG_FLUSH();
+    AWS_LOGSTREAM_FLUSH();
 }
 
 void VerifyAllLogsAtOrBelow(LogLevel logLevel, const Aws::String& tag, const Aws::Vector<Aws::String>& loggedStatements)
