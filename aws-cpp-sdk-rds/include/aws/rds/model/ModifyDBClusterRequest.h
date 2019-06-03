@@ -1019,54 +1019,54 @@ namespace Model
 
 
     /**
-     * <note> <p>HTTP endpoint functionality is in beta for Aurora Serverless and is
-     * subject to change.</p> </note> <p>A value that indicates whether to enable the
-     * HTTP endpoint for an Aurora Serverless DB cluster. By default, the HTTP endpoint
-     * is disabled.</p> <p>When enabled, the HTTP endpoint provides a connectionless
-     * web service API for running SQL queries on the Aurora Serverless DB cluster. You
-     * can also query your database from inside the RDS console with the query
-     * editor.</p> <p>For more information about Aurora Serverless, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-     * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * <p>A value that indicates whether to enable the HTTP endpoint for an Aurora
+     * Serverless DB cluster. By default, the HTTP endpoint is disabled.</p> <p>When
+     * enabled, the HTTP endpoint provides a connectionless web service API for running
+     * SQL queries on the Aurora Serverless DB cluster. You can also query your
+     * database from inside the RDS console with the query editor.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+     * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
      */
     inline bool GetEnableHttpEndpoint() const{ return m_enableHttpEndpoint; }
 
     /**
-     * <note> <p>HTTP endpoint functionality is in beta for Aurora Serverless and is
-     * subject to change.</p> </note> <p>A value that indicates whether to enable the
-     * HTTP endpoint for an Aurora Serverless DB cluster. By default, the HTTP endpoint
-     * is disabled.</p> <p>When enabled, the HTTP endpoint provides a connectionless
-     * web service API for running SQL queries on the Aurora Serverless DB cluster. You
-     * can also query your database from inside the RDS console with the query
-     * editor.</p> <p>For more information about Aurora Serverless, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-     * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * <p>A value that indicates whether to enable the HTTP endpoint for an Aurora
+     * Serverless DB cluster. By default, the HTTP endpoint is disabled.</p> <p>When
+     * enabled, the HTTP endpoint provides a connectionless web service API for running
+     * SQL queries on the Aurora Serverless DB cluster. You can also query your
+     * database from inside the RDS console with the query editor.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+     * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
      */
     inline bool EnableHttpEndpointHasBeenSet() const { return m_enableHttpEndpointHasBeenSet; }
 
     /**
-     * <note> <p>HTTP endpoint functionality is in beta for Aurora Serverless and is
-     * subject to change.</p> </note> <p>A value that indicates whether to enable the
-     * HTTP endpoint for an Aurora Serverless DB cluster. By default, the HTTP endpoint
-     * is disabled.</p> <p>When enabled, the HTTP endpoint provides a connectionless
-     * web service API for running SQL queries on the Aurora Serverless DB cluster. You
-     * can also query your database from inside the RDS console with the query
-     * editor.</p> <p>For more information about Aurora Serverless, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-     * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * <p>A value that indicates whether to enable the HTTP endpoint for an Aurora
+     * Serverless DB cluster. By default, the HTTP endpoint is disabled.</p> <p>When
+     * enabled, the HTTP endpoint provides a connectionless web service API for running
+     * SQL queries on the Aurora Serverless DB cluster. You can also query your
+     * database from inside the RDS console with the query editor.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+     * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
      */
     inline void SetEnableHttpEndpoint(bool value) { m_enableHttpEndpointHasBeenSet = true; m_enableHttpEndpoint = value; }
 
     /**
-     * <note> <p>HTTP endpoint functionality is in beta for Aurora Serverless and is
-     * subject to change.</p> </note> <p>A value that indicates whether to enable the
-     * HTTP endpoint for an Aurora Serverless DB cluster. By default, the HTTP endpoint
-     * is disabled.</p> <p>When enabled, the HTTP endpoint provides a connectionless
-     * web service API for running SQL queries on the Aurora Serverless DB cluster. You
-     * can also query your database from inside the RDS console with the query
-     * editor.</p> <p>For more information about Aurora Serverless, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-     * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     * <p>A value that indicates whether to enable the HTTP endpoint for an Aurora
+     * Serverless DB cluster. By default, the HTTP endpoint is disabled.</p> <p>When
+     * enabled, the HTTP endpoint provides a connectionless web service API for running
+     * SQL queries on the Aurora Serverless DB cluster. You can also query your
+     * database from inside the RDS console with the query editor.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+     * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
      */
     inline ModifyDBClusterRequest& WithEnableHttpEndpoint(bool value) { SetEnableHttpEndpoint(value); return *this;}
 
