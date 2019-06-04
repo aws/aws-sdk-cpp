@@ -56,7 +56,7 @@ namespace Model
      * <p>The 4-digit id for the node group you are configuring. For Redis (cluster
      * mode disabled) replication groups, the node group id is always 0001. To find a
      * Redis (cluster mode enabled)'s node group's (shard's) id, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
      * a Shard's Id</a>.</p>
      */
     inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
@@ -65,7 +65,7 @@ namespace Model
      * <p>The 4-digit id for the node group you are configuring. For Redis (cluster
      * mode disabled) replication groups, the node group id is always 0001. To find a
      * Redis (cluster mode enabled)'s node group's (shard's) id, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
      * a Shard's Id</a>.</p>
      */
     inline bool NodeGroupIdHasBeenSet() const { return m_nodeGroupIdHasBeenSet; }
@@ -74,7 +74,7 @@ namespace Model
      * <p>The 4-digit id for the node group you are configuring. For Redis (cluster
      * mode disabled) replication groups, the node group id is always 0001. To find a
      * Redis (cluster mode enabled)'s node group's (shard's) id, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
      * a Shard's Id</a>.</p>
      */
     inline void SetNodeGroupId(const Aws::String& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
@@ -83,7 +83,7 @@ namespace Model
      * <p>The 4-digit id for the node group you are configuring. For Redis (cluster
      * mode disabled) replication groups, the node group id is always 0001. To find a
      * Redis (cluster mode enabled)'s node group's (shard's) id, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
      * a Shard's Id</a>.</p>
      */
     inline void SetNodeGroupId(Aws::String&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = std::move(value); }
@@ -92,7 +92,7 @@ namespace Model
      * <p>The 4-digit id for the node group you are configuring. For Redis (cluster
      * mode disabled) replication groups, the node group id is always 0001. To find a
      * Redis (cluster mode enabled)'s node group's (shard's) id, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
      * a Shard's Id</a>.</p>
      */
     inline void SetNodeGroupId(const char* value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId.assign(value); }
@@ -101,7 +101,7 @@ namespace Model
      * <p>The 4-digit id for the node group you are configuring. For Redis (cluster
      * mode disabled) replication groups, the node group id is always 0001. To find a
      * Redis (cluster mode enabled)'s node group's (shard's) id, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
      * a Shard's Id</a>.</p>
      */
     inline ConfigureShard& WithNodeGroupId(const Aws::String& value) { SetNodeGroupId(value); return *this;}
@@ -110,7 +110,7 @@ namespace Model
      * <p>The 4-digit id for the node group you are configuring. For Redis (cluster
      * mode disabled) replication groups, the node group id is always 0001. To find a
      * Redis (cluster mode enabled)'s node group's (shard's) id, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
      * a Shard's Id</a>.</p>
      */
     inline ConfigureShard& WithNodeGroupId(Aws::String&& value) { SetNodeGroupId(std::move(value)); return *this;}
@@ -119,7 +119,7 @@ namespace Model
      * <p>The 4-digit id for the node group you are configuring. For Redis (cluster
      * mode disabled) replication groups, the node group id is always 0001. To find a
      * Redis (cluster mode enabled)'s node group's (shard's) id, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
      * a Shard's Id</a>.</p>
      */
     inline ConfigureShard& WithNodeGroupId(const char* value) { SetNodeGroupId(value); return *this;}

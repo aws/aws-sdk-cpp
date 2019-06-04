@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>The container element for Object Lock configuration parameters.</p><p><h3>See
+   * <p>The container element for object lock configuration parameters.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ObjectLockConfiguration">AWS
    * API Reference</a></p>
@@ -50,63 +50,63 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether this bucket has an Object Lock configuration enabled.</p>
+     * <p>Indicates whether this bucket has an object lock configuration enabled.</p>
      */
     inline const ObjectLockEnabled& GetObjectLockEnabled() const{ return m_objectLockEnabled; }
 
     /**
-     * <p>Indicates whether this bucket has an Object Lock configuration enabled.</p>
+     * <p>Indicates whether this bucket has an object lock configuration enabled.</p>
      */
     inline bool ObjectLockEnabledHasBeenSet() const { return m_objectLockEnabledHasBeenSet; }
 
     /**
-     * <p>Indicates whether this bucket has an Object Lock configuration enabled.</p>
+     * <p>Indicates whether this bucket has an object lock configuration enabled.</p>
      */
     inline void SetObjectLockEnabled(const ObjectLockEnabled& value) { m_objectLockEnabledHasBeenSet = true; m_objectLockEnabled = value; }
 
     /**
-     * <p>Indicates whether this bucket has an Object Lock configuration enabled.</p>
+     * <p>Indicates whether this bucket has an object lock configuration enabled.</p>
      */
     inline void SetObjectLockEnabled(ObjectLockEnabled&& value) { m_objectLockEnabledHasBeenSet = true; m_objectLockEnabled = std::move(value); }
 
     /**
-     * <p>Indicates whether this bucket has an Object Lock configuration enabled.</p>
+     * <p>Indicates whether this bucket has an object lock configuration enabled.</p>
      */
     inline ObjectLockConfiguration& WithObjectLockEnabled(const ObjectLockEnabled& value) { SetObjectLockEnabled(value); return *this;}
 
     /**
-     * <p>Indicates whether this bucket has an Object Lock configuration enabled.</p>
+     * <p>Indicates whether this bucket has an object lock configuration enabled.</p>
      */
     inline ObjectLockConfiguration& WithObjectLockEnabled(ObjectLockEnabled&& value) { SetObjectLockEnabled(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Object Lock rule in place for the specified object.</p>
+     * <p>The object lock rule in place for the specified object.</p>
      */
     inline const ObjectLockRule& GetRule() const{ return m_rule; }
 
     /**
-     * <p>The Object Lock rule in place for the specified object.</p>
+     * <p>The object lock rule in place for the specified object.</p>
      */
     inline bool RuleHasBeenSet() const { return m_ruleHasBeenSet; }
 
     /**
-     * <p>The Object Lock rule in place for the specified object.</p>
+     * <p>The object lock rule in place for the specified object.</p>
      */
     inline void SetRule(const ObjectLockRule& value) { m_ruleHasBeenSet = true; m_rule = value; }
 
     /**
-     * <p>The Object Lock rule in place for the specified object.</p>
+     * <p>The object lock rule in place for the specified object.</p>
      */
     inline void SetRule(ObjectLockRule&& value) { m_ruleHasBeenSet = true; m_rule = std::move(value); }
 
     /**
-     * <p>The Object Lock rule in place for the specified object.</p>
+     * <p>The object lock rule in place for the specified object.</p>
      */
     inline ObjectLockConfiguration& WithRule(const ObjectLockRule& value) { SetRule(value); return *this;}
 
     /**
-     * <p>The Object Lock rule in place for the specified object.</p>
+     * <p>The object lock rule in place for the specified object.</p>
      */
     inline ObjectLockConfiguration& WithRule(ObjectLockRule&& value) { SetRule(std::move(value)); return *this;}
 

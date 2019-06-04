@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Contains the elements that set the ACL permissions for an object per
+   * grantee.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AccessControlPolicy">AWS
    * API Reference</a></p>
    */
@@ -91,32 +92,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Container for the bucket owner's display name and ID.</p>
      */
     inline const Owner& GetOwner() const{ return m_owner; }
 
     /**
-     * <p/>
+     * <p>Container for the bucket owner's display name and ID.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Container for the bucket owner's display name and ID.</p>
      */
     inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p/>
+     * <p>Container for the bucket owner's display name and ID.</p>
      */
     inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Container for the bucket owner's display name and ID.</p>
      */
     inline AccessControlPolicy& WithOwner(const Owner& value) { SetOwner(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Container for the bucket owner's display name and ID.</p>
      */
     inline AccessControlPolicy& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 

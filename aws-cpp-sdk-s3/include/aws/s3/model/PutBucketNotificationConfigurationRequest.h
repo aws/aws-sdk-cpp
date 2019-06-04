@@ -91,22 +91,34 @@ namespace Model
     inline PutBucketNotificationConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const NotificationConfiguration& GetNotificationConfiguration() const{ return m_notificationConfiguration; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool NotificationConfigurationHasBeenSet() const { return m_notificationConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetNotificationConfiguration(const NotificationConfiguration& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetNotificationConfiguration(NotificationConfiguration&& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketNotificationConfigurationRequest& WithNotificationConfiguration(const NotificationConfiguration& value) { SetNotificationConfiguration(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketNotificationConfigurationRequest& WithNotificationConfiguration(NotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
 
 

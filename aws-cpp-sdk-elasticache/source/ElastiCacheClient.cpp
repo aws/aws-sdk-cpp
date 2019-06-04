@@ -32,6 +32,8 @@
 #include <aws/elasticache/ElastiCacheErrorMarshaller.h>
 #include <aws/elasticache/model/AddTagsToResourceRequest.h>
 #include <aws/elasticache/model/AuthorizeCacheSecurityGroupIngressRequest.h>
+#include <aws/elasticache/model/BatchApplyUpdateActionRequest.h>
+#include <aws/elasticache/model/BatchStopUpdateActionRequest.h>
 #include <aws/elasticache/model/CopySnapshotRequest.h>
 #include <aws/elasticache/model/CreateCacheClusterRequest.h>
 #include <aws/elasticache/model/CreateCacheParameterGroupRequest.h>
@@ -57,7 +59,9 @@
 #include <aws/elasticache/model/DescribeReplicationGroupsRequest.h>
 #include <aws/elasticache/model/DescribeReservedCacheNodesRequest.h>
 #include <aws/elasticache/model/DescribeReservedCacheNodesOfferingsRequest.h>
+#include <aws/elasticache/model/DescribeServiceUpdatesRequest.h>
 #include <aws/elasticache/model/DescribeSnapshotsRequest.h>
+#include <aws/elasticache/model/DescribeUpdateActionsRequest.h>
 #include <aws/elasticache/model/IncreaseReplicaCountRequest.h>
 #include <aws/elasticache/model/ListAllowedNodeTypeModificationsRequest.h>
 #include <aws/elasticache/model/ListTagsForResourceRequest.h>
@@ -224,6 +228,76 @@ void ElastiCacheClient::AuthorizeCacheSecurityGroupIngressAsync(const AuthorizeC
 void ElastiCacheClient::AuthorizeCacheSecurityGroupIngressAsyncHelper(const AuthorizeCacheSecurityGroupIngressRequest& request, const AuthorizeCacheSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AuthorizeCacheSecurityGroupIngress(request), context);
+}
+
+BatchApplyUpdateActionOutcome ElastiCacheClient::BatchApplyUpdateAction(const BatchApplyUpdateActionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return BatchApplyUpdateActionOutcome(BatchApplyUpdateActionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchApplyUpdateActionOutcome(outcome.GetError());
+  }
+}
+
+BatchApplyUpdateActionOutcomeCallable ElastiCacheClient::BatchApplyUpdateActionCallable(const BatchApplyUpdateActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchApplyUpdateActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchApplyUpdateAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::BatchApplyUpdateActionAsync(const BatchApplyUpdateActionRequest& request, const BatchApplyUpdateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchApplyUpdateActionAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::BatchApplyUpdateActionAsyncHelper(const BatchApplyUpdateActionRequest& request, const BatchApplyUpdateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchApplyUpdateAction(request), context);
+}
+
+BatchStopUpdateActionOutcome ElastiCacheClient::BatchStopUpdateAction(const BatchStopUpdateActionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return BatchStopUpdateActionOutcome(BatchStopUpdateActionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchStopUpdateActionOutcome(outcome.GetError());
+  }
+}
+
+BatchStopUpdateActionOutcomeCallable ElastiCacheClient::BatchStopUpdateActionCallable(const BatchStopUpdateActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchStopUpdateActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchStopUpdateAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::BatchStopUpdateActionAsync(const BatchStopUpdateActionRequest& request, const BatchStopUpdateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchStopUpdateActionAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::BatchStopUpdateActionAsyncHelper(const BatchStopUpdateActionRequest& request, const BatchStopUpdateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchStopUpdateAction(request), context);
 }
 
 CopySnapshotOutcome ElastiCacheClient::CopySnapshot(const CopySnapshotRequest& request) const
@@ -1101,6 +1175,41 @@ void ElastiCacheClient::DescribeReservedCacheNodesOfferingsAsyncHelper(const Des
   handler(this, request, DescribeReservedCacheNodesOfferings(request), context);
 }
 
+DescribeServiceUpdatesOutcome ElastiCacheClient::DescribeServiceUpdates(const DescribeServiceUpdatesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeServiceUpdatesOutcome(DescribeServiceUpdatesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeServiceUpdatesOutcome(outcome.GetError());
+  }
+}
+
+DescribeServiceUpdatesOutcomeCallable ElastiCacheClient::DescribeServiceUpdatesCallable(const DescribeServiceUpdatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeServiceUpdatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeServiceUpdates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::DescribeServiceUpdatesAsync(const DescribeServiceUpdatesRequest& request, const DescribeServiceUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeServiceUpdatesAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::DescribeServiceUpdatesAsyncHelper(const DescribeServiceUpdatesRequest& request, const DescribeServiceUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeServiceUpdates(request), context);
+}
+
 DescribeSnapshotsOutcome ElastiCacheClient::DescribeSnapshots(const DescribeSnapshotsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1134,6 +1243,41 @@ void ElastiCacheClient::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& r
 void ElastiCacheClient::DescribeSnapshotsAsyncHelper(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeSnapshots(request), context);
+}
+
+DescribeUpdateActionsOutcome ElastiCacheClient::DescribeUpdateActions(const DescribeUpdateActionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeUpdateActionsOutcome(DescribeUpdateActionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeUpdateActionsOutcome(outcome.GetError());
+  }
+}
+
+DescribeUpdateActionsOutcomeCallable ElastiCacheClient::DescribeUpdateActionsCallable(const DescribeUpdateActionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeUpdateActionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeUpdateActions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::DescribeUpdateActionsAsync(const DescribeUpdateActionsRequest& request, const DescribeUpdateActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeUpdateActionsAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::DescribeUpdateActionsAsyncHelper(const DescribeUpdateActionsRequest& request, const DescribeUpdateActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeUpdateActions(request), context);
 }
 
 IncreaseReplicaCountOutcome ElastiCacheClient::IncreaseReplicaCount(const IncreaseReplicaCountRequest& request) const

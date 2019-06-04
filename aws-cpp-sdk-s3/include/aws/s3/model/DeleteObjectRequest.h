@@ -244,26 +244,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions
-     * to process this operation.</p>
+     * <p>Indicates whether Amazon S3 object lock should bypass governance-mode
+     * restrictions to process this operation.</p>
      */
     inline bool GetBypassGovernanceRetention() const{ return m_bypassGovernanceRetention; }
 
     /**
-     * <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions
-     * to process this operation.</p>
+     * <p>Indicates whether Amazon S3 object lock should bypass governance-mode
+     * restrictions to process this operation.</p>
      */
     inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
 
     /**
-     * <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions
-     * to process this operation.</p>
+     * <p>Indicates whether Amazon S3 object lock should bypass governance-mode
+     * restrictions to process this operation.</p>
      */
     inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
 
     /**
-     * <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions
-     * to process this operation.</p>
+     * <p>Indicates whether Amazon S3 object lock should bypass governance-mode
+     * restrictions to process this operation.</p>
      */
     inline DeleteObjectRequest& WithBypassGovernanceRetention(bool value) { SetBypassGovernanceRetention(value); return *this;}
 

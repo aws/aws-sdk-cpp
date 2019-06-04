@@ -34,11 +34,13 @@ namespace Model
 
   /**
    * <p>Container for the transition rule that describes when noncurrent objects
-   * transition to the STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER or
-   * DEEP_ARCHIVE storage class. If your bucket is versioning-enabled (or versioning
-   * is suspended), you can set this action to request that Amazon S3 transition
-   * noncurrent object versions to the STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING,
-   * GLACIER or DEEP_ARCHIVE storage class at a specific period in the object's
+   * transition to the <code>STANDARD_IA</code>, <code>ONEZONE_IA</code>,
+   * <code>INTELLIGENT_TIERING</code>, <code>GLACIER</code>, or
+   * <code>DEEP_ARCHIVE</code> storage class. If your bucket is versioning-enabled
+   * (or versioning is suspended), you can set this action to request that Amazon S3
+   * transition noncurrent object versions to the <code>STANDARD_IA</code>,
+   * <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>GLACIER</code>,
+   * or <code>DEEP_ARCHIVE</code> storage class at a specific period in the object's
    * lifetime.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/NoncurrentVersionTransition">AWS
    * API Reference</a></p>
@@ -58,8 +60,8 @@ namespace Model
      * perform the associated action. For information about the noncurrent days
      * calculations, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">How
-     * Amazon S3 Calculates When an Object Became Noncurrent</a> in the Amazon Simple
-     * Storage Service Developer Guide.</p>
+     * Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon
+     * Simple Storage Service Developer Guide</i>.</p>
      */
     inline int GetNoncurrentDays() const{ return m_noncurrentDays; }
 
@@ -68,8 +70,8 @@ namespace Model
      * perform the associated action. For information about the noncurrent days
      * calculations, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">How
-     * Amazon S3 Calculates When an Object Became Noncurrent</a> in the Amazon Simple
-     * Storage Service Developer Guide.</p>
+     * Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon
+     * Simple Storage Service Developer Guide</i>.</p>
      */
     inline bool NoncurrentDaysHasBeenSet() const { return m_noncurrentDaysHasBeenSet; }
 
@@ -78,8 +80,8 @@ namespace Model
      * perform the associated action. For information about the noncurrent days
      * calculations, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">How
-     * Amazon S3 Calculates When an Object Became Noncurrent</a> in the Amazon Simple
-     * Storage Service Developer Guide.</p>
+     * Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon
+     * Simple Storage Service Developer Guide</i>.</p>
      */
     inline void SetNoncurrentDays(int value) { m_noncurrentDaysHasBeenSet = true; m_noncurrentDays = value; }
 
@@ -88,8 +90,8 @@ namespace Model
      * perform the associated action. For information about the noncurrent days
      * calculations, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">How
-     * Amazon S3 Calculates When an Object Became Noncurrent</a> in the Amazon Simple
-     * Storage Service Developer Guide.</p>
+     * Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon
+     * Simple Storage Service Developer Guide</i>.</p>
      */
     inline NoncurrentVersionTransition& WithNoncurrentDays(int value) { SetNoncurrentDays(value); return *this;}
 

@@ -94,102 +94,138 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit.</p>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
     /**
-     * <p/>
+     * <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit.</p>
      */
     inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit.</p>
      */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     /**
-     * <p/>
+     * <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit.</p>
      */
     inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit.</p>
      */
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
     /**
-     * <p/>
+     * <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit.</p>
      */
     inline PutBucketReplicationRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit.</p>
      */
     inline PutBucketReplicationRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit.</p>
      */
     inline PutBucketReplicationRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const ReplicationConfiguration& GetReplicationConfiguration() const{ return m_replicationConfiguration; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool ReplicationConfigurationHasBeenSet() const { return m_replicationConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetReplicationConfiguration(const ReplicationConfiguration& value) { m_replicationConfigurationHasBeenSet = true; m_replicationConfiguration = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetReplicationConfiguration(ReplicationConfiguration&& value) { m_replicationConfigurationHasBeenSet = true; m_replicationConfiguration = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketReplicationRequest& WithReplicationConfiguration(const ReplicationConfiguration& value) { SetReplicationConfiguration(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketReplicationRequest& WithReplicationConfiguration(ReplicationConfiguration&& value) { SetReplicationConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>A token that allows Amazon S3 object lock to be enabled for an existing
+     * bucket.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
 
     /**
-     * <p/>
+     * <p>A token that allows Amazon S3 object lock to be enabled for an existing
+     * bucket.</p>
      */
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>A token that allows Amazon S3 object lock to be enabled for an existing
+     * bucket.</p>
      */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
 
     /**
-     * <p/>
+     * <p>A token that allows Amazon S3 object lock to be enabled for an existing
+     * bucket.</p>
      */
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A token that allows Amazon S3 object lock to be enabled for an existing
+     * bucket.</p>
      */
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
 
     /**
-     * <p/>
+     * <p>A token that allows Amazon S3 object lock to be enabled for an existing
+     * bucket.</p>
      */
     inline PutBucketReplicationRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A token that allows Amazon S3 object lock to be enabled for an existing
+     * bucket.</p>
      */
     inline PutBucketReplicationRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>A token that allows Amazon S3 object lock to be enabled for an existing
+     * bucket.</p>
      */
     inline PutBucketReplicationRequest& WithToken(const char* value) { SetToken(value); return *this;}
 

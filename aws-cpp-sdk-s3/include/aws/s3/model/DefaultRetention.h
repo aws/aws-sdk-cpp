@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>The container element for specifying the default Object Lock retention
+   * <p>The container element for specifying the default object lock retention
    * settings for new objects placed in the specified bucket.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DefaultRetention">AWS
@@ -50,37 +50,37 @@ namespace Model
 
 
     /**
-     * <p>The default Object Lock retention mode you want to apply to new objects
+     * <p>The default object lock retention mode you want to apply to new objects
      * placed in the specified bucket.</p>
      */
     inline const ObjectLockRetentionMode& GetMode() const{ return m_mode; }
 
     /**
-     * <p>The default Object Lock retention mode you want to apply to new objects
+     * <p>The default object lock retention mode you want to apply to new objects
      * placed in the specified bucket.</p>
      */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     /**
-     * <p>The default Object Lock retention mode you want to apply to new objects
+     * <p>The default object lock retention mode you want to apply to new objects
      * placed in the specified bucket.</p>
      */
     inline void SetMode(const ObjectLockRetentionMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
-     * <p>The default Object Lock retention mode you want to apply to new objects
+     * <p>The default object lock retention mode you want to apply to new objects
      * placed in the specified bucket.</p>
      */
     inline void SetMode(ObjectLockRetentionMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
-     * <p>The default Object Lock retention mode you want to apply to new objects
+     * <p>The default object lock retention mode you want to apply to new objects
      * placed in the specified bucket.</p>
      */
     inline DefaultRetention& WithMode(const ObjectLockRetentionMode& value) { SetMode(value); return *this;}
 
     /**
-     * <p>The default Object Lock retention mode you want to apply to new objects
+     * <p>The default object lock retention mode you want to apply to new objects
      * placed in the specified bucket.</p>
      */
     inline DefaultRetention& WithMode(ObjectLockRetentionMode&& value) { SetMode(std::move(value)); return *this;}

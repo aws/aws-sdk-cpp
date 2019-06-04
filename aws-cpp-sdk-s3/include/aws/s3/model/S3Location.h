@@ -137,22 +137,34 @@ namespace Model
     inline S3Location& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Encryption& GetEncryption() const{ return m_encryption; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetEncryption(const Encryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline S3Location& WithEncryption(const Encryption& value) { SetEncryption(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline S3Location& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
 
 

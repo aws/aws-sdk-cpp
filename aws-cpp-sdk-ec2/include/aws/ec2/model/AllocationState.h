@@ -30,7 +30,8 @@ namespace Model
     under_assessment,
     permanent_failure,
     released,
-    released_permanent_failure
+    released_permanent_failure,
+    pending
   };
 
 namespace AllocationStateMapper

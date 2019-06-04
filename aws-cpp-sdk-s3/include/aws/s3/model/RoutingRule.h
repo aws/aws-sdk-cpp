@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Specifies the redirect behavior and when a redirect is applied.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RoutingRule">AWS API
    * Reference</a></p>
    */
@@ -50,49 +51,55 @@ namespace Model
 
     /**
      * <p>A container for describing a condition that must be met for the specified
-     * redirect to apply. For example, 1. If request is for pages in the /docs folder,
-     * redirect to the /documents folder. 2. If request results in HTTP error 4xx,
-     * redirect request to another host where you might process the error.</p>
+     * redirect to apply. For example, 1. If request is for pages in the
+     * <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If
+     * request results in HTTP error 4xx, redirect request to another host where you
+     * might process the error.</p>
      */
     inline const Condition& GetCondition() const{ return m_condition; }
 
     /**
      * <p>A container for describing a condition that must be met for the specified
-     * redirect to apply. For example, 1. If request is for pages in the /docs folder,
-     * redirect to the /documents folder. 2. If request results in HTTP error 4xx,
-     * redirect request to another host where you might process the error.</p>
+     * redirect to apply. For example, 1. If request is for pages in the
+     * <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If
+     * request results in HTTP error 4xx, redirect request to another host where you
+     * might process the error.</p>
      */
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
 
     /**
      * <p>A container for describing a condition that must be met for the specified
-     * redirect to apply. For example, 1. If request is for pages in the /docs folder,
-     * redirect to the /documents folder. 2. If request results in HTTP error 4xx,
-     * redirect request to another host where you might process the error.</p>
+     * redirect to apply. For example, 1. If request is for pages in the
+     * <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If
+     * request results in HTTP error 4xx, redirect request to another host where you
+     * might process the error.</p>
      */
     inline void SetCondition(const Condition& value) { m_conditionHasBeenSet = true; m_condition = value; }
 
     /**
      * <p>A container for describing a condition that must be met for the specified
-     * redirect to apply. For example, 1. If request is for pages in the /docs folder,
-     * redirect to the /documents folder. 2. If request results in HTTP error 4xx,
-     * redirect request to another host where you might process the error.</p>
+     * redirect to apply. For example, 1. If request is for pages in the
+     * <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If
+     * request results in HTTP error 4xx, redirect request to another host where you
+     * might process the error.</p>
      */
     inline void SetCondition(Condition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
 
     /**
      * <p>A container for describing a condition that must be met for the specified
-     * redirect to apply. For example, 1. If request is for pages in the /docs folder,
-     * redirect to the /documents folder. 2. If request results in HTTP error 4xx,
-     * redirect request to another host where you might process the error.</p>
+     * redirect to apply. For example, 1. If request is for pages in the
+     * <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If
+     * request results in HTTP error 4xx, redirect request to another host where you
+     * might process the error.</p>
      */
     inline RoutingRule& WithCondition(const Condition& value) { SetCondition(value); return *this;}
 
     /**
      * <p>A container for describing a condition that must be met for the specified
-     * redirect to apply. For example, 1. If request is for pages in the /docs folder,
-     * redirect to the /documents folder. 2. If request results in HTTP error 4xx,
-     * redirect request to another host where you might process the error.</p>
+     * redirect to apply. For example, 1. If request is for pages in the
+     * <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If
+     * request results in HTTP error 4xx, redirect request to another host where you
+     * might process the error.</p>
      */
     inline RoutingRule& WithCondition(Condition&& value) { SetCondition(std::move(value)); return *this;}
 

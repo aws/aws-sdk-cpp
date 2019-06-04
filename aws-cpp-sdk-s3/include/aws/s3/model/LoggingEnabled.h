@@ -35,9 +35,11 @@ namespace Model
 {
 
   /**
-   * <p>Container for logging information. Presence of this element indicates that
-   * logging is enabled. Parameters TargetBucket and TargetPrefix are required in
-   * this case.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all
+   * log object keys for a bucket. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT
+   * Bucket logging</a> in the <i>Amazon Simple Storage Service API
+   * Reference</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LoggingEnabled">AWS
    * API Reference</a></p>
    */
@@ -174,50 +176,58 @@ namespace Model
 
 
     /**
-     * <p>This element lets you specify a prefix for the keys that the log files will
-     * be stored under.</p>
+     * <p>A prefix for all log object keys. If you store log files from multiple Amazon
+     * S3 buckets in a single bucket, you can use a prefix to distinguish which log
+     * files came from which bucket.</p>
      */
     inline const Aws::String& GetTargetPrefix() const{ return m_targetPrefix; }
 
     /**
-     * <p>This element lets you specify a prefix for the keys that the log files will
-     * be stored under.</p>
+     * <p>A prefix for all log object keys. If you store log files from multiple Amazon
+     * S3 buckets in a single bucket, you can use a prefix to distinguish which log
+     * files came from which bucket.</p>
      */
     inline bool TargetPrefixHasBeenSet() const { return m_targetPrefixHasBeenSet; }
 
     /**
-     * <p>This element lets you specify a prefix for the keys that the log files will
-     * be stored under.</p>
+     * <p>A prefix for all log object keys. If you store log files from multiple Amazon
+     * S3 buckets in a single bucket, you can use a prefix to distinguish which log
+     * files came from which bucket.</p>
      */
     inline void SetTargetPrefix(const Aws::String& value) { m_targetPrefixHasBeenSet = true; m_targetPrefix = value; }
 
     /**
-     * <p>This element lets you specify a prefix for the keys that the log files will
-     * be stored under.</p>
+     * <p>A prefix for all log object keys. If you store log files from multiple Amazon
+     * S3 buckets in a single bucket, you can use a prefix to distinguish which log
+     * files came from which bucket.</p>
      */
     inline void SetTargetPrefix(Aws::String&& value) { m_targetPrefixHasBeenSet = true; m_targetPrefix = std::move(value); }
 
     /**
-     * <p>This element lets you specify a prefix for the keys that the log files will
-     * be stored under.</p>
+     * <p>A prefix for all log object keys. If you store log files from multiple Amazon
+     * S3 buckets in a single bucket, you can use a prefix to distinguish which log
+     * files came from which bucket.</p>
      */
     inline void SetTargetPrefix(const char* value) { m_targetPrefixHasBeenSet = true; m_targetPrefix.assign(value); }
 
     /**
-     * <p>This element lets you specify a prefix for the keys that the log files will
-     * be stored under.</p>
+     * <p>A prefix for all log object keys. If you store log files from multiple Amazon
+     * S3 buckets in a single bucket, you can use a prefix to distinguish which log
+     * files came from which bucket.</p>
      */
     inline LoggingEnabled& WithTargetPrefix(const Aws::String& value) { SetTargetPrefix(value); return *this;}
 
     /**
-     * <p>This element lets you specify a prefix for the keys that the log files will
-     * be stored under.</p>
+     * <p>A prefix for all log object keys. If you store log files from multiple Amazon
+     * S3 buckets in a single bucket, you can use a prefix to distinguish which log
+     * files came from which bucket.</p>
      */
     inline LoggingEnabled& WithTargetPrefix(Aws::String&& value) { SetTargetPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>This element lets you specify a prefix for the keys that the log files will
-     * be stored under.</p>
+     * <p>A prefix for all log object keys. If you store log files from multiple Amazon
+     * S3 buckets in a single bucket, you can use a prefix to distinguish which log
+     * files came from which bucket.</p>
      */
     inline LoggingEnabled& WithTargetPrefix(const char* value) { SetTargetPrefix(value); return *this;}
 

@@ -35,7 +35,11 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p> Specifies the configuration and any analyses for the analytics filter of an
+   * Amazon S3 bucket.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETAnalyticsConfig.html">GET
+   * Bucket analytics</a> in the <i>Amazon Simple Storage Service API Reference</i>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AnalyticsConfiguration">AWS
    * API Reference</a></p>
    */
@@ -50,42 +54,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier used to represent an analytics configuration.</p>
+     * <p>The ID that identifies the analytics configuration.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier used to represent an analytics configuration.</p>
+     * <p>The ID that identifies the analytics configuration.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The identifier used to represent an analytics configuration.</p>
+     * <p>The ID that identifies the analytics configuration.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The identifier used to represent an analytics configuration.</p>
+     * <p>The ID that identifies the analytics configuration.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The identifier used to represent an analytics configuration.</p>
+     * <p>The ID that identifies the analytics configuration.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The identifier used to represent an analytics configuration.</p>
+     * <p>The ID that identifies the analytics configuration.</p>
      */
     inline AnalyticsConfiguration& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier used to represent an analytics configuration.</p>
+     * <p>The ID that identifies the analytics configuration.</p>
      */
     inline AnalyticsConfiguration& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier used to represent an analytics configuration.</p>
+     * <p>The ID that identifies the analytics configuration.</p>
      */
     inline AnalyticsConfiguration& WithId(const char* value) { SetId(value); return *this;}
 
@@ -134,44 +138,38 @@ namespace Model
 
 
     /**
-     * <p>If present, it indicates that data related to access patterns will be
-     * collected and made available to analyze the tradeoffs between different storage
-     * classes.</p>
+     * <p> Contains data related to access patterns to be collected and made available
+     * to analyze the tradeoffs between different storage classes. </p>
      */
     inline const StorageClassAnalysis& GetStorageClassAnalysis() const{ return m_storageClassAnalysis; }
 
     /**
-     * <p>If present, it indicates that data related to access patterns will be
-     * collected and made available to analyze the tradeoffs between different storage
-     * classes.</p>
+     * <p> Contains data related to access patterns to be collected and made available
+     * to analyze the tradeoffs between different storage classes. </p>
      */
     inline bool StorageClassAnalysisHasBeenSet() const { return m_storageClassAnalysisHasBeenSet; }
 
     /**
-     * <p>If present, it indicates that data related to access patterns will be
-     * collected and made available to analyze the tradeoffs between different storage
-     * classes.</p>
+     * <p> Contains data related to access patterns to be collected and made available
+     * to analyze the tradeoffs between different storage classes. </p>
      */
     inline void SetStorageClassAnalysis(const StorageClassAnalysis& value) { m_storageClassAnalysisHasBeenSet = true; m_storageClassAnalysis = value; }
 
     /**
-     * <p>If present, it indicates that data related to access patterns will be
-     * collected and made available to analyze the tradeoffs between different storage
-     * classes.</p>
+     * <p> Contains data related to access patterns to be collected and made available
+     * to analyze the tradeoffs between different storage classes. </p>
      */
     inline void SetStorageClassAnalysis(StorageClassAnalysis&& value) { m_storageClassAnalysisHasBeenSet = true; m_storageClassAnalysis = std::move(value); }
 
     /**
-     * <p>If present, it indicates that data related to access patterns will be
-     * collected and made available to analyze the tradeoffs between different storage
-     * classes.</p>
+     * <p> Contains data related to access patterns to be collected and made available
+     * to analyze the tradeoffs between different storage classes. </p>
      */
     inline AnalyticsConfiguration& WithStorageClassAnalysis(const StorageClassAnalysis& value) { SetStorageClassAnalysis(value); return *this;}
 
     /**
-     * <p>If present, it indicates that data related to access patterns will be
-     * collected and made available to analyze the tradeoffs between different storage
-     * classes.</p>
+     * <p> Contains data related to access patterns to be collected and made available
+     * to analyze the tradeoffs between different storage classes. </p>
      */
     inline AnalyticsConfiguration& WithStorageClassAnalysis(StorageClassAnalysis&& value) { SetStorageClassAnalysis(std::move(value)); return *this;}
 

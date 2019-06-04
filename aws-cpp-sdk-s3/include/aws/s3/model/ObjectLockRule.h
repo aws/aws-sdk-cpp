@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>The container element for an Object Lock rule.</p><p><h3>See Also:</h3>   <a
+   * <p>The container element for an object lock rule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ObjectLockRule">AWS
    * API Reference</a></p>
    */

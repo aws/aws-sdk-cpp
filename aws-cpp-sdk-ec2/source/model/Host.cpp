@@ -44,7 +44,9 @@ Host::Host() :
     m_stateHasBeenSet(false),
     m_allocationTimeHasBeenSet(false),
     m_releaseTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_hostRecovery(HostRecovery::NOT_SET),
+    m_hostRecoveryHasBeenSet(false)
 {
 }
 
@@ -62,7 +64,9 @@ Host::Host(const XmlNode& xmlNode) :
     m_stateHasBeenSet(false),
     m_allocationTimeHasBeenSet(false),
     m_releaseTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_hostRecovery(HostRecovery::NOT_SET),
+    m_hostRecoveryHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -157,6 +161,12 @@ Host& Host::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode hostRecoveryNode = resultNode.FirstChild("hostRecovery");
+    if(!hostRecoveryNode.IsNull())
+    {
+      m_hostRecovery = HostRecoveryMapper::GetHostRecoveryForName(StringUtils::Trim(hostRecoveryNode.GetText().c_str()).c_str());
+      m_hostRecoveryHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -240,6 +250,11 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       }
   }
 
+  if(m_hostRecoveryHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HostRecovery=" << HostRecoveryMapper::GetNameForHostRecovery(m_hostRecovery) << "&";
+  }
+
 }
 
 void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -307,6 +322,10 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_hostRecoveryHasBeenSet)
+  {
+      oStream << location << ".HostRecovery=" << HostRecoveryMapper::GetNameForHostRecovery(m_hostRecovery) << "&";
   }
 }
 

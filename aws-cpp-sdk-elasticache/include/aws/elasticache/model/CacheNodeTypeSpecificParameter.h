@@ -383,7 +383,7 @@ namespace Model
      * <p>Indicates whether a change to the parameter is applied immediately or
      * requires a reboot for the change to be applied. You can force a reboot or wait
      * until the next maintenance window's reboot. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
      * a Cluster</a>.</p>
      */
     inline const ChangeType& GetChangeType() const{ return m_changeType; }
@@ -392,7 +392,7 @@ namespace Model
      * <p>Indicates whether a change to the parameter is applied immediately or
      * requires a reboot for the change to be applied. You can force a reboot or wait
      * until the next maintenance window's reboot. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
      * a Cluster</a>.</p>
      */
     inline bool ChangeTypeHasBeenSet() const { return m_changeTypeHasBeenSet; }
@@ -401,7 +401,7 @@ namespace Model
      * <p>Indicates whether a change to the parameter is applied immediately or
      * requires a reboot for the change to be applied. You can force a reboot or wait
      * until the next maintenance window's reboot. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
      * a Cluster</a>.</p>
      */
     inline void SetChangeType(const ChangeType& value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
@@ -410,7 +410,7 @@ namespace Model
      * <p>Indicates whether a change to the parameter is applied immediately or
      * requires a reboot for the change to be applied. You can force a reboot or wait
      * until the next maintenance window's reboot. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
      * a Cluster</a>.</p>
      */
     inline void SetChangeType(ChangeType&& value) { m_changeTypeHasBeenSet = true; m_changeType = std::move(value); }
@@ -419,7 +419,7 @@ namespace Model
      * <p>Indicates whether a change to the parameter is applied immediately or
      * requires a reboot for the change to be applied. You can force a reboot or wait
      * until the next maintenance window's reboot. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
      * a Cluster</a>.</p>
      */
     inline CacheNodeTypeSpecificParameter& WithChangeType(const ChangeType& value) { SetChangeType(value); return *this;}
@@ -428,7 +428,7 @@ namespace Model
      * <p>Indicates whether a change to the parameter is applied immediately or
      * requires a reboot for the change to be applied. You can force a reboot or wait
      * until the next maintenance window's reboot. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
      * a Cluster</a>.</p>
      */
     inline CacheNodeTypeSpecificParameter& WithChangeType(ChangeType&& value) { SetChangeType(std::move(value)); return *this;}

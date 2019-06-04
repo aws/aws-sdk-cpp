@@ -35,8 +35,11 @@ namespace Model
 
   /**
    * <p>Describes the default server-side encryption to apply to new objects in the
-   * bucket. If Put Object request does not specify any server-side encryption, this
-   * default encryption will be applied.</p><p><h3>See Also:</h3>   <a
+   * bucket. If a PUT Object request doesn't specify any server-side encryption, this
+   * default encryption will be applied. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTencryption.html">PUT
+   * Bucket encryption</a> in the <i>Amazon Simple Storage Service API
+   * Reference</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ServerSideEncryptionByDefault">AWS
    * API Reference</a></p>
    */
@@ -83,49 +86,57 @@ namespace Model
 
     /**
      * <p>KMS master key ID to use for the default encryption. This parameter is
-     * allowed if SSEAlgorithm is aws:kms.</p>
+     * allowed if and only if <code>SSEAlgorithm</code> is set to
+     * <code>aws:kms</code>.</p>
      */
     inline const Aws::String& GetKMSMasterKeyID() const{ return m_kMSMasterKeyID; }
 
     /**
      * <p>KMS master key ID to use for the default encryption. This parameter is
-     * allowed if SSEAlgorithm is aws:kms.</p>
+     * allowed if and only if <code>SSEAlgorithm</code> is set to
+     * <code>aws:kms</code>.</p>
      */
     inline bool KMSMasterKeyIDHasBeenSet() const { return m_kMSMasterKeyIDHasBeenSet; }
 
     /**
      * <p>KMS master key ID to use for the default encryption. This parameter is
-     * allowed if SSEAlgorithm is aws:kms.</p>
+     * allowed if and only if <code>SSEAlgorithm</code> is set to
+     * <code>aws:kms</code>.</p>
      */
     inline void SetKMSMasterKeyID(const Aws::String& value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID = value; }
 
     /**
      * <p>KMS master key ID to use for the default encryption. This parameter is
-     * allowed if SSEAlgorithm is aws:kms.</p>
+     * allowed if and only if <code>SSEAlgorithm</code> is set to
+     * <code>aws:kms</code>.</p>
      */
     inline void SetKMSMasterKeyID(Aws::String&& value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID = std::move(value); }
 
     /**
      * <p>KMS master key ID to use for the default encryption. This parameter is
-     * allowed if SSEAlgorithm is aws:kms.</p>
+     * allowed if and only if <code>SSEAlgorithm</code> is set to
+     * <code>aws:kms</code>.</p>
      */
     inline void SetKMSMasterKeyID(const char* value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID.assign(value); }
 
     /**
      * <p>KMS master key ID to use for the default encryption. This parameter is
-     * allowed if SSEAlgorithm is aws:kms.</p>
+     * allowed if and only if <code>SSEAlgorithm</code> is set to
+     * <code>aws:kms</code>.</p>
      */
     inline ServerSideEncryptionByDefault& WithKMSMasterKeyID(const Aws::String& value) { SetKMSMasterKeyID(value); return *this;}
 
     /**
      * <p>KMS master key ID to use for the default encryption. This parameter is
-     * allowed if SSEAlgorithm is aws:kms.</p>
+     * allowed if and only if <code>SSEAlgorithm</code> is set to
+     * <code>aws:kms</code>.</p>
      */
     inline ServerSideEncryptionByDefault& WithKMSMasterKeyID(Aws::String&& value) { SetKMSMasterKeyID(std::move(value)); return *this;}
 
     /**
      * <p>KMS master key ID to use for the default encryption. This parameter is
-     * allowed if SSEAlgorithm is aws:kms.</p>
+     * allowed if and only if <code>SSEAlgorithm</code> is set to
+     * <code>aws:kms</code>.</p>
      */
     inline ServerSideEncryptionByDefault& WithKMSMasterKeyID(const char* value) { SetKMSMasterKeyID(value); return *this;}
 

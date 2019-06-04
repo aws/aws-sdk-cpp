@@ -18,6 +18,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/model/AutoPlacement.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/HostRecovery.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -124,6 +125,55 @@ namespace Model
      */
     inline ModifyHostsRequest& AddHostIds(const char* value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
 
+
+    /**
+     * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
+     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline const HostRecovery& GetHostRecovery() const{ return m_hostRecovery; }
+
+    /**
+     * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
+     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline bool HostRecoveryHasBeenSet() const { return m_hostRecoveryHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
+     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetHostRecovery(const HostRecovery& value) { m_hostRecoveryHasBeenSet = true; m_hostRecovery = value; }
+
+    /**
+     * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
+     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetHostRecovery(HostRecovery&& value) { m_hostRecoveryHasBeenSet = true; m_hostRecovery = std::move(value); }
+
+    /**
+     * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
+     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline ModifyHostsRequest& WithHostRecovery(const HostRecovery& value) { SetHostRecovery(value); return *this;}
+
+    /**
+     * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
+     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline ModifyHostsRequest& WithHostRecovery(HostRecovery&& value) { SetHostRecovery(std::move(value)); return *this;}
+
   private:
 
     AutoPlacement m_autoPlacement;
@@ -131,6 +181,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_hostIds;
     bool m_hostIdsHasBeenSet;
+
+    HostRecovery m_hostRecovery;
+    bool m_hostRecoveryHasBeenSet;
   };
 
 } // namespace Model

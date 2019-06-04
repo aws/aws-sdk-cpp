@@ -49,32 +49,32 @@ namespace Model
 
 
     /**
-     * <p>The file format used when exporting data to Amazon S3.</p>
+     * <p>Specifies the file format used when exporting data to Amazon S3.</p>
      */
     inline const AnalyticsS3ExportFileFormat& GetFormat() const{ return m_format; }
 
     /**
-     * <p>The file format used when exporting data to Amazon S3.</p>
+     * <p>Specifies the file format used when exporting data to Amazon S3.</p>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
-     * <p>The file format used when exporting data to Amazon S3.</p>
+     * <p>Specifies the file format used when exporting data to Amazon S3.</p>
      */
     inline void SetFormat(const AnalyticsS3ExportFileFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
-     * <p>The file format used when exporting data to Amazon S3.</p>
+     * <p>Specifies the file format used when exporting data to Amazon S3.</p>
      */
     inline void SetFormat(AnalyticsS3ExportFileFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
-     * <p>The file format used when exporting data to Amazon S3.</p>
+     * <p>Specifies the file format used when exporting data to Amazon S3.</p>
      */
     inline AnalyticsS3BucketDestination& WithFormat(const AnalyticsS3ExportFileFormat& value) { SetFormat(value); return *this;}
 
     /**
-     * <p>The file format used when exporting data to Amazon S3.</p>
+     * <p>Specifies the file format used when exporting data to Amazon S3.</p>
      */
     inline AnalyticsS3BucketDestination& WithFormat(AnalyticsS3ExportFileFormat&& value) { SetFormat(std::move(value)); return *this;}
 
@@ -129,91 +129,91 @@ namespace Model
 
 
     /**
-     * <p>The Amazon resource name (ARN) of the bucket to which data is exported.</p>
+     * <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The Amazon resource name (ARN) of the bucket to which data is exported.</p>
+     * <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The Amazon resource name (ARN) of the bucket to which data is exported.</p>
+     * <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The Amazon resource name (ARN) of the bucket to which data is exported.</p>
+     * <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The Amazon resource name (ARN) of the bucket to which data is exported.</p>
+     * <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The Amazon resource name (ARN) of the bucket to which data is exported.</p>
+     * <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
      */
     inline AnalyticsS3BucketDestination& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The Amazon resource name (ARN) of the bucket to which data is exported.</p>
+     * <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
      */
     inline AnalyticsS3BucketDestination& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon resource name (ARN) of the bucket to which data is exported.</p>
+     * <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
      */
     inline AnalyticsS3BucketDestination& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * <p>The prefix to use when exporting data. The exported data begins with this
-     * prefix.</p>
+     * <p>The prefix to use when exporting data. The prefix is prepended to all
+     * results.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * <p>The prefix to use when exporting data. The exported data begins with this
-     * prefix.</p>
+     * <p>The prefix to use when exporting data. The prefix is prepended to all
+     * results.</p>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
-     * <p>The prefix to use when exporting data. The exported data begins with this
-     * prefix.</p>
+     * <p>The prefix to use when exporting data. The prefix is prepended to all
+     * results.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * <p>The prefix to use when exporting data. The exported data begins with this
-     * prefix.</p>
+     * <p>The prefix to use when exporting data. The prefix is prepended to all
+     * results.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * <p>The prefix to use when exporting data. The exported data begins with this
-     * prefix.</p>
+     * <p>The prefix to use when exporting data. The prefix is prepended to all
+     * results.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * <p>The prefix to use when exporting data. The exported data begins with this
-     * prefix.</p>
+     * <p>The prefix to use when exporting data. The prefix is prepended to all
+     * results.</p>
      */
     inline AnalyticsS3BucketDestination& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * <p>The prefix to use when exporting data. The exported data begins with this
-     * prefix.</p>
+     * <p>The prefix to use when exporting data. The prefix is prepended to all
+     * results.</p>
      */
     inline AnalyticsS3BucketDestination& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The prefix to use when exporting data. The exported data begins with this
-     * prefix.</p>
+     * <p>The prefix to use when exporting data. The prefix is prepended to all
+     * results.</p>
      */
     inline AnalyticsS3BucketDestination& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 

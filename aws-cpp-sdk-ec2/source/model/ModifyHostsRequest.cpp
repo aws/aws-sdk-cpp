@@ -23,7 +23,9 @@ using namespace Aws::Utils;
 ModifyHostsRequest::ModifyHostsRequest() : 
     m_autoPlacement(AutoPlacement::NOT_SET),
     m_autoPlacementHasBeenSet(false),
-    m_hostIdsHasBeenSet(false)
+    m_hostIdsHasBeenSet(false),
+    m_hostRecovery(HostRecovery::NOT_SET),
+    m_hostRecoveryHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,11 @@ Aws::String ModifyHostsRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       hostIdsCount++;
     }
+  }
+
+  if(m_hostRecoveryHasBeenSet)
+  {
+    ss << "HostRecovery=" << HostRecoveryMapper::GetNameForHostRecovery(m_hostRecovery) << "&";
   }
 
   ss << "Version=2016-11-15";

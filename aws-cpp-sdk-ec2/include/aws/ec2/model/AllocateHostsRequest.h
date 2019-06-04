@@ -19,6 +19,7 @@
 #include <aws/ec2/model/AutoPlacement.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/HostRecovery.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
@@ -154,72 +155,64 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
      */
     inline AllocateHostsRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
      */
     inline AllocateHostsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
      */
     inline AllocateHostsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -346,6 +339,61 @@ namespace Model
      */
     inline AllocateHostsRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
+     * Host recovery is disabled by default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
+     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: <code>off</code> </p>
+     */
+    inline const HostRecovery& GetHostRecovery() const{ return m_hostRecovery; }
+
+    /**
+     * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
+     * Host recovery is disabled by default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
+     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: <code>off</code> </p>
+     */
+    inline bool HostRecoveryHasBeenSet() const { return m_hostRecoveryHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
+     * Host recovery is disabled by default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
+     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: <code>off</code> </p>
+     */
+    inline void SetHostRecovery(const HostRecovery& value) { m_hostRecoveryHasBeenSet = true; m_hostRecovery = value; }
+
+    /**
+     * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
+     * Host recovery is disabled by default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
+     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: <code>off</code> </p>
+     */
+    inline void SetHostRecovery(HostRecovery&& value) { m_hostRecoveryHasBeenSet = true; m_hostRecovery = std::move(value); }
+
+    /**
+     * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
+     * Host recovery is disabled by default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
+     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: <code>off</code> </p>
+     */
+    inline AllocateHostsRequest& WithHostRecovery(const HostRecovery& value) { SetHostRecovery(value); return *this;}
+
+    /**
+     * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
+     * Host recovery is disabled by default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
+     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Default: <code>off</code> </p>
+     */
+    inline AllocateHostsRequest& WithHostRecovery(HostRecovery&& value) { SetHostRecovery(std::move(value)); return *this;}
+
   private:
 
     AutoPlacement m_autoPlacement;
@@ -365,6 +413,9 @@ namespace Model
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;
+
+    HostRecovery m_hostRecovery;
+    bool m_hostRecoveryHasBeenSet;
   };
 
 } // namespace Model

@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>The specified bucket's Object Lock configuration.</p>
+     * <p>The specified bucket's object lock configuration.</p>
      */
     inline const ObjectLockConfiguration& GetObjectLockConfiguration() const{ return m_objectLockConfiguration; }
 
     /**
-     * <p>The specified bucket's Object Lock configuration.</p>
+     * <p>The specified bucket's object lock configuration.</p>
      */
     inline void SetObjectLockConfiguration(const ObjectLockConfiguration& value) { m_objectLockConfiguration = value; }
 
     /**
-     * <p>The specified bucket's Object Lock configuration.</p>
+     * <p>The specified bucket's object lock configuration.</p>
      */
     inline void SetObjectLockConfiguration(ObjectLockConfiguration&& value) { m_objectLockConfiguration = std::move(value); }
 
     /**
-     * <p>The specified bucket's Object Lock configuration.</p>
+     * <p>The specified bucket's object lock configuration.</p>
      */
     inline GetObjectLockConfigurationResult& WithObjectLockConfiguration(const ObjectLockConfiguration& value) { SetObjectLockConfiguration(value); return *this;}
 
     /**
-     * <p>The specified bucket's Object Lock configuration.</p>
+     * <p>The specified bucket's object lock configuration.</p>
      */
     inline GetObjectLockConfigurationResult& WithObjectLockConfiguration(ObjectLockConfiguration&& value) { SetObjectLockConfiguration(std::move(value)); return *this;}
 

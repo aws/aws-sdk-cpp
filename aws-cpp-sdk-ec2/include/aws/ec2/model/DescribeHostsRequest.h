@@ -260,9 +260,9 @@ namespace Model
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
      * <code>nextToken</code> value. This value can be between 5 and 500. If
-     * <code>maxResults</code> is given a larger value than 500, you receive an error.
-     * You cannot specify this parameter and the host IDs parameter in the same
-     * request.</p>
+     * <code>maxResults</code> is given a larger value than 500, you receive an
+     * error.</p> <p>You cannot specify this parameter and the host IDs parameter in
+     * the same request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -270,9 +270,9 @@ namespace Model
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
      * <code>nextToken</code> value. This value can be between 5 and 500. If
-     * <code>maxResults</code> is given a larger value than 500, you receive an error.
-     * You cannot specify this parameter and the host IDs parameter in the same
-     * request.</p>
+     * <code>maxResults</code> is given a larger value than 500, you receive an
+     * error.</p> <p>You cannot specify this parameter and the host IDs parameter in
+     * the same request.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -280,9 +280,9 @@ namespace Model
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
      * <code>nextToken</code> value. This value can be between 5 and 500. If
-     * <code>maxResults</code> is given a larger value than 500, you receive an error.
-     * You cannot specify this parameter and the host IDs parameter in the same
-     * request.</p>
+     * <code>maxResults</code> is given a larger value than 500, you receive an
+     * error.</p> <p>You cannot specify this parameter and the host IDs parameter in
+     * the same request.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -290,50 +290,50 @@ namespace Model
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
      * <code>nextToken</code> value. This value can be between 5 and 500. If
-     * <code>maxResults</code> is given a larger value than 500, you receive an error.
-     * You cannot specify this parameter and the host IDs parameter in the same
-     * request.</p>
+     * <code>maxResults</code> is given a larger value than 500, you receive an
+     * error.</p> <p>You cannot specify this parameter and the host IDs parameter in
+     * the same request.</p>
      */
     inline DescribeHostsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token to use to retrieve the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token to use to retrieve the next page of results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token to use to retrieve the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token to use to retrieve the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token to use to retrieve the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token to use to retrieve the next page of results.</p>
      */
     inline DescribeHostsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token to use to retrieve the next page of results.</p>
      */
     inline DescribeHostsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token to use to retrieve the next page of results.</p>
      */
     inline DescribeHostsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

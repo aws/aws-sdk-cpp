@@ -691,7 +691,10 @@ namespace Aws
 
         /**
          * <p>Deletes an analytics configuration for the bucket (specified by the analytics
-         * configuration ID).</p><p><h3>See Also:</h3>   <a
+         * configuration ID).</p> <p>To use this operation, you must have permissions to
+         * perform the s3:PutAnalyticsConfiguration action. The bucket owner has this
+         * permission by default. The bucket owner can grant this permission to others.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">AWS
          * API Reference</a></p>
          */
@@ -699,7 +702,10 @@ namespace Aws
 
         /**
          * <p>Deletes an analytics configuration for the bucket (specified by the analytics
-         * configuration ID).</p><p><h3>See Also:</h3>   <a
+         * configuration ID).</p> <p>To use this operation, you must have permissions to
+         * perform the s3:PutAnalyticsConfiguration action. The bucket owner has this
+         * permission by default. The bucket owner can grant this permission to others.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">AWS
          * API Reference</a></p>
          *
@@ -709,7 +715,10 @@ namespace Aws
 
         /**
          * <p>Deletes an analytics configuration for the bucket (specified by the analytics
-         * configuration ID).</p><p><h3>See Also:</h3>   <a
+         * configuration ID).</p> <p>To use this operation, you must have permissions to
+         * perform the s3:PutAnalyticsConfiguration action. The bucket owner has this
+         * permission by default. The bucket owner can grant this permission to others.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1652,8 +1661,8 @@ namespace Aws
         virtual void GetObjectLegalHoldAsync(const Model::GetObjectLegalHoldRequest& request, const GetObjectLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the Object Lock configuration for a bucket. The rule specified in the
-         * Object Lock configuration will be applied by default to every new object placed
+         * <p>Gets the object lock configuration for a bucket. The rule specified in the
+         * object lock configuration will be applied by default to every new object placed
          * in the specified bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">AWS
          * API Reference</a></p>
@@ -1661,8 +1670,8 @@ namespace Aws
         virtual Model::GetObjectLockConfigurationOutcome GetObjectLockConfiguration(const Model::GetObjectLockConfigurationRequest& request) const;
 
         /**
-         * <p>Gets the Object Lock configuration for a bucket. The rule specified in the
-         * Object Lock configuration will be applied by default to every new object placed
+         * <p>Gets the object lock configuration for a bucket. The rule specified in the
+         * object lock configuration will be applied by default to every new object placed
          * in the specified bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">AWS
          * API Reference</a></p>
@@ -1672,8 +1681,8 @@ namespace Aws
         virtual Model::GetObjectLockConfigurationOutcomeCallable GetObjectLockConfigurationCallable(const Model::GetObjectLockConfigurationRequest& request) const;
 
         /**
-         * <p>Gets the Object Lock configuration for a bucket. The rule specified in the
-         * Object Lock configuration will be applied by default to every new object placed
+         * <p>Gets the object lock configuration for a bucket. The rule specified in the
+         * object lock configuration will be applied by default to every new object placed
          * in the specified bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">AWS
          * API Reference</a></p>
@@ -2388,16 +2397,16 @@ namespace Aws
         virtual void PutBucketNotificationConfigurationAsync(const Model::PutBucketNotificationConfigurationRequest& request, const PutBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Replaces a policy on a bucket. If the bucket already has a policy, the one in
-         * this request completely replaces it.</p><p><h3>See Also:</h3>   <a
+         * <p>Applies an Amazon S3 bucket policy to an Amazon S3 bucket.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::PutBucketPolicyOutcome PutBucketPolicy(const Model::PutBucketPolicyRequest& request) const;
 
         /**
-         * <p>Replaces a policy on a bucket. If the bucket already has a policy, the one in
-         * this request completely replaces it.</p><p><h3>See Also:</h3>   <a
+         * <p>Applies an Amazon S3 bucket policy to an Amazon S3 bucket.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">AWS
          * API Reference</a></p>
          *
@@ -2406,8 +2415,8 @@ namespace Aws
         virtual Model::PutBucketPolicyOutcomeCallable PutBucketPolicyCallable(const Model::PutBucketPolicyRequest& request) const;
 
         /**
-         * <p>Replaces a policy on a bucket. If the bucket already has a policy, the one in
-         * this request completely replaces it.</p><p><h3>See Also:</h3>   <a
+         * <p>Applies an Amazon S3 bucket policy to an Amazon S3 bucket.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">AWS
          * API Reference</a></p>
          *
@@ -2417,8 +2426,8 @@ namespace Aws
 
         /**
          * <p> Creates a replication configuration or replaces an existing one. For more
-         * information, see <a href="
-         * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
          * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">AWS
@@ -2428,8 +2437,8 @@ namespace Aws
 
         /**
          * <p> Creates a replication configuration or replaces an existing one. For more
-         * information, see <a href="
-         * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
          * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">AWS
@@ -2441,8 +2450,8 @@ namespace Aws
 
         /**
          * <p> Creates a replication configuration or replaces an existing one. For more
-         * information, see <a href="
-         * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
          * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">AWS
@@ -2655,8 +2664,8 @@ namespace Aws
         virtual void PutObjectLegalHoldAsync(const Model::PutObjectLegalHoldRequest& request, const PutObjectLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Places an Object Lock configuration on the specified bucket. The rule
-         * specified in the Object Lock configuration will be applied by default to every
+         * <p>Places an object lock configuration on the specified bucket. The rule
+         * specified in the object lock configuration will be applied by default to every
          * new object placed in the specified bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">AWS
          * API Reference</a></p>
@@ -2664,8 +2673,8 @@ namespace Aws
         virtual Model::PutObjectLockConfigurationOutcome PutObjectLockConfiguration(const Model::PutObjectLockConfigurationRequest& request) const;
 
         /**
-         * <p>Places an Object Lock configuration on the specified bucket. The rule
-         * specified in the Object Lock configuration will be applied by default to every
+         * <p>Places an object lock configuration on the specified bucket. The rule
+         * specified in the object lock configuration will be applied by default to every
          * new object placed in the specified bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">AWS
          * API Reference</a></p>
@@ -2675,8 +2684,8 @@ namespace Aws
         virtual Model::PutObjectLockConfigurationOutcomeCallable PutObjectLockConfigurationCallable(const Model::PutObjectLockConfigurationRequest& request) const;
 
         /**
-         * <p>Places an Object Lock configuration on the specified bucket. The rule
-         * specified in the Object Lock configuration will be applied by default to every
+         * <p>Places an object lock configuration on the specified bucket. The rule
+         * specified in the object lock configuration will be applied by default to every
          * new object placed in the specified bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">AWS
          * API Reference</a></p>

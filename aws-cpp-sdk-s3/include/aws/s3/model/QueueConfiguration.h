@@ -36,9 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>A container for specifying the configuration for publication of messages to
-   * an Amazon Simple Queue Service (Amazon SQS) queue.when Amazon S3 detects
-   * specified events.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the configuration for publishing messages to an Amazon Simple Queue
+   * Service (Amazon SQS) queue when Amazon S3 detects specified
+   * events.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/QueueConfiguration">AWS
    * API Reference</a></p>
    */
@@ -79,49 +79,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3
-     * will publish a message when it detects events of the specified type.</p>
+     * publishes a message when it detects events of the specified type.</p>
      */
     inline const Aws::String& GetQueueArn() const{ return m_queueArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3
-     * will publish a message when it detects events of the specified type.</p>
+     * publishes a message when it detects events of the specified type.</p>
      */
     inline bool QueueArnHasBeenSet() const { return m_queueArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3
-     * will publish a message when it detects events of the specified type.</p>
+     * publishes a message when it detects events of the specified type.</p>
      */
     inline void SetQueueArn(const Aws::String& value) { m_queueArnHasBeenSet = true; m_queueArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3
-     * will publish a message when it detects events of the specified type.</p>
+     * publishes a message when it detects events of the specified type.</p>
      */
     inline void SetQueueArn(Aws::String&& value) { m_queueArnHasBeenSet = true; m_queueArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3
-     * will publish a message when it detects events of the specified type.</p>
+     * publishes a message when it detects events of the specified type.</p>
      */
     inline void SetQueueArn(const char* value) { m_queueArnHasBeenSet = true; m_queueArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3
-     * will publish a message when it detects events of the specified type.</p>
+     * publishes a message when it detects events of the specified type.</p>
      */
     inline QueueConfiguration& WithQueueArn(const Aws::String& value) { SetQueueArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3
-     * will publish a message when it detects events of the specified type.</p>
+     * publishes a message when it detects events of the specified type.</p>
      */
     inline QueueConfiguration& WithQueueArn(Aws::String&& value) { SetQueueArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3
-     * will publish a message when it detects events of the specified type.</p>
+     * publishes a message when it detects events of the specified type.</p>
      */
     inline QueueConfiguration& WithQueueArn(const char* value) { SetQueueArn(value); return *this;}
 
@@ -167,22 +167,34 @@ namespace Model
     inline QueueConfiguration& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p/>
+     */
     inline const NotificationConfigurationFilter& GetFilter() const{ return m_filter; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetFilter(const NotificationConfigurationFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetFilter(NotificationConfigurationFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline QueueConfiguration& WithFilter(const NotificationConfigurationFilter& value) { SetFilter(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline QueueConfiguration& WithFilter(NotificationConfigurationFilter&& value) { SetFilter(std::move(value)); return *this;}
 
   private:

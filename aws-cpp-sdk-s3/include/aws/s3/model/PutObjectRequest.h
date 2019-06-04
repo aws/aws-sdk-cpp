@@ -336,49 +336,57 @@ namespace Model
 
     /**
      * <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is
-     * auto-populated when using the command from the CLI</p>
+     * auto-populated when using the command from the CLI. This parameted is required
+     * if object lock parameters are specified.</p>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
     /**
      * <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is
-     * auto-populated when using the command from the CLI</p>
+     * auto-populated when using the command from the CLI. This parameted is required
+     * if object lock parameters are specified.</p>
      */
     inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
 
     /**
      * <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is
-     * auto-populated when using the command from the CLI</p>
+     * auto-populated when using the command from the CLI. This parameted is required
+     * if object lock parameters are specified.</p>
      */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     /**
      * <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is
-     * auto-populated when using the command from the CLI</p>
+     * auto-populated when using the command from the CLI. This parameted is required
+     * if object lock parameters are specified.</p>
      */
     inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
     /**
      * <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is
-     * auto-populated when using the command from the CLI</p>
+     * auto-populated when using the command from the CLI. This parameted is required
+     * if object lock parameters are specified.</p>
      */
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
     /**
      * <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is
-     * auto-populated when using the command from the CLI</p>
+     * auto-populated when using the command from the CLI. This parameted is required
+     * if object lock parameters are specified.</p>
      */
     inline PutObjectRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
     /**
      * <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is
-     * auto-populated when using the command from the CLI</p>
+     * auto-populated when using the command from the CLI. This parameted is required
+     * if object lock parameters are specified.</p>
      */
     inline PutObjectRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
     /**
      * <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is
-     * auto-populated when using the command from the CLI</p>
+     * auto-populated when using the command from the CLI. This parameted is required
+     * if object lock parameters are specified.</p>
      */
     inline PutObjectRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
@@ -1139,63 +1147,63 @@ namespace Model
 
 
     /**
-     * <p>The Object Lock mode that you want to apply to this object.</p>
+     * <p>The object lock mode that you want to apply to this object.</p>
      */
     inline const ObjectLockMode& GetObjectLockMode() const{ return m_objectLockMode; }
 
     /**
-     * <p>The Object Lock mode that you want to apply to this object.</p>
+     * <p>The object lock mode that you want to apply to this object.</p>
      */
     inline bool ObjectLockModeHasBeenSet() const { return m_objectLockModeHasBeenSet; }
 
     /**
-     * <p>The Object Lock mode that you want to apply to this object.</p>
+     * <p>The object lock mode that you want to apply to this object.</p>
      */
     inline void SetObjectLockMode(const ObjectLockMode& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = value; }
 
     /**
-     * <p>The Object Lock mode that you want to apply to this object.</p>
+     * <p>The object lock mode that you want to apply to this object.</p>
      */
     inline void SetObjectLockMode(ObjectLockMode&& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = std::move(value); }
 
     /**
-     * <p>The Object Lock mode that you want to apply to this object.</p>
+     * <p>The object lock mode that you want to apply to this object.</p>
      */
     inline PutObjectRequest& WithObjectLockMode(const ObjectLockMode& value) { SetObjectLockMode(value); return *this;}
 
     /**
-     * <p>The Object Lock mode that you want to apply to this object.</p>
+     * <p>The object lock mode that you want to apply to this object.</p>
      */
     inline PutObjectRequest& WithObjectLockMode(ObjectLockMode&& value) { SetObjectLockMode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time when you want this object's Object Lock to expire.</p>
+     * <p>The date and time when you want this object's object lock to expire.</p>
      */
     inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const{ return m_objectLockRetainUntilDate; }
 
     /**
-     * <p>The date and time when you want this object's Object Lock to expire.</p>
+     * <p>The date and time when you want this object's object lock to expire.</p>
      */
     inline bool ObjectLockRetainUntilDateHasBeenSet() const { return m_objectLockRetainUntilDateHasBeenSet; }
 
     /**
-     * <p>The date and time when you want this object's Object Lock to expire.</p>
+     * <p>The date and time when you want this object's object lock to expire.</p>
      */
     inline void SetObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = value; }
 
     /**
-     * <p>The date and time when you want this object's Object Lock to expire.</p>
+     * <p>The date and time when you want this object's object lock to expire.</p>
      */
     inline void SetObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = std::move(value); }
 
     /**
-     * <p>The date and time when you want this object's Object Lock to expire.</p>
+     * <p>The date and time when you want this object's object lock to expire.</p>
      */
     inline PutObjectRequest& WithObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { SetObjectLockRetainUntilDate(value); return *this;}
 
     /**
-     * <p>The date and time when you want this object's Object Lock to expire.</p>
+     * <p>The date and time when you want this object's object lock to expire.</p>
      */
     inline PutObjectRequest& WithObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { SetObjectLockRetainUntilDate(std::move(value)); return *this;}
 

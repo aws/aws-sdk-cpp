@@ -53,42 +53,50 @@ namespace Model
 
 
     /**
-     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     * <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id
+     * for the node group these configuration values apply to.</p>
      */
     inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
 
     /**
-     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     * <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id
+     * for the node group these configuration values apply to.</p>
      */
     inline bool NodeGroupIdHasBeenSet() const { return m_nodeGroupIdHasBeenSet; }
 
     /**
-     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     * <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id
+     * for the node group these configuration values apply to.</p>
      */
     inline void SetNodeGroupId(const Aws::String& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
 
     /**
-     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     * <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id
+     * for the node group these configuration values apply to.</p>
      */
     inline void SetNodeGroupId(Aws::String&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = std::move(value); }
 
     /**
-     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     * <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id
+     * for the node group these configuration values apply to.</p>
      */
     inline void SetNodeGroupId(const char* value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId.assign(value); }
 
     /**
-     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     * <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id
+     * for the node group these configuration values apply to.</p>
      */
     inline ReshardingConfiguration& WithNodeGroupId(const Aws::String& value) { SetNodeGroupId(value); return *this;}
 
     /**
-     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     * <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id
+     * for the node group these configuration values apply to.</p>
      */
     inline ReshardingConfiguration& WithNodeGroupId(Aws::String&& value) { SetNodeGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     * <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id
+     * for the node group these configuration values apply to.</p>
      */
     inline ReshardingConfiguration& WithNodeGroupId(const char* value) { SetNodeGroupId(value); return *this;}
 

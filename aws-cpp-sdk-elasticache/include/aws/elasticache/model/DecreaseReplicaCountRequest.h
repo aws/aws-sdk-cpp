@@ -276,29 +276,25 @@ namespace Model
 
     /**
      * <p>If <code>True</code>, the number of replica nodes is decreased immediately.
-     * If <code>False</code>, the number of replica nodes is decreased during the next
-     * maintenance window.</p>
+     * <code>ApplyImmediately=False</code> is not currently supported.</p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
 
     /**
      * <p>If <code>True</code>, the number of replica nodes is decreased immediately.
-     * If <code>False</code>, the number of replica nodes is decreased during the next
-     * maintenance window.</p>
+     * <code>ApplyImmediately=False</code> is not currently supported.</p>
      */
     inline bool ApplyImmediatelyHasBeenSet() const { return m_applyImmediatelyHasBeenSet; }
 
     /**
      * <p>If <code>True</code>, the number of replica nodes is decreased immediately.
-     * If <code>False</code>, the number of replica nodes is decreased during the next
-     * maintenance window.</p>
+     * <code>ApplyImmediately=False</code> is not currently supported.</p>
      */
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
 
     /**
      * <p>If <code>True</code>, the number of replica nodes is decreased immediately.
-     * If <code>False</code>, the number of replica nodes is decreased during the next
-     * maintenance window.</p>
+     * <code>ApplyImmediately=False</code> is not currently supported.</p>
      */
     inline DecreaseReplicaCountRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 

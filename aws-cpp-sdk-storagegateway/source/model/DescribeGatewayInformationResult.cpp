@@ -116,6 +116,12 @@ DescribeGatewayInformationResult& DescribeGatewayInformationResult::operator =(c
     }
   }
 
+  if(jsonValue.ValueExists("VPCEndpoint"))
+  {
+    m_vPCEndpoint = jsonValue.GetString("VPCEndpoint");
+
+  }
+
 
 
   return *this;

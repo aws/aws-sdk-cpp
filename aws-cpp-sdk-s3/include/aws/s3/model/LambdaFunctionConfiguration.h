@@ -77,111 +77,147 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda cloud function that Amazon S3
-     * can invoke when it detects events of the specified type.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function that Amazon S3
+     * invokes when the specified event type occurs.</p>
      */
     inline const Aws::String& GetLambdaFunctionArn() const{ return m_lambdaFunctionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda cloud function that Amazon S3
-     * can invoke when it detects events of the specified type.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function that Amazon S3
+     * invokes when the specified event type occurs.</p>
      */
     inline bool LambdaFunctionArnHasBeenSet() const { return m_lambdaFunctionArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda cloud function that Amazon S3
-     * can invoke when it detects events of the specified type.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function that Amazon S3
+     * invokes when the specified event type occurs.</p>
      */
     inline void SetLambdaFunctionArn(const Aws::String& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda cloud function that Amazon S3
-     * can invoke when it detects events of the specified type.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function that Amazon S3
+     * invokes when the specified event type occurs.</p>
      */
     inline void SetLambdaFunctionArn(Aws::String&& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda cloud function that Amazon S3
-     * can invoke when it detects events of the specified type.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function that Amazon S3
+     * invokes when the specified event type occurs.</p>
      */
     inline void SetLambdaFunctionArn(const char* value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda cloud function that Amazon S3
-     * can invoke when it detects events of the specified type.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function that Amazon S3
+     * invokes when the specified event type occurs.</p>
      */
     inline LambdaFunctionConfiguration& WithLambdaFunctionArn(const Aws::String& value) { SetLambdaFunctionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda cloud function that Amazon S3
-     * can invoke when it detects events of the specified type.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function that Amazon S3
+     * invokes when the specified event type occurs.</p>
      */
     inline LambdaFunctionConfiguration& WithLambdaFunctionArn(Aws::String&& value) { SetLambdaFunctionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda cloud function that Amazon S3
-     * can invoke when it detects events of the specified type.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function that Amazon S3
+     * invokes when the specified event type occurs.</p>
      */
     inline LambdaFunctionConfiguration& WithLambdaFunctionArn(const char* value) { SetLambdaFunctionArn(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The Amazon S3 bucket event for which to invoke the AWS Lambda function. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
+     * Event Types</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 bucket event for which to invoke the AWS Lambda function. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
+     * Event Types</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 bucket event for which to invoke the AWS Lambda function. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
+     * Event Types</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 bucket event for which to invoke the AWS Lambda function. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
+     * Event Types</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 bucket event for which to invoke the AWS Lambda function. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
+     * Event Types</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline LambdaFunctionConfiguration& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon S3 bucket event for which to invoke the AWS Lambda function. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
+     * Event Types</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline LambdaFunctionConfiguration& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon S3 bucket event for which to invoke the AWS Lambda function. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
+     * Event Types</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline LambdaFunctionConfiguration& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 bucket event for which to invoke the AWS Lambda function. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
+     * Event Types</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline LambdaFunctionConfiguration& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p/>
+     */
     inline const NotificationConfigurationFilter& GetFilter() const{ return m_filter; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetFilter(const NotificationConfigurationFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetFilter(NotificationConfigurationFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline LambdaFunctionConfiguration& WithFilter(const NotificationConfigurationFilter& value) { SetFilter(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline LambdaFunctionConfiguration& WithFilter(NotificationConfigurationFilter&& value) { SetFilter(std::move(value)); return *this;}
 
   private:

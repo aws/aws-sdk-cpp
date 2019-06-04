@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeSMBSettingsResult::DescribeSMBSettingsResult() : 
-    m_sMBGuestPasswordSet(false)
+    m_sMBGuestPasswordSet(false),
+    m_sMBSecurityStrategy(SMBSecurityStrategy::NOT_SET)
 {
 }
 
 DescribeSMBSettingsResult::DescribeSMBSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_sMBGuestPasswordSet(false)
+    m_sMBGuestPasswordSet(false),
+    m_sMBSecurityStrategy(SMBSecurityStrategy::NOT_SET)
 {
   *this = result;
 }
@@ -55,6 +57,12 @@ DescribeSMBSettingsResult& DescribeSMBSettingsResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("SMBGuestPasswordSet"))
   {
     m_sMBGuestPasswordSet = jsonValue.GetBool("SMBGuestPasswordSet");
+
+  }
+
+  if(jsonValue.ValueExists("SMBSecurityStrategy"))
+  {
+    m_sMBSecurityStrategy = SMBSecurityStrategyMapper::GetSMBSecurityStrategyForName(jsonValue.GetString("SMBSecurityStrategy"));
 
   }
 

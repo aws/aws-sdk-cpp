@@ -370,25 +370,25 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether you want S3 Object Lock to be enabled for the new
+     * <p>Specifies whether you want Amazon S3 object lock to be enabled for the new
      * bucket.</p>
      */
     inline bool GetObjectLockEnabledForBucket() const{ return m_objectLockEnabledForBucket; }
 
     /**
-     * <p>Specifies whether you want S3 Object Lock to be enabled for the new
+     * <p>Specifies whether you want Amazon S3 object lock to be enabled for the new
      * bucket.</p>
      */
     inline bool ObjectLockEnabledForBucketHasBeenSet() const { return m_objectLockEnabledForBucketHasBeenSet; }
 
     /**
-     * <p>Specifies whether you want S3 Object Lock to be enabled for the new
+     * <p>Specifies whether you want Amazon S3 object lock to be enabled for the new
      * bucket.</p>
      */
     inline void SetObjectLockEnabledForBucket(bool value) { m_objectLockEnabledForBucketHasBeenSet = true; m_objectLockEnabledForBucket = value; }
 
     /**
-     * <p>Specifies whether you want S3 Object Lock to be enabled for the new
+     * <p>Specifies whether you want Amazon S3 object lock to be enabled for the new
      * bucket.</p>
      */
     inline CreateBucketRequest& WithObjectLockEnabledForBucket(bool value) { SetObjectLockEnabledForBucket(value); return *this;}

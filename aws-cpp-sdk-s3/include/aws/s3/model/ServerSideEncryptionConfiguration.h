@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Container for server-side encryption configuration rules. Currently S3
-   * supports one rule only.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the default server-side-encryption configuration.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ServerSideEncryptionConfiguration">AWS
    * API Reference</a></p>
    */

@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>A container for information about the encryption-based configuration for
-   * replicas.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies encryption-related information for an Amazon S3 bucket that is a
+   * destination for replicated objects.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/EncryptionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -49,50 +49,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS KMS key for the AWS Region where the destination bucket
-     * resides. Amazon S3 uses this key to encrypt the replica object. </p>
+     * <p>Specifies the AWS KMS Key ID (Key ARN or Alias ARN) for the destination
+     * bucket. Amazon S3 uses this key to encrypt replica objects.</p>
      */
     inline const Aws::String& GetReplicaKmsKeyID() const{ return m_replicaKmsKeyID; }
 
     /**
-     * <p>The ID of the AWS KMS key for the AWS Region where the destination bucket
-     * resides. Amazon S3 uses this key to encrypt the replica object. </p>
+     * <p>Specifies the AWS KMS Key ID (Key ARN or Alias ARN) for the destination
+     * bucket. Amazon S3 uses this key to encrypt replica objects.</p>
      */
     inline bool ReplicaKmsKeyIDHasBeenSet() const { return m_replicaKmsKeyIDHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS KMS key for the AWS Region where the destination bucket
-     * resides. Amazon S3 uses this key to encrypt the replica object. </p>
+     * <p>Specifies the AWS KMS Key ID (Key ARN or Alias ARN) for the destination
+     * bucket. Amazon S3 uses this key to encrypt replica objects.</p>
      */
     inline void SetReplicaKmsKeyID(const Aws::String& value) { m_replicaKmsKeyIDHasBeenSet = true; m_replicaKmsKeyID = value; }
 
     /**
-     * <p>The ID of the AWS KMS key for the AWS Region where the destination bucket
-     * resides. Amazon S3 uses this key to encrypt the replica object. </p>
+     * <p>Specifies the AWS KMS Key ID (Key ARN or Alias ARN) for the destination
+     * bucket. Amazon S3 uses this key to encrypt replica objects.</p>
      */
     inline void SetReplicaKmsKeyID(Aws::String&& value) { m_replicaKmsKeyIDHasBeenSet = true; m_replicaKmsKeyID = std::move(value); }
 
     /**
-     * <p>The ID of the AWS KMS key for the AWS Region where the destination bucket
-     * resides. Amazon S3 uses this key to encrypt the replica object. </p>
+     * <p>Specifies the AWS KMS Key ID (Key ARN or Alias ARN) for the destination
+     * bucket. Amazon S3 uses this key to encrypt replica objects.</p>
      */
     inline void SetReplicaKmsKeyID(const char* value) { m_replicaKmsKeyIDHasBeenSet = true; m_replicaKmsKeyID.assign(value); }
 
     /**
-     * <p>The ID of the AWS KMS key for the AWS Region where the destination bucket
-     * resides. Amazon S3 uses this key to encrypt the replica object. </p>
+     * <p>Specifies the AWS KMS Key ID (Key ARN or Alias ARN) for the destination
+     * bucket. Amazon S3 uses this key to encrypt replica objects.</p>
      */
     inline EncryptionConfiguration& WithReplicaKmsKeyID(const Aws::String& value) { SetReplicaKmsKeyID(value); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS key for the AWS Region where the destination bucket
-     * resides. Amazon S3 uses this key to encrypt the replica object. </p>
+     * <p>Specifies the AWS KMS Key ID (Key ARN or Alias ARN) for the destination
+     * bucket. Amazon S3 uses this key to encrypt replica objects.</p>
      */
     inline EncryptionConfiguration& WithReplicaKmsKeyID(Aws::String&& value) { SetReplicaKmsKeyID(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS key for the AWS Region where the destination bucket
-     * resides. Amazon S3 uses this key to encrypt the replica object. </p>
+     * <p>Specifies the AWS KMS Key ID (Key ARN or Alias ARN) for the destination
+     * bucket. Amazon S3 uses this key to encrypt replica objects.</p>
      */
     inline EncryptionConfiguration& WithReplicaKmsKeyID(const char* value) { SetReplicaKmsKeyID(value); return *this;}
 

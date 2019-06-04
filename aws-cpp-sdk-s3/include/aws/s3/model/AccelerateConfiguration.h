@@ -33,7 +33,11 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Configures the transfer acceleration state for an Amazon S3 bucket. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Amazon
+   * S3 Transfer Acceleration</a> in the <i>Amazon Simple Storage Service Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AccelerateConfiguration">AWS
    * API Reference</a></p>
    */
@@ -48,32 +52,32 @@ namespace Model
 
 
     /**
-     * <p>The accelerate configuration of the bucket.</p>
+     * <p>Specifies the transfer acceleration status of the bucket.</p>
      */
     inline const BucketAccelerateStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The accelerate configuration of the bucket.</p>
+     * <p>Specifies the transfer acceleration status of the bucket.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The accelerate configuration of the bucket.</p>
+     * <p>Specifies the transfer acceleration status of the bucket.</p>
      */
     inline void SetStatus(const BucketAccelerateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The accelerate configuration of the bucket.</p>
+     * <p>Specifies the transfer acceleration status of the bucket.</p>
      */
     inline void SetStatus(BucketAccelerateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The accelerate configuration of the bucket.</p>
+     * <p>Specifies the transfer acceleration status of the bucket.</p>
      */
     inline AccelerateConfiguration& WithStatus(const BucketAccelerateStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The accelerate configuration of the bucket.</p>
+     * <p>Specifies the transfer acceleration status of the bucket.</p>
      */
     inline AccelerateConfiguration& WithStatus(BucketAccelerateStatus&& value) { SetStatus(std::move(value)); return *this;}
 

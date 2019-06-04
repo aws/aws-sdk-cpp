@@ -142,8 +142,9 @@ namespace Model
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
-     * | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> </p>
+     * for.</p> <p>Valid values are: <code>memcached1.4</code> |
+     * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
      * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
      * a hyphen or contain two consecutive hyphens</p> </li> </ul>
@@ -152,8 +153,9 @@ namespace Model
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
-     * | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> </p>
+     * for.</p> <p>Valid values are: <code>memcached1.4</code> |
+     * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
      * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
      * a hyphen or contain two consecutive hyphens</p> </li> </ul>
@@ -162,8 +164,9 @@ namespace Model
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
-     * | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> </p>
+     * for.</p> <p>Valid values are: <code>memcached1.4</code> |
+     * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
      * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
      * a hyphen or contain two consecutive hyphens</p> </li> </ul>
@@ -172,8 +175,9 @@ namespace Model
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
-     * | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> </p>
+     * for.</p> <p>Valid values are: <code>memcached1.4</code> |
+     * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
      * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
      * a hyphen or contain two consecutive hyphens</p> </li> </ul>
@@ -182,8 +186,9 @@ namespace Model
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
-     * | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> </p>
+     * for.</p> <p>Valid values are: <code>memcached1.4</code> |
+     * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
      * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
      * a hyphen or contain two consecutive hyphens</p> </li> </ul>
@@ -192,8 +197,9 @@ namespace Model
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
-     * | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> </p>
+     * for.</p> <p>Valid values are: <code>memcached1.4</code> |
+     * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
      * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
      * a hyphen or contain two consecutive hyphens</p> </li> </ul>
@@ -202,8 +208,9 @@ namespace Model
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
-     * | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> </p>
+     * for.</p> <p>Valid values are: <code>memcached1.4</code> |
+     * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
      * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
      * a hyphen or contain two consecutive hyphens</p> </li> </ul>
@@ -212,8 +219,9 @@ namespace Model
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Valid values are: <code>memcached1.4</code> | <code>redis2.6</code>
-     * | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> </p>
+     * for.</p> <p>Valid values are: <code>memcached1.4</code> |
+     * <code>memcached1.5</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
      * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
      * a hyphen or contain two consecutive hyphens</p> </li> </ul>

@@ -135,22 +135,34 @@ namespace Model
     inline LifecycleRule& WithID(const char* value) { SetID(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const LifecycleRuleFilter& GetFilter() const{ return m_filter; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetFilter(const LifecycleRuleFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetFilter(LifecycleRuleFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline LifecycleRule& WithFilter(const LifecycleRuleFilter& value) { SetFilter(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline LifecycleRule& WithFilter(LifecycleRuleFilter&& value) { SetFilter(std::move(value)); return *this;}
 
 
@@ -273,41 +285,65 @@ namespace Model
     inline LifecycleRule& AddNoncurrentVersionTransitions(NoncurrentVersionTransition&& value) { m_noncurrentVersionTransitionsHasBeenSet = true; m_noncurrentVersionTransitions.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p/>
+     */
     inline const NoncurrentVersionExpiration& GetNoncurrentVersionExpiration() const{ return m_noncurrentVersionExpiration; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool NoncurrentVersionExpirationHasBeenSet() const { return m_noncurrentVersionExpirationHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetNoncurrentVersionExpiration(const NoncurrentVersionExpiration& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetNoncurrentVersionExpiration(NoncurrentVersionExpiration&& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline LifecycleRule& WithNoncurrentVersionExpiration(const NoncurrentVersionExpiration& value) { SetNoncurrentVersionExpiration(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline LifecycleRule& WithNoncurrentVersionExpiration(NoncurrentVersionExpiration&& value) { SetNoncurrentVersionExpiration(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const AbortIncompleteMultipartUpload& GetAbortIncompleteMultipartUpload() const{ return m_abortIncompleteMultipartUpload; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool AbortIncompleteMultipartUploadHasBeenSet() const { return m_abortIncompleteMultipartUploadHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetAbortIncompleteMultipartUpload(const AbortIncompleteMultipartUpload& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetAbortIncompleteMultipartUpload(AbortIncompleteMultipartUpload&& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline LifecycleRule& WithAbortIncompleteMultipartUpload(const AbortIncompleteMultipartUpload& value) { SetAbortIncompleteMultipartUpload(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline LifecycleRule& WithAbortIncompleteMultipartUpload(AbortIncompleteMultipartUpload&& value) { SetAbortIncompleteMultipartUpload(std::move(value)); return *this;}
 
   private:

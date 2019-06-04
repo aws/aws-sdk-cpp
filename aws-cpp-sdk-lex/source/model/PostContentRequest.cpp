@@ -40,7 +40,6 @@ PostContentRequest::PostContentRequest() :
 Aws::Http::HeaderValueCollection PostContentRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_EVENTSTREAM_CONTENT_TYPE);
   Aws::StringStream ss;
   if(m_sessionAttributesHasBeenSet)
   {

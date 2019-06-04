@@ -28,7 +28,9 @@ AllocateHostsRequest::AllocateHostsRequest() :
     m_instanceTypeHasBeenSet(false),
     m_quantity(0),
     m_quantityHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_hostRecovery(HostRecovery::NOT_SET),
+    m_hostRecoveryHasBeenSet(false)
 {
 }
 
@@ -69,6 +71,11 @@ Aws::String AllocateHostsRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_hostRecoveryHasBeenSet)
+  {
+    ss << "HostRecovery=" << HostRecoveryMapper::GetNameForHostRecovery(m_hostRecovery) << "&";
   }
 
   ss << "Version=2016-11-15";

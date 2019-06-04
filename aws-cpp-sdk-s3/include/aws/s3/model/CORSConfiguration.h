@@ -34,7 +34,11 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Describes the cross-origin access configuration for objects in an Amazon S3
+   * bucket. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
+   * Cross-Origin Resource Sharing</a> in the <i>Amazon Simple Storage Service
+   * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CORSConfiguration">AWS
    * API Reference</a></p>
    */
@@ -49,42 +53,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>A set of allowed origins and methods.</p>
      */
     inline const Aws::Vector<CORSRule>& GetCORSRules() const{ return m_cORSRules; }
 
     /**
-     * <p/>
+     * <p>A set of allowed origins and methods.</p>
      */
     inline bool CORSRulesHasBeenSet() const { return m_cORSRulesHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>A set of allowed origins and methods.</p>
      */
     inline void SetCORSRules(const Aws::Vector<CORSRule>& value) { m_cORSRulesHasBeenSet = true; m_cORSRules = value; }
 
     /**
-     * <p/>
+     * <p>A set of allowed origins and methods.</p>
      */
     inline void SetCORSRules(Aws::Vector<CORSRule>&& value) { m_cORSRulesHasBeenSet = true; m_cORSRules = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A set of allowed origins and methods.</p>
      */
     inline CORSConfiguration& WithCORSRules(const Aws::Vector<CORSRule>& value) { SetCORSRules(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A set of allowed origins and methods.</p>
      */
     inline CORSConfiguration& WithCORSRules(Aws::Vector<CORSRule>&& value) { SetCORSRules(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>A set of allowed origins and methods.</p>
      */
     inline CORSConfiguration& AddCORSRules(const CORSRule& value) { m_cORSRulesHasBeenSet = true; m_cORSRules.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>A set of allowed origins and methods.</p>
      */
     inline CORSConfiguration& AddCORSRules(CORSRule&& value) { m_cORSRulesHasBeenSet = true; m_cORSRules.push_back(std::move(value)); return *this; }
 

@@ -268,9 +268,9 @@ namespace Model
      * primary if the existing primary encounters a failure.</p> <p>Valid values:
      * <code>true</code> | <code>false</code> </p> <p>Amazon ElastiCache for Redis does
      * not support Multi-AZ with automatic failover on:</p> <ul> <li> <p>Redis versions
-     * earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 and T2
-     * cache node types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node
-     * types.</p> </li> </ul>
+     * earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node
+     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
+     * </ul>
      */
     inline bool GetAutomaticFailoverEnabled() const{ return m_automaticFailoverEnabled; }
 
@@ -279,9 +279,9 @@ namespace Model
      * primary if the existing primary encounters a failure.</p> <p>Valid values:
      * <code>true</code> | <code>false</code> </p> <p>Amazon ElastiCache for Redis does
      * not support Multi-AZ with automatic failover on:</p> <ul> <li> <p>Redis versions
-     * earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 and T2
-     * cache node types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node
-     * types.</p> </li> </ul>
+     * earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node
+     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
+     * </ul>
      */
     inline bool AutomaticFailoverEnabledHasBeenSet() const { return m_automaticFailoverEnabledHasBeenSet; }
 
@@ -290,9 +290,9 @@ namespace Model
      * primary if the existing primary encounters a failure.</p> <p>Valid values:
      * <code>true</code> | <code>false</code> </p> <p>Amazon ElastiCache for Redis does
      * not support Multi-AZ with automatic failover on:</p> <ul> <li> <p>Redis versions
-     * earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 and T2
-     * cache node types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node
-     * types.</p> </li> </ul>
+     * earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node
+     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
+     * </ul>
      */
     inline void SetAutomaticFailoverEnabled(bool value) { m_automaticFailoverEnabledHasBeenSet = true; m_automaticFailoverEnabled = value; }
 
@@ -301,9 +301,9 @@ namespace Model
      * primary if the existing primary encounters a failure.</p> <p>Valid values:
      * <code>true</code> | <code>false</code> </p> <p>Amazon ElastiCache for Redis does
      * not support Multi-AZ with automatic failover on:</p> <ul> <li> <p>Redis versions
-     * earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 and T2
-     * cache node types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node
-     * types.</p> </li> </ul>
+     * earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node
+     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
+     * </ul>
      */
     inline ModifyReplicationGroupRequest& WithAutomaticFailoverEnabled(bool value) { SetAutomaticFailoverEnabled(value); return *this;}
 
@@ -788,7 +788,7 @@ namespace Model
      * <p>The upgraded version of the cache engine to be run on the clusters in the
      * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
      * version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing replication group and create it anew with the earlier engine version.
@@ -800,7 +800,7 @@ namespace Model
      * <p>The upgraded version of the cache engine to be run on the clusters in the
      * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
      * version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing replication group and create it anew with the earlier engine version.
@@ -812,7 +812,7 @@ namespace Model
      * <p>The upgraded version of the cache engine to be run on the clusters in the
      * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
      * version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing replication group and create it anew with the earlier engine version.
@@ -824,7 +824,7 @@ namespace Model
      * <p>The upgraded version of the cache engine to be run on the clusters in the
      * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
      * version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing replication group and create it anew with the earlier engine version.
@@ -836,7 +836,7 @@ namespace Model
      * <p>The upgraded version of the cache engine to be run on the clusters in the
      * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
      * version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing replication group and create it anew with the earlier engine version.
@@ -848,7 +848,7 @@ namespace Model
      * <p>The upgraded version of the cache engine to be run on the clusters in the
      * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
      * version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing replication group and create it anew with the earlier engine version.
@@ -860,7 +860,7 @@ namespace Model
      * <p>The upgraded version of the cache engine to be run on the clusters in the
      * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
      * version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing replication group and create it anew with the earlier engine version.
@@ -872,7 +872,7 @@ namespace Model
      * <p>The upgraded version of the cache engine to be run on the clusters in the
      * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
      * version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing replication group and create it anew with the earlier engine version.

@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>A conjunction (logical AND) of predicates, which is used in evaluating a
+   * metrics filter. The operator must have at least two predicates in any
+   * combination, and an object must match all of the predicates for the filter to
+   * apply.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AnalyticsAndOperator">AWS
    * API Reference</a></p>
    */
@@ -50,42 +53,50 @@ namespace Model
 
 
     /**
-     * <p>The prefix to use when evaluating an AND predicate.</p>
+     * <p>The prefix to use when evaluating an AND predicate: The prefix that an object
+     * must have to be included in the metrics results.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * <p>The prefix to use when evaluating an AND predicate.</p>
+     * <p>The prefix to use when evaluating an AND predicate: The prefix that an object
+     * must have to be included in the metrics results.</p>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
-     * <p>The prefix to use when evaluating an AND predicate.</p>
+     * <p>The prefix to use when evaluating an AND predicate: The prefix that an object
+     * must have to be included in the metrics results.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * <p>The prefix to use when evaluating an AND predicate.</p>
+     * <p>The prefix to use when evaluating an AND predicate: The prefix that an object
+     * must have to be included in the metrics results.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * <p>The prefix to use when evaluating an AND predicate.</p>
+     * <p>The prefix to use when evaluating an AND predicate: The prefix that an object
+     * must have to be included in the metrics results.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * <p>The prefix to use when evaluating an AND predicate.</p>
+     * <p>The prefix to use when evaluating an AND predicate: The prefix that an object
+     * must have to be included in the metrics results.</p>
      */
     inline AnalyticsAndOperator& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * <p>The prefix to use when evaluating an AND predicate.</p>
+     * <p>The prefix to use when evaluating an AND predicate: The prefix that an object
+     * must have to be included in the metrics results.</p>
      */
     inline AnalyticsAndOperator& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The prefix to use when evaluating an AND predicate.</p>
+     * <p>The prefix to use when evaluating an AND predicate: The prefix that an object
+     * must have to be included in the metrics results.</p>
      */
     inline AnalyticsAndOperator& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 

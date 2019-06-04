@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Specifies a cross-origin access rule for an Amazon S3 bucket.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CORSRule">AWS API
    * Reference</a></p>
    */
@@ -49,102 +50,138 @@ namespace Model
 
 
     /**
-     * <p>Specifies which headers are allowed in a pre-flight OPTIONS request.</p>
+     * <p>Headers that are specified in the <code>Access-Control-Request-Headers</code>
+     * header. These headers are allowed in a preflight OPTIONS request. In response to
+     * any preflight OPTIONS request, Amazon S3 returns any requested headers that are
+     * allowed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedHeaders() const{ return m_allowedHeaders; }
 
     /**
-     * <p>Specifies which headers are allowed in a pre-flight OPTIONS request.</p>
+     * <p>Headers that are specified in the <code>Access-Control-Request-Headers</code>
+     * header. These headers are allowed in a preflight OPTIONS request. In response to
+     * any preflight OPTIONS request, Amazon S3 returns any requested headers that are
+     * allowed.</p>
      */
     inline bool AllowedHeadersHasBeenSet() const { return m_allowedHeadersHasBeenSet; }
 
     /**
-     * <p>Specifies which headers are allowed in a pre-flight OPTIONS request.</p>
+     * <p>Headers that are specified in the <code>Access-Control-Request-Headers</code>
+     * header. These headers are allowed in a preflight OPTIONS request. In response to
+     * any preflight OPTIONS request, Amazon S3 returns any requested headers that are
+     * allowed.</p>
      */
     inline void SetAllowedHeaders(const Aws::Vector<Aws::String>& value) { m_allowedHeadersHasBeenSet = true; m_allowedHeaders = value; }
 
     /**
-     * <p>Specifies which headers are allowed in a pre-flight OPTIONS request.</p>
+     * <p>Headers that are specified in the <code>Access-Control-Request-Headers</code>
+     * header. These headers are allowed in a preflight OPTIONS request. In response to
+     * any preflight OPTIONS request, Amazon S3 returns any requested headers that are
+     * allowed.</p>
      */
     inline void SetAllowedHeaders(Aws::Vector<Aws::String>&& value) { m_allowedHeadersHasBeenSet = true; m_allowedHeaders = std::move(value); }
 
     /**
-     * <p>Specifies which headers are allowed in a pre-flight OPTIONS request.</p>
+     * <p>Headers that are specified in the <code>Access-Control-Request-Headers</code>
+     * header. These headers are allowed in a preflight OPTIONS request. In response to
+     * any preflight OPTIONS request, Amazon S3 returns any requested headers that are
+     * allowed.</p>
      */
     inline CORSRule& WithAllowedHeaders(const Aws::Vector<Aws::String>& value) { SetAllowedHeaders(value); return *this;}
 
     /**
-     * <p>Specifies which headers are allowed in a pre-flight OPTIONS request.</p>
+     * <p>Headers that are specified in the <code>Access-Control-Request-Headers</code>
+     * header. These headers are allowed in a preflight OPTIONS request. In response to
+     * any preflight OPTIONS request, Amazon S3 returns any requested headers that are
+     * allowed.</p>
      */
     inline CORSRule& WithAllowedHeaders(Aws::Vector<Aws::String>&& value) { SetAllowedHeaders(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies which headers are allowed in a pre-flight OPTIONS request.</p>
+     * <p>Headers that are specified in the <code>Access-Control-Request-Headers</code>
+     * header. These headers are allowed in a preflight OPTIONS request. In response to
+     * any preflight OPTIONS request, Amazon S3 returns any requested headers that are
+     * allowed.</p>
      */
     inline CORSRule& AddAllowedHeaders(const Aws::String& value) { m_allowedHeadersHasBeenSet = true; m_allowedHeaders.push_back(value); return *this; }
 
     /**
-     * <p>Specifies which headers are allowed in a pre-flight OPTIONS request.</p>
+     * <p>Headers that are specified in the <code>Access-Control-Request-Headers</code>
+     * header. These headers are allowed in a preflight OPTIONS request. In response to
+     * any preflight OPTIONS request, Amazon S3 returns any requested headers that are
+     * allowed.</p>
      */
     inline CORSRule& AddAllowedHeaders(Aws::String&& value) { m_allowedHeadersHasBeenSet = true; m_allowedHeaders.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Specifies which headers are allowed in a pre-flight OPTIONS request.</p>
+     * <p>Headers that are specified in the <code>Access-Control-Request-Headers</code>
+     * header. These headers are allowed in a preflight OPTIONS request. In response to
+     * any preflight OPTIONS request, Amazon S3 returns any requested headers that are
+     * allowed.</p>
      */
     inline CORSRule& AddAllowedHeaders(const char* value) { m_allowedHeadersHasBeenSet = true; m_allowedHeaders.push_back(value); return *this; }
 
 
     /**
-     * <p>Identifies HTTP methods that the domain/origin specified in the rule is
-     * allowed to execute.</p>
+     * <p>An HTTP method that you allow the origin to execute. Valid values are
+     * <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and
+     * <code>DELETE</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedMethods() const{ return m_allowedMethods; }
 
     /**
-     * <p>Identifies HTTP methods that the domain/origin specified in the rule is
-     * allowed to execute.</p>
+     * <p>An HTTP method that you allow the origin to execute. Valid values are
+     * <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and
+     * <code>DELETE</code>.</p>
      */
     inline bool AllowedMethodsHasBeenSet() const { return m_allowedMethodsHasBeenSet; }
 
     /**
-     * <p>Identifies HTTP methods that the domain/origin specified in the rule is
-     * allowed to execute.</p>
+     * <p>An HTTP method that you allow the origin to execute. Valid values are
+     * <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and
+     * <code>DELETE</code>.</p>
      */
     inline void SetAllowedMethods(const Aws::Vector<Aws::String>& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods = value; }
 
     /**
-     * <p>Identifies HTTP methods that the domain/origin specified in the rule is
-     * allowed to execute.</p>
+     * <p>An HTTP method that you allow the origin to execute. Valid values are
+     * <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and
+     * <code>DELETE</code>.</p>
      */
     inline void SetAllowedMethods(Aws::Vector<Aws::String>&& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods = std::move(value); }
 
     /**
-     * <p>Identifies HTTP methods that the domain/origin specified in the rule is
-     * allowed to execute.</p>
+     * <p>An HTTP method that you allow the origin to execute. Valid values are
+     * <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and
+     * <code>DELETE</code>.</p>
      */
     inline CORSRule& WithAllowedMethods(const Aws::Vector<Aws::String>& value) { SetAllowedMethods(value); return *this;}
 
     /**
-     * <p>Identifies HTTP methods that the domain/origin specified in the rule is
-     * allowed to execute.</p>
+     * <p>An HTTP method that you allow the origin to execute. Valid values are
+     * <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and
+     * <code>DELETE</code>.</p>
      */
     inline CORSRule& WithAllowedMethods(Aws::Vector<Aws::String>&& value) { SetAllowedMethods(std::move(value)); return *this;}
 
     /**
-     * <p>Identifies HTTP methods that the domain/origin specified in the rule is
-     * allowed to execute.</p>
+     * <p>An HTTP method that you allow the origin to execute. Valid values are
+     * <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and
+     * <code>DELETE</code>.</p>
      */
     inline CORSRule& AddAllowedMethods(const Aws::String& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods.push_back(value); return *this; }
 
     /**
-     * <p>Identifies HTTP methods that the domain/origin specified in the rule is
-     * allowed to execute.</p>
+     * <p>An HTTP method that you allow the origin to execute. Valid values are
+     * <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and
+     * <code>DELETE</code>.</p>
      */
     inline CORSRule& AddAllowedMethods(Aws::String&& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Identifies HTTP methods that the domain/origin specified in the rule is
-     * allowed to execute.</p>
+     * <p>An HTTP method that you allow the origin to execute. Valid values are
+     * <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and
+     * <code>DELETE</code>.</p>
      */
     inline CORSRule& AddAllowedMethods(const char* value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods.push_back(value); return *this; }
 
@@ -206,64 +243,64 @@ namespace Model
 
     /**
      * <p>One or more headers in the response that you want customers to be able to
-     * access from their applications (for example, from a JavaScript XMLHttpRequest
-     * object).</p>
+     * access from their applications (for example, from a JavaScript
+     * <code>XMLHttpRequest</code> object).</p>
      */
     inline const Aws::Vector<Aws::String>& GetExposeHeaders() const{ return m_exposeHeaders; }
 
     /**
      * <p>One or more headers in the response that you want customers to be able to
-     * access from their applications (for example, from a JavaScript XMLHttpRequest
-     * object).</p>
+     * access from their applications (for example, from a JavaScript
+     * <code>XMLHttpRequest</code> object).</p>
      */
     inline bool ExposeHeadersHasBeenSet() const { return m_exposeHeadersHasBeenSet; }
 
     /**
      * <p>One or more headers in the response that you want customers to be able to
-     * access from their applications (for example, from a JavaScript XMLHttpRequest
-     * object).</p>
+     * access from their applications (for example, from a JavaScript
+     * <code>XMLHttpRequest</code> object).</p>
      */
     inline void SetExposeHeaders(const Aws::Vector<Aws::String>& value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders = value; }
 
     /**
      * <p>One or more headers in the response that you want customers to be able to
-     * access from their applications (for example, from a JavaScript XMLHttpRequest
-     * object).</p>
+     * access from their applications (for example, from a JavaScript
+     * <code>XMLHttpRequest</code> object).</p>
      */
     inline void SetExposeHeaders(Aws::Vector<Aws::String>&& value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders = std::move(value); }
 
     /**
      * <p>One or more headers in the response that you want customers to be able to
-     * access from their applications (for example, from a JavaScript XMLHttpRequest
-     * object).</p>
+     * access from their applications (for example, from a JavaScript
+     * <code>XMLHttpRequest</code> object).</p>
      */
     inline CORSRule& WithExposeHeaders(const Aws::Vector<Aws::String>& value) { SetExposeHeaders(value); return *this;}
 
     /**
      * <p>One or more headers in the response that you want customers to be able to
-     * access from their applications (for example, from a JavaScript XMLHttpRequest
-     * object).</p>
+     * access from their applications (for example, from a JavaScript
+     * <code>XMLHttpRequest</code> object).</p>
      */
     inline CORSRule& WithExposeHeaders(Aws::Vector<Aws::String>&& value) { SetExposeHeaders(std::move(value)); return *this;}
 
     /**
      * <p>One or more headers in the response that you want customers to be able to
-     * access from their applications (for example, from a JavaScript XMLHttpRequest
-     * object).</p>
+     * access from their applications (for example, from a JavaScript
+     * <code>XMLHttpRequest</code> object).</p>
      */
     inline CORSRule& AddExposeHeaders(const Aws::String& value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders.push_back(value); return *this; }
 
     /**
      * <p>One or more headers in the response that you want customers to be able to
-     * access from their applications (for example, from a JavaScript XMLHttpRequest
-     * object).</p>
+     * access from their applications (for example, from a JavaScript
+     * <code>XMLHttpRequest</code> object).</p>
      */
     inline CORSRule& AddExposeHeaders(Aws::String&& value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more headers in the response that you want customers to be able to
-     * access from their applications (for example, from a JavaScript XMLHttpRequest
-     * object).</p>
+     * access from their applications (for example, from a JavaScript
+     * <code>XMLHttpRequest</code> object).</p>
      */
     inline CORSRule& AddExposeHeaders(const char* value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders.push_back(value); return *this; }
 

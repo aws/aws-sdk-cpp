@@ -1555,68 +1555,68 @@ namespace Model
 
 
     /**
-     * <p>The Object Lock mode that you want to apply to the copied object.</p>
+     * <p>The object lock mode that you want to apply to the copied object.</p>
      */
     inline const ObjectLockMode& GetObjectLockMode() const{ return m_objectLockMode; }
 
     /**
-     * <p>The Object Lock mode that you want to apply to the copied object.</p>
+     * <p>The object lock mode that you want to apply to the copied object.</p>
      */
     inline bool ObjectLockModeHasBeenSet() const { return m_objectLockModeHasBeenSet; }
 
     /**
-     * <p>The Object Lock mode that you want to apply to the copied object.</p>
+     * <p>The object lock mode that you want to apply to the copied object.</p>
      */
     inline void SetObjectLockMode(const ObjectLockMode& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = value; }
 
     /**
-     * <p>The Object Lock mode that you want to apply to the copied object.</p>
+     * <p>The object lock mode that you want to apply to the copied object.</p>
      */
     inline void SetObjectLockMode(ObjectLockMode&& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = std::move(value); }
 
     /**
-     * <p>The Object Lock mode that you want to apply to the copied object.</p>
+     * <p>The object lock mode that you want to apply to the copied object.</p>
      */
     inline CopyObjectRequest& WithObjectLockMode(const ObjectLockMode& value) { SetObjectLockMode(value); return *this;}
 
     /**
-     * <p>The Object Lock mode that you want to apply to the copied object.</p>
+     * <p>The object lock mode that you want to apply to the copied object.</p>
      */
     inline CopyObjectRequest& WithObjectLockMode(ObjectLockMode&& value) { SetObjectLockMode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time when you want the copied object's Object Lock to
+     * <p>The date and time when you want the copied object's object lock to
      * expire.</p>
      */
     inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const{ return m_objectLockRetainUntilDate; }
 
     /**
-     * <p>The date and time when you want the copied object's Object Lock to
+     * <p>The date and time when you want the copied object's object lock to
      * expire.</p>
      */
     inline bool ObjectLockRetainUntilDateHasBeenSet() const { return m_objectLockRetainUntilDateHasBeenSet; }
 
     /**
-     * <p>The date and time when you want the copied object's Object Lock to
+     * <p>The date and time when you want the copied object's object lock to
      * expire.</p>
      */
     inline void SetObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = value; }
 
     /**
-     * <p>The date and time when you want the copied object's Object Lock to
+     * <p>The date and time when you want the copied object's object lock to
      * expire.</p>
      */
     inline void SetObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = std::move(value); }
 
     /**
-     * <p>The date and time when you want the copied object's Object Lock to
+     * <p>The date and time when you want the copied object's object lock to
      * expire.</p>
      */
     inline CopyObjectRequest& WithObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { SetObjectLockRetainUntilDate(value); return *this;}
 
     /**
-     * <p>The date and time when you want the copied object's Object Lock to
+     * <p>The date and time when you want the copied object's object lock to
      * expire.</p>
      */
     inline CopyObjectRequest& WithObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { SetObjectLockRetainUntilDate(std::move(value)); return *this;}

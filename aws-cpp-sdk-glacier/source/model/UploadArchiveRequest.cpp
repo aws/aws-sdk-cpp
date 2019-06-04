@@ -39,7 +39,6 @@ Aws::Http::HeaderValueCollection UploadArchiveRequest::GetRequestSpecificHeaders
 {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("x-amz-glacier-version", "2012-06-01"));
-  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_EVENTSTREAM_CONTENT_TYPE);
   Aws::StringStream ss;
   if(m_archiveDescriptionHasBeenSet)
   {

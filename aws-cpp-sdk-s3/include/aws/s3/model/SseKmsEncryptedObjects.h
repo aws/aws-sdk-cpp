@@ -49,38 +49,38 @@ namespace Model
 
 
     /**
-     * <p> If the status is not <code>Enabled</code>, replication for S3 objects
-     * encrypted with AWS KMS is disabled.</p>
+     * <p>Specifies whether Amazon S3 replicates objects created with server-side
+     * encryption using an AWS KMS-managed key.</p>
      */
     inline const SseKmsEncryptedObjectsStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p> If the status is not <code>Enabled</code>, replication for S3 objects
-     * encrypted with AWS KMS is disabled.</p>
+     * <p>Specifies whether Amazon S3 replicates objects created with server-side
+     * encryption using an AWS KMS-managed key.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p> If the status is not <code>Enabled</code>, replication for S3 objects
-     * encrypted with AWS KMS is disabled.</p>
+     * <p>Specifies whether Amazon S3 replicates objects created with server-side
+     * encryption using an AWS KMS-managed key.</p>
      */
     inline void SetStatus(const SseKmsEncryptedObjectsStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p> If the status is not <code>Enabled</code>, replication for S3 objects
-     * encrypted with AWS KMS is disabled.</p>
+     * <p>Specifies whether Amazon S3 replicates objects created with server-side
+     * encryption using an AWS KMS-managed key.</p>
      */
     inline void SetStatus(SseKmsEncryptedObjectsStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p> If the status is not <code>Enabled</code>, replication for S3 objects
-     * encrypted with AWS KMS is disabled.</p>
+     * <p>Specifies whether Amazon S3 replicates objects created with server-side
+     * encryption using an AWS KMS-managed key.</p>
      */
     inline SseKmsEncryptedObjects& WithStatus(const SseKmsEncryptedObjectsStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> If the status is not <code>Enabled</code>, replication for S3 objects
-     * encrypted with AWS KMS is disabled.</p>
+     * <p>Specifies whether Amazon S3 replicates objects created with server-side
+     * encryption using an AWS KMS-managed key.</p>
      */
     inline SseKmsEncryptedObjects& WithStatus(SseKmsEncryptedObjectsStatus&& value) { SetStatus(std::move(value)); return *this;}
 

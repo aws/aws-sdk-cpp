@@ -941,53 +941,53 @@ namespace Model
 
 
     /**
-     * <p>The Object Lock mode currently in place for this object.</p>
+     * <p>The object lock mode currently in place for this object.</p>
      */
     inline const ObjectLockMode& GetObjectLockMode() const{ return m_objectLockMode; }
 
     /**
-     * <p>The Object Lock mode currently in place for this object.</p>
+     * <p>The object lock mode currently in place for this object.</p>
      */
     inline void SetObjectLockMode(const ObjectLockMode& value) { m_objectLockMode = value; }
 
     /**
-     * <p>The Object Lock mode currently in place for this object.</p>
+     * <p>The object lock mode currently in place for this object.</p>
      */
     inline void SetObjectLockMode(ObjectLockMode&& value) { m_objectLockMode = std::move(value); }
 
     /**
-     * <p>The Object Lock mode currently in place for this object.</p>
+     * <p>The object lock mode currently in place for this object.</p>
      */
     inline HeadObjectResult& WithObjectLockMode(const ObjectLockMode& value) { SetObjectLockMode(value); return *this;}
 
     /**
-     * <p>The Object Lock mode currently in place for this object.</p>
+     * <p>The object lock mode currently in place for this object.</p>
      */
     inline HeadObjectResult& WithObjectLockMode(ObjectLockMode&& value) { SetObjectLockMode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time when this object's Object Lock will expire.</p>
+     * <p>The date and time when this object's object lock expires.</p>
      */
     inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const{ return m_objectLockRetainUntilDate; }
 
     /**
-     * <p>The date and time when this object's Object Lock will expire.</p>
+     * <p>The date and time when this object's object lock expires.</p>
      */
     inline void SetObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { m_objectLockRetainUntilDate = value; }
 
     /**
-     * <p>The date and time when this object's Object Lock will expire.</p>
+     * <p>The date and time when this object's object lock expires.</p>
      */
     inline void SetObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { m_objectLockRetainUntilDate = std::move(value); }
 
     /**
-     * <p>The date and time when this object's Object Lock will expire.</p>
+     * <p>The date and time when this object's object lock expires.</p>
      */
     inline HeadObjectResult& WithObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { SetObjectLockRetainUntilDate(value); return *this;}
 
     /**
-     * <p>The date and time when this object's Object Lock will expire.</p>
+     * <p>The date and time when this object's object lock expires.</p>
      */
     inline HeadObjectResult& WithObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { SetObjectLockRetainUntilDate(std::move(value)); return *this;}
 

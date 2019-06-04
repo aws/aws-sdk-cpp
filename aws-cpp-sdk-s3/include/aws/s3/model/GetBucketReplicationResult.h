@@ -42,19 +42,29 @@ namespace Model
     GetBucketReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p/>
+     */
     inline const ReplicationConfiguration& GetReplicationConfiguration() const{ return m_replicationConfiguration; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetReplicationConfiguration(const ReplicationConfiguration& value) { m_replicationConfiguration = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetReplicationConfiguration(ReplicationConfiguration&& value) { m_replicationConfiguration = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline GetBucketReplicationResult& WithReplicationConfiguration(const ReplicationConfiguration& value) { SetReplicationConfiguration(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline GetBucketReplicationResult& WithReplicationConfiguration(ReplicationConfiguration&& value) { SetReplicationConfiguration(std::move(value)); return *this;}
 
   private:

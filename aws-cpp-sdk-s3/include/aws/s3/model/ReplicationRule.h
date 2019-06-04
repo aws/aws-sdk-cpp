@@ -38,8 +38,8 @@ namespace Model
 {
 
   /**
-   * <p>A container for information about a specific replication rule.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Specifies which Amazon S3 objects to replicate and where to store the
+   * replicas.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ReplicationRule">AWS
    * API Reference</a></p>
    */
@@ -151,52 +151,64 @@ namespace Model
     inline ReplicationRule& WithPriority(int value) { SetPriority(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const ReplicationRuleFilter& GetFilter() const{ return m_filter; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetFilter(const ReplicationRuleFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetFilter(ReplicationRuleFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ReplicationRule& WithFilter(const ReplicationRuleFilter& value) { SetFilter(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ReplicationRule& WithFilter(ReplicationRuleFilter&& value) { SetFilter(std::move(value)); return *this;}
 
 
     /**
-     * <p>If status isn't enabled, the rule is ignored.</p>
+     * <p>Specifies whether the rule is enabled.</p>
      */
     inline const ReplicationRuleStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>If status isn't enabled, the rule is ignored.</p>
+     * <p>Specifies whether the rule is enabled.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>If status isn't enabled, the rule is ignored.</p>
+     * <p>Specifies whether the rule is enabled.</p>
      */
     inline void SetStatus(const ReplicationRuleStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>If status isn't enabled, the rule is ignored.</p>
+     * <p>Specifies whether the rule is enabled.</p>
      */
     inline void SetStatus(ReplicationRuleStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>If status isn't enabled, the rule is ignored.</p>
+     * <p>Specifies whether the rule is enabled.</p>
      */
     inline ReplicationRule& WithStatus(const ReplicationRuleStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>If status isn't enabled, the rule is ignored.</p>
+     * <p>Specifies whether the rule is enabled.</p>
      */
     inline ReplicationRule& WithStatus(ReplicationRuleStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -206,8 +218,7 @@ namespace Model
      * objects that you want to replicate. You can choose to enable or disable the
      * replication of these objects. Currently, Amazon S3 supports only the filter that
      * you can specify for objects created with server-side encryption using an AWS
-     * KMS-Managed Key (SSE-KMS). </p> <p> If you want Amazon S3 to replicate objects
-     * created with server-side encryption using AWS KMS-Managed Keys. </p>
+     * KMS-Managed Key (SSE-KMS).</p>
      */
     inline const SourceSelectionCriteria& GetSourceSelectionCriteria() const{ return m_sourceSelectionCriteria; }
 
@@ -216,8 +227,7 @@ namespace Model
      * objects that you want to replicate. You can choose to enable or disable the
      * replication of these objects. Currently, Amazon S3 supports only the filter that
      * you can specify for objects created with server-side encryption using an AWS
-     * KMS-Managed Key (SSE-KMS). </p> <p> If you want Amazon S3 to replicate objects
-     * created with server-side encryption using AWS KMS-Managed Keys. </p>
+     * KMS-Managed Key (SSE-KMS).</p>
      */
     inline bool SourceSelectionCriteriaHasBeenSet() const { return m_sourceSelectionCriteriaHasBeenSet; }
 
@@ -226,8 +236,7 @@ namespace Model
      * objects that you want to replicate. You can choose to enable or disable the
      * replication of these objects. Currently, Amazon S3 supports only the filter that
      * you can specify for objects created with server-side encryption using an AWS
-     * KMS-Managed Key (SSE-KMS). </p> <p> If you want Amazon S3 to replicate objects
-     * created with server-side encryption using AWS KMS-Managed Keys. </p>
+     * KMS-Managed Key (SSE-KMS).</p>
      */
     inline void SetSourceSelectionCriteria(const SourceSelectionCriteria& value) { m_sourceSelectionCriteriaHasBeenSet = true; m_sourceSelectionCriteria = value; }
 
@@ -236,8 +245,7 @@ namespace Model
      * objects that you want to replicate. You can choose to enable or disable the
      * replication of these objects. Currently, Amazon S3 supports only the filter that
      * you can specify for objects created with server-side encryption using an AWS
-     * KMS-Managed Key (SSE-KMS). </p> <p> If you want Amazon S3 to replicate objects
-     * created with server-side encryption using AWS KMS-Managed Keys. </p>
+     * KMS-Managed Key (SSE-KMS).</p>
      */
     inline void SetSourceSelectionCriteria(SourceSelectionCriteria&& value) { m_sourceSelectionCriteriaHasBeenSet = true; m_sourceSelectionCriteria = std::move(value); }
 
@@ -246,8 +254,7 @@ namespace Model
      * objects that you want to replicate. You can choose to enable or disable the
      * replication of these objects. Currently, Amazon S3 supports only the filter that
      * you can specify for objects created with server-side encryption using an AWS
-     * KMS-Managed Key (SSE-KMS). </p> <p> If you want Amazon S3 to replicate objects
-     * created with server-side encryption using AWS KMS-Managed Keys. </p>
+     * KMS-Managed Key (SSE-KMS).</p>
      */
     inline ReplicationRule& WithSourceSelectionCriteria(const SourceSelectionCriteria& value) { SetSourceSelectionCriteria(value); return *this;}
 
@@ -256,8 +263,7 @@ namespace Model
      * objects that you want to replicate. You can choose to enable or disable the
      * replication of these objects. Currently, Amazon S3 supports only the filter that
      * you can specify for objects created with server-side encryption using an AWS
-     * KMS-Managed Key (SSE-KMS). </p> <p> If you want Amazon S3 to replicate objects
-     * created with server-side encryption using AWS KMS-Managed Keys. </p>
+     * KMS-Managed Key (SSE-KMS).</p>
      */
     inline ReplicationRule& WithSourceSelectionCriteria(SourceSelectionCriteria&& value) { SetSourceSelectionCriteria(std::move(value)); return *this;}
 
@@ -293,22 +299,34 @@ namespace Model
     inline ReplicationRule& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const DeleteMarkerReplication& GetDeleteMarkerReplication() const{ return m_deleteMarkerReplication; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool DeleteMarkerReplicationHasBeenSet() const { return m_deleteMarkerReplicationHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDeleteMarkerReplication(const DeleteMarkerReplication& value) { m_deleteMarkerReplicationHasBeenSet = true; m_deleteMarkerReplication = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDeleteMarkerReplication(DeleteMarkerReplication&& value) { m_deleteMarkerReplicationHasBeenSet = true; m_deleteMarkerReplication = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ReplicationRule& WithDeleteMarkerReplication(const DeleteMarkerReplication& value) { SetDeleteMarkerReplication(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ReplicationRule& WithDeleteMarkerReplication(DeleteMarkerReplication&& value) { SetDeleteMarkerReplication(std::move(value)); return *this;}
 
   private:

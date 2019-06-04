@@ -537,6 +537,49 @@ namespace Model
      */
     inline DescribeGatewayInformationResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
+     * your gateway. </p>
+     */
+    inline const Aws::String& GetVPCEndpoint() const{ return m_vPCEndpoint; }
+
+    /**
+     * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
+     * your gateway. </p>
+     */
+    inline void SetVPCEndpoint(const Aws::String& value) { m_vPCEndpoint = value; }
+
+    /**
+     * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
+     * your gateway. </p>
+     */
+    inline void SetVPCEndpoint(Aws::String&& value) { m_vPCEndpoint = std::move(value); }
+
+    /**
+     * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
+     * your gateway. </p>
+     */
+    inline void SetVPCEndpoint(const char* value) { m_vPCEndpoint.assign(value); }
+
+    /**
+     * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
+     * your gateway. </p>
+     */
+    inline DescribeGatewayInformationResult& WithVPCEndpoint(const Aws::String& value) { SetVPCEndpoint(value); return *this;}
+
+    /**
+     * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
+     * your gateway. </p>
+     */
+    inline DescribeGatewayInformationResult& WithVPCEndpoint(Aws::String&& value) { SetVPCEndpoint(std::move(value)); return *this;}
+
+    /**
+     * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
+     * your gateway. </p>
+     */
+    inline DescribeGatewayInformationResult& WithVPCEndpoint(const char* value) { SetVPCEndpoint(value); return *this;}
+
   private:
 
     Aws::String m_gatewayARN;
@@ -562,6 +605,8 @@ namespace Model
     Aws::String m_ec2InstanceRegion;
 
     Aws::Vector<Tag> m_tags;
+
+    Aws::String m_vPCEndpoint;
   };
 
 } // namespace Model

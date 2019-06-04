@@ -24,6 +24,8 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/elasticache/model/AddTagsToResourceResult.h>
 #include <aws/elasticache/model/AuthorizeCacheSecurityGroupIngressResult.h>
+#include <aws/elasticache/model/BatchApplyUpdateActionResult.h>
+#include <aws/elasticache/model/BatchStopUpdateActionResult.h>
 #include <aws/elasticache/model/CopySnapshotResult.h>
 #include <aws/elasticache/model/CreateCacheClusterResult.h>
 #include <aws/elasticache/model/CreateCacheParameterGroupResult.h>
@@ -46,7 +48,9 @@
 #include <aws/elasticache/model/DescribeReplicationGroupsResult.h>
 #include <aws/elasticache/model/DescribeReservedCacheNodesResult.h>
 #include <aws/elasticache/model/DescribeReservedCacheNodesOfferingsResult.h>
+#include <aws/elasticache/model/DescribeServiceUpdatesResult.h>
 #include <aws/elasticache/model/DescribeSnapshotsResult.h>
+#include <aws/elasticache/model/DescribeUpdateActionsResult.h>
 #include <aws/elasticache/model/IncreaseReplicaCountResult.h>
 #include <aws/elasticache/model/ListAllowedNodeTypeModificationsResult.h>
 #include <aws/elasticache/model/ListTagsForResourceResult.h>
@@ -109,6 +113,8 @@ namespace Model
 {
         class AddTagsToResourceRequest;
         class AuthorizeCacheSecurityGroupIngressRequest;
+        class BatchApplyUpdateActionRequest;
+        class BatchStopUpdateActionRequest;
         class CopySnapshotRequest;
         class CreateCacheClusterRequest;
         class CreateCacheParameterGroupRequest;
@@ -134,7 +140,9 @@ namespace Model
         class DescribeReplicationGroupsRequest;
         class DescribeReservedCacheNodesRequest;
         class DescribeReservedCacheNodesOfferingsRequest;
+        class DescribeServiceUpdatesRequest;
         class DescribeSnapshotsRequest;
+        class DescribeUpdateActionsRequest;
         class IncreaseReplicaCountRequest;
         class ListAllowedNodeTypeModificationsRequest;
         class ListTagsForResourceRequest;
@@ -152,6 +160,8 @@ namespace Model
 
         typedef Aws::Utils::Outcome<AddTagsToResourceResult, Aws::Client::AWSError<ElastiCacheErrors>> AddTagsToResourceOutcome;
         typedef Aws::Utils::Outcome<AuthorizeCacheSecurityGroupIngressResult, Aws::Client::AWSError<ElastiCacheErrors>> AuthorizeCacheSecurityGroupIngressOutcome;
+        typedef Aws::Utils::Outcome<BatchApplyUpdateActionResult, Aws::Client::AWSError<ElastiCacheErrors>> BatchApplyUpdateActionOutcome;
+        typedef Aws::Utils::Outcome<BatchStopUpdateActionResult, Aws::Client::AWSError<ElastiCacheErrors>> BatchStopUpdateActionOutcome;
         typedef Aws::Utils::Outcome<CopySnapshotResult, Aws::Client::AWSError<ElastiCacheErrors>> CopySnapshotOutcome;
         typedef Aws::Utils::Outcome<CreateCacheClusterResult, Aws::Client::AWSError<ElastiCacheErrors>> CreateCacheClusterOutcome;
         typedef Aws::Utils::Outcome<CreateCacheParameterGroupResult, Aws::Client::AWSError<ElastiCacheErrors>> CreateCacheParameterGroupOutcome;
@@ -177,7 +187,9 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeReplicationGroupsResult, Aws::Client::AWSError<ElastiCacheErrors>> DescribeReplicationGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeReservedCacheNodesResult, Aws::Client::AWSError<ElastiCacheErrors>> DescribeReservedCacheNodesOutcome;
         typedef Aws::Utils::Outcome<DescribeReservedCacheNodesOfferingsResult, Aws::Client::AWSError<ElastiCacheErrors>> DescribeReservedCacheNodesOfferingsOutcome;
+        typedef Aws::Utils::Outcome<DescribeServiceUpdatesResult, Aws::Client::AWSError<ElastiCacheErrors>> DescribeServiceUpdatesOutcome;
         typedef Aws::Utils::Outcome<DescribeSnapshotsResult, Aws::Client::AWSError<ElastiCacheErrors>> DescribeSnapshotsOutcome;
+        typedef Aws::Utils::Outcome<DescribeUpdateActionsResult, Aws::Client::AWSError<ElastiCacheErrors>> DescribeUpdateActionsOutcome;
         typedef Aws::Utils::Outcome<IncreaseReplicaCountResult, Aws::Client::AWSError<ElastiCacheErrors>> IncreaseReplicaCountOutcome;
         typedef Aws::Utils::Outcome<ListAllowedNodeTypeModificationsResult, Aws::Client::AWSError<ElastiCacheErrors>> ListAllowedNodeTypeModificationsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<ElastiCacheErrors>> ListTagsForResourceOutcome;
@@ -195,6 +207,8 @@ namespace Model
 
         typedef std::future<AddTagsToResourceOutcome> AddTagsToResourceOutcomeCallable;
         typedef std::future<AuthorizeCacheSecurityGroupIngressOutcome> AuthorizeCacheSecurityGroupIngressOutcomeCallable;
+        typedef std::future<BatchApplyUpdateActionOutcome> BatchApplyUpdateActionOutcomeCallable;
+        typedef std::future<BatchStopUpdateActionOutcome> BatchStopUpdateActionOutcomeCallable;
         typedef std::future<CopySnapshotOutcome> CopySnapshotOutcomeCallable;
         typedef std::future<CreateCacheClusterOutcome> CreateCacheClusterOutcomeCallable;
         typedef std::future<CreateCacheParameterGroupOutcome> CreateCacheParameterGroupOutcomeCallable;
@@ -220,7 +234,9 @@ namespace Model
         typedef std::future<DescribeReplicationGroupsOutcome> DescribeReplicationGroupsOutcomeCallable;
         typedef std::future<DescribeReservedCacheNodesOutcome> DescribeReservedCacheNodesOutcomeCallable;
         typedef std::future<DescribeReservedCacheNodesOfferingsOutcome> DescribeReservedCacheNodesOfferingsOutcomeCallable;
+        typedef std::future<DescribeServiceUpdatesOutcome> DescribeServiceUpdatesOutcomeCallable;
         typedef std::future<DescribeSnapshotsOutcome> DescribeSnapshotsOutcomeCallable;
+        typedef std::future<DescribeUpdateActionsOutcome> DescribeUpdateActionsOutcomeCallable;
         typedef std::future<IncreaseReplicaCountOutcome> IncreaseReplicaCountOutcomeCallable;
         typedef std::future<ListAllowedNodeTypeModificationsOutcome> ListAllowedNodeTypeModificationsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -241,6 +257,8 @@ namespace Model
 
     typedef std::function<void(const ElastiCacheClient*, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToResourceResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::AuthorizeCacheSecurityGroupIngressRequest&, const Model::AuthorizeCacheSecurityGroupIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AuthorizeCacheSecurityGroupIngressResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::BatchApplyUpdateActionRequest&, const Model::BatchApplyUpdateActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchApplyUpdateActionResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::BatchStopUpdateActionRequest&, const Model::BatchStopUpdateActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchStopUpdateActionResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::CopySnapshotRequest&, const Model::CopySnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopySnapshotResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::CreateCacheClusterRequest&, const Model::CreateCacheClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCacheClusterResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::CreateCacheParameterGroupRequest&, const Model::CreateCacheParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCacheParameterGroupResponseReceivedHandler;
@@ -266,7 +284,9 @@ namespace Model
     typedef std::function<void(const ElastiCacheClient*, const Model::DescribeReplicationGroupsRequest&, const Model::DescribeReplicationGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReplicationGroupsResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DescribeReservedCacheNodesRequest&, const Model::DescribeReservedCacheNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedCacheNodesResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DescribeReservedCacheNodesOfferingsRequest&, const Model::DescribeReservedCacheNodesOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedCacheNodesOfferingsResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::DescribeServiceUpdatesRequest&, const Model::DescribeServiceUpdatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServiceUpdatesResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DescribeSnapshotsRequest&, const Model::DescribeSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSnapshotsResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::DescribeUpdateActionsRequest&, const Model::DescribeUpdateActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUpdateActionsResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::IncreaseReplicaCountRequest&, const Model::IncreaseReplicaCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > IncreaseReplicaCountResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::ListAllowedNodeTypeModificationsRequest&, const Model::ListAllowedNodeTypeModificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAllowedNodeTypeModificationsResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -337,7 +357,7 @@ namespace Model
          * your tags. You can apply tags that represent business categories (such as cost
          * centers, application names, or owners) to organize your costs across multiple
          * services. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Using
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Using
          * Cost Allocation Tags in Amazon ElastiCache</a> in the <i>ElastiCache User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AddTagsToResource">AWS
@@ -354,7 +374,7 @@ namespace Model
          * your tags. You can apply tags that represent business categories (such as cost
          * centers, application names, or owners) to organize your costs across multiple
          * services. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Using
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Using
          * Cost Allocation Tags in Amazon ElastiCache</a> in the <i>ElastiCache User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AddTagsToResource">AWS
@@ -373,7 +393,7 @@ namespace Model
          * your tags. You can apply tags that represent business categories (such as cost
          * centers, application names, or owners) to organize your costs across multiple
          * services. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Using
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Using
          * Cost Allocation Tags in Amazon ElastiCache</a> in the <i>ElastiCache User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AddTagsToResource">AWS
@@ -421,6 +441,74 @@ namespace Model
         virtual void AuthorizeCacheSecurityGroupIngressAsync(const Model::AuthorizeCacheSecurityGroupIngressRequest& request, const AuthorizeCacheSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Apply the service update. For more information on service updates and
+         * applying them, see <a
+         * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/Amazon/red-ug/applying-updates.html">Applying
+         * Service Updates</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/BatchApplyUpdateAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchApplyUpdateActionOutcome BatchApplyUpdateAction(const Model::BatchApplyUpdateActionRequest& request) const;
+
+        /**
+         * <p>Apply the service update. For more information on service updates and
+         * applying them, see <a
+         * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/Amazon/red-ug/applying-updates.html">Applying
+         * Service Updates</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/BatchApplyUpdateAction">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchApplyUpdateActionOutcomeCallable BatchApplyUpdateActionCallable(const Model::BatchApplyUpdateActionRequest& request) const;
+
+        /**
+         * <p>Apply the service update. For more information on service updates and
+         * applying them, see <a
+         * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/Amazon/red-ug/applying-updates.html">Applying
+         * Service Updates</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/BatchApplyUpdateAction">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchApplyUpdateActionAsync(const Model::BatchApplyUpdateActionRequest& request, const BatchApplyUpdateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stop the service update. For more information on service updates and stopping
+         * them, see <a
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/stopping-self-service-updates.html">Stopping
+         * Service Updates</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/BatchStopUpdateAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchStopUpdateActionOutcome BatchStopUpdateAction(const Model::BatchStopUpdateActionRequest& request) const;
+
+        /**
+         * <p>Stop the service update. For more information on service updates and stopping
+         * them, see <a
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/stopping-self-service-updates.html">Stopping
+         * Service Updates</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/BatchStopUpdateAction">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchStopUpdateActionOutcomeCallable BatchStopUpdateActionCallable(const Model::BatchStopUpdateActionRequest& request) const;
+
+        /**
+         * <p>Stop the service update. For more information on service updates and stopping
+         * them, see <a
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/stopping-self-service-updates.html">Stopping
+         * Service Updates</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/BatchStopUpdateAction">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchStopUpdateActionAsync(const Model::BatchStopUpdateActionRequest& request, const BatchStopUpdateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Makes a copy of an existing snapshot.</p> <note> <p>This operation is valid
          * for Redis only.</p> </note> <important> <p>Users or groups that have permissions
          * to use the <code>CopySnapshot</code> operation can create their own Amazon S3
@@ -428,25 +516,25 @@ namespace Model
          * IAM policy to control who has the ability to use the <code>CopySnapshot</code>
          * operation. For more information about using IAM to control the use of
          * ElastiCache operations, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting
          * Snapshots</a> and <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication
          * &amp; Access Control</a>.</p> </important> <p>You could receive the following
          * error messages.</p> <p class="title"> <b>Error Messages</b> </p> <ul> <li> <p>
          * <b>Error Message:</b> The S3 bucket %s is outside of the region.</p> <p>
          * <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
          * 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.</p> </li> <li>
          * <p> <b>Error Message:</b> The S3 bucket %s does not exist.</p> <p>
          * <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
          * 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.</p> </li> <li>
          * <p> <b>Error Message:</b> The S3 bucket %s is not owned by the authenticated
          * user.</p> <p> <b>Solution:</b> Create an Amazon S3 bucket in the same region as
          * your snapshot. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
          * 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.</p> </li> <li>
          * <p> <b>Error Message:</b> The authenticated user does not have sufficient
          * permissions to perform the desired activity.</p> <p> <b>Solution:</b> Contact
@@ -459,17 +547,17 @@ namespace Model
          * ElastiCache has not been granted READ permissions %s on the S3 Bucket.</p> <p>
          * <b>Solution:</b> Add List and Read permissions on the bucket. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> <li> <p> <b>Error Message: </b> ElastiCache has not been
          * granted WRITE permissions %s on the S3 Bucket.</p> <p> <b>Solution:</b> Add
          * Upload/Delete permissions on the bucket. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> <li> <p> <b>Error Message: </b> ElastiCache has not been
          * granted READ_ACP permissions %s on the S3 Bucket.</p> <p> <b>Solution:</b> Add
          * View Permissions on the bucket. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopySnapshot">AWS
@@ -485,25 +573,25 @@ namespace Model
          * IAM policy to control who has the ability to use the <code>CopySnapshot</code>
          * operation. For more information about using IAM to control the use of
          * ElastiCache operations, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting
          * Snapshots</a> and <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication
          * &amp; Access Control</a>.</p> </important> <p>You could receive the following
          * error messages.</p> <p class="title"> <b>Error Messages</b> </p> <ul> <li> <p>
          * <b>Error Message:</b> The S3 bucket %s is outside of the region.</p> <p>
          * <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
          * 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.</p> </li> <li>
          * <p> <b>Error Message:</b> The S3 bucket %s does not exist.</p> <p>
          * <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
          * 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.</p> </li> <li>
          * <p> <b>Error Message:</b> The S3 bucket %s is not owned by the authenticated
          * user.</p> <p> <b>Solution:</b> Create an Amazon S3 bucket in the same region as
          * your snapshot. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
          * 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.</p> </li> <li>
          * <p> <b>Error Message:</b> The authenticated user does not have sufficient
          * permissions to perform the desired activity.</p> <p> <b>Solution:</b> Contact
@@ -516,17 +604,17 @@ namespace Model
          * ElastiCache has not been granted READ permissions %s on the S3 Bucket.</p> <p>
          * <b>Solution:</b> Add List and Read permissions on the bucket. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> <li> <p> <b>Error Message: </b> ElastiCache has not been
          * granted WRITE permissions %s on the S3 Bucket.</p> <p> <b>Solution:</b> Add
          * Upload/Delete permissions on the bucket. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> <li> <p> <b>Error Message: </b> ElastiCache has not been
          * granted READ_ACP permissions %s on the S3 Bucket.</p> <p> <b>Solution:</b> Add
          * View Permissions on the bucket. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopySnapshot">AWS
@@ -544,25 +632,25 @@ namespace Model
          * IAM policy to control who has the ability to use the <code>CopySnapshot</code>
          * operation. For more information about using IAM to control the use of
          * ElastiCache operations, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting
          * Snapshots</a> and <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication
          * &amp; Access Control</a>.</p> </important> <p>You could receive the following
          * error messages.</p> <p class="title"> <b>Error Messages</b> </p> <ul> <li> <p>
          * <b>Error Message:</b> The S3 bucket %s is outside of the region.</p> <p>
          * <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
          * 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.</p> </li> <li>
          * <p> <b>Error Message:</b> The S3 bucket %s does not exist.</p> <p>
          * <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
          * 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.</p> </li> <li>
          * <p> <b>Error Message:</b> The S3 bucket %s is not owned by the authenticated
          * user.</p> <p> <b>Solution:</b> Create an Amazon S3 bucket in the same region as
          * your snapshot. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
          * 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.</p> </li> <li>
          * <p> <b>Error Message:</b> The authenticated user does not have sufficient
          * permissions to perform the desired activity.</p> <p> <b>Solution:</b> Contact
@@ -575,17 +663,17 @@ namespace Model
          * ElastiCache has not been granted READ permissions %s on the S3 Bucket.</p> <p>
          * <b>Solution:</b> Add List and Read permissions on the bucket. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> <li> <p> <b>Error Message: </b> ElastiCache has not been
          * granted WRITE permissions %s on the S3 Bucket.</p> <p> <b>Solution:</b> Add
          * Upload/Delete permissions on the bucket. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> <li> <p> <b>Error Message: </b> ElastiCache has not been
          * granted READ_ACP permissions %s on the S3 Bucket.</p> <p> <b>Solution:</b> Add
          * View Permissions on the bucket. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopySnapshot">AWS
@@ -637,9 +725,9 @@ namespace Model
          * duplicate of the default parameter group for the CacheParameterGroupFamily. To
          * customize the newly created CacheParameterGroup you can change the values of
          * specific parameters. For more information, see:</p> <ul> <li> <p> <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheParameterGroup.html">ModifyCacheParameterGroup</a>
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheParameterGroup.html">ModifyCacheParameterGroup</a>
          * in the ElastiCache API Reference.</p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.html">Parameters
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.html">Parameters
          * and Parameter Groups</a> in the ElastiCache User Guide.</p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheParameterGroup">AWS
@@ -655,9 +743,9 @@ namespace Model
          * duplicate of the default parameter group for the CacheParameterGroupFamily. To
          * customize the newly created CacheParameterGroup you can change the values of
          * specific parameters. For more information, see:</p> <ul> <li> <p> <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheParameterGroup.html">ModifyCacheParameterGroup</a>
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheParameterGroup.html">ModifyCacheParameterGroup</a>
          * in the ElastiCache API Reference.</p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.html">Parameters
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.html">Parameters
          * and Parameter Groups</a> in the ElastiCache User Guide.</p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheParameterGroup">AWS
@@ -675,9 +763,9 @@ namespace Model
          * duplicate of the default parameter group for the CacheParameterGroupFamily. To
          * customize the newly created CacheParameterGroup you can change the values of
          * specific parameters. For more information, see:</p> <ul> <li> <p> <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheParameterGroup.html">ModifyCacheParameterGroup</a>
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheParameterGroup.html">ModifyCacheParameterGroup</a>
          * in the ElastiCache API Reference.</p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.html">Parameters
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.html">Parameters
          * and Parameter Groups</a> in the ElastiCache User Guide.</p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheParameterGroup">AWS
@@ -693,7 +781,7 @@ namespace Model
          * you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon
          * VPC). If you are creating a cluster inside of a VPC, use a cache subnet group
          * instead. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSecurityGroup">AWS
          * API Reference</a></p>
@@ -706,7 +794,7 @@ namespace Model
          * you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon
          * VPC). If you are creating a cluster inside of a VPC, use a cache subnet group
          * instead. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSecurityGroup">AWS
          * API Reference</a></p>
@@ -721,7 +809,7 @@ namespace Model
          * you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon
          * VPC). If you are creating a cluster inside of a VPC, use a cache subnet group
          * instead. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSecurityGroup">AWS
          * API Reference</a></p>
@@ -777,7 +865,7 @@ namespace Model
          * after it has been created. However, if you need to increase or decrease the
          * number of node groups (console: shards), you can avail yourself of ElastiCache
          * for Redis' enhanced backup and restore. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-restoring.html">Restoring
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-restoring.html">Restoring
          * From a Backup with Cluster Resizing</a> in the <i>ElastiCache User
          * Guide</i>.</p> <note> <p>This operation is valid for Redis only.</p>
          * </note><p><h3>See Also:</h3>   <a
@@ -802,7 +890,7 @@ namespace Model
          * after it has been created. However, if you need to increase or decrease the
          * number of node groups (console: shards), you can avail yourself of ElastiCache
          * for Redis' enhanced backup and restore. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-restoring.html">Restoring
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-restoring.html">Restoring
          * From a Backup with Cluster Resizing</a> in the <i>ElastiCache User
          * Guide</i>.</p> <note> <p>This operation is valid for Redis only.</p>
          * </note><p><h3>See Also:</h3>   <a
@@ -829,7 +917,7 @@ namespace Model
          * after it has been created. However, if you need to increase or decrease the
          * number of node groups (console: shards), you can avail yourself of ElastiCache
          * for Redis' enhanced backup and restore. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-restoring.html">Restoring
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-restoring.html">Restoring
          * From a Backup with Cluster Resizing</a> in the <i>ElastiCache User
          * Guide</i>.</p> <note> <p>This operation is valid for Redis only.</p>
          * </note><p><h3>See Also:</h3>   <a
@@ -910,11 +998,12 @@ namespace Model
          * deletes all associated cache nodes, node endpoints and the cluster itself. When
          * you receive a successful response from this operation, Amazon ElastiCache
          * immediately begins deleting the cluster; you cannot cancel or revert this
-         * operation.</p> <p>This operation cannot be used to delete a cluster that is the
-         * last read replica of a replication group or node group (shard) that has Multi-AZ
-         * mode enabled or a cluster from a Redis (cluster mode enabled) replication
-         * group.</p> <p>This operation is not valid for Redis (cluster mode enabled)
-         * clusters.</p><p><h3>See Also:</h3>   <a
+         * operation.</p> <p>This operation is not valid for:</p> <ul> <li> <p>Redis
+         * (cluster mode enabled) clusters</p> </li> <li> <p>A cluster that is the last
+         * read replica of a replication group</p> </li> <li> <p>A node group (shard) that
+         * has Multi-AZ mode enabled</p> </li> <li> <p>A cluster from a Redis (cluster mode
+         * enabled) replication group</p> </li> <li> <p>A cluster that is not in the
+         * <code>available</code> state</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster">AWS
          * API Reference</a></p>
          */
@@ -925,11 +1014,12 @@ namespace Model
          * deletes all associated cache nodes, node endpoints and the cluster itself. When
          * you receive a successful response from this operation, Amazon ElastiCache
          * immediately begins deleting the cluster; you cannot cancel or revert this
-         * operation.</p> <p>This operation cannot be used to delete a cluster that is the
-         * last read replica of a replication group or node group (shard) that has Multi-AZ
-         * mode enabled or a cluster from a Redis (cluster mode enabled) replication
-         * group.</p> <p>This operation is not valid for Redis (cluster mode enabled)
-         * clusters.</p><p><h3>See Also:</h3>   <a
+         * operation.</p> <p>This operation is not valid for:</p> <ul> <li> <p>Redis
+         * (cluster mode enabled) clusters</p> </li> <li> <p>A cluster that is the last
+         * read replica of a replication group</p> </li> <li> <p>A node group (shard) that
+         * has Multi-AZ mode enabled</p> </li> <li> <p>A cluster from a Redis (cluster mode
+         * enabled) replication group</p> </li> <li> <p>A cluster that is not in the
+         * <code>available</code> state</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster">AWS
          * API Reference</a></p>
          *
@@ -942,11 +1032,12 @@ namespace Model
          * deletes all associated cache nodes, node endpoints and the cluster itself. When
          * you receive a successful response from this operation, Amazon ElastiCache
          * immediately begins deleting the cluster; you cannot cancel or revert this
-         * operation.</p> <p>This operation cannot be used to delete a cluster that is the
-         * last read replica of a replication group or node group (shard) that has Multi-AZ
-         * mode enabled or a cluster from a Redis (cluster mode enabled) replication
-         * group.</p> <p>This operation is not valid for Redis (cluster mode enabled)
-         * clusters.</p><p><h3>See Also:</h3>   <a
+         * operation.</p> <p>This operation is not valid for:</p> <ul> <li> <p>Redis
+         * (cluster mode enabled) clusters</p> </li> <li> <p>A cluster that is the last
+         * read replica of a replication group</p> </li> <li> <p>A node group (shard) that
+         * has Multi-AZ mode enabled</p> </li> <li> <p>A cluster from a Redis (cluster mode
+         * enabled) replication group</p> </li> <li> <p>A cluster that is not in the
+         * <code>available</code> state</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster">AWS
          * API Reference</a></p>
          *
@@ -1283,8 +1374,9 @@ namespace Model
 
         /**
          * <p>Returns a list of cache security group descriptions. If a cache security
-         * group name is specified, the list contains only the description of that
-         * group.</p><p><h3>See Also:</h3>   <a
+         * group name is specified, the list contains only the description of that group.
+         * This applicable only when you have ElastiCache in Classic setup </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSecurityGroups">AWS
          * API Reference</a></p>
          */
@@ -1292,8 +1384,9 @@ namespace Model
 
         /**
          * <p>Returns a list of cache security group descriptions. If a cache security
-         * group name is specified, the list contains only the description of that
-         * group.</p><p><h3>See Also:</h3>   <a
+         * group name is specified, the list contains only the description of that group.
+         * This applicable only when you have ElastiCache in Classic setup </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSecurityGroups">AWS
          * API Reference</a></p>
          *
@@ -1303,8 +1396,9 @@ namespace Model
 
         /**
          * <p>Returns a list of cache security group descriptions. If a cache security
-         * group name is specified, the list contains only the description of that
-         * group.</p><p><h3>See Also:</h3>   <a
+         * group name is specified, the list contains only the description of that group.
+         * This applicable only when you have ElastiCache in Classic setup </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSecurityGroups">AWS
          * API Reference</a></p>
          *
@@ -1314,8 +1408,9 @@ namespace Model
 
         /**
          * <p>Returns a list of cache subnet group descriptions. If a subnet group name is
-         * specified, the list contains only the description of that group.</p><p><h3>See
-         * Also:</h3>   <a
+         * specified, the list contains only the description of that group. This is
+         * applicable only when you have ElastiCache in VPC setup. All ElastiCache clusters
+         * now launch in VPC by default. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSubnetGroups">AWS
          * API Reference</a></p>
          */
@@ -1323,8 +1418,9 @@ namespace Model
 
         /**
          * <p>Returns a list of cache subnet group descriptions. If a subnet group name is
-         * specified, the list contains only the description of that group.</p><p><h3>See
-         * Also:</h3>   <a
+         * specified, the list contains only the description of that group. This is
+         * applicable only when you have ElastiCache in VPC setup. All ElastiCache clusters
+         * now launch in VPC by default. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSubnetGroups">AWS
          * API Reference</a></p>
          *
@@ -1334,8 +1430,9 @@ namespace Model
 
         /**
          * <p>Returns a list of cache subnet group descriptions. If a subnet group name is
-         * specified, the list contains only the description of that group.</p><p><h3>See
-         * Also:</h3>   <a
+         * specified, the list contains only the description of that group. This is
+         * applicable only when you have ElastiCache in VPC setup. All ElastiCache clusters
+         * now launch in VPC by default. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSubnetGroups">AWS
          * API Reference</a></p>
          *
@@ -1499,6 +1596,31 @@ namespace Model
         virtual void DescribeReservedCacheNodesOfferingsAsync(const Model::DescribeReservedCacheNodesOfferingsRequest& request, const DescribeReservedCacheNodesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns details of the service updates</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServiceUpdates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeServiceUpdatesOutcome DescribeServiceUpdates(const Model::DescribeServiceUpdatesRequest& request) const;
+
+        /**
+         * <p>Returns details of the service updates</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServiceUpdates">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeServiceUpdatesOutcomeCallable DescribeServiceUpdatesCallable(const Model::DescribeServiceUpdatesRequest& request) const;
+
+        /**
+         * <p>Returns details of the service updates</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServiceUpdates">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeServiceUpdatesAsync(const Model::DescribeServiceUpdatesRequest& request, const DescribeServiceUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about cluster or replication group snapshots. By default,
          * <code>DescribeSnapshots</code> lists all of your snapshots; it can optionally
          * describe a single snapshot, or just the snapshots associated with a particular
@@ -1534,6 +1656,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeSnapshotsAsync(const Model::DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns details of the update actions </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUpdateActions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeUpdateActionsOutcome DescribeUpdateActions(const Model::DescribeUpdateActionsRequest& request) const;
+
+        /**
+         * <p>Returns details of the update actions </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUpdateActions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeUpdateActionsOutcomeCallable DescribeUpdateActionsCallable(const Model::DescribeUpdateActionsRequest& request) const;
+
+        /**
+         * <p>Returns details of the update actions </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUpdateActions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeUpdateActionsAsync(const Model::DescribeUpdateActionsRequest& request, const DescribeUpdateActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Dynamically increases the number of replics in a Redis (cluster mode
@@ -1617,7 +1764,7 @@ namespace Model
          * <code>ListTagsForResource</code> returns an error.</p> <p>You can have a maximum
          * of 50 cost allocation tags on an ElastiCache resource. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Monitoring
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Monitoring
          * Costs with Tags</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1632,7 +1779,7 @@ namespace Model
          * <code>ListTagsForResource</code> returns an error.</p> <p>You can have a maximum
          * of 50 cost allocation tags on an ElastiCache resource. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Monitoring
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Monitoring
          * Costs with Tags</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1649,7 +1796,7 @@ namespace Model
          * <code>ListTagsForResource</code> returns an error.</p> <p>You can have a maximum
          * of 50 cost allocation tags on an ElastiCache resource. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Monitoring
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Monitoring
          * Costs with Tags</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1749,10 +1896,10 @@ namespace Model
          * <p>Modifies the settings for a replication group.</p> <p>For Redis (cluster mode
          * enabled) clusters, this operation cannot be used to change a cluster's node type
          * or engine version. For more information, see:</p> <ul> <li> <p> <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
-         * for Amazon ElastiCache for Redis—Redis (cluster mode enabled)</a> in the
-         * ElastiCache User Guide</p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html">ModifyReplicationGroupShardConfiguration</a>
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
+         * for Amazon ElastiCache for Redis (cluster mode enabled)</a> in the ElastiCache
+         * User Guide</p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html">ModifyReplicationGroupShardConfiguration</a>
          * in the ElastiCache API Reference</p> </li> </ul> <note> <p>This operation is
          * valid for Redis only.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">AWS
@@ -1764,10 +1911,10 @@ namespace Model
          * <p>Modifies the settings for a replication group.</p> <p>For Redis (cluster mode
          * enabled) clusters, this operation cannot be used to change a cluster's node type
          * or engine version. For more information, see:</p> <ul> <li> <p> <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
-         * for Amazon ElastiCache for Redis—Redis (cluster mode enabled)</a> in the
-         * ElastiCache User Guide</p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html">ModifyReplicationGroupShardConfiguration</a>
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
+         * for Amazon ElastiCache for Redis (cluster mode enabled)</a> in the ElastiCache
+         * User Guide</p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html">ModifyReplicationGroupShardConfiguration</a>
          * in the ElastiCache API Reference</p> </li> </ul> <note> <p>This operation is
          * valid for Redis only.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">AWS
@@ -1781,10 +1928,10 @@ namespace Model
          * <p>Modifies the settings for a replication group.</p> <p>For Redis (cluster mode
          * enabled) clusters, this operation cannot be used to change a cluster's node type
          * or engine version. For more information, see:</p> <ul> <li> <p> <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
-         * for Amazon ElastiCache for Redis—Redis (cluster mode enabled)</a> in the
-         * ElastiCache User Guide</p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html">ModifyReplicationGroupShardConfiguration</a>
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
+         * for Amazon ElastiCache for Redis (cluster mode enabled)</a> in the ElastiCache
+         * User Guide</p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html">ModifyReplicationGroupShardConfiguration</a>
          * in the ElastiCache API Reference</p> </li> </ul> <note> <p>This operation is
          * valid for Redis only.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">AWS
@@ -2034,12 +2181,12 @@ namespace Model
          * <code>Recovering cache nodes &lt;node-id&gt;</code> </p> </li> <li> <p>Cache
          * cluster message: <code>Finished recovery for cache nodes &lt;node-id&gt;</code>
          * </p> </li> </ol> <p>For more information see:</p> <ul> <li> <p> <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ECEvents.Viewing.html">Viewing
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ECEvents.Viewing.html">Viewing
          * ElastiCache Events</a> in the <i>ElastiCache User Guide</i> </p> </li> <li> <p>
          * <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>
          * in the ElastiCache API Reference</p> </li> </ul> </li> </ul> <p>Also see, <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html#auto-failover-test">Testing
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html#auto-failover-test">Testing
          * Multi-AZ with Automatic Failover</a> in the <i>ElastiCache User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestFailover">AWS
@@ -2071,12 +2218,12 @@ namespace Model
          * <code>Recovering cache nodes &lt;node-id&gt;</code> </p> </li> <li> <p>Cache
          * cluster message: <code>Finished recovery for cache nodes &lt;node-id&gt;</code>
          * </p> </li> </ol> <p>For more information see:</p> <ul> <li> <p> <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ECEvents.Viewing.html">Viewing
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ECEvents.Viewing.html">Viewing
          * ElastiCache Events</a> in the <i>ElastiCache User Guide</i> </p> </li> <li> <p>
          * <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>
          * in the ElastiCache API Reference</p> </li> </ul> </li> </ul> <p>Also see, <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html#auto-failover-test">Testing
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html#auto-failover-test">Testing
          * Multi-AZ with Automatic Failover</a> in the <i>ElastiCache User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestFailover">AWS
@@ -2110,12 +2257,12 @@ namespace Model
          * <code>Recovering cache nodes &lt;node-id&gt;</code> </p> </li> <li> <p>Cache
          * cluster message: <code>Finished recovery for cache nodes &lt;node-id&gt;</code>
          * </p> </li> </ol> <p>For more information see:</p> <ul> <li> <p> <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ECEvents.Viewing.html">Viewing
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ECEvents.Viewing.html">Viewing
          * ElastiCache Events</a> in the <i>ElastiCache User Guide</i> </p> </li> <li> <p>
          * <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>
          * in the ElastiCache API Reference</p> </li> </ul> </li> </ul> <p>Also see, <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html#auto-failover-test">Testing
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html#auto-failover-test">Testing
          * Multi-AZ with Automatic Failover</a> in the <i>ElastiCache User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestFailover">AWS
@@ -2131,6 +2278,8 @@ namespace Model
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AuthorizeCacheSecurityGroupIngressAsyncHelper(const Model::AuthorizeCacheSecurityGroupIngressRequest& request, const AuthorizeCacheSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchApplyUpdateActionAsyncHelper(const Model::BatchApplyUpdateActionRequest& request, const BatchApplyUpdateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchStopUpdateActionAsyncHelper(const Model::BatchStopUpdateActionRequest& request, const BatchStopUpdateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopySnapshotAsyncHelper(const Model::CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCacheClusterAsyncHelper(const Model::CreateCacheClusterRequest& request, const CreateCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCacheParameterGroupAsyncHelper(const Model::CreateCacheParameterGroupRequest& request, const CreateCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2156,7 +2305,9 @@ namespace Model
         void DescribeReplicationGroupsAsyncHelper(const Model::DescribeReplicationGroupsRequest& request, const DescribeReplicationGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReservedCacheNodesAsyncHelper(const Model::DescribeReservedCacheNodesRequest& request, const DescribeReservedCacheNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReservedCacheNodesOfferingsAsyncHelper(const Model::DescribeReservedCacheNodesOfferingsRequest& request, const DescribeReservedCacheNodesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeServiceUpdatesAsyncHelper(const Model::DescribeServiceUpdatesRequest& request, const DescribeServiceUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSnapshotsAsyncHelper(const Model::DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeUpdateActionsAsyncHelper(const Model::DescribeUpdateActionsRequest& request, const DescribeUpdateActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void IncreaseReplicaCountAsyncHelper(const Model::IncreaseReplicaCountRequest& request, const IncreaseReplicaCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAllowedNodeTypeModificationsAsyncHelper(const Model::ListAllowedNodeTypeModificationsRequest& request, const ListAllowedNodeTypeModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

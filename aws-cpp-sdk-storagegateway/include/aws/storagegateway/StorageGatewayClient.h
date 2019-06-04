@@ -91,6 +91,7 @@
 #include <aws/storagegateway/model/UpdateMaintenanceStartTimeResult.h>
 #include <aws/storagegateway/model/UpdateNFSFileShareResult.h>
 #include <aws/storagegateway/model/UpdateSMBFileShareResult.h>
+#include <aws/storagegateway/model/UpdateSMBSecurityStrategyResult.h>
 #include <aws/storagegateway/model/UpdateSnapshotScheduleResult.h>
 #include <aws/storagegateway/model/UpdateVTLDeviceTypeResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -202,6 +203,7 @@ namespace Model
         class UpdateMaintenanceStartTimeRequest;
         class UpdateNFSFileShareRequest;
         class UpdateSMBFileShareRequest;
+        class UpdateSMBSecurityStrategyRequest;
         class UpdateSnapshotScheduleRequest;
         class UpdateVTLDeviceTypeRequest;
 
@@ -275,6 +277,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateMaintenanceStartTimeResult, Aws::Client::AWSError<StorageGatewayErrors>> UpdateMaintenanceStartTimeOutcome;
         typedef Aws::Utils::Outcome<UpdateNFSFileShareResult, Aws::Client::AWSError<StorageGatewayErrors>> UpdateNFSFileShareOutcome;
         typedef Aws::Utils::Outcome<UpdateSMBFileShareResult, Aws::Client::AWSError<StorageGatewayErrors>> UpdateSMBFileShareOutcome;
+        typedef Aws::Utils::Outcome<UpdateSMBSecurityStrategyResult, Aws::Client::AWSError<StorageGatewayErrors>> UpdateSMBSecurityStrategyOutcome;
         typedef Aws::Utils::Outcome<UpdateSnapshotScheduleResult, Aws::Client::AWSError<StorageGatewayErrors>> UpdateSnapshotScheduleOutcome;
         typedef Aws::Utils::Outcome<UpdateVTLDeviceTypeResult, Aws::Client::AWSError<StorageGatewayErrors>> UpdateVTLDeviceTypeOutcome;
 
@@ -348,6 +351,7 @@ namespace Model
         typedef std::future<UpdateMaintenanceStartTimeOutcome> UpdateMaintenanceStartTimeOutcomeCallable;
         typedef std::future<UpdateNFSFileShareOutcome> UpdateNFSFileShareOutcomeCallable;
         typedef std::future<UpdateSMBFileShareOutcome> UpdateSMBFileShareOutcomeCallable;
+        typedef std::future<UpdateSMBSecurityStrategyOutcome> UpdateSMBSecurityStrategyOutcomeCallable;
         typedef std::future<UpdateSnapshotScheduleOutcome> UpdateSnapshotScheduleOutcomeCallable;
         typedef std::future<UpdateVTLDeviceTypeOutcome> UpdateVTLDeviceTypeOutcomeCallable;
 } // namespace Model
@@ -424,6 +428,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateMaintenanceStartTimeRequest&, const Model::UpdateMaintenanceStartTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMaintenanceStartTimeResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateNFSFileShareRequest&, const Model::UpdateNFSFileShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNFSFileShareResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateSMBFileShareRequest&, const Model::UpdateSMBFileShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSMBFileShareResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::UpdateSMBSecurityStrategyRequest&, const Model::UpdateSMBSecurityStrategyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSMBSecurityStrategyResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateSnapshotScheduleRequest&, const Model::UpdateSnapshotScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSnapshotScheduleResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateVTLDeviceTypeRequest&, const Model::UpdateVTLDeviceTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVTLDeviceTypeResponseReceivedHandler;
 
@@ -3543,6 +3548,34 @@ namespace Model
         virtual void UpdateSMBFileShareAsync(const Model::UpdateSMBFileShareRequest& request, const UpdateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the SMB security strategy on a file gateway. This action is only
+         * supported in file gateways.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBSecurityStrategy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSMBSecurityStrategyOutcome UpdateSMBSecurityStrategy(const Model::UpdateSMBSecurityStrategyRequest& request) const;
+
+        /**
+         * <p>Updates the SMB security strategy on a file gateway. This action is only
+         * supported in file gateways.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBSecurityStrategy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateSMBSecurityStrategyOutcomeCallable UpdateSMBSecurityStrategyCallable(const Model::UpdateSMBSecurityStrategyRequest& request) const;
+
+        /**
+         * <p>Updates the SMB security strategy on a file gateway. This action is only
+         * supported in file gateways.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBSecurityStrategy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateSMBSecurityStrategyAsync(const Model::UpdateSMBSecurityStrategyRequest& request, const UpdateSMBSecurityStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a snapshot schedule configured for a gateway volume. This operation
          * is only supported in the cached volume and stored volume gateway types.</p>
          * <p>The default snapshot schedule for volume is once every 24 hours, starting at
@@ -3699,6 +3732,7 @@ namespace Model
         void UpdateMaintenanceStartTimeAsyncHelper(const Model::UpdateMaintenanceStartTimeRequest& request, const UpdateMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateNFSFileShareAsyncHelper(const Model::UpdateNFSFileShareRequest& request, const UpdateNFSFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSMBFileShareAsyncHelper(const Model::UpdateSMBFileShareRequest& request, const UpdateSMBFileShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateSMBSecurityStrategyAsyncHelper(const Model::UpdateSMBSecurityStrategyRequest& request, const UpdateSMBSecurityStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSnapshotScheduleAsyncHelper(const Model::UpdateSnapshotScheduleRequest& request, const UpdateSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVTLDeviceTypeAsyncHelper(const Model::UpdateVTLDeviceTypeRequest& request, const UpdateVTLDeviceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Specifies data related to access patterns to be collected and made available
+   * to analyze the tradeoffs between different storage classes for an Amazon S3
+   * bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/StorageClassAnalysis">AWS
    * API Reference</a></p>
    */
@@ -48,38 +50,38 @@ namespace Model
 
 
     /**
-     * <p>A container used to describe how data related to the storage class analysis
-     * should be exported.</p>
+     * <p>Specifies how data related to the storage class analysis for an Amazon S3
+     * bucket should be exported.</p>
      */
     inline const StorageClassAnalysisDataExport& GetDataExport() const{ return m_dataExport; }
 
     /**
-     * <p>A container used to describe how data related to the storage class analysis
-     * should be exported.</p>
+     * <p>Specifies how data related to the storage class analysis for an Amazon S3
+     * bucket should be exported.</p>
      */
     inline bool DataExportHasBeenSet() const { return m_dataExportHasBeenSet; }
 
     /**
-     * <p>A container used to describe how data related to the storage class analysis
-     * should be exported.</p>
+     * <p>Specifies how data related to the storage class analysis for an Amazon S3
+     * bucket should be exported.</p>
      */
     inline void SetDataExport(const StorageClassAnalysisDataExport& value) { m_dataExportHasBeenSet = true; m_dataExport = value; }
 
     /**
-     * <p>A container used to describe how data related to the storage class analysis
-     * should be exported.</p>
+     * <p>Specifies how data related to the storage class analysis for an Amazon S3
+     * bucket should be exported.</p>
      */
     inline void SetDataExport(StorageClassAnalysisDataExport&& value) { m_dataExportHasBeenSet = true; m_dataExport = std::move(value); }
 
     /**
-     * <p>A container used to describe how data related to the storage class analysis
-     * should be exported.</p>
+     * <p>Specifies how data related to the storage class analysis for an Amazon S3
+     * bucket should be exported.</p>
      */
     inline StorageClassAnalysis& WithDataExport(const StorageClassAnalysisDataExport& value) { SetDataExport(value); return *this;}
 
     /**
-     * <p>A container used to describe how data related to the storage class analysis
-     * should be exported.</p>
+     * <p>Specifies how data related to the storage class analysis for an Amazon S3
+     * bucket should be exported.</p>
      */
     inline StorageClassAnalysis& WithDataExport(StorageClassAnalysisDataExport&& value) { SetDataExport(std::move(value)); return *this;}
 

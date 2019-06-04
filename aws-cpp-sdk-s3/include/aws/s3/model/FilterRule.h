@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>A container for a key value pair that defines the criteria for the filter
-   * rule.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the Amazon S3 object key name to filter on and whether to filter on
+   * the suffix or prefix of the key name.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/FilterRule">AWS API
    * Reference</a></p>
    */
@@ -51,9 +51,8 @@ namespace Model
 
     /**
      * <p>The object key name prefix or suffix identifying one or more objects to which
-     * the filtering rule applies. The maximum prefix length is 1,024 characters.
-     * Overlapping prefixes and suffixes are not supported. For more information, see
-     * <a
+     * the filtering rule applies. The maximum length is 1,024 characters. Overlapping
+     * prefixes and suffixes are not supported. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
      * Event Notifications</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
@@ -62,9 +61,8 @@ namespace Model
 
     /**
      * <p>The object key name prefix or suffix identifying one or more objects to which
-     * the filtering rule applies. The maximum prefix length is 1,024 characters.
-     * Overlapping prefixes and suffixes are not supported. For more information, see
-     * <a
+     * the filtering rule applies. The maximum length is 1,024 characters. Overlapping
+     * prefixes and suffixes are not supported. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
      * Event Notifications</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
@@ -73,9 +71,8 @@ namespace Model
 
     /**
      * <p>The object key name prefix or suffix identifying one or more objects to which
-     * the filtering rule applies. The maximum prefix length is 1,024 characters.
-     * Overlapping prefixes and suffixes are not supported. For more information, see
-     * <a
+     * the filtering rule applies. The maximum length is 1,024 characters. Overlapping
+     * prefixes and suffixes are not supported. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
      * Event Notifications</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
@@ -84,9 +81,8 @@ namespace Model
 
     /**
      * <p>The object key name prefix or suffix identifying one or more objects to which
-     * the filtering rule applies. The maximum prefix length is 1,024 characters.
-     * Overlapping prefixes and suffixes are not supported. For more information, see
-     * <a
+     * the filtering rule applies. The maximum length is 1,024 characters. Overlapping
+     * prefixes and suffixes are not supported. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
      * Event Notifications</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
@@ -95,9 +91,8 @@ namespace Model
 
     /**
      * <p>The object key name prefix or suffix identifying one or more objects to which
-     * the filtering rule applies. The maximum prefix length is 1,024 characters.
-     * Overlapping prefixes and suffixes are not supported. For more information, see
-     * <a
+     * the filtering rule applies. The maximum length is 1,024 characters. Overlapping
+     * prefixes and suffixes are not supported. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
      * Event Notifications</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
@@ -106,9 +101,8 @@ namespace Model
 
     /**
      * <p>The object key name prefix or suffix identifying one or more objects to which
-     * the filtering rule applies. The maximum prefix length is 1,024 characters.
-     * Overlapping prefixes and suffixes are not supported. For more information, see
-     * <a
+     * the filtering rule applies. The maximum length is 1,024 characters. Overlapping
+     * prefixes and suffixes are not supported. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
      * Event Notifications</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
@@ -117,42 +111,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The value that the filter searches for in object key names.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p/>
+     * <p>The value that the filter searches for in object key names.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The value that the filter searches for in object key names.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p/>
+     * <p>The value that the filter searches for in object key names.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The value that the filter searches for in object key names.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p/>
+     * <p>The value that the filter searches for in object key names.</p>
      */
     inline FilterRule& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The value that the filter searches for in object key names.</p>
      */
     inline FilterRule& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The value that the filter searches for in object key names.</p>
      */
     inline FilterRule& WithValue(const char* value) { SetValue(value); return *this;}
 

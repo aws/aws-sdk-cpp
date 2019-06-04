@@ -37,7 +37,7 @@ namespace Model
 
   /**
    * <p>A container for specifying the configuration for publication of messages to
-   * an Amazon Simple Notification Service (Amazon SNS) topic.when Amazon S3 detects
+   * an Amazon Simple Notification Service (Amazon SNS) topic when Amazon S3 detects
    * specified events.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/TopicConfiguration">AWS
    * API Reference</a></p>
@@ -79,110 +79,146 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3
-     * will publish a message when it detects events of the specified type.</p>
+     * publishes a message when it detects events of the specified type.</p>
      */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3
-     * will publish a message when it detects events of the specified type.</p>
+     * publishes a message when it detects events of the specified type.</p>
      */
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3
-     * will publish a message when it detects events of the specified type.</p>
+     * publishes a message when it detects events of the specified type.</p>
      */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3
-     * will publish a message when it detects events of the specified type.</p>
+     * publishes a message when it detects events of the specified type.</p>
      */
     inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3
-     * will publish a message when it detects events of the specified type.</p>
+     * publishes a message when it detects events of the specified type.</p>
      */
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3
-     * will publish a message when it detects events of the specified type.</p>
+     * publishes a message when it detects events of the specified type.</p>
      */
     inline TopicConfiguration& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3
-     * will publish a message when it detects events of the specified type.</p>
+     * publishes a message when it detects events of the specified type.</p>
      */
     inline TopicConfiguration& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3
-     * will publish a message when it detects events of the specified type.</p>
+     * publishes a message when it detects events of the specified type.</p>
      */
     inline TopicConfiguration& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The Amazon S3 bucket event about which to send notifications. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
+     * Event Types</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 bucket event about which to send notifications. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
+     * Event Types</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 bucket event about which to send notifications. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
+     * Event Types</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 bucket event about which to send notifications. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
+     * Event Types</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 bucket event about which to send notifications. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
+     * Event Types</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline TopicConfiguration& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon S3 bucket event about which to send notifications. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
+     * Event Types</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline TopicConfiguration& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon S3 bucket event about which to send notifications. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
+     * Event Types</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline TopicConfiguration& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The Amazon S3 bucket event about which to send notifications. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
+     * Event Types</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline TopicConfiguration& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p/>
+     */
     inline const NotificationConfigurationFilter& GetFilter() const{ return m_filter; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetFilter(const NotificationConfigurationFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetFilter(NotificationConfigurationFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline TopicConfiguration& WithFilter(const NotificationConfigurationFilter& value) { SetFilter(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline TopicConfiguration& WithFilter(NotificationConfigurationFilter&& value) { SetFilter(std::move(value)); return *this;}
 
   private:

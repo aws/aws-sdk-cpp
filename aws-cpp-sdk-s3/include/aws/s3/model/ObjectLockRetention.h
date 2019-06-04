@@ -80,32 +80,32 @@ namespace Model
 
 
     /**
-     * <p>The date on which this Object Lock Retention will expire.</p>
+     * <p>The date on which this object lock retention expires.</p>
      */
     inline const Aws::Utils::DateTime& GetRetainUntilDate() const{ return m_retainUntilDate; }
 
     /**
-     * <p>The date on which this Object Lock Retention will expire.</p>
+     * <p>The date on which this object lock retention expires.</p>
      */
     inline bool RetainUntilDateHasBeenSet() const { return m_retainUntilDateHasBeenSet; }
 
     /**
-     * <p>The date on which this Object Lock Retention will expire.</p>
+     * <p>The date on which this object lock retention expires.</p>
      */
     inline void SetRetainUntilDate(const Aws::Utils::DateTime& value) { m_retainUntilDateHasBeenSet = true; m_retainUntilDate = value; }
 
     /**
-     * <p>The date on which this Object Lock Retention will expire.</p>
+     * <p>The date on which this object lock retention expires.</p>
      */
     inline void SetRetainUntilDate(Aws::Utils::DateTime&& value) { m_retainUntilDateHasBeenSet = true; m_retainUntilDate = std::move(value); }
 
     /**
-     * <p>The date on which this Object Lock Retention will expire.</p>
+     * <p>The date on which this object lock retention expires.</p>
      */
     inline ObjectLockRetention& WithRetainUntilDate(const Aws::Utils::DateTime& value) { SetRetainUntilDate(value); return *this;}
 
     /**
-     * <p>The date on which this Object Lock Retention will expire.</p>
+     * <p>The date on which this object lock retention expires.</p>
      */
     inline ObjectLockRetention& WithRetainUntilDate(Aws::Utils::DateTime&& value) { SetRetainUntilDate(std::move(value)); return *this;}
 

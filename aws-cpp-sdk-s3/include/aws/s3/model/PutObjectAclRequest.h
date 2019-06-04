@@ -86,32 +86,38 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Contains the elements that set the ACL permissions for an object per
+     * grantee.</p>
      */
     inline const AccessControlPolicy& GetAccessControlPolicy() const{ return m_accessControlPolicy; }
 
     /**
-     * <p/>
+     * <p>Contains the elements that set the ACL permissions for an object per
+     * grantee.</p>
      */
     inline bool AccessControlPolicyHasBeenSet() const { return m_accessControlPolicyHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Contains the elements that set the ACL permissions for an object per
+     * grantee.</p>
      */
     inline void SetAccessControlPolicy(const AccessControlPolicy& value) { m_accessControlPolicyHasBeenSet = true; m_accessControlPolicy = value; }
 
     /**
-     * <p/>
+     * <p>Contains the elements that set the ACL permissions for an object per
+     * grantee.</p>
      */
     inline void SetAccessControlPolicy(AccessControlPolicy&& value) { m_accessControlPolicyHasBeenSet = true; m_accessControlPolicy = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Contains the elements that set the ACL permissions for an object per
+     * grantee.</p>
      */
     inline PutObjectAclRequest& WithAccessControlPolicy(const AccessControlPolicy& value) { SetAccessControlPolicy(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Contains the elements that set the ACL permissions for an object per
+     * grantee.</p>
      */
     inline PutObjectAclRequest& WithAccessControlPolicy(AccessControlPolicy&& value) { SetAccessControlPolicy(std::move(value)); return *this;}
 

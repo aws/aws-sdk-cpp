@@ -49,28 +49,44 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<FilterRule>& GetFilterRules() const{ return m_filterRules; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool FilterRulesHasBeenSet() const { return m_filterRulesHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetFilterRules(const Aws::Vector<FilterRule>& value) { m_filterRulesHasBeenSet = true; m_filterRules = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetFilterRules(Aws::Vector<FilterRule>&& value) { m_filterRulesHasBeenSet = true; m_filterRules = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline S3KeyFilter& WithFilterRules(const Aws::Vector<FilterRule>& value) { SetFilterRules(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline S3KeyFilter& WithFilterRules(Aws::Vector<FilterRule>&& value) { SetFilterRules(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline S3KeyFilter& AddFilterRules(const FilterRule& value) { m_filterRulesHasBeenSet = true; m_filterRules.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline S3KeyFilter& AddFilterRules(FilterRule&& value) { m_filterRulesHasBeenSet = true; m_filterRules.push_back(std::move(value)); return *this; }
 
   private:

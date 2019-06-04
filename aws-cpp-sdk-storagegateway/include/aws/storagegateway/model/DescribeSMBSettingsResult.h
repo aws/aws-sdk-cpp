@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/storagegateway/model/SMBSecurityStrategy.h>
 #include <utility>
 
 namespace Aws
@@ -118,6 +119,57 @@ namespace Model
      */
     inline DescribeSMBSettingsResult& WithSMBGuestPasswordSet(bool value) { SetSMBGuestPasswordSet(value); return *this;}
 
+
+    /**
+     * <p>The type of security strategy that was specified for file gateway.</p>
+     * <p>ClientSpecified: SMBv1 is enabled, SMB signing is offered but not required,
+     * SMB encryption is offered but not required.</p> <p>MandatorySigning: SMBv1 is
+     * disabled, SMB signing is required, SMB encryption is offered but not
+     * required.</p> <p>MandatoryEncryption: SMBv1 is disabled, SMB signing is offered
+     * but not required, SMB encryption is required.</p>
+     */
+    inline const SMBSecurityStrategy& GetSMBSecurityStrategy() const{ return m_sMBSecurityStrategy; }
+
+    /**
+     * <p>The type of security strategy that was specified for file gateway.</p>
+     * <p>ClientSpecified: SMBv1 is enabled, SMB signing is offered but not required,
+     * SMB encryption is offered but not required.</p> <p>MandatorySigning: SMBv1 is
+     * disabled, SMB signing is required, SMB encryption is offered but not
+     * required.</p> <p>MandatoryEncryption: SMBv1 is disabled, SMB signing is offered
+     * but not required, SMB encryption is required.</p>
+     */
+    inline void SetSMBSecurityStrategy(const SMBSecurityStrategy& value) { m_sMBSecurityStrategy = value; }
+
+    /**
+     * <p>The type of security strategy that was specified for file gateway.</p>
+     * <p>ClientSpecified: SMBv1 is enabled, SMB signing is offered but not required,
+     * SMB encryption is offered but not required.</p> <p>MandatorySigning: SMBv1 is
+     * disabled, SMB signing is required, SMB encryption is offered but not
+     * required.</p> <p>MandatoryEncryption: SMBv1 is disabled, SMB signing is offered
+     * but not required, SMB encryption is required.</p>
+     */
+    inline void SetSMBSecurityStrategy(SMBSecurityStrategy&& value) { m_sMBSecurityStrategy = std::move(value); }
+
+    /**
+     * <p>The type of security strategy that was specified for file gateway.</p>
+     * <p>ClientSpecified: SMBv1 is enabled, SMB signing is offered but not required,
+     * SMB encryption is offered but not required.</p> <p>MandatorySigning: SMBv1 is
+     * disabled, SMB signing is required, SMB encryption is offered but not
+     * required.</p> <p>MandatoryEncryption: SMBv1 is disabled, SMB signing is offered
+     * but not required, SMB encryption is required.</p>
+     */
+    inline DescribeSMBSettingsResult& WithSMBSecurityStrategy(const SMBSecurityStrategy& value) { SetSMBSecurityStrategy(value); return *this;}
+
+    /**
+     * <p>The type of security strategy that was specified for file gateway.</p>
+     * <p>ClientSpecified: SMBv1 is enabled, SMB signing is offered but not required,
+     * SMB encryption is offered but not required.</p> <p>MandatorySigning: SMBv1 is
+     * disabled, SMB signing is required, SMB encryption is offered but not
+     * required.</p> <p>MandatoryEncryption: SMBv1 is disabled, SMB signing is offered
+     * but not required, SMB encryption is required.</p>
+     */
+    inline DescribeSMBSettingsResult& WithSMBSecurityStrategy(SMBSecurityStrategy&& value) { SetSMBSecurityStrategy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_gatewayARN;
@@ -125,6 +177,8 @@ namespace Model
     Aws::String m_domainName;
 
     bool m_sMBGuestPasswordSet;
+
+    SMBSecurityStrategy m_sMBSecurityStrategy;
   };
 
 } // namespace Model

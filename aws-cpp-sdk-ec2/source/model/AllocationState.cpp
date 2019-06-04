@@ -35,6 +35,7 @@ namespace Aws
         static const int permanent_failure_HASH = HashingUtils::HashString("permanent-failure");
         static const int released_HASH = HashingUtils::HashString("released");
         static const int released_permanent_failure_HASH = HashingUtils::HashString("released-permanent-failure");
+        static const int pending_HASH = HashingUtils::HashString("pending");
 
 
         AllocationState GetAllocationStateForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return AllocationState::released_permanent_failure;
           }
+          else if (hashCode == pending_HASH)
+          {
+            return AllocationState::pending;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +89,8 @@ namespace Aws
             return "released";
           case AllocationState::released_permanent_failure:
             return "released-permanent-failure";
+          case AllocationState::pending:
+            return "pending";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

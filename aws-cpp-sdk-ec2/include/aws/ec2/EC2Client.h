@@ -11851,15 +11851,15 @@ namespace Model
          * <i>encryption</i> to be <i>false</i> in the API call that creates the
          * volume.</p> <p>If you do not specify a customer master key (CMK) in the API call
          * that creates the EBS volume, then the volume is encrypted to your AWS account's
-         * default CMK.</p> <p>You can specify a default CMK of your choice using
-         * <a>ModifyEbsDefaultKmsKeyId</a>.</p> <p>Enabling default encryption for EBS
+         * managed CMK.</p> <p>You can specify a CMK of your choice using
+         * <a>ModifyEbsDefaultKmsKeyId</a>.</p> <p>Enabling encryption-by-default for EBS
          * volumes has no effect on existing unencrypted volumes in your account.
          * Encrypting the data in these requires manual action. You can either create an
          * encrypted snapshot of an unencrypted volume, or encrypt a copy of an unencrypted
          * snapshot. Any volume restored from an encrypted snapshot is also encrypted. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-         * EBS Snapshots</a>.</p> <p>After EBS encryption by default is enabled, you can no
+         * EBS Snapshots</a>.</p> <p>After EBS encryption-by-default is enabled, you can no
          * longer launch older-generation instance types that do not support encryption.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
@@ -11879,15 +11879,15 @@ namespace Model
          * <i>encryption</i> to be <i>false</i> in the API call that creates the
          * volume.</p> <p>If you do not specify a customer master key (CMK) in the API call
          * that creates the EBS volume, then the volume is encrypted to your AWS account's
-         * default CMK.</p> <p>You can specify a default CMK of your choice using
-         * <a>ModifyEbsDefaultKmsKeyId</a>.</p> <p>Enabling default encryption for EBS
+         * managed CMK.</p> <p>You can specify a CMK of your choice using
+         * <a>ModifyEbsDefaultKmsKeyId</a>.</p> <p>Enabling encryption-by-default for EBS
          * volumes has no effect on existing unencrypted volumes in your account.
          * Encrypting the data in these requires manual action. You can either create an
          * encrypted snapshot of an unencrypted volume, or encrypt a copy of an unencrypted
          * snapshot. Any volume restored from an encrypted snapshot is also encrypted. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-         * EBS Snapshots</a>.</p> <p>After EBS encryption by default is enabled, you can no
+         * EBS Snapshots</a>.</p> <p>After EBS encryption-by-default is enabled, you can no
          * longer launch older-generation instance types that do not support encryption.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
@@ -11909,15 +11909,15 @@ namespace Model
          * <i>encryption</i> to be <i>false</i> in the API call that creates the
          * volume.</p> <p>If you do not specify a customer master key (CMK) in the API call
          * that creates the EBS volume, then the volume is encrypted to your AWS account's
-         * default CMK.</p> <p>You can specify a default CMK of your choice using
-         * <a>ModifyEbsDefaultKmsKeyId</a>.</p> <p>Enabling default encryption for EBS
+         * managed CMK.</p> <p>You can specify a CMK of your choice using
+         * <a>ModifyEbsDefaultKmsKeyId</a>.</p> <p>Enabling encryption-by-default for EBS
          * volumes has no effect on existing unencrypted volumes in your account.
          * Encrypting the data in these requires manual action. You can either create an
          * encrypted snapshot of an unencrypted volume, or encrypt a copy of an unencrypted
          * snapshot. Any volume restored from an encrypted snapshot is also encrypted. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-         * EBS Snapshots</a>.</p> <p>After EBS encryption by default is enabled, you can no
+         * EBS Snapshots</a>.</p> <p>After EBS encryption-by-default is enabled, you can no
          * longer launch older-generation instance types that do not support encryption.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
@@ -12941,28 +12941,28 @@ namespace Model
         virtual void ModifyClientVpnEndpointAsync(const Model::ModifyClientVpnEndpointRequest& request, const ModifyClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes the default customer master key (CMK) that your account uses to
-         * encrypt EBS volumes if you don't specify a CMK in the API call.</p> <p>Your
-         * account has an AWS-managed default CMK that is used for encrypting an EBS volume
-         * when no CMK is specified in the API call that creates the volume. By calling
-         * this API, you can specify a customer-managed CMK to use in place of the
-         * AWS-managed default CMK.</p> <p>Note: Deleting or disabling the custom CMK that
-         * you have specified to act as your default CMK will result in instance-launch
-         * failures.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the customer master key (CMK) that your account uses to encrypt EBS
+         * volumes if you don't specify a CMK in the API call.</p> <p>By default, your
+         * account has an AWS-managed CMK that is used for encrypting an EBS volume when no
+         * CMK is specified in the API call that creates the volume. By calling this API,
+         * you can specify a customer-managed CMK to use in place of the AWS-managed
+         * CMK.</p> <p>Note: Deleting or disabling the CMK that you have specified to act
+         * as your default CMK will result in instance-launch failures.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">AWS
          * API Reference</a></p>
          */
         virtual Model::ModifyEbsDefaultKmsKeyIdOutcome ModifyEbsDefaultKmsKeyId(const Model::ModifyEbsDefaultKmsKeyIdRequest& request) const;
 
         /**
-         * <p>Changes the default customer master key (CMK) that your account uses to
-         * encrypt EBS volumes if you don't specify a CMK in the API call.</p> <p>Your
-         * account has an AWS-managed default CMK that is used for encrypting an EBS volume
-         * when no CMK is specified in the API call that creates the volume. By calling
-         * this API, you can specify a customer-managed CMK to use in place of the
-         * AWS-managed default CMK.</p> <p>Note: Deleting or disabling the custom CMK that
-         * you have specified to act as your default CMK will result in instance-launch
-         * failures.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the customer master key (CMK) that your account uses to encrypt EBS
+         * volumes if you don't specify a CMK in the API call.</p> <p>By default, your
+         * account has an AWS-managed CMK that is used for encrypting an EBS volume when no
+         * CMK is specified in the API call that creates the volume. By calling this API,
+         * you can specify a customer-managed CMK to use in place of the AWS-managed
+         * CMK.</p> <p>Note: Deleting or disabling the CMK that you have specified to act
+         * as your default CMK will result in instance-launch failures.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">AWS
          * API Reference</a></p>
          *
@@ -12971,14 +12971,14 @@ namespace Model
         virtual Model::ModifyEbsDefaultKmsKeyIdOutcomeCallable ModifyEbsDefaultKmsKeyIdCallable(const Model::ModifyEbsDefaultKmsKeyIdRequest& request) const;
 
         /**
-         * <p>Changes the default customer master key (CMK) that your account uses to
-         * encrypt EBS volumes if you don't specify a CMK in the API call.</p> <p>Your
-         * account has an AWS-managed default CMK that is used for encrypting an EBS volume
-         * when no CMK is specified in the API call that creates the volume. By calling
-         * this API, you can specify a customer-managed CMK to use in place of the
-         * AWS-managed default CMK.</p> <p>Note: Deleting or disabling the custom CMK that
-         * you have specified to act as your default CMK will result in instance-launch
-         * failures.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the customer master key (CMK) that your account uses to encrypt EBS
+         * volumes if you don't specify a CMK in the API call.</p> <p>By default, your
+         * account has an AWS-managed CMK that is used for encrypting an EBS volume when no
+         * CMK is specified in the API call that creates the volume. By calling this API,
+         * you can specify a customer-managed CMK to use in place of the AWS-managed
+         * CMK.</p> <p>Note: Deleting or disabling the CMK that you have specified to act
+         * as your default CMK will result in instance-launch failures.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">AWS
          * API Reference</a></p>
          *
