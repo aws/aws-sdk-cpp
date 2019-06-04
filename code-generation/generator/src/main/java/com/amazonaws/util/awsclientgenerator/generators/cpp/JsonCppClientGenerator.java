@@ -117,10 +117,12 @@ public class JsonCppClientGenerator extends CppClientGenerator {
             VelocityContext context = createContext(serviceModel);
 
             if (shape.isRequest() && (shape.hasStreamMembers() || shape.hasEventStreamMembers())) {
+                if (shape.hasEventStreamMembers()) {
+                    HashMap<String, String> headersMap = new HashMap<>(10);
+                    headersMap.put("Aws::Http::CONTENT_TYPE_HEADER", "Aws::AMZN_EVENTSTREAM_CONTENT_TYPE");
+                    context.put("requestSpecificHeaders", headersMap);
+                }
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/StreamRequestSource.vm", StandardCharsets.UTF_8.name());
-                HashMap<String, String> headersMap = new HashMap<>(10);
-                headersMap.put("Aws::Http::CONTENT_TYPE_HEADER", "Aws::AMZN_EVENTSTREAM_CONTENT_TYPE");
-                context.put("requestSpecificHeaders", headersMap);
             }
             else if (shape.isRequest()) {
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonRequestSource.vm", StandardCharsets.UTF_8.name());
