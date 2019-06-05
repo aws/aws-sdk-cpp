@@ -123,7 +123,7 @@ namespace Model
 
     /**
      * <p>A <code>cron</code> expression used to specify the schedule (see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
      * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p> <p>This
      * field is required when the trigger type is SCHEDULED.</p>
@@ -132,7 +132,7 @@ namespace Model
 
     /**
      * <p>A <code>cron</code> expression used to specify the schedule (see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
      * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p> <p>This
      * field is required when the trigger type is SCHEDULED.</p>
@@ -141,7 +141,7 @@ namespace Model
 
     /**
      * <p>A <code>cron</code> expression used to specify the schedule (see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
      * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p> <p>This
      * field is required when the trigger type is SCHEDULED.</p>
@@ -150,7 +150,7 @@ namespace Model
 
     /**
      * <p>A <code>cron</code> expression used to specify the schedule (see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
      * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p> <p>This
      * field is required when the trigger type is SCHEDULED.</p>
@@ -159,7 +159,7 @@ namespace Model
 
     /**
      * <p>A <code>cron</code> expression used to specify the schedule (see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
      * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p> <p>This
      * field is required when the trigger type is SCHEDULED.</p>
@@ -168,7 +168,7 @@ namespace Model
 
     /**
      * <p>A <code>cron</code> expression used to specify the schedule (see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
      * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p> <p>This
      * field is required when the trigger type is SCHEDULED.</p>
@@ -177,7 +177,7 @@ namespace Model
 
     /**
      * <p>A <code>cron</code> expression used to specify the schedule (see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
      * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p> <p>This
      * field is required when the trigger type is SCHEDULED.</p>
@@ -186,7 +186,7 @@ namespace Model
 
     /**
      * <p>A <code>cron</code> expression used to specify the schedule (see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
      * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p> <p>This
      * field is required when the trigger type is SCHEDULED.</p>
@@ -196,37 +196,37 @@ namespace Model
 
     /**
      * <p>A predicate to specify when the new trigger should fire.</p> <p>This field is
-     * required when the trigger type is CONDITIONAL.</p>
+     * required when the trigger type is <code>CONDITIONAL</code>.</p>
      */
     inline const Predicate& GetPredicate() const{ return m_predicate; }
 
     /**
      * <p>A predicate to specify when the new trigger should fire.</p> <p>This field is
-     * required when the trigger type is CONDITIONAL.</p>
+     * required when the trigger type is <code>CONDITIONAL</code>.</p>
      */
     inline bool PredicateHasBeenSet() const { return m_predicateHasBeenSet; }
 
     /**
      * <p>A predicate to specify when the new trigger should fire.</p> <p>This field is
-     * required when the trigger type is CONDITIONAL.</p>
+     * required when the trigger type is <code>CONDITIONAL</code>.</p>
      */
     inline void SetPredicate(const Predicate& value) { m_predicateHasBeenSet = true; m_predicate = value; }
 
     /**
      * <p>A predicate to specify when the new trigger should fire.</p> <p>This field is
-     * required when the trigger type is CONDITIONAL.</p>
+     * required when the trigger type is <code>CONDITIONAL</code>.</p>
      */
     inline void SetPredicate(Predicate&& value) { m_predicateHasBeenSet = true; m_predicate = std::move(value); }
 
     /**
      * <p>A predicate to specify when the new trigger should fire.</p> <p>This field is
-     * required when the trigger type is CONDITIONAL.</p>
+     * required when the trigger type is <code>CONDITIONAL</code>.</p>
      */
     inline CreateTriggerRequest& WithPredicate(const Predicate& value) { SetPredicate(value); return *this;}
 
     /**
      * <p>A predicate to specify when the new trigger should fire.</p> <p>This field is
-     * required when the trigger type is CONDITIONAL.</p>
+     * required when the trigger type is <code>CONDITIONAL</code>.</p>
      */
     inline CreateTriggerRequest& WithPredicate(Predicate&& value) { SetPredicate(std::move(value)); return *this;}
 
@@ -314,26 +314,30 @@ namespace Model
 
 
     /**
-     * <p>Set to true to start SCHEDULED and CONDITIONAL triggers when created. True
-     * not supported for ON_DEMAND triggers.</p>
+     * <p>Set to <code>true</code> to start <code>SCHEDULED</code> and
+     * <code>CONDITIONAL</code> triggers when created. True is not supported for
+     * <code>ON_DEMAND</code> triggers.</p>
      */
     inline bool GetStartOnCreation() const{ return m_startOnCreation; }
 
     /**
-     * <p>Set to true to start SCHEDULED and CONDITIONAL triggers when created. True
-     * not supported for ON_DEMAND triggers.</p>
+     * <p>Set to <code>true</code> to start <code>SCHEDULED</code> and
+     * <code>CONDITIONAL</code> triggers when created. True is not supported for
+     * <code>ON_DEMAND</code> triggers.</p>
      */
     inline bool StartOnCreationHasBeenSet() const { return m_startOnCreationHasBeenSet; }
 
     /**
-     * <p>Set to true to start SCHEDULED and CONDITIONAL triggers when created. True
-     * not supported for ON_DEMAND triggers.</p>
+     * <p>Set to <code>true</code> to start <code>SCHEDULED</code> and
+     * <code>CONDITIONAL</code> triggers when created. True is not supported for
+     * <code>ON_DEMAND</code> triggers.</p>
      */
     inline void SetStartOnCreation(bool value) { m_startOnCreationHasBeenSet = true; m_startOnCreation = value; }
 
     /**
-     * <p>Set to true to start SCHEDULED and CONDITIONAL triggers when created. True
-     * not supported for ON_DEMAND triggers.</p>
+     * <p>Set to <code>true</code> to start <code>SCHEDULED</code> and
+     * <code>CONDITIONAL</code> triggers when created. True is not supported for
+     * <code>ON_DEMAND</code> triggers.</p>
      */
     inline CreateTriggerRequest& WithStartOnCreation(bool value) { SetStartOnCreation(value); return *this;}
 
@@ -341,7 +345,7 @@ namespace Model
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
      * trigger. For more information about tags in AWS Glue, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
      * AWS Glue</a> in the developer guide. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -349,7 +353,7 @@ namespace Model
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
      * trigger. For more information about tags in AWS Glue, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
      * AWS Glue</a> in the developer guide. </p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -357,7 +361,7 @@ namespace Model
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
      * trigger. For more information about tags in AWS Glue, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
      * AWS Glue</a> in the developer guide. </p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
@@ -365,7 +369,7 @@ namespace Model
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
      * trigger. For more information about tags in AWS Glue, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
      * AWS Glue</a> in the developer guide. </p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
@@ -373,7 +377,7 @@ namespace Model
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
      * trigger. For more information about tags in AWS Glue, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
      * AWS Glue</a> in the developer guide. </p>
      */
     inline CreateTriggerRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
@@ -381,7 +385,7 @@ namespace Model
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
      * trigger. For more information about tags in AWS Glue, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
      * AWS Glue</a> in the developer guide. </p>
      */
     inline CreateTriggerRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
@@ -389,7 +393,7 @@ namespace Model
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
      * trigger. For more information about tags in AWS Glue, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
      * AWS Glue</a> in the developer guide. </p>
      */
     inline CreateTriggerRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
@@ -397,7 +401,7 @@ namespace Model
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
      * trigger. For more information about tags in AWS Glue, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
      * AWS Glue</a> in the developer guide. </p>
      */
     inline CreateTriggerRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
@@ -405,7 +409,7 @@ namespace Model
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
      * trigger. For more information about tags in AWS Glue, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
      * AWS Glue</a> in the developer guide. </p>
      */
     inline CreateTriggerRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
@@ -413,7 +417,7 @@ namespace Model
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
      * trigger. For more information about tags in AWS Glue, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
      * AWS Glue</a> in the developer guide. </p>
      */
     inline CreateTriggerRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
@@ -421,7 +425,7 @@ namespace Model
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
      * trigger. For more information about tags in AWS Glue, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
      * AWS Glue</a> in the developer guide. </p>
      */
     inline CreateTriggerRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
@@ -429,7 +433,7 @@ namespace Model
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
      * trigger. For more information about tags in AWS Glue, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
      * AWS Glue</a> in the developer guide. </p>
      */
     inline CreateTriggerRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
@@ -437,7 +441,7 @@ namespace Model
     /**
      * <p>The tags to use with this trigger. You may use tags to limit access to the
      * trigger. For more information about tags in AWS Glue, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
      * AWS Glue</a> in the developer guide. </p>
      */
     inline CreateTriggerRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }

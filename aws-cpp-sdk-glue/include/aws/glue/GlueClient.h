@@ -2624,9 +2624,9 @@ namespace Model
          * <p>Retrieves the names of all crawler resources in this AWS account, or the
          * resources with the specified tag. This operation allows you to see which
          * resources are available in your account, and their names.</p> <p>This operation
-         * takes the optional <code>Tags</code> field which you can use as a filter on the
+         * takes the optional <code>Tags</code> field, which you can use as a filter on the
          * response so that tagged resources can be retrieved as a group. If you choose to
-         * use tags filtering, only resources with the tag will be retrieved.</p><p><h3>See
+         * use tags filtering, only resources with the tag are retrieved.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCrawlers">AWS
          * API Reference</a></p>
@@ -2637,9 +2637,9 @@ namespace Model
          * <p>Retrieves the names of all crawler resources in this AWS account, or the
          * resources with the specified tag. This operation allows you to see which
          * resources are available in your account, and their names.</p> <p>This operation
-         * takes the optional <code>Tags</code> field which you can use as a filter on the
+         * takes the optional <code>Tags</code> field, which you can use as a filter on the
          * response so that tagged resources can be retrieved as a group. If you choose to
-         * use tags filtering, only resources with the tag will be retrieved.</p><p><h3>See
+         * use tags filtering, only resources with the tag are retrieved.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCrawlers">AWS
          * API Reference</a></p>
@@ -2652,9 +2652,9 @@ namespace Model
          * <p>Retrieves the names of all crawler resources in this AWS account, or the
          * resources with the specified tag. This operation allows you to see which
          * resources are available in your account, and their names.</p> <p>This operation
-         * takes the optional <code>Tags</code> field which you can use as a filter on the
+         * takes the optional <code>Tags</code> field, which you can use as a filter on the
          * response so that tagged resources can be retrieved as a group. If you choose to
-         * use tags filtering, only resources with the tag will be retrieved.</p><p><h3>See
+         * use tags filtering, only resources with the tag are retrieved.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCrawlers">AWS
          * API Reference</a></p>
@@ -2664,26 +2664,26 @@ namespace Model
         virtual void ListCrawlersAsync(const Model::ListCrawlersRequest& request, const ListCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the names of all DevEndpoint resources in this AWS account, or the
-         * resources with the specified tag. This operation allows you to see which
-         * resources are available in your account, and their names.</p> <p>This operation
-         * takes the optional <code>Tags</code> field which you can use as a filter on the
-         * response so that tagged resources can be retrieved as a group. If you choose to
-         * use tags filtering, only resources with the tag will be retrieved.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the names of all <code>DevEndpoint</code> resources in this AWS
+         * account, or the resources with the specified tag. This operation allows you to
+         * see which resources are available in your account, and their names.</p> <p>This
+         * operation takes the optional <code>Tags</code> field, which you can use as a
+         * filter on the response so that tagged resources can be retrieved as a group. If
+         * you choose to use tags filtering, only resources with the tag are
+         * retrieved.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDevEndpoints">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDevEndpointsOutcome ListDevEndpoints(const Model::ListDevEndpointsRequest& request) const;
 
         /**
-         * <p>Retrieves the names of all DevEndpoint resources in this AWS account, or the
-         * resources with the specified tag. This operation allows you to see which
-         * resources are available in your account, and their names.</p> <p>This operation
-         * takes the optional <code>Tags</code> field which you can use as a filter on the
-         * response so that tagged resources can be retrieved as a group. If you choose to
-         * use tags filtering, only resources with the tag will be retrieved.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the names of all <code>DevEndpoint</code> resources in this AWS
+         * account, or the resources with the specified tag. This operation allows you to
+         * see which resources are available in your account, and their names.</p> <p>This
+         * operation takes the optional <code>Tags</code> field, which you can use as a
+         * filter on the response so that tagged resources can be retrieved as a group. If
+         * you choose to use tags filtering, only resources with the tag are
+         * retrieved.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDevEndpoints">AWS
          * API Reference</a></p>
          *
@@ -2692,13 +2692,13 @@ namespace Model
         virtual Model::ListDevEndpointsOutcomeCallable ListDevEndpointsCallable(const Model::ListDevEndpointsRequest& request) const;
 
         /**
-         * <p>Retrieves the names of all DevEndpoint resources in this AWS account, or the
-         * resources with the specified tag. This operation allows you to see which
-         * resources are available in your account, and their names.</p> <p>This operation
-         * takes the optional <code>Tags</code> field which you can use as a filter on the
-         * response so that tagged resources can be retrieved as a group. If you choose to
-         * use tags filtering, only resources with the tag will be retrieved.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the names of all <code>DevEndpoint</code> resources in this AWS
+         * account, or the resources with the specified tag. This operation allows you to
+         * see which resources are available in your account, and their names.</p> <p>This
+         * operation takes the optional <code>Tags</code> field, which you can use as a
+         * filter on the response so that tagged resources can be retrieved as a group. If
+         * you choose to use tags filtering, only resources with the tag are
+         * retrieved.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDevEndpoints">AWS
          * API Reference</a></p>
          *
@@ -2710,9 +2710,9 @@ namespace Model
          * <p>Retrieves the names of all job resources in this AWS account, or the
          * resources with the specified tag. This operation allows you to see which
          * resources are available in your account, and their names.</p> <p>This operation
-         * takes the optional <code>Tags</code> field which you can use as a filter on the
+         * takes the optional <code>Tags</code> field, which you can use as a filter on the
          * response so that tagged resources can be retrieved as a group. If you choose to
-         * use tags filtering, only resources with the tag will be retrieved.</p><p><h3>See
+         * use tags filtering, only resources with the tag are retrieved.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListJobs">AWS API
          * Reference</a></p>
@@ -2723,9 +2723,9 @@ namespace Model
          * <p>Retrieves the names of all job resources in this AWS account, or the
          * resources with the specified tag. This operation allows you to see which
          * resources are available in your account, and their names.</p> <p>This operation
-         * takes the optional <code>Tags</code> field which you can use as a filter on the
+         * takes the optional <code>Tags</code> field, which you can use as a filter on the
          * response so that tagged resources can be retrieved as a group. If you choose to
-         * use tags filtering, only resources with the tag will be retrieved.</p><p><h3>See
+         * use tags filtering, only resources with the tag are retrieved.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListJobs">AWS API
          * Reference</a></p>
@@ -2738,9 +2738,9 @@ namespace Model
          * <p>Retrieves the names of all job resources in this AWS account, or the
          * resources with the specified tag. This operation allows you to see which
          * resources are available in your account, and their names.</p> <p>This operation
-         * takes the optional <code>Tags</code> field which you can use as a filter on the
+         * takes the optional <code>Tags</code> field, which you can use as a filter on the
          * response so that tagged resources can be retrieved as a group. If you choose to
-         * use tags filtering, only resources with the tag will be retrieved.</p><p><h3>See
+         * use tags filtering, only resources with the tag are retrieved.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListJobs">AWS API
          * Reference</a></p>
@@ -2753,9 +2753,9 @@ namespace Model
          * <p>Retrieves the names of all trigger resources in this AWS account, or the
          * resources with the specified tag. This operation allows you to see which
          * resources are available in your account, and their names.</p> <p>This operation
-         * takes the optional <code>Tags</code> field which you can use as a filter on the
+         * takes the optional <code>Tags</code> field, which you can use as a filter on the
          * response so that tagged resources can be retrieved as a group. If you choose to
-         * use tags filtering, only resources with the tag will be retrieved.</p><p><h3>See
+         * use tags filtering, only resources with the tag are retrieved.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTriggers">AWS
          * API Reference</a></p>
@@ -2766,9 +2766,9 @@ namespace Model
          * <p>Retrieves the names of all trigger resources in this AWS account, or the
          * resources with the specified tag. This operation allows you to see which
          * resources are available in your account, and their names.</p> <p>This operation
-         * takes the optional <code>Tags</code> field which you can use as a filter on the
+         * takes the optional <code>Tags</code> field, which you can use as a filter on the
          * response so that tagged resources can be retrieved as a group. If you choose to
-         * use tags filtering, only resources with the tag will be retrieved.</p><p><h3>See
+         * use tags filtering, only resources with the tag are retrieved.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTriggers">AWS
          * API Reference</a></p>
@@ -2781,9 +2781,9 @@ namespace Model
          * <p>Retrieves the names of all trigger resources in this AWS account, or the
          * resources with the specified tag. This operation allows you to see which
          * resources are available in your account, and their names.</p> <p>This operation
-         * takes the optional <code>Tags</code> field which you can use as a filter on the
+         * takes the optional <code>Tags</code> field, which you can use as a filter on the
          * response so that tagged resources can be retrieved as a group. If you choose to
-         * use tags filtering, only resources with the tag will be retrieved.</p><p><h3>See
+         * use tags filtering, only resources with the tag are retrieved.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTriggers">AWS
          * API Reference</a></p>
@@ -2968,7 +2968,7 @@ namespace Model
 
         /**
          * <p>Starts an existing trigger. See <a
-         * href="http://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
+         * href="https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
          * Jobs</a> for information about how different types of trigger are
          * started.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartTrigger">AWS
@@ -2978,7 +2978,7 @@ namespace Model
 
         /**
          * <p>Starts an existing trigger. See <a
-         * href="http://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
+         * href="https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
          * Jobs</a> for information about how different types of trigger are
          * started.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartTrigger">AWS
@@ -2990,7 +2990,7 @@ namespace Model
 
         /**
          * <p>Starts an existing trigger. See <a
-         * href="http://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
+         * href="https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
          * Jobs</a> for information about how different types of trigger are
          * started.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartTrigger">AWS
@@ -3088,7 +3088,7 @@ namespace Model
          * <p>Adds tags to a resource. A tag is a label you can assign to an AWS resource.
          * In AWS Glue, you can tag only certain resources. For information about what
          * resources you can tag, see <a
-         * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+         * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
          * AWS Glue</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TagResource">AWS
          * API Reference</a></p>
@@ -3099,7 +3099,7 @@ namespace Model
          * <p>Adds tags to a resource. A tag is a label you can assign to an AWS resource.
          * In AWS Glue, you can tag only certain resources. For information about what
          * resources you can tag, see <a
-         * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+         * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
          * AWS Glue</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TagResource">AWS
          * API Reference</a></p>
@@ -3112,7 +3112,7 @@ namespace Model
          * <p>Adds tags to a resource. A tag is a label you can assign to an AWS resource.
          * In AWS Glue, you can tag only certain resources. For information about what
          * resources you can tag, see <a
-         * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+         * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
          * AWS Glue</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TagResource">AWS
          * API Reference</a></p>

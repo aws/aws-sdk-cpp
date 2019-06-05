@@ -117,50 +117,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the previous run of this job. For example, the JobRunId specified
-     * in the StartJobRun action.</p>
+     * <p>The ID of the previous run of this job. For example, the
+     * <code>JobRunId</code> specified in the <code>StartJobRun</code> action.</p>
      */
     inline const Aws::String& GetPreviousRunId() const{ return m_previousRunId; }
 
     /**
-     * <p>The ID of the previous run of this job. For example, the JobRunId specified
-     * in the StartJobRun action.</p>
+     * <p>The ID of the previous run of this job. For example, the
+     * <code>JobRunId</code> specified in the <code>StartJobRun</code> action.</p>
      */
     inline bool PreviousRunIdHasBeenSet() const { return m_previousRunIdHasBeenSet; }
 
     /**
-     * <p>The ID of the previous run of this job. For example, the JobRunId specified
-     * in the StartJobRun action.</p>
+     * <p>The ID of the previous run of this job. For example, the
+     * <code>JobRunId</code> specified in the <code>StartJobRun</code> action.</p>
      */
     inline void SetPreviousRunId(const Aws::String& value) { m_previousRunIdHasBeenSet = true; m_previousRunId = value; }
 
     /**
-     * <p>The ID of the previous run of this job. For example, the JobRunId specified
-     * in the StartJobRun action.</p>
+     * <p>The ID of the previous run of this job. For example, the
+     * <code>JobRunId</code> specified in the <code>StartJobRun</code> action.</p>
      */
     inline void SetPreviousRunId(Aws::String&& value) { m_previousRunIdHasBeenSet = true; m_previousRunId = std::move(value); }
 
     /**
-     * <p>The ID of the previous run of this job. For example, the JobRunId specified
-     * in the StartJobRun action.</p>
+     * <p>The ID of the previous run of this job. For example, the
+     * <code>JobRunId</code> specified in the <code>StartJobRun</code> action.</p>
      */
     inline void SetPreviousRunId(const char* value) { m_previousRunIdHasBeenSet = true; m_previousRunId.assign(value); }
 
     /**
-     * <p>The ID of the previous run of this job. For example, the JobRunId specified
-     * in the StartJobRun action.</p>
+     * <p>The ID of the previous run of this job. For example, the
+     * <code>JobRunId</code> specified in the <code>StartJobRun</code> action.</p>
      */
     inline JobRun& WithPreviousRunId(const Aws::String& value) { SetPreviousRunId(value); return *this;}
 
     /**
-     * <p>The ID of the previous run of this job. For example, the JobRunId specified
-     * in the StartJobRun action.</p>
+     * <p>The ID of the previous run of this job. For example, the
+     * <code>JobRunId</code> specified in the <code>StartJobRun</code> action.</p>
      */
     inline JobRun& WithPreviousRunId(Aws::String&& value) { SetPreviousRunId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the previous run of this job. For example, the JobRunId specified
-     * in the StartJobRun action.</p>
+     * <p>The ID of the previous run of this job. For example, the
+     * <code>JobRunId</code> specified in the <code>StartJobRun</code> action.</p>
      */
     inline JobRun& WithPreviousRunId(const char* value) { SetPreviousRunId(value); return *this;}
 
@@ -279,63 +279,63 @@ namespace Model
 
 
     /**
-     * <p>The last time this job run was modified.</p>
+     * <p>The last time that this job run was modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedOn() const{ return m_lastModifiedOn; }
 
     /**
-     * <p>The last time this job run was modified.</p>
+     * <p>The last time that this job run was modified.</p>
      */
     inline bool LastModifiedOnHasBeenSet() const { return m_lastModifiedOnHasBeenSet; }
 
     /**
-     * <p>The last time this job run was modified.</p>
+     * <p>The last time that this job run was modified.</p>
      */
     inline void SetLastModifiedOn(const Aws::Utils::DateTime& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = value; }
 
     /**
-     * <p>The last time this job run was modified.</p>
+     * <p>The last time that this job run was modified.</p>
      */
     inline void SetLastModifiedOn(Aws::Utils::DateTime&& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = std::move(value); }
 
     /**
-     * <p>The last time this job run was modified.</p>
+     * <p>The last time that this job run was modified.</p>
      */
     inline JobRun& WithLastModifiedOn(const Aws::Utils::DateTime& value) { SetLastModifiedOn(value); return *this;}
 
     /**
-     * <p>The last time this job run was modified.</p>
+     * <p>The last time that this job run was modified.</p>
      */
     inline JobRun& WithLastModifiedOn(Aws::Utils::DateTime&& value) { SetLastModifiedOn(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time this job run completed.</p>
+     * <p>The date and time that this job run completed.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletedOn() const{ return m_completedOn; }
 
     /**
-     * <p>The date and time this job run completed.</p>
+     * <p>The date and time that this job run completed.</p>
      */
     inline bool CompletedOnHasBeenSet() const { return m_completedOnHasBeenSet; }
 
     /**
-     * <p>The date and time this job run completed.</p>
+     * <p>The date and time that this job run completed.</p>
      */
     inline void SetCompletedOn(const Aws::Utils::DateTime& value) { m_completedOnHasBeenSet = true; m_completedOn = value; }
 
     /**
-     * <p>The date and time this job run completed.</p>
+     * <p>The date and time that this job run completed.</p>
      */
     inline void SetCompletedOn(Aws::Utils::DateTime&& value) { m_completedOnHasBeenSet = true; m_completedOn = std::move(value); }
 
     /**
-     * <p>The date and time this job run completed.</p>
+     * <p>The date and time that this job run completed.</p>
      */
     inline JobRun& WithCompletedOn(const Aws::Utils::DateTime& value) { SetCompletedOn(value); return *this;}
 
     /**
-     * <p>The date and time this job run completed.</p>
+     * <p>The date and time that this job run completed.</p>
      */
     inline JobRun& WithCompletedOn(Aws::Utils::DateTime&& value) { SetCompletedOn(std::move(value)); return *this;}
 
@@ -377,10 +377,10 @@ namespace Model
      * arguments here that your own job-execution script consumes, as well as arguments
      * that AWS Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
@@ -391,10 +391,10 @@ namespace Model
      * arguments here that your own job-execution script consumes, as well as arguments
      * that AWS Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline bool ArgumentsHasBeenSet() const { return m_argumentsHasBeenSet; }
@@ -405,10 +405,10 @@ namespace Model
      * arguments here that your own job-execution script consumes, as well as arguments
      * that AWS Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline void SetArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_argumentsHasBeenSet = true; m_arguments = value; }
@@ -419,10 +419,10 @@ namespace Model
      * arguments here that your own job-execution script consumes, as well as arguments
      * that AWS Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline void SetArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_argumentsHasBeenSet = true; m_arguments = std::move(value); }
@@ -433,10 +433,10 @@ namespace Model
      * arguments here that your own job-execution script consumes, as well as arguments
      * that AWS Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& WithArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetArguments(value); return *this;}
@@ -447,10 +447,10 @@ namespace Model
      * arguments here that your own job-execution script consumes, as well as arguments
      * that AWS Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& WithArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetArguments(std::move(value)); return *this;}
@@ -461,10 +461,10 @@ namespace Model
      * arguments here that your own job-execution script consumes, as well as arguments
      * that AWS Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(const Aws::String& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
@@ -475,10 +475,10 @@ namespace Model
      * arguments here that your own job-execution script consumes, as well as arguments
      * that AWS Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(Aws::String&& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
@@ -489,10 +489,10 @@ namespace Model
      * arguments here that your own job-execution script consumes, as well as arguments
      * that AWS Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(const Aws::String& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
@@ -503,10 +503,10 @@ namespace Model
      * arguments here that your own job-execution script consumes, as well as arguments
      * that AWS Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(Aws::String&& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), std::move(value)); return *this; }
@@ -517,10 +517,10 @@ namespace Model
      * arguments here that your own job-execution script consumes, as well as arguments
      * that AWS Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(const char* key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
@@ -531,10 +531,10 @@ namespace Model
      * arguments here that your own job-execution script consumes, as well as arguments
      * that AWS Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(Aws::String&& key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
@@ -545,10 +545,10 @@ namespace Model
      * arguments here that your own job-execution script consumes, as well as arguments
      * that AWS Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(const char* key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
@@ -658,34 +658,34 @@ namespace Model
 
 
     /**
-     * <p>The JobRun timeout in minutes. This is the maximum time that a job run can
-     * consume resources before it is terminated and enters <code>TIMEOUT</code>
-     * status. The default is 2,880 minutes (48 hours). This overrides the timeout
-     * value set in the parent job.</p>
+     * <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a
+     * job run can consume resources before it is terminated and enters
+     * <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This
+     * overrides the timeout value set in the parent job.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
 
     /**
-     * <p>The JobRun timeout in minutes. This is the maximum time that a job run can
-     * consume resources before it is terminated and enters <code>TIMEOUT</code>
-     * status. The default is 2,880 minutes (48 hours). This overrides the timeout
-     * value set in the parent job.</p>
+     * <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a
+     * job run can consume resources before it is terminated and enters
+     * <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This
+     * overrides the timeout value set in the parent job.</p>
      */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
-     * <p>The JobRun timeout in minutes. This is the maximum time that a job run can
-     * consume resources before it is terminated and enters <code>TIMEOUT</code>
-     * status. The default is 2,880 minutes (48 hours). This overrides the timeout
-     * value set in the parent job.</p>
+     * <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a
+     * job run can consume resources before it is terminated and enters
+     * <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This
+     * overrides the timeout value set in the parent job.</p>
      */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
-     * <p>The JobRun timeout in minutes. This is the maximum time that a job run can
-     * consume resources before it is terminated and enters <code>TIMEOUT</code>
-     * status. The default is 2,880 minutes (48 hours). This overrides the timeout
-     * value set in the parent job.</p>
+     * <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a
+     * job run can consume resources before it is terminated and enters
+     * <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This
+     * overrides the timeout value set in the parent job.</p>
      */
     inline JobRun& WithTimeout(int value) { SetTimeout(value); return *this;}
 
@@ -694,12 +694,13 @@ namespace Model
      * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
      * when this job runs. A DPU is a relative measure of processing power that
      * consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-     * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue
      * pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using
      * <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that
      * can be allocated for <code>MaxCapacity</code> depends on whether you are running
-     * a python shell job, or an Apache Spark ETL job:</p> <ul> <li> <p>When you
-     * specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
+     * a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify
+     * a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
      * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
      * <p>When you specify an Apache Spark ETL job
      * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
@@ -712,12 +713,13 @@ namespace Model
      * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
      * when this job runs. A DPU is a relative measure of processing power that
      * consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-     * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue
      * pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using
      * <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that
      * can be allocated for <code>MaxCapacity</code> depends on whether you are running
-     * a python shell job, or an Apache Spark ETL job:</p> <ul> <li> <p>When you
-     * specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
+     * a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify
+     * a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
      * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
      * <p>When you specify an Apache Spark ETL job
      * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
@@ -730,12 +732,13 @@ namespace Model
      * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
      * when this job runs. A DPU is a relative measure of processing power that
      * consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-     * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue
      * pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using
      * <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that
      * can be allocated for <code>MaxCapacity</code> depends on whether you are running
-     * a python shell job, or an Apache Spark ETL job:</p> <ul> <li> <p>When you
-     * specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
+     * a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify
+     * a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
      * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
      * <p>When you specify an Apache Spark ETL job
      * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
@@ -748,12 +751,13 @@ namespace Model
      * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
      * when this job runs. A DPU is a relative measure of processing power that
      * consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-     * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue
      * pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using
      * <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that
      * can be allocated for <code>MaxCapacity</code> depends on whether you are running
-     * a python shell job, or an Apache Spark ETL job:</p> <ul> <li> <p>When you
-     * specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
+     * a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify
+     * a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
      * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
      * <p>When you specify an Apache Spark ETL job
      * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
@@ -897,139 +901,139 @@ namespace Model
 
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used with this job
-     * run.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used with
+     * this job run.</p>
      */
     inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used with this job
-     * run.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used with
+     * this job run.</p>
      */
     inline bool SecurityConfigurationHasBeenSet() const { return m_securityConfigurationHasBeenSet; }
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used with this job
-     * run.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used with
+     * this job run.</p>
      */
     inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used with this job
-     * run.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used with
+     * this job run.</p>
      */
     inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::move(value); }
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used with this job
-     * run.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used with
+     * this job run.</p>
      */
     inline void SetSecurityConfiguration(const char* value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration.assign(value); }
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used with this job
-     * run.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used with
+     * this job run.</p>
      */
     inline JobRun& WithSecurityConfiguration(const Aws::String& value) { SetSecurityConfiguration(value); return *this;}
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used with this job
-     * run.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used with
+     * this job run.</p>
      */
     inline JobRun& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the SecurityConfiguration structure to be used with this job
-     * run.</p>
+     * <p>The name of the <code>SecurityConfiguration</code> structure to be used with
+     * this job run.</p>
      */
     inline JobRun& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
 
 
     /**
-     * <p>The name of the log group for secure logging, that can be server-side
-     * encrypted in CloudWatch using KMS. This name can be
+     * <p>The name of the log group for secure logging that can be server-side
+     * encrypted in Amazon CloudWatch using AWS KMS. This name can be
      * <code>/aws-glue/jobs/</code>, in which case the default encryption is
-     * <code>NONE</code>. If you add a role name and SecurityConfiguration name (in
-     * other words,
+     * <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code>
+     * name (in other words,
      * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then
-     * that security configuration will be used to encrypt the log group.</p>
+     * that security configuration is used to encrypt the log group.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
     /**
-     * <p>The name of the log group for secure logging, that can be server-side
-     * encrypted in CloudWatch using KMS. This name can be
+     * <p>The name of the log group for secure logging that can be server-side
+     * encrypted in Amazon CloudWatch using AWS KMS. This name can be
      * <code>/aws-glue/jobs/</code>, in which case the default encryption is
-     * <code>NONE</code>. If you add a role name and SecurityConfiguration name (in
-     * other words,
+     * <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code>
+     * name (in other words,
      * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then
-     * that security configuration will be used to encrypt the log group.</p>
+     * that security configuration is used to encrypt the log group.</p>
      */
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the log group for secure logging, that can be server-side
-     * encrypted in CloudWatch using KMS. This name can be
+     * <p>The name of the log group for secure logging that can be server-side
+     * encrypted in Amazon CloudWatch using AWS KMS. This name can be
      * <code>/aws-glue/jobs/</code>, in which case the default encryption is
-     * <code>NONE</code>. If you add a role name and SecurityConfiguration name (in
-     * other words,
+     * <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code>
+     * name (in other words,
      * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then
-     * that security configuration will be used to encrypt the log group.</p>
+     * that security configuration is used to encrypt the log group.</p>
      */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The name of the log group for secure logging, that can be server-side
-     * encrypted in CloudWatch using KMS. This name can be
+     * <p>The name of the log group for secure logging that can be server-side
+     * encrypted in Amazon CloudWatch using AWS KMS. This name can be
      * <code>/aws-glue/jobs/</code>, in which case the default encryption is
-     * <code>NONE</code>. If you add a role name and SecurityConfiguration name (in
-     * other words,
+     * <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code>
+     * name (in other words,
      * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then
-     * that security configuration will be used to encrypt the log group.</p>
+     * that security configuration is used to encrypt the log group.</p>
      */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
-     * <p>The name of the log group for secure logging, that can be server-side
-     * encrypted in CloudWatch using KMS. This name can be
+     * <p>The name of the log group for secure logging that can be server-side
+     * encrypted in Amazon CloudWatch using AWS KMS. This name can be
      * <code>/aws-glue/jobs/</code>, in which case the default encryption is
-     * <code>NONE</code>. If you add a role name and SecurityConfiguration name (in
-     * other words,
+     * <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code>
+     * name (in other words,
      * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then
-     * that security configuration will be used to encrypt the log group.</p>
+     * that security configuration is used to encrypt the log group.</p>
      */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
     /**
-     * <p>The name of the log group for secure logging, that can be server-side
-     * encrypted in CloudWatch using KMS. This name can be
+     * <p>The name of the log group for secure logging that can be server-side
+     * encrypted in Amazon CloudWatch using AWS KMS. This name can be
      * <code>/aws-glue/jobs/</code>, in which case the default encryption is
-     * <code>NONE</code>. If you add a role name and SecurityConfiguration name (in
-     * other words,
+     * <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code>
+     * name (in other words,
      * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then
-     * that security configuration will be used to encrypt the log group.</p>
+     * that security configuration is used to encrypt the log group.</p>
      */
     inline JobRun& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The name of the log group for secure logging, that can be server-side
-     * encrypted in CloudWatch using KMS. This name can be
+     * <p>The name of the log group for secure logging that can be server-side
+     * encrypted in Amazon CloudWatch using AWS KMS. This name can be
      * <code>/aws-glue/jobs/</code>, in which case the default encryption is
-     * <code>NONE</code>. If you add a role name and SecurityConfiguration name (in
-     * other words,
+     * <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code>
+     * name (in other words,
      * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then
-     * that security configuration will be used to encrypt the log group.</p>
+     * that security configuration is used to encrypt the log group.</p>
      */
     inline JobRun& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the log group for secure logging, that can be server-side
-     * encrypted in CloudWatch using KMS. This name can be
+     * <p>The name of the log group for secure logging that can be server-side
+     * encrypted in Amazon CloudWatch using AWS KMS. This name can be
      * <code>/aws-glue/jobs/</code>, in which case the default encryption is
-     * <code>NONE</code>. If you add a role name and SecurityConfiguration name (in
-     * other words,
+     * <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code>
+     * name (in other words,
      * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then
-     * that security configuration will be used to encrypt the log group.</p>
+     * that security configuration is used to encrypt the log group.</p>
      */
     inline JobRun& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 

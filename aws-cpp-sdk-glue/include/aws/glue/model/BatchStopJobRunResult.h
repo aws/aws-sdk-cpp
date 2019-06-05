@@ -81,51 +81,51 @@ namespace Model
 
 
     /**
-     * <p>A list of the errors that were encountered in tryng to stop JobRuns,
-     * including the JobRunId for which each error was encountered and details about
-     * the error.</p>
+     * <p>A list of the errors that were encountered in trying to stop
+     * <code>JobRuns</code>, including the <code>JobRunId</code> for which each error
+     * was encountered and details about the error.</p>
      */
     inline const Aws::Vector<BatchStopJobRunError>& GetErrors() const{ return m_errors; }
 
     /**
-     * <p>A list of the errors that were encountered in tryng to stop JobRuns,
-     * including the JobRunId for which each error was encountered and details about
-     * the error.</p>
+     * <p>A list of the errors that were encountered in trying to stop
+     * <code>JobRuns</code>, including the <code>JobRunId</code> for which each error
+     * was encountered and details about the error.</p>
      */
     inline void SetErrors(const Aws::Vector<BatchStopJobRunError>& value) { m_errors = value; }
 
     /**
-     * <p>A list of the errors that were encountered in tryng to stop JobRuns,
-     * including the JobRunId for which each error was encountered and details about
-     * the error.</p>
+     * <p>A list of the errors that were encountered in trying to stop
+     * <code>JobRuns</code>, including the <code>JobRunId</code> for which each error
+     * was encountered and details about the error.</p>
      */
     inline void SetErrors(Aws::Vector<BatchStopJobRunError>&& value) { m_errors = std::move(value); }
 
     /**
-     * <p>A list of the errors that were encountered in tryng to stop JobRuns,
-     * including the JobRunId for which each error was encountered and details about
-     * the error.</p>
+     * <p>A list of the errors that were encountered in trying to stop
+     * <code>JobRuns</code>, including the <code>JobRunId</code> for which each error
+     * was encountered and details about the error.</p>
      */
     inline BatchStopJobRunResult& WithErrors(const Aws::Vector<BatchStopJobRunError>& value) { SetErrors(value); return *this;}
 
     /**
-     * <p>A list of the errors that were encountered in tryng to stop JobRuns,
-     * including the JobRunId for which each error was encountered and details about
-     * the error.</p>
+     * <p>A list of the errors that were encountered in trying to stop
+     * <code>JobRuns</code>, including the <code>JobRunId</code> for which each error
+     * was encountered and details about the error.</p>
      */
     inline BatchStopJobRunResult& WithErrors(Aws::Vector<BatchStopJobRunError>&& value) { SetErrors(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the errors that were encountered in tryng to stop JobRuns,
-     * including the JobRunId for which each error was encountered and details about
-     * the error.</p>
+     * <p>A list of the errors that were encountered in trying to stop
+     * <code>JobRuns</code>, including the <code>JobRunId</code> for which each error
+     * was encountered and details about the error.</p>
      */
     inline BatchStopJobRunResult& AddErrors(const BatchStopJobRunError& value) { m_errors.push_back(value); return *this; }
 
     /**
-     * <p>A list of the errors that were encountered in tryng to stop JobRuns,
-     * including the JobRunId for which each error was encountered and details about
-     * the error.</p>
+     * <p>A list of the errors that were encountered in trying to stop
+     * <code>JobRuns</code>, including the <code>JobRunId</code> for which each error
+     * was encountered and details about the error.</p>
      */
     inline BatchStopJobRunResult& AddErrors(BatchStopJobRunError&& value) { m_errors.push_back(std::move(value)); return *this; }
 

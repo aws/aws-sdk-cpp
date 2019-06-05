@@ -48,93 +48,158 @@ namespace Model
 
 
     /**
-     * <p>The name of the job command: this must be <code>glueetl</code>, for an Apache
-     * Spark ETL job, or <code>pythonshell</code>, for a Python shell job.</p>
+     * <p>The name of the job command. For an Apache Spark ETL job, this must be
+     * <code>glueetl</code>. For a Python shell job, it must be
+     * <code>pythonshell</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the job command: this must be <code>glueetl</code>, for an Apache
-     * Spark ETL job, or <code>pythonshell</code>, for a Python shell job.</p>
+     * <p>The name of the job command. For an Apache Spark ETL job, this must be
+     * <code>glueetl</code>. For a Python shell job, it must be
+     * <code>pythonshell</code>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the job command: this must be <code>glueetl</code>, for an Apache
-     * Spark ETL job, or <code>pythonshell</code>, for a Python shell job.</p>
+     * <p>The name of the job command. For an Apache Spark ETL job, this must be
+     * <code>glueetl</code>. For a Python shell job, it must be
+     * <code>pythonshell</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the job command: this must be <code>glueetl</code>, for an Apache
-     * Spark ETL job, or <code>pythonshell</code>, for a Python shell job.</p>
+     * <p>The name of the job command. For an Apache Spark ETL job, this must be
+     * <code>glueetl</code>. For a Python shell job, it must be
+     * <code>pythonshell</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the job command: this must be <code>glueetl</code>, for an Apache
-     * Spark ETL job, or <code>pythonshell</code>, for a Python shell job.</p>
+     * <p>The name of the job command. For an Apache Spark ETL job, this must be
+     * <code>glueetl</code>. For a Python shell job, it must be
+     * <code>pythonshell</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the job command: this must be <code>glueetl</code>, for an Apache
-     * Spark ETL job, or <code>pythonshell</code>, for a Python shell job.</p>
+     * <p>The name of the job command. For an Apache Spark ETL job, this must be
+     * <code>glueetl</code>. For a Python shell job, it must be
+     * <code>pythonshell</code>.</p>
      */
     inline JobCommand& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the job command: this must be <code>glueetl</code>, for an Apache
-     * Spark ETL job, or <code>pythonshell</code>, for a Python shell job.</p>
+     * <p>The name of the job command. For an Apache Spark ETL job, this must be
+     * <code>glueetl</code>. For a Python shell job, it must be
+     * <code>pythonshell</code>.</p>
      */
     inline JobCommand& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job command: this must be <code>glueetl</code>, for an Apache
-     * Spark ETL job, or <code>pythonshell</code>, for a Python shell job.</p>
+     * <p>The name of the job command. For an Apache Spark ETL job, this must be
+     * <code>glueetl</code>. For a Python shell job, it must be
+     * <code>pythonshell</code>.</p>
      */
     inline JobCommand& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Specifies the S3 path to a script that executes a job (required).</p>
+     * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
+     * executes a job (required).</p>
      */
     inline const Aws::String& GetScriptLocation() const{ return m_scriptLocation; }
 
     /**
-     * <p>Specifies the S3 path to a script that executes a job (required).</p>
+     * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
+     * executes a job (required).</p>
      */
     inline bool ScriptLocationHasBeenSet() const { return m_scriptLocationHasBeenSet; }
 
     /**
-     * <p>Specifies the S3 path to a script that executes a job (required).</p>
+     * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
+     * executes a job (required).</p>
      */
     inline void SetScriptLocation(const Aws::String& value) { m_scriptLocationHasBeenSet = true; m_scriptLocation = value; }
 
     /**
-     * <p>Specifies the S3 path to a script that executes a job (required).</p>
+     * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
+     * executes a job (required).</p>
      */
     inline void SetScriptLocation(Aws::String&& value) { m_scriptLocationHasBeenSet = true; m_scriptLocation = std::move(value); }
 
     /**
-     * <p>Specifies the S3 path to a script that executes a job (required).</p>
+     * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
+     * executes a job (required).</p>
      */
     inline void SetScriptLocation(const char* value) { m_scriptLocationHasBeenSet = true; m_scriptLocation.assign(value); }
 
     /**
-     * <p>Specifies the S3 path to a script that executes a job (required).</p>
+     * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
+     * executes a job (required).</p>
      */
     inline JobCommand& WithScriptLocation(const Aws::String& value) { SetScriptLocation(value); return *this;}
 
     /**
-     * <p>Specifies the S3 path to a script that executes a job (required).</p>
+     * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
+     * executes a job (required).</p>
      */
     inline JobCommand& WithScriptLocation(Aws::String&& value) { SetScriptLocation(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the S3 path to a script that executes a job (required).</p>
+     * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
+     * executes a job (required).</p>
      */
     inline JobCommand& WithScriptLocation(const char* value) { SetScriptLocation(value); return *this;}
+
+
+    /**
+     * <p>The Python version being used to execute a Python shell job. Allowed values
+     * are 2 or 3.</p>
+     */
+    inline const Aws::String& GetPythonVersion() const{ return m_pythonVersion; }
+
+    /**
+     * <p>The Python version being used to execute a Python shell job. Allowed values
+     * are 2 or 3.</p>
+     */
+    inline bool PythonVersionHasBeenSet() const { return m_pythonVersionHasBeenSet; }
+
+    /**
+     * <p>The Python version being used to execute a Python shell job. Allowed values
+     * are 2 or 3.</p>
+     */
+    inline void SetPythonVersion(const Aws::String& value) { m_pythonVersionHasBeenSet = true; m_pythonVersion = value; }
+
+    /**
+     * <p>The Python version being used to execute a Python shell job. Allowed values
+     * are 2 or 3.</p>
+     */
+    inline void SetPythonVersion(Aws::String&& value) { m_pythonVersionHasBeenSet = true; m_pythonVersion = std::move(value); }
+
+    /**
+     * <p>The Python version being used to execute a Python shell job. Allowed values
+     * are 2 or 3.</p>
+     */
+    inline void SetPythonVersion(const char* value) { m_pythonVersionHasBeenSet = true; m_pythonVersion.assign(value); }
+
+    /**
+     * <p>The Python version being used to execute a Python shell job. Allowed values
+     * are 2 or 3.</p>
+     */
+    inline JobCommand& WithPythonVersion(const Aws::String& value) { SetPythonVersion(value); return *this;}
+
+    /**
+     * <p>The Python version being used to execute a Python shell job. Allowed values
+     * are 2 or 3.</p>
+     */
+    inline JobCommand& WithPythonVersion(Aws::String&& value) { SetPythonVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The Python version being used to execute a Python shell job. Allowed values
+     * are 2 or 3.</p>
+     */
+    inline JobCommand& WithPythonVersion(const char* value) { SetPythonVersion(value); return *this;}
 
   private:
 
@@ -143,6 +208,9 @@ namespace Model
 
     Aws::String m_scriptLocation;
     bool m_scriptLocationHasBeenSet;
+
+    Aws::String m_pythonVersion;
+    bool m_pythonVersionHasBeenSet;
   };
 
 } // namespace Model

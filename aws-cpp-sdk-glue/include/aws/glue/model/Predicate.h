@@ -51,37 +51,37 @@ namespace Model
 
 
     /**
-     * <p>Optional field if only one condition is listed. If multiple conditions are
+     * <p>An optional field if only one condition is listed. If multiple conditions are
      * listed, then this field is required.</p>
      */
     inline const Logical& GetLogical() const{ return m_logical; }
 
     /**
-     * <p>Optional field if only one condition is listed. If multiple conditions are
+     * <p>An optional field if only one condition is listed. If multiple conditions are
      * listed, then this field is required.</p>
      */
     inline bool LogicalHasBeenSet() const { return m_logicalHasBeenSet; }
 
     /**
-     * <p>Optional field if only one condition is listed. If multiple conditions are
+     * <p>An optional field if only one condition is listed. If multiple conditions are
      * listed, then this field is required.</p>
      */
     inline void SetLogical(const Logical& value) { m_logicalHasBeenSet = true; m_logical = value; }
 
     /**
-     * <p>Optional field if only one condition is listed. If multiple conditions are
+     * <p>An optional field if only one condition is listed. If multiple conditions are
      * listed, then this field is required.</p>
      */
     inline void SetLogical(Logical&& value) { m_logicalHasBeenSet = true; m_logical = std::move(value); }
 
     /**
-     * <p>Optional field if only one condition is listed. If multiple conditions are
+     * <p>An optional field if only one condition is listed. If multiple conditions are
      * listed, then this field is required.</p>
      */
     inline Predicate& WithLogical(const Logical& value) { SetLogical(value); return *this;}
 
     /**
-     * <p>Optional field if only one condition is listed. If multiple conditions are
+     * <p>An optional field if only one condition is listed. If multiple conditions are
      * listed, then this field is required.</p>
      */
     inline Predicate& WithLogical(Logical&& value) { SetLogical(std::move(value)); return *this;}
