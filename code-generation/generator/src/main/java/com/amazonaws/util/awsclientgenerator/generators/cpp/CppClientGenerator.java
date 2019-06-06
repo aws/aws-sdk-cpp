@@ -342,14 +342,45 @@ public abstract class CppClientGenerator implements ClientGenerator {
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EndpointEnumSource.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
-        context.put("endpointMapping", computeRegionEndpointsForService(serviceModel));
+        context.put("endpointMapping", computeEndpointMappingForService(serviceModel));
 
         String fileName = String.format("source/%s%s.cpp", serviceModel.getMetadata().getClassNamePrefix(), "Endpoint");
         return makeFile(template, context, fileName, true);
     }
 
-    protected Map<String, String> computeRegionEndpointsForService(final ServiceModel serviceModel) {
-        return new LinkedHashMap<>();
+    private Map<String, String> computeEndpointMappingForService(final ServiceModel serviceModel) {
+        Map<String, String> endpoints = new HashMap<>();
+
+        if (serviceModel.getServiceName().equals("budgets") || 
+            serviceModel.getServiceName().equals("cloudfront") || 
+            serviceModel.getServiceName().equals("importexport") ||
+            serviceModel.getServiceName().equals("route53") || 
+            serviceModel.getServiceName().equals("waf"))
+        {
+            serviceModel.getMetadata().setGlobalEndpoint(serviceModel.getServiceName() + ".amazonaws.com");
+
+        } else if (serviceModel.getServiceName().equals("iam")) {
+            endpoints.put("cn-north-1", "iam.cn-north-1.amazonaws.com.cn");
+            endpoints.put("cn-northwest-1", "iam.cn-north-1.amazonaws.com.cn");
+            endpoints.put("us-gov-east-1", "iam.us-gov.amazonaws.com");
+            endpoints.put("us-gov-west-1", "iam.us-gov.amazonaws.com");
+            serviceModel.getMetadata().setGlobalEndpoint("iam.amazonaws.com");
+
+        } else if (serviceModel.getServiceName().equals("organizations")) {
+            endpoints.put("us-gov-west-1", "organizations.us-gov-west-1.amazonaws.com");
+            serviceModel.getMetadata().setGlobalEndpoint("organizations.us-east-1.amazonaws.com");
+
+        } else if (serviceModel.getServiceName().equals("s3")) {
+            serviceModel.getMetadata().setGlobalEndpoint(null);
+            endpoints.put("us-east-1", "s3.amazonaws.com");
+            endpoints.put("us-gov-west-1", "s3-us-gov-west-1.amazonaws.com");
+            endpoints.put("fips-us-gov-west-1", "s3-fips-us-gov-west-1.amazonaws.com");
+
+        } else if (serviceModel.getServiceName().equals("sts")) {
+             serviceModel.getMetadata().setGlobalEndpoint(null);           
+        }
+
+        return endpoints;
     }
 
     private SdkFileEntry generateExportHeader(final ServiceModel serviceModel) throws Exception {

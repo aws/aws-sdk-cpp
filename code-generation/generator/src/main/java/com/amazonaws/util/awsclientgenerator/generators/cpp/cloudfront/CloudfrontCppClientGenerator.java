@@ -35,14 +35,6 @@ public class CloudfrontCppClientGenerator extends RestXmlCppClientGenerator {
     }
 
     @Override
-    protected Map<String, String> computeRegionEndpointsForService(final ServiceModel serviceModel) {
-        Map<String, String> endpoints = new HashMap<>();
-        endpoints.put("us-east-1", serviceModel.getMetadata().getGlobalEndpoint());
-
-        return endpoints;
-    }
-
-    @Override
     protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
         Shape shape = shapeEntry.getValue();
 

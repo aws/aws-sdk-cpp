@@ -257,15 +257,5 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         context.put("CppViewHelper", CppViewHelper.class);
         return makeFile(template, context, fileName, true); 
     }
-    
-
-    protected Map<String, String> computeRegionEndpointsForService(final ServiceModel serviceModel) {
-        Map<String, String> endpoints = new LinkedHashMap<>();
-        endpoints.put("us-east-1", serviceModel.getMetadata().getGlobalEndpoint());
-        endpoints.put("us-gov-west-1", "s3-us-gov-west-1.amazonaws.com");
-        endpoints.put("fips-us-gov-west-1", "s3-fips-us-gov-west-1.amazonaws.com");
-
-        return endpoints;
-    }
 }
 

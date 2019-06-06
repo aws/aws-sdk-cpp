@@ -29,6 +29,7 @@ public class ServiceModel {
     String runtimeMajorVersionUpperBound;
     String runtimeMinorVersion;
     String namespace;
+    String serviceName;
     Metadata metadata;
     String documentation;
     String licenseText;
