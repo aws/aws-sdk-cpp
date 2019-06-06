@@ -37,6 +37,7 @@ ContainerInstance::ContainerInstance() :
     m_remainingResourcesHasBeenSet(false),
     m_registeredResourcesHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_statusReasonHasBeenSet(false),
     m_agentConnected(false),
     m_agentConnectedHasBeenSet(false),
     m_runningTasksCount(0),
@@ -61,6 +62,7 @@ ContainerInstance::ContainerInstance(JsonView jsonValue) :
     m_remainingResourcesHasBeenSet(false),
     m_registeredResourcesHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_statusReasonHasBeenSet(false),
     m_agentConnected(false),
     m_agentConnectedHasBeenSet(false),
     m_runningTasksCount(0),
@@ -132,6 +134,13 @@ ContainerInstance& ContainerInstance::operator =(JsonView jsonValue)
     m_status = jsonValue.GetString("status");
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("statusReason"))
+  {
+    m_statusReason = jsonValue.GetString("statusReason");
+
+    m_statusReasonHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("agentConnected"))
@@ -255,6 +264,12 @@ JsonValue ContainerInstance::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", m_status);
+
+  }
+
+  if(m_statusReasonHasBeenSet)
+  {
+   payload.WithString("statusReason", m_statusReason);
 
   }
 

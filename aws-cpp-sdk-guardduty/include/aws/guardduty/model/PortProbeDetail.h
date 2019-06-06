@@ -34,11 +34,6 @@ namespace GuardDuty
 namespace Model
 {
 
-  /**
-   * Details about the port probe finding.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/PortProbeDetail">AWS
-   * API Reference</a></p>
-   */
   class AWS_GUARDDUTY_API PortProbeDetail
   {
   public:
@@ -49,63 +44,63 @@ namespace Model
 
 
     /**
-     * Local port information of the connection.
+     * <p>Local port information of the connection.</p>
      */
     inline const LocalPortDetails& GetLocalPortDetails() const{ return m_localPortDetails; }
 
     /**
-     * Local port information of the connection.
+     * <p>Local port information of the connection.</p>
      */
     inline bool LocalPortDetailsHasBeenSet() const { return m_localPortDetailsHasBeenSet; }
 
     /**
-     * Local port information of the connection.
+     * <p>Local port information of the connection.</p>
      */
     inline void SetLocalPortDetails(const LocalPortDetails& value) { m_localPortDetailsHasBeenSet = true; m_localPortDetails = value; }
 
     /**
-     * Local port information of the connection.
+     * <p>Local port information of the connection.</p>
      */
     inline void SetLocalPortDetails(LocalPortDetails&& value) { m_localPortDetailsHasBeenSet = true; m_localPortDetails = std::move(value); }
 
     /**
-     * Local port information of the connection.
+     * <p>Local port information of the connection.</p>
      */
     inline PortProbeDetail& WithLocalPortDetails(const LocalPortDetails& value) { SetLocalPortDetails(value); return *this;}
 
     /**
-     * Local port information of the connection.
+     * <p>Local port information of the connection.</p>
      */
     inline PortProbeDetail& WithLocalPortDetails(LocalPortDetails&& value) { SetLocalPortDetails(std::move(value)); return *this;}
 
 
     /**
-     * Remote IP information of the connection.
+     * <p>Remote IP information of the connection.</p>
      */
     inline const RemoteIpDetails& GetRemoteIpDetails() const{ return m_remoteIpDetails; }
 
     /**
-     * Remote IP information of the connection.
+     * <p>Remote IP information of the connection.</p>
      */
     inline bool RemoteIpDetailsHasBeenSet() const { return m_remoteIpDetailsHasBeenSet; }
 
     /**
-     * Remote IP information of the connection.
+     * <p>Remote IP information of the connection.</p>
      */
     inline void SetRemoteIpDetails(const RemoteIpDetails& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = value; }
 
     /**
-     * Remote IP information of the connection.
+     * <p>Remote IP information of the connection.</p>
      */
     inline void SetRemoteIpDetails(RemoteIpDetails&& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = std::move(value); }
 
     /**
-     * Remote IP information of the connection.
+     * <p>Remote IP information of the connection.</p>
      */
     inline PortProbeDetail& WithRemoteIpDetails(const RemoteIpDetails& value) { SetRemoteIpDetails(value); return *this;}
 
     /**
-     * Remote IP information of the connection.
+     * <p>Remote IP information of the connection.</p>
      */
     inline PortProbeDetail& WithRemoteIpDetails(RemoteIpDetails&& value) { SetRemoteIpDetails(std::move(value)); return *this;}
 

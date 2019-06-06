@@ -33,11 +33,6 @@ namespace GuardDuty
 namespace Model
 {
 
-  /**
-   * The product code of the EC2 instance.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ProductCode">AWS
-   * API Reference</a></p>
-   */
   class AWS_GUARDDUTY_API ProductCode
   {
   public:
@@ -48,83 +43,83 @@ namespace Model
 
 
     /**
-     * Product code information.
+     * <p>Product code information.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
 
     /**
-     * Product code information.
+     * <p>Product code information.</p>
      */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
 
     /**
-     * Product code information.
+     * <p>Product code information.</p>
      */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
-     * Product code information.
+     * <p>Product code information.</p>
      */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
-     * Product code information.
+     * <p>Product code information.</p>
      */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
 
     /**
-     * Product code information.
+     * <p>Product code information.</p>
      */
     inline ProductCode& WithCode(const Aws::String& value) { SetCode(value); return *this;}
 
     /**
-     * Product code information.
+     * <p>Product code information.</p>
      */
     inline ProductCode& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     /**
-     * Product code information.
+     * <p>Product code information.</p>
      */
     inline ProductCode& WithCode(const char* value) { SetCode(value); return *this;}
 
 
     /**
-     * Product code type.
+     * <p>Product code type.</p>
      */
     inline const Aws::String& GetProductType() const{ return m_productType; }
 
     /**
-     * Product code type.
+     * <p>Product code type.</p>
      */
     inline bool ProductTypeHasBeenSet() const { return m_productTypeHasBeenSet; }
 
     /**
-     * Product code type.
+     * <p>Product code type.</p>
      */
     inline void SetProductType(const Aws::String& value) { m_productTypeHasBeenSet = true; m_productType = value; }
 
     /**
-     * Product code type.
+     * <p>Product code type.</p>
      */
     inline void SetProductType(Aws::String&& value) { m_productTypeHasBeenSet = true; m_productType = std::move(value); }
 
     /**
-     * Product code type.
+     * <p>Product code type.</p>
      */
     inline void SetProductType(const char* value) { m_productTypeHasBeenSet = true; m_productType.assign(value); }
 
     /**
-     * Product code type.
+     * <p>Product code type.</p>
      */
     inline ProductCode& WithProductType(const Aws::String& value) { SetProductType(value); return *this;}
 
     /**
-     * Product code type.
+     * <p>Product code type.</p>
      */
     inline ProductCode& WithProductType(Aws::String&& value) { SetProductType(std::move(value)); return *this;}
 
     /**
-     * Product code type.
+     * <p>Product code type.</p>
      */
     inline ProductCode& WithProductType(const char* value) { SetProductType(value); return *this;}
 

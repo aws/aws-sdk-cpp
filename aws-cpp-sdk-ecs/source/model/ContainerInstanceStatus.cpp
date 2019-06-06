@@ -32,6 +32,9 @@ namespace Aws
 
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int DRAINING_HASH = HashingUtils::HashString("DRAINING");
+        static const int REGISTERING_HASH = HashingUtils::HashString("REGISTERING");
+        static const int DEREGISTERING_HASH = HashingUtils::HashString("DEREGISTERING");
+        static const int REGISTRATION_FAILED_HASH = HashingUtils::HashString("REGISTRATION_FAILED");
 
 
         ContainerInstanceStatus GetContainerInstanceStatusForName(const Aws::String& name)
@@ -44,6 +47,18 @@ namespace Aws
           else if (hashCode == DRAINING_HASH)
           {
             return ContainerInstanceStatus::DRAINING;
+          }
+          else if (hashCode == REGISTERING_HASH)
+          {
+            return ContainerInstanceStatus::REGISTERING;
+          }
+          else if (hashCode == DEREGISTERING_HASH)
+          {
+            return ContainerInstanceStatus::DEREGISTERING;
+          }
+          else if (hashCode == REGISTRATION_FAILED_HASH)
+          {
+            return ContainerInstanceStatus::REGISTRATION_FAILED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +78,12 @@ namespace Aws
             return "ACTIVE";
           case ContainerInstanceStatus::DRAINING:
             return "DRAINING";
+          case ContainerInstanceStatus::REGISTERING:
+            return "REGISTERING";
+          case ContainerInstanceStatus::DEREGISTERING:
+            return "DEREGISTERING";
+          case ContainerInstanceStatus::REGISTRATION_FAILED:
+            return "REGISTRATION_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * The unique ID of the created detector.
+     * <p>The unique ID of the created detector.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The unique ID of the created detector.
+     * <p>The unique ID of the created detector.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorId = value; }
 
     /**
-     * The unique ID of the created detector.
+     * <p>The unique ID of the created detector.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorId = std::move(value); }
 
     /**
-     * The unique ID of the created detector.
+     * <p>The unique ID of the created detector.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorId.assign(value); }
 
     /**
-     * The unique ID of the created detector.
+     * <p>The unique ID of the created detector.</p>
      */
     inline CreateDetectorResult& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The unique ID of the created detector.
+     * <p>The unique ID of the created detector.</p>
      */
     inline CreateDetectorResult& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of the created detector.
+     * <p>The unique ID of the created detector.</p>
      */
     inline CreateDetectorResult& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 

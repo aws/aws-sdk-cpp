@@ -29,82 +29,82 @@ namespace Model
 {
 
 Condition::Condition() : 
-    m_eqHasBeenSet(false),
-    m_gt(0),
-    m_gtHasBeenSet(false),
-    m_gte(0),
-    m_gteHasBeenSet(false),
-    m_lt(0),
-    m_ltHasBeenSet(false),
-    m_lte(0),
-    m_lteHasBeenSet(false),
-    m_neqHasBeenSet(false)
+    m_equalsHasBeenSet(false),
+    m_notEqualsHasBeenSet(false),
+    m_greaterThan(0),
+    m_greaterThanHasBeenSet(false),
+    m_greaterThanOrEqual(0),
+    m_greaterThanOrEqualHasBeenSet(false),
+    m_lessThan(0),
+    m_lessThanHasBeenSet(false),
+    m_lessThanOrEqual(0),
+    m_lessThanOrEqualHasBeenSet(false)
 {
 }
 
 Condition::Condition(JsonView jsonValue) : 
-    m_eqHasBeenSet(false),
-    m_gt(0),
-    m_gtHasBeenSet(false),
-    m_gte(0),
-    m_gteHasBeenSet(false),
-    m_lt(0),
-    m_ltHasBeenSet(false),
-    m_lte(0),
-    m_lteHasBeenSet(false),
-    m_neqHasBeenSet(false)
+    m_equalsHasBeenSet(false),
+    m_notEqualsHasBeenSet(false),
+    m_greaterThan(0),
+    m_greaterThanHasBeenSet(false),
+    m_greaterThanOrEqual(0),
+    m_greaterThanOrEqualHasBeenSet(false),
+    m_lessThan(0),
+    m_lessThanHasBeenSet(false),
+    m_lessThanOrEqual(0),
+    m_lessThanOrEqualHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Condition& Condition::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("eq"))
+  if(jsonValue.ValueExists("equals"))
   {
-    Array<JsonView> eqJsonList = jsonValue.GetArray("eq");
-    for(unsigned eqIndex = 0; eqIndex < eqJsonList.GetLength(); ++eqIndex)
+    Array<JsonView> equalsJsonList = jsonValue.GetArray("equals");
+    for(unsigned equalsIndex = 0; equalsIndex < equalsJsonList.GetLength(); ++equalsIndex)
     {
-      m_eq.push_back(eqJsonList[eqIndex].AsString());
+      m_equals.push_back(equalsJsonList[equalsIndex].AsString());
     }
-    m_eqHasBeenSet = true;
+    m_equalsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("gt"))
+  if(jsonValue.ValueExists("notEquals"))
   {
-    m_gt = jsonValue.GetInteger("gt");
-
-    m_gtHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("gte"))
-  {
-    m_gte = jsonValue.GetInteger("gte");
-
-    m_gteHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("lt"))
-  {
-    m_lt = jsonValue.GetInteger("lt");
-
-    m_ltHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("lte"))
-  {
-    m_lte = jsonValue.GetInteger("lte");
-
-    m_lteHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("neq"))
-  {
-    Array<JsonView> neqJsonList = jsonValue.GetArray("neq");
-    for(unsigned neqIndex = 0; neqIndex < neqJsonList.GetLength(); ++neqIndex)
+    Array<JsonView> notEqualsJsonList = jsonValue.GetArray("notEquals");
+    for(unsigned notEqualsIndex = 0; notEqualsIndex < notEqualsJsonList.GetLength(); ++notEqualsIndex)
     {
-      m_neq.push_back(neqJsonList[neqIndex].AsString());
+      m_notEquals.push_back(notEqualsJsonList[notEqualsIndex].AsString());
     }
-    m_neqHasBeenSet = true;
+    m_notEqualsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("greaterThan"))
+  {
+    m_greaterThan = jsonValue.GetInt64("greaterThan");
+
+    m_greaterThanHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("greaterThanOrEqual"))
+  {
+    m_greaterThanOrEqual = jsonValue.GetInt64("greaterThanOrEqual");
+
+    m_greaterThanOrEqualHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lessThan"))
+  {
+    m_lessThan = jsonValue.GetInt64("lessThan");
+
+    m_lessThanHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lessThanOrEqual"))
+  {
+    m_lessThanOrEqual = jsonValue.GetInt64("lessThanOrEqual");
+
+    m_lessThanOrEqualHasBeenSet = true;
   }
 
   return *this;
@@ -114,49 +114,49 @@ JsonValue Condition::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_eqHasBeenSet)
+  if(m_equalsHasBeenSet)
   {
-   Array<JsonValue> eqJsonList(m_eq.size());
-   for(unsigned eqIndex = 0; eqIndex < eqJsonList.GetLength(); ++eqIndex)
+   Array<JsonValue> equalsJsonList(m_equals.size());
+   for(unsigned equalsIndex = 0; equalsIndex < equalsJsonList.GetLength(); ++equalsIndex)
    {
-     eqJsonList[eqIndex].AsString(m_eq[eqIndex]);
+     equalsJsonList[equalsIndex].AsString(m_equals[equalsIndex]);
    }
-   payload.WithArray("eq", std::move(eqJsonList));
+   payload.WithArray("equals", std::move(equalsJsonList));
 
   }
 
-  if(m_gtHasBeenSet)
+  if(m_notEqualsHasBeenSet)
   {
-   payload.WithInteger("gt", m_gt);
-
-  }
-
-  if(m_gteHasBeenSet)
-  {
-   payload.WithInteger("gte", m_gte);
-
-  }
-
-  if(m_ltHasBeenSet)
-  {
-   payload.WithInteger("lt", m_lt);
-
-  }
-
-  if(m_lteHasBeenSet)
-  {
-   payload.WithInteger("lte", m_lte);
-
-  }
-
-  if(m_neqHasBeenSet)
-  {
-   Array<JsonValue> neqJsonList(m_neq.size());
-   for(unsigned neqIndex = 0; neqIndex < neqJsonList.GetLength(); ++neqIndex)
+   Array<JsonValue> notEqualsJsonList(m_notEquals.size());
+   for(unsigned notEqualsIndex = 0; notEqualsIndex < notEqualsJsonList.GetLength(); ++notEqualsIndex)
    {
-     neqJsonList[neqIndex].AsString(m_neq[neqIndex]);
+     notEqualsJsonList[notEqualsIndex].AsString(m_notEquals[notEqualsIndex]);
    }
-   payload.WithArray("neq", std::move(neqJsonList));
+   payload.WithArray("notEquals", std::move(notEqualsJsonList));
+
+  }
+
+  if(m_greaterThanHasBeenSet)
+  {
+   payload.WithInt64("greaterThan", m_greaterThan);
+
+  }
+
+  if(m_greaterThanOrEqualHasBeenSet)
+  {
+   payload.WithInt64("greaterThanOrEqual", m_greaterThanOrEqual);
+
+  }
+
+  if(m_lessThanHasBeenSet)
+  {
+   payload.WithInt64("lessThan", m_lessThan);
+
+  }
+
+  if(m_lessThanOrEqualHasBeenSet)
+  {
+   payload.WithInt64("lessThanOrEqual", m_lessThanOrEqual);
 
   }
 

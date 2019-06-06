@@ -31,7 +31,7 @@ namespace Model
    * <p>Represents a request to enable or disable the Amazon SES custom MAIL FROM
    * domain setup for a verified identity. For information about using a custom MAIL
    * FROM domain, see the <a
-   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityMailFromDomainRequest">AWS
    * API Reference</a></p>
@@ -108,7 +108,7 @@ namespace Model
      * MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used
      * in a "From" address if the MAIL FROM domain is the destination of email feedback
      * forwarding (for more information, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
      * SES Developer Guide</a>), and 3) not be used to receive emails. A value of
      * <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
      */
@@ -119,7 +119,7 @@ namespace Model
      * MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used
      * in a "From" address if the MAIL FROM domain is the destination of email feedback
      * forwarding (for more information, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
      * SES Developer Guide</a>), and 3) not be used to receive emails. A value of
      * <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
      */
@@ -130,7 +130,7 @@ namespace Model
      * MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used
      * in a "From" address if the MAIL FROM domain is the destination of email feedback
      * forwarding (for more information, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
      * SES Developer Guide</a>), and 3) not be used to receive emails. A value of
      * <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
      */
@@ -141,7 +141,7 @@ namespace Model
      * MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used
      * in a "From" address if the MAIL FROM domain is the destination of email feedback
      * forwarding (for more information, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
      * SES Developer Guide</a>), and 3) not be used to receive emails. A value of
      * <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
      */
@@ -152,7 +152,7 @@ namespace Model
      * MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used
      * in a "From" address if the MAIL FROM domain is the destination of email feedback
      * forwarding (for more information, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
      * SES Developer Guide</a>), and 3) not be used to receive emails. A value of
      * <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
      */
@@ -163,7 +163,7 @@ namespace Model
      * MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used
      * in a "From" address if the MAIL FROM domain is the destination of email feedback
      * forwarding (for more information, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
      * SES Developer Guide</a>), and 3) not be used to receive emails. A value of
      * <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
      */
@@ -174,7 +174,7 @@ namespace Model
      * MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used
      * in a "From" address if the MAIL FROM domain is the destination of email feedback
      * forwarding (for more information, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
      * SES Developer Guide</a>), and 3) not be used to receive emails. A value of
      * <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
      */
@@ -185,7 +185,7 @@ namespace Model
      * MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used
      * in a "From" address if the MAIL FROM domain is the destination of email feedback
      * forwarding (for more information, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
      * SES Developer Guide</a>), and 3) not be used to receive emails. A value of
      * <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
      */

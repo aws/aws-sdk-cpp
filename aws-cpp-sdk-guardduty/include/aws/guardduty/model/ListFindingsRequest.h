@@ -29,9 +29,6 @@ namespace Model
 {
 
   /**
-   * ListFindings request body.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFindingsRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_GUARDDUTY_API ListFindingsRequest : public GuardDutyRequest
   {
@@ -48,204 +45,204 @@ namespace Model
 
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to list.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to list.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to list.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to list.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to list.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to list.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to list.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to list.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to list.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to list.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to list.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to list.</p>
      */
     inline ListFindingsRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to list.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to list.</p>
      */
     inline ListFindingsRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to list.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to list.</p>
      */
     inline ListFindingsRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * Represents the criteria used for querying findings.
+     * <p>Represents the criteria used for querying findings.</p>
      */
     inline const FindingCriteria& GetFindingCriteria() const{ return m_findingCriteria; }
 
     /**
-     * Represents the criteria used for querying findings.
+     * <p>Represents the criteria used for querying findings.</p>
      */
     inline bool FindingCriteriaHasBeenSet() const { return m_findingCriteriaHasBeenSet; }
 
     /**
-     * Represents the criteria used for querying findings.
+     * <p>Represents the criteria used for querying findings.</p>
      */
     inline void SetFindingCriteria(const FindingCriteria& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = value; }
 
     /**
-     * Represents the criteria used for querying findings.
+     * <p>Represents the criteria used for querying findings.</p>
      */
     inline void SetFindingCriteria(FindingCriteria&& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = std::move(value); }
 
     /**
-     * Represents the criteria used for querying findings.
+     * <p>Represents the criteria used for querying findings.</p>
      */
     inline ListFindingsRequest& WithFindingCriteria(const FindingCriteria& value) { SetFindingCriteria(value); return *this;}
 
     /**
-     * Represents the criteria used for querying findings.
+     * <p>Represents the criteria used for querying findings.</p>
      */
     inline ListFindingsRequest& WithFindingCriteria(FindingCriteria&& value) { SetFindingCriteria(std::move(value)); return *this;}
 
 
     /**
-     * You can use this parameter to indicate the maximum number of items you want in
-     * the response. The default value is 50. The maximum value is 50.
+     * <p>Represents the criteria used for sorting findings.</p>
+     */
+    inline const SortCriteria& GetSortCriteria() const{ return m_sortCriteria; }
+
+    /**
+     * <p>Represents the criteria used for sorting findings.</p>
+     */
+    inline bool SortCriteriaHasBeenSet() const { return m_sortCriteriaHasBeenSet; }
+
+    /**
+     * <p>Represents the criteria used for sorting findings.</p>
+     */
+    inline void SetSortCriteria(const SortCriteria& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = value; }
+
+    /**
+     * <p>Represents the criteria used for sorting findings.</p>
+     */
+    inline void SetSortCriteria(SortCriteria&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = std::move(value); }
+
+    /**
+     * <p>Represents the criteria used for sorting findings.</p>
+     */
+    inline ListFindingsRequest& WithSortCriteria(const SortCriteria& value) { SetSortCriteria(value); return *this;}
+
+    /**
+     * <p>Represents the criteria used for sorting findings.</p>
+     */
+    inline ListFindingsRequest& WithSortCriteria(SortCriteria&& value) { SetSortCriteria(std::move(value)); return *this;}
+
+
+    /**
+     * <p>You can use this parameter to indicate the maximum number of items you want
+     * in the response. The default value is 50. The maximum value is 50.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * You can use this parameter to indicate the maximum number of items you want in
-     * the response. The default value is 50. The maximum value is 50.
+     * <p>You can use this parameter to indicate the maximum number of items you want
+     * in the response. The default value is 50. The maximum value is 50.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * You can use this parameter to indicate the maximum number of items you want in
-     * the response. The default value is 50. The maximum value is 50.
+     * <p>You can use this parameter to indicate the maximum number of items you want
+     * in the response. The default value is 50. The maximum value is 50.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * You can use this parameter to indicate the maximum number of items you want in
-     * the response. The default value is 50. The maximum value is 50.
+     * <p>You can use this parameter to indicate the maximum number of items you want
+     * in the response. The default value is 50. The maximum value is 50.</p>
      */
     inline ListFindingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the ListFindings action. For subsequent
-     * calls to the action fill nextToken in the request with the value of nextToken
-     * from the previous response to continue listing data.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the ListFindings action. For subsequent
-     * calls to the action fill nextToken in the request with the value of nextToken
-     * from the previous response to continue listing data.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the ListFindings action. For subsequent
-     * calls to the action fill nextToken in the request with the value of nextToken
-     * from the previous response to continue listing data.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the ListFindings action. For subsequent
-     * calls to the action fill nextToken in the request with the value of nextToken
-     * from the previous response to continue listing data.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the ListFindings action. For subsequent
-     * calls to the action fill nextToken in the request with the value of nextToken
-     * from the previous response to continue listing data.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the ListFindings action. For subsequent
-     * calls to the action fill nextToken in the request with the value of nextToken
-     * from the previous response to continue listing data.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline ListFindingsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the ListFindings action. For subsequent
-     * calls to the action fill nextToken in the request with the value of nextToken
-     * from the previous response to continue listing data.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline ListFindingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the ListFindings action. For subsequent
-     * calls to the action fill nextToken in the request with the value of nextToken
-     * from the previous response to continue listing data.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline ListFindingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
-
-    /**
-     * Represents the criteria used for sorting findings.
-     */
-    inline const SortCriteria& GetSortCriteria() const{ return m_sortCriteria; }
-
-    /**
-     * Represents the criteria used for sorting findings.
-     */
-    inline bool SortCriteriaHasBeenSet() const { return m_sortCriteriaHasBeenSet; }
-
-    /**
-     * Represents the criteria used for sorting findings.
-     */
-    inline void SetSortCriteria(const SortCriteria& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = value; }
-
-    /**
-     * Represents the criteria used for sorting findings.
-     */
-    inline void SetSortCriteria(SortCriteria&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = std::move(value); }
-
-    /**
-     * Represents the criteria used for sorting findings.
-     */
-    inline ListFindingsRequest& WithSortCriteria(const SortCriteria& value) { SetSortCriteria(value); return *this;}
-
-    /**
-     * Represents the criteria used for sorting findings.
-     */
-    inline ListFindingsRequest& WithSortCriteria(SortCriteria&& value) { SetSortCriteria(std::move(value)); return *this;}
 
   private:
 
@@ -255,14 +252,14 @@ namespace Model
     FindingCriteria m_findingCriteria;
     bool m_findingCriteriaHasBeenSet;
 
+    SortCriteria m_sortCriteria;
+    bool m_sortCriteriaHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-
-    SortCriteria m_sortCriteria;
-    bool m_sortCriteriaHasBeenSet;
   };
 
 } // namespace Model

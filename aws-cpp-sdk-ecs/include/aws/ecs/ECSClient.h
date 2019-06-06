@@ -55,6 +55,7 @@
 #include <aws/ecs/model/RunTaskResult.h>
 #include <aws/ecs/model/StartTaskResult.h>
 #include <aws/ecs/model/StopTaskResult.h>
+#include <aws/ecs/model/SubmitAttachmentStateChangesResult.h>
 #include <aws/ecs/model/SubmitContainerStateChangeResult.h>
 #include <aws/ecs/model/SubmitTaskStateChangeResult.h>
 #include <aws/ecs/model/TagResourceResult.h>
@@ -137,6 +138,7 @@ namespace Model
         class RunTaskRequest;
         class StartTaskRequest;
         class StopTaskRequest;
+        class SubmitAttachmentStateChangesRequest;
         class SubmitContainerStateChangeRequest;
         class SubmitTaskStateChangeRequest;
         class TagResourceRequest;
@@ -181,6 +183,7 @@ namespace Model
         typedef Aws::Utils::Outcome<RunTaskResult, Aws::Client::AWSError<ECSErrors>> RunTaskOutcome;
         typedef Aws::Utils::Outcome<StartTaskResult, Aws::Client::AWSError<ECSErrors>> StartTaskOutcome;
         typedef Aws::Utils::Outcome<StopTaskResult, Aws::Client::AWSError<ECSErrors>> StopTaskOutcome;
+        typedef Aws::Utils::Outcome<SubmitAttachmentStateChangesResult, Aws::Client::AWSError<ECSErrors>> SubmitAttachmentStateChangesOutcome;
         typedef Aws::Utils::Outcome<SubmitContainerStateChangeResult, Aws::Client::AWSError<ECSErrors>> SubmitContainerStateChangeOutcome;
         typedef Aws::Utils::Outcome<SubmitTaskStateChangeResult, Aws::Client::AWSError<ECSErrors>> SubmitTaskStateChangeOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<ECSErrors>> TagResourceOutcome;
@@ -225,6 +228,7 @@ namespace Model
         typedef std::future<RunTaskOutcome> RunTaskOutcomeCallable;
         typedef std::future<StartTaskOutcome> StartTaskOutcomeCallable;
         typedef std::future<StopTaskOutcome> StopTaskOutcomeCallable;
+        typedef std::future<SubmitAttachmentStateChangesOutcome> SubmitAttachmentStateChangesOutcomeCallable;
         typedef std::future<SubmitContainerStateChangeOutcome> SubmitContainerStateChangeOutcomeCallable;
         typedef std::future<SubmitTaskStateChangeOutcome> SubmitTaskStateChangeOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -272,6 +276,7 @@ namespace Model
     typedef std::function<void(const ECSClient*, const Model::RunTaskRequest&, const Model::RunTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunTaskResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::StartTaskRequest&, const Model::StartTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTaskResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::StopTaskRequest&, const Model::StopTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTaskResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::SubmitAttachmentStateChangesRequest&, const Model::SubmitAttachmentStateChangesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitAttachmentStateChangesResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::SubmitContainerStateChangeRequest&, const Model::SubmitContainerStateChangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitContainerStateChangeResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::SubmitTaskStateChangeRequest&, const Model::SubmitTaskStateChangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitTaskStateChangeResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
@@ -291,7 +296,7 @@ namespace Model
    * launch type. For more control, you can host your tasks on a cluster of Amazon
    * Elastic Compute Cloud (Amazon EC2) instances that you manage by using the EC2
    * launch type. For more information about launch types, see <a
-   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
    * ECS Launch Types</a>.</p> <p>Amazon ECS lets you launch and stop container-based
    * applications with simple API calls, allows you to get the state of your cluster
    * from a centralized service, and gives you access to many familiar Amazon EC2
@@ -340,7 +345,7 @@ namespace Model
          * services can be managed on your behalf. However, if the IAM user that makes the
          * call does not have permissions to create the service-linked role, it is not
          * created. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
          * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">AWS
@@ -358,7 +363,7 @@ namespace Model
          * services can be managed on your behalf. However, if the IAM user that makes the
          * call does not have permissions to create the service-linked role, it is not
          * created. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
          * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">AWS
@@ -378,7 +383,7 @@ namespace Model
          * services can be managed on your behalf. However, if the IAM user that makes the
          * call does not have permissions to create the service-linked role, it is not
          * created. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
          * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">AWS
@@ -687,7 +692,7 @@ namespace Model
          * <p>Create a task set in the specified cluster and service. This is used when a
          * service uses the <code>EXTERNAL</code> deployment controller type. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
          * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet">AWS
@@ -699,7 +704,7 @@ namespace Model
          * <p>Create a task set in the specified cluster and service. This is used when a
          * service uses the <code>EXTERNAL</code> deployment controller type. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
          * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet">AWS
@@ -713,7 +718,7 @@ namespace Model
          * <p>Create a task set in the specified cluster and service. This is used when a
          * service uses the <code>EXTERNAL</code> deployment controller type. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
          * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet">AWS
@@ -724,20 +729,16 @@ namespace Model
         virtual void CreateTaskSetAsync(const Model::CreateTaskSetRequest& request, const CreateTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the ARN and resource ID format of a resource for a specified IAM
-         * user, IAM role, or the root user for an account. You can specify whether the new
-         * ARN and resource ID format are disabled for new resources that are
-         * created.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables an account setting for a specified IAM user, IAM role, or the root
+         * user for an account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAccountSetting">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteAccountSettingOutcome DeleteAccountSetting(const Model::DeleteAccountSettingRequest& request) const;
 
         /**
-         * <p>Modifies the ARN and resource ID format of a resource for a specified IAM
-         * user, IAM role, or the root user for an account. You can specify whether the new
-         * ARN and resource ID format are disabled for new resources that are
-         * created.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables an account setting for a specified IAM user, IAM role, or the root
+         * user for an account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAccountSetting">AWS
          * API Reference</a></p>
          *
@@ -746,10 +747,8 @@ namespace Model
         virtual Model::DeleteAccountSettingOutcomeCallable DeleteAccountSettingCallable(const Model::DeleteAccountSettingRequest& request) const;
 
         /**
-         * <p>Modifies the ARN and resource ID format of a resource for a specified IAM
-         * user, IAM role, or the root user for an account. You can specify whether the new
-         * ARN and resource ID format are disabled for new resources that are
-         * created.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables an account setting for a specified IAM user, IAM role, or the root
+         * user for an account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAccountSetting">AWS
          * API Reference</a></p>
          *
@@ -899,7 +898,7 @@ namespace Model
          * <p>Deletes a specified task set within a service. This is used when a service
          * uses the <code>EXTERNAL</code> deployment controller type. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
          * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet">AWS
@@ -911,7 +910,7 @@ namespace Model
          * <p>Deletes a specified task set within a service. This is used when a service
          * uses the <code>EXTERNAL</code> deployment controller type. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
          * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet">AWS
@@ -925,7 +924,7 @@ namespace Model
          * <p>Deletes a specified task set within a service. This is used when a service
          * uses the <code>EXTERNAL</code> deployment controller type. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
          * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet">AWS
@@ -1188,7 +1187,7 @@ namespace Model
          * <p>Describes the task sets in the specified cluster and service. This is used
          * when a service uses the <code>EXTERNAL</code> deployment controller type. For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
          * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskSets">AWS
@@ -1200,7 +1199,7 @@ namespace Model
          * <p>Describes the task sets in the specified cluster and service. This is used
          * when a service uses the <code>EXTERNAL</code> deployment controller type. For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
          * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskSets">AWS
@@ -1214,7 +1213,7 @@ namespace Model
          * <p>Describes the task sets in the specified cluster and service. This is used
          * when a service uses the <code>EXTERNAL</code> deployment controller type. For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
          * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskSets">AWS
@@ -1281,16 +1280,16 @@ namespace Model
         virtual void DiscoverPollEndpointAsync(const Model::DiscoverPollEndpointRequest& request, const DiscoverPollEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the account settings for an Amazon ECS resource for a specified
-         * principal.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the account settings for a specified principal.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAccountSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAccountSettingsOutcome ListAccountSettings(const Model::ListAccountSettingsRequest& request) const;
 
         /**
-         * <p>Lists the account settings for an Amazon ECS resource for a specified
-         * principal.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the account settings for a specified principal.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAccountSettings">AWS
          * API Reference</a></p>
          *
@@ -1299,8 +1298,8 @@ namespace Model
         virtual Model::ListAccountSettingsOutcomeCallable ListAccountSettingsCallable(const Model::ListAccountSettingsRequest& request) const;
 
         /**
-         * <p>Lists the account settings for an Amazon ECS resource for a specified
-         * principal.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the account settings for a specified principal.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAccountSettings">AWS
          * API Reference</a></p>
          *
@@ -1593,17 +1592,26 @@ namespace Model
         virtual void ListTasksAsync(const Model::ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the ARN and resource ID format of a resource type for a specified
-         * IAM user, IAM role, or the root user for an account. If the account setting for
-         * the root user is changed, it sets the default setting for all of the IAM users
-         * and roles for which no individual account setting has been set. The opt-in and
-         * opt-out account setting can be set for each Amazon ECS resource separately. The
+         * <p>Modifies an account setting. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
+         * Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+         * <p>When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or
+         * <code>containerInstanceLongArnFormat</code> are specified, the ARN and resource
+         * ID format of the resource type for a specified IAM user, IAM role, or the root
+         * user for an account is changed. If you change the account setting for the root
+         * user, the default settings for all of the IAM users and roles for which no
+         * individual account setting has been specified are reset. The opt-in and opt-out
+         * account setting can be specified for each Amazon ECS resource separately. The
          * ARN and resource ID format of a resource will be defined by the opt-in status of
-         * the IAM user or role that created the resource. Enabling this setting is
-         * required to use new Amazon ECS features such as resource tagging. For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-resource-ids.html">Amazon
-         * Resource Names (ARNs) and IDs</a> in the <i>Amazon Elastic Container Service
+         * the IAM user or role that created the resource. You must enable this setting to
+         * use Amazon ECS features such as resource tagging.</p> <p>When
+         * <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
+         * limit for any new container instances that support the feature is changed. If
+         * <code>awsvpcTrunking</code> is enabled, any new container instances that support
+         * the feature are launched have the increased ENI limits available to them. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic
+         * Network Interface Trunking</a> in the <i>Amazon Elastic Container Service
          * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">AWS
          * API Reference</a></p>
@@ -1611,17 +1619,26 @@ namespace Model
         virtual Model::PutAccountSettingOutcome PutAccountSetting(const Model::PutAccountSettingRequest& request) const;
 
         /**
-         * <p>Modifies the ARN and resource ID format of a resource type for a specified
-         * IAM user, IAM role, or the root user for an account. If the account setting for
-         * the root user is changed, it sets the default setting for all of the IAM users
-         * and roles for which no individual account setting has been set. The opt-in and
-         * opt-out account setting can be set for each Amazon ECS resource separately. The
+         * <p>Modifies an account setting. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
+         * Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+         * <p>When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or
+         * <code>containerInstanceLongArnFormat</code> are specified, the ARN and resource
+         * ID format of the resource type for a specified IAM user, IAM role, or the root
+         * user for an account is changed. If you change the account setting for the root
+         * user, the default settings for all of the IAM users and roles for which no
+         * individual account setting has been specified are reset. The opt-in and opt-out
+         * account setting can be specified for each Amazon ECS resource separately. The
          * ARN and resource ID format of a resource will be defined by the opt-in status of
-         * the IAM user or role that created the resource. Enabling this setting is
-         * required to use new Amazon ECS features such as resource tagging. For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-resource-ids.html">Amazon
-         * Resource Names (ARNs) and IDs</a> in the <i>Amazon Elastic Container Service
+         * the IAM user or role that created the resource. You must enable this setting to
+         * use Amazon ECS features such as resource tagging.</p> <p>When
+         * <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
+         * limit for any new container instances that support the feature is changed. If
+         * <code>awsvpcTrunking</code> is enabled, any new container instances that support
+         * the feature are launched have the increased ENI limits available to them. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic
+         * Network Interface Trunking</a> in the <i>Amazon Elastic Container Service
          * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">AWS
          * API Reference</a></p>
@@ -1631,17 +1648,26 @@ namespace Model
         virtual Model::PutAccountSettingOutcomeCallable PutAccountSettingCallable(const Model::PutAccountSettingRequest& request) const;
 
         /**
-         * <p>Modifies the ARN and resource ID format of a resource type for a specified
-         * IAM user, IAM role, or the root user for an account. If the account setting for
-         * the root user is changed, it sets the default setting for all of the IAM users
-         * and roles for which no individual account setting has been set. The opt-in and
-         * opt-out account setting can be set for each Amazon ECS resource separately. The
+         * <p>Modifies an account setting. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
+         * Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+         * <p>When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or
+         * <code>containerInstanceLongArnFormat</code> are specified, the ARN and resource
+         * ID format of the resource type for a specified IAM user, IAM role, or the root
+         * user for an account is changed. If you change the account setting for the root
+         * user, the default settings for all of the IAM users and roles for which no
+         * individual account setting has been specified are reset. The opt-in and opt-out
+         * account setting can be specified for each Amazon ECS resource separately. The
          * ARN and resource ID format of a resource will be defined by the opt-in status of
-         * the IAM user or role that created the resource. Enabling this setting is
-         * required to use new Amazon ECS features such as resource tagging. For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-resource-ids.html">Amazon
-         * Resource Names (ARNs) and IDs</a> in the <i>Amazon Elastic Container Service
+         * the IAM user or role that created the resource. You must enable this setting to
+         * use Amazon ECS features such as resource tagging.</p> <p>When
+         * <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
+         * limit for any new container instances that support the feature is changed. If
+         * <code>awsvpcTrunking</code> is enabled, any new container instances that support
+         * the feature are launched have the increased ENI limits available to them. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic
+         * Network Interface Trunking</a> in the <i>Amazon Elastic Container Service
          * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">AWS
          * API Reference</a></p>
@@ -1651,20 +1677,16 @@ namespace Model
         virtual void PutAccountSettingAsync(const Model::PutAccountSettingRequest& request, const PutAccountSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the ARN and resource ID format of a resource type for all IAM users
-         * on an account for which no individual account setting has been set. Enabling
-         * this setting is required to use new Amazon ECS features such as resource
-         * tagging.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies an account setting for all IAM users on an account for whom no
+         * individual account setting has been specified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">AWS
          * API Reference</a></p>
          */
         virtual Model::PutAccountSettingDefaultOutcome PutAccountSettingDefault(const Model::PutAccountSettingDefaultRequest& request) const;
 
         /**
-         * <p>Modifies the ARN and resource ID format of a resource type for all IAM users
-         * on an account for which no individual account setting has been set. Enabling
-         * this setting is required to use new Amazon ECS features such as resource
-         * tagging.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies an account setting for all IAM users on an account for whom no
+         * individual account setting has been specified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">AWS
          * API Reference</a></p>
          *
@@ -1673,10 +1695,8 @@ namespace Model
         virtual Model::PutAccountSettingDefaultOutcomeCallable PutAccountSettingDefaultCallable(const Model::PutAccountSettingDefaultRequest& request) const;
 
         /**
-         * <p>Modifies the ARN and resource ID format of a resource type for all IAM users
-         * on an account for which no individual account setting has been set. Enabling
-         * this setting is required to use new Amazon ECS features such as resource
-         * tagging.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies an account setting for all IAM users on an account for whom no
+         * individual account setting has been specified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">AWS
          * API Reference</a></p>
          *
@@ -1783,7 +1803,7 @@ namespace Model
          * network mode, the task is allocated an elastic network interface, and you must
          * specify a <a>NetworkConfiguration</a> when you create a service or run a task
          * with the task definition. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
          * Networking</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">AWS
@@ -1813,7 +1833,7 @@ namespace Model
          * network mode, the task is allocated an elastic network interface, and you must
          * specify a <a>NetworkConfiguration</a> when you create a service or run a task
          * with the task definition. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
          * Networking</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">AWS
@@ -1845,7 +1865,7 @@ namespace Model
          * network mode, the task is allocated an elastic network interface, and you must
          * specify a <a>NetworkConfiguration</a> when you create a service or run a task
          * with the task definition. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
          * Networking</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">AWS
@@ -2049,6 +2069,37 @@ namespace Model
 
         /**
          * <note> <p>This action is only used by the Amazon ECS agent, and it is not
+         * intended for use outside of the agent.</p> </note> <p>Sent to acknowledge that
+         * an attachment changed states.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitAttachmentStateChanges">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SubmitAttachmentStateChangesOutcome SubmitAttachmentStateChanges(const Model::SubmitAttachmentStateChangesRequest& request) const;
+
+        /**
+         * <note> <p>This action is only used by the Amazon ECS agent, and it is not
+         * intended for use outside of the agent.</p> </note> <p>Sent to acknowledge that
+         * an attachment changed states.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitAttachmentStateChanges">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SubmitAttachmentStateChangesOutcomeCallable SubmitAttachmentStateChangesCallable(const Model::SubmitAttachmentStateChangesRequest& request) const;
+
+        /**
+         * <note> <p>This action is only used by the Amazon ECS agent, and it is not
+         * intended for use outside of the agent.</p> </note> <p>Sent to acknowledge that
+         * an attachment changed states.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitAttachmentStateChanges">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SubmitAttachmentStateChangesAsync(const Model::SubmitAttachmentStateChangesRequest& request, const SubmitAttachmentStateChangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <note> <p>This action is only used by the Amazon ECS agent, and it is not
          * intended for use outside of the agent.</p> </note> <p>Sent to acknowledge that a
          * container changed states.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitContainerStateChange">AWS
@@ -2224,17 +2275,21 @@ namespace Model
         virtual void UpdateContainerAgentAsync(const Model::UpdateContainerAgentRequest& request, const UpdateContainerAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the status of an Amazon ECS container instance.</p> <p>You can
-         * change the status of a container instance to <code>DRAINING</code> to manually
-         * remove an instance from a cluster, for example to perform system updates, update
-         * the Docker daemon, or scale down the cluster size. </p> <p>When you set a
-         * container instance to <code>DRAINING</code>, Amazon ECS prevents new tasks from
-         * being scheduled for placement on the container instance and replacement service
-         * tasks are started on other container instances in the cluster if the resources
-         * are available. Service tasks on the container instance that are in the
-         * <code>PENDING</code> state are stopped immediately.</p> <p>Service tasks on the
-         * container instance that are in the <code>RUNNING</code> state are stopped and
-         * replaced according to the service's deployment configuration parameters,
+         * <p>Modifies the status of an Amazon ECS container instance.</p> <p>Once a
+         * container instance has reached an <code>ACTIVE</code> state, you can change the
+         * status of a container instance to <code>DRAINING</code> to manually remove an
+         * instance from a cluster, for example to perform system updates, update the
+         * Docker daemon, or scale down the cluster size.</p> <important> <p>A container
+         * instance cannot be changed to <code>DRAINING</code> until it has reached an
+         * <code>ACTIVE</code> status. If the instance is in any other status, an error
+         * will be received.</p> </important> <p>When you set a container instance to
+         * <code>DRAINING</code>, Amazon ECS prevents new tasks from being scheduled for
+         * placement on the container instance and replacement service tasks are started on
+         * other container instances in the cluster if the resources are available. Service
+         * tasks on the container instance that are in the <code>PENDING</code> state are
+         * stopped immediately.</p> <p>Service tasks on the container instance that are in
+         * the <code>RUNNING</code> state are stopped and replaced according to the
+         * service's deployment configuration parameters,
          * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>. You can
          * change the deployment configuration of your service using
          * <a>UpdateService</a>.</p> <ul> <li> <p>If <code>minimumHealthyPercent</code> is
@@ -2258,7 +2313,8 @@ namespace Model
          * belong to a service are not affected. You must wait for them to finish or stop
          * them manually.</p> <p>A container instance has completed draining when it has no
          * more <code>RUNNING</code> tasks. You can verify this using <a>ListTasks</a>.</p>
-         * <p>When you set a container instance to <code>ACTIVE</code>, the Amazon ECS
+         * <p>When a container instance has been drained, you can set a container instance
+         * to <code>ACTIVE</code> status and once it has reached that status the Amazon ECS
          * scheduler can begin scheduling tasks on the instance again.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">AWS
@@ -2267,17 +2323,21 @@ namespace Model
         virtual Model::UpdateContainerInstancesStateOutcome UpdateContainerInstancesState(const Model::UpdateContainerInstancesStateRequest& request) const;
 
         /**
-         * <p>Modifies the status of an Amazon ECS container instance.</p> <p>You can
-         * change the status of a container instance to <code>DRAINING</code> to manually
-         * remove an instance from a cluster, for example to perform system updates, update
-         * the Docker daemon, or scale down the cluster size. </p> <p>When you set a
-         * container instance to <code>DRAINING</code>, Amazon ECS prevents new tasks from
-         * being scheduled for placement on the container instance and replacement service
-         * tasks are started on other container instances in the cluster if the resources
-         * are available. Service tasks on the container instance that are in the
-         * <code>PENDING</code> state are stopped immediately.</p> <p>Service tasks on the
-         * container instance that are in the <code>RUNNING</code> state are stopped and
-         * replaced according to the service's deployment configuration parameters,
+         * <p>Modifies the status of an Amazon ECS container instance.</p> <p>Once a
+         * container instance has reached an <code>ACTIVE</code> state, you can change the
+         * status of a container instance to <code>DRAINING</code> to manually remove an
+         * instance from a cluster, for example to perform system updates, update the
+         * Docker daemon, or scale down the cluster size.</p> <important> <p>A container
+         * instance cannot be changed to <code>DRAINING</code> until it has reached an
+         * <code>ACTIVE</code> status. If the instance is in any other status, an error
+         * will be received.</p> </important> <p>When you set a container instance to
+         * <code>DRAINING</code>, Amazon ECS prevents new tasks from being scheduled for
+         * placement on the container instance and replacement service tasks are started on
+         * other container instances in the cluster if the resources are available. Service
+         * tasks on the container instance that are in the <code>PENDING</code> state are
+         * stopped immediately.</p> <p>Service tasks on the container instance that are in
+         * the <code>RUNNING</code> state are stopped and replaced according to the
+         * service's deployment configuration parameters,
          * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>. You can
          * change the deployment configuration of your service using
          * <a>UpdateService</a>.</p> <ul> <li> <p>If <code>minimumHealthyPercent</code> is
@@ -2301,7 +2361,8 @@ namespace Model
          * belong to a service are not affected. You must wait for them to finish or stop
          * them manually.</p> <p>A container instance has completed draining when it has no
          * more <code>RUNNING</code> tasks. You can verify this using <a>ListTasks</a>.</p>
-         * <p>When you set a container instance to <code>ACTIVE</code>, the Amazon ECS
+         * <p>When a container instance has been drained, you can set a container instance
+         * to <code>ACTIVE</code> status and once it has reached that status the Amazon ECS
          * scheduler can begin scheduling tasks on the instance again.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">AWS
@@ -2312,17 +2373,21 @@ namespace Model
         virtual Model::UpdateContainerInstancesStateOutcomeCallable UpdateContainerInstancesStateCallable(const Model::UpdateContainerInstancesStateRequest& request) const;
 
         /**
-         * <p>Modifies the status of an Amazon ECS container instance.</p> <p>You can
-         * change the status of a container instance to <code>DRAINING</code> to manually
-         * remove an instance from a cluster, for example to perform system updates, update
-         * the Docker daemon, or scale down the cluster size. </p> <p>When you set a
-         * container instance to <code>DRAINING</code>, Amazon ECS prevents new tasks from
-         * being scheduled for placement on the container instance and replacement service
-         * tasks are started on other container instances in the cluster if the resources
-         * are available. Service tasks on the container instance that are in the
-         * <code>PENDING</code> state are stopped immediately.</p> <p>Service tasks on the
-         * container instance that are in the <code>RUNNING</code> state are stopped and
-         * replaced according to the service's deployment configuration parameters,
+         * <p>Modifies the status of an Amazon ECS container instance.</p> <p>Once a
+         * container instance has reached an <code>ACTIVE</code> state, you can change the
+         * status of a container instance to <code>DRAINING</code> to manually remove an
+         * instance from a cluster, for example to perform system updates, update the
+         * Docker daemon, or scale down the cluster size.</p> <important> <p>A container
+         * instance cannot be changed to <code>DRAINING</code> until it has reached an
+         * <code>ACTIVE</code> status. If the instance is in any other status, an error
+         * will be received.</p> </important> <p>When you set a container instance to
+         * <code>DRAINING</code>, Amazon ECS prevents new tasks from being scheduled for
+         * placement on the container instance and replacement service tasks are started on
+         * other container instances in the cluster if the resources are available. Service
+         * tasks on the container instance that are in the <code>PENDING</code> state are
+         * stopped immediately.</p> <p>Service tasks on the container instance that are in
+         * the <code>RUNNING</code> state are stopped and replaced according to the
+         * service's deployment configuration parameters,
          * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>. You can
          * change the deployment configuration of your service using
          * <a>UpdateService</a>.</p> <ul> <li> <p>If <code>minimumHealthyPercent</code> is
@@ -2346,7 +2411,8 @@ namespace Model
          * belong to a service are not affected. You must wait for them to finish or stop
          * them manually.</p> <p>A container instance has completed draining when it has no
          * more <code>RUNNING</code> tasks. You can verify this using <a>ListTasks</a>.</p>
-         * <p>When you set a container instance to <code>ACTIVE</code>, the Amazon ECS
+         * <p>When a container instance has been drained, you can set a container instance
+         * to <code>ACTIVE</code> status and once it has reached that status the Amazon ECS
          * scheduler can begin scheduling tasks on the instance again.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">AWS
@@ -2608,7 +2674,7 @@ namespace Model
          * that are updated on the primary task set in a service will transition to the
          * service. This is used when a service uses the <code>EXTERNAL</code> deployment
          * controller type. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
          * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet">AWS
@@ -2621,7 +2687,7 @@ namespace Model
          * that are updated on the primary task set in a service will transition to the
          * service. This is used when a service uses the <code>EXTERNAL</code> deployment
          * controller type. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
          * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet">AWS
@@ -2636,7 +2702,7 @@ namespace Model
          * that are updated on the primary task set in a service will transition to the
          * service. This is used when a service uses the <code>EXTERNAL</code> deployment
          * controller type. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
          * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet">AWS
@@ -2649,7 +2715,7 @@ namespace Model
         /**
          * <p>Modifies a task set. This is used when a service uses the
          * <code>EXTERNAL</code> deployment controller type. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
          * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet">AWS
@@ -2660,7 +2726,7 @@ namespace Model
         /**
          * <p>Modifies a task set. This is used when a service uses the
          * <code>EXTERNAL</code> deployment controller type. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
          * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet">AWS
@@ -2673,7 +2739,7 @@ namespace Model
         /**
          * <p>Modifies a task set. This is used when a service uses the
          * <code>EXTERNAL</code> deployment controller type. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
          * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet">AWS
@@ -2721,6 +2787,7 @@ namespace Model
         void RunTaskAsyncHelper(const Model::RunTaskRequest& request, const RunTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartTaskAsyncHelper(const Model::StartTaskRequest& request, const StartTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopTaskAsyncHelper(const Model::StopTaskRequest& request, const StopTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SubmitAttachmentStateChangesAsyncHelper(const Model::SubmitAttachmentStateChangesRequest& request, const SubmitAttachmentStateChangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SubmitContainerStateChangeAsyncHelper(const Model::SubmitContainerStateChangeRequest& request, const SubmitContainerStateChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SubmitTaskStateChangeAsyncHelper(const Model::SubmitTaskStateChangeRequest& request, const SubmitTaskStateChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

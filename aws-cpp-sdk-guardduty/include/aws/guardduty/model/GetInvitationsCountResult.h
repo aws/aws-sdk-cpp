@@ -41,17 +41,17 @@ namespace Model
 
 
     /**
-     * The number of received invitations.
+     * <p>The number of received invitations.</p>
      */
     inline int GetInvitationsCount() const{ return m_invitationsCount; }
 
     /**
-     * The number of received invitations.
+     * <p>The number of received invitations.</p>
      */
     inline void SetInvitationsCount(int value) { m_invitationsCount = value; }
 
     /**
-     * The number of received invitations.
+     * <p>The number of received invitations.</p>
      */
     inline GetInvitationsCountResult& WithInvitationsCount(int value) { SetInvitationsCount(value); return *this;}
 

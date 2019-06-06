@@ -23,14 +23,14 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateFilterRequest::UpdateFilterRequest() : 
-    m_action(FilterAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_detectorIdHasBeenSet(false),
     m_filterNameHasBeenSet(false),
-    m_findingCriteriaHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_action(FilterAction::NOT_SET),
+    m_actionHasBeenSet(false),
     m_rank(0),
-    m_rankHasBeenSet(false)
+    m_rankHasBeenSet(false),
+    m_findingCriteriaHasBeenSet(false)
 {
 }
 
@@ -38,26 +38,26 @@ Aws::String UpdateFilterRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("action", FilterActionMapper::GetNameForFilterAction(m_action));
-  }
-
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
 
   }
 
-  if(m_findingCriteriaHasBeenSet)
+  if(m_actionHasBeenSet)
   {
-   payload.WithObject("findingCriteria", m_findingCriteria.Jsonize());
-
+   payload.WithString("action", FilterActionMapper::GetNameForFilterAction(m_action));
   }
 
   if(m_rankHasBeenSet)
   {
    payload.WithInteger("rank", m_rank);
+
+  }
+
+  if(m_findingCriteriaHasBeenSet)
+  {
+   payload.WithObject("findingCriteria", m_findingCriteria.Jsonize());
 
   }
 

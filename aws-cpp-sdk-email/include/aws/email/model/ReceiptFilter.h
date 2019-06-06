@@ -38,7 +38,7 @@ namespace Model
    * <p>A receipt IP address filter enables you to specify whether to accept or
    * reject mail originating from an IP address or range of IP addresses.</p> <p>For
    * information about setting up IP address filters, see the <a
-   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReceiptFilter">AWS
    * API Reference</a></p>

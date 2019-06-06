@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * The name of the successfully created filter.
+     * <p>The name of the successfully created filter.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * The name of the successfully created filter.
+     * <p>The name of the successfully created filter.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * The name of the successfully created filter.
+     * <p>The name of the successfully created filter.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * The name of the successfully created filter.
+     * <p>The name of the successfully created filter.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * The name of the successfully created filter.
+     * <p>The name of the successfully created filter.</p>
      */
     inline CreateFilterResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * The name of the successfully created filter.
+     * <p>The name of the successfully created filter.</p>
      */
     inline CreateFilterResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * The name of the successfully created filter.
+     * <p>The name of the successfully created filter.</p>
      */
     inline CreateFilterResult& WithName(const char* value) { SetName(value); return *this;}
 

@@ -33,12 +33,6 @@ namespace GuardDuty
 namespace Model
 {
 
-  /**
-   * Other private IP address information of the EC2 instance.<p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/PrivateIpAddressDetails">AWS
-   * API Reference</a></p>
-   */
   class AWS_GUARDDUTY_API PrivateIpAddressDetails
   {
   public:
@@ -49,83 +43,83 @@ namespace Model
 
 
     /**
-     * Private DNS name of the EC2 instance.
+     * <p>Private DNS name of the EC2 instance.</p>
      */
     inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
 
     /**
-     * Private DNS name of the EC2 instance.
+     * <p>Private DNS name of the EC2 instance.</p>
      */
     inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
 
     /**
-     * Private DNS name of the EC2 instance.
+     * <p>Private DNS name of the EC2 instance.</p>
      */
     inline void SetPrivateDnsName(const Aws::String& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
 
     /**
-     * Private DNS name of the EC2 instance.
+     * <p>Private DNS name of the EC2 instance.</p>
      */
     inline void SetPrivateDnsName(Aws::String&& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = std::move(value); }
 
     /**
-     * Private DNS name of the EC2 instance.
+     * <p>Private DNS name of the EC2 instance.</p>
      */
     inline void SetPrivateDnsName(const char* value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName.assign(value); }
 
     /**
-     * Private DNS name of the EC2 instance.
+     * <p>Private DNS name of the EC2 instance.</p>
      */
     inline PrivateIpAddressDetails& WithPrivateDnsName(const Aws::String& value) { SetPrivateDnsName(value); return *this;}
 
     /**
-     * Private DNS name of the EC2 instance.
+     * <p>Private DNS name of the EC2 instance.</p>
      */
     inline PrivateIpAddressDetails& WithPrivateDnsName(Aws::String&& value) { SetPrivateDnsName(std::move(value)); return *this;}
 
     /**
-     * Private DNS name of the EC2 instance.
+     * <p>Private DNS name of the EC2 instance.</p>
      */
     inline PrivateIpAddressDetails& WithPrivateDnsName(const char* value) { SetPrivateDnsName(value); return *this;}
 
 
     /**
-     * Private IP address of the EC2 instance.
+     * <p>Private IP address of the EC2 instance.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
 
     /**
-     * Private IP address of the EC2 instance.
+     * <p>Private IP address of the EC2 instance.</p>
      */
     inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
 
     /**
-     * Private IP address of the EC2 instance.
+     * <p>Private IP address of the EC2 instance.</p>
      */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
-     * Private IP address of the EC2 instance.
+     * <p>Private IP address of the EC2 instance.</p>
      */
     inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
 
     /**
-     * Private IP address of the EC2 instance.
+     * <p>Private IP address of the EC2 instance.</p>
      */
     inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
 
     /**
-     * Private IP address of the EC2 instance.
+     * <p>Private IP address of the EC2 instance.</p>
      */
     inline PrivateIpAddressDetails& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * Private IP address of the EC2 instance.
+     * <p>Private IP address of the EC2 instance.</p>
      */
     inline PrivateIpAddressDetails& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
 
     /**
-     * Private IP address of the EC2 instance.
+     * <p>Private IP address of the EC2 instance.</p>
      */
     inline PrivateIpAddressDetails& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 

@@ -33,11 +33,6 @@ namespace GuardDuty
 namespace Model
 {
 
-  /**
-   * City information of the remote IP address.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/City">AWS API
-   * Reference</a></p>
-   */
   class AWS_GUARDDUTY_API City
   {
   public:
@@ -48,42 +43,42 @@ namespace Model
 
 
     /**
-     * City name of the remote IP address.
+     * <p>City name of the remote IP address.</p>
      */
     inline const Aws::String& GetCityName() const{ return m_cityName; }
 
     /**
-     * City name of the remote IP address.
+     * <p>City name of the remote IP address.</p>
      */
     inline bool CityNameHasBeenSet() const { return m_cityNameHasBeenSet; }
 
     /**
-     * City name of the remote IP address.
+     * <p>City name of the remote IP address.</p>
      */
     inline void SetCityName(const Aws::String& value) { m_cityNameHasBeenSet = true; m_cityName = value; }
 
     /**
-     * City name of the remote IP address.
+     * <p>City name of the remote IP address.</p>
      */
     inline void SetCityName(Aws::String&& value) { m_cityNameHasBeenSet = true; m_cityName = std::move(value); }
 
     /**
-     * City name of the remote IP address.
+     * <p>City name of the remote IP address.</p>
      */
     inline void SetCityName(const char* value) { m_cityNameHasBeenSet = true; m_cityName.assign(value); }
 
     /**
-     * City name of the remote IP address.
+     * <p>City name of the remote IP address.</p>
      */
     inline City& WithCityName(const Aws::String& value) { SetCityName(value); return *this;}
 
     /**
-     * City name of the remote IP address.
+     * <p>City name of the remote IP address.</p>
      */
     inline City& WithCityName(Aws::String&& value) { SetCityName(std::move(value)); return *this;}
 
     /**
-     * City name of the remote IP address.
+     * <p>City name of the remote IP address.</p>
      */
     inline City& WithCityName(const char* value) { SetCityName(value); return *this;}
 

@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Indicates how to transform ingested log eventsto metric data in a CloudWatch
+   * <p>Indicates how to transform ingested log events to metric data in a CloudWatch
    * metric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/MetricTransformation">AWS
    * API Reference</a></p>

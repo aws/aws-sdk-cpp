@@ -68,8 +68,7 @@ namespace Model
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
 
@@ -78,8 +77,7 @@ namespace Model
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
 
@@ -88,8 +86,7 @@ namespace Model
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
 
@@ -98,8 +95,7 @@ namespace Model
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
 
@@ -108,8 +104,7 @@ namespace Model
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
 
@@ -118,8 +113,7 @@ namespace Model
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline Service& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
 
@@ -128,8 +122,7 @@ namespace Model
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline Service& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
 
@@ -138,73 +131,72 @@ namespace Model
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline Service& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
 
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed. Service names must be unique
-     * within a cluster, but you can have similarly named services in multiple clusters
-     * within a Region or across multiple Regions.</p>
+     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
+     * but you can have similarly named services in multiple clusters within a Region
+     * or across multiple Regions.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed. Service names must be unique
-     * within a cluster, but you can have similarly named services in multiple clusters
-     * within a Region or across multiple Regions.</p>
+     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
+     * but you can have similarly named services in multiple clusters within a Region
+     * or across multiple Regions.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed. Service names must be unique
-     * within a cluster, but you can have similarly named services in multiple clusters
-     * within a Region or across multiple Regions.</p>
+     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
+     * but you can have similarly named services in multiple clusters within a Region
+     * or across multiple Regions.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed. Service names must be unique
-     * within a cluster, but you can have similarly named services in multiple clusters
-     * within a Region or across multiple Regions.</p>
+     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
+     * but you can have similarly named services in multiple clusters within a Region
+     * or across multiple Regions.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed. Service names must be unique
-     * within a cluster, but you can have similarly named services in multiple clusters
-     * within a Region or across multiple Regions.</p>
+     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
+     * but you can have similarly named services in multiple clusters within a Region
+     * or across multiple Regions.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed. Service names must be unique
-     * within a cluster, but you can have similarly named services in multiple clusters
-     * within a Region or across multiple Regions.</p>
+     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
+     * but you can have similarly named services in multiple clusters within a Region
+     * or across multiple Regions.</p>
      */
     inline Service& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed. Service names must be unique
-     * within a cluster, but you can have similarly named services in multiple clusters
-     * within a Region or across multiple Regions.</p>
+     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
+     * but you can have similarly named services in multiple clusters within a Region
+     * or across multiple Regions.</p>
      */
     inline Service& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed. Service names must be unique
-     * within a cluster, but you can have similarly named services in multiple clusters
-     * within a Region or across multiple Regions.</p>
+     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
+     * but you can have similarly named services in multiple clusters within a Region
+     * or across multiple Regions.</p>
      */
     inline Service& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
@@ -366,7 +358,7 @@ namespace Model
     /**
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p>
      */
     inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
@@ -374,7 +366,7 @@ namespace Model
     /**
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p>
      */
     inline bool ServiceRegistriesHasBeenSet() const { return m_serviceRegistriesHasBeenSet; }
@@ -382,7 +374,7 @@ namespace Model
     /**
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p>
      */
     inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
@@ -390,7 +382,7 @@ namespace Model
     /**
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p>
      */
     inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
@@ -398,7 +390,7 @@ namespace Model
     /**
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p>
      */
     inline Service& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
@@ -406,7 +398,7 @@ namespace Model
     /**
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p>
      */
     inline Service& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
@@ -414,7 +406,7 @@ namespace Model
     /**
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p>
      */
     inline Service& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
@@ -422,7 +414,7 @@ namespace Model
     /**
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p>
      */
     inline Service& AddServiceRegistries(ServiceRegistry&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(std::move(value)); return *this; }
@@ -557,8 +549,9 @@ namespace Model
 
 
     /**
-     * <p>The launch type on which your service is running. For more information, see
-     * <a
+     * <p>The launch type on which your service is running. If no value is specified,
+     * it will default to <code>EC2</code>. Valid values include <code>EC2</code> and
+     * <code>FARGATE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -566,8 +559,9 @@ namespace Model
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
     /**
-     * <p>The launch type on which your service is running. For more information, see
-     * <a
+     * <p>The launch type on which your service is running. If no value is specified,
+     * it will default to <code>EC2</code>. Valid values include <code>EC2</code> and
+     * <code>FARGATE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -575,8 +569,9 @@ namespace Model
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
 
     /**
-     * <p>The launch type on which your service is running. For more information, see
-     * <a
+     * <p>The launch type on which your service is running. If no value is specified,
+     * it will default to <code>EC2</code>. Valid values include <code>EC2</code> and
+     * <code>FARGATE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -584,8 +579,9 @@ namespace Model
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
     /**
-     * <p>The launch type on which your service is running. For more information, see
-     * <a
+     * <p>The launch type on which your service is running. If no value is specified,
+     * it will default to <code>EC2</code>. Valid values include <code>EC2</code> and
+     * <code>FARGATE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -593,8 +589,9 @@ namespace Model
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
     /**
-     * <p>The launch type on which your service is running. For more information, see
-     * <a
+     * <p>The launch type on which your service is running. If no value is specified,
+     * it will default to <code>EC2</code>. Valid values include <code>EC2</code> and
+     * <code>FARGATE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -602,8 +599,9 @@ namespace Model
     inline Service& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
     /**
-     * <p>The launch type on which your service is running. For more information, see
-     * <a
+     * <p>The launch type on which your service is running. If no value is specified,
+     * it will default to <code>EC2</code>. Valid values include <code>EC2</code> and
+     * <code>FARGATE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -612,10 +610,10 @@ namespace Model
 
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The platform version on which to run your service. A platform version is only
+     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <code>LATEST</code> platform version is used by default. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -623,10 +621,10 @@ namespace Model
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The platform version on which to run your service. A platform version is only
+     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <code>LATEST</code> platform version is used by default. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -634,10 +632,10 @@ namespace Model
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The platform version on which to run your service. A platform version is only
+     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <code>LATEST</code> platform version is used by default. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -645,10 +643,10 @@ namespace Model
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The platform version on which to run your service. A platform version is only
+     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <code>LATEST</code> platform version is used by default. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -656,10 +654,10 @@ namespace Model
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The platform version on which to run your service. A platform version is only
+     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <code>LATEST</code> platform version is used by default. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -667,10 +665,10 @@ namespace Model
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The platform version on which to run your service. A platform version is only
+     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <code>LATEST</code> platform version is used by default. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -678,10 +676,10 @@ namespace Model
     inline Service& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The platform version on which to run your service. A platform version is only
+     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <code>LATEST</code> platform version is used by default. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -689,10 +687,10 @@ namespace Model
     inline Service& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The platform version on which to run your service. A platform version is only
+     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <code>LATEST</code> platform version is used by default. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -1201,7 +1199,7 @@ namespace Model
 
     /**
      * <p>The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
      * desired number of tasks across your cluster. By default, the service scheduler
@@ -1217,7 +1215,7 @@ namespace Model
 
     /**
      * <p>The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
      * desired number of tasks across your cluster. By default, the service scheduler
@@ -1233,7 +1231,7 @@ namespace Model
 
     /**
      * <p>The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
      * desired number of tasks across your cluster. By default, the service scheduler
@@ -1249,7 +1247,7 @@ namespace Model
 
     /**
      * <p>The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
      * desired number of tasks across your cluster. By default, the service scheduler
@@ -1265,7 +1263,7 @@ namespace Model
 
     /**
      * <p>The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
      * desired number of tasks across your cluster. By default, the service scheduler
@@ -1281,7 +1279,7 @@ namespace Model
 
     /**
      * <p>The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
      * desired number of tasks across your cluster. By default, the service scheduler
@@ -1436,7 +1434,7 @@ namespace Model
     /**
      * <p>Specifies whether to enable Amazon ECS managed tags for the tasks in the
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -1445,7 +1443,7 @@ namespace Model
     /**
      * <p>Specifies whether to enable Amazon ECS managed tags for the tasks in the
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -1454,7 +1452,7 @@ namespace Model
     /**
      * <p>Specifies whether to enable Amazon ECS managed tags for the tasks in the
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -1463,7 +1461,7 @@ namespace Model
     /**
      * <p>Specifies whether to enable Amazon ECS managed tags for the tasks in the
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */

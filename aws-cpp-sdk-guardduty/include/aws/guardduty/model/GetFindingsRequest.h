@@ -29,9 +29,6 @@ namespace Model
 {
 
   /**
-   * GetFindings request body.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFindingsRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_GUARDDUTY_API GetFindingsRequest : public GuardDutyRequest
   {
@@ -48,127 +45,127 @@ namespace Model
 
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to retrieve.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to retrieve.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to retrieve.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to retrieve.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to retrieve.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to retrieve.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to retrieve.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to retrieve.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to retrieve.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to retrieve.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to retrieve.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to retrieve.</p>
      */
     inline GetFindingsRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to retrieve.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to retrieve.</p>
      */
     inline GetFindingsRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to retrieve.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to retrieve.</p>
      */
     inline GetFindingsRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * IDs of the findings that you want to retrieve.
+     * <p>IDs of the findings that you want to retrieve.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFindingIds() const{ return m_findingIds; }
 
     /**
-     * IDs of the findings that you want to retrieve.
+     * <p>IDs of the findings that you want to retrieve.</p>
      */
     inline bool FindingIdsHasBeenSet() const { return m_findingIdsHasBeenSet; }
 
     /**
-     * IDs of the findings that you want to retrieve.
+     * <p>IDs of the findings that you want to retrieve.</p>
      */
     inline void SetFindingIds(const Aws::Vector<Aws::String>& value) { m_findingIdsHasBeenSet = true; m_findingIds = value; }
 
     /**
-     * IDs of the findings that you want to retrieve.
+     * <p>IDs of the findings that you want to retrieve.</p>
      */
     inline void SetFindingIds(Aws::Vector<Aws::String>&& value) { m_findingIdsHasBeenSet = true; m_findingIds = std::move(value); }
 
     /**
-     * IDs of the findings that you want to retrieve.
+     * <p>IDs of the findings that you want to retrieve.</p>
      */
     inline GetFindingsRequest& WithFindingIds(const Aws::Vector<Aws::String>& value) { SetFindingIds(value); return *this;}
 
     /**
-     * IDs of the findings that you want to retrieve.
+     * <p>IDs of the findings that you want to retrieve.</p>
      */
     inline GetFindingsRequest& WithFindingIds(Aws::Vector<Aws::String>&& value) { SetFindingIds(std::move(value)); return *this;}
 
     /**
-     * IDs of the findings that you want to retrieve.
+     * <p>IDs of the findings that you want to retrieve.</p>
      */
     inline GetFindingsRequest& AddFindingIds(const Aws::String& value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(value); return *this; }
 
     /**
-     * IDs of the findings that you want to retrieve.
+     * <p>IDs of the findings that you want to retrieve.</p>
      */
     inline GetFindingsRequest& AddFindingIds(Aws::String&& value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(std::move(value)); return *this; }
 
     /**
-     * IDs of the findings that you want to retrieve.
+     * <p>IDs of the findings that you want to retrieve.</p>
      */
     inline GetFindingsRequest& AddFindingIds(const char* value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(value); return *this; }
 
 
     /**
-     * Represents the criteria used for sorting findings.
+     * <p>Represents the criteria used for sorting findings.</p>
      */
     inline const SortCriteria& GetSortCriteria() const{ return m_sortCriteria; }
 
     /**
-     * Represents the criteria used for sorting findings.
+     * <p>Represents the criteria used for sorting findings.</p>
      */
     inline bool SortCriteriaHasBeenSet() const { return m_sortCriteriaHasBeenSet; }
 
     /**
-     * Represents the criteria used for sorting findings.
+     * <p>Represents the criteria used for sorting findings.</p>
      */
     inline void SetSortCriteria(const SortCriteria& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = value; }
 
     /**
-     * Represents the criteria used for sorting findings.
+     * <p>Represents the criteria used for sorting findings.</p>
      */
     inline void SetSortCriteria(SortCriteria&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = std::move(value); }
 
     /**
-     * Represents the criteria used for sorting findings.
+     * <p>Represents the criteria used for sorting findings.</p>
      */
     inline GetFindingsRequest& WithSortCriteria(const SortCriteria& value) { SetSortCriteria(value); return *this;}
 
     /**
-     * Represents the criteria used for sorting findings.
+     * <p>Represents the criteria used for sorting findings.</p>
      */
     inline GetFindingsRequest& WithSortCriteria(SortCriteria&& value) { SetSortCriteria(std::move(value)); return *this;}
 

@@ -49,140 +49,132 @@ namespace Model
 
 
     /**
-     * The ID of the detector that specifies the GuardDuty service where you want to
-     * list filters.
+     * <p>The unique ID of the detector the filter is associated with.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service where you want to
-     * list filters.
+     * <p>The unique ID of the detector the filter is associated with.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service where you want to
-     * list filters.
+     * <p>The unique ID of the detector the filter is associated with.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service where you want to
-     * list filters.
+     * <p>The unique ID of the detector the filter is associated with.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service where you want to
-     * list filters.
+     * <p>The unique ID of the detector the filter is associated with.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service where you want to
-     * list filters.
+     * <p>The unique ID of the detector the filter is associated with.</p>
      */
     inline ListFiltersRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The ID of the detector that specifies the GuardDuty service where you want to
-     * list filters.
+     * <p>The unique ID of the detector the filter is associated with.</p>
      */
     inline ListFiltersRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The ID of the detector that specifies the GuardDuty service where you want to
-     * list filters.
+     * <p>The unique ID of the detector the filter is associated with.</p>
      */
     inline ListFiltersRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * Indicates the maximum number of items that you want in the response. The maximum
-     * value is 50.
+     * <p>You can use this parameter to indicate the maximum number of items you want
+     * in the response. The default value is 50. The maximum value is 50.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * Indicates the maximum number of items that you want in the response. The maximum
-     * value is 50.
+     * <p>You can use this parameter to indicate the maximum number of items you want
+     * in the response. The default value is 50. The maximum value is 50.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * Indicates the maximum number of items that you want in the response. The maximum
-     * value is 50.
+     * <p>You can use this parameter to indicate the maximum number of items you want
+     * in the response. The default value is 50. The maximum value is 50.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * Indicates the maximum number of items that you want in the response. The maximum
-     * value is 50.
+     * <p>You can use this parameter to indicate the maximum number of items you want
+     * in the response. The default value is 50. The maximum value is 50.</p>
      */
     inline ListFiltersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * Paginates results. Set the value of this parameter to NULL on your first call to
-     * the ListFilters operation.For subsequent calls to the operation, fill nextToken
-     * in the request with the value of nextToken from the previous response to
-     * continue listing data.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * Paginates results. Set the value of this parameter to NULL on your first call to
-     * the ListFilters operation.For subsequent calls to the operation, fill nextToken
-     * in the request with the value of nextToken from the previous response to
-     * continue listing data.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * Paginates results. Set the value of this parameter to NULL on your first call to
-     * the ListFilters operation.For subsequent calls to the operation, fill nextToken
-     * in the request with the value of nextToken from the previous response to
-     * continue listing data.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * Paginates results. Set the value of this parameter to NULL on your first call to
-     * the ListFilters operation.For subsequent calls to the operation, fill nextToken
-     * in the request with the value of nextToken from the previous response to
-     * continue listing data.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * Paginates results. Set the value of this parameter to NULL on your first call to
-     * the ListFilters operation.For subsequent calls to the operation, fill nextToken
-     * in the request with the value of nextToken from the previous response to
-     * continue listing data.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * Paginates results. Set the value of this parameter to NULL on your first call to
-     * the ListFilters operation.For subsequent calls to the operation, fill nextToken
-     * in the request with the value of nextToken from the previous response to
-     * continue listing data.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline ListFiltersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * Paginates results. Set the value of this parameter to NULL on your first call to
-     * the ListFilters operation.For subsequent calls to the operation, fill nextToken
-     * in the request with the value of nextToken from the previous response to
-     * continue listing data.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline ListFiltersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * Paginates results. Set the value of this parameter to NULL on your first call to
-     * the ListFilters operation.For subsequent calls to the operation, fill nextToken
-     * in the request with the value of nextToken from the previous response to
-     * continue listing data.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline ListFiltersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

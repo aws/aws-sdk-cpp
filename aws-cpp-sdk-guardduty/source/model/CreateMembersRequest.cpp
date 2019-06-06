@@ -23,8 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateMembersRequest::CreateMembersRequest() : 
-    m_accountDetailsHasBeenSet(false),
-    m_detectorIdHasBeenSet(false)
+    m_detectorIdHasBeenSet(false),
+    m_accountDetailsHasBeenSet(false)
 {
 }
 

@@ -185,36 +185,36 @@ namespace Model
     /**
      * <p>Specifies whether to return the effective settings. If <code>true</code>, the
      * account settings for the root user or the default setting for the
-     * <code>principalArn</code>. If <code>false</code>, the account settings for the
-     * <code>principalArn</code> are returned if they are set. Otherwise, no account
-     * settings are returned.</p>
+     * <code>principalArn</code> are returned. If <code>false</code>, the account
+     * settings for the <code>principalArn</code> are returned if they are set.
+     * Otherwise, no account settings are returned.</p>
      */
     inline bool GetEffectiveSettings() const{ return m_effectiveSettings; }
 
     /**
      * <p>Specifies whether to return the effective settings. If <code>true</code>, the
      * account settings for the root user or the default setting for the
-     * <code>principalArn</code>. If <code>false</code>, the account settings for the
-     * <code>principalArn</code> are returned if they are set. Otherwise, no account
-     * settings are returned.</p>
+     * <code>principalArn</code> are returned. If <code>false</code>, the account
+     * settings for the <code>principalArn</code> are returned if they are set.
+     * Otherwise, no account settings are returned.</p>
      */
     inline bool EffectiveSettingsHasBeenSet() const { return m_effectiveSettingsHasBeenSet; }
 
     /**
      * <p>Specifies whether to return the effective settings. If <code>true</code>, the
      * account settings for the root user or the default setting for the
-     * <code>principalArn</code>. If <code>false</code>, the account settings for the
-     * <code>principalArn</code> are returned if they are set. Otherwise, no account
-     * settings are returned.</p>
+     * <code>principalArn</code> are returned. If <code>false</code>, the account
+     * settings for the <code>principalArn</code> are returned if they are set.
+     * Otherwise, no account settings are returned.</p>
      */
     inline void SetEffectiveSettings(bool value) { m_effectiveSettingsHasBeenSet = true; m_effectiveSettings = value; }
 
     /**
      * <p>Specifies whether to return the effective settings. If <code>true</code>, the
      * account settings for the root user or the default setting for the
-     * <code>principalArn</code>. If <code>false</code>, the account settings for the
-     * <code>principalArn</code> are returned if they are set. Otherwise, no account
-     * settings are returned.</p>
+     * <code>principalArn</code> are returned. If <code>false</code>, the account
+     * settings for the <code>principalArn</code> are returned if they are set.
+     * Otherwise, no account settings are returned.</p>
      */
     inline ListAccountSettingsRequest& WithEffectiveSettings(bool value) { SetEffectiveSettings(value); return *this;}
 

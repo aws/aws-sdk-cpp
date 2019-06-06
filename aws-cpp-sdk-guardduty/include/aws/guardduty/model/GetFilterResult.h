@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
-#include <aws/guardduty/model/FilterAction.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/guardduty/model/FilterAction.h>
 #include <aws/guardduty/model/FindingCriteria.h>
 #include <utility>
 
@@ -45,163 +45,163 @@ namespace Model
 
 
     /**
-     * Specifies the action that is to be applied to the findings that match the
-     * filter.
-     */
-    inline const FilterAction& GetAction() const{ return m_action; }
-
-    /**
-     * Specifies the action that is to be applied to the findings that match the
-     * filter.
-     */
-    inline void SetAction(const FilterAction& value) { m_action = value; }
-
-    /**
-     * Specifies the action that is to be applied to the findings that match the
-     * filter.
-     */
-    inline void SetAction(FilterAction&& value) { m_action = std::move(value); }
-
-    /**
-     * Specifies the action that is to be applied to the findings that match the
-     * filter.
-     */
-    inline GetFilterResult& WithAction(const FilterAction& value) { SetAction(value); return *this;}
-
-    /**
-     * Specifies the action that is to be applied to the findings that match the
-     * filter.
-     */
-    inline GetFilterResult& WithAction(FilterAction&& value) { SetAction(std::move(value)); return *this;}
-
-
-    /**
-     * The description of the filter.
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * The description of the filter.
-     */
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-
-    /**
-     * The description of the filter.
-     */
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-
-    /**
-     * The description of the filter.
-     */
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-
-    /**
-     * The description of the filter.
-     */
-    inline GetFilterResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * The description of the filter.
-     */
-    inline GetFilterResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * The description of the filter.
-     */
-    inline GetFilterResult& WithDescription(const char* value) { SetDescription(value); return *this;}
-
-
-    /**
-     * Represents the criteria to be used in the filter for querying findings.
-     */
-    inline const FindingCriteria& GetFindingCriteria() const{ return m_findingCriteria; }
-
-    /**
-     * Represents the criteria to be used in the filter for querying findings.
-     */
-    inline void SetFindingCriteria(const FindingCriteria& value) { m_findingCriteria = value; }
-
-    /**
-     * Represents the criteria to be used in the filter for querying findings.
-     */
-    inline void SetFindingCriteria(FindingCriteria&& value) { m_findingCriteria = std::move(value); }
-
-    /**
-     * Represents the criteria to be used in the filter for querying findings.
-     */
-    inline GetFilterResult& WithFindingCriteria(const FindingCriteria& value) { SetFindingCriteria(value); return *this;}
-
-    /**
-     * Represents the criteria to be used in the filter for querying findings.
-     */
-    inline GetFilterResult& WithFindingCriteria(FindingCriteria&& value) { SetFindingCriteria(std::move(value)); return *this;}
-
-
-    /**
-     * The name of the filter.
+     * <p>The name of the filter.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter.</p>
      */
     inline GetFilterResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter.</p>
      */
     inline GetFilterResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter.</p>
      */
     inline GetFilterResult& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * Specifies the position of the filter in the list of current filters. Also
-     * specifies the order in which this filter is applied to the findings.
+     * <p>The description of the filter.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the filter.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_description = value; }
+
+    /**
+     * <p>The description of the filter.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
+
+    /**
+     * <p>The description of the filter.</p>
+     */
+    inline void SetDescription(const char* value) { m_description.assign(value); }
+
+    /**
+     * <p>The description of the filter.</p>
+     */
+    inline GetFilterResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The description of the filter.</p>
+     */
+    inline GetFilterResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The description of the filter.</p>
+     */
+    inline GetFilterResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>Specifies the action that is to be applied to the findings that match the
+     * filter.</p>
+     */
+    inline const FilterAction& GetAction() const{ return m_action; }
+
+    /**
+     * <p>Specifies the action that is to be applied to the findings that match the
+     * filter.</p>
+     */
+    inline void SetAction(const FilterAction& value) { m_action = value; }
+
+    /**
+     * <p>Specifies the action that is to be applied to the findings that match the
+     * filter.</p>
+     */
+    inline void SetAction(FilterAction&& value) { m_action = std::move(value); }
+
+    /**
+     * <p>Specifies the action that is to be applied to the findings that match the
+     * filter.</p>
+     */
+    inline GetFilterResult& WithAction(const FilterAction& value) { SetAction(value); return *this;}
+
+    /**
+     * <p>Specifies the action that is to be applied to the findings that match the
+     * filter.</p>
+     */
+    inline GetFilterResult& WithAction(FilterAction&& value) { SetAction(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the position of the filter in the list of current filters. Also
+     * specifies the order in which this filter is applied to the findings.</p>
      */
     inline int GetRank() const{ return m_rank; }
 
     /**
-     * Specifies the position of the filter in the list of current filters. Also
-     * specifies the order in which this filter is applied to the findings.
+     * <p>Specifies the position of the filter in the list of current filters. Also
+     * specifies the order in which this filter is applied to the findings.</p>
      */
     inline void SetRank(int value) { m_rank = value; }
 
     /**
-     * Specifies the position of the filter in the list of current filters. Also
-     * specifies the order in which this filter is applied to the findings.
+     * <p>Specifies the position of the filter in the list of current filters. Also
+     * specifies the order in which this filter is applied to the findings.</p>
      */
     inline GetFilterResult& WithRank(int value) { SetRank(value); return *this;}
 
+
+    /**
+     * <p>Represents the criteria to be used in the filter for querying findings.</p>
+     */
+    inline const FindingCriteria& GetFindingCriteria() const{ return m_findingCriteria; }
+
+    /**
+     * <p>Represents the criteria to be used in the filter for querying findings.</p>
+     */
+    inline void SetFindingCriteria(const FindingCriteria& value) { m_findingCriteria = value; }
+
+    /**
+     * <p>Represents the criteria to be used in the filter for querying findings.</p>
+     */
+    inline void SetFindingCriteria(FindingCriteria&& value) { m_findingCriteria = std::move(value); }
+
+    /**
+     * <p>Represents the criteria to be used in the filter for querying findings.</p>
+     */
+    inline GetFilterResult& WithFindingCriteria(const FindingCriteria& value) { SetFindingCriteria(value); return *this;}
+
+    /**
+     * <p>Represents the criteria to be used in the filter for querying findings.</p>
+     */
+    inline GetFilterResult& WithFindingCriteria(FindingCriteria&& value) { SetFindingCriteria(std::move(value)); return *this;}
+
   private:
-
-    FilterAction m_action;
-
-    Aws::String m_description;
-
-    FindingCriteria m_findingCriteria;
 
     Aws::String m_name;
 
+    Aws::String m_description;
+
+    FilterAction m_action;
+
     int m_rank;
+
+    FindingCriteria m_findingCriteria;
   };
 
 } // namespace Model

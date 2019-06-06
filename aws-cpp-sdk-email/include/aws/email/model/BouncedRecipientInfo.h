@@ -39,7 +39,7 @@ namespace Model
    * <p>Recipient-related information to include in the Delivery Status Notification
    * (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For
    * information about receiving email through Amazon SES, see the <a
-   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/BouncedRecipientInfo">AWS
    * API Reference</a></p>
@@ -101,7 +101,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to receive email for the recipient of the bounced email. For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline const Aws::String& GetRecipientArn() const{ return m_recipientArn; }
@@ -111,7 +111,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to receive email for the recipient of the bounced email. For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline bool RecipientArnHasBeenSet() const { return m_recipientArnHasBeenSet; }
@@ -121,7 +121,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to receive email for the recipient of the bounced email. For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetRecipientArn(const Aws::String& value) { m_recipientArnHasBeenSet = true; m_recipientArn = value; }
@@ -131,7 +131,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to receive email for the recipient of the bounced email. For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetRecipientArn(Aws::String&& value) { m_recipientArnHasBeenSet = true; m_recipientArn = std::move(value); }
@@ -141,7 +141,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to receive email for the recipient of the bounced email. For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetRecipientArn(const char* value) { m_recipientArnHasBeenSet = true; m_recipientArn.assign(value); }
@@ -151,7 +151,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to receive email for the recipient of the bounced email. For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline BouncedRecipientInfo& WithRecipientArn(const Aws::String& value) { SetRecipientArn(value); return *this;}
@@ -161,7 +161,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to receive email for the recipient of the bounced email. For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline BouncedRecipientInfo& WithRecipientArn(Aws::String&& value) { SetRecipientArn(std::move(value)); return *this;}
@@ -171,7 +171,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to receive email for the recipient of the bounced email. For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline BouncedRecipientInfo& WithRecipientArn(const char* value) { SetRecipientArn(value); return *this;}

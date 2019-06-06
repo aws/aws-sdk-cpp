@@ -46,7 +46,7 @@ namespace Model
 
     /**
      * <p>The unique identifier (ID) of the OU or account whose parent containers you
-     * want to list. Do not specify a root.</p> <p>The <a
+     * want to list. Don't specify a root.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string
      * requires one of the following:</p> <ul> <li> <p>Account: a string that consists
      * of exactly 12 digits.</p> </li> <li> <p>Organizational unit (OU): a string that
@@ -58,7 +58,7 @@ namespace Model
 
     /**
      * <p>The unique identifier (ID) of the OU or account whose parent containers you
-     * want to list. Do not specify a root.</p> <p>The <a
+     * want to list. Don't specify a root.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string
      * requires one of the following:</p> <ul> <li> <p>Account: a string that consists
      * of exactly 12 digits.</p> </li> <li> <p>Organizational unit (OU): a string that
@@ -70,7 +70,7 @@ namespace Model
 
     /**
      * <p>The unique identifier (ID) of the OU or account whose parent containers you
-     * want to list. Do not specify a root.</p> <p>The <a
+     * want to list. Don't specify a root.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string
      * requires one of the following:</p> <ul> <li> <p>Account: a string that consists
      * of exactly 12 digits.</p> </li> <li> <p>Organizational unit (OU): a string that
@@ -82,7 +82,7 @@ namespace Model
 
     /**
      * <p>The unique identifier (ID) of the OU or account whose parent containers you
-     * want to list. Do not specify a root.</p> <p>The <a
+     * want to list. Don't specify a root.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string
      * requires one of the following:</p> <ul> <li> <p>Account: a string that consists
      * of exactly 12 digits.</p> </li> <li> <p>Organizational unit (OU): a string that
@@ -94,7 +94,7 @@ namespace Model
 
     /**
      * <p>The unique identifier (ID) of the OU or account whose parent containers you
-     * want to list. Do not specify a root.</p> <p>The <a
+     * want to list. Don't specify a root.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string
      * requires one of the following:</p> <ul> <li> <p>Account: a string that consists
      * of exactly 12 digits.</p> </li> <li> <p>Organizational unit (OU): a string that
@@ -106,7 +106,7 @@ namespace Model
 
     /**
      * <p>The unique identifier (ID) of the OU or account whose parent containers you
-     * want to list. Do not specify a root.</p> <p>The <a
+     * want to list. Don't specify a root.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string
      * requires one of the following:</p> <ul> <li> <p>Account: a string that consists
      * of exactly 12 digits.</p> </li> <li> <p>Organizational unit (OU): a string that
@@ -118,7 +118,7 @@ namespace Model
 
     /**
      * <p>The unique identifier (ID) of the OU or account whose parent containers you
-     * want to list. Do not specify a root.</p> <p>The <a
+     * want to list. Don't specify a root.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string
      * requires one of the following:</p> <ul> <li> <p>Account: a string that consists
      * of exactly 12 digits.</p> </li> <li> <p>Organizational unit (OU): a string that
@@ -130,7 +130,7 @@ namespace Model
 
     /**
      * <p>The unique identifier (ID) of the OU or account whose parent containers you
-     * want to list. Do not specify a root.</p> <p>The <a
+     * want to list. Don't specify a root.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string
      * requires one of the following:</p> <ul> <li> <p>Account: a string that consists
      * of exactly 12 digits.</p> </li> <li> <p>Organizational unit (OU): a string that

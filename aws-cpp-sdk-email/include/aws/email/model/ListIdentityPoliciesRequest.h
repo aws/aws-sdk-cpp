@@ -31,7 +31,7 @@ namespace Model
    * are attached to an identity. Sending authorization is an Amazon SES feature that
    * enables you to authorize other senders to use your identities. For information,
    * see the <a
-   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentityPoliciesRequest">AWS
    * API Reference</a></p>

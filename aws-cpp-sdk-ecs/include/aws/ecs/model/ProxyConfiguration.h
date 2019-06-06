@@ -44,11 +44,10 @@ namespace Model
    * launched from the Amazon ECS-optimized AMI version <code>20190301</code> or
    * later, then they contain the required versions of the container agent and
    * <code>ecs-init</code>. For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
    * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-   * Guide</i>.</p> <p>This parameter is available for tasks using the Fargate launch
-   * type in the Ohio (us-east-2) region only and the task or service requires
-   * platform version 1.3.0 or later.</p><p><h3>See Also:</h3>   <a
+   * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
+   * requires platform version 1.3.0 or later.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ProxyConfiguration">AWS
    * API Reference</a></p>
    */
@@ -142,7 +141,7 @@ namespace Model
      * specified, this field can be empty.</p> </li> <li> <p> <code>IgnoredGID</code> -
      * (Required) The group ID (GID) of the proxy container as defined by the
      * <code>user</code> parameter in a container definition. This is used to ensure
-     * the proxy ignores its own traffic. If <code>IgnoredGID</code> is specified, this
+     * the proxy ignores its own traffic. If <code>IgnoredUID</code> is specified, this
      * field can be empty.</p> </li> <li> <p> <code>AppPorts</code> - (Required) The
      * list of ports that the application uses. Network traffic to these ports is
      * forwarded to the <code>ProxyIngressPort</code> and
@@ -168,7 +167,7 @@ namespace Model
      * specified, this field can be empty.</p> </li> <li> <p> <code>IgnoredGID</code> -
      * (Required) The group ID (GID) of the proxy container as defined by the
      * <code>user</code> parameter in a container definition. This is used to ensure
-     * the proxy ignores its own traffic. If <code>IgnoredGID</code> is specified, this
+     * the proxy ignores its own traffic. If <code>IgnoredUID</code> is specified, this
      * field can be empty.</p> </li> <li> <p> <code>AppPorts</code> - (Required) The
      * list of ports that the application uses. Network traffic to these ports is
      * forwarded to the <code>ProxyIngressPort</code> and
@@ -194,7 +193,7 @@ namespace Model
      * specified, this field can be empty.</p> </li> <li> <p> <code>IgnoredGID</code> -
      * (Required) The group ID (GID) of the proxy container as defined by the
      * <code>user</code> parameter in a container definition. This is used to ensure
-     * the proxy ignores its own traffic. If <code>IgnoredGID</code> is specified, this
+     * the proxy ignores its own traffic. If <code>IgnoredUID</code> is specified, this
      * field can be empty.</p> </li> <li> <p> <code>AppPorts</code> - (Required) The
      * list of ports that the application uses. Network traffic to these ports is
      * forwarded to the <code>ProxyIngressPort</code> and
@@ -220,7 +219,7 @@ namespace Model
      * specified, this field can be empty.</p> </li> <li> <p> <code>IgnoredGID</code> -
      * (Required) The group ID (GID) of the proxy container as defined by the
      * <code>user</code> parameter in a container definition. This is used to ensure
-     * the proxy ignores its own traffic. If <code>IgnoredGID</code> is specified, this
+     * the proxy ignores its own traffic. If <code>IgnoredUID</code> is specified, this
      * field can be empty.</p> </li> <li> <p> <code>AppPorts</code> - (Required) The
      * list of ports that the application uses. Network traffic to these ports is
      * forwarded to the <code>ProxyIngressPort</code> and
@@ -246,7 +245,7 @@ namespace Model
      * specified, this field can be empty.</p> </li> <li> <p> <code>IgnoredGID</code> -
      * (Required) The group ID (GID) of the proxy container as defined by the
      * <code>user</code> parameter in a container definition. This is used to ensure
-     * the proxy ignores its own traffic. If <code>IgnoredGID</code> is specified, this
+     * the proxy ignores its own traffic. If <code>IgnoredUID</code> is specified, this
      * field can be empty.</p> </li> <li> <p> <code>AppPorts</code> - (Required) The
      * list of ports that the application uses. Network traffic to these ports is
      * forwarded to the <code>ProxyIngressPort</code> and
@@ -272,7 +271,7 @@ namespace Model
      * specified, this field can be empty.</p> </li> <li> <p> <code>IgnoredGID</code> -
      * (Required) The group ID (GID) of the proxy container as defined by the
      * <code>user</code> parameter in a container definition. This is used to ensure
-     * the proxy ignores its own traffic. If <code>IgnoredGID</code> is specified, this
+     * the proxy ignores its own traffic. If <code>IgnoredUID</code> is specified, this
      * field can be empty.</p> </li> <li> <p> <code>AppPorts</code> - (Required) The
      * list of ports that the application uses. Network traffic to these ports is
      * forwarded to the <code>ProxyIngressPort</code> and
@@ -298,7 +297,7 @@ namespace Model
      * specified, this field can be empty.</p> </li> <li> <p> <code>IgnoredGID</code> -
      * (Required) The group ID (GID) of the proxy container as defined by the
      * <code>user</code> parameter in a container definition. This is used to ensure
-     * the proxy ignores its own traffic. If <code>IgnoredGID</code> is specified, this
+     * the proxy ignores its own traffic. If <code>IgnoredUID</code> is specified, this
      * field can be empty.</p> </li> <li> <p> <code>AppPorts</code> - (Required) The
      * list of ports that the application uses. Network traffic to these ports is
      * forwarded to the <code>ProxyIngressPort</code> and
@@ -324,7 +323,7 @@ namespace Model
      * specified, this field can be empty.</p> </li> <li> <p> <code>IgnoredGID</code> -
      * (Required) The group ID (GID) of the proxy container as defined by the
      * <code>user</code> parameter in a container definition. This is used to ensure
-     * the proxy ignores its own traffic. If <code>IgnoredGID</code> is specified, this
+     * the proxy ignores its own traffic. If <code>IgnoredUID</code> is specified, this
      * field can be empty.</p> </li> <li> <p> <code>AppPorts</code> - (Required) The
      * list of ports that the application uses. Network traffic to these ports is
      * forwarded to the <code>ProxyIngressPort</code> and

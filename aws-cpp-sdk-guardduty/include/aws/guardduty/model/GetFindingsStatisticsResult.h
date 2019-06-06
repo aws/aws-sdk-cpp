@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * Finding statistics object.
+     * <p>Finding statistics object.</p>
      */
     inline const FindingStatistics& GetFindingStatistics() const{ return m_findingStatistics; }
 
     /**
-     * Finding statistics object.
+     * <p>Finding statistics object.</p>
      */
     inline void SetFindingStatistics(const FindingStatistics& value) { m_findingStatistics = value; }
 
     /**
-     * Finding statistics object.
+     * <p>Finding statistics object.</p>
      */
     inline void SetFindingStatistics(FindingStatistics&& value) { m_findingStatistics = std::move(value); }
 
     /**
-     * Finding statistics object.
+     * <p>Finding statistics object.</p>
      */
     inline GetFindingsStatisticsResult& WithFindingStatistics(const FindingStatistics& value) { SetFindingStatistics(value); return *this;}
 
     /**
-     * Finding statistics object.
+     * <p>Finding statistics object.</p>
      */
     inline GetFindingsStatisticsResult& WithFindingStatistics(FindingStatistics&& value) { SetFindingStatistics(std::move(value)); return *this;}
 

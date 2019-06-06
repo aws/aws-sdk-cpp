@@ -45,7 +45,11 @@ namespace Model
 {
 
   /**
-   * <p>Details of a task definition.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of a task definition which describes the container and volume
+   * definitions of an Amazon Elastic Container Service task. You can specify which
+   * Docker images to use, the required resources, and other configurations related
+   * to launching the task definition through an Amazon ECS service or
+   * task.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskDefinition">AWS
    * API Reference</a></p>
    */
@@ -181,50 +185,77 @@ namespace Model
 
 
     /**
-     * <p>The family of your task definition, used as the definition name.</p>
+     * <p>The name of a family that this task definition is registered to. A family
+     * groups multiple versions of a task definition. Amazon ECS gives the first task
+     * definition that you registered to a family a revision number of 1. Amazon ECS
+     * gives sequential revision numbers to each task definition that you add.</p>
      */
     inline const Aws::String& GetFamily() const{ return m_family; }
 
     /**
-     * <p>The family of your task definition, used as the definition name.</p>
+     * <p>The name of a family that this task definition is registered to. A family
+     * groups multiple versions of a task definition. Amazon ECS gives the first task
+     * definition that you registered to a family a revision number of 1. Amazon ECS
+     * gives sequential revision numbers to each task definition that you add.</p>
      */
     inline bool FamilyHasBeenSet() const { return m_familyHasBeenSet; }
 
     /**
-     * <p>The family of your task definition, used as the definition name.</p>
+     * <p>The name of a family that this task definition is registered to. A family
+     * groups multiple versions of a task definition. Amazon ECS gives the first task
+     * definition that you registered to a family a revision number of 1. Amazon ECS
+     * gives sequential revision numbers to each task definition that you add.</p>
      */
     inline void SetFamily(const Aws::String& value) { m_familyHasBeenSet = true; m_family = value; }
 
     /**
-     * <p>The family of your task definition, used as the definition name.</p>
+     * <p>The name of a family that this task definition is registered to. A family
+     * groups multiple versions of a task definition. Amazon ECS gives the first task
+     * definition that you registered to a family a revision number of 1. Amazon ECS
+     * gives sequential revision numbers to each task definition that you add.</p>
      */
     inline void SetFamily(Aws::String&& value) { m_familyHasBeenSet = true; m_family = std::move(value); }
 
     /**
-     * <p>The family of your task definition, used as the definition name.</p>
+     * <p>The name of a family that this task definition is registered to. A family
+     * groups multiple versions of a task definition. Amazon ECS gives the first task
+     * definition that you registered to a family a revision number of 1. Amazon ECS
+     * gives sequential revision numbers to each task definition that you add.</p>
      */
     inline void SetFamily(const char* value) { m_familyHasBeenSet = true; m_family.assign(value); }
 
     /**
-     * <p>The family of your task definition, used as the definition name.</p>
+     * <p>The name of a family that this task definition is registered to. A family
+     * groups multiple versions of a task definition. Amazon ECS gives the first task
+     * definition that you registered to a family a revision number of 1. Amazon ECS
+     * gives sequential revision numbers to each task definition that you add.</p>
      */
     inline TaskDefinition& WithFamily(const Aws::String& value) { SetFamily(value); return *this;}
 
     /**
-     * <p>The family of your task definition, used as the definition name.</p>
+     * <p>The name of a family that this task definition is registered to. A family
+     * groups multiple versions of a task definition. Amazon ECS gives the first task
+     * definition that you registered to a family a revision number of 1. Amazon ECS
+     * gives sequential revision numbers to each task definition that you add.</p>
      */
     inline TaskDefinition& WithFamily(Aws::String&& value) { SetFamily(std::move(value)); return *this;}
 
     /**
-     * <p>The family of your task definition, used as the definition name.</p>
+     * <p>The name of a family that this task definition is registered to. A family
+     * groups multiple versions of a task definition. Amazon ECS gives the first task
+     * definition that you registered to a family a revision number of 1. Amazon ECS
+     * gives sequential revision numbers to each task definition that you add.</p>
      */
     inline TaskDefinition& WithFamily(const char* value) { SetFamily(value); return *this;}
 
 
     /**
-     * <p>The ARN of the IAM role that containers in this task can assume. All
-     * containers in this task are granted the permissions that are specified in this
-     * role.</p> <p>IAM roles for tasks on Windows require that the
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that grants containers in the task permission to call AWS APIs on your
+     * behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
+     * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
      * <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon
      * ECS-optimized Windows AMI. Your containers must also run some configuration code
      * in order to take advantage of the feature. For more information, see <a
@@ -235,9 +266,12 @@ namespace Model
     inline const Aws::String& GetTaskRoleArn() const{ return m_taskRoleArn; }
 
     /**
-     * <p>The ARN of the IAM role that containers in this task can assume. All
-     * containers in this task are granted the permissions that are specified in this
-     * role.</p> <p>IAM roles for tasks on Windows require that the
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that grants containers in the task permission to call AWS APIs on your
+     * behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
+     * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
      * <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon
      * ECS-optimized Windows AMI. Your containers must also run some configuration code
      * in order to take advantage of the feature. For more information, see <a
@@ -248,9 +282,12 @@ namespace Model
     inline bool TaskRoleArnHasBeenSet() const { return m_taskRoleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM role that containers in this task can assume. All
-     * containers in this task are granted the permissions that are specified in this
-     * role.</p> <p>IAM roles for tasks on Windows require that the
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that grants containers in the task permission to call AWS APIs on your
+     * behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
+     * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
      * <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon
      * ECS-optimized Windows AMI. Your containers must also run some configuration code
      * in order to take advantage of the feature. For more information, see <a
@@ -261,9 +298,12 @@ namespace Model
     inline void SetTaskRoleArn(const Aws::String& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
 
     /**
-     * <p>The ARN of the IAM role that containers in this task can assume. All
-     * containers in this task are granted the permissions that are specified in this
-     * role.</p> <p>IAM roles for tasks on Windows require that the
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that grants containers in the task permission to call AWS APIs on your
+     * behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
+     * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
      * <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon
      * ECS-optimized Windows AMI. Your containers must also run some configuration code
      * in order to take advantage of the feature. For more information, see <a
@@ -274,9 +314,12 @@ namespace Model
     inline void SetTaskRoleArn(Aws::String&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM role that containers in this task can assume. All
-     * containers in this task are granted the permissions that are specified in this
-     * role.</p> <p>IAM roles for tasks on Windows require that the
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that grants containers in the task permission to call AWS APIs on your
+     * behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
+     * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
      * <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon
      * ECS-optimized Windows AMI. Your containers must also run some configuration code
      * in order to take advantage of the feature. For more information, see <a
@@ -287,9 +330,12 @@ namespace Model
     inline void SetTaskRoleArn(const char* value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM role that containers in this task can assume. All
-     * containers in this task are granted the permissions that are specified in this
-     * role.</p> <p>IAM roles for tasks on Windows require that the
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that grants containers in the task permission to call AWS APIs on your
+     * behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
+     * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
      * <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon
      * ECS-optimized Windows AMI. Your containers must also run some configuration code
      * in order to take advantage of the feature. For more information, see <a
@@ -300,9 +346,12 @@ namespace Model
     inline TaskDefinition& WithTaskRoleArn(const Aws::String& value) { SetTaskRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that containers in this task can assume. All
-     * containers in this task are granted the permissions that are specified in this
-     * role.</p> <p>IAM roles for tasks on Windows require that the
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that grants containers in the task permission to call AWS APIs on your
+     * behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
+     * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
      * <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon
      * ECS-optimized Windows AMI. Your containers must also run some configuration code
      * in order to take advantage of the feature. For more information, see <a
@@ -313,9 +362,12 @@ namespace Model
     inline TaskDefinition& WithTaskRoleArn(Aws::String&& value) { SetTaskRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that containers in this task can assume. All
-     * containers in this task are granted the permissions that are specified in this
-     * role.</p> <p>IAM roles for tasks on Windows require that the
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that grants containers in the task permission to call AWS APIs on your
+     * behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
+     * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
      * <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon
      * ECS-optimized Windows AMI. Your containers must also run some configuration code
      * in order to take advantage of the feature. For more information, see <a
@@ -327,50 +379,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that containers in
+     * this task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that containers in
+     * this task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.</p>
      */
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that containers in
+     * this task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.</p>
      */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that containers in
+     * this task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.</p>
      */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that containers in
+     * this task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.</p>
      */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that containers in
+     * this task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.</p>
      */
     inline TaskDefinition& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that containers in
+     * this task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.</p>
      */
     inline TaskDefinition& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that containers in
+     * this task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.</p>
      */
     inline TaskDefinition& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
 
@@ -395,7 +455,7 @@ namespace Model
      * network interface, and you must specify a <a>NetworkConfiguration</a> value when
      * you create a service or run a task with the task definition. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
      * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
@@ -432,7 +492,7 @@ namespace Model
      * network interface, and you must specify a <a>NetworkConfiguration</a> value when
      * you create a service or run a task with the task definition. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
      * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
@@ -469,7 +529,7 @@ namespace Model
      * network interface, and you must specify a <a>NetworkConfiguration</a> value when
      * you create a service or run a task with the task definition. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
      * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
@@ -506,7 +566,7 @@ namespace Model
      * network interface, and you must specify a <a>NetworkConfiguration</a> value when
      * you create a service or run a task with the task definition. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
      * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
@@ -543,7 +603,7 @@ namespace Model
      * network interface, and you must specify a <a>NetworkConfiguration</a> value when
      * you create a service or run a task with the task definition. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
      * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
@@ -580,7 +640,7 @@ namespace Model
      * network interface, and you must specify a <a>NetworkConfiguration</a> value when
      * you create a service or run a task with the task definition. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
      * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
@@ -640,10 +700,10 @@ namespace Model
 
 
     /**
-     * <p>The list of volumes in a task.</p> <p>If you are using the Fargate launch
-     * type, the <code>host</code> and <code>sourcePath</code> parameters are not
-     * supported.</p> <p>For more information about volume definition parameters and
-     * defaults, see <a
+     * <p>The list of volume definitions for the task.</p> <p>If your tasks are using
+     * the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
+     * parameters are not supported.</p> <p>For more information about volume
+     * definition parameters and defaults, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -651,10 +711,10 @@ namespace Model
     inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
 
     /**
-     * <p>The list of volumes in a task.</p> <p>If you are using the Fargate launch
-     * type, the <code>host</code> and <code>sourcePath</code> parameters are not
-     * supported.</p> <p>For more information about volume definition parameters and
-     * defaults, see <a
+     * <p>The list of volume definitions for the task.</p> <p>If your tasks are using
+     * the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
+     * parameters are not supported.</p> <p>For more information about volume
+     * definition parameters and defaults, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -662,10 +722,10 @@ namespace Model
     inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
 
     /**
-     * <p>The list of volumes in a task.</p> <p>If you are using the Fargate launch
-     * type, the <code>host</code> and <code>sourcePath</code> parameters are not
-     * supported.</p> <p>For more information about volume definition parameters and
-     * defaults, see <a
+     * <p>The list of volume definitions for the task.</p> <p>If your tasks are using
+     * the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
+     * parameters are not supported.</p> <p>For more information about volume
+     * definition parameters and defaults, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -673,10 +733,10 @@ namespace Model
     inline void SetVolumes(const Aws::Vector<Volume>& value) { m_volumesHasBeenSet = true; m_volumes = value; }
 
     /**
-     * <p>The list of volumes in a task.</p> <p>If you are using the Fargate launch
-     * type, the <code>host</code> and <code>sourcePath</code> parameters are not
-     * supported.</p> <p>For more information about volume definition parameters and
-     * defaults, see <a
+     * <p>The list of volume definitions for the task.</p> <p>If your tasks are using
+     * the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
+     * parameters are not supported.</p> <p>For more information about volume
+     * definition parameters and defaults, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -684,10 +744,10 @@ namespace Model
     inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumesHasBeenSet = true; m_volumes = std::move(value); }
 
     /**
-     * <p>The list of volumes in a task.</p> <p>If you are using the Fargate launch
-     * type, the <code>host</code> and <code>sourcePath</code> parameters are not
-     * supported.</p> <p>For more information about volume definition parameters and
-     * defaults, see <a
+     * <p>The list of volume definitions for the task.</p> <p>If your tasks are using
+     * the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
+     * parameters are not supported.</p> <p>For more information about volume
+     * definition parameters and defaults, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -695,10 +755,10 @@ namespace Model
     inline TaskDefinition& WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
 
     /**
-     * <p>The list of volumes in a task.</p> <p>If you are using the Fargate launch
-     * type, the <code>host</code> and <code>sourcePath</code> parameters are not
-     * supported.</p> <p>For more information about volume definition parameters and
-     * defaults, see <a
+     * <p>The list of volume definitions for the task.</p> <p>If your tasks are using
+     * the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
+     * parameters are not supported.</p> <p>For more information about volume
+     * definition parameters and defaults, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -706,10 +766,10 @@ namespace Model
     inline TaskDefinition& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(std::move(value)); return *this;}
 
     /**
-     * <p>The list of volumes in a task.</p> <p>If you are using the Fargate launch
-     * type, the <code>host</code> and <code>sourcePath</code> parameters are not
-     * supported.</p> <p>For more information about volume definition parameters and
-     * defaults, see <a
+     * <p>The list of volume definitions for the task.</p> <p>If your tasks are using
+     * the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
+     * parameters are not supported.</p> <p>For more information about volume
+     * definition parameters and defaults, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -717,10 +777,10 @@ namespace Model
     inline TaskDefinition& AddVolumes(const Volume& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
 
     /**
-     * <p>The list of volumes in a task.</p> <p>If you are using the Fargate launch
-     * type, the <code>host</code> and <code>sourcePath</code> parameters are not
-     * supported.</p> <p>For more information about volume definition parameters and
-     * defaults, see <a
+     * <p>The list of volume definitions for the task.</p> <p>If your tasks are using
+     * the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
+     * parameters are not supported.</p> <p>For more information about volume
+     * definition parameters and defaults, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -923,42 +983,58 @@ namespace Model
 
 
     /**
-     * <p>The launch type that the task is using.</p>
+     * <p>The launch type the task requires. If no value is specified, it will default
+     * to <code>EC2</code>. Valid values include <code>EC2</code> and
+     * <code>FARGATE</code>.</p>
      */
     inline const Aws::Vector<Compatibility>& GetRequiresCompatibilities() const{ return m_requiresCompatibilities; }
 
     /**
-     * <p>The launch type that the task is using.</p>
+     * <p>The launch type the task requires. If no value is specified, it will default
+     * to <code>EC2</code>. Valid values include <code>EC2</code> and
+     * <code>FARGATE</code>.</p>
      */
     inline bool RequiresCompatibilitiesHasBeenSet() const { return m_requiresCompatibilitiesHasBeenSet; }
 
     /**
-     * <p>The launch type that the task is using.</p>
+     * <p>The launch type the task requires. If no value is specified, it will default
+     * to <code>EC2</code>. Valid values include <code>EC2</code> and
+     * <code>FARGATE</code>.</p>
      */
     inline void SetRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = value; }
 
     /**
-     * <p>The launch type that the task is using.</p>
+     * <p>The launch type the task requires. If no value is specified, it will default
+     * to <code>EC2</code>. Valid values include <code>EC2</code> and
+     * <code>FARGATE</code>.</p>
      */
     inline void SetRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = std::move(value); }
 
     /**
-     * <p>The launch type that the task is using.</p>
+     * <p>The launch type the task requires. If no value is specified, it will default
+     * to <code>EC2</code>. Valid values include <code>EC2</code> and
+     * <code>FARGATE</code>.</p>
      */
     inline TaskDefinition& WithRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { SetRequiresCompatibilities(value); return *this;}
 
     /**
-     * <p>The launch type that the task is using.</p>
+     * <p>The launch type the task requires. If no value is specified, it will default
+     * to <code>EC2</code>. Valid values include <code>EC2</code> and
+     * <code>FARGATE</code>.</p>
      */
     inline TaskDefinition& WithRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { SetRequiresCompatibilities(std::move(value)); return *this;}
 
     /**
-     * <p>The launch type that the task is using.</p>
+     * <p>The launch type the task requires. If no value is specified, it will default
+     * to <code>EC2</code>. Valid values include <code>EC2</code> and
+     * <code>FARGATE</code>.</p>
      */
     inline TaskDefinition& AddRequiresCompatibilities(const Compatibility& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(value); return *this; }
 
     /**
-     * <p>The launch type that the task is using.</p>
+     * <p>The launch type the task requires. If no value is specified, it will default
+     * to <code>EC2</code>. Valid values include <code>EC2</code> and
+     * <code>FARGATE</code>.</p>
      */
     inline TaskDefinition& AddRequiresCompatibilities(Compatibility&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(std::move(value)); return *this; }
 
@@ -1374,7 +1450,7 @@ namespace Model
      * security</a>.</p> <p>If you are setting namespaced kernel parameters using
      * <code>systemControls</code> for the containers in the task, the following will
      * apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      * <ul> <li> <p>For tasks that use the <code>host</code> IPC mode, IPC namespace
      * related <code>systemControls</code> are not supported.</p> </li> <li> <p>For
@@ -1405,7 +1481,7 @@ namespace Model
      * security</a>.</p> <p>If you are setting namespaced kernel parameters using
      * <code>systemControls</code> for the containers in the task, the following will
      * apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      * <ul> <li> <p>For tasks that use the <code>host</code> IPC mode, IPC namespace
      * related <code>systemControls</code> are not supported.</p> </li> <li> <p>For
@@ -1436,7 +1512,7 @@ namespace Model
      * security</a>.</p> <p>If you are setting namespaced kernel parameters using
      * <code>systemControls</code> for the containers in the task, the following will
      * apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      * <ul> <li> <p>For tasks that use the <code>host</code> IPC mode, IPC namespace
      * related <code>systemControls</code> are not supported.</p> </li> <li> <p>For
@@ -1467,7 +1543,7 @@ namespace Model
      * security</a>.</p> <p>If you are setting namespaced kernel parameters using
      * <code>systemControls</code> for the containers in the task, the following will
      * apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      * <ul> <li> <p>For tasks that use the <code>host</code> IPC mode, IPC namespace
      * related <code>systemControls</code> are not supported.</p> </li> <li> <p>For
@@ -1498,7 +1574,7 @@ namespace Model
      * security</a>.</p> <p>If you are setting namespaced kernel parameters using
      * <code>systemControls</code> for the containers in the task, the following will
      * apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      * <ul> <li> <p>For tasks that use the <code>host</code> IPC mode, IPC namespace
      * related <code>systemControls</code> are not supported.</p> </li> <li> <p>For
@@ -1529,7 +1605,7 @@ namespace Model
      * security</a>.</p> <p>If you are setting namespaced kernel parameters using
      * <code>systemControls</code> for the containers in the task, the following will
      * apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      * <ul> <li> <p>For tasks that use the <code>host</code> IPC mode, IPC namespace
      * related <code>systemControls</code> are not supported.</p> </li> <li> <p>For
@@ -1549,7 +1625,7 @@ namespace Model
      * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
      * required versions of the container agent and <code>ecs-init</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -1563,7 +1639,7 @@ namespace Model
      * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
      * required versions of the container agent and <code>ecs-init</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -1577,7 +1653,7 @@ namespace Model
      * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
      * required versions of the container agent and <code>ecs-init</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -1591,7 +1667,7 @@ namespace Model
      * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
      * required versions of the container agent and <code>ecs-init</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -1605,7 +1681,7 @@ namespace Model
      * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
      * required versions of the container agent and <code>ecs-init</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -1619,7 +1695,7 @@ namespace Model
      * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
      * required versions of the container agent and <code>ecs-init</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */

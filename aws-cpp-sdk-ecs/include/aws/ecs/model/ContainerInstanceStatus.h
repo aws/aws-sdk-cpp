@@ -27,7 +27,10 @@ namespace Model
   {
     NOT_SET,
     ACTIVE,
-    DRAINING
+    DRAINING,
+    REGISTERING,
+    DEREGISTERING,
+    REGISTRATION_FAILED
   };
 
 namespace ContainerInstanceStatusMapper

@@ -52,10 +52,10 @@ namespace Model
      * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
      * similar to the following example:</p> <p> <code>--target
      * Id=123456789012,Type=ACCOUNT</code> </p> <p>If you specify <code>"Type":
-     * "ACCOUNT"</code>, then you must provide the AWS account ID number as the
-     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must
-     * specify the email address that is associated with the account.</p> <p>
-     * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
+     * "ACCOUNT"</code>, you must provide the AWS account ID number as the
+     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify
+     * the email address that is associated with the account.</p> <p> <code>--target
+     * Id=diego@example.com,Type=EMAIL</code> </p>
      */
     inline const HandshakeParty& GetTarget() const{ return m_target; }
 
@@ -66,10 +66,10 @@ namespace Model
      * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
      * similar to the following example:</p> <p> <code>--target
      * Id=123456789012,Type=ACCOUNT</code> </p> <p>If you specify <code>"Type":
-     * "ACCOUNT"</code>, then you must provide the AWS account ID number as the
-     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must
-     * specify the email address that is associated with the account.</p> <p>
-     * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
+     * "ACCOUNT"</code>, you must provide the AWS account ID number as the
+     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify
+     * the email address that is associated with the account.</p> <p> <code>--target
+     * Id=diego@example.com,Type=EMAIL</code> </p>
      */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
@@ -80,10 +80,10 @@ namespace Model
      * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
      * similar to the following example:</p> <p> <code>--target
      * Id=123456789012,Type=ACCOUNT</code> </p> <p>If you specify <code>"Type":
-     * "ACCOUNT"</code>, then you must provide the AWS account ID number as the
-     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must
-     * specify the email address that is associated with the account.</p> <p>
-     * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
+     * "ACCOUNT"</code>, you must provide the AWS account ID number as the
+     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify
+     * the email address that is associated with the account.</p> <p> <code>--target
+     * Id=diego@example.com,Type=EMAIL</code> </p>
      */
     inline void SetTarget(const HandshakeParty& value) { m_targetHasBeenSet = true; m_target = value; }
 
@@ -94,10 +94,10 @@ namespace Model
      * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
      * similar to the following example:</p> <p> <code>--target
      * Id=123456789012,Type=ACCOUNT</code> </p> <p>If you specify <code>"Type":
-     * "ACCOUNT"</code>, then you must provide the AWS account ID number as the
-     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must
-     * specify the email address that is associated with the account.</p> <p>
-     * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
+     * "ACCOUNT"</code>, you must provide the AWS account ID number as the
+     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify
+     * the email address that is associated with the account.</p> <p> <code>--target
+     * Id=diego@example.com,Type=EMAIL</code> </p>
      */
     inline void SetTarget(HandshakeParty&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
@@ -108,10 +108,10 @@ namespace Model
      * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
      * similar to the following example:</p> <p> <code>--target
      * Id=123456789012,Type=ACCOUNT</code> </p> <p>If you specify <code>"Type":
-     * "ACCOUNT"</code>, then you must provide the AWS account ID number as the
-     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must
-     * specify the email address that is associated with the account.</p> <p>
-     * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
+     * "ACCOUNT"</code>, you must provide the AWS account ID number as the
+     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify
+     * the email address that is associated with the account.</p> <p> <code>--target
+     * Id=diego@example.com,Type=EMAIL</code> </p>
      */
     inline InviteAccountToOrganizationRequest& WithTarget(const HandshakeParty& value) { SetTarget(value); return *this;}
 
@@ -122,10 +122,10 @@ namespace Model
      * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
      * similar to the following example:</p> <p> <code>--target
      * Id=123456789012,Type=ACCOUNT</code> </p> <p>If you specify <code>"Type":
-     * "ACCOUNT"</code>, then you must provide the AWS account ID number as the
-     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must
-     * specify the email address that is associated with the account.</p> <p>
-     * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
+     * "ACCOUNT"</code>, you must provide the AWS account ID number as the
+     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify
+     * the email address that is associated with the account.</p> <p> <code>--target
+     * Id=diego@example.com,Type=EMAIL</code> </p>
      */
     inline InviteAccountToOrganizationRequest& WithTarget(HandshakeParty&& value) { SetTarget(std::move(value)); return *this;}
 

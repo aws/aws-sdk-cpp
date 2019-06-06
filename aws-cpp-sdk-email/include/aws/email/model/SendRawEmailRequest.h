@@ -32,7 +32,7 @@ namespace Model
   /**
    * <p>Represents a request to send a single raw email using Amazon SES. For more
    * information, see the <a
-   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmailRequest">AWS
    * API Reference</a></p>
@@ -311,13 +311,13 @@ namespace Model
      * message must be formatted properly.</p> </li> <li> <p>Attachments must be of a
      * content type that Amazon SES supports. For a list on unsupported content types,
      * see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported
      * Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p> </li> <li>
      * <p>The entire message must be base64-encoded.</p> </li> <li> <p>If any of the
      * MIME parts in your message contain content that is outside of the 7-bit ASCII
      * character range, we highly recommend that you encode that content. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending
      * Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p> </li> <li> <p>Per <a
      * href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the
      * maximum length of each line of text, including the &lt;CRLF&gt;, must not exceed
@@ -333,13 +333,13 @@ namespace Model
      * message must be formatted properly.</p> </li> <li> <p>Attachments must be of a
      * content type that Amazon SES supports. For a list on unsupported content types,
      * see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported
      * Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p> </li> <li>
      * <p>The entire message must be base64-encoded.</p> </li> <li> <p>If any of the
      * MIME parts in your message contain content that is outside of the 7-bit ASCII
      * character range, we highly recommend that you encode that content. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending
      * Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p> </li> <li> <p>Per <a
      * href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the
      * maximum length of each line of text, including the &lt;CRLF&gt;, must not exceed
@@ -355,13 +355,13 @@ namespace Model
      * message must be formatted properly.</p> </li> <li> <p>Attachments must be of a
      * content type that Amazon SES supports. For a list on unsupported content types,
      * see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported
      * Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p> </li> <li>
      * <p>The entire message must be base64-encoded.</p> </li> <li> <p>If any of the
      * MIME parts in your message contain content that is outside of the 7-bit ASCII
      * character range, we highly recommend that you encode that content. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending
      * Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p> </li> <li> <p>Per <a
      * href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the
      * maximum length of each line of text, including the &lt;CRLF&gt;, must not exceed
@@ -377,13 +377,13 @@ namespace Model
      * message must be formatted properly.</p> </li> <li> <p>Attachments must be of a
      * content type that Amazon SES supports. For a list on unsupported content types,
      * see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported
      * Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p> </li> <li>
      * <p>The entire message must be base64-encoded.</p> </li> <li> <p>If any of the
      * MIME parts in your message contain content that is outside of the 7-bit ASCII
      * character range, we highly recommend that you encode that content. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending
      * Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p> </li> <li> <p>Per <a
      * href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the
      * maximum length of each line of text, including the &lt;CRLF&gt;, must not exceed
@@ -399,13 +399,13 @@ namespace Model
      * message must be formatted properly.</p> </li> <li> <p>Attachments must be of a
      * content type that Amazon SES supports. For a list on unsupported content types,
      * see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported
      * Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p> </li> <li>
      * <p>The entire message must be base64-encoded.</p> </li> <li> <p>If any of the
      * MIME parts in your message contain content that is outside of the 7-bit ASCII
      * character range, we highly recommend that you encode that content. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending
      * Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p> </li> <li> <p>Per <a
      * href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the
      * maximum length of each line of text, including the &lt;CRLF&gt;, must not exceed
@@ -421,13 +421,13 @@ namespace Model
      * message must be formatted properly.</p> </li> <li> <p>Attachments must be of a
      * content type that Amazon SES supports. For a list on unsupported content types,
      * see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported
      * Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p> </li> <li>
      * <p>The entire message must be base64-encoded.</p> </li> <li> <p>If any of the
      * MIME parts in your message contain content that is outside of the 7-bit ASCII
      * character range, we highly recommend that you encode that content. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending
      * Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p> </li> <li> <p>Per <a
      * href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the
      * maximum length of each line of text, including the &lt;CRLF&gt;, must not exceed
@@ -446,7 +446,7 @@ namespace Model
      * the value of the <code>FromArn</code> parameter.</p> <note> <p>For information
      * about when to use this parameter, see the description of
      * <code>SendRawEmail</code> in this guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline const Aws::String& GetFromArn() const{ return m_fromArn; }
@@ -461,7 +461,7 @@ namespace Model
      * the value of the <code>FromArn</code> parameter.</p> <note> <p>For information
      * about when to use this parameter, see the description of
      * <code>SendRawEmail</code> in this guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline bool FromArnHasBeenSet() const { return m_fromArnHasBeenSet; }
@@ -476,7 +476,7 @@ namespace Model
      * the value of the <code>FromArn</code> parameter.</p> <note> <p>For information
      * about when to use this parameter, see the description of
      * <code>SendRawEmail</code> in this guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline void SetFromArn(const Aws::String& value) { m_fromArnHasBeenSet = true; m_fromArn = value; }
@@ -491,7 +491,7 @@ namespace Model
      * the value of the <code>FromArn</code> parameter.</p> <note> <p>For information
      * about when to use this parameter, see the description of
      * <code>SendRawEmail</code> in this guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline void SetFromArn(Aws::String&& value) { m_fromArnHasBeenSet = true; m_fromArn = std::move(value); }
@@ -506,7 +506,7 @@ namespace Model
      * the value of the <code>FromArn</code> parameter.</p> <note> <p>For information
      * about when to use this parameter, see the description of
      * <code>SendRawEmail</code> in this guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline void SetFromArn(const char* value) { m_fromArnHasBeenSet = true; m_fromArn.assign(value); }
@@ -521,7 +521,7 @@ namespace Model
      * the value of the <code>FromArn</code> parameter.</p> <note> <p>For information
      * about when to use this parameter, see the description of
      * <code>SendRawEmail</code> in this guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline SendRawEmailRequest& WithFromArn(const Aws::String& value) { SetFromArn(value); return *this;}
@@ -536,7 +536,7 @@ namespace Model
      * the value of the <code>FromArn</code> parameter.</p> <note> <p>For information
      * about when to use this parameter, see the description of
      * <code>SendRawEmail</code> in this guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline SendRawEmailRequest& WithFromArn(Aws::String&& value) { SetFromArn(std::move(value)); return *this;}
@@ -551,7 +551,7 @@ namespace Model
      * the value of the <code>FromArn</code> parameter.</p> <note> <p>For information
      * about when to use this parameter, see the description of
      * <code>SendRawEmail</code> in this guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline SendRawEmailRequest& WithFromArn(const char* value) { SetFromArn(value); return *this;}
@@ -573,7 +573,7 @@ namespace Model
      * <code>SourceArn</code> parameter.</p> <note> <p>For information about when to
      * use this parameter, see the description of <code>SendRawEmail</code> in this
      * guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
@@ -594,7 +594,7 @@ namespace Model
      * <code>SourceArn</code> parameter.</p> <note> <p>For information about when to
      * use this parameter, see the description of <code>SendRawEmail</code> in this
      * guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
@@ -615,7 +615,7 @@ namespace Model
      * <code>SourceArn</code> parameter.</p> <note> <p>For information about when to
      * use this parameter, see the description of <code>SendRawEmail</code> in this
      * guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
@@ -636,7 +636,7 @@ namespace Model
      * <code>SourceArn</code> parameter.</p> <note> <p>For information about when to
      * use this parameter, see the description of <code>SendRawEmail</code> in this
      * guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
@@ -657,7 +657,7 @@ namespace Model
      * <code>SourceArn</code> parameter.</p> <note> <p>For information about when to
      * use this parameter, see the description of <code>SendRawEmail</code> in this
      * guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
@@ -678,7 +678,7 @@ namespace Model
      * <code>SourceArn</code> parameter.</p> <note> <p>For information about when to
      * use this parameter, see the description of <code>SendRawEmail</code> in this
      * guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline SendRawEmailRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
@@ -699,7 +699,7 @@ namespace Model
      * <code>SourceArn</code> parameter.</p> <note> <p>For information about when to
      * use this parameter, see the description of <code>SendRawEmail</code> in this
      * guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline SendRawEmailRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
@@ -720,7 +720,7 @@ namespace Model
      * <code>SourceArn</code> parameter.</p> <note> <p>For information about when to
      * use this parameter, see the description of <code>SendRawEmail</code> in this
      * guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline SendRawEmailRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
@@ -743,7 +743,7 @@ namespace Model
      * Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p>
      * <note> <p>For information about when to use this parameter, see the description
      * of <code>SendRawEmail</code> in this guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline const Aws::String& GetReturnPathArn() const{ return m_returnPathArn; }
@@ -765,7 +765,7 @@ namespace Model
      * Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p>
      * <note> <p>For information about when to use this parameter, see the description
      * of <code>SendRawEmail</code> in this guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline bool ReturnPathArnHasBeenSet() const { return m_returnPathArnHasBeenSet; }
@@ -787,7 +787,7 @@ namespace Model
      * Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p>
      * <note> <p>For information about when to use this parameter, see the description
      * of <code>SendRawEmail</code> in this guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline void SetReturnPathArn(const Aws::String& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = value; }
@@ -809,7 +809,7 @@ namespace Model
      * Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p>
      * <note> <p>For information about when to use this parameter, see the description
      * of <code>SendRawEmail</code> in this guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline void SetReturnPathArn(Aws::String&& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = std::move(value); }
@@ -831,7 +831,7 @@ namespace Model
      * Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p>
      * <note> <p>For information about when to use this parameter, see the description
      * of <code>SendRawEmail</code> in this guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline void SetReturnPathArn(const char* value) { m_returnPathArnHasBeenSet = true; m_returnPathArn.assign(value); }
@@ -853,7 +853,7 @@ namespace Model
      * Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p>
      * <note> <p>For information about when to use this parameter, see the description
      * of <code>SendRawEmail</code> in this guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline SendRawEmailRequest& WithReturnPathArn(const Aws::String& value) { SetReturnPathArn(value); return *this;}
@@ -875,7 +875,7 @@ namespace Model
      * Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p>
      * <note> <p>For information about when to use this parameter, see the description
      * of <code>SendRawEmail</code> in this guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline SendRawEmailRequest& WithReturnPathArn(Aws::String&& value) { SetReturnPathArn(std::move(value)); return *this;}
@@ -897,7 +897,7 @@ namespace Model
      * Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p>
      * <note> <p>For information about when to use this parameter, see the description
      * of <code>SendRawEmail</code> in this guide, or see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
     inline SendRawEmailRequest& WithReturnPathArn(const char* value) { SetReturnPathArn(value); return *this;}

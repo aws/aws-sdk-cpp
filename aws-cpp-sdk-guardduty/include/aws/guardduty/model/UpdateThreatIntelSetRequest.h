@@ -27,9 +27,6 @@ namespace Model
 {
 
   /**
-   * UpdateThreatIntelSet request body.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateThreatIntelSetRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_GUARDDUTY_API UpdateThreatIntelSetRequest : public GuardDutyRequest
   {
@@ -46,225 +43,225 @@ namespace Model
 
 
     /**
-     * The updated boolean value that specifies whether the ThreateIntelSet is active
-     * or not.
-     */
-    inline bool GetActivate() const{ return m_activate; }
-
-    /**
-     * The updated boolean value that specifies whether the ThreateIntelSet is active
-     * or not.
-     */
-    inline bool ActivateHasBeenSet() const { return m_activateHasBeenSet; }
-
-    /**
-     * The updated boolean value that specifies whether the ThreateIntelSet is active
-     * or not.
-     */
-    inline void SetActivate(bool value) { m_activateHasBeenSet = true; m_activate = value; }
-
-    /**
-     * The updated boolean value that specifies whether the ThreateIntelSet is active
-     * or not.
-     */
-    inline UpdateThreatIntelSetRequest& WithActivate(bool value) { SetActivate(value); return *this;}
-
-
-    /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
-     * want to update.
+     * <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
+     * want to update.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
-     * want to update.
+     * <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
+     * want to update.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
-     * want to update.
+     * <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
+     * want to update.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
-     * want to update.
+     * <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
+     * want to update.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
-     * want to update.
+     * <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
+     * want to update.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
-     * want to update.
+     * <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
+     * want to update.</p>
      */
     inline UpdateThreatIntelSetRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
-     * want to update.
+     * <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
+     * want to update.</p>
      */
     inline UpdateThreatIntelSetRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
-     * want to update.
+     * <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
+     * want to update.</p>
      */
     inline UpdateThreatIntelSetRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * The updated URI of the file that contains the ThreateIntelSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     * <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetThreatIntelSetId() const{ return m_threatIntelSetId; }
 
     /**
-     * The updated URI of the file that contains the ThreateIntelSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     * <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
      */
-    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+    inline bool ThreatIntelSetIdHasBeenSet() const { return m_threatIntelSetIdHasBeenSet; }
 
     /**
-     * The updated URI of the file that contains the ThreateIntelSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     * <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
      */
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
+    inline void SetThreatIntelSetId(const Aws::String& value) { m_threatIntelSetIdHasBeenSet = true; m_threatIntelSetId = value; }
 
     /**
-     * The updated URI of the file that contains the ThreateIntelSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     * <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
      */
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
+    inline void SetThreatIntelSetId(Aws::String&& value) { m_threatIntelSetIdHasBeenSet = true; m_threatIntelSetId = std::move(value); }
 
     /**
-     * The updated URI of the file that contains the ThreateIntelSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     * <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
      */
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
+    inline void SetThreatIntelSetId(const char* value) { m_threatIntelSetIdHasBeenSet = true; m_threatIntelSetId.assign(value); }
 
     /**
-     * The updated URI of the file that contains the ThreateIntelSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     * <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
      */
-    inline UpdateThreatIntelSetRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+    inline UpdateThreatIntelSetRequest& WithThreatIntelSetId(const Aws::String& value) { SetThreatIntelSetId(value); return *this;}
 
     /**
-     * The updated URI of the file that contains the ThreateIntelSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     * <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
      */
-    inline UpdateThreatIntelSetRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
+    inline UpdateThreatIntelSetRequest& WithThreatIntelSetId(Aws::String&& value) { SetThreatIntelSetId(std::move(value)); return *this;}
 
     /**
-     * The updated URI of the file that contains the ThreateIntelSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     * <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
      */
-    inline UpdateThreatIntelSetRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
+    inline UpdateThreatIntelSetRequest& WithThreatIntelSetId(const char* value) { SetThreatIntelSetId(value); return *this;}
 
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
      */
     inline UpdateThreatIntelSetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
      */
     inline UpdateThreatIntelSetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
      */
     inline UpdateThreatIntelSetRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>The updated URI of the file that contains the ThreateIntelSet. For example
+     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)</p>
      */
-    inline const Aws::String& GetThreatIntelSetId() const{ return m_threatIntelSetId; }
+    inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>The updated URI of the file that contains the ThreateIntelSet. For example
+     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)</p>
      */
-    inline bool ThreatIntelSetIdHasBeenSet() const { return m_threatIntelSetIdHasBeenSet; }
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>The updated URI of the file that contains the ThreateIntelSet. For example
+     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)</p>
      */
-    inline void SetThreatIntelSetId(const Aws::String& value) { m_threatIntelSetIdHasBeenSet = true; m_threatIntelSetId = value; }
+    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>The updated URI of the file that contains the ThreateIntelSet. For example
+     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)</p>
      */
-    inline void SetThreatIntelSetId(Aws::String&& value) { m_threatIntelSetIdHasBeenSet = true; m_threatIntelSetId = std::move(value); }
+    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>The updated URI of the file that contains the ThreateIntelSet. For example
+     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)</p>
      */
-    inline void SetThreatIntelSetId(const char* value) { m_threatIntelSetIdHasBeenSet = true; m_threatIntelSetId.assign(value); }
+    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>The updated URI of the file that contains the ThreateIntelSet. For example
+     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)</p>
      */
-    inline UpdateThreatIntelSetRequest& WithThreatIntelSetId(const Aws::String& value) { SetThreatIntelSetId(value); return *this;}
+    inline UpdateThreatIntelSetRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>The updated URI of the file that contains the ThreateIntelSet. For example
+     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)</p>
      */
-    inline UpdateThreatIntelSetRequest& WithThreatIntelSetId(Aws::String&& value) { SetThreatIntelSetId(std::move(value)); return *this;}
+    inline UpdateThreatIntelSetRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>The updated URI of the file that contains the ThreateIntelSet. For example
+     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)</p>
      */
-    inline UpdateThreatIntelSetRequest& WithThreatIntelSetId(const char* value) { SetThreatIntelSetId(value); return *this;}
+    inline UpdateThreatIntelSetRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
+
+
+    /**
+     * <p>The updated boolean value that specifies whether the ThreateIntelSet is
+     * active or not.</p>
+     */
+    inline bool GetActivate() const{ return m_activate; }
+
+    /**
+     * <p>The updated boolean value that specifies whether the ThreateIntelSet is
+     * active or not.</p>
+     */
+    inline bool ActivateHasBeenSet() const { return m_activateHasBeenSet; }
+
+    /**
+     * <p>The updated boolean value that specifies whether the ThreateIntelSet is
+     * active or not.</p>
+     */
+    inline void SetActivate(bool value) { m_activateHasBeenSet = true; m_activate = value; }
+
+    /**
+     * <p>The updated boolean value that specifies whether the ThreateIntelSet is
+     * active or not.</p>
+     */
+    inline UpdateThreatIntelSetRequest& WithActivate(bool value) { SetActivate(value); return *this;}
 
   private:
-
-    bool m_activate;
-    bool m_activateHasBeenSet;
 
     Aws::String m_detectorId;
     bool m_detectorIdHasBeenSet;
 
-    Aws::String m_location;
-    bool m_locationHasBeenSet;
+    Aws::String m_threatIntelSetId;
+    bool m_threatIntelSetIdHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
 
-    Aws::String m_threatIntelSetId;
-    bool m_threatIntelSetIdHasBeenSet;
+    Aws::String m_location;
+    bool m_locationHasBeenSet;
+
+    bool m_activate;
+    bool m_activateHasBeenSet;
   };
 
 } // namespace Model

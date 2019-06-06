@@ -31,7 +31,7 @@ namespace Model
    * <p>Represents a request to update the event destination of a configuration set.
    * Configuration sets enable you to publish email sending events. For information
    * about using configuration sets, see the <a
-   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetEventDestinationRequest">AWS
    * API Reference</a></p>

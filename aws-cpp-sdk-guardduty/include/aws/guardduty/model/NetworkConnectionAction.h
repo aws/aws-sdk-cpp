@@ -36,12 +36,6 @@ namespace GuardDuty
 namespace Model
 {
 
-  /**
-   * Information about the NETWORK_CONNECTION action described in this
-   * finding.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/NetworkConnectionAction">AWS
-   * API Reference</a></p>
-   */
   class AWS_GUARDDUTY_API NetworkConnectionAction
   {
   public:
@@ -52,197 +46,197 @@ namespace Model
 
 
     /**
-     * Network connection blocked information.
+     * <p>Network connection blocked information.</p>
      */
     inline bool GetBlocked() const{ return m_blocked; }
 
     /**
-     * Network connection blocked information.
+     * <p>Network connection blocked information.</p>
      */
     inline bool BlockedHasBeenSet() const { return m_blockedHasBeenSet; }
 
     /**
-     * Network connection blocked information.
+     * <p>Network connection blocked information.</p>
      */
     inline void SetBlocked(bool value) { m_blockedHasBeenSet = true; m_blocked = value; }
 
     /**
-     * Network connection blocked information.
+     * <p>Network connection blocked information.</p>
      */
     inline NetworkConnectionAction& WithBlocked(bool value) { SetBlocked(value); return *this;}
 
 
     /**
-     * Network connection direction.
+     * <p>Network connection direction.</p>
      */
     inline const Aws::String& GetConnectionDirection() const{ return m_connectionDirection; }
 
     /**
-     * Network connection direction.
+     * <p>Network connection direction.</p>
      */
     inline bool ConnectionDirectionHasBeenSet() const { return m_connectionDirectionHasBeenSet; }
 
     /**
-     * Network connection direction.
+     * <p>Network connection direction.</p>
      */
     inline void SetConnectionDirection(const Aws::String& value) { m_connectionDirectionHasBeenSet = true; m_connectionDirection = value; }
 
     /**
-     * Network connection direction.
+     * <p>Network connection direction.</p>
      */
     inline void SetConnectionDirection(Aws::String&& value) { m_connectionDirectionHasBeenSet = true; m_connectionDirection = std::move(value); }
 
     /**
-     * Network connection direction.
+     * <p>Network connection direction.</p>
      */
     inline void SetConnectionDirection(const char* value) { m_connectionDirectionHasBeenSet = true; m_connectionDirection.assign(value); }
 
     /**
-     * Network connection direction.
+     * <p>Network connection direction.</p>
      */
     inline NetworkConnectionAction& WithConnectionDirection(const Aws::String& value) { SetConnectionDirection(value); return *this;}
 
     /**
-     * Network connection direction.
+     * <p>Network connection direction.</p>
      */
     inline NetworkConnectionAction& WithConnectionDirection(Aws::String&& value) { SetConnectionDirection(std::move(value)); return *this;}
 
     /**
-     * Network connection direction.
+     * <p>Network connection direction.</p>
      */
     inline NetworkConnectionAction& WithConnectionDirection(const char* value) { SetConnectionDirection(value); return *this;}
 
 
     /**
-     * Local port information of the connection.
+     * <p>Local port information of the connection.</p>
      */
     inline const LocalPortDetails& GetLocalPortDetails() const{ return m_localPortDetails; }
 
     /**
-     * Local port information of the connection.
+     * <p>Local port information of the connection.</p>
      */
     inline bool LocalPortDetailsHasBeenSet() const { return m_localPortDetailsHasBeenSet; }
 
     /**
-     * Local port information of the connection.
+     * <p>Local port information of the connection.</p>
      */
     inline void SetLocalPortDetails(const LocalPortDetails& value) { m_localPortDetailsHasBeenSet = true; m_localPortDetails = value; }
 
     /**
-     * Local port information of the connection.
+     * <p>Local port information of the connection.</p>
      */
     inline void SetLocalPortDetails(LocalPortDetails&& value) { m_localPortDetailsHasBeenSet = true; m_localPortDetails = std::move(value); }
 
     /**
-     * Local port information of the connection.
+     * <p>Local port information of the connection.</p>
      */
     inline NetworkConnectionAction& WithLocalPortDetails(const LocalPortDetails& value) { SetLocalPortDetails(value); return *this;}
 
     /**
-     * Local port information of the connection.
+     * <p>Local port information of the connection.</p>
      */
     inline NetworkConnectionAction& WithLocalPortDetails(LocalPortDetails&& value) { SetLocalPortDetails(std::move(value)); return *this;}
 
 
     /**
-     * Network connection protocol.
+     * <p>Network connection protocol.</p>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
 
     /**
-     * Network connection protocol.
+     * <p>Network connection protocol.</p>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
-     * Network connection protocol.
+     * <p>Network connection protocol.</p>
      */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * Network connection protocol.
+     * <p>Network connection protocol.</p>
      */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
-     * Network connection protocol.
+     * <p>Network connection protocol.</p>
      */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
 
     /**
-     * Network connection protocol.
+     * <p>Network connection protocol.</p>
      */
     inline NetworkConnectionAction& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
 
     /**
-     * Network connection protocol.
+     * <p>Network connection protocol.</p>
      */
     inline NetworkConnectionAction& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
-     * Network connection protocol.
+     * <p>Network connection protocol.</p>
      */
     inline NetworkConnectionAction& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 
 
     /**
-     * Remote IP information of the connection.
+     * <p>Remote IP information of the connection.</p>
      */
     inline const RemoteIpDetails& GetRemoteIpDetails() const{ return m_remoteIpDetails; }
 
     /**
-     * Remote IP information of the connection.
+     * <p>Remote IP information of the connection.</p>
      */
     inline bool RemoteIpDetailsHasBeenSet() const { return m_remoteIpDetailsHasBeenSet; }
 
     /**
-     * Remote IP information of the connection.
+     * <p>Remote IP information of the connection.</p>
      */
     inline void SetRemoteIpDetails(const RemoteIpDetails& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = value; }
 
     /**
-     * Remote IP information of the connection.
+     * <p>Remote IP information of the connection.</p>
      */
     inline void SetRemoteIpDetails(RemoteIpDetails&& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = std::move(value); }
 
     /**
-     * Remote IP information of the connection.
+     * <p>Remote IP information of the connection.</p>
      */
     inline NetworkConnectionAction& WithRemoteIpDetails(const RemoteIpDetails& value) { SetRemoteIpDetails(value); return *this;}
 
     /**
-     * Remote IP information of the connection.
+     * <p>Remote IP information of the connection.</p>
      */
     inline NetworkConnectionAction& WithRemoteIpDetails(RemoteIpDetails&& value) { SetRemoteIpDetails(std::move(value)); return *this;}
 
 
     /**
-     * Remote port information of the connection.
+     * <p>Remote port information of the connection.</p>
      */
     inline const RemotePortDetails& GetRemotePortDetails() const{ return m_remotePortDetails; }
 
     /**
-     * Remote port information of the connection.
+     * <p>Remote port information of the connection.</p>
      */
     inline bool RemotePortDetailsHasBeenSet() const { return m_remotePortDetailsHasBeenSet; }
 
     /**
-     * Remote port information of the connection.
+     * <p>Remote port information of the connection.</p>
      */
     inline void SetRemotePortDetails(const RemotePortDetails& value) { m_remotePortDetailsHasBeenSet = true; m_remotePortDetails = value; }
 
     /**
-     * Remote port information of the connection.
+     * <p>Remote port information of the connection.</p>
      */
     inline void SetRemotePortDetails(RemotePortDetails&& value) { m_remotePortDetailsHasBeenSet = true; m_remotePortDetails = std::move(value); }
 
     /**
-     * Remote port information of the connection.
+     * <p>Remote port information of the connection.</p>
      */
     inline NetworkConnectionAction& WithRemotePortDetails(const RemotePortDetails& value) { SetRemotePortDetails(value); return *this;}
 
     /**
-     * Remote port information of the connection.
+     * <p>Remote port information of the connection.</p>
      */
     inline NetworkConnectionAction& WithRemotePortDetails(RemotePortDetails&& value) { SetRemotePortDetails(std::move(value)); return *this;}
 

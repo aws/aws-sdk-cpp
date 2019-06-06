@@ -39,7 +39,7 @@ namespace Model
    * collection of rules that specify what Amazon SES should do with mail it receives
    * on behalf of your account's verified domains.</p> <p>For information about
    * setting up receipt rule sets, see the <a
-   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReceiptRuleSetMetadata">AWS
    * API Reference</a></p>

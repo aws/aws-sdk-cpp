@@ -173,7 +173,7 @@ namespace Model
      * Organizations User Guide</i>, and steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
-     * Guide</i>.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> that is used to validate this parameter is a string of characters
      * that can consist of uppercase letters, lowercase letters, digits with no spaces,
      * and any of the following characters: =,.@-</p>
@@ -194,7 +194,7 @@ namespace Model
      * Organizations User Guide</i>, and steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
-     * Guide</i>.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> that is used to validate this parameter is a string of characters
      * that can consist of uppercase letters, lowercase letters, digits with no spaces,
      * and any of the following characters: =,.@-</p>
@@ -215,7 +215,7 @@ namespace Model
      * Organizations User Guide</i>, and steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
-     * Guide</i>.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> that is used to validate this parameter is a string of characters
      * that can consist of uppercase letters, lowercase letters, digits with no spaces,
      * and any of the following characters: =,.@-</p>
@@ -236,7 +236,7 @@ namespace Model
      * Organizations User Guide</i>, and steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
-     * Guide</i>.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> that is used to validate this parameter is a string of characters
      * that can consist of uppercase letters, lowercase letters, digits with no spaces,
      * and any of the following characters: =,.@-</p>
@@ -257,7 +257,7 @@ namespace Model
      * Organizations User Guide</i>, and steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
-     * Guide</i>.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> that is used to validate this parameter is a string of characters
      * that can consist of uppercase letters, lowercase letters, digits with no spaces,
      * and any of the following characters: =,.@-</p>
@@ -278,7 +278,7 @@ namespace Model
      * Organizations User Guide</i>, and steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
-     * Guide</i>.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> that is used to validate this parameter is a string of characters
      * that can consist of uppercase letters, lowercase letters, digits with no spaces,
      * and any of the following characters: =,.@-</p>
@@ -299,7 +299,7 @@ namespace Model
      * Organizations User Guide</i>, and steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
-     * Guide</i>.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> that is used to validate this parameter is a string of characters
      * that can consist of uppercase letters, lowercase letters, digits with no spaces,
      * and any of the following characters: =,.@-</p>
@@ -320,7 +320,7 @@ namespace Model
      * Organizations User Guide</i>, and steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
-     * Guide</i>.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> that is used to validate this parameter is a string of characters
      * that can consist of uppercase letters, lowercase letters, digits with no spaces,
      * and any of the following characters: =,.@-</p>

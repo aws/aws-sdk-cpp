@@ -23,15 +23,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateIPSetRequest::CreateIPSetRequest() : 
-    m_activate(false),
-    m_activateHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true),
     m_detectorIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_format(IpSetFormat::NOT_SET),
     m_formatHasBeenSet(false),
     m_locationHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_activate(false),
+    m_activateHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -39,15 +39,9 @@ Aws::String CreateIPSetRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_activateHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithBool("activate", m_activate);
-
-  }
-
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("name", m_name);
 
   }
 
@@ -62,9 +56,15 @@ Aws::String CreateIPSetRequest::SerializePayload() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_activateHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithBool("activate", m_activate);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

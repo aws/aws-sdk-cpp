@@ -18,6 +18,7 @@
 #include <aws/email/model/ConfigurationSet.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/email/model/TrackingOptions.h>
+#include <aws/email/model/DeliveryOptions.h>
 #include <aws/email/model/ReputationOptions.h>
 #include <aws/email/model/ResponseMetadata.h>
 #include <aws/email/model/EventDestination.h>
@@ -43,7 +44,7 @@ namespace Model
    * <p>Represents the details of a configuration set. Configuration sets enable you
    * to publish email sending events. For information about using configuration sets,
    * see the <a
-   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeConfigurationSetResponse">AWS
    * API Reference</a></p>
@@ -154,6 +155,22 @@ namespace Model
     inline DescribeConfigurationSetResult& WithTrackingOptions(TrackingOptions&& value) { SetTrackingOptions(std::move(value)); return *this;}
 
 
+    
+    inline const DeliveryOptions& GetDeliveryOptions() const{ return m_deliveryOptions; }
+
+    
+    inline void SetDeliveryOptions(const DeliveryOptions& value) { m_deliveryOptions = value; }
+
+    
+    inline void SetDeliveryOptions(DeliveryOptions&& value) { m_deliveryOptions = std::move(value); }
+
+    
+    inline DescribeConfigurationSetResult& WithDeliveryOptions(const DeliveryOptions& value) { SetDeliveryOptions(value); return *this;}
+
+    
+    inline DescribeConfigurationSetResult& WithDeliveryOptions(DeliveryOptions&& value) { SetDeliveryOptions(std::move(value)); return *this;}
+
+
     /**
      * <p>An object that represents the reputation settings for the configuration set.
      * </p>
@@ -207,6 +224,8 @@ namespace Model
     Aws::Vector<EventDestination> m_eventDestinations;
 
     TrackingOptions m_trackingOptions;
+
+    DeliveryOptions m_deliveryOptions;
 
     ReputationOptions m_reputationOptions;
 

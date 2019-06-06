@@ -37,11 +37,6 @@ namespace GuardDuty
 namespace Model
 {
 
-  /**
-   * Information about the activity described in a finding.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Action">AWS
-   * API Reference</a></p>
-   */
   class AWS_GUARDDUTY_API Action
   {
   public:
@@ -52,166 +47,172 @@ namespace Model
 
 
     /**
-     * GuardDuty Finding activity type.
+     * <p>GuardDuty Finding activity type.</p>
      */
     inline const Aws::String& GetActionType() const{ return m_actionType; }
 
     /**
-     * GuardDuty Finding activity type.
+     * <p>GuardDuty Finding activity type.</p>
      */
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
 
     /**
-     * GuardDuty Finding activity type.
+     * <p>GuardDuty Finding activity type.</p>
      */
     inline void SetActionType(const Aws::String& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
 
     /**
-     * GuardDuty Finding activity type.
+     * <p>GuardDuty Finding activity type.</p>
      */
     inline void SetActionType(Aws::String&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
 
     /**
-     * GuardDuty Finding activity type.
+     * <p>GuardDuty Finding activity type.</p>
      */
     inline void SetActionType(const char* value) { m_actionTypeHasBeenSet = true; m_actionType.assign(value); }
 
     /**
-     * GuardDuty Finding activity type.
+     * <p>GuardDuty Finding activity type.</p>
      */
     inline Action& WithActionType(const Aws::String& value) { SetActionType(value); return *this;}
 
     /**
-     * GuardDuty Finding activity type.
+     * <p>GuardDuty Finding activity type.</p>
      */
     inline Action& WithActionType(Aws::String&& value) { SetActionType(std::move(value)); return *this;}
 
     /**
-     * GuardDuty Finding activity type.
+     * <p>GuardDuty Finding activity type.</p>
      */
     inline Action& WithActionType(const char* value) { SetActionType(value); return *this;}
 
 
     /**
-     * Information about the AWS_API_CALL action described in this finding.
+     * <p>Information about the AWS_API_CALL action described in this finding.</p>
      */
     inline const AwsApiCallAction& GetAwsApiCallAction() const{ return m_awsApiCallAction; }
 
     /**
-     * Information about the AWS_API_CALL action described in this finding.
+     * <p>Information about the AWS_API_CALL action described in this finding.</p>
      */
     inline bool AwsApiCallActionHasBeenSet() const { return m_awsApiCallActionHasBeenSet; }
 
     /**
-     * Information about the AWS_API_CALL action described in this finding.
+     * <p>Information about the AWS_API_CALL action described in this finding.</p>
      */
     inline void SetAwsApiCallAction(const AwsApiCallAction& value) { m_awsApiCallActionHasBeenSet = true; m_awsApiCallAction = value; }
 
     /**
-     * Information about the AWS_API_CALL action described in this finding.
+     * <p>Information about the AWS_API_CALL action described in this finding.</p>
      */
     inline void SetAwsApiCallAction(AwsApiCallAction&& value) { m_awsApiCallActionHasBeenSet = true; m_awsApiCallAction = std::move(value); }
 
     /**
-     * Information about the AWS_API_CALL action described in this finding.
+     * <p>Information about the AWS_API_CALL action described in this finding.</p>
      */
     inline Action& WithAwsApiCallAction(const AwsApiCallAction& value) { SetAwsApiCallAction(value); return *this;}
 
     /**
-     * Information about the AWS_API_CALL action described in this finding.
+     * <p>Information about the AWS_API_CALL action described in this finding.</p>
      */
     inline Action& WithAwsApiCallAction(AwsApiCallAction&& value) { SetAwsApiCallAction(std::move(value)); return *this;}
 
 
     /**
-     * Information about the DNS_REQUEST action described in this finding.
+     * <p>Information about the DNS_REQUEST action described in this finding.</p>
      */
     inline const DnsRequestAction& GetDnsRequestAction() const{ return m_dnsRequestAction; }
 
     /**
-     * Information about the DNS_REQUEST action described in this finding.
+     * <p>Information about the DNS_REQUEST action described in this finding.</p>
      */
     inline bool DnsRequestActionHasBeenSet() const { return m_dnsRequestActionHasBeenSet; }
 
     /**
-     * Information about the DNS_REQUEST action described in this finding.
+     * <p>Information about the DNS_REQUEST action described in this finding.</p>
      */
     inline void SetDnsRequestAction(const DnsRequestAction& value) { m_dnsRequestActionHasBeenSet = true; m_dnsRequestAction = value; }
 
     /**
-     * Information about the DNS_REQUEST action described in this finding.
+     * <p>Information about the DNS_REQUEST action described in this finding.</p>
      */
     inline void SetDnsRequestAction(DnsRequestAction&& value) { m_dnsRequestActionHasBeenSet = true; m_dnsRequestAction = std::move(value); }
 
     /**
-     * Information about the DNS_REQUEST action described in this finding.
+     * <p>Information about the DNS_REQUEST action described in this finding.</p>
      */
     inline Action& WithDnsRequestAction(const DnsRequestAction& value) { SetDnsRequestAction(value); return *this;}
 
     /**
-     * Information about the DNS_REQUEST action described in this finding.
+     * <p>Information about the DNS_REQUEST action described in this finding.</p>
      */
     inline Action& WithDnsRequestAction(DnsRequestAction&& value) { SetDnsRequestAction(std::move(value)); return *this;}
 
 
     /**
-     * Information about the NETWORK_CONNECTION action described in this finding.
+     * <p>Information about the NETWORK_CONNECTION action described in this
+     * finding.</p>
      */
     inline const NetworkConnectionAction& GetNetworkConnectionAction() const{ return m_networkConnectionAction; }
 
     /**
-     * Information about the NETWORK_CONNECTION action described in this finding.
+     * <p>Information about the NETWORK_CONNECTION action described in this
+     * finding.</p>
      */
     inline bool NetworkConnectionActionHasBeenSet() const { return m_networkConnectionActionHasBeenSet; }
 
     /**
-     * Information about the NETWORK_CONNECTION action described in this finding.
+     * <p>Information about the NETWORK_CONNECTION action described in this
+     * finding.</p>
      */
     inline void SetNetworkConnectionAction(const NetworkConnectionAction& value) { m_networkConnectionActionHasBeenSet = true; m_networkConnectionAction = value; }
 
     /**
-     * Information about the NETWORK_CONNECTION action described in this finding.
+     * <p>Information about the NETWORK_CONNECTION action described in this
+     * finding.</p>
      */
     inline void SetNetworkConnectionAction(NetworkConnectionAction&& value) { m_networkConnectionActionHasBeenSet = true; m_networkConnectionAction = std::move(value); }
 
     /**
-     * Information about the NETWORK_CONNECTION action described in this finding.
+     * <p>Information about the NETWORK_CONNECTION action described in this
+     * finding.</p>
      */
     inline Action& WithNetworkConnectionAction(const NetworkConnectionAction& value) { SetNetworkConnectionAction(value); return *this;}
 
     /**
-     * Information about the NETWORK_CONNECTION action described in this finding.
+     * <p>Information about the NETWORK_CONNECTION action described in this
+     * finding.</p>
      */
     inline Action& WithNetworkConnectionAction(NetworkConnectionAction&& value) { SetNetworkConnectionAction(std::move(value)); return *this;}
 
 
     /**
-     * Information about the PORT_PROBE action described in this finding.
+     * <p>Information about the PORT_PROBE action described in this finding.</p>
      */
     inline const PortProbeAction& GetPortProbeAction() const{ return m_portProbeAction; }
 
     /**
-     * Information about the PORT_PROBE action described in this finding.
+     * <p>Information about the PORT_PROBE action described in this finding.</p>
      */
     inline bool PortProbeActionHasBeenSet() const { return m_portProbeActionHasBeenSet; }
 
     /**
-     * Information about the PORT_PROBE action described in this finding.
+     * <p>Information about the PORT_PROBE action described in this finding.</p>
      */
     inline void SetPortProbeAction(const PortProbeAction& value) { m_portProbeActionHasBeenSet = true; m_portProbeAction = value; }
 
     /**
-     * Information about the PORT_PROBE action described in this finding.
+     * <p>Information about the PORT_PROBE action described in this finding.</p>
      */
     inline void SetPortProbeAction(PortProbeAction&& value) { m_portProbeActionHasBeenSet = true; m_portProbeAction = std::move(value); }
 
     /**
-     * Information about the PORT_PROBE action described in this finding.
+     * <p>Information about the PORT_PROBE action described in this finding.</p>
      */
     inline Action& WithPortProbeAction(const PortProbeAction& value) { SetPortProbeAction(value); return *this;}
 
     /**
-     * Information about the PORT_PROBE action described in this finding.
+     * <p>Information about the PORT_PROBE action described in this finding.</p>
      */
     inline Action& WithPortProbeAction(PortProbeAction&& value) { SetPortProbeAction(std::move(value)); return *this;}
 

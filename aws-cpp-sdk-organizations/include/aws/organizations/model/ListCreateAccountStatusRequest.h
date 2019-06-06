@@ -48,49 +48,49 @@ namespace Model
 
     /**
      * <p>A list of one or more states that you want included in the response. If this
-     * parameter is not present, then all requests are included in the response.</p>
+     * parameter isn't present, all requests are included in the response.</p>
      */
     inline const Aws::Vector<CreateAccountState>& GetStates() const{ return m_states; }
 
     /**
      * <p>A list of one or more states that you want included in the response. If this
-     * parameter is not present, then all requests are included in the response.</p>
+     * parameter isn't present, all requests are included in the response.</p>
      */
     inline bool StatesHasBeenSet() const { return m_statesHasBeenSet; }
 
     /**
      * <p>A list of one or more states that you want included in the response. If this
-     * parameter is not present, then all requests are included in the response.</p>
+     * parameter isn't present, all requests are included in the response.</p>
      */
     inline void SetStates(const Aws::Vector<CreateAccountState>& value) { m_statesHasBeenSet = true; m_states = value; }
 
     /**
      * <p>A list of one or more states that you want included in the response. If this
-     * parameter is not present, then all requests are included in the response.</p>
+     * parameter isn't present, all requests are included in the response.</p>
      */
     inline void SetStates(Aws::Vector<CreateAccountState>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
 
     /**
      * <p>A list of one or more states that you want included in the response. If this
-     * parameter is not present, then all requests are included in the response.</p>
+     * parameter isn't present, all requests are included in the response.</p>
      */
     inline ListCreateAccountStatusRequest& WithStates(const Aws::Vector<CreateAccountState>& value) { SetStates(value); return *this;}
 
     /**
      * <p>A list of one or more states that you want included in the response. If this
-     * parameter is not present, then all requests are included in the response.</p>
+     * parameter isn't present, all requests are included in the response.</p>
      */
     inline ListCreateAccountStatusRequest& WithStates(Aws::Vector<CreateAccountState>&& value) { SetStates(std::move(value)); return *this;}
 
     /**
      * <p>A list of one or more states that you want included in the response. If this
-     * parameter is not present, then all requests are included in the response.</p>
+     * parameter isn't present, all requests are included in the response.</p>
      */
     inline ListCreateAccountStatusRequest& AddStates(const CreateAccountState& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
 
     /**
      * <p>A list of one or more states that you want included in the response. If this
-     * parameter is not present, then all requests are included in the response.</p>
+     * parameter isn't present, all requests are included in the response.</p>
      */
     inline ListCreateAccountStatusRequest& AddStates(CreateAccountState&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
 

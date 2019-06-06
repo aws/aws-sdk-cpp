@@ -299,7 +299,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to use the address in the "From" header of the bounce. For more information
      * about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline const Aws::String& GetBounceSenderArn() const{ return m_bounceSenderArn; }
@@ -309,7 +309,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to use the address in the "From" header of the bounce. For more information
      * about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline bool BounceSenderArnHasBeenSet() const { return m_bounceSenderArnHasBeenSet; }
@@ -319,7 +319,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to use the address in the "From" header of the bounce. For more information
      * about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetBounceSenderArn(const Aws::String& value) { m_bounceSenderArnHasBeenSet = true; m_bounceSenderArn = value; }
@@ -329,7 +329,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to use the address in the "From" header of the bounce. For more information
      * about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetBounceSenderArn(Aws::String&& value) { m_bounceSenderArnHasBeenSet = true; m_bounceSenderArn = std::move(value); }
@@ -339,7 +339,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to use the address in the "From" header of the bounce. For more information
      * about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetBounceSenderArn(const char* value) { m_bounceSenderArnHasBeenSet = true; m_bounceSenderArn.assign(value); }
@@ -349,7 +349,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to use the address in the "From" header of the bounce. For more information
      * about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline SendBounceRequest& WithBounceSenderArn(const Aws::String& value) { SetBounceSenderArn(value); return *this;}
@@ -359,7 +359,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to use the address in the "From" header of the bounce. For more information
      * about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline SendBounceRequest& WithBounceSenderArn(Aws::String&& value) { SetBounceSenderArn(std::move(value)); return *this;}
@@ -369,7 +369,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to use the address in the "From" header of the bounce. For more information
      * about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline SendBounceRequest& WithBounceSenderArn(const char* value) { SetBounceSenderArn(value); return *this;}

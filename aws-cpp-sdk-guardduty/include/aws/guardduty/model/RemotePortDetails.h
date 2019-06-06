@@ -33,11 +33,6 @@ namespace GuardDuty
 namespace Model
 {
 
-  /**
-   * Remote port information of the connection.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/RemotePortDetails">AWS
-   * API Reference</a></p>
-   */
   class AWS_GUARDDUTY_API RemotePortDetails
   {
   public:
@@ -48,63 +43,63 @@ namespace Model
 
 
     /**
-     * Port number of the remote connection.
+     * <p>Port number of the remote connection.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * Port number of the remote connection.
+     * <p>Port number of the remote connection.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * Port number of the remote connection.
+     * <p>Port number of the remote connection.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * Port number of the remote connection.
+     * <p>Port number of the remote connection.</p>
      */
     inline RemotePortDetails& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
-     * Port name of the remote connection.
+     * <p>Port name of the remote connection.</p>
      */
     inline const Aws::String& GetPortName() const{ return m_portName; }
 
     /**
-     * Port name of the remote connection.
+     * <p>Port name of the remote connection.</p>
      */
     inline bool PortNameHasBeenSet() const { return m_portNameHasBeenSet; }
 
     /**
-     * Port name of the remote connection.
+     * <p>Port name of the remote connection.</p>
      */
     inline void SetPortName(const Aws::String& value) { m_portNameHasBeenSet = true; m_portName = value; }
 
     /**
-     * Port name of the remote connection.
+     * <p>Port name of the remote connection.</p>
      */
     inline void SetPortName(Aws::String&& value) { m_portNameHasBeenSet = true; m_portName = std::move(value); }
 
     /**
-     * Port name of the remote connection.
+     * <p>Port name of the remote connection.</p>
      */
     inline void SetPortName(const char* value) { m_portNameHasBeenSet = true; m_portName.assign(value); }
 
     /**
-     * Port name of the remote connection.
+     * <p>Port name of the remote connection.</p>
      */
     inline RemotePortDetails& WithPortName(const Aws::String& value) { SetPortName(value); return *this;}
 
     /**
-     * Port name of the remote connection.
+     * <p>Port name of the remote connection.</p>
      */
     inline RemotePortDetails& WithPortName(Aws::String&& value) { SetPortName(std::move(value)); return *this;}
 
     /**
-     * Port name of the remote connection.
+     * <p>Port name of the remote connection.</p>
      */
     inline RemotePortDetails& WithPortName(const char* value) { SetPortName(value); return *this;}
 

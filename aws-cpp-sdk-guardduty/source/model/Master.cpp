@@ -31,16 +31,16 @@ namespace Model
 Master::Master() : 
     m_accountIdHasBeenSet(false),
     m_invitationIdHasBeenSet(false),
-    m_invitedAtHasBeenSet(false),
-    m_relationshipStatusHasBeenSet(false)
+    m_relationshipStatusHasBeenSet(false),
+    m_invitedAtHasBeenSet(false)
 {
 }
 
 Master::Master(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
     m_invitationIdHasBeenSet(false),
-    m_invitedAtHasBeenSet(false),
-    m_relationshipStatusHasBeenSet(false)
+    m_relationshipStatusHasBeenSet(false),
+    m_invitedAtHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,18 +61,18 @@ Master& Master::operator =(JsonView jsonValue)
     m_invitationIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("invitedAt"))
-  {
-    m_invitedAt = jsonValue.GetString("invitedAt");
-
-    m_invitedAtHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("relationshipStatus"))
   {
     m_relationshipStatus = jsonValue.GetString("relationshipStatus");
 
     m_relationshipStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("invitedAt"))
+  {
+    m_invitedAt = jsonValue.GetString("invitedAt");
+
+    m_invitedAtHasBeenSet = true;
   }
 
   return *this;
@@ -94,15 +94,15 @@ JsonValue Master::Jsonize() const
 
   }
 
-  if(m_invitedAtHasBeenSet)
-  {
-   payload.WithString("invitedAt", m_invitedAt);
-
-  }
-
   if(m_relationshipStatusHasBeenSet)
   {
    payload.WithString("relationshipStatus", m_relationshipStatus);
+
+  }
+
+  if(m_invitedAtHasBeenSet)
+  {
+   payload.WithString("invitedAt", m_invitedAt);
 
   }
 

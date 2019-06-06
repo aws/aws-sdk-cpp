@@ -254,56 +254,56 @@ namespace Model
 
     /**
      * <p>The last known status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
      * Lifecycle</a>.</p>
      */
     inline const Aws::String& GetLastStatus() const{ return m_lastStatus; }
 
     /**
      * <p>The last known status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
      * Lifecycle</a>.</p>
      */
     inline bool LastStatusHasBeenSet() const { return m_lastStatusHasBeenSet; }
 
     /**
      * <p>The last known status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
      * Lifecycle</a>.</p>
      */
     inline void SetLastStatus(const Aws::String& value) { m_lastStatusHasBeenSet = true; m_lastStatus = value; }
 
     /**
      * <p>The last known status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
      * Lifecycle</a>.</p>
      */
     inline void SetLastStatus(Aws::String&& value) { m_lastStatusHasBeenSet = true; m_lastStatus = std::move(value); }
 
     /**
      * <p>The last known status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
      * Lifecycle</a>.</p>
      */
     inline void SetLastStatus(const char* value) { m_lastStatusHasBeenSet = true; m_lastStatus.assign(value); }
 
     /**
      * <p>The last known status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
      * Lifecycle</a>.</p>
      */
     inline Task& WithLastStatus(const Aws::String& value) { SetLastStatus(value); return *this;}
 
     /**
      * <p>The last known status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
      * Lifecycle</a>.</p>
      */
     inline Task& WithLastStatus(Aws::String&& value) { SetLastStatus(std::move(value)); return *this;}
 
     /**
      * <p>The last known status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
      * Lifecycle</a>.</p>
      */
     inline Task& WithLastStatus(const char* value) { SetLastStatus(value); return *this;}
@@ -311,56 +311,56 @@ namespace Model
 
     /**
      * <p>The desired status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
      * Lifecycle</a>.</p>
      */
     inline const Aws::String& GetDesiredStatus() const{ return m_desiredStatus; }
 
     /**
      * <p>The desired status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
      * Lifecycle</a>.</p>
      */
     inline bool DesiredStatusHasBeenSet() const { return m_desiredStatusHasBeenSet; }
 
     /**
      * <p>The desired status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
      * Lifecycle</a>.</p>
      */
     inline void SetDesiredStatus(const Aws::String& value) { m_desiredStatusHasBeenSet = true; m_desiredStatus = value; }
 
     /**
      * <p>The desired status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
      * Lifecycle</a>.</p>
      */
     inline void SetDesiredStatus(Aws::String&& value) { m_desiredStatusHasBeenSet = true; m_desiredStatus = std::move(value); }
 
     /**
      * <p>The desired status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
      * Lifecycle</a>.</p>
      */
     inline void SetDesiredStatus(const char* value) { m_desiredStatusHasBeenSet = true; m_desiredStatus.assign(value); }
 
     /**
      * <p>The desired status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
      * Lifecycle</a>.</p>
      */
     inline Task& WithDesiredStatus(const Aws::String& value) { SetDesiredStatus(value); return *this;}
 
     /**
      * <p>The desired status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
      * Lifecycle</a>.</p>
      */
     inline Task& WithDesiredStatus(Aws::String&& value) { SetDesiredStatus(std::move(value)); return *this;}
 
     /**
      * <p>The desired status of the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
      * Lifecycle</a>.</p>
      */
     inline Task& WithDesiredStatus(const char* value) { SetDesiredStatus(value); return *this;}

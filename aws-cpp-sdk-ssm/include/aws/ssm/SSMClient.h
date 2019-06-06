@@ -29,6 +29,7 @@
 #include <aws/ssm/model/CreateAssociationBatchResult.h>
 #include <aws/ssm/model/CreateDocumentResult.h>
 #include <aws/ssm/model/CreateMaintenanceWindowResult.h>
+#include <aws/ssm/model/CreateOpsItemResult.h>
 #include <aws/ssm/model/CreatePatchBaselineResult.h>
 #include <aws/ssm/model/CreateResourceDataSyncResult.h>
 #include <aws/ssm/model/DeleteActivationResult.h>
@@ -69,6 +70,7 @@
 #include <aws/ssm/model/DescribeMaintenanceWindowTasksResult.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowsResult.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowsForTargetResult.h>
+#include <aws/ssm/model/DescribeOpsItemsResult.h>
 #include <aws/ssm/model/DescribeParametersResult.h>
 #include <aws/ssm/model/DescribePatchBaselinesResult.h>
 #include <aws/ssm/model/DescribePatchGroupStateResult.h>
@@ -88,6 +90,8 @@
 #include <aws/ssm/model/GetMaintenanceWindowExecutionTaskResult.h>
 #include <aws/ssm/model/GetMaintenanceWindowExecutionTaskInvocationResult.h>
 #include <aws/ssm/model/GetMaintenanceWindowTaskResult.h>
+#include <aws/ssm/model/GetOpsItemResult.h>
+#include <aws/ssm/model/GetOpsSummaryResult.h>
 #include <aws/ssm/model/GetParameterResult.h>
 #include <aws/ssm/model/GetParameterHistoryResult.h>
 #include <aws/ssm/model/GetParametersResult.h>
@@ -134,6 +138,7 @@
 #include <aws/ssm/model/UpdateMaintenanceWindowTargetResult.h>
 #include <aws/ssm/model/UpdateMaintenanceWindowTaskResult.h>
 #include <aws/ssm/model/UpdateManagedInstanceRoleResult.h>
+#include <aws/ssm/model/UpdateOpsItemResult.h>
 #include <aws/ssm/model/UpdatePatchBaselineResult.h>
 #include <aws/ssm/model/UpdateServiceSettingResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -183,6 +188,7 @@ namespace Model
         class CreateAssociationBatchRequest;
         class CreateDocumentRequest;
         class CreateMaintenanceWindowRequest;
+        class CreateOpsItemRequest;
         class CreatePatchBaselineRequest;
         class CreateResourceDataSyncRequest;
         class DeleteActivationRequest;
@@ -223,6 +229,7 @@ namespace Model
         class DescribeMaintenanceWindowTasksRequest;
         class DescribeMaintenanceWindowsRequest;
         class DescribeMaintenanceWindowsForTargetRequest;
+        class DescribeOpsItemsRequest;
         class DescribeParametersRequest;
         class DescribePatchBaselinesRequest;
         class DescribePatchGroupStateRequest;
@@ -242,6 +249,8 @@ namespace Model
         class GetMaintenanceWindowExecutionTaskRequest;
         class GetMaintenanceWindowExecutionTaskInvocationRequest;
         class GetMaintenanceWindowTaskRequest;
+        class GetOpsItemRequest;
+        class GetOpsSummaryRequest;
         class GetParameterRequest;
         class GetParameterHistoryRequest;
         class GetParametersRequest;
@@ -288,6 +297,7 @@ namespace Model
         class UpdateMaintenanceWindowTargetRequest;
         class UpdateMaintenanceWindowTaskRequest;
         class UpdateManagedInstanceRoleRequest;
+        class UpdateOpsItemRequest;
         class UpdatePatchBaselineRequest;
         class UpdateServiceSettingRequest;
 
@@ -299,6 +309,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateAssociationBatchResult, Aws::Client::AWSError<SSMErrors>> CreateAssociationBatchOutcome;
         typedef Aws::Utils::Outcome<CreateDocumentResult, Aws::Client::AWSError<SSMErrors>> CreateDocumentOutcome;
         typedef Aws::Utils::Outcome<CreateMaintenanceWindowResult, Aws::Client::AWSError<SSMErrors>> CreateMaintenanceWindowOutcome;
+        typedef Aws::Utils::Outcome<CreateOpsItemResult, Aws::Client::AWSError<SSMErrors>> CreateOpsItemOutcome;
         typedef Aws::Utils::Outcome<CreatePatchBaselineResult, Aws::Client::AWSError<SSMErrors>> CreatePatchBaselineOutcome;
         typedef Aws::Utils::Outcome<CreateResourceDataSyncResult, Aws::Client::AWSError<SSMErrors>> CreateResourceDataSyncOutcome;
         typedef Aws::Utils::Outcome<DeleteActivationResult, Aws::Client::AWSError<SSMErrors>> DeleteActivationOutcome;
@@ -339,6 +350,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeMaintenanceWindowTasksResult, Aws::Client::AWSError<SSMErrors>> DescribeMaintenanceWindowTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeMaintenanceWindowsResult, Aws::Client::AWSError<SSMErrors>> DescribeMaintenanceWindowsOutcome;
         typedef Aws::Utils::Outcome<DescribeMaintenanceWindowsForTargetResult, Aws::Client::AWSError<SSMErrors>> DescribeMaintenanceWindowsForTargetOutcome;
+        typedef Aws::Utils::Outcome<DescribeOpsItemsResult, Aws::Client::AWSError<SSMErrors>> DescribeOpsItemsOutcome;
         typedef Aws::Utils::Outcome<DescribeParametersResult, Aws::Client::AWSError<SSMErrors>> DescribeParametersOutcome;
         typedef Aws::Utils::Outcome<DescribePatchBaselinesResult, Aws::Client::AWSError<SSMErrors>> DescribePatchBaselinesOutcome;
         typedef Aws::Utils::Outcome<DescribePatchGroupStateResult, Aws::Client::AWSError<SSMErrors>> DescribePatchGroupStateOutcome;
@@ -358,6 +370,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetMaintenanceWindowExecutionTaskResult, Aws::Client::AWSError<SSMErrors>> GetMaintenanceWindowExecutionTaskOutcome;
         typedef Aws::Utils::Outcome<GetMaintenanceWindowExecutionTaskInvocationResult, Aws::Client::AWSError<SSMErrors>> GetMaintenanceWindowExecutionTaskInvocationOutcome;
         typedef Aws::Utils::Outcome<GetMaintenanceWindowTaskResult, Aws::Client::AWSError<SSMErrors>> GetMaintenanceWindowTaskOutcome;
+        typedef Aws::Utils::Outcome<GetOpsItemResult, Aws::Client::AWSError<SSMErrors>> GetOpsItemOutcome;
+        typedef Aws::Utils::Outcome<GetOpsSummaryResult, Aws::Client::AWSError<SSMErrors>> GetOpsSummaryOutcome;
         typedef Aws::Utils::Outcome<GetParameterResult, Aws::Client::AWSError<SSMErrors>> GetParameterOutcome;
         typedef Aws::Utils::Outcome<GetParameterHistoryResult, Aws::Client::AWSError<SSMErrors>> GetParameterHistoryOutcome;
         typedef Aws::Utils::Outcome<GetParametersResult, Aws::Client::AWSError<SSMErrors>> GetParametersOutcome;
@@ -404,6 +418,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateMaintenanceWindowTargetResult, Aws::Client::AWSError<SSMErrors>> UpdateMaintenanceWindowTargetOutcome;
         typedef Aws::Utils::Outcome<UpdateMaintenanceWindowTaskResult, Aws::Client::AWSError<SSMErrors>> UpdateMaintenanceWindowTaskOutcome;
         typedef Aws::Utils::Outcome<UpdateManagedInstanceRoleResult, Aws::Client::AWSError<SSMErrors>> UpdateManagedInstanceRoleOutcome;
+        typedef Aws::Utils::Outcome<UpdateOpsItemResult, Aws::Client::AWSError<SSMErrors>> UpdateOpsItemOutcome;
         typedef Aws::Utils::Outcome<UpdatePatchBaselineResult, Aws::Client::AWSError<SSMErrors>> UpdatePatchBaselineOutcome;
         typedef Aws::Utils::Outcome<UpdateServiceSettingResult, Aws::Client::AWSError<SSMErrors>> UpdateServiceSettingOutcome;
 
@@ -415,6 +430,7 @@ namespace Model
         typedef std::future<CreateAssociationBatchOutcome> CreateAssociationBatchOutcomeCallable;
         typedef std::future<CreateDocumentOutcome> CreateDocumentOutcomeCallable;
         typedef std::future<CreateMaintenanceWindowOutcome> CreateMaintenanceWindowOutcomeCallable;
+        typedef std::future<CreateOpsItemOutcome> CreateOpsItemOutcomeCallable;
         typedef std::future<CreatePatchBaselineOutcome> CreatePatchBaselineOutcomeCallable;
         typedef std::future<CreateResourceDataSyncOutcome> CreateResourceDataSyncOutcomeCallable;
         typedef std::future<DeleteActivationOutcome> DeleteActivationOutcomeCallable;
@@ -455,6 +471,7 @@ namespace Model
         typedef std::future<DescribeMaintenanceWindowTasksOutcome> DescribeMaintenanceWindowTasksOutcomeCallable;
         typedef std::future<DescribeMaintenanceWindowsOutcome> DescribeMaintenanceWindowsOutcomeCallable;
         typedef std::future<DescribeMaintenanceWindowsForTargetOutcome> DescribeMaintenanceWindowsForTargetOutcomeCallable;
+        typedef std::future<DescribeOpsItemsOutcome> DescribeOpsItemsOutcomeCallable;
         typedef std::future<DescribeParametersOutcome> DescribeParametersOutcomeCallable;
         typedef std::future<DescribePatchBaselinesOutcome> DescribePatchBaselinesOutcomeCallable;
         typedef std::future<DescribePatchGroupStateOutcome> DescribePatchGroupStateOutcomeCallable;
@@ -474,6 +491,8 @@ namespace Model
         typedef std::future<GetMaintenanceWindowExecutionTaskOutcome> GetMaintenanceWindowExecutionTaskOutcomeCallable;
         typedef std::future<GetMaintenanceWindowExecutionTaskInvocationOutcome> GetMaintenanceWindowExecutionTaskInvocationOutcomeCallable;
         typedef std::future<GetMaintenanceWindowTaskOutcome> GetMaintenanceWindowTaskOutcomeCallable;
+        typedef std::future<GetOpsItemOutcome> GetOpsItemOutcomeCallable;
+        typedef std::future<GetOpsSummaryOutcome> GetOpsSummaryOutcomeCallable;
         typedef std::future<GetParameterOutcome> GetParameterOutcomeCallable;
         typedef std::future<GetParameterHistoryOutcome> GetParameterHistoryOutcomeCallable;
         typedef std::future<GetParametersOutcome> GetParametersOutcomeCallable;
@@ -520,6 +539,7 @@ namespace Model
         typedef std::future<UpdateMaintenanceWindowTargetOutcome> UpdateMaintenanceWindowTargetOutcomeCallable;
         typedef std::future<UpdateMaintenanceWindowTaskOutcome> UpdateMaintenanceWindowTaskOutcomeCallable;
         typedef std::future<UpdateManagedInstanceRoleOutcome> UpdateManagedInstanceRoleOutcomeCallable;
+        typedef std::future<UpdateOpsItemOutcome> UpdateOpsItemOutcomeCallable;
         typedef std::future<UpdatePatchBaselineOutcome> UpdatePatchBaselineOutcomeCallable;
         typedef std::future<UpdateServiceSettingOutcome> UpdateServiceSettingOutcomeCallable;
 } // namespace Model
@@ -534,6 +554,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::CreateAssociationBatchRequest&, const Model::CreateAssociationBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssociationBatchResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::CreateDocumentRequest&, const Model::CreateDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDocumentResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::CreateMaintenanceWindowRequest&, const Model::CreateMaintenanceWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMaintenanceWindowResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::CreateOpsItemRequest&, const Model::CreateOpsItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOpsItemResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::CreatePatchBaselineRequest&, const Model::CreatePatchBaselineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePatchBaselineResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::CreateResourceDataSyncRequest&, const Model::CreateResourceDataSyncOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResourceDataSyncResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeleteActivationRequest&, const Model::DeleteActivationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteActivationResponseReceivedHandler;
@@ -574,6 +595,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::DescribeMaintenanceWindowTasksRequest&, const Model::DescribeMaintenanceWindowTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMaintenanceWindowTasksResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeMaintenanceWindowsRequest&, const Model::DescribeMaintenanceWindowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMaintenanceWindowsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeMaintenanceWindowsForTargetRequest&, const Model::DescribeMaintenanceWindowsForTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMaintenanceWindowsForTargetResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::DescribeOpsItemsRequest&, const Model::DescribeOpsItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOpsItemsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeParametersRequest&, const Model::DescribeParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeParametersResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribePatchBaselinesRequest&, const Model::DescribePatchBaselinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePatchBaselinesResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribePatchGroupStateRequest&, const Model::DescribePatchGroupStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePatchGroupStateResponseReceivedHandler;
@@ -593,6 +615,8 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::GetMaintenanceWindowExecutionTaskRequest&, const Model::GetMaintenanceWindowExecutionTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMaintenanceWindowExecutionTaskResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetMaintenanceWindowExecutionTaskInvocationRequest&, const Model::GetMaintenanceWindowExecutionTaskInvocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMaintenanceWindowExecutionTaskInvocationResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetMaintenanceWindowTaskRequest&, const Model::GetMaintenanceWindowTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMaintenanceWindowTaskResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::GetOpsItemRequest&, const Model::GetOpsItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOpsItemResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::GetOpsSummaryRequest&, const Model::GetOpsSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOpsSummaryResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetParameterRequest&, const Model::GetParameterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetParameterResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetParameterHistoryRequest&, const Model::GetParameterHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetParameterHistoryResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetParametersRequest&, const Model::GetParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetParametersResponseReceivedHandler;
@@ -639,6 +663,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::UpdateMaintenanceWindowTargetRequest&, const Model::UpdateMaintenanceWindowTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMaintenanceWindowTargetResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdateMaintenanceWindowTaskRequest&, const Model::UpdateMaintenanceWindowTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMaintenanceWindowTaskResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdateManagedInstanceRoleRequest&, const Model::UpdateManagedInstanceRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateManagedInstanceRoleResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::UpdateOpsItemRequest&, const Model::UpdateOpsItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOpsItemResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdatePatchBaselineRequest&, const Model::UpdatePatchBaselineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePatchBaselineResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdateServiceSettingRequest&, const Model::UpdateServiceSettingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceSettingResponseReceivedHandler;
 
@@ -1015,6 +1040,58 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateMaintenanceWindowAsync(const Model::CreateMaintenanceWindowRequest& request, const CreateMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new OpsItem. You must have permission in AWS Identity and Access
+         * Management (IAM) to create a new OpsItem. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
+         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
+         * capability to view, investigate, and remediate operational issues impacting the
+         * performance and health of their AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
+         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateOpsItemOutcome CreateOpsItem(const Model::CreateOpsItemRequest& request) const;
+
+        /**
+         * <p>Creates a new OpsItem. You must have permission in AWS Identity and Access
+         * Management (IAM) to create a new OpsItem. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
+         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
+         * capability to view, investigate, and remediate operational issues impacting the
+         * performance and health of their AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
+         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateOpsItemOutcomeCallable CreateOpsItemCallable(const Model::CreateOpsItemRequest& request) const;
+
+        /**
+         * <p>Creates a new OpsItem. You must have permission in AWS Identity and Access
+         * Management (IAM) to create a new OpsItem. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
+         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
+         * capability to view, investigate, and remediate operational issues impacting the
+         * performance and health of their AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
+         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateOpsItemAsync(const Model::CreateOpsItemRequest& request, const CreateOpsItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a patch baseline.</p> <note> <p>For information about valid key and
@@ -2251,6 +2328,58 @@ namespace Model
         virtual void DescribeMaintenanceWindowsForTargetAsync(const Model::DescribeMaintenanceWindowsForTargetRequest& request, const DescribeMaintenanceWindowsForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Query a set of OpsItems. You must have permission in AWS Identity and Access
+         * Management (IAM) to query a list of OpsItems. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
+         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
+         * capability to view, investigate, and remediate operational issues impacting the
+         * performance and health of their AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
+         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeOpsItems">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeOpsItemsOutcome DescribeOpsItems(const Model::DescribeOpsItemsRequest& request) const;
+
+        /**
+         * <p>Query a set of OpsItems. You must have permission in AWS Identity and Access
+         * Management (IAM) to query a list of OpsItems. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
+         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
+         * capability to view, investigate, and remediate operational issues impacting the
+         * performance and health of their AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
+         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeOpsItems">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeOpsItemsOutcomeCallable DescribeOpsItemsCallable(const Model::DescribeOpsItemsRequest& request) const;
+
+        /**
+         * <p>Query a set of OpsItems. You must have permission in AWS Identity and Access
+         * Management (IAM) to query a list of OpsItems. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
+         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
+         * capability to view, investigate, and remediate operational issues impacting the
+         * performance and health of their AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
+         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeOpsItems">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeOpsItemsAsync(const Model::DescribeOpsItemsRequest& request, const DescribeOpsItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Get information about a parameter.</p> <p>Request results are returned on a
          * best-effort basis. If you specify <code>MaxResults</code> in the request, the
          * response includes information up to the limit specified. The number of items
@@ -2850,6 +2979,89 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetMaintenanceWindowTaskAsync(const Model::GetMaintenanceWindowTaskRequest& request, const GetMaintenanceWindowTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get information about an OpsItem by using the ID. You must have permission in
+         * AWS Identity and Access Management (IAM) to view information about an OpsItem.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
+         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
+         * capability to view, investigate, and remediate operational issues impacting the
+         * performance and health of their AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
+         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsItem">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::GetOpsItemOutcome GetOpsItem(const Model::GetOpsItemRequest& request) const;
+
+        /**
+         * <p>Get information about an OpsItem by using the ID. You must have permission in
+         * AWS Identity and Access Management (IAM) to view information about an OpsItem.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
+         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
+         * capability to view, investigate, and remediate operational issues impacting the
+         * performance and health of their AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
+         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsItem">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetOpsItemOutcomeCallable GetOpsItemCallable(const Model::GetOpsItemRequest& request) const;
+
+        /**
+         * <p>Get information about an OpsItem by using the ID. You must have permission in
+         * AWS Identity and Access Management (IAM) to view information about an OpsItem.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
+         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
+         * capability to view, investigate, and remediate operational issues impacting the
+         * performance and health of their AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
+         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsItem">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetOpsItemAsync(const Model::GetOpsItemRequest& request, const GetOpsItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>View a summary of OpsItems based on specified filters and
+         * aggregators.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsSummary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetOpsSummaryOutcome GetOpsSummary(const Model::GetOpsSummaryRequest& request) const;
+
+        /**
+         * <p>View a summary of OpsItems based on specified filters and
+         * aggregators.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsSummary">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetOpsSummaryOutcomeCallable GetOpsSummaryCallable(const Model::GetOpsSummaryRequest& request) const;
+
+        /**
+         * <p>View a summary of OpsItems based on specified filters and
+         * aggregators.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsSummary">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetOpsSummaryAsync(const Model::GetOpsSummaryRequest& request, const GetOpsSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get information about a parameter by using the parameter name. Don't confuse
@@ -4470,6 +4682,58 @@ namespace Model
         virtual void UpdateManagedInstanceRoleAsync(const Model::UpdateManagedInstanceRoleRequest& request, const UpdateManagedInstanceRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Edit or change an OpsItem. You must have permission in AWS Identity and
+         * Access Management (IAM) to update an OpsItem. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
+         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
+         * capability to view, investigate, and remediate operational issues impacting the
+         * performance and health of their AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
+         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsItem">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateOpsItemOutcome UpdateOpsItem(const Model::UpdateOpsItemRequest& request) const;
+
+        /**
+         * <p>Edit or change an OpsItem. You must have permission in AWS Identity and
+         * Access Management (IAM) to update an OpsItem. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
+         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
+         * capability to view, investigate, and remediate operational issues impacting the
+         * performance and health of their AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
+         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsItem">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateOpsItemOutcomeCallable UpdateOpsItemCallable(const Model::UpdateOpsItemRequest& request) const;
+
+        /**
+         * <p>Edit or change an OpsItem. You must have permission in AWS Identity and
+         * Access Management (IAM) to update an OpsItem. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
+         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
+         * capability to view, investigate, and remediate operational issues impacting the
+         * performance and health of their AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
+         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsItem">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateOpsItemAsync(const Model::UpdateOpsItemRequest& request, const UpdateOpsItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies an existing patch baseline. Fields not specified in the request are
          * left unchanged.</p> <note> <p>For information about valid key and value pairs in
          * <code>PatchFilters</code> for each supported operating system type, see <a
@@ -4582,6 +4846,7 @@ namespace Model
         void CreateAssociationBatchAsyncHelper(const Model::CreateAssociationBatchRequest& request, const CreateAssociationBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDocumentAsyncHelper(const Model::CreateDocumentRequest& request, const CreateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMaintenanceWindowAsyncHelper(const Model::CreateMaintenanceWindowRequest& request, const CreateMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateOpsItemAsyncHelper(const Model::CreateOpsItemRequest& request, const CreateOpsItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePatchBaselineAsyncHelper(const Model::CreatePatchBaselineRequest& request, const CreatePatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateResourceDataSyncAsyncHelper(const Model::CreateResourceDataSyncRequest& request, const CreateResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteActivationAsyncHelper(const Model::DeleteActivationRequest& request, const DeleteActivationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4622,6 +4887,7 @@ namespace Model
         void DescribeMaintenanceWindowTasksAsyncHelper(const Model::DescribeMaintenanceWindowTasksRequest& request, const DescribeMaintenanceWindowTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMaintenanceWindowsAsyncHelper(const Model::DescribeMaintenanceWindowsRequest& request, const DescribeMaintenanceWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMaintenanceWindowsForTargetAsyncHelper(const Model::DescribeMaintenanceWindowsForTargetRequest& request, const DescribeMaintenanceWindowsForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeOpsItemsAsyncHelper(const Model::DescribeOpsItemsRequest& request, const DescribeOpsItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeParametersAsyncHelper(const Model::DescribeParametersRequest& request, const DescribeParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePatchBaselinesAsyncHelper(const Model::DescribePatchBaselinesRequest& request, const DescribePatchBaselinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePatchGroupStateAsyncHelper(const Model::DescribePatchGroupStateRequest& request, const DescribePatchGroupStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4641,6 +4907,8 @@ namespace Model
         void GetMaintenanceWindowExecutionTaskAsyncHelper(const Model::GetMaintenanceWindowExecutionTaskRequest& request, const GetMaintenanceWindowExecutionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMaintenanceWindowExecutionTaskInvocationAsyncHelper(const Model::GetMaintenanceWindowExecutionTaskInvocationRequest& request, const GetMaintenanceWindowExecutionTaskInvocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMaintenanceWindowTaskAsyncHelper(const Model::GetMaintenanceWindowTaskRequest& request, const GetMaintenanceWindowTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetOpsItemAsyncHelper(const Model::GetOpsItemRequest& request, const GetOpsItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetOpsSummaryAsyncHelper(const Model::GetOpsSummaryRequest& request, const GetOpsSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetParameterAsyncHelper(const Model::GetParameterRequest& request, const GetParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetParameterHistoryAsyncHelper(const Model::GetParameterHistoryRequest& request, const GetParameterHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetParametersAsyncHelper(const Model::GetParametersRequest& request, const GetParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4687,6 +4955,7 @@ namespace Model
         void UpdateMaintenanceWindowTargetAsyncHelper(const Model::UpdateMaintenanceWindowTargetRequest& request, const UpdateMaintenanceWindowTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMaintenanceWindowTaskAsyncHelper(const Model::UpdateMaintenanceWindowTaskRequest& request, const UpdateMaintenanceWindowTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateManagedInstanceRoleAsyncHelper(const Model::UpdateManagedInstanceRoleRequest& request, const UpdateManagedInstanceRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateOpsItemAsyncHelper(const Model::UpdateOpsItemRequest& request, const UpdateOpsItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePatchBaselineAsyncHelper(const Model::UpdatePatchBaselineRequest& request, const UpdatePatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateServiceSettingAsyncHelper(const Model::UpdateServiceSettingRequest& request, const UpdateServiceSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * The unique ID of the detector of the GuardDuty member account.
+     * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The unique ID of the detector of the GuardDuty member account.
+     * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * The unique ID of the detector of the GuardDuty member account.
+     * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * The unique ID of the detector of the GuardDuty member account.
+     * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * The unique ID of the detector of the GuardDuty member account.
+     * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * The unique ID of the detector of the GuardDuty member account.
+     * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
     inline GetMasterAccountRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The unique ID of the detector of the GuardDuty member account.
+     * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
     inline GetMasterAccountRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of the detector of the GuardDuty member account.
+     * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
     inline GetMasterAccountRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 

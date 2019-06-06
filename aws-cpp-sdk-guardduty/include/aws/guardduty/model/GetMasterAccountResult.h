@@ -42,19 +42,29 @@ namespace Model
     GetMasterAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>Master account details.</p>
+     */
     inline const Master& GetMaster() const{ return m_master; }
 
-    
+    /**
+     * <p>Master account details.</p>
+     */
     inline void SetMaster(const Master& value) { m_master = value; }
 
-    
+    /**
+     * <p>Master account details.</p>
+     */
     inline void SetMaster(Master&& value) { m_master = std::move(value); }
 
-    
+    /**
+     * <p>Master account details.</p>
+     */
     inline GetMasterAccountResult& WithMaster(const Master& value) { SetMaster(value); return *this;}
 
-    
+    /**
+     * <p>Master account details.</p>
+     */
     inline GetMasterAccountResult& WithMaster(Master&& value) { SetMaster(std::move(value)); return *this;}
 
   private:

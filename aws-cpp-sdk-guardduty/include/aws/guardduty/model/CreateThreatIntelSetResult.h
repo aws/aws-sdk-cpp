@@ -42,25 +42,39 @@ namespace Model
     CreateThreatIntelSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The ID of the ThreatIntelSet resource.</p>
+     */
     inline const Aws::String& GetThreatIntelSetId() const{ return m_threatIntelSetId; }
 
-    
+    /**
+     * <p>The ID of the ThreatIntelSet resource.</p>
+     */
     inline void SetThreatIntelSetId(const Aws::String& value) { m_threatIntelSetId = value; }
 
-    
+    /**
+     * <p>The ID of the ThreatIntelSet resource.</p>
+     */
     inline void SetThreatIntelSetId(Aws::String&& value) { m_threatIntelSetId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the ThreatIntelSet resource.</p>
+     */
     inline void SetThreatIntelSetId(const char* value) { m_threatIntelSetId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the ThreatIntelSet resource.</p>
+     */
     inline CreateThreatIntelSetResult& WithThreatIntelSetId(const Aws::String& value) { SetThreatIntelSetId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the ThreatIntelSet resource.</p>
+     */
     inline CreateThreatIntelSetResult& WithThreatIntelSetId(Aws::String&& value) { SetThreatIntelSetId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the ThreatIntelSet resource.</p>
+     */
     inline CreateThreatIntelSetResult& WithThreatIntelSetId(const char* value) { SetThreatIntelSetId(value); return *this;}
 
   private:

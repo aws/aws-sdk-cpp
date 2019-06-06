@@ -107,8 +107,7 @@ namespace Model
      * the Region of the container instance, the AWS account ID of the container
      * instance owner, the <code>container-instance</code> namespace, and then the
      * container instance ID. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline const Aws::String& GetContainerInstance() const{ return m_containerInstance; }
 
@@ -118,8 +117,7 @@ namespace Model
      * the Region of the container instance, the AWS account ID of the container
      * instance owner, the <code>container-instance</code> namespace, and then the
      * container instance ID. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline bool ContainerInstanceHasBeenSet() const { return m_containerInstanceHasBeenSet; }
 
@@ -129,8 +127,7 @@ namespace Model
      * the Region of the container instance, the AWS account ID of the container
      * instance owner, the <code>container-instance</code> namespace, and then the
      * container instance ID. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline void SetContainerInstance(const Aws::String& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = value; }
 
@@ -140,8 +137,7 @@ namespace Model
      * the Region of the container instance, the AWS account ID of the container
      * instance owner, the <code>container-instance</code> namespace, and then the
      * container instance ID. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline void SetContainerInstance(Aws::String&& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = std::move(value); }
 
@@ -151,8 +147,7 @@ namespace Model
      * the Region of the container instance, the AWS account ID of the container
      * instance owner, the <code>container-instance</code> namespace, and then the
      * container instance ID. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline void SetContainerInstance(const char* value) { m_containerInstanceHasBeenSet = true; m_containerInstance.assign(value); }
 
@@ -162,8 +157,7 @@ namespace Model
      * the Region of the container instance, the AWS account ID of the container
      * instance owner, the <code>container-instance</code> namespace, and then the
      * container instance ID. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline DeregisterContainerInstanceRequest& WithContainerInstance(const Aws::String& value) { SetContainerInstance(value); return *this;}
 
@@ -173,8 +167,7 @@ namespace Model
      * the Region of the container instance, the AWS account ID of the container
      * instance owner, the <code>container-instance</code> namespace, and then the
      * container instance ID. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline DeregisterContainerInstanceRequest& WithContainerInstance(Aws::String&& value) { SetContainerInstance(std::move(value)); return *this;}
 
@@ -184,8 +177,7 @@ namespace Model
      * the Region of the container instance, the AWS account ID of the container
      * instance owner, the <code>container-instance</code> namespace, and then the
      * container instance ID. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline DeregisterContainerInstanceRequest& WithContainerInstance(const char* value) { SetContainerInstance(value); return *this;}
 

@@ -49,116 +49,132 @@ namespace Model
 
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSets you
-     * want to list.
+     * <p>The unique ID of the detector the threatIntelSet is associated with.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSets you
-     * want to list.
+     * <p>The unique ID of the detector the threatIntelSet is associated with.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSets you
-     * want to list.
+     * <p>The unique ID of the detector the threatIntelSet is associated with.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSets you
-     * want to list.
+     * <p>The unique ID of the detector the threatIntelSet is associated with.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSets you
-     * want to list.
+     * <p>The unique ID of the detector the threatIntelSet is associated with.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSets you
-     * want to list.
+     * <p>The unique ID of the detector the threatIntelSet is associated with.</p>
      */
     inline ListThreatIntelSetsRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSets you
-     * want to list.
+     * <p>The unique ID of the detector the threatIntelSet is associated with.</p>
      */
     inline ListThreatIntelSetsRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSets you
-     * want to list.
+     * <p>The unique ID of the detector the threatIntelSet is associated with.</p>
      */
     inline ListThreatIntelSetsRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * You can use this parameter to indicate the maximum number of items that you want
-     * in the response. The default value is 7. The maximum value is 7.
+     * <p>You can use this parameter to indicate the maximum number of items you want
+     * in the response. The default value is 50. The maximum value is 50.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * You can use this parameter to indicate the maximum number of items that you want
-     * in the response. The default value is 7. The maximum value is 7.
+     * <p>You can use this parameter to indicate the maximum number of items you want
+     * in the response. The default value is 50. The maximum value is 50.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * You can use this parameter to indicate the maximum number of items that you want
-     * in the response. The default value is 7. The maximum value is 7.
+     * <p>You can use this parameter to indicate the maximum number of items you want
+     * in the response. The default value is 50. The maximum value is 50.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * You can use this parameter to indicate the maximum number of items that you want
-     * in the response. The default value is 7. The maximum value is 7.
+     * <p>You can use this parameter to indicate the maximum number of items you want
+     * in the response. The default value is 50. The maximum value is 50.</p>
      */
     inline ListThreatIntelSetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * Pagination token to start retrieving threat intel sets from.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * Pagination token to start retrieving threat intel sets from.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * Pagination token to start retrieving threat intel sets from.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * Pagination token to start retrieving threat intel sets from.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * Pagination token to start retrieving threat intel sets from.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * Pagination token to start retrieving threat intel sets from.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline ListThreatIntelSetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * Pagination token to start retrieving threat intel sets from.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline ListThreatIntelSetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * Pagination token to start retrieving threat intel sets from.
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the list action. For subsequent calls to
+     * the action fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
      */
     inline ListThreatIntelSetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

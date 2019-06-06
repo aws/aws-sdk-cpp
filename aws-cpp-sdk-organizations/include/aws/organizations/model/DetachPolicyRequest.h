@@ -118,8 +118,8 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier (ID) of the root, OU, or account from which you want to
-     * detach the policy. You can get the ID from the <a>ListRoots</a>,
+     * <p>The unique identifier (ID) of the root, OU, or account that you want to
+     * detach the policy from. You can get the ID from the <a>ListRoots</a>,
      * <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a> operations.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target
      * ID string requires one of the following:</p> <ul> <li> <p>Root: a string that
@@ -133,8 +133,8 @@ namespace Model
     inline const Aws::String& GetTargetId() const{ return m_targetId; }
 
     /**
-     * <p>The unique identifier (ID) of the root, OU, or account from which you want to
-     * detach the policy. You can get the ID from the <a>ListRoots</a>,
+     * <p>The unique identifier (ID) of the root, OU, or account that you want to
+     * detach the policy from. You can get the ID from the <a>ListRoots</a>,
      * <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a> operations.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target
      * ID string requires one of the following:</p> <ul> <li> <p>Root: a string that
@@ -148,8 +148,8 @@ namespace Model
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier (ID) of the root, OU, or account from which you want to
-     * detach the policy. You can get the ID from the <a>ListRoots</a>,
+     * <p>The unique identifier (ID) of the root, OU, or account that you want to
+     * detach the policy from. You can get the ID from the <a>ListRoots</a>,
      * <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a> operations.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target
      * ID string requires one of the following:</p> <ul> <li> <p>Root: a string that
@@ -163,8 +163,8 @@ namespace Model
     inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
 
     /**
-     * <p>The unique identifier (ID) of the root, OU, or account from which you want to
-     * detach the policy. You can get the ID from the <a>ListRoots</a>,
+     * <p>The unique identifier (ID) of the root, OU, or account that you want to
+     * detach the policy from. You can get the ID from the <a>ListRoots</a>,
      * <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a> operations.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target
      * ID string requires one of the following:</p> <ul> <li> <p>Root: a string that
@@ -178,8 +178,8 @@ namespace Model
     inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
 
     /**
-     * <p>The unique identifier (ID) of the root, OU, or account from which you want to
-     * detach the policy. You can get the ID from the <a>ListRoots</a>,
+     * <p>The unique identifier (ID) of the root, OU, or account that you want to
+     * detach the policy from. You can get the ID from the <a>ListRoots</a>,
      * <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a> operations.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target
      * ID string requires one of the following:</p> <ul> <li> <p>Root: a string that
@@ -193,8 +193,8 @@ namespace Model
     inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
 
     /**
-     * <p>The unique identifier (ID) of the root, OU, or account from which you want to
-     * detach the policy. You can get the ID from the <a>ListRoots</a>,
+     * <p>The unique identifier (ID) of the root, OU, or account that you want to
+     * detach the policy from. You can get the ID from the <a>ListRoots</a>,
      * <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a> operations.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target
      * ID string requires one of the following:</p> <ul> <li> <p>Root: a string that
@@ -208,8 +208,8 @@ namespace Model
     inline DetachPolicyRequest& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
 
     /**
-     * <p>The unique identifier (ID) of the root, OU, or account from which you want to
-     * detach the policy. You can get the ID from the <a>ListRoots</a>,
+     * <p>The unique identifier (ID) of the root, OU, or account that you want to
+     * detach the policy from. You can get the ID from the <a>ListRoots</a>,
      * <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a> operations.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target
      * ID string requires one of the following:</p> <ul> <li> <p>Root: a string that
@@ -223,8 +223,8 @@ namespace Model
     inline DetachPolicyRequest& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier (ID) of the root, OU, or account from which you want to
-     * detach the policy. You can get the ID from the <a>ListRoots</a>,
+     * <p>The unique identifier (ID) of the root, OU, or account that you want to
+     * detach the policy from. You can get the ID from the <a>ListRoots</a>,
      * <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a> operations.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target
      * ID string requires one of the following:</p> <ul> <li> <p>Root: a string that

@@ -30,13 +30,18 @@ namespace Aws
       namespace KeyTypeMapper
       {
 
+        static const int speke_HASH = HashingUtils::HashString("speke");
         static const int static_key_HASH = HashingUtils::HashString("static-key");
 
 
         KeyType GetKeyTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == static_key_HASH)
+          if (hashCode == speke_HASH)
+          {
+            return KeyType::speke;
+          }
+          else if (hashCode == static_key_HASH)
           {
             return KeyType::static_key;
           }
@@ -54,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyType::speke:
+            return "speke";
           case KeyType::static_key:
             return "static-key";
           default:

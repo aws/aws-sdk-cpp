@@ -317,42 +317,50 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>If the account was created successfully, the unique identifier (ID) of the
+     * new account in the AWS GovCloud (US) Region.</p>
      */
     inline const Aws::String& GetGovCloudAccountId() const{ return m_govCloudAccountId; }
 
     /**
-     * <p/>
+     * <p>If the account was created successfully, the unique identifier (ID) of the
+     * new account in the AWS GovCloud (US) Region.</p>
      */
     inline bool GovCloudAccountIdHasBeenSet() const { return m_govCloudAccountIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>If the account was created successfully, the unique identifier (ID) of the
+     * new account in the AWS GovCloud (US) Region.</p>
      */
     inline void SetGovCloudAccountId(const Aws::String& value) { m_govCloudAccountIdHasBeenSet = true; m_govCloudAccountId = value; }
 
     /**
-     * <p/>
+     * <p>If the account was created successfully, the unique identifier (ID) of the
+     * new account in the AWS GovCloud (US) Region.</p>
      */
     inline void SetGovCloudAccountId(Aws::String&& value) { m_govCloudAccountIdHasBeenSet = true; m_govCloudAccountId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>If the account was created successfully, the unique identifier (ID) of the
+     * new account in the AWS GovCloud (US) Region.</p>
      */
     inline void SetGovCloudAccountId(const char* value) { m_govCloudAccountIdHasBeenSet = true; m_govCloudAccountId.assign(value); }
 
     /**
-     * <p/>
+     * <p>If the account was created successfully, the unique identifier (ID) of the
+     * new account in the AWS GovCloud (US) Region.</p>
      */
     inline CreateAccountStatus& WithGovCloudAccountId(const Aws::String& value) { SetGovCloudAccountId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>If the account was created successfully, the unique identifier (ID) of the
+     * new account in the AWS GovCloud (US) Region.</p>
      */
     inline CreateAccountStatus& WithGovCloudAccountId(Aws::String&& value) { SetGovCloudAccountId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>If the account was created successfully, the unique identifier (ID) of the
+     * new account in the AWS GovCloud (US) Region.</p>
      */
     inline CreateAccountStatus& WithGovCloudAccountId(const char* value) { SetGovCloudAccountId(value); return *this;}
 

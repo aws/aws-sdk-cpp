@@ -23,12 +23,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateThreatIntelSetRequest::UpdateThreatIntelSetRequest() : 
-    m_activate(false),
-    m_activateHasBeenSet(false),
     m_detectorIdHasBeenSet(false),
-    m_locationHasBeenSet(false),
+    m_threatIntelSetIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_threatIntelSetIdHasBeenSet(false)
+    m_locationHasBeenSet(false),
+    m_activate(false),
+    m_activateHasBeenSet(false)
 {
 }
 
@@ -36,9 +36,9 @@ Aws::String UpdateThreatIntelSetRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_activateHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithBool("activate", m_activate);
+   payload.WithString("name", m_name);
 
   }
 
@@ -48,9 +48,9 @@ Aws::String UpdateThreatIntelSetRequest::SerializePayload() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_activateHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithBool("activate", m_activate);
 
   }
 

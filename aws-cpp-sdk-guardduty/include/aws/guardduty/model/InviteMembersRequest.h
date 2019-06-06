@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/GuardDutyRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -28,9 +28,6 @@ namespace Model
 {
 
   /**
-   * InviteMembers request body.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/InviteMembersRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_GUARDDUTY_API InviteMembersRequest : public GuardDutyRequest
   {
@@ -47,189 +44,189 @@ namespace Model
 
 
     /**
-     * A list of account IDs of the accounts that you want to invite to GuardDuty as
-     * members.
-     */
-    inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
-
-    /**
-     * A list of account IDs of the accounts that you want to invite to GuardDuty as
-     * members.
-     */
-    inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-
-    /**
-     * A list of account IDs of the accounts that you want to invite to GuardDuty as
-     * members.
-     */
-    inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-
-    /**
-     * A list of account IDs of the accounts that you want to invite to GuardDuty as
-     * members.
-     */
-    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-
-    /**
-     * A list of account IDs of the accounts that you want to invite to GuardDuty as
-     * members.
-     */
-    inline InviteMembersRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-
-    /**
-     * A list of account IDs of the accounts that you want to invite to GuardDuty as
-     * members.
-     */
-    inline InviteMembersRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-
-    /**
-     * A list of account IDs of the accounts that you want to invite to GuardDuty as
-     * members.
-     */
-    inline InviteMembersRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-
-    /**
-     * A list of account IDs of the accounts that you want to invite to GuardDuty as
-     * members.
-     */
-    inline InviteMembersRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * A list of account IDs of the accounts that you want to invite to GuardDuty as
-     * members.
-     */
-    inline InviteMembersRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-
-
-    /**
-     * The unique ID of the detector of the GuardDuty account with which you want to
-     * invite members.
+     * <p>The unique ID of the detector of the GuardDuty account with which you want to
+     * invite members.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The unique ID of the detector of the GuardDuty account with which you want to
-     * invite members.
+     * <p>The unique ID of the detector of the GuardDuty account with which you want to
+     * invite members.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * The unique ID of the detector of the GuardDuty account with which you want to
-     * invite members.
+     * <p>The unique ID of the detector of the GuardDuty account with which you want to
+     * invite members.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * The unique ID of the detector of the GuardDuty account with which you want to
-     * invite members.
+     * <p>The unique ID of the detector of the GuardDuty account with which you want to
+     * invite members.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * The unique ID of the detector of the GuardDuty account with which you want to
-     * invite members.
+     * <p>The unique ID of the detector of the GuardDuty account with which you want to
+     * invite members.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * The unique ID of the detector of the GuardDuty account with which you want to
-     * invite members.
+     * <p>The unique ID of the detector of the GuardDuty account with which you want to
+     * invite members.</p>
      */
     inline InviteMembersRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The unique ID of the detector of the GuardDuty account with which you want to
-     * invite members.
+     * <p>The unique ID of the detector of the GuardDuty account with which you want to
+     * invite members.</p>
      */
     inline InviteMembersRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of the detector of the GuardDuty account with which you want to
-     * invite members.
+     * <p>The unique ID of the detector of the GuardDuty account with which you want to
+     * invite members.</p>
      */
     inline InviteMembersRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * A boolean value that specifies whether you want to disable email notification to
-     * the accounts that you’re inviting to GuardDuty as members.
+     * <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
+     * members.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
+
+    /**
+     * <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
+     * members.</p>
+     */
+    inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
+
+    /**
+     * <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
+     * members.</p>
+     */
+    inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
+
+    /**
+     * <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
+     * members.</p>
+     */
+    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
+
+    /**
+     * <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
+     * members.</p>
+     */
+    inline InviteMembersRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
+
+    /**
+     * <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
+     * members.</p>
+     */
+    inline InviteMembersRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
+     * members.</p>
+     */
+    inline InviteMembersRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+
+    /**
+     * <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
+     * members.</p>
+     */
+    inline InviteMembersRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
+     * members.</p>
+     */
+    inline InviteMembersRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>A boolean value that specifies whether you want to disable email notification
+     * to the accounts that you’re inviting to GuardDuty as members.</p>
      */
     inline bool GetDisableEmailNotification() const{ return m_disableEmailNotification; }
 
     /**
-     * A boolean value that specifies whether you want to disable email notification to
-     * the accounts that you’re inviting to GuardDuty as members.
+     * <p>A boolean value that specifies whether you want to disable email notification
+     * to the accounts that you’re inviting to GuardDuty as members.</p>
      */
     inline bool DisableEmailNotificationHasBeenSet() const { return m_disableEmailNotificationHasBeenSet; }
 
     /**
-     * A boolean value that specifies whether you want to disable email notification to
-     * the accounts that you’re inviting to GuardDuty as members.
+     * <p>A boolean value that specifies whether you want to disable email notification
+     * to the accounts that you’re inviting to GuardDuty as members.</p>
      */
     inline void SetDisableEmailNotification(bool value) { m_disableEmailNotificationHasBeenSet = true; m_disableEmailNotification = value; }
 
     /**
-     * A boolean value that specifies whether you want to disable email notification to
-     * the accounts that you’re inviting to GuardDuty as members.
+     * <p>A boolean value that specifies whether you want to disable email notification
+     * to the accounts that you’re inviting to GuardDuty as members.</p>
      */
     inline InviteMembersRequest& WithDisableEmailNotification(bool value) { SetDisableEmailNotification(value); return *this;}
 
 
     /**
-     * The invitation message that you want to send to the accounts that you’re
-     * inviting to GuardDuty as members.
+     * <p>The invitation message that you want to send to the accounts that you’re
+     * inviting to GuardDuty as members.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * The invitation message that you want to send to the accounts that you’re
-     * inviting to GuardDuty as members.
+     * <p>The invitation message that you want to send to the accounts that you’re
+     * inviting to GuardDuty as members.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * The invitation message that you want to send to the accounts that you’re
-     * inviting to GuardDuty as members.
+     * <p>The invitation message that you want to send to the accounts that you’re
+     * inviting to GuardDuty as members.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * The invitation message that you want to send to the accounts that you’re
-     * inviting to GuardDuty as members.
+     * <p>The invitation message that you want to send to the accounts that you’re
+     * inviting to GuardDuty as members.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * The invitation message that you want to send to the accounts that you’re
-     * inviting to GuardDuty as members.
+     * <p>The invitation message that you want to send to the accounts that you’re
+     * inviting to GuardDuty as members.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * The invitation message that you want to send to the accounts that you’re
-     * inviting to GuardDuty as members.
+     * <p>The invitation message that you want to send to the accounts that you’re
+     * inviting to GuardDuty as members.</p>
      */
     inline InviteMembersRequest& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * The invitation message that you want to send to the accounts that you’re
-     * inviting to GuardDuty as members.
+     * <p>The invitation message that you want to send to the accounts that you’re
+     * inviting to GuardDuty as members.</p>
      */
     inline InviteMembersRequest& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * The invitation message that you want to send to the accounts that you’re
-     * inviting to GuardDuty as members.
+     * <p>The invitation message that you want to send to the accounts that you’re
+     * inviting to GuardDuty as members.</p>
      */
     inline InviteMembersRequest& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
 
-    Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
-
     Aws::String m_detectorId;
     bool m_detectorIdHasBeenSet;
+
+    Aws::Vector<Aws::String> m_accountIds;
+    bool m_accountIdsHasBeenSet;
 
     bool m_disableEmailNotification;
     bool m_disableEmailNotificationHasBeenSet;

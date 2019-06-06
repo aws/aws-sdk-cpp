@@ -64,6 +64,7 @@
 #include <aws/ecs/model/RunTaskRequest.h>
 #include <aws/ecs/model/StartTaskRequest.h>
 #include <aws/ecs/model/StopTaskRequest.h>
+#include <aws/ecs/model/SubmitAttachmentStateChangesRequest.h>
 #include <aws/ecs/model/SubmitContainerStateChangeRequest.h>
 #include <aws/ecs/model/SubmitTaskStateChangeRequest.h>
 #include <aws/ecs/model/TagResourceRequest.h>
@@ -1334,6 +1335,41 @@ void ECSClient::StopTaskAsync(const StopTaskRequest& request, const StopTaskResp
 void ECSClient::StopTaskAsyncHelper(const StopTaskRequest& request, const StopTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopTask(request), context);
+}
+
+SubmitAttachmentStateChangesOutcome ECSClient::SubmitAttachmentStateChanges(const SubmitAttachmentStateChangesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return SubmitAttachmentStateChangesOutcome(SubmitAttachmentStateChangesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SubmitAttachmentStateChangesOutcome(outcome.GetError());
+  }
+}
+
+SubmitAttachmentStateChangesOutcomeCallable ECSClient::SubmitAttachmentStateChangesCallable(const SubmitAttachmentStateChangesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SubmitAttachmentStateChangesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SubmitAttachmentStateChanges(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::SubmitAttachmentStateChangesAsync(const SubmitAttachmentStateChangesRequest& request, const SubmitAttachmentStateChangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SubmitAttachmentStateChangesAsyncHelper( request, handler, context ); } );
+}
+
+void ECSClient::SubmitAttachmentStateChangesAsyncHelper(const SubmitAttachmentStateChangesRequest& request, const SubmitAttachmentStateChangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SubmitAttachmentStateChanges(request), context);
 }
 
 SubmitContainerStateChangeOutcome ECSClient::SubmitContainerStateChange(const SubmitContainerStateChangeRequest& request) const

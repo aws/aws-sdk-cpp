@@ -1200,9 +1200,12 @@ namespace Model
 
         /**
          * <p>Returns the results from the specified query. If the query is in progress,
-         * partial results of that current execution are returned. Only the fields
-         * requested in the query are returned.</p> <p> <code>GetQueryResults</code> does
-         * not start a query execution. To run a query, use .</p><p><h3>See Also:</h3>   <a
+         * partial results of that current execution are returned.</p> <p>Only the fields
+         * requested in the query are returned, along with a <code>@ptr</code> field which
+         * is the identifier for the log record. You can use the value of <code>@ptr</code>
+         * in a operation to get the full log record.</p> <p> <code>GetQueryResults</code>
+         * does not start a query execution. To run a query, use .</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetQueryResults">AWS
          * API Reference</a></p>
          */
@@ -1210,9 +1213,12 @@ namespace Model
 
         /**
          * <p>Returns the results from the specified query. If the query is in progress,
-         * partial results of that current execution are returned. Only the fields
-         * requested in the query are returned.</p> <p> <code>GetQueryResults</code> does
-         * not start a query execution. To run a query, use .</p><p><h3>See Also:</h3>   <a
+         * partial results of that current execution are returned.</p> <p>Only the fields
+         * requested in the query are returned, along with a <code>@ptr</code> field which
+         * is the identifier for the log record. You can use the value of <code>@ptr</code>
+         * in a operation to get the full log record.</p> <p> <code>GetQueryResults</code>
+         * does not start a query execution. To run a query, use .</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetQueryResults">AWS
          * API Reference</a></p>
          *
@@ -1222,9 +1228,12 @@ namespace Model
 
         /**
          * <p>Returns the results from the specified query. If the query is in progress,
-         * partial results of that current execution are returned. Only the fields
-         * requested in the query are returned.</p> <p> <code>GetQueryResults</code> does
-         * not start a query execution. To run a query, use .</p><p><h3>See Also:</h3>   <a
+         * partial results of that current execution are returned.</p> <p>Only the fields
+         * requested in the query are returned, along with a <code>@ptr</code> field which
+         * is the identifier for the log record. You can use the value of <code>@ptr</code>
+         * in a operation to get the full log record.</p> <p> <code>GetQueryResults</code>
+         * does not start a query execution. To run a query, use .</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetQueryResults">AWS
          * API Reference</a></p>
          *
@@ -1361,11 +1370,11 @@ namespace Model
          * calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log
          * event.</p> </li> <li> <p>None of the log events in the batch can be more than 2
          * hours in the future.</p> </li> <li> <p>None of the log events in the batch can
-         * be older than 14 days or the retention period of the log group.</p> </li> <li>
-         * <p>The log events in the batch must be in chronological ordered by their
-         * timestamp. The timestamp is the time the event occurred, expressed as the number
-         * of milliseconds after Jan 1, 1970 00:00:00 UTC. (In AWS Tools for PowerShell and
-         * the AWS SDK for .NET, the timestamp is specified in .NET format:
+         * be older than 14 days or older than the retention period of the log group.</p>
+         * </li> <li> <p>The log events in the batch must be in chronological ordered by
+         * their timestamp. The timestamp is the time the event occurred, expressed as the
+         * number of milliseconds after Jan 1, 1970 00:00:00 UTC. (In AWS Tools for
+         * PowerShell and the AWS SDK for .NET, the timestamp is specified in .NET format:
          * yyyy-mm-ddThh:mm:ss. For example, 2017-09-15T13:45:30.) </p> </li> <li> <p>The
          * maximum number of log events in a batch is 10,000.</p> </li> <li> <p>A batch of
          * log events in a single request cannot span more than 24 hours. Otherwise, the
@@ -1389,11 +1398,11 @@ namespace Model
          * calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log
          * event.</p> </li> <li> <p>None of the log events in the batch can be more than 2
          * hours in the future.</p> </li> <li> <p>None of the log events in the batch can
-         * be older than 14 days or the retention period of the log group.</p> </li> <li>
-         * <p>The log events in the batch must be in chronological ordered by their
-         * timestamp. The timestamp is the time the event occurred, expressed as the number
-         * of milliseconds after Jan 1, 1970 00:00:00 UTC. (In AWS Tools for PowerShell and
-         * the AWS SDK for .NET, the timestamp is specified in .NET format:
+         * be older than 14 days or older than the retention period of the log group.</p>
+         * </li> <li> <p>The log events in the batch must be in chronological ordered by
+         * their timestamp. The timestamp is the time the event occurred, expressed as the
+         * number of milliseconds after Jan 1, 1970 00:00:00 UTC. (In AWS Tools for
+         * PowerShell and the AWS SDK for .NET, the timestamp is specified in .NET format:
          * yyyy-mm-ddThh:mm:ss. For example, 2017-09-15T13:45:30.) </p> </li> <li> <p>The
          * maximum number of log events in a batch is 10,000.</p> </li> <li> <p>A batch of
          * log events in a single request cannot span more than 24 hours. Otherwise, the
@@ -1419,11 +1428,11 @@ namespace Model
          * calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log
          * event.</p> </li> <li> <p>None of the log events in the batch can be more than 2
          * hours in the future.</p> </li> <li> <p>None of the log events in the batch can
-         * be older than 14 days or the retention period of the log group.</p> </li> <li>
-         * <p>The log events in the batch must be in chronological ordered by their
-         * timestamp. The timestamp is the time the event occurred, expressed as the number
-         * of milliseconds after Jan 1, 1970 00:00:00 UTC. (In AWS Tools for PowerShell and
-         * the AWS SDK for .NET, the timestamp is specified in .NET format:
+         * be older than 14 days or older than the retention period of the log group.</p>
+         * </li> <li> <p>The log events in the batch must be in chronological ordered by
+         * their timestamp. The timestamp is the time the event occurred, expressed as the
+         * number of milliseconds after Jan 1, 1970 00:00:00 UTC. (In AWS Tools for
+         * PowerShell and the AWS SDK for .NET, the timestamp is specified in .NET format:
          * yyyy-mm-ddThh:mm:ss. For example, 2017-09-15T13:45:30.) </p> </li> <li> <p>The
          * maximum number of log events in a batch is 10,000.</p> </li> <li> <p>A batch of
          * log events in a single request cannot span more than 24 hours. Otherwise, the
@@ -1608,7 +1617,9 @@ namespace Model
          * the log group and time range to query, and the query string to use.</p> <p>For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
-         * Logs Insights Query Syntax</a>.</p><p><h3>See Also:</h3>   <a
+         * Logs Insights Query Syntax</a>.</p> <p>Queries time out after 15 minutes of
+         * execution. If your queries are timing out, reduce the time range being searched,
+         * or partition your query into a number of queries.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartQuery">AWS API
          * Reference</a></p>
          */
@@ -1619,7 +1630,9 @@ namespace Model
          * the log group and time range to query, and the query string to use.</p> <p>For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
-         * Logs Insights Query Syntax</a>.</p><p><h3>See Also:</h3>   <a
+         * Logs Insights Query Syntax</a>.</p> <p>Queries time out after 15 minutes of
+         * execution. If your queries are timing out, reduce the time range being searched,
+         * or partition your query into a number of queries.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartQuery">AWS API
          * Reference</a></p>
          *
@@ -1632,7 +1645,9 @@ namespace Model
          * the log group and time range to query, and the query string to use.</p> <p>For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
-         * Logs Insights Query Syntax</a>.</p><p><h3>See Also:</h3>   <a
+         * Logs Insights Query Syntax</a>.</p> <p>Queries time out after 15 minutes of
+         * execution. If your queries are timing out, reduce the time range being searched,
+         * or partition your query into a number of queries.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartQuery">AWS API
          * Reference</a></p>
          *

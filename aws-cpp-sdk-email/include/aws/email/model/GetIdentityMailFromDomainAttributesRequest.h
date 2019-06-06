@@ -31,7 +31,7 @@ namespace Model
    * <p>Represents a request to return the Amazon SES custom MAIL FROM attributes for
    * a list of identities. For information about using a custom MAIL FROM domain, see
    * the <a
-   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityMailFromDomainAttributesRequest">AWS
    * API Reference</a></p>

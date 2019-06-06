@@ -50,6 +50,8 @@ namespace Aws
         static const int CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION_HASH = HashingUtils::HashString("CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION");
         static const int EMAIL_VERIFICATION_CODE_EXPIRED_HASH = HashingUtils::HashString("EMAIL_VERIFICATION_CODE_EXPIRED");
         static const int WAIT_PERIOD_ACTIVE_HASH = HashingUtils::HashString("WAIT_PERIOD_ACTIVE");
+        static const int MAX_TAG_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("MAX_TAG_LIMIT_EXCEEDED");
+        static const int TAG_POLICY_VIOLATION_HASH = HashingUtils::HashString("TAG_POLICY_VIOLATION");
 
 
         ConstraintViolationExceptionReason GetConstraintViolationExceptionReasonForName(const Aws::String& name)
@@ -135,6 +137,14 @@ namespace Aws
           {
             return ConstraintViolationExceptionReason::WAIT_PERIOD_ACTIVE;
           }
+          else if (hashCode == MAX_TAG_LIMIT_EXCEEDED_HASH)
+          {
+            return ConstraintViolationExceptionReason::MAX_TAG_LIMIT_EXCEEDED;
+          }
+          else if (hashCode == TAG_POLICY_VIOLATION_HASH)
+          {
+            return ConstraintViolationExceptionReason::TAG_POLICY_VIOLATION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -189,6 +199,10 @@ namespace Aws
             return "EMAIL_VERIFICATION_CODE_EXPIRED";
           case ConstraintViolationExceptionReason::WAIT_PERIOD_ACTIVE:
             return "WAIT_PERIOD_ACTIVE";
+          case ConstraintViolationExceptionReason::MAX_TAG_LIMIT_EXCEEDED:
+            return "MAX_TAG_LIMIT_EXCEEDED";
+          case ConstraintViolationExceptionReason::TAG_POLICY_VIOLATION:
+            return "TAG_POLICY_VIOLATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

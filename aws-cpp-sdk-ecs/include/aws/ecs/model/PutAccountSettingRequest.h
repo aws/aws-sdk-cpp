@@ -46,62 +46,74 @@ namespace Model
 
 
     /**
-     * <p>The resource name for which to enable the new format. If
+     * <p>The resource name for which to modify the account setting. If
      * <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS
      * services is affected. If <code>taskLongArnFormat</code> is specified, the ARN
      * and resource ID for your Amazon ECS tasks is affected. If
      * <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource
-     * ID for your Amazon ECS container instances is affected.</p>
+     * ID for your Amazon ECS container instances is affected. If
+     * <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS
+     * container instances is affected.</p>
      */
     inline const SettingName& GetName() const{ return m_name; }
 
     /**
-     * <p>The resource name for which to enable the new format. If
+     * <p>The resource name for which to modify the account setting. If
      * <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS
      * services is affected. If <code>taskLongArnFormat</code> is specified, the ARN
      * and resource ID for your Amazon ECS tasks is affected. If
      * <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource
-     * ID for your Amazon ECS container instances is affected.</p>
+     * ID for your Amazon ECS container instances is affected. If
+     * <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS
+     * container instances is affected.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The resource name for which to enable the new format. If
+     * <p>The resource name for which to modify the account setting. If
      * <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS
      * services is affected. If <code>taskLongArnFormat</code> is specified, the ARN
      * and resource ID for your Amazon ECS tasks is affected. If
      * <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource
-     * ID for your Amazon ECS container instances is affected.</p>
+     * ID for your Amazon ECS container instances is affected. If
+     * <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS
+     * container instances is affected.</p>
      */
     inline void SetName(const SettingName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The resource name for which to enable the new format. If
+     * <p>The resource name for which to modify the account setting. If
      * <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS
      * services is affected. If <code>taskLongArnFormat</code> is specified, the ARN
      * and resource ID for your Amazon ECS tasks is affected. If
      * <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource
-     * ID for your Amazon ECS container instances is affected.</p>
+     * ID for your Amazon ECS container instances is affected. If
+     * <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS
+     * container instances is affected.</p>
      */
     inline void SetName(SettingName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The resource name for which to enable the new format. If
+     * <p>The resource name for which to modify the account setting. If
      * <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS
      * services is affected. If <code>taskLongArnFormat</code> is specified, the ARN
      * and resource ID for your Amazon ECS tasks is affected. If
      * <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource
-     * ID for your Amazon ECS container instances is affected.</p>
+     * ID for your Amazon ECS container instances is affected. If
+     * <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS
+     * container instances is affected.</p>
      */
     inline PutAccountSettingRequest& WithName(const SettingName& value) { SetName(value); return *this;}
 
     /**
-     * <p>The resource name for which to enable the new format. If
+     * <p>The resource name for which to modify the account setting. If
      * <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS
      * services is affected. If <code>taskLongArnFormat</code> is specified, the ARN
      * and resource ID for your Amazon ECS tasks is affected. If
      * <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource
-     * ID for your Amazon ECS container instances is affected.</p>
+     * ID for your Amazon ECS container instances is affected. If
+     * <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS
+     * container instances is affected.</p>
      */
     inline PutAccountSettingRequest& WithName(SettingName&& value) { SetName(std::move(value)); return *this;}
 
@@ -157,73 +169,73 @@ namespace Model
 
     /**
      * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If you specify the root user, it modifies the ARN and resource ID format
-     * for all IAM users, IAM roles, and the root user of the account unless an IAM
-     * user or role explicitly overrides these settings for themselves. If this field
-     * is omitted, the settings are changed only for the authenticated user.</p>
+     * user. If you specify the root user, it modifies the account setting for all IAM
+     * users, IAM roles, and the root user of the account unless an IAM user or role
+     * explicitly overrides these settings. If this field is omitted, the setting is
+     * changed only for the authenticated user.</p>
      */
     inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
 
     /**
      * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If you specify the root user, it modifies the ARN and resource ID format
-     * for all IAM users, IAM roles, and the root user of the account unless an IAM
-     * user or role explicitly overrides these settings for themselves. If this field
-     * is omitted, the settings are changed only for the authenticated user.</p>
+     * user. If you specify the root user, it modifies the account setting for all IAM
+     * users, IAM roles, and the root user of the account unless an IAM user or role
+     * explicitly overrides these settings. If this field is omitted, the setting is
+     * changed only for the authenticated user.</p>
      */
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
 
     /**
      * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If you specify the root user, it modifies the ARN and resource ID format
-     * for all IAM users, IAM roles, and the root user of the account unless an IAM
-     * user or role explicitly overrides these settings for themselves. If this field
-     * is omitted, the settings are changed only for the authenticated user.</p>
+     * user. If you specify the root user, it modifies the account setting for all IAM
+     * users, IAM roles, and the root user of the account unless an IAM user or role
+     * explicitly overrides these settings. If this field is omitted, the setting is
+     * changed only for the authenticated user.</p>
      */
     inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
 
     /**
      * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If you specify the root user, it modifies the ARN and resource ID format
-     * for all IAM users, IAM roles, and the root user of the account unless an IAM
-     * user or role explicitly overrides these settings for themselves. If this field
-     * is omitted, the settings are changed only for the authenticated user.</p>
+     * user. If you specify the root user, it modifies the account setting for all IAM
+     * users, IAM roles, and the root user of the account unless an IAM user or role
+     * explicitly overrides these settings. If this field is omitted, the setting is
+     * changed only for the authenticated user.</p>
      */
     inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
 
     /**
      * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If you specify the root user, it modifies the ARN and resource ID format
-     * for all IAM users, IAM roles, and the root user of the account unless an IAM
-     * user or role explicitly overrides these settings for themselves. If this field
-     * is omitted, the settings are changed only for the authenticated user.</p>
+     * user. If you specify the root user, it modifies the account setting for all IAM
+     * users, IAM roles, and the root user of the account unless an IAM user or role
+     * explicitly overrides these settings. If this field is omitted, the setting is
+     * changed only for the authenticated user.</p>
      */
     inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
 
     /**
      * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If you specify the root user, it modifies the ARN and resource ID format
-     * for all IAM users, IAM roles, and the root user of the account unless an IAM
-     * user or role explicitly overrides these settings for themselves. If this field
-     * is omitted, the settings are changed only for the authenticated user.</p>
+     * user. If you specify the root user, it modifies the account setting for all IAM
+     * users, IAM roles, and the root user of the account unless an IAM user or role
+     * explicitly overrides these settings. If this field is omitted, the setting is
+     * changed only for the authenticated user.</p>
      */
     inline PutAccountSettingRequest& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
 
     /**
      * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If you specify the root user, it modifies the ARN and resource ID format
-     * for all IAM users, IAM roles, and the root user of the account unless an IAM
-     * user or role explicitly overrides these settings for themselves. If this field
-     * is omitted, the settings are changed only for the authenticated user.</p>
+     * user. If you specify the root user, it modifies the account setting for all IAM
+     * users, IAM roles, and the root user of the account unless an IAM user or role
+     * explicitly overrides these settings. If this field is omitted, the setting is
+     * changed only for the authenticated user.</p>
      */
     inline PutAccountSettingRequest& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. If you specify the root user, it modifies the ARN and resource ID format
-     * for all IAM users, IAM roles, and the root user of the account unless an IAM
-     * user or role explicitly overrides these settings for themselves. If this field
-     * is omitted, the settings are changed only for the authenticated user.</p>
+     * user. If you specify the root user, it modifies the account setting for all IAM
+     * users, IAM roles, and the root user of the account unless an IAM user or role
+     * explicitly overrides these settings. If this field is omitted, the setting is
+     * changed only for the authenticated user.</p>
      */
     inline PutAccountSettingRequest& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
 

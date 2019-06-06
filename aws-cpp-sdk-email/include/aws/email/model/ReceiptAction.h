@@ -44,7 +44,7 @@ namespace Model
    * or more email addresses or domains that you own. An instance of this data type
    * can represent only one action.</p> <p>For information about setting up receipt
    * rules, see the <a
-   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReceiptAction">AWS
    * API Reference</a></p>

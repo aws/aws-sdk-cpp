@@ -62,8 +62,7 @@ namespace Model
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline const Aws::String& GetContainerInstanceArn() const{ return m_containerInstanceArn; }
 
@@ -73,8 +72,7 @@ namespace Model
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline bool ContainerInstanceArnHasBeenSet() const { return m_containerInstanceArnHasBeenSet; }
 
@@ -84,8 +82,7 @@ namespace Model
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline void SetContainerInstanceArn(const Aws::String& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
 
@@ -95,8 +92,7 @@ namespace Model
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline void SetContainerInstanceArn(Aws::String&& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = std::move(value); }
 
@@ -106,8 +102,7 @@ namespace Model
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline void SetContainerInstanceArn(const char* value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn.assign(value); }
 
@@ -117,8 +112,7 @@ namespace Model
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline ContainerInstance& WithContainerInstanceArn(const Aws::String& value) { SetContainerInstanceArn(value); return *this;}
 
@@ -128,8 +122,7 @@ namespace Model
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline ContainerInstance& WithContainerInstanceArn(Aws::String&& value) { SetContainerInstanceArn(std::move(value)); return *this;}
 
@@ -139,8 +132,7 @@ namespace Model
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
-     * </code>.</p>
+     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline ContainerInstance& WithContainerInstanceArn(const char* value) { SetContainerInstanceArn(value); return *this;}
 
@@ -448,11 +440,22 @@ namespace Model
 
     /**
      * <p>The status of the container instance. The valid values are
-     * <code>ACTIVE</code>, <code>INACTIVE</code>, or <code>DRAINING</code>.
-     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
-     * <code>DRAINING</code> indicates that new tasks are not placed on the container
-     * instance and any service tasks running on the container instance are removed if
-     * possible. For more information, see <a
+     * <code>REGISTERING</code>, <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>,
+     * <code>INACTIVE</code>, <code>DEREGISTERING</code>, or <code>DRAINING</code>.</p>
+     * <p>If your account has opted in to the <code>awsvpcTrunking</code> account
+     * setting, then any newly registered container instance will transition to a
+     * <code>REGISTERING</code> status while the trunk elastic network interface is
+     * provisioned for the instance. If the registration fails, the instance will
+     * transition to a <code>REGISTRATION_FAILED</code> status. You can describe the
+     * container instance and see the reason for failure in the
+     * <code>statusReason</code> parameter. Once the container instance is terminated,
+     * the instance transitions to a <code>DEREGISTERING</code> status while the trunk
+     * elastic network interface is deprovisioned. The instance then transitions to an
+     * <code>INACTIVE</code> status.</p> <p>The <code>ACTIVE</code> status indicates
+     * that the container instance can accept tasks. The <code>DRAINING</code>
+     * indicates that new tasks are not placed on the container instance and any
+     * service tasks running on the container instance are removed if possible. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -461,11 +464,22 @@ namespace Model
 
     /**
      * <p>The status of the container instance. The valid values are
-     * <code>ACTIVE</code>, <code>INACTIVE</code>, or <code>DRAINING</code>.
-     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
-     * <code>DRAINING</code> indicates that new tasks are not placed on the container
-     * instance and any service tasks running on the container instance are removed if
-     * possible. For more information, see <a
+     * <code>REGISTERING</code>, <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>,
+     * <code>INACTIVE</code>, <code>DEREGISTERING</code>, or <code>DRAINING</code>.</p>
+     * <p>If your account has opted in to the <code>awsvpcTrunking</code> account
+     * setting, then any newly registered container instance will transition to a
+     * <code>REGISTERING</code> status while the trunk elastic network interface is
+     * provisioned for the instance. If the registration fails, the instance will
+     * transition to a <code>REGISTRATION_FAILED</code> status. You can describe the
+     * container instance and see the reason for failure in the
+     * <code>statusReason</code> parameter. Once the container instance is terminated,
+     * the instance transitions to a <code>DEREGISTERING</code> status while the trunk
+     * elastic network interface is deprovisioned. The instance then transitions to an
+     * <code>INACTIVE</code> status.</p> <p>The <code>ACTIVE</code> status indicates
+     * that the container instance can accept tasks. The <code>DRAINING</code>
+     * indicates that new tasks are not placed on the container instance and any
+     * service tasks running on the container instance are removed if possible. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -474,11 +488,22 @@ namespace Model
 
     /**
      * <p>The status of the container instance. The valid values are
-     * <code>ACTIVE</code>, <code>INACTIVE</code>, or <code>DRAINING</code>.
-     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
-     * <code>DRAINING</code> indicates that new tasks are not placed on the container
-     * instance and any service tasks running on the container instance are removed if
-     * possible. For more information, see <a
+     * <code>REGISTERING</code>, <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>,
+     * <code>INACTIVE</code>, <code>DEREGISTERING</code>, or <code>DRAINING</code>.</p>
+     * <p>If your account has opted in to the <code>awsvpcTrunking</code> account
+     * setting, then any newly registered container instance will transition to a
+     * <code>REGISTERING</code> status while the trunk elastic network interface is
+     * provisioned for the instance. If the registration fails, the instance will
+     * transition to a <code>REGISTRATION_FAILED</code> status. You can describe the
+     * container instance and see the reason for failure in the
+     * <code>statusReason</code> parameter. Once the container instance is terminated,
+     * the instance transitions to a <code>DEREGISTERING</code> status while the trunk
+     * elastic network interface is deprovisioned. The instance then transitions to an
+     * <code>INACTIVE</code> status.</p> <p>The <code>ACTIVE</code> status indicates
+     * that the container instance can accept tasks. The <code>DRAINING</code>
+     * indicates that new tasks are not placed on the container instance and any
+     * service tasks running on the container instance are removed if possible. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -487,11 +512,22 @@ namespace Model
 
     /**
      * <p>The status of the container instance. The valid values are
-     * <code>ACTIVE</code>, <code>INACTIVE</code>, or <code>DRAINING</code>.
-     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
-     * <code>DRAINING</code> indicates that new tasks are not placed on the container
-     * instance and any service tasks running on the container instance are removed if
-     * possible. For more information, see <a
+     * <code>REGISTERING</code>, <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>,
+     * <code>INACTIVE</code>, <code>DEREGISTERING</code>, or <code>DRAINING</code>.</p>
+     * <p>If your account has opted in to the <code>awsvpcTrunking</code> account
+     * setting, then any newly registered container instance will transition to a
+     * <code>REGISTERING</code> status while the trunk elastic network interface is
+     * provisioned for the instance. If the registration fails, the instance will
+     * transition to a <code>REGISTRATION_FAILED</code> status. You can describe the
+     * container instance and see the reason for failure in the
+     * <code>statusReason</code> parameter. Once the container instance is terminated,
+     * the instance transitions to a <code>DEREGISTERING</code> status while the trunk
+     * elastic network interface is deprovisioned. The instance then transitions to an
+     * <code>INACTIVE</code> status.</p> <p>The <code>ACTIVE</code> status indicates
+     * that the container instance can accept tasks. The <code>DRAINING</code>
+     * indicates that new tasks are not placed on the container instance and any
+     * service tasks running on the container instance are removed if possible. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -500,11 +536,22 @@ namespace Model
 
     /**
      * <p>The status of the container instance. The valid values are
-     * <code>ACTIVE</code>, <code>INACTIVE</code>, or <code>DRAINING</code>.
-     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
-     * <code>DRAINING</code> indicates that new tasks are not placed on the container
-     * instance and any service tasks running on the container instance are removed if
-     * possible. For more information, see <a
+     * <code>REGISTERING</code>, <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>,
+     * <code>INACTIVE</code>, <code>DEREGISTERING</code>, or <code>DRAINING</code>.</p>
+     * <p>If your account has opted in to the <code>awsvpcTrunking</code> account
+     * setting, then any newly registered container instance will transition to a
+     * <code>REGISTERING</code> status while the trunk elastic network interface is
+     * provisioned for the instance. If the registration fails, the instance will
+     * transition to a <code>REGISTRATION_FAILED</code> status. You can describe the
+     * container instance and see the reason for failure in the
+     * <code>statusReason</code> parameter. Once the container instance is terminated,
+     * the instance transitions to a <code>DEREGISTERING</code> status while the trunk
+     * elastic network interface is deprovisioned. The instance then transitions to an
+     * <code>INACTIVE</code> status.</p> <p>The <code>ACTIVE</code> status indicates
+     * that the container instance can accept tasks. The <code>DRAINING</code>
+     * indicates that new tasks are not placed on the container instance and any
+     * service tasks running on the container instance are removed if possible. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -513,11 +560,22 @@ namespace Model
 
     /**
      * <p>The status of the container instance. The valid values are
-     * <code>ACTIVE</code>, <code>INACTIVE</code>, or <code>DRAINING</code>.
-     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
-     * <code>DRAINING</code> indicates that new tasks are not placed on the container
-     * instance and any service tasks running on the container instance are removed if
-     * possible. For more information, see <a
+     * <code>REGISTERING</code>, <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>,
+     * <code>INACTIVE</code>, <code>DEREGISTERING</code>, or <code>DRAINING</code>.</p>
+     * <p>If your account has opted in to the <code>awsvpcTrunking</code> account
+     * setting, then any newly registered container instance will transition to a
+     * <code>REGISTERING</code> status while the trunk elastic network interface is
+     * provisioned for the instance. If the registration fails, the instance will
+     * transition to a <code>REGISTRATION_FAILED</code> status. You can describe the
+     * container instance and see the reason for failure in the
+     * <code>statusReason</code> parameter. Once the container instance is terminated,
+     * the instance transitions to a <code>DEREGISTERING</code> status while the trunk
+     * elastic network interface is deprovisioned. The instance then transitions to an
+     * <code>INACTIVE</code> status.</p> <p>The <code>ACTIVE</code> status indicates
+     * that the container instance can accept tasks. The <code>DRAINING</code>
+     * indicates that new tasks are not placed on the container instance and any
+     * service tasks running on the container instance are removed if possible. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -526,11 +584,22 @@ namespace Model
 
     /**
      * <p>The status of the container instance. The valid values are
-     * <code>ACTIVE</code>, <code>INACTIVE</code>, or <code>DRAINING</code>.
-     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
-     * <code>DRAINING</code> indicates that new tasks are not placed on the container
-     * instance and any service tasks running on the container instance are removed if
-     * possible. For more information, see <a
+     * <code>REGISTERING</code>, <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>,
+     * <code>INACTIVE</code>, <code>DEREGISTERING</code>, or <code>DRAINING</code>.</p>
+     * <p>If your account has opted in to the <code>awsvpcTrunking</code> account
+     * setting, then any newly registered container instance will transition to a
+     * <code>REGISTERING</code> status while the trunk elastic network interface is
+     * provisioned for the instance. If the registration fails, the instance will
+     * transition to a <code>REGISTRATION_FAILED</code> status. You can describe the
+     * container instance and see the reason for failure in the
+     * <code>statusReason</code> parameter. Once the container instance is terminated,
+     * the instance transitions to a <code>DEREGISTERING</code> status while the trunk
+     * elastic network interface is deprovisioned. The instance then transitions to an
+     * <code>INACTIVE</code> status.</p> <p>The <code>ACTIVE</code> status indicates
+     * that the container instance can accept tasks. The <code>DRAINING</code>
+     * indicates that new tasks are not placed on the container instance and any
+     * service tasks running on the container instance are removed if possible. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -539,16 +608,68 @@ namespace Model
 
     /**
      * <p>The status of the container instance. The valid values are
-     * <code>ACTIVE</code>, <code>INACTIVE</code>, or <code>DRAINING</code>.
-     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
-     * <code>DRAINING</code> indicates that new tasks are not placed on the container
-     * instance and any service tasks running on the container instance are removed if
-     * possible. For more information, see <a
+     * <code>REGISTERING</code>, <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>,
+     * <code>INACTIVE</code>, <code>DEREGISTERING</code>, or <code>DRAINING</code>.</p>
+     * <p>If your account has opted in to the <code>awsvpcTrunking</code> account
+     * setting, then any newly registered container instance will transition to a
+     * <code>REGISTERING</code> status while the trunk elastic network interface is
+     * provisioned for the instance. If the registration fails, the instance will
+     * transition to a <code>REGISTRATION_FAILED</code> status. You can describe the
+     * container instance and see the reason for failure in the
+     * <code>statusReason</code> parameter. Once the container instance is terminated,
+     * the instance transitions to a <code>DEREGISTERING</code> status while the trunk
+     * elastic network interface is deprovisioned. The instance then transitions to an
+     * <code>INACTIVE</code> status.</p> <p>The <code>ACTIVE</code> status indicates
+     * that the container instance can accept tasks. The <code>DRAINING</code>
+     * indicates that new tasks are not placed on the container instance and any
+     * service tasks running on the container instance are removed if possible. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline ContainerInstance& WithStatus(const char* value) { SetStatus(value); return *this;}
+
+
+    /**
+     * <p>The reason that the container instance reached its current status.</p>
+     */
+    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>The reason that the container instance reached its current status.</p>
+     */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
+
+    /**
+     * <p>The reason that the container instance reached its current status.</p>
+     */
+    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+
+    /**
+     * <p>The reason that the container instance reached its current status.</p>
+     */
+    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
+
+    /**
+     * <p>The reason that the container instance reached its current status.</p>
+     */
+    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
+
+    /**
+     * <p>The reason that the container instance reached its current status.</p>
+     */
+    inline ContainerInstance& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
+
+    /**
+     * <p>The reason that the container instance reached its current status.</p>
+     */
+    inline ContainerInstance& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The reason that the container instance reached its current status.</p>
+     */
+    inline ContainerInstance& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
 
     /**
@@ -760,42 +881,50 @@ namespace Model
 
 
     /**
-     * <p>The elastic network interfaces associated with the container instance.</p>
+     * <p>The resources attached to a container instance, such as elastic network
+     * interfaces.</p>
      */
     inline const Aws::Vector<Attachment>& GetAttachments() const{ return m_attachments; }
 
     /**
-     * <p>The elastic network interfaces associated with the container instance.</p>
+     * <p>The resources attached to a container instance, such as elastic network
+     * interfaces.</p>
      */
     inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
 
     /**
-     * <p>The elastic network interfaces associated with the container instance.</p>
+     * <p>The resources attached to a container instance, such as elastic network
+     * interfaces.</p>
      */
     inline void SetAttachments(const Aws::Vector<Attachment>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
 
     /**
-     * <p>The elastic network interfaces associated with the container instance.</p>
+     * <p>The resources attached to a container instance, such as elastic network
+     * interfaces.</p>
      */
     inline void SetAttachments(Aws::Vector<Attachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
 
     /**
-     * <p>The elastic network interfaces associated with the container instance.</p>
+     * <p>The resources attached to a container instance, such as elastic network
+     * interfaces.</p>
      */
     inline ContainerInstance& WithAttachments(const Aws::Vector<Attachment>& value) { SetAttachments(value); return *this;}
 
     /**
-     * <p>The elastic network interfaces associated with the container instance.</p>
+     * <p>The resources attached to a container instance, such as elastic network
+     * interfaces.</p>
      */
     inline ContainerInstance& WithAttachments(Aws::Vector<Attachment>&& value) { SetAttachments(std::move(value)); return *this;}
 
     /**
-     * <p>The elastic network interfaces associated with the container instance.</p>
+     * <p>The resources attached to a container instance, such as elastic network
+     * interfaces.</p>
      */
     inline ContainerInstance& AddAttachments(const Attachment& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
 
     /**
-     * <p>The elastic network interfaces associated with the container instance.</p>
+     * <p>The resources attached to a container instance, such as elastic network
+     * interfaces.</p>
      */
     inline ContainerInstance& AddAttachments(Attachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
 
@@ -886,6 +1015,9 @@ namespace Model
 
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_statusReason;
+    bool m_statusReasonHasBeenSet;
 
     bool m_agentConnected;
     bool m_agentConnectedHasBeenSet;

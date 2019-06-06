@@ -33,11 +33,6 @@ namespace GuardDuty
 namespace Model
 {
 
-  /**
-   * Contains details about the master account.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Master">AWS
-   * API Reference</a></p>
-   */
   class AWS_GUARDDUTY_API Master
   {
   public:
@@ -48,167 +43,167 @@ namespace Model
 
 
     /**
-     * Master account ID
+     * <p>Master account ID</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * Master account ID
+     * <p>Master account ID</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * Master account ID
+     * <p>Master account ID</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * Master account ID
+     * <p>Master account ID</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * Master account ID
+     * <p>Master account ID</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * Master account ID
+     * <p>Master account ID</p>
      */
     inline Master& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * Master account ID
+     * <p>Master account ID</p>
      */
     inline Master& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * Master account ID
+     * <p>Master account ID</p>
      */
     inline Master& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
-     * This value is used to validate the master account to the member account.
+     * <p>This value is used to validate the master account to the member account.</p>
      */
     inline const Aws::String& GetInvitationId() const{ return m_invitationId; }
 
     /**
-     * This value is used to validate the master account to the member account.
+     * <p>This value is used to validate the master account to the member account.</p>
      */
     inline bool InvitationIdHasBeenSet() const { return m_invitationIdHasBeenSet; }
 
     /**
-     * This value is used to validate the master account to the member account.
+     * <p>This value is used to validate the master account to the member account.</p>
      */
     inline void SetInvitationId(const Aws::String& value) { m_invitationIdHasBeenSet = true; m_invitationId = value; }
 
     /**
-     * This value is used to validate the master account to the member account.
+     * <p>This value is used to validate the master account to the member account.</p>
      */
     inline void SetInvitationId(Aws::String&& value) { m_invitationIdHasBeenSet = true; m_invitationId = std::move(value); }
 
     /**
-     * This value is used to validate the master account to the member account.
+     * <p>This value is used to validate the master account to the member account.</p>
      */
     inline void SetInvitationId(const char* value) { m_invitationIdHasBeenSet = true; m_invitationId.assign(value); }
 
     /**
-     * This value is used to validate the master account to the member account.
+     * <p>This value is used to validate the master account to the member account.</p>
      */
     inline Master& WithInvitationId(const Aws::String& value) { SetInvitationId(value); return *this;}
 
     /**
-     * This value is used to validate the master account to the member account.
+     * <p>This value is used to validate the master account to the member account.</p>
      */
     inline Master& WithInvitationId(Aws::String&& value) { SetInvitationId(std::move(value)); return *this;}
 
     /**
-     * This value is used to validate the master account to the member account.
+     * <p>This value is used to validate the master account to the member account.</p>
      */
     inline Master& WithInvitationId(const char* value) { SetInvitationId(value); return *this;}
 
 
     /**
-     * Timestamp at which the invitation was sent
-     */
-    inline const Aws::String& GetInvitedAt() const{ return m_invitedAt; }
-
-    /**
-     * Timestamp at which the invitation was sent
-     */
-    inline bool InvitedAtHasBeenSet() const { return m_invitedAtHasBeenSet; }
-
-    /**
-     * Timestamp at which the invitation was sent
-     */
-    inline void SetInvitedAt(const Aws::String& value) { m_invitedAtHasBeenSet = true; m_invitedAt = value; }
-
-    /**
-     * Timestamp at which the invitation was sent
-     */
-    inline void SetInvitedAt(Aws::String&& value) { m_invitedAtHasBeenSet = true; m_invitedAt = std::move(value); }
-
-    /**
-     * Timestamp at which the invitation was sent
-     */
-    inline void SetInvitedAt(const char* value) { m_invitedAtHasBeenSet = true; m_invitedAt.assign(value); }
-
-    /**
-     * Timestamp at which the invitation was sent
-     */
-    inline Master& WithInvitedAt(const Aws::String& value) { SetInvitedAt(value); return *this;}
-
-    /**
-     * Timestamp at which the invitation was sent
-     */
-    inline Master& WithInvitedAt(Aws::String&& value) { SetInvitedAt(std::move(value)); return *this;}
-
-    /**
-     * Timestamp at which the invitation was sent
-     */
-    inline Master& WithInvitedAt(const char* value) { SetInvitedAt(value); return *this;}
-
-
-    /**
-     * The status of the relationship between the master and member accounts.
+     * <p>The status of the relationship between the master and member accounts.</p>
      */
     inline const Aws::String& GetRelationshipStatus() const{ return m_relationshipStatus; }
 
     /**
-     * The status of the relationship between the master and member accounts.
+     * <p>The status of the relationship between the master and member accounts.</p>
      */
     inline bool RelationshipStatusHasBeenSet() const { return m_relationshipStatusHasBeenSet; }
 
     /**
-     * The status of the relationship between the master and member accounts.
+     * <p>The status of the relationship between the master and member accounts.</p>
      */
     inline void SetRelationshipStatus(const Aws::String& value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus = value; }
 
     /**
-     * The status of the relationship between the master and member accounts.
+     * <p>The status of the relationship between the master and member accounts.</p>
      */
     inline void SetRelationshipStatus(Aws::String&& value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus = std::move(value); }
 
     /**
-     * The status of the relationship between the master and member accounts.
+     * <p>The status of the relationship between the master and member accounts.</p>
      */
     inline void SetRelationshipStatus(const char* value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus.assign(value); }
 
     /**
-     * The status of the relationship between the master and member accounts.
+     * <p>The status of the relationship between the master and member accounts.</p>
      */
     inline Master& WithRelationshipStatus(const Aws::String& value) { SetRelationshipStatus(value); return *this;}
 
     /**
-     * The status of the relationship between the master and member accounts.
+     * <p>The status of the relationship between the master and member accounts.</p>
      */
     inline Master& WithRelationshipStatus(Aws::String&& value) { SetRelationshipStatus(std::move(value)); return *this;}
 
     /**
-     * The status of the relationship between the master and member accounts.
+     * <p>The status of the relationship between the master and member accounts.</p>
      */
     inline Master& WithRelationshipStatus(const char* value) { SetRelationshipStatus(value); return *this;}
+
+
+    /**
+     * <p>Timestamp at which the invitation was sent</p>
+     */
+    inline const Aws::String& GetInvitedAt() const{ return m_invitedAt; }
+
+    /**
+     * <p>Timestamp at which the invitation was sent</p>
+     */
+    inline bool InvitedAtHasBeenSet() const { return m_invitedAtHasBeenSet; }
+
+    /**
+     * <p>Timestamp at which the invitation was sent</p>
+     */
+    inline void SetInvitedAt(const Aws::String& value) { m_invitedAtHasBeenSet = true; m_invitedAt = value; }
+
+    /**
+     * <p>Timestamp at which the invitation was sent</p>
+     */
+    inline void SetInvitedAt(Aws::String&& value) { m_invitedAtHasBeenSet = true; m_invitedAt = std::move(value); }
+
+    /**
+     * <p>Timestamp at which the invitation was sent</p>
+     */
+    inline void SetInvitedAt(const char* value) { m_invitedAtHasBeenSet = true; m_invitedAt.assign(value); }
+
+    /**
+     * <p>Timestamp at which the invitation was sent</p>
+     */
+    inline Master& WithInvitedAt(const Aws::String& value) { SetInvitedAt(value); return *this;}
+
+    /**
+     * <p>Timestamp at which the invitation was sent</p>
+     */
+    inline Master& WithInvitedAt(Aws::String&& value) { SetInvitedAt(std::move(value)); return *this;}
+
+    /**
+     * <p>Timestamp at which the invitation was sent</p>
+     */
+    inline Master& WithInvitedAt(const char* value) { SetInvitedAt(value); return *this;}
 
   private:
 
@@ -218,11 +213,11 @@ namespace Model
     Aws::String m_invitationId;
     bool m_invitationIdHasBeenSet;
 
-    Aws::String m_invitedAt;
-    bool m_invitedAtHasBeenSet;
-
     Aws::String m_relationshipStatus;
     bool m_relationshipStatusHasBeenSet;
+
+    Aws::String m_invitedAt;
+    bool m_invitedAtHasBeenSet;
   };
 
 } // namespace Model

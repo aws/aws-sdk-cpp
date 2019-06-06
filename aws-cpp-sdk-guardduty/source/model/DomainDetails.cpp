@@ -28,24 +28,38 @@ namespace GuardDuty
 namespace Model
 {
 
-DomainDetails::DomainDetails()
+DomainDetails::DomainDetails() : 
+    m_domainHasBeenSet(false)
 {
 }
 
-DomainDetails::DomainDetails(JsonView jsonValue)
+DomainDetails::DomainDetails(JsonView jsonValue) : 
+    m_domainHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 DomainDetails& DomainDetails::operator =(JsonView jsonValue)
 {
-  AWS_UNREFERENCED_PARAM(jsonValue);
+  if(jsonValue.ValueExists("domain"))
+  {
+    m_domain = jsonValue.GetString("domain");
+
+    m_domainHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue DomainDetails::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_domainHasBeenSet)
+  {
+   payload.WithString("domain", m_domain);
+
+  }
 
   return payload;
 }

@@ -28,9 +28,6 @@ namespace Model
 {
 
   /**
-   * DeclineInvitations request body.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeclineInvitationsRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_GUARDDUTY_API DeclineInvitationsRequest : public GuardDutyRequest
   {
@@ -47,56 +44,56 @@ namespace Model
 
 
     /**
-     * A list of account IDs of the AWS accounts that sent invitations to the current
-     * member account that you want to decline invitations from.
+     * <p>A list of account IDs of the AWS accounts that sent invitations to the
+     * current member account that you want to decline invitations from.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
 
     /**
-     * A list of account IDs of the AWS accounts that sent invitations to the current
-     * member account that you want to decline invitations from.
+     * <p>A list of account IDs of the AWS accounts that sent invitations to the
+     * current member account that you want to decline invitations from.</p>
      */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
 
     /**
-     * A list of account IDs of the AWS accounts that sent invitations to the current
-     * member account that you want to decline invitations from.
+     * <p>A list of account IDs of the AWS accounts that sent invitations to the
+     * current member account that you want to decline invitations from.</p>
      */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**
-     * A list of account IDs of the AWS accounts that sent invitations to the current
-     * member account that you want to decline invitations from.
+     * <p>A list of account IDs of the AWS accounts that sent invitations to the
+     * current member account that you want to decline invitations from.</p>
      */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
 
     /**
-     * A list of account IDs of the AWS accounts that sent invitations to the current
-     * member account that you want to decline invitations from.
+     * <p>A list of account IDs of the AWS accounts that sent invitations to the
+     * current member account that you want to decline invitations from.</p>
      */
     inline DeclineInvitationsRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
 
     /**
-     * A list of account IDs of the AWS accounts that sent invitations to the current
-     * member account that you want to decline invitations from.
+     * <p>A list of account IDs of the AWS accounts that sent invitations to the
+     * current member account that you want to decline invitations from.</p>
      */
     inline DeclineInvitationsRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
 
     /**
-     * A list of account IDs of the AWS accounts that sent invitations to the current
-     * member account that you want to decline invitations from.
+     * <p>A list of account IDs of the AWS accounts that sent invitations to the
+     * current member account that you want to decline invitations from.</p>
      */
     inline DeclineInvitationsRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 
     /**
-     * A list of account IDs of the AWS accounts that sent invitations to the current
-     * member account that you want to decline invitations from.
+     * <p>A list of account IDs of the AWS accounts that sent invitations to the
+     * current member account that you want to decline invitations from.</p>
      */
     inline DeclineInvitationsRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
 
     /**
-     * A list of account IDs of the AWS accounts that sent invitations to the current
-     * member account that you want to decline invitations from.
+     * <p>A list of account IDs of the AWS accounts that sent invitations to the
+     * current member account that you want to decline invitations from.</p>
      */
     inline DeclineInvitationsRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 

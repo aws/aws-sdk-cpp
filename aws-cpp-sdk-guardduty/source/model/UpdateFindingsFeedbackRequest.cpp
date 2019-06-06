@@ -23,28 +23,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateFindingsFeedbackRequest::UpdateFindingsFeedbackRequest() : 
-    m_commentsHasBeenSet(false),
     m_detectorIdHasBeenSet(false),
+    m_findingIdsHasBeenSet(false),
     m_feedback(Feedback::NOT_SET),
     m_feedbackHasBeenSet(false),
-    m_findingIdsHasBeenSet(false)
+    m_commentsHasBeenSet(false)
 {
 }
 
 Aws::String UpdateFindingsFeedbackRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_commentsHasBeenSet)
-  {
-   payload.WithString("comments", m_comments);
-
-  }
-
-  if(m_feedbackHasBeenSet)
-  {
-   payload.WithString("feedback", FeedbackMapper::GetNameForFeedback(m_feedback));
-  }
 
   if(m_findingIdsHasBeenSet)
   {
@@ -54,6 +43,17 @@ Aws::String UpdateFindingsFeedbackRequest::SerializePayload() const
      findingIdsJsonList[findingIdsIndex].AsString(m_findingIds[findingIdsIndex]);
    }
    payload.WithArray("findingIds", std::move(findingIdsJsonList));
+
+  }
+
+  if(m_feedbackHasBeenSet)
+  {
+   payload.WithString("feedback", FeedbackMapper::GetNameForFeedback(m_feedback));
+  }
+
+  if(m_commentsHasBeenSet)
+  {
+   payload.WithString("comments", m_comments);
 
   }
 

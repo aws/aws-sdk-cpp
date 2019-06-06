@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     serviceLongArnFormat,
     taskLongArnFormat,
-    containerInstanceLongArnFormat
+    containerInstanceLongArnFormat,
+    awsvpcTrunking
   };
 
 namespace SettingNameMapper

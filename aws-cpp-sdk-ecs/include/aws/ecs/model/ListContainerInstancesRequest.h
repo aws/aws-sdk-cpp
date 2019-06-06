@@ -322,8 +322,8 @@ namespace Model
      * <code>DRAINING</code> status, the results include only container instances that
      * have been set to <code>DRAINING</code> using
      * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the
-     * default is to include container instances set to <code>ACTIVE</code> and
-     * <code>DRAINING</code>.</p>
+     * default is to include container instances set to all states other than
+     * <code>INACTIVE</code>.</p>
      */
     inline const ContainerInstanceStatus& GetStatus() const{ return m_status; }
 
@@ -332,8 +332,8 @@ namespace Model
      * <code>DRAINING</code> status, the results include only container instances that
      * have been set to <code>DRAINING</code> using
      * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the
-     * default is to include container instances set to <code>ACTIVE</code> and
-     * <code>DRAINING</code>.</p>
+     * default is to include container instances set to all states other than
+     * <code>INACTIVE</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -342,8 +342,8 @@ namespace Model
      * <code>DRAINING</code> status, the results include only container instances that
      * have been set to <code>DRAINING</code> using
      * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the
-     * default is to include container instances set to <code>ACTIVE</code> and
-     * <code>DRAINING</code>.</p>
+     * default is to include container instances set to all states other than
+     * <code>INACTIVE</code>.</p>
      */
     inline void SetStatus(const ContainerInstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -352,8 +352,8 @@ namespace Model
      * <code>DRAINING</code> status, the results include only container instances that
      * have been set to <code>DRAINING</code> using
      * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the
-     * default is to include container instances set to <code>ACTIVE</code> and
-     * <code>DRAINING</code>.</p>
+     * default is to include container instances set to all states other than
+     * <code>INACTIVE</code>.</p>
      */
     inline void SetStatus(ContainerInstanceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -362,8 +362,8 @@ namespace Model
      * <code>DRAINING</code> status, the results include only container instances that
      * have been set to <code>DRAINING</code> using
      * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the
-     * default is to include container instances set to <code>ACTIVE</code> and
-     * <code>DRAINING</code>.</p>
+     * default is to include container instances set to all states other than
+     * <code>INACTIVE</code>.</p>
      */
     inline ListContainerInstancesRequest& WithStatus(const ContainerInstanceStatus& value) { SetStatus(value); return *this;}
 
@@ -372,8 +372,8 @@ namespace Model
      * <code>DRAINING</code> status, the results include only container instances that
      * have been set to <code>DRAINING</code> using
      * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the
-     * default is to include container instances set to <code>ACTIVE</code> and
-     * <code>DRAINING</code>.</p>
+     * default is to include container instances set to all states other than
+     * <code>INACTIVE</code>.</p>
      */
     inline ListContainerInstancesRequest& WithStatus(ContainerInstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
 

@@ -44,44 +44,44 @@ namespace Model
 
 
     /**
-     * A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.
+     * <p>A list of objects containing the unprocessed account and a result string
+     * explaining why it was unprocessed.</p>
      */
     inline const Aws::Vector<UnprocessedAccount>& GetUnprocessedAccounts() const{ return m_unprocessedAccounts; }
 
     /**
-     * A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.
+     * <p>A list of objects containing the unprocessed account and a result string
+     * explaining why it was unprocessed.</p>
      */
     inline void SetUnprocessedAccounts(const Aws::Vector<UnprocessedAccount>& value) { m_unprocessedAccounts = value; }
 
     /**
-     * A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.
+     * <p>A list of objects containing the unprocessed account and a result string
+     * explaining why it was unprocessed.</p>
      */
     inline void SetUnprocessedAccounts(Aws::Vector<UnprocessedAccount>&& value) { m_unprocessedAccounts = std::move(value); }
 
     /**
-     * A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.
+     * <p>A list of objects containing the unprocessed account and a result string
+     * explaining why it was unprocessed.</p>
      */
     inline DeleteInvitationsResult& WithUnprocessedAccounts(const Aws::Vector<UnprocessedAccount>& value) { SetUnprocessedAccounts(value); return *this;}
 
     /**
-     * A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.
+     * <p>A list of objects containing the unprocessed account and a result string
+     * explaining why it was unprocessed.</p>
      */
     inline DeleteInvitationsResult& WithUnprocessedAccounts(Aws::Vector<UnprocessedAccount>&& value) { SetUnprocessedAccounts(std::move(value)); return *this;}
 
     /**
-     * A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.
+     * <p>A list of objects containing the unprocessed account and a result string
+     * explaining why it was unprocessed.</p>
      */
     inline DeleteInvitationsResult& AddUnprocessedAccounts(const UnprocessedAccount& value) { m_unprocessedAccounts.push_back(value); return *this; }
 
     /**
-     * A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.
+     * <p>A list of objects containing the unprocessed account and a result string
+     * explaining why it was unprocessed.</p>
      */
     inline DeleteInvitationsResult& AddUnprocessedAccounts(UnprocessedAccount&& value) { m_unprocessedAccounts.push_back(std::move(value)); return *this; }
 

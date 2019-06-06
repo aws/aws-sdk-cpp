@@ -33,12 +33,6 @@ namespace GuardDuty
 namespace Model
 {
 
-  /**
-   * An object containing the member's accountId and email address.<p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AccountDetail">AWS
-   * API Reference</a></p>
-   */
   class AWS_GUARDDUTY_API AccountDetail
   {
   public:
@@ -49,83 +43,83 @@ namespace Model
 
 
     /**
-     * Member account ID.
+     * <p>Member account ID.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * Member account ID.
+     * <p>Member account ID.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * Member account ID.
+     * <p>Member account ID.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * Member account ID.
+     * <p>Member account ID.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * Member account ID.
+     * <p>Member account ID.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * Member account ID.
+     * <p>Member account ID.</p>
      */
     inline AccountDetail& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * Member account ID.
+     * <p>Member account ID.</p>
      */
     inline AccountDetail& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * Member account ID.
+     * <p>Member account ID.</p>
      */
     inline AccountDetail& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
-     * Member account's email address.
+     * <p>Member account's email address.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
 
     /**
-     * Member account's email address.
+     * <p>Member account's email address.</p>
      */
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
 
     /**
-     * Member account's email address.
+     * <p>Member account's email address.</p>
      */
     inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
 
     /**
-     * Member account's email address.
+     * <p>Member account's email address.</p>
      */
     inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
 
     /**
-     * Member account's email address.
+     * <p>Member account's email address.</p>
      */
     inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
 
     /**
-     * Member account's email address.
+     * <p>Member account's email address.</p>
      */
     inline AccountDetail& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
 
     /**
-     * Member account's email address.
+     * <p>Member account's email address.</p>
      */
     inline AccountDetail& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
 
     /**
-     * Member account's email address.
+     * <p>Member account's email address.</p>
      */
     inline AccountDetail& WithEmail(const char* value) { SetEmail(value); return *this;}
 

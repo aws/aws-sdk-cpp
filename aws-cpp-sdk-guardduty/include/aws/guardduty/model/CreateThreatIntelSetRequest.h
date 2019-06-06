@@ -29,9 +29,6 @@ namespace Model
 {
 
   /**
-   * CreateThreatIntelSet request body.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatIntelSetRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_GUARDDUTY_API CreateThreatIntelSetRequest : public GuardDutyRequest
   {
@@ -48,250 +45,263 @@ namespace Model
 
 
     /**
-     * A boolean value that indicates whether GuardDuty is to start using the uploaded
-     * ThreatIntelSet.
-     */
-    inline bool GetActivate() const{ return m_activate; }
-
-    /**
-     * A boolean value that indicates whether GuardDuty is to start using the uploaded
-     * ThreatIntelSet.
-     */
-    inline bool ActivateHasBeenSet() const { return m_activateHasBeenSet; }
-
-    /**
-     * A boolean value that indicates whether GuardDuty is to start using the uploaded
-     * ThreatIntelSet.
-     */
-    inline void SetActivate(bool value) { m_activateHasBeenSet = true; m_activate = value; }
-
-    /**
-     * A boolean value that indicates whether GuardDuty is to start using the uploaded
-     * ThreatIntelSet.
-     */
-    inline CreateThreatIntelSetRequest& WithActivate(bool value) { SetActivate(value); return *this;}
-
-
-    /**
-     * The idempotency token for the create request.
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * The idempotency token for the create request.
-     */
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * The idempotency token for the create request.
-     */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * The idempotency token for the create request.
-     */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * The idempotency token for the create request.
-     */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * The idempotency token for the create request.
-     */
-    inline CreateThreatIntelSetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * The idempotency token for the create request.
-     */
-    inline CreateThreatIntelSetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * The idempotency token for the create request.
-     */
-    inline CreateThreatIntelSetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
-
-    /**
-     * The unique ID of the detector that you want to update.
+     * <p>The unique ID of the detector of the GuardDuty account for which you want to
+     * create a threatIntelSet.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The unique ID of the detector that you want to update.
+     * <p>The unique ID of the detector of the GuardDuty account for which you want to
+     * create a threatIntelSet.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * The unique ID of the detector that you want to update.
+     * <p>The unique ID of the detector of the GuardDuty account for which you want to
+     * create a threatIntelSet.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * The unique ID of the detector that you want to update.
+     * <p>The unique ID of the detector of the GuardDuty account for which you want to
+     * create a threatIntelSet.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * The unique ID of the detector that you want to update.
+     * <p>The unique ID of the detector of the GuardDuty account for which you want to
+     * create a threatIntelSet.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * The unique ID of the detector that you want to update.
+     * <p>The unique ID of the detector of the GuardDuty account for which you want to
+     * create a threatIntelSet.</p>
      */
     inline CreateThreatIntelSetRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The unique ID of the detector that you want to update.
+     * <p>The unique ID of the detector of the GuardDuty account for which you want to
+     * create a threatIntelSet.</p>
      */
     inline CreateThreatIntelSetRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of the detector that you want to update.
+     * <p>The unique ID of the detector of the GuardDuty account for which you want to
+     * create a threatIntelSet.</p>
      */
     inline CreateThreatIntelSetRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * The format of the file that contains the ThreatIntelSet.
+     * <p>A user-friendly ThreatIntelSet name that is displayed in all finding
+     * generated by activity that involves IP addresses included in this
+     * ThreatIntelSet.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A user-friendly ThreatIntelSet name that is displayed in all finding
+     * generated by activity that involves IP addresses included in this
+     * ThreatIntelSet.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A user-friendly ThreatIntelSet name that is displayed in all finding
+     * generated by activity that involves IP addresses included in this
+     * ThreatIntelSet.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>A user-friendly ThreatIntelSet name that is displayed in all finding
+     * generated by activity that involves IP addresses included in this
+     * ThreatIntelSet.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>A user-friendly ThreatIntelSet name that is displayed in all finding
+     * generated by activity that involves IP addresses included in this
+     * ThreatIntelSet.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>A user-friendly ThreatIntelSet name that is displayed in all finding
+     * generated by activity that involves IP addresses included in this
+     * ThreatIntelSet.</p>
+     */
+    inline CreateThreatIntelSetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>A user-friendly ThreatIntelSet name that is displayed in all finding
+     * generated by activity that involves IP addresses included in this
+     * ThreatIntelSet.</p>
+     */
+    inline CreateThreatIntelSetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>A user-friendly ThreatIntelSet name that is displayed in all finding
+     * generated by activity that involves IP addresses included in this
+     * ThreatIntelSet.</p>
+     */
+    inline CreateThreatIntelSetRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The format of the file that contains the ThreatIntelSet.</p>
      */
     inline const ThreatIntelSetFormat& GetFormat() const{ return m_format; }
 
     /**
-     * The format of the file that contains the ThreatIntelSet.
+     * <p>The format of the file that contains the ThreatIntelSet.</p>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
-     * The format of the file that contains the ThreatIntelSet.
+     * <p>The format of the file that contains the ThreatIntelSet.</p>
      */
     inline void SetFormat(const ThreatIntelSetFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
-     * The format of the file that contains the ThreatIntelSet.
+     * <p>The format of the file that contains the ThreatIntelSet.</p>
      */
     inline void SetFormat(ThreatIntelSetFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
-     * The format of the file that contains the ThreatIntelSet.
+     * <p>The format of the file that contains the ThreatIntelSet.</p>
      */
     inline CreateThreatIntelSetRequest& WithFormat(const ThreatIntelSetFormat& value) { SetFormat(value); return *this;}
 
     /**
-     * The format of the file that contains the ThreatIntelSet.
+     * <p>The format of the file that contains the ThreatIntelSet.</p>
      */
     inline CreateThreatIntelSetRequest& WithFormat(ThreatIntelSetFormat&& value) { SetFormat(std::move(value)); return *this;}
 
 
     /**
-     * The URI of the file that contains the ThreatIntelSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).
+     * <p>The URI of the file that contains the ThreatIntelSet. For example
+     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * The URI of the file that contains the ThreatIntelSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).
+     * <p>The URI of the file that contains the ThreatIntelSet. For example
+     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).</p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * The URI of the file that contains the ThreatIntelSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).
+     * <p>The URI of the file that contains the ThreatIntelSet. For example
+     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).</p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * The URI of the file that contains the ThreatIntelSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).
+     * <p>The URI of the file that contains the ThreatIntelSet. For example
+     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).</p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * The URI of the file that contains the ThreatIntelSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).
+     * <p>The URI of the file that contains the ThreatIntelSet. For example
+     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).</p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
-     * The URI of the file that contains the ThreatIntelSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).
+     * <p>The URI of the file that contains the ThreatIntelSet. For example
+     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).</p>
      */
     inline CreateThreatIntelSetRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * The URI of the file that contains the ThreatIntelSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).
+     * <p>The URI of the file that contains the ThreatIntelSet. For example
+     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).</p>
      */
     inline CreateThreatIntelSetRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * The URI of the file that contains the ThreatIntelSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).
+     * <p>The URI of the file that contains the ThreatIntelSet. For example
+     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).</p>
      */
     inline CreateThreatIntelSetRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
 
 
     /**
-     * A user-friendly ThreatIntelSet name that is displayed in all finding generated
-     * by activity that involves IP addresses included in this ThreatIntelSet.
+     * <p>A boolean value that indicates whether GuardDuty is to start using the
+     * uploaded ThreatIntelSet.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline bool GetActivate() const{ return m_activate; }
 
     /**
-     * A user-friendly ThreatIntelSet name that is displayed in all finding generated
-     * by activity that involves IP addresses included in this ThreatIntelSet.
+     * <p>A boolean value that indicates whether GuardDuty is to start using the
+     * uploaded ThreatIntelSet.</p>
      */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline bool ActivateHasBeenSet() const { return m_activateHasBeenSet; }
 
     /**
-     * A user-friendly ThreatIntelSet name that is displayed in all finding generated
-     * by activity that involves IP addresses included in this ThreatIntelSet.
+     * <p>A boolean value that indicates whether GuardDuty is to start using the
+     * uploaded ThreatIntelSet.</p>
      */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetActivate(bool value) { m_activateHasBeenSet = true; m_activate = value; }
 
     /**
-     * A user-friendly ThreatIntelSet name that is displayed in all finding generated
-     * by activity that involves IP addresses included in this ThreatIntelSet.
+     * <p>A boolean value that indicates whether GuardDuty is to start using the
+     * uploaded ThreatIntelSet.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+    inline CreateThreatIntelSetRequest& WithActivate(bool value) { SetActivate(value); return *this;}
+
 
     /**
-     * A user-friendly ThreatIntelSet name that is displayed in all finding generated
-     * by activity that involves IP addresses included in this ThreatIntelSet.
+     * <p>The idempotency token for the create request.</p>
      */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * A user-friendly ThreatIntelSet name that is displayed in all finding generated
-     * by activity that involves IP addresses included in this ThreatIntelSet.
+     * <p>The idempotency token for the create request.</p>
      */
-    inline CreateThreatIntelSetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * A user-friendly ThreatIntelSet name that is displayed in all finding generated
-     * by activity that involves IP addresses included in this ThreatIntelSet.
+     * <p>The idempotency token for the create request.</p>
      */
-    inline CreateThreatIntelSetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * A user-friendly ThreatIntelSet name that is displayed in all finding generated
-     * by activity that involves IP addresses included in this ThreatIntelSet.
+     * <p>The idempotency token for the create request.</p>
      */
-    inline CreateThreatIntelSetRequest& WithName(const char* value) { SetName(value); return *this;}
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>The idempotency token for the create request.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>The idempotency token for the create request.</p>
+     */
+    inline CreateThreatIntelSetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>The idempotency token for the create request.</p>
+     */
+    inline CreateThreatIntelSetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The idempotency token for the create request.</p>
+     */
+    inline CreateThreatIntelSetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
   private:
 
-    bool m_activate;
-    bool m_activateHasBeenSet;
-
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
-
     Aws::String m_detectorId;
     bool m_detectorIdHasBeenSet;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
 
     ThreatIntelSetFormat m_format;
     bool m_formatHasBeenSet;
@@ -299,8 +309,11 @@ namespace Model
     Aws::String m_location;
     bool m_locationHasBeenSet;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_activate;
+    bool m_activateHasBeenSet;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet;
   };
 
 } // namespace Model

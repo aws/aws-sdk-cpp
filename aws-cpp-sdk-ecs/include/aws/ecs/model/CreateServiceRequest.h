@@ -115,65 +115,65 @@ namespace Model
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed. Service names must be unique
-     * within a cluster, but you can have similarly named services in multiple clusters
-     * within a Region or across multiple Regions.</p>
+     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
+     * but you can have similarly named services in multiple clusters within a Region
+     * or across multiple Regions.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed. Service names must be unique
-     * within a cluster, but you can have similarly named services in multiple clusters
-     * within a Region or across multiple Regions.</p>
+     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
+     * but you can have similarly named services in multiple clusters within a Region
+     * or across multiple Regions.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed. Service names must be unique
-     * within a cluster, but you can have similarly named services in multiple clusters
-     * within a Region or across multiple Regions.</p>
+     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
+     * but you can have similarly named services in multiple clusters within a Region
+     * or across multiple Regions.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed. Service names must be unique
-     * within a cluster, but you can have similarly named services in multiple clusters
-     * within a Region or across multiple Regions.</p>
+     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
+     * but you can have similarly named services in multiple clusters within a Region
+     * or across multiple Regions.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed. Service names must be unique
-     * within a cluster, but you can have similarly named services in multiple clusters
-     * within a Region or across multiple Regions.</p>
+     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
+     * but you can have similarly named services in multiple clusters within a Region
+     * or across multiple Regions.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed. Service names must be unique
-     * within a cluster, but you can have similarly named services in multiple clusters
-     * within a Region or across multiple Regions.</p>
+     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
+     * but you can have similarly named services in multiple clusters within a Region
+     * or across multiple Regions.</p>
      */
     inline CreateServiceRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed. Service names must be unique
-     * within a cluster, but you can have similarly named services in multiple clusters
-     * within a Region or across multiple Regions.</p>
+     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
+     * but you can have similarly named services in multiple clusters within a Region
+     * or across multiple Regions.</p>
      */
     inline CreateServiceRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed. Service names must be unique
-     * within a cluster, but you can have similarly named services in multiple clusters
-     * within a Region or across multiple Regions.</p>
+     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
+     * but you can have similarly named services in multiple clusters within a Region
+     * or across multiple Regions.</p>
      */
     inline CreateServiceRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
@@ -559,10 +559,10 @@ namespace Model
     /**
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a>.</p> </note>
      */
     inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
@@ -570,10 +570,10 @@ namespace Model
     /**
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a>.</p> </note>
      */
     inline bool ServiceRegistriesHasBeenSet() const { return m_serviceRegistriesHasBeenSet; }
@@ -581,10 +581,10 @@ namespace Model
     /**
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a>.</p> </note>
      */
     inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
@@ -592,10 +592,10 @@ namespace Model
     /**
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a>.</p> </note>
      */
     inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
@@ -603,10 +603,10 @@ namespace Model
     /**
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a>.</p> </note>
      */
     inline CreateServiceRequest& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
@@ -614,10 +614,10 @@ namespace Model
     /**
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a>.</p> </note>
      */
     inline CreateServiceRequest& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
@@ -625,10 +625,10 @@ namespace Model
     /**
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a>.</p> </note>
      */
     inline CreateServiceRequest& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
@@ -636,10 +636,10 @@ namespace Model
     /**
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a>.</p> </note>
      */
     inline CreateServiceRequest& AddServiceRegistries(ServiceRegistry&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(std::move(value)); return *this; }
@@ -868,7 +868,7 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode, in
      * which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
@@ -892,7 +892,7 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode, in
      * which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
@@ -916,7 +916,7 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode, in
      * which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
@@ -940,7 +940,7 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode, in
      * which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
@@ -964,7 +964,7 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode, in
      * which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
@@ -988,7 +988,7 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode, in
      * which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
@@ -1012,7 +1012,7 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode, in
      * which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
@@ -1036,7 +1036,7 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode, in
      * which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
@@ -1198,7 +1198,7 @@ namespace Model
      * task definitions that use the <code>awsvpc</code> network mode to receive their
      * own elastic network interface, and it is not supported for other network modes.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -1209,7 +1209,7 @@ namespace Model
      * task definitions that use the <code>awsvpc</code> network mode to receive their
      * own elastic network interface, and it is not supported for other network modes.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -1220,7 +1220,7 @@ namespace Model
      * task definitions that use the <code>awsvpc</code> network mode to receive their
      * own elastic network interface, and it is not supported for other network modes.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -1231,7 +1231,7 @@ namespace Model
      * task definitions that use the <code>awsvpc</code> network mode to receive their
      * own elastic network interface, and it is not supported for other network modes.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -1242,7 +1242,7 @@ namespace Model
      * task definitions that use the <code>awsvpc</code> network mode to receive their
      * own elastic network interface, and it is not supported for other network modes.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -1253,7 +1253,7 @@ namespace Model
      * task definitions that use the <code>awsvpc</code> network mode to receive their
      * own elastic network interface, and it is not supported for other network modes.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -1315,7 +1315,7 @@ namespace Model
 
     /**
      * <p>The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
      * desired number of tasks across your cluster. By default, the service scheduler
@@ -1336,7 +1336,7 @@ namespace Model
 
     /**
      * <p>The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
      * desired number of tasks across your cluster. By default, the service scheduler
@@ -1357,7 +1357,7 @@ namespace Model
 
     /**
      * <p>The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
      * desired number of tasks across your cluster. By default, the service scheduler
@@ -1378,7 +1378,7 @@ namespace Model
 
     /**
      * <p>The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
      * desired number of tasks across your cluster. By default, the service scheduler
@@ -1399,7 +1399,7 @@ namespace Model
 
     /**
      * <p>The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
      * desired number of tasks across your cluster. By default, the service scheduler
@@ -1420,7 +1420,7 @@ namespace Model
 
     /**
      * <p>The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
      * desired number of tasks across your cluster. By default, the service scheduler
@@ -1547,7 +1547,7 @@ namespace Model
     /**
      * <p>Specifies whether to enable Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -1556,7 +1556,7 @@ namespace Model
     /**
      * <p>Specifies whether to enable Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -1565,7 +1565,7 @@ namespace Model
     /**
      * <p>Specifies whether to enable Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -1574,7 +1574,7 @@ namespace Model
     /**
      * <p>Specifies whether to enable Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */

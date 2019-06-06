@@ -30,7 +30,8 @@ namespace Model
     ManagedInstance,
     MaintenanceWindow,
     Parameter,
-    PatchBaseline
+    PatchBaseline,
+    OpsItem
   };
 
 namespace ResourceTypeForTaggingMapper

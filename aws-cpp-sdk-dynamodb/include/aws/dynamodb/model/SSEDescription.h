@@ -51,164 +51,140 @@ namespace Model
 
 
     /**
-     * <p>The current state of server-side encryption:</p> <ul> <li> <p>
-     * <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li>
-     * <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p>
-     * <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
-     * <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
-     * <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p>
-     * </li> </ul>
+     * <p>Represents the current state of server-side encryption. The only supported
+     * values are:</p> <ul> <li> <p> <code>ENABLED</code> - Server-side encryption is
+     * enabled.</p> </li> <li> <p> <code>UPDATING</code> - Server-side encryption is
+     * being updated.</p> </li> </ul>
      */
     inline const SSEStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current state of server-side encryption:</p> <ul> <li> <p>
-     * <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li>
-     * <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p>
-     * <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
-     * <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
-     * <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p>
-     * </li> </ul>
+     * <p>Represents the current state of server-side encryption. The only supported
+     * values are:</p> <ul> <li> <p> <code>ENABLED</code> - Server-side encryption is
+     * enabled.</p> </li> <li> <p> <code>UPDATING</code> - Server-side encryption is
+     * being updated.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The current state of server-side encryption:</p> <ul> <li> <p>
-     * <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li>
-     * <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p>
-     * <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
-     * <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
-     * <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p>
-     * </li> </ul>
+     * <p>Represents the current state of server-side encryption. The only supported
+     * values are:</p> <ul> <li> <p> <code>ENABLED</code> - Server-side encryption is
+     * enabled.</p> </li> <li> <p> <code>UPDATING</code> - Server-side encryption is
+     * being updated.</p> </li> </ul>
      */
     inline void SetStatus(const SSEStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current state of server-side encryption:</p> <ul> <li> <p>
-     * <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li>
-     * <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p>
-     * <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
-     * <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
-     * <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p>
-     * </li> </ul>
+     * <p>Represents the current state of server-side encryption. The only supported
+     * values are:</p> <ul> <li> <p> <code>ENABLED</code> - Server-side encryption is
+     * enabled.</p> </li> <li> <p> <code>UPDATING</code> - Server-side encryption is
+     * being updated.</p> </li> </ul>
      */
     inline void SetStatus(SSEStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The current state of server-side encryption:</p> <ul> <li> <p>
-     * <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li>
-     * <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p>
-     * <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
-     * <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
-     * <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p>
-     * </li> </ul>
+     * <p>Represents the current state of server-side encryption. The only supported
+     * values are:</p> <ul> <li> <p> <code>ENABLED</code> - Server-side encryption is
+     * enabled.</p> </li> <li> <p> <code>UPDATING</code> - Server-side encryption is
+     * being updated.</p> </li> </ul>
      */
     inline SSEDescription& WithStatus(const SSEStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current state of server-side encryption:</p> <ul> <li> <p>
-     * <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li>
-     * <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p>
-     * <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
-     * <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
-     * <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p>
-     * </li> </ul>
+     * <p>Represents the current state of server-side encryption. The only supported
+     * values are:</p> <ul> <li> <p> <code>ENABLED</code> - Server-side encryption is
+     * enabled.</p> </li> <li> <p> <code>UPDATING</code> - Server-side encryption is
+     * being updated.</p> </li> </ul>
      */
     inline SSEDescription& WithStatus(SSEStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
-     * Server-side encryption which uses the AES256 algorithm (not applicable).</p>
-     * </li> <li> <p> <code>KMS</code> - Server-side encryption which uses AWS Key
-     * Management Service. Key is stored in your account and is managed by AWS KMS (KMS
-     * charges apply).</p> </li> </ul>
+     * <p>Server-side encryption type. The only supported value is:</p> <ul> <li> <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     * Key is stored in your account and is managed by AWS KMS (KMS charges apply).</p>
+     * </li> </ul>
      */
     inline const SSEType& GetSSEType() const{ return m_sSEType; }
 
     /**
-     * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
-     * Server-side encryption which uses the AES256 algorithm (not applicable).</p>
-     * </li> <li> <p> <code>KMS</code> - Server-side encryption which uses AWS Key
-     * Management Service. Key is stored in your account and is managed by AWS KMS (KMS
-     * charges apply).</p> </li> </ul>
+     * <p>Server-side encryption type. The only supported value is:</p> <ul> <li> <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     * Key is stored in your account and is managed by AWS KMS (KMS charges apply).</p>
+     * </li> </ul>
      */
     inline bool SSETypeHasBeenSet() const { return m_sSETypeHasBeenSet; }
 
     /**
-     * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
-     * Server-side encryption which uses the AES256 algorithm (not applicable).</p>
-     * </li> <li> <p> <code>KMS</code> - Server-side encryption which uses AWS Key
-     * Management Service. Key is stored in your account and is managed by AWS KMS (KMS
-     * charges apply).</p> </li> </ul>
+     * <p>Server-side encryption type. The only supported value is:</p> <ul> <li> <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     * Key is stored in your account and is managed by AWS KMS (KMS charges apply).</p>
+     * </li> </ul>
      */
     inline void SetSSEType(const SSEType& value) { m_sSETypeHasBeenSet = true; m_sSEType = value; }
 
     /**
-     * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
-     * Server-side encryption which uses the AES256 algorithm (not applicable).</p>
-     * </li> <li> <p> <code>KMS</code> - Server-side encryption which uses AWS Key
-     * Management Service. Key is stored in your account and is managed by AWS KMS (KMS
-     * charges apply).</p> </li> </ul>
+     * <p>Server-side encryption type. The only supported value is:</p> <ul> <li> <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     * Key is stored in your account and is managed by AWS KMS (KMS charges apply).</p>
+     * </li> </ul>
      */
     inline void SetSSEType(SSEType&& value) { m_sSETypeHasBeenSet = true; m_sSEType = std::move(value); }
 
     /**
-     * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
-     * Server-side encryption which uses the AES256 algorithm (not applicable).</p>
-     * </li> <li> <p> <code>KMS</code> - Server-side encryption which uses AWS Key
-     * Management Service. Key is stored in your account and is managed by AWS KMS (KMS
-     * charges apply).</p> </li> </ul>
+     * <p>Server-side encryption type. The only supported value is:</p> <ul> <li> <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     * Key is stored in your account and is managed by AWS KMS (KMS charges apply).</p>
+     * </li> </ul>
      */
     inline SSEDescription& WithSSEType(const SSEType& value) { SetSSEType(value); return *this;}
 
     /**
-     * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
-     * Server-side encryption which uses the AES256 algorithm (not applicable).</p>
-     * </li> <li> <p> <code>KMS</code> - Server-side encryption which uses AWS Key
-     * Management Service. Key is stored in your account and is managed by AWS KMS (KMS
-     * charges apply).</p> </li> </ul>
+     * <p>Server-side encryption type. The only supported value is:</p> <ul> <li> <p>
+     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+     * Key is stored in your account and is managed by AWS KMS (KMS charges apply).</p>
+     * </li> </ul>
      */
     inline SSEDescription& WithSSEType(SSEType&& value) { SetSSEType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The KMS master key ARN used for the KMS encryption.</p>
+     * <p>The KMS customer master key (CMK) ARN used for the KMS encryption.</p>
      */
     inline const Aws::String& GetKMSMasterKeyArn() const{ return m_kMSMasterKeyArn; }
 
     /**
-     * <p>The KMS master key ARN used for the KMS encryption.</p>
+     * <p>The KMS customer master key (CMK) ARN used for the KMS encryption.</p>
      */
     inline bool KMSMasterKeyArnHasBeenSet() const { return m_kMSMasterKeyArnHasBeenSet; }
 
     /**
-     * <p>The KMS master key ARN used for the KMS encryption.</p>
+     * <p>The KMS customer master key (CMK) ARN used for the KMS encryption.</p>
      */
     inline void SetKMSMasterKeyArn(const Aws::String& value) { m_kMSMasterKeyArnHasBeenSet = true; m_kMSMasterKeyArn = value; }
 
     /**
-     * <p>The KMS master key ARN used for the KMS encryption.</p>
+     * <p>The KMS customer master key (CMK) ARN used for the KMS encryption.</p>
      */
     inline void SetKMSMasterKeyArn(Aws::String&& value) { m_kMSMasterKeyArnHasBeenSet = true; m_kMSMasterKeyArn = std::move(value); }
 
     /**
-     * <p>The KMS master key ARN used for the KMS encryption.</p>
+     * <p>The KMS customer master key (CMK) ARN used for the KMS encryption.</p>
      */
     inline void SetKMSMasterKeyArn(const char* value) { m_kMSMasterKeyArnHasBeenSet = true; m_kMSMasterKeyArn.assign(value); }
 
     /**
-     * <p>The KMS master key ARN used for the KMS encryption.</p>
+     * <p>The KMS customer master key (CMK) ARN used for the KMS encryption.</p>
      */
     inline SSEDescription& WithKMSMasterKeyArn(const Aws::String& value) { SetKMSMasterKeyArn(value); return *this;}
 
     /**
-     * <p>The KMS master key ARN used for the KMS encryption.</p>
+     * <p>The KMS customer master key (CMK) ARN used for the KMS encryption.</p>
      */
     inline SSEDescription& WithKMSMasterKeyArn(Aws::String&& value) { SetKMSMasterKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS master key ARN used for the KMS encryption.</p>
+     * <p>The KMS customer master key (CMK) ARN used for the KMS encryption.</p>
      */
     inline SSEDescription& WithKMSMasterKeyArn(const char* value) { SetKMSMasterKeyArn(value); return *this;}
 

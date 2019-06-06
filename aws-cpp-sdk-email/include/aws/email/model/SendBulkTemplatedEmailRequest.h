@@ -32,7 +32,7 @@ namespace Model
   /**
    * <p>Represents a request to send a templated email to multiple destinations using
    * Amazon SES. For more information, see the <a
-   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBulkTemplatedEmailRequest">AWS
    * API Reference</a></p>
@@ -59,12 +59,12 @@ namespace Model
      * <p>The email address that is sending the email. This email address must be
      * either individually verified with Amazon SES, or from a domain that has been
      * verified with Amazon SES. For information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
      * SES Developer Guide</a>.</p> <p>If you are sending on behalf of another user and
      * have been permitted to do so by a sending authorization policy, then you must
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p> <note> <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
@@ -86,12 +86,12 @@ namespace Model
      * <p>The email address that is sending the email. This email address must be
      * either individually verified with Amazon SES, or from a domain that has been
      * verified with Amazon SES. For information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
      * SES Developer Guide</a>.</p> <p>If you are sending on behalf of another user and
      * have been permitted to do so by a sending authorization policy, then you must
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p> <note> <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
@@ -113,12 +113,12 @@ namespace Model
      * <p>The email address that is sending the email. This email address must be
      * either individually verified with Amazon SES, or from a domain that has been
      * verified with Amazon SES. For information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
      * SES Developer Guide</a>.</p> <p>If you are sending on behalf of another user and
      * have been permitted to do so by a sending authorization policy, then you must
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p> <note> <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
@@ -140,12 +140,12 @@ namespace Model
      * <p>The email address that is sending the email. This email address must be
      * either individually verified with Amazon SES, or from a domain that has been
      * verified with Amazon SES. For information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
      * SES Developer Guide</a>.</p> <p>If you are sending on behalf of another user and
      * have been permitted to do so by a sending authorization policy, then you must
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p> <note> <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
@@ -167,12 +167,12 @@ namespace Model
      * <p>The email address that is sending the email. This email address must be
      * either individually verified with Amazon SES, or from a domain that has been
      * verified with Amazon SES. For information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
      * SES Developer Guide</a>.</p> <p>If you are sending on behalf of another user and
      * have been permitted to do so by a sending authorization policy, then you must
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p> <note> <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
@@ -194,12 +194,12 @@ namespace Model
      * <p>The email address that is sending the email. This email address must be
      * either individually verified with Amazon SES, or from a domain that has been
      * verified with Amazon SES. For information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
      * SES Developer Guide</a>.</p> <p>If you are sending on behalf of another user and
      * have been permitted to do so by a sending authorization policy, then you must
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p> <note> <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
@@ -221,12 +221,12 @@ namespace Model
      * <p>The email address that is sending the email. This email address must be
      * either individually verified with Amazon SES, or from a domain that has been
      * verified with Amazon SES. For information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
      * SES Developer Guide</a>.</p> <p>If you are sending on behalf of another user and
      * have been permitted to do so by a sending authorization policy, then you must
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p> <note> <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
@@ -248,12 +248,12 @@ namespace Model
      * <p>The email address that is sending the email. This email address must be
      * either individually verified with Amazon SES, or from a domain that has been
      * verified with Amazon SES. For information about verifying identities, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
      * SES Developer Guide</a>.</p> <p>If you are sending on behalf of another user and
      * have been permitted to do so by a sending authorization policy, then you must
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p> <note> <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
@@ -283,7 +283,7 @@ namespace Model
      * to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
@@ -299,7 +299,7 @@ namespace Model
      * to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
@@ -315,7 +315,7 @@ namespace Model
      * to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
@@ -331,7 +331,7 @@ namespace Model
      * to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
@@ -347,7 +347,7 @@ namespace Model
      * to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
@@ -363,7 +363,7 @@ namespace Model
      * to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline SendBulkTemplatedEmailRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
@@ -379,7 +379,7 @@ namespace Model
      * to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline SendBulkTemplatedEmailRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
@@ -395,7 +395,7 @@ namespace Model
      * to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline SendBulkTemplatedEmailRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
@@ -557,7 +557,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline const Aws::String& GetReturnPathArn() const{ return m_returnPathArn; }
@@ -574,7 +574,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline bool ReturnPathArnHasBeenSet() const { return m_returnPathArnHasBeenSet; }
@@ -591,7 +591,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetReturnPathArn(const Aws::String& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = value; }
@@ -608,7 +608,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetReturnPathArn(Aws::String&& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = std::move(value); }
@@ -625,7 +625,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetReturnPathArn(const char* value) { m_returnPathArnHasBeenSet = true; m_returnPathArn.assign(value); }
@@ -642,7 +642,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline SendBulkTemplatedEmailRequest& WithReturnPathArn(const Aws::String& value) { SetReturnPathArn(value); return *this;}
@@ -659,7 +659,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline SendBulkTemplatedEmailRequest& WithReturnPathArn(Aws::String&& value) { SetReturnPathArn(std::move(value)); return *this;}
@@ -676,7 +676,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline SendBulkTemplatedEmailRequest& WithReturnPathArn(const char* value) { SetReturnPathArn(value); return *this;}

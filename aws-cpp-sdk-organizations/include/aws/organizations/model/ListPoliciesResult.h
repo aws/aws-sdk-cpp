@@ -46,49 +46,49 @@ namespace Model
 
     /**
      * <p>A list of policies that match the filter criteria in the request. The output
-     * list does not include the policy contents. To see the content for a policy, see
+     * list doesn't include the policy contents. To see the content for a policy, see
      * <a>DescribePolicy</a>.</p>
      */
     inline const Aws::Vector<PolicySummary>& GetPolicies() const{ return m_policies; }
 
     /**
      * <p>A list of policies that match the filter criteria in the request. The output
-     * list does not include the policy contents. To see the content for a policy, see
+     * list doesn't include the policy contents. To see the content for a policy, see
      * <a>DescribePolicy</a>.</p>
      */
     inline void SetPolicies(const Aws::Vector<PolicySummary>& value) { m_policies = value; }
 
     /**
      * <p>A list of policies that match the filter criteria in the request. The output
-     * list does not include the policy contents. To see the content for a policy, see
+     * list doesn't include the policy contents. To see the content for a policy, see
      * <a>DescribePolicy</a>.</p>
      */
     inline void SetPolicies(Aws::Vector<PolicySummary>&& value) { m_policies = std::move(value); }
 
     /**
      * <p>A list of policies that match the filter criteria in the request. The output
-     * list does not include the policy contents. To see the content for a policy, see
+     * list doesn't include the policy contents. To see the content for a policy, see
      * <a>DescribePolicy</a>.</p>
      */
     inline ListPoliciesResult& WithPolicies(const Aws::Vector<PolicySummary>& value) { SetPolicies(value); return *this;}
 
     /**
      * <p>A list of policies that match the filter criteria in the request. The output
-     * list does not include the policy contents. To see the content for a policy, see
+     * list doesn't include the policy contents. To see the content for a policy, see
      * <a>DescribePolicy</a>.</p>
      */
     inline ListPoliciesResult& WithPolicies(Aws::Vector<PolicySummary>&& value) { SetPolicies(std::move(value)); return *this;}
 
     /**
      * <p>A list of policies that match the filter criteria in the request. The output
-     * list does not include the policy contents. To see the content for a policy, see
+     * list doesn't include the policy contents. To see the content for a policy, see
      * <a>DescribePolicy</a>.</p>
      */
     inline ListPoliciesResult& AddPolicies(const PolicySummary& value) { m_policies.push_back(value); return *this; }
 
     /**
      * <p>A list of policies that match the filter criteria in the request. The output
-     * list does not include the policy contents. To see the content for a policy, see
+     * list doesn't include the policy contents. To see the content for a policy, see
      * <a>DescribePolicy</a>.</p>
      */
     inline ListPoliciesResult& AddPolicies(PolicySummary&& value) { m_policies.push_back(std::move(value)); return *this; }

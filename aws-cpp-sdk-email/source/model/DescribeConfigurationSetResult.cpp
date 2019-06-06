@@ -69,6 +69,11 @@ DescribeConfigurationSetResult& DescribeConfigurationSetResult::operator =(const
     {
       m_trackingOptions = trackingOptionsNode;
     }
+    XmlNode deliveryOptionsNode = resultNode.FirstChild("DeliveryOptions");
+    if(!deliveryOptionsNode.IsNull())
+    {
+      m_deliveryOptions = deliveryOptionsNode;
+    }
     XmlNode reputationOptionsNode = resultNode.FirstChild("ReputationOptions");
     if(!reputationOptionsNode.IsNull())
     {

@@ -32,6 +32,7 @@ namespace Aws
 
         static const int eventDestinations_HASH = HashingUtils::HashString("eventDestinations");
         static const int trackingOptions_HASH = HashingUtils::HashString("trackingOptions");
+        static const int deliveryOptions_HASH = HashingUtils::HashString("deliveryOptions");
         static const int reputationOptions_HASH = HashingUtils::HashString("reputationOptions");
 
 
@@ -45,6 +46,10 @@ namespace Aws
           else if (hashCode == trackingOptions_HASH)
           {
             return ConfigurationSetAttribute::trackingOptions;
+          }
+          else if (hashCode == deliveryOptions_HASH)
+          {
+            return ConfigurationSetAttribute::deliveryOptions;
           }
           else if (hashCode == reputationOptions_HASH)
           {
@@ -68,6 +73,8 @@ namespace Aws
             return "eventDestinations";
           case ConfigurationSetAttribute::trackingOptions:
             return "trackingOptions";
+          case ConfigurationSetAttribute::deliveryOptions:
+            return "deliveryOptions";
           case ConfigurationSetAttribute::reputationOptions:
             return "reputationOptions";
           default:

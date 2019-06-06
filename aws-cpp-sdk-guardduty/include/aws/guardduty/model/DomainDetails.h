@@ -15,6 +15,8 @@
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -31,11 +33,6 @@ namespace GuardDuty
 namespace Model
 {
 
-  /**
-   * Domain information for the AWS API call.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DomainDetails">AWS
-   * API Reference</a></p>
-   */
   class AWS_GUARDDUTY_API DomainDetails
   {
   public:
@@ -44,6 +41,51 @@ namespace Model
     DomainDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    /**
+     * <p>Domain information for the AWS API call.</p>
+     */
+    inline const Aws::String& GetDomain() const{ return m_domain; }
+
+    /**
+     * <p>Domain information for the AWS API call.</p>
+     */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>Domain information for the AWS API call.</p>
+     */
+    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /**
+     * <p>Domain information for the AWS API call.</p>
+     */
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
+
+    /**
+     * <p>Domain information for the AWS API call.</p>
+     */
+    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
+
+    /**
+     * <p>Domain information for the AWS API call.</p>
+     */
+    inline DomainDetails& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p>Domain information for the AWS API call.</p>
+     */
+    inline DomainDetails& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
+
+    /**
+     * <p>Domain information for the AWS API call.</p>
+     */
+    inline DomainDetails& WithDomain(const char* value) { SetDomain(value); return *this;}
+
+  private:
+
+    Aws::String m_domain;
+    bool m_domainHasBeenSet;
   };
 
 } // namespace Model

@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * The unique ID of the detector that you want to retrieve.
+     * <p>The unique ID of the detector that you want to get.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The unique ID of the detector that you want to retrieve.
+     * <p>The unique ID of the detector that you want to get.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * The unique ID of the detector that you want to retrieve.
+     * <p>The unique ID of the detector that you want to get.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * The unique ID of the detector that you want to retrieve.
+     * <p>The unique ID of the detector that you want to get.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * The unique ID of the detector that you want to retrieve.
+     * <p>The unique ID of the detector that you want to get.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * The unique ID of the detector that you want to retrieve.
+     * <p>The unique ID of the detector that you want to get.</p>
      */
     inline GetDetectorRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The unique ID of the detector that you want to retrieve.
+     * <p>The unique ID of the detector that you want to get.</p>
      */
     inline GetDetectorRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of the detector that you want to retrieve.
+     * <p>The unique ID of the detector that you want to get.</p>
      */
     inline GetDetectorRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 

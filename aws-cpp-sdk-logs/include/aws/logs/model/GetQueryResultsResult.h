@@ -141,35 +141,50 @@ namespace Model
     /**
      * <p>The status of the most recent running of the query. Possible values are
      * <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>,
-     * <code>Running</code>, <code>Scheduled</code>, and <code>Unknown</code>.</p>
+     * <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and
+     * <code>Unknown</code>.</p> <p>Queries time out after 15 minutes of execution. To
+     * avoid having your queries time out, reduce the time range being searched, or
+     * partition your query into a number of queries.</p>
      */
     inline const QueryStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the most recent running of the query. Possible values are
      * <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>,
-     * <code>Running</code>, <code>Scheduled</code>, and <code>Unknown</code>.</p>
+     * <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and
+     * <code>Unknown</code>.</p> <p>Queries time out after 15 minutes of execution. To
+     * avoid having your queries time out, reduce the time range being searched, or
+     * partition your query into a number of queries.</p>
      */
     inline void SetStatus(const QueryStatus& value) { m_status = value; }
 
     /**
      * <p>The status of the most recent running of the query. Possible values are
      * <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>,
-     * <code>Running</code>, <code>Scheduled</code>, and <code>Unknown</code>.</p>
+     * <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and
+     * <code>Unknown</code>.</p> <p>Queries time out after 15 minutes of execution. To
+     * avoid having your queries time out, reduce the time range being searched, or
+     * partition your query into a number of queries.</p>
      */
     inline void SetStatus(QueryStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The status of the most recent running of the query. Possible values are
      * <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>,
-     * <code>Running</code>, <code>Scheduled</code>, and <code>Unknown</code>.</p>
+     * <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and
+     * <code>Unknown</code>.</p> <p>Queries time out after 15 minutes of execution. To
+     * avoid having your queries time out, reduce the time range being searched, or
+     * partition your query into a number of queries.</p>
      */
     inline GetQueryResultsResult& WithStatus(const QueryStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the most recent running of the query. Possible values are
      * <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>,
-     * <code>Running</code>, <code>Scheduled</code>, and <code>Unknown</code>.</p>
+     * <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and
+     * <code>Unknown</code>.</p> <p>Queries time out after 15 minutes of execution. To
+     * avoid having your queries time out, reduce the time range being searched, or
+     * partition your query into a number of queries.</p>
      */
     inline GetQueryResultsResult& WithStatus(QueryStatus&& value) { SetStatus(std::move(value)); return *this;}
 

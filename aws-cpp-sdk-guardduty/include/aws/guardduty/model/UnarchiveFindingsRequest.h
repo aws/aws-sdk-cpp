@@ -28,9 +28,6 @@ namespace Model
 {
 
   /**
-   * UnarchiveFindings request body.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UnarchiveFindingsRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_GUARDDUTY_API UnarchiveFindingsRequest : public GuardDutyRequest
   {
@@ -47,96 +44,96 @@ namespace Model
 
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to unarchive.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to unarchive.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to unarchive.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to unarchive.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to unarchive.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to unarchive.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to unarchive.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to unarchive.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to unarchive.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to unarchive.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to unarchive.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to unarchive.</p>
      */
     inline UnarchiveFindingsRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to unarchive.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to unarchive.</p>
      */
     inline UnarchiveFindingsRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The ID of the detector that specifies the GuardDuty service whose findings you
-     * want to unarchive.
+     * <p>The ID of the detector that specifies the GuardDuty service whose findings
+     * you want to unarchive.</p>
      */
     inline UnarchiveFindingsRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * IDs of the findings that you want to unarchive.
+     * <p>IDs of the findings that you want to unarchive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFindingIds() const{ return m_findingIds; }
 
     /**
-     * IDs of the findings that you want to unarchive.
+     * <p>IDs of the findings that you want to unarchive.</p>
      */
     inline bool FindingIdsHasBeenSet() const { return m_findingIdsHasBeenSet; }
 
     /**
-     * IDs of the findings that you want to unarchive.
+     * <p>IDs of the findings that you want to unarchive.</p>
      */
     inline void SetFindingIds(const Aws::Vector<Aws::String>& value) { m_findingIdsHasBeenSet = true; m_findingIds = value; }
 
     /**
-     * IDs of the findings that you want to unarchive.
+     * <p>IDs of the findings that you want to unarchive.</p>
      */
     inline void SetFindingIds(Aws::Vector<Aws::String>&& value) { m_findingIdsHasBeenSet = true; m_findingIds = std::move(value); }
 
     /**
-     * IDs of the findings that you want to unarchive.
+     * <p>IDs of the findings that you want to unarchive.</p>
      */
     inline UnarchiveFindingsRequest& WithFindingIds(const Aws::Vector<Aws::String>& value) { SetFindingIds(value); return *this;}
 
     /**
-     * IDs of the findings that you want to unarchive.
+     * <p>IDs of the findings that you want to unarchive.</p>
      */
     inline UnarchiveFindingsRequest& WithFindingIds(Aws::Vector<Aws::String>&& value) { SetFindingIds(std::move(value)); return *this;}
 
     /**
-     * IDs of the findings that you want to unarchive.
+     * <p>IDs of the findings that you want to unarchive.</p>
      */
     inline UnarchiveFindingsRequest& AddFindingIds(const Aws::String& value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(value); return *this; }
 
     /**
-     * IDs of the findings that you want to unarchive.
+     * <p>IDs of the findings that you want to unarchive.</p>
      */
     inline UnarchiveFindingsRequest& AddFindingIds(Aws::String&& value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(std::move(value)); return *this; }
 
     /**
-     * IDs of the findings that you want to unarchive.
+     * <p>IDs of the findings that you want to unarchive.</p>
      */
     inline UnarchiveFindingsRequest& AddFindingIds(const char* value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(value); return *this; }
 

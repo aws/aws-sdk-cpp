@@ -38,12 +38,6 @@ ListThreatIntelSetsResult::ListThreatIntelSetsResult(const Aws::AmazonWebService
 ListThreatIntelSetsResult& ListThreatIntelSetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("threatIntelSetIds"))
   {
     Array<JsonView> threatIntelSetIdsJsonList = jsonValue.GetArray("threatIntelSetIds");
@@ -51,6 +45,12 @@ ListThreatIntelSetsResult& ListThreatIntelSetsResult::operator =(const Aws::Amaz
     {
       m_threatIntelSetIds.push_back(threatIntelSetIdsJsonList[threatIntelSetIdsIndex].AsString());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

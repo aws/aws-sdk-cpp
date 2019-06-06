@@ -43,91 +43,83 @@ namespace Model
 
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
-     * want to delete.
+     * <p>The unique ID of the detector the threatIntelSet is associated with.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
-     * want to delete.
+     * <p>The unique ID of the detector the threatIntelSet is associated with.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
-     * want to delete.
+     * <p>The unique ID of the detector the threatIntelSet is associated with.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
-     * want to delete.
+     * <p>The unique ID of the detector the threatIntelSet is associated with.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
-     * want to delete.
+     * <p>The unique ID of the detector the threatIntelSet is associated with.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
-     * want to delete.
+     * <p>The unique ID of the detector the threatIntelSet is associated with.</p>
      */
     inline DeleteThreatIntelSetRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
-     * want to delete.
+     * <p>The unique ID of the detector the threatIntelSet is associated with.</p>
      */
     inline DeleteThreatIntelSetRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
-     * want to delete.
+     * <p>The unique ID of the detector the threatIntelSet is associated with.</p>
      */
     inline DeleteThreatIntelSetRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to delete.
+     * <p>The unique ID of the threatIntelSet you want to delete.</p>
      */
     inline const Aws::String& GetThreatIntelSetId() const{ return m_threatIntelSetId; }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to delete.
+     * <p>The unique ID of the threatIntelSet you want to delete.</p>
      */
     inline bool ThreatIntelSetIdHasBeenSet() const { return m_threatIntelSetIdHasBeenSet; }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to delete.
+     * <p>The unique ID of the threatIntelSet you want to delete.</p>
      */
     inline void SetThreatIntelSetId(const Aws::String& value) { m_threatIntelSetIdHasBeenSet = true; m_threatIntelSetId = value; }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to delete.
+     * <p>The unique ID of the threatIntelSet you want to delete.</p>
      */
     inline void SetThreatIntelSetId(Aws::String&& value) { m_threatIntelSetIdHasBeenSet = true; m_threatIntelSetId = std::move(value); }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to delete.
+     * <p>The unique ID of the threatIntelSet you want to delete.</p>
      */
     inline void SetThreatIntelSetId(const char* value) { m_threatIntelSetIdHasBeenSet = true; m_threatIntelSetId.assign(value); }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to delete.
+     * <p>The unique ID of the threatIntelSet you want to delete.</p>
      */
     inline DeleteThreatIntelSetRequest& WithThreatIntelSetId(const Aws::String& value) { SetThreatIntelSetId(value); return *this;}
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to delete.
+     * <p>The unique ID of the threatIntelSet you want to delete.</p>
      */
     inline DeleteThreatIntelSetRequest& WithThreatIntelSetId(Aws::String&& value) { SetThreatIntelSetId(std::move(value)); return *this;}
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to delete.
+     * <p>The unique ID of the threatIntelSet you want to delete.</p>
      */
     inline DeleteThreatIntelSetRequest& WithThreatIntelSetId(const char* value) { SetThreatIntelSetId(value); return *this;}
 

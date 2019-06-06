@@ -53,13 +53,14 @@ namespace Model
     /**
      * <p>A set of character strings that represent the domain's identity. If the
      * identity is an email address, the tokens represent the domain of that
-     * address.</p> <p>Using these tokens, you will need to create DNS CNAME records
-     * that point to DKIM public keys hosted by Amazon SES. Amazon Web Services will
-     * eventually detect that you have updated your DNS records; this detection process
-     * may take up to 72 hours. Upon successful detection, Amazon SES will be able to
-     * DKIM-sign emails originating from that domain.</p> <p>For more information about
-     * creating DNS records using DKIM tokens, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+     * address.</p> <p>Using these tokens, you need to create DNS CNAME records that
+     * point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services
+     * eventually detects that you've updated your DNS records. This detection process
+     * might take up to 72 hours. After successful detection, Amazon SES is able to
+     * DKIM-sign email originating from that domain. (This only applies to domain
+     * identities, not email address identities.)</p> <p>For more information about
+     * creating DNS records using DKIM tokens, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDkimTokens() const{ return m_dkimTokens; }
@@ -67,13 +68,14 @@ namespace Model
     /**
      * <p>A set of character strings that represent the domain's identity. If the
      * identity is an email address, the tokens represent the domain of that
-     * address.</p> <p>Using these tokens, you will need to create DNS CNAME records
-     * that point to DKIM public keys hosted by Amazon SES. Amazon Web Services will
-     * eventually detect that you have updated your DNS records; this detection process
-     * may take up to 72 hours. Upon successful detection, Amazon SES will be able to
-     * DKIM-sign emails originating from that domain.</p> <p>For more information about
-     * creating DNS records using DKIM tokens, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+     * address.</p> <p>Using these tokens, you need to create DNS CNAME records that
+     * point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services
+     * eventually detects that you've updated your DNS records. This detection process
+     * might take up to 72 hours. After successful detection, Amazon SES is able to
+     * DKIM-sign email originating from that domain. (This only applies to domain
+     * identities, not email address identities.)</p> <p>For more information about
+     * creating DNS records using DKIM tokens, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetDkimTokens(const Aws::Vector<Aws::String>& value) { m_dkimTokens = value; }
@@ -81,13 +83,14 @@ namespace Model
     /**
      * <p>A set of character strings that represent the domain's identity. If the
      * identity is an email address, the tokens represent the domain of that
-     * address.</p> <p>Using these tokens, you will need to create DNS CNAME records
-     * that point to DKIM public keys hosted by Amazon SES. Amazon Web Services will
-     * eventually detect that you have updated your DNS records; this detection process
-     * may take up to 72 hours. Upon successful detection, Amazon SES will be able to
-     * DKIM-sign emails originating from that domain.</p> <p>For more information about
-     * creating DNS records using DKIM tokens, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+     * address.</p> <p>Using these tokens, you need to create DNS CNAME records that
+     * point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services
+     * eventually detects that you've updated your DNS records. This detection process
+     * might take up to 72 hours. After successful detection, Amazon SES is able to
+     * DKIM-sign email originating from that domain. (This only applies to domain
+     * identities, not email address identities.)</p> <p>For more information about
+     * creating DNS records using DKIM tokens, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetDkimTokens(Aws::Vector<Aws::String>&& value) { m_dkimTokens = std::move(value); }
@@ -95,13 +98,14 @@ namespace Model
     /**
      * <p>A set of character strings that represent the domain's identity. If the
      * identity is an email address, the tokens represent the domain of that
-     * address.</p> <p>Using these tokens, you will need to create DNS CNAME records
-     * that point to DKIM public keys hosted by Amazon SES. Amazon Web Services will
-     * eventually detect that you have updated your DNS records; this detection process
-     * may take up to 72 hours. Upon successful detection, Amazon SES will be able to
-     * DKIM-sign emails originating from that domain.</p> <p>For more information about
-     * creating DNS records using DKIM tokens, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+     * address.</p> <p>Using these tokens, you need to create DNS CNAME records that
+     * point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services
+     * eventually detects that you've updated your DNS records. This detection process
+     * might take up to 72 hours. After successful detection, Amazon SES is able to
+     * DKIM-sign email originating from that domain. (This only applies to domain
+     * identities, not email address identities.)</p> <p>For more information about
+     * creating DNS records using DKIM tokens, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline VerifyDomainDkimResult& WithDkimTokens(const Aws::Vector<Aws::String>& value) { SetDkimTokens(value); return *this;}
@@ -109,13 +113,14 @@ namespace Model
     /**
      * <p>A set of character strings that represent the domain's identity. If the
      * identity is an email address, the tokens represent the domain of that
-     * address.</p> <p>Using these tokens, you will need to create DNS CNAME records
-     * that point to DKIM public keys hosted by Amazon SES. Amazon Web Services will
-     * eventually detect that you have updated your DNS records; this detection process
-     * may take up to 72 hours. Upon successful detection, Amazon SES will be able to
-     * DKIM-sign emails originating from that domain.</p> <p>For more information about
-     * creating DNS records using DKIM tokens, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+     * address.</p> <p>Using these tokens, you need to create DNS CNAME records that
+     * point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services
+     * eventually detects that you've updated your DNS records. This detection process
+     * might take up to 72 hours. After successful detection, Amazon SES is able to
+     * DKIM-sign email originating from that domain. (This only applies to domain
+     * identities, not email address identities.)</p> <p>For more information about
+     * creating DNS records using DKIM tokens, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline VerifyDomainDkimResult& WithDkimTokens(Aws::Vector<Aws::String>&& value) { SetDkimTokens(std::move(value)); return *this;}
@@ -123,13 +128,14 @@ namespace Model
     /**
      * <p>A set of character strings that represent the domain's identity. If the
      * identity is an email address, the tokens represent the domain of that
-     * address.</p> <p>Using these tokens, you will need to create DNS CNAME records
-     * that point to DKIM public keys hosted by Amazon SES. Amazon Web Services will
-     * eventually detect that you have updated your DNS records; this detection process
-     * may take up to 72 hours. Upon successful detection, Amazon SES will be able to
-     * DKIM-sign emails originating from that domain.</p> <p>For more information about
-     * creating DNS records using DKIM tokens, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+     * address.</p> <p>Using these tokens, you need to create DNS CNAME records that
+     * point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services
+     * eventually detects that you've updated your DNS records. This detection process
+     * might take up to 72 hours. After successful detection, Amazon SES is able to
+     * DKIM-sign email originating from that domain. (This only applies to domain
+     * identities, not email address identities.)</p> <p>For more information about
+     * creating DNS records using DKIM tokens, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline VerifyDomainDkimResult& AddDkimTokens(const Aws::String& value) { m_dkimTokens.push_back(value); return *this; }
@@ -137,13 +143,14 @@ namespace Model
     /**
      * <p>A set of character strings that represent the domain's identity. If the
      * identity is an email address, the tokens represent the domain of that
-     * address.</p> <p>Using these tokens, you will need to create DNS CNAME records
-     * that point to DKIM public keys hosted by Amazon SES. Amazon Web Services will
-     * eventually detect that you have updated your DNS records; this detection process
-     * may take up to 72 hours. Upon successful detection, Amazon SES will be able to
-     * DKIM-sign emails originating from that domain.</p> <p>For more information about
-     * creating DNS records using DKIM tokens, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+     * address.</p> <p>Using these tokens, you need to create DNS CNAME records that
+     * point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services
+     * eventually detects that you've updated your DNS records. This detection process
+     * might take up to 72 hours. After successful detection, Amazon SES is able to
+     * DKIM-sign email originating from that domain. (This only applies to domain
+     * identities, not email address identities.)</p> <p>For more information about
+     * creating DNS records using DKIM tokens, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline VerifyDomainDkimResult& AddDkimTokens(Aws::String&& value) { m_dkimTokens.push_back(std::move(value)); return *this; }
@@ -151,13 +158,14 @@ namespace Model
     /**
      * <p>A set of character strings that represent the domain's identity. If the
      * identity is an email address, the tokens represent the domain of that
-     * address.</p> <p>Using these tokens, you will need to create DNS CNAME records
-     * that point to DKIM public keys hosted by Amazon SES. Amazon Web Services will
-     * eventually detect that you have updated your DNS records; this detection process
-     * may take up to 72 hours. Upon successful detection, Amazon SES will be able to
-     * DKIM-sign emails originating from that domain.</p> <p>For more information about
-     * creating DNS records using DKIM tokens, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+     * address.</p> <p>Using these tokens, you need to create DNS CNAME records that
+     * point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services
+     * eventually detects that you've updated your DNS records. This detection process
+     * might take up to 72 hours. After successful detection, Amazon SES is able to
+     * DKIM-sign email originating from that domain. (This only applies to domain
+     * identities, not email address identities.)</p> <p>For more information about
+     * creating DNS records using DKIM tokens, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline VerifyDomainDkimResult& AddDkimTokens(const char* value) { m_dkimTokens.push_back(value); return *this; }

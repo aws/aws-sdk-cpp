@@ -28,9 +28,6 @@ namespace Model
 {
 
   /**
-   * CreateSampleFindings request body.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateSampleFindingsRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_GUARDDUTY_API CreateSampleFindingsRequest : public GuardDutyRequest
   {
@@ -47,88 +44,88 @@ namespace Model
 
 
     /**
-     * The ID of the detector to create sample findings for.
+     * <p>The ID of the detector to create sample findings for.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The ID of the detector to create sample findings for.
+     * <p>The ID of the detector to create sample findings for.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * The ID of the detector to create sample findings for.
+     * <p>The ID of the detector to create sample findings for.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * The ID of the detector to create sample findings for.
+     * <p>The ID of the detector to create sample findings for.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * The ID of the detector to create sample findings for.
+     * <p>The ID of the detector to create sample findings for.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * The ID of the detector to create sample findings for.
+     * <p>The ID of the detector to create sample findings for.</p>
      */
     inline CreateSampleFindingsRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The ID of the detector to create sample findings for.
+     * <p>The ID of the detector to create sample findings for.</p>
      */
     inline CreateSampleFindingsRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The ID of the detector to create sample findings for.
+     * <p>The ID of the detector to create sample findings for.</p>
      */
     inline CreateSampleFindingsRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * Types of sample findings that you want to generate.
+     * <p>Types of sample findings that you want to generate.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFindingTypes() const{ return m_findingTypes; }
 
     /**
-     * Types of sample findings that you want to generate.
+     * <p>Types of sample findings that you want to generate.</p>
      */
     inline bool FindingTypesHasBeenSet() const { return m_findingTypesHasBeenSet; }
 
     /**
-     * Types of sample findings that you want to generate.
+     * <p>Types of sample findings that you want to generate.</p>
      */
     inline void SetFindingTypes(const Aws::Vector<Aws::String>& value) { m_findingTypesHasBeenSet = true; m_findingTypes = value; }
 
     /**
-     * Types of sample findings that you want to generate.
+     * <p>Types of sample findings that you want to generate.</p>
      */
     inline void SetFindingTypes(Aws::Vector<Aws::String>&& value) { m_findingTypesHasBeenSet = true; m_findingTypes = std::move(value); }
 
     /**
-     * Types of sample findings that you want to generate.
+     * <p>Types of sample findings that you want to generate.</p>
      */
     inline CreateSampleFindingsRequest& WithFindingTypes(const Aws::Vector<Aws::String>& value) { SetFindingTypes(value); return *this;}
 
     /**
-     * Types of sample findings that you want to generate.
+     * <p>Types of sample findings that you want to generate.</p>
      */
     inline CreateSampleFindingsRequest& WithFindingTypes(Aws::Vector<Aws::String>&& value) { SetFindingTypes(std::move(value)); return *this;}
 
     /**
-     * Types of sample findings that you want to generate.
+     * <p>Types of sample findings that you want to generate.</p>
      */
     inline CreateSampleFindingsRequest& AddFindingTypes(const Aws::String& value) { m_findingTypesHasBeenSet = true; m_findingTypes.push_back(value); return *this; }
 
     /**
-     * Types of sample findings that you want to generate.
+     * <p>Types of sample findings that you want to generate.</p>
      */
     inline CreateSampleFindingsRequest& AddFindingTypes(Aws::String&& value) { m_findingTypesHasBeenSet = true; m_findingTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * Types of sample findings that you want to generate.
+     * <p>Types of sample findings that you want to generate.</p>
      */
     inline CreateSampleFindingsRequest& AddFindingTypes(const char* value) { m_findingTypesHasBeenSet = true; m_findingTypes.push_back(value); return *this; }
 

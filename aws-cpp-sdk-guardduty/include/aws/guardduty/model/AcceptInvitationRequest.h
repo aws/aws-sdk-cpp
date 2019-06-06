@@ -27,9 +27,6 @@ namespace Model
 {
 
   /**
-   * AcceptInvitation request body.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptInvitationRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_GUARDDUTY_API AcceptInvitationRequest : public GuardDutyRequest
   {
@@ -46,145 +43,145 @@ namespace Model
 
 
     /**
-     * The unique ID of the detector of the GuardDuty member account.
+     * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The unique ID of the detector of the GuardDuty member account.
+     * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * The unique ID of the detector of the GuardDuty member account.
+     * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * The unique ID of the detector of the GuardDuty member account.
+     * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * The unique ID of the detector of the GuardDuty member account.
+     * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * The unique ID of the detector of the GuardDuty member account.
+     * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
     inline AcceptInvitationRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The unique ID of the detector of the GuardDuty member account.
+     * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
     inline AcceptInvitationRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of the detector of the GuardDuty member account.
+     * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
     inline AcceptInvitationRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * This value is used to validate the master account to the member account.
-     */
-    inline const Aws::String& GetInvitationId() const{ return m_invitationId; }
-
-    /**
-     * This value is used to validate the master account to the member account.
-     */
-    inline bool InvitationIdHasBeenSet() const { return m_invitationIdHasBeenSet; }
-
-    /**
-     * This value is used to validate the master account to the member account.
-     */
-    inline void SetInvitationId(const Aws::String& value) { m_invitationIdHasBeenSet = true; m_invitationId = value; }
-
-    /**
-     * This value is used to validate the master account to the member account.
-     */
-    inline void SetInvitationId(Aws::String&& value) { m_invitationIdHasBeenSet = true; m_invitationId = std::move(value); }
-
-    /**
-     * This value is used to validate the master account to the member account.
-     */
-    inline void SetInvitationId(const char* value) { m_invitationIdHasBeenSet = true; m_invitationId.assign(value); }
-
-    /**
-     * This value is used to validate the master account to the member account.
-     */
-    inline AcceptInvitationRequest& WithInvitationId(const Aws::String& value) { SetInvitationId(value); return *this;}
-
-    /**
-     * This value is used to validate the master account to the member account.
-     */
-    inline AcceptInvitationRequest& WithInvitationId(Aws::String&& value) { SetInvitationId(std::move(value)); return *this;}
-
-    /**
-     * This value is used to validate the master account to the member account.
-     */
-    inline AcceptInvitationRequest& WithInvitationId(const char* value) { SetInvitationId(value); return *this;}
-
-
-    /**
-     * The account ID of the master GuardDuty account whose invitation you're
-     * accepting.
+     * <p>The account ID of the master GuardDuty account whose invitation you're
+     * accepting.</p>
      */
     inline const Aws::String& GetMasterId() const{ return m_masterId; }
 
     /**
-     * The account ID of the master GuardDuty account whose invitation you're
-     * accepting.
+     * <p>The account ID of the master GuardDuty account whose invitation you're
+     * accepting.</p>
      */
     inline bool MasterIdHasBeenSet() const { return m_masterIdHasBeenSet; }
 
     /**
-     * The account ID of the master GuardDuty account whose invitation you're
-     * accepting.
+     * <p>The account ID of the master GuardDuty account whose invitation you're
+     * accepting.</p>
      */
     inline void SetMasterId(const Aws::String& value) { m_masterIdHasBeenSet = true; m_masterId = value; }
 
     /**
-     * The account ID of the master GuardDuty account whose invitation you're
-     * accepting.
+     * <p>The account ID of the master GuardDuty account whose invitation you're
+     * accepting.</p>
      */
     inline void SetMasterId(Aws::String&& value) { m_masterIdHasBeenSet = true; m_masterId = std::move(value); }
 
     /**
-     * The account ID of the master GuardDuty account whose invitation you're
-     * accepting.
+     * <p>The account ID of the master GuardDuty account whose invitation you're
+     * accepting.</p>
      */
     inline void SetMasterId(const char* value) { m_masterIdHasBeenSet = true; m_masterId.assign(value); }
 
     /**
-     * The account ID of the master GuardDuty account whose invitation you're
-     * accepting.
+     * <p>The account ID of the master GuardDuty account whose invitation you're
+     * accepting.</p>
      */
     inline AcceptInvitationRequest& WithMasterId(const Aws::String& value) { SetMasterId(value); return *this;}
 
     /**
-     * The account ID of the master GuardDuty account whose invitation you're
-     * accepting.
+     * <p>The account ID of the master GuardDuty account whose invitation you're
+     * accepting.</p>
      */
     inline AcceptInvitationRequest& WithMasterId(Aws::String&& value) { SetMasterId(std::move(value)); return *this;}
 
     /**
-     * The account ID of the master GuardDuty account whose invitation you're
-     * accepting.
+     * <p>The account ID of the master GuardDuty account whose invitation you're
+     * accepting.</p>
      */
     inline AcceptInvitationRequest& WithMasterId(const char* value) { SetMasterId(value); return *this;}
+
+
+    /**
+     * <p>This value is used to validate the master account to the member account.</p>
+     */
+    inline const Aws::String& GetInvitationId() const{ return m_invitationId; }
+
+    /**
+     * <p>This value is used to validate the master account to the member account.</p>
+     */
+    inline bool InvitationIdHasBeenSet() const { return m_invitationIdHasBeenSet; }
+
+    /**
+     * <p>This value is used to validate the master account to the member account.</p>
+     */
+    inline void SetInvitationId(const Aws::String& value) { m_invitationIdHasBeenSet = true; m_invitationId = value; }
+
+    /**
+     * <p>This value is used to validate the master account to the member account.</p>
+     */
+    inline void SetInvitationId(Aws::String&& value) { m_invitationIdHasBeenSet = true; m_invitationId = std::move(value); }
+
+    /**
+     * <p>This value is used to validate the master account to the member account.</p>
+     */
+    inline void SetInvitationId(const char* value) { m_invitationIdHasBeenSet = true; m_invitationId.assign(value); }
+
+    /**
+     * <p>This value is used to validate the master account to the member account.</p>
+     */
+    inline AcceptInvitationRequest& WithInvitationId(const Aws::String& value) { SetInvitationId(value); return *this;}
+
+    /**
+     * <p>This value is used to validate the master account to the member account.</p>
+     */
+    inline AcceptInvitationRequest& WithInvitationId(Aws::String&& value) { SetInvitationId(std::move(value)); return *this;}
+
+    /**
+     * <p>This value is used to validate the master account to the member account.</p>
+     */
+    inline AcceptInvitationRequest& WithInvitationId(const char* value) { SetInvitationId(value); return *this;}
 
   private:
 
     Aws::String m_detectorId;
     bool m_detectorIdHasBeenSet;
 
-    Aws::String m_invitationId;
-    bool m_invitationIdHasBeenSet;
-
     Aws::String m_masterId;
     bool m_masterIdHasBeenSet;
+
+    Aws::String m_invitationId;
+    bool m_invitationIdHasBeenSet;
   };
 
 } // namespace Model

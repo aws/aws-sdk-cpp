@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -43,57 +43,94 @@ namespace Model
     ListThreatIntelSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    
-    inline ListThreatIntelSetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    
-    inline ListThreatIntelSetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    
-    inline ListThreatIntelSetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
-
-    
+    /**
+     * <p>The IDs of the ThreatIntelSet resources.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetThreatIntelSetIds() const{ return m_threatIntelSetIds; }
 
-    
+    /**
+     * <p>The IDs of the ThreatIntelSet resources.</p>
+     */
     inline void SetThreatIntelSetIds(const Aws::Vector<Aws::String>& value) { m_threatIntelSetIds = value; }
 
-    
+    /**
+     * <p>The IDs of the ThreatIntelSet resources.</p>
+     */
     inline void SetThreatIntelSetIds(Aws::Vector<Aws::String>&& value) { m_threatIntelSetIds = std::move(value); }
 
-    
+    /**
+     * <p>The IDs of the ThreatIntelSet resources.</p>
+     */
     inline ListThreatIntelSetsResult& WithThreatIntelSetIds(const Aws::Vector<Aws::String>& value) { SetThreatIntelSetIds(value); return *this;}
 
-    
+    /**
+     * <p>The IDs of the ThreatIntelSet resources.</p>
+     */
     inline ListThreatIntelSetsResult& WithThreatIntelSetIds(Aws::Vector<Aws::String>&& value) { SetThreatIntelSetIds(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The IDs of the ThreatIntelSet resources.</p>
+     */
     inline ListThreatIntelSetsResult& AddThreatIntelSetIds(const Aws::String& value) { m_threatIntelSetIds.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The IDs of the ThreatIntelSet resources.</p>
+     */
     inline ListThreatIntelSetsResult& AddThreatIntelSetIds(Aws::String&& value) { m_threatIntelSetIds.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>The IDs of the ThreatIntelSet resources.</p>
+     */
     inline ListThreatIntelSetsResult& AddThreatIntelSetIds(const char* value) { m_threatIntelSetIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>Pagination parameter to be used on the next list operation to retrieve more
+     * items.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Pagination parameter to be used on the next list operation to retrieve more
+     * items.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>Pagination parameter to be used on the next list operation to retrieve more
+     * items.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>Pagination parameter to be used on the next list operation to retrieve more
+     * items.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>Pagination parameter to be used on the next list operation to retrieve more
+     * items.</p>
+     */
+    inline ListThreatIntelSetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>Pagination parameter to be used on the next list operation to retrieve more
+     * items.</p>
+     */
+    inline ListThreatIntelSetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>Pagination parameter to be used on the next list operation to retrieve more
+     * items.</p>
+     */
+    inline ListThreatIntelSetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<Aws::String> m_threatIntelSetIds;
+
+    Aws::String m_nextToken;
   };
 
 } // namespace Model

@@ -43,50 +43,87 @@ namespace Model
     ListIPSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The IDs of the IPSet resources.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetIpSetIds() const{ return m_ipSetIds; }
 
-    
+    /**
+     * <p>The IDs of the IPSet resources.</p>
+     */
     inline void SetIpSetIds(const Aws::Vector<Aws::String>& value) { m_ipSetIds = value; }
 
-    
+    /**
+     * <p>The IDs of the IPSet resources.</p>
+     */
     inline void SetIpSetIds(Aws::Vector<Aws::String>&& value) { m_ipSetIds = std::move(value); }
 
-    
+    /**
+     * <p>The IDs of the IPSet resources.</p>
+     */
     inline ListIPSetsResult& WithIpSetIds(const Aws::Vector<Aws::String>& value) { SetIpSetIds(value); return *this;}
 
-    
+    /**
+     * <p>The IDs of the IPSet resources.</p>
+     */
     inline ListIPSetsResult& WithIpSetIds(Aws::Vector<Aws::String>&& value) { SetIpSetIds(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The IDs of the IPSet resources.</p>
+     */
     inline ListIPSetsResult& AddIpSetIds(const Aws::String& value) { m_ipSetIds.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The IDs of the IPSet resources.</p>
+     */
     inline ListIPSetsResult& AddIpSetIds(Aws::String&& value) { m_ipSetIds.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>The IDs of the IPSet resources.</p>
+     */
     inline ListIPSetsResult& AddIpSetIds(const char* value) { m_ipSetIds.push_back(value); return *this; }
 
 
-    
+    /**
+     * <p>Pagination parameter to be used on the next list operation to retrieve more
+     * items.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    
+    /**
+     * <p>Pagination parameter to be used on the next list operation to retrieve more
+     * items.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    
+    /**
+     * <p>Pagination parameter to be used on the next list operation to retrieve more
+     * items.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
-    
+    /**
+     * <p>Pagination parameter to be used on the next list operation to retrieve more
+     * items.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    
+    /**
+     * <p>Pagination parameter to be used on the next list operation to retrieve more
+     * items.</p>
+     */
     inline ListIPSetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /**
+     * <p>Pagination parameter to be used on the next list operation to retrieve more
+     * items.</p>
+     */
     inline ListIPSetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Pagination parameter to be used on the next list operation to retrieve more
+     * items.</p>
+     */
     inline ListIPSetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:

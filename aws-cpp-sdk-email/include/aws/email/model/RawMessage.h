@@ -62,7 +62,7 @@ namespace Model
      * documentation for <code>SendRawEmail</code>. </p> <important> <p>Do not include
      * these X-headers in the DKIM signature, because they are removed by Amazon SES
      * before sending the email.</p> </important> <p>For more information, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
@@ -80,7 +80,7 @@ namespace Model
      * documentation for <code>SendRawEmail</code>. </p> <important> <p>Do not include
      * these X-headers in the DKIM signature, because they are removed by Amazon SES
      * before sending the email.</p> </important> <p>For more information, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
@@ -98,7 +98,7 @@ namespace Model
      * documentation for <code>SendRawEmail</code>. </p> <important> <p>Do not include
      * these X-headers in the DKIM signature, because they are removed by Amazon SES
      * before sending the email.</p> </important> <p>For more information, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
@@ -116,7 +116,7 @@ namespace Model
      * documentation for <code>SendRawEmail</code>. </p> <important> <p>Do not include
      * these X-headers in the DKIM signature, because they are removed by Amazon SES
      * before sending the email.</p> </important> <p>For more information, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
@@ -134,7 +134,7 @@ namespace Model
      * documentation for <code>SendRawEmail</code>. </p> <important> <p>Do not include
      * these X-headers in the DKIM signature, because they are removed by Amazon SES
      * before sending the email.</p> </important> <p>For more information, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline RawMessage& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
@@ -152,7 +152,7 @@ namespace Model
      * documentation for <code>SendRawEmail</code>. </p> <important> <p>Do not include
      * these X-headers in the DKIM signature, because they are removed by Amazon SES
      * before sending the email.</p> </important> <p>For more information, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline RawMessage& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}

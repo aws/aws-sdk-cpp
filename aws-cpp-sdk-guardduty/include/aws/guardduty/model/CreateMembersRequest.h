@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/GuardDutyRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/guardduty/model/AccountDetail.h>
 #include <utility>
 
@@ -29,9 +29,6 @@ namespace Model
 {
 
   /**
-   * CreateMembers request body.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembersRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_GUARDDUTY_API CreateMembersRequest : public GuardDutyRequest
   {
@@ -48,109 +45,109 @@ namespace Model
 
 
     /**
-     * A list of account ID and email address pairs of the accounts that you want to
-     * associate with the master GuardDuty account.
-     */
-    inline const Aws::Vector<AccountDetail>& GetAccountDetails() const{ return m_accountDetails; }
-
-    /**
-     * A list of account ID and email address pairs of the accounts that you want to
-     * associate with the master GuardDuty account.
-     */
-    inline bool AccountDetailsHasBeenSet() const { return m_accountDetailsHasBeenSet; }
-
-    /**
-     * A list of account ID and email address pairs of the accounts that you want to
-     * associate with the master GuardDuty account.
-     */
-    inline void SetAccountDetails(const Aws::Vector<AccountDetail>& value) { m_accountDetailsHasBeenSet = true; m_accountDetails = value; }
-
-    /**
-     * A list of account ID and email address pairs of the accounts that you want to
-     * associate with the master GuardDuty account.
-     */
-    inline void SetAccountDetails(Aws::Vector<AccountDetail>&& value) { m_accountDetailsHasBeenSet = true; m_accountDetails = std::move(value); }
-
-    /**
-     * A list of account ID and email address pairs of the accounts that you want to
-     * associate with the master GuardDuty account.
-     */
-    inline CreateMembersRequest& WithAccountDetails(const Aws::Vector<AccountDetail>& value) { SetAccountDetails(value); return *this;}
-
-    /**
-     * A list of account ID and email address pairs of the accounts that you want to
-     * associate with the master GuardDuty account.
-     */
-    inline CreateMembersRequest& WithAccountDetails(Aws::Vector<AccountDetail>&& value) { SetAccountDetails(std::move(value)); return *this;}
-
-    /**
-     * A list of account ID and email address pairs of the accounts that you want to
-     * associate with the master GuardDuty account.
-     */
-    inline CreateMembersRequest& AddAccountDetails(const AccountDetail& value) { m_accountDetailsHasBeenSet = true; m_accountDetails.push_back(value); return *this; }
-
-    /**
-     * A list of account ID and email address pairs of the accounts that you want to
-     * associate with the master GuardDuty account.
-     */
-    inline CreateMembersRequest& AddAccountDetails(AccountDetail&& value) { m_accountDetailsHasBeenSet = true; m_accountDetails.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * The unique ID of the detector of the GuardDuty account with which you want to
-     * associate member accounts.
+     * <p>The unique ID of the detector of the GuardDuty account with which you want to
+     * associate member accounts.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The unique ID of the detector of the GuardDuty account with which you want to
-     * associate member accounts.
+     * <p>The unique ID of the detector of the GuardDuty account with which you want to
+     * associate member accounts.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * The unique ID of the detector of the GuardDuty account with which you want to
-     * associate member accounts.
+     * <p>The unique ID of the detector of the GuardDuty account with which you want to
+     * associate member accounts.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * The unique ID of the detector of the GuardDuty account with which you want to
-     * associate member accounts.
+     * <p>The unique ID of the detector of the GuardDuty account with which you want to
+     * associate member accounts.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * The unique ID of the detector of the GuardDuty account with which you want to
-     * associate member accounts.
+     * <p>The unique ID of the detector of the GuardDuty account with which you want to
+     * associate member accounts.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * The unique ID of the detector of the GuardDuty account with which you want to
-     * associate member accounts.
+     * <p>The unique ID of the detector of the GuardDuty account with which you want to
+     * associate member accounts.</p>
      */
     inline CreateMembersRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The unique ID of the detector of the GuardDuty account with which you want to
-     * associate member accounts.
+     * <p>The unique ID of the detector of the GuardDuty account with which you want to
+     * associate member accounts.</p>
      */
     inline CreateMembersRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of the detector of the GuardDuty account with which you want to
-     * associate member accounts.
+     * <p>The unique ID of the detector of the GuardDuty account with which you want to
+     * associate member accounts.</p>
      */
     inline CreateMembersRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
-  private:
 
-    Aws::Vector<AccountDetail> m_accountDetails;
-    bool m_accountDetailsHasBeenSet;
+    /**
+     * <p>A list of account ID and email address pairs of the accounts that you want to
+     * associate with the master GuardDuty account.</p>
+     */
+    inline const Aws::Vector<AccountDetail>& GetAccountDetails() const{ return m_accountDetails; }
+
+    /**
+     * <p>A list of account ID and email address pairs of the accounts that you want to
+     * associate with the master GuardDuty account.</p>
+     */
+    inline bool AccountDetailsHasBeenSet() const { return m_accountDetailsHasBeenSet; }
+
+    /**
+     * <p>A list of account ID and email address pairs of the accounts that you want to
+     * associate with the master GuardDuty account.</p>
+     */
+    inline void SetAccountDetails(const Aws::Vector<AccountDetail>& value) { m_accountDetailsHasBeenSet = true; m_accountDetails = value; }
+
+    /**
+     * <p>A list of account ID and email address pairs of the accounts that you want to
+     * associate with the master GuardDuty account.</p>
+     */
+    inline void SetAccountDetails(Aws::Vector<AccountDetail>&& value) { m_accountDetailsHasBeenSet = true; m_accountDetails = std::move(value); }
+
+    /**
+     * <p>A list of account ID and email address pairs of the accounts that you want to
+     * associate with the master GuardDuty account.</p>
+     */
+    inline CreateMembersRequest& WithAccountDetails(const Aws::Vector<AccountDetail>& value) { SetAccountDetails(value); return *this;}
+
+    /**
+     * <p>A list of account ID and email address pairs of the accounts that you want to
+     * associate with the master GuardDuty account.</p>
+     */
+    inline CreateMembersRequest& WithAccountDetails(Aws::Vector<AccountDetail>&& value) { SetAccountDetails(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of account ID and email address pairs of the accounts that you want to
+     * associate with the master GuardDuty account.</p>
+     */
+    inline CreateMembersRequest& AddAccountDetails(const AccountDetail& value) { m_accountDetailsHasBeenSet = true; m_accountDetails.push_back(value); return *this; }
+
+    /**
+     * <p>A list of account ID and email address pairs of the accounts that you want to
+     * associate with the master GuardDuty account.</p>
+     */
+    inline CreateMembersRequest& AddAccountDetails(AccountDetail&& value) { m_accountDetailsHasBeenSet = true; m_accountDetails.push_back(std::move(value)); return *this; }
+
+  private:
 
     Aws::String m_detectorId;
     bool m_detectorIdHasBeenSet;
+
+    Aws::Vector<AccountDetail> m_accountDetails;
+    bool m_accountDetailsHasBeenSet;
   };
 
 } // namespace Model

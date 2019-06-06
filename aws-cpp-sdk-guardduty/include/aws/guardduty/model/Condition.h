@@ -34,12 +34,6 @@ namespace GuardDuty
 namespace Model
 {
 
-  /**
-   * Finding attribute (for example, accountId) for which conditions and values must
-   * be specified when querying findings.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Condition">AWS
-   * API Reference</a></p>
-   */
   class AWS_GUARDDUTY_API Condition
   {
   public:
@@ -49,234 +43,180 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    /**
-     * Represents the equal condition to be applied to a single field when querying for
-     * findings.
-     */
-    inline const Aws::Vector<Aws::String>& GetEq() const{ return m_eq; }
+    
+    inline const Aws::Vector<Aws::String>& GetEquals() const{ return m_equals; }
 
-    /**
-     * Represents the equal condition to be applied to a single field when querying for
-     * findings.
-     */
-    inline bool EqHasBeenSet() const { return m_eqHasBeenSet; }
+    
+    inline bool EqualsHasBeenSet() const { return m_equalsHasBeenSet; }
 
-    /**
-     * Represents the equal condition to be applied to a single field when querying for
-     * findings.
-     */
-    inline void SetEq(const Aws::Vector<Aws::String>& value) { m_eqHasBeenSet = true; m_eq = value; }
+    
+    inline void SetEquals(const Aws::Vector<Aws::String>& value) { m_equalsHasBeenSet = true; m_equals = value; }
 
-    /**
-     * Represents the equal condition to be applied to a single field when querying for
-     * findings.
-     */
-    inline void SetEq(Aws::Vector<Aws::String>&& value) { m_eqHasBeenSet = true; m_eq = std::move(value); }
+    
+    inline void SetEquals(Aws::Vector<Aws::String>&& value) { m_equalsHasBeenSet = true; m_equals = std::move(value); }
 
-    /**
-     * Represents the equal condition to be applied to a single field when querying for
-     * findings.
-     */
-    inline Condition& WithEq(const Aws::Vector<Aws::String>& value) { SetEq(value); return *this;}
+    
+    inline Condition& WithEquals(const Aws::Vector<Aws::String>& value) { SetEquals(value); return *this;}
 
-    /**
-     * Represents the equal condition to be applied to a single field when querying for
-     * findings.
-     */
-    inline Condition& WithEq(Aws::Vector<Aws::String>&& value) { SetEq(std::move(value)); return *this;}
+    
+    inline Condition& WithEquals(Aws::Vector<Aws::String>&& value) { SetEquals(std::move(value)); return *this;}
 
-    /**
-     * Represents the equal condition to be applied to a single field when querying for
-     * findings.
-     */
-    inline Condition& AddEq(const Aws::String& value) { m_eqHasBeenSet = true; m_eq.push_back(value); return *this; }
+    
+    inline Condition& AddEquals(const Aws::String& value) { m_equalsHasBeenSet = true; m_equals.push_back(value); return *this; }
 
-    /**
-     * Represents the equal condition to be applied to a single field when querying for
-     * findings.
-     */
-    inline Condition& AddEq(Aws::String&& value) { m_eqHasBeenSet = true; m_eq.push_back(std::move(value)); return *this; }
+    
+    inline Condition& AddEquals(Aws::String&& value) { m_equalsHasBeenSet = true; m_equals.push_back(std::move(value)); return *this; }
 
-    /**
-     * Represents the equal condition to be applied to a single field when querying for
-     * findings.
-     */
-    inline Condition& AddEq(const char* value) { m_eqHasBeenSet = true; m_eq.push_back(value); return *this; }
+    
+    inline Condition& AddEquals(const char* value) { m_equalsHasBeenSet = true; m_equals.push_back(value); return *this; }
 
 
-    /**
-     * Represents the greater than condition to be applied to a single field when
-     * querying for findings.
-     */
-    inline int GetGt() const{ return m_gt; }
+    
+    inline const Aws::Vector<Aws::String>& GetNotEquals() const{ return m_notEquals; }
 
-    /**
-     * Represents the greater than condition to be applied to a single field when
-     * querying for findings.
-     */
-    inline bool GtHasBeenSet() const { return m_gtHasBeenSet; }
+    
+    inline bool NotEqualsHasBeenSet() const { return m_notEqualsHasBeenSet; }
 
-    /**
-     * Represents the greater than condition to be applied to a single field when
-     * querying for findings.
-     */
-    inline void SetGt(int value) { m_gtHasBeenSet = true; m_gt = value; }
+    
+    inline void SetNotEquals(const Aws::Vector<Aws::String>& value) { m_notEqualsHasBeenSet = true; m_notEquals = value; }
 
-    /**
-     * Represents the greater than condition to be applied to a single field when
-     * querying for findings.
-     */
-    inline Condition& WithGt(int value) { SetGt(value); return *this;}
+    
+    inline void SetNotEquals(Aws::Vector<Aws::String>&& value) { m_notEqualsHasBeenSet = true; m_notEquals = std::move(value); }
+
+    
+    inline Condition& WithNotEquals(const Aws::Vector<Aws::String>& value) { SetNotEquals(value); return *this;}
+
+    
+    inline Condition& WithNotEquals(Aws::Vector<Aws::String>&& value) { SetNotEquals(std::move(value)); return *this;}
+
+    
+    inline Condition& AddNotEquals(const Aws::String& value) { m_notEqualsHasBeenSet = true; m_notEquals.push_back(value); return *this; }
+
+    
+    inline Condition& AddNotEquals(Aws::String&& value) { m_notEqualsHasBeenSet = true; m_notEquals.push_back(std::move(value)); return *this; }
+
+    
+    inline Condition& AddNotEquals(const char* value) { m_notEqualsHasBeenSet = true; m_notEquals.push_back(value); return *this; }
 
 
     /**
-     * Represents the greater than equal condition to be applied to a single field when
-     * querying for findings.
+     * <p>Represents a greater than condition to be applied to a single field when
+     * querying for findings.</p>
      */
-    inline int GetGte() const{ return m_gte; }
+    inline long long GetGreaterThan() const{ return m_greaterThan; }
 
     /**
-     * Represents the greater than equal condition to be applied to a single field when
-     * querying for findings.
+     * <p>Represents a greater than condition to be applied to a single field when
+     * querying for findings.</p>
      */
-    inline bool GteHasBeenSet() const { return m_gteHasBeenSet; }
+    inline bool GreaterThanHasBeenSet() const { return m_greaterThanHasBeenSet; }
 
     /**
-     * Represents the greater than equal condition to be applied to a single field when
-     * querying for findings.
+     * <p>Represents a greater than condition to be applied to a single field when
+     * querying for findings.</p>
      */
-    inline void SetGte(int value) { m_gteHasBeenSet = true; m_gte = value; }
+    inline void SetGreaterThan(long long value) { m_greaterThanHasBeenSet = true; m_greaterThan = value; }
 
     /**
-     * Represents the greater than equal condition to be applied to a single field when
-     * querying for findings.
+     * <p>Represents a greater than condition to be applied to a single field when
+     * querying for findings.</p>
      */
-    inline Condition& WithGte(int value) { SetGte(value); return *this;}
-
-
-    /**
-     * Represents the less than condition to be applied to a single field when querying
-     * for findings.
-     */
-    inline int GetLt() const{ return m_lt; }
-
-    /**
-     * Represents the less than condition to be applied to a single field when querying
-     * for findings.
-     */
-    inline bool LtHasBeenSet() const { return m_ltHasBeenSet; }
-
-    /**
-     * Represents the less than condition to be applied to a single field when querying
-     * for findings.
-     */
-    inline void SetLt(int value) { m_ltHasBeenSet = true; m_lt = value; }
-
-    /**
-     * Represents the less than condition to be applied to a single field when querying
-     * for findings.
-     */
-    inline Condition& WithLt(int value) { SetLt(value); return *this;}
+    inline Condition& WithGreaterThan(long long value) { SetGreaterThan(value); return *this;}
 
 
     /**
-     * Represents the less than equal condition to be applied to a single field when
-     * querying for findings.
+     * <p>Represents a greater than equal condition to be applied to a single field
+     * when querying for findings.</p>
      */
-    inline int GetLte() const{ return m_lte; }
+    inline long long GetGreaterThanOrEqual() const{ return m_greaterThanOrEqual; }
 
     /**
-     * Represents the less than equal condition to be applied to a single field when
-     * querying for findings.
+     * <p>Represents a greater than equal condition to be applied to a single field
+     * when querying for findings.</p>
      */
-    inline bool LteHasBeenSet() const { return m_lteHasBeenSet; }
+    inline bool GreaterThanOrEqualHasBeenSet() const { return m_greaterThanOrEqualHasBeenSet; }
 
     /**
-     * Represents the less than equal condition to be applied to a single field when
-     * querying for findings.
+     * <p>Represents a greater than equal condition to be applied to a single field
+     * when querying for findings.</p>
      */
-    inline void SetLte(int value) { m_lteHasBeenSet = true; m_lte = value; }
+    inline void SetGreaterThanOrEqual(long long value) { m_greaterThanOrEqualHasBeenSet = true; m_greaterThanOrEqual = value; }
 
     /**
-     * Represents the less than equal condition to be applied to a single field when
-     * querying for findings.
+     * <p>Represents a greater than equal condition to be applied to a single field
+     * when querying for findings.</p>
      */
-    inline Condition& WithLte(int value) { SetLte(value); return *this;}
+    inline Condition& WithGreaterThanOrEqual(long long value) { SetGreaterThanOrEqual(value); return *this;}
 
 
     /**
-     * Represents the not equal condition to be applied to a single field when querying
-     * for findings.
+     * <p>Represents a less than condition to be applied to a single field when
+     * querying for findings.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNeq() const{ return m_neq; }
+    inline long long GetLessThan() const{ return m_lessThan; }
 
     /**
-     * Represents the not equal condition to be applied to a single field when querying
-     * for findings.
+     * <p>Represents a less than condition to be applied to a single field when
+     * querying for findings.</p>
      */
-    inline bool NeqHasBeenSet() const { return m_neqHasBeenSet; }
+    inline bool LessThanHasBeenSet() const { return m_lessThanHasBeenSet; }
 
     /**
-     * Represents the not equal condition to be applied to a single field when querying
-     * for findings.
+     * <p>Represents a less than condition to be applied to a single field when
+     * querying for findings.</p>
      */
-    inline void SetNeq(const Aws::Vector<Aws::String>& value) { m_neqHasBeenSet = true; m_neq = value; }
+    inline void SetLessThan(long long value) { m_lessThanHasBeenSet = true; m_lessThan = value; }
 
     /**
-     * Represents the not equal condition to be applied to a single field when querying
-     * for findings.
+     * <p>Represents a less than condition to be applied to a single field when
+     * querying for findings.</p>
      */
-    inline void SetNeq(Aws::Vector<Aws::String>&& value) { m_neqHasBeenSet = true; m_neq = std::move(value); }
+    inline Condition& WithLessThan(long long value) { SetLessThan(value); return *this;}
+
 
     /**
-     * Represents the not equal condition to be applied to a single field when querying
-     * for findings.
+     * <p>Represents a less than equal condition to be applied to a single field when
+     * querying for findings.</p>
      */
-    inline Condition& WithNeq(const Aws::Vector<Aws::String>& value) { SetNeq(value); return *this;}
+    inline long long GetLessThanOrEqual() const{ return m_lessThanOrEqual; }
 
     /**
-     * Represents the not equal condition to be applied to a single field when querying
-     * for findings.
+     * <p>Represents a less than equal condition to be applied to a single field when
+     * querying for findings.</p>
      */
-    inline Condition& WithNeq(Aws::Vector<Aws::String>&& value) { SetNeq(std::move(value)); return *this;}
+    inline bool LessThanOrEqualHasBeenSet() const { return m_lessThanOrEqualHasBeenSet; }
 
     /**
-     * Represents the not equal condition to be applied to a single field when querying
-     * for findings.
+     * <p>Represents a less than equal condition to be applied to a single field when
+     * querying for findings.</p>
      */
-    inline Condition& AddNeq(const Aws::String& value) { m_neqHasBeenSet = true; m_neq.push_back(value); return *this; }
+    inline void SetLessThanOrEqual(long long value) { m_lessThanOrEqualHasBeenSet = true; m_lessThanOrEqual = value; }
 
     /**
-     * Represents the not equal condition to be applied to a single field when querying
-     * for findings.
+     * <p>Represents a less than equal condition to be applied to a single field when
+     * querying for findings.</p>
      */
-    inline Condition& AddNeq(Aws::String&& value) { m_neqHasBeenSet = true; m_neq.push_back(std::move(value)); return *this; }
-
-    /**
-     * Represents the not equal condition to be applied to a single field when querying
-     * for findings.
-     */
-    inline Condition& AddNeq(const char* value) { m_neqHasBeenSet = true; m_neq.push_back(value); return *this; }
+    inline Condition& WithLessThanOrEqual(long long value) { SetLessThanOrEqual(value); return *this;}
 
   private:
 
-    Aws::Vector<Aws::String> m_eq;
-    bool m_eqHasBeenSet;
+    Aws::Vector<Aws::String> m_equals;
+    bool m_equalsHasBeenSet;
 
-    int m_gt;
-    bool m_gtHasBeenSet;
+    Aws::Vector<Aws::String> m_notEquals;
+    bool m_notEqualsHasBeenSet;
 
-    int m_gte;
-    bool m_gteHasBeenSet;
+    long long m_greaterThan;
+    bool m_greaterThanHasBeenSet;
 
-    int m_lt;
-    bool m_ltHasBeenSet;
+    long long m_greaterThanOrEqual;
+    bool m_greaterThanOrEqualHasBeenSet;
 
-    int m_lte;
-    bool m_lteHasBeenSet;
+    long long m_lessThan;
+    bool m_lessThanHasBeenSet;
 
-    Aws::Vector<Aws::String> m_neq;
-    bool m_neqHasBeenSet;
+    long long m_lessThanOrEqual;
+    bool m_lessThanOrEqualHasBeenSet;
   };
 
 } // namespace Model

@@ -42,9 +42,9 @@ GetFilterResult::GetFilterResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 GetFilterResult& GetFilterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("action"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_action = FilterActionMapper::GetFilterActionForName(jsonValue.GetString("action"));
+    m_name = jsonValue.GetString("name");
 
   }
 
@@ -54,21 +54,21 @@ GetFilterResult& GetFilterResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
-  if(jsonValue.ValueExists("findingCriteria"))
+  if(jsonValue.ValueExists("action"))
   {
-    m_findingCriteria = jsonValue.GetObject("findingCriteria");
-
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
+    m_action = FilterActionMapper::GetFilterActionForName(jsonValue.GetString("action"));
 
   }
 
   if(jsonValue.ValueExists("rank"))
   {
     m_rank = jsonValue.GetInteger("rank");
+
+  }
+
+  if(jsonValue.ValueExists("findingCriteria"))
+  {
+    m_findingCriteria = jsonValue.GetObject("findingCriteria");
 
   }
 

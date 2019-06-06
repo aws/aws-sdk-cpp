@@ -284,22 +284,34 @@ namespace Model
 
 
     /**
-     * <p>The number of bytes stored.</p>
+     * <p>The number of bytes stored.</p> <p> <b>IMPORTANT:</b> Starting on June 17,
+     * 2019, this parameter will be deprecated for log streams, and will be reported as
+     * zero. This change applies only to log streams. The <code>storedBytes</code>
+     * parameter for log groups is not affected.</p>
      */
     inline long long GetStoredBytes() const{ return m_storedBytes; }
 
     /**
-     * <p>The number of bytes stored.</p>
+     * <p>The number of bytes stored.</p> <p> <b>IMPORTANT:</b> Starting on June 17,
+     * 2019, this parameter will be deprecated for log streams, and will be reported as
+     * zero. This change applies only to log streams. The <code>storedBytes</code>
+     * parameter for log groups is not affected.</p>
      */
     inline bool StoredBytesHasBeenSet() const { return m_storedBytesHasBeenSet; }
 
     /**
-     * <p>The number of bytes stored.</p>
+     * <p>The number of bytes stored.</p> <p> <b>IMPORTANT:</b> Starting on June 17,
+     * 2019, this parameter will be deprecated for log streams, and will be reported as
+     * zero. This change applies only to log streams. The <code>storedBytes</code>
+     * parameter for log groups is not affected.</p>
      */
     inline void SetStoredBytes(long long value) { m_storedBytesHasBeenSet = true; m_storedBytes = value; }
 
     /**
-     * <p>The number of bytes stored.</p>
+     * <p>The number of bytes stored.</p> <p> <b>IMPORTANT:</b> Starting on June 17,
+     * 2019, this parameter will be deprecated for log streams, and will be reported as
+     * zero. This change applies only to log streams. The <code>storedBytes</code>
+     * parameter for log groups is not affected.</p>
      */
     inline LogStream& WithStoredBytes(long long value) { SetStoredBytes(value); return *this;}
 

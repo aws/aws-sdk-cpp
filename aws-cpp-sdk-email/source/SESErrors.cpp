@@ -41,6 +41,7 @@ static const int EVENT_DESTINATION_DOES_NOT_EXIST_HASH = HashingUtils::HashStrin
 static const int TEMPLATE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("TemplateDoesNotExist");
 static const int MISSING_RENDERING_ATTRIBUTE_HASH = HashingUtils::HashString("MissingRenderingAttribute");
 static const int CONFIGURATION_SET_ALREADY_EXISTS_HASH = HashingUtils::HashString("ConfigurationSetAlreadyExists");
+static const int INVALID_DELIVERY_OPTIONS_HASH = HashingUtils::HashString("InvalidDeliveryOptions");
 static const int EVENT_DESTINATION_ALREADY_EXISTS_HASH = HashingUtils::HashString("EventDestinationAlreadyExists");
 static const int CUSTOM_VERIFICATION_EMAIL_TEMPLATE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("CustomVerificationEmailTemplateDoesNotExist");
 static const int INVALID_LAMBDA_FUNCTION_HASH = HashingUtils::HashString("InvalidLambdaFunction");
@@ -118,6 +119,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CONFIGURATION_SET_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::CONFIGURATION_SET_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == INVALID_DELIVERY_OPTIONS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::INVALID_DELIVERY_OPTIONS), false);
   }
   else if (hashCode == EVENT_DESTINATION_ALREADY_EXISTS_HASH)
   {

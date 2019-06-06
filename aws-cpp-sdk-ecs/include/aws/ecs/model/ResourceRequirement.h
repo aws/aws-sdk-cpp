@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>The type and amount of a resource to assign to a container. The only
    * supported resource is a GPU. For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working
    * with GPUs on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
    * Guide</i> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ResourceRequirement">AWS

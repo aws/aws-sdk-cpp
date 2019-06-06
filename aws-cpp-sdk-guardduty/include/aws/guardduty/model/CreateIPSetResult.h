@@ -42,25 +42,39 @@ namespace Model
     CreateIPSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The ID of the IPSet resource.</p>
+     */
     inline const Aws::String& GetIpSetId() const{ return m_ipSetId; }
 
-    
+    /**
+     * <p>The ID of the IPSet resource.</p>
+     */
     inline void SetIpSetId(const Aws::String& value) { m_ipSetId = value; }
 
-    
+    /**
+     * <p>The ID of the IPSet resource.</p>
+     */
     inline void SetIpSetId(Aws::String&& value) { m_ipSetId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the IPSet resource.</p>
+     */
     inline void SetIpSetId(const char* value) { m_ipSetId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the IPSet resource.</p>
+     */
     inline CreateIPSetResult& WithIpSetId(const Aws::String& value) { SetIpSetId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the IPSet resource.</p>
+     */
     inline CreateIPSetResult& WithIpSetId(Aws::String&& value) { SetIpSetId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the IPSet resource.</p>
+     */
     inline CreateIPSetResult& WithIpSetId(const char* value) { SetIpSetId(value); return *this;}
 
   private:

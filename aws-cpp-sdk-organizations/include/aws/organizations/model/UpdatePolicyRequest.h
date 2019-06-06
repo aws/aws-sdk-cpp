@@ -212,7 +212,7 @@ namespace Model
      * formatted JSON that complies with the syntax for the policy's type. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
+     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
@@ -221,7 +221,7 @@ namespace Model
      * formatted JSON that complies with the syntax for the policy's type. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
+     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
@@ -230,7 +230,7 @@ namespace Model
      * formatted JSON that complies with the syntax for the policy's type. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
+     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
@@ -239,7 +239,7 @@ namespace Model
      * formatted JSON that complies with the syntax for the policy's type. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
+     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
@@ -248,7 +248,7 @@ namespace Model
      * formatted JSON that complies with the syntax for the policy's type. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
+     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
@@ -257,7 +257,7 @@ namespace Model
      * formatted JSON that complies with the syntax for the policy's type. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
+     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
      */
     inline UpdatePolicyRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
@@ -266,7 +266,7 @@ namespace Model
      * formatted JSON that complies with the syntax for the policy's type. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
+     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
      */
     inline UpdatePolicyRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
@@ -275,7 +275,7 @@ namespace Model
      * formatted JSON that complies with the syntax for the policy's type. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
+     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
      */
     inline UpdatePolicyRequest& WithContent(const char* value) { SetContent(value); return *this;}
 

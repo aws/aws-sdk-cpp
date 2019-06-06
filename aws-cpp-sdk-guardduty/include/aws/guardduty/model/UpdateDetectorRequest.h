@@ -28,9 +28,6 @@ namespace Model
 {
 
   /**
-   * UpdateDetector request body.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateDetectorRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_GUARDDUTY_API UpdateDetectorRequest : public GuardDutyRequest
   {
@@ -47,104 +44,104 @@ namespace Model
 
 
     /**
-     * The unique ID of the detector that you want to update.
+     * <p>The unique ID of the detector that you want to update.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The unique ID of the detector that you want to update.
+     * <p>The unique ID of the detector that you want to update.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * The unique ID of the detector that you want to update.
+     * <p>The unique ID of the detector that you want to update.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * The unique ID of the detector that you want to update.
+     * <p>The unique ID of the detector that you want to update.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * The unique ID of the detector that you want to update.
+     * <p>The unique ID of the detector that you want to update.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * The unique ID of the detector that you want to update.
+     * <p>The unique ID of the detector that you want to update.</p>
      */
     inline UpdateDetectorRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The unique ID of the detector that you want to update.
+     * <p>The unique ID of the detector that you want to update.</p>
      */
     inline UpdateDetectorRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of the detector that you want to update.
+     * <p>The unique ID of the detector that you want to update.</p>
      */
     inline UpdateDetectorRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * Updated boolean value for the detector that specifies whether the detector is
-     * enabled.
+     * <p>Updated boolean value for the detector that specifies whether the detector is
+     * enabled.</p>
      */
     inline bool GetEnable() const{ return m_enable; }
 
     /**
-     * Updated boolean value for the detector that specifies whether the detector is
-     * enabled.
+     * <p>Updated boolean value for the detector that specifies whether the detector is
+     * enabled.</p>
      */
     inline bool EnableHasBeenSet() const { return m_enableHasBeenSet; }
 
     /**
-     * Updated boolean value for the detector that specifies whether the detector is
-     * enabled.
+     * <p>Updated boolean value for the detector that specifies whether the detector is
+     * enabled.</p>
      */
     inline void SetEnable(bool value) { m_enableHasBeenSet = true; m_enable = value; }
 
     /**
-     * Updated boolean value for the detector that specifies whether the detector is
-     * enabled.
+     * <p>Updated boolean value for the detector that specifies whether the detector is
+     * enabled.</p>
      */
     inline UpdateDetectorRequest& WithEnable(bool value) { SetEnable(value); return *this;}
 
 
     /**
-     * A enum value that specifies how frequently customer got Finding updates
-     * published.
+     * <p>A enum value that specifies how frequently customer got Finding updates
+     * published.</p>
      */
     inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
 
     /**
-     * A enum value that specifies how frequently customer got Finding updates
-     * published.
+     * <p>A enum value that specifies how frequently customer got Finding updates
+     * published.</p>
      */
     inline bool FindingPublishingFrequencyHasBeenSet() const { return m_findingPublishingFrequencyHasBeenSet; }
 
     /**
-     * A enum value that specifies how frequently customer got Finding updates
-     * published.
+     * <p>A enum value that specifies how frequently customer got Finding updates
+     * published.</p>
      */
     inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = value; }
 
     /**
-     * A enum value that specifies how frequently customer got Finding updates
-     * published.
+     * <p>A enum value that specifies how frequently customer got Finding updates
+     * published.</p>
      */
     inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = std::move(value); }
 
     /**
-     * A enum value that specifies how frequently customer got Finding updates
-     * published.
+     * <p>A enum value that specifies how frequently customer got Finding updates
+     * published.</p>
      */
     inline UpdateDetectorRequest& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
 
     /**
-     * A enum value that specifies how frequently customer got Finding updates
-     * published.
+     * <p>A enum value that specifies how frequently customer got Finding updates
+     * published.</p>
      */
     inline UpdateDetectorRequest& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
 

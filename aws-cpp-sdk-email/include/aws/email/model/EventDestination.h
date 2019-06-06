@@ -48,7 +48,7 @@ namespace Model
    * events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple
    * Notification Service (Amazon SNS). For information about using configuration
    * sets, see the <a
-   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/EventDestination">AWS
    * API Reference</a></p>

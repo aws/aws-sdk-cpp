@@ -38,12 +38,6 @@ namespace GuardDuty
 namespace Model
 {
 
-  /**
-   * The information about the EC2 instance associated with the activity that
-   * prompted GuardDuty to generate a finding.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/InstanceDetails">AWS
-   * API Reference</a></p>
-   */
   class AWS_GUARDDUTY_API InstanceDetails
   {
   public:
@@ -54,471 +48,483 @@ namespace Model
 
 
     /**
-     * The availability zone of the EC2 instance.
+     * <p>The availability zone of the EC2 instance.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * The availability zone of the EC2 instance.
+     * <p>The availability zone of the EC2 instance.</p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
-     * The availability zone of the EC2 instance.
+     * <p>The availability zone of the EC2 instance.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * The availability zone of the EC2 instance.
+     * <p>The availability zone of the EC2 instance.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * The availability zone of the EC2 instance.
+     * <p>The availability zone of the EC2 instance.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * The availability zone of the EC2 instance.
+     * <p>The availability zone of the EC2 instance.</p>
      */
     inline InstanceDetails& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * The availability zone of the EC2 instance.
+     * <p>The availability zone of the EC2 instance.</p>
      */
     inline InstanceDetails& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * The availability zone of the EC2 instance.
+     * <p>The availability zone of the EC2 instance.</p>
      */
     inline InstanceDetails& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
 
-    
+    /**
+     * <p>The profile information of the EC2 instance.</p>
+     */
     inline const IamInstanceProfile& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
 
-    
+    /**
+     * <p>The profile information of the EC2 instance.</p>
+     */
     inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
 
-    
+    /**
+     * <p>The profile information of the EC2 instance.</p>
+     */
     inline void SetIamInstanceProfile(const IamInstanceProfile& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
 
-    
+    /**
+     * <p>The profile information of the EC2 instance.</p>
+     */
     inline void SetIamInstanceProfile(IamInstanceProfile&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
 
-    
+    /**
+     * <p>The profile information of the EC2 instance.</p>
+     */
     inline InstanceDetails& WithIamInstanceProfile(const IamInstanceProfile& value) { SetIamInstanceProfile(value); return *this;}
 
-    
+    /**
+     * <p>The profile information of the EC2 instance.</p>
+     */
     inline InstanceDetails& WithIamInstanceProfile(IamInstanceProfile&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
 
 
     /**
-     * The image description of the EC2 instance.
+     * <p>The image description of the EC2 instance.</p>
      */
     inline const Aws::String& GetImageDescription() const{ return m_imageDescription; }
 
     /**
-     * The image description of the EC2 instance.
+     * <p>The image description of the EC2 instance.</p>
      */
     inline bool ImageDescriptionHasBeenSet() const { return m_imageDescriptionHasBeenSet; }
 
     /**
-     * The image description of the EC2 instance.
+     * <p>The image description of the EC2 instance.</p>
      */
     inline void SetImageDescription(const Aws::String& value) { m_imageDescriptionHasBeenSet = true; m_imageDescription = value; }
 
     /**
-     * The image description of the EC2 instance.
+     * <p>The image description of the EC2 instance.</p>
      */
     inline void SetImageDescription(Aws::String&& value) { m_imageDescriptionHasBeenSet = true; m_imageDescription = std::move(value); }
 
     /**
-     * The image description of the EC2 instance.
+     * <p>The image description of the EC2 instance.</p>
      */
     inline void SetImageDescription(const char* value) { m_imageDescriptionHasBeenSet = true; m_imageDescription.assign(value); }
 
     /**
-     * The image description of the EC2 instance.
+     * <p>The image description of the EC2 instance.</p>
      */
     inline InstanceDetails& WithImageDescription(const Aws::String& value) { SetImageDescription(value); return *this;}
 
     /**
-     * The image description of the EC2 instance.
+     * <p>The image description of the EC2 instance.</p>
      */
     inline InstanceDetails& WithImageDescription(Aws::String&& value) { SetImageDescription(std::move(value)); return *this;}
 
     /**
-     * The image description of the EC2 instance.
+     * <p>The image description of the EC2 instance.</p>
      */
     inline InstanceDetails& WithImageDescription(const char* value) { SetImageDescription(value); return *this;}
 
 
     /**
-     * The image ID of the EC2 instance.
+     * <p>The image ID of the EC2 instance.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
 
     /**
-     * The image ID of the EC2 instance.
+     * <p>The image ID of the EC2 instance.</p>
      */
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
-     * The image ID of the EC2 instance.
+     * <p>The image ID of the EC2 instance.</p>
      */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
-     * The image ID of the EC2 instance.
+     * <p>The image ID of the EC2 instance.</p>
      */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
-     * The image ID of the EC2 instance.
+     * <p>The image ID of the EC2 instance.</p>
      */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
 
     /**
-     * The image ID of the EC2 instance.
+     * <p>The image ID of the EC2 instance.</p>
      */
     inline InstanceDetails& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
 
     /**
-     * The image ID of the EC2 instance.
+     * <p>The image ID of the EC2 instance.</p>
      */
     inline InstanceDetails& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
-     * The image ID of the EC2 instance.
+     * <p>The image ID of the EC2 instance.</p>
      */
     inline InstanceDetails& WithImageId(const char* value) { SetImageId(value); return *this;}
 
 
     /**
-     * The ID of the EC2 instance.
+     * <p>The ID of the EC2 instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * The ID of the EC2 instance.
+     * <p>The ID of the EC2 instance.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * The ID of the EC2 instance.
+     * <p>The ID of the EC2 instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * The ID of the EC2 instance.
+     * <p>The ID of the EC2 instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * The ID of the EC2 instance.
+     * <p>The ID of the EC2 instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * The ID of the EC2 instance.
+     * <p>The ID of the EC2 instance.</p>
      */
     inline InstanceDetails& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * The ID of the EC2 instance.
+     * <p>The ID of the EC2 instance.</p>
      */
     inline InstanceDetails& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * The ID of the EC2 instance.
+     * <p>The ID of the EC2 instance.</p>
      */
     inline InstanceDetails& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
-     * The state of the EC2 instance.
+     * <p>The state of the EC2 instance.</p>
      */
     inline const Aws::String& GetInstanceState() const{ return m_instanceState; }
 
     /**
-     * The state of the EC2 instance.
+     * <p>The state of the EC2 instance.</p>
      */
     inline bool InstanceStateHasBeenSet() const { return m_instanceStateHasBeenSet; }
 
     /**
-     * The state of the EC2 instance.
+     * <p>The state of the EC2 instance.</p>
      */
     inline void SetInstanceState(const Aws::String& value) { m_instanceStateHasBeenSet = true; m_instanceState = value; }
 
     /**
-     * The state of the EC2 instance.
+     * <p>The state of the EC2 instance.</p>
      */
     inline void SetInstanceState(Aws::String&& value) { m_instanceStateHasBeenSet = true; m_instanceState = std::move(value); }
 
     /**
-     * The state of the EC2 instance.
+     * <p>The state of the EC2 instance.</p>
      */
     inline void SetInstanceState(const char* value) { m_instanceStateHasBeenSet = true; m_instanceState.assign(value); }
 
     /**
-     * The state of the EC2 instance.
+     * <p>The state of the EC2 instance.</p>
      */
     inline InstanceDetails& WithInstanceState(const Aws::String& value) { SetInstanceState(value); return *this;}
 
     /**
-     * The state of the EC2 instance.
+     * <p>The state of the EC2 instance.</p>
      */
     inline InstanceDetails& WithInstanceState(Aws::String&& value) { SetInstanceState(std::move(value)); return *this;}
 
     /**
-     * The state of the EC2 instance.
+     * <p>The state of the EC2 instance.</p>
      */
     inline InstanceDetails& WithInstanceState(const char* value) { SetInstanceState(value); return *this;}
 
 
     /**
-     * The type of the EC2 instance.
+     * <p>The type of the EC2 instance.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * The type of the EC2 instance.
+     * <p>The type of the EC2 instance.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * The type of the EC2 instance.
+     * <p>The type of the EC2 instance.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * The type of the EC2 instance.
+     * <p>The type of the EC2 instance.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * The type of the EC2 instance.
+     * <p>The type of the EC2 instance.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * The type of the EC2 instance.
+     * <p>The type of the EC2 instance.</p>
      */
     inline InstanceDetails& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * The type of the EC2 instance.
+     * <p>The type of the EC2 instance.</p>
      */
     inline InstanceDetails& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * The type of the EC2 instance.
+     * <p>The type of the EC2 instance.</p>
      */
     inline InstanceDetails& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
 
     /**
-     * The launch time of the EC2 instance.
+     * <p>The launch time of the EC2 instance.</p>
      */
     inline const Aws::String& GetLaunchTime() const{ return m_launchTime; }
 
     /**
-     * The launch time of the EC2 instance.
+     * <p>The launch time of the EC2 instance.</p>
      */
     inline bool LaunchTimeHasBeenSet() const { return m_launchTimeHasBeenSet; }
 
     /**
-     * The launch time of the EC2 instance.
+     * <p>The launch time of the EC2 instance.</p>
      */
     inline void SetLaunchTime(const Aws::String& value) { m_launchTimeHasBeenSet = true; m_launchTime = value; }
 
     /**
-     * The launch time of the EC2 instance.
+     * <p>The launch time of the EC2 instance.</p>
      */
     inline void SetLaunchTime(Aws::String&& value) { m_launchTimeHasBeenSet = true; m_launchTime = std::move(value); }
 
     /**
-     * The launch time of the EC2 instance.
+     * <p>The launch time of the EC2 instance.</p>
      */
     inline void SetLaunchTime(const char* value) { m_launchTimeHasBeenSet = true; m_launchTime.assign(value); }
 
     /**
-     * The launch time of the EC2 instance.
+     * <p>The launch time of the EC2 instance.</p>
      */
     inline InstanceDetails& WithLaunchTime(const Aws::String& value) { SetLaunchTime(value); return *this;}
 
     /**
-     * The launch time of the EC2 instance.
+     * <p>The launch time of the EC2 instance.</p>
      */
     inline InstanceDetails& WithLaunchTime(Aws::String&& value) { SetLaunchTime(std::move(value)); return *this;}
 
     /**
-     * The launch time of the EC2 instance.
+     * <p>The launch time of the EC2 instance.</p>
      */
     inline InstanceDetails& WithLaunchTime(const char* value) { SetLaunchTime(value); return *this;}
 
 
     /**
-     * The network interface information of the EC2 instance.
+     * <p>The network interface information of the EC2 instance.</p>
      */
     inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
     /**
-     * The network interface information of the EC2 instance.
+     * <p>The network interface information of the EC2 instance.</p>
      */
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
-     * The network interface information of the EC2 instance.
+     * <p>The network interface information of the EC2 instance.</p>
      */
     inline void SetNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
 
     /**
-     * The network interface information of the EC2 instance.
+     * <p>The network interface information of the EC2 instance.</p>
      */
     inline void SetNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
 
     /**
-     * The network interface information of the EC2 instance.
+     * <p>The network interface information of the EC2 instance.</p>
      */
     inline InstanceDetails& WithNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
-     * The network interface information of the EC2 instance.
+     * <p>The network interface information of the EC2 instance.</p>
      */
     inline InstanceDetails& WithNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
-     * The network interface information of the EC2 instance.
+     * <p>The network interface information of the EC2 instance.</p>
      */
     inline InstanceDetails& AddNetworkInterfaces(const NetworkInterface& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
     /**
-     * The network interface information of the EC2 instance.
+     * <p>The network interface information of the EC2 instance.</p>
      */
     inline InstanceDetails& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 
 
     /**
-     * The platform of the EC2 instance.
+     * <p>The platform of the EC2 instance.</p>
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
 
     /**
-     * The platform of the EC2 instance.
+     * <p>The platform of the EC2 instance.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * The platform of the EC2 instance.
+     * <p>The platform of the EC2 instance.</p>
      */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * The platform of the EC2 instance.
+     * <p>The platform of the EC2 instance.</p>
      */
     inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * The platform of the EC2 instance.
+     * <p>The platform of the EC2 instance.</p>
      */
     inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
 
     /**
-     * The platform of the EC2 instance.
+     * <p>The platform of the EC2 instance.</p>
      */
     inline InstanceDetails& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
 
     /**
-     * The platform of the EC2 instance.
+     * <p>The platform of the EC2 instance.</p>
      */
     inline InstanceDetails& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
-     * The platform of the EC2 instance.
+     * <p>The platform of the EC2 instance.</p>
      */
     inline InstanceDetails& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
 
     /**
-     * The product code of the EC2 instance.
+     * <p>The product code of the EC2 instance.</p>
      */
     inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
 
     /**
-     * The product code of the EC2 instance.
+     * <p>The product code of the EC2 instance.</p>
      */
     inline bool ProductCodesHasBeenSet() const { return m_productCodesHasBeenSet; }
 
     /**
-     * The product code of the EC2 instance.
+     * <p>The product code of the EC2 instance.</p>
      */
     inline void SetProductCodes(const Aws::Vector<ProductCode>& value) { m_productCodesHasBeenSet = true; m_productCodes = value; }
 
     /**
-     * The product code of the EC2 instance.
+     * <p>The product code of the EC2 instance.</p>
      */
     inline void SetProductCodes(Aws::Vector<ProductCode>&& value) { m_productCodesHasBeenSet = true; m_productCodes = std::move(value); }
 
     /**
-     * The product code of the EC2 instance.
+     * <p>The product code of the EC2 instance.</p>
      */
     inline InstanceDetails& WithProductCodes(const Aws::Vector<ProductCode>& value) { SetProductCodes(value); return *this;}
 
     /**
-     * The product code of the EC2 instance.
+     * <p>The product code of the EC2 instance.</p>
      */
     inline InstanceDetails& WithProductCodes(Aws::Vector<ProductCode>&& value) { SetProductCodes(std::move(value)); return *this;}
 
     /**
-     * The product code of the EC2 instance.
+     * <p>The product code of the EC2 instance.</p>
      */
     inline InstanceDetails& AddProductCodes(const ProductCode& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(value); return *this; }
 
     /**
-     * The product code of the EC2 instance.
+     * <p>The product code of the EC2 instance.</p>
      */
     inline InstanceDetails& AddProductCodes(ProductCode&& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(std::move(value)); return *this; }
 
 
     /**
-     * The tags of the EC2 instance.
+     * <p>The tags of the EC2 instance.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * The tags of the EC2 instance.
+     * <p>The tags of the EC2 instance.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * The tags of the EC2 instance.
+     * <p>The tags of the EC2 instance.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * The tags of the EC2 instance.
+     * <p>The tags of the EC2 instance.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * The tags of the EC2 instance.
+     * <p>The tags of the EC2 instance.</p>
      */
     inline InstanceDetails& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * The tags of the EC2 instance.
+     * <p>The tags of the EC2 instance.</p>
      */
     inline InstanceDetails& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * The tags of the EC2 instance.
+     * <p>The tags of the EC2 instance.</p>
      */
     inline InstanceDetails& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * The tags of the EC2 instance.
+     * <p>The tags of the EC2 instance.</p>
      */
     inline InstanceDetails& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

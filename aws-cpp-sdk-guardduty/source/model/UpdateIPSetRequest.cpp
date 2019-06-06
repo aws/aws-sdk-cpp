@@ -23,12 +23,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateIPSetRequest::UpdateIPSetRequest() : 
-    m_activate(false),
-    m_activateHasBeenSet(false),
     m_detectorIdHasBeenSet(false),
     m_ipSetIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_locationHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_activate(false),
+    m_activateHasBeenSet(false)
 {
 }
 
@@ -36,9 +36,9 @@ Aws::String UpdateIPSetRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_activateHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithBool("activate", m_activate);
+   payload.WithString("name", m_name);
 
   }
 
@@ -48,9 +48,9 @@ Aws::String UpdateIPSetRequest::SerializePayload() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_activateHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithBool("activate", m_activate);
 
   }
 

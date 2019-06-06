@@ -37,8 +37,11 @@ namespace Model
 {
 
   /**
-   * <p>The overrides that should be sent to a container.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The overrides that should be sent to a container. An empty container override
+   * can be passed in. An example of an empty container override would be
+   * <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is
+   * specified, the <code>name</code> parameter must be included.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerOverride">AWS
    * API Reference</a></p>
    */

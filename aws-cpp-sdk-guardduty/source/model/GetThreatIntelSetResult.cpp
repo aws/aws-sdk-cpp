@@ -42,6 +42,12 @@ GetThreatIntelSetResult::GetThreatIntelSetResult(const Aws::AmazonWebServiceResu
 GetThreatIntelSetResult& GetThreatIntelSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+  }
+
   if(jsonValue.ValueExists("format"))
   {
     m_format = ThreatIntelSetFormatMapper::GetThreatIntelSetFormatForName(jsonValue.GetString("format"));
@@ -51,12 +57,6 @@ GetThreatIntelSetResult& GetThreatIntelSetResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
 
   }
 

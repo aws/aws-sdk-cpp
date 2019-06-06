@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/GuardDutyRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -28,9 +28,6 @@ namespace Model
 {
 
   /**
-   * GetMembers request body.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMembersRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_GUARDDUTY_API GetMembersRequest : public GuardDutyRequest
   {
@@ -47,115 +44,115 @@ namespace Model
 
 
     /**
-     * A list of account IDs of the GuardDuty member accounts that you want to
-     * describe.
-     */
-    inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
-
-    /**
-     * A list of account IDs of the GuardDuty member accounts that you want to
-     * describe.
-     */
-    inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-
-    /**
-     * A list of account IDs of the GuardDuty member accounts that you want to
-     * describe.
-     */
-    inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-
-    /**
-     * A list of account IDs of the GuardDuty member accounts that you want to
-     * describe.
-     */
-    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-
-    /**
-     * A list of account IDs of the GuardDuty member accounts that you want to
-     * describe.
-     */
-    inline GetMembersRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-
-    /**
-     * A list of account IDs of the GuardDuty member accounts that you want to
-     * describe.
-     */
-    inline GetMembersRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-
-    /**
-     * A list of account IDs of the GuardDuty member accounts that you want to
-     * describe.
-     */
-    inline GetMembersRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-
-    /**
-     * A list of account IDs of the GuardDuty member accounts that you want to
-     * describe.
-     */
-    inline GetMembersRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * A list of account IDs of the GuardDuty member accounts that you want to
-     * describe.
-     */
-    inline GetMembersRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-
-
-    /**
-     * The unique ID of the detector of the GuardDuty account whose members you want to
-     * retrieve.
+     * <p>The unique ID of the detector of the GuardDuty account whose members you want
+     * to retrieve.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The unique ID of the detector of the GuardDuty account whose members you want to
-     * retrieve.
+     * <p>The unique ID of the detector of the GuardDuty account whose members you want
+     * to retrieve.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * The unique ID of the detector of the GuardDuty account whose members you want to
-     * retrieve.
+     * <p>The unique ID of the detector of the GuardDuty account whose members you want
+     * to retrieve.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * The unique ID of the detector of the GuardDuty account whose members you want to
-     * retrieve.
+     * <p>The unique ID of the detector of the GuardDuty account whose members you want
+     * to retrieve.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * The unique ID of the detector of the GuardDuty account whose members you want to
-     * retrieve.
+     * <p>The unique ID of the detector of the GuardDuty account whose members you want
+     * to retrieve.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * The unique ID of the detector of the GuardDuty account whose members you want to
-     * retrieve.
+     * <p>The unique ID of the detector of the GuardDuty account whose members you want
+     * to retrieve.</p>
      */
     inline GetMembersRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The unique ID of the detector of the GuardDuty account whose members you want to
-     * retrieve.
+     * <p>The unique ID of the detector of the GuardDuty account whose members you want
+     * to retrieve.</p>
      */
     inline GetMembersRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of the detector of the GuardDuty account whose members you want to
-     * retrieve.
+     * <p>The unique ID of the detector of the GuardDuty account whose members you want
+     * to retrieve.</p>
      */
     inline GetMembersRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
-  private:
 
-    Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    /**
+     * <p>A list of account IDs of the GuardDuty member accounts that you want to
+     * describe.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
+
+    /**
+     * <p>A list of account IDs of the GuardDuty member accounts that you want to
+     * describe.</p>
+     */
+    inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
+
+    /**
+     * <p>A list of account IDs of the GuardDuty member accounts that you want to
+     * describe.</p>
+     */
+    inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
+
+    /**
+     * <p>A list of account IDs of the GuardDuty member accounts that you want to
+     * describe.</p>
+     */
+    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
+
+    /**
+     * <p>A list of account IDs of the GuardDuty member accounts that you want to
+     * describe.</p>
+     */
+    inline GetMembersRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
+
+    /**
+     * <p>A list of account IDs of the GuardDuty member accounts that you want to
+     * describe.</p>
+     */
+    inline GetMembersRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of account IDs of the GuardDuty member accounts that you want to
+     * describe.</p>
+     */
+    inline GetMembersRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+
+    /**
+     * <p>A list of account IDs of the GuardDuty member accounts that you want to
+     * describe.</p>
+     */
+    inline GetMembersRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of account IDs of the GuardDuty member accounts that you want to
+     * describe.</p>
+     */
+    inline GetMembersRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+
+  private:
 
     Aws::String m_detectorId;
     bool m_detectorIdHasBeenSet;
+
+    Aws::Vector<Aws::String> m_accountIds;
+    bool m_accountIdsHasBeenSet;
   };
 
 } // namespace Model

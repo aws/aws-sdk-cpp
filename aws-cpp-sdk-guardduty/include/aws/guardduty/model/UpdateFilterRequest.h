@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/GuardDutyRequest.h>
-#include <aws/guardduty/model/FilterAction.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/guardduty/model/FilterAction.h>
 #include <aws/guardduty/model/FindingCriteria.h>
 #include <utility>
 
@@ -29,9 +29,6 @@ namespace Model
 {
 
   /**
-   * UpdateFilterRequest request body.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFilterRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_GUARDDUTY_API UpdateFilterRequest : public GuardDutyRequest
   {
@@ -48,235 +45,229 @@ namespace Model
 
 
     /**
-     * Specifies the action that is to be applied to the findings that match the
-     * filter.
-     */
-    inline const FilterAction& GetAction() const{ return m_action; }
-
-    /**
-     * Specifies the action that is to be applied to the findings that match the
-     * filter.
-     */
-    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-
-    /**
-     * Specifies the action that is to be applied to the findings that match the
-     * filter.
-     */
-    inline void SetAction(const FilterAction& value) { m_actionHasBeenSet = true; m_action = value; }
-
-    /**
-     * Specifies the action that is to be applied to the findings that match the
-     * filter.
-     */
-    inline void SetAction(FilterAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-
-    /**
-     * Specifies the action that is to be applied to the findings that match the
-     * filter.
-     */
-    inline UpdateFilterRequest& WithAction(const FilterAction& value) { SetAction(value); return *this;}
-
-    /**
-     * Specifies the action that is to be applied to the findings that match the
-     * filter.
-     */
-    inline UpdateFilterRequest& WithAction(FilterAction&& value) { SetAction(std::move(value)); return *this;}
-
-
-    /**
-     * The description of the filter.
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * The description of the filter.
-     */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * The description of the filter.
-     */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * The description of the filter.
-     */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * The description of the filter.
-     */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * The description of the filter.
-     */
-    inline UpdateFilterRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * The description of the filter.
-     */
-    inline UpdateFilterRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * The description of the filter.
-     */
-    inline UpdateFilterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-
-
-    /**
-     * The unique ID of the detector that specifies the GuardDuty service where you
-     * want to update a filter.
+     * <p>The unique ID of the detector that specifies the GuardDuty service where you
+     * want to update a filter.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The unique ID of the detector that specifies the GuardDuty service where you
-     * want to update a filter.
+     * <p>The unique ID of the detector that specifies the GuardDuty service where you
+     * want to update a filter.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * The unique ID of the detector that specifies the GuardDuty service where you
-     * want to update a filter.
+     * <p>The unique ID of the detector that specifies the GuardDuty service where you
+     * want to update a filter.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * The unique ID of the detector that specifies the GuardDuty service where you
-     * want to update a filter.
+     * <p>The unique ID of the detector that specifies the GuardDuty service where you
+     * want to update a filter.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * The unique ID of the detector that specifies the GuardDuty service where you
-     * want to update a filter.
+     * <p>The unique ID of the detector that specifies the GuardDuty service where you
+     * want to update a filter.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * The unique ID of the detector that specifies the GuardDuty service where you
-     * want to update a filter.
+     * <p>The unique ID of the detector that specifies the GuardDuty service where you
+     * want to update a filter.</p>
      */
     inline UpdateFilterRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The unique ID of the detector that specifies the GuardDuty service where you
-     * want to update a filter.
+     * <p>The unique ID of the detector that specifies the GuardDuty service where you
+     * want to update a filter.</p>
      */
     inline UpdateFilterRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of the detector that specifies the GuardDuty service where you
-     * want to update a filter.
+     * <p>The unique ID of the detector that specifies the GuardDuty service where you
+     * want to update a filter.</p>
      */
     inline UpdateFilterRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter.</p>
      */
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter.</p>
      */
     inline bool FilterNameHasBeenSet() const { return m_filterNameHasBeenSet; }
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter.</p>
      */
     inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter.</p>
      */
     inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = std::move(value); }
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter.</p>
      */
     inline void SetFilterName(const char* value) { m_filterNameHasBeenSet = true; m_filterName.assign(value); }
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter.</p>
      */
     inline UpdateFilterRequest& WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter.</p>
      */
     inline UpdateFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(std::move(value)); return *this;}
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter.</p>
      */
     inline UpdateFilterRequest& WithFilterName(const char* value) { SetFilterName(value); return *this;}
 
 
     /**
-     * Represents the criteria to be used in the filter for querying findings.
+     * <p>The description of the filter.</p>
      */
-    inline const FindingCriteria& GetFindingCriteria() const{ return m_findingCriteria; }
+    inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * Represents the criteria to be used in the filter for querying findings.
+     * <p>The description of the filter.</p>
      */
-    inline bool FindingCriteriaHasBeenSet() const { return m_findingCriteriaHasBeenSet; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * Represents the criteria to be used in the filter for querying findings.
+     * <p>The description of the filter.</p>
      */
-    inline void SetFindingCriteria(const FindingCriteria& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = value; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * Represents the criteria to be used in the filter for querying findings.
+     * <p>The description of the filter.</p>
      */
-    inline void SetFindingCriteria(FindingCriteria&& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = std::move(value); }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * Represents the criteria to be used in the filter for querying findings.
+     * <p>The description of the filter.</p>
      */
-    inline UpdateFilterRequest& WithFindingCriteria(const FindingCriteria& value) { SetFindingCriteria(value); return *this;}
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * Represents the criteria to be used in the filter for querying findings.
+     * <p>The description of the filter.</p>
      */
-    inline UpdateFilterRequest& WithFindingCriteria(FindingCriteria&& value) { SetFindingCriteria(std::move(value)); return *this;}
+    inline UpdateFilterRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The description of the filter.</p>
+     */
+    inline UpdateFilterRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The description of the filter.</p>
+     */
+    inline UpdateFilterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * Specifies the position of the filter in the list of current filters. Also
-     * specifies the order in which this filter is applied to the findings.
+     * <p>Specifies the action that is to be applied to the findings that match the
+     * filter.</p>
+     */
+    inline const FilterAction& GetAction() const{ return m_action; }
+
+    /**
+     * <p>Specifies the action that is to be applied to the findings that match the
+     * filter.</p>
+     */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>Specifies the action that is to be applied to the findings that match the
+     * filter.</p>
+     */
+    inline void SetAction(const FilterAction& value) { m_actionHasBeenSet = true; m_action = value; }
+
+    /**
+     * <p>Specifies the action that is to be applied to the findings that match the
+     * filter.</p>
+     */
+    inline void SetAction(FilterAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
+
+    /**
+     * <p>Specifies the action that is to be applied to the findings that match the
+     * filter.</p>
+     */
+    inline UpdateFilterRequest& WithAction(const FilterAction& value) { SetAction(value); return *this;}
+
+    /**
+     * <p>Specifies the action that is to be applied to the findings that match the
+     * filter.</p>
+     */
+    inline UpdateFilterRequest& WithAction(FilterAction&& value) { SetAction(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the position of the filter in the list of current filters. Also
+     * specifies the order in which this filter is applied to the findings.</p>
      */
     inline int GetRank() const{ return m_rank; }
 
     /**
-     * Specifies the position of the filter in the list of current filters. Also
-     * specifies the order in which this filter is applied to the findings.
+     * <p>Specifies the position of the filter in the list of current filters. Also
+     * specifies the order in which this filter is applied to the findings.</p>
      */
     inline bool RankHasBeenSet() const { return m_rankHasBeenSet; }
 
     /**
-     * Specifies the position of the filter in the list of current filters. Also
-     * specifies the order in which this filter is applied to the findings.
+     * <p>Specifies the position of the filter in the list of current filters. Also
+     * specifies the order in which this filter is applied to the findings.</p>
      */
     inline void SetRank(int value) { m_rankHasBeenSet = true; m_rank = value; }
 
     /**
-     * Specifies the position of the filter in the list of current filters. Also
-     * specifies the order in which this filter is applied to the findings.
+     * <p>Specifies the position of the filter in the list of current filters. Also
+     * specifies the order in which this filter is applied to the findings.</p>
      */
     inline UpdateFilterRequest& WithRank(int value) { SetRank(value); return *this;}
 
+
+    /**
+     * <p>Represents the criteria to be used in the filter for querying findings.</p>
+     */
+    inline const FindingCriteria& GetFindingCriteria() const{ return m_findingCriteria; }
+
+    /**
+     * <p>Represents the criteria to be used in the filter for querying findings.</p>
+     */
+    inline bool FindingCriteriaHasBeenSet() const { return m_findingCriteriaHasBeenSet; }
+
+    /**
+     * <p>Represents the criteria to be used in the filter for querying findings.</p>
+     */
+    inline void SetFindingCriteria(const FindingCriteria& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = value; }
+
+    /**
+     * <p>Represents the criteria to be used in the filter for querying findings.</p>
+     */
+    inline void SetFindingCriteria(FindingCriteria&& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = std::move(value); }
+
+    /**
+     * <p>Represents the criteria to be used in the filter for querying findings.</p>
+     */
+    inline UpdateFilterRequest& WithFindingCriteria(const FindingCriteria& value) { SetFindingCriteria(value); return *this;}
+
+    /**
+     * <p>Represents the criteria to be used in the filter for querying findings.</p>
+     */
+    inline UpdateFilterRequest& WithFindingCriteria(FindingCriteria&& value) { SetFindingCriteria(std::move(value)); return *this;}
+
   private:
-
-    FilterAction m_action;
-    bool m_actionHasBeenSet;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet;
 
     Aws::String m_detectorId;
     bool m_detectorIdHasBeenSet;
@@ -284,11 +275,17 @@ namespace Model
     Aws::String m_filterName;
     bool m_filterNameHasBeenSet;
 
-    FindingCriteria m_findingCriteria;
-    bool m_findingCriteriaHasBeenSet;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
+
+    FilterAction m_action;
+    bool m_actionHasBeenSet;
 
     int m_rank;
     bool m_rankHasBeenSet;
+
+    FindingCriteria m_findingCriteria;
+    bool m_findingCriteriaHasBeenSet;
   };
 
 } // namespace Model

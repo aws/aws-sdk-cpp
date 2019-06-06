@@ -29,7 +29,7 @@ namespace Model
   /**
    * <p>Represents a request to create an email template. For more information, see
    * the <a
-   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateTemplateRequest">AWS
    * API Reference</a></p>

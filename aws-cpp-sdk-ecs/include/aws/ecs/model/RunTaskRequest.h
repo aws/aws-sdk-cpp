@@ -681,7 +681,7 @@ namespace Model
      * definitions that use the <code>awsvpc</code> network mode to receive their own
      * elastic network interface, and it is not supported for other network modes. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -692,7 +692,7 @@ namespace Model
      * definitions that use the <code>awsvpc</code> network mode to receive their own
      * elastic network interface, and it is not supported for other network modes. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -703,7 +703,7 @@ namespace Model
      * definitions that use the <code>awsvpc</code> network mode to receive their own
      * elastic network interface, and it is not supported for other network modes. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -714,7 +714,7 @@ namespace Model
      * definitions that use the <code>awsvpc</code> network mode to receive their own
      * elastic network interface, and it is not supported for other network modes. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -725,7 +725,7 @@ namespace Model
      * definitions that use the <code>awsvpc</code> network mode to receive their own
      * elastic network interface, and it is not supported for other network modes. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -736,7 +736,7 @@ namespace Model
      * definitions that use the <code>awsvpc</code> network mode to receive their own
      * elastic network interface, and it is not supported for other network modes. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -811,7 +811,7 @@ namespace Model
     /**
      * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -820,7 +820,7 @@ namespace Model
     /**
      * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -829,7 +829,7 @@ namespace Model
     /**
      * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -838,7 +838,7 @@ namespace Model
     /**
      * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */

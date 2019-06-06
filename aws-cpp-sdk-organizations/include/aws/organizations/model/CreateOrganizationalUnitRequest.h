@@ -45,8 +45,8 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier (ID) of the parent root or OU in which you want to
-     * create the new OU.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * <p>The unique identifier (ID) of the parent root or OU that you want to create
+     * the new OU in.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> for a parent ID string requires one of the following:</p> <ul> <li>
      * <p>Root: a string that begins with "r-" followed by from 4 to 32 lower-case
      * letters or digits.</p> </li> <li> <p>Organizational unit (OU): a string that
@@ -57,8 +57,8 @@ namespace Model
     inline const Aws::String& GetParentId() const{ return m_parentId; }
 
     /**
-     * <p>The unique identifier (ID) of the parent root or OU in which you want to
-     * create the new OU.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * <p>The unique identifier (ID) of the parent root or OU that you want to create
+     * the new OU in.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> for a parent ID string requires one of the following:</p> <ul> <li>
      * <p>Root: a string that begins with "r-" followed by from 4 to 32 lower-case
      * letters or digits.</p> </li> <li> <p>Organizational unit (OU): a string that
@@ -69,8 +69,8 @@ namespace Model
     inline bool ParentIdHasBeenSet() const { return m_parentIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier (ID) of the parent root or OU in which you want to
-     * create the new OU.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * <p>The unique identifier (ID) of the parent root or OU that you want to create
+     * the new OU in.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> for a parent ID string requires one of the following:</p> <ul> <li>
      * <p>Root: a string that begins with "r-" followed by from 4 to 32 lower-case
      * letters or digits.</p> </li> <li> <p>Organizational unit (OU): a string that
@@ -81,8 +81,8 @@ namespace Model
     inline void SetParentId(const Aws::String& value) { m_parentIdHasBeenSet = true; m_parentId = value; }
 
     /**
-     * <p>The unique identifier (ID) of the parent root or OU in which you want to
-     * create the new OU.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * <p>The unique identifier (ID) of the parent root or OU that you want to create
+     * the new OU in.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> for a parent ID string requires one of the following:</p> <ul> <li>
      * <p>Root: a string that begins with "r-" followed by from 4 to 32 lower-case
      * letters or digits.</p> </li> <li> <p>Organizational unit (OU): a string that
@@ -93,8 +93,8 @@ namespace Model
     inline void SetParentId(Aws::String&& value) { m_parentIdHasBeenSet = true; m_parentId = std::move(value); }
 
     /**
-     * <p>The unique identifier (ID) of the parent root or OU in which you want to
-     * create the new OU.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * <p>The unique identifier (ID) of the parent root or OU that you want to create
+     * the new OU in.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> for a parent ID string requires one of the following:</p> <ul> <li>
      * <p>Root: a string that begins with "r-" followed by from 4 to 32 lower-case
      * letters or digits.</p> </li> <li> <p>Organizational unit (OU): a string that
@@ -105,8 +105,8 @@ namespace Model
     inline void SetParentId(const char* value) { m_parentIdHasBeenSet = true; m_parentId.assign(value); }
 
     /**
-     * <p>The unique identifier (ID) of the parent root or OU in which you want to
-     * create the new OU.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * <p>The unique identifier (ID) of the parent root or OU that you want to create
+     * the new OU in.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> for a parent ID string requires one of the following:</p> <ul> <li>
      * <p>Root: a string that begins with "r-" followed by from 4 to 32 lower-case
      * letters or digits.</p> </li> <li> <p>Organizational unit (OU): a string that
@@ -117,8 +117,8 @@ namespace Model
     inline CreateOrganizationalUnitRequest& WithParentId(const Aws::String& value) { SetParentId(value); return *this;}
 
     /**
-     * <p>The unique identifier (ID) of the parent root or OU in which you want to
-     * create the new OU.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * <p>The unique identifier (ID) of the parent root or OU that you want to create
+     * the new OU in.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> for a parent ID string requires one of the following:</p> <ul> <li>
      * <p>Root: a string that begins with "r-" followed by from 4 to 32 lower-case
      * letters or digits.</p> </li> <li> <p>Organizational unit (OU): a string that
@@ -129,8 +129,8 @@ namespace Model
     inline CreateOrganizationalUnitRequest& WithParentId(Aws::String&& value) { SetParentId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier (ID) of the parent root or OU in which you want to
-     * create the new OU.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * <p>The unique identifier (ID) of the parent root or OU that you want to create
+     * the new OU in.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> for a parent ID string requires one of the following:</p> <ul> <li>
      * <p>Root: a string that begins with "r-" followed by from 4 to 32 lower-case
      * letters or digits.</p> </li> <li> <p>Organizational unit (OU): a string that

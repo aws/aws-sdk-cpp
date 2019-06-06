@@ -23,8 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 InviteMembersRequest::InviteMembersRequest() : 
-    m_accountIdsHasBeenSet(false),
     m_detectorIdHasBeenSet(false),
+    m_accountIdsHasBeenSet(false),
     m_disableEmailNotification(false),
     m_disableEmailNotificationHasBeenSet(false),
     m_messageHasBeenSet(false)

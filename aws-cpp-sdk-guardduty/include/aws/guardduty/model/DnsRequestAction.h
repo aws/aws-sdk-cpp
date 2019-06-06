@@ -33,12 +33,6 @@ namespace GuardDuty
 namespace Model
 {
 
-  /**
-   * Information about the DNS_REQUEST action described in this finding.<p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DnsRequestAction">AWS
-   * API Reference</a></p>
-   */
   class AWS_GUARDDUTY_API DnsRequestAction
   {
   public:
@@ -49,42 +43,42 @@ namespace Model
 
 
     /**
-     * Domain information for the DNS request.
+     * <p>Domain information for the DNS request.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * Domain information for the DNS request.
+     * <p>Domain information for the DNS request.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * Domain information for the DNS request.
+     * <p>Domain information for the DNS request.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * Domain information for the DNS request.
+     * <p>Domain information for the DNS request.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * Domain information for the DNS request.
+     * <p>Domain information for the DNS request.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * Domain information for the DNS request.
+     * <p>Domain information for the DNS request.</p>
      */
     inline DnsRequestAction& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * Domain information for the DNS request.
+     * <p>Domain information for the DNS request.</p>
      */
     inline DnsRequestAction& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * Domain information for the DNS request.
+     * <p>Domain information for the DNS request.</p>
      */
     inline DnsRequestAction& WithDomain(const char* value) { SetDomain(value); return *this;}
 

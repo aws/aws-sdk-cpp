@@ -52,6 +52,7 @@ static const int HIERARCHY_LEVEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString(
 static const int DOCUMENT_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DocumentVersionLimitExceeded");
 static const int RESOURCE_DATA_SYNC_NOT_FOUND_HASH = HashingUtils::HashString("ResourceDataSyncNotFoundException");
 static const int INVALID_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidFilterValue");
+static const int OPS_ITEM_ALREADY_EXISTS_HASH = HashingUtils::HashString("OpsItemAlreadyExistsException");
 static const int INVALID_DELETE_INVENTORY_PARAMETERS_HASH = HashingUtils::HashString("InvalidDeleteInventoryParametersException");
 static const int FEATURE_NOT_AVAILABLE_HASH = HashingUtils::HashString("FeatureNotAvailableException");
 static const int INVALID_PLUGIN_NAME_HASH = HashingUtils::HashString("InvalidPluginName");
@@ -88,6 +89,7 @@ static const int RESOURCE_DATA_SYNC_ALREADY_EXISTS_HASH = HashingUtils::HashStri
 static const int INVALID_RESULT_ATTRIBUTE_HASH = HashingUtils::HashString("InvalidResultAttributeException");
 static const int UNSUPPORTED_FEATURE_REQUIRED_HASH = HashingUtils::HashString("UnsupportedFeatureRequiredException");
 static const int STATUS_UNCHANGED_HASH = HashingUtils::HashString("StatusUnchanged");
+static const int OPS_ITEM_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OpsItemLimitExceededException");
 static const int DUPLICATE_INSTANCE_ID_HASH = HashingUtils::HashString("DuplicateInstanceId");
 static const int DUPLICATE_DOCUMENT_CONTENT_HASH = HashingUtils::HashString("DuplicateDocumentContent");
 static const int INVALID_OUTPUT_FOLDER_HASH = HashingUtils::HashString("InvalidOutputFolder");
@@ -114,6 +116,7 @@ static const int INVALID_ASSOCIATION_HASH = HashingUtils::HashString("InvalidAss
 static const int HIERARCHY_TYPE_MISMATCH_HASH = HashingUtils::HashString("HierarchyTypeMismatchException");
 static const int DOES_NOT_EXIST_HASH = HashingUtils::HashString("DoesNotExistException");
 static const int INVALID_DOCUMENT_OPERATION_HASH = HashingUtils::HashString("InvalidDocumentOperation");
+static const int OPS_ITEM_NOT_FOUND_HASH = HashingUtils::HashString("OpsItemNotFoundException");
 static const int INVALID_UPDATE_HASH = HashingUtils::HashString("InvalidUpdate");
 static const int INVALID_FILTER_OPTION_HASH = HashingUtils::HashString("InvalidFilterOption");
 static const int INVALID_ITEM_CONTENT_HASH = HashingUtils::HashString("InvalidItemContentException");
@@ -124,6 +127,7 @@ static const int INVALID_NOTIFICATION_CONFIG_HASH = HashingUtils::HashString("In
 static const int INVALID_SCHEDULE_HASH = HashingUtils::HashString("InvalidSchedule");
 static const int INVALID_ACTIVATION_ID_HASH = HashingUtils::HashString("InvalidActivationId");
 static const int INVALID_FILTER_HASH = HashingUtils::HashString("InvalidFilter");
+static const int OPS_ITEM_INVALID_PARAMETER_HASH = HashingUtils::HashString("OpsItemInvalidParameterException");
 static const int INVALID_INVENTORY_GROUP_HASH = HashingUtils::HashString("InvalidInventoryGroupException");
 static const int POLICIES_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("PoliciesLimitExceededException");
 static const int UNSUPPORTED_PARAMETER_TYPE_HASH = HashingUtils::HashString("UnsupportedParameterType");
@@ -234,6 +238,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_FILTER_VALUE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_VALUE), false);
+  }
+  else if (hashCode == OPS_ITEM_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_ALREADY_EXISTS), false);
   }
   else if (hashCode == INVALID_DELETE_INVENTORY_PARAMETERS_HASH)
   {
@@ -379,6 +387,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::STATUS_UNCHANGED), false);
   }
+  else if (hashCode == OPS_ITEM_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_LIMIT_EXCEEDED), false);
+  }
   else if (hashCode == DUPLICATE_INSTANCE_ID_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_INSTANCE_ID), false);
@@ -483,6 +495,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_OPERATION), false);
   }
+  else if (hashCode == OPS_ITEM_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_NOT_FOUND), false);
+  }
   else if (hashCode == INVALID_UPDATE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_UPDATE), false);
@@ -522,6 +538,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_FILTER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER), false);
+  }
+  else if (hashCode == OPS_ITEM_INVALID_PARAMETER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_INVALID_PARAMETER), false);
   }
   else if (hashCode == INVALID_INVENTORY_GROUP_HASH)
   {

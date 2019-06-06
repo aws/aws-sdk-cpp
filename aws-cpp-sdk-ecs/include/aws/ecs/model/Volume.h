@@ -40,7 +40,7 @@ namespace Model
    * specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind
    * mount host volume, specify a <code>host</code> and optional
    * <code>sourcePath</code>. For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
    * Data Volumes in Tasks</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Volume">AWS API
    * Reference</a></p>
@@ -56,7 +56,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed. This name is referenced in the
+     * and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -64,7 +64,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed. This name is referenced in the
+     * and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -72,7 +72,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed. This name is referenced in the
+     * and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -80,7 +80,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed. This name is referenced in the
+     * and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -88,7 +88,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed. This name is referenced in the
+     * and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -96,7 +96,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed. This name is referenced in the
+     * and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -104,7 +104,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed. This name is referenced in the
+     * and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -112,7 +112,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed. This name is referenced in the
+     * and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */

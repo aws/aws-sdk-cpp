@@ -41,12 +41,12 @@ namespace Model
    * to encrypt your emails, or publish to an Amazon SNS topic of another account,
    * Amazon SES must have permission to access those resources. For information about
    * giving permissions, see the <a
-   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
    * SES Developer Guide</a>.</p> <note> <p>When you save your emails to an Amazon S3
    * bucket, the maximum email size (including headers) is 30 MB. Emails larger than
    * that will bounce.</p> </note> <p>For information about specifying Amazon S3
    * actions in receipt rules, see the <a
-   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-s3.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-s3.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/S3Action">AWS API
    * Reference</a></p>
@@ -67,7 +67,7 @@ namespace Model
      * Amazon S3 bucket. An example of an Amazon SNS topic ARN is
      * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
      * about Amazon SNS topics, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
@@ -77,7 +77,7 @@ namespace Model
      * Amazon S3 bucket. An example of an Amazon SNS topic ARN is
      * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
      * about Amazon SNS topics, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
@@ -87,7 +87,7 @@ namespace Model
      * Amazon S3 bucket. An example of an Amazon SNS topic ARN is
      * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
      * about Amazon SNS topics, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
@@ -97,7 +97,7 @@ namespace Model
      * Amazon S3 bucket. An example of an Amazon SNS topic ARN is
      * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
      * about Amazon SNS topics, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
     inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
@@ -107,7 +107,7 @@ namespace Model
      * Amazon S3 bucket. An example of an Amazon SNS topic ARN is
      * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
      * about Amazon SNS topics, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
@@ -117,7 +117,7 @@ namespace Model
      * Amazon S3 bucket. An example of an Amazon SNS topic ARN is
      * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
      * about Amazon SNS topics, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
     inline S3Action& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
@@ -127,7 +127,7 @@ namespace Model
      * Amazon S3 bucket. An example of an Amazon SNS topic ARN is
      * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
      * about Amazon SNS topics, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
     inline S3Action& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
@@ -137,7 +137,7 @@ namespace Model
      * Amazon S3 bucket. An example of an Amazon SNS topic ARN is
      * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
      * about Amazon SNS topics, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
     inline S3Action& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
@@ -255,10 +255,10 @@ namespace Model
      * key you created in AWS KMS, provide the ARN of the master key and ensure that
      * you add a statement to your key's policy to give Amazon SES permission to use
      * it. For more information about giving permissions, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
      * SES Developer Guide</a>.</p> </li> </ul> <p>For more information about key
      * policies, see the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * KMS Developer Guide</a>. If you do not specify a master key, Amazon SES will not
      * encrypt your emails.</p> <important> <p>Your mail is encrypted by Amazon SES
      * using the Amazon S3 encryption client before the mail is submitted to Amazon S3
@@ -269,7 +269,7 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS SDK for Java</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
      * S3 Developer Guide</a>.</p> </important>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
@@ -288,10 +288,10 @@ namespace Model
      * key you created in AWS KMS, provide the ARN of the master key and ensure that
      * you add a statement to your key's policy to give Amazon SES permission to use
      * it. For more information about giving permissions, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
      * SES Developer Guide</a>.</p> </li> </ul> <p>For more information about key
      * policies, see the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * KMS Developer Guide</a>. If you do not specify a master key, Amazon SES will not
      * encrypt your emails.</p> <important> <p>Your mail is encrypted by Amazon SES
      * using the Amazon S3 encryption client before the mail is submitted to Amazon S3
@@ -302,7 +302,7 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS SDK for Java</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
      * S3 Developer Guide</a>.</p> </important>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
@@ -321,10 +321,10 @@ namespace Model
      * key you created in AWS KMS, provide the ARN of the master key and ensure that
      * you add a statement to your key's policy to give Amazon SES permission to use
      * it. For more information about giving permissions, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
      * SES Developer Guide</a>.</p> </li> </ul> <p>For more information about key
      * policies, see the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * KMS Developer Guide</a>. If you do not specify a master key, Amazon SES will not
      * encrypt your emails.</p> <important> <p>Your mail is encrypted by Amazon SES
      * using the Amazon S3 encryption client before the mail is submitted to Amazon S3
@@ -335,7 +335,7 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS SDK for Java</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
      * S3 Developer Guide</a>.</p> </important>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
@@ -354,10 +354,10 @@ namespace Model
      * key you created in AWS KMS, provide the ARN of the master key and ensure that
      * you add a statement to your key's policy to give Amazon SES permission to use
      * it. For more information about giving permissions, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
      * SES Developer Guide</a>.</p> </li> </ul> <p>For more information about key
      * policies, see the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * KMS Developer Guide</a>. If you do not specify a master key, Amazon SES will not
      * encrypt your emails.</p> <important> <p>Your mail is encrypted by Amazon SES
      * using the Amazon S3 encryption client before the mail is submitted to Amazon S3
@@ -368,7 +368,7 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS SDK for Java</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
      * S3 Developer Guide</a>.</p> </important>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
@@ -387,10 +387,10 @@ namespace Model
      * key you created in AWS KMS, provide the ARN of the master key and ensure that
      * you add a statement to your key's policy to give Amazon SES permission to use
      * it. For more information about giving permissions, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
      * SES Developer Guide</a>.</p> </li> </ul> <p>For more information about key
      * policies, see the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * KMS Developer Guide</a>. If you do not specify a master key, Amazon SES will not
      * encrypt your emails.</p> <important> <p>Your mail is encrypted by Amazon SES
      * using the Amazon S3 encryption client before the mail is submitted to Amazon S3
@@ -401,7 +401,7 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS SDK for Java</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
      * S3 Developer Guide</a>.</p> </important>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
@@ -420,10 +420,10 @@ namespace Model
      * key you created in AWS KMS, provide the ARN of the master key and ensure that
      * you add a statement to your key's policy to give Amazon SES permission to use
      * it. For more information about giving permissions, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
      * SES Developer Guide</a>.</p> </li> </ul> <p>For more information about key
      * policies, see the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * KMS Developer Guide</a>. If you do not specify a master key, Amazon SES will not
      * encrypt your emails.</p> <important> <p>Your mail is encrypted by Amazon SES
      * using the Amazon S3 encryption client before the mail is submitted to Amazon S3
@@ -434,7 +434,7 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS SDK for Java</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
      * S3 Developer Guide</a>.</p> </important>
      */
     inline S3Action& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
@@ -453,10 +453,10 @@ namespace Model
      * key you created in AWS KMS, provide the ARN of the master key and ensure that
      * you add a statement to your key's policy to give Amazon SES permission to use
      * it. For more information about giving permissions, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
      * SES Developer Guide</a>.</p> </li> </ul> <p>For more information about key
      * policies, see the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * KMS Developer Guide</a>. If you do not specify a master key, Amazon SES will not
      * encrypt your emails.</p> <important> <p>Your mail is encrypted by Amazon SES
      * using the Amazon S3 encryption client before the mail is submitted to Amazon S3
@@ -467,7 +467,7 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS SDK for Java</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
      * S3 Developer Guide</a>.</p> </important>
      */
     inline S3Action& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
@@ -486,10 +486,10 @@ namespace Model
      * key you created in AWS KMS, provide the ARN of the master key and ensure that
      * you add a statement to your key's policy to give Amazon SES permission to use
      * it. For more information about giving permissions, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
      * SES Developer Guide</a>.</p> </li> </ul> <p>For more information about key
      * policies, see the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
      * KMS Developer Guide</a>. If you do not specify a master key, Amazon SES will not
      * encrypt your emails.</p> <important> <p>Your mail is encrypted by Amazon SES
      * using the Amazon S3 encryption client before the mail is submitted to Amazon S3
@@ -500,7 +500,7 @@ namespace Model
      * <a href="http://aws.amazon.com/sdk-for-java/">AWS SDK for Java</a> and <a
      * href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more
      * information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
      * S3 Developer Guide</a>.</p> </important>
      */
     inline S3Action& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}

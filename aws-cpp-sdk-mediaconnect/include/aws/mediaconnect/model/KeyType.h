@@ -26,6 +26,7 @@ namespace Model
   enum class KeyType
   {
     NOT_SET,
+    speke,
     static_key
   };
 

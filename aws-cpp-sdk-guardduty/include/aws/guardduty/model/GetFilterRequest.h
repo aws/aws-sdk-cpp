@@ -43,91 +43,83 @@ namespace Model
 
 
     /**
-     * The detector ID that specifies the GuardDuty service where you want to list the
-     * details of the specified filter.
+     * <p>The unique ID of the detector the filter is associated with.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * The detector ID that specifies the GuardDuty service where you want to list the
-     * details of the specified filter.
+     * <p>The unique ID of the detector the filter is associated with.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * The detector ID that specifies the GuardDuty service where you want to list the
-     * details of the specified filter.
+     * <p>The unique ID of the detector the filter is associated with.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * The detector ID that specifies the GuardDuty service where you want to list the
-     * details of the specified filter.
+     * <p>The unique ID of the detector the filter is associated with.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * The detector ID that specifies the GuardDuty service where you want to list the
-     * details of the specified filter.
+     * <p>The unique ID of the detector the filter is associated with.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * The detector ID that specifies the GuardDuty service where you want to list the
-     * details of the specified filter.
+     * <p>The unique ID of the detector the filter is associated with.</p>
      */
     inline GetFilterRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * The detector ID that specifies the GuardDuty service where you want to list the
-     * details of the specified filter.
+     * <p>The unique ID of the detector the filter is associated with.</p>
      */
     inline GetFilterRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * The detector ID that specifies the GuardDuty service where you want to list the
-     * details of the specified filter.
+     * <p>The unique ID of the detector the filter is associated with.</p>
      */
     inline GetFilterRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * The name of the filter whose details you want to get.
+     * <p>The name of the filter you want to get.</p>
      */
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
 
     /**
-     * The name of the filter whose details you want to get.
+     * <p>The name of the filter you want to get.</p>
      */
     inline bool FilterNameHasBeenSet() const { return m_filterNameHasBeenSet; }
 
     /**
-     * The name of the filter whose details you want to get.
+     * <p>The name of the filter you want to get.</p>
      */
     inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
     /**
-     * The name of the filter whose details you want to get.
+     * <p>The name of the filter you want to get.</p>
      */
     inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = std::move(value); }
 
     /**
-     * The name of the filter whose details you want to get.
+     * <p>The name of the filter you want to get.</p>
      */
     inline void SetFilterName(const char* value) { m_filterNameHasBeenSet = true; m_filterName.assign(value); }
 
     /**
-     * The name of the filter whose details you want to get.
+     * <p>The name of the filter you want to get.</p>
      */
     inline GetFilterRequest& WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
 
     /**
-     * The name of the filter whose details you want to get.
+     * <p>The name of the filter you want to get.</p>
      */
     inline GetFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(std::move(value)); return *this;}
 
     /**
-     * The name of the filter whose details you want to get.
+     * <p>The name of the filter you want to get.</p>
      */
     inline GetFilterRequest& WithFilterName(const char* value) { SetFilterName(value); return *this;}
 
