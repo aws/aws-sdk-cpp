@@ -24,6 +24,8 @@
 #include <algorithm>
 #include <type_traits>
 
+struct aws_allocator;
+
 namespace Aws
 {
     namespace Utils
@@ -59,6 +61,8 @@ namespace Aws
      *  use these functions instead or Aws::MakeShared
      */
     AWS_CORE_API void Free(void* memoryPtr);
+
+    AWS_CORE_API aws_allocator* get_aws_allocator();
 
     /**
      * ::new, ::delete, ::malloc, ::free, std::make_shared, and std::make_unique should not be used in SDK code
@@ -292,7 +296,6 @@ namespace Aws
     {
         return UniqueArrayPtr<T>(Aws::NewArray<T>(amount, allocationTag, std::forward<ArgTypes>(args)...));
     }
-
 
 } // namespace Aws
 

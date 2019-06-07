@@ -16,13 +16,14 @@
 
 #include <aws/core/utils/event/EventStreamDecoder.h>
 #include <aws/testing/mocks/event/MockEventStreamHandler.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 
 class MockEventStreamDecoder : public Aws::Utils::Event::EventStreamDecoder
 {
 public:
     MockEventStreamDecoder(Aws::Utils::Event::EventStreamHandler* handler) : EventStreamDecoder(handler)
     {
-        aws_event_stream_streaming_decoder_init(&m_decoder, aws_default_allocator(),
+        aws_event_stream_streaming_decoder_init(&m_decoder, Aws::get_aws_allocator(),
             onPayloadSegment,
             onPreludeReceived,
             onHeaderReceived,

@@ -18,6 +18,7 @@
 #include <aws/core/utils/event/EventStreamDecoder.h>
 #include <aws/testing/mocks/event/MockEventStreamHandler.h>
 #include <aws/testing/mocks/event/MockEventStreamDecoder.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 
 namespace
 {
@@ -29,7 +30,7 @@ namespace
 
         // Assemble Records Message
         // Headers
-        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&eventStreamHeaders, aws_default_allocator()));
+        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&eventStreamHeaders, Aws::get_aws_allocator()));
         for (const auto& header : headers)
         {
             ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_add_string_header(&eventStreamHeaders, header.first.c_str(), static_cast<uint8_t>(header.first.size()),
@@ -49,7 +50,7 @@ namespace
         aws_event_stream_header_value_pair eventHeader;
 
         // BOOL_TRUE
-        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, aws_default_allocator()));
+        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, Aws::get_aws_allocator()));
         ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_add_bool_header(&headers, "foo", 3, 1/*true*/));
         ASSERT_EQ(1u, headers.length);
         ASSERT_EQ(AWS_OP_SUCCESS, aws_array_list_front(&headers, &eventHeader));
@@ -57,7 +58,7 @@ namespace
         aws_event_stream_headers_list_cleanup(&headers);
 
         // BOOL_FALSE
-        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, aws_default_allocator()));
+        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, Aws::get_aws_allocator()));
         ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_add_bool_header(&headers, "foo", 3, 0/*false*/));
         ASSERT_EQ(1u, headers.length);
         ASSERT_EQ(AWS_OP_SUCCESS, aws_array_list_front(&headers, &eventHeader));
@@ -65,7 +66,7 @@ namespace
         aws_event_stream_headers_list_cleanup(&headers);
 
         // BYTE
-        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, aws_default_allocator()));
+        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, Aws::get_aws_allocator()));
         ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_add_byte_header(&headers, "foo", 3, static_cast<uint8_t>(100)));
         ASSERT_EQ(1u, headers.length);
         ASSERT_EQ(AWS_OP_SUCCESS, aws_array_list_front(&headers, &eventHeader));
@@ -73,7 +74,7 @@ namespace
         aws_event_stream_headers_list_cleanup(&headers);
 
         // INT16
-        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, aws_default_allocator()));
+        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, Aws::get_aws_allocator()));
         ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_add_int16_header(&headers, "foo", 3, static_cast<int16_t>(1000)));
         ASSERT_EQ(1u, headers.length);
         ASSERT_EQ(AWS_OP_SUCCESS, aws_array_list_front(&headers, &eventHeader));
@@ -81,7 +82,7 @@ namespace
         aws_event_stream_headers_list_cleanup(&headers);
 
         // INT32
-        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, aws_default_allocator()));
+        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, Aws::get_aws_allocator()));
         ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_add_int32_header(&headers, "foo", 3, static_cast<int32_t>(10000)));
         ASSERT_EQ(1u, headers.length);
         ASSERT_EQ(AWS_OP_SUCCESS, aws_array_list_front(&headers, &eventHeader));
@@ -89,7 +90,7 @@ namespace
         aws_event_stream_headers_list_cleanup(&headers);
 
         // INT64
-        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, aws_default_allocator()));
+        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, Aws::get_aws_allocator()));
         ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_add_int64_header(&headers, "foo", 3, static_cast<int64_t>(100000)));
         ASSERT_EQ(1u, headers.length);
         ASSERT_EQ(AWS_OP_SUCCESS, aws_array_list_front(&headers, &eventHeader));
@@ -97,7 +98,7 @@ namespace
         aws_event_stream_headers_list_cleanup(&headers);
 
         // BYTE_BUF
-        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, aws_default_allocator()));
+        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, Aws::get_aws_allocator()));
         uint8_t value[] = {1, 2, 3};
         ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_add_bytebuf_header(&headers, "foo", 3, value, 3, 0/*no copy*/));
         ASSERT_EQ(1u, headers.length);
@@ -107,7 +108,7 @@ namespace
         aws_event_stream_headers_list_cleanup(&headers);
 
         // STRING
-        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, aws_default_allocator()));
+        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, Aws::get_aws_allocator()));
         ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_add_string_header(&headers, "foo", 3, "test", 4, 0/*no copy*/));
         ASSERT_EQ(1u, headers.length);
         ASSERT_EQ(AWS_OP_SUCCESS, aws_array_list_front(&headers, &eventHeader));
@@ -115,7 +116,7 @@ namespace
         aws_event_stream_headers_list_cleanup(&headers);
 
         // TIMESTAMP
-        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, aws_default_allocator()));
+        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, Aws::get_aws_allocator()));
         ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_add_timestamp_header(&headers, "foo", 3, static_cast<int64_t>(1000000)));
         ASSERT_EQ(1u, headers.length);
         ASSERT_EQ(AWS_OP_SUCCESS, aws_array_list_front(&headers, &eventHeader));
@@ -123,7 +124,7 @@ namespace
         aws_event_stream_headers_list_cleanup(&headers);
 
         // UUID
-        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, aws_default_allocator()));
+        ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&headers, Aws::get_aws_allocator()));
         uint8_t uuid[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
         ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_add_uuid_header(&headers, "foo", 3, uuid));
         ASSERT_EQ(1u, headers.length);

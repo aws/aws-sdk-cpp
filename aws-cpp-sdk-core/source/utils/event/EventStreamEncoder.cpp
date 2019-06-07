@@ -19,6 +19,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/common/byte_order.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 
 #include <cassert>
 
@@ -32,7 +33,7 @@ namespace Aws
 
             static void EncodeHeaders(const Aws::Utils::Event::Message& msg, aws_array_list* headers)
             {
-                aws_array_list_init_dynamic(headers, aws_default_allocator(), msg.GetEventHeaders().size(), sizeof(aws_event_stream_header_value_pair));
+                aws_array_list_init_dynamic(headers, get_aws_allocator(), msg.GetEventHeaders().size(), sizeof(aws_event_stream_header_value_pair));
                 for (auto&& header : msg.GetEventHeaders())
                 {
                     const uint8_t headerKeyLen = static_cast<uint8_t>(header.first.length());
@@ -113,7 +114,7 @@ namespace Aws
                 payload.allocator = nullptr;
 
                 aws_event_stream_message encoded;
-                if(aws_event_stream_message_init(&encoded, aws_default_allocator(), &headers, &payload) == AWS_OP_ERR)
+                if(aws_event_stream_message_init(&encoded, get_aws_allocator(), &headers, &payload) == AWS_OP_ERR)
                 {
                     AWS_LOGSTREAM_ERROR(TAG, "Error creating event-stream message from paylaod.");
                     aws_event_stream_headers_list_cleanup(&headers);
@@ -152,7 +153,7 @@ namespace Aws
                 payload.allocator = nullptr;
 
                 aws_event_stream_message signedmsg;
-                if(aws_event_stream_message_init(&signedmsg, aws_default_allocator(), &headers, &payload))
+                if(aws_event_stream_message_init(&signedmsg, get_aws_allocator(), &headers, &payload))
                 {
                     AWS_LOGSTREAM_ERROR(TAG, "Error creating event-stream message from paylaod.");
                     aws_event_stream_headers_list_cleanup(&headers);

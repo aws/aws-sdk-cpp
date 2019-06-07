@@ -23,6 +23,7 @@
 #include <aws/core/utils/event/EventStream.h>
 #include <aws/testing/mocks/event/MockEventStreamHandler.h>
 #include <aws/testing/mocks/event/MockEventStreamDecoder.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 
 namespace
 {
@@ -53,7 +54,7 @@ namespace
         {
             // Assemble Records Message
             // Headers
-            ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&eventStreamHeaders, aws_default_allocator()));
+            ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&eventStreamHeaders, Aws::get_aws_allocator()));
             Aws::Http::HeaderValueCollection headers;
             headers.insert(Aws::Http::HeaderValuePair(":event-type", "Records"));
             headers.insert(Aws::Http::HeaderValuePair(":content-type", "application/octet-stream"));
@@ -67,7 +68,7 @@ namespace
             // Payload
             const char* payload = "Records";
             aws_byte_buf payloadBuf = aws_byte_buf_from_array(reinterpret_cast<const uint8_t*>(payload), strlen(payload));
-            ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_message_init(&eventStreamMessage, aws_default_allocator(), &eventStreamHeaders, &payloadBuf));
+            ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_message_init(&eventStreamMessage, Aws::get_aws_allocator(), &eventStreamHeaders, &payloadBuf));
         }
 
         static void TearDownTestCase()

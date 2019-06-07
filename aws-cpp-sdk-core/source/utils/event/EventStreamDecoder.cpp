@@ -19,6 +19,7 @@
 #include <aws/core/utils/event/EventStreamDecoder.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 
 namespace Aws
 {
@@ -30,7 +31,8 @@ namespace Aws
 
             EventStreamDecoder::EventStreamDecoder(EventStreamHandler* handler) : m_eventStreamHandler(handler)
             {
-                aws_event_stream_streaming_decoder_init(&m_decoder, aws_default_allocator(),
+                aws_event_stream_streaming_decoder_init(&m_decoder,
+                    get_aws_allocator(),
                     onPayloadSegment,
                     onPreludeReceived,
                     onHeaderReceived,
@@ -61,7 +63,7 @@ namespace Aws
 
             void EventStreamDecoder::ResetEventStreamHandler(EventStreamHandler* handler)
             {
-                aws_event_stream_streaming_decoder_init(&m_decoder, aws_default_allocator(),
+                aws_event_stream_streaming_decoder_init(&m_decoder, get_aws_allocator(),
                     onPayloadSegment,
                     onPreludeReceived,
                     onHeaderReceived,
