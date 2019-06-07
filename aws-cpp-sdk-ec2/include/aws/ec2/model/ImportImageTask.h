@@ -53,49 +53,49 @@ namespace Model
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code> </p>
+     * <code>i386</code> | <code>x86_64</code> | <code>arm64</code> </p>
      */
     inline const Aws::String& GetArchitecture() const{ return m_architecture; }
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code> </p>
+     * <code>i386</code> | <code>x86_64</code> | <code>arm64</code> </p>
      */
     inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code> </p>
+     * <code>i386</code> | <code>x86_64</code> | <code>arm64</code> </p>
      */
     inline void SetArchitecture(const Aws::String& value) { m_architectureHasBeenSet = true; m_architecture = value; }
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code> </p>
+     * <code>i386</code> | <code>x86_64</code> | <code>arm64</code> </p>
      */
     inline void SetArchitecture(Aws::String&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code> </p>
+     * <code>i386</code> | <code>x86_64</code> | <code>arm64</code> </p>
      */
     inline void SetArchitecture(const char* value) { m_architectureHasBeenSet = true; m_architecture.assign(value); }
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code> </p>
+     * <code>i386</code> | <code>x86_64</code> | <code>arm64</code> </p>
      */
     inline ImportImageTask& WithArchitecture(const Aws::String& value) { SetArchitecture(value); return *this;}
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code> </p>
+     * <code>i386</code> | <code>x86_64</code> | <code>arm64</code> </p>
      */
     inline ImportImageTask& WithArchitecture(Aws::String&& value) { SetArchitecture(std::move(value)); return *this;}
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code> </p>
+     * <code>i386</code> | <code>x86_64</code> | <code>arm64</code> </p>
      */
     inline ImportImageTask& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
 

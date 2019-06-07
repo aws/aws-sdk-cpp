@@ -32,6 +32,7 @@ namespace Aws
 
         static const int vpc_HASH = HashingUtils::HashString("vpc");
         static const int vpn_HASH = HashingUtils::HashString("vpn");
+        static const int direct_connect_gateway_HASH = HashingUtils::HashString("direct-connect-gateway");
 
 
         TransitGatewayAttachmentResourceType GetTransitGatewayAttachmentResourceTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == vpn_HASH)
           {
             return TransitGatewayAttachmentResourceType::vpn;
+          }
+          else if (hashCode == direct_connect_gateway_HASH)
+          {
+            return TransitGatewayAttachmentResourceType::direct_connect_gateway;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "vpc";
           case TransitGatewayAttachmentResourceType::vpn:
             return "vpn";
+          case TransitGatewayAttachmentResourceType::direct_connect_gateway:
+            return "direct-connect-gateway";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

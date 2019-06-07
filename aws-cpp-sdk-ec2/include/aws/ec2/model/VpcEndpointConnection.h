@@ -19,6 +19,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/State.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/DnsEntry.h>
 #include <utility>
 
 namespace Aws
@@ -236,6 +238,102 @@ namespace Model
      */
     inline VpcEndpointConnection& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The DNS entries for the VPC endpoint.</p>
+     */
+    inline const Aws::Vector<DnsEntry>& GetDnsEntries() const{ return m_dnsEntries; }
+
+    /**
+     * <p>The DNS entries for the VPC endpoint.</p>
+     */
+    inline bool DnsEntriesHasBeenSet() const { return m_dnsEntriesHasBeenSet; }
+
+    /**
+     * <p>The DNS entries for the VPC endpoint.</p>
+     */
+    inline void SetDnsEntries(const Aws::Vector<DnsEntry>& value) { m_dnsEntriesHasBeenSet = true; m_dnsEntries = value; }
+
+    /**
+     * <p>The DNS entries for the VPC endpoint.</p>
+     */
+    inline void SetDnsEntries(Aws::Vector<DnsEntry>&& value) { m_dnsEntriesHasBeenSet = true; m_dnsEntries = std::move(value); }
+
+    /**
+     * <p>The DNS entries for the VPC endpoint.</p>
+     */
+    inline VpcEndpointConnection& WithDnsEntries(const Aws::Vector<DnsEntry>& value) { SetDnsEntries(value); return *this;}
+
+    /**
+     * <p>The DNS entries for the VPC endpoint.</p>
+     */
+    inline VpcEndpointConnection& WithDnsEntries(Aws::Vector<DnsEntry>&& value) { SetDnsEntries(std::move(value)); return *this;}
+
+    /**
+     * <p>The DNS entries for the VPC endpoint.</p>
+     */
+    inline VpcEndpointConnection& AddDnsEntries(const DnsEntry& value) { m_dnsEntriesHasBeenSet = true; m_dnsEntries.push_back(value); return *this; }
+
+    /**
+     * <p>The DNS entries for the VPC endpoint.</p>
+     */
+    inline VpcEndpointConnection& AddDnsEntries(DnsEntry&& value) { m_dnsEntriesHasBeenSet = true; m_dnsEntries.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the network load balancers for the
+     * service.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetNetworkLoadBalancerArns() const{ return m_networkLoadBalancerArns; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the network load balancers for the
+     * service.</p>
+     */
+    inline bool NetworkLoadBalancerArnsHasBeenSet() const { return m_networkLoadBalancerArnsHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the network load balancers for the
+     * service.</p>
+     */
+    inline void SetNetworkLoadBalancerArns(const Aws::Vector<Aws::String>& value) { m_networkLoadBalancerArnsHasBeenSet = true; m_networkLoadBalancerArns = value; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the network load balancers for the
+     * service.</p>
+     */
+    inline void SetNetworkLoadBalancerArns(Aws::Vector<Aws::String>&& value) { m_networkLoadBalancerArnsHasBeenSet = true; m_networkLoadBalancerArns = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the network load balancers for the
+     * service.</p>
+     */
+    inline VpcEndpointConnection& WithNetworkLoadBalancerArns(const Aws::Vector<Aws::String>& value) { SetNetworkLoadBalancerArns(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the network load balancers for the
+     * service.</p>
+     */
+    inline VpcEndpointConnection& WithNetworkLoadBalancerArns(Aws::Vector<Aws::String>&& value) { SetNetworkLoadBalancerArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the network load balancers for the
+     * service.</p>
+     */
+    inline VpcEndpointConnection& AddNetworkLoadBalancerArns(const Aws::String& value) { m_networkLoadBalancerArnsHasBeenSet = true; m_networkLoadBalancerArns.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the network load balancers for the
+     * service.</p>
+     */
+    inline VpcEndpointConnection& AddNetworkLoadBalancerArns(Aws::String&& value) { m_networkLoadBalancerArnsHasBeenSet = true; m_networkLoadBalancerArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the network load balancers for the
+     * service.</p>
+     */
+    inline VpcEndpointConnection& AddNetworkLoadBalancerArns(const char* value) { m_networkLoadBalancerArnsHasBeenSet = true; m_networkLoadBalancerArns.push_back(value); return *this; }
+
   private:
 
     Aws::String m_serviceId;
@@ -252,6 +350,12 @@ namespace Model
 
     Aws::Utils::DateTime m_creationTimestamp;
     bool m_creationTimestampHasBeenSet;
+
+    Aws::Vector<DnsEntry> m_dnsEntries;
+    bool m_dnsEntriesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_networkLoadBalancerArns;
+    bool m_networkLoadBalancerArnsHasBeenSet;
   };
 
 } // namespace Model

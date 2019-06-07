@@ -38,8 +38,8 @@ namespace Model
 {
 
   /**
-   * <p>Object that contains information about a snapshot.</p><p><h3>See Also:</h3>  
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SnapshotInfo">AWS
+   * <p>Information about a snapshot.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SnapshotInfo">AWS
    * API Reference</a></p>
    */
   class AWS_EC2_API SnapshotInfo
@@ -144,22 +144,22 @@ namespace Model
 
 
     /**
-     * <p>Boolean that specifies whether or not this snapshot is encrypted.</p>
+     * <p>Indicates whether the snapshot is encrypted.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
-     * <p>Boolean that specifies whether or not this snapshot is encrypted.</p>
+     * <p>Indicates whether the snapshot is encrypted.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
     /**
-     * <p>Boolean that specifies whether or not this snapshot is encrypted.</p>
+     * <p>Indicates whether the snapshot is encrypted.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
-     * <p>Boolean that specifies whether or not this snapshot is encrypted.</p>
+     * <p>Indicates whether the snapshot is encrypted.</p>
      */
     inline SnapshotInfo& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 

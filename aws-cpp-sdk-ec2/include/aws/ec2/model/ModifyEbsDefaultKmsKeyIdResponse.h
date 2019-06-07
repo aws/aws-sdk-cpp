@@ -44,44 +44,44 @@ namespace Model
 
 
     /**
-     * <p>The full ARN of the default CMK that your account uses to encrypt an EBS
-     * volume when no CMK is specified in the API call that creates the volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the default CMK for encryption by
+     * default.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The full ARN of the default CMK that your account uses to encrypt an EBS
-     * volume when no CMK is specified in the API call that creates the volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the default CMK for encryption by
+     * default.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
 
     /**
-     * <p>The full ARN of the default CMK that your account uses to encrypt an EBS
-     * volume when no CMK is specified in the API call that creates the volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the default CMK for encryption by
+     * default.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The full ARN of the default CMK that your account uses to encrypt an EBS
-     * volume when no CMK is specified in the API call that creates the volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the default CMK for encryption by
+     * default.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The full ARN of the default CMK that your account uses to encrypt an EBS
-     * volume when no CMK is specified in the API call that creates the volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the default CMK for encryption by
+     * default.</p>
      */
     inline ModifyEbsDefaultKmsKeyIdResponse& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The full ARN of the default CMK that your account uses to encrypt an EBS
-     * volume when no CMK is specified in the API call that creates the volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the default CMK for encryption by
+     * default.</p>
      */
     inline ModifyEbsDefaultKmsKeyIdResponse& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The full ARN of the default CMK that your account uses to encrypt an EBS
-     * volume when no CMK is specified in the API call that creates the volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the default CMK for encryption by
+     * default.</p>
      */
     inline ModifyEbsDefaultKmsKeyIdResponse& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

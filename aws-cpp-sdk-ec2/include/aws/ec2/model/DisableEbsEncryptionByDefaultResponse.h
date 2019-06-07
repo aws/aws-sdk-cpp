@@ -43,17 +43,17 @@ namespace Model
 
 
     /**
-     * <p>Account-level encryption status after performing the action.</p>
+     * <p>The updated status of encryption by default.</p>
      */
     inline bool GetEbsEncryptionByDefault() const{ return m_ebsEncryptionByDefault; }
 
     /**
-     * <p>Account-level encryption status after performing the action.</p>
+     * <p>The updated status of encryption by default.</p>
      */
     inline void SetEbsEncryptionByDefault(bool value) { m_ebsEncryptionByDefault = value; }
 
     /**
-     * <p>Account-level encryption status after performing the action.</p>
+     * <p>The updated status of encryption by default.</p>
      */
     inline DisableEbsEncryptionByDefaultResponse& WithEbsEncryptionByDefault(bool value) { SetEbsEncryptionByDefault(value); return *this;}
 

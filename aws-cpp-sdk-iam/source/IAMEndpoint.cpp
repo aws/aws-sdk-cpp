@@ -26,10 +26,11 @@ namespace IAM
 {
 namespace IAMEndpoint
 {
-  static const int CN_NORTH_HASH = Aws::Utils::HashingUtils::HashString("cn-north-1");
-  static const int CN_NORTHWEST_1_HASH = Aws::Utils::HashingUtils::HashString("cn-northwest-1");
   
-  static const int US_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-east-1");
+  static const int CN_NORTH_1_HASH = Aws::Utils::HashingUtils::HashString("cn-north-1");
+  static const int US_GOV_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-west-1");
+  static const int US_GOV_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-east-1");
+  static const int CN_NORTHWEST_1_HASH = Aws::Utils::HashingUtils::HashString("cn-northwest-1");
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
@@ -37,27 +38,24 @@ namespace IAMEndpoint
     
     if(!useDualStack)
     {      
-      if(hash == US_EAST_1_HASH)
+      if(hash == CN_NORTH_1_HASH)
       {
-        return "iam.amazonaws.com";
+        return "iam.cn-north-1.amazonaws.com.cn";
+      }
+      if(hash == US_GOV_WEST_1_HASH)
+      {
+        return "iam.us-gov.amazonaws.com";
+      }
+      if(hash == US_GOV_EAST_1_HASH)
+      {
+        return "iam.us-gov.amazonaws.com";
+      }
+      if(hash == CN_NORTHWEST_1_HASH)
+      {
+        return "iam.cn-north-1.amazonaws.com.cn";
       }
     }
-    Aws::StringStream ss;
-    ss << "iam" << ".";
-
-    if(useDualStack)
-    {
-      ss << "dualstack.";
-    }
-
-    ss << regionName << ".amazonaws.com";
-    
-    if (hash == CN_NORTH_HASH || hash == CN_NORTHWEST_1_HASH)
-    {
-      ss << ".cn"; 
-    }
-    
-    return ss.str();
+    return "iam.amazonaws.com";
   }
 
 } // namespace IAMEndpoint

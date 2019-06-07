@@ -43,20 +43,17 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether default encryption for EBS volumes is enabled or
-     * disabled.</p>
+     * <p>Indicates whether encryption by default is enabled.</p>
      */
     inline bool GetEbsEncryptionByDefault() const{ return m_ebsEncryptionByDefault; }
 
     /**
-     * <p>Indicates whether default encryption for EBS volumes is enabled or
-     * disabled.</p>
+     * <p>Indicates whether encryption by default is enabled.</p>
      */
     inline void SetEbsEncryptionByDefault(bool value) { m_ebsEncryptionByDefault = value; }
 
     /**
-     * <p>Indicates whether default encryption for EBS volumes is enabled or
-     * disabled.</p>
+     * <p>Indicates whether encryption by default is enabled.</p>
      */
     inline GetEbsEncryptionByDefaultResponse& WithEbsEncryptionByDefault(bool value) { SetEbsEncryptionByDefault(value); return *this;}
 

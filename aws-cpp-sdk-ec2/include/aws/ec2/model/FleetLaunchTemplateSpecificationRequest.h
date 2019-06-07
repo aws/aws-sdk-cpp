@@ -133,42 +133,50 @@ namespace Model
 
 
     /**
-     * <p>The version number of the launch template. </p>
+     * <p>The version number of the launch template. Note: This is a required parameter
+     * and will be updated soon. </p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version number of the launch template. </p>
+     * <p>The version number of the launch template. Note: This is a required parameter
+     * and will be updated soon. </p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>The version number of the launch template. </p>
+     * <p>The version number of the launch template. Note: This is a required parameter
+     * and will be updated soon. </p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version number of the launch template. </p>
+     * <p>The version number of the launch template. Note: This is a required parameter
+     * and will be updated soon. </p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The version number of the launch template. </p>
+     * <p>The version number of the launch template. Note: This is a required parameter
+     * and will be updated soon. </p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The version number of the launch template. </p>
+     * <p>The version number of the launch template. Note: This is a required parameter
+     * and will be updated soon. </p>
      */
     inline FleetLaunchTemplateSpecificationRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version number of the launch template. </p>
+     * <p>The version number of the launch template. Note: This is a required parameter
+     * and will be updated soon. </p>
      */
     inline FleetLaunchTemplateSpecificationRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version number of the launch template. </p>
+     * <p>The version number of the launch template. Note: This is a required parameter
+     * and will be updated soon. </p>
      */
     inline FleetLaunchTemplateSpecificationRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 

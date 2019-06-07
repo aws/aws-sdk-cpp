@@ -60,8 +60,7 @@ namespace Model
      * the original volume or snapshot copy. Because data encryption keys are inherited
      * by volumes created from snapshots, and vice versa, if snapshots share the same
      * data encryption key identifier, then they belong to the same volume/snapshot
-     * lineage. This parameter is only returned by the <a>DescribeSnapshots</a> API
-     * operation.</p>
+     * lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
      */
     inline const Aws::String& GetDataEncryptionKeyId() const{ return m_dataEncryptionKeyId; }
 
@@ -71,8 +70,7 @@ namespace Model
      * the original volume or snapshot copy. Because data encryption keys are inherited
      * by volumes created from snapshots, and vice versa, if snapshots share the same
      * data encryption key identifier, then they belong to the same volume/snapshot
-     * lineage. This parameter is only returned by the <a>DescribeSnapshots</a> API
-     * operation.</p>
+     * lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
      */
     inline bool DataEncryptionKeyIdHasBeenSet() const { return m_dataEncryptionKeyIdHasBeenSet; }
 
@@ -82,8 +80,7 @@ namespace Model
      * the original volume or snapshot copy. Because data encryption keys are inherited
      * by volumes created from snapshots, and vice versa, if snapshots share the same
      * data encryption key identifier, then they belong to the same volume/snapshot
-     * lineage. This parameter is only returned by the <a>DescribeSnapshots</a> API
-     * operation.</p>
+     * lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
      */
     inline void SetDataEncryptionKeyId(const Aws::String& value) { m_dataEncryptionKeyIdHasBeenSet = true; m_dataEncryptionKeyId = value; }
 
@@ -93,8 +90,7 @@ namespace Model
      * the original volume or snapshot copy. Because data encryption keys are inherited
      * by volumes created from snapshots, and vice versa, if snapshots share the same
      * data encryption key identifier, then they belong to the same volume/snapshot
-     * lineage. This parameter is only returned by the <a>DescribeSnapshots</a> API
-     * operation.</p>
+     * lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
      */
     inline void SetDataEncryptionKeyId(Aws::String&& value) { m_dataEncryptionKeyIdHasBeenSet = true; m_dataEncryptionKeyId = std::move(value); }
 
@@ -104,8 +100,7 @@ namespace Model
      * the original volume or snapshot copy. Because data encryption keys are inherited
      * by volumes created from snapshots, and vice versa, if snapshots share the same
      * data encryption key identifier, then they belong to the same volume/snapshot
-     * lineage. This parameter is only returned by the <a>DescribeSnapshots</a> API
-     * operation.</p>
+     * lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
      */
     inline void SetDataEncryptionKeyId(const char* value) { m_dataEncryptionKeyIdHasBeenSet = true; m_dataEncryptionKeyId.assign(value); }
 
@@ -115,8 +110,7 @@ namespace Model
      * the original volume or snapshot copy. Because data encryption keys are inherited
      * by volumes created from snapshots, and vice versa, if snapshots share the same
      * data encryption key identifier, then they belong to the same volume/snapshot
-     * lineage. This parameter is only returned by the <a>DescribeSnapshots</a> API
-     * operation.</p>
+     * lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
      */
     inline Snapshot& WithDataEncryptionKeyId(const Aws::String& value) { SetDataEncryptionKeyId(value); return *this;}
 
@@ -126,8 +120,7 @@ namespace Model
      * the original volume or snapshot copy. Because data encryption keys are inherited
      * by volumes created from snapshots, and vice versa, if snapshots share the same
      * data encryption key identifier, then they belong to the same volume/snapshot
-     * lineage. This parameter is only returned by the <a>DescribeSnapshots</a> API
-     * operation.</p>
+     * lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
      */
     inline Snapshot& WithDataEncryptionKeyId(Aws::String&& value) { SetDataEncryptionKeyId(std::move(value)); return *this;}
 
@@ -137,8 +130,7 @@ namespace Model
      * the original volume or snapshot copy. Because data encryption keys are inherited
      * by volumes created from snapshots, and vice versa, if snapshots share the same
      * data encryption key identifier, then they belong to the same volume/snapshot
-     * lineage. This parameter is only returned by the <a>DescribeSnapshots</a> API
-     * operation.</p>
+     * lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
      */
     inline Snapshot& WithDataEncryptionKeyId(const char* value) { SetDataEncryptionKeyId(value); return *this;}
 
@@ -206,58 +198,58 @@ namespace Model
 
 
     /**
-     * <p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key
-     * (CMK) that was used to protect the volume encryption key for the parent
-     * volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used to protect the volume encryption key for
+     * the parent volume.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key
-     * (CMK) that was used to protect the volume encryption key for the parent
-     * volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used to protect the volume encryption key for
+     * the parent volume.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key
-     * (CMK) that was used to protect the volume encryption key for the parent
-     * volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used to protect the volume encryption key for
+     * the parent volume.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key
-     * (CMK) that was used to protect the volume encryption key for the parent
-     * volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used to protect the volume encryption key for
+     * the parent volume.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key
-     * (CMK) that was used to protect the volume encryption key for the parent
-     * volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used to protect the volume encryption key for
+     * the parent volume.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key
-     * (CMK) that was used to protect the volume encryption key for the parent
-     * volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used to protect the volume encryption key for
+     * the parent volume.</p>
      */
     inline Snapshot& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key
-     * (CMK) that was used to protect the volume encryption key for the parent
-     * volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used to protect the volume encryption key for
+     * the parent volume.</p>
      */
     inline Snapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key
-     * (CMK) that was used to protect the volume encryption key for the parent
-     * volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used to protect the volume encryption key for
+     * the parent volume.</p>
      */
     inline Snapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -459,8 +451,8 @@ namespace Model
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
      * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
      * permissions are not obtained) this field displays error state details to help
-     * you diagnose why the error occurred. This parameter is only returned by the
-     * <a>DescribeSnapshots</a> API operation.</p>
+     * you diagnose why the error occurred. This parameter is only returned by
+     * <a>DescribeSnapshots</a>.</p>
      */
     inline const Aws::String& GetStateMessage() const{ return m_stateMessage; }
 
@@ -468,8 +460,8 @@ namespace Model
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
      * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
      * permissions are not obtained) this field displays error state details to help
-     * you diagnose why the error occurred. This parameter is only returned by the
-     * <a>DescribeSnapshots</a> API operation.</p>
+     * you diagnose why the error occurred. This parameter is only returned by
+     * <a>DescribeSnapshots</a>.</p>
      */
     inline bool StateMessageHasBeenSet() const { return m_stateMessageHasBeenSet; }
 
@@ -477,8 +469,8 @@ namespace Model
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
      * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
      * permissions are not obtained) this field displays error state details to help
-     * you diagnose why the error occurred. This parameter is only returned by the
-     * <a>DescribeSnapshots</a> API operation.</p>
+     * you diagnose why the error occurred. This parameter is only returned by
+     * <a>DescribeSnapshots</a>.</p>
      */
     inline void SetStateMessage(const Aws::String& value) { m_stateMessageHasBeenSet = true; m_stateMessage = value; }
 
@@ -486,8 +478,8 @@ namespace Model
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
      * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
      * permissions are not obtained) this field displays error state details to help
-     * you diagnose why the error occurred. This parameter is only returned by the
-     * <a>DescribeSnapshots</a> API operation.</p>
+     * you diagnose why the error occurred. This parameter is only returned by
+     * <a>DescribeSnapshots</a>.</p>
      */
     inline void SetStateMessage(Aws::String&& value) { m_stateMessageHasBeenSet = true; m_stateMessage = std::move(value); }
 
@@ -495,8 +487,8 @@ namespace Model
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
      * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
      * permissions are not obtained) this field displays error state details to help
-     * you diagnose why the error occurred. This parameter is only returned by the
-     * <a>DescribeSnapshots</a> API operation.</p>
+     * you diagnose why the error occurred. This parameter is only returned by
+     * <a>DescribeSnapshots</a>.</p>
      */
     inline void SetStateMessage(const char* value) { m_stateMessageHasBeenSet = true; m_stateMessage.assign(value); }
 
@@ -504,8 +496,8 @@ namespace Model
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
      * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
      * permissions are not obtained) this field displays error state details to help
-     * you diagnose why the error occurred. This parameter is only returned by the
-     * <a>DescribeSnapshots</a> API operation.</p>
+     * you diagnose why the error occurred. This parameter is only returned by
+     * <a>DescribeSnapshots</a>.</p>
      */
     inline Snapshot& WithStateMessage(const Aws::String& value) { SetStateMessage(value); return *this;}
 
@@ -513,8 +505,8 @@ namespace Model
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
      * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
      * permissions are not obtained) this field displays error state details to help
-     * you diagnose why the error occurred. This parameter is only returned by the
-     * <a>DescribeSnapshots</a> API operation.</p>
+     * you diagnose why the error occurred. This parameter is only returned by
+     * <a>DescribeSnapshots</a>.</p>
      */
     inline Snapshot& WithStateMessage(Aws::String&& value) { SetStateMessage(std::move(value)); return *this;}
 
@@ -522,8 +514,8 @@ namespace Model
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
      * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
      * permissions are not obtained) this field displays error state details to help
-     * you diagnose why the error occurred. This parameter is only returned by the
-     * <a>DescribeSnapshots</a> API operation.</p>
+     * you diagnose why the error occurred. This parameter is only returned by
+     * <a>DescribeSnapshots</a>.</p>
      */
     inline Snapshot& WithStateMessage(const char* value) { SetStateMessage(value); return *this;}
 

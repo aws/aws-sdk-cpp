@@ -49,7 +49,8 @@ VpcEndpoint::VpcEndpoint() :
     m_networkInterfaceIdsHasBeenSet(false),
     m_dnsEntriesHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_ownerIdHasBeenSet(false)
 {
 }
 
@@ -72,7 +73,8 @@ VpcEndpoint::VpcEndpoint(const XmlNode& xmlNode) :
     m_networkInterfaceIdsHasBeenSet(false),
     m_dnsEntriesHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_ownerIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -209,6 +211,12 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -321,6 +329,11 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
       }
   }
 
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+
 }
 
 void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -414,6 +427,10 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
 }
 

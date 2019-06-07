@@ -2685,24 +2685,22 @@ namespace Model
 
         /**
          * <p>Attaches an EBS volume to a running or stopped instance and exposes it to the
-         * instance with the specified device name.</p> <p>Encrypted EBS volumes may only
-         * be attached to instances that support Amazon EBS encryption. For more
-         * information, see <a
+         * instance with the specified device name.</p> <p>Encrypted EBS volumes must be
+         * attached to instances that support Amazon EBS encryption. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>For a list of supported device names, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
-         * an EBS Volume to an Instance</a>. Any device names that aren't reserved for
-         * instance store volumes can be used for EBS volumes. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
-         * EC2 Instance Store</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p>If a volume has an AWS Marketplace product code:</p> <ul> <li>
-         * <p>The volume can be attached only to a stopped instance.</p> </li> <li> <p>AWS
-         * Marketplace product codes are copied from the volume to the instance.</p> </li>
-         * <li> <p>You must be subscribed to the product.</p> </li> <li> <p>The instance
-         * type and operating system of the instance must support the product. For example,
-         * you can't detach a volume from a Windows instance and attach it to a Linux
-         * instance.</p> </li> </ul> <p>For more information about EBS volumes, see <a
+         * <p>After you attach an EBS volume, you must make it available. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Making
+         * an EBS Volume Available For Use</a>.</p> <p>If a volume has an AWS Marketplace
+         * product code:</p> <ul> <li> <p>The volume can be attached only to a stopped
+         * instance.</p> </li> <li> <p>AWS Marketplace product codes are copied from the
+         * volume to the instance.</p> </li> <li> <p>You must be subscribed to the
+         * product.</p> </li> <li> <p>The instance type and operating system of the
+         * instance must support the product. For example, you can't detach a volume from a
+         * Windows instance and attach it to a Linux instance.</p> </li> </ul> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
          * Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2713,24 +2711,22 @@ namespace Model
 
         /**
          * <p>Attaches an EBS volume to a running or stopped instance and exposes it to the
-         * instance with the specified device name.</p> <p>Encrypted EBS volumes may only
-         * be attached to instances that support Amazon EBS encryption. For more
-         * information, see <a
+         * instance with the specified device name.</p> <p>Encrypted EBS volumes must be
+         * attached to instances that support Amazon EBS encryption. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>For a list of supported device names, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
-         * an EBS Volume to an Instance</a>. Any device names that aren't reserved for
-         * instance store volumes can be used for EBS volumes. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
-         * EC2 Instance Store</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p>If a volume has an AWS Marketplace product code:</p> <ul> <li>
-         * <p>The volume can be attached only to a stopped instance.</p> </li> <li> <p>AWS
-         * Marketplace product codes are copied from the volume to the instance.</p> </li>
-         * <li> <p>You must be subscribed to the product.</p> </li> <li> <p>The instance
-         * type and operating system of the instance must support the product. For example,
-         * you can't detach a volume from a Windows instance and attach it to a Linux
-         * instance.</p> </li> </ul> <p>For more information about EBS volumes, see <a
+         * <p>After you attach an EBS volume, you must make it available. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Making
+         * an EBS Volume Available For Use</a>.</p> <p>If a volume has an AWS Marketplace
+         * product code:</p> <ul> <li> <p>The volume can be attached only to a stopped
+         * instance.</p> </li> <li> <p>AWS Marketplace product codes are copied from the
+         * volume to the instance.</p> </li> <li> <p>You must be subscribed to the
+         * product.</p> </li> <li> <p>The instance type and operating system of the
+         * instance must support the product. For example, you can't detach a volume from a
+         * Windows instance and attach it to a Linux instance.</p> </li> </ul> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
          * Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2743,24 +2739,22 @@ namespace Model
 
         /**
          * <p>Attaches an EBS volume to a running or stopped instance and exposes it to the
-         * instance with the specified device name.</p> <p>Encrypted EBS volumes may only
-         * be attached to instances that support Amazon EBS encryption. For more
-         * information, see <a
+         * instance with the specified device name.</p> <p>Encrypted EBS volumes must be
+         * attached to instances that support Amazon EBS encryption. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>For a list of supported device names, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
-         * an EBS Volume to an Instance</a>. Any device names that aren't reserved for
-         * instance store volumes can be used for EBS volumes. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
-         * EC2 Instance Store</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p>If a volume has an AWS Marketplace product code:</p> <ul> <li>
-         * <p>The volume can be attached only to a stopped instance.</p> </li> <li> <p>AWS
-         * Marketplace product codes are copied from the volume to the instance.</p> </li>
-         * <li> <p>You must be subscribed to the product.</p> </li> <li> <p>The instance
-         * type and operating system of the instance must support the product. For example,
-         * you can't detach a volume from a Windows instance and attach it to a Linux
-         * instance.</p> </li> </ul> <p>For more information about EBS volumes, see <a
+         * <p>After you attach an EBS volume, you must make it available. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Making
+         * an EBS Volume Available For Use</a>.</p> <p>If a volume has an AWS Marketplace
+         * product code:</p> <ul> <li> <p>The volume can be attached only to a stopped
+         * instance.</p> </li> <li> <p>AWS Marketplace product codes are copied from the
+         * volume to the instance.</p> </li> <li> <p>You must be subscribed to the
+         * product.</p> </li> <li> <p>The instance type and operating system of the
+         * instance must support the product. For example, you can't detach a volume from a
+         * Windows instance and attach it to a Linux instance.</p> </li> </ul> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
          * Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3402,18 +3396,16 @@ namespace Model
         /**
          * <p>Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3.
          * You can copy the snapshot within the same Region or from one Region to another.
-         * You can use the snapshot to create EBS volumes or Amazon Machine Images (AMIs).
-         * The snapshot is copied to the regional endpoint that you send the HTTP request
-         * to.</p> <p>Copies of encrypted EBS snapshots remain encrypted. Copies of
-         * unencrypted snapshots remain unencrypted, unless the <code>Encrypted</code> flag
-         * is specified during the snapshot copy operation. By default, encrypted snapshot
-         * copies use the default AWS Key Management Service (AWS KMS) customer master key
-         * (CMK); however, you can specify a non-default CMK with the <code>KmsKeyId</code>
-         * parameter.</p> <p>To copy an encrypted snapshot that has been shared from
-         * another account, you must have permissions for the CMK used to encrypt the
-         * snapshot.</p> <p>Snapshots created by copying another snapshot have an arbitrary
-         * volume ID that should not be used for any purpose.</p> <p>For more information,
-         * see <a
+         * You can use the snapshot to create EBS volumes or Amazon Machine Images
+         * (AMIs).</p> <p>Copies of encrypted EBS snapshots remain encrypted. Copies of
+         * unencrypted snapshots remain unencrypted, unless you enable encryption for the
+         * snapshot copy operation. By default, encrypted snapshot copies use the default
+         * AWS Key Management Service (AWS KMS) customer master key (CMK); however, you can
+         * specify a different CMK.</p> <p>To copy an encrypted snapshot that has been
+         * shared from another account, you must have permissions for the CMK used to
+         * encrypt the snapshot.</p> <p>Snapshots created by copying another snapshot have
+         * an arbitrary volume ID that should not be used for any purpose.</p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
          * an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3425,18 +3417,16 @@ namespace Model
         /**
          * <p>Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3.
          * You can copy the snapshot within the same Region or from one Region to another.
-         * You can use the snapshot to create EBS volumes or Amazon Machine Images (AMIs).
-         * The snapshot is copied to the regional endpoint that you send the HTTP request
-         * to.</p> <p>Copies of encrypted EBS snapshots remain encrypted. Copies of
-         * unencrypted snapshots remain unencrypted, unless the <code>Encrypted</code> flag
-         * is specified during the snapshot copy operation. By default, encrypted snapshot
-         * copies use the default AWS Key Management Service (AWS KMS) customer master key
-         * (CMK); however, you can specify a non-default CMK with the <code>KmsKeyId</code>
-         * parameter.</p> <p>To copy an encrypted snapshot that has been shared from
-         * another account, you must have permissions for the CMK used to encrypt the
-         * snapshot.</p> <p>Snapshots created by copying another snapshot have an arbitrary
-         * volume ID that should not be used for any purpose.</p> <p>For more information,
-         * see <a
+         * You can use the snapshot to create EBS volumes or Amazon Machine Images
+         * (AMIs).</p> <p>Copies of encrypted EBS snapshots remain encrypted. Copies of
+         * unencrypted snapshots remain unencrypted, unless you enable encryption for the
+         * snapshot copy operation. By default, encrypted snapshot copies use the default
+         * AWS Key Management Service (AWS KMS) customer master key (CMK); however, you can
+         * specify a different CMK.</p> <p>To copy an encrypted snapshot that has been
+         * shared from another account, you must have permissions for the CMK used to
+         * encrypt the snapshot.</p> <p>Snapshots created by copying another snapshot have
+         * an arbitrary volume ID that should not be used for any purpose.</p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
          * an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3450,18 +3440,16 @@ namespace Model
         /**
          * <p>Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3.
          * You can copy the snapshot within the same Region or from one Region to another.
-         * You can use the snapshot to create EBS volumes or Amazon Machine Images (AMIs).
-         * The snapshot is copied to the regional endpoint that you send the HTTP request
-         * to.</p> <p>Copies of encrypted EBS snapshots remain encrypted. Copies of
-         * unencrypted snapshots remain unencrypted, unless the <code>Encrypted</code> flag
-         * is specified during the snapshot copy operation. By default, encrypted snapshot
-         * copies use the default AWS Key Management Service (AWS KMS) customer master key
-         * (CMK); however, you can specify a non-default CMK with the <code>KmsKeyId</code>
-         * parameter.</p> <p>To copy an encrypted snapshot that has been shared from
-         * another account, you must have permissions for the CMK used to encrypt the
-         * snapshot.</p> <p>Snapshots created by copying another snapshot have an arbitrary
-         * volume ID that should not be used for any purpose.</p> <p>For more information,
-         * see <a
+         * You can use the snapshot to create EBS volumes or Amazon Machine Images
+         * (AMIs).</p> <p>Copies of encrypted EBS snapshots remain encrypted. Copies of
+         * unencrypted snapshots remain unencrypted, unless you enable encryption for the
+         * snapshot copy operation. By default, encrypted snapshot copies use the default
+         * AWS Key Management Service (AWS KMS) customer master key (CMK); however, you can
+         * specify a different CMK.</p> <p>To copy an encrypted snapshot that has been
+         * shared from another account, you must have permissions for the CMK used to
+         * encrypt the snapshot.</p> <p>Snapshots created by copying another snapshot have
+         * an arbitrary volume ID that should not be used for any purpose.</p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
          * an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -5459,11 +5447,10 @@ namespace Model
          * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
          * Endpoints</a>.</p> <p>You can create a new empty volume or restore a volume from
          * an EBS snapshot. Any AWS Marketplace product codes from the snapshot are
-         * propagated to the volume.</p> <p>You can create encrypted volumes with the
-         * <code>Encrypted</code> parameter. Encrypted volumes may only be attached to
-         * instances that support Amazon EBS encryption. Volumes that are created from
-         * encrypted snapshots are also automatically encrypted. For more information, see
-         * <a
+         * propagated to the volume.</p> <p>You can create encrypted volumes. Encrypted
+         * volumes must be attached to instances that support Amazon EBS encryption.
+         * Volumes that are created from encrypted snapshots are also automatically
+         * encrypted. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>You can tag your volumes during creation. For more information, see <a
@@ -5485,11 +5472,10 @@ namespace Model
          * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
          * Endpoints</a>.</p> <p>You can create a new empty volume or restore a volume from
          * an EBS snapshot. Any AWS Marketplace product codes from the snapshot are
-         * propagated to the volume.</p> <p>You can create encrypted volumes with the
-         * <code>Encrypted</code> parameter. Encrypted volumes may only be attached to
-         * instances that support Amazon EBS encryption. Volumes that are created from
-         * encrypted snapshots are also automatically encrypted. For more information, see
-         * <a
+         * propagated to the volume.</p> <p>You can create encrypted volumes. Encrypted
+         * volumes must be attached to instances that support Amazon EBS encryption.
+         * Volumes that are created from encrypted snapshots are also automatically
+         * encrypted. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>You can tag your volumes during creation. For more information, see <a
@@ -5513,11 +5499,10 @@ namespace Model
          * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
          * Endpoints</a>.</p> <p>You can create a new empty volume or restore a volume from
          * an EBS snapshot. Any AWS Marketplace product codes from the snapshot are
-         * propagated to the volume.</p> <p>You can create encrypted volumes with the
-         * <code>Encrypted</code> parameter. Encrypted volumes may only be attached to
-         * instances that support Amazon EBS encryption. Volumes that are created from
-         * encrypted snapshots are also automatically encrypted. For more information, see
-         * <a
+         * propagated to the volume.</p> <p>You can create encrypted volumes. Encrypted
+         * volumes must be attached to instances that support Amazon EBS encryption.
+         * Volumes that are created from encrypted snapshots are also automatically
+         * encrypted. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>You can tag your volumes during creation. For more information, see <a
@@ -11410,26 +11395,28 @@ namespace Model
         virtual void DetachVpnGatewayAsync(const Model::DetachVpnGatewayRequest& request, const DetachVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables default encryption for EBS volumes that are created in your account
-         * in the current region.</p> <p>Call this API if you have enabled default
-         * encryption using <a>EnableEbsEncryptionByDefault</a> and want to disable default
-         * EBS encryption. Once default EBS encryption is disabled, you can still create an
-         * encrypted volume by setting <i>encrypted</i> to <i>true</i> in the API call that
-         * creates the volume. </p> <p>Disabling default EBS encryption will not change the
-         * encryption status of any of your existing volumes.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables EBS encryption by default for your account in the current
+         * Region.</p> <p>After you disable encryption by default, you can still create
+         * encrypted volumes by enabling encryption when you create each volume.</p>
+         * <p>Disabling encryption by default does not change the encryption status of your
+         * existing volumes.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableEbsEncryptionByDefault">AWS
          * API Reference</a></p>
          */
         virtual Model::DisableEbsEncryptionByDefaultOutcome DisableEbsEncryptionByDefault(const Model::DisableEbsEncryptionByDefaultRequest& request) const;
 
         /**
-         * <p>Disables default encryption for EBS volumes that are created in your account
-         * in the current region.</p> <p>Call this API if you have enabled default
-         * encryption using <a>EnableEbsEncryptionByDefault</a> and want to disable default
-         * EBS encryption. Once default EBS encryption is disabled, you can still create an
-         * encrypted volume by setting <i>encrypted</i> to <i>true</i> in the API call that
-         * creates the volume. </p> <p>Disabling default EBS encryption will not change the
-         * encryption status of any of your existing volumes.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables EBS encryption by default for your account in the current
+         * Region.</p> <p>After you disable encryption by default, you can still create
+         * encrypted volumes by enabling encryption when you create each volume.</p>
+         * <p>Disabling encryption by default does not change the encryption status of your
+         * existing volumes.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableEbsEncryptionByDefault">AWS
          * API Reference</a></p>
          *
@@ -11438,13 +11425,14 @@ namespace Model
         virtual Model::DisableEbsEncryptionByDefaultOutcomeCallable DisableEbsEncryptionByDefaultCallable(const Model::DisableEbsEncryptionByDefaultRequest& request) const;
 
         /**
-         * <p>Disables default encryption for EBS volumes that are created in your account
-         * in the current region.</p> <p>Call this API if you have enabled default
-         * encryption using <a>EnableEbsEncryptionByDefault</a> and want to disable default
-         * EBS encryption. Once default EBS encryption is disabled, you can still create an
-         * encrypted volume by setting <i>encrypted</i> to <i>true</i> in the API call that
-         * creates the volume. </p> <p>Disabling default EBS encryption will not change the
-         * encryption status of any of your existing volumes.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables EBS encryption by default for your account in the current
+         * Region.</p> <p>After you disable encryption by default, you can still create
+         * encrypted volumes by enabling encryption when you create each volume.</p>
+         * <p>Disabling encryption by default does not change the encryption status of your
+         * existing volumes.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableEbsEncryptionByDefault">AWS
          * API Reference</a></p>
          *
@@ -11842,26 +11830,18 @@ namespace Model
         virtual void DisassociateVpcCidrBlockAsync(const Model::DisassociateVpcCidrBlockRequest& request, const DisassociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables default encryption for EBS volumes that are created in your account
-         * in the current region.</p> <p>Once encryption is enabled with this action, EBS
-         * volumes that are created in your account will always be encrypted even if
-         * encryption is not specified at launch. This setting overrides the
-         * <i>encrypted</i> setting to <i>true</i> in all API calls that create EBS volumes
-         * in your account. A volume will be encrypted even if you specify
-         * <i>encryption</i> to be <i>false</i> in the API call that creates the
-         * volume.</p> <p>If you do not specify a customer master key (CMK) in the API call
-         * that creates the EBS volume, then the volume is encrypted to your AWS account's
-         * managed CMK.</p> <p>You can specify a CMK of your choice using
-         * <a>ModifyEbsDefaultKmsKeyId</a>.</p> <p>Enabling encryption-by-default for EBS
-         * volumes has no effect on existing unencrypted volumes in your account.
-         * Encrypting the data in these requires manual action. You can either create an
-         * encrypted snapshot of an unencrypted volume, or encrypt a copy of an unencrypted
-         * snapshot. Any volume restored from an encrypted snapshot is also encrypted. For
+         * <p>Enables EBS encryption by default for your account in the current Region.</p>
+         * <p>After you enable encryption by default, the EBS volumes that you create are
+         * are always encrypted, either using the default CMK or the CMK that you specified
+         * when you created each volume. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * <p>You can specify the default CMK for encryption by default using
+         * <a>ModifyEbsDefaultKmsKeyId</a> or <a>ResetEbsDefaultKmsKeyId</a>.</p>
+         * <p>Enabling encryption by default has no effect on the encryption status of your
+         * existing volumes.</p> <p>After you enable encryption by default, you can no
+         * longer launch instances using instance types that do not support encryption. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-         * EBS Snapshots</a>.</p> <p>After EBS encryption-by-default is enabled, you can no
-         * longer launch older-generation instance types that do not support encryption.
-         * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
          * Instance Types</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">AWS
@@ -11870,26 +11850,18 @@ namespace Model
         virtual Model::EnableEbsEncryptionByDefaultOutcome EnableEbsEncryptionByDefault(const Model::EnableEbsEncryptionByDefaultRequest& request) const;
 
         /**
-         * <p>Enables default encryption for EBS volumes that are created in your account
-         * in the current region.</p> <p>Once encryption is enabled with this action, EBS
-         * volumes that are created in your account will always be encrypted even if
-         * encryption is not specified at launch. This setting overrides the
-         * <i>encrypted</i> setting to <i>true</i> in all API calls that create EBS volumes
-         * in your account. A volume will be encrypted even if you specify
-         * <i>encryption</i> to be <i>false</i> in the API call that creates the
-         * volume.</p> <p>If you do not specify a customer master key (CMK) in the API call
-         * that creates the EBS volume, then the volume is encrypted to your AWS account's
-         * managed CMK.</p> <p>You can specify a CMK of your choice using
-         * <a>ModifyEbsDefaultKmsKeyId</a>.</p> <p>Enabling encryption-by-default for EBS
-         * volumes has no effect on existing unencrypted volumes in your account.
-         * Encrypting the data in these requires manual action. You can either create an
-         * encrypted snapshot of an unencrypted volume, or encrypt a copy of an unencrypted
-         * snapshot. Any volume restored from an encrypted snapshot is also encrypted. For
+         * <p>Enables EBS encryption by default for your account in the current Region.</p>
+         * <p>After you enable encryption by default, the EBS volumes that you create are
+         * are always encrypted, either using the default CMK or the CMK that you specified
+         * when you created each volume. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * <p>You can specify the default CMK for encryption by default using
+         * <a>ModifyEbsDefaultKmsKeyId</a> or <a>ResetEbsDefaultKmsKeyId</a>.</p>
+         * <p>Enabling encryption by default has no effect on the encryption status of your
+         * existing volumes.</p> <p>After you enable encryption by default, you can no
+         * longer launch instances using instance types that do not support encryption. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-         * EBS Snapshots</a>.</p> <p>After EBS encryption-by-default is enabled, you can no
-         * longer launch older-generation instance types that do not support encryption.
-         * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
          * Instance Types</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">AWS
@@ -11900,26 +11872,18 @@ namespace Model
         virtual Model::EnableEbsEncryptionByDefaultOutcomeCallable EnableEbsEncryptionByDefaultCallable(const Model::EnableEbsEncryptionByDefaultRequest& request) const;
 
         /**
-         * <p>Enables default encryption for EBS volumes that are created in your account
-         * in the current region.</p> <p>Once encryption is enabled with this action, EBS
-         * volumes that are created in your account will always be encrypted even if
-         * encryption is not specified at launch. This setting overrides the
-         * <i>encrypted</i> setting to <i>true</i> in all API calls that create EBS volumes
-         * in your account. A volume will be encrypted even if you specify
-         * <i>encryption</i> to be <i>false</i> in the API call that creates the
-         * volume.</p> <p>If you do not specify a customer master key (CMK) in the API call
-         * that creates the EBS volume, then the volume is encrypted to your AWS account's
-         * managed CMK.</p> <p>You can specify a CMK of your choice using
-         * <a>ModifyEbsDefaultKmsKeyId</a>.</p> <p>Enabling encryption-by-default for EBS
-         * volumes has no effect on existing unencrypted volumes in your account.
-         * Encrypting the data in these requires manual action. You can either create an
-         * encrypted snapshot of an unencrypted volume, or encrypt a copy of an unencrypted
-         * snapshot. Any volume restored from an encrypted snapshot is also encrypted. For
+         * <p>Enables EBS encryption by default for your account in the current Region.</p>
+         * <p>After you enable encryption by default, the EBS volumes that you create are
+         * are always encrypted, either using the default CMK or the CMK that you specified
+         * when you created each volume. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * <p>You can specify the default CMK for encryption by default using
+         * <a>ModifyEbsDefaultKmsKeyId</a> or <a>ResetEbsDefaultKmsKeyId</a>.</p>
+         * <p>Enabling encryption by default has no effect on the encryption status of your
+         * existing volumes.</p> <p>After you enable encryption by default, you can no
+         * longer launch instances using instance types that do not support encryption. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-         * EBS Snapshots</a>.</p> <p>After EBS encryption-by-default is enabled, you can no
-         * longer launch older-generation instance types that do not support encryption.
-         * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
          * Instance Types</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">AWS
@@ -12306,20 +12270,26 @@ namespace Model
         virtual void GetConsoleScreenshotAsync(const Model::GetConsoleScreenshotRequest& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the default customer master key (CMK) that your account uses to
-         * encrypt EBS volumes if you don’t specify a CMK in the API call. You can change
-         * this default using <a>ModifyEbsDefaultKmsKeyId</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Describes the default customer master key (CMK) for EBS encryption by default
+         * for your account in this Region. You can change the default CMK for encryption
+         * by default using <a>ModifyEbsDefaultKmsKeyId</a> or
+         * <a>ResetEbsDefaultKmsKeyId</a>.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsDefaultKmsKeyId">AWS
          * API Reference</a></p>
          */
         virtual Model::GetEbsDefaultKmsKeyIdOutcome GetEbsDefaultKmsKeyId(const Model::GetEbsDefaultKmsKeyIdRequest& request) const;
 
         /**
-         * <p>Describes the default customer master key (CMK) that your account uses to
-         * encrypt EBS volumes if you don’t specify a CMK in the API call. You can change
-         * this default using <a>ModifyEbsDefaultKmsKeyId</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Describes the default customer master key (CMK) for EBS encryption by default
+         * for your account in this Region. You can change the default CMK for encryption
+         * by default using <a>ModifyEbsDefaultKmsKeyId</a> or
+         * <a>ResetEbsDefaultKmsKeyId</a>.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsDefaultKmsKeyId">AWS
          * API Reference</a></p>
          *
@@ -12328,10 +12298,13 @@ namespace Model
         virtual Model::GetEbsDefaultKmsKeyIdOutcomeCallable GetEbsDefaultKmsKeyIdCallable(const Model::GetEbsDefaultKmsKeyIdRequest& request) const;
 
         /**
-         * <p>Describes the default customer master key (CMK) that your account uses to
-         * encrypt EBS volumes if you don’t specify a CMK in the API call. You can change
-         * this default using <a>ModifyEbsDefaultKmsKeyId</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Describes the default customer master key (CMK) for EBS encryption by default
+         * for your account in this Region. You can change the default CMK for encryption
+         * by default using <a>ModifyEbsDefaultKmsKeyId</a> or
+         * <a>ResetEbsDefaultKmsKeyId</a>.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsDefaultKmsKeyId">AWS
          * API Reference</a></p>
          *
@@ -12340,16 +12313,22 @@ namespace Model
         virtual void GetEbsDefaultKmsKeyIdAsync(const Model::GetEbsDefaultKmsKeyIdRequest& request, const GetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes whether default EBS encryption is enabled for your account in the
-         * current region.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes whether EBS encryption by default is enabled for your account in
+         * the current Region.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsEncryptionByDefault">AWS
          * API Reference</a></p>
          */
         virtual Model::GetEbsEncryptionByDefaultOutcome GetEbsEncryptionByDefault(const Model::GetEbsEncryptionByDefaultRequest& request) const;
 
         /**
-         * <p>Describes whether default EBS encryption is enabled for your account in the
-         * current region.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes whether EBS encryption by default is enabled for your account in
+         * the current Region.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsEncryptionByDefault">AWS
          * API Reference</a></p>
          *
@@ -12358,8 +12337,11 @@ namespace Model
         virtual Model::GetEbsEncryptionByDefaultOutcomeCallable GetEbsEncryptionByDefaultCallable(const Model::GetEbsEncryptionByDefaultRequest& request) const;
 
         /**
-         * <p>Describes whether default EBS encryption is enabled for your account in the
-         * current region.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes whether EBS encryption by default is enabled for your account in
+         * the current Region.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsEncryptionByDefault">AWS
          * API Reference</a></p>
          *
@@ -12941,28 +12923,34 @@ namespace Model
         virtual void ModifyClientVpnEndpointAsync(const Model::ModifyClientVpnEndpointRequest& request, const ModifyClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes the customer master key (CMK) that your account uses to encrypt EBS
-         * volumes if you don't specify a CMK in the API call.</p> <p>By default, your
-         * account has an AWS-managed CMK that is used for encrypting an EBS volume when no
-         * CMK is specified in the API call that creates the volume. By calling this API,
-         * you can specify a customer-managed CMK to use in place of the AWS-managed
-         * CMK.</p> <p>Note: Deleting or disabling the CMK that you have specified to act
-         * as your default CMK will result in instance-launch failures.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Changes the default customer master key (CMK) for EBS encryption by default
+         * for your account in this Region.</p> <p>AWS creates a unique AWS managed CMK in
+         * each Region for use with encryption by default. If you change the default CMK to
+         * a customer managed CMK, it is used instead of the AWS managed CMK. To reset the
+         * default CMK to the AWS managed CMK for EBS, use
+         * <a>ResetEbsDefaultKmsKeyId</a>.</p> <p>If you delete or disable the customer
+         * managed CMK that you specified for use with encryption by default, your
+         * instances will fail to launch.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">AWS
          * API Reference</a></p>
          */
         virtual Model::ModifyEbsDefaultKmsKeyIdOutcome ModifyEbsDefaultKmsKeyId(const Model::ModifyEbsDefaultKmsKeyIdRequest& request) const;
 
         /**
-         * <p>Changes the customer master key (CMK) that your account uses to encrypt EBS
-         * volumes if you don't specify a CMK in the API call.</p> <p>By default, your
-         * account has an AWS-managed CMK that is used for encrypting an EBS volume when no
-         * CMK is specified in the API call that creates the volume. By calling this API,
-         * you can specify a customer-managed CMK to use in place of the AWS-managed
-         * CMK.</p> <p>Note: Deleting or disabling the CMK that you have specified to act
-         * as your default CMK will result in instance-launch failures.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Changes the default customer master key (CMK) for EBS encryption by default
+         * for your account in this Region.</p> <p>AWS creates a unique AWS managed CMK in
+         * each Region for use with encryption by default. If you change the default CMK to
+         * a customer managed CMK, it is used instead of the AWS managed CMK. To reset the
+         * default CMK to the AWS managed CMK for EBS, use
+         * <a>ResetEbsDefaultKmsKeyId</a>.</p> <p>If you delete or disable the customer
+         * managed CMK that you specified for use with encryption by default, your
+         * instances will fail to launch.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">AWS
          * API Reference</a></p>
          *
@@ -12971,14 +12959,17 @@ namespace Model
         virtual Model::ModifyEbsDefaultKmsKeyIdOutcomeCallable ModifyEbsDefaultKmsKeyIdCallable(const Model::ModifyEbsDefaultKmsKeyIdRequest& request) const;
 
         /**
-         * <p>Changes the customer master key (CMK) that your account uses to encrypt EBS
-         * volumes if you don't specify a CMK in the API call.</p> <p>By default, your
-         * account has an AWS-managed CMK that is used for encrypting an EBS volume when no
-         * CMK is specified in the API call that creates the volume. By calling this API,
-         * you can specify a customer-managed CMK to use in place of the AWS-managed
-         * CMK.</p> <p>Note: Deleting or disabling the CMK that you have specified to act
-         * as your default CMK will result in instance-launch failures.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Changes the default customer master key (CMK) for EBS encryption by default
+         * for your account in this Region.</p> <p>AWS creates a unique AWS managed CMK in
+         * each Region for use with encryption by default. If you change the default CMK to
+         * a customer managed CMK, it is used instead of the AWS managed CMK. To reset the
+         * default CMK to the AWS managed CMK for EBS, use
+         * <a>ResetEbsDefaultKmsKeyId</a>.</p> <p>If you delete or disable the customer
+         * managed CMK that you specified for use with encryption by default, your
+         * instances will fail to launch.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">AWS
          * API Reference</a></p>
          *
@@ -13684,8 +13675,8 @@ namespace Model
         /**
          * <p>Adds or removes permission settings for the specified snapshot. You may add
          * or remove specified AWS account IDs from a snapshot's list of create volume
-         * permissions, but you cannot do both in a single API call. If you need to both
-         * add and remove account IDs for a snapshot, you must use multiple API calls.</p>
+         * permissions, but you cannot do both in a single operation. If you need to both
+         * add and remove account IDs for a snapshot, you must use multiple operations.</p>
          * <p>Encrypted snapshots and snapshots with AWS Marketplace product codes cannot
          * be made public. Snapshots encrypted with your default CMK cannot be shared with
          * other accounts.</p> <p>For more information about modifying snapshot
@@ -13701,8 +13692,8 @@ namespace Model
         /**
          * <p>Adds or removes permission settings for the specified snapshot. You may add
          * or remove specified AWS account IDs from a snapshot's list of create volume
-         * permissions, but you cannot do both in a single API call. If you need to both
-         * add and remove account IDs for a snapshot, you must use multiple API calls.</p>
+         * permissions, but you cannot do both in a single operation. If you need to both
+         * add and remove account IDs for a snapshot, you must use multiple operations.</p>
          * <p>Encrypted snapshots and snapshots with AWS Marketplace product codes cannot
          * be made public. Snapshots encrypted with your default CMK cannot be shared with
          * other accounts.</p> <p>For more information about modifying snapshot
@@ -13720,8 +13711,8 @@ namespace Model
         /**
          * <p>Adds or removes permission settings for the specified snapshot. You may add
          * or remove specified AWS account IDs from a snapshot's list of create volume
-         * permissions, but you cannot do both in a single API call. If you need to both
-         * add and remove account IDs for a snapshot, you must use multiple API calls.</p>
+         * permissions, but you cannot do both in a single operation. If you need to both
+         * add and remove account IDs for a snapshot, you must use multiple operations.</p>
          * <p>Encrypted snapshots and snapshots with AWS Marketplace product codes cannot
          * be made public. Snapshots encrypted with your default CMK cannot be shared with
          * other accounts.</p> <p>For more information about modifying snapshot
@@ -13894,8 +13885,8 @@ namespace Model
          * Events, see the <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. You can also track the status of a
-         * modification using the <a>DescribeVolumesModifications</a> API. For information
-         * about tracking status changes using either method, see <a
+         * modification using <a>DescribeVolumesModifications</a>. For information about
+         * tracking status changes using either method, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
          * Volume Modifications</a>. </p> <p>With previous-generation instance types,
          * resizing an EBS volume may require detaching and reattaching the volume or
@@ -13935,8 +13926,8 @@ namespace Model
          * Events, see the <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. You can also track the status of a
-         * modification using the <a>DescribeVolumesModifications</a> API. For information
-         * about tracking status changes using either method, see <a
+         * modification using <a>DescribeVolumesModifications</a>. For information about
+         * tracking status changes using either method, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
          * Volume Modifications</a>. </p> <p>With previous-generation instance types,
          * resizing an EBS volume may require detaching and reattaching the volume or
@@ -13978,8 +13969,8 @@ namespace Model
          * Events, see the <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. You can also track the status of a
-         * modification using the <a>DescribeVolumesModifications</a> API. For information
-         * about tracking status changes using either method, see <a
+         * modification using <a>DescribeVolumesModifications</a>. For information about
+         * tracking status changes using either method, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
          * Volume Modifications</a>. </p> <p>With previous-generation instance types,
          * resizing an EBS volume may require detaching and reattaching the volume or
@@ -15503,36 +15494,28 @@ namespace Model
         virtual void RequestSpotInstancesAsync(const Model::RequestSpotInstancesRequest& request, const RequestSpotInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Resets the account's default customer master key (CMK) to the account's
-         * AWS-managed default CMK. This default CMK is used to encrypt EBS volumes when
-         * you have enabled EBS encryption by default without specifying a CMK in the API
-         * call. If you have not enabled encryption by default, then this CMK is used when
-         * you set the <code>Encrypted</code> parameter to true without specifying a custom
-         * CMK in the API call.</p> <p>Call this API if you have modified the default CMK
-         * that is used for encrypting your EBS volume using
-         * <a>ModifyEbsDefaultKmsKeyId</a> and you want to reset it to the AWS-managed
-         * default CMK. After resetting, you can continue to provide a CMK of your choice
-         * in the API call that creates the volume. However, if no CMK is specified, your
-         * account will encrypt the volume to the AWS-managed default CMK.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Resets the default customer master key (CMK) for EBS encryption for your
+         * account in this Region to the AWS managed CMK for EBS.</p> <p>After resetting
+         * the default CMK to the AWS managed CMK, you can continue to encrypt by a
+         * customer managed CMK by specifying it when you create the volume. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetEbsDefaultKmsKeyId">AWS
          * API Reference</a></p>
          */
         virtual Model::ResetEbsDefaultKmsKeyIdOutcome ResetEbsDefaultKmsKeyId(const Model::ResetEbsDefaultKmsKeyIdRequest& request) const;
 
         /**
-         * <p>Resets the account's default customer master key (CMK) to the account's
-         * AWS-managed default CMK. This default CMK is used to encrypt EBS volumes when
-         * you have enabled EBS encryption by default without specifying a CMK in the API
-         * call. If you have not enabled encryption by default, then this CMK is used when
-         * you set the <code>Encrypted</code> parameter to true without specifying a custom
-         * CMK in the API call.</p> <p>Call this API if you have modified the default CMK
-         * that is used for encrypting your EBS volume using
-         * <a>ModifyEbsDefaultKmsKeyId</a> and you want to reset it to the AWS-managed
-         * default CMK. After resetting, you can continue to provide a CMK of your choice
-         * in the API call that creates the volume. However, if no CMK is specified, your
-         * account will encrypt the volume to the AWS-managed default CMK.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Resets the default customer master key (CMK) for EBS encryption for your
+         * account in this Region to the AWS managed CMK for EBS.</p> <p>After resetting
+         * the default CMK to the AWS managed CMK, you can continue to encrypt by a
+         * customer managed CMK by specifying it when you create the volume. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetEbsDefaultKmsKeyId">AWS
          * API Reference</a></p>
          *
@@ -15541,18 +15524,14 @@ namespace Model
         virtual Model::ResetEbsDefaultKmsKeyIdOutcomeCallable ResetEbsDefaultKmsKeyIdCallable(const Model::ResetEbsDefaultKmsKeyIdRequest& request) const;
 
         /**
-         * <p>Resets the account's default customer master key (CMK) to the account's
-         * AWS-managed default CMK. This default CMK is used to encrypt EBS volumes when
-         * you have enabled EBS encryption by default without specifying a CMK in the API
-         * call. If you have not enabled encryption by default, then this CMK is used when
-         * you set the <code>Encrypted</code> parameter to true without specifying a custom
-         * CMK in the API call.</p> <p>Call this API if you have modified the default CMK
-         * that is used for encrypting your EBS volume using
-         * <a>ModifyEbsDefaultKmsKeyId</a> and you want to reset it to the AWS-managed
-         * default CMK. After resetting, you can continue to provide a CMK of your choice
-         * in the API call that creates the volume. However, if no CMK is specified, your
-         * account will encrypt the volume to the AWS-managed default CMK.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Resets the default customer master key (CMK) for EBS encryption for your
+         * account in this Region to the AWS managed CMK for EBS.</p> <p>After resetting
+         * the default CMK to the AWS managed CMK, you can continue to encrypt by a
+         * customer managed CMK by specifying it when you create the volume. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetEbsDefaultKmsKeyId">AWS
          * API Reference</a></p>
          *

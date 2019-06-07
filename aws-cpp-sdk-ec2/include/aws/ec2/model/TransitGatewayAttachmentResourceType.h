@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     vpc,
-    vpn
+    vpn,
+    direct_connect_gateway
   };
 
 namespace TransitGatewayAttachmentResourceTypeMapper

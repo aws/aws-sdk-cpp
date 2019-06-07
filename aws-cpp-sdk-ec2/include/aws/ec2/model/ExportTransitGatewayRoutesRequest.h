@@ -91,7 +91,7 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit
+     * <code>attachment.transit-gateway-attachment-id</code> - The id of the transit
      * gateway attachment.</p> </li> <li> <p> <code>attachment.resource-id</code> - The
      * resource id of the transit gateway attachment.</p> </li> <li> <p>
      * <code>route-search.exact-match</code> - The exact match of the specified
@@ -108,14 +108,14 @@ namespace Model
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
      * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
      * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p>
-     * </li> <li> <p> <code>type</code> - The type of roue (<code>active</code> |
+     * </li> <li> <p> <code>type</code> - The type of route (<code>active</code> |
      * <code>blackhole</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit
+     * <code>attachment.transit-gateway-attachment-id</code> - The id of the transit
      * gateway attachment.</p> </li> <li> <p> <code>attachment.resource-id</code> - The
      * resource id of the transit gateway attachment.</p> </li> <li> <p>
      * <code>route-search.exact-match</code> - The exact match of the specified
@@ -132,14 +132,14 @@ namespace Model
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
      * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
      * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p>
-     * </li> <li> <p> <code>type</code> - The type of roue (<code>active</code> |
+     * </li> <li> <p> <code>type</code> - The type of route (<code>active</code> |
      * <code>blackhole</code>).</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit
+     * <code>attachment.transit-gateway-attachment-id</code> - The id of the transit
      * gateway attachment.</p> </li> <li> <p> <code>attachment.resource-id</code> - The
      * resource id of the transit gateway attachment.</p> </li> <li> <p>
      * <code>route-search.exact-match</code> - The exact match of the specified
@@ -156,14 +156,14 @@ namespace Model
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
      * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
      * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p>
-     * </li> <li> <p> <code>type</code> - The type of roue (<code>active</code> |
+     * </li> <li> <p> <code>type</code> - The type of route (<code>active</code> |
      * <code>blackhole</code>).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit
+     * <code>attachment.transit-gateway-attachment-id</code> - The id of the transit
      * gateway attachment.</p> </li> <li> <p> <code>attachment.resource-id</code> - The
      * resource id of the transit gateway attachment.</p> </li> <li> <p>
      * <code>route-search.exact-match</code> - The exact match of the specified
@@ -180,14 +180,14 @@ namespace Model
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
      * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
      * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p>
-     * </li> <li> <p> <code>type</code> - The type of roue (<code>active</code> |
+     * </li> <li> <p> <code>type</code> - The type of route (<code>active</code> |
      * <code>blackhole</code>).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit
+     * <code>attachment.transit-gateway-attachment-id</code> - The id of the transit
      * gateway attachment.</p> </li> <li> <p> <code>attachment.resource-id</code> - The
      * resource id of the transit gateway attachment.</p> </li> <li> <p>
      * <code>route-search.exact-match</code> - The exact match of the specified
@@ -204,14 +204,14 @@ namespace Model
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
      * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
      * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p>
-     * </li> <li> <p> <code>type</code> - The type of roue (<code>active</code> |
+     * </li> <li> <p> <code>type</code> - The type of route (<code>active</code> |
      * <code>blackhole</code>).</p> </li> </ul>
      */
     inline ExportTransitGatewayRoutesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit
+     * <code>attachment.transit-gateway-attachment-id</code> - The id of the transit
      * gateway attachment.</p> </li> <li> <p> <code>attachment.resource-id</code> - The
      * resource id of the transit gateway attachment.</p> </li> <li> <p>
      * <code>route-search.exact-match</code> - The exact match of the specified
@@ -228,14 +228,14 @@ namespace Model
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
      * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
      * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p>
-     * </li> <li> <p> <code>type</code> - The type of roue (<code>active</code> |
+     * </li> <li> <p> <code>type</code> - The type of route (<code>active</code> |
      * <code>blackhole</code>).</p> </li> </ul>
      */
     inline ExportTransitGatewayRoutesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit
+     * <code>attachment.transit-gateway-attachment-id</code> - The id of the transit
      * gateway attachment.</p> </li> <li> <p> <code>attachment.resource-id</code> - The
      * resource id of the transit gateway attachment.</p> </li> <li> <p>
      * <code>route-search.exact-match</code> - The exact match of the specified
@@ -252,14 +252,14 @@ namespace Model
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
      * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
      * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p>
-     * </li> <li> <p> <code>type</code> - The type of roue (<code>active</code> |
+     * </li> <li> <p> <code>type</code> - The type of route (<code>active</code> |
      * <code>blackhole</code>).</p> </li> </ul>
      */
     inline ExportTransitGatewayRoutesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit
+     * <code>attachment.transit-gateway-attachment-id</code> - The id of the transit
      * gateway attachment.</p> </li> <li> <p> <code>attachment.resource-id</code> - The
      * resource id of the transit gateway attachment.</p> </li> <li> <p>
      * <code>route-search.exact-match</code> - The exact match of the specified
@@ -276,7 +276,7 @@ namespace Model
      * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
      * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
      * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p>
-     * </li> <li> <p> <code>type</code> - The type of roue (<code>active</code> |
+     * </li> <li> <p> <code>type</code> - The type of route (<code>active</code> |
      * <code>blackhole</code>).</p> </li> </ul>
      */
     inline ExportTransitGatewayRoutesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
