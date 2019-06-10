@@ -23,6 +23,7 @@
 #include <aws/core/utils/ratelimiter/DefaultRateLimiter.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/FileSystemUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/mediastore/MediaStoreClient.h>
 #include <aws/mediastore/model/CreateContainerRequest.h>
 #include <aws/mediastore/model/DeleteContainerRequest.h>
@@ -48,17 +49,16 @@ using namespace Aws::MediaStoreData::Model;
 
 namespace
 {
-    static const char ALLOCATION_TAG[] = "MediaStoreDataTest";
+    static const char LOG_TAG[]                  = "MediaStoreIntegrationTest";
+    static const char ALLOCATION_TAG[]           = "MediaStoreDataTest";
     static const char TEST_CONTAINER_NAME_BASE[] = "MediaStoreDataTest";
-    
-    static const char SMALL_PAYLOAD_TEST_PATH[] = "SmallPayload";
-    static const char SMALL_PAYLOAD_TEST_TEXT[] = "This is a test.. :)";
+    static const char SMALL_PAYLOAD_TEST_PATH[]  = "SmallPayload";
+    static const char SMALL_PAYLOAD_TEST_TEXT[]  = "This is a test.. :)";
+    static const char BIG_TEST_FILE_PATH[]       = "BigPayload";
+    static const char BIG_TEST_FILE_NAME[]       = "BigMediaStoreDataTestFile";
+    static const size_t BIG_TEST_FILE_SIZE       = 10000000;
 
-    static const char BIG_TEST_FILE_PATH[] = "BigPayload";
-    static const char BIG_TEST_FILE_NAME[] = "BigMediaStoreDataTestFile";
-    static const size_t BIG_TEST_FILE_SIZE = 10000000;
-
-    static const size_t TIMEOUT_MAX = 60;
+    static const size_t TIMEOUT_MAX              = 60;
 
     class MediaStoreDataTest : public ::testing::Test
     {
@@ -146,6 +146,15 @@ namespace
                 ASSERT_TRUE(listItemsOutcome.IsSuccess());
                 if (listItemsOutcome.GetResult().GetItems().size() > 0)
                 {
+                    AWS_LOGSTREAM_DEBUG(LOG_TAG, "Listing items while deleting container returned "
+                            << listItemsOutcome.GetResult().GetItems().size()
+                            << " items.");
+                    for (const auto& item : listItemsOutcome.GetResult().GetItems())
+                    {
+                        DeleteObjectRequest deleteObjectRequest;
+                        deleteObjectRequest.SetPath(item.GetName());
+                        m_mediaStoreDataClient->DeleteObject(deleteObjectRequest);
+                    }
                     std::this_thread::sleep_for(std::chrono::seconds(10));
                 }
                 else
@@ -153,6 +162,8 @@ namespace
                     break;
                 }
             }
+
+            ASSERT_LE(timeoutCount, TIMEOUT_MAX);
         }
 
         static void DeleteContainer(const Aws::String& containerName)
@@ -168,6 +179,10 @@ namespace
                 auto listItemsOutcome = m_mediaStoreDataClient->ListItems(listItemsRequest);
                 if (listItemsOutcome.IsSuccess())
                 {
+                    AWS_LOGSTREAM_DEBUG(LOG_TAG, "Listing items before attempting to delete container returned "
+                            << listItemsOutcome.GetResult().GetItems().size()
+                            << " items.");
+
                     for (const auto& item : listItemsOutcome.GetResult().GetItems())
                     {
                         DeleteObjectRequest deleteObjectRequest;
