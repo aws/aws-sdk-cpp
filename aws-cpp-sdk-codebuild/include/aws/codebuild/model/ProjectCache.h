@@ -182,7 +182,7 @@ namespace Model
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
      * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
-     * the Linux enviornment only. </p> </li> <li> <p> The <code>privileged</code> flag
+     * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
      * <li> <p> You should consider the security implications before you use a Docker
      * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
@@ -211,7 +211,7 @@ namespace Model
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
      * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
-     * the Linux enviornment only. </p> </li> <li> <p> The <code>privileged</code> flag
+     * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
      * <li> <p> You should consider the security implications before you use a Docker
      * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
@@ -240,7 +240,7 @@ namespace Model
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
      * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
-     * the Linux enviornment only. </p> </li> <li> <p> The <code>privileged</code> flag
+     * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
      * <li> <p> You should consider the security implications before you use a Docker
      * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
@@ -269,7 +269,7 @@ namespace Model
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
      * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
-     * the Linux enviornment only. </p> </li> <li> <p> The <code>privileged</code> flag
+     * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
      * <li> <p> You should consider the security implications before you use a Docker
      * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
@@ -298,7 +298,7 @@ namespace Model
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
      * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
-     * the Linux enviornment only. </p> </li> <li> <p> The <code>privileged</code> flag
+     * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
      * <li> <p> You should consider the security implications before you use a Docker
      * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
@@ -327,7 +327,7 @@ namespace Model
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
      * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
-     * the Linux enviornment only. </p> </li> <li> <p> The <code>privileged</code> flag
+     * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
      * <li> <p> You should consider the security implications before you use a Docker
      * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
@@ -356,7 +356,7 @@ namespace Model
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
      * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
-     * the Linux enviornment only. </p> </li> <li> <p> The <code>privileged</code> flag
+     * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
      * <li> <p> You should consider the security implications before you use a Docker
      * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
@@ -385,7 +385,7 @@ namespace Model
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
      * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
-     * the Linux enviornment only. </p> </li> <li> <p> The <code>privileged</code> flag
+     * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
      * <li> <p> You should consider the security implications before you use a Docker
      * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>

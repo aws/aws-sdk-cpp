@@ -34,6 +34,8 @@ Project::Project() :
     m_descriptionHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_secondarySourcesHasBeenSet(false),
+    m_sourceVersionHasBeenSet(false),
+    m_secondarySourceVersionsHasBeenSet(false),
     m_artifactsHasBeenSet(false),
     m_secondaryArtifactsHasBeenSet(false),
     m_cacheHasBeenSet(false),
@@ -60,6 +62,8 @@ Project::Project(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_secondarySourcesHasBeenSet(false),
+    m_sourceVersionHasBeenSet(false),
+    m_secondarySourceVersionsHasBeenSet(false),
     m_artifactsHasBeenSet(false),
     m_secondaryArtifactsHasBeenSet(false),
     m_cacheHasBeenSet(false),
@@ -119,6 +123,23 @@ Project& Project::operator =(JsonView jsonValue)
       m_secondarySources.push_back(secondarySourcesJsonList[secondarySourcesIndex].AsObject());
     }
     m_secondarySourcesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sourceVersion"))
+  {
+    m_sourceVersion = jsonValue.GetString("sourceVersion");
+
+    m_sourceVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("secondarySourceVersions"))
+  {
+    Array<JsonView> secondarySourceVersionsJsonList = jsonValue.GetArray("secondarySourceVersions");
+    for(unsigned secondarySourceVersionsIndex = 0; secondarySourceVersionsIndex < secondarySourceVersionsJsonList.GetLength(); ++secondarySourceVersionsIndex)
+    {
+      m_secondarySourceVersions.push_back(secondarySourceVersionsJsonList[secondarySourceVersionsIndex].AsObject());
+    }
+    m_secondarySourceVersionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("artifacts"))
@@ -271,6 +292,23 @@ JsonValue Project::Jsonize() const
      secondarySourcesJsonList[secondarySourcesIndex].AsObject(m_secondarySources[secondarySourcesIndex].Jsonize());
    }
    payload.WithArray("secondarySources", std::move(secondarySourcesJsonList));
+
+  }
+
+  if(m_sourceVersionHasBeenSet)
+  {
+   payload.WithString("sourceVersion", m_sourceVersion);
+
+  }
+
+  if(m_secondarySourceVersionsHasBeenSet)
+  {
+   Array<JsonValue> secondarySourceVersionsJsonList(m_secondarySourceVersions.size());
+   for(unsigned secondarySourceVersionsIndex = 0; secondarySourceVersionsIndex < secondarySourceVersionsJsonList.GetLength(); ++secondarySourceVersionsIndex)
+   {
+     secondarySourceVersionsJsonList[secondarySourceVersionsIndex].AsObject(m_secondarySourceVersions[secondarySourceVersionsIndex].Jsonize());
+   }
+   payload.WithArray("secondarySourceVersions", std::move(secondarySourceVersionsJsonList));
 
   }
 

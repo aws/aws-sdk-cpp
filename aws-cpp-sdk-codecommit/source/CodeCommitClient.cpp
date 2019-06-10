@@ -30,15 +30,18 @@
 #include <aws/codecommit/CodeCommitClient.h>
 #include <aws/codecommit/CodeCommitEndpoint.h>
 #include <aws/codecommit/CodeCommitErrorMarshaller.h>
+#include <aws/codecommit/model/BatchDescribeMergeConflictsRequest.h>
 #include <aws/codecommit/model/BatchGetRepositoriesRequest.h>
 #include <aws/codecommit/model/CreateBranchRequest.h>
 #include <aws/codecommit/model/CreateCommitRequest.h>
 #include <aws/codecommit/model/CreatePullRequestRequest.h>
 #include <aws/codecommit/model/CreateRepositoryRequest.h>
+#include <aws/codecommit/model/CreateUnreferencedMergeCommitRequest.h>
 #include <aws/codecommit/model/DeleteBranchRequest.h>
 #include <aws/codecommit/model/DeleteCommentContentRequest.h>
 #include <aws/codecommit/model/DeleteFileRequest.h>
 #include <aws/codecommit/model/DeleteRepositoryRequest.h>
+#include <aws/codecommit/model/DescribeMergeConflictsRequest.h>
 #include <aws/codecommit/model/DescribePullRequestEventsRequest.h>
 #include <aws/codecommit/model/GetBlobRequest.h>
 #include <aws/codecommit/model/GetBranchRequest.h>
@@ -49,7 +52,9 @@
 #include <aws/codecommit/model/GetDifferencesRequest.h>
 #include <aws/codecommit/model/GetFileRequest.h>
 #include <aws/codecommit/model/GetFolderRequest.h>
+#include <aws/codecommit/model/GetMergeCommitRequest.h>
 #include <aws/codecommit/model/GetMergeConflictsRequest.h>
+#include <aws/codecommit/model/GetMergeOptionsRequest.h>
 #include <aws/codecommit/model/GetPullRequestRequest.h>
 #include <aws/codecommit/model/GetRepositoryRequest.h>
 #include <aws/codecommit/model/GetRepositoryTriggersRequest.h>
@@ -57,7 +62,12 @@
 #include <aws/codecommit/model/ListPullRequestsRequest.h>
 #include <aws/codecommit/model/ListRepositoriesRequest.h>
 #include <aws/codecommit/model/ListTagsForResourceRequest.h>
+#include <aws/codecommit/model/MergeBranchesByFastForwardRequest.h>
+#include <aws/codecommit/model/MergeBranchesBySquashRequest.h>
+#include <aws/codecommit/model/MergeBranchesByThreeWayRequest.h>
 #include <aws/codecommit/model/MergePullRequestByFastForwardRequest.h>
+#include <aws/codecommit/model/MergePullRequestBySquashRequest.h>
+#include <aws/codecommit/model/MergePullRequestByThreeWayRequest.h>
 #include <aws/codecommit/model/PostCommentForComparedCommitRequest.h>
 #include <aws/codecommit/model/PostCommentForPullRequestRequest.h>
 #include <aws/codecommit/model/PostCommentReplyRequest.h>
@@ -144,6 +154,41 @@ void CodeCommitClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+BatchDescribeMergeConflictsOutcome CodeCommitClient::BatchDescribeMergeConflicts(const BatchDescribeMergeConflictsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return BatchDescribeMergeConflictsOutcome(BatchDescribeMergeConflictsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchDescribeMergeConflictsOutcome(outcome.GetError());
+  }
+}
+
+BatchDescribeMergeConflictsOutcomeCallable CodeCommitClient::BatchDescribeMergeConflictsCallable(const BatchDescribeMergeConflictsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchDescribeMergeConflictsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDescribeMergeConflicts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::BatchDescribeMergeConflictsAsync(const BatchDescribeMergeConflictsRequest& request, const BatchDescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchDescribeMergeConflictsAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::BatchDescribeMergeConflictsAsyncHelper(const BatchDescribeMergeConflictsRequest& request, const BatchDescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchDescribeMergeConflicts(request), context);
 }
 
 BatchGetRepositoriesOutcome CodeCommitClient::BatchGetRepositories(const BatchGetRepositoriesRequest& request) const
@@ -321,6 +366,41 @@ void CodeCommitClient::CreateRepositoryAsyncHelper(const CreateRepositoryRequest
   handler(this, request, CreateRepository(request), context);
 }
 
+CreateUnreferencedMergeCommitOutcome CodeCommitClient::CreateUnreferencedMergeCommit(const CreateUnreferencedMergeCommitRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateUnreferencedMergeCommitOutcome(CreateUnreferencedMergeCommitResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateUnreferencedMergeCommitOutcome(outcome.GetError());
+  }
+}
+
+CreateUnreferencedMergeCommitOutcomeCallable CodeCommitClient::CreateUnreferencedMergeCommitCallable(const CreateUnreferencedMergeCommitRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateUnreferencedMergeCommitOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUnreferencedMergeCommit(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::CreateUnreferencedMergeCommitAsync(const CreateUnreferencedMergeCommitRequest& request, const CreateUnreferencedMergeCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateUnreferencedMergeCommitAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::CreateUnreferencedMergeCommitAsyncHelper(const CreateUnreferencedMergeCommitRequest& request, const CreateUnreferencedMergeCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateUnreferencedMergeCommit(request), context);
+}
+
 DeleteBranchOutcome CodeCommitClient::DeleteBranch(const DeleteBranchRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -459,6 +539,41 @@ void CodeCommitClient::DeleteRepositoryAsync(const DeleteRepositoryRequest& requ
 void CodeCommitClient::DeleteRepositoryAsyncHelper(const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteRepository(request), context);
+}
+
+DescribeMergeConflictsOutcome CodeCommitClient::DescribeMergeConflicts(const DescribeMergeConflictsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeMergeConflictsOutcome(DescribeMergeConflictsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeMergeConflictsOutcome(outcome.GetError());
+  }
+}
+
+DescribeMergeConflictsOutcomeCallable CodeCommitClient::DescribeMergeConflictsCallable(const DescribeMergeConflictsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMergeConflictsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMergeConflicts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::DescribeMergeConflictsAsync(const DescribeMergeConflictsRequest& request, const DescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeMergeConflictsAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::DescribeMergeConflictsAsyncHelper(const DescribeMergeConflictsRequest& request, const DescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeMergeConflicts(request), context);
 }
 
 DescribePullRequestEventsOutcome CodeCommitClient::DescribePullRequestEvents(const DescribePullRequestEventsRequest& request) const
@@ -811,6 +926,41 @@ void CodeCommitClient::GetFolderAsyncHelper(const GetFolderRequest& request, con
   handler(this, request, GetFolder(request), context);
 }
 
+GetMergeCommitOutcome CodeCommitClient::GetMergeCommit(const GetMergeCommitRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetMergeCommitOutcome(GetMergeCommitResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetMergeCommitOutcome(outcome.GetError());
+  }
+}
+
+GetMergeCommitOutcomeCallable CodeCommitClient::GetMergeCommitCallable(const GetMergeCommitRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMergeCommitOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMergeCommit(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::GetMergeCommitAsync(const GetMergeCommitRequest& request, const GetMergeCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMergeCommitAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::GetMergeCommitAsyncHelper(const GetMergeCommitRequest& request, const GetMergeCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMergeCommit(request), context);
+}
+
 GetMergeConflictsOutcome CodeCommitClient::GetMergeConflicts(const GetMergeConflictsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -844,6 +994,41 @@ void CodeCommitClient::GetMergeConflictsAsync(const GetMergeConflictsRequest& re
 void CodeCommitClient::GetMergeConflictsAsyncHelper(const GetMergeConflictsRequest& request, const GetMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetMergeConflicts(request), context);
+}
+
+GetMergeOptionsOutcome CodeCommitClient::GetMergeOptions(const GetMergeOptionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetMergeOptionsOutcome(GetMergeOptionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetMergeOptionsOutcome(outcome.GetError());
+  }
+}
+
+GetMergeOptionsOutcomeCallable CodeCommitClient::GetMergeOptionsCallable(const GetMergeOptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMergeOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMergeOptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::GetMergeOptionsAsync(const GetMergeOptionsRequest& request, const GetMergeOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMergeOptionsAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::GetMergeOptionsAsyncHelper(const GetMergeOptionsRequest& request, const GetMergeOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMergeOptions(request), context);
 }
 
 GetPullRequestOutcome CodeCommitClient::GetPullRequest(const GetPullRequestRequest& request) const
@@ -1091,6 +1276,111 @@ void CodeCommitClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceR
   handler(this, request, ListTagsForResource(request), context);
 }
 
+MergeBranchesByFastForwardOutcome CodeCommitClient::MergeBranchesByFastForward(const MergeBranchesByFastForwardRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return MergeBranchesByFastForwardOutcome(MergeBranchesByFastForwardResult(outcome.GetResult()));
+  }
+  else
+  {
+    return MergeBranchesByFastForwardOutcome(outcome.GetError());
+  }
+}
+
+MergeBranchesByFastForwardOutcomeCallable CodeCommitClient::MergeBranchesByFastForwardCallable(const MergeBranchesByFastForwardRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< MergeBranchesByFastForwardOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->MergeBranchesByFastForward(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::MergeBranchesByFastForwardAsync(const MergeBranchesByFastForwardRequest& request, const MergeBranchesByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->MergeBranchesByFastForwardAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::MergeBranchesByFastForwardAsyncHelper(const MergeBranchesByFastForwardRequest& request, const MergeBranchesByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, MergeBranchesByFastForward(request), context);
+}
+
+MergeBranchesBySquashOutcome CodeCommitClient::MergeBranchesBySquash(const MergeBranchesBySquashRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return MergeBranchesBySquashOutcome(MergeBranchesBySquashResult(outcome.GetResult()));
+  }
+  else
+  {
+    return MergeBranchesBySquashOutcome(outcome.GetError());
+  }
+}
+
+MergeBranchesBySquashOutcomeCallable CodeCommitClient::MergeBranchesBySquashCallable(const MergeBranchesBySquashRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< MergeBranchesBySquashOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->MergeBranchesBySquash(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::MergeBranchesBySquashAsync(const MergeBranchesBySquashRequest& request, const MergeBranchesBySquashResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->MergeBranchesBySquashAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::MergeBranchesBySquashAsyncHelper(const MergeBranchesBySquashRequest& request, const MergeBranchesBySquashResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, MergeBranchesBySquash(request), context);
+}
+
+MergeBranchesByThreeWayOutcome CodeCommitClient::MergeBranchesByThreeWay(const MergeBranchesByThreeWayRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return MergeBranchesByThreeWayOutcome(MergeBranchesByThreeWayResult(outcome.GetResult()));
+  }
+  else
+  {
+    return MergeBranchesByThreeWayOutcome(outcome.GetError());
+  }
+}
+
+MergeBranchesByThreeWayOutcomeCallable CodeCommitClient::MergeBranchesByThreeWayCallable(const MergeBranchesByThreeWayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< MergeBranchesByThreeWayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->MergeBranchesByThreeWay(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::MergeBranchesByThreeWayAsync(const MergeBranchesByThreeWayRequest& request, const MergeBranchesByThreeWayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->MergeBranchesByThreeWayAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::MergeBranchesByThreeWayAsyncHelper(const MergeBranchesByThreeWayRequest& request, const MergeBranchesByThreeWayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, MergeBranchesByThreeWay(request), context);
+}
+
 MergePullRequestByFastForwardOutcome CodeCommitClient::MergePullRequestByFastForward(const MergePullRequestByFastForwardRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1124,6 +1414,76 @@ void CodeCommitClient::MergePullRequestByFastForwardAsync(const MergePullRequest
 void CodeCommitClient::MergePullRequestByFastForwardAsyncHelper(const MergePullRequestByFastForwardRequest& request, const MergePullRequestByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, MergePullRequestByFastForward(request), context);
+}
+
+MergePullRequestBySquashOutcome CodeCommitClient::MergePullRequestBySquash(const MergePullRequestBySquashRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return MergePullRequestBySquashOutcome(MergePullRequestBySquashResult(outcome.GetResult()));
+  }
+  else
+  {
+    return MergePullRequestBySquashOutcome(outcome.GetError());
+  }
+}
+
+MergePullRequestBySquashOutcomeCallable CodeCommitClient::MergePullRequestBySquashCallable(const MergePullRequestBySquashRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< MergePullRequestBySquashOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->MergePullRequestBySquash(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::MergePullRequestBySquashAsync(const MergePullRequestBySquashRequest& request, const MergePullRequestBySquashResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->MergePullRequestBySquashAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::MergePullRequestBySquashAsyncHelper(const MergePullRequestBySquashRequest& request, const MergePullRequestBySquashResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, MergePullRequestBySquash(request), context);
+}
+
+MergePullRequestByThreeWayOutcome CodeCommitClient::MergePullRequestByThreeWay(const MergePullRequestByThreeWayRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return MergePullRequestByThreeWayOutcome(MergePullRequestByThreeWayResult(outcome.GetResult()));
+  }
+  else
+  {
+    return MergePullRequestByThreeWayOutcome(outcome.GetError());
+  }
+}
+
+MergePullRequestByThreeWayOutcomeCallable CodeCommitClient::MergePullRequestByThreeWayCallable(const MergePullRequestByThreeWayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< MergePullRequestByThreeWayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->MergePullRequestByThreeWay(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::MergePullRequestByThreeWayAsync(const MergePullRequestByThreeWayRequest& request, const MergePullRequestByThreeWayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->MergePullRequestByThreeWayAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::MergePullRequestByThreeWayAsyncHelper(const MergePullRequestByThreeWayRequest& request, const MergePullRequestByThreeWayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, MergePullRequestByThreeWay(request), context);
 }
 
 PostCommentForComparedCommitOutcome CodeCommitClient::PostCommentForComparedCommit(const PostCommentForComparedCommitRequest& request) const

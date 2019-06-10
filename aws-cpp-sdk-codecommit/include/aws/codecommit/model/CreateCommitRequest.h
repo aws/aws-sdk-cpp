@@ -329,28 +329,28 @@ namespace Model
     /**
      * <p>If the commit contains deletions, whether to keep a folder or folder
      * structure if the changes leave the folders empty. If this is specified as true,
-     * a .gitkeep file will be created for empty folders.</p>
+     * a .gitkeep file will be created for empty folders. The default is false.</p>
      */
     inline bool GetKeepEmptyFolders() const{ return m_keepEmptyFolders; }
 
     /**
      * <p>If the commit contains deletions, whether to keep a folder or folder
      * structure if the changes leave the folders empty. If this is specified as true,
-     * a .gitkeep file will be created for empty folders.</p>
+     * a .gitkeep file will be created for empty folders. The default is false.</p>
      */
     inline bool KeepEmptyFoldersHasBeenSet() const { return m_keepEmptyFoldersHasBeenSet; }
 
     /**
      * <p>If the commit contains deletions, whether to keep a folder or folder
      * structure if the changes leave the folders empty. If this is specified as true,
-     * a .gitkeep file will be created for empty folders.</p>
+     * a .gitkeep file will be created for empty folders. The default is false.</p>
      */
     inline void SetKeepEmptyFolders(bool value) { m_keepEmptyFoldersHasBeenSet = true; m_keepEmptyFolders = value; }
 
     /**
      * <p>If the commit contains deletions, whether to keep a folder or folder
      * structure if the changes leave the folders empty. If this is specified as true,
-     * a .gitkeep file will be created for empty folders.</p>
+     * a .gitkeep file will be created for empty folders. The default is false.</p>
      */
     inline CreateCommitRequest& WithKeepEmptyFolders(bool value) { SetKeepEmptyFolders(value); return *this;}
 

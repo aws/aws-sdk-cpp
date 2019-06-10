@@ -312,12 +312,13 @@ namespace Model
      * with Docker support.)</p> <p>If the operating system's base image is Ubuntu
      * Linux:</p> <p> <code>- nohup /usr/local/bin/dockerd
      * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-     * --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .;
-     * sleep 1; done"</code> </p> <p>If the operating system's base image is Alpine
-     * Linux, add the <code>-t</code> argument to <code>timeout</code>:</p> <p> <code>-
-     * nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
-     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c
-     * "until docker info; do echo .; sleep 1; done"</code> </p>
+     * --storage-driver=overlay&amp;</code> </p> <p> <code>- timeout 15 sh -c "until
+     * docker info; do echo .; sleep 1; done"</code> </p> <p>If the operating system's
+     * base image is Alpine Linux and the previous command does not work, add the
+     * <code>-t</code> argument to <code>timeout</code>:</p> <p> <code>- nohup
+     * /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
+     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p> <p> <code>-
+     * timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
      */
     inline bool GetPrivilegedMode() const{ return m_privilegedMode; }
 
@@ -333,12 +334,13 @@ namespace Model
      * with Docker support.)</p> <p>If the operating system's base image is Ubuntu
      * Linux:</p> <p> <code>- nohup /usr/local/bin/dockerd
      * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-     * --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .;
-     * sleep 1; done"</code> </p> <p>If the operating system's base image is Alpine
-     * Linux, add the <code>-t</code> argument to <code>timeout</code>:</p> <p> <code>-
-     * nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
-     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c
-     * "until docker info; do echo .; sleep 1; done"</code> </p>
+     * --storage-driver=overlay&amp;</code> </p> <p> <code>- timeout 15 sh -c "until
+     * docker info; do echo .; sleep 1; done"</code> </p> <p>If the operating system's
+     * base image is Alpine Linux and the previous command does not work, add the
+     * <code>-t</code> argument to <code>timeout</code>:</p> <p> <code>- nohup
+     * /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
+     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p> <p> <code>-
+     * timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
      */
     inline bool PrivilegedModeHasBeenSet() const { return m_privilegedModeHasBeenSet; }
 
@@ -354,12 +356,13 @@ namespace Model
      * with Docker support.)</p> <p>If the operating system's base image is Ubuntu
      * Linux:</p> <p> <code>- nohup /usr/local/bin/dockerd
      * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-     * --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .;
-     * sleep 1; done"</code> </p> <p>If the operating system's base image is Alpine
-     * Linux, add the <code>-t</code> argument to <code>timeout</code>:</p> <p> <code>-
-     * nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
-     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c
-     * "until docker info; do echo .; sleep 1; done"</code> </p>
+     * --storage-driver=overlay&amp;</code> </p> <p> <code>- timeout 15 sh -c "until
+     * docker info; do echo .; sleep 1; done"</code> </p> <p>If the operating system's
+     * base image is Alpine Linux and the previous command does not work, add the
+     * <code>-t</code> argument to <code>timeout</code>:</p> <p> <code>- nohup
+     * /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
+     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p> <p> <code>-
+     * timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
      */
     inline void SetPrivilegedMode(bool value) { m_privilegedModeHasBeenSet = true; m_privilegedMode = value; }
 
@@ -375,12 +378,13 @@ namespace Model
      * with Docker support.)</p> <p>If the operating system's base image is Ubuntu
      * Linux:</p> <p> <code>- nohup /usr/local/bin/dockerd
      * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-     * --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .;
-     * sleep 1; done"</code> </p> <p>If the operating system's base image is Alpine
-     * Linux, add the <code>-t</code> argument to <code>timeout</code>:</p> <p> <code>-
-     * nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
-     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c
-     * "until docker info; do echo .; sleep 1; done"</code> </p>
+     * --storage-driver=overlay&amp;</code> </p> <p> <code>- timeout 15 sh -c "until
+     * docker info; do echo .; sleep 1; done"</code> </p> <p>If the operating system's
+     * base image is Alpine Linux and the previous command does not work, add the
+     * <code>-t</code> argument to <code>timeout</code>:</p> <p> <code>- nohup
+     * /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
+     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p> <p> <code>-
+     * timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
      */
     inline ProjectEnvironment& WithPrivilegedMode(bool value) { SetPrivilegedMode(value); return *this;}
 

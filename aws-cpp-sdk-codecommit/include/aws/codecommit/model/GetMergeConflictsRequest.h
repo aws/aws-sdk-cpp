@@ -18,6 +18,8 @@
 #include <aws/codecommit/CodeCommitRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codecommit/model/MergeOptionTypeEnum.h>
+#include <aws/codecommit/model/ConflictDetailLevelTypeEnum.h>
+#include <aws/codecommit/model/ConflictResolutionStrategyTypeEnum.h>
 #include <utility>
 
 namespace Aws
@@ -185,40 +187,208 @@ namespace Model
 
 
     /**
-     * <p>The merge option or strategy you want to use to merge the code. The only
-     * valid value is FAST_FORWARD_MERGE.</p>
+     * <p>The merge option or strategy you want to use to merge the code. </p>
      */
     inline const MergeOptionTypeEnum& GetMergeOption() const{ return m_mergeOption; }
 
     /**
-     * <p>The merge option or strategy you want to use to merge the code. The only
-     * valid value is FAST_FORWARD_MERGE.</p>
+     * <p>The merge option or strategy you want to use to merge the code. </p>
      */
     inline bool MergeOptionHasBeenSet() const { return m_mergeOptionHasBeenSet; }
 
     /**
-     * <p>The merge option or strategy you want to use to merge the code. The only
-     * valid value is FAST_FORWARD_MERGE.</p>
+     * <p>The merge option or strategy you want to use to merge the code. </p>
      */
     inline void SetMergeOption(const MergeOptionTypeEnum& value) { m_mergeOptionHasBeenSet = true; m_mergeOption = value; }
 
     /**
-     * <p>The merge option or strategy you want to use to merge the code. The only
-     * valid value is FAST_FORWARD_MERGE.</p>
+     * <p>The merge option or strategy you want to use to merge the code. </p>
      */
     inline void SetMergeOption(MergeOptionTypeEnum&& value) { m_mergeOptionHasBeenSet = true; m_mergeOption = std::move(value); }
 
     /**
-     * <p>The merge option or strategy you want to use to merge the code. The only
-     * valid value is FAST_FORWARD_MERGE.</p>
+     * <p>The merge option or strategy you want to use to merge the code. </p>
      */
     inline GetMergeConflictsRequest& WithMergeOption(const MergeOptionTypeEnum& value) { SetMergeOption(value); return *this;}
 
     /**
-     * <p>The merge option or strategy you want to use to merge the code. The only
-     * valid value is FAST_FORWARD_MERGE.</p>
+     * <p>The merge option or strategy you want to use to merge the code. </p>
      */
     inline GetMergeConflictsRequest& WithMergeOption(MergeOptionTypeEnum&& value) { SetMergeOption(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL
+     * is used, which will return a not mergeable result if the same file has
+     * differences in both branches. If LINE_LEVEL is specified, a conflict will be
+     * considered not mergeable if the same file in both branches has differences on
+     * the same line.</p>
+     */
+    inline const ConflictDetailLevelTypeEnum& GetConflictDetailLevel() const{ return m_conflictDetailLevel; }
+
+    /**
+     * <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL
+     * is used, which will return a not mergeable result if the same file has
+     * differences in both branches. If LINE_LEVEL is specified, a conflict will be
+     * considered not mergeable if the same file in both branches has differences on
+     * the same line.</p>
+     */
+    inline bool ConflictDetailLevelHasBeenSet() const { return m_conflictDetailLevelHasBeenSet; }
+
+    /**
+     * <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL
+     * is used, which will return a not mergeable result if the same file has
+     * differences in both branches. If LINE_LEVEL is specified, a conflict will be
+     * considered not mergeable if the same file in both branches has differences on
+     * the same line.</p>
+     */
+    inline void SetConflictDetailLevel(const ConflictDetailLevelTypeEnum& value) { m_conflictDetailLevelHasBeenSet = true; m_conflictDetailLevel = value; }
+
+    /**
+     * <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL
+     * is used, which will return a not mergeable result if the same file has
+     * differences in both branches. If LINE_LEVEL is specified, a conflict will be
+     * considered not mergeable if the same file in both branches has differences on
+     * the same line.</p>
+     */
+    inline void SetConflictDetailLevel(ConflictDetailLevelTypeEnum&& value) { m_conflictDetailLevelHasBeenSet = true; m_conflictDetailLevel = std::move(value); }
+
+    /**
+     * <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL
+     * is used, which will return a not mergeable result if the same file has
+     * differences in both branches. If LINE_LEVEL is specified, a conflict will be
+     * considered not mergeable if the same file in both branches has differences on
+     * the same line.</p>
+     */
+    inline GetMergeConflictsRequest& WithConflictDetailLevel(const ConflictDetailLevelTypeEnum& value) { SetConflictDetailLevel(value); return *this;}
+
+    /**
+     * <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL
+     * is used, which will return a not mergeable result if the same file has
+     * differences in both branches. If LINE_LEVEL is specified, a conflict will be
+     * considered not mergeable if the same file in both branches has differences on
+     * the same line.</p>
+     */
+    inline GetMergeConflictsRequest& WithConflictDetailLevel(ConflictDetailLevelTypeEnum&& value) { SetConflictDetailLevel(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The maximum number of files to include in the output.</p>
+     */
+    inline int GetMaxConflictFiles() const{ return m_maxConflictFiles; }
+
+    /**
+     * <p>The maximum number of files to include in the output.</p>
+     */
+    inline bool MaxConflictFilesHasBeenSet() const { return m_maxConflictFilesHasBeenSet; }
+
+    /**
+     * <p>The maximum number of files to include in the output.</p>
+     */
+    inline void SetMaxConflictFiles(int value) { m_maxConflictFilesHasBeenSet = true; m_maxConflictFiles = value; }
+
+    /**
+     * <p>The maximum number of files to include in the output.</p>
+     */
+    inline GetMergeConflictsRequest& WithMaxConflictFiles(int value) { SetMaxConflictFiles(value); return *this;}
+
+
+    /**
+     * <p>Specifies which branch to use when resolving conflicts, or whether to attempt
+     * automatically merging two versions of a file. The default is NONE, which
+     * requires any conflicts to be resolved manually before the merge operation will
+     * be successful.</p>
+     */
+    inline const ConflictResolutionStrategyTypeEnum& GetConflictResolutionStrategy() const{ return m_conflictResolutionStrategy; }
+
+    /**
+     * <p>Specifies which branch to use when resolving conflicts, or whether to attempt
+     * automatically merging two versions of a file. The default is NONE, which
+     * requires any conflicts to be resolved manually before the merge operation will
+     * be successful.</p>
+     */
+    inline bool ConflictResolutionStrategyHasBeenSet() const { return m_conflictResolutionStrategyHasBeenSet; }
+
+    /**
+     * <p>Specifies which branch to use when resolving conflicts, or whether to attempt
+     * automatically merging two versions of a file. The default is NONE, which
+     * requires any conflicts to be resolved manually before the merge operation will
+     * be successful.</p>
+     */
+    inline void SetConflictResolutionStrategy(const ConflictResolutionStrategyTypeEnum& value) { m_conflictResolutionStrategyHasBeenSet = true; m_conflictResolutionStrategy = value; }
+
+    /**
+     * <p>Specifies which branch to use when resolving conflicts, or whether to attempt
+     * automatically merging two versions of a file. The default is NONE, which
+     * requires any conflicts to be resolved manually before the merge operation will
+     * be successful.</p>
+     */
+    inline void SetConflictResolutionStrategy(ConflictResolutionStrategyTypeEnum&& value) { m_conflictResolutionStrategyHasBeenSet = true; m_conflictResolutionStrategy = std::move(value); }
+
+    /**
+     * <p>Specifies which branch to use when resolving conflicts, or whether to attempt
+     * automatically merging two versions of a file. The default is NONE, which
+     * requires any conflicts to be resolved manually before the merge operation will
+     * be successful.</p>
+     */
+    inline GetMergeConflictsRequest& WithConflictResolutionStrategy(const ConflictResolutionStrategyTypeEnum& value) { SetConflictResolutionStrategy(value); return *this;}
+
+    /**
+     * <p>Specifies which branch to use when resolving conflicts, or whether to attempt
+     * automatically merging two versions of a file. The default is NONE, which
+     * requires any conflicts to be resolved manually before the merge operation will
+     * be successful.</p>
+     */
+    inline GetMergeConflictsRequest& WithConflictResolutionStrategy(ConflictResolutionStrategyTypeEnum&& value) { SetConflictResolutionStrategy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An enumeration token that when provided in a request, returns the next batch
+     * of the results.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An enumeration token that when provided in a request, returns the next batch
+     * of the results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>An enumeration token that when provided in a request, returns the next batch
+     * of the results.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>An enumeration token that when provided in a request, returns the next batch
+     * of the results.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+
+    /**
+     * <p>An enumeration token that when provided in a request, returns the next batch
+     * of the results.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /**
+     * <p>An enumeration token that when provided in a request, returns the next batch
+     * of the results.</p>
+     */
+    inline GetMergeConflictsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>An enumeration token that when provided in a request, returns the next batch
+     * of the results.</p>
+     */
+    inline GetMergeConflictsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>An enumeration token that when provided in a request, returns the next batch
+     * of the results.</p>
+     */
+    inline GetMergeConflictsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
 
@@ -233,6 +403,18 @@ namespace Model
 
     MergeOptionTypeEnum m_mergeOption;
     bool m_mergeOptionHasBeenSet;
+
+    ConflictDetailLevelTypeEnum m_conflictDetailLevel;
+    bool m_conflictDetailLevelHasBeenSet;
+
+    int m_maxConflictFiles;
+    bool m_maxConflictFilesHasBeenSet;
+
+    ConflictResolutionStrategyTypeEnum m_conflictResolutionStrategy;
+    bool m_conflictResolutionStrategyHasBeenSet;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
   };
 
 } // namespace Model

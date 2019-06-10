@@ -27,6 +27,8 @@ CreateProjectRequest::CreateProjectRequest() :
     m_descriptionHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_secondarySourcesHasBeenSet(false),
+    m_sourceVersionHasBeenSet(false),
+    m_secondarySourceVersionsHasBeenSet(false),
     m_artifactsHasBeenSet(false),
     m_secondaryArtifactsHasBeenSet(false),
     m_cacheHasBeenSet(false),
@@ -75,6 +77,23 @@ Aws::String CreateProjectRequest::SerializePayload() const
      secondarySourcesJsonList[secondarySourcesIndex].AsObject(m_secondarySources[secondarySourcesIndex].Jsonize());
    }
    payload.WithArray("secondarySources", std::move(secondarySourcesJsonList));
+
+  }
+
+  if(m_sourceVersionHasBeenSet)
+  {
+   payload.WithString("sourceVersion", m_sourceVersion);
+
+  }
+
+  if(m_secondarySourceVersionsHasBeenSet)
+  {
+   Array<JsonValue> secondarySourceVersionsJsonList(m_secondarySourceVersions.size());
+   for(unsigned secondarySourceVersionsIndex = 0; secondarySourceVersionsIndex < secondarySourceVersionsJsonList.GetLength(); ++secondarySourceVersionsIndex)
+   {
+     secondarySourceVersionsJsonList[secondarySourceVersionsIndex].AsObject(m_secondarySourceVersions[secondarySourceVersionsIndex].Jsonize());
+   }
+   payload.WithArray("secondarySourceVersions", std::move(secondarySourceVersionsJsonList));
 
   }
 

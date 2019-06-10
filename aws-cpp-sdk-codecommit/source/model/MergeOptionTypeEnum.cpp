@@ -31,6 +31,8 @@ namespace Aws
       {
 
         static const int FAST_FORWARD_MERGE_HASH = HashingUtils::HashString("FAST_FORWARD_MERGE");
+        static const int SQUASH_MERGE_HASH = HashingUtils::HashString("SQUASH_MERGE");
+        static const int THREE_WAY_MERGE_HASH = HashingUtils::HashString("THREE_WAY_MERGE");
 
 
         MergeOptionTypeEnum GetMergeOptionTypeEnumForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           if (hashCode == FAST_FORWARD_MERGE_HASH)
           {
             return MergeOptionTypeEnum::FAST_FORWARD_MERGE;
+          }
+          else if (hashCode == SQUASH_MERGE_HASH)
+          {
+            return MergeOptionTypeEnum::SQUASH_MERGE;
+          }
+          else if (hashCode == THREE_WAY_MERGE_HASH)
+          {
+            return MergeOptionTypeEnum::THREE_WAY_MERGE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +66,10 @@ namespace Aws
           {
           case MergeOptionTypeEnum::FAST_FORWARD_MERGE:
             return "FAST_FORWARD_MERGE";
+          case MergeOptionTypeEnum::SQUASH_MERGE:
+            return "SQUASH_MERGE";
+          case MergeOptionTypeEnum::THREE_WAY_MERGE:
+            return "THREE_WAY_MERGE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

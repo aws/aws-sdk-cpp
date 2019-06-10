@@ -211,7 +211,11 @@ namespace Model
      * name is specified, the branch's HEAD commit ID is used. If not specified, the
      * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul>
+     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
+     * is specified at the project level, then this <code>sourceVersion</code> (at the
+     * build level) takes precedence. </p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
 
@@ -229,7 +233,11 @@ namespace Model
      * name is specified, the branch's HEAD commit ID is used. If not specified, the
      * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul>
+     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
+     * is specified at the project level, then this <code>sourceVersion</code> (at the
+     * build level) takes precedence. </p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
 
@@ -247,7 +255,11 @@ namespace Model
      * name is specified, the branch's HEAD commit ID is used. If not specified, the
      * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul>
+     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
+     * is specified at the project level, then this <code>sourceVersion</code> (at the
+     * build level) takes precedence. </p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline void SetSourceVersion(const Aws::String& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = value; }
 
@@ -265,7 +277,11 @@ namespace Model
      * name is specified, the branch's HEAD commit ID is used. If not specified, the
      * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul>
+     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
+     * is specified at the project level, then this <code>sourceVersion</code> (at the
+     * build level) takes precedence. </p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline void SetSourceVersion(Aws::String&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::move(value); }
 
@@ -283,7 +299,11 @@ namespace Model
      * name is specified, the branch's HEAD commit ID is used. If not specified, the
      * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul>
+     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
+     * is specified at the project level, then this <code>sourceVersion</code> (at the
+     * build level) takes precedence. </p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline void SetSourceVersion(const char* value) { m_sourceVersionHasBeenSet = true; m_sourceVersion.assign(value); }
 
@@ -301,7 +321,11 @@ namespace Model
      * name is specified, the branch's HEAD commit ID is used. If not specified, the
      * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul>
+     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
+     * is specified at the project level, then this <code>sourceVersion</code> (at the
+     * build level) takes precedence. </p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline StartBuildRequest& WithSourceVersion(const Aws::String& value) { SetSourceVersion(value); return *this;}
 
@@ -319,7 +343,11 @@ namespace Model
      * name is specified, the branch's HEAD commit ID is used. If not specified, the
      * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul>
+     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
+     * is specified at the project level, then this <code>sourceVersion</code> (at the
+     * build level) takes precedence. </p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline StartBuildRequest& WithSourceVersion(Aws::String&& value) { SetSourceVersion(std::move(value)); return *this;}
 
@@ -337,7 +365,11 @@ namespace Model
      * name is specified, the branch's HEAD commit ID is used. If not specified, the
      * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul>
+     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
+     * is specified at the project level, then this <code>sourceVersion</code> (at the
+     * build level) takes precedence. </p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline StartBuildRequest& WithSourceVersion(const char* value) { SetSourceVersion(value); return *this;}
 

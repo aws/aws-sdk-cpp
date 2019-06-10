@@ -26,6 +26,7 @@
 #include <aws/codebuild/model/VpcConfig.h>
 #include <aws/codebuild/model/ProjectBadge.h>
 #include <aws/codebuild/model/LogsConfig.h>
+#include <aws/codebuild/model/ProjectSourceVersion.h>
 #include <aws/codebuild/model/Tag.h>
 #include <utility>
 
@@ -251,6 +252,256 @@ namespace Model
      * <p> An array of <code>ProjectSource</code> objects. </p>
      */
     inline Project& AddSecondarySources(ProjectSource&& value) { m_secondarySourcesHasBeenSet = true; m_secondarySources.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A version of the build input to be built for this project. If not specified,
+     * the latest version is used. If specified, it must be one of:</p> <ul> <li>
+     * <p>For AWS CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the
+     * commit ID, pull request ID, branch name, or tag name that corresponds to the
+     * version of the source code you want to build. If a pull request ID is specified,
+     * it must use the format <code>pr/pull-request-ID</code> (for example
+     * <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID
+     * is used. If not specified, the default branch's HEAD commit ID is used.</p>
+     * </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name that
+     * corresponds to the version of the source code you want to build. If a branch
+     * name is specified, the branch's HEAD commit ID is used. If not specified, the
+     * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
+     * Storage Service (Amazon S3): the version ID of the object that represents the
+     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
+     * is specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level). </p> <p> For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     */
+    inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
+
+    /**
+     * <p>A version of the build input to be built for this project. If not specified,
+     * the latest version is used. If specified, it must be one of:</p> <ul> <li>
+     * <p>For AWS CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the
+     * commit ID, pull request ID, branch name, or tag name that corresponds to the
+     * version of the source code you want to build. If a pull request ID is specified,
+     * it must use the format <code>pr/pull-request-ID</code> (for example
+     * <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID
+     * is used. If not specified, the default branch's HEAD commit ID is used.</p>
+     * </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name that
+     * corresponds to the version of the source code you want to build. If a branch
+     * name is specified, the branch's HEAD commit ID is used. If not specified, the
+     * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
+     * Storage Service (Amazon S3): the version ID of the object that represents the
+     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
+     * is specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level). </p> <p> For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     */
+    inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
+
+    /**
+     * <p>A version of the build input to be built for this project. If not specified,
+     * the latest version is used. If specified, it must be one of:</p> <ul> <li>
+     * <p>For AWS CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the
+     * commit ID, pull request ID, branch name, or tag name that corresponds to the
+     * version of the source code you want to build. If a pull request ID is specified,
+     * it must use the format <code>pr/pull-request-ID</code> (for example
+     * <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID
+     * is used. If not specified, the default branch's HEAD commit ID is used.</p>
+     * </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name that
+     * corresponds to the version of the source code you want to build. If a branch
+     * name is specified, the branch's HEAD commit ID is used. If not specified, the
+     * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
+     * Storage Service (Amazon S3): the version ID of the object that represents the
+     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
+     * is specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level). </p> <p> For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     */
+    inline void SetSourceVersion(const Aws::String& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = value; }
+
+    /**
+     * <p>A version of the build input to be built for this project. If not specified,
+     * the latest version is used. If specified, it must be one of:</p> <ul> <li>
+     * <p>For AWS CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the
+     * commit ID, pull request ID, branch name, or tag name that corresponds to the
+     * version of the source code you want to build. If a pull request ID is specified,
+     * it must use the format <code>pr/pull-request-ID</code> (for example
+     * <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID
+     * is used. If not specified, the default branch's HEAD commit ID is used.</p>
+     * </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name that
+     * corresponds to the version of the source code you want to build. If a branch
+     * name is specified, the branch's HEAD commit ID is used. If not specified, the
+     * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
+     * Storage Service (Amazon S3): the version ID of the object that represents the
+     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
+     * is specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level). </p> <p> For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     */
+    inline void SetSourceVersion(Aws::String&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::move(value); }
+
+    /**
+     * <p>A version of the build input to be built for this project. If not specified,
+     * the latest version is used. If specified, it must be one of:</p> <ul> <li>
+     * <p>For AWS CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the
+     * commit ID, pull request ID, branch name, or tag name that corresponds to the
+     * version of the source code you want to build. If a pull request ID is specified,
+     * it must use the format <code>pr/pull-request-ID</code> (for example
+     * <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID
+     * is used. If not specified, the default branch's HEAD commit ID is used.</p>
+     * </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name that
+     * corresponds to the version of the source code you want to build. If a branch
+     * name is specified, the branch's HEAD commit ID is used. If not specified, the
+     * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
+     * Storage Service (Amazon S3): the version ID of the object that represents the
+     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
+     * is specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level). </p> <p> For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     */
+    inline void SetSourceVersion(const char* value) { m_sourceVersionHasBeenSet = true; m_sourceVersion.assign(value); }
+
+    /**
+     * <p>A version of the build input to be built for this project. If not specified,
+     * the latest version is used. If specified, it must be one of:</p> <ul> <li>
+     * <p>For AWS CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the
+     * commit ID, pull request ID, branch name, or tag name that corresponds to the
+     * version of the source code you want to build. If a pull request ID is specified,
+     * it must use the format <code>pr/pull-request-ID</code> (for example
+     * <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID
+     * is used. If not specified, the default branch's HEAD commit ID is used.</p>
+     * </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name that
+     * corresponds to the version of the source code you want to build. If a branch
+     * name is specified, the branch's HEAD commit ID is used. If not specified, the
+     * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
+     * Storage Service (Amazon S3): the version ID of the object that represents the
+     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
+     * is specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level). </p> <p> For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     */
+    inline Project& WithSourceVersion(const Aws::String& value) { SetSourceVersion(value); return *this;}
+
+    /**
+     * <p>A version of the build input to be built for this project. If not specified,
+     * the latest version is used. If specified, it must be one of:</p> <ul> <li>
+     * <p>For AWS CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the
+     * commit ID, pull request ID, branch name, or tag name that corresponds to the
+     * version of the source code you want to build. If a pull request ID is specified,
+     * it must use the format <code>pr/pull-request-ID</code> (for example
+     * <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID
+     * is used. If not specified, the default branch's HEAD commit ID is used.</p>
+     * </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name that
+     * corresponds to the version of the source code you want to build. If a branch
+     * name is specified, the branch's HEAD commit ID is used. If not specified, the
+     * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
+     * Storage Service (Amazon S3): the version ID of the object that represents the
+     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
+     * is specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level). </p> <p> For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     */
+    inline Project& WithSourceVersion(Aws::String&& value) { SetSourceVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>A version of the build input to be built for this project. If not specified,
+     * the latest version is used. If specified, it must be one of:</p> <ul> <li>
+     * <p>For AWS CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the
+     * commit ID, pull request ID, branch name, or tag name that corresponds to the
+     * version of the source code you want to build. If a pull request ID is specified,
+     * it must use the format <code>pr/pull-request-ID</code> (for example
+     * <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID
+     * is used. If not specified, the default branch's HEAD commit ID is used.</p>
+     * </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name that
+     * corresponds to the version of the source code you want to build. If a branch
+     * name is specified, the branch's HEAD commit ID is used. If not specified, the
+     * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
+     * Storage Service (Amazon S3): the version ID of the object that represents the
+     * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
+     * is specified at the build level, then that version takes precedence over this
+     * <code>sourceVersion</code> (at the project level). </p> <p> For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     */
+    inline Project& WithSourceVersion(const char* value) { SetSourceVersion(value); return *this;}
+
+
+    /**
+     * <p> An array of <code>ProjectSourceVersion</code> objects. If
+     * <code>secondarySourceVersions</code> is specified at the build level, then they
+     * take over these <code>secondarySourceVersions</code> (at the project level).
+     * </p>
+     */
+    inline const Aws::Vector<ProjectSourceVersion>& GetSecondarySourceVersions() const{ return m_secondarySourceVersions; }
+
+    /**
+     * <p> An array of <code>ProjectSourceVersion</code> objects. If
+     * <code>secondarySourceVersions</code> is specified at the build level, then they
+     * take over these <code>secondarySourceVersions</code> (at the project level).
+     * </p>
+     */
+    inline bool SecondarySourceVersionsHasBeenSet() const { return m_secondarySourceVersionsHasBeenSet; }
+
+    /**
+     * <p> An array of <code>ProjectSourceVersion</code> objects. If
+     * <code>secondarySourceVersions</code> is specified at the build level, then they
+     * take over these <code>secondarySourceVersions</code> (at the project level).
+     * </p>
+     */
+    inline void SetSecondarySourceVersions(const Aws::Vector<ProjectSourceVersion>& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions = value; }
+
+    /**
+     * <p> An array of <code>ProjectSourceVersion</code> objects. If
+     * <code>secondarySourceVersions</code> is specified at the build level, then they
+     * take over these <code>secondarySourceVersions</code> (at the project level).
+     * </p>
+     */
+    inline void SetSecondarySourceVersions(Aws::Vector<ProjectSourceVersion>&& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions = std::move(value); }
+
+    /**
+     * <p> An array of <code>ProjectSourceVersion</code> objects. If
+     * <code>secondarySourceVersions</code> is specified at the build level, then they
+     * take over these <code>secondarySourceVersions</code> (at the project level).
+     * </p>
+     */
+    inline Project& WithSecondarySourceVersions(const Aws::Vector<ProjectSourceVersion>& value) { SetSecondarySourceVersions(value); return *this;}
+
+    /**
+     * <p> An array of <code>ProjectSourceVersion</code> objects. If
+     * <code>secondarySourceVersions</code> is specified at the build level, then they
+     * take over these <code>secondarySourceVersions</code> (at the project level).
+     * </p>
+     */
+    inline Project& WithSecondarySourceVersions(Aws::Vector<ProjectSourceVersion>&& value) { SetSecondarySourceVersions(std::move(value)); return *this;}
+
+    /**
+     * <p> An array of <code>ProjectSourceVersion</code> objects. If
+     * <code>secondarySourceVersions</code> is specified at the build level, then they
+     * take over these <code>secondarySourceVersions</code> (at the project level).
+     * </p>
+     */
+    inline Project& AddSecondarySourceVersions(const ProjectSourceVersion& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions.push_back(value); return *this; }
+
+    /**
+     * <p> An array of <code>ProjectSourceVersion</code> objects. If
+     * <code>secondarySourceVersions</code> is specified at the build level, then they
+     * take over these <code>secondarySourceVersions</code> (at the project level).
+     * </p>
+     */
+    inline Project& AddSecondarySourceVersions(ProjectSourceVersion&& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -847,6 +1098,12 @@ namespace Model
 
     Aws::Vector<ProjectSource> m_secondarySources;
     bool m_secondarySourcesHasBeenSet;
+
+    Aws::String m_sourceVersion;
+    bool m_sourceVersionHasBeenSet;
+
+    Aws::Vector<ProjectSourceVersion> m_secondarySourceVersions;
+    bool m_secondarySourceVersionsHasBeenSet;
 
     ProjectArtifacts m_artifacts;
     bool m_artifactsHasBeenSet;

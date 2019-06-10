@@ -32,16 +32,20 @@ static const int REPOSITORY_TRIGGERS_LIST_REQUIRED_HASH = HashingUtils::HashStri
 static const int PULL_REQUEST_DOES_NOT_EXIST_HASH = HashingUtils::HashString("PullRequestDoesNotExistException");
 static const int BRANCH_NAME_EXISTS_HASH = HashingUtils::HashString("BranchNameExistsException");
 static const int FILE_ENTRY_REQUIRED_HASH = HashingUtils::HashString("FileEntryRequiredException");
+static const int INVALID_CONFLICT_RESOLUTION_STRATEGY_HASH = HashingUtils::HashString("InvalidConflictResolutionStrategyException");
 static const int PATH_DOES_NOT_EXIST_HASH = HashingUtils::HashString("PathDoesNotExistException");
 static const int FILE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("FileDoesNotExistException");
 static const int INVALID_PULL_REQUEST_ID_HASH = HashingUtils::HashString("InvalidPullRequestIdException");
 static const int COMMIT_MESSAGE_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("CommitMessageLengthExceededException");
 static const int COMMENT_CONTENT_REQUIRED_HASH = HashingUtils::HashString("CommentContentRequiredException");
+static const int INVALID_MAX_MERGE_HUNKS_HASH = HashingUtils::HashString("InvalidMaxMergeHunksException");
 static const int INVALID_CONTINUATION_TOKEN_HASH = HashingUtils::HashString("InvalidContinuationTokenException");
 static const int MERGE_OPTION_REQUIRED_HASH = HashingUtils::HashString("MergeOptionRequiredException");
 static const int INVALID_AUTHOR_ARN_HASH = HashingUtils::HashString("InvalidAuthorArnException");
+static const int INVALID_TARGET_BRANCH_HASH = HashingUtils::HashString("InvalidTargetBranchException");
 static const int INVALID_COMMIT_ID_HASH = HashingUtils::HashString("InvalidCommitIdException");
 static const int MULTIPLE_REPOSITORIES_IN_PULL_REQUEST_HASH = HashingUtils::HashString("MultipleRepositoriesInPullRequestException");
+static const int INVALID_REPLACEMENT_CONTENT_HASH = HashingUtils::HashString("InvalidReplacementContentException");
 static const int INVALID_ACTOR_ARN_HASH = HashingUtils::HashString("InvalidActorArnException");
 static const int INVALID_REPOSITORY_TRIGGER_EVENTS_HASH = HashingUtils::HashString("InvalidRepositoryTriggerEventsException");
 static const int COMMIT_DOES_NOT_EXIST_HASH = HashingUtils::HashString("CommitDoesNotExistException");
@@ -69,6 +73,7 @@ static const int TITLE_REQUIRED_HASH = HashingUtils::HashString("TitleRequiredEx
 static const int TARGETS_REQUIRED_HASH = HashingUtils::HashString("TargetsRequiredException");
 static const int COMMENT_NOT_CREATED_BY_CALLER_HASH = HashingUtils::HashString("CommentNotCreatedByCallerException");
 static const int NAME_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("NameLengthExceededException");
+static const int MAXIMUM_CONFLICT_RESOLUTION_ENTRIES_EXCEEDED_HASH = HashingUtils::HashString("MaximumConflictResolutionEntriesExceededException");
 static const int COMMENT_DELETED_HASH = HashingUtils::HashString("CommentDeletedException");
 static const int COMMIT_ID_REQUIRED_HASH = HashingUtils::HashString("CommitIdRequiredException");
 static const int RESTRICTED_SOURCE_FILE_HASH = HashingUtils::HashString("RestrictedSourceFileException");
@@ -80,10 +85,13 @@ static const int INVALID_RELATIVE_FILE_VERSION_ENUM_HASH = HashingUtils::HashStr
 static const int INVALID_CLIENT_REQUEST_TOKEN_HASH = HashingUtils::HashString("InvalidClientRequestTokenException");
 static const int BRANCH_NAME_REQUIRED_HASH = HashingUtils::HashString("BranchNameRequiredException");
 static const int FILE_CONTENT_REQUIRED_HASH = HashingUtils::HashString("FileContentRequiredException");
+static const int MAXIMUM_FILE_CONTENT_TO_LOAD_EXCEEDED_HASH = HashingUtils::HashString("MaximumFileContentToLoadExceededException");
 static const int SAME_PATH_REQUEST_HASH = HashingUtils::HashString("SamePathRequestException");
 static const int INVALID_DESCRIPTION_HASH = HashingUtils::HashString("InvalidDescriptionException");
+static const int INVALID_REPLACEMENT_TYPE_HASH = HashingUtils::HashString("InvalidReplacementTypeException");
 static const int ENCRYPTION_KEY_ACCESS_DENIED_HASH = HashingUtils::HashString("EncryptionKeyAccessDeniedException");
 static const int INVALID_RESOURCE_ARN_HASH = HashingUtils::HashString("InvalidResourceArnException");
+static const int INVALID_CONFLICT_RESOLUTION_HASH = HashingUtils::HashString("InvalidConflictResolutionException");
 static const int BLOB_ID_REQUIRED_HASH = HashingUtils::HashString("BlobIdRequiredException");
 static const int REPOSITORY_NAMES_REQUIRED_HASH = HashingUtils::HashString("RepositoryNamesRequiredException");
 static const int COMMENT_CONTENT_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CommentContentSizeLimitExceededException");
@@ -110,8 +118,8 @@ static const int INVALID_REFERENCE_NAME_HASH = HashingUtils::HashString("Invalid
 static const int PULL_REQUEST_ALREADY_CLOSED_HASH = HashingUtils::HashString("PullRequestAlreadyClosedException");
 static const int INVALID_SYSTEM_TAG_USAGE_HASH = HashingUtils::HashString("InvalidSystemTagUsageException");
 static const int INVALID_TAG_KEYS_LIST_HASH = HashingUtils::HashString("InvalidTagKeysListException");
-static const int COMMENT_ID_REQUIRED_HASH = HashingUtils::HashString("CommentIdRequiredException");
 static const int INVALID_MERGE_OPTION_HASH = HashingUtils::HashString("InvalidMergeOptionException");
+static const int COMMENT_ID_REQUIRED_HASH = HashingUtils::HashString("CommentIdRequiredException");
 static const int REPOSITORY_NOT_ASSOCIATED_WITH_PULL_REQUEST_HASH = HashingUtils::HashString("RepositoryNotAssociatedWithPullRequestException");
 static const int INVALID_SOURCE_COMMIT_SPECIFIER_HASH = HashingUtils::HashString("InvalidSourceCommitSpecifierException");
 static const int FILE_PATH_CONFLICTS_WITH_SUBMODULE_PATH_HASH = HashingUtils::HashString("FilePathConflictsWithSubmodulePathException");
@@ -131,8 +139,11 @@ static const int MAXIMUM_OPEN_PULL_REQUESTS_EXCEEDED_HASH = HashingUtils::HashSt
 static const int ENCRYPTION_KEY_NOT_FOUND_HASH = HashingUtils::HashString("EncryptionKeyNotFoundException");
 static const int REFERENCE_NAME_REQUIRED_HASH = HashingUtils::HashString("ReferenceNameRequiredException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
+static const int REPLACEMENT_CONTENT_REQUIRED_HASH = HashingUtils::HashString("ReplacementContentRequiredException");
 static const int COMMIT_REQUIRED_HASH = HashingUtils::HashString("CommitRequiredException");
 static const int ENCRYPTION_KEY_UNAVAILABLE_HASH = HashingUtils::HashString("EncryptionKeyUnavailableException");
+static const int MULTIPLE_CONFLICT_RESOLUTION_ENTRIES_HASH = HashingUtils::HashString("MultipleConflictResolutionEntriesException");
+static const int INVALID_MAX_CONFLICT_FILES_HASH = HashingUtils::HashString("InvalidMaxConflictFilesException");
 static const int COMMENT_DOES_NOT_EXIST_HASH = HashingUtils::HashString("CommentDoesNotExistException");
 static const int INVALID_COMMENT_ID_HASH = HashingUtils::HashString("InvalidCommentIdException");
 static const int TARGET_REQUIRED_HASH = HashingUtils::HashString("TargetRequiredException");
@@ -145,9 +156,11 @@ static const int FOLDER_DOES_NOT_EXIST_HASH = HashingUtils::HashString("FolderDo
 static const int INVALID_PATH_HASH = HashingUtils::HashString("InvalidPathException");
 static const int ACTOR_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ActorDoesNotExistException");
 static const int NO_CHANGE_HASH = HashingUtils::HashString("NoChangeException");
+static const int REPLACEMENT_TYPE_REQUIRED_HASH = HashingUtils::HashString("ReplacementTypeRequiredException");
 static const int MANUAL_MERGE_REQUIRED_HASH = HashingUtils::HashString("ManualMergeRequiredException");
 static const int FILE_TOO_LARGE_HASH = HashingUtils::HashString("FileTooLargeException");
 static const int MAXIMUM_REPOSITORY_TRIGGERS_EXCEEDED_HASH = HashingUtils::HashString("MaximumRepositoryTriggersExceededException");
+static const int INVALID_CONFLICT_DETAIL_LEVEL_HASH = HashingUtils::HashString("InvalidConflictDetailLevelException");
 static const int BLOB_ID_DOES_NOT_EXIST_HASH = HashingUtils::HashString("BlobIdDoesNotExistException");
 static const int PUT_FILE_ENTRY_CONFLICT_HASH = HashingUtils::HashString("PutFileEntryConflictException");
 static const int AUTHOR_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AuthorDoesNotExistException");
@@ -191,6 +204,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_ENTRY_REQUIRED), false);
     return true;
   }
+  else if (hashCode == INVALID_CONFLICT_RESOLUTION_STRATEGY_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_CONFLICT_RESOLUTION_STRATEGY), false);
+    return true;
+  }
   else if (hashCode == PATH_DOES_NOT_EXIST_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PATH_DOES_NOT_EXIST), false);
@@ -216,6 +234,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMENT_CONTENT_REQUIRED), false);
     return true;
   }
+  else if (hashCode == INVALID_MAX_MERGE_HUNKS_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_MAX_MERGE_HUNKS), false);
+    return true;
+  }
   else if (hashCode == INVALID_CONTINUATION_TOKEN_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_CONTINUATION_TOKEN), false);
@@ -231,6 +254,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_AUTHOR_ARN), false);
     return true;
   }
+  else if (hashCode == INVALID_TARGET_BRANCH_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_TARGET_BRANCH), false);
+    return true;
+  }
   else if (hashCode == INVALID_COMMIT_ID_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_COMMIT_ID), false);
@@ -239,6 +267,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == MULTIPLE_REPOSITORIES_IN_PULL_REQUEST_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MULTIPLE_REPOSITORIES_IN_PULL_REQUEST), false);
+    return true;
+  }
+  else if (hashCode == INVALID_REPLACEMENT_CONTENT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPLACEMENT_CONTENT), false);
     return true;
   }
   else if (hashCode == INVALID_ACTOR_ARN_HASH)
@@ -376,6 +409,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::NAME_LENGTH_EXCEEDED), false);
     return true;
   }
+  else if (hashCode == MAXIMUM_CONFLICT_RESOLUTION_ENTRIES_EXCEEDED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_CONFLICT_RESOLUTION_ENTRIES_EXCEEDED), false);
+    return true;
+  }
   else if (hashCode == COMMENT_DELETED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMENT_DELETED), false);
@@ -431,6 +469,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_CONTENT_REQUIRED), false);
     return true;
   }
+  else if (hashCode == MAXIMUM_FILE_CONTENT_TO_LOAD_EXCEEDED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_FILE_CONTENT_TO_LOAD_EXCEEDED), false);
+    return true;
+  }
   else if (hashCode == SAME_PATH_REQUEST_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::SAME_PATH_REQUEST), false);
@@ -441,6 +484,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_DESCRIPTION), false);
     return true;
   }
+  else if (hashCode == INVALID_REPLACEMENT_TYPE_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPLACEMENT_TYPE), false);
+    return true;
+  }
   else if (hashCode == ENCRYPTION_KEY_ACCESS_DENIED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ENCRYPTION_KEY_ACCESS_DENIED), false);
@@ -449,6 +497,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == INVALID_RESOURCE_ARN_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_RESOURCE_ARN), false);
+    return true;
+  }
+  else if (hashCode == INVALID_CONFLICT_RESOLUTION_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_CONFLICT_RESOLUTION), false);
     return true;
   }
   else if (hashCode == BLOB_ID_REQUIRED_HASH)
@@ -581,14 +634,14 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_TAG_KEYS_LIST), false);
     return true;
   }
-  else if (hashCode == COMMENT_ID_REQUIRED_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMENT_ID_REQUIRED), false);
-    return true;
-  }
   else if (hashCode == INVALID_MERGE_OPTION_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_MERGE_OPTION), false);
+    return true;
+  }
+  else if (hashCode == COMMENT_ID_REQUIRED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMENT_ID_REQUIRED), false);
     return true;
   }
   else if (hashCode == REPOSITORY_NOT_ASSOCIATED_WITH_PULL_REQUEST_HASH)
@@ -686,6 +739,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TOO_MANY_TAGS), false);
     return true;
   }
+  else if (hashCode == REPLACEMENT_CONTENT_REQUIRED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPLACEMENT_CONTENT_REQUIRED), false);
+    return true;
+  }
   else if (hashCode == COMMIT_REQUIRED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMIT_REQUIRED), false);
@@ -694,6 +752,16 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == ENCRYPTION_KEY_UNAVAILABLE_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::ENCRYPTION_KEY_UNAVAILABLE), false);
+    return true;
+  }
+  else if (hashCode == MULTIPLE_CONFLICT_RESOLUTION_ENTRIES_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MULTIPLE_CONFLICT_RESOLUTION_ENTRIES), false);
+    return true;
+  }
+  else if (hashCode == INVALID_MAX_CONFLICT_FILES_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_MAX_CONFLICT_FILES), false);
     return true;
   }
   else if (hashCode == COMMENT_DOES_NOT_EXIST_HASH)
@@ -726,7 +794,12 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_LIMIT_EXCEEDED), false);
     return true;
   }
-  else if (hashCode == INVALID_REPOSITORY_NAME_HASH)
+  return false;
+}
+
+static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
+{
+  if (hashCode == INVALID_REPOSITORY_NAME_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_NAME), false);
     return true;
@@ -756,6 +829,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::NO_CHANGE), false);
     return true;
   }
+  else if (hashCode == REPLACEMENT_TYPE_REQUIRED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPLACEMENT_TYPE_REQUIRED), false);
+    return true;
+  }
   else if (hashCode == MANUAL_MERGE_REQUIRED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MANUAL_MERGE_REQUIRED), false);
@@ -771,6 +849,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_REPOSITORY_TRIGGERS_EXCEEDED), false);
     return true;
   }
+  else if (hashCode == INVALID_CONFLICT_DETAIL_LEVEL_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_CONFLICT_DETAIL_LEVEL), false);
+    return true;
+  }
   else if (hashCode == BLOB_ID_DOES_NOT_EXIST_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BLOB_ID_DOES_NOT_EXIST), false);
@@ -781,12 +864,7 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PUT_FILE_ENTRY_CONFLICT), false);
     return true;
   }
-  return false;
-}
-
-static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
-{
-  if (hashCode == AUTHOR_DOES_NOT_EXIST_HASH)
+  else if (hashCode == AUTHOR_DOES_NOT_EXIST_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::AUTHOR_DOES_NOT_EXIST), false);
     return true;

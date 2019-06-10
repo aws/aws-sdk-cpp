@@ -306,42 +306,82 @@ namespace Model
 
 
     /**
-     * <p>Any version identifier for the version of the source code to be built.</p>
+     * <p>Any version identifier for the version of the source code to be built. If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p> For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
 
     /**
-     * <p>Any version identifier for the version of the source code to be built.</p>
+     * <p>Any version identifier for the version of the source code to be built. If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p> For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
 
     /**
-     * <p>Any version identifier for the version of the source code to be built.</p>
+     * <p>Any version identifier for the version of the source code to be built. If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p> For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline void SetSourceVersion(const Aws::String& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = value; }
 
     /**
-     * <p>Any version identifier for the version of the source code to be built.</p>
+     * <p>Any version identifier for the version of the source code to be built. If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p> For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline void SetSourceVersion(Aws::String&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::move(value); }
 
     /**
-     * <p>Any version identifier for the version of the source code to be built.</p>
+     * <p>Any version identifier for the version of the source code to be built. If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p> For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline void SetSourceVersion(const char* value) { m_sourceVersionHasBeenSet = true; m_sourceVersion.assign(value); }
 
     /**
-     * <p>Any version identifier for the version of the source code to be built.</p>
+     * <p>Any version identifier for the version of the source code to be built. If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p> For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline Build& WithSourceVersion(const Aws::String& value) { SetSourceVersion(value); return *this;}
 
     /**
-     * <p>Any version identifier for the version of the source code to be built.</p>
+     * <p>Any version identifier for the version of the source code to be built. If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p> For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline Build& WithSourceVersion(Aws::String&& value) { SetSourceVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Any version identifier for the version of the source code to be built.</p>
+     * <p>Any version identifier for the version of the source code to be built. If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p> For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
+     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
     inline Build& WithSourceVersion(const char* value) { SetSourceVersion(value); return *this;}
 

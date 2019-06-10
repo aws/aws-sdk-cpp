@@ -21,14 +21,17 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/codecommit/model/BatchDescribeMergeConflictsResult.h>
 #include <aws/codecommit/model/BatchGetRepositoriesResult.h>
 #include <aws/codecommit/model/CreateCommitResult.h>
 #include <aws/codecommit/model/CreatePullRequestResult.h>
 #include <aws/codecommit/model/CreateRepositoryResult.h>
+#include <aws/codecommit/model/CreateUnreferencedMergeCommitResult.h>
 #include <aws/codecommit/model/DeleteBranchResult.h>
 #include <aws/codecommit/model/DeleteCommentContentResult.h>
 #include <aws/codecommit/model/DeleteFileResult.h>
 #include <aws/codecommit/model/DeleteRepositoryResult.h>
+#include <aws/codecommit/model/DescribeMergeConflictsResult.h>
 #include <aws/codecommit/model/DescribePullRequestEventsResult.h>
 #include <aws/codecommit/model/GetBlobResult.h>
 #include <aws/codecommit/model/GetBranchResult.h>
@@ -39,7 +42,9 @@
 #include <aws/codecommit/model/GetDifferencesResult.h>
 #include <aws/codecommit/model/GetFileResult.h>
 #include <aws/codecommit/model/GetFolderResult.h>
+#include <aws/codecommit/model/GetMergeCommitResult.h>
 #include <aws/codecommit/model/GetMergeConflictsResult.h>
+#include <aws/codecommit/model/GetMergeOptionsResult.h>
 #include <aws/codecommit/model/GetPullRequestResult.h>
 #include <aws/codecommit/model/GetRepositoryResult.h>
 #include <aws/codecommit/model/GetRepositoryTriggersResult.h>
@@ -47,7 +52,12 @@
 #include <aws/codecommit/model/ListPullRequestsResult.h>
 #include <aws/codecommit/model/ListRepositoriesResult.h>
 #include <aws/codecommit/model/ListTagsForResourceResult.h>
+#include <aws/codecommit/model/MergeBranchesByFastForwardResult.h>
+#include <aws/codecommit/model/MergeBranchesBySquashResult.h>
+#include <aws/codecommit/model/MergeBranchesByThreeWayResult.h>
 #include <aws/codecommit/model/MergePullRequestByFastForwardResult.h>
+#include <aws/codecommit/model/MergePullRequestBySquashResult.h>
+#include <aws/codecommit/model/MergePullRequestByThreeWayResult.h>
 #include <aws/codecommit/model/PostCommentForComparedCommitResult.h>
 #include <aws/codecommit/model/PostCommentForPullRequestResult.h>
 #include <aws/codecommit/model/PostCommentReplyResult.h>
@@ -98,15 +108,18 @@ namespace CodeCommit
 
 namespace Model
 {
+        class BatchDescribeMergeConflictsRequest;
         class BatchGetRepositoriesRequest;
         class CreateBranchRequest;
         class CreateCommitRequest;
         class CreatePullRequestRequest;
         class CreateRepositoryRequest;
+        class CreateUnreferencedMergeCommitRequest;
         class DeleteBranchRequest;
         class DeleteCommentContentRequest;
         class DeleteFileRequest;
         class DeleteRepositoryRequest;
+        class DescribeMergeConflictsRequest;
         class DescribePullRequestEventsRequest;
         class GetBlobRequest;
         class GetBranchRequest;
@@ -117,7 +130,9 @@ namespace Model
         class GetDifferencesRequest;
         class GetFileRequest;
         class GetFolderRequest;
+        class GetMergeCommitRequest;
         class GetMergeConflictsRequest;
+        class GetMergeOptionsRequest;
         class GetPullRequestRequest;
         class GetRepositoryRequest;
         class GetRepositoryTriggersRequest;
@@ -125,7 +140,12 @@ namespace Model
         class ListPullRequestsRequest;
         class ListRepositoriesRequest;
         class ListTagsForResourceRequest;
+        class MergeBranchesByFastForwardRequest;
+        class MergeBranchesBySquashRequest;
+        class MergeBranchesByThreeWayRequest;
         class MergePullRequestByFastForwardRequest;
+        class MergePullRequestBySquashRequest;
+        class MergePullRequestByThreeWayRequest;
         class PostCommentForComparedCommitRequest;
         class PostCommentForPullRequestRequest;
         class PostCommentReplyRequest;
@@ -142,15 +162,18 @@ namespace Model
         class UpdateRepositoryDescriptionRequest;
         class UpdateRepositoryNameRequest;
 
+        typedef Aws::Utils::Outcome<BatchDescribeMergeConflictsResult, Aws::Client::AWSError<CodeCommitErrors>> BatchDescribeMergeConflictsOutcome;
         typedef Aws::Utils::Outcome<BatchGetRepositoriesResult, Aws::Client::AWSError<CodeCommitErrors>> BatchGetRepositoriesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> CreateBranchOutcome;
         typedef Aws::Utils::Outcome<CreateCommitResult, Aws::Client::AWSError<CodeCommitErrors>> CreateCommitOutcome;
         typedef Aws::Utils::Outcome<CreatePullRequestResult, Aws::Client::AWSError<CodeCommitErrors>> CreatePullRequestOutcome;
         typedef Aws::Utils::Outcome<CreateRepositoryResult, Aws::Client::AWSError<CodeCommitErrors>> CreateRepositoryOutcome;
+        typedef Aws::Utils::Outcome<CreateUnreferencedMergeCommitResult, Aws::Client::AWSError<CodeCommitErrors>> CreateUnreferencedMergeCommitOutcome;
         typedef Aws::Utils::Outcome<DeleteBranchResult, Aws::Client::AWSError<CodeCommitErrors>> DeleteBranchOutcome;
         typedef Aws::Utils::Outcome<DeleteCommentContentResult, Aws::Client::AWSError<CodeCommitErrors>> DeleteCommentContentOutcome;
         typedef Aws::Utils::Outcome<DeleteFileResult, Aws::Client::AWSError<CodeCommitErrors>> DeleteFileOutcome;
         typedef Aws::Utils::Outcome<DeleteRepositoryResult, Aws::Client::AWSError<CodeCommitErrors>> DeleteRepositoryOutcome;
+        typedef Aws::Utils::Outcome<DescribeMergeConflictsResult, Aws::Client::AWSError<CodeCommitErrors>> DescribeMergeConflictsOutcome;
         typedef Aws::Utils::Outcome<DescribePullRequestEventsResult, Aws::Client::AWSError<CodeCommitErrors>> DescribePullRequestEventsOutcome;
         typedef Aws::Utils::Outcome<GetBlobResult, Aws::Client::AWSError<CodeCommitErrors>> GetBlobOutcome;
         typedef Aws::Utils::Outcome<GetBranchResult, Aws::Client::AWSError<CodeCommitErrors>> GetBranchOutcome;
@@ -161,7 +184,9 @@ namespace Model
         typedef Aws::Utils::Outcome<GetDifferencesResult, Aws::Client::AWSError<CodeCommitErrors>> GetDifferencesOutcome;
         typedef Aws::Utils::Outcome<GetFileResult, Aws::Client::AWSError<CodeCommitErrors>> GetFileOutcome;
         typedef Aws::Utils::Outcome<GetFolderResult, Aws::Client::AWSError<CodeCommitErrors>> GetFolderOutcome;
+        typedef Aws::Utils::Outcome<GetMergeCommitResult, Aws::Client::AWSError<CodeCommitErrors>> GetMergeCommitOutcome;
         typedef Aws::Utils::Outcome<GetMergeConflictsResult, Aws::Client::AWSError<CodeCommitErrors>> GetMergeConflictsOutcome;
+        typedef Aws::Utils::Outcome<GetMergeOptionsResult, Aws::Client::AWSError<CodeCommitErrors>> GetMergeOptionsOutcome;
         typedef Aws::Utils::Outcome<GetPullRequestResult, Aws::Client::AWSError<CodeCommitErrors>> GetPullRequestOutcome;
         typedef Aws::Utils::Outcome<GetRepositoryResult, Aws::Client::AWSError<CodeCommitErrors>> GetRepositoryOutcome;
         typedef Aws::Utils::Outcome<GetRepositoryTriggersResult, Aws::Client::AWSError<CodeCommitErrors>> GetRepositoryTriggersOutcome;
@@ -169,7 +194,12 @@ namespace Model
         typedef Aws::Utils::Outcome<ListPullRequestsResult, Aws::Client::AWSError<CodeCommitErrors>> ListPullRequestsOutcome;
         typedef Aws::Utils::Outcome<ListRepositoriesResult, Aws::Client::AWSError<CodeCommitErrors>> ListRepositoriesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CodeCommitErrors>> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<MergeBranchesByFastForwardResult, Aws::Client::AWSError<CodeCommitErrors>> MergeBranchesByFastForwardOutcome;
+        typedef Aws::Utils::Outcome<MergeBranchesBySquashResult, Aws::Client::AWSError<CodeCommitErrors>> MergeBranchesBySquashOutcome;
+        typedef Aws::Utils::Outcome<MergeBranchesByThreeWayResult, Aws::Client::AWSError<CodeCommitErrors>> MergeBranchesByThreeWayOutcome;
         typedef Aws::Utils::Outcome<MergePullRequestByFastForwardResult, Aws::Client::AWSError<CodeCommitErrors>> MergePullRequestByFastForwardOutcome;
+        typedef Aws::Utils::Outcome<MergePullRequestBySquashResult, Aws::Client::AWSError<CodeCommitErrors>> MergePullRequestBySquashOutcome;
+        typedef Aws::Utils::Outcome<MergePullRequestByThreeWayResult, Aws::Client::AWSError<CodeCommitErrors>> MergePullRequestByThreeWayOutcome;
         typedef Aws::Utils::Outcome<PostCommentForComparedCommitResult, Aws::Client::AWSError<CodeCommitErrors>> PostCommentForComparedCommitOutcome;
         typedef Aws::Utils::Outcome<PostCommentForPullRequestResult, Aws::Client::AWSError<CodeCommitErrors>> PostCommentForPullRequestOutcome;
         typedef Aws::Utils::Outcome<PostCommentReplyResult, Aws::Client::AWSError<CodeCommitErrors>> PostCommentReplyOutcome;
@@ -186,15 +216,18 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> UpdateRepositoryDescriptionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> UpdateRepositoryNameOutcome;
 
+        typedef std::future<BatchDescribeMergeConflictsOutcome> BatchDescribeMergeConflictsOutcomeCallable;
         typedef std::future<BatchGetRepositoriesOutcome> BatchGetRepositoriesOutcomeCallable;
         typedef std::future<CreateBranchOutcome> CreateBranchOutcomeCallable;
         typedef std::future<CreateCommitOutcome> CreateCommitOutcomeCallable;
         typedef std::future<CreatePullRequestOutcome> CreatePullRequestOutcomeCallable;
         typedef std::future<CreateRepositoryOutcome> CreateRepositoryOutcomeCallable;
+        typedef std::future<CreateUnreferencedMergeCommitOutcome> CreateUnreferencedMergeCommitOutcomeCallable;
         typedef std::future<DeleteBranchOutcome> DeleteBranchOutcomeCallable;
         typedef std::future<DeleteCommentContentOutcome> DeleteCommentContentOutcomeCallable;
         typedef std::future<DeleteFileOutcome> DeleteFileOutcomeCallable;
         typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
+        typedef std::future<DescribeMergeConflictsOutcome> DescribeMergeConflictsOutcomeCallable;
         typedef std::future<DescribePullRequestEventsOutcome> DescribePullRequestEventsOutcomeCallable;
         typedef std::future<GetBlobOutcome> GetBlobOutcomeCallable;
         typedef std::future<GetBranchOutcome> GetBranchOutcomeCallable;
@@ -205,7 +238,9 @@ namespace Model
         typedef std::future<GetDifferencesOutcome> GetDifferencesOutcomeCallable;
         typedef std::future<GetFileOutcome> GetFileOutcomeCallable;
         typedef std::future<GetFolderOutcome> GetFolderOutcomeCallable;
+        typedef std::future<GetMergeCommitOutcome> GetMergeCommitOutcomeCallable;
         typedef std::future<GetMergeConflictsOutcome> GetMergeConflictsOutcomeCallable;
+        typedef std::future<GetMergeOptionsOutcome> GetMergeOptionsOutcomeCallable;
         typedef std::future<GetPullRequestOutcome> GetPullRequestOutcomeCallable;
         typedef std::future<GetRepositoryOutcome> GetRepositoryOutcomeCallable;
         typedef std::future<GetRepositoryTriggersOutcome> GetRepositoryTriggersOutcomeCallable;
@@ -213,7 +248,12 @@ namespace Model
         typedef std::future<ListPullRequestsOutcome> ListPullRequestsOutcomeCallable;
         typedef std::future<ListRepositoriesOutcome> ListRepositoriesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<MergeBranchesByFastForwardOutcome> MergeBranchesByFastForwardOutcomeCallable;
+        typedef std::future<MergeBranchesBySquashOutcome> MergeBranchesBySquashOutcomeCallable;
+        typedef std::future<MergeBranchesByThreeWayOutcome> MergeBranchesByThreeWayOutcomeCallable;
         typedef std::future<MergePullRequestByFastForwardOutcome> MergePullRequestByFastForwardOutcomeCallable;
+        typedef std::future<MergePullRequestBySquashOutcome> MergePullRequestBySquashOutcomeCallable;
+        typedef std::future<MergePullRequestByThreeWayOutcome> MergePullRequestByThreeWayOutcomeCallable;
         typedef std::future<PostCommentForComparedCommitOutcome> PostCommentForComparedCommitOutcomeCallable;
         typedef std::future<PostCommentForPullRequestOutcome> PostCommentForPullRequestOutcomeCallable;
         typedef std::future<PostCommentReplyOutcome> PostCommentReplyOutcomeCallable;
@@ -233,15 +273,18 @@ namespace Model
 
   class CodeCommitClient;
 
+    typedef std::function<void(const CodeCommitClient*, const Model::BatchDescribeMergeConflictsRequest&, const Model::BatchDescribeMergeConflictsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDescribeMergeConflictsResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::BatchGetRepositoriesRequest&, const Model::BatchGetRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetRepositoriesResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::CreateBranchRequest&, const Model::CreateBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBranchResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::CreateCommitRequest&, const Model::CreateCommitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCommitResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::CreatePullRequestRequest&, const Model::CreatePullRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePullRequestResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::CreateRepositoryRequest&, const Model::CreateRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRepositoryResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::CreateUnreferencedMergeCommitRequest&, const Model::CreateUnreferencedMergeCommitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUnreferencedMergeCommitResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::DeleteBranchRequest&, const Model::DeleteBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBranchResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::DeleteCommentContentRequest&, const Model::DeleteCommentContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCommentContentResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::DeleteFileRequest&, const Model::DeleteFileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::DeleteRepositoryRequest&, const Model::DeleteRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::DescribeMergeConflictsRequest&, const Model::DescribeMergeConflictsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMergeConflictsResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::DescribePullRequestEventsRequest&, const Model::DescribePullRequestEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePullRequestEventsResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetBlobRequest&, const Model::GetBlobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBlobResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetBranchRequest&, const Model::GetBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBranchResponseReceivedHandler;
@@ -252,7 +295,9 @@ namespace Model
     typedef std::function<void(const CodeCommitClient*, const Model::GetDifferencesRequest&, const Model::GetDifferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDifferencesResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetFileRequest&, const Model::GetFileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFileResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetFolderRequest&, const Model::GetFolderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFolderResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::GetMergeCommitRequest&, const Model::GetMergeCommitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMergeCommitResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetMergeConflictsRequest&, const Model::GetMergeConflictsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMergeConflictsResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::GetMergeOptionsRequest&, const Model::GetMergeOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMergeOptionsResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetPullRequestRequest&, const Model::GetPullRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPullRequestResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetRepositoryRequest&, const Model::GetRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRepositoryResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetRepositoryTriggersRequest&, const Model::GetRepositoryTriggersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRepositoryTriggersResponseReceivedHandler;
@@ -260,7 +305,12 @@ namespace Model
     typedef std::function<void(const CodeCommitClient*, const Model::ListPullRequestsRequest&, const Model::ListPullRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPullRequestsResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::ListRepositoriesRequest&, const Model::ListRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRepositoriesResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::MergeBranchesByFastForwardRequest&, const Model::MergeBranchesByFastForwardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergeBranchesByFastForwardResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::MergeBranchesBySquashRequest&, const Model::MergeBranchesBySquashOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergeBranchesBySquashResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::MergeBranchesByThreeWayRequest&, const Model::MergeBranchesByThreeWayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergeBranchesByThreeWayResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::MergePullRequestByFastForwardRequest&, const Model::MergePullRequestByFastForwardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergePullRequestByFastForwardResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::MergePullRequestBySquashRequest&, const Model::MergePullRequestBySquashOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergePullRequestBySquashResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::MergePullRequestByThreeWayRequest&, const Model::MergePullRequestByThreeWayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergePullRequestByThreeWayResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::PostCommentForComparedCommitRequest&, const Model::PostCommentForComparedCommitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostCommentForComparedCommitResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::PostCommentForPullRequestRequest&, const Model::PostCommentForPullRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostCommentForPullRequestResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::PostCommentReplyRequest&, const Model::PostCommentReplyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostCommentReplyResponseReceivedHandler;
@@ -315,22 +365,42 @@ namespace Model
    * a commit, including commit messages and author and committer information.</p>
    * </li> <li> <p> <a>GetDifferences</a>, which returns information about the
    * differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID
-   * or other fully qualified reference).</p> </li> </ul> <p>Pull requests, by
-   * calling the following:</p> <ul> <li> <p> <a>CreatePullRequest</a>, which creates
-   * a pull request in a specified repository.</p> </li> <li> <p>
-   * <a>DescribePullRequestEvents</a>, which returns information about one or more
-   * pull request events.</p> </li> <li> <p> <a>GetCommentsForPullRequest</a>, which
-   * returns information about comments on a specified pull request.</p> </li> <li>
-   * <p> <a>GetMergeConflicts</a>, which returns information about merge conflicts
+   * or other fully qualified reference).</p> </li> </ul> <p>Merges, by calling the
+   * following:</p> <ul> <li> <p> <a>BatchDescribeMergeConflicts</a>, which returns
+   * information about conflicts in a merge between commits in a repository.</p>
+   * </li> <li> <p> <a>CreateUnreferencedMergeCommit</a>, which creates an
+   * unreferenced commit between two branches or commits for the purpose of comparing
+   * them and identifying any potential conflicts.</p> </li> <li> <p>
+   * <a>DescribeMergeConflicts</a>, which returns information about merge conflicts
+   * between the base, source, and destination versions of a file in a potential
+   * merge.</p> </li> <li> <p> <a>GetMergeCommit</a>, which returns information about
+   * the merge between a source and destination commit. </p> </li> <li> <p>
+   * <a>GetMergeConflicts</a>, which returns information about merge conflicts
    * between the source and destination branch in a pull request.</p> </li> <li> <p>
-   * <a>GetPullRequest</a>, which returns information about a specified pull
-   * request.</p> </li> <li> <p> <a>ListPullRequests</a>, which lists all pull
-   * requests for a repository.</p> </li> <li> <p>
-   * <a>MergePullRequestByFastForward</a>, which merges the source destination branch
-   * of a pull request into the specified destination branch for that pull request
-   * using the fast-forward merge option.</p> </li> <li> <p>
-   * <a>PostCommentForPullRequest</a>, which posts a comment to a pull request at the
-   * specified line, file, or request.</p> </li> <li> <p>
+   * <a>GetMergeOptions</a>, which returns information about the available merge
+   * options between two branches or commit specifiers.</p> </li> <li> <p>
+   * <a>MergeBranchesByFastForward</a>, which merges two branches using the
+   * fast-forward merge option.</p> </li> <li> <p> <a>MergeBranchesBySquash</a>,
+   * which merges two branches using the squash merge option.</p> </li> <li> <p>
+   * <a>MergeBranchesByThreeWay</a>, which merges two branches using the three-way
+   * merge option.</p> </li> </ul> <p>Pull requests, by calling the following:</p>
+   * <ul> <li> <p> <a>CreatePullRequest</a>, which creates a pull request in a
+   * specified repository.</p> </li> <li> <p> <a>DescribePullRequestEvents</a>, which
+   * returns information about one or more pull request events.</p> </li> <li> <p>
+   * <a>GetCommentsForPullRequest</a>, which returns information about comments on a
+   * specified pull request.</p> </li> <li> <p> <a>GetPullRequest</a>, which returns
+   * information about a specified pull request.</p> </li> <li> <p>
+   * <a>ListPullRequests</a>, which lists all pull requests for a repository.</p>
+   * </li> <li> <p> <a>MergePullRequestByFastForward</a>, which merges the source
+   * destination branch of a pull request into the specified destination branch for
+   * that pull request using the fast-forward merge option.</p> </li> <li> <p>
+   * <a>MergePullRequestBySquash</a>, which merges the source destination branch of a
+   * pull request into the specified destination branch for that pull request using
+   * the squash merge option.</p> </li> <li> <p> <a>MergePullRequestByThreeWay</a>.
+   * which merges the source destination branch of a pull request into the specified
+   * destination branch for that pull request using the three-way merge option.</p>
+   * </li> <li> <p> <a>PostCommentForPullRequest</a>, which posts a comment to a pull
+   * request at the specified line, file, or request.</p> </li> <li> <p>
    * <a>UpdatePullRequestDescription</a>, which updates the description of a pull
    * request.</p> </li> <li> <p> <a>UpdatePullRequestStatus</a>, which updates the
    * status of a pull request.</p> </li> <li> <p> <a>UpdatePullRequestTitle</a>,
@@ -390,6 +460,37 @@ namespace Model
 
         inline virtual const char* GetServiceClientName() const override { return "CodeCommit"; }
 
+
+        /**
+         * <p>Returns information about one or more merge conflicts in the attempted merge
+         * of two commit specifiers using the squash or three-way merge
+         * strategy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDescribeMergeConflicts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDescribeMergeConflictsOutcome BatchDescribeMergeConflicts(const Model::BatchDescribeMergeConflictsRequest& request) const;
+
+        /**
+         * <p>Returns information about one or more merge conflicts in the attempted merge
+         * of two commit specifiers using the squash or three-way merge
+         * strategy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDescribeMergeConflicts">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchDescribeMergeConflictsOutcomeCallable BatchDescribeMergeConflictsCallable(const Model::BatchDescribeMergeConflictsRequest& request) const;
+
+        /**
+         * <p>Returns information about one or more merge conflicts in the attempted merge
+         * of two commit specifiers using the squash or three-way merge
+         * strategy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDescribeMergeConflicts">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchDescribeMergeConflictsAsync(const Model::BatchDescribeMergeConflictsRequest& request, const BatchDescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about one or more repositories.</p> <note> <p>The
@@ -550,6 +651,46 @@ namespace Model
         virtual void CreateRepositoryAsync(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates an unerferenced commit that represents the result of merging two
+         * branches using a specified merge strategy. This can help you determine the
+         * outcome of a potential merge. </p> <note> <p>This unreferenced merge commit can
+         * only be accessed using the GetCommit API or through git commands such as git
+         * fetch. To retrieve this commit, you must specify its commit ID or otherwise
+         * reference it.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateUnreferencedMergeCommitOutcome CreateUnreferencedMergeCommit(const Model::CreateUnreferencedMergeCommitRequest& request) const;
+
+        /**
+         * <p>Creates an unerferenced commit that represents the result of merging two
+         * branches using a specified merge strategy. This can help you determine the
+         * outcome of a potential merge. </p> <note> <p>This unreferenced merge commit can
+         * only be accessed using the GetCommit API or through git commands such as git
+         * fetch. To retrieve this commit, you must specify its commit ID or otherwise
+         * reference it.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateUnreferencedMergeCommitOutcomeCallable CreateUnreferencedMergeCommitCallable(const Model::CreateUnreferencedMergeCommitRequest& request) const;
+
+        /**
+         * <p>Creates an unerferenced commit that represents the result of merging two
+         * branches using a specified merge strategy. This can help you determine the
+         * outcome of a potential merge. </p> <note> <p>This unreferenced merge commit can
+         * only be accessed using the GetCommit API or through git commands such as git
+         * fetch. To retrieve this commit, you must specify its commit ID or otherwise
+         * reference it.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateUnreferencedMergeCommitAsync(const Model::CreateUnreferencedMergeCommitRequest& request, const CreateUnreferencedMergeCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a branch from a repository, unless that branch is the default branch
          * for the repository. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch">AWS
@@ -672,6 +813,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRepositoryAsync(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about one or more merge conflicts in the attempted merge
+         * of two commit specifiers using the squash or three-way merge strategy. If the
+         * merge option for the attempted merge is specified as FAST_FORWARD_MERGE, an
+         * exception will be thrown.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DescribeMergeConflicts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMergeConflictsOutcome DescribeMergeConflicts(const Model::DescribeMergeConflictsRequest& request) const;
+
+        /**
+         * <p>Returns information about one or more merge conflicts in the attempted merge
+         * of two commit specifiers using the squash or three-way merge strategy. If the
+         * merge option for the attempted merge is specified as FAST_FORWARD_MERGE, an
+         * exception will be thrown.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DescribeMergeConflicts">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeMergeConflictsOutcomeCallable DescribeMergeConflictsCallable(const Model::DescribeMergeConflictsRequest& request) const;
+
+        /**
+         * <p>Returns information about one or more merge conflicts in the attempted merge
+         * of two commit specifiers using the squash or three-way merge strategy. If the
+         * merge option for the attempted merge is specified as FAST_FORWARD_MERGE, an
+         * exception will be thrown.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DescribeMergeConflicts">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeMergeConflictsAsync(const Model::DescribeMergeConflictsRequest& request, const DescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about one or more pull request events.</p><p><h3>See
@@ -954,6 +1129,34 @@ namespace Model
         virtual void GetFolderAsync(const Model::GetFolderRequest& request, const GetFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about a specified merge commit.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeCommit">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMergeCommitOutcome GetMergeCommit(const Model::GetMergeCommitRequest& request) const;
+
+        /**
+         * <p>Returns information about a specified merge commit.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeCommit">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMergeCommitOutcomeCallable GetMergeCommitCallable(const Model::GetMergeCommitRequest& request) const;
+
+        /**
+         * <p>Returns information about a specified merge commit.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeCommit">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMergeCommitAsync(const Model::GetMergeCommitRequest& request, const GetMergeCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about merge conflicts between the before and after commit
          * IDs for a pull request in a repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeConflicts">AWS
@@ -980,6 +1183,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetMergeConflictsAsync(const Model::GetMergeConflictsRequest& request, const GetMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about the merge options available for merging two
+         * specified branches. For details about why a particular merge option is not
+         * available, use GetMergeConflicts or DescribeMergeConflicts.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMergeOptionsOutcome GetMergeOptions(const Model::GetMergeOptionsRequest& request) const;
+
+        /**
+         * <p>Returns information about the merge options available for merging two
+         * specified branches. For details about why a particular merge option is not
+         * available, use GetMergeConflicts or DescribeMergeConflicts.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeOptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMergeOptionsOutcomeCallable GetMergeOptionsCallable(const Model::GetMergeOptionsRequest& request) const;
+
+        /**
+         * <p>Returns information about the merge options available for merging two
+         * specified branches. For details about why a particular merge option is not
+         * available, use GetMergeConflicts or DescribeMergeConflicts.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeOptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMergeOptionsAsync(const Model::GetMergeOptionsRequest& request, const GetMergeOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a pull request in a specified
@@ -1205,9 +1442,93 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Merges two branches using the fast-forward merge strategy.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByFastForward">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::MergeBranchesByFastForwardOutcome MergeBranchesByFastForward(const Model::MergeBranchesByFastForwardRequest& request) const;
+
+        /**
+         * <p>Merges two branches using the fast-forward merge strategy.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByFastForward">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::MergeBranchesByFastForwardOutcomeCallable MergeBranchesByFastForwardCallable(const Model::MergeBranchesByFastForwardRequest& request) const;
+
+        /**
+         * <p>Merges two branches using the fast-forward merge strategy.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByFastForward">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void MergeBranchesByFastForwardAsync(const Model::MergeBranchesByFastForwardRequest& request, const MergeBranchesByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Merges two branches using the squash merge strategy.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesBySquash">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::MergeBranchesBySquashOutcome MergeBranchesBySquash(const Model::MergeBranchesBySquashRequest& request) const;
+
+        /**
+         * <p>Merges two branches using the squash merge strategy.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesBySquash">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::MergeBranchesBySquashOutcomeCallable MergeBranchesBySquashCallable(const Model::MergeBranchesBySquashRequest& request) const;
+
+        /**
+         * <p>Merges two branches using the squash merge strategy.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesBySquash">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void MergeBranchesBySquashAsync(const Model::MergeBranchesBySquashRequest& request, const MergeBranchesBySquashResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Merges two specified branches using the three-way merge
+         * strategy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByThreeWay">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::MergeBranchesByThreeWayOutcome MergeBranchesByThreeWay(const Model::MergeBranchesByThreeWayRequest& request) const;
+
+        /**
+         * <p>Merges two specified branches using the three-way merge
+         * strategy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByThreeWay">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::MergeBranchesByThreeWayOutcomeCallable MergeBranchesByThreeWayCallable(const Model::MergeBranchesByThreeWayRequest& request) const;
+
+        /**
+         * <p>Merges two specified branches using the three-way merge
+         * strategy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByThreeWay">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void MergeBranchesByThreeWayAsync(const Model::MergeBranchesByThreeWayRequest& request, const MergeBranchesByThreeWayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Closes a pull request and attempts to merge the source commit of a pull
          * request into the specified destination branch for that pull request at the
-         * specified commit using the fast-forward merge option.</p><p><h3>See Also:</h3>  
+         * specified commit using the fast-forward merge strategy.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByFastForward">AWS
          * API Reference</a></p>
@@ -1217,7 +1538,7 @@ namespace Model
         /**
          * <p>Closes a pull request and attempts to merge the source commit of a pull
          * request into the specified destination branch for that pull request at the
-         * specified commit using the fast-forward merge option.</p><p><h3>See Also:</h3>  
+         * specified commit using the fast-forward merge strategy.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByFastForward">AWS
          * API Reference</a></p>
@@ -1229,7 +1550,7 @@ namespace Model
         /**
          * <p>Closes a pull request and attempts to merge the source commit of a pull
          * request into the specified destination branch for that pull request at the
-         * specified commit using the fast-forward merge option.</p><p><h3>See Also:</h3>  
+         * specified commit using the fast-forward merge strategy.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByFastForward">AWS
          * API Reference</a></p>
@@ -1237,6 +1558,71 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void MergePullRequestByFastForwardAsync(const Model::MergePullRequestByFastForwardRequest& request, const MergePullRequestByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Closes a pull request and attempts to merge the source commit of a pull
+         * request into the specified destination branch for that pull request at the
+         * specified commit using the squash merge strategy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestBySquash">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::MergePullRequestBySquashOutcome MergePullRequestBySquash(const Model::MergePullRequestBySquashRequest& request) const;
+
+        /**
+         * <p>Closes a pull request and attempts to merge the source commit of a pull
+         * request into the specified destination branch for that pull request at the
+         * specified commit using the squash merge strategy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestBySquash">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::MergePullRequestBySquashOutcomeCallable MergePullRequestBySquashCallable(const Model::MergePullRequestBySquashRequest& request) const;
+
+        /**
+         * <p>Closes a pull request and attempts to merge the source commit of a pull
+         * request into the specified destination branch for that pull request at the
+         * specified commit using the squash merge strategy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestBySquash">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void MergePullRequestBySquashAsync(const Model::MergePullRequestBySquashRequest& request, const MergePullRequestBySquashResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Closes a pull request and attempts to merge the source commit of a pull
+         * request into the specified destination branch for that pull request at the
+         * specified commit using the three-way merge strategy.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByThreeWay">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::MergePullRequestByThreeWayOutcome MergePullRequestByThreeWay(const Model::MergePullRequestByThreeWayRequest& request) const;
+
+        /**
+         * <p>Closes a pull request and attempts to merge the source commit of a pull
+         * request into the specified destination branch for that pull request at the
+         * specified commit using the three-way merge strategy.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByThreeWay">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::MergePullRequestByThreeWayOutcomeCallable MergePullRequestByThreeWayCallable(const Model::MergePullRequestByThreeWayRequest& request) const;
+
+        /**
+         * <p>Closes a pull request and attempts to merge the source commit of a pull
+         * request into the specified destination branch for that pull request at the
+         * specified commit using the three-way merge strategy.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByThreeWay">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void MergePullRequestByThreeWayAsync(const Model::MergePullRequestByThreeWayRequest& request, const MergePullRequestByThreeWayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Posts a comment on the comparison between two commits.</p><p><h3>See
@@ -1713,15 +2099,18 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void BatchDescribeMergeConflictsAsyncHelper(const Model::BatchDescribeMergeConflictsRequest& request, const BatchDescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetRepositoriesAsyncHelper(const Model::BatchGetRepositoriesRequest& request, const BatchGetRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBranchAsyncHelper(const Model::CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCommitAsyncHelper(const Model::CreateCommitRequest& request, const CreateCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePullRequestAsyncHelper(const Model::CreatePullRequestRequest& request, const CreatePullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRepositoryAsyncHelper(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateUnreferencedMergeCommitAsyncHelper(const Model::CreateUnreferencedMergeCommitRequest& request, const CreateUnreferencedMergeCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBranchAsyncHelper(const Model::DeleteBranchRequest& request, const DeleteBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCommentContentAsyncHelper(const Model::DeleteCommentContentRequest& request, const DeleteCommentContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFileAsyncHelper(const Model::DeleteFileRequest& request, const DeleteFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRepositoryAsyncHelper(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeMergeConflictsAsyncHelper(const Model::DescribeMergeConflictsRequest& request, const DescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePullRequestEventsAsyncHelper(const Model::DescribePullRequestEventsRequest& request, const DescribePullRequestEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBlobAsyncHelper(const Model::GetBlobRequest& request, const GetBlobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBranchAsyncHelper(const Model::GetBranchRequest& request, const GetBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1732,7 +2121,9 @@ namespace Model
         void GetDifferencesAsyncHelper(const Model::GetDifferencesRequest& request, const GetDifferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFileAsyncHelper(const Model::GetFileRequest& request, const GetFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFolderAsyncHelper(const Model::GetFolderRequest& request, const GetFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMergeCommitAsyncHelper(const Model::GetMergeCommitRequest& request, const GetMergeCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMergeConflictsAsyncHelper(const Model::GetMergeConflictsRequest& request, const GetMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMergeOptionsAsyncHelper(const Model::GetMergeOptionsRequest& request, const GetMergeOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPullRequestAsyncHelper(const Model::GetPullRequestRequest& request, const GetPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRepositoryAsyncHelper(const Model::GetRepositoryRequest& request, const GetRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRepositoryTriggersAsyncHelper(const Model::GetRepositoryTriggersRequest& request, const GetRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1740,7 +2131,12 @@ namespace Model
         void ListPullRequestsAsyncHelper(const Model::ListPullRequestsRequest& request, const ListPullRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRepositoriesAsyncHelper(const Model::ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void MergeBranchesByFastForwardAsyncHelper(const Model::MergeBranchesByFastForwardRequest& request, const MergeBranchesByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void MergeBranchesBySquashAsyncHelper(const Model::MergeBranchesBySquashRequest& request, const MergeBranchesBySquashResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void MergeBranchesByThreeWayAsyncHelper(const Model::MergeBranchesByThreeWayRequest& request, const MergeBranchesByThreeWayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MergePullRequestByFastForwardAsyncHelper(const Model::MergePullRequestByFastForwardRequest& request, const MergePullRequestByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void MergePullRequestBySquashAsyncHelper(const Model::MergePullRequestBySquashRequest& request, const MergePullRequestBySquashResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void MergePullRequestByThreeWayAsyncHelper(const Model::MergePullRequestByThreeWayRequest& request, const MergePullRequestByThreeWayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PostCommentForComparedCommitAsyncHelper(const Model::PostCommentForComparedCommitRequest& request, const PostCommentForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PostCommentForPullRequestAsyncHelper(const Model::PostCommentForPullRequestRequest& request, const PostCommentForPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PostCommentReplyAsyncHelper(const Model::PostCommentReplyRequest& request, const PostCommentReplyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

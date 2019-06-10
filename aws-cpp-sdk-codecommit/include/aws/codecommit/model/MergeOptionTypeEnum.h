@@ -26,7 +26,9 @@ namespace Model
   enum class MergeOptionTypeEnum
   {
     NOT_SET,
-    FAST_FORWARD_MERGE
+    FAST_FORWARD_MERGE,
+    SQUASH_MERGE,
+    THREE_WAY_MERGE
   };
 
 namespace MergeOptionTypeEnumMapper
