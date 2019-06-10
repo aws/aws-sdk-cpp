@@ -63,9 +63,8 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
 #if($operation.result && $operation.result.shape.hasStreamMembers())
   StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_${operation.http.method});
 #elseif($operation.result && $operation.result.shape.hasEventStreamMembers())
-  request.GetEventStreamDecoder().Reset();
   request.SetResponseStreamFactory(
-      [&] { return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
+      [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_${operation.http.method});
 #else
