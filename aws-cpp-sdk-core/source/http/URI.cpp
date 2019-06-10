@@ -141,8 +141,8 @@ Aws::String URI::URLEncodePathRFC3986(const Aws::String& path)
                 // RFC 3986 §2.2 Reserved characters
                 // NOTE: this implementation does not accurately implement the RFC on purpose to accommodate for
                 // discrepancies in the implementations of URL encoding between AWS services for legacy reasons.
-                case '$': case '&': case ',': case '/':
-                case ':': case ';': case '=': case '@':
+                case '$': case '&': case ',':
+                case ':': case '=': case '@':
                     ss << c;
                     break;
                 default:

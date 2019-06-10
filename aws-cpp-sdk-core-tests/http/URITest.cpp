@@ -229,4 +229,7 @@ TEST(URITest, TestGetRFC3986URLEncodedPath)
 
     uri = "https://test.com/ሴ";
     EXPECT_STREQ("/%E1%88%B4", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+
+    uri = "https://test.com/segment+other/b;jsession=1";
+    EXPECT_STREQ("/segment%2Bother/b%3Bjsession=1", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
 }

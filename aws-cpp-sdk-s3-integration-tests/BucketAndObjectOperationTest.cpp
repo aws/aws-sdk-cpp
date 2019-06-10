@@ -625,6 +625,32 @@ namespace
         ASSERT_TRUE(deleteBucketOutcome.IsSuccess());
     }
 
+    TEST_F(BucketAndObjectOperationTest, TestPutWithSpecialCharactersInKeyName)
+    {
+        Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str());
+
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
+
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
+        ASSERT_TRUE(!createBucketResult.GetLocation().empty());
+
+        WaitForBucketToPropagate(fullBucketName);
+
+        PutObjectRequest putObjectRequest;
+        putObjectRequest.SetBucket(fullBucketName);
+        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("BucketAndObjectOperationTest");
+        *objectStream << "Test Object";
+        putObjectRequest.SetBody(objectStream);
+        putObjectRequest.SetContentType("text/plain");
+        putObjectRequest.SetKey("foo;jsessionid=40+2");
+        PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+        ASSERT_TRUE(putObjectOutcome.IsSuccess());
+    }
+
     TEST_F(BucketAndObjectOperationTest, TestObjectOperations)
     {
         Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str());
