@@ -15,7 +15,7 @@
 
 #pragma once
 
-#if defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
+#if defined (USE_WINDOWS_DLL_SEMANTICS) || defined (_WIN32)
     #ifdef _MSC_VER
         #pragma warning(disable : 4251)
     #endif // _MSC_VER
@@ -29,7 +29,7 @@
     #else // USE_IMPORT_EXPORT
         #define AWS_QUEUES_API
     #endif // USE_IMPORT_EXPORT
-#else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
+#else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (_WIN32)
     #define AWS_QUEUES_API
-#endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
+#endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (_WIN32)
 
