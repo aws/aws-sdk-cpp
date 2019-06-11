@@ -22,6 +22,7 @@
 #include <aws/sagemaker/model/TransformInput.h>
 #include <aws/sagemaker/model/TransformOutput.h>
 #include <aws/sagemaker/model/TransformResources.h>
+#include <aws/sagemaker/model/DataProcessing.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -537,6 +538,55 @@ namespace Model
 
 
     /**
+     * <p>The data structure used for combining the input data and inference in the
+     * output file. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch
+     * Transform I/O Join</a>.</p>
+     */
+    inline const DataProcessing& GetDataProcessing() const{ return m_dataProcessing; }
+
+    /**
+     * <p>The data structure used for combining the input data and inference in the
+     * output file. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch
+     * Transform I/O Join</a>.</p>
+     */
+    inline bool DataProcessingHasBeenSet() const { return m_dataProcessingHasBeenSet; }
+
+    /**
+     * <p>The data structure used for combining the input data and inference in the
+     * output file. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch
+     * Transform I/O Join</a>.</p>
+     */
+    inline void SetDataProcessing(const DataProcessing& value) { m_dataProcessingHasBeenSet = true; m_dataProcessing = value; }
+
+    /**
+     * <p>The data structure used for combining the input data and inference in the
+     * output file. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch
+     * Transform I/O Join</a>.</p>
+     */
+    inline void SetDataProcessing(DataProcessing&& value) { m_dataProcessingHasBeenSet = true; m_dataProcessing = std::move(value); }
+
+    /**
+     * <p>The data structure used for combining the input data and inference in the
+     * output file. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch
+     * Transform I/O Join</a>.</p>
+     */
+    inline CreateTransformJobRequest& WithDataProcessing(const DataProcessing& value) { SetDataProcessing(value); return *this;}
+
+    /**
+     * <p>The data structure used for combining the input data and inference in the
+     * output file. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch
+     * Transform I/O Join</a>.</p>
+     */
+    inline CreateTransformJobRequest& WithDataProcessing(DataProcessing&& value) { SetDataProcessing(std::move(value)); return *this;}
+
+
+    /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
@@ -628,6 +678,9 @@ namespace Model
 
     TransformResources m_transformResources;
     bool m_transformResourcesHasBeenSet;
+
+    DataProcessing m_dataProcessing;
+    bool m_dataProcessingHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

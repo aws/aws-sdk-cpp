@@ -303,7 +303,7 @@ namespace Model
      * examples, don't use status messages in if statements.</p> </important> <p>To
      * have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in
-     * <a>DescribeTrainingJobResponse</a>, and <code>StatusMessage</code> together. For
+     * <a>DescribeTrainingJob</a>, and <code>StatusMessage</code> together. For
      * example, at the start of a training job, you might see the following:</p> <ul>
      * <li> <p> <code>TrainingJobStatus</code> - InProgress</p> </li> <li> <p>
      * <code>SecondaryStatus</code> - Training</p> </li> <li> <p>
@@ -326,7 +326,7 @@ namespace Model
      * examples, don't use status messages in if statements.</p> </important> <p>To
      * have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in
-     * <a>DescribeTrainingJobResponse</a>, and <code>StatusMessage</code> together. For
+     * <a>DescribeTrainingJob</a>, and <code>StatusMessage</code> together. For
      * example, at the start of a training job, you might see the following:</p> <ul>
      * <li> <p> <code>TrainingJobStatus</code> - InProgress</p> </li> <li> <p>
      * <code>SecondaryStatus</code> - Training</p> </li> <li> <p>
@@ -349,7 +349,7 @@ namespace Model
      * examples, don't use status messages in if statements.</p> </important> <p>To
      * have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in
-     * <a>DescribeTrainingJobResponse</a>, and <code>StatusMessage</code> together. For
+     * <a>DescribeTrainingJob</a>, and <code>StatusMessage</code> together. For
      * example, at the start of a training job, you might see the following:</p> <ul>
      * <li> <p> <code>TrainingJobStatus</code> - InProgress</p> </li> <li> <p>
      * <code>SecondaryStatus</code> - Training</p> </li> <li> <p>
@@ -372,7 +372,7 @@ namespace Model
      * examples, don't use status messages in if statements.</p> </important> <p>To
      * have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in
-     * <a>DescribeTrainingJobResponse</a>, and <code>StatusMessage</code> together. For
+     * <a>DescribeTrainingJob</a>, and <code>StatusMessage</code> together. For
      * example, at the start of a training job, you might see the following:</p> <ul>
      * <li> <p> <code>TrainingJobStatus</code> - InProgress</p> </li> <li> <p>
      * <code>SecondaryStatus</code> - Training</p> </li> <li> <p>
@@ -395,7 +395,7 @@ namespace Model
      * examples, don't use status messages in if statements.</p> </important> <p>To
      * have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in
-     * <a>DescribeTrainingJobResponse</a>, and <code>StatusMessage</code> together. For
+     * <a>DescribeTrainingJob</a>, and <code>StatusMessage</code> together. For
      * example, at the start of a training job, you might see the following:</p> <ul>
      * <li> <p> <code>TrainingJobStatus</code> - InProgress</p> </li> <li> <p>
      * <code>SecondaryStatus</code> - Training</p> </li> <li> <p>
@@ -418,7 +418,7 @@ namespace Model
      * examples, don't use status messages in if statements.</p> </important> <p>To
      * have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in
-     * <a>DescribeTrainingJobResponse</a>, and <code>StatusMessage</code> together. For
+     * <a>DescribeTrainingJob</a>, and <code>StatusMessage</code> together. For
      * example, at the start of a training job, you might see the following:</p> <ul>
      * <li> <p> <code>TrainingJobStatus</code> - InProgress</p> </li> <li> <p>
      * <code>SecondaryStatus</code> - Training</p> </li> <li> <p>
@@ -441,7 +441,7 @@ namespace Model
      * examples, don't use status messages in if statements.</p> </important> <p>To
      * have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in
-     * <a>DescribeTrainingJobResponse</a>, and <code>StatusMessage</code> together. For
+     * <a>DescribeTrainingJob</a>, and <code>StatusMessage</code> together. For
      * example, at the start of a training job, you might see the following:</p> <ul>
      * <li> <p> <code>TrainingJobStatus</code> - InProgress</p> </li> <li> <p>
      * <code>SecondaryStatus</code> - Training</p> </li> <li> <p>
@@ -464,7 +464,7 @@ namespace Model
      * examples, don't use status messages in if statements.</p> </important> <p>To
      * have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in
-     * <a>DescribeTrainingJobResponse</a>, and <code>StatusMessage</code> together. For
+     * <a>DescribeTrainingJob</a>, and <code>StatusMessage</code> together. For
      * example, at the start of a training job, you might see the following:</p> <ul>
      * <li> <p> <code>TrainingJobStatus</code> - InProgress</p> </li> <li> <p>
      * <code>SecondaryStatus</code> - Training</p> </li> <li> <p>

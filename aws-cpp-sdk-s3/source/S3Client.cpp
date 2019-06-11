@@ -3655,9 +3655,8 @@ SelectObjectContentOutcome S3Client::SelectObjectContent(SelectObjectContentRequ
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?select&select-type=2");
   uri.SetQueryString(ss.str());
-  request.GetEventStreamDecoder().Reset();
   request.SetResponseStreamFactory(
-      [&] { return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
+      [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
   XmlOutcome outcome = MakeRequestWithEventStream(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())

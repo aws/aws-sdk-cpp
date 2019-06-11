@@ -113,9 +113,8 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
   Aws::StringStream ss;
   ss << "/stream-transcription";
   uri.SetPath(uri.GetPath() + ss.str());
-  request.GetEventStreamDecoder().Reset();
   request.SetResponseStreamFactory(
-      [&] { return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
+      [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
 
   auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG);

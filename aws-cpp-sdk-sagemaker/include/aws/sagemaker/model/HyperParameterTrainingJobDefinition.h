@@ -442,68 +442,44 @@ namespace Model
 
 
     /**
-     * <p>Sets a maximum duration for the training jobs that the tuning job launches.
-     * Use this parameter to limit model training costs. </p> <p>To stop a job, Amazon
-     * SageMaker sends the algorithm the <code>SIGTERM</code> signal. This delays job
-     * termination for 120 seconds. Algorithms might use this 120-second window to save
-     * the model artifacts.</p> <p>When Amazon SageMaker terminates a job because the
-     * stopping condition has been met, training algorithms provided by Amazon
-     * SageMaker save the intermediate results of the job.</p>
+     * <p>Specifies a limit to how long a model hyperparameter training job can run.
+     * When the job reaches the time limit, Amazon SageMaker ends the training job. Use
+     * this API to cap model training costs.</p>
      */
     inline const StoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
 
     /**
-     * <p>Sets a maximum duration for the training jobs that the tuning job launches.
-     * Use this parameter to limit model training costs. </p> <p>To stop a job, Amazon
-     * SageMaker sends the algorithm the <code>SIGTERM</code> signal. This delays job
-     * termination for 120 seconds. Algorithms might use this 120-second window to save
-     * the model artifacts.</p> <p>When Amazon SageMaker terminates a job because the
-     * stopping condition has been met, training algorithms provided by Amazon
-     * SageMaker save the intermediate results of the job.</p>
+     * <p>Specifies a limit to how long a model hyperparameter training job can run.
+     * When the job reaches the time limit, Amazon SageMaker ends the training job. Use
+     * this API to cap model training costs.</p>
      */
     inline bool StoppingConditionHasBeenSet() const { return m_stoppingConditionHasBeenSet; }
 
     /**
-     * <p>Sets a maximum duration for the training jobs that the tuning job launches.
-     * Use this parameter to limit model training costs. </p> <p>To stop a job, Amazon
-     * SageMaker sends the algorithm the <code>SIGTERM</code> signal. This delays job
-     * termination for 120 seconds. Algorithms might use this 120-second window to save
-     * the model artifacts.</p> <p>When Amazon SageMaker terminates a job because the
-     * stopping condition has been met, training algorithms provided by Amazon
-     * SageMaker save the intermediate results of the job.</p>
+     * <p>Specifies a limit to how long a model hyperparameter training job can run.
+     * When the job reaches the time limit, Amazon SageMaker ends the training job. Use
+     * this API to cap model training costs.</p>
      */
     inline void SetStoppingCondition(const StoppingCondition& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = value; }
 
     /**
-     * <p>Sets a maximum duration for the training jobs that the tuning job launches.
-     * Use this parameter to limit model training costs. </p> <p>To stop a job, Amazon
-     * SageMaker sends the algorithm the <code>SIGTERM</code> signal. This delays job
-     * termination for 120 seconds. Algorithms might use this 120-second window to save
-     * the model artifacts.</p> <p>When Amazon SageMaker terminates a job because the
-     * stopping condition has been met, training algorithms provided by Amazon
-     * SageMaker save the intermediate results of the job.</p>
+     * <p>Specifies a limit to how long a model hyperparameter training job can run.
+     * When the job reaches the time limit, Amazon SageMaker ends the training job. Use
+     * this API to cap model training costs.</p>
      */
     inline void SetStoppingCondition(StoppingCondition&& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = std::move(value); }
 
     /**
-     * <p>Sets a maximum duration for the training jobs that the tuning job launches.
-     * Use this parameter to limit model training costs. </p> <p>To stop a job, Amazon
-     * SageMaker sends the algorithm the <code>SIGTERM</code> signal. This delays job
-     * termination for 120 seconds. Algorithms might use this 120-second window to save
-     * the model artifacts.</p> <p>When Amazon SageMaker terminates a job because the
-     * stopping condition has been met, training algorithms provided by Amazon
-     * SageMaker save the intermediate results of the job.</p>
+     * <p>Specifies a limit to how long a model hyperparameter training job can run.
+     * When the job reaches the time limit, Amazon SageMaker ends the training job. Use
+     * this API to cap model training costs.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithStoppingCondition(const StoppingCondition& value) { SetStoppingCondition(value); return *this;}
 
     /**
-     * <p>Sets a maximum duration for the training jobs that the tuning job launches.
-     * Use this parameter to limit model training costs. </p> <p>To stop a job, Amazon
-     * SageMaker sends the algorithm the <code>SIGTERM</code> signal. This delays job
-     * termination for 120 seconds. Algorithms might use this 120-second window to save
-     * the model artifacts.</p> <p>When Amazon SageMaker terminates a job because the
-     * stopping condition has been met, training algorithms provided by Amazon
-     * SageMaker save the intermediate results of the job.</p>
+     * <p>Specifies a limit to how long a model hyperparameter training job can run.
+     * When the job reaches the time limit, Amazon SageMaker ends the training job. Use
+     * this API to cap model training costs.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithStoppingCondition(StoppingCondition&& value) { SetStoppingCondition(std::move(value)); return *this;}
 

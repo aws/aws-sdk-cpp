@@ -23,32 +23,19 @@ namespace SageMaker
 {
 namespace Model
 {
-  enum class TargetDevice
+  enum class JoinSource
   {
     NOT_SET,
-    lambda,
-    ml_m4,
-    ml_m5,
-    ml_c4,
-    ml_c5,
-    ml_p2,
-    ml_p3,
-    jetson_tx1,
-    jetson_tx2,
-    jetson_nano,
-    rasp3b,
-    deeplens,
-    rk3399,
-    rk3288,
-    sbe_c
+    Input,
+    None
   };
 
-namespace TargetDeviceMapper
+namespace JoinSourceMapper
 {
-AWS_SAGEMAKER_API TargetDevice GetTargetDeviceForName(const Aws::String& name);
+AWS_SAGEMAKER_API JoinSource GetJoinSourceForName(const Aws::String& name);
 
-AWS_SAGEMAKER_API Aws::String GetNameForTargetDevice(TargetDevice value);
-} // namespace TargetDeviceMapper
+AWS_SAGEMAKER_API Aws::String GetNameForJoinSource(JoinSource value);
+} // namespace JoinSourceMapper
 } // namespace Model
 } // namespace SageMaker
 } // namespace Aws

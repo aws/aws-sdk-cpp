@@ -195,7 +195,7 @@ namespace Model
      * SageMaker hyperparameter tuning chooses the best scale for the
      * hyperparameter.</p> </dd> <dt>Linear</dt> <dd> <p>Hyperparameter tuning searches
      * the values in the hyperparameter range by using a linear scale.</p> </dd>
-     * <dt>Logarithmic</dt> <dd> <p>Hyperparemeter tuning searches the values in the
+     * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
      * hyperparameter range by using a logarithmic scale.</p> <p>Logarithmic scaling
      * works only for ranges that have only values greater than 0.</p> </dd>
      * <dt>ReverseLogarithmic</dt> <dd> <p>Hyperparemeter tuning searches the values in
@@ -213,7 +213,7 @@ namespace Model
      * SageMaker hyperparameter tuning chooses the best scale for the
      * hyperparameter.</p> </dd> <dt>Linear</dt> <dd> <p>Hyperparameter tuning searches
      * the values in the hyperparameter range by using a linear scale.</p> </dd>
-     * <dt>Logarithmic</dt> <dd> <p>Hyperparemeter tuning searches the values in the
+     * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
      * hyperparameter range by using a logarithmic scale.</p> <p>Logarithmic scaling
      * works only for ranges that have only values greater than 0.</p> </dd>
      * <dt>ReverseLogarithmic</dt> <dd> <p>Hyperparemeter tuning searches the values in
@@ -231,7 +231,7 @@ namespace Model
      * SageMaker hyperparameter tuning chooses the best scale for the
      * hyperparameter.</p> </dd> <dt>Linear</dt> <dd> <p>Hyperparameter tuning searches
      * the values in the hyperparameter range by using a linear scale.</p> </dd>
-     * <dt>Logarithmic</dt> <dd> <p>Hyperparemeter tuning searches the values in the
+     * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
      * hyperparameter range by using a logarithmic scale.</p> <p>Logarithmic scaling
      * works only for ranges that have only values greater than 0.</p> </dd>
      * <dt>ReverseLogarithmic</dt> <dd> <p>Hyperparemeter tuning searches the values in
@@ -249,7 +249,7 @@ namespace Model
      * SageMaker hyperparameter tuning chooses the best scale for the
      * hyperparameter.</p> </dd> <dt>Linear</dt> <dd> <p>Hyperparameter tuning searches
      * the values in the hyperparameter range by using a linear scale.</p> </dd>
-     * <dt>Logarithmic</dt> <dd> <p>Hyperparemeter tuning searches the values in the
+     * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
      * hyperparameter range by using a logarithmic scale.</p> <p>Logarithmic scaling
      * works only for ranges that have only values greater than 0.</p> </dd>
      * <dt>ReverseLogarithmic</dt> <dd> <p>Hyperparemeter tuning searches the values in
@@ -267,7 +267,7 @@ namespace Model
      * SageMaker hyperparameter tuning chooses the best scale for the
      * hyperparameter.</p> </dd> <dt>Linear</dt> <dd> <p>Hyperparameter tuning searches
      * the values in the hyperparameter range by using a linear scale.</p> </dd>
-     * <dt>Logarithmic</dt> <dd> <p>Hyperparemeter tuning searches the values in the
+     * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
      * hyperparameter range by using a logarithmic scale.</p> <p>Logarithmic scaling
      * works only for ranges that have only values greater than 0.</p> </dd>
      * <dt>ReverseLogarithmic</dt> <dd> <p>Hyperparemeter tuning searches the values in
@@ -285,7 +285,7 @@ namespace Model
      * SageMaker hyperparameter tuning chooses the best scale for the
      * hyperparameter.</p> </dd> <dt>Linear</dt> <dd> <p>Hyperparameter tuning searches
      * the values in the hyperparameter range by using a linear scale.</p> </dd>
-     * <dt>Logarithmic</dt> <dd> <p>Hyperparemeter tuning searches the values in the
+     * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
      * hyperparameter range by using a logarithmic scale.</p> <p>Logarithmic scaling
      * works only for ranges that have only values greater than 0.</p> </dd>
      * <dt>ReverseLogarithmic</dt> <dd> <p>Hyperparemeter tuning searches the values in

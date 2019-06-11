@@ -176,8 +176,8 @@ namespace Model
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
-     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo (ap-northeast-1):</b> </p> <ul> <li>
-     * <p>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo) (ap-northeast-1):</b> </p> <ul>
+     * <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
@@ -185,7 +185,7 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
-     * </p> </li> </ul> <p> <b>Asia Pacific (Sydney (ap-southeast-1):</b> </p> <ul>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Sydney) (ap-southeast-1):</b> </p> <ul>
      * <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-BoundingBox</code>
      * </p> </li> <li> <p>
@@ -236,8 +236,8 @@ namespace Model
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
-     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo (ap-northeast-1):</b> </p> <ul> <li>
-     * <p>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo) (ap-northeast-1):</b> </p> <ul>
+     * <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
@@ -245,7 +245,7 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
-     * </p> </li> </ul> <p> <b>Asia Pacific (Sydney (ap-southeast-1):</b> </p> <ul>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Sydney) (ap-southeast-1):</b> </p> <ul>
      * <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-BoundingBox</code>
      * </p> </li> <li> <p>
@@ -296,8 +296,8 @@ namespace Model
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
-     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo (ap-northeast-1):</b> </p> <ul> <li>
-     * <p>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo) (ap-northeast-1):</b> </p> <ul>
+     * <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
@@ -305,7 +305,7 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
-     * </p> </li> </ul> <p> <b>Asia Pacific (Sydney (ap-southeast-1):</b> </p> <ul>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Sydney) (ap-southeast-1):</b> </p> <ul>
      * <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-BoundingBox</code>
      * </p> </li> <li> <p>
@@ -356,8 +356,8 @@ namespace Model
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
-     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo (ap-northeast-1):</b> </p> <ul> <li>
-     * <p>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo) (ap-northeast-1):</b> </p> <ul>
+     * <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
@@ -365,7 +365,7 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
-     * </p> </li> </ul> <p> <b>Asia Pacific (Sydney (ap-southeast-1):</b> </p> <ul>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Sydney) (ap-southeast-1):</b> </p> <ul>
      * <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-BoundingBox</code>
      * </p> </li> <li> <p>
@@ -416,8 +416,8 @@ namespace Model
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
-     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo (ap-northeast-1):</b> </p> <ul> <li>
-     * <p>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo) (ap-northeast-1):</b> </p> <ul>
+     * <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
@@ -425,7 +425,7 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
-     * </p> </li> </ul> <p> <b>Asia Pacific (Sydney (ap-southeast-1):</b> </p> <ul>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Sydney) (ap-southeast-1):</b> </p> <ul>
      * <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-BoundingBox</code>
      * </p> </li> <li> <p>
@@ -476,8 +476,8 @@ namespace Model
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
-     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo (ap-northeast-1):</b> </p> <ul> <li>
-     * <p>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo) (ap-northeast-1):</b> </p> <ul>
+     * <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
@@ -485,7 +485,7 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
-     * </p> </li> </ul> <p> <b>Asia Pacific (Sydney (ap-southeast-1):</b> </p> <ul>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Sydney) (ap-southeast-1):</b> </p> <ul>
      * <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-BoundingBox</code>
      * </p> </li> <li> <p>
@@ -536,8 +536,8 @@ namespace Model
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
-     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo (ap-northeast-1):</b> </p> <ul> <li>
-     * <p>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo) (ap-northeast-1):</b> </p> <ul>
+     * <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
@@ -545,7 +545,7 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
-     * </p> </li> </ul> <p> <b>Asia Pacific (Sydney (ap-southeast-1):</b> </p> <ul>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Sydney) (ap-southeast-1):</b> </p> <ul>
      * <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-BoundingBox</code>
      * </p> </li> <li> <p>
@@ -596,8 +596,8 @@ namespace Model
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
-     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo (ap-northeast-1):</b> </p> <ul> <li>
-     * <p>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo) (ap-northeast-1):</b> </p> <ul>
+     * <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
@@ -605,7 +605,7 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
-     * </p> </li> </ul> <p> <b>Asia Pacific (Sydney (ap-southeast-1):</b> </p> <ul>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Sydney) (ap-southeast-1):</b> </p> <ul>
      * <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-BoundingBox</code>
      * </p> </li> <li> <p>

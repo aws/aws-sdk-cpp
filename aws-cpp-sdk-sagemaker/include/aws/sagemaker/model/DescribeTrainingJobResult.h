@@ -780,27 +780,52 @@ namespace Model
 
 
     /**
-     * <p>The condition under which to stop the training job. </p>
+     * <p>Specifies a limit to how long a model training job can run. When the job
+     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
+     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
+     * algorithm the <code>SIGTERM</code> signal, which delays job termination for 120
+     * seconds. Algorithms can use this 120-second window to save the model artifacts,
+     * so the results of training are not lost. </p>
      */
     inline const StoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
 
     /**
-     * <p>The condition under which to stop the training job. </p>
+     * <p>Specifies a limit to how long a model training job can run. When the job
+     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
+     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
+     * algorithm the <code>SIGTERM</code> signal, which delays job termination for 120
+     * seconds. Algorithms can use this 120-second window to save the model artifacts,
+     * so the results of training are not lost. </p>
      */
     inline void SetStoppingCondition(const StoppingCondition& value) { m_stoppingCondition = value; }
 
     /**
-     * <p>The condition under which to stop the training job. </p>
+     * <p>Specifies a limit to how long a model training job can run. When the job
+     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
+     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
+     * algorithm the <code>SIGTERM</code> signal, which delays job termination for 120
+     * seconds. Algorithms can use this 120-second window to save the model artifacts,
+     * so the results of training are not lost. </p>
      */
     inline void SetStoppingCondition(StoppingCondition&& value) { m_stoppingCondition = std::move(value); }
 
     /**
-     * <p>The condition under which to stop the training job. </p>
+     * <p>Specifies a limit to how long a model training job can run. When the job
+     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
+     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
+     * algorithm the <code>SIGTERM</code> signal, which delays job termination for 120
+     * seconds. Algorithms can use this 120-second window to save the model artifacts,
+     * so the results of training are not lost. </p>
      */
     inline DescribeTrainingJobResult& WithStoppingCondition(const StoppingCondition& value) { SetStoppingCondition(value); return *this;}
 
     /**
-     * <p>The condition under which to stop the training job. </p>
+     * <p>Specifies a limit to how long a model training job can run. When the job
+     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
+     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
+     * algorithm the <code>SIGTERM</code> signal, which delays job termination for 120
+     * seconds. Algorithms can use this 120-second window to save the model artifacts,
+     * so the results of training are not lost. </p>
      */
     inline DescribeTrainingJobResult& WithStoppingCondition(StoppingCondition&& value) { SetStoppingCondition(std::move(value)); return *this;}
 
@@ -1086,7 +1111,7 @@ namespace Model
      * training, choose <code>True</code>. Encryption provides greater security for
      * distributed training, but training might take longer. How long it takes depends
      * on the amount of communication between compute instances, especially if you use
-     * a deep learning algorithm in distributed training.</p>
+     * a deep learning algorithms in distributed training.</p>
      */
     inline bool GetEnableInterContainerTrafficEncryption() const{ return m_enableInterContainerTrafficEncryption; }
 
@@ -1095,7 +1120,7 @@ namespace Model
      * training, choose <code>True</code>. Encryption provides greater security for
      * distributed training, but training might take longer. How long it takes depends
      * on the amount of communication between compute instances, especially if you use
-     * a deep learning algorithm in distributed training.</p>
+     * a deep learning algorithms in distributed training.</p>
      */
     inline void SetEnableInterContainerTrafficEncryption(bool value) { m_enableInterContainerTrafficEncryption = value; }
 
@@ -1104,7 +1129,7 @@ namespace Model
      * training, choose <code>True</code>. Encryption provides greater security for
      * distributed training, but training might take longer. How long it takes depends
      * on the amount of communication between compute instances, especially if you use
-     * a deep learning algorithm in distributed training.</p>
+     * a deep learning algorithms in distributed training.</p>
      */
     inline DescribeTrainingJobResult& WithEnableInterContainerTrafficEncryption(bool value) { SetEnableInterContainerTrafficEncryption(value); return *this;}
 

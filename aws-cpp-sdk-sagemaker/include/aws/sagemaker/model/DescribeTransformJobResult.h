@@ -23,6 +23,7 @@
 #include <aws/sagemaker/model/TransformOutput.h>
 #include <aws/sagemaker/model/TransformResources.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/sagemaker/model/DataProcessing.h>
 #include <utility>
 
 namespace Aws
@@ -639,6 +640,22 @@ namespace Model
      */
     inline DescribeTransformJobResult& WithLabelingJobArn(const char* value) { SetLabelingJobArn(value); return *this;}
 
+
+    
+    inline const DataProcessing& GetDataProcessing() const{ return m_dataProcessing; }
+
+    
+    inline void SetDataProcessing(const DataProcessing& value) { m_dataProcessing = value; }
+
+    
+    inline void SetDataProcessing(DataProcessing&& value) { m_dataProcessing = std::move(value); }
+
+    
+    inline DescribeTransformJobResult& WithDataProcessing(const DataProcessing& value) { SetDataProcessing(value); return *this;}
+
+    
+    inline DescribeTransformJobResult& WithDataProcessing(DataProcessing&& value) { SetDataProcessing(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transformJobName;
@@ -672,6 +689,8 @@ namespace Model
     Aws::Utils::DateTime m_transformEndTime;
 
     Aws::String m_labelingJobArn;
+
+    DataProcessing m_dataProcessing;
   };
 
 } // namespace Model

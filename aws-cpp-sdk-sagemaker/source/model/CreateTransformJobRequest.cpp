@@ -35,6 +35,7 @@ CreateTransformJobRequest::CreateTransformJobRequest() :
     m_transformInputHasBeenSet(false),
     m_transformOutputHasBeenSet(false),
     m_transformResourcesHasBeenSet(false),
+    m_dataProcessingHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -98,6 +99,12 @@ Aws::String CreateTransformJobRequest::SerializePayload() const
   if(m_transformResourcesHasBeenSet)
   {
    payload.WithObject("TransformResources", m_transformResources.Jsonize());
+
+  }
+
+  if(m_dataProcessingHasBeenSet)
+  {
+   payload.WithObject("DataProcessing", m_dataProcessing.Jsonize());
 
   }
 

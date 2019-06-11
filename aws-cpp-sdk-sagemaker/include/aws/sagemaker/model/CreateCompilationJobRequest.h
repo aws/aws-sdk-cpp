@@ -298,32 +298,44 @@ namespace Model
 
 
     /**
-     * <p>The duration allowed for model compilation.</p>
+     * <p>Specifies a limit to how long a model compilation job can run. When the job
+     * reaches the time limit, Amazon SageMaker ends the compilation job. Use this API
+     * to cap model training costs.</p>
      */
     inline const StoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
 
     /**
-     * <p>The duration allowed for model compilation.</p>
+     * <p>Specifies a limit to how long a model compilation job can run. When the job
+     * reaches the time limit, Amazon SageMaker ends the compilation job. Use this API
+     * to cap model training costs.</p>
      */
     inline bool StoppingConditionHasBeenSet() const { return m_stoppingConditionHasBeenSet; }
 
     /**
-     * <p>The duration allowed for model compilation.</p>
+     * <p>Specifies a limit to how long a model compilation job can run. When the job
+     * reaches the time limit, Amazon SageMaker ends the compilation job. Use this API
+     * to cap model training costs.</p>
      */
     inline void SetStoppingCondition(const StoppingCondition& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = value; }
 
     /**
-     * <p>The duration allowed for model compilation.</p>
+     * <p>Specifies a limit to how long a model compilation job can run. When the job
+     * reaches the time limit, Amazon SageMaker ends the compilation job. Use this API
+     * to cap model training costs.</p>
      */
     inline void SetStoppingCondition(StoppingCondition&& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = std::move(value); }
 
     /**
-     * <p>The duration allowed for model compilation.</p>
+     * <p>Specifies a limit to how long a model compilation job can run. When the job
+     * reaches the time limit, Amazon SageMaker ends the compilation job. Use this API
+     * to cap model training costs.</p>
      */
     inline CreateCompilationJobRequest& WithStoppingCondition(const StoppingCondition& value) { SetStoppingCondition(value); return *this;}
 
     /**
-     * <p>The duration allowed for model compilation.</p>
+     * <p>Specifies a limit to how long a model compilation job can run. When the job
+     * reaches the time limit, Amazon SageMaker ends the compilation job. Use this API
+     * to cap model training costs.</p>
      */
     inline CreateCompilationJobRequest& WithStoppingCondition(StoppingCondition&& value) { SetStoppingCondition(std::move(value)); return *this;}
 

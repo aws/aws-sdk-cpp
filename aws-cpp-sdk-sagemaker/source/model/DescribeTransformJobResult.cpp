@@ -145,6 +145,12 @@ DescribeTransformJobResult& DescribeTransformJobResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("DataProcessing"))
+  {
+    m_dataProcessing = jsonValue.GetObject("DataProcessing");
+
+  }
+
 
 
   return *this;
