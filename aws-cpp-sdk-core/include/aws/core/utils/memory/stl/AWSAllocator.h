@@ -103,7 +103,7 @@ namespace Aws
     {
         AWS_UNREFERENCED_PARAM(allocationTag);
 
-        return std::allocate_shared<T, Aws::Allocator<T>>(Aws::Allocator<T>(), std::forward<ArgTypes>(args)...);
+        return std::allocate_shared<T, Aws::Allocator<T> >(Aws::Allocator<T>(), std::forward<ArgTypes>(args)...);
     }
 
 
