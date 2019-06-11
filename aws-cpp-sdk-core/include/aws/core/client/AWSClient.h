@@ -86,8 +86,8 @@ namespace Aws
         struct ClientConfiguration;
         class RetryStrategy;
 
-        typedef Utils::Outcome<std::shared_ptr<Aws::Http::HttpResponse>, AWSError<CoreErrors>> HttpResponseOutcome;
-        typedef Utils::Outcome<AmazonWebServiceResult<Utils::Stream::ResponseStream>, AWSError<CoreErrors>> StreamOutcome;
+        typedef Utils::Outcome<std::shared_ptr<Aws::Http::HttpResponse>, AWSError<CoreErrors> > HttpResponseOutcome;
+        typedef Utils::Outcome<AmazonWebServiceResult<Utils::Stream::ResponseStream>, AWSError<CoreErrors> > StreamOutcome;
 
         /**
          * Abstract AWS Client. Contains most of the functionality necessary to build an http request, get it signed, and send it accross the wire.
@@ -279,7 +279,7 @@ namespace Aws
             bool m_enableClockSkewAdjustment;
         };
 
-        typedef Utils::Outcome<AmazonWebServiceResult<Utils::Json::JsonValue>, AWSError<CoreErrors>> JsonOutcome;
+        typedef Utils::Outcome<AmazonWebServiceResult<Utils::Json::JsonValue>, AWSError<CoreErrors> > JsonOutcome;
         AWS_CORE_API Aws::String GetAuthorizationHeader(const Aws::Http::HttpRequest& httpRequest);
 
         /**
@@ -338,7 +338,7 @@ namespace Aws
             JsonOutcome MakeEventStreamRequest(std::shared_ptr<Aws::Http::HttpRequest>& request) const;
         };
 
-        typedef Utils::Outcome<AmazonWebServiceResult<Utils::Xml::XmlDocument>, AWSError<CoreErrors>> XmlOutcome;
+        typedef Utils::Outcome<AmazonWebServiceResult<Utils::Xml::XmlDocument>, AWSError<CoreErrors> > XmlOutcome;
 
         /**
         *  AWSClient that handles marshalling xml response bodies. You would inherit from this class

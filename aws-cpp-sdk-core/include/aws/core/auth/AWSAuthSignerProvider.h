@@ -57,7 +57,7 @@ namespace Aws
             void AddSigner(std::shared_ptr<Aws::Client::AWSAuthSigner>& signer) override;
             std::shared_ptr<Aws::Client::AWSAuthSigner> GetSigner(const Aws::String& signerName) const override;
         private:
-            Aws::Vector<std::shared_ptr<Aws::Client::AWSAuthSigner>> m_signers;
+            Aws::Vector<std::shared_ptr<Aws::Client::AWSAuthSigner> > m_signers;
         };
     }
 }
