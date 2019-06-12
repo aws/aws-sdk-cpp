@@ -32,7 +32,9 @@ ProvisioningArtifact::ProvisioningArtifact() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_guidance(ProvisioningArtifactGuidance::NOT_SET),
+    m_guidanceHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ ProvisioningArtifact::ProvisioningArtifact(JsonView jsonValue) :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_guidance(ProvisioningArtifactGuidance::NOT_SET),
+    m_guidanceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +79,13 @@ ProvisioningArtifact& ProvisioningArtifact::operator =(JsonView jsonValue)
     m_createdTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Guidance"))
+  {
+    m_guidance = ProvisioningArtifactGuidanceMapper::GetProvisioningArtifactGuidanceForName(jsonValue.GetString("Guidance"));
+
+    m_guidanceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +114,11 @@ JsonValue ProvisioningArtifact::Jsonize() const
   if(m_createdTimeHasBeenSet)
   {
    payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
+  }
+
+  if(m_guidanceHasBeenSet)
+  {
+   payload.WithString("Guidance", ProvisioningArtifactGuidanceMapper::GetNameForProvisioningArtifactGuidance(m_guidance));
   }
 
   return payload;

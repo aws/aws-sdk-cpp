@@ -528,42 +528,66 @@ namespace Model
 
 
     /**
-     * <p>One or more tags.</p>
+     * <p>One or more tags.</p> <p>If the plan is for an existing provisioned product,
+     * the product must have a <code>RESOURCE_UPDATE</code> constraint with
+     * <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow
+     * tag updates.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>One or more tags.</p> <p>If the plan is for an existing provisioned product,
+     * the product must have a <code>RESOURCE_UPDATE</code> constraint with
+     * <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow
+     * tag updates.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>One or more tags.</p> <p>If the plan is for an existing provisioned product,
+     * the product must have a <code>RESOURCE_UPDATE</code> constraint with
+     * <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow
+     * tag updates.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>One or more tags.</p> <p>If the plan is for an existing provisioned product,
+     * the product must have a <code>RESOURCE_UPDATE</code> constraint with
+     * <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow
+     * tag updates.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>One or more tags.</p> <p>If the plan is for an existing provisioned product,
+     * the product must have a <code>RESOURCE_UPDATE</code> constraint with
+     * <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow
+     * tag updates.</p>
      */
     inline CreateProvisionedProductPlanRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>One or more tags.</p>
+     * <p>One or more tags.</p> <p>If the plan is for an existing provisioned product,
+     * the product must have a <code>RESOURCE_UPDATE</code> constraint with
+     * <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow
+     * tag updates.</p>
      */
     inline CreateProvisionedProductPlanRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>One or more tags.</p>
+     * <p>One or more tags.</p> <p>If the plan is for an existing provisioned product,
+     * the product must have a <code>RESOURCE_UPDATE</code> constraint with
+     * <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow
+     * tag updates.</p>
      */
     inline CreateProvisionedProductPlanRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>One or more tags.</p> <p>If the plan is for an existing provisioned product,
+     * the product must have a <code>RESOURCE_UPDATE</code> constraint with
+     * <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow
+     * tag updates.</p>
      */
     inline CreateProvisionedProductPlanRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

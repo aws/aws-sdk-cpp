@@ -17,6 +17,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/servicecatalog/model/ProvisioningArtifactGuidance.h>
 #include <utility>
 
 namespace Aws
@@ -202,6 +203,43 @@ namespace Model
      */
     inline ProvisioningArtifact& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information set by the administrator to provide guidance to end users about
+     * which provisioning artifacts to use.</p>
+     */
+    inline const ProvisioningArtifactGuidance& GetGuidance() const{ return m_guidance; }
+
+    /**
+     * <p>Information set by the administrator to provide guidance to end users about
+     * which provisioning artifacts to use.</p>
+     */
+    inline bool GuidanceHasBeenSet() const { return m_guidanceHasBeenSet; }
+
+    /**
+     * <p>Information set by the administrator to provide guidance to end users about
+     * which provisioning artifacts to use.</p>
+     */
+    inline void SetGuidance(const ProvisioningArtifactGuidance& value) { m_guidanceHasBeenSet = true; m_guidance = value; }
+
+    /**
+     * <p>Information set by the administrator to provide guidance to end users about
+     * which provisioning artifacts to use.</p>
+     */
+    inline void SetGuidance(ProvisioningArtifactGuidance&& value) { m_guidanceHasBeenSet = true; m_guidance = std::move(value); }
+
+    /**
+     * <p>Information set by the administrator to provide guidance to end users about
+     * which provisioning artifacts to use.</p>
+     */
+    inline ProvisioningArtifact& WithGuidance(const ProvisioningArtifactGuidance& value) { SetGuidance(value); return *this;}
+
+    /**
+     * <p>Information set by the administrator to provide guidance to end users about
+     * which provisioning artifacts to use.</p>
+     */
+    inline ProvisioningArtifact& WithGuidance(ProvisioningArtifactGuidance&& value) { SetGuidance(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -215,6 +253,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
+
+    ProvisioningArtifactGuidance m_guidance;
+    bool m_guidanceHasBeenSet;
   };
 
 } // namespace Model
