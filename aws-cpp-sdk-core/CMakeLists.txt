@@ -92,7 +92,7 @@ include(CheckCXXSourceRuns)
 if(ENABLE_CURL_CLIENT)
     file(GLOB HTTP_CURL_CLIENT_HEADERS "include/aws/core/http/curl/*.h")
     file(GLOB HTTP_CURL_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/curl/*.cpp")
-    set(CMAKE_REQUIRED_LIBRARIES "curl")
+    set(CMAKE_REQUIRED_LIBRARIES ${CURL_LIBRARIES})
     check_c_source_runs("
     #include <curl/curl.h>
     int main() {
