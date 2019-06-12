@@ -570,6 +570,11 @@ install (FILES ${UTILS_THREADING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/c
 install (FILES ${CJSON_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/external/cjson)
 install (FILES ${TINYXML2_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/external/tinyxml2)
 
+# android logcat headers
+if(PLATFORM_ANDROID)
+    install (FILES ${UTILS_LOGGING_ANDROID_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/logging/android)
+endif()
+
 # http client headers
 if(ENABLE_CURL_CLIENT)
     install (FILES ${HTTP_CURL_CLIENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http/curl)
