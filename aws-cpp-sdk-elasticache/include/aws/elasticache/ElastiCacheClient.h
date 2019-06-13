@@ -443,7 +443,7 @@ namespace Model
         /**
          * <p>Apply the service update. For more information on service updates and
          * applying them, see <a
-         * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/Amazon/red-ug/applying-updates.html">Applying
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/applying-updates.html">Applying
          * Service Updates</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/BatchApplyUpdateAction">AWS
          * API Reference</a></p>
@@ -453,7 +453,7 @@ namespace Model
         /**
          * <p>Apply the service update. For more information on service updates and
          * applying them, see <a
-         * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/Amazon/red-ug/applying-updates.html">Applying
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/applying-updates.html">Applying
          * Service Updates</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/BatchApplyUpdateAction">AWS
          * API Reference</a></p>
@@ -465,7 +465,7 @@ namespace Model
         /**
          * <p>Apply the service update. For more information on service updates and
          * applying them, see <a
-         * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/Amazon/red-ug/applying-updates.html">Applying
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/applying-updates.html">Applying
          * Service Updates</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/BatchApplyUpdateAction">AWS
          * API Reference</a></p>

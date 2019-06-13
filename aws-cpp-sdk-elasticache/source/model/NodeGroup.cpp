@@ -34,6 +34,7 @@ NodeGroup::NodeGroup() :
     m_nodeGroupIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_primaryEndpointHasBeenSet(false),
+    m_readerEndpointHasBeenSet(false),
     m_slotsHasBeenSet(false),
     m_nodeGroupMembersHasBeenSet(false)
 {
@@ -43,6 +44,7 @@ NodeGroup::NodeGroup(const XmlNode& xmlNode) :
     m_nodeGroupIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_primaryEndpointHasBeenSet(false),
+    m_readerEndpointHasBeenSet(false),
     m_slotsHasBeenSet(false),
     m_nodeGroupMembersHasBeenSet(false)
 {
@@ -72,6 +74,12 @@ NodeGroup& NodeGroup::operator =(const XmlNode& xmlNode)
     {
       m_primaryEndpoint = primaryEndpointNode;
       m_primaryEndpointHasBeenSet = true;
+    }
+    XmlNode readerEndpointNode = resultNode.FirstChild("ReaderEndpoint");
+    if(!readerEndpointNode.IsNull())
+    {
+      m_readerEndpoint = readerEndpointNode;
+      m_readerEndpointHasBeenSet = true;
     }
     XmlNode slotsNode = resultNode.FirstChild("Slots");
     if(!slotsNode.IsNull())
@@ -115,6 +123,13 @@ void NodeGroup::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       m_primaryEndpoint.OutputToStream(oStream, primaryEndpointLocationAndMemberSs.str().c_str());
   }
 
+  if(m_readerEndpointHasBeenSet)
+  {
+      Aws::StringStream readerEndpointLocationAndMemberSs;
+      readerEndpointLocationAndMemberSs << location << index << locationValue << ".ReaderEndpoint";
+      m_readerEndpoint.OutputToStream(oStream, readerEndpointLocationAndMemberSs.str().c_str());
+  }
+
   if(m_slotsHasBeenSet)
   {
       oStream << location << index << locationValue << ".Slots=" << StringUtils::URLEncode(m_slots.c_str()) << "&";
@@ -148,6 +163,12 @@ void NodeGroup::OutputToStream(Aws::OStream& oStream, const char* location) cons
       Aws::String primaryEndpointLocationAndMember(location);
       primaryEndpointLocationAndMember += ".PrimaryEndpoint";
       m_primaryEndpoint.OutputToStream(oStream, primaryEndpointLocationAndMember.c_str());
+  }
+  if(m_readerEndpointHasBeenSet)
+  {
+      Aws::String readerEndpointLocationAndMember(location);
+      readerEndpointLocationAndMember += ".ReaderEndpoint";
+      m_readerEndpoint.OutputToStream(oStream, readerEndpointLocationAndMember.c_str());
   }
   if(m_slotsHasBeenSet)
   {

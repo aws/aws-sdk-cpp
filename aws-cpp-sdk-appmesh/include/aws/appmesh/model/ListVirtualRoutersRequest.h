@@ -64,8 +64,8 @@ namespace Model
             <code>ListVirtualRouters</code> request with the returned
      * <code>nextToken</code> value.
          This value can be between 1 and 100. If
-     * you don't use this parameter, 
-         <code>ListVirtualRouters</code> returns
+     * you don't use this
+         parameter, <code>ListVirtualRouters</code> returns
      * up to 100 results and
          a <code>nextToken</code> value if applicable.</p>
      */
@@ -84,8 +84,8 @@ namespace Model
             <code>ListVirtualRouters</code> request with the returned
      * <code>nextToken</code> value.
          This value can be between 1 and 100. If
-     * you don't use this parameter, 
-         <code>ListVirtualRouters</code> returns
+     * you don't use this
+         parameter, <code>ListVirtualRouters</code> returns
      * up to 100 results and
          a <code>nextToken</code> value if applicable.</p>
      */
@@ -104,8 +104,8 @@ namespace Model
             <code>ListVirtualRouters</code> request with the returned
      * <code>nextToken</code> value.
          This value can be between 1 and 100. If
-     * you don't use this parameter, 
-         <code>ListVirtualRouters</code> returns
+     * you don't use this
+         parameter, <code>ListVirtualRouters</code> returns
      * up to 100 results and
          a <code>nextToken</code> value if applicable.</p>
      */
@@ -124,8 +124,8 @@ namespace Model
             <code>ListVirtualRouters</code> request with the returned
      * <code>nextToken</code> value.
          This value can be between 1 and 100. If
-     * you don't use this parameter, 
-         <code>ListVirtualRouters</code> returns
+     * you don't use this
+         parameter, <code>ListVirtualRouters</code> returns
      * up to 100 results and
          a <code>nextToken</code> value if applicable.</p>
      */
@@ -175,7 +175,7 @@ namespace Model
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-        
+         
      * <code>ListVirtualRouters</code> request where <code>limit</code> was used and
      * the
          results exceeded the value of that parameter. Pagination continues
@@ -187,7 +187,7 @@ namespace Model
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-        
+         
      * <code>ListVirtualRouters</code> request where <code>limit</code> was used and
      * the
          results exceeded the value of that parameter. Pagination continues
@@ -199,7 +199,7 @@ namespace Model
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-        
+         
      * <code>ListVirtualRouters</code> request where <code>limit</code> was used and
      * the
          results exceeded the value of that parameter. Pagination continues
@@ -211,7 +211,7 @@ namespace Model
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-        
+         
      * <code>ListVirtualRouters</code> request where <code>limit</code> was used and
      * the
          results exceeded the value of that parameter. Pagination continues
@@ -223,7 +223,7 @@ namespace Model
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-        
+         
      * <code>ListVirtualRouters</code> request where <code>limit</code> was used and
      * the
          results exceeded the value of that parameter. Pagination continues
@@ -235,7 +235,7 @@ namespace Model
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-        
+         
      * <code>ListVirtualRouters</code> request where <code>limit</code> was used and
      * the
          results exceeded the value of that parameter. Pagination continues
@@ -247,7 +247,7 @@ namespace Model
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-        
+         
      * <code>ListVirtualRouters</code> request where <code>limit</code> was used and
      * the
          results exceeded the value of that parameter. Pagination continues
@@ -259,7 +259,7 @@ namespace Model
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-        
+         
      * <code>ListVirtualRouters</code> request where <code>limit</code> was used and
      * the
          results exceeded the value of that parameter. Pagination continues

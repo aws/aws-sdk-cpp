@@ -218,25 +218,20 @@ namespace Model
    * gives you consistent visibility and network traffic controls for every
         
    * microservice in an application. You can use App Mesh with AWS Fargate, Amazon
-   * ECS, Amazon EKS, and
-         Kubernetes on AWS.</p>
-         <note>
-           
-   * <p>App Mesh supports microservice applications that use service discovery naming
-   * for their
-            components. To use App Mesh, you must have an application
-   * running on Amazon EC2 instances,
-            hosted in either Amazon ECS, Amazon
-   * EKS, or Kubernetes on AWS. For more information about
-            service
-   * discovery on Amazon ECS, see <a
+   * ECS, Amazon EKS,
+         Kubernetes on AWS, and Amazon EC2.</p>
+        
+   * <note>
+            <p>App Mesh supports microservice applications that use
+   * service discovery naming for their
+            components. For more information
+   * about service discovery on Amazon ECS, see <a
    * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-
-   * Discovery</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-   * Kubernetes
-               <code>kube-dns</code> and <code>coredns</code> are
-   * supported. For more information,
-            see <a
+   * Discovery</a> in the
+               <i>Amazon Elastic Container Service
+   * Developer Guide</i>. Kubernetes <code>kube-dns</code> and
+              
+   * <code>coredns</code> are supported. For more information, see <a
    * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS
 
    *  for Services and Pods</a> in the Kubernetes documentation.</p>
@@ -273,8 +268,8 @@ namespace Model
 
         /**
          * <p>Creates a service mesh. A service mesh is a logical boundary for network
-         * traffic
-         between the services that reside within it.</p>
+         * traffic between
+         the services that reside within it.</p>
         
          * <p>After you create your service mesh, you can create virtual services, virtual
          * nodes,
@@ -288,8 +283,8 @@ namespace Model
 
         /**
          * <p>Creates a service mesh. A service mesh is a logical boundary for network
-         * traffic
-         between the services that reside within it.</p>
+         * traffic between
+         the services that reside within it.</p>
         
          * <p>After you create your service mesh, you can create virtual services, virtual
          * nodes,
@@ -305,8 +300,8 @@ namespace Model
 
         /**
          * <p>Creates a service mesh. A service mesh is a logical boundary for network
-         * traffic
-         between the services that reside within it.</p>
+         * traffic between
+         the services that reside within it.</p>
         
          * <p>After you create your service mesh, you can create virtual services, virtual
          * nodes,
@@ -392,10 +387,10 @@ namespace Model
          <p>A virtual node
          * acts as a logical pointer to a particular task group, such as an Amazon ECS
     
-         * service or a Kubernetes deployment. When you create a virtual node, you must
+         * service or a Kubernetes deployment. When you create a virtual node, you can
          * specify the
-         DNS service discovery hostname for your task group.</p>
-   
+         service discovery information for your task group.</p>
+    
          * <p>Any inbound traffic that your virtual node expects should be specified as a
  
          * <code>listener</code>. Any outbound traffic that your virtual node expects to
@@ -436,10 +431,10 @@ namespace Model
          <p>A virtual node
          * acts as a logical pointer to a particular task group, such as an Amazon ECS
     
-         * service or a Kubernetes deployment. When you create a virtual node, you must
+         * service or a Kubernetes deployment. When you create a virtual node, you can
          * specify the
-         DNS service discovery hostname for your task group.</p>
-   
+         service discovery information for your task group.</p>
+    
          * <p>Any inbound traffic that your virtual node expects should be specified as a
  
          * <code>listener</code>. Any outbound traffic that your virtual node expects to
@@ -482,10 +477,10 @@ namespace Model
          <p>A virtual node
          * acts as a logical pointer to a particular task group, such as an Amazon ECS
     
-         * service or a Kubernetes deployment. When you create a virtual node, you must
+         * service or a Kubernetes deployment. When you create a virtual node, you can
          * specify the
-         DNS service discovery hostname for your task group.</p>
-   
+         service discovery information for your task group.</p>
+    
          * <p>Any inbound traffic that your virtual node expects should be specified as a
  
          * <code>listener</code>. Any outbound traffic that your virtual node expects to
@@ -584,16 +579,16 @@ namespace Model
         /**
          * <p>Creates a virtual service within a service mesh.</p>
          <p>A virtual
-         * service is an abstraction of a real service that is provided by a
-        
-         * virtual node directly or indirectly by means of a virtual router. Dependent
-         * services call
-         your virtual service by its
-         * <code>virtualServiceName</code>, and those requests are routed
-         to the
-         * virtual node or virtual router that is specified as the provider for the
-         * virtual
-         service.</p><p><h3>See Also:</h3>   <a
+         * service is an abstraction of a real service that is provided by a virtual node
+ 
+         * directly or indirectly by means of a virtual router. Dependent services call
+         * your virtual
+         service by its <code>virtualServiceName</code>, and those
+         * requests are routed to the
+         virtual node or virtual router that is
+         * specified as the provider for the virtual
+         service.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualService">AWS
          * API Reference</a></p>
          */
@@ -602,16 +597,16 @@ namespace Model
         /**
          * <p>Creates a virtual service within a service mesh.</p>
          <p>A virtual
-         * service is an abstraction of a real service that is provided by a
-        
-         * virtual node directly or indirectly by means of a virtual router. Dependent
-         * services call
-         your virtual service by its
-         * <code>virtualServiceName</code>, and those requests are routed
-         to the
-         * virtual node or virtual router that is specified as the provider for the
-         * virtual
-         service.</p><p><h3>See Also:</h3>   <a
+         * service is an abstraction of a real service that is provided by a virtual node
+ 
+         * directly or indirectly by means of a virtual router. Dependent services call
+         * your virtual
+         service by its <code>virtualServiceName</code>, and those
+         * requests are routed to the
+         virtual node or virtual router that is
+         * specified as the provider for the virtual
+         service.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualService">AWS
          * API Reference</a></p>
          *
@@ -622,16 +617,16 @@ namespace Model
         /**
          * <p>Creates a virtual service within a service mesh.</p>
          <p>A virtual
-         * service is an abstraction of a real service that is provided by a
-        
-         * virtual node directly or indirectly by means of a virtual router. Dependent
-         * services call
-         your virtual service by its
-         * <code>virtualServiceName</code>, and those requests are routed
-         to the
-         * virtual node or virtual router that is specified as the provider for the
-         * virtual
-         service.</p><p><h3>See Also:</h3>   <a
+         * service is an abstraction of a real service that is provided by a virtual node
+ 
+         * directly or indirectly by means of a virtual router. Dependent services call
+         * your virtual
+         service by its <code>virtualServiceName</code>, and those
+         * requests are routed to the
+         virtual node or virtual router that is
+         * specified as the provider for the virtual
+         service.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualService">AWS
          * API Reference</a></p>
          *
@@ -642,9 +637,9 @@ namespace Model
         /**
          * <p>Deletes an existing service mesh.</p>
          <p>You must delete all
-         * resources (virtual services, routes, virtual routers, and virtual nodes)
-       
-         * in the service mesh before you can delete the mesh itself.</p><p><h3>See
+         * resources (virtual services, routes, virtual routers, and virtual
+        
+         * nodes) in the service mesh before you can delete the mesh itself.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteMesh">AWS
          * API Reference</a></p>
@@ -654,9 +649,9 @@ namespace Model
         /**
          * <p>Deletes an existing service mesh.</p>
          <p>You must delete all
-         * resources (virtual services, routes, virtual routers, and virtual nodes)
-       
-         * in the service mesh before you can delete the mesh itself.</p><p><h3>See
+         * resources (virtual services, routes, virtual routers, and virtual
+        
+         * nodes) in the service mesh before you can delete the mesh itself.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteMesh">AWS
          * API Reference</a></p>
@@ -668,9 +663,9 @@ namespace Model
         /**
          * <p>Deletes an existing service mesh.</p>
          <p>You must delete all
-         * resources (virtual services, routes, virtual routers, and virtual nodes)
-       
-         * in the service mesh before you can delete the mesh itself.</p><p><h3>See
+         * resources (virtual services, routes, virtual routers, and virtual
+        
+         * nodes) in the service mesh before you can delete the mesh itself.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteMesh">AWS
          * API Reference</a></p>
@@ -1089,12 +1084,12 @@ namespace Model
 
         /**
          * <p>Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>.
+         If existing tags on a resource aren't
+         * specified in the request parameters, they aren't
+         changed. When a
+         * resource is deleted, the tags associated with that resource are also
         
-         * <code>resourceArn</code>. If existing tags on a resource aren't specified in
-         * the
-         request parameters, they aren't changed. When a resource is
-         * deleted, the tags
-         associated with that resource are also
          * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TagResource">AWS
          * API Reference</a></p>
@@ -1103,12 +1098,12 @@ namespace Model
 
         /**
          * <p>Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>.
+         If existing tags on a resource aren't
+         * specified in the request parameters, they aren't
+         changed. When a
+         * resource is deleted, the tags associated with that resource are also
         
-         * <code>resourceArn</code>. If existing tags on a resource aren't specified in
-         * the
-         request parameters, they aren't changed. When a resource is
-         * deleted, the tags
-         associated with that resource are also
          * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TagResource">AWS
          * API Reference</a></p>
@@ -1119,12 +1114,12 @@ namespace Model
 
         /**
          * <p>Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>.
+         If existing tags on a resource aren't
+         * specified in the request parameters, they aren't
+         changed. When a
+         * resource is deleted, the tags associated with that resource are also
         
-         * <code>resourceArn</code>. If existing tags on a resource aren't specified in
-         * the
-         request parameters, they aren't changed. When a resource is
-         * deleted, the tags
-         associated with that resource are also
          * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TagResource">AWS
          * API Reference</a></p>

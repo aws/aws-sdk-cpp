@@ -34,6 +34,6 @@
     #else
         #define AWS_COGNITOIDENTITY_API
     #endif // USE_IMPORT_EXPORT
-#else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (_WIN32)
+#else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_COGNITOIDENTITY_API
-#endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (_WIN32)
+#endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

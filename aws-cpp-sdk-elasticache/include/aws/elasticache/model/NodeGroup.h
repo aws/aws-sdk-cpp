@@ -208,6 +208,37 @@ namespace Model
 
 
     /**
+     * <p>The endpoint of the replica nodes in this node group (shard).</p>
+     */
+    inline const Endpoint& GetReaderEndpoint() const{ return m_readerEndpoint; }
+
+    /**
+     * <p>The endpoint of the replica nodes in this node group (shard).</p>
+     */
+    inline bool ReaderEndpointHasBeenSet() const { return m_readerEndpointHasBeenSet; }
+
+    /**
+     * <p>The endpoint of the replica nodes in this node group (shard).</p>
+     */
+    inline void SetReaderEndpoint(const Endpoint& value) { m_readerEndpointHasBeenSet = true; m_readerEndpoint = value; }
+
+    /**
+     * <p>The endpoint of the replica nodes in this node group (shard).</p>
+     */
+    inline void SetReaderEndpoint(Endpoint&& value) { m_readerEndpointHasBeenSet = true; m_readerEndpoint = std::move(value); }
+
+    /**
+     * <p>The endpoint of the replica nodes in this node group (shard).</p>
+     */
+    inline NodeGroup& WithReaderEndpoint(const Endpoint& value) { SetReaderEndpoint(value); return *this;}
+
+    /**
+     * <p>The endpoint of the replica nodes in this node group (shard).</p>
+     */
+    inline NodeGroup& WithReaderEndpoint(Endpoint&& value) { SetReaderEndpoint(std::move(value)); return *this;}
+
+
+    /**
      * <p>The keyspace for this node group (shard).</p>
      */
     inline const Aws::String& GetSlots() const{ return m_slots; }
@@ -306,6 +337,9 @@ namespace Model
 
     Endpoint m_primaryEndpoint;
     bool m_primaryEndpointHasBeenSet;
+
+    Endpoint m_readerEndpoint;
+    bool m_readerEndpointHasBeenSet;
 
     Aws::String m_slots;
     bool m_slotsHasBeenSet;

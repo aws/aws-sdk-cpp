@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
+#include <aws/appmesh/model/AwsCloudMapServiceDiscovery.h>
 #include <aws/appmesh/model/DnsServiceDiscovery.h>
 #include <utility>
 
@@ -49,6 +50,37 @@ namespace Model
 
 
     /**
+     * <p>Specifies any AWS Cloud Map information for the virtual node.</p>
+     */
+    inline const AwsCloudMapServiceDiscovery& GetAwsCloudMap() const{ return m_awsCloudMap; }
+
+    /**
+     * <p>Specifies any AWS Cloud Map information for the virtual node.</p>
+     */
+    inline bool AwsCloudMapHasBeenSet() const { return m_awsCloudMapHasBeenSet; }
+
+    /**
+     * <p>Specifies any AWS Cloud Map information for the virtual node.</p>
+     */
+    inline void SetAwsCloudMap(const AwsCloudMapServiceDiscovery& value) { m_awsCloudMapHasBeenSet = true; m_awsCloudMap = value; }
+
+    /**
+     * <p>Specifies any AWS Cloud Map information for the virtual node.</p>
+     */
+    inline void SetAwsCloudMap(AwsCloudMapServiceDiscovery&& value) { m_awsCloudMapHasBeenSet = true; m_awsCloudMap = std::move(value); }
+
+    /**
+     * <p>Specifies any AWS Cloud Map information for the virtual node.</p>
+     */
+    inline ServiceDiscovery& WithAwsCloudMap(const AwsCloudMapServiceDiscovery& value) { SetAwsCloudMap(value); return *this;}
+
+    /**
+     * <p>Specifies any AWS Cloud Map information for the virtual node.</p>
+     */
+    inline ServiceDiscovery& WithAwsCloudMap(AwsCloudMapServiceDiscovery&& value) { SetAwsCloudMap(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies the DNS information for the virtual node.</p>
      */
     inline const DnsServiceDiscovery& GetDns() const{ return m_dns; }
@@ -79,6 +111,9 @@ namespace Model
     inline ServiceDiscovery& WithDns(DnsServiceDiscovery&& value) { SetDns(std::move(value)); return *this;}
 
   private:
+
+    AwsCloudMapServiceDiscovery m_awsCloudMap;
+    bool m_awsCloudMapHasBeenSet;
 
     DnsServiceDiscovery m_dns;
     bool m_dnsHasBeenSet;

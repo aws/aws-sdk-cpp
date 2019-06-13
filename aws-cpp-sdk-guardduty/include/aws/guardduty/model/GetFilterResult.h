@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/model/FilterAction.h>
 #include <aws/guardduty/model/FindingCriteria.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -191,6 +192,67 @@ namespace Model
      */
     inline GetFilterResult& WithFindingCriteria(FindingCriteria&& value) { SetFindingCriteria(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The tags of the filter resource.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags of the filter resource.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    /**
+     * <p>The tags of the filter resource.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>The tags of the filter resource.</p>
+     */
+    inline GetFilterResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags of the filter resource.</p>
+     */
+    inline GetFilterResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags of the filter resource.</p>
+     */
+    inline GetFilterResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags of the filter resource.</p>
+     */
+    inline GetFilterResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags of the filter resource.</p>
+     */
+    inline GetFilterResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags of the filter resource.</p>
+     */
+    inline GetFilterResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags of the filter resource.</p>
+     */
+    inline GetFilterResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags of the filter resource.</p>
+     */
+    inline GetFilterResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags of the filter resource.</p>
+     */
+    inline GetFilterResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -202,6 +264,8 @@ namespace Model
     int m_rank;
 
     FindingCriteria m_findingCriteria;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
   };
 
 } // namespace Model

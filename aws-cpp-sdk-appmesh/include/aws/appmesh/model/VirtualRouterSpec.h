@@ -51,49 +51,57 @@ namespace Model
 
     /**
      * <p>The listeners that the virtual router is expected to receive inbound traffic
-     * from. Currently only one listener is supported per virtual router.</p>
+     * from.
+         Currently only one listener is supported per virtual router.</p>
      */
     inline const Aws::Vector<VirtualRouterListener>& GetListeners() const{ return m_listeners; }
 
     /**
      * <p>The listeners that the virtual router is expected to receive inbound traffic
-     * from. Currently only one listener is supported per virtual router.</p>
+     * from.
+         Currently only one listener is supported per virtual router.</p>
      */
     inline bool ListenersHasBeenSet() const { return m_listenersHasBeenSet; }
 
     /**
      * <p>The listeners that the virtual router is expected to receive inbound traffic
-     * from. Currently only one listener is supported per virtual router.</p>
+     * from.
+         Currently only one listener is supported per virtual router.</p>
      */
     inline void SetListeners(const Aws::Vector<VirtualRouterListener>& value) { m_listenersHasBeenSet = true; m_listeners = value; }
 
     /**
      * <p>The listeners that the virtual router is expected to receive inbound traffic
-     * from. Currently only one listener is supported per virtual router.</p>
+     * from.
+         Currently only one listener is supported per virtual router.</p>
      */
     inline void SetListeners(Aws::Vector<VirtualRouterListener>&& value) { m_listenersHasBeenSet = true; m_listeners = std::move(value); }
 
     /**
      * <p>The listeners that the virtual router is expected to receive inbound traffic
-     * from. Currently only one listener is supported per virtual router.</p>
+     * from.
+         Currently only one listener is supported per virtual router.</p>
      */
     inline VirtualRouterSpec& WithListeners(const Aws::Vector<VirtualRouterListener>& value) { SetListeners(value); return *this;}
 
     /**
      * <p>The listeners that the virtual router is expected to receive inbound traffic
-     * from. Currently only one listener is supported per virtual router.</p>
+     * from.
+         Currently only one listener is supported per virtual router.</p>
      */
     inline VirtualRouterSpec& WithListeners(Aws::Vector<VirtualRouterListener>&& value) { SetListeners(std::move(value)); return *this;}
 
     /**
      * <p>The listeners that the virtual router is expected to receive inbound traffic
-     * from. Currently only one listener is supported per virtual router.</p>
+     * from.
+         Currently only one listener is supported per virtual router.</p>
      */
     inline VirtualRouterSpec& AddListeners(const VirtualRouterListener& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
 
     /**
      * <p>The listeners that the virtual router is expected to receive inbound traffic
-     * from. Currently only one listener is supported per virtual router.</p>
+     * from.
+         Currently only one listener is supported per virtual router.</p>
      */
     inline VirtualRouterSpec& AddListeners(VirtualRouterListener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(std::move(value)); return *this; }
 

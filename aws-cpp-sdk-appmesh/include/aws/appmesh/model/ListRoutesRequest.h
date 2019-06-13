@@ -57,14 +57,14 @@ namespace Model
          When you use this parameter, <code>ListRoutes</code>
      * returns only <code>limit</code>
          results in a single page along with a
-     * <code>nextToken</code> response element. You can see the
-         remaining
-     * results of the initial request by sending another
+     * <code>nextToken</code> response element. You can see
+         the remaining
+     * results of the initial request by sending another <code>ListRoutes</code>
+      
+     * request with the returned <code>nextToken</code> value. This value can be
+     * between
+         1 and 100. If you don't use this parameter,
            
-     * <code>ListRoutes</code> request with the returned <code>nextToken</code> value.
-     * This
-         value can be between 1 and 100. If you don't use this parameter,
- 
      * <code>ListRoutes</code> returns up to 100 results and a
            
      * <code>nextToken</code> value if applicable.</p>
@@ -77,14 +77,14 @@ namespace Model
          When you use this parameter, <code>ListRoutes</code>
      * returns only <code>limit</code>
          results in a single page along with a
-     * <code>nextToken</code> response element. You can see the
-         remaining
-     * results of the initial request by sending another
+     * <code>nextToken</code> response element. You can see
+         the remaining
+     * results of the initial request by sending another <code>ListRoutes</code>
+      
+     * request with the returned <code>nextToken</code> value. This value can be
+     * between
+         1 and 100. If you don't use this parameter,
            
-     * <code>ListRoutes</code> request with the returned <code>nextToken</code> value.
-     * This
-         value can be between 1 and 100. If you don't use this parameter,
- 
      * <code>ListRoutes</code> returns up to 100 results and a
            
      * <code>nextToken</code> value if applicable.</p>
@@ -97,14 +97,14 @@ namespace Model
          When you use this parameter, <code>ListRoutes</code>
      * returns only <code>limit</code>
          results in a single page along with a
-     * <code>nextToken</code> response element. You can see the
-         remaining
-     * results of the initial request by sending another
+     * <code>nextToken</code> response element. You can see
+         the remaining
+     * results of the initial request by sending another <code>ListRoutes</code>
+      
+     * request with the returned <code>nextToken</code> value. This value can be
+     * between
+         1 and 100. If you don't use this parameter,
            
-     * <code>ListRoutes</code> request with the returned <code>nextToken</code> value.
-     * This
-         value can be between 1 and 100. If you don't use this parameter,
- 
      * <code>ListRoutes</code> returns up to 100 results and a
            
      * <code>nextToken</code> value if applicable.</p>
@@ -117,14 +117,14 @@ namespace Model
          When you use this parameter, <code>ListRoutes</code>
      * returns only <code>limit</code>
          results in a single page along with a
-     * <code>nextToken</code> response element. You can see the
-         remaining
-     * results of the initial request by sending another
+     * <code>nextToken</code> response element. You can see
+         the remaining
+     * results of the initial request by sending another <code>ListRoutes</code>
+      
+     * request with the returned <code>nextToken</code> value. This value can be
+     * between
+         1 and 100. If you don't use this parameter,
            
-     * <code>ListRoutes</code> request with the returned <code>nextToken</code> value.
-     * This
-         value can be between 1 and 100. If you don't use this parameter,
- 
      * <code>ListRoutes</code> returns up to 100 results and a
            
      * <code>nextToken</code> value if applicable.</p>
@@ -175,97 +175,97 @@ namespace Model
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-        
+         
      * <code>ListRoutes</code> request where <code>limit</code> was used and the
-      
-     * results exceeded the value of that parameter. Pagination continues from the end
-     * of the
-         previous results that returned the <code>nextToken</code>
-     * value.</p>
+     * results
+         exceeded the value of that parameter. Pagination continues from
+     * the end of the previous
+         results that returned the
+     * <code>nextToken</code> value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-        
+         
      * <code>ListRoutes</code> request where <code>limit</code> was used and the
-      
-     * results exceeded the value of that parameter. Pagination continues from the end
-     * of the
-         previous results that returned the <code>nextToken</code>
-     * value.</p>
+     * results
+         exceeded the value of that parameter. Pagination continues from
+     * the end of the previous
+         results that returned the
+     * <code>nextToken</code> value.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-        
+         
      * <code>ListRoutes</code> request where <code>limit</code> was used and the
-      
-     * results exceeded the value of that parameter. Pagination continues from the end
-     * of the
-         previous results that returned the <code>nextToken</code>
-     * value.</p>
+     * results
+         exceeded the value of that parameter. Pagination continues from
+     * the end of the previous
+         results that returned the
+     * <code>nextToken</code> value.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-        
+         
      * <code>ListRoutes</code> request where <code>limit</code> was used and the
-      
-     * results exceeded the value of that parameter. Pagination continues from the end
-     * of the
-         previous results that returned the <code>nextToken</code>
-     * value.</p>
+     * results
+         exceeded the value of that parameter. Pagination continues from
+     * the end of the previous
+         results that returned the
+     * <code>nextToken</code> value.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-        
+         
      * <code>ListRoutes</code> request where <code>limit</code> was used and the
-      
-     * results exceeded the value of that parameter. Pagination continues from the end
-     * of the
-         previous results that returned the <code>nextToken</code>
-     * value.</p>
+     * results
+         exceeded the value of that parameter. Pagination continues from
+     * the end of the previous
+         results that returned the
+     * <code>nextToken</code> value.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-        
+         
      * <code>ListRoutes</code> request where <code>limit</code> was used and the
-      
-     * results exceeded the value of that parameter. Pagination continues from the end
-     * of the
-         previous results that returned the <code>nextToken</code>
-     * value.</p>
+     * results
+         exceeded the value of that parameter. Pagination continues from
+     * the end of the previous
+         results that returned the
+     * <code>nextToken</code> value.</p>
      */
     inline ListRoutesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-        
+         
      * <code>ListRoutes</code> request where <code>limit</code> was used and the
-      
-     * results exceeded the value of that parameter. Pagination continues from the end
-     * of the
-         previous results that returned the <code>nextToken</code>
-     * value.</p>
+     * results
+         exceeded the value of that parameter. Pagination continues from
+     * the end of the previous
+         results that returned the
+     * <code>nextToken</code> value.</p>
      */
     inline ListRoutesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
-        
+         
      * <code>ListRoutes</code> request where <code>limit</code> was used and the
-      
-     * results exceeded the value of that parameter. Pagination continues from the end
-     * of the
-         previous results that returned the <code>nextToken</code>
-     * value.</p>
+     * results
+         exceeded the value of that parameter. Pagination continues from
+     * the end of the previous
+         results that returned the
+     * <code>nextToken</code> value.</p>
      */
     inline ListRoutesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -103,49 +103,57 @@ namespace Model
 
     /**
      * <p>The listeners that the virtual node is expected to receive inbound traffic
-     * from. Currently only one listener is supported per virtual node.</p>
+     * from.
+         Currently only one listener is supported per virtual node.</p>
      */
     inline const Aws::Vector<Listener>& GetListeners() const{ return m_listeners; }
 
     /**
      * <p>The listeners that the virtual node is expected to receive inbound traffic
-     * from. Currently only one listener is supported per virtual node.</p>
+     * from.
+         Currently only one listener is supported per virtual node.</p>
      */
     inline bool ListenersHasBeenSet() const { return m_listenersHasBeenSet; }
 
     /**
      * <p>The listeners that the virtual node is expected to receive inbound traffic
-     * from. Currently only one listener is supported per virtual node.</p>
+     * from.
+         Currently only one listener is supported per virtual node.</p>
      */
     inline void SetListeners(const Aws::Vector<Listener>& value) { m_listenersHasBeenSet = true; m_listeners = value; }
 
     /**
      * <p>The listeners that the virtual node is expected to receive inbound traffic
-     * from. Currently only one listener is supported per virtual node.</p>
+     * from.
+         Currently only one listener is supported per virtual node.</p>
      */
     inline void SetListeners(Aws::Vector<Listener>&& value) { m_listenersHasBeenSet = true; m_listeners = std::move(value); }
 
     /**
      * <p>The listeners that the virtual node is expected to receive inbound traffic
-     * from. Currently only one listener is supported per virtual node.</p>
+     * from.
+         Currently only one listener is supported per virtual node.</p>
      */
     inline VirtualNodeSpec& WithListeners(const Aws::Vector<Listener>& value) { SetListeners(value); return *this;}
 
     /**
      * <p>The listeners that the virtual node is expected to receive inbound traffic
-     * from. Currently only one listener is supported per virtual node.</p>
+     * from.
+         Currently only one listener is supported per virtual node.</p>
      */
     inline VirtualNodeSpec& WithListeners(Aws::Vector<Listener>&& value) { SetListeners(std::move(value)); return *this;}
 
     /**
      * <p>The listeners that the virtual node is expected to receive inbound traffic
-     * from. Currently only one listener is supported per virtual node.</p>
+     * from.
+         Currently only one listener is supported per virtual node.</p>
      */
     inline VirtualNodeSpec& AddListeners(const Listener& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
 
     /**
      * <p>The listeners that the virtual node is expected to receive inbound traffic
-     * from. Currently only one listener is supported per virtual node.</p>
+     * from.
+         Currently only one listener is supported per virtual node.</p>
      */
     inline VirtualNodeSpec& AddListeners(Listener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(std::move(value)); return *this; }
 

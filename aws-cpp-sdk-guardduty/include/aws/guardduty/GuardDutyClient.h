@@ -54,10 +54,13 @@
 #include <aws/guardduty/model/ListIPSetsResult.h>
 #include <aws/guardduty/model/ListInvitationsResult.h>
 #include <aws/guardduty/model/ListMembersResult.h>
+#include <aws/guardduty/model/ListTagsForResourceResult.h>
 #include <aws/guardduty/model/ListThreatIntelSetsResult.h>
 #include <aws/guardduty/model/StartMonitoringMembersResult.h>
 #include <aws/guardduty/model/StopMonitoringMembersResult.h>
+#include <aws/guardduty/model/TagResourceResult.h>
 #include <aws/guardduty/model/UnarchiveFindingsResult.h>
+#include <aws/guardduty/model/UntagResourceResult.h>
 #include <aws/guardduty/model/UpdateDetectorResult.h>
 #include <aws/guardduty/model/UpdateFilterResult.h>
 #include <aws/guardduty/model/UpdateFindingsFeedbackResult.h>
@@ -135,10 +138,13 @@ namespace Model
         class ListIPSetsRequest;
         class ListInvitationsRequest;
         class ListMembersRequest;
+        class ListTagsForResourceRequest;
         class ListThreatIntelSetsRequest;
         class StartMonitoringMembersRequest;
         class StopMonitoringMembersRequest;
+        class TagResourceRequest;
         class UnarchiveFindingsRequest;
+        class UntagResourceRequest;
         class UpdateDetectorRequest;
         class UpdateFilterRequest;
         class UpdateFindingsFeedbackRequest;
@@ -178,10 +184,13 @@ namespace Model
         typedef Aws::Utils::Outcome<ListIPSetsResult, Aws::Client::AWSError<GuardDutyErrors>> ListIPSetsOutcome;
         typedef Aws::Utils::Outcome<ListInvitationsResult, Aws::Client::AWSError<GuardDutyErrors>> ListInvitationsOutcome;
         typedef Aws::Utils::Outcome<ListMembersResult, Aws::Client::AWSError<GuardDutyErrors>> ListMembersOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<GuardDutyErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListThreatIntelSetsResult, Aws::Client::AWSError<GuardDutyErrors>> ListThreatIntelSetsOutcome;
         typedef Aws::Utils::Outcome<StartMonitoringMembersResult, Aws::Client::AWSError<GuardDutyErrors>> StartMonitoringMembersOutcome;
         typedef Aws::Utils::Outcome<StopMonitoringMembersResult, Aws::Client::AWSError<GuardDutyErrors>> StopMonitoringMembersOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<GuardDutyErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UnarchiveFindingsResult, Aws::Client::AWSError<GuardDutyErrors>> UnarchiveFindingsOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<GuardDutyErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDetectorResult, Aws::Client::AWSError<GuardDutyErrors>> UpdateDetectorOutcome;
         typedef Aws::Utils::Outcome<UpdateFilterResult, Aws::Client::AWSError<GuardDutyErrors>> UpdateFilterOutcome;
         typedef Aws::Utils::Outcome<UpdateFindingsFeedbackResult, Aws::Client::AWSError<GuardDutyErrors>> UpdateFindingsFeedbackOutcome;
@@ -221,10 +230,13 @@ namespace Model
         typedef std::future<ListIPSetsOutcome> ListIPSetsOutcomeCallable;
         typedef std::future<ListInvitationsOutcome> ListInvitationsOutcomeCallable;
         typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListThreatIntelSetsOutcome> ListThreatIntelSetsOutcomeCallable;
         typedef std::future<StartMonitoringMembersOutcome> StartMonitoringMembersOutcomeCallable;
         typedef std::future<StopMonitoringMembersOutcome> StopMonitoringMembersOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UnarchiveFindingsOutcome> UnarchiveFindingsOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDetectorOutcome> UpdateDetectorOutcomeCallable;
         typedef std::future<UpdateFilterOutcome> UpdateFilterOutcomeCallable;
         typedef std::future<UpdateFindingsFeedbackOutcome> UpdateFindingsFeedbackOutcomeCallable;
@@ -267,10 +279,13 @@ namespace Model
     typedef std::function<void(const GuardDutyClient*, const Model::ListIPSetsRequest&, const Model::ListIPSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIPSetsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListInvitationsRequest&, const Model::ListInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvitationsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListMembersRequest&, const Model::ListMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMembersResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListThreatIntelSetsRequest&, const Model::ListThreatIntelSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThreatIntelSetsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::StartMonitoringMembersRequest&, const Model::StartMonitoringMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMonitoringMembersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::StopMonitoringMembersRequest&, const Model::StopMonitoringMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMonitoringMembersResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UnarchiveFindingsRequest&, const Model::UnarchiveFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnarchiveFindingsResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateDetectorRequest&, const Model::UpdateDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDetectorResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateFilterRequest&, const Model::UpdateFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFilterResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateFindingsFeedbackRequest&, const Model::UpdateFindingsFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFindingsFeedbackResponseReceivedHandler;
@@ -1268,6 +1283,40 @@ namespace Model
         virtual void ListMembersAsync(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists tags for a resource. Tagging is currently supported for detectors,
+         * finding filters, IP sets, and Threat Intel sets, with a limit of 50 tags per
+         * resource. When invoked, this operation returns all assigned tags for a given
+         * resource..</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists tags for a resource. Tagging is currently supported for detectors,
+         * finding filters, IP sets, and Threat Intel sets, with a limit of 50 tags per
+         * resource. When invoked, this operation returns all assigned tags for a given
+         * resource..</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists tags for a resource. Tagging is currently supported for detectors,
+         * finding filters, IP sets, and Threat Intel sets, with a limit of 50 tags per
+         * resource. When invoked, this operation returns all assigned tags for a given
+         * resource..</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the ThreatIntelSets of the GuardDuty service specified by the detector
          * ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatIntelSets">AWS
@@ -1364,6 +1413,31 @@ namespace Model
         virtual void StopMonitoringMembersAsync(const Model::StopMonitoringMembersRequest& request, const StopMonitoringMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Adds tags to a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds tags to a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds tags to a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Unarchives Amazon GuardDuty findings specified by the list of finding
          * IDs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UnarchiveFindings">AWS
@@ -1390,6 +1464,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UnarchiveFindingsAsync(const Model::UnarchiveFindingsRequest& request, const UnarchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an Amazon GuardDuty detector specified by the
@@ -1565,10 +1664,13 @@ namespace Model
         void ListIPSetsAsyncHelper(const Model::ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInvitationsAsyncHelper(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMembersAsyncHelper(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListThreatIntelSetsAsyncHelper(const Model::ListThreatIntelSetsRequest& request, const ListThreatIntelSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartMonitoringMembersAsyncHelper(const Model::StartMonitoringMembersRequest& request, const StartMonitoringMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopMonitoringMembersAsyncHelper(const Model::StopMonitoringMembersRequest& request, const StopMonitoringMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UnarchiveFindingsAsyncHelper(const Model::UnarchiveFindingsRequest& request, const UnarchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDetectorAsyncHelper(const Model::UpdateDetectorRequest& request, const UpdateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFilterAsyncHelper(const Model::UpdateFilterRequest& request, const UpdateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFindingsFeedbackAsyncHelper(const Model::UpdateFindingsFeedbackRequest& request, const UpdateFindingsFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

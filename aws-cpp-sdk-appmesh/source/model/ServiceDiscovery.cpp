@@ -29,11 +29,13 @@ namespace Model
 {
 
 ServiceDiscovery::ServiceDiscovery() : 
+    m_awsCloudMapHasBeenSet(false),
     m_dnsHasBeenSet(false)
 {
 }
 
 ServiceDiscovery::ServiceDiscovery(JsonView jsonValue) : 
+    m_awsCloudMapHasBeenSet(false),
     m_dnsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -41,6 +43,13 @@ ServiceDiscovery::ServiceDiscovery(JsonView jsonValue) :
 
 ServiceDiscovery& ServiceDiscovery::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("awsCloudMap"))
+  {
+    m_awsCloudMap = jsonValue.GetObject("awsCloudMap");
+
+    m_awsCloudMapHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("dns"))
   {
     m_dns = jsonValue.GetObject("dns");
@@ -54,6 +63,12 @@ ServiceDiscovery& ServiceDiscovery::operator =(JsonView jsonValue)
 JsonValue ServiceDiscovery::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_awsCloudMapHasBeenSet)
+  {
+   payload.WithObject("awsCloudMap", m_awsCloudMap.Jsonize());
+
+  }
 
   if(m_dnsHasBeenSet)
   {

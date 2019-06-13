@@ -28,7 +28,8 @@ CreateDetectorRequest::CreateDetectorRequest() :
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_findingPublishingFrequency(FindingPublishingFrequency::NOT_SET),
-    m_findingPublishingFrequencyHasBeenSet(false)
+    m_findingPublishingFrequencyHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,17 @@ Aws::String CreateDetectorRequest::SerializePayload() const
   if(m_findingPublishingFrequencyHasBeenSet)
   {
    payload.WithString("findingPublishingFrequency", FindingPublishingFrequencyMapper::GetNameForFindingPublishingFrequency(m_findingPublishingFrequency));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
   }
 
   return payload.View().WriteReadable();
