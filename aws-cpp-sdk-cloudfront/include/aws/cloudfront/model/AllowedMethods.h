@@ -46,7 +46,7 @@ namespace Model
    * your custom origin so users can't perform operations that you don't want them
    * to. For example, you might not want users to have permissions to delete objects
    * from your origin.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/AllowedMethods">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/AllowedMethods">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API AllowedMethods

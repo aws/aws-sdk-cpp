@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>Complex data type for field-level encryption profiles that includes all of
    * the encryption entities. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/EncryptionEntities">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/EncryptionEntities">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API EncryptionEntities

@@ -41,7 +41,7 @@ namespace Model
    * distribution, you can specifiy the origin group instead of a single origin, and
    * CloudFront will failover from the primary origin to the second origin under the
    * failover conditions that you've chosen.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/OriginGroup">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/OriginGroup">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API OriginGroup

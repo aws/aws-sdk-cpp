@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>A complex type that contains zero or more <code>CacheBehavior</code>
    * elements. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CacheBehaviors">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CacheBehaviors">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CacheBehaviors

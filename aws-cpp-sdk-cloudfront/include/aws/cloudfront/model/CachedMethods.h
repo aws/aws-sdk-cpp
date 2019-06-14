@@ -42,7 +42,7 @@ namespace Model
    * pick the second choice for your Amazon S3 Origin, you may need to forward
    * Access-Control-Request-Method, Access-Control-Request-Headers, and Origin
    * headers for the responses to be cached correctly. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CachedMethods">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CachedMethods">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CachedMethods

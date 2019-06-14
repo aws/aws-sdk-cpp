@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>A complex data type that includes the profile configurations and other
    * options specified for field-level encryption. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/FieldLevelEncryption">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/FieldLevelEncryption">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API FieldLevelEncryption

@@ -35,7 +35,7 @@ namespace Model
   /**
    * <p>Information about a public key you add to CloudFront to use with features
    * like field-level encryption.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/PublicKeyConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/PublicKeyConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API PublicKeyConfig

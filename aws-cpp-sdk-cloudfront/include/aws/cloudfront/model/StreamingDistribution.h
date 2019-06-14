@@ -36,8 +36,10 @@ namespace Model
 {
 
   /**
-   * <p>A streaming distribution. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/StreamingDistribution">AWS
+   * <p>A streaming distribution tells CloudFront where you want RTMP content to be
+   * delivered from, and the details about how to track and manage content
+   * delivery.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/StreamingDistribution">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API StreamingDistribution
@@ -304,7 +306,7 @@ namespace Model
      * AWS account. If no <code>KeyPairId</code> element appears for a
      * <code>Signer</code>, that signer can't create signed URLs.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
      */
@@ -321,7 +323,7 @@ namespace Model
      * AWS account. If no <code>KeyPairId</code> element appears for a
      * <code>Signer</code>, that signer can't create signed URLs.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
      */
@@ -338,7 +340,7 @@ namespace Model
      * AWS account. If no <code>KeyPairId</code> element appears for a
      * <code>Signer</code>, that signer can't create signed URLs.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
      */
@@ -355,7 +357,7 @@ namespace Model
      * AWS account. If no <code>KeyPairId</code> element appears for a
      * <code>Signer</code>, that signer can't create signed URLs.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
      */
@@ -372,7 +374,7 @@ namespace Model
      * AWS account. If no <code>KeyPairId</code> element appears for a
      * <code>Signer</code>, that signer can't create signed URLs.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
      */
@@ -389,7 +391,7 @@ namespace Model
      * AWS account. If no <code>KeyPairId</code> element appears for a
      * <code>Signer</code>, that signer can't create signed URLs.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
      */

@@ -35,7 +35,7 @@ namespace Model
   /**
    * <p>Summary of the information about a CloudFront origin access
    * identity.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CloudFrontOriginAccessIdentitySummary">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CloudFrontOriginAccessIdentitySummary">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentitySummary

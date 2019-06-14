@@ -53,7 +53,8 @@ DistributionSummary::DistributionSummary() :
     m_httpVersion(HttpVersion::NOT_SET),
     m_httpVersionHasBeenSet(false),
     m_isIPV6Enabled(false),
-    m_isIPV6EnabledHasBeenSet(false)
+    m_isIPV6EnabledHasBeenSet(false),
+    m_aliasICPRecordalsHasBeenSet(false)
 {
 }
 
@@ -80,7 +81,8 @@ DistributionSummary::DistributionSummary(const XmlNode& xmlNode) :
     m_httpVersion(HttpVersion::NOT_SET),
     m_httpVersionHasBeenSet(false),
     m_isIPV6Enabled(false),
-    m_isIPV6EnabledHasBeenSet(false)
+    m_isIPV6EnabledHasBeenSet(false),
+    m_aliasICPRecordalsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -204,6 +206,18 @@ DistributionSummary& DistributionSummary::operator =(const XmlNode& xmlNode)
     {
       m_isIPV6Enabled = StringUtils::ConvertToBool(StringUtils::Trim(isIPV6EnabledNode.GetText().c_str()).c_str());
       m_isIPV6EnabledHasBeenSet = true;
+    }
+    XmlNode aliasICPRecordalsNode = resultNode.FirstChild("AliasICPRecordals");
+    if(!aliasICPRecordalsNode.IsNull())
+    {
+      XmlNode aliasICPRecordalsMember = aliasICPRecordalsNode.FirstChild("AliasICPRecordal");
+      while(!aliasICPRecordalsMember.IsNull())
+      {
+        m_aliasICPRecordals.push_back(aliasICPRecordalsMember);
+        aliasICPRecordalsMember = aliasICPRecordalsMember.NextNode("AliasICPRecordal");
+      }
+
+      m_aliasICPRecordalsHasBeenSet = true;
     }
   }
 
@@ -329,6 +343,16 @@ void DistributionSummary::AddToNode(XmlNode& parentNode) const
    ss << std::boolalpha << m_isIPV6Enabled;
    isIPV6EnabledNode.SetText(ss.str());
    ss.str("");
+  }
+
+  if(m_aliasICPRecordalsHasBeenSet)
+  {
+   XmlNode aliasICPRecordalsParentNode = parentNode.CreateChildElement("AliasICPRecordals");
+   for(const auto& item : m_aliasICPRecordals)
+   {
+     XmlNode aliasICPRecordalsNode = aliasICPRecordalsParentNode.CreateChildElement("AliasICPRecordal");
+     item.AddToNode(aliasICPRecordalsNode);
+   }
   }
 
 }

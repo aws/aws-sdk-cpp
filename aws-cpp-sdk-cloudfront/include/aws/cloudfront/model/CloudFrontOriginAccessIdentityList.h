@@ -43,7 +43,7 @@ namespace Model
    * default, your entire list of origin access identities is returned in one single
    * page. If the list is long, you can paginate it using the <code>MaxItems</code>
    * and <code>Marker</code> parameters.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CloudFrontOriginAccessIdentityList">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CloudFrontOriginAccessIdentityList">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentityList

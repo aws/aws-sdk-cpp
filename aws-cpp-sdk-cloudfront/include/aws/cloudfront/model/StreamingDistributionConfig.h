@@ -40,7 +40,7 @@ namespace Model
   /**
    * <p>The RTMP distribution's configuration information.</p><p><h3>See Also:</h3>  
    * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/StreamingDistributionConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/StreamingDistributionConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API StreamingDistributionConfig
@@ -299,7 +299,7 @@ namespace Model
      * create signed URLs for private content. If you want the distribution to use
      * signed URLs, include this element; if you want the distribution to use public
      * URLs, remove this element. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
      */
@@ -310,7 +310,7 @@ namespace Model
      * create signed URLs for private content. If you want the distribution to use
      * signed URLs, include this element; if you want the distribution to use public
      * URLs, remove this element. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
      */
@@ -321,7 +321,7 @@ namespace Model
      * create signed URLs for private content. If you want the distribution to use
      * signed URLs, include this element; if you want the distribution to use public
      * URLs, remove this element. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
      */
@@ -332,7 +332,7 @@ namespace Model
      * create signed URLs for private content. If you want the distribution to use
      * signed URLs, include this element; if you want the distribution to use public
      * URLs, remove this element. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
      */
@@ -343,7 +343,7 @@ namespace Model
      * create signed URLs for private content. If you want the distribution to use
      * signed URLs, include this element; if you want the distribution to use public
      * URLs, remove this element. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
      */
@@ -354,7 +354,7 @@ namespace Model
      * create signed URLs for private content. If you want the distribution to use
      * signed URLs, include this element; if you want the distribution to use public
      * URLs, remove this element. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
      */

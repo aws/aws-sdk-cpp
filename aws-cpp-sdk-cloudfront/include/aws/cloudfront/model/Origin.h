@@ -42,10 +42,10 @@ namespace Model
    * You must specify at least one origin or origin group.</p> <p>For the current
    * limit on the number of origins or origin groups that you can specify for a
    * distribution, see <a
-   * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon
+   * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon
    * CloudFront Limits</a> in the <i>AWS General Reference</i>.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Origin">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Origin">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Origin
@@ -67,7 +67,7 @@ namespace Model
      * element for that origin. When a request matches the path pattern for that cache
      * behavior, CloudFront routes the request to the specified origin. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
      * Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -81,7 +81,7 @@ namespace Model
      * element for that origin. When a request matches the path pattern for that cache
      * behavior, CloudFront routes the request to the specified origin. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
      * Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
@@ -95,7 +95,7 @@ namespace Model
      * element for that origin. When a request matches the path pattern for that cache
      * behavior, CloudFront routes the request to the specified origin. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
      * Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
@@ -109,7 +109,7 @@ namespace Model
      * element for that origin. When a request matches the path pattern for that cache
      * behavior, CloudFront routes the request to the specified origin. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
      * Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
@@ -123,7 +123,7 @@ namespace Model
      * element for that origin. When a request matches the path pattern for that cache
      * behavior, CloudFront routes the request to the specified origin. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
      * Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
@@ -137,7 +137,7 @@ namespace Model
      * element for that origin. When a request matches the path pattern for that cache
      * behavior, CloudFront routes the request to the specified origin. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
      * Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline Origin& WithId(const Aws::String& value) { SetId(value); return *this;}
@@ -151,7 +151,7 @@ namespace Model
      * element for that origin. When a request matches the path pattern for that cache
      * behavior, CloudFront routes the request to the specified origin. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
      * Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline Origin& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
@@ -165,7 +165,7 @@ namespace Model
      * element for that origin. When a request matches the path pattern for that cache
      * behavior, CloudFront routes the request to the specified origin. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
      * Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline Origin& WithId(const char* value) { SetId(value); return *this;}
@@ -178,7 +178,7 @@ namespace Model
      * configured as a website endpoint, enter the Amazon S3 static website hosting
      * endpoint for the bucket.</p> <p>For more information about specifying this value
      * for different types of origins, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
      * Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Constraints for Amazon S3 origins: </p> <ul> <li> <p>If you configured Amazon
      * S3 Transfer Acceleration for your bucket, don't specify the
@@ -203,7 +203,7 @@ namespace Model
      * configured as a website endpoint, enter the Amazon S3 static website hosting
      * endpoint for the bucket.</p> <p>For more information about specifying this value
      * for different types of origins, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
      * Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Constraints for Amazon S3 origins: </p> <ul> <li> <p>If you configured Amazon
      * S3 Transfer Acceleration for your bucket, don't specify the
@@ -228,7 +228,7 @@ namespace Model
      * configured as a website endpoint, enter the Amazon S3 static website hosting
      * endpoint for the bucket.</p> <p>For more information about specifying this value
      * for different types of origins, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
      * Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Constraints for Amazon S3 origins: </p> <ul> <li> <p>If you configured Amazon
      * S3 Transfer Acceleration for your bucket, don't specify the
@@ -253,7 +253,7 @@ namespace Model
      * configured as a website endpoint, enter the Amazon S3 static website hosting
      * endpoint for the bucket.</p> <p>For more information about specifying this value
      * for different types of origins, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
      * Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Constraints for Amazon S3 origins: </p> <ul> <li> <p>If you configured Amazon
      * S3 Transfer Acceleration for your bucket, don't specify the
@@ -278,7 +278,7 @@ namespace Model
      * configured as a website endpoint, enter the Amazon S3 static website hosting
      * endpoint for the bucket.</p> <p>For more information about specifying this value
      * for different types of origins, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
      * Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Constraints for Amazon S3 origins: </p> <ul> <li> <p>If you configured Amazon
      * S3 Transfer Acceleration for your bucket, don't specify the
@@ -303,7 +303,7 @@ namespace Model
      * configured as a website endpoint, enter the Amazon S3 static website hosting
      * endpoint for the bucket.</p> <p>For more information about specifying this value
      * for different types of origins, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
      * Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Constraints for Amazon S3 origins: </p> <ul> <li> <p>If you configured Amazon
      * S3 Transfer Acceleration for your bucket, don't specify the
@@ -328,7 +328,7 @@ namespace Model
      * configured as a website endpoint, enter the Amazon S3 static website hosting
      * endpoint for the bucket.</p> <p>For more information about specifying this value
      * for different types of origins, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
      * Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Constraints for Amazon S3 origins: </p> <ul> <li> <p>If you configured Amazon
      * S3 Transfer Acceleration for your bucket, don't specify the
@@ -353,7 +353,7 @@ namespace Model
      * configured as a website endpoint, enter the Amazon S3 static website hosting
      * endpoint for the bucket.</p> <p>For more information about specifying this value
      * for different types of origins, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
      * Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * <p>Constraints for Amazon S3 origins: </p> <ul> <li> <p>If you configured Amazon
      * S3 Transfer Acceleration for your bucket, don't specify the

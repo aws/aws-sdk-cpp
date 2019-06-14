@@ -40,18 +40,19 @@ namespace Model
    * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
    * <code>Enabled</code>, and specify the applicable values for
    * <code>Quantity</code> and <code>Items</code>. For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-   * Private Content through CloudFront</a> in the <i>Amazon Amazon CloudFront
-   * Developer Guide</i>.</p> <p>If you don't want to require signed URLs in requests
-   * for objects that match <code>PathPattern</code>, specify <code>false</code> for
+   * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+   * Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer
+   * Guide</i>.</p> <p>If you don't want to require signed URLs in requests for
+   * objects that match <code>PathPattern</code>, specify <code>false</code> for
    * <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
    * <code>Items</code>.</p> <p>To add, change, or remove one or more trusted
    * signers, change <code>Enabled</code> to <code>true</code> (if it's currently
    * <code>false</code>), change <code>Quantity</code> as applicable, and specify all
    * of the trusted signers that you want to include in the updated distribution.</p>
-   * <p>For more information about updating the distribution configuration, see
-   * <a>DistributionConfig</a> .</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/TrustedSigners">AWS
+   * <p>For more information about updating the distribution configuration, see <a
+   * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/DistributionConfig.html">DistributionConfig</a>
+   * in the <i>Amazon CloudFront API Reference</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/TrustedSigners">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API TrustedSigners

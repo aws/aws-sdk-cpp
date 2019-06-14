@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>A complex data type for public key information. </p><p><h3>See Also:</h3>  
    * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/PublicKeySummary">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/PublicKeySummary">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API PublicKeySummary

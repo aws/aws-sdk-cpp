@@ -36,7 +36,7 @@ namespace Model
    * <p>A complex type that contains information about the Amazon S3 origin. If the
    * origin is a custom origin, use the <code>CustomOriginConfig</code> element
    * instead.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/S3OriginConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/S3OriginConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API S3OriginConfig
@@ -65,7 +65,7 @@ namespace Model
      * replace the origin access identity, update the distribution configuration and
      * specify the new origin access identity.</p> <p>For more information about the
      * origin access identity, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
@@ -87,7 +87,7 @@ namespace Model
      * replace the origin access identity, update the distribution configuration and
      * specify the new origin access identity.</p> <p>For more information about the
      * origin access identity, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
@@ -109,7 +109,7 @@ namespace Model
      * replace the origin access identity, update the distribution configuration and
      * specify the new origin access identity.</p> <p>For more information about the
      * origin access identity, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
@@ -131,7 +131,7 @@ namespace Model
      * replace the origin access identity, update the distribution configuration and
      * specify the new origin access identity.</p> <p>For more information about the
      * origin access identity, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
@@ -153,7 +153,7 @@ namespace Model
      * replace the origin access identity, update the distribution configuration and
      * specify the new origin access identity.</p> <p>For more information about the
      * origin access identity, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
@@ -175,7 +175,7 @@ namespace Model
      * replace the origin access identity, update the distribution configuration and
      * specify the new origin access identity.</p> <p>For more information about the
      * origin access identity, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
@@ -197,7 +197,7 @@ namespace Model
      * replace the origin access identity, update the distribution configuration and
      * specify the new origin access identity.</p> <p>For more information about the
      * origin access identity, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
@@ -219,7 +219,7 @@ namespace Model
      * replace the origin access identity, update the distribution configuration and
      * specify the new origin access identity.</p> <p>For more information about the
      * origin access identity, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */

@@ -36,10 +36,10 @@ namespace Model
   /**
    * <p>A complex type that contains information about the objects that you want to
    * invalidate. For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
+   * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
    * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
    * </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Paths">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Paths">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Paths
@@ -53,22 +53,26 @@ namespace Model
 
 
     /**
-     * <p>The number of objects that you want to invalidate.</p>
+     * <p>The number of invalidation paths specified for the objects that you want to
+     * invalidate.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
-     * <p>The number of objects that you want to invalidate.</p>
+     * <p>The number of invalidation paths specified for the objects that you want to
+     * invalidate.</p>
      */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
 
     /**
-     * <p>The number of objects that you want to invalidate.</p>
+     * <p>The number of invalidation paths specified for the objects that you want to
+     * invalidate.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
-     * <p>The number of objects that you want to invalidate.</p>
+     * <p>The number of invalidation paths specified for the objects that you want to
+     * invalidate.</p>
      */
     inline Paths& WithQuantity(int value) { SetQuantity(value); return *this;}
 

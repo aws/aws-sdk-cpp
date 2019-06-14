@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>A complex type that contains information about CNAMEs (alternate domain
    * names), if any, for this distribution. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Aliases">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Aliases">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Aliases

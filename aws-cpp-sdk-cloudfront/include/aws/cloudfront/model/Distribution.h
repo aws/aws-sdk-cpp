@@ -19,6 +19,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/cloudfront/model/ActiveTrustedSigners.h>
 #include <aws/cloudfront/model/DistributionConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudfront/model/AliasICPRecordal.h>
 #include <utility>
 
 namespace Aws
@@ -36,8 +38,10 @@ namespace Model
 {
 
   /**
-   * <p>The distribution's information.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Distribution">AWS
+   * <p>A distribution tells CloudFront where you want content to be delivered from,
+   * and the details about how to track and manage content delivery.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Distribution">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Distribution
@@ -435,6 +439,103 @@ namespace Model
      */
     inline Distribution& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>AWS services in China customers must file for an Internet Content Provider
+     * (ICP) recordal if they want to serve content publicly on an alternate domain
+     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
+     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
+     * <p>For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
+     * China</i>.</p>
+     */
+    inline const Aws::Vector<AliasICPRecordal>& GetAliasICPRecordals() const{ return m_aliasICPRecordals; }
+
+    /**
+     * <p>AWS services in China customers must file for an Internet Content Provider
+     * (ICP) recordal if they want to serve content publicly on an alternate domain
+     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
+     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
+     * <p>For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
+     * China</i>.</p>
+     */
+    inline bool AliasICPRecordalsHasBeenSet() const { return m_aliasICPRecordalsHasBeenSet; }
+
+    /**
+     * <p>AWS services in China customers must file for an Internet Content Provider
+     * (ICP) recordal if they want to serve content publicly on an alternate domain
+     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
+     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
+     * <p>For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
+     * China</i>.</p>
+     */
+    inline void SetAliasICPRecordals(const Aws::Vector<AliasICPRecordal>& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals = value; }
+
+    /**
+     * <p>AWS services in China customers must file for an Internet Content Provider
+     * (ICP) recordal if they want to serve content publicly on an alternate domain
+     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
+     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
+     * <p>For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
+     * China</i>.</p>
+     */
+    inline void SetAliasICPRecordals(Aws::Vector<AliasICPRecordal>&& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals = std::move(value); }
+
+    /**
+     * <p>AWS services in China customers must file for an Internet Content Provider
+     * (ICP) recordal if they want to serve content publicly on an alternate domain
+     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
+     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
+     * <p>For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
+     * China</i>.</p>
+     */
+    inline Distribution& WithAliasICPRecordals(const Aws::Vector<AliasICPRecordal>& value) { SetAliasICPRecordals(value); return *this;}
+
+    /**
+     * <p>AWS services in China customers must file for an Internet Content Provider
+     * (ICP) recordal if they want to serve content publicly on an alternate domain
+     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
+     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
+     * <p>For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
+     * China</i>.</p>
+     */
+    inline Distribution& WithAliasICPRecordals(Aws::Vector<AliasICPRecordal>&& value) { SetAliasICPRecordals(std::move(value)); return *this;}
+
+    /**
+     * <p>AWS services in China customers must file for an Internet Content Provider
+     * (ICP) recordal if they want to serve content publicly on an alternate domain
+     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
+     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
+     * <p>For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
+     * China</i>.</p>
+     */
+    inline Distribution& AddAliasICPRecordals(const AliasICPRecordal& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals.push_back(value); return *this; }
+
+    /**
+     * <p>AWS services in China customers must file for an Internet Content Provider
+     * (ICP) recordal if they want to serve content publicly on an alternate domain
+     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
+     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
+     * <p>For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
+     * China</i>.</p>
+     */
+    inline Distribution& AddAliasICPRecordals(AliasICPRecordal&& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_id;
@@ -460,6 +561,9 @@ namespace Model
 
     DistributionConfig m_distributionConfig;
     bool m_distributionConfigHasBeenSet;
+
+    Aws::Vector<AliasICPRecordal> m_aliasICPRecordals;
+    bool m_aliasICPRecordalsHasBeenSet;
   };
 
 } // namespace Model

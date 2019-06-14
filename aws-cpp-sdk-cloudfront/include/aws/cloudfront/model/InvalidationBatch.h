@@ -35,7 +35,7 @@ namespace Model
 
   /**
    * <p>An invalidation batch.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/InvalidationBatch">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/InvalidationBatch">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API InvalidationBatch
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>A complex type that contains information about the objects that you want to
      * invalidate. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
      * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
@@ -60,7 +60,7 @@ namespace Model
     /**
      * <p>A complex type that contains information about the objects that you want to
      * invalidate. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
      * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
@@ -69,7 +69,7 @@ namespace Model
     /**
      * <p>A complex type that contains information about the objects that you want to
      * invalidate. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
      * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
@@ -78,7 +78,7 @@ namespace Model
     /**
      * <p>A complex type that contains information about the objects that you want to
      * invalidate. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
      * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
@@ -87,7 +87,7 @@ namespace Model
     /**
      * <p>A complex type that contains information about the objects that you want to
      * invalidate. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
      * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
@@ -96,7 +96,7 @@ namespace Model
     /**
      * <p>A complex type that contains information about the objects that you want to
      * invalidate. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
      * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */

@@ -45,7 +45,7 @@ namespace Model
 
   /**
    * <p>A distribution configuration.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DistributionConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DistributionConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API DistributionConfig
@@ -191,7 +191,7 @@ namespace Model
      * element.</p> <p>To replace the default root object, update the distribution
      * configuration and specify the new object.</p> <p>For more information about the
      * default root object, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
      * a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline const Aws::String& GetDefaultRootObject() const{ return m_defaultRootObject; }
@@ -211,7 +211,7 @@ namespace Model
      * element.</p> <p>To replace the default root object, update the distribution
      * configuration and specify the new object.</p> <p>For more information about the
      * default root object, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
      * a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline bool DefaultRootObjectHasBeenSet() const { return m_defaultRootObjectHasBeenSet; }
@@ -231,7 +231,7 @@ namespace Model
      * element.</p> <p>To replace the default root object, update the distribution
      * configuration and specify the new object.</p> <p>For more information about the
      * default root object, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
      * a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetDefaultRootObject(const Aws::String& value) { m_defaultRootObjectHasBeenSet = true; m_defaultRootObject = value; }
@@ -251,7 +251,7 @@ namespace Model
      * element.</p> <p>To replace the default root object, update the distribution
      * configuration and specify the new object.</p> <p>For more information about the
      * default root object, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
      * a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetDefaultRootObject(Aws::String&& value) { m_defaultRootObjectHasBeenSet = true; m_defaultRootObject = std::move(value); }
@@ -271,7 +271,7 @@ namespace Model
      * element.</p> <p>To replace the default root object, update the distribution
      * configuration and specify the new object.</p> <p>For more information about the
      * default root object, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
      * a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetDefaultRootObject(const char* value) { m_defaultRootObjectHasBeenSet = true; m_defaultRootObject.assign(value); }
@@ -291,7 +291,7 @@ namespace Model
      * element.</p> <p>To replace the default root object, update the distribution
      * configuration and specify the new object.</p> <p>For more information about the
      * default root object, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
      * a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline DistributionConfig& WithDefaultRootObject(const Aws::String& value) { SetDefaultRootObject(value); return *this;}
@@ -311,7 +311,7 @@ namespace Model
      * element.</p> <p>To replace the default root object, update the distribution
      * configuration and specify the new object.</p> <p>For more information about the
      * default root object, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
      * a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline DistributionConfig& WithDefaultRootObject(Aws::String&& value) { SetDefaultRootObject(std::move(value)); return *this;}
@@ -331,7 +331,7 @@ namespace Model
      * element.</p> <p>To replace the default root object, update the distribution
      * configuration and specify the new object.</p> <p>For more information about the
      * default root object, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
      * a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline DistributionConfig& WithDefaultRootObject(const char* value) { SetDefaultRootObject(value); return *this;}
@@ -503,7 +503,7 @@ namespace Model
      * messages before returning the response to the viewer.</p> </li> <li> <p>How long
      * CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul>
      * <p>For more information about custom error pages, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline const CustomErrorResponses& GetCustomErrorResponses() const{ return m_customErrorResponses; }
@@ -514,7 +514,7 @@ namespace Model
      * messages before returning the response to the viewer.</p> </li> <li> <p>How long
      * CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul>
      * <p>For more information about custom error pages, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline bool CustomErrorResponsesHasBeenSet() const { return m_customErrorResponsesHasBeenSet; }
@@ -525,7 +525,7 @@ namespace Model
      * messages before returning the response to the viewer.</p> </li> <li> <p>How long
      * CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul>
      * <p>For more information about custom error pages, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetCustomErrorResponses(const CustomErrorResponses& value) { m_customErrorResponsesHasBeenSet = true; m_customErrorResponses = value; }
@@ -536,7 +536,7 @@ namespace Model
      * messages before returning the response to the viewer.</p> </li> <li> <p>How long
      * CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul>
      * <p>For more information about custom error pages, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetCustomErrorResponses(CustomErrorResponses&& value) { m_customErrorResponsesHasBeenSet = true; m_customErrorResponses = std::move(value); }
@@ -547,7 +547,7 @@ namespace Model
      * messages before returning the response to the viewer.</p> </li> <li> <p>How long
      * CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul>
      * <p>For more information about custom error pages, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline DistributionConfig& WithCustomErrorResponses(const CustomErrorResponses& value) { SetCustomErrorResponses(value); return *this;}
@@ -558,7 +558,7 @@ namespace Model
      * messages before returning the response to the viewer.</p> </li> <li> <p>How long
      * CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul>
      * <p>For more information about custom error pages, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline DistributionConfig& WithCustomErrorResponses(CustomErrorResponses&& value) { SetCustomErrorResponses(std::move(value)); return *this;}
@@ -640,7 +640,7 @@ namespace Model
     /**
      * <p>A complex type that controls whether access logs are written for the
      * distribution.</p> <p>For more information about logging, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access
      * Logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline const LoggingConfig& GetLogging() const{ return m_logging; }
@@ -648,7 +648,7 @@ namespace Model
     /**
      * <p>A complex type that controls whether access logs are written for the
      * distribution.</p> <p>For more information about logging, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access
      * Logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline bool LoggingHasBeenSet() const { return m_loggingHasBeenSet; }
@@ -656,7 +656,7 @@ namespace Model
     /**
      * <p>A complex type that controls whether access logs are written for the
      * distribution.</p> <p>For more information about logging, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access
      * Logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetLogging(const LoggingConfig& value) { m_loggingHasBeenSet = true; m_logging = value; }
@@ -664,7 +664,7 @@ namespace Model
     /**
      * <p>A complex type that controls whether access logs are written for the
      * distribution.</p> <p>For more information about logging, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access
      * Logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetLogging(LoggingConfig&& value) { m_loggingHasBeenSet = true; m_logging = std::move(value); }
@@ -672,7 +672,7 @@ namespace Model
     /**
      * <p>A complex type that controls whether access logs are written for the
      * distribution.</p> <p>For more information about logging, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access
      * Logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline DistributionConfig& WithLogging(const LoggingConfig& value) { SetLogging(value); return *this;}
@@ -680,7 +680,7 @@ namespace Model
     /**
      * <p>A complex type that controls whether access logs are written for the
      * distribution.</p> <p>For more information about logging, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access
      * Logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline DistributionConfig& WithLogging(LoggingConfig&& value) { SetLogging(std::move(value)); return *this;}
@@ -695,11 +695,11 @@ namespace Model
      * lowest latency among the edge locations in your price class. Viewers who are in
      * or near regions that are excluded from your specified price class may encounter
      * slower performance.</p> <p>For more information about price classes, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
      * the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront
      * Developer Guide</i>. For information about CloudFront pricing, including how
      * price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
      * For price class information, scroll down to see the table at the bottom of the
      * page.</p>
      */
@@ -714,11 +714,11 @@ namespace Model
      * lowest latency among the edge locations in your price class. Viewers who are in
      * or near regions that are excluded from your specified price class may encounter
      * slower performance.</p> <p>For more information about price classes, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
      * the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront
      * Developer Guide</i>. For information about CloudFront pricing, including how
      * price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
      * For price class information, scroll down to see the table at the bottom of the
      * page.</p>
      */
@@ -733,11 +733,11 @@ namespace Model
      * lowest latency among the edge locations in your price class. Viewers who are in
      * or near regions that are excluded from your specified price class may encounter
      * slower performance.</p> <p>For more information about price classes, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
      * the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront
      * Developer Guide</i>. For information about CloudFront pricing, including how
      * price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
      * For price class information, scroll down to see the table at the bottom of the
      * page.</p>
      */
@@ -752,11 +752,11 @@ namespace Model
      * lowest latency among the edge locations in your price class. Viewers who are in
      * or near regions that are excluded from your specified price class may encounter
      * slower performance.</p> <p>For more information about price classes, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
      * the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront
      * Developer Guide</i>. For information about CloudFront pricing, including how
      * price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
      * For price class information, scroll down to see the table at the bottom of the
      * page.</p>
      */
@@ -771,11 +771,11 @@ namespace Model
      * lowest latency among the edge locations in your price class. Viewers who are in
      * or near regions that are excluded from your specified price class may encounter
      * slower performance.</p> <p>For more information about price classes, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
      * the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront
      * Developer Guide</i>. For information about CloudFront pricing, including how
      * price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
      * For price class information, scroll down to see the table at the bottom of the
      * page.</p>
      */
@@ -790,11 +790,11 @@ namespace Model
      * lowest latency among the edge locations in your price class. Viewers who are in
      * or near regions that are excluded from your specified price class may encounter
      * slower performance.</p> <p>For more information about price classes, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
      * the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront
      * Developer Guide</i>. For information about CloudFront pricing, including how
      * price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
      * For price class information, scroll down to see the table at the bottom of the
      * page.</p>
      */
@@ -823,63 +823,87 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>A complex type that specifies whether you want viewers to use HTTP or HTTPS
+     * to request your objects, whether you're using an alternate domain name with
+     * HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a third-party
+     * certificate authority.</p>
      */
     inline const ViewerCertificate& GetViewerCertificate() const{ return m_viewerCertificate; }
 
     /**
-     * <p/>
+     * <p>A complex type that specifies whether you want viewers to use HTTP or HTTPS
+     * to request your objects, whether you're using an alternate domain name with
+     * HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a third-party
+     * certificate authority.</p>
      */
     inline bool ViewerCertificateHasBeenSet() const { return m_viewerCertificateHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>A complex type that specifies whether you want viewers to use HTTP or HTTPS
+     * to request your objects, whether you're using an alternate domain name with
+     * HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a third-party
+     * certificate authority.</p>
      */
     inline void SetViewerCertificate(const ViewerCertificate& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = value; }
 
     /**
-     * <p/>
+     * <p>A complex type that specifies whether you want viewers to use HTTP or HTTPS
+     * to request your objects, whether you're using an alternate domain name with
+     * HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a third-party
+     * certificate authority.</p>
      */
     inline void SetViewerCertificate(ViewerCertificate&& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A complex type that specifies whether you want viewers to use HTTP or HTTPS
+     * to request your objects, whether you're using an alternate domain name with
+     * HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a third-party
+     * certificate authority.</p>
      */
     inline DistributionConfig& WithViewerCertificate(const ViewerCertificate& value) { SetViewerCertificate(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A complex type that specifies whether you want viewers to use HTTP or HTTPS
+     * to request your objects, whether you're using an alternate domain name with
+     * HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a third-party
+     * certificate authority.</p>
      */
     inline DistributionConfig& WithViewerCertificate(ViewerCertificate&& value) { SetViewerCertificate(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>A complex type that identifies ways in which you want to restrict
+     * distribution of your content.</p>
      */
     inline const Restrictions& GetRestrictions() const{ return m_restrictions; }
 
     /**
-     * <p/>
+     * <p>A complex type that identifies ways in which you want to restrict
+     * distribution of your content.</p>
      */
     inline bool RestrictionsHasBeenSet() const { return m_restrictionsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>A complex type that identifies ways in which you want to restrict
+     * distribution of your content.</p>
      */
     inline void SetRestrictions(const Restrictions& value) { m_restrictionsHasBeenSet = true; m_restrictions = value; }
 
     /**
-     * <p/>
+     * <p>A complex type that identifies ways in which you want to restrict
+     * distribution of your content.</p>
      */
     inline void SetRestrictions(Restrictions&& value) { m_restrictionsHasBeenSet = true; m_restrictions = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A complex type that identifies ways in which you want to restrict
+     * distribution of your content.</p>
      */
     inline DistributionConfig& WithRestrictions(const Restrictions& value) { SetRestrictions(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A complex type that identifies ways in which you want to restrict
+     * distribution of your content.</p>
      */
     inline DistributionConfig& WithRestrictions(Restrictions&& value) { SetRestrictions(std::move(value)); return *this;}
 
@@ -1092,7 +1116,7 @@ namespace Model
      * to some content by IP address and not restrict access to other content (or
      * restrict access but not by IP address), you can create two distributions. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
      * a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p> <p>If you're using an Amazon Route 53 alias resource record set
      * to route traffic to your CloudFront distribution, you need to create a second
@@ -1100,7 +1124,7 @@ namespace Model
      * <p>You enable IPv6 for the distribution</p> </li> <li> <p>You're using alternate
      * domain names in the URLs for your objects</p> </li> </ul> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
      * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a>
      * in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>If you created a CNAME
      * resource record set, either with Amazon Route 53 or with another DNS service,
@@ -1123,7 +1147,7 @@ namespace Model
      * to some content by IP address and not restrict access to other content (or
      * restrict access but not by IP address), you can create two distributions. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
      * a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p> <p>If you're using an Amazon Route 53 alias resource record set
      * to route traffic to your CloudFront distribution, you need to create a second
@@ -1131,7 +1155,7 @@ namespace Model
      * <p>You enable IPv6 for the distribution</p> </li> <li> <p>You're using alternate
      * domain names in the URLs for your objects</p> </li> </ul> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
      * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a>
      * in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>If you created a CNAME
      * resource record set, either with Amazon Route 53 or with another DNS service,
@@ -1154,7 +1178,7 @@ namespace Model
      * to some content by IP address and not restrict access to other content (or
      * restrict access but not by IP address), you can create two distributions. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
      * a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p> <p>If you're using an Amazon Route 53 alias resource record set
      * to route traffic to your CloudFront distribution, you need to create a second
@@ -1162,7 +1186,7 @@ namespace Model
      * <p>You enable IPv6 for the distribution</p> </li> <li> <p>You're using alternate
      * domain names in the URLs for your objects</p> </li> </ul> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
      * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a>
      * in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>If you created a CNAME
      * resource record set, either with Amazon Route 53 or with another DNS service,
@@ -1185,7 +1209,7 @@ namespace Model
      * to some content by IP address and not restrict access to other content (or
      * restrict access but not by IP address), you can create two distributions. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
      * a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p> <p>If you're using an Amazon Route 53 alias resource record set
      * to route traffic to your CloudFront distribution, you need to create a second
@@ -1193,7 +1217,7 @@ namespace Model
      * <p>You enable IPv6 for the distribution</p> </li> <li> <p>You're using alternate
      * domain names in the URLs for your objects</p> </li> </ul> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
      * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a>
      * in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>If you created a CNAME
      * resource record set, either with Amazon Route 53 or with another DNS service,

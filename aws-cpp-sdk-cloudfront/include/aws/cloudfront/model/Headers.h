@@ -44,10 +44,10 @@ namespace Model
    * <code>product</code> header. CloudFront forwards the <code>product</code> header
    * to the origin and caches the response from the origin once for each header
    * value. For more information about caching based on header values, see <a
-   * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">How
+   * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">How
    * CloudFront Forwards and Caches Headers</a> in the <i>Amazon CloudFront Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Headers">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Headers">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Headers
@@ -78,10 +78,10 @@ namespace Model
      * choose, CloudFront forwards headers to your origin based on whether the origin
      * is an S3 bucket or a custom origin. See the following documentation:</p> <ul>
      * <li> <p> <b>S3 bucket</b>: See <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers">HTTP
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers">HTTP
      * Request Headers That CloudFront Removes or Updates</a> </p> </li> <li> <p>
      * <b>Custom origin</b>: See <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior">HTTP
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior">HTTP
      * Request Headers and CloudFront Behavior</a> </p> </li> </ul>
      */
     inline int GetQuantity() const{ return m_quantity; }
@@ -104,10 +104,10 @@ namespace Model
      * choose, CloudFront forwards headers to your origin based on whether the origin
      * is an S3 bucket or a custom origin. See the following documentation:</p> <ul>
      * <li> <p> <b>S3 bucket</b>: See <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers">HTTP
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers">HTTP
      * Request Headers That CloudFront Removes or Updates</a> </p> </li> <li> <p>
      * <b>Custom origin</b>: See <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior">HTTP
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior">HTTP
      * Request Headers and CloudFront Behavior</a> </p> </li> </ul>
      */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
@@ -130,10 +130,10 @@ namespace Model
      * choose, CloudFront forwards headers to your origin based on whether the origin
      * is an S3 bucket or a custom origin. See the following documentation:</p> <ul>
      * <li> <p> <b>S3 bucket</b>: See <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers">HTTP
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers">HTTP
      * Request Headers That CloudFront Removes or Updates</a> </p> </li> <li> <p>
      * <b>Custom origin</b>: See <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior">HTTP
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior">HTTP
      * Request Headers and CloudFront Behavior</a> </p> </li> </ul>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
@@ -156,10 +156,10 @@ namespace Model
      * choose, CloudFront forwards headers to your origin based on whether the origin
      * is an S3 bucket or a custom origin. See the following documentation:</p> <ul>
      * <li> <p> <b>S3 bucket</b>: See <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers">HTTP
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers">HTTP
      * Request Headers That CloudFront Removes or Updates</a> </p> </li> <li> <p>
      * <b>Custom origin</b>: See <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior">HTTP
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior">HTTP
      * Request Headers and CloudFront Behavior</a> </p> </li> </ul>
      */
     inline Headers& WithQuantity(int value) { SetQuantity(value); return *this;}

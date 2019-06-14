@@ -45,7 +45,7 @@ namespace Model
    * invoke any Lambda functions for the requests that match
    * <code>PathPattern</code>, specify <code>0</code> for <code>Quantity</code> and
    * omit <code>Items</code>. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/LambdaFunctionAssociations">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/LambdaFunctionAssociations">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API LambdaFunctionAssociations

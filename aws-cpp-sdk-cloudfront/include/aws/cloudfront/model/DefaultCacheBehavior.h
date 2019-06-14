@@ -42,7 +42,7 @@ namespace Model
    * a <code>CacheBehavior</code> element or if files don't match any of the values
    * of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must
    * create exactly one default cache behavior.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DefaultCacheBehavior">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DefaultCacheBehavior">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API DefaultCacheBehavior
@@ -156,10 +156,10 @@ namespace Model
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
      * <code>Enabled</code>, and specify the applicable values for
      * <code>Quantity</code> and <code>Items</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     * Private Content through CloudFront</a> in the <i>Amazon Amazon CloudFront
-     * Developer Guide</i>.</p> <p>If you don't want to require signed URLs in requests
-     * for objects that match <code>PathPattern</code>, specify <code>false</code> for
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer
+     * Guide</i>.</p> <p>If you don't want to require signed URLs in requests for
+     * objects that match <code>PathPattern</code>, specify <code>false</code> for
      * <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
      * <code>Items</code>.</p> <p>To add, change, or remove one or more trusted
      * signers, change <code>Enabled</code> to <code>true</code> (if it's currently
@@ -175,10 +175,10 @@ namespace Model
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
      * <code>Enabled</code>, and specify the applicable values for
      * <code>Quantity</code> and <code>Items</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     * Private Content through CloudFront</a> in the <i>Amazon Amazon CloudFront
-     * Developer Guide</i>.</p> <p>If you don't want to require signed URLs in requests
-     * for objects that match <code>PathPattern</code>, specify <code>false</code> for
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer
+     * Guide</i>.</p> <p>If you don't want to require signed URLs in requests for
+     * objects that match <code>PathPattern</code>, specify <code>false</code> for
      * <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
      * <code>Items</code>.</p> <p>To add, change, or remove one or more trusted
      * signers, change <code>Enabled</code> to <code>true</code> (if it's currently
@@ -194,10 +194,10 @@ namespace Model
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
      * <code>Enabled</code>, and specify the applicable values for
      * <code>Quantity</code> and <code>Items</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     * Private Content through CloudFront</a> in the <i>Amazon Amazon CloudFront
-     * Developer Guide</i>.</p> <p>If you don't want to require signed URLs in requests
-     * for objects that match <code>PathPattern</code>, specify <code>false</code> for
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer
+     * Guide</i>.</p> <p>If you don't want to require signed URLs in requests for
+     * objects that match <code>PathPattern</code>, specify <code>false</code> for
      * <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
      * <code>Items</code>.</p> <p>To add, change, or remove one or more trusted
      * signers, change <code>Enabled</code> to <code>true</code> (if it's currently
@@ -213,10 +213,10 @@ namespace Model
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
      * <code>Enabled</code>, and specify the applicable values for
      * <code>Quantity</code> and <code>Items</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     * Private Content through CloudFront</a> in the <i>Amazon Amazon CloudFront
-     * Developer Guide</i>.</p> <p>If you don't want to require signed URLs in requests
-     * for objects that match <code>PathPattern</code>, specify <code>false</code> for
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer
+     * Guide</i>.</p> <p>If you don't want to require signed URLs in requests for
+     * objects that match <code>PathPattern</code>, specify <code>false</code> for
      * <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
      * <code>Items</code>.</p> <p>To add, change, or remove one or more trusted
      * signers, change <code>Enabled</code> to <code>true</code> (if it's currently
@@ -232,10 +232,10 @@ namespace Model
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
      * <code>Enabled</code>, and specify the applicable values for
      * <code>Quantity</code> and <code>Items</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     * Private Content through CloudFront</a> in the <i>Amazon Amazon CloudFront
-     * Developer Guide</i>.</p> <p>If you don't want to require signed URLs in requests
-     * for objects that match <code>PathPattern</code>, specify <code>false</code> for
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer
+     * Guide</i>.</p> <p>If you don't want to require signed URLs in requests for
+     * objects that match <code>PathPattern</code>, specify <code>false</code> for
      * <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
      * <code>Items</code>.</p> <p>To add, change, or remove one or more trusted
      * signers, change <code>Enabled</code> to <code>true</code> (if it's currently
@@ -251,10 +251,10 @@ namespace Model
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
      * <code>Enabled</code>, and specify the applicable values for
      * <code>Quantity</code> and <code>Items</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     * Private Content through CloudFront</a> in the <i>Amazon Amazon CloudFront
-     * Developer Guide</i>.</p> <p>If you don't want to require signed URLs in requests
-     * for objects that match <code>PathPattern</code>, specify <code>false</code> for
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer
+     * Guide</i>.</p> <p>If you don't want to require signed URLs in requests for
+     * objects that match <code>PathPattern</code>, specify <code>false</code> for
      * <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
      * <code>Items</code>.</p> <p>To add, change, or remove one or more trusted
      * signers, change <code>Enabled</code> to <code>true</code> (if it's currently
@@ -275,7 +275,7 @@ namespace Model
      * </li> <li> <p> <code>https-only</code>: If a viewer sends an HTTP request,
      * CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      * <p>For more information about requiring the HTTPS protocol, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
      * an HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront
      * Developer Guide</i>.</p> <note> <p>The only way to guarantee that viewers
      * retrieve an object that was fetched from the origin using HTTPS is never to use
@@ -284,9 +284,9 @@ namespace Model
      * are protocol agnostic. That means that an edge location will return an object
      * from the cache regardless of whether the current request protocol matches the
      * protocol used previously. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
-     * How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in
-     * the <i>Amazon CloudFront Developer Guide</i>.</p> </note>
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p> </note>
      */
     inline const ViewerProtocolPolicy& GetViewerProtocolPolicy() const{ return m_viewerProtocolPolicy; }
 
@@ -301,7 +301,7 @@ namespace Model
      * </li> <li> <p> <code>https-only</code>: If a viewer sends an HTTP request,
      * CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      * <p>For more information about requiring the HTTPS protocol, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
      * an HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront
      * Developer Guide</i>.</p> <note> <p>The only way to guarantee that viewers
      * retrieve an object that was fetched from the origin using HTTPS is never to use
@@ -310,9 +310,9 @@ namespace Model
      * are protocol agnostic. That means that an edge location will return an object
      * from the cache regardless of whether the current request protocol matches the
      * protocol used previously. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
-     * How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in
-     * the <i>Amazon CloudFront Developer Guide</i>.</p> </note>
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p> </note>
      */
     inline bool ViewerProtocolPolicyHasBeenSet() const { return m_viewerProtocolPolicyHasBeenSet; }
 
@@ -327,7 +327,7 @@ namespace Model
      * </li> <li> <p> <code>https-only</code>: If a viewer sends an HTTP request,
      * CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      * <p>For more information about requiring the HTTPS protocol, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
      * an HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront
      * Developer Guide</i>.</p> <note> <p>The only way to guarantee that viewers
      * retrieve an object that was fetched from the origin using HTTPS is never to use
@@ -336,9 +336,9 @@ namespace Model
      * are protocol agnostic. That means that an edge location will return an object
      * from the cache regardless of whether the current request protocol matches the
      * protocol used previously. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
-     * How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in
-     * the <i>Amazon CloudFront Developer Guide</i>.</p> </note>
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p> </note>
      */
     inline void SetViewerProtocolPolicy(const ViewerProtocolPolicy& value) { m_viewerProtocolPolicyHasBeenSet = true; m_viewerProtocolPolicy = value; }
 
@@ -353,7 +353,7 @@ namespace Model
      * </li> <li> <p> <code>https-only</code>: If a viewer sends an HTTP request,
      * CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      * <p>For more information about requiring the HTTPS protocol, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
      * an HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront
      * Developer Guide</i>.</p> <note> <p>The only way to guarantee that viewers
      * retrieve an object that was fetched from the origin using HTTPS is never to use
@@ -362,9 +362,9 @@ namespace Model
      * are protocol agnostic. That means that an edge location will return an object
      * from the cache regardless of whether the current request protocol matches the
      * protocol used previously. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
-     * How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in
-     * the <i>Amazon CloudFront Developer Guide</i>.</p> </note>
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p> </note>
      */
     inline void SetViewerProtocolPolicy(ViewerProtocolPolicy&& value) { m_viewerProtocolPolicyHasBeenSet = true; m_viewerProtocolPolicy = std::move(value); }
 
@@ -379,7 +379,7 @@ namespace Model
      * </li> <li> <p> <code>https-only</code>: If a viewer sends an HTTP request,
      * CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      * <p>For more information about requiring the HTTPS protocol, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
      * an HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront
      * Developer Guide</i>.</p> <note> <p>The only way to guarantee that viewers
      * retrieve an object that was fetched from the origin using HTTPS is never to use
@@ -388,9 +388,9 @@ namespace Model
      * are protocol agnostic. That means that an edge location will return an object
      * from the cache regardless of whether the current request protocol matches the
      * protocol used previously. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
-     * How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in
-     * the <i>Amazon CloudFront Developer Guide</i>.</p> </note>
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p> </note>
      */
     inline DefaultCacheBehavior& WithViewerProtocolPolicy(const ViewerProtocolPolicy& value) { SetViewerProtocolPolicy(value); return *this;}
 
@@ -405,7 +405,7 @@ namespace Model
      * </li> <li> <p> <code>https-only</code>: If a viewer sends an HTTP request,
      * CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      * <p>For more information about requiring the HTTPS protocol, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
      * an HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront
      * Developer Guide</i>.</p> <note> <p>The only way to guarantee that viewers
      * retrieve an object that was fetched from the origin using HTTPS is never to use
@@ -414,9 +414,9 @@ namespace Model
      * are protocol agnostic. That means that an edge location will return an object
      * from the cache regardless of whether the current request protocol matches the
      * protocol used previously. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
-     * How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in
-     * the <i>Amazon CloudFront Developer Guide</i>.</p> </note>
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p> </note>
      */
     inline DefaultCacheBehavior& WithViewerProtocolPolicy(ViewerProtocolPolicy&& value) { SetViewerProtocolPolicy(std::move(value)); return *this;}
 
@@ -425,13 +425,12 @@ namespace Model
      * <p>The minimum amount of time that you want objects to stay in CloudFront caches
      * before CloudFront forwards another request to your origin to determine whether
      * the object has been updated. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
-     * How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in
-     * the <i>Amazon Amazon CloudFront Developer Guide</i>.</p> <p>You must specify
-     * <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward
-     * all headers to your origin (under <code>Headers</code>, if you specify
-     * <code>1</code> for <code>Quantity</code> and <code>*</code> for
-     * <code>Name</code>).</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p> <p>You must specify <code>0</code> for
+     * <code>MinTTL</code> if you configure CloudFront to forward all headers to your
+     * origin (under <code>Headers</code>, if you specify <code>1</code> for
+     * <code>Quantity</code> and <code>*</code> for <code>Name</code>).</p>
      */
     inline long long GetMinTTL() const{ return m_minTTL; }
 
@@ -439,13 +438,12 @@ namespace Model
      * <p>The minimum amount of time that you want objects to stay in CloudFront caches
      * before CloudFront forwards another request to your origin to determine whether
      * the object has been updated. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
-     * How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in
-     * the <i>Amazon Amazon CloudFront Developer Guide</i>.</p> <p>You must specify
-     * <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward
-     * all headers to your origin (under <code>Headers</code>, if you specify
-     * <code>1</code> for <code>Quantity</code> and <code>*</code> for
-     * <code>Name</code>).</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p> <p>You must specify <code>0</code> for
+     * <code>MinTTL</code> if you configure CloudFront to forward all headers to your
+     * origin (under <code>Headers</code>, if you specify <code>1</code> for
+     * <code>Quantity</code> and <code>*</code> for <code>Name</code>).</p>
      */
     inline bool MinTTLHasBeenSet() const { return m_minTTLHasBeenSet; }
 
@@ -453,13 +451,12 @@ namespace Model
      * <p>The minimum amount of time that you want objects to stay in CloudFront caches
      * before CloudFront forwards another request to your origin to determine whether
      * the object has been updated. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
-     * How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in
-     * the <i>Amazon Amazon CloudFront Developer Guide</i>.</p> <p>You must specify
-     * <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward
-     * all headers to your origin (under <code>Headers</code>, if you specify
-     * <code>1</code> for <code>Quantity</code> and <code>*</code> for
-     * <code>Name</code>).</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p> <p>You must specify <code>0</code> for
+     * <code>MinTTL</code> if you configure CloudFront to forward all headers to your
+     * origin (under <code>Headers</code>, if you specify <code>1</code> for
+     * <code>Quantity</code> and <code>*</code> for <code>Name</code>).</p>
      */
     inline void SetMinTTL(long long value) { m_minTTLHasBeenSet = true; m_minTTL = value; }
 
@@ -467,13 +464,12 @@ namespace Model
      * <p>The minimum amount of time that you want objects to stay in CloudFront caches
      * before CloudFront forwards another request to your origin to determine whether
      * the object has been updated. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
-     * How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in
-     * the <i>Amazon Amazon CloudFront Developer Guide</i>.</p> <p>You must specify
-     * <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward
-     * all headers to your origin (under <code>Headers</code>, if you specify
-     * <code>1</code> for <code>Quantity</code> and <code>*</code> for
-     * <code>Name</code>).</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p> <p>You must specify <code>0</code> for
+     * <code>MinTTL</code> if you configure CloudFront to forward all headers to your
+     * origin (under <code>Headers</code>, if you specify <code>1</code> for
+     * <code>Quantity</code> and <code>*</code> for <code>Name</code>).</p>
      */
     inline DefaultCacheBehavior& WithMinTTL(long long value) { SetMinTTL(value); return *this;}
 
@@ -545,9 +541,9 @@ namespace Model
      * origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
      * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
-     * How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in
-     * the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p>
      */
     inline long long GetDefaultTTL() const{ return m_defaultTTL; }
 
@@ -558,9 +554,9 @@ namespace Model
      * origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
      * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
-     * How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in
-     * the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p>
      */
     inline bool DefaultTTLHasBeenSet() const { return m_defaultTTLHasBeenSet; }
 
@@ -571,9 +567,9 @@ namespace Model
      * origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
      * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
-     * How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in
-     * the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p>
      */
     inline void SetDefaultTTL(long long value) { m_defaultTTLHasBeenSet = true; m_defaultTTL = value; }
 
@@ -584,23 +580,63 @@ namespace Model
      * origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
      * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
-     * How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in
-     * the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p>
      */
     inline DefaultCacheBehavior& WithDefaultTTL(long long value) { SetDefaultTTL(value); return *this;}
 
 
-    
+    /**
+     * <p>The maximum amount of time that you want objects to stay in CloudFront caches
+     * before CloudFront forwards another request to your origin to determine whether
+     * the object has been updated. The value that you specify applies only when your
+     * origin adds HTTP headers such as <code>Cache-Control max-age</code>,
+     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p>
+     */
     inline long long GetMaxTTL() const{ return m_maxTTL; }
 
-    
+    /**
+     * <p>The maximum amount of time that you want objects to stay in CloudFront caches
+     * before CloudFront forwards another request to your origin to determine whether
+     * the object has been updated. The value that you specify applies only when your
+     * origin adds HTTP headers such as <code>Cache-Control max-age</code>,
+     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p>
+     */
     inline bool MaxTTLHasBeenSet() const { return m_maxTTLHasBeenSet; }
 
-    
+    /**
+     * <p>The maximum amount of time that you want objects to stay in CloudFront caches
+     * before CloudFront forwards another request to your origin to determine whether
+     * the object has been updated. The value that you specify applies only when your
+     * origin adds HTTP headers such as <code>Cache-Control max-age</code>,
+     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p>
+     */
     inline void SetMaxTTL(long long value) { m_maxTTLHasBeenSet = true; m_maxTTL = value; }
 
-    
+    /**
+     * <p>The maximum amount of time that you want objects to stay in CloudFront caches
+     * before CloudFront forwards another request to your origin to determine whether
+     * the object has been updated. The value that you specify applies only when your
+     * origin adds HTTP headers such as <code>Cache-Control max-age</code>,
+     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p>
+     */
     inline DefaultCacheBehavior& WithMaxTTL(long long value) { SetMaxTTL(value); return *this;}
 
 
@@ -608,7 +644,7 @@ namespace Model
      * <p>Whether you want CloudFront to automatically compress certain files for this
      * cache behavior. If so, specify <code>true</code>; if not, specify
      * <code>false</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
      * Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline bool GetCompress() const{ return m_compress; }
@@ -617,7 +653,7 @@ namespace Model
      * <p>Whether you want CloudFront to automatically compress certain files for this
      * cache behavior. If so, specify <code>true</code>; if not, specify
      * <code>false</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
      * Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline bool CompressHasBeenSet() const { return m_compressHasBeenSet; }
@@ -626,7 +662,7 @@ namespace Model
      * <p>Whether you want CloudFront to automatically compress certain files for this
      * cache behavior. If so, specify <code>true</code>; if not, specify
      * <code>false</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
      * Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetCompress(bool value) { m_compressHasBeenSet = true; m_compress = value; }
@@ -635,7 +671,7 @@ namespace Model
      * <p>Whether you want CloudFront to automatically compress certain files for this
      * cache behavior. If so, specify <code>true</code>; if not, specify
      * <code>false</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
      * Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline DefaultCacheBehavior& WithCompress(bool value) { SetCompress(value); return *this;}

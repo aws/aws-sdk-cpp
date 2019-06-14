@@ -35,7 +35,7 @@ namespace Model
   /**
    * <p>A complex type that controls whether access logs are written for this
    * streaming distribution.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/StreamingLoggingConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/StreamingLoggingConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API StreamingLoggingConfig

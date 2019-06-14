@@ -36,7 +36,7 @@ namespace Model
    * <p>A complex data type for the status codes that you specify that, when returned
    * by a primary origin, trigger CloudFront to failover to a second
    * origin.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/StatusCodes">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/StatusCodes">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API StatusCodes

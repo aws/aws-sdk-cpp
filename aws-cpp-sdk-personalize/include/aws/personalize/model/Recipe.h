@@ -336,58 +336,50 @@ namespace Model
 
 
     /**
-     * <p>One of the following values:</p> <ul> <li> <p>SEARCH_PERSONALIZATION</p>
-     * </li> <li> <p>RELATED_ITEMS</p> </li> <li> <p>USER_PERSONALIZATION</p> </li>
-     * </ul>
+     * <p>One of the following values:</p> <ul> <li> <p>PERSONALIZED_RANKING</p> </li>
+     * <li> <p>RELATED_ITEMS</p> </li> <li> <p>USER_PERSONALIZATION</p> </li> </ul>
      */
     inline const Aws::String& GetRecipeType() const{ return m_recipeType; }
 
     /**
-     * <p>One of the following values:</p> <ul> <li> <p>SEARCH_PERSONALIZATION</p>
-     * </li> <li> <p>RELATED_ITEMS</p> </li> <li> <p>USER_PERSONALIZATION</p> </li>
-     * </ul>
+     * <p>One of the following values:</p> <ul> <li> <p>PERSONALIZED_RANKING</p> </li>
+     * <li> <p>RELATED_ITEMS</p> </li> <li> <p>USER_PERSONALIZATION</p> </li> </ul>
      */
     inline bool RecipeTypeHasBeenSet() const { return m_recipeTypeHasBeenSet; }
 
     /**
-     * <p>One of the following values:</p> <ul> <li> <p>SEARCH_PERSONALIZATION</p>
-     * </li> <li> <p>RELATED_ITEMS</p> </li> <li> <p>USER_PERSONALIZATION</p> </li>
-     * </ul>
+     * <p>One of the following values:</p> <ul> <li> <p>PERSONALIZED_RANKING</p> </li>
+     * <li> <p>RELATED_ITEMS</p> </li> <li> <p>USER_PERSONALIZATION</p> </li> </ul>
      */
     inline void SetRecipeType(const Aws::String& value) { m_recipeTypeHasBeenSet = true; m_recipeType = value; }
 
     /**
-     * <p>One of the following values:</p> <ul> <li> <p>SEARCH_PERSONALIZATION</p>
-     * </li> <li> <p>RELATED_ITEMS</p> </li> <li> <p>USER_PERSONALIZATION</p> </li>
-     * </ul>
+     * <p>One of the following values:</p> <ul> <li> <p>PERSONALIZED_RANKING</p> </li>
+     * <li> <p>RELATED_ITEMS</p> </li> <li> <p>USER_PERSONALIZATION</p> </li> </ul>
      */
     inline void SetRecipeType(Aws::String&& value) { m_recipeTypeHasBeenSet = true; m_recipeType = std::move(value); }
 
     /**
-     * <p>One of the following values:</p> <ul> <li> <p>SEARCH_PERSONALIZATION</p>
-     * </li> <li> <p>RELATED_ITEMS</p> </li> <li> <p>USER_PERSONALIZATION</p> </li>
-     * </ul>
+     * <p>One of the following values:</p> <ul> <li> <p>PERSONALIZED_RANKING</p> </li>
+     * <li> <p>RELATED_ITEMS</p> </li> <li> <p>USER_PERSONALIZATION</p> </li> </ul>
      */
     inline void SetRecipeType(const char* value) { m_recipeTypeHasBeenSet = true; m_recipeType.assign(value); }
 
     /**
-     * <p>One of the following values:</p> <ul> <li> <p>SEARCH_PERSONALIZATION</p>
-     * </li> <li> <p>RELATED_ITEMS</p> </li> <li> <p>USER_PERSONALIZATION</p> </li>
-     * </ul>
+     * <p>One of the following values:</p> <ul> <li> <p>PERSONALIZED_RANKING</p> </li>
+     * <li> <p>RELATED_ITEMS</p> </li> <li> <p>USER_PERSONALIZATION</p> </li> </ul>
      */
     inline Recipe& WithRecipeType(const Aws::String& value) { SetRecipeType(value); return *this;}
 
     /**
-     * <p>One of the following values:</p> <ul> <li> <p>SEARCH_PERSONALIZATION</p>
-     * </li> <li> <p>RELATED_ITEMS</p> </li> <li> <p>USER_PERSONALIZATION</p> </li>
-     * </ul>
+     * <p>One of the following values:</p> <ul> <li> <p>PERSONALIZED_RANKING</p> </li>
+     * <li> <p>RELATED_ITEMS</p> </li> <li> <p>USER_PERSONALIZATION</p> </li> </ul>
      */
     inline Recipe& WithRecipeType(Aws::String&& value) { SetRecipeType(std::move(value)); return *this;}
 
     /**
-     * <p>One of the following values:</p> <ul> <li> <p>SEARCH_PERSONALIZATION</p>
-     * </li> <li> <p>RELATED_ITEMS</p> </li> <li> <p>USER_PERSONALIZATION</p> </li>
-     * </ul>
+     * <p>One of the following values:</p> <ul> <li> <p>PERSONALIZED_RANKING</p> </li>
+     * <li> <p>RELATED_ITEMS</p> </li> <li> <p>USER_PERSONALIZATION</p> </li> </ul>
      */
     inline Recipe& WithRecipeType(const char* value) { SetRecipeType(value); return *this;}
 

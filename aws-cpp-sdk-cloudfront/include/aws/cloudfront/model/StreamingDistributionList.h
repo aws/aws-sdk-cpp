@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p>A streaming distribution list. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/StreamingDistributionList">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/StreamingDistributionList">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API StreamingDistributionList

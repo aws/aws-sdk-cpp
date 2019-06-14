@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p>An invalidation. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Invalidation">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Invalidation">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Invalidation

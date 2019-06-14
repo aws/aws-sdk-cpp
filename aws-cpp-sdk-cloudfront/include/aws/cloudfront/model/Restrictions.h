@@ -35,7 +35,7 @@ namespace Model
   /**
    * <p>A complex type that identifies ways in which you want to restrict
    * distribution of your content.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Restrictions">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Restrictions">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Restrictions
@@ -48,22 +48,46 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
-    
+    /**
+     * <p>A complex type that controls the countries in which your content is
+     * distributed. CloudFront determines the location of your users using
+     * <code>MaxMind</code> GeoIP databases.</p>
+     */
     inline const GeoRestriction& GetGeoRestriction() const{ return m_geoRestriction; }
 
-    
+    /**
+     * <p>A complex type that controls the countries in which your content is
+     * distributed. CloudFront determines the location of your users using
+     * <code>MaxMind</code> GeoIP databases.</p>
+     */
     inline bool GeoRestrictionHasBeenSet() const { return m_geoRestrictionHasBeenSet; }
 
-    
+    /**
+     * <p>A complex type that controls the countries in which your content is
+     * distributed. CloudFront determines the location of your users using
+     * <code>MaxMind</code> GeoIP databases.</p>
+     */
     inline void SetGeoRestriction(const GeoRestriction& value) { m_geoRestrictionHasBeenSet = true; m_geoRestriction = value; }
 
-    
+    /**
+     * <p>A complex type that controls the countries in which your content is
+     * distributed. CloudFront determines the location of your users using
+     * <code>MaxMind</code> GeoIP databases.</p>
+     */
     inline void SetGeoRestriction(GeoRestriction&& value) { m_geoRestrictionHasBeenSet = true; m_geoRestriction = std::move(value); }
 
-    
+    /**
+     * <p>A complex type that controls the countries in which your content is
+     * distributed. CloudFront determines the location of your users using
+     * <code>MaxMind</code> GeoIP databases.</p>
+     */
     inline Restrictions& WithGeoRestriction(const GeoRestriction& value) { SetGeoRestriction(value); return *this;}
 
-    
+    /**
+     * <p>A complex type that controls the countries in which your content is
+     * distributed. CloudFront determines the location of your users using
+     * <code>MaxMind</code> GeoIP databases.</p>
+     */
     inline Restrictions& WithGeoRestriction(GeoRestriction&& value) { SetGeoRestriction(std::move(value)); return *this;}
 
   private:

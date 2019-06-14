@@ -39,7 +39,8 @@ Distribution::Distribution() :
     m_inProgressInvalidationBatchesHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_activeTrustedSignersHasBeenSet(false),
-    m_distributionConfigHasBeenSet(false)
+    m_distributionConfigHasBeenSet(false),
+    m_aliasICPRecordalsHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ Distribution::Distribution(const XmlNode& xmlNode) :
     m_inProgressInvalidationBatchesHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_activeTrustedSignersHasBeenSet(false),
-    m_distributionConfigHasBeenSet(false)
+    m_distributionConfigHasBeenSet(false),
+    m_aliasICPRecordalsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -111,6 +113,18 @@ Distribution& Distribution::operator =(const XmlNode& xmlNode)
       m_distributionConfig = distributionConfigNode;
       m_distributionConfigHasBeenSet = true;
     }
+    XmlNode aliasICPRecordalsNode = resultNode.FirstChild("AliasICPRecordals");
+    if(!aliasICPRecordalsNode.IsNull())
+    {
+      XmlNode aliasICPRecordalsMember = aliasICPRecordalsNode.FirstChild("AliasICPRecordal");
+      while(!aliasICPRecordalsMember.IsNull())
+      {
+        m_aliasICPRecordals.push_back(aliasICPRecordalsMember);
+        aliasICPRecordalsMember = aliasICPRecordalsMember.NextNode("AliasICPRecordal");
+      }
+
+      m_aliasICPRecordalsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -167,6 +181,16 @@ void Distribution::AddToNode(XmlNode& parentNode) const
   {
    XmlNode distributionConfigNode = parentNode.CreateChildElement("DistributionConfig");
    m_distributionConfig.AddToNode(distributionConfigNode);
+  }
+
+  if(m_aliasICPRecordalsHasBeenSet)
+  {
+   XmlNode aliasICPRecordalsParentNode = parentNode.CreateChildElement("AliasICPRecordals");
+   for(const auto& item : m_aliasICPRecordals)
+   {
+     XmlNode aliasICPRecordalsNode = aliasICPRecordalsParentNode.CreateChildElement("AliasICPRecordal");
+     item.AddToNode(aliasICPRecordalsNode);
+   }
   }
 
 }

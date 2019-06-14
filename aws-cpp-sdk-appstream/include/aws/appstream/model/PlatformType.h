@@ -26,7 +26,9 @@ namespace Model
   enum class PlatformType
   {
     NOT_SET,
-    WINDOWS
+    WINDOWS,
+    WINDOWS_SERVER_2016,
+    WINDOWS_SERVER_2019
   };
 
 namespace PlatformTypeMapper

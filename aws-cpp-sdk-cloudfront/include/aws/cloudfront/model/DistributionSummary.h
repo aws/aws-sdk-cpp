@@ -27,6 +27,8 @@
 #include <aws/cloudfront/model/ViewerCertificate.h>
 #include <aws/cloudfront/model/Restrictions.h>
 #include <aws/cloudfront/model/HttpVersion.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudfront/model/AliasICPRecordal.h>
 #include <utility>
 
 namespace Aws
@@ -46,7 +48,7 @@ namespace Model
   /**
    * <p>A summary of the information about a CloudFront distribution.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DistributionSummary">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DistributionSummary">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API DistributionSummary
@@ -636,63 +638,87 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>A complex type that specifies whether you want viewers to use HTTP or HTTPS
+     * to request your objects, whether you're using an alternate domain name with
+     * HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a third-party
+     * certificate authority.</p>
      */
     inline const ViewerCertificate& GetViewerCertificate() const{ return m_viewerCertificate; }
 
     /**
-     * <p/>
+     * <p>A complex type that specifies whether you want viewers to use HTTP or HTTPS
+     * to request your objects, whether you're using an alternate domain name with
+     * HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a third-party
+     * certificate authority.</p>
      */
     inline bool ViewerCertificateHasBeenSet() const { return m_viewerCertificateHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>A complex type that specifies whether you want viewers to use HTTP or HTTPS
+     * to request your objects, whether you're using an alternate domain name with
+     * HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a third-party
+     * certificate authority.</p>
      */
     inline void SetViewerCertificate(const ViewerCertificate& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = value; }
 
     /**
-     * <p/>
+     * <p>A complex type that specifies whether you want viewers to use HTTP or HTTPS
+     * to request your objects, whether you're using an alternate domain name with
+     * HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a third-party
+     * certificate authority.</p>
      */
     inline void SetViewerCertificate(ViewerCertificate&& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A complex type that specifies whether you want viewers to use HTTP or HTTPS
+     * to request your objects, whether you're using an alternate domain name with
+     * HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a third-party
+     * certificate authority.</p>
      */
     inline DistributionSummary& WithViewerCertificate(const ViewerCertificate& value) { SetViewerCertificate(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A complex type that specifies whether you want viewers to use HTTP or HTTPS
+     * to request your objects, whether you're using an alternate domain name with
+     * HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a third-party
+     * certificate authority.</p>
      */
     inline DistributionSummary& WithViewerCertificate(ViewerCertificate&& value) { SetViewerCertificate(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>A complex type that identifies ways in which you want to restrict
+     * distribution of your content.</p>
      */
     inline const Restrictions& GetRestrictions() const{ return m_restrictions; }
 
     /**
-     * <p/>
+     * <p>A complex type that identifies ways in which you want to restrict
+     * distribution of your content.</p>
      */
     inline bool RestrictionsHasBeenSet() const { return m_restrictionsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>A complex type that identifies ways in which you want to restrict
+     * distribution of your content.</p>
      */
     inline void SetRestrictions(const Restrictions& value) { m_restrictionsHasBeenSet = true; m_restrictions = value; }
 
     /**
-     * <p/>
+     * <p>A complex type that identifies ways in which you want to restrict
+     * distribution of your content.</p>
      */
     inline void SetRestrictions(Restrictions&& value) { m_restrictionsHasBeenSet = true; m_restrictions = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A complex type that identifies ways in which you want to restrict
+     * distribution of your content.</p>
      */
     inline DistributionSummary& WithRestrictions(const Restrictions& value) { SetRestrictions(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A complex type that identifies ways in which you want to restrict
+     * distribution of your content.</p>
      */
     inline DistributionSummary& WithRestrictions(Restrictions&& value) { SetRestrictions(std::move(value)); return *this;}
 
@@ -811,6 +837,103 @@ namespace Model
      */
     inline DistributionSummary& WithIsIPV6Enabled(bool value) { SetIsIPV6Enabled(value); return *this;}
 
+
+    /**
+     * <p>AWS services in China customers must file for an Internet Content Provider
+     * (ICP) recordal if they want to serve content publicly on an alternate domain
+     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
+     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
+     * <p>For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
+     * China</i>.</p>
+     */
+    inline const Aws::Vector<AliasICPRecordal>& GetAliasICPRecordals() const{ return m_aliasICPRecordals; }
+
+    /**
+     * <p>AWS services in China customers must file for an Internet Content Provider
+     * (ICP) recordal if they want to serve content publicly on an alternate domain
+     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
+     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
+     * <p>For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
+     * China</i>.</p>
+     */
+    inline bool AliasICPRecordalsHasBeenSet() const { return m_aliasICPRecordalsHasBeenSet; }
+
+    /**
+     * <p>AWS services in China customers must file for an Internet Content Provider
+     * (ICP) recordal if they want to serve content publicly on an alternate domain
+     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
+     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
+     * <p>For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
+     * China</i>.</p>
+     */
+    inline void SetAliasICPRecordals(const Aws::Vector<AliasICPRecordal>& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals = value; }
+
+    /**
+     * <p>AWS services in China customers must file for an Internet Content Provider
+     * (ICP) recordal if they want to serve content publicly on an alternate domain
+     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
+     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
+     * <p>For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
+     * China</i>.</p>
+     */
+    inline void SetAliasICPRecordals(Aws::Vector<AliasICPRecordal>&& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals = std::move(value); }
+
+    /**
+     * <p>AWS services in China customers must file for an Internet Content Provider
+     * (ICP) recordal if they want to serve content publicly on an alternate domain
+     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
+     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
+     * <p>For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
+     * China</i>.</p>
+     */
+    inline DistributionSummary& WithAliasICPRecordals(const Aws::Vector<AliasICPRecordal>& value) { SetAliasICPRecordals(value); return *this;}
+
+    /**
+     * <p>AWS services in China customers must file for an Internet Content Provider
+     * (ICP) recordal if they want to serve content publicly on an alternate domain
+     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
+     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
+     * <p>For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
+     * China</i>.</p>
+     */
+    inline DistributionSummary& WithAliasICPRecordals(Aws::Vector<AliasICPRecordal>&& value) { SetAliasICPRecordals(std::move(value)); return *this;}
+
+    /**
+     * <p>AWS services in China customers must file for an Internet Content Provider
+     * (ICP) recordal if they want to serve content publicly on an alternate domain
+     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
+     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
+     * <p>For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
+     * China</i>.</p>
+     */
+    inline DistributionSummary& AddAliasICPRecordals(const AliasICPRecordal& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals.push_back(value); return *this; }
+
+    /**
+     * <p>AWS services in China customers must file for an Internet Content Provider
+     * (ICP) recordal if they want to serve content publicly on an alternate domain
+     * name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal
+     * provides the ICP recordal status for CNAMEs associated with distributions.</p>
+     * <p>For more information about ICP recordals, see <a
+     * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+     * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
+     * China</i>.</p>
+     */
+    inline DistributionSummary& AddAliasICPRecordals(AliasICPRecordal&& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_id;
@@ -869,6 +992,9 @@ namespace Model
 
     bool m_isIPV6Enabled;
     bool m_isIPV6EnabledHasBeenSet;
+
+    Aws::Vector<AliasICPRecordal> m_aliasICPRecordals;
+    bool m_aliasICPRecordalsHasBeenSet;
   };
 
 } // namespace Model

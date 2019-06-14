@@ -38,9 +38,9 @@ namespace Model
 {
 
   /**
-   * <p> A summary of the information for an Amazon CloudFront streaming
+   * <p> A summary of the information for a CloudFront streaming
    * distribution.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/StreamingDistributionSummary">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/StreamingDistributionSummary">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API StreamingDistributionSummary
@@ -383,7 +383,10 @@ namespace Model
      * more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's
      * currently <code>false</code>), change <code>Quantity</code> as applicable, and
      * specify all of the trusted signers that you want to include in the updated
-     * distribution.</p>
+     * distribution.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>. </p>
      */
     inline const TrustedSigners& GetTrustedSigners() const{ return m_trustedSigners; }
 
@@ -400,7 +403,10 @@ namespace Model
      * more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's
      * currently <code>false</code>), change <code>Quantity</code> as applicable, and
      * specify all of the trusted signers that you want to include in the updated
-     * distribution.</p>
+     * distribution.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>. </p>
      */
     inline bool TrustedSignersHasBeenSet() const { return m_trustedSignersHasBeenSet; }
 
@@ -417,7 +423,10 @@ namespace Model
      * more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's
      * currently <code>false</code>), change <code>Quantity</code> as applicable, and
      * specify all of the trusted signers that you want to include in the updated
-     * distribution.</p>
+     * distribution.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>. </p>
      */
     inline void SetTrustedSigners(const TrustedSigners& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = value; }
 
@@ -434,7 +443,10 @@ namespace Model
      * more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's
      * currently <code>false</code>), change <code>Quantity</code> as applicable, and
      * specify all of the trusted signers that you want to include in the updated
-     * distribution.</p>
+     * distribution.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>. </p>
      */
     inline void SetTrustedSigners(TrustedSigners&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = std::move(value); }
 
@@ -451,7 +463,10 @@ namespace Model
      * more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's
      * currently <code>false</code>), change <code>Quantity</code> as applicable, and
      * specify all of the trusted signers that you want to include in the updated
-     * distribution.</p>
+     * distribution.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>. </p>
      */
     inline StreamingDistributionSummary& WithTrustedSigners(const TrustedSigners& value) { SetTrustedSigners(value); return *this;}
 
@@ -468,7 +483,10 @@ namespace Model
      * more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's
      * currently <code>false</code>), change <code>Quantity</code> as applicable, and
      * specify all of the trusted signers that you want to include in the updated
-     * distribution.</p>
+     * distribution.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>. </p>
      */
     inline StreamingDistributionSummary& WithTrustedSigners(TrustedSigners&& value) { SetTrustedSigners(std::move(value)); return *this;}
 
@@ -515,32 +533,38 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>A complex type that contains information about price class for this streaming
+     * distribution. </p>
      */
     inline const PriceClass& GetPriceClass() const{ return m_priceClass; }
 
     /**
-     * <p/>
+     * <p>A complex type that contains information about price class for this streaming
+     * distribution. </p>
      */
     inline bool PriceClassHasBeenSet() const { return m_priceClassHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>A complex type that contains information about price class for this streaming
+     * distribution. </p>
      */
     inline void SetPriceClass(const PriceClass& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
 
     /**
-     * <p/>
+     * <p>A complex type that contains information about price class for this streaming
+     * distribution. </p>
      */
     inline void SetPriceClass(PriceClass&& value) { m_priceClassHasBeenSet = true; m_priceClass = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A complex type that contains information about price class for this streaming
+     * distribution. </p>
      */
     inline StreamingDistributionSummary& WithPriceClass(const PriceClass& value) { SetPriceClass(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A complex type that contains information about price class for this streaming
+     * distribution. </p>
      */
     inline StreamingDistributionSummary& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
 

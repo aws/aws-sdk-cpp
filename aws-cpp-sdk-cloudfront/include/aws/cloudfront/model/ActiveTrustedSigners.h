@@ -44,10 +44,10 @@ namespace Model
    * AWS account. If no <code>KeyPairId</code> element appears for a
    * <code>Signer</code>, that signer can't create signed URLs. </p> <p>For more
    * information, see <a
-   * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+   * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
    * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ActiveTrustedSigners">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ActiveTrustedSigners">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API ActiveTrustedSigners
@@ -62,62 +62,54 @@ namespace Model
 
     /**
      * <p>Enabled is <code>true</code> if any of the AWS accounts listed in the
-     * <code>TrustedSigners</code> complex type for this RTMP distribution have active
+     * <code>TrustedSigners</code> complex type for this distribution have active
      * CloudFront key pairs. If not, <code>Enabled</code> is <code>false</code>.</p>
-     * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
      * <p>Enabled is <code>true</code> if any of the AWS accounts listed in the
-     * <code>TrustedSigners</code> complex type for this RTMP distribution have active
+     * <code>TrustedSigners</code> complex type for this distribution have active
      * CloudFront key pairs. If not, <code>Enabled</code> is <code>false</code>.</p>
-     * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * <p>Enabled is <code>true</code> if any of the AWS accounts listed in the
-     * <code>TrustedSigners</code> complex type for this RTMP distribution have active
+     * <code>TrustedSigners</code> complex type for this distribution have active
      * CloudFront key pairs. If not, <code>Enabled</code> is <code>false</code>.</p>
-     * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
      * <p>Enabled is <code>true</code> if any of the AWS accounts listed in the
-     * <code>TrustedSigners</code> complex type for this RTMP distribution have active
+     * <code>TrustedSigners</code> complex type for this distribution have active
      * CloudFront key pairs. If not, <code>Enabled</code> is <code>false</code>.</p>
-     * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
      */
     inline ActiveTrustedSigners& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
 
     /**
-     * <p>A complex type that contains one <code>Signer</code> complex type for each
-     * trusted signer specified in the <code>TrustedSigners</code> complex type.</p>
-     * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
+     * <p>The number of trusted signers specified in the <code>TrustedSigners</code>
+     * complex type.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
-     * <p>A complex type that contains one <code>Signer</code> complex type for each
-     * trusted signer specified in the <code>TrustedSigners</code> complex type.</p>
-     * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
+     * <p>The number of trusted signers specified in the <code>TrustedSigners</code>
+     * complex type.</p>
      */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
 
     /**
-     * <p>A complex type that contains one <code>Signer</code> complex type for each
-     * trusted signer specified in the <code>TrustedSigners</code> complex type.</p>
-     * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
+     * <p>The number of trusted signers specified in the <code>TrustedSigners</code>
+     * complex type.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
-     * <p>A complex type that contains one <code>Signer</code> complex type for each
-     * trusted signer specified in the <code>TrustedSigners</code> complex type.</p>
-     * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
+     * <p>The number of trusted signers specified in the <code>TrustedSigners</code>
+     * complex type.</p>
      */
     inline ActiveTrustedSigners& WithQuantity(int value) { SetQuantity(value); return *this;}
 
@@ -125,56 +117,56 @@ namespace Model
     /**
      * <p>A complex type that contains one <code>Signer</code> complex type for each
      * trusted signer that is specified in the <code>TrustedSigners</code> complex
-     * type.</p> <p>For more information, see <a>ActiveTrustedSigners</a>. </p>
+     * type.</p>
      */
     inline const Aws::Vector<Signer>& GetItems() const{ return m_items; }
 
     /**
      * <p>A complex type that contains one <code>Signer</code> complex type for each
      * trusted signer that is specified in the <code>TrustedSigners</code> complex
-     * type.</p> <p>For more information, see <a>ActiveTrustedSigners</a>. </p>
+     * type.</p>
      */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>A complex type that contains one <code>Signer</code> complex type for each
      * trusted signer that is specified in the <code>TrustedSigners</code> complex
-     * type.</p> <p>For more information, see <a>ActiveTrustedSigners</a>. </p>
+     * type.</p>
      */
     inline void SetItems(const Aws::Vector<Signer>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
      * <p>A complex type that contains one <code>Signer</code> complex type for each
      * trusted signer that is specified in the <code>TrustedSigners</code> complex
-     * type.</p> <p>For more information, see <a>ActiveTrustedSigners</a>. </p>
+     * type.</p>
      */
     inline void SetItems(Aws::Vector<Signer>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * <p>A complex type that contains one <code>Signer</code> complex type for each
      * trusted signer that is specified in the <code>TrustedSigners</code> complex
-     * type.</p> <p>For more information, see <a>ActiveTrustedSigners</a>. </p>
+     * type.</p>
      */
     inline ActiveTrustedSigners& WithItems(const Aws::Vector<Signer>& value) { SetItems(value); return *this;}
 
     /**
      * <p>A complex type that contains one <code>Signer</code> complex type for each
      * trusted signer that is specified in the <code>TrustedSigners</code> complex
-     * type.</p> <p>For more information, see <a>ActiveTrustedSigners</a>. </p>
+     * type.</p>
      */
     inline ActiveTrustedSigners& WithItems(Aws::Vector<Signer>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that contains one <code>Signer</code> complex type for each
      * trusted signer that is specified in the <code>TrustedSigners</code> complex
-     * type.</p> <p>For more information, see <a>ActiveTrustedSigners</a>. </p>
+     * type.</p>
      */
     inline ActiveTrustedSigners& AddItems(const Signer& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
      * <p>A complex type that contains one <code>Signer</code> complex type for each
      * trusted signer that is specified in the <code>TrustedSigners</code> complex
-     * type.</p> <p>For more information, see <a>ActiveTrustedSigners</a>. </p>
+     * type.</p>
      */
     inline ActiveTrustedSigners& AddItems(Signer&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 

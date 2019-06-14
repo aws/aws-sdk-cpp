@@ -39,10 +39,10 @@ namespace Model
    * returning the response to the viewer.</p> </li> <li> <p>How long CloudFront
    * caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul> <p>For more
    * information about custom error pages, see <a
-   * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+   * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
    * Error Responses</a> in the <i>Amazon CloudFront Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CustomErrorResponses">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CustomErrorResponses">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CustomErrorResponses

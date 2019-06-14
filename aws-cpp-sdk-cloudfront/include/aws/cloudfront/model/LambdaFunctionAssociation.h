@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>A complex type that contains a Lambda function association.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/LambdaFunctionAssociation">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/LambdaFunctionAssociation">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API LambdaFunctionAssociation
@@ -216,7 +216,7 @@ namespace Model
     /**
      * <p>A flag that allows a Lambda function to have read access to the body content.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
      * the Request Body by Choosing the Include Body Option</a> in the Amazon
      * CloudFront Developer Guide.</p>
      */
@@ -225,7 +225,7 @@ namespace Model
     /**
      * <p>A flag that allows a Lambda function to have read access to the body content.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
      * the Request Body by Choosing the Include Body Option</a> in the Amazon
      * CloudFront Developer Guide.</p>
      */
@@ -234,7 +234,7 @@ namespace Model
     /**
      * <p>A flag that allows a Lambda function to have read access to the body content.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
      * the Request Body by Choosing the Include Body Option</a> in the Amazon
      * CloudFront Developer Guide.</p>
      */
@@ -243,7 +243,7 @@ namespace Model
     /**
      * <p>A flag that allows a Lambda function to have read access to the body content.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
      * the Request Body by Choosing the Include Body Option</a> in the Amazon
      * CloudFront Developer Guide.</p>
      */

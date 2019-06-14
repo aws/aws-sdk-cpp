@@ -38,10 +38,10 @@ namespace Model
    * returning the response to the viewer. </p> </li> <li> <p>How long CloudFront
    * caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul> <p>For more
    * information about custom error pages, see <a
-   * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+   * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
    * Error Responses</a> in the <i>Amazon CloudFront Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CustomErrorResponse">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CustomErrorResponse">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CustomErrorResponse
@@ -441,7 +441,7 @@ namespace Model
      * you don't want to specify a value, include an empty element,
      * <code>&lt;ErrorCachingMinTTL&gt;</code>, in the XML document.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline long long GetErrorCachingMinTTL() const{ return m_errorCachingMinTTL; }
@@ -454,7 +454,7 @@ namespace Model
      * you don't want to specify a value, include an empty element,
      * <code>&lt;ErrorCachingMinTTL&gt;</code>, in the XML document.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline bool ErrorCachingMinTTLHasBeenSet() const { return m_errorCachingMinTTLHasBeenSet; }
@@ -467,7 +467,7 @@ namespace Model
      * you don't want to specify a value, include an empty element,
      * <code>&lt;ErrorCachingMinTTL&gt;</code>, in the XML document.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetErrorCachingMinTTL(long long value) { m_errorCachingMinTTLHasBeenSet = true; m_errorCachingMinTTL = value; }
@@ -480,7 +480,7 @@ namespace Model
      * you don't want to specify a value, include an empty element,
      * <code>&lt;ErrorCachingMinTTL&gt;</code>, in the XML document.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline CustomErrorResponse& WithErrorCachingMinTTL(long long value) { SetErrorCachingMinTTL(value); return *this;}

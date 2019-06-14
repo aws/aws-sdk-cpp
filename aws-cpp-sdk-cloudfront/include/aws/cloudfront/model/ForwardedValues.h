@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>A complex type that specifies how CloudFront handles query strings and
    * cookies.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ForwardedValues">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ForwardedValues">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API ForwardedValues
@@ -67,7 +67,7 @@ namespace Model
      * specify false for <code>QueryString</code>, CloudFront doesn't forward any query
      * string parameters to the origin, and doesn't cache based on query string
      * parameters.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
      * CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.</p>
      */
@@ -90,7 +90,7 @@ namespace Model
      * specify false for <code>QueryString</code>, CloudFront doesn't forward any query
      * string parameters to the origin, and doesn't cache based on query string
      * parameters.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
      * CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.</p>
      */
@@ -113,7 +113,7 @@ namespace Model
      * specify false for <code>QueryString</code>, CloudFront doesn't forward any query
      * string parameters to the origin, and doesn't cache based on query string
      * parameters.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
      * CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.</p>
      */
@@ -136,7 +136,7 @@ namespace Model
      * specify false for <code>QueryString</code>, CloudFront doesn't forward any query
      * string parameters to the origin, and doesn't cache based on query string
      * parameters.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
      * CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.</p>
      */
@@ -147,7 +147,7 @@ namespace Model
      * <p>A complex type that specifies whether you want CloudFront to forward cookies
      * to the origin and, if so, which ones. For more information about forwarding
      * cookies to the origin, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
      * CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront
      * Developer Guide</i>.</p>
      */
@@ -157,7 +157,7 @@ namespace Model
      * <p>A complex type that specifies whether you want CloudFront to forward cookies
      * to the origin and, if so, which ones. For more information about forwarding
      * cookies to the origin, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
      * CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront
      * Developer Guide</i>.</p>
      */
@@ -167,7 +167,7 @@ namespace Model
      * <p>A complex type that specifies whether you want CloudFront to forward cookies
      * to the origin and, if so, which ones. For more information about forwarding
      * cookies to the origin, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
      * CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront
      * Developer Guide</i>.</p>
      */
@@ -177,7 +177,7 @@ namespace Model
      * <p>A complex type that specifies whether you want CloudFront to forward cookies
      * to the origin and, if so, which ones. For more information about forwarding
      * cookies to the origin, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
      * CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront
      * Developer Guide</i>.</p>
      */
@@ -187,7 +187,7 @@ namespace Model
      * <p>A complex type that specifies whether you want CloudFront to forward cookies
      * to the origin and, if so, which ones. For more information about forwarding
      * cookies to the origin, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
      * CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront
      * Developer Guide</i>.</p>
      */
@@ -197,7 +197,7 @@ namespace Model
      * <p>A complex type that specifies whether you want CloudFront to forward cookies
      * to the origin and, if so, which ones. For more information about forwarding
      * cookies to the origin, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
      * CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront
      * Developer Guide</i>.</p>
      */
@@ -206,37 +206,73 @@ namespace Model
 
     /**
      * <p>A complex type that specifies the <code>Headers</code>, if any, that you want
-     * CloudFront to base caching on for this cache behavior. </p>
+     * CloudFront to forward to the origin for this cache behavior (whitelisted
+     * headers). For the headers that you specify, CloudFront also caches separate
+     * versions of a specified object that is based on the header values in viewer
+     * requests.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">
+     * Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront
+     * Developer Guide</i>.</p>
      */
     inline const Headers& GetHeaders() const{ return m_headers; }
 
     /**
      * <p>A complex type that specifies the <code>Headers</code>, if any, that you want
-     * CloudFront to base caching on for this cache behavior. </p>
+     * CloudFront to forward to the origin for this cache behavior (whitelisted
+     * headers). For the headers that you specify, CloudFront also caches separate
+     * versions of a specified object that is based on the header values in viewer
+     * requests.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">
+     * Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront
+     * Developer Guide</i>.</p>
      */
     inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
 
     /**
      * <p>A complex type that specifies the <code>Headers</code>, if any, that you want
-     * CloudFront to base caching on for this cache behavior. </p>
+     * CloudFront to forward to the origin for this cache behavior (whitelisted
+     * headers). For the headers that you specify, CloudFront also caches separate
+     * versions of a specified object that is based on the header values in viewer
+     * requests.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">
+     * Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront
+     * Developer Guide</i>.</p>
      */
     inline void SetHeaders(const Headers& value) { m_headersHasBeenSet = true; m_headers = value; }
 
     /**
      * <p>A complex type that specifies the <code>Headers</code>, if any, that you want
-     * CloudFront to base caching on for this cache behavior. </p>
+     * CloudFront to forward to the origin for this cache behavior (whitelisted
+     * headers). For the headers that you specify, CloudFront also caches separate
+     * versions of a specified object that is based on the header values in viewer
+     * requests.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">
+     * Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront
+     * Developer Guide</i>.</p>
      */
     inline void SetHeaders(Headers&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
 
     /**
      * <p>A complex type that specifies the <code>Headers</code>, if any, that you want
-     * CloudFront to base caching on for this cache behavior. </p>
+     * CloudFront to forward to the origin for this cache behavior (whitelisted
+     * headers). For the headers that you specify, CloudFront also caches separate
+     * versions of a specified object that is based on the header values in viewer
+     * requests.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">
+     * Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront
+     * Developer Guide</i>.</p>
      */
     inline ForwardedValues& WithHeaders(const Headers& value) { SetHeaders(value); return *this;}
 
     /**
      * <p>A complex type that specifies the <code>Headers</code>, if any, that you want
-     * CloudFront to base caching on for this cache behavior. </p>
+     * CloudFront to forward to the origin for this cache behavior (whitelisted
+     * headers). For the headers that you specify, CloudFront also caches separate
+     * versions of a specified object that is based on the header values in viewer
+     * requests.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">
+     * Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront
+     * Developer Guide</i>.</p>
      */
     inline ForwardedValues& WithHeaders(Headers&& value) { SetHeaders(std::move(value)); return *this;}
 
