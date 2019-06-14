@@ -36,7 +36,51 @@ static const char *AllocationTag = "AWSCredentialsProviderTest";
 using namespace Aws::Auth;
 using namespace Aws::Utils;
 
-TEST(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
+class ProfileConfigFileAWSCredentialsProviderTest : public ::testing::Test
+{
+public:
+    void SetUp()
+    {
+        SaveEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE");  
+        SaveEnvironmentVariable("AWS_DEFAULT_PROFILE");
+
+        Aws::FileSystem::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
+        m_credsFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() + "_blah";
+
+        Aws::Environment::SetEnv("AWS_SHARED_CREDENTIALS_FILE", m_credsFileName.c_str(), 1);
+        Aws::Environment::UnSetEnv("AWS_DEFAULT_PROFILE");
+    }
+
+    void TearDown()
+    {
+        RestoreEnvironmentVariables();
+    }
+
+    void SaveEnvironmentVariable(const char* variableName)
+    {
+        m_environment.emplace_back(variableName, Aws::Environment::GetEnv(variableName));
+    }
+
+    void RestoreEnvironmentVariables()
+    {
+        for(const auto& iter : m_environment)
+        {
+            if(iter.second.empty())
+            {
+                Aws::Environment::UnSetEnv(iter.first);
+            }
+            else
+            {
+                Aws::Environment::SetEnv(iter.first, iter.second.c_str(), 1);
+            }
+        }
+    }
+
+    Aws::Vector<std::pair<const char*, Aws::String>> m_environment;
+    Aws::String m_credsFileName;
+};
+
+TEST_F(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
 {
     struct ReloadableProfileConfigProvider : ProfileConfigFileAWSCredentialsProvider
     {
@@ -46,121 +90,104 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
         }
     };
 
-    auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+    Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
-    Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
-
-    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename();
-    Aws::String tempFileName = configFileName + "_tempMv";
-    Aws::FileSystem::RelocateFileOrDirectory(configFileName.c_str(), tempFileName.c_str());
-
-    Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-
-    configFile << std::endl;
-    configFile << "[Somebody Else ]" << std::endl;
-    configFile << "aws_access_key_id = SomebodyElseAccessId" << std::endl;
-    configFile << "something else to break the parser" << std::endl;
-    configFile << "#test comment" << std::endl;
-    configFile << "[default]" << std::endl;
-    configFile << "aws_access_key_id = DefaultAccessKey" << std::endl;
-    configFile << "aws_secret_access_key=DefaultSecretKey " << std::endl;
-    configFile << "aws_session_token=DefaultSessionToken" << std::endl;
-    configFile << std::endl;
-    configFile << " [Somebody Else Again]" << std::endl;
-    configFile << "aws_secret_access_key = SomebodyElseAgainAccessId" << std::endl;
-    configFile << " aws_secret_access_key=SomebodyElseAgainSecretKey" << std::endl;
-    configFile << "aws_session_token=SomebodyElseAgainSessionToken" << std::endl;
-
-    configFile.flush();
-    configFile.close();
-
+    credsFile << std::endl;
+    credsFile << "[Somebody Else ]" << std::endl;
+    credsFile << "aws_access_key_id = SomebodyElseAccessId" << std::endl;
+    credsFile << "something else to break the parser" << std::endl;
+    credsFile << "#test comment" << std::endl;
+    credsFile << "[default]" << std::endl;
+    credsFile << "aws_access_key_id = DefaultAccessKey" << std::endl;
+    credsFile << "aws_secret_access_key=DefaultSecretKey " << std::endl;
+    credsFile << "aws_session_token=DefaultSessionToken" << std::endl;
+    credsFile << std::endl;
+    credsFile << " [Somebody Else Again]" << std::endl;
+    credsFile << "aws_secret_access_key = SomebodyElseAgainAccessId" << std::endl;
+    credsFile << " aws_secret_access_key=SomebodyElseAgainSecretKey" << std::endl;
+    credsFile << "aws_session_token=SomebodyElseAgainSessionToken" << std::endl;
+    credsFile.close();
 
     ReloadableProfileConfigProvider provider;
     EXPECT_STREQ("DefaultAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("DefaultSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
-    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
     provider.ReloadNow();
-
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
-
-    Aws::FileSystem::RelocateFileOrDirectory(tempFileName.c_str(), configFileName.c_str());
-
 }
 
 class EnvironmentModifyingTest : public ::testing::Test
 {
 public:
 
-    static void SetUpTestCase()
-    {
-        Aws::FileSystem::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
-    }
-
-    static void TearDownTestCase()
-    {
-    }
-
     void SetUp()
     {
-        SaveVariable("AWS_SHARED_CREDENTIALS_FILE");  
-        SaveVariable("AWS_CONFIG_FILE");
-        SaveVariable("AWS_DEFAULT_PROFILE");
-        SaveVariable("AWS_PROFILE");
-        SaveVariable("AWS_ACCESS_KEY_ID");
-        SaveVariable("AWS_SECRET_ACCESS_KEY");
-        SaveVariable("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI");
-        SaveVariable("AWS_EC2_METADATA_DISABLED");
+        SaveEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE");  
+        SaveEnvironmentVariable("AWS_CONFIG_FILE");
+        SaveEnvironmentVariable("AWS_DEFAULT_PROFILE");
+        SaveEnvironmentVariable("AWS_PROFILE");
+        SaveEnvironmentVariable("AWS_ACCESS_KEY_ID");
+        SaveEnvironmentVariable("AWS_SECRET_ACCESS_KEY");
+        SaveEnvironmentVariable("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI");
+        SaveEnvironmentVariable("AWS_EC2_METADATA_DISABLED");
+
+        Aws::FileSystem::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
+        m_credsFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() + "_blah";
+        Aws::Environment::SetEnv("AWS_SHARED_CREDENTIALS_FILE", m_credsFileName.c_str(), 1);
+
     }
 
     void TearDown()
+    {
+        RestoreEnvironmentVariable();
+    }
+
+    void SaveEnvironmentVariable(const char* variableName)
+    {
+        m_environment.emplace_back(variableName, Aws::Environment::GetEnv(variableName));
+    }
+
+    void RestoreEnvironmentVariable()
     {
         for(const auto& iter : m_environment)
         {
             if(iter.second.empty())
             {
-                Aws::Environment::UnSetEnv(iter.first.c_str());
+                Aws::Environment::UnSetEnv(iter.first);
             }
             else
             {
-                Aws::Environment::SetEnv(iter.first.c_str(), iter.second.c_str(), 1);
+                Aws::Environment::SetEnv(iter.first, iter.second.c_str(), 1);
             }
         }
     }
 
-    void SaveVariable(const char* variableName)
-    {
-        m_environment[ Aws::String( variableName ) ] = Aws::Environment::GetEnv(variableName);
-    }
-
-    Aws::Map<Aws::String, Aws::String> m_environment;
+    Aws::Vector<std::pair<const char*, Aws::String>> m_environment;
+    Aws::String m_credsFileName;
 };
 
 TEST_F(EnvironmentModifyingTest, TestOrderOfAwsDefaultProfileAndAwsProfile)
 {
-    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() + "_blah";
-    Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-    Aws::Environment::SetEnv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
+    Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
+    credsFile << "[default_profile]" << std::endl;
+    credsFile << " aws_access_key_id = DefaultProfileAccessKey " << std::endl;
+    credsFile << "aws_secret_access_key= DefaultProfileSecretKey" << std::endl;
+    credsFile << std::endl;
 
-    configFile << "[default_profile]" << std::endl;
-    configFile << " aws_access_key_id = DefaultProfileAccessKey " << std::endl;
-    configFile << "aws_secret_access_key= DefaultProfileSecretKey" << std::endl;
-    configFile << std::endl;
+    credsFile << "[default]" << std::endl;
+    credsFile << " aws_access_key_id = DefaultAccessKey " << std::endl;
+    credsFile << "aws_secret_access_key= DefaultSecretKey" << std::endl;
+    credsFile << std::endl;
 
-    configFile << "[default]" << std::endl;
-    configFile << " aws_access_key_id = DefaultAccessKey " << std::endl;
-    configFile << "aws_secret_access_key= DefaultSecretKey" << std::endl;
-    configFile << std::endl;
+    credsFile << "[profile]" << std::endl;
+    credsFile << " aws_access_key_id = ProfileAccessKey " << std::endl;
+    credsFile << "aws_secret_access_key =ProfileSecretKey" << std::endl;
+    credsFile << std::endl;
 
-    configFile << "[profile]" << std::endl;
-    configFile << " aws_access_key_id = ProfileAccessKey " << std::endl;
-    configFile << "aws_secret_access_key =ProfileSecretKey" << std::endl;
-    configFile << std::endl;
-
-    configFile.flush();
-    configFile.close();
+    credsFile.close();
 
     Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "default_profile", 1/*override*/);
     Aws::Environment::SetEnv("AWS_PROFILE", "profile", 1/*override*/);
@@ -181,72 +208,54 @@ TEST_F(EnvironmentModifyingTest, TestOrderOfAwsDefaultProfileAndAwsProfile)
     EXPECT_STREQ("DefaultAccessKey", providerDefault.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("DefaultSecretKey", providerDefault.GetAWSCredentials().GetAWSSecretKey().c_str());
 
-    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
 }
 
 TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVars)
 {
-    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() + "_blah";
-  
-    Aws::Environment::SetEnv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
-    const char* profile = "someProfile";
-    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", profile, 1);
-    Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "someProfile", 1);
+    Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
-    configFile << "[ someProfile]" << std::endl;
-    configFile << " aws_access_key_id = SomeProfileAccessKey " << std::endl;
-    configFile << "aws_secret_access_key =SomeProfileSecretKey" << std::endl;
-    configFile << "aws_session_token=SomeProfileSessionToken " << std::endl;
-    configFile << std::endl;
-
-    configFile.flush();
-    configFile.close();
+    credsFile << "[ someProfile]" << std::endl;
+    credsFile << " aws_access_key_id = SomeProfileAccessKey " << std::endl;
+    credsFile << "aws_secret_access_key =SomeProfileSecretKey" << std::endl;
+    credsFile << "aws_session_token=SomeProfileSessionToken " << std::endl;
+    credsFile << std::endl;
+    credsFile.close();
 
     ProfileConfigFileAWSCredentialsProvider provider(10);
     EXPECT_STREQ("SomeProfileAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("SomeProfileSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
-    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
 }
 
 TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVarsButSpecifiedProfile)
 {
-    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() + "_blah";
+    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "someProfile", 1);
+    Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
-    Aws::Environment::SetEnv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
-    const char* profile = "someProfile";
-    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", profile, 1);
-    Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-
-    configFile << " [ someProfile]" << std::endl;
-    configFile << " aws_access_key_id = SomeProfileAccessKey" << std::endl;
-    configFile << "aws_secret_access_key=SomeProfileSecretKey " << std::endl;
-    configFile << "aws_session_token= SomeProfileSessionToken" << std::endl;
-    configFile << std::endl;
-    configFile << "[customProfile]" << std::endl;
-    configFile << "aws_access_key_id =customProfileAccessKey" << std::endl;
-    configFile << "aws_secret_access_key=customProfileSecretKey " << std::endl;
-    configFile << " aws_session_token=customProfileSessionToken" << std::endl;
-    configFile << std::endl;
-
-    configFile.flush();
-    configFile.close();
+    credsFile << " [ someProfile]" << std::endl;
+    credsFile << " aws_access_key_id = SomeProfileAccessKey" << std::endl;
+    credsFile << "aws_secret_access_key=SomeProfileSecretKey " << std::endl;
+    credsFile << "aws_session_token= SomeProfileSessionToken" << std::endl;
+    credsFile << std::endl;
+    credsFile << "[customProfile]" << std::endl;
+    credsFile << "aws_access_key_id =customProfileAccessKey" << std::endl;
+    credsFile << "aws_secret_access_key=customProfileSecretKey " << std::endl;
+    credsFile << " aws_session_token=customProfileSessionToken" << std::endl;
+    credsFile << std::endl;
+    credsFile.close();
 
     ProfileConfigFileAWSCredentialsProvider provider("customProfile", 10);
     EXPECT_STREQ("customProfileAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("customProfileSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
-    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
 }
-
 
 TEST_F(EnvironmentModifyingTest, ProfileConfigTestNotSetup)
 {
-    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename();
-    Aws::String tempFileName = configFileName + "_tempNotSetup";
-
-    Aws::FileSystem::RelocateFileOrDirectory(configFileName.c_str(), tempFileName.c_str());
-
     Aws::Environment::UnSetEnv("AWS_ACCESS_KEY_ID");
     Aws::Environment::UnSetEnv("AWS_SECRET_ACCESS_KEY");
     Aws::Environment::UnSetEnv("AWS_SHARED_CREDENTIALS_FILE");
@@ -254,8 +263,6 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestNotSetup)
     ProfileConfigFileAWSCredentialsProvider provider;
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
-
-    Aws::FileSystem::RelocateFileOrDirectory(tempFileName.c_str(), configFileName.c_str());
 }
 
 TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesExist)
@@ -269,7 +276,6 @@ TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesExist)
     ASSERT_EQ("Secret Key", provider.GetAWSCredentials().GetAWSSecretKey());
     ASSERT_EQ("Session Token", provider.GetAWSCredentials().GetSessionToken());    
 }
-
 
 TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesDoNotExist)
 {
@@ -471,48 +477,61 @@ class ProcessCredentialsProviderTest : public ::testing::Test
 public:
     void SetUp()
     {
-        m_storedAwsConfigFileEnvVar = Aws::Environment::GetEnv("AWS_CONFIG_FILE");
+        SaveEnvironmentVariable("AWS_CONFIG_FILE");
+        SaveEnvironmentVariable("AWS_DEFAULT_PROFILE");
+
+        m_configFileName = Aws::Auth::GetConfigProfileFilename() + "_blah";
+        Aws::Environment::SetEnv("AWS_CONFIG_FILE", m_configFileName.c_str(), 1);
+        Aws::Environment::UnSetEnv("AWS_DEFAULT_PROFILE");
+
         auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
         Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
     }
 
     void TearDown()
     {
-        if(m_storedAwsConfigFileEnvVar.empty())
+        RestoreEnvironmentVariables();
+    }
+
+    void SaveEnvironmentVariable(const char* variableName)
+    {
+        m_environment.emplace_back(variableName, Aws::Environment::GetEnv(variableName));
+    }
+
+    void RestoreEnvironmentVariables()
+    {
+        for(const auto& iter : m_environment)
         {
-            Aws::Environment::UnSetEnv("AWS_CONFIG_FILE");
-        }
-        else
-        {
-            Aws::Environment::SetEnv("AWS_CONFIG_FILE", m_storedAwsConfigFileEnvVar.c_str(), 1/*override*/);
+            if(iter.second.empty())
+            {
+                Aws::Environment::UnSetEnv(iter.first);
+            }
+            else
+            {
+                Aws::Environment::SetEnv(iter.first, iter.second.c_str(), 1);
+            }
         }
     }
 
-    Aws::String m_storedAwsConfigFileEnvVar;
+    Aws::Vector<std::pair<const char*, Aws::String>> m_environment;
+    Aws::String m_configFileName;
 };
 
 TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderExpiredThenRefreshed)
 {
-    Aws::String configFileName = Aws::Auth::GetConfigProfileFilename() + "_blah";
-    Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1);
-
-    Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
     configFile << "[default]" << std::endl;
     configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey123\", \"SecretAccessKey\": \"SecretKey321\", \"Expiration\": \"1970-01-01T00:00:01Z\"}") << std::endl;
-
-    configFile.flush();
     configFile.close();
 
     ProcessCredentialsProvider provider;
     Aws::Auth::AWSCredentials credsOne = provider.GetAWSCredentials();
     EXPECT_TRUE(credsOne.IsEmpty());
 
-    Aws::OFStream configFileNew(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
     configFileNew << "[default]" << std::endl;
     configFileNew << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey321\", \"SecretAccessKey\": \"SecretKey123\"}") << std::endl;
-
-    configFileNew.flush();
     configFileNew.close();
 
     Aws::Auth::AWSCredentials credsTwo = provider.GetAWSCredentials();
@@ -521,37 +540,28 @@ TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderExpiredThen
     EXPECT_STREQ("AccessKey321", credsTwo.GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("SecretKey123", credsTwo.GetAWSSecretKey().c_str());
 
-    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+    Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
 }
 
 TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderNonSupportedVersion)
 {
-    Aws::String configFileName = Aws::Auth::GetConfigProfileFilename() + "_blah";
-    Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1);
-
-    Aws::OFStream configFileNew(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
     configFileNew << "[default]" << std::endl;
     configFileNew << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 2, \"AccessKeyId\": \"AccessKey321\", \"SecretAccessKey\": \"SecretKey123\"}") << std::endl;
-
-    configFileNew.flush();
     configFileNew.close();
     
     ProcessCredentialsProvider provider;
     EXPECT_TRUE(provider.GetAWSCredentials().IsEmpty());
 
-    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+    Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
 }
 
 TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderDoNotRefresh)
 {
-    Aws::String configFileName = Aws::Auth::GetConfigProfileFilename() + "_blah";
-    Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1);
-    Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
     configFile << "[default]" << std::endl;
     configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey456\", \"SecretAccessKey\": \"SecretKey654\"}") << std::endl;
-
-    configFile.flush();
     configFile.close();
 
     ProcessCredentialsProvider provider;
@@ -559,36 +569,32 @@ TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderDoNotRefres
     EXPECT_STREQ("AccessKey456", credsOne.GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("SecretKey654", credsOne.GetAWSSecretKey().c_str());
 
-    Aws::OFStream configFileNew(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
     configFileNew << "[default]" << std::endl;
     configFileNew << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey789\", \"SecretAccessKey\": \"SecretKey987\"}") << std::endl;
-
-    configFileNew.flush();
     configFileNew.close();
+
     Aws::Auth::AWSCredentials credsTwo = provider.GetAWSCredentials();
     EXPECT_EQ(credsOne, credsTwo);
     EXPECT_FALSE(credsTwo.IsEmpty());
     EXPECT_STREQ("AccessKey456", credsTwo.GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("SecretKey654", credsTwo.GetAWSSecretKey().c_str());
 
-    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+    Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
 }
 
 TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderCaptureInvalidOutput)
 {
-    Aws::String configFileName = Aws::Auth::GetConfigProfileFilename();
-    Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
     configFile << "[default]" << std::endl;
     configFile << "credential_process = echo 'Error: Failed to retrieve credentials'" << std::endl;
     configFile << std::endl;
-
-    configFile.flush();
     configFile.close();
 
     ProcessCredentialsProvider provider;
     EXPECT_TRUE(provider.GetAWSCredentials().IsEmpty());
 
-    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+    Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
 }
