@@ -1356,6 +1356,61 @@ namespace Model
      */
     inline CreateDBClusterRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
+
+    /**
+     * <p>The list of log types that need to be enabled for exporting to CloudWatch
+     * Logs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
+
+    /**
+     * <p>The list of log types that need to be enabled for exporting to CloudWatch
+     * Logs.</p>
+     */
+    inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
+
+    /**
+     * <p>The list of log types that need to be enabled for exporting to CloudWatch
+     * Logs.</p>
+     */
+    inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
+
+    /**
+     * <p>The list of log types that need to be enabled for exporting to CloudWatch
+     * Logs.</p>
+     */
+    inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
+
+    /**
+     * <p>The list of log types that need to be enabled for exporting to CloudWatch
+     * Logs.</p>
+     */
+    inline CreateDBClusterRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
+
+    /**
+     * <p>The list of log types that need to be enabled for exporting to CloudWatch
+     * Logs.</p>
+     */
+    inline CreateDBClusterRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of log types that need to be enabled for exporting to CloudWatch
+     * Logs.</p>
+     */
+    inline CreateDBClusterRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
+
+    /**
+     * <p>The list of log types that need to be enabled for exporting to CloudWatch
+     * Logs.</p>
+     */
+    inline CreateDBClusterRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of log types that need to be enabled for exporting to CloudWatch
+     * Logs.</p>
+     */
+    inline CreateDBClusterRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
+
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -1423,6 +1478,9 @@ namespace Model
 
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+
+    Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
+    bool m_enableCloudwatchLogsExportsHasBeenSet;
   };
 
 } // namespace Model

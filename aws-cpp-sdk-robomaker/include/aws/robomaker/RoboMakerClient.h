@@ -713,16 +713,14 @@ namespace Model
         virtual void DeregisterRobotAsync(const Model::DeregisterRobotRequest& request, const DeregisterRobotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a deployment job. [Does it work regardless of deployment status,
-         * e.g. Failed?]</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a deployment job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeDeploymentJob">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDeploymentJobOutcome DescribeDeploymentJob(const Model::DescribeDeploymentJobRequest& request) const;
 
         /**
-         * <p>Describes a deployment job. [Does it work regardless of deployment status,
-         * e.g. Failed?]</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a deployment job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeDeploymentJob">AWS
          * API Reference</a></p>
          *
@@ -731,8 +729,7 @@ namespace Model
         virtual Model::DescribeDeploymentJobOutcomeCallable DescribeDeploymentJobCallable(const Model::DescribeDeploymentJobRequest& request) const;
 
         /**
-         * <p>Describes a deployment job. [Does it work regardless of deployment status,
-         * e.g. Failed?]</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a deployment job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeDeploymentJob">AWS
          * API Reference</a></p>
          *

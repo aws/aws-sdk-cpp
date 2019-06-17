@@ -1076,10 +1076,8 @@ namespace Model
          * DB instance is in a failure state and has a status of <code>failed</code>,
          * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
          * only delete it when the <code>SkipFinalSnapshot</code> parameter is set to
-         * <code>true</code>.</p> <p>If the specified DB instance is part of a DB cluster,
-         * you can't delete the DB instance if both of the following conditions are
-         * true:</p> <ul> <li> <p>The DB instance is the only instance in the DB
-         * cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>true</code>.</p> <p>You can't delete a DB instance if it is the only
+         * instance in the DB cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBInstance">AWS
          * API Reference</a></p>
          */
@@ -1097,10 +1095,8 @@ namespace Model
          * DB instance is in a failure state and has a status of <code>failed</code>,
          * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
          * only delete it when the <code>SkipFinalSnapshot</code> parameter is set to
-         * <code>true</code>.</p> <p>If the specified DB instance is part of a DB cluster,
-         * you can't delete the DB instance if both of the following conditions are
-         * true:</p> <ul> <li> <p>The DB instance is the only instance in the DB
-         * cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>true</code>.</p> <p>You can't delete a DB instance if it is the only
+         * instance in the DB cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBInstance">AWS
          * API Reference</a></p>
          *
@@ -1120,10 +1116,8 @@ namespace Model
          * DB instance is in a failure state and has a status of <code>failed</code>,
          * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
          * only delete it when the <code>SkipFinalSnapshot</code> parameter is set to
-         * <code>true</code>.</p> <p>If the specified DB instance is part of a DB cluster,
-         * you can't delete the DB instance if both of the following conditions are
-         * true:</p> <ul> <li> <p>The DB instance is the only instance in the DB
-         * cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>true</code>.</p> <p>You can't delete a DB instance if it is the only
+         * instance in the DB cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBInstance">AWS
          * API Reference</a></p>
          *

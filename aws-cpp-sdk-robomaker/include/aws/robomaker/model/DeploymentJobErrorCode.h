@@ -30,6 +30,7 @@ namespace Model
     EnvironmentSetupError,
     EtagMismatch,
     FailureThresholdBreached,
+    RobotDeploymentAborted,
     RobotDeploymentNoResponse,
     RobotAgentConnectionTimeout,
     GreengrassDeploymentFailed,

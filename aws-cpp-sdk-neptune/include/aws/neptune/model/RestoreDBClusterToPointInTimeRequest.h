@@ -115,50 +115,90 @@ namespace Model
 
 
     /**
-     * <p>The type of restore to be performed. The only type of restore currently
-     * supported is <code>full-copy</code> (the default).</p>
+     * <p>The type of restore to be performed. You can specify one of the following
+     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
+     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p>
      */
     inline const Aws::String& GetRestoreType() const{ return m_restoreType; }
 
     /**
-     * <p>The type of restore to be performed. The only type of restore currently
-     * supported is <code>full-copy</code> (the default).</p>
+     * <p>The type of restore to be performed. You can specify one of the following
+     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
+     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p>
      */
     inline bool RestoreTypeHasBeenSet() const { return m_restoreTypeHasBeenSet; }
 
     /**
-     * <p>The type of restore to be performed. The only type of restore currently
-     * supported is <code>full-copy</code> (the default).</p>
+     * <p>The type of restore to be performed. You can specify one of the following
+     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
+     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p>
      */
     inline void SetRestoreType(const Aws::String& value) { m_restoreTypeHasBeenSet = true; m_restoreType = value; }
 
     /**
-     * <p>The type of restore to be performed. The only type of restore currently
-     * supported is <code>full-copy</code> (the default).</p>
+     * <p>The type of restore to be performed. You can specify one of the following
+     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
+     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p>
      */
     inline void SetRestoreType(Aws::String&& value) { m_restoreTypeHasBeenSet = true; m_restoreType = std::move(value); }
 
     /**
-     * <p>The type of restore to be performed. The only type of restore currently
-     * supported is <code>full-copy</code> (the default).</p>
+     * <p>The type of restore to be performed. You can specify one of the following
+     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
+     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p>
      */
     inline void SetRestoreType(const char* value) { m_restoreTypeHasBeenSet = true; m_restoreType.assign(value); }
 
     /**
-     * <p>The type of restore to be performed. The only type of restore currently
-     * supported is <code>full-copy</code> (the default).</p>
+     * <p>The type of restore to be performed. You can specify one of the following
+     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
+     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(const Aws::String& value) { SetRestoreType(value); return *this;}
 
     /**
-     * <p>The type of restore to be performed. The only type of restore currently
-     * supported is <code>full-copy</code> (the default).</p>
+     * <p>The type of restore to be performed. You can specify one of the following
+     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
+     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(Aws::String&& value) { SetRestoreType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of restore to be performed. The only type of restore currently
-     * supported is <code>full-copy</code> (the default).</p>
+     * <p>The type of restore to be performed. You can specify one of the following
+     * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
+     * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
+     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(const char* value) { SetRestoreType(value); return *this;}
 
@@ -729,6 +769,61 @@ namespace Model
 
 
     /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
+
+
+    /**
      * <p>The name of the DB cluster parameter group to associate with the new DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
      * of an existing DBClusterParameterGroup.</p> </li> </ul>
@@ -821,6 +916,9 @@ namespace Model
 
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+
+    Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
+    bool m_enableCloudwatchLogsExportsHasBeenSet;
 
     Aws::String m_dBClusterParameterGroupName;
     bool m_dBClusterParameterGroupNameHasBeenSet;

@@ -34,6 +34,7 @@ namespace Aws
         static const int EnvironmentSetupError_HASH = HashingUtils::HashString("EnvironmentSetupError");
         static const int EtagMismatch_HASH = HashingUtils::HashString("EtagMismatch");
         static const int FailureThresholdBreached_HASH = HashingUtils::HashString("FailureThresholdBreached");
+        static const int RobotDeploymentAborted_HASH = HashingUtils::HashString("RobotDeploymentAborted");
         static const int RobotDeploymentNoResponse_HASH = HashingUtils::HashString("RobotDeploymentNoResponse");
         static const int RobotAgentConnectionTimeout_HASH = HashingUtils::HashString("RobotAgentConnectionTimeout");
         static const int GreengrassDeploymentFailed_HASH = HashingUtils::HashString("GreengrassDeploymentFailed");
@@ -66,6 +67,10 @@ namespace Aws
           else if (hashCode == FailureThresholdBreached_HASH)
           {
             return DeploymentJobErrorCode::FailureThresholdBreached;
+          }
+          else if (hashCode == RobotDeploymentAborted_HASH)
+          {
+            return DeploymentJobErrorCode::RobotDeploymentAborted;
           }
           else if (hashCode == RobotDeploymentNoResponse_HASH)
           {
@@ -137,6 +142,8 @@ namespace Aws
             return "EtagMismatch";
           case DeploymentJobErrorCode::FailureThresholdBreached:
             return "FailureThresholdBreached";
+          case DeploymentJobErrorCode::RobotDeploymentAborted:
+            return "RobotDeploymentAborted";
           case DeploymentJobErrorCode::RobotDeploymentNoResponse:
             return "RobotDeploymentNoResponse";
           case DeploymentJobErrorCode::RobotAgentConnectionTimeout:

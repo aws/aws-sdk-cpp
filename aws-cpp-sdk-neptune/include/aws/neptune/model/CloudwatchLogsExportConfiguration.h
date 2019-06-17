@@ -36,7 +36,9 @@ namespace Model
 
   /**
    * <p>The configuration setting for the log types to be enabled for export to
-   * CloudWatch Logs for a specific DB instance or DB cluster.</p><p><h3>See
+   * CloudWatch Logs for a specific DB instance or DB cluster.</p> <p>The
+   * <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine
+   * which logs will be exported (or not exported) to CloudWatch Logs.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CloudwatchLogsExportConfiguration">AWS
    * API Reference</a></p>

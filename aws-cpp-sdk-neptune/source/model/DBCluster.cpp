@@ -71,7 +71,8 @@ DBCluster::DBCluster() :
     m_iAMDatabaseAuthenticationEnabled(false),
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
     m_cloneGroupIdHasBeenSet(false),
-    m_clusterCreateTimeHasBeenSet(false)
+    m_clusterCreateTimeHasBeenSet(false),
+    m_enabledCloudwatchLogsExportsHasBeenSet(false)
 {
 }
 
@@ -116,7 +117,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_iAMDatabaseAuthenticationEnabled(false),
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
     m_cloneGroupIdHasBeenSet(false),
-    m_clusterCreateTimeHasBeenSet(false)
+    m_clusterCreateTimeHasBeenSet(false),
+    m_enabledCloudwatchLogsExportsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -373,6 +375,18 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_clusterCreateTime = DateTime(StringUtils::Trim(clusterCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_clusterCreateTimeHasBeenSet = true;
     }
+    XmlNode enabledCloudwatchLogsExportsNode = resultNode.FirstChild("EnabledCloudwatchLogsExports");
+    if(!enabledCloudwatchLogsExportsNode.IsNull())
+    {
+      XmlNode enabledCloudwatchLogsExportsMember = enabledCloudwatchLogsExportsNode.FirstChild("member");
+      while(!enabledCloudwatchLogsExportsMember.IsNull())
+      {
+        m_enabledCloudwatchLogsExports.push_back(StringUtils::Trim(enabledCloudwatchLogsExportsMember.GetText().c_str()));
+        enabledCloudwatchLogsExportsMember = enabledCloudwatchLogsExportsMember.NextNode("member");
+      }
+
+      m_enabledCloudwatchLogsExportsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -587,6 +601,15 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_enabledCloudwatchLogsExportsHasBeenSet)
+  {
+      unsigned enabledCloudwatchLogsExportsIdx = 1;
+      for(auto& item : m_enabledCloudwatchLogsExports)
+      {
+        oStream << location << index << locationValue << ".EnabledCloudwatchLogsExports.member." << enabledCloudwatchLogsExportsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -762,6 +785,14 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_clusterCreateTimeHasBeenSet)
   {
       oStream << location << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_enabledCloudwatchLogsExportsHasBeenSet)
+  {
+      unsigned enabledCloudwatchLogsExportsIdx = 1;
+      for(auto& item : m_enabledCloudwatchLogsExports)
+      {
+        oStream << location << ".EnabledCloudwatchLogsExports.member." << enabledCloudwatchLogsExportsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 
