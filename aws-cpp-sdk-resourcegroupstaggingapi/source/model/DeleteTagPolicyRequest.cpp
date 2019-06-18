@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/resourcegroupstaggingapi/model/GetTagKeysRequest.h>
+#include <aws/resourcegroupstaggingapi/model/DeleteTagPolicyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,36 +22,28 @@ using namespace Aws::ResourceGroupsTaggingAPI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTagKeysRequest::GetTagKeysRequest() : 
-    m_paginationTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+DeleteTagPolicyRequest::DeleteTagPolicyRequest() : 
+    m_targetIdHasBeenSet(false)
 {
 }
 
-Aws::String GetTagKeysRequest::SerializePayload() const
+Aws::String DeleteTagPolicyRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_paginationTokenHasBeenSet)
+  if(m_targetIdHasBeenSet)
   {
-   payload.WithString("PaginationToken", m_paginationToken);
-
-  }
-
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
+   payload.WithString("TargetId", m_targetId);
 
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetTagKeysRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection DeleteTagPolicyRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ResourceGroupsTaggingAPI_20170126.GetTagKeys"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ResourceGroupsTaggingAPI_20170126.DeleteTagPolicy"));
   return headers;
 
 }

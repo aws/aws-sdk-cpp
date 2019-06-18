@@ -56,7 +56,9 @@ enum class ResourceGroupsTaggingAPIErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVICE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONSTRAINT_VIOLATION,
+  INTERNAL_SERVICE,
   INVALID_PARAMETER,
   PAGINATION_TOKEN_EXPIRED
 };

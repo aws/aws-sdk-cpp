@@ -154,7 +154,9 @@ namespace Aws
         static const int c5_2xlarge_HASH = HashingUtils::HashString("c5.2xlarge");
         static const int c5_4xlarge_HASH = HashingUtils::HashString("c5.4xlarge");
         static const int c5_9xlarge_HASH = HashingUtils::HashString("c5.9xlarge");
+        static const int c5_12xlarge_HASH = HashingUtils::HashString("c5.12xlarge");
         static const int c5_18xlarge_HASH = HashingUtils::HashString("c5.18xlarge");
+        static const int c5_24xlarge_HASH = HashingUtils::HashString("c5.24xlarge");
         static const int c5d_large_HASH = HashingUtils::HashString("c5d.large");
         static const int c5d_xlarge_HASH = HashingUtils::HashString("c5d.xlarge");
         static const int c5d_2xlarge_HASH = HashingUtils::HashString("c5d.2xlarge");
@@ -869,9 +871,19 @@ namespace Aws
             enumValue = InstanceType::c5_9xlarge;
             return true;
           }
+          else if (hashCode == c5_12xlarge_HASH)
+          {
+            enumValue = InstanceType::c5_12xlarge;
+            return true;
+          }
           else if (hashCode == c5_18xlarge_HASH)
           {
             enumValue = InstanceType::c5_18xlarge;
+            return true;
+          }
+          else if (hashCode == c5_24xlarge_HASH)
+          {
+            enumValue = InstanceType::c5_24xlarge;
             return true;
           }
           else if (hashCode == c5d_large_HASH)
@@ -1671,8 +1683,14 @@ namespace Aws
           case InstanceType::c5_9xlarge:
             value = "c5.9xlarge";
             return true;
+          case InstanceType::c5_12xlarge:
+            value = "c5.12xlarge";
+            return true;
           case InstanceType::c5_18xlarge:
             value = "c5.18xlarge";
+            return true;
+          case InstanceType::c5_24xlarge:
+            value = "c5.24xlarge";
             return true;
           case InstanceType::c5d_large:
             value = "c5d.large";

@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 
 GetTagValuesRequest::GetTagValuesRequest() : 
     m_paginationTokenHasBeenSet(false),
-    m_keyHasBeenSet(false)
+    m_keyHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,12 @@ Aws::String GetTagValuesRequest::SerializePayload() const
   if(m_keyHasBeenSet)
   {
    payload.WithString("Key", m_key);
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("MaxResults", m_maxResults);
 
   }
 

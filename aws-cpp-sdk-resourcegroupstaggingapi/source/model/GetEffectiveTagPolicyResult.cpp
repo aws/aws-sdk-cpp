@@ -13,49 +13,44 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/resourcegroupstaggingapi/model/GetTagKeysRequest.h>
+#include <aws/resourcegroupstaggingapi/model/GetEffectiveTagPolicyResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
 
 using namespace Aws::ResourceGroupsTaggingAPI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws;
 
-GetTagKeysRequest::GetTagKeysRequest() : 
-    m_paginationTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+GetEffectiveTagPolicyResult::GetEffectiveTagPolicyResult()
 {
 }
 
-Aws::String GetTagKeysRequest::SerializePayload() const
+GetEffectiveTagPolicyResult::GetEffectiveTagPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  JsonValue payload;
+  *this = result;
+}
 
-  if(m_paginationTokenHasBeenSet)
+GetEffectiveTagPolicyResult& GetEffectiveTagPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+{
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("Policy"))
   {
-   payload.WithString("PaginationToken", m_paginationToken);
+    m_policy = jsonValue.GetString("Policy");
 
   }
 
-  if(m_maxResultsHasBeenSet)
+  if(jsonValue.ValueExists("LastUpdated"))
   {
-   payload.WithInteger("MaxResults", m_maxResults);
+    m_lastUpdated = jsonValue.GetString("LastUpdated");
 
   }
 
-  return payload.View().WriteReadable();
+
+
+  return *this;
 }
-
-Aws::Http::HeaderValueCollection GetTagKeysRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ResourceGroupsTaggingAPI_20170126.GetTagKeys"));
-  return headers;
-
-}
-
-
-
-

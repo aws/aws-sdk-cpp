@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/resourcegroupstaggingapi/model/GetTagKeysRequest.h>
+#include <aws/resourcegroupstaggingapi/model/EnableTagPoliciesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,36 +22,28 @@ using namespace Aws::ResourceGroupsTaggingAPI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTagKeysRequest::GetTagKeysRequest() : 
-    m_paginationTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+EnableTagPoliciesRequest::EnableTagPoliciesRequest() : 
+    m_rootIdHasBeenSet(false)
 {
 }
 
-Aws::String GetTagKeysRequest::SerializePayload() const
+Aws::String EnableTagPoliciesRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_paginationTokenHasBeenSet)
+  if(m_rootIdHasBeenSet)
   {
-   payload.WithString("PaginationToken", m_paginationToken);
-
-  }
-
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
+   payload.WithString("RootId", m_rootId);
 
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetTagKeysRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection EnableTagPoliciesRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ResourceGroupsTaggingAPI_20170126.GetTagKeys"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ResourceGroupsTaggingAPI_20170126.EnableTagPolicies"));
   return headers;
 
 }

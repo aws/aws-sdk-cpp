@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/resourcegroupstaggingapi/model/GetTagKeysRequest.h>
+#include <aws/resourcegroupstaggingapi/model/DescribeReportCreationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,36 +22,19 @@ using namespace Aws::ResourceGroupsTaggingAPI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTagKeysRequest::GetTagKeysRequest() : 
-    m_paginationTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+DescribeReportCreationRequest::DescribeReportCreationRequest()
 {
 }
 
-Aws::String GetTagKeysRequest::SerializePayload() const
+Aws::String DescribeReportCreationRequest::SerializePayload() const
 {
-  JsonValue payload;
-
-  if(m_paginationTokenHasBeenSet)
-  {
-   payload.WithString("PaginationToken", m_paginationToken);
-
-  }
-
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
-  }
-
-  return payload.View().WriteReadable();
+  return "{}";
 }
 
-Aws::Http::HeaderValueCollection GetTagKeysRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection DescribeReportCreationRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ResourceGroupsTaggingAPI_20170126.GetTagKeys"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ResourceGroupsTaggingAPI_20170126.DescribeReportCreation"));
   return headers;
 
 }

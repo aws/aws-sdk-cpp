@@ -29,7 +29,12 @@ GetResourcesRequest::GetResourcesRequest() :
     m_resourcesPerPageHasBeenSet(false),
     m_tagsPerPage(0),
     m_tagsPerPageHasBeenSet(false),
-    m_resourceTypeFiltersHasBeenSet(false)
+    m_resourceTypeFiltersHasBeenSet(false),
+    m_includeComplianceDetails(false),
+    m_includeComplianceDetailsHasBeenSet(false),
+    m_excludeCompliantResources(false),
+    m_excludeCompliantResourcesHasBeenSet(false),
+    m_policyHasBeenSet(false)
 {
 }
 
@@ -74,6 +79,24 @@ Aws::String GetResourcesRequest::SerializePayload() const
      resourceTypeFiltersJsonList[resourceTypeFiltersIndex].AsString(m_resourceTypeFilters[resourceTypeFiltersIndex]);
    }
    payload.WithArray("ResourceTypeFilters", std::move(resourceTypeFiltersJsonList));
+
+  }
+
+  if(m_includeComplianceDetailsHasBeenSet)
+  {
+   payload.WithBool("IncludeComplianceDetails", m_includeComplianceDetails);
+
+  }
+
+  if(m_excludeCompliantResourcesHasBeenSet)
+  {
+   payload.WithBool("ExcludeCompliantResources", m_excludeCompliantResources);
+
+  }
+
+  if(m_policyHasBeenSet)
+  {
+   payload.WithString("Policy", m_policy);
 
   }
 
