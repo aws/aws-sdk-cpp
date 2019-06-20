@@ -197,16 +197,6 @@ public class C2jModelToGeneratorModelTransformer {
             shape.setEnumValues(Collections.emptyList());
         }
 
-        // All shapes only related to shapes enable "eventstream" or "event" should be removed, there are two cases:
-        // 1. The removed shape is the only ancestor of this shape.
-        // 2. This shape is the ancestor of the removed shape.
-        if ((c2jShape.isEventstream() || c2jShape.isEvent()) &&
-                !this.c2jServiceModel.getServiceName().equals("s3") &&
-                !this.c2jServiceModel.getServiceName().equals("transcribestreaming")) {
-            // shape.setIgnored(true);
-            removedShapes.add(shape.getName());
-        }
-
         shape.setMax(c2jShape.getMax());
         shape.setMin(c2jShape.getMin());
         shape.setType(c2jShape.getType());
