@@ -229,6 +229,159 @@ namespace Model
 
 
     /**
+     * <p>Specifies a custom configuration template to use when issuing a certificate.
+     * If this parameter is not provided, ACM Private CA defaults to the
+     * <code>EndEntityCertificate/V1</code> template.</p> <p>The following
+     * service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
+     * </p> <ul> <li> <p>arn:aws:acm-pca:::template/EndEntityCertificate/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1</p>
+     * </li> <li>
+     * <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen1/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen2/V1</p>
+     * </li> <li>
+     * <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/RootCACertificate/V1</p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Using
+     * Templates</a>.</p>
+     */
+    inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
+
+    /**
+     * <p>Specifies a custom configuration template to use when issuing a certificate.
+     * If this parameter is not provided, ACM Private CA defaults to the
+     * <code>EndEntityCertificate/V1</code> template.</p> <p>The following
+     * service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
+     * </p> <ul> <li> <p>arn:aws:acm-pca:::template/EndEntityCertificate/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1</p>
+     * </li> <li>
+     * <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen1/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen2/V1</p>
+     * </li> <li>
+     * <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/RootCACertificate/V1</p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Using
+     * Templates</a>.</p>
+     */
+    inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
+
+    /**
+     * <p>Specifies a custom configuration template to use when issuing a certificate.
+     * If this parameter is not provided, ACM Private CA defaults to the
+     * <code>EndEntityCertificate/V1</code> template.</p> <p>The following
+     * service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
+     * </p> <ul> <li> <p>arn:aws:acm-pca:::template/EndEntityCertificate/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1</p>
+     * </li> <li>
+     * <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen1/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen2/V1</p>
+     * </li> <li>
+     * <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/RootCACertificate/V1</p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Using
+     * Templates</a>.</p>
+     */
+    inline void SetTemplateArn(const Aws::String& value) { m_templateArnHasBeenSet = true; m_templateArn = value; }
+
+    /**
+     * <p>Specifies a custom configuration template to use when issuing a certificate.
+     * If this parameter is not provided, ACM Private CA defaults to the
+     * <code>EndEntityCertificate/V1</code> template.</p> <p>The following
+     * service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
+     * </p> <ul> <li> <p>arn:aws:acm-pca:::template/EndEntityCertificate/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1</p>
+     * </li> <li>
+     * <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen1/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen2/V1</p>
+     * </li> <li>
+     * <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/RootCACertificate/V1</p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Using
+     * Templates</a>.</p>
+     */
+    inline void SetTemplateArn(Aws::String&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::move(value); }
+
+    /**
+     * <p>Specifies a custom configuration template to use when issuing a certificate.
+     * If this parameter is not provided, ACM Private CA defaults to the
+     * <code>EndEntityCertificate/V1</code> template.</p> <p>The following
+     * service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
+     * </p> <ul> <li> <p>arn:aws:acm-pca:::template/EndEntityCertificate/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1</p>
+     * </li> <li>
+     * <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen1/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen2/V1</p>
+     * </li> <li>
+     * <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/RootCACertificate/V1</p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Using
+     * Templates</a>.</p>
+     */
+    inline void SetTemplateArn(const char* value) { m_templateArnHasBeenSet = true; m_templateArn.assign(value); }
+
+    /**
+     * <p>Specifies a custom configuration template to use when issuing a certificate.
+     * If this parameter is not provided, ACM Private CA defaults to the
+     * <code>EndEntityCertificate/V1</code> template.</p> <p>The following
+     * service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
+     * </p> <ul> <li> <p>arn:aws:acm-pca:::template/EndEntityCertificate/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1</p>
+     * </li> <li>
+     * <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen1/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen2/V1</p>
+     * </li> <li>
+     * <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/RootCACertificate/V1</p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Using
+     * Templates</a>.</p>
+     */
+    inline IssueCertificateRequest& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
+
+    /**
+     * <p>Specifies a custom configuration template to use when issuing a certificate.
+     * If this parameter is not provided, ACM Private CA defaults to the
+     * <code>EndEntityCertificate/V1</code> template.</p> <p>The following
+     * service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
+     * </p> <ul> <li> <p>arn:aws:acm-pca:::template/EndEntityCertificate/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1</p>
+     * </li> <li>
+     * <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen1/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen2/V1</p>
+     * </li> <li>
+     * <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/RootCACertificate/V1</p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Using
+     * Templates</a>.</p>
+     */
+    inline IssueCertificateRequest& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies a custom configuration template to use when issuing a certificate.
+     * If this parameter is not provided, ACM Private CA defaults to the
+     * <code>EndEntityCertificate/V1</code> template.</p> <p>The following
+     * service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
+     * </p> <ul> <li> <p>arn:aws:acm-pca:::template/EndEntityCertificate/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1</p>
+     * </li> <li>
+     * <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen1/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen2/V1</p>
+     * </li> <li>
+     * <p>arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1</p> </li>
+     * <li> <p>arn:aws:acm-pca:::template/RootCACertificate/V1</p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Using
+     * Templates</a>.</p>
+     */
+    inline IssueCertificateRequest& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+
+
+    /**
      * <p>The type of the validity period.</p>
      */
     inline const Validity& GetValidity() const{ return m_validity; }
@@ -261,88 +414,88 @@ namespace Model
 
     /**
      * <p>Custom string that can be used to distinguish between calls to the
-     * <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour.
+     * <b>IssueCertificate</b> action. Idempotency tokens time out after one hour.
      * Therefore, if you call <b>IssueCertificate</b> multiple times with the same
-     * idempotency token within 5 minutes, ACM PCA recognizes that you are requesting
-     * only one certificate and will issue only one. If you change the idempotency
-     * token for each call, PCA recognizes that you are requesting multiple
+     * idempotency token within 5 minutes, ACM Private CA recognizes that you are
+     * requesting only one certificate and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
      * certificates.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
     /**
      * <p>Custom string that can be used to distinguish between calls to the
-     * <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour.
+     * <b>IssueCertificate</b> action. Idempotency tokens time out after one hour.
      * Therefore, if you call <b>IssueCertificate</b> multiple times with the same
-     * idempotency token within 5 minutes, ACM PCA recognizes that you are requesting
-     * only one certificate and will issue only one. If you change the idempotency
-     * token for each call, PCA recognizes that you are requesting multiple
+     * idempotency token within 5 minutes, ACM Private CA recognizes that you are
+     * requesting only one certificate and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
      * certificates.</p>
      */
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
     /**
      * <p>Custom string that can be used to distinguish between calls to the
-     * <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour.
+     * <b>IssueCertificate</b> action. Idempotency tokens time out after one hour.
      * Therefore, if you call <b>IssueCertificate</b> multiple times with the same
-     * idempotency token within 5 minutes, ACM PCA recognizes that you are requesting
-     * only one certificate and will issue only one. If you change the idempotency
-     * token for each call, PCA recognizes that you are requesting multiple
+     * idempotency token within 5 minutes, ACM Private CA recognizes that you are
+     * requesting only one certificate and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
      * certificates.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
     /**
      * <p>Custom string that can be used to distinguish between calls to the
-     * <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour.
+     * <b>IssueCertificate</b> action. Idempotency tokens time out after one hour.
      * Therefore, if you call <b>IssueCertificate</b> multiple times with the same
-     * idempotency token within 5 minutes, ACM PCA recognizes that you are requesting
-     * only one certificate and will issue only one. If you change the idempotency
-     * token for each call, PCA recognizes that you are requesting multiple
+     * idempotency token within 5 minutes, ACM Private CA recognizes that you are
+     * requesting only one certificate and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
      * certificates.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
     /**
      * <p>Custom string that can be used to distinguish between calls to the
-     * <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour.
+     * <b>IssueCertificate</b> action. Idempotency tokens time out after one hour.
      * Therefore, if you call <b>IssueCertificate</b> multiple times with the same
-     * idempotency token within 5 minutes, ACM PCA recognizes that you are requesting
-     * only one certificate and will issue only one. If you change the idempotency
-     * token for each call, PCA recognizes that you are requesting multiple
+     * idempotency token within 5 minutes, ACM Private CA recognizes that you are
+     * requesting only one certificate and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
      * certificates.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
     /**
      * <p>Custom string that can be used to distinguish between calls to the
-     * <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour.
+     * <b>IssueCertificate</b> action. Idempotency tokens time out after one hour.
      * Therefore, if you call <b>IssueCertificate</b> multiple times with the same
-     * idempotency token within 5 minutes, ACM PCA recognizes that you are requesting
-     * only one certificate and will issue only one. If you change the idempotency
-     * token for each call, PCA recognizes that you are requesting multiple
+     * idempotency token within 5 minutes, ACM Private CA recognizes that you are
+     * requesting only one certificate and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
      * certificates.</p>
      */
     inline IssueCertificateRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
     /**
      * <p>Custom string that can be used to distinguish between calls to the
-     * <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour.
+     * <b>IssueCertificate</b> action. Idempotency tokens time out after one hour.
      * Therefore, if you call <b>IssueCertificate</b> multiple times with the same
-     * idempotency token within 5 minutes, ACM PCA recognizes that you are requesting
-     * only one certificate and will issue only one. If you change the idempotency
-     * token for each call, PCA recognizes that you are requesting multiple
+     * idempotency token within 5 minutes, ACM Private CA recognizes that you are
+     * requesting only one certificate and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
      * certificates.</p>
      */
     inline IssueCertificateRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
     /**
      * <p>Custom string that can be used to distinguish between calls to the
-     * <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour.
+     * <b>IssueCertificate</b> action. Idempotency tokens time out after one hour.
      * Therefore, if you call <b>IssueCertificate</b> multiple times with the same
-     * idempotency token within 5 minutes, ACM PCA recognizes that you are requesting
-     * only one certificate and will issue only one. If you change the idempotency
-     * token for each call, PCA recognizes that you are requesting multiple
+     * idempotency token within 5 minutes, ACM Private CA recognizes that you are
+     * requesting only one certificate and will issue only one. If you change the
+     * idempotency token for each call, PCA recognizes that you are requesting multiple
      * certificates.</p>
      */
     inline IssueCertificateRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
@@ -357,6 +510,9 @@ namespace Model
 
     SigningAlgorithm m_signingAlgorithm;
     bool m_signingAlgorithmHasBeenSet;
+
+    Aws::String m_templateArn;
+    bool m_templateArnHasBeenSet;
 
     Validity m_validity;
     bool m_validityHasBeenSet;

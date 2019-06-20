@@ -114,7 +114,7 @@ namespace Model
     /**
      * <p>A custom AMI ID to be used to create the instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      */
     inline const Aws::String& GetAmiId() const{ return m_amiId; }
@@ -122,7 +122,7 @@ namespace Model
     /**
      * <p>A custom AMI ID to be used to create the instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      */
     inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
@@ -130,7 +130,7 @@ namespace Model
     /**
      * <p>A custom AMI ID to be used to create the instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      */
     inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
@@ -138,7 +138,7 @@ namespace Model
     /**
      * <p>A custom AMI ID to be used to create the instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      */
     inline void SetAmiId(Aws::String&& value) { m_amiIdHasBeenSet = true; m_amiId = std::move(value); }
@@ -146,7 +146,7 @@ namespace Model
     /**
      * <p>A custom AMI ID to be used to create the instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      */
     inline void SetAmiId(const char* value) { m_amiIdHasBeenSet = true; m_amiId.assign(value); }
@@ -154,7 +154,7 @@ namespace Model
     /**
      * <p>A custom AMI ID to be used to create the instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      */
     inline Instance& WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
@@ -162,7 +162,7 @@ namespace Model
     /**
      * <p>A custom AMI ID to be used to create the instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      */
     inline Instance& WithAmiId(Aws::String&& value) { SetAmiId(std::move(value)); return *this;}
@@ -170,7 +170,7 @@ namespace Model
     /**
      * <p>A custom AMI ID to be used to create the instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      */
     inline Instance& WithAmiId(const char* value) { SetAmiId(value); return *this;}
@@ -281,56 +281,56 @@ namespace Model
 
     /**
      * <p>The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
      * <p>The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
      * <p>The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline Instance& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline Instance& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline Instance& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
@@ -572,56 +572,56 @@ namespace Model
 
     /**
      * <p>The instance <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address </a>.</p>
      */
     inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
 
     /**
      * <p>The instance <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address </a>.</p>
      */
     inline bool ElasticIpHasBeenSet() const { return m_elasticIpHasBeenSet; }
 
     /**
      * <p>The instance <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address </a>.</p>
      */
     inline void SetElasticIp(const Aws::String& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
 
     /**
      * <p>The instance <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address </a>.</p>
      */
     inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = std::move(value); }
 
     /**
      * <p>The instance <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address </a>.</p>
      */
     inline void SetElasticIp(const char* value) { m_elasticIpHasBeenSet = true; m_elasticIp.assign(value); }
 
     /**
      * <p>The instance <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address </a>.</p>
      */
     inline Instance& WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
 
     /**
      * <p>The instance <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address </a>.</p>
      */
     inline Instance& WithElasticIp(Aws::String&& value) { SetElasticIp(std::move(value)); return *this;}
 
     /**
      * <p>The instance <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address </a>.</p>
      */
     inline Instance& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
@@ -810,7 +810,7 @@ namespace Model
     /**
      * <p>The ARN of the instance's IAM profile. For more information about IAM ARNs,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline const Aws::String& GetInstanceProfileArn() const{ return m_instanceProfileArn; }
@@ -818,7 +818,7 @@ namespace Model
     /**
      * <p>The ARN of the instance's IAM profile. For more information about IAM ARNs,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline bool InstanceProfileArnHasBeenSet() const { return m_instanceProfileArnHasBeenSet; }
@@ -826,7 +826,7 @@ namespace Model
     /**
      * <p>The ARN of the instance's IAM profile. For more information about IAM ARNs,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline void SetInstanceProfileArn(const Aws::String& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = value; }
@@ -834,7 +834,7 @@ namespace Model
     /**
      * <p>The ARN of the instance's IAM profile. For more information about IAM ARNs,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline void SetInstanceProfileArn(Aws::String&& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = std::move(value); }
@@ -842,7 +842,7 @@ namespace Model
     /**
      * <p>The ARN of the instance's IAM profile. For more information about IAM ARNs,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline void SetInstanceProfileArn(const char* value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn.assign(value); }
@@ -850,7 +850,7 @@ namespace Model
     /**
      * <p>The ARN of the instance's IAM profile. For more information about IAM ARNs,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline Instance& WithInstanceProfileArn(const Aws::String& value) { SetInstanceProfileArn(value); return *this;}
@@ -858,7 +858,7 @@ namespace Model
     /**
      * <p>The ARN of the instance's IAM profile. For more information about IAM ARNs,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline Instance& WithInstanceProfileArn(Aws::String&& value) { SetInstanceProfileArn(std::move(value)); return *this;}
@@ -866,7 +866,7 @@ namespace Model
     /**
      * <p>The ARN of the instance's IAM profile. For more information about IAM ARNs,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline Instance& WithInstanceProfileArn(const char* value) { SetInstanceProfileArn(value); return *this;}
@@ -1369,42 +1369,42 @@ namespace Model
 
     /**
      * <p>The instance's root device type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.</p>
      */
     inline const RootDeviceType& GetRootDeviceType() const{ return m_rootDeviceType; }
 
     /**
      * <p>The instance's root device type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.</p>
      */
     inline bool RootDeviceTypeHasBeenSet() const { return m_rootDeviceTypeHasBeenSet; }
 
     /**
      * <p>The instance's root device type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.</p>
      */
     inline void SetRootDeviceType(const RootDeviceType& value) { m_rootDeviceTypeHasBeenSet = true; m_rootDeviceType = value; }
 
     /**
      * <p>The instance's root device type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.</p>
      */
     inline void SetRootDeviceType(RootDeviceType&& value) { m_rootDeviceTypeHasBeenSet = true; m_rootDeviceType = std::move(value); }
 
     /**
      * <p>The instance's root device type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.</p>
      */
     inline Instance& WithRootDeviceType(const RootDeviceType& value) { SetRootDeviceType(value); return *this;}
 
     /**
      * <p>The instance's root device type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.</p>
      */
     inline Instance& WithRootDeviceType(RootDeviceType&& value) { SetRootDeviceType(std::move(value)); return *this;}

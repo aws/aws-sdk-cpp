@@ -44,6 +44,7 @@ static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnExceptio
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int MALFORMED_C_S_R_HASH = HashingUtils::HashString("MalformedCSRException");
 static const int INVALID_POLICY_HASH = HashingUtils::HashString("InvalidPolicyException");
+static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -113,6 +114,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_POLICY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMPCAErrors::INVALID_POLICY), false);
+  }
+  else if (hashCode == INVALID_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMPCAErrors::INVALID_REQUEST), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

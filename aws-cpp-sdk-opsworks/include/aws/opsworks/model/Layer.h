@@ -434,7 +434,7 @@ namespace Model
     /**
      * <p>The ARN of the default IAM profile to be used for the layer's EC2 instances.
      * For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline const Aws::String& GetCustomInstanceProfileArn() const{ return m_customInstanceProfileArn; }
@@ -442,7 +442,7 @@ namespace Model
     /**
      * <p>The ARN of the default IAM profile to be used for the layer's EC2 instances.
      * For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline bool CustomInstanceProfileArnHasBeenSet() const { return m_customInstanceProfileArnHasBeenSet; }
@@ -450,7 +450,7 @@ namespace Model
     /**
      * <p>The ARN of the default IAM profile to be used for the layer's EC2 instances.
      * For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline void SetCustomInstanceProfileArn(const Aws::String& value) { m_customInstanceProfileArnHasBeenSet = true; m_customInstanceProfileArn = value; }
@@ -458,7 +458,7 @@ namespace Model
     /**
      * <p>The ARN of the default IAM profile to be used for the layer's EC2 instances.
      * For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline void SetCustomInstanceProfileArn(Aws::String&& value) { m_customInstanceProfileArnHasBeenSet = true; m_customInstanceProfileArn = std::move(value); }
@@ -466,7 +466,7 @@ namespace Model
     /**
      * <p>The ARN of the default IAM profile to be used for the layer's EC2 instances.
      * For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline void SetCustomInstanceProfileArn(const char* value) { m_customInstanceProfileArnHasBeenSet = true; m_customInstanceProfileArn.assign(value); }
@@ -474,7 +474,7 @@ namespace Model
     /**
      * <p>The ARN of the default IAM profile to be used for the layer's EC2 instances.
      * For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline Layer& WithCustomInstanceProfileArn(const Aws::String& value) { SetCustomInstanceProfileArn(value); return *this;}
@@ -482,7 +482,7 @@ namespace Model
     /**
      * <p>The ARN of the default IAM profile to be used for the layer's EC2 instances.
      * For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline Layer& WithCustomInstanceProfileArn(Aws::String&& value) { SetCustomInstanceProfileArn(std::move(value)); return *this;}
@@ -490,7 +490,7 @@ namespace Model
     /**
      * <p>The ARN of the default IAM profile to be used for the layer's EC2 instances.
      * For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline Layer& WithCustomInstanceProfileArn(const char* value) { SetCustomInstanceProfileArn(value); return *this;}
@@ -764,36 +764,36 @@ namespace Model
 
     /**
      * <p>Whether to automatically assign an <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address</a> to the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      * to Edit a Layer</a>.</p>
      */
     inline bool GetAutoAssignElasticIps() const{ return m_autoAssignElasticIps; }
 
     /**
      * <p>Whether to automatically assign an <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address</a> to the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      * to Edit a Layer</a>.</p>
      */
     inline bool AutoAssignElasticIpsHasBeenSet() const { return m_autoAssignElasticIpsHasBeenSet; }
 
     /**
      * <p>Whether to automatically assign an <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address</a> to the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      * to Edit a Layer</a>.</p>
      */
     inline void SetAutoAssignElasticIps(bool value) { m_autoAssignElasticIpsHasBeenSet = true; m_autoAssignElasticIps = value; }
 
     /**
      * <p>Whether to automatically assign an <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address</a> to the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      * to Edit a Layer</a>.</p>
      */
     inline Layer& WithAutoAssignElasticIps(bool value) { SetAutoAssignElasticIps(value); return *this;}
@@ -802,7 +802,7 @@ namespace Model
     /**
      * <p>For stacks that are running in a VPC, whether to automatically assign a
      * public IP address to the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      * to Edit a Layer</a>.</p>
      */
     inline bool GetAutoAssignPublicIps() const{ return m_autoAssignPublicIps; }
@@ -810,7 +810,7 @@ namespace Model
     /**
      * <p>For stacks that are running in a VPC, whether to automatically assign a
      * public IP address to the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      * to Edit a Layer</a>.</p>
      */
     inline bool AutoAssignPublicIpsHasBeenSet() const { return m_autoAssignPublicIpsHasBeenSet; }
@@ -818,7 +818,7 @@ namespace Model
     /**
      * <p>For stacks that are running in a VPC, whether to automatically assign a
      * public IP address to the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      * to Edit a Layer</a>.</p>
      */
     inline void SetAutoAssignPublicIps(bool value) { m_autoAssignPublicIpsHasBeenSet = true; m_autoAssignPublicIps = value; }
@@ -826,28 +826,106 @@ namespace Model
     /**
      * <p>For stacks that are running in a VPC, whether to automatically assign a
      * public IP address to the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      * to Edit a Layer</a>.</p>
      */
     inline Layer& WithAutoAssignPublicIps(bool value) { SetAutoAssignPublicIps(value); return *this;}
 
 
-    
+    /**
+     * <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>,
+     * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For
+     * each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event.
+     * You can also provide custom recipes for any or all layers and events. AWS
+     * OpsWorks Stacks runs custom event recipes after the standard recipes.
+     * <code>LayerCustomRecipes</code> specifies the custom recipes for a particular
+     * layer to be run in response to each of the five events.</p> <p>To specify a
+     * recipe, use the cookbook's directory name in the repository followed by two
+     * colons and the recipe name, which is the recipe's file name without the
+     * <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies
+     * the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code>
+     * folder.</p>
+     */
     inline const Recipes& GetDefaultRecipes() const{ return m_defaultRecipes; }
 
-    
+    /**
+     * <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>,
+     * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For
+     * each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event.
+     * You can also provide custom recipes for any or all layers and events. AWS
+     * OpsWorks Stacks runs custom event recipes after the standard recipes.
+     * <code>LayerCustomRecipes</code> specifies the custom recipes for a particular
+     * layer to be run in response to each of the five events.</p> <p>To specify a
+     * recipe, use the cookbook's directory name in the repository followed by two
+     * colons and the recipe name, which is the recipe's file name without the
+     * <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies
+     * the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code>
+     * folder.</p>
+     */
     inline bool DefaultRecipesHasBeenSet() const { return m_defaultRecipesHasBeenSet; }
 
-    
+    /**
+     * <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>,
+     * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For
+     * each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event.
+     * You can also provide custom recipes for any or all layers and events. AWS
+     * OpsWorks Stacks runs custom event recipes after the standard recipes.
+     * <code>LayerCustomRecipes</code> specifies the custom recipes for a particular
+     * layer to be run in response to each of the five events.</p> <p>To specify a
+     * recipe, use the cookbook's directory name in the repository followed by two
+     * colons and the recipe name, which is the recipe's file name without the
+     * <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies
+     * the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code>
+     * folder.</p>
+     */
     inline void SetDefaultRecipes(const Recipes& value) { m_defaultRecipesHasBeenSet = true; m_defaultRecipes = value; }
 
-    
+    /**
+     * <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>,
+     * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For
+     * each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event.
+     * You can also provide custom recipes for any or all layers and events. AWS
+     * OpsWorks Stacks runs custom event recipes after the standard recipes.
+     * <code>LayerCustomRecipes</code> specifies the custom recipes for a particular
+     * layer to be run in response to each of the five events.</p> <p>To specify a
+     * recipe, use the cookbook's directory name in the repository followed by two
+     * colons and the recipe name, which is the recipe's file name without the
+     * <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies
+     * the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code>
+     * folder.</p>
+     */
     inline void SetDefaultRecipes(Recipes&& value) { m_defaultRecipesHasBeenSet = true; m_defaultRecipes = std::move(value); }
 
-    
+    /**
+     * <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>,
+     * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For
+     * each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event.
+     * You can also provide custom recipes for any or all layers and events. AWS
+     * OpsWorks Stacks runs custom event recipes after the standard recipes.
+     * <code>LayerCustomRecipes</code> specifies the custom recipes for a particular
+     * layer to be run in response to each of the five events.</p> <p>To specify a
+     * recipe, use the cookbook's directory name in the repository followed by two
+     * colons and the recipe name, which is the recipe's file name without the
+     * <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies
+     * the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code>
+     * folder.</p>
+     */
     inline Layer& WithDefaultRecipes(const Recipes& value) { SetDefaultRecipes(value); return *this;}
 
-    
+    /**
+     * <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>,
+     * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For
+     * each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event.
+     * You can also provide custom recipes for any or all layers and events. AWS
+     * OpsWorks Stacks runs custom event recipes after the standard recipes.
+     * <code>LayerCustomRecipes</code> specifies the custom recipes for a particular
+     * layer to be run in response to each of the five events.</p> <p>To specify a
+     * recipe, use the cookbook's directory name in the repository followed by two
+     * colons and the recipe name, which is the recipe's file name without the
+     * <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies
+     * the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code>
+     * folder.</p>
+     */
     inline Layer& WithDefaultRecipes(Recipes&& value) { SetDefaultRecipes(std::move(value)); return *this;}
 
 

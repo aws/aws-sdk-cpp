@@ -239,7 +239,7 @@ namespace Model
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      * You can either have AWS OpsWorks Stacks update the role for you when you first
      * use this feature or you can edit the role manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
      * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetAlarms() const{ return m_alarms; }
@@ -251,7 +251,7 @@ namespace Model
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      * You can either have AWS OpsWorks Stacks update the role for you when you first
      * use this feature or you can edit the role manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
      * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
      */
     inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
@@ -263,7 +263,7 @@ namespace Model
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      * You can either have AWS OpsWorks Stacks update the role for you when you first
      * use this feature or you can edit the role manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
      * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
      */
     inline void SetAlarms(const Aws::Vector<Aws::String>& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
@@ -275,7 +275,7 @@ namespace Model
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      * You can either have AWS OpsWorks Stacks update the role for you when you first
      * use this feature or you can edit the role manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
      * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
      */
     inline void SetAlarms(Aws::Vector<Aws::String>&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
@@ -287,7 +287,7 @@ namespace Model
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      * You can either have AWS OpsWorks Stacks update the role for you when you first
      * use this feature or you can edit the role manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
      * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
      */
     inline AutoScalingThresholds& WithAlarms(const Aws::Vector<Aws::String>& value) { SetAlarms(value); return *this;}
@@ -299,7 +299,7 @@ namespace Model
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      * You can either have AWS OpsWorks Stacks update the role for you when you first
      * use this feature or you can edit the role manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
      * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
      */
     inline AutoScalingThresholds& WithAlarms(Aws::Vector<Aws::String>&& value) { SetAlarms(std::move(value)); return *this;}
@@ -311,7 +311,7 @@ namespace Model
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      * You can either have AWS OpsWorks Stacks update the role for you when you first
      * use this feature or you can edit the role manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
      * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
      */
     inline AutoScalingThresholds& AddAlarms(const Aws::String& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(value); return *this; }
@@ -323,7 +323,7 @@ namespace Model
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      * You can either have AWS OpsWorks Stacks update the role for you when you first
      * use this feature or you can edit the role manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
      * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
      */
     inline AutoScalingThresholds& AddAlarms(Aws::String&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(std::move(value)); return *this; }
@@ -335,7 +335,7 @@ namespace Model
      * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
      * You can either have AWS OpsWorks Stacks update the role for you when you first
      * use this feature or you can edit the role manually. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
      * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
      */
     inline AutoScalingThresholds& AddAlarms(const char* value) { m_alarmsHasBeenSet = true; m_alarms.push_back(value); return *this; }

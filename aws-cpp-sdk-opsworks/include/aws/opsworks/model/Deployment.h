@@ -357,22 +357,34 @@ namespace Model
     inline Deployment& WithComment(const char* value) { SetComment(value); return *this;}
 
 
-    
+    /**
+     * <p>Used to specify a stack or deployment command.</p>
+     */
     inline const DeploymentCommand& GetCommand() const{ return m_command; }
 
-    
+    /**
+     * <p>Used to specify a stack or deployment command.</p>
+     */
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
 
-    
+    /**
+     * <p>Used to specify a stack or deployment command.</p>
+     */
     inline void SetCommand(const DeploymentCommand& value) { m_commandHasBeenSet = true; m_command = value; }
 
-    
+    /**
+     * <p>Used to specify a stack or deployment command.</p>
+     */
     inline void SetCommand(DeploymentCommand&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
 
-    
+    /**
+     * <p>Used to specify a stack or deployment command.</p>
+     */
     inline Deployment& WithCommand(const DeploymentCommand& value) { SetCommand(value); return *this;}
 
-    
+    /**
+     * <p>Used to specify a stack or deployment command.</p>
+     */
     inline Deployment& WithCommand(DeploymentCommand&& value) { SetCommand(std::move(value)); return *this;}
 
 
@@ -431,7 +443,7 @@ namespace Model
      * pass data to recipes. The string should be in the following format:</p> <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more
      * information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
     inline const Aws::String& GetCustomJson() const{ return m_customJson; }
@@ -442,7 +454,7 @@ namespace Model
      * pass data to recipes. The string should be in the following format:</p> <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more
      * information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
     inline bool CustomJsonHasBeenSet() const { return m_customJsonHasBeenSet; }
@@ -453,7 +465,7 @@ namespace Model
      * pass data to recipes. The string should be in the following format:</p> <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more
      * information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
     inline void SetCustomJson(const Aws::String& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
@@ -464,7 +476,7 @@ namespace Model
      * pass data to recipes. The string should be in the following format:</p> <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more
      * information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
     inline void SetCustomJson(Aws::String&& value) { m_customJsonHasBeenSet = true; m_customJson = std::move(value); }
@@ -475,7 +487,7 @@ namespace Model
      * pass data to recipes. The string should be in the following format:</p> <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more
      * information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
     inline void SetCustomJson(const char* value) { m_customJsonHasBeenSet = true; m_customJson.assign(value); }
@@ -486,7 +498,7 @@ namespace Model
      * pass data to recipes. The string should be in the following format:</p> <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more
      * information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
     inline Deployment& WithCustomJson(const Aws::String& value) { SetCustomJson(value); return *this;}
@@ -497,7 +509,7 @@ namespace Model
      * pass data to recipes. The string should be in the following format:</p> <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more
      * information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
     inline Deployment& WithCustomJson(Aws::String&& value) { SetCustomJson(std::move(value)); return *this;}
@@ -508,7 +520,7 @@ namespace Model
      * pass data to recipes. The string should be in the following format:</p> <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more
      * information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
     inline Deployment& WithCustomJson(const char* value) { SetCustomJson(value); return *this;}

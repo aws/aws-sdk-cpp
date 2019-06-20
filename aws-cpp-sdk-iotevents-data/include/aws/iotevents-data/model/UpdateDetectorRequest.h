@@ -50,50 +50,50 @@ namespace Model
 
 
     /**
-     * <p>The ID you wish to assign to the detector update "message". Each "messageId"
-     * must be unique within each batch sent.</p>
+     * <p>The ID to assign to the detector update <code>"message"</code>. Each
+     * <code>"messageId"</code> must be unique within each batch sent.</p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
     /**
-     * <p>The ID you wish to assign to the detector update "message". Each "messageId"
-     * must be unique within each batch sent.</p>
+     * <p>The ID to assign to the detector update <code>"message"</code>. Each
+     * <code>"messageId"</code> must be unique within each batch sent.</p>
      */
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
 
     /**
-     * <p>The ID you wish to assign to the detector update "message". Each "messageId"
-     * must be unique within each batch sent.</p>
+     * <p>The ID to assign to the detector update <code>"message"</code>. Each
+     * <code>"messageId"</code> must be unique within each batch sent.</p>
      */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
 
     /**
-     * <p>The ID you wish to assign to the detector update "message". Each "messageId"
-     * must be unique within each batch sent.</p>
+     * <p>The ID to assign to the detector update <code>"message"</code>. Each
+     * <code>"messageId"</code> must be unique within each batch sent.</p>
      */
     inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
 
     /**
-     * <p>The ID you wish to assign to the detector update "message". Each "messageId"
-     * must be unique within each batch sent.</p>
+     * <p>The ID to assign to the detector update <code>"message"</code>. Each
+     * <code>"messageId"</code> must be unique within each batch sent.</p>
      */
     inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
 
     /**
-     * <p>The ID you wish to assign to the detector update "message". Each "messageId"
-     * must be unique within each batch sent.</p>
+     * <p>The ID to assign to the detector update <code>"message"</code>. Each
+     * <code>"messageId"</code> must be unique within each batch sent.</p>
      */
     inline UpdateDetectorRequest& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
     /**
-     * <p>The ID you wish to assign to the detector update "message". Each "messageId"
-     * must be unique within each batch sent.</p>
+     * <p>The ID to assign to the detector update <code>"message"</code>. Each
+     * <code>"messageId"</code> must be unique within each batch sent.</p>
      */
     inline UpdateDetectorRequest& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID you wish to assign to the detector update "message". Each "messageId"
-     * must be unique within each batch sent.</p>
+     * <p>The ID to assign to the detector update <code>"message"</code>. Each
+     * <code>"messageId"</code> must be unique within each batch sent.</p>
      */
     inline UpdateDetectorRequest& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 

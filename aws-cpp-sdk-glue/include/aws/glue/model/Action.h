@@ -307,37 +307,6 @@ namespace Model
 
 
     /**
-     * <p>Specifies configuration properties of a job run notification.</p>
-     */
-    inline const NotificationProperty& GetNotificationProperty() const{ return m_notificationProperty; }
-
-    /**
-     * <p>Specifies configuration properties of a job run notification.</p>
-     */
-    inline bool NotificationPropertyHasBeenSet() const { return m_notificationPropertyHasBeenSet; }
-
-    /**
-     * <p>Specifies configuration properties of a job run notification.</p>
-     */
-    inline void SetNotificationProperty(const NotificationProperty& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = value; }
-
-    /**
-     * <p>Specifies configuration properties of a job run notification.</p>
-     */
-    inline void SetNotificationProperty(NotificationProperty&& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = std::move(value); }
-
-    /**
-     * <p>Specifies configuration properties of a job run notification.</p>
-     */
-    inline Action& WithNotificationProperty(const NotificationProperty& value) { SetNotificationProperty(value); return *this;}
-
-    /**
-     * <p>Specifies configuration properties of a job run notification.</p>
-     */
-    inline Action& WithNotificationProperty(NotificationProperty&& value) { SetNotificationProperty(std::move(value)); return *this;}
-
-
-    /**
      * <p>The name of the <code>SecurityConfiguration</code> structure to be used with
      * this action.</p>
      */
@@ -385,6 +354,78 @@ namespace Model
      */
     inline Action& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
 
+
+    /**
+     * <p>Specifies configuration properties of a job run notification.</p>
+     */
+    inline const NotificationProperty& GetNotificationProperty() const{ return m_notificationProperty; }
+
+    /**
+     * <p>Specifies configuration properties of a job run notification.</p>
+     */
+    inline bool NotificationPropertyHasBeenSet() const { return m_notificationPropertyHasBeenSet; }
+
+    /**
+     * <p>Specifies configuration properties of a job run notification.</p>
+     */
+    inline void SetNotificationProperty(const NotificationProperty& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = value; }
+
+    /**
+     * <p>Specifies configuration properties of a job run notification.</p>
+     */
+    inline void SetNotificationProperty(NotificationProperty&& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = std::move(value); }
+
+    /**
+     * <p>Specifies configuration properties of a job run notification.</p>
+     */
+    inline Action& WithNotificationProperty(const NotificationProperty& value) { SetNotificationProperty(value); return *this;}
+
+    /**
+     * <p>Specifies configuration properties of a job run notification.</p>
+     */
+    inline Action& WithNotificationProperty(NotificationProperty&& value) { SetNotificationProperty(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name of the crawler to be used with this action.</p>
+     */
+    inline const Aws::String& GetCrawlerName() const{ return m_crawlerName; }
+
+    /**
+     * <p>The name of the crawler to be used with this action.</p>
+     */
+    inline bool CrawlerNameHasBeenSet() const { return m_crawlerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the crawler to be used with this action.</p>
+     */
+    inline void SetCrawlerName(const Aws::String& value) { m_crawlerNameHasBeenSet = true; m_crawlerName = value; }
+
+    /**
+     * <p>The name of the crawler to be used with this action.</p>
+     */
+    inline void SetCrawlerName(Aws::String&& value) { m_crawlerNameHasBeenSet = true; m_crawlerName = std::move(value); }
+
+    /**
+     * <p>The name of the crawler to be used with this action.</p>
+     */
+    inline void SetCrawlerName(const char* value) { m_crawlerNameHasBeenSet = true; m_crawlerName.assign(value); }
+
+    /**
+     * <p>The name of the crawler to be used with this action.</p>
+     */
+    inline Action& WithCrawlerName(const Aws::String& value) { SetCrawlerName(value); return *this;}
+
+    /**
+     * <p>The name of the crawler to be used with this action.</p>
+     */
+    inline Action& WithCrawlerName(Aws::String&& value) { SetCrawlerName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the crawler to be used with this action.</p>
+     */
+    inline Action& WithCrawlerName(const char* value) { SetCrawlerName(value); return *this;}
+
   private:
 
     Aws::String m_jobName;
@@ -396,11 +437,14 @@ namespace Model
     int m_timeout;
     bool m_timeoutHasBeenSet;
 
+    Aws::String m_securityConfiguration;
+    bool m_securityConfigurationHasBeenSet;
+
     NotificationProperty m_notificationProperty;
     bool m_notificationPropertyHasBeenSet;
 
-    Aws::String m_securityConfiguration;
-    bool m_securityConfigurationHasBeenSet;
+    Aws::String m_crawlerName;
+    bool m_crawlerNameHasBeenSet;
   };
 
 } // namespace Model

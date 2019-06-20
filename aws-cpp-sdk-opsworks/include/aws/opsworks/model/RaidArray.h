@@ -321,56 +321,56 @@ namespace Model
 
     /**
      * <p>The array's Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
      * <p>The array's Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The array's Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The array's Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The array's Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
      * <p>The array's Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline RaidArray& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The array's Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline RaidArray& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The array's Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline RaidArray& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}

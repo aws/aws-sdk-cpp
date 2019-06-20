@@ -28,6 +28,7 @@ IssueCertificateRequest::IssueCertificateRequest() :
     m_csrHasBeenSet(false),
     m_signingAlgorithm(SigningAlgorithm::NOT_SET),
     m_signingAlgorithmHasBeenSet(false),
+    m_templateArnHasBeenSet(false),
     m_validityHasBeenSet(false),
     m_idempotencyTokenHasBeenSet(false)
 {
@@ -51,6 +52,12 @@ Aws::String IssueCertificateRequest::SerializePayload() const
   if(m_signingAlgorithmHasBeenSet)
   {
    payload.WithString("SigningAlgorithm", SigningAlgorithmMapper::GetNameForSigningAlgorithm(m_signingAlgorithm));
+  }
+
+  if(m_templateArnHasBeenSet)
+  {
+   payload.WithString("TemplateArn", m_templateArn);
+
   }
 
   if(m_validityHasBeenSet)

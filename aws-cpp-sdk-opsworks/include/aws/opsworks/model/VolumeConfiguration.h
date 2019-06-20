@@ -157,7 +157,7 @@ namespace Model
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
      * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> - Magnetic.
      * Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
      * GiB.</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes
@@ -173,7 +173,7 @@ namespace Model
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
      * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> - Magnetic.
      * Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
      * GiB.</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes
@@ -189,7 +189,7 @@ namespace Model
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
      * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> - Magnetic.
      * Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
      * GiB.</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes
@@ -205,7 +205,7 @@ namespace Model
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
      * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> - Magnetic.
      * Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
      * GiB.</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes
@@ -221,7 +221,7 @@ namespace Model
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
      * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> - Magnetic.
      * Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
      * GiB.</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes
@@ -237,7 +237,7 @@ namespace Model
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
      * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> - Magnetic.
      * Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
      * GiB.</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes
@@ -253,7 +253,7 @@ namespace Model
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
      * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> - Magnetic.
      * Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
      * GiB.</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes
@@ -269,7 +269,7 @@ namespace Model
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
      * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> - Magnetic.
      * Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
      * GiB.</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes
@@ -308,7 +308,7 @@ namespace Model
     /**
      * <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a>.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
@@ -316,7 +316,7 @@ namespace Model
     /**
      * <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a>.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
@@ -324,7 +324,7 @@ namespace Model
     /**
      * <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a>.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
@@ -332,7 +332,7 @@ namespace Model
     /**
      * <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a>.</p>
      */
     inline VolumeConfiguration& WithEncrypted(bool value) { SetEncrypted(value); return *this;}

@@ -73,7 +73,7 @@ namespace Model
     /**
      * <p>Whether to enable Elastic Load Balancing connection draining. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection
+     * href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection
      * Draining</a> </p>
      */
     inline bool GetDelayUntilElbConnectionsDrained() const{ return m_delayUntilElbConnectionsDrained; }
@@ -81,7 +81,7 @@ namespace Model
     /**
      * <p>Whether to enable Elastic Load Balancing connection draining. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection
+     * href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection
      * Draining</a> </p>
      */
     inline bool DelayUntilElbConnectionsDrainedHasBeenSet() const { return m_delayUntilElbConnectionsDrainedHasBeenSet; }
@@ -89,7 +89,7 @@ namespace Model
     /**
      * <p>Whether to enable Elastic Load Balancing connection draining. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection
+     * href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection
      * Draining</a> </p>
      */
     inline void SetDelayUntilElbConnectionsDrained(bool value) { m_delayUntilElbConnectionsDrainedHasBeenSet = true; m_delayUntilElbConnectionsDrained = value; }
@@ -97,7 +97,7 @@ namespace Model
     /**
      * <p>Whether to enable Elastic Load Balancing connection draining. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection
+     * href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection
      * Draining</a> </p>
      */
     inline ShutdownEventConfiguration& WithDelayUntilElbConnectionsDrained(bool value) { SetDelayUntilElbConnectionsDrained(value); return *this;}

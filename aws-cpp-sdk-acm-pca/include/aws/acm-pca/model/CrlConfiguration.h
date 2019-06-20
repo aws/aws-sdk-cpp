@@ -42,8 +42,8 @@ namespace Model
    * hide the name of your bucket by specifying a value for the <b>CustomCname</b>
    * parameter. Your private CA copies the CNAME or the S3 bucket name to the <b>CRL
    * Distribution Points</b> extension of each certificate it issues. Your S3 bucket
-   * policy must give write permission to ACM PCA. </p> <p>Your private CA uses the
-   * value in the <b>ExpirationInDays</b> parameter to calculate the
+   * policy must give write permission to ACM Private CA. </p> <p>Your private CA
+   * uses the value in the <b>ExpirationInDays</b> parameter to calculate the
    * <b>nextUpdate</b> field in the CRL. The CRL is refreshed at 1/2 the age of next
    * update or when a certificate is revoked. When a certificate is revoked, it is
    * recorded in the next CRL that is generated and in the next audit report. Only
@@ -68,9 +68,9 @@ namespace Model
    * CRL Number:</b>: Decimal sequence number for the CRL.</p> </li> </ul> </li> <li>
    * <p> <b>Signature Algorithm</b>: Algorithm used by your private CA to sign the
    * CRL.</p> </li> <li> <p> <b>Signature Value</b>: Signature computed over the
-   * CRL.</p> </li> </ul> <p>Certificate revocation lists created by ACM PCA are
-   * DER-encoded. You can use the following OpenSSL command to list a CRL.</p> <p>
-   * <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code>
+   * CRL.</p> </li> </ul> <p>Certificate revocation lists created by ACM Private CA
+   * are DER-encoded. You can use the following OpenSSL command to list a CRL.</p>
+   * <p> <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code>
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CrlConfiguration">AWS
    * API Reference</a></p>
@@ -87,32 +87,32 @@ namespace Model
     /**
      * <p>Boolean value that specifies whether certificate revocation lists (CRLs) are
      * enabled. You can use this value to enable certificate revocation for a new CA
-     * when you call the <a>CreateCertificateAuthority</a> operation or for an existing
-     * CA when you call the <a>UpdateCertificateAuthority</a> operation. </p>
+     * when you call the <a>CreateCertificateAuthority</a> action or for an existing CA
+     * when you call the <a>UpdateCertificateAuthority</a> action. </p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
      * <p>Boolean value that specifies whether certificate revocation lists (CRLs) are
      * enabled. You can use this value to enable certificate revocation for a new CA
-     * when you call the <a>CreateCertificateAuthority</a> operation or for an existing
-     * CA when you call the <a>UpdateCertificateAuthority</a> operation. </p>
+     * when you call the <a>CreateCertificateAuthority</a> action or for an existing CA
+     * when you call the <a>UpdateCertificateAuthority</a> action. </p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * <p>Boolean value that specifies whether certificate revocation lists (CRLs) are
      * enabled. You can use this value to enable certificate revocation for a new CA
-     * when you call the <a>CreateCertificateAuthority</a> operation or for an existing
-     * CA when you call the <a>UpdateCertificateAuthority</a> operation. </p>
+     * when you call the <a>CreateCertificateAuthority</a> action or for an existing CA
+     * when you call the <a>UpdateCertificateAuthority</a> action. </p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
      * <p>Boolean value that specifies whether certificate revocation lists (CRLs) are
      * enabled. You can use this value to enable certificate revocation for a new CA
-     * when you call the <a>CreateCertificateAuthority</a> operation or for an existing
-     * CA when you call the <a>UpdateCertificateAuthority</a> operation. </p>
+     * when you call the <a>CreateCertificateAuthority</a> action or for an existing CA
+     * when you call the <a>UpdateCertificateAuthority</a> action. </p>
      */
     inline CrlConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
@@ -200,8 +200,8 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a>UpdateCertificateAuthority</a>
-     * operation. You must specify a bucket policy that allows ACM PCA to write the CRL
-     * to your bucket.</p>
+     * action. You must specify a bucket policy that allows ACM Private CA to write the
+     * CRL to your bucket.</p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
 
@@ -210,8 +210,8 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a>UpdateCertificateAuthority</a>
-     * operation. You must specify a bucket policy that allows ACM PCA to write the CRL
-     * to your bucket.</p>
+     * action. You must specify a bucket policy that allows ACM Private CA to write the
+     * CRL to your bucket.</p>
      */
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
 
@@ -220,8 +220,8 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a>UpdateCertificateAuthority</a>
-     * operation. You must specify a bucket policy that allows ACM PCA to write the CRL
-     * to your bucket.</p>
+     * action. You must specify a bucket policy that allows ACM Private CA to write the
+     * CRL to your bucket.</p>
      */
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
 
@@ -230,8 +230,8 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a>UpdateCertificateAuthority</a>
-     * operation. You must specify a bucket policy that allows ACM PCA to write the CRL
-     * to your bucket.</p>
+     * action. You must specify a bucket policy that allows ACM Private CA to write the
+     * CRL to your bucket.</p>
      */
     inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
 
@@ -240,8 +240,8 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a>UpdateCertificateAuthority</a>
-     * operation. You must specify a bucket policy that allows ACM PCA to write the CRL
-     * to your bucket.</p>
+     * action. You must specify a bucket policy that allows ACM Private CA to write the
+     * CRL to your bucket.</p>
      */
     inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
 
@@ -250,8 +250,8 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a>UpdateCertificateAuthority</a>
-     * operation. You must specify a bucket policy that allows ACM PCA to write the CRL
-     * to your bucket.</p>
+     * action. You must specify a bucket policy that allows ACM Private CA to write the
+     * CRL to your bucket.</p>
      */
     inline CrlConfiguration& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
 
@@ -260,8 +260,8 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a>UpdateCertificateAuthority</a>
-     * operation. You must specify a bucket policy that allows ACM PCA to write the CRL
-     * to your bucket.</p>
+     * action. You must specify a bucket policy that allows ACM Private CA to write the
+     * CRL to your bucket.</p>
      */
     inline CrlConfiguration& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
 
@@ -270,8 +270,8 @@ namespace Model
      * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
      * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
      * change the name of your bucket by calling the <a>UpdateCertificateAuthority</a>
-     * operation. You must specify a bucket policy that allows ACM PCA to write the CRL
-     * to your bucket.</p>
+     * action. You must specify a bucket policy that allows ACM Private CA to write the
+     * CRL to your bucket.</p>
      */
     inline CrlConfiguration& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
 

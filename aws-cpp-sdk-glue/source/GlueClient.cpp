@@ -40,6 +40,7 @@
 #include <aws/glue/model/BatchGetJobsRequest.h>
 #include <aws/glue/model/BatchGetPartitionRequest.h>
 #include <aws/glue/model/BatchGetTriggersRequest.h>
+#include <aws/glue/model/BatchGetWorkflowsRequest.h>
 #include <aws/glue/model/BatchStopJobRunRequest.h>
 #include <aws/glue/model/CreateClassifierRequest.h>
 #include <aws/glue/model/CreateConnectionRequest.h>
@@ -53,6 +54,7 @@
 #include <aws/glue/model/CreateTableRequest.h>
 #include <aws/glue/model/CreateTriggerRequest.h>
 #include <aws/glue/model/CreateUserDefinedFunctionRequest.h>
+#include <aws/glue/model/CreateWorkflowRequest.h>
 #include <aws/glue/model/DeleteClassifierRequest.h>
 #include <aws/glue/model/DeleteConnectionRequest.h>
 #include <aws/glue/model/DeleteCrawlerRequest.h>
@@ -66,6 +68,7 @@
 #include <aws/glue/model/DeleteTableVersionRequest.h>
 #include <aws/glue/model/DeleteTriggerRequest.h>
 #include <aws/glue/model/DeleteUserDefinedFunctionRequest.h>
+#include <aws/glue/model/DeleteWorkflowRequest.h>
 #include <aws/glue/model/GetCatalogImportStatusRequest.h>
 #include <aws/glue/model/GetClassifierRequest.h>
 #include <aws/glue/model/GetClassifiersRequest.h>
@@ -100,18 +103,25 @@
 #include <aws/glue/model/GetTriggersRequest.h>
 #include <aws/glue/model/GetUserDefinedFunctionRequest.h>
 #include <aws/glue/model/GetUserDefinedFunctionsRequest.h>
+#include <aws/glue/model/GetWorkflowRequest.h>
+#include <aws/glue/model/GetWorkflowRunRequest.h>
+#include <aws/glue/model/GetWorkflowRunPropertiesRequest.h>
+#include <aws/glue/model/GetWorkflowRunsRequest.h>
 #include <aws/glue/model/ImportCatalogToGlueRequest.h>
 #include <aws/glue/model/ListCrawlersRequest.h>
 #include <aws/glue/model/ListDevEndpointsRequest.h>
 #include <aws/glue/model/ListJobsRequest.h>
 #include <aws/glue/model/ListTriggersRequest.h>
+#include <aws/glue/model/ListWorkflowsRequest.h>
 #include <aws/glue/model/PutDataCatalogEncryptionSettingsRequest.h>
 #include <aws/glue/model/PutResourcePolicyRequest.h>
+#include <aws/glue/model/PutWorkflowRunPropertiesRequest.h>
 #include <aws/glue/model/ResetJobBookmarkRequest.h>
 #include <aws/glue/model/StartCrawlerRequest.h>
 #include <aws/glue/model/StartCrawlerScheduleRequest.h>
 #include <aws/glue/model/StartJobRunRequest.h>
 #include <aws/glue/model/StartTriggerRequest.h>
+#include <aws/glue/model/StartWorkflowRunRequest.h>
 #include <aws/glue/model/StopCrawlerRequest.h>
 #include <aws/glue/model/StopCrawlerScheduleRequest.h>
 #include <aws/glue/model/StopTriggerRequest.h>
@@ -128,6 +138,7 @@
 #include <aws/glue/model/UpdateTableRequest.h>
 #include <aws/glue/model/UpdateTriggerRequest.h>
 #include <aws/glue/model/UpdateUserDefinedFunctionRequest.h>
+#include <aws/glue/model/UpdateWorkflowRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -549,6 +560,41 @@ void GlueClient::BatchGetTriggersAsync(const BatchGetTriggersRequest& request, c
 void GlueClient::BatchGetTriggersAsyncHelper(const BatchGetTriggersRequest& request, const BatchGetTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchGetTriggers(request), context);
+}
+
+BatchGetWorkflowsOutcome GlueClient::BatchGetWorkflows(const BatchGetWorkflowsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return BatchGetWorkflowsOutcome(BatchGetWorkflowsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchGetWorkflowsOutcome(outcome.GetError());
+  }
+}
+
+BatchGetWorkflowsOutcomeCallable GlueClient::BatchGetWorkflowsCallable(const BatchGetWorkflowsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetWorkflowsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetWorkflows(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::BatchGetWorkflowsAsync(const BatchGetWorkflowsRequest& request, const BatchGetWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetWorkflowsAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::BatchGetWorkflowsAsyncHelper(const BatchGetWorkflowsRequest& request, const BatchGetWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetWorkflows(request), context);
 }
 
 BatchStopJobRunOutcome GlueClient::BatchStopJobRun(const BatchStopJobRunRequest& request) const
@@ -1006,6 +1052,41 @@ void GlueClient::CreateUserDefinedFunctionAsyncHelper(const CreateUserDefinedFun
   handler(this, request, CreateUserDefinedFunction(request), context);
 }
 
+CreateWorkflowOutcome GlueClient::CreateWorkflow(const CreateWorkflowRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateWorkflowOutcome(CreateWorkflowResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateWorkflowOutcome(outcome.GetError());
+  }
+}
+
+CreateWorkflowOutcomeCallable GlueClient::CreateWorkflowCallable(const CreateWorkflowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkflow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::CreateWorkflowAsync(const CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkflowAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::CreateWorkflowAsyncHelper(const CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateWorkflow(request), context);
+}
+
 DeleteClassifierOutcome GlueClient::DeleteClassifier(const DeleteClassifierRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1459,6 +1540,41 @@ void GlueClient::DeleteUserDefinedFunctionAsync(const DeleteUserDefinedFunctionR
 void GlueClient::DeleteUserDefinedFunctionAsyncHelper(const DeleteUserDefinedFunctionRequest& request, const DeleteUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteUserDefinedFunction(request), context);
+}
+
+DeleteWorkflowOutcome GlueClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteWorkflowOutcome(DeleteWorkflowResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteWorkflowOutcome(outcome.GetError());
+  }
+}
+
+DeleteWorkflowOutcomeCallable GlueClient::DeleteWorkflowCallable(const DeleteWorkflowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkflow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::DeleteWorkflowAsync(const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorkflowAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::DeleteWorkflowAsyncHelper(const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteWorkflow(request), context);
 }
 
 GetCatalogImportStatusOutcome GlueClient::GetCatalogImportStatus(const GetCatalogImportStatusRequest& request) const
@@ -2651,6 +2767,146 @@ void GlueClient::GetUserDefinedFunctionsAsyncHelper(const GetUserDefinedFunction
   handler(this, request, GetUserDefinedFunctions(request), context);
 }
 
+GetWorkflowOutcome GlueClient::GetWorkflow(const GetWorkflowRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetWorkflowOutcome(GetWorkflowResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetWorkflowOutcome(outcome.GetError());
+  }
+}
+
+GetWorkflowOutcomeCallable GlueClient::GetWorkflowCallable(const GetWorkflowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkflow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetWorkflowAsync(const GetWorkflowRequest& request, const GetWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetWorkflowAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetWorkflowAsyncHelper(const GetWorkflowRequest& request, const GetWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetWorkflow(request), context);
+}
+
+GetWorkflowRunOutcome GlueClient::GetWorkflowRun(const GetWorkflowRunRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetWorkflowRunOutcome(GetWorkflowRunResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetWorkflowRunOutcome(outcome.GetError());
+  }
+}
+
+GetWorkflowRunOutcomeCallable GlueClient::GetWorkflowRunCallable(const GetWorkflowRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetWorkflowRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkflowRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetWorkflowRunAsync(const GetWorkflowRunRequest& request, const GetWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetWorkflowRunAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetWorkflowRunAsyncHelper(const GetWorkflowRunRequest& request, const GetWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetWorkflowRun(request), context);
+}
+
+GetWorkflowRunPropertiesOutcome GlueClient::GetWorkflowRunProperties(const GetWorkflowRunPropertiesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetWorkflowRunPropertiesOutcome(GetWorkflowRunPropertiesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetWorkflowRunPropertiesOutcome(outcome.GetError());
+  }
+}
+
+GetWorkflowRunPropertiesOutcomeCallable GlueClient::GetWorkflowRunPropertiesCallable(const GetWorkflowRunPropertiesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetWorkflowRunPropertiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkflowRunProperties(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetWorkflowRunPropertiesAsync(const GetWorkflowRunPropertiesRequest& request, const GetWorkflowRunPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetWorkflowRunPropertiesAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetWorkflowRunPropertiesAsyncHelper(const GetWorkflowRunPropertiesRequest& request, const GetWorkflowRunPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetWorkflowRunProperties(request), context);
+}
+
+GetWorkflowRunsOutcome GlueClient::GetWorkflowRuns(const GetWorkflowRunsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetWorkflowRunsOutcome(GetWorkflowRunsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetWorkflowRunsOutcome(outcome.GetError());
+  }
+}
+
+GetWorkflowRunsOutcomeCallable GlueClient::GetWorkflowRunsCallable(const GetWorkflowRunsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetWorkflowRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkflowRuns(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetWorkflowRunsAsync(const GetWorkflowRunsRequest& request, const GetWorkflowRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetWorkflowRunsAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetWorkflowRunsAsyncHelper(const GetWorkflowRunsRequest& request, const GetWorkflowRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetWorkflowRuns(request), context);
+}
+
 ImportCatalogToGlueOutcome GlueClient::ImportCatalogToGlue(const ImportCatalogToGlueRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2826,6 +3082,41 @@ void GlueClient::ListTriggersAsyncHelper(const ListTriggersRequest& request, con
   handler(this, request, ListTriggers(request), context);
 }
 
+ListWorkflowsOutcome GlueClient::ListWorkflows(const ListWorkflowsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListWorkflowsOutcome(ListWorkflowsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListWorkflowsOutcome(outcome.GetError());
+  }
+}
+
+ListWorkflowsOutcomeCallable GlueClient::ListWorkflowsCallable(const ListWorkflowsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListWorkflowsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkflows(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::ListWorkflowsAsync(const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListWorkflowsAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::ListWorkflowsAsyncHelper(const ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListWorkflows(request), context);
+}
+
 PutDataCatalogEncryptionSettingsOutcome GlueClient::PutDataCatalogEncryptionSettings(const PutDataCatalogEncryptionSettingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2894,6 +3185,41 @@ void GlueClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request,
 void GlueClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutResourcePolicy(request), context);
+}
+
+PutWorkflowRunPropertiesOutcome GlueClient::PutWorkflowRunProperties(const PutWorkflowRunPropertiesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutWorkflowRunPropertiesOutcome(PutWorkflowRunPropertiesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutWorkflowRunPropertiesOutcome(outcome.GetError());
+  }
+}
+
+PutWorkflowRunPropertiesOutcomeCallable GlueClient::PutWorkflowRunPropertiesCallable(const PutWorkflowRunPropertiesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutWorkflowRunPropertiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutWorkflowRunProperties(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::PutWorkflowRunPropertiesAsync(const PutWorkflowRunPropertiesRequest& request, const PutWorkflowRunPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutWorkflowRunPropertiesAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::PutWorkflowRunPropertiesAsyncHelper(const PutWorkflowRunPropertiesRequest& request, const PutWorkflowRunPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutWorkflowRunProperties(request), context);
 }
 
 ResetJobBookmarkOutcome GlueClient::ResetJobBookmark(const ResetJobBookmarkRequest& request) const
@@ -3069,6 +3395,41 @@ void GlueClient::StartTriggerAsync(const StartTriggerRequest& request, const Sta
 void GlueClient::StartTriggerAsyncHelper(const StartTriggerRequest& request, const StartTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartTrigger(request), context);
+}
+
+StartWorkflowRunOutcome GlueClient::StartWorkflowRun(const StartWorkflowRunRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartWorkflowRunOutcome(StartWorkflowRunResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartWorkflowRunOutcome(outcome.GetError());
+  }
+}
+
+StartWorkflowRunOutcomeCallable GlueClient::StartWorkflowRunCallable(const StartWorkflowRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartWorkflowRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartWorkflowRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::StartWorkflowRunAsync(const StartWorkflowRunRequest& request, const StartWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartWorkflowRunAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::StartWorkflowRunAsyncHelper(const StartWorkflowRunRequest& request, const StartWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartWorkflowRun(request), context);
 }
 
 StopCrawlerOutcome GlueClient::StopCrawler(const StopCrawlerRequest& request) const
@@ -3629,5 +3990,40 @@ void GlueClient::UpdateUserDefinedFunctionAsync(const UpdateUserDefinedFunctionR
 void GlueClient::UpdateUserDefinedFunctionAsyncHelper(const UpdateUserDefinedFunctionRequest& request, const UpdateUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateUserDefinedFunction(request), context);
+}
+
+UpdateWorkflowOutcome GlueClient::UpdateWorkflow(const UpdateWorkflowRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateWorkflowOutcome(UpdateWorkflowResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateWorkflowOutcome(outcome.GetError());
+  }
+}
+
+UpdateWorkflowOutcomeCallable GlueClient::UpdateWorkflowCallable(const UpdateWorkflowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkflowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkflow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::UpdateWorkflowAsync(const UpdateWorkflowRequest& request, const UpdateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateWorkflowAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::UpdateWorkflowAsyncHelper(const UpdateWorkflowRequest& request, const UpdateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateWorkflow(request), context);
 }
 

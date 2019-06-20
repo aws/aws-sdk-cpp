@@ -33,6 +33,7 @@ namespace Aws
         static const int issue_HASH = HashingUtils::HashString("issue");
         static const int accountNotification_HASH = HashingUtils::HashString("accountNotification");
         static const int scheduledChange_HASH = HashingUtils::HashString("scheduledChange");
+        static const int investigation_HASH = HashingUtils::HashString("investigation");
 
 
         EventTypeCategory GetEventTypeCategoryForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == scheduledChange_HASH)
           {
             return EventTypeCategory::scheduledChange;
+          }
+          else if (hashCode == investigation_HASH)
+          {
+            return EventTypeCategory::investigation;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "accountNotification";
           case EventTypeCategory::scheduledChange:
             return "scheduledChange";
+          case EventTypeCategory::investigation:
+            return "investigation";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

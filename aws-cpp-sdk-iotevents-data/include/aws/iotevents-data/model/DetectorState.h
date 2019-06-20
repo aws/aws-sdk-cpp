@@ -93,42 +93,42 @@ namespace Model
 
 
     /**
-     * <p>The current state of the detector's variables.</p>
+     * <p>The current values of the detector's variables.</p>
      */
     inline const Aws::Vector<Variable>& GetVariables() const{ return m_variables; }
 
     /**
-     * <p>The current state of the detector's variables.</p>
+     * <p>The current values of the detector's variables.</p>
      */
     inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
 
     /**
-     * <p>The current state of the detector's variables.</p>
+     * <p>The current values of the detector's variables.</p>
      */
     inline void SetVariables(const Aws::Vector<Variable>& value) { m_variablesHasBeenSet = true; m_variables = value; }
 
     /**
-     * <p>The current state of the detector's variables.</p>
+     * <p>The current values of the detector's variables.</p>
      */
     inline void SetVariables(Aws::Vector<Variable>&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
 
     /**
-     * <p>The current state of the detector's variables.</p>
+     * <p>The current values of the detector's variables.</p>
      */
     inline DetectorState& WithVariables(const Aws::Vector<Variable>& value) { SetVariables(value); return *this;}
 
     /**
-     * <p>The current state of the detector's variables.</p>
+     * <p>The current values of the detector's variables.</p>
      */
     inline DetectorState& WithVariables(Aws::Vector<Variable>&& value) { SetVariables(std::move(value)); return *this;}
 
     /**
-     * <p>The current state of the detector's variables.</p>
+     * <p>The current values of the detector's variables.</p>
      */
     inline DetectorState& AddVariables(const Variable& value) { m_variablesHasBeenSet = true; m_variables.push_back(value); return *this; }
 
     /**
-     * <p>The current state of the detector's variables.</p>
+     * <p>The current values of the detector's variables.</p>
      */
     inline DetectorState& AddVariables(Variable&& value) { m_variablesHasBeenSet = true; m_variables.push_back(std::move(value)); return *this; }
 

@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about the error which occured when attempting to update a
+   * <p>Information about the error that occured when attempting to update a
    * detector.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchUpdateDetectorErrorEntry">AWS
    * API Reference</a></p>
@@ -50,58 +50,58 @@ namespace Model
 
 
     /**
-     * <p>The "messageId" of the update request that caused the error. (The value of
-     * the <code>messageId</code> in the update request <code>Detector</code>
-     * object.)</p>
+     * <p>The <code>"messageId"</code> of the update request that caused the error.
+     * (The value of the <code>"messageId"</code> in the update request
+     * <code>"Detector"</code> object.)</p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
     /**
-     * <p>The "messageId" of the update request that caused the error. (The value of
-     * the <code>messageId</code> in the update request <code>Detector</code>
-     * object.)</p>
+     * <p>The <code>"messageId"</code> of the update request that caused the error.
+     * (The value of the <code>"messageId"</code> in the update request
+     * <code>"Detector"</code> object.)</p>
      */
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
 
     /**
-     * <p>The "messageId" of the update request that caused the error. (The value of
-     * the <code>messageId</code> in the update request <code>Detector</code>
-     * object.)</p>
+     * <p>The <code>"messageId"</code> of the update request that caused the error.
+     * (The value of the <code>"messageId"</code> in the update request
+     * <code>"Detector"</code> object.)</p>
      */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
 
     /**
-     * <p>The "messageId" of the update request that caused the error. (The value of
-     * the <code>messageId</code> in the update request <code>Detector</code>
-     * object.)</p>
+     * <p>The <code>"messageId"</code> of the update request that caused the error.
+     * (The value of the <code>"messageId"</code> in the update request
+     * <code>"Detector"</code> object.)</p>
      */
     inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
 
     /**
-     * <p>The "messageId" of the update request that caused the error. (The value of
-     * the <code>messageId</code> in the update request <code>Detector</code>
-     * object.)</p>
+     * <p>The <code>"messageId"</code> of the update request that caused the error.
+     * (The value of the <code>"messageId"</code> in the update request
+     * <code>"Detector"</code> object.)</p>
      */
     inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
 
     /**
-     * <p>The "messageId" of the update request that caused the error. (The value of
-     * the <code>messageId</code> in the update request <code>Detector</code>
-     * object.)</p>
+     * <p>The <code>"messageId"</code> of the update request that caused the error.
+     * (The value of the <code>"messageId"</code> in the update request
+     * <code>"Detector"</code> object.)</p>
      */
     inline BatchUpdateDetectorErrorEntry& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
     /**
-     * <p>The "messageId" of the update request that caused the error. (The value of
-     * the <code>messageId</code> in the update request <code>Detector</code>
-     * object.)</p>
+     * <p>The <code>"messageId"</code> of the update request that caused the error.
+     * (The value of the <code>"messageId"</code> in the update request
+     * <code>"Detector"</code> object.)</p>
      */
     inline BatchUpdateDetectorErrorEntry& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
 
     /**
-     * <p>The "messageId" of the update request that caused the error. (The value of
-     * the <code>messageId</code> in the update request <code>Detector</code>
-     * object.)</p>
+     * <p>The <code>"messageId"</code> of the update request that caused the error.
+     * (The value of the <code>"messageId"</code> in the update request
+     * <code>"Detector"</code> object.)</p>
      */
     inline BatchUpdateDetectorErrorEntry& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 

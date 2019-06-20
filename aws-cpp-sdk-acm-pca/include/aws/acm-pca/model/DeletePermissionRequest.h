@@ -47,7 +47,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Number (ARN) of the private CA that issued the
      * permissions. You can find the CA's ARN by calling the
-     * <a>ListCertificateAuthorities</a> operation. This must have the following form:
+     * <a>ListCertificateAuthorities</a> action. This must have the following form:
      * </p> <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
@@ -57,7 +57,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Number (ARN) of the private CA that issued the
      * permissions. You can find the CA's ARN by calling the
-     * <a>ListCertificateAuthorities</a> operation. This must have the following form:
+     * <a>ListCertificateAuthorities</a> action. This must have the following form:
      * </p> <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
@@ -67,7 +67,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Number (ARN) of the private CA that issued the
      * permissions. You can find the CA's ARN by calling the
-     * <a>ListCertificateAuthorities</a> operation. This must have the following form:
+     * <a>ListCertificateAuthorities</a> action. This must have the following form:
      * </p> <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
@@ -77,7 +77,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Number (ARN) of the private CA that issued the
      * permissions. You can find the CA's ARN by calling the
-     * <a>ListCertificateAuthorities</a> operation. This must have the following form:
+     * <a>ListCertificateAuthorities</a> action. This must have the following form:
      * </p> <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
@@ -87,7 +87,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Number (ARN) of the private CA that issued the
      * permissions. You can find the CA's ARN by calling the
-     * <a>ListCertificateAuthorities</a> operation. This must have the following form:
+     * <a>ListCertificateAuthorities</a> action. This must have the following form:
      * </p> <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
@@ -97,7 +97,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Number (ARN) of the private CA that issued the
      * permissions. You can find the CA's ARN by calling the
-     * <a>ListCertificateAuthorities</a> operation. This must have the following form:
+     * <a>ListCertificateAuthorities</a> action. This must have the following form:
      * </p> <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
@@ -107,7 +107,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Number (ARN) of the private CA that issued the
      * permissions. You can find the CA's ARN by calling the
-     * <a>ListCertificateAuthorities</a> operation. This must have the following form:
+     * <a>ListCertificateAuthorities</a> action. This must have the following form:
      * </p> <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
@@ -117,7 +117,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Number (ARN) of the private CA that issued the
      * permissions. You can find the CA's ARN by calling the
-     * <a>ListCertificateAuthorities</a> operation. This must have the following form:
+     * <a>ListCertificateAuthorities</a> action. This must have the following form:
      * </p> <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
@@ -183,42 +183,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account that calls this operation.</p>
+     * <p>The AWS account that calls this action.</p>
      */
     inline const Aws::String& GetSourceAccount() const{ return m_sourceAccount; }
 
     /**
-     * <p>The AWS account that calls this operation.</p>
+     * <p>The AWS account that calls this action.</p>
      */
     inline bool SourceAccountHasBeenSet() const { return m_sourceAccountHasBeenSet; }
 
     /**
-     * <p>The AWS account that calls this operation.</p>
+     * <p>The AWS account that calls this action.</p>
      */
     inline void SetSourceAccount(const Aws::String& value) { m_sourceAccountHasBeenSet = true; m_sourceAccount = value; }
 
     /**
-     * <p>The AWS account that calls this operation.</p>
+     * <p>The AWS account that calls this action.</p>
      */
     inline void SetSourceAccount(Aws::String&& value) { m_sourceAccountHasBeenSet = true; m_sourceAccount = std::move(value); }
 
     /**
-     * <p>The AWS account that calls this operation.</p>
+     * <p>The AWS account that calls this action.</p>
      */
     inline void SetSourceAccount(const char* value) { m_sourceAccountHasBeenSet = true; m_sourceAccount.assign(value); }
 
     /**
-     * <p>The AWS account that calls this operation.</p>
+     * <p>The AWS account that calls this action.</p>
      */
     inline DeletePermissionRequest& WithSourceAccount(const Aws::String& value) { SetSourceAccount(value); return *this;}
 
     /**
-     * <p>The AWS account that calls this operation.</p>
+     * <p>The AWS account that calls this action.</p>
      */
     inline DeletePermissionRequest& WithSourceAccount(Aws::String&& value) { SetSourceAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account that calls this operation.</p>
+     * <p>The AWS account that calls this action.</p>
      */
     inline DeletePermissionRequest& WithSourceAccount(const char* value) { SetSourceAccount(value); return *this;}
 

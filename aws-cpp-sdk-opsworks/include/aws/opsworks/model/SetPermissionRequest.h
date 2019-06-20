@@ -175,7 +175,7 @@ namespace Model
      * <code>deploy</code> </p> </li> <li> <p> <code>manage</code> </p> </li> <li> <p>
      * <code>iam_only</code> </p> </li> </ul> <p>For more information about the
      * permissions associated with these levels, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      * User Permissions</a>.</p>
      */
     inline const Aws::String& GetLevel() const{ return m_level; }
@@ -187,7 +187,7 @@ namespace Model
      * <code>deploy</code> </p> </li> <li> <p> <code>manage</code> </p> </li> <li> <p>
      * <code>iam_only</code> </p> </li> </ul> <p>For more information about the
      * permissions associated with these levels, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      * User Permissions</a>.</p>
      */
     inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
@@ -199,7 +199,7 @@ namespace Model
      * <code>deploy</code> </p> </li> <li> <p> <code>manage</code> </p> </li> <li> <p>
      * <code>iam_only</code> </p> </li> </ul> <p>For more information about the
      * permissions associated with these levels, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      * User Permissions</a>.</p>
      */
     inline void SetLevel(const Aws::String& value) { m_levelHasBeenSet = true; m_level = value; }
@@ -211,7 +211,7 @@ namespace Model
      * <code>deploy</code> </p> </li> <li> <p> <code>manage</code> </p> </li> <li> <p>
      * <code>iam_only</code> </p> </li> </ul> <p>For more information about the
      * permissions associated with these levels, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      * User Permissions</a>.</p>
      */
     inline void SetLevel(Aws::String&& value) { m_levelHasBeenSet = true; m_level = std::move(value); }
@@ -223,7 +223,7 @@ namespace Model
      * <code>deploy</code> </p> </li> <li> <p> <code>manage</code> </p> </li> <li> <p>
      * <code>iam_only</code> </p> </li> </ul> <p>For more information about the
      * permissions associated with these levels, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      * User Permissions</a>.</p>
      */
     inline void SetLevel(const char* value) { m_levelHasBeenSet = true; m_level.assign(value); }
@@ -235,7 +235,7 @@ namespace Model
      * <code>deploy</code> </p> </li> <li> <p> <code>manage</code> </p> </li> <li> <p>
      * <code>iam_only</code> </p> </li> </ul> <p>For more information about the
      * permissions associated with these levels, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      * User Permissions</a>.</p>
      */
     inline SetPermissionRequest& WithLevel(const Aws::String& value) { SetLevel(value); return *this;}
@@ -247,7 +247,7 @@ namespace Model
      * <code>deploy</code> </p> </li> <li> <p> <code>manage</code> </p> </li> <li> <p>
      * <code>iam_only</code> </p> </li> </ul> <p>For more information about the
      * permissions associated with these levels, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      * User Permissions</a>.</p>
      */
     inline SetPermissionRequest& WithLevel(Aws::String&& value) { SetLevel(std::move(value)); return *this;}
@@ -259,7 +259,7 @@ namespace Model
      * <code>deploy</code> </p> </li> <li> <p> <code>manage</code> </p> </li> <li> <p>
      * <code>iam_only</code> </p> </li> </ul> <p>For more information about the
      * permissions associated with these levels, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      * User Permissions</a>.</p>
      */
     inline SetPermissionRequest& WithLevel(const char* value) { SetLevel(value); return *this;}

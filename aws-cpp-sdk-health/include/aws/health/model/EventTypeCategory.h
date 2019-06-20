@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     issue,
     accountNotification,
-    scheduledChange
+    scheduledChange,
+    investigation
   };
 
 namespace EventTypeCategoryMapper

@@ -30,12 +30,11 @@ StartJobRunRequest::StartJobRunRequest() :
     m_timeoutHasBeenSet(false),
     m_maxCapacity(0.0),
     m_maxCapacityHasBeenSet(false),
-    m_workerType(WorkerType::NOT_SET),
+    m_securityConfigurationHasBeenSet(false),
+    m_notificationPropertyHasBeenSet(false),
     m_workerTypeHasBeenSet(false),
     m_numberOfWorkers(0),
-    m_numberOfWorkersHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false)
+    m_numberOfWorkersHasBeenSet(false)
 {
 }
 
@@ -78,17 +77,6 @@ Aws::String StartJobRunRequest::SerializePayload() const
 
   }
 
-  if(m_workerTypeHasBeenSet)
-  {
-   payload.WithString("WorkerType", WorkerTypeMapper::GetNameForWorkerType(m_workerType));
-  }
-
-  if(m_numberOfWorkersHasBeenSet)
-  {
-   payload.WithInteger("NumberOfWorkers", m_numberOfWorkers);
-
-  }
-
   if(m_securityConfigurationHasBeenSet)
   {
    payload.WithString("SecurityConfiguration", m_securityConfiguration);
@@ -98,6 +86,18 @@ Aws::String StartJobRunRequest::SerializePayload() const
   if(m_notificationPropertyHasBeenSet)
   {
    payload.WithObject("NotificationProperty", m_notificationProperty.Jsonize());
+
+  }
+
+  if(m_workerTypeHasBeenSet)
+  {
+   payload.WithString("WorkerType", m_workerType);
+
+  }
+
+  if(m_numberOfWorkersHasBeenSet)
+  {
+   payload.WithInteger("NumberOfWorkers", m_numberOfWorkers);
 
   }
 

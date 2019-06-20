@@ -254,49 +254,49 @@ namespace Model
 
     /**
      * <p>The value returned by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p>The value returned by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The value returned by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The value returned by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The value returned by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
      * <p>The value returned by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
      */
     inline Volume& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The value returned by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
      */
     inline Volume& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The value returned by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
      */
     inline Volume& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -406,56 +406,56 @@ namespace Model
 
     /**
      * <p>The AWS region. For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
      * <p>The AWS region. For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
      * <p>The AWS region. For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
      * <p>The AWS region. For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
      * <p>The AWS region. For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
      * <p>The AWS region. For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline Volume& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
      * <p>The AWS region. For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline Volume& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
      * <p>The AWS region. For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline Volume& WithRegion(const char* value) { SetRegion(value); return *this;}
@@ -463,56 +463,56 @@ namespace Model
 
     /**
      * <p>The volume Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
      * <p>The volume Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The volume Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The volume Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The volume Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
      * <p>The volume Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline Volume& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The volume Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline Volume& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The volume Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline Volume& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
@@ -520,7 +520,7 @@ namespace Model
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
      * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> - Magnetic.
      * Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
      * GiB.</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes
@@ -536,7 +536,7 @@ namespace Model
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
      * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> - Magnetic.
      * Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
      * GiB.</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes
@@ -552,7 +552,7 @@ namespace Model
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
      * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> - Magnetic.
      * Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
      * GiB.</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes
@@ -568,7 +568,7 @@ namespace Model
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
      * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> - Magnetic.
      * Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
      * GiB.</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes
@@ -584,7 +584,7 @@ namespace Model
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
      * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> - Magnetic.
      * Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
      * GiB.</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes
@@ -600,7 +600,7 @@ namespace Model
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
      * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> - Magnetic.
      * Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
      * GiB.</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes
@@ -616,7 +616,7 @@ namespace Model
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
      * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> - Magnetic.
      * Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
      * GiB.</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes
@@ -632,7 +632,7 @@ namespace Model
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
      * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> - Magnetic.
      * Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
      * GiB.</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes
@@ -671,7 +671,7 @@ namespace Model
     /**
      * <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a>.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
@@ -679,7 +679,7 @@ namespace Model
     /**
      * <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a>.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
@@ -687,7 +687,7 @@ namespace Model
     /**
      * <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a>.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
@@ -695,7 +695,7 @@ namespace Model
     /**
      * <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a>.</p>
      */
     inline Volume& WithEncrypted(bool value) { SetEncrypted(value); return *this;}

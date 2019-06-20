@@ -41,7 +41,7 @@ namespace Model
    * key pair that your private CA creates when it issues a certificate. It also
    * includes the signature algorithm that it uses when issuing certificates, and its
    * X.500 distinguished name. You must specify this information when you call the
-   * <a>CreateCertificateAuthority</a> operation. </p><p><h3>See Also:</h3>   <a
+   * <a>CreateCertificateAuthority</a> action. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CertificateAuthorityConfiguration">AWS
    * API Reference</a></p>
    */
@@ -56,37 +56,43 @@ namespace Model
 
     /**
      * <p>Type of the public key algorithm and size, in bits, of the key pair that your
-     * key pair creates when it issues a certificate.</p>
+     * CA creates when it issues a certificate. When you create a subordinate CA, you
+     * must use a key algorithm supported by the parent CA.</p>
      */
     inline const KeyAlgorithm& GetKeyAlgorithm() const{ return m_keyAlgorithm; }
 
     /**
      * <p>Type of the public key algorithm and size, in bits, of the key pair that your
-     * key pair creates when it issues a certificate.</p>
+     * CA creates when it issues a certificate. When you create a subordinate CA, you
+     * must use a key algorithm supported by the parent CA.</p>
      */
     inline bool KeyAlgorithmHasBeenSet() const { return m_keyAlgorithmHasBeenSet; }
 
     /**
      * <p>Type of the public key algorithm and size, in bits, of the key pair that your
-     * key pair creates when it issues a certificate.</p>
+     * CA creates when it issues a certificate. When you create a subordinate CA, you
+     * must use a key algorithm supported by the parent CA.</p>
      */
     inline void SetKeyAlgorithm(const KeyAlgorithm& value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = value; }
 
     /**
      * <p>Type of the public key algorithm and size, in bits, of the key pair that your
-     * key pair creates when it issues a certificate.</p>
+     * CA creates when it issues a certificate. When you create a subordinate CA, you
+     * must use a key algorithm supported by the parent CA.</p>
      */
     inline void SetKeyAlgorithm(KeyAlgorithm&& value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = std::move(value); }
 
     /**
      * <p>Type of the public key algorithm and size, in bits, of the key pair that your
-     * key pair creates when it issues a certificate.</p>
+     * CA creates when it issues a certificate. When you create a subordinate CA, you
+     * must use a key algorithm supported by the parent CA.</p>
      */
     inline CertificateAuthorityConfiguration& WithKeyAlgorithm(const KeyAlgorithm& value) { SetKeyAlgorithm(value); return *this;}
 
     /**
      * <p>Type of the public key algorithm and size, in bits, of the key pair that your
-     * key pair creates when it issues a certificate.</p>
+     * CA creates when it issues a certificate. When you create a subordinate CA, you
+     * must use a key algorithm supported by the parent CA.</p>
      */
     inline CertificateAuthorityConfiguration& WithKeyAlgorithm(KeyAlgorithm&& value) { SetKeyAlgorithm(std::move(value)); return *this;}
 

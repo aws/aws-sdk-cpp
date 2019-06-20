@@ -22,7 +22,6 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/glue/model/ConnectionsList.h>
 #include <aws/glue/model/NotificationProperty.h>
-#include <aws/glue/model/WorkerType.h>
 #include <utility>
 
 namespace Aws
@@ -623,145 +622,6 @@ namespace Model
 
 
     /**
-     * <p>Specifies configuration properties of a job notification.</p>
-     */
-    inline const NotificationProperty& GetNotificationProperty() const{ return m_notificationProperty; }
-
-    /**
-     * <p>Specifies configuration properties of a job notification.</p>
-     */
-    inline bool NotificationPropertyHasBeenSet() const { return m_notificationPropertyHasBeenSet; }
-
-    /**
-     * <p>Specifies configuration properties of a job notification.</p>
-     */
-    inline void SetNotificationProperty(const NotificationProperty& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = value; }
-
-    /**
-     * <p>Specifies configuration properties of a job notification.</p>
-     */
-    inline void SetNotificationProperty(NotificationProperty&& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = std::move(value); }
-
-    /**
-     * <p>Specifies configuration properties of a job notification.</p>
-     */
-    inline CreateJobRequest& WithNotificationProperty(const NotificationProperty& value) { SetNotificationProperty(value); return *this;}
-
-    /**
-     * <p>Specifies configuration properties of a job notification.</p>
-     */
-    inline CreateJobRequest& WithNotificationProperty(NotificationProperty&& value) { SetNotificationProperty(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
-     * executor per worker. We recommend this worker type for memory-intensive
-     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
-     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
-     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
-     */
-    inline const WorkerType& GetWorkerType() const{ return m_workerType; }
-
-    /**
-     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
-     * executor per worker. We recommend this worker type for memory-intensive
-     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
-     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
-     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
-     */
-    inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }
-
-    /**
-     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
-     * executor per worker. We recommend this worker type for memory-intensive
-     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
-     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
-     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
-     */
-    inline void SetWorkerType(const WorkerType& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
-
-    /**
-     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
-     * executor per worker. We recommend this worker type for memory-intensive
-     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
-     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
-     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
-     */
-    inline void SetWorkerType(WorkerType&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
-
-    /**
-     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
-     * executor per worker. We recommend this worker type for memory-intensive
-     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
-     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
-     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
-     */
-    inline CreateJobRequest& WithWorkerType(const WorkerType& value) { SetWorkerType(value); return *this;}
-
-    /**
-     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
-     * executor per worker. We recommend this worker type for memory-intensive
-     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
-     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
-     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
-     */
-    inline CreateJobRequest& WithWorkerType(WorkerType&& value) { SetWorkerType(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The number of workers of a defined <code>workerType</code> that are allocated
-     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
-     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
-     */
-    inline int GetNumberOfWorkers() const{ return m_numberOfWorkers; }
-
-    /**
-     * <p>The number of workers of a defined <code>workerType</code> that are allocated
-     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
-     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
-     */
-    inline bool NumberOfWorkersHasBeenSet() const { return m_numberOfWorkersHasBeenSet; }
-
-    /**
-     * <p>The number of workers of a defined <code>workerType</code> that are allocated
-     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
-     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
-     */
-    inline void SetNumberOfWorkers(int value) { m_numberOfWorkersHasBeenSet = true; m_numberOfWorkers = value; }
-
-    /**
-     * <p>The number of workers of a defined <code>workerType</code> that are allocated
-     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
-     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
-     */
-    inline CreateJobRequest& WithNumberOfWorkers(int value) { SetNumberOfWorkers(value); return *this;}
-
-
-    /**
      * <p>The name of the <code>SecurityConfiguration</code> structure to be used with
      * this job.</p>
      */
@@ -914,6 +774,171 @@ namespace Model
      */
     inline CreateJobRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies configuration properties of a job notification.</p>
+     */
+    inline const NotificationProperty& GetNotificationProperty() const{ return m_notificationProperty; }
+
+    /**
+     * <p>Specifies configuration properties of a job notification.</p>
+     */
+    inline bool NotificationPropertyHasBeenSet() const { return m_notificationPropertyHasBeenSet; }
+
+    /**
+     * <p>Specifies configuration properties of a job notification.</p>
+     */
+    inline void SetNotificationProperty(const NotificationProperty& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = value; }
+
+    /**
+     * <p>Specifies configuration properties of a job notification.</p>
+     */
+    inline void SetNotificationProperty(NotificationProperty&& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = std::move(value); }
+
+    /**
+     * <p>Specifies configuration properties of a job notification.</p>
+     */
+    inline CreateJobRequest& WithNotificationProperty(const NotificationProperty& value) { SetNotificationProperty(value); return *this;}
+
+    /**
+     * <p>Specifies configuration properties of a job notification.</p>
+     */
+    inline CreateJobRequest& WithNotificationProperty(NotificationProperty&& value) { SetNotificationProperty(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The number of workers of a defined <code>workerType</code> that are allocated
+     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
+     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+     */
+    inline int GetNumberOfWorkers() const{ return m_numberOfWorkers; }
+
+    /**
+     * <p>The number of workers of a defined <code>workerType</code> that are allocated
+     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
+     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+     */
+    inline bool NumberOfWorkersHasBeenSet() const { return m_numberOfWorkersHasBeenSet; }
+
+    /**
+     * <p>The number of workers of a defined <code>workerType</code> that are allocated
+     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
+     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+     */
+    inline void SetNumberOfWorkers(int value) { m_numberOfWorkersHasBeenSet = true; m_numberOfWorkers = value; }
+
+    /**
+     * <p>The number of workers of a defined <code>workerType</code> that are allocated
+     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
+     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+     */
+    inline CreateJobRequest& WithNumberOfWorkers(int value) { SetNumberOfWorkers(value); return *this;}
+
+
+    /**
+     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
+     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
+     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for memory-intensive
+     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
+     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
+     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
+     */
+    inline const Aws::String& GetWorkerType() const{ return m_workerType; }
+
+    /**
+     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
+     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
+     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for memory-intensive
+     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
+     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
+     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
+     */
+    inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }
+
+    /**
+     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
+     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
+     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for memory-intensive
+     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
+     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
+     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
+     */
+    inline void SetWorkerType(const Aws::String& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
+
+    /**
+     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
+     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
+     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for memory-intensive
+     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
+     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
+     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
+     */
+    inline void SetWorkerType(Aws::String&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
+
+    /**
+     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
+     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
+     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for memory-intensive
+     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
+     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
+     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
+     */
+    inline void SetWorkerType(const char* value) { m_workerTypeHasBeenSet = true; m_workerType.assign(value); }
+
+    /**
+     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
+     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
+     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for memory-intensive
+     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
+     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
+     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
+     */
+    inline CreateJobRequest& WithWorkerType(const Aws::String& value) { SetWorkerType(value); return *this;}
+
+    /**
+     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
+     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
+     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for memory-intensive
+     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
+     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
+     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
+     */
+    inline CreateJobRequest& WithWorkerType(Aws::String&& value) { SetWorkerType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
+     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
+     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for memory-intensive
+     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
+     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
+     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
+     */
+    inline CreateJobRequest& WithWorkerType(const char* value) { SetWorkerType(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -949,20 +974,20 @@ namespace Model
     double m_maxCapacity;
     bool m_maxCapacityHasBeenSet;
 
-    NotificationProperty m_notificationProperty;
-    bool m_notificationPropertyHasBeenSet;
-
-    WorkerType m_workerType;
-    bool m_workerTypeHasBeenSet;
-
-    int m_numberOfWorkers;
-    bool m_numberOfWorkersHasBeenSet;
-
     Aws::String m_securityConfiguration;
     bool m_securityConfigurationHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    NotificationProperty m_notificationProperty;
+    bool m_notificationPropertyHasBeenSet;
+
+    int m_numberOfWorkers;
+    bool m_numberOfWorkersHasBeenSet;
+
+    Aws::String m_workerType;
+    bool m_workerTypeHasBeenSet;
   };
 
 } // namespace Model

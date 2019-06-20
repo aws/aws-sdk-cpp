@@ -30,6 +30,7 @@ namespace Model
 
 Trigger::Trigger() : 
     m_nameHasBeenSet(false),
+    m_workflowNameHasBeenSet(false),
     m_idHasBeenSet(false),
     m_type(TriggerType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -44,6 +45,7 @@ Trigger::Trigger() :
 
 Trigger::Trigger(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
+    m_workflowNameHasBeenSet(false),
     m_idHasBeenSet(false),
     m_type(TriggerType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -64,6 +66,13 @@ Trigger& Trigger::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WorkflowName"))
+  {
+    m_workflowName = jsonValue.GetString("WorkflowName");
+
+    m_workflowNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Id"))
@@ -128,6 +137,12 @@ JsonValue Trigger::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_workflowNameHasBeenSet)
+  {
+   payload.WithString("WorkflowName", m_workflowName);
 
   }
 

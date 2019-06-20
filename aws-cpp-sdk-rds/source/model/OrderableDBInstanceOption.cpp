@@ -66,7 +66,9 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_maxIopsPerGib(0.0),
     m_maxIopsPerGibHasBeenSet(false),
     m_availableProcessorFeaturesHasBeenSet(false),
-    m_supportedEngineModesHasBeenSet(false)
+    m_supportedEngineModesHasBeenSet(false),
+    m_supportsStorageAutoscaling(false),
+    m_supportsStorageAutoscalingHasBeenSet(false)
 {
 }
 
@@ -106,7 +108,9 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_maxIopsPerGib(0.0),
     m_maxIopsPerGibHasBeenSet(false),
     m_availableProcessorFeaturesHasBeenSet(false),
-    m_supportedEngineModesHasBeenSet(false)
+    m_supportedEngineModesHasBeenSet(false),
+    m_supportsStorageAutoscaling(false),
+    m_supportsStorageAutoscalingHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -267,6 +271,12 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
 
       m_supportedEngineModesHasBeenSet = true;
     }
+    XmlNode supportsStorageAutoscalingNode = resultNode.FirstChild("SupportsStorageAutoscaling");
+    if(!supportsStorageAutoscalingNode.IsNull())
+    {
+      m_supportsStorageAutoscaling = StringUtils::ConvertToBool(StringUtils::Trim(supportsStorageAutoscalingNode.GetText().c_str()).c_str());
+      m_supportsStorageAutoscalingHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -400,6 +410,11 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       }
   }
 
+  if(m_supportsStorageAutoscalingHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsStorageAutoscaling=" << std::boolalpha << m_supportsStorageAutoscaling << "&";
+  }
+
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -507,6 +522,10 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       {
         oStream << location << ".SupportedEngineModes.member." << supportedEngineModesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_supportsStorageAutoscalingHasBeenSet)
+  {
+      oStream << location << ".SupportsStorageAutoscaling=" << std::boolalpha << m_supportsStorageAutoscaling << "&";
   }
 }
 

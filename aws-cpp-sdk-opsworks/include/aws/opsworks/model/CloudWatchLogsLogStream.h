@@ -39,7 +39,7 @@ namespace Model
   /**
    * <p>Describes the Amazon CloudWatch logs configuration for a layer. For detailed
    * information about members of this data type, see the <a
-   * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
    * Logs Agent Reference</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloudWatchLogsLogStream">AWS
    * API Reference</a></p>
@@ -121,7 +121,7 @@ namespace Model
     /**
      * <p>Specifies how the time stamp is extracted from logs. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
      * Logs Agent Reference</a>.</p>
      */
     inline const Aws::String& GetDatetimeFormat() const{ return m_datetimeFormat; }
@@ -129,7 +129,7 @@ namespace Model
     /**
      * <p>Specifies how the time stamp is extracted from logs. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
      * Logs Agent Reference</a>.</p>
      */
     inline bool DatetimeFormatHasBeenSet() const { return m_datetimeFormatHasBeenSet; }
@@ -137,7 +137,7 @@ namespace Model
     /**
      * <p>Specifies how the time stamp is extracted from logs. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
      * Logs Agent Reference</a>.</p>
      */
     inline void SetDatetimeFormat(const Aws::String& value) { m_datetimeFormatHasBeenSet = true; m_datetimeFormat = value; }
@@ -145,7 +145,7 @@ namespace Model
     /**
      * <p>Specifies how the time stamp is extracted from logs. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
      * Logs Agent Reference</a>.</p>
      */
     inline void SetDatetimeFormat(Aws::String&& value) { m_datetimeFormatHasBeenSet = true; m_datetimeFormat = std::move(value); }
@@ -153,7 +153,7 @@ namespace Model
     /**
      * <p>Specifies how the time stamp is extracted from logs. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
      * Logs Agent Reference</a>.</p>
      */
     inline void SetDatetimeFormat(const char* value) { m_datetimeFormatHasBeenSet = true; m_datetimeFormat.assign(value); }
@@ -161,7 +161,7 @@ namespace Model
     /**
      * <p>Specifies how the time stamp is extracted from logs. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
      * Logs Agent Reference</a>.</p>
      */
     inline CloudWatchLogsLogStream& WithDatetimeFormat(const Aws::String& value) { SetDatetimeFormat(value); return *this;}
@@ -169,7 +169,7 @@ namespace Model
     /**
      * <p>Specifies how the time stamp is extracted from logs. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
      * Logs Agent Reference</a>.</p>
      */
     inline CloudWatchLogsLogStream& WithDatetimeFormat(Aws::String&& value) { SetDatetimeFormat(std::move(value)); return *this;}
@@ -177,7 +177,7 @@ namespace Model
     /**
      * <p>Specifies how the time stamp is extracted from logs. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
      * Logs Agent Reference</a>.</p>
      */
     inline CloudWatchLogsLogStream& WithDatetimeFormat(const char* value) { SetDatetimeFormat(value); return *this;}

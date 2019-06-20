@@ -44,50 +44,50 @@ namespace Model
 
 
     /**
-     * <p>The list of messages to send. Each message has format: <code>'{ "messageId":
-     * "string", "inputName": "string", "payload": "string"}'</code>.</p>
+     * <p>The list of messages to send. Each message has the following format: <code>'{
+     * "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
      */
     inline const Aws::Vector<Message>& GetMessages() const{ return m_messages; }
 
     /**
-     * <p>The list of messages to send. Each message has format: <code>'{ "messageId":
-     * "string", "inputName": "string", "payload": "string"}'</code>.</p>
+     * <p>The list of messages to send. Each message has the following format: <code>'{
+     * "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
      */
     inline bool MessagesHasBeenSet() const { return m_messagesHasBeenSet; }
 
     /**
-     * <p>The list of messages to send. Each message has format: <code>'{ "messageId":
-     * "string", "inputName": "string", "payload": "string"}'</code>.</p>
+     * <p>The list of messages to send. Each message has the following format: <code>'{
+     * "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
      */
     inline void SetMessages(const Aws::Vector<Message>& value) { m_messagesHasBeenSet = true; m_messages = value; }
 
     /**
-     * <p>The list of messages to send. Each message has format: <code>'{ "messageId":
-     * "string", "inputName": "string", "payload": "string"}'</code>.</p>
+     * <p>The list of messages to send. Each message has the following format: <code>'{
+     * "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
      */
     inline void SetMessages(Aws::Vector<Message>&& value) { m_messagesHasBeenSet = true; m_messages = std::move(value); }
 
     /**
-     * <p>The list of messages to send. Each message has format: <code>'{ "messageId":
-     * "string", "inputName": "string", "payload": "string"}'</code>.</p>
+     * <p>The list of messages to send. Each message has the following format: <code>'{
+     * "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
      */
     inline BatchPutMessageRequest& WithMessages(const Aws::Vector<Message>& value) { SetMessages(value); return *this;}
 
     /**
-     * <p>The list of messages to send. Each message has format: <code>'{ "messageId":
-     * "string", "inputName": "string", "payload": "string"}'</code>.</p>
+     * <p>The list of messages to send. Each message has the following format: <code>'{
+     * "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
      */
     inline BatchPutMessageRequest& WithMessages(Aws::Vector<Message>&& value) { SetMessages(std::move(value)); return *this;}
 
     /**
-     * <p>The list of messages to send. Each message has format: <code>'{ "messageId":
-     * "string", "inputName": "string", "payload": "string"}'</code>.</p>
+     * <p>The list of messages to send. Each message has the following format: <code>'{
+     * "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
      */
     inline BatchPutMessageRequest& AddMessages(const Message& value) { m_messagesHasBeenSet = true; m_messages.push_back(value); return *this; }
 
     /**
-     * <p>The list of messages to send. Each message has format: <code>'{ "messageId":
-     * "string", "inputName": "string", "payload": "string"}'</code>.</p>
+     * <p>The list of messages to send. Each message has the following format: <code>'{
+     * "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
      */
     inline BatchPutMessageRequest& AddMessages(Message&& value) { m_messagesHasBeenSet = true; m_messages.push_back(std::move(value)); return *this; }
 

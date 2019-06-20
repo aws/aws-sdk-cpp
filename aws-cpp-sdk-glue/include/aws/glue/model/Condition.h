@@ -18,6 +18,7 @@
 #include <aws/glue/model/LogicalOperator.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/JobRunState.h>
+#include <aws/glue/model/CrawlState.h>
 #include <utility>
 
 namespace Aws
@@ -171,6 +172,78 @@ namespace Model
      */
     inline Condition& WithState(JobRunState&& value) { SetState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the crawler to which this condition applies.</p>
+     */
+    inline const Aws::String& GetCrawlerName() const{ return m_crawlerName; }
+
+    /**
+     * <p>The name of the crawler to which this condition applies.</p>
+     */
+    inline bool CrawlerNameHasBeenSet() const { return m_crawlerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the crawler to which this condition applies.</p>
+     */
+    inline void SetCrawlerName(const Aws::String& value) { m_crawlerNameHasBeenSet = true; m_crawlerName = value; }
+
+    /**
+     * <p>The name of the crawler to which this condition applies.</p>
+     */
+    inline void SetCrawlerName(Aws::String&& value) { m_crawlerNameHasBeenSet = true; m_crawlerName = std::move(value); }
+
+    /**
+     * <p>The name of the crawler to which this condition applies.</p>
+     */
+    inline void SetCrawlerName(const char* value) { m_crawlerNameHasBeenSet = true; m_crawlerName.assign(value); }
+
+    /**
+     * <p>The name of the crawler to which this condition applies.</p>
+     */
+    inline Condition& WithCrawlerName(const Aws::String& value) { SetCrawlerName(value); return *this;}
+
+    /**
+     * <p>The name of the crawler to which this condition applies.</p>
+     */
+    inline Condition& WithCrawlerName(Aws::String&& value) { SetCrawlerName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the crawler to which this condition applies.</p>
+     */
+    inline Condition& WithCrawlerName(const char* value) { SetCrawlerName(value); return *this;}
+
+
+    /**
+     * <p>The state of the crawler to which this condition applies.</p>
+     */
+    inline const CrawlState& GetCrawlState() const{ return m_crawlState; }
+
+    /**
+     * <p>The state of the crawler to which this condition applies.</p>
+     */
+    inline bool CrawlStateHasBeenSet() const { return m_crawlStateHasBeenSet; }
+
+    /**
+     * <p>The state of the crawler to which this condition applies.</p>
+     */
+    inline void SetCrawlState(const CrawlState& value) { m_crawlStateHasBeenSet = true; m_crawlState = value; }
+
+    /**
+     * <p>The state of the crawler to which this condition applies.</p>
+     */
+    inline void SetCrawlState(CrawlState&& value) { m_crawlStateHasBeenSet = true; m_crawlState = std::move(value); }
+
+    /**
+     * <p>The state of the crawler to which this condition applies.</p>
+     */
+    inline Condition& WithCrawlState(const CrawlState& value) { SetCrawlState(value); return *this;}
+
+    /**
+     * <p>The state of the crawler to which this condition applies.</p>
+     */
+    inline Condition& WithCrawlState(CrawlState&& value) { SetCrawlState(std::move(value)); return *this;}
+
   private:
 
     LogicalOperator m_logicalOperator;
@@ -181,6 +254,12 @@ namespace Model
 
     JobRunState m_state;
     bool m_stateHasBeenSet;
+
+    Aws::String m_crawlerName;
+    bool m_crawlerNameHasBeenSet;
+
+    CrawlState m_crawlState;
+    bool m_crawlStateHasBeenSet;
   };
 
 } // namespace Model

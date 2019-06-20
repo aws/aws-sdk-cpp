@@ -2919,6 +2919,31 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
+
+    /**
+     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
+     * the DB instance.</p>
+     */
+    inline int GetMaxAllocatedStorage() const{ return m_maxAllocatedStorage; }
+
+    /**
+     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
+     * the DB instance.</p>
+     */
+    inline bool MaxAllocatedStorageHasBeenSet() const { return m_maxAllocatedStorageHasBeenSet; }
+
+    /**
+     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
+     * the DB instance.</p>
+     */
+    inline void SetMaxAllocatedStorage(int value) { m_maxAllocatedStorageHasBeenSet = true; m_maxAllocatedStorage = value; }
+
+    /**
+     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
+     * the DB instance.</p>
+     */
+    inline ModifyDBInstanceRequest& WithMaxAllocatedStorage(int value) { SetMaxAllocatedStorage(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -3040,6 +3065,9 @@ namespace Model
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet;
+
+    int m_maxAllocatedStorage;
+    bool m_maxAllocatedStorageHasBeenSet;
   };
 
 } // namespace Model

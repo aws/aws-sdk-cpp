@@ -37,7 +37,7 @@ namespace Model
    * <p>Length of time for which the certificate issued by your private certificate
    * authority (CA), or by the private CA itself, is valid in days, months, or years.
    * You can issue a certificate by calling the <a>IssueCertificate</a>
-   * operation.</p><p><h3>See Also:</h3>   <a
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/Validity">AWS
    * API Reference</a></p>
    */

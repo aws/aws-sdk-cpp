@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 CreateTriggerRequest::CreateTriggerRequest() : 
     m_nameHasBeenSet(false),
+    m_workflowNameHasBeenSet(false),
     m_type(TriggerType::NOT_SET),
     m_typeHasBeenSet(false),
     m_scheduleHasBeenSet(false),
@@ -43,6 +44,12 @@ Aws::String CreateTriggerRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_workflowNameHasBeenSet)
+  {
+   payload.WithString("WorkflowName", m_workflowName);
 
   }
 

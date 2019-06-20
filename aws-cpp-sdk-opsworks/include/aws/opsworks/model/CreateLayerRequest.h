@@ -184,7 +184,7 @@ namespace Model
      * installed. It can have a maximum of 200 characters, which are limited to the
      * alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short
      * names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a>.</p>
      */
     inline const Aws::String& GetShortname() const{ return m_shortname; }
@@ -196,7 +196,7 @@ namespace Model
      * installed. It can have a maximum of 200 characters, which are limited to the
      * alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short
      * names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a>.</p>
      */
     inline bool ShortnameHasBeenSet() const { return m_shortnameHasBeenSet; }
@@ -208,7 +208,7 @@ namespace Model
      * installed. It can have a maximum of 200 characters, which are limited to the
      * alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short
      * names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a>.</p>
      */
     inline void SetShortname(const Aws::String& value) { m_shortnameHasBeenSet = true; m_shortname = value; }
@@ -220,7 +220,7 @@ namespace Model
      * installed. It can have a maximum of 200 characters, which are limited to the
      * alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short
      * names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a>.</p>
      */
     inline void SetShortname(Aws::String&& value) { m_shortnameHasBeenSet = true; m_shortname = std::move(value); }
@@ -232,7 +232,7 @@ namespace Model
      * installed. It can have a maximum of 200 characters, which are limited to the
      * alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short
      * names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a>.</p>
      */
     inline void SetShortname(const char* value) { m_shortnameHasBeenSet = true; m_shortname.assign(value); }
@@ -244,7 +244,7 @@ namespace Model
      * installed. It can have a maximum of 200 characters, which are limited to the
      * alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short
      * names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a>.</p>
      */
     inline CreateLayerRequest& WithShortname(const Aws::String& value) { SetShortname(value); return *this;}
@@ -256,7 +256,7 @@ namespace Model
      * installed. It can have a maximum of 200 characters, which are limited to the
      * alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short
      * names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a>.</p>
      */
     inline CreateLayerRequest& WithShortname(Aws::String&& value) { SetShortname(std::move(value)); return *this;}
@@ -268,7 +268,7 @@ namespace Model
      * installed. It can have a maximum of 200 characters, which are limited to the
      * alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short
      * names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
      * Reference</a>.</p>
      */
     inline CreateLayerRequest& WithShortname(const char* value) { SetShortname(value); return *this;}
@@ -399,7 +399,7 @@ namespace Model
     /**
      * <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more
      * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline const Aws::String& GetCustomInstanceProfileArn() const{ return m_customInstanceProfileArn; }
@@ -407,7 +407,7 @@ namespace Model
     /**
      * <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more
      * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline bool CustomInstanceProfileArnHasBeenSet() const { return m_customInstanceProfileArnHasBeenSet; }
@@ -415,7 +415,7 @@ namespace Model
     /**
      * <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more
      * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline void SetCustomInstanceProfileArn(const Aws::String& value) { m_customInstanceProfileArnHasBeenSet = true; m_customInstanceProfileArn = value; }
@@ -423,7 +423,7 @@ namespace Model
     /**
      * <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more
      * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline void SetCustomInstanceProfileArn(Aws::String&& value) { m_customInstanceProfileArnHasBeenSet = true; m_customInstanceProfileArn = std::move(value); }
@@ -431,7 +431,7 @@ namespace Model
     /**
      * <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more
      * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline void SetCustomInstanceProfileArn(const char* value) { m_customInstanceProfileArnHasBeenSet = true; m_customInstanceProfileArn.assign(value); }
@@ -439,7 +439,7 @@ namespace Model
     /**
      * <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more
      * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline CreateLayerRequest& WithCustomInstanceProfileArn(const Aws::String& value) { SetCustomInstanceProfileArn(value); return *this;}
@@ -447,7 +447,7 @@ namespace Model
     /**
      * <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more
      * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline CreateLayerRequest& WithCustomInstanceProfileArn(Aws::String&& value) { SetCustomInstanceProfileArn(std::move(value)); return *this;}
@@ -455,7 +455,7 @@ namespace Model
     /**
      * <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more
      * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline CreateLayerRequest& WithCustomInstanceProfileArn(const char* value) { SetCustomInstanceProfileArn(value); return *this;}
@@ -465,7 +465,7 @@ namespace Model
      * <p>A JSON-formatted string containing custom stack configuration and deployment
      * attributes to be installed on the layer's instances. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
      * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
      * CLI. </p>
      */
@@ -475,7 +475,7 @@ namespace Model
      * <p>A JSON-formatted string containing custom stack configuration and deployment
      * attributes to be installed on the layer's instances. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
      * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
      * CLI. </p>
      */
@@ -485,7 +485,7 @@ namespace Model
      * <p>A JSON-formatted string containing custom stack configuration and deployment
      * attributes to be installed on the layer's instances. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
      * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
      * CLI. </p>
      */
@@ -495,7 +495,7 @@ namespace Model
      * <p>A JSON-formatted string containing custom stack configuration and deployment
      * attributes to be installed on the layer's instances. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
      * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
      * CLI. </p>
      */
@@ -505,7 +505,7 @@ namespace Model
      * <p>A JSON-formatted string containing custom stack configuration and deployment
      * attributes to be installed on the layer's instances. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
      * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
      * CLI. </p>
      */
@@ -515,7 +515,7 @@ namespace Model
      * <p>A JSON-formatted string containing custom stack configuration and deployment
      * attributes to be installed on the layer's instances. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
      * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
      * CLI. </p>
      */
@@ -525,7 +525,7 @@ namespace Model
      * <p>A JSON-formatted string containing custom stack configuration and deployment
      * attributes to be installed on the layer's instances. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
      * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
      * CLI. </p>
      */
@@ -535,7 +535,7 @@ namespace Model
      * <p>A JSON-formatted string containing custom stack configuration and deployment
      * attributes to be installed on the layer's instances. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
      * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
      * CLI. </p>
      */
@@ -715,36 +715,36 @@ namespace Model
 
     /**
      * <p>Whether to automatically assign an <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address</a> to the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      * to Edit a Layer</a>.</p>
      */
     inline bool GetAutoAssignElasticIps() const{ return m_autoAssignElasticIps; }
 
     /**
      * <p>Whether to automatically assign an <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address</a> to the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      * to Edit a Layer</a>.</p>
      */
     inline bool AutoAssignElasticIpsHasBeenSet() const { return m_autoAssignElasticIpsHasBeenSet; }
 
     /**
      * <p>Whether to automatically assign an <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address</a> to the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      * to Edit a Layer</a>.</p>
      */
     inline void SetAutoAssignElasticIps(bool value) { m_autoAssignElasticIpsHasBeenSet = true; m_autoAssignElasticIps = value; }
 
     /**
      * <p>Whether to automatically assign an <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address</a> to the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      * to Edit a Layer</a>.</p>
      */
     inline CreateLayerRequest& WithAutoAssignElasticIps(bool value) { SetAutoAssignElasticIps(value); return *this;}
@@ -753,7 +753,7 @@ namespace Model
     /**
      * <p>For stacks that are running in a VPC, whether to automatically assign a
      * public IP address to the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      * to Edit a Layer</a>.</p>
      */
     inline bool GetAutoAssignPublicIps() const{ return m_autoAssignPublicIps; }
@@ -761,7 +761,7 @@ namespace Model
     /**
      * <p>For stacks that are running in a VPC, whether to automatically assign a
      * public IP address to the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      * to Edit a Layer</a>.</p>
      */
     inline bool AutoAssignPublicIpsHasBeenSet() const { return m_autoAssignPublicIpsHasBeenSet; }
@@ -769,7 +769,7 @@ namespace Model
     /**
      * <p>For stacks that are running in a VPC, whether to automatically assign a
      * public IP address to the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      * to Edit a Layer</a>.</p>
      */
     inline void SetAutoAssignPublicIps(bool value) { m_autoAssignPublicIpsHasBeenSet = true; m_autoAssignPublicIps = value; }
@@ -777,7 +777,7 @@ namespace Model
     /**
      * <p>For stacks that are running in a VPC, whether to automatically assign a
      * public IP address to the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      * to Edit a Layer</a>.</p>
      */
     inline CreateLayerRequest& WithAutoAssignPublicIps(bool value) { SetAutoAssignPublicIps(value); return *this;}

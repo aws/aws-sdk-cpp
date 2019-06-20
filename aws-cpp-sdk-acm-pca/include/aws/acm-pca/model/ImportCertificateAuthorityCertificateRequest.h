@@ -111,87 +111,105 @@ namespace Model
 
 
     /**
-     * <p>The PEM-encoded certificate for your private CA. This must be signed by using
-     * your on-premises CA.</p>
+     * <p>The PEM-encoded certificate for a private CA. This may be a self-signed
+     * certificate in the case of a root CA, or it may be signed by another CA that you
+     * control.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetCertificate() const{ return m_certificate; }
 
     /**
-     * <p>The PEM-encoded certificate for your private CA. This must be signed by using
-     * your on-premises CA.</p>
+     * <p>The PEM-encoded certificate for a private CA. This may be a self-signed
+     * certificate in the case of a root CA, or it may be signed by another CA that you
+     * control.</p>
      */
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
 
     /**
-     * <p>The PEM-encoded certificate for your private CA. This must be signed by using
-     * your on-premises CA.</p>
+     * <p>The PEM-encoded certificate for a private CA. This may be a self-signed
+     * certificate in the case of a root CA, or it may be signed by another CA that you
+     * control.</p>
      */
     inline void SetCertificate(const Aws::Utils::ByteBuffer& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
     /**
-     * <p>The PEM-encoded certificate for your private CA. This must be signed by using
-     * your on-premises CA.</p>
+     * <p>The PEM-encoded certificate for a private CA. This may be a self-signed
+     * certificate in the case of a root CA, or it may be signed by another CA that you
+     * control.</p>
      */
     inline void SetCertificate(Aws::Utils::ByteBuffer&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
 
     /**
-     * <p>The PEM-encoded certificate for your private CA. This must be signed by using
-     * your on-premises CA.</p>
+     * <p>The PEM-encoded certificate for a private CA. This may be a self-signed
+     * certificate in the case of a root CA, or it may be signed by another CA that you
+     * control.</p>
      */
     inline ImportCertificateAuthorityCertificateRequest& WithCertificate(const Aws::Utils::ByteBuffer& value) { SetCertificate(value); return *this;}
 
     /**
-     * <p>The PEM-encoded certificate for your private CA. This must be signed by using
-     * your on-premises CA.</p>
+     * <p>The PEM-encoded certificate for a private CA. This may be a self-signed
+     * certificate in the case of a root CA, or it may be signed by another CA that you
+     * control.</p>
      */
     inline ImportCertificateAuthorityCertificateRequest& WithCertificate(Aws::Utils::ByteBuffer&& value) { SetCertificate(std::move(value)); return *this;}
 
 
     /**
      * <p>A PEM-encoded file that contains all of your certificates, other than the
-     * certificate you're importing, chaining up to your root CA. Your on-premises root
-     * certificate is the last in the chain, and each certificate in the chain signs
-     * the one preceding. </p>
+     * certificate you're importing, chaining up to your root CA. Your ACM Private
+     * CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding. </p> <p>This parameter must be
+     * supplied when you import a subordinate CA. When you import a root CA, there is
+     * no chain.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetCertificateChain() const{ return m_certificateChain; }
 
     /**
      * <p>A PEM-encoded file that contains all of your certificates, other than the
-     * certificate you're importing, chaining up to your root CA. Your on-premises root
-     * certificate is the last in the chain, and each certificate in the chain signs
-     * the one preceding. </p>
+     * certificate you're importing, chaining up to your root CA. Your ACM Private
+     * CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding. </p> <p>This parameter must be
+     * supplied when you import a subordinate CA. When you import a root CA, there is
+     * no chain.</p>
      */
     inline bool CertificateChainHasBeenSet() const { return m_certificateChainHasBeenSet; }
 
     /**
      * <p>A PEM-encoded file that contains all of your certificates, other than the
-     * certificate you're importing, chaining up to your root CA. Your on-premises root
-     * certificate is the last in the chain, and each certificate in the chain signs
-     * the one preceding. </p>
+     * certificate you're importing, chaining up to your root CA. Your ACM Private
+     * CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding. </p> <p>This parameter must be
+     * supplied when you import a subordinate CA. When you import a root CA, there is
+     * no chain.</p>
      */
     inline void SetCertificateChain(const Aws::Utils::ByteBuffer& value) { m_certificateChainHasBeenSet = true; m_certificateChain = value; }
 
     /**
      * <p>A PEM-encoded file that contains all of your certificates, other than the
-     * certificate you're importing, chaining up to your root CA. Your on-premises root
-     * certificate is the last in the chain, and each certificate in the chain signs
-     * the one preceding. </p>
+     * certificate you're importing, chaining up to your root CA. Your ACM Private
+     * CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding. </p> <p>This parameter must be
+     * supplied when you import a subordinate CA. When you import a root CA, there is
+     * no chain.</p>
      */
     inline void SetCertificateChain(Aws::Utils::ByteBuffer&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = std::move(value); }
 
     /**
      * <p>A PEM-encoded file that contains all of your certificates, other than the
-     * certificate you're importing, chaining up to your root CA. Your on-premises root
-     * certificate is the last in the chain, and each certificate in the chain signs
-     * the one preceding. </p>
+     * certificate you're importing, chaining up to your root CA. Your ACM Private
+     * CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding. </p> <p>This parameter must be
+     * supplied when you import a subordinate CA. When you import a root CA, there is
+     * no chain.</p>
      */
     inline ImportCertificateAuthorityCertificateRequest& WithCertificateChain(const Aws::Utils::ByteBuffer& value) { SetCertificateChain(value); return *this;}
 
     /**
      * <p>A PEM-encoded file that contains all of your certificates, other than the
-     * certificate you're importing, chaining up to your root CA. Your on-premises root
-     * certificate is the last in the chain, and each certificate in the chain signs
-     * the one preceding. </p>
+     * certificate you're importing, chaining up to your root CA. Your ACM Private
+     * CA-hosted or on-premises root certificate is the last in the chain, and each
+     * certificate in the chain signs the one preceding. </p> <p>This parameter must be
+     * supplied when you import a subordinate CA. When you import a root CA, there is
+     * no chain.</p>
      */
     inline ImportCertificateAuthorityCertificateRequest& WithCertificateChain(Aws::Utils::ByteBuffer&& value) { SetCertificateChain(std::move(value)); return *this;}
 

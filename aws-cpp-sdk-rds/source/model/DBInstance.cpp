@@ -102,7 +102,9 @@ DBInstance::DBInstance() :
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
     m_associatedRolesHasBeenSet(false),
-    m_listenerEndpointHasBeenSet(false)
+    m_listenerEndpointHasBeenSet(false),
+    m_maxAllocatedStorage(0),
+    m_maxAllocatedStorageHasBeenSet(false)
 {
 }
 
@@ -178,7 +180,9 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
     m_associatedRolesHasBeenSet(false),
-    m_listenerEndpointHasBeenSet(false)
+    m_listenerEndpointHasBeenSet(false),
+    m_maxAllocatedStorage(0),
+    m_maxAllocatedStorageHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -597,6 +601,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_listenerEndpoint = listenerEndpointNode;
       m_listenerEndpointHasBeenSet = true;
     }
+    XmlNode maxAllocatedStorageNode = resultNode.FirstChild("MaxAllocatedStorage");
+    if(!maxAllocatedStorageNode.IsNull())
+    {
+      m_maxAllocatedStorage = StringUtils::ConvertToInt32(StringUtils::Trim(maxAllocatedStorageNode.GetText().c_str()).c_str());
+      m_maxAllocatedStorageHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -957,6 +967,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       m_listenerEndpoint.OutputToStream(oStream, listenerEndpointLocationAndMemberSs.str().c_str());
   }
 
+  if(m_maxAllocatedStorageHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MaxAllocatedStorage=" << m_maxAllocatedStorage << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1256,6 +1271,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       Aws::String listenerEndpointLocationAndMember(location);
       listenerEndpointLocationAndMember += ".ListenerEndpoint";
       m_listenerEndpoint.OutputToStream(oStream, listenerEndpointLocationAndMember.c_str());
+  }
+  if(m_maxAllocatedStorageHasBeenSet)
+  {
+      oStream << location << ".MaxAllocatedStorage=" << m_maxAllocatedStorage << "&";
   }
 }
 

@@ -37,14 +37,13 @@ namespace Model
 {
 
   /**
-   * <p>Permissions designate which private CA operations can be performed by an AWS
+   * <p>Permissions designate which private CA actions can be performed by an AWS
    * service or entity. In order for ACM to automatically renew private certificates,
    * you must give the ACM service principal all available permissions
    * (<code>IssueCertificate</code>, <code>GetCertificate</code>, and
    * <code>ListPermissions</code>). Permissions can be assigned with the
-   * <a>CreatePermission</a> operation, removed with the <a>DeletePermission</a>
-   * operation, and listed with the <a>ListPermissions</a> operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * <a>CreatePermission</a> action, removed with the <a>DeletePermission</a> action,
+   * and listed with the <a>ListPermissions</a> action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/Permission">AWS
    * API Reference</a></p>
    */
@@ -228,49 +227,49 @@ namespace Model
 
 
     /**
-     * <p>The private CA operations that can be performed by the designated AWS
+     * <p>The private CA actions that can be performed by the designated AWS
      * service.</p>
      */
     inline const Aws::Vector<ActionType>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>The private CA operations that can be performed by the designated AWS
+     * <p>The private CA actions that can be performed by the designated AWS
      * service.</p>
      */
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
-     * <p>The private CA operations that can be performed by the designated AWS
+     * <p>The private CA actions that can be performed by the designated AWS
      * service.</p>
      */
     inline void SetActions(const Aws::Vector<ActionType>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>The private CA operations that can be performed by the designated AWS
+     * <p>The private CA actions that can be performed by the designated AWS
      * service.</p>
      */
     inline void SetActions(Aws::Vector<ActionType>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>The private CA operations that can be performed by the designated AWS
+     * <p>The private CA actions that can be performed by the designated AWS
      * service.</p>
      */
     inline Permission& WithActions(const Aws::Vector<ActionType>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>The private CA operations that can be performed by the designated AWS
+     * <p>The private CA actions that can be performed by the designated AWS
      * service.</p>
      */
     inline Permission& WithActions(Aws::Vector<ActionType>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * <p>The private CA operations that can be performed by the designated AWS
+     * <p>The private CA actions that can be performed by the designated AWS
      * service.</p>
      */
     inline Permission& AddActions(const ActionType& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>The private CA operations that can be performed by the designated AWS
+     * <p>The private CA actions that can be performed by the designated AWS
      * service.</p>
      */
     inline Permission& AddActions(ActionType&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }

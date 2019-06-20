@@ -118,9 +118,9 @@ namespace Model
    * API from an account that does not have a Business or Enterprise support plan
    * causes a <code>SubscriptionRequiredException</code>. </p> <p>For authentication
    * of requests, AWS Health uses the <a
-   * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+   * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
    * Version 4 Signing Process</a>.</p> <p>See the <a
-   * href="http://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html">AWS
+   * href="https://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html">AWS
    * Health User Guide</a> for information about how to use the API.</p> <p>
    * <b>Service Endpoint</b> </p> <p>The HTTP endpoint for the AWS Health API is:</p>
    * <ul> <li> <p>https://health.us-east-1.amazonaws.com </p> </li> </ul>

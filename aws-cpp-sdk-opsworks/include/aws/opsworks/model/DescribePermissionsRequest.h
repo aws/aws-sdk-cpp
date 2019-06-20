@@ -47,7 +47,7 @@ namespace Model
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
      * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
@@ -55,7 +55,7 @@ namespace Model
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
      * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline bool IamUserArnHasBeenSet() const { return m_iamUserArnHasBeenSet; }
@@ -63,7 +63,7 @@ namespace Model
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
      * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
@@ -71,7 +71,7 @@ namespace Model
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
      * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::move(value); }
@@ -79,7 +79,7 @@ namespace Model
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
      * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline void SetIamUserArn(const char* value) { m_iamUserArnHasBeenSet = true; m_iamUserArn.assign(value); }
@@ -87,7 +87,7 @@ namespace Model
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
      * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline DescribePermissionsRequest& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
@@ -95,7 +95,7 @@ namespace Model
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
      * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline DescribePermissionsRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(std::move(value)); return *this;}
@@ -103,7 +103,7 @@ namespace Model
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
      * information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline DescribePermissionsRequest& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}

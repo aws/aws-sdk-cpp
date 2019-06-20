@@ -49,91 +49,91 @@ namespace Model
 
 
     /**
-     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
-     * within each batch sent.</p>
+     * <p>The ID to assign to the message. Within each batch sent, each
+     * <code>"messageId"</code> must be unique.</p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
     /**
-     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
-     * within each batch sent.</p>
+     * <p>The ID to assign to the message. Within each batch sent, each
+     * <code>"messageId"</code> must be unique.</p>
      */
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
 
     /**
-     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
-     * within each batch sent.</p>
+     * <p>The ID to assign to the message. Within each batch sent, each
+     * <code>"messageId"</code> must be unique.</p>
      */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
 
     /**
-     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
-     * within each batch sent.</p>
+     * <p>The ID to assign to the message. Within each batch sent, each
+     * <code>"messageId"</code> must be unique.</p>
      */
     inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
 
     /**
-     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
-     * within each batch sent.</p>
+     * <p>The ID to assign to the message. Within each batch sent, each
+     * <code>"messageId"</code> must be unique.</p>
      */
     inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
 
     /**
-     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
-     * within each batch sent.</p>
+     * <p>The ID to assign to the message. Within each batch sent, each
+     * <code>"messageId"</code> must be unique.</p>
      */
     inline Message& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
     /**
-     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
-     * within each batch sent.</p>
+     * <p>The ID to assign to the message. Within each batch sent, each
+     * <code>"messageId"</code> must be unique.</p>
      */
     inline Message& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
-     * within each batch sent.</p>
+     * <p>The ID to assign to the message. Within each batch sent, each
+     * <code>"messageId"</code> must be unique.</p>
      */
     inline Message& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 
 
     /**
-     * <p>The name of the input into which the message payload will be transformed.</p>
+     * <p>The name of the input into which the message payload is transformed.</p>
      */
     inline const Aws::String& GetInputName() const{ return m_inputName; }
 
     /**
-     * <p>The name of the input into which the message payload will be transformed.</p>
+     * <p>The name of the input into which the message payload is transformed.</p>
      */
     inline bool InputNameHasBeenSet() const { return m_inputNameHasBeenSet; }
 
     /**
-     * <p>The name of the input into which the message payload will be transformed.</p>
+     * <p>The name of the input into which the message payload is transformed.</p>
      */
     inline void SetInputName(const Aws::String& value) { m_inputNameHasBeenSet = true; m_inputName = value; }
 
     /**
-     * <p>The name of the input into which the message payload will be transformed.</p>
+     * <p>The name of the input into which the message payload is transformed.</p>
      */
     inline void SetInputName(Aws::String&& value) { m_inputNameHasBeenSet = true; m_inputName = std::move(value); }
 
     /**
-     * <p>The name of the input into which the message payload will be transformed.</p>
+     * <p>The name of the input into which the message payload is transformed.</p>
      */
     inline void SetInputName(const char* value) { m_inputNameHasBeenSet = true; m_inputName.assign(value); }
 
     /**
-     * <p>The name of the input into which the message payload will be transformed.</p>
+     * <p>The name of the input into which the message payload is transformed.</p>
      */
     inline Message& WithInputName(const Aws::String& value) { SetInputName(value); return *this;}
 
     /**
-     * <p>The name of the input into which the message payload will be transformed.</p>
+     * <p>The name of the input into which the message payload is transformed.</p>
      */
     inline Message& WithInputName(Aws::String&& value) { SetInputName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the input into which the message payload will be transformed.</p>
+     * <p>The name of the input into which the message payload is transformed.</p>
      */
     inline Message& WithInputName(const char* value) { SetInputName(value); return *this;}
 

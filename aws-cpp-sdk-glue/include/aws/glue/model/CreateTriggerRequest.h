@@ -91,6 +91,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the workflow associated with the trigger.</p>
+     */
+    inline const Aws::String& GetWorkflowName() const{ return m_workflowName; }
+
+    /**
+     * <p>The name of the workflow associated with the trigger.</p>
+     */
+    inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
+
+    /**
+     * <p>The name of the workflow associated with the trigger.</p>
+     */
+    inline void SetWorkflowName(const Aws::String& value) { m_workflowNameHasBeenSet = true; m_workflowName = value; }
+
+    /**
+     * <p>The name of the workflow associated with the trigger.</p>
+     */
+    inline void SetWorkflowName(Aws::String&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::move(value); }
+
+    /**
+     * <p>The name of the workflow associated with the trigger.</p>
+     */
+    inline void SetWorkflowName(const char* value) { m_workflowNameHasBeenSet = true; m_workflowName.assign(value); }
+
+    /**
+     * <p>The name of the workflow associated with the trigger.</p>
+     */
+    inline CreateTriggerRequest& WithWorkflowName(const Aws::String& value) { SetWorkflowName(value); return *this;}
+
+    /**
+     * <p>The name of the workflow associated with the trigger.</p>
+     */
+    inline CreateTriggerRequest& WithWorkflowName(Aws::String&& value) { SetWorkflowName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the workflow associated with the trigger.</p>
+     */
+    inline CreateTriggerRequest& WithWorkflowName(const char* value) { SetWorkflowName(value); return *this;}
+
+
+    /**
      * <p>The type of the new trigger.</p>
      */
     inline const TriggerType& GetType() const{ return m_type; }
@@ -450,6 +491,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_workflowName;
+    bool m_workflowNameHasBeenSet;
 
     TriggerType m_type;
     bool m_typeHasBeenSet;

@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>Describes an Amazon EBS volume. This data type maps directly to the Amazon
    * EC2 <a
-   * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>
    * data type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/EbsBlockDevice">AWS
    * API Reference</a></p>
@@ -95,53 +95,53 @@ namespace Model
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
      */
     inline EbsBlockDevice& WithIops(int value) { SetIops(value); return *this;}
 
 
     /**
      * <p>The volume size, in GiB. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
      */
     inline int GetVolumeSize() const{ return m_volumeSize; }
 
     /**
      * <p>The volume size, in GiB. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
      */
     inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
 
     /**
      * <p>The volume size, in GiB. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
      */
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**
      * <p>The volume size, in GiB. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
      */
     inline EbsBlockDevice& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
 

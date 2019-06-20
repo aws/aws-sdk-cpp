@@ -52,98 +52,98 @@ namespace Model
 
     /**
      * <p>The name of the operating system, such as <code>Amazon Linux
-     * 2017.09</code>.</p>
+     * 2018.03</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the operating system, such as <code>Amazon Linux
-     * 2017.09</code>.</p>
+     * 2018.03</code>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the operating system, such as <code>Amazon Linux
-     * 2017.09</code>.</p>
+     * 2018.03</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the operating system, such as <code>Amazon Linux
-     * 2017.09</code>.</p>
+     * 2018.03</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the operating system, such as <code>Amazon Linux
-     * 2017.09</code>.</p>
+     * 2018.03</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name of the operating system, such as <code>Amazon Linux
-     * 2017.09</code>.</p>
+     * 2018.03</code>.</p>
      */
     inline OperatingSystem& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the operating system, such as <code>Amazon Linux
-     * 2017.09</code>.</p>
+     * 2018.03</code>.</p>
      */
     inline OperatingSystem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the operating system, such as <code>Amazon Linux
-     * 2017.09</code>.</p>
+     * 2018.03</code>.</p>
      */
     inline OperatingSystem& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
      * <p>The ID of a supported operating system, such as <code>Amazon Linux
-     * 2017.09</code>.</p>
+     * 2018.03</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
      * <p>The ID of a supported operating system, such as <code>Amazon Linux
-     * 2017.09</code>.</p>
+     * 2018.03</code>.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The ID of a supported operating system, such as <code>Amazon Linux
-     * 2017.09</code>.</p>
+     * 2018.03</code>.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
      * <p>The ID of a supported operating system, such as <code>Amazon Linux
-     * 2017.09</code>.</p>
+     * 2018.03</code>.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The ID of a supported operating system, such as <code>Amazon Linux
-     * 2017.09</code>.</p>
+     * 2018.03</code>.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
      * <p>The ID of a supported operating system, such as <code>Amazon Linux
-     * 2017.09</code>.</p>
+     * 2018.03</code>.</p>
      */
     inline OperatingSystem& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * <p>The ID of a supported operating system, such as <code>Amazon Linux
-     * 2017.09</code>.</p>
+     * 2018.03</code>.</p>
      */
     inline OperatingSystem& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of a supported operating system, such as <code>Amazon Linux
-     * 2017.09</code>.</p>
+     * 2018.03</code>.</p>
      */
     inline OperatingSystem& WithId(const char* value) { SetId(value); return *this;}
 

@@ -30,13 +30,18 @@ namespace Aws
       namespace CertificateAuthorityTypeMapper
       {
 
+        static const int ROOT_HASH = HashingUtils::HashString("ROOT");
         static const int SUBORDINATE_HASH = HashingUtils::HashString("SUBORDINATE");
 
 
         CertificateAuthorityType GetCertificateAuthorityTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == SUBORDINATE_HASH)
+          if (hashCode == ROOT_HASH)
+          {
+            return CertificateAuthorityType::ROOT;
+          }
+          else if (hashCode == SUBORDINATE_HASH)
           {
             return CertificateAuthorityType::SUBORDINATE;
           }
@@ -54,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CertificateAuthorityType::ROOT:
+            return "ROOT";
           case CertificateAuthorityType::SUBORDINATE:
             return "SUBORDINATE";
           default:

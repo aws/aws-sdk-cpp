@@ -26,6 +26,7 @@ namespace Model
   enum class CertificateAuthorityType
   {
     NOT_SET,
+    ROOT,
     SUBORDINATE
   };
 

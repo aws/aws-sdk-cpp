@@ -88,8 +88,8 @@ namespace Model
 
     /**
      * <p>Contains a Boolean value that you can use to enable a certification
-     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM PCA
-     * will write the CRL, and an optional CNAME alias that you can use to hide the
+     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM Private
+     * CA will write the CRL, and an optional CNAME alias that you can use to hide the
      * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
      * certificate. For more information, see the <a>CrlConfiguration</a> structure.
      * </p>
@@ -98,8 +98,8 @@ namespace Model
 
     /**
      * <p>Contains a Boolean value that you can use to enable a certification
-     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM PCA
-     * will write the CRL, and an optional CNAME alias that you can use to hide the
+     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM Private
+     * CA will write the CRL, and an optional CNAME alias that you can use to hide the
      * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
      * certificate. For more information, see the <a>CrlConfiguration</a> structure.
      * </p>
@@ -108,8 +108,8 @@ namespace Model
 
     /**
      * <p>Contains a Boolean value that you can use to enable a certification
-     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM PCA
-     * will write the CRL, and an optional CNAME alias that you can use to hide the
+     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM Private
+     * CA will write the CRL, and an optional CNAME alias that you can use to hide the
      * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
      * certificate. For more information, see the <a>CrlConfiguration</a> structure.
      * </p>
@@ -118,8 +118,8 @@ namespace Model
 
     /**
      * <p>Contains a Boolean value that you can use to enable a certification
-     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM PCA
-     * will write the CRL, and an optional CNAME alias that you can use to hide the
+     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM Private
+     * CA will write the CRL, and an optional CNAME alias that you can use to hide the
      * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
      * certificate. For more information, see the <a>CrlConfiguration</a> structure.
      * </p>
@@ -128,8 +128,8 @@ namespace Model
 
     /**
      * <p>Contains a Boolean value that you can use to enable a certification
-     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM PCA
-     * will write the CRL, and an optional CNAME alias that you can use to hide the
+     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM Private
+     * CA will write the CRL, and an optional CNAME alias that you can use to hide the
      * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
      * certificate. For more information, see the <a>CrlConfiguration</a> structure.
      * </p>
@@ -138,8 +138,8 @@ namespace Model
 
     /**
      * <p>Contains a Boolean value that you can use to enable a certification
-     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM PCA
-     * will write the CRL, and an optional CNAME alias that you can use to hide the
+     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM Private
+     * CA will write the CRL, and an optional CNAME alias that you can use to hide the
      * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
      * certificate. For more information, see the <a>CrlConfiguration</a> structure.
      * </p>
@@ -148,38 +148,32 @@ namespace Model
 
 
     /**
-     * <p>The type of the certificate authority. Currently, this must be
-     * <b>SUBORDINATE</b>.</p>
+     * <p>The type of the certificate authority.</p>
      */
     inline const CertificateAuthorityType& GetCertificateAuthorityType() const{ return m_certificateAuthorityType; }
 
     /**
-     * <p>The type of the certificate authority. Currently, this must be
-     * <b>SUBORDINATE</b>.</p>
+     * <p>The type of the certificate authority.</p>
      */
     inline bool CertificateAuthorityTypeHasBeenSet() const { return m_certificateAuthorityTypeHasBeenSet; }
 
     /**
-     * <p>The type of the certificate authority. Currently, this must be
-     * <b>SUBORDINATE</b>.</p>
+     * <p>The type of the certificate authority.</p>
      */
     inline void SetCertificateAuthorityType(const CertificateAuthorityType& value) { m_certificateAuthorityTypeHasBeenSet = true; m_certificateAuthorityType = value; }
 
     /**
-     * <p>The type of the certificate authority. Currently, this must be
-     * <b>SUBORDINATE</b>.</p>
+     * <p>The type of the certificate authority.</p>
      */
     inline void SetCertificateAuthorityType(CertificateAuthorityType&& value) { m_certificateAuthorityTypeHasBeenSet = true; m_certificateAuthorityType = std::move(value); }
 
     /**
-     * <p>The type of the certificate authority. Currently, this must be
-     * <b>SUBORDINATE</b>.</p>
+     * <p>The type of the certificate authority.</p>
      */
     inline CreateCertificateAuthorityRequest& WithCertificateAuthorityType(const CertificateAuthorityType& value) { SetCertificateAuthorityType(value); return *this;}
 
     /**
-     * <p>The type of the certificate authority. Currently, this must be
-     * <b>SUBORDINATE</b>.</p>
+     * <p>The type of the certificate authority.</p>
      */
     inline CreateCertificateAuthorityRequest& WithCertificateAuthorityType(CertificateAuthorityType&& value) { SetCertificateAuthorityType(std::move(value)); return *this;}
 
@@ -188,10 +182,11 @@ namespace Model
      * <p>Alphanumeric string that can be used to distinguish between calls to
      * <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five
      * minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times
-     * with the same idempotency token within a five minute period, ACM PCA recognizes
-     * that you are requesting only one certificate. As a result, ACM PCA issues only
-     * one. If you change the idempotency token for each call, however, ACM PCA
-     * recognizes that you are requesting multiple certificates.</p>
+     * with the same idempotency token within a five minute period, ACM Private CA
+     * recognizes that you are requesting only one certificate. As a result, ACM
+     * Private CA issues only one. If you change the idempotency token for each call,
+     * however, ACM Private CA recognizes that you are requesting multiple
+     * certificates.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
@@ -199,10 +194,11 @@ namespace Model
      * <p>Alphanumeric string that can be used to distinguish between calls to
      * <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five
      * minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times
-     * with the same idempotency token within a five minute period, ACM PCA recognizes
-     * that you are requesting only one certificate. As a result, ACM PCA issues only
-     * one. If you change the idempotency token for each call, however, ACM PCA
-     * recognizes that you are requesting multiple certificates.</p>
+     * with the same idempotency token within a five minute period, ACM Private CA
+     * recognizes that you are requesting only one certificate. As a result, ACM
+     * Private CA issues only one. If you change the idempotency token for each call,
+     * however, ACM Private CA recognizes that you are requesting multiple
+     * certificates.</p>
      */
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
@@ -210,10 +206,11 @@ namespace Model
      * <p>Alphanumeric string that can be used to distinguish between calls to
      * <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five
      * minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times
-     * with the same idempotency token within a five minute period, ACM PCA recognizes
-     * that you are requesting only one certificate. As a result, ACM PCA issues only
-     * one. If you change the idempotency token for each call, however, ACM PCA
-     * recognizes that you are requesting multiple certificates.</p>
+     * with the same idempotency token within a five minute period, ACM Private CA
+     * recognizes that you are requesting only one certificate. As a result, ACM
+     * Private CA issues only one. If you change the idempotency token for each call,
+     * however, ACM Private CA recognizes that you are requesting multiple
+     * certificates.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
@@ -221,10 +218,11 @@ namespace Model
      * <p>Alphanumeric string that can be used to distinguish between calls to
      * <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five
      * minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times
-     * with the same idempotency token within a five minute period, ACM PCA recognizes
-     * that you are requesting only one certificate. As a result, ACM PCA issues only
-     * one. If you change the idempotency token for each call, however, ACM PCA
-     * recognizes that you are requesting multiple certificates.</p>
+     * with the same idempotency token within a five minute period, ACM Private CA
+     * recognizes that you are requesting only one certificate. As a result, ACM
+     * Private CA issues only one. If you change the idempotency token for each call,
+     * however, ACM Private CA recognizes that you are requesting multiple
+     * certificates.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
@@ -232,10 +230,11 @@ namespace Model
      * <p>Alphanumeric string that can be used to distinguish between calls to
      * <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five
      * minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times
-     * with the same idempotency token within a five minute period, ACM PCA recognizes
-     * that you are requesting only one certificate. As a result, ACM PCA issues only
-     * one. If you change the idempotency token for each call, however, ACM PCA
-     * recognizes that you are requesting multiple certificates.</p>
+     * with the same idempotency token within a five minute period, ACM Private CA
+     * recognizes that you are requesting only one certificate. As a result, ACM
+     * Private CA issues only one. If you change the idempotency token for each call,
+     * however, ACM Private CA recognizes that you are requesting multiple
+     * certificates.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
@@ -243,10 +242,11 @@ namespace Model
      * <p>Alphanumeric string that can be used to distinguish between calls to
      * <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five
      * minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times
-     * with the same idempotency token within a five minute period, ACM PCA recognizes
-     * that you are requesting only one certificate. As a result, ACM PCA issues only
-     * one. If you change the idempotency token for each call, however, ACM PCA
-     * recognizes that you are requesting multiple certificates.</p>
+     * with the same idempotency token within a five minute period, ACM Private CA
+     * recognizes that you are requesting only one certificate. As a result, ACM
+     * Private CA issues only one. If you change the idempotency token for each call,
+     * however, ACM Private CA recognizes that you are requesting multiple
+     * certificates.</p>
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
@@ -254,10 +254,11 @@ namespace Model
      * <p>Alphanumeric string that can be used to distinguish between calls to
      * <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five
      * minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times
-     * with the same idempotency token within a five minute period, ACM PCA recognizes
-     * that you are requesting only one certificate. As a result, ACM PCA issues only
-     * one. If you change the idempotency token for each call, however, ACM PCA
-     * recognizes that you are requesting multiple certificates.</p>
+     * with the same idempotency token within a five minute period, ACM Private CA
+     * recognizes that you are requesting only one certificate. As a result, ACM
+     * Private CA issues only one. If you change the idempotency token for each call,
+     * however, ACM Private CA recognizes that you are requesting multiple
+     * certificates.</p>
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
@@ -265,59 +266,84 @@ namespace Model
      * <p>Alphanumeric string that can be used to distinguish between calls to
      * <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five
      * minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times
-     * with the same idempotency token within a five minute period, ACM PCA recognizes
-     * that you are requesting only one certificate. As a result, ACM PCA issues only
-     * one. If you change the idempotency token for each call, however, ACM PCA
-     * recognizes that you are requesting multiple certificates.</p>
+     * with the same idempotency token within a five minute period, ACM Private CA
+     * recognizes that you are requesting only one certificate. As a result, ACM
+     * Private CA issues only one. If you change the idempotency token for each call,
+     * however, ACM Private CA recognizes that you are requesting multiple
+     * certificates.</p>
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
 
     /**
      * <p>Key-value pairs that will be attached to the new private CA. You can
-     * associate up to 50 tags with a private CA.</p>
+     * associate up to 50 tags with a private CA. For information using tags with </p>
+     * <p>IAM to manage permissions, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+     * Access Using IAM Tags</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>Key-value pairs that will be attached to the new private CA. You can
-     * associate up to 50 tags with a private CA.</p>
+     * associate up to 50 tags with a private CA. For information using tags with </p>
+     * <p>IAM to manage permissions, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+     * Access Using IAM Tags</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Key-value pairs that will be attached to the new private CA. You can
-     * associate up to 50 tags with a private CA.</p>
+     * associate up to 50 tags with a private CA. For information using tags with </p>
+     * <p>IAM to manage permissions, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+     * Access Using IAM Tags</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>Key-value pairs that will be attached to the new private CA. You can
-     * associate up to 50 tags with a private CA.</p>
+     * associate up to 50 tags with a private CA. For information using tags with </p>
+     * <p>IAM to manage permissions, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+     * Access Using IAM Tags</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>Key-value pairs that will be attached to the new private CA. You can
-     * associate up to 50 tags with a private CA.</p>
+     * associate up to 50 tags with a private CA. For information using tags with </p>
+     * <p>IAM to manage permissions, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+     * Access Using IAM Tags</a>.</p>
      */
     inline CreateCertificateAuthorityRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>Key-value pairs that will be attached to the new private CA. You can
-     * associate up to 50 tags with a private CA.</p>
+     * associate up to 50 tags with a private CA. For information using tags with </p>
+     * <p>IAM to manage permissions, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+     * Access Using IAM Tags</a>.</p>
      */
     inline CreateCertificateAuthorityRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Key-value pairs that will be attached to the new private CA. You can
-     * associate up to 50 tags with a private CA.</p>
+     * associate up to 50 tags with a private CA. For information using tags with </p>
+     * <p>IAM to manage permissions, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+     * Access Using IAM Tags</a>.</p>
      */
     inline CreateCertificateAuthorityRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>Key-value pairs that will be attached to the new private CA. You can
-     * associate up to 50 tags with a private CA.</p>
+     * associate up to 50 tags with a private CA. For information using tags with </p>
+     * <p>IAM to manage permissions, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+     * Access Using IAM Tags</a>.</p>
      */
     inline CreateCertificateAuthorityRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

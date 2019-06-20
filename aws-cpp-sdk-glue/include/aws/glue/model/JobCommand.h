@@ -106,49 +106,49 @@ namespace Model
 
     /**
      * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
-     * executes a job (required).</p>
+     * executes a job.</p>
      */
     inline const Aws::String& GetScriptLocation() const{ return m_scriptLocation; }
 
     /**
      * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
-     * executes a job (required).</p>
+     * executes a job.</p>
      */
     inline bool ScriptLocationHasBeenSet() const { return m_scriptLocationHasBeenSet; }
 
     /**
      * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
-     * executes a job (required).</p>
+     * executes a job.</p>
      */
     inline void SetScriptLocation(const Aws::String& value) { m_scriptLocationHasBeenSet = true; m_scriptLocation = value; }
 
     /**
      * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
-     * executes a job (required).</p>
+     * executes a job.</p>
      */
     inline void SetScriptLocation(Aws::String&& value) { m_scriptLocationHasBeenSet = true; m_scriptLocation = std::move(value); }
 
     /**
      * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
-     * executes a job (required).</p>
+     * executes a job.</p>
      */
     inline void SetScriptLocation(const char* value) { m_scriptLocationHasBeenSet = true; m_scriptLocation.assign(value); }
 
     /**
      * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
-     * executes a job (required).</p>
+     * executes a job.</p>
      */
     inline JobCommand& WithScriptLocation(const Aws::String& value) { SetScriptLocation(value); return *this;}
 
     /**
      * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
-     * executes a job (required).</p>
+     * executes a job.</p>
      */
     inline JobCommand& WithScriptLocation(Aws::String&& value) { SetScriptLocation(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
-     * executes a job (required).</p>
+     * executes a job.</p>
      */
     inline JobCommand& WithScriptLocation(const char* value) { SetScriptLocation(value); return *this;}
 

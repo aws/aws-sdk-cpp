@@ -34,7 +34,9 @@ ValidStorageOptions::ValidStorageOptions() :
     m_storageTypeHasBeenSet(false),
     m_storageSizeHasBeenSet(false),
     m_provisionedIopsHasBeenSet(false),
-    m_iopsToStorageRatioHasBeenSet(false)
+    m_iopsToStorageRatioHasBeenSet(false),
+    m_supportsStorageAutoscaling(false),
+    m_supportsStorageAutoscalingHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ ValidStorageOptions::ValidStorageOptions(const XmlNode& xmlNode) :
     m_storageTypeHasBeenSet(false),
     m_storageSizeHasBeenSet(false),
     m_provisionedIopsHasBeenSet(false),
-    m_iopsToStorageRatioHasBeenSet(false)
+    m_iopsToStorageRatioHasBeenSet(false),
+    m_supportsStorageAutoscaling(false),
+    m_supportsStorageAutoscalingHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -95,6 +99,12 @@ ValidStorageOptions& ValidStorageOptions::operator =(const XmlNode& xmlNode)
 
       m_iopsToStorageRatioHasBeenSet = true;
     }
+    XmlNode supportsStorageAutoscalingNode = resultNode.FirstChild("SupportsStorageAutoscaling");
+    if(!supportsStorageAutoscalingNode.IsNull())
+    {
+      m_supportsStorageAutoscaling = StringUtils::ConvertToBool(StringUtils::Trim(supportsStorageAutoscalingNode.GetText().c_str()).c_str());
+      m_supportsStorageAutoscalingHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -140,6 +150,11 @@ void ValidStorageOptions::OutputToStream(Aws::OStream& oStream, const char* loca
       }
   }
 
+  if(m_supportsStorageAutoscalingHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsStorageAutoscaling=" << std::boolalpha << m_supportsStorageAutoscaling << "&";
+  }
+
 }
 
 void ValidStorageOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -177,6 +192,10 @@ void ValidStorageOptions::OutputToStream(Aws::OStream& oStream, const char* loca
         iopsToStorageRatioSs << location <<  ".DoubleRange." << iopsToStorageRatioIdx++;
         item.OutputToStream(oStream, iopsToStorageRatioSs.str().c_str());
       }
+  }
+  if(m_supportsStorageAutoscalingHasBeenSet)
+  {
+      oStream << location << ".SupportsStorageAutoscaling=" << std::boolalpha << m_supportsStorageAutoscaling << "&";
   }
 }
 

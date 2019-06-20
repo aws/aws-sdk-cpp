@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the detector model whose instances you want to list.</p>
+     * <p>The name of the detector model whose detectors (instances) are listed.</p>
      */
     inline const Aws::String& GetDetectorModelName() const{ return m_detectorModelName; }
 
     /**
-     * <p>The name of the detector model whose instances you want to list.</p>
+     * <p>The name of the detector model whose detectors (instances) are listed.</p>
      */
     inline bool DetectorModelNameHasBeenSet() const { return m_detectorModelNameHasBeenSet; }
 
     /**
-     * <p>The name of the detector model whose instances you want to list.</p>
+     * <p>The name of the detector model whose detectors (instances) are listed.</p>
      */
     inline void SetDetectorModelName(const Aws::String& value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName = value; }
 
     /**
-     * <p>The name of the detector model whose instances you want to list.</p>
+     * <p>The name of the detector model whose detectors (instances) are listed.</p>
      */
     inline void SetDetectorModelName(Aws::String&& value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName = std::move(value); }
 
     /**
-     * <p>The name of the detector model whose instances you want to list.</p>
+     * <p>The name of the detector model whose detectors (instances) are listed.</p>
      */
     inline void SetDetectorModelName(const char* value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName.assign(value); }
 
     /**
-     * <p>The name of the detector model whose instances you want to list.</p>
+     * <p>The name of the detector model whose detectors (instances) are listed.</p>
      */
     inline ListDetectorsRequest& WithDetectorModelName(const Aws::String& value) { SetDetectorModelName(value); return *this;}
 
     /**
-     * <p>The name of the detector model whose instances you want to list.</p>
+     * <p>The name of the detector model whose detectors (instances) are listed.</p>
      */
     inline ListDetectorsRequest& WithDetectorModelName(Aws::String&& value) { SetDetectorModelName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the detector model whose instances you want to list.</p>
+     * <p>The name of the detector model whose detectors (instances) are listed.</p>
      */
     inline ListDetectorsRequest& WithDetectorModelName(const char* value) { SetDetectorModelName(value); return *this;}
 
