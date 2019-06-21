@@ -161,7 +161,7 @@ namespace Model
      * <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION: The
      * Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation type.</p>
      * </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li> <p>XCTEST: The
-     * XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test type.</p> </li>
+     * Xcode test type.</p> </li> <li> <p>XCTEST_UI: The Xcode UI test type.</p> </li>
      * </ul>
      */
     inline const TestType& GetType() const{ return m_type; }
@@ -183,7 +183,7 @@ namespace Model
      * <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION: The
      * Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation type.</p>
      * </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li> <p>XCTEST: The
-     * XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test type.</p> </li>
+     * Xcode test type.</p> </li> <li> <p>XCTEST_UI: The Xcode UI test type.</p> </li>
      * </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -205,7 +205,7 @@ namespace Model
      * <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION: The
      * Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation type.</p>
      * </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li> <p>XCTEST: The
-     * XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test type.</p> </li>
+     * Xcode test type.</p> </li> <li> <p>XCTEST_UI: The Xcode UI test type.</p> </li>
      * </ul>
      */
     inline void SetType(const TestType& value) { m_typeHasBeenSet = true; m_type = value; }
@@ -227,7 +227,7 @@ namespace Model
      * <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION: The
      * Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation type.</p>
      * </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li> <p>XCTEST: The
-     * XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test type.</p> </li>
+     * Xcode test type.</p> </li> <li> <p>XCTEST_UI: The Xcode UI test type.</p> </li>
      * </ul>
      */
     inline void SetType(TestType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
@@ -249,7 +249,7 @@ namespace Model
      * <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION: The
      * Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation type.</p>
      * </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li> <p>XCTEST: The
-     * XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test type.</p> </li>
+     * Xcode test type.</p> </li> <li> <p>XCTEST_UI: The Xcode UI test type.</p> </li>
      * </ul>
      */
     inline Run& WithType(const TestType& value) { SetType(value); return *this;}
@@ -271,7 +271,7 @@ namespace Model
      * <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION: The
      * Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation type.</p>
      * </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li> <p>XCTEST: The
-     * XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test type.</p> </li>
+     * Xcode test type.</p> </li> <li> <p>XCTEST_UI: The Xcode UI test type.</p> </li>
      * </ul>
      */
     inline Run& WithType(TestType&& value) { SetType(std::move(value)); return *this;}

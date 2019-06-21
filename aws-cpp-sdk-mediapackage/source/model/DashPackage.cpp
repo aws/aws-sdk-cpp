@@ -29,6 +29,9 @@ namespace Model
 {
 
 DashPackage::DashPackage() : 
+    m_adTriggersHasBeenSet(false),
+    m_adsOnDeliveryRestrictions(AdsOnDeliveryRestrictions::NOT_SET),
+    m_adsOnDeliveryRestrictionsHasBeenSet(false),
     m_encryptionHasBeenSet(false),
     m_manifestLayout(ManifestLayout::NOT_SET),
     m_manifestLayoutHasBeenSet(false),
@@ -52,6 +55,9 @@ DashPackage::DashPackage() :
 }
 
 DashPackage::DashPackage(JsonView jsonValue) : 
+    m_adTriggersHasBeenSet(false),
+    m_adsOnDeliveryRestrictions(AdsOnDeliveryRestrictions::NOT_SET),
+    m_adsOnDeliveryRestrictionsHasBeenSet(false),
     m_encryptionHasBeenSet(false),
     m_manifestLayout(ManifestLayout::NOT_SET),
     m_manifestLayoutHasBeenSet(false),
@@ -77,6 +83,23 @@ DashPackage::DashPackage(JsonView jsonValue) :
 
 DashPackage& DashPackage::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("adTriggers"))
+  {
+    Array<JsonView> adTriggersJsonList = jsonValue.GetArray("adTriggers");
+    for(unsigned adTriggersIndex = 0; adTriggersIndex < adTriggersJsonList.GetLength(); ++adTriggersIndex)
+    {
+      m_adTriggers.push_back(__AdTriggersElementMapper::Get__AdTriggersElementForName(adTriggersJsonList[adTriggersIndex].AsString()));
+    }
+    m_adTriggersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("adsOnDeliveryRestrictions"))
+  {
+    m_adsOnDeliveryRestrictions = AdsOnDeliveryRestrictionsMapper::GetAdsOnDeliveryRestrictionsForName(jsonValue.GetString("adsOnDeliveryRestrictions"));
+
+    m_adsOnDeliveryRestrictionsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("encryption"))
   {
     m_encryption = jsonValue.GetObject("encryption");
@@ -163,6 +186,22 @@ DashPackage& DashPackage::operator =(JsonView jsonValue)
 JsonValue DashPackage::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_adTriggersHasBeenSet)
+  {
+   Array<JsonValue> adTriggersJsonList(m_adTriggers.size());
+   for(unsigned adTriggersIndex = 0; adTriggersIndex < adTriggersJsonList.GetLength(); ++adTriggersIndex)
+   {
+     adTriggersJsonList[adTriggersIndex].AsString(__AdTriggersElementMapper::GetNameFor__AdTriggersElement(m_adTriggers[adTriggersIndex]));
+   }
+   payload.WithArray("adTriggers", std::move(adTriggersJsonList));
+
+  }
+
+  if(m_adsOnDeliveryRestrictionsHasBeenSet)
+  {
+   payload.WithString("adsOnDeliveryRestrictions", AdsOnDeliveryRestrictionsMapper::GetNameForAdsOnDeliveryRestrictions(m_adsOnDeliveryRestrictions));
+  }
 
   if(m_encryptionHasBeenSet)
   {

@@ -333,7 +333,7 @@ namespace Model
      * password. This can be because:</p> <ul> <li> <p>The user never had a
      * password.</p> </li> <li> <p>A password exists but has not been used since IAM
      * started tracking this information on October 20, 2014.</p> </li> </ul> <p>A null
-     * valuedoes not mean that the user <i>never</i> had a password. Also, if the user
+     * value does not mean that the user <i>never</i> had a password. Also, if the user
      * does not currently have a password, but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
      * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
@@ -352,7 +352,7 @@ namespace Model
      * password. This can be because:</p> <ul> <li> <p>The user never had a
      * password.</p> </li> <li> <p>A password exists but has not been used since IAM
      * started tracking this information on October 20, 2014.</p> </li> </ul> <p>A null
-     * valuedoes not mean that the user <i>never</i> had a password. Also, if the user
+     * value does not mean that the user <i>never</i> had a password. Also, if the user
      * does not currently have a password, but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
      * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
@@ -371,7 +371,7 @@ namespace Model
      * password. This can be because:</p> <ul> <li> <p>The user never had a
      * password.</p> </li> <li> <p>A password exists but has not been used since IAM
      * started tracking this information on October 20, 2014.</p> </li> </ul> <p>A null
-     * valuedoes not mean that the user <i>never</i> had a password. Also, if the user
+     * value does not mean that the user <i>never</i> had a password. Also, if the user
      * does not currently have a password, but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
      * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
@@ -390,7 +390,7 @@ namespace Model
      * password. This can be because:</p> <ul> <li> <p>The user never had a
      * password.</p> </li> <li> <p>A password exists but has not been used since IAM
      * started tracking this information on October 20, 2014.</p> </li> </ul> <p>A null
-     * valuedoes not mean that the user <i>never</i> had a password. Also, if the user
+     * value does not mean that the user <i>never</i> had a password. Also, if the user
      * does not currently have a password, but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
      * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
@@ -409,7 +409,7 @@ namespace Model
      * password. This can be because:</p> <ul> <li> <p>The user never had a
      * password.</p> </li> <li> <p>A password exists but has not been used since IAM
      * started tracking this information on October 20, 2014.</p> </li> </ul> <p>A null
-     * valuedoes not mean that the user <i>never</i> had a password. Also, if the user
+     * value does not mean that the user <i>never</i> had a password. Also, if the user
      * does not currently have a password, but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
      * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
@@ -428,7 +428,7 @@ namespace Model
      * password. This can be because:</p> <ul> <li> <p>The user never had a
      * password.</p> </li> <li> <p>A password exists but has not been used since IAM
      * started tracking this information on October 20, 2014.</p> </li> </ul> <p>A null
-     * valuedoes not mean that the user <i>never</i> had a password. Also, if the user
+     * value does not mean that the user <i>never</i> had a password. Also, if the user
      * does not currently have a password, but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
      * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>

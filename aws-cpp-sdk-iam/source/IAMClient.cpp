@@ -80,6 +80,7 @@
 #include <aws/iam/model/DetachUserPolicyRequest.h>
 #include <aws/iam/model/EnableMFADeviceRequest.h>
 #include <aws/iam/model/GenerateCredentialReportRequest.h>
+#include <aws/iam/model/GenerateOrganizationsAccessReportRequest.h>
 #include <aws/iam/model/GenerateServiceLastAccessedDetailsRequest.h>
 #include <aws/iam/model/GetAccessKeyLastUsedRequest.h>
 #include <aws/iam/model/GetAccountAuthorizationDetailsRequest.h>
@@ -93,6 +94,7 @@
 #include <aws/iam/model/GetInstanceProfileRequest.h>
 #include <aws/iam/model/GetLoginProfileRequest.h>
 #include <aws/iam/model/GetOpenIDConnectProviderRequest.h>
+#include <aws/iam/model/GetOrganizationsAccessReportRequest.h>
 #include <aws/iam/model/GetPolicyRequest.h>
 #include <aws/iam/model/GetPolicyVersionRequest.h>
 #include <aws/iam/model/GetRoleRequest.h>
@@ -2002,6 +2004,41 @@ void IAMClient::GenerateCredentialReportAsyncHelper(const GenerateCredentialRepo
   handler(this, request, GenerateCredentialReport(request), context);
 }
 
+GenerateOrganizationsAccessReportOutcome IAMClient::GenerateOrganizationsAccessReport(const GenerateOrganizationsAccessReportRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GenerateOrganizationsAccessReportOutcome(GenerateOrganizationsAccessReportResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GenerateOrganizationsAccessReportOutcome(outcome.GetError());
+  }
+}
+
+GenerateOrganizationsAccessReportOutcomeCallable IAMClient::GenerateOrganizationsAccessReportCallable(const GenerateOrganizationsAccessReportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GenerateOrganizationsAccessReportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GenerateOrganizationsAccessReport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::GenerateOrganizationsAccessReportAsync(const GenerateOrganizationsAccessReportRequest& request, const GenerateOrganizationsAccessReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GenerateOrganizationsAccessReportAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::GenerateOrganizationsAccessReportAsyncHelper(const GenerateOrganizationsAccessReportRequest& request, const GenerateOrganizationsAccessReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GenerateOrganizationsAccessReport(request), context);
+}
+
 GenerateServiceLastAccessedDetailsOutcome IAMClient::GenerateServiceLastAccessedDetails(const GenerateServiceLastAccessedDetailsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2455,6 +2492,41 @@ void IAMClient::GetOpenIDConnectProviderAsync(const GetOpenIDConnectProviderRequ
 void IAMClient::GetOpenIDConnectProviderAsyncHelper(const GetOpenIDConnectProviderRequest& request, const GetOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetOpenIDConnectProvider(request), context);
+}
+
+GetOrganizationsAccessReportOutcome IAMClient::GetOrganizationsAccessReport(const GetOrganizationsAccessReportRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetOrganizationsAccessReportOutcome(GetOrganizationsAccessReportResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetOrganizationsAccessReportOutcome(outcome.GetError());
+  }
+}
+
+GetOrganizationsAccessReportOutcomeCallable IAMClient::GetOrganizationsAccessReportCallable(const GetOrganizationsAccessReportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetOrganizationsAccessReportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetOrganizationsAccessReport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::GetOrganizationsAccessReportAsync(const GetOrganizationsAccessReportRequest& request, const GetOrganizationsAccessReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetOrganizationsAccessReportAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::GetOrganizationsAccessReportAsyncHelper(const GetOrganizationsAccessReportRequest& request, const GetOrganizationsAccessReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetOrganizationsAccessReport(request), context);
 }
 
 GetPolicyOutcome IAMClient::GetPolicy(const GetPolicyRequest& request) const

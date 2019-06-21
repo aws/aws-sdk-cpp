@@ -174,7 +174,7 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this scenario. Remember that even if multiple statements allow the operation on
      * the resource, if only one statement denies that operation, then the explicit
-     * deny overrides any allow. Inaddition, the deny statement is the only entry
+     * deny overrides any allow. In addition, the deny statement is the only entry
      * included in the result.</p>
      */
     inline const Aws::Vector<Statement>& GetMatchedStatements() const{ return m_matchedStatements; }
@@ -183,7 +183,7 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this scenario. Remember that even if multiple statements allow the operation on
      * the resource, if only one statement denies that operation, then the explicit
-     * deny overrides any allow. Inaddition, the deny statement is the only entry
+     * deny overrides any allow. In addition, the deny statement is the only entry
      * included in the result.</p>
      */
     inline bool MatchedStatementsHasBeenSet() const { return m_matchedStatementsHasBeenSet; }
@@ -192,7 +192,7 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this scenario. Remember that even if multiple statements allow the operation on
      * the resource, if only one statement denies that operation, then the explicit
-     * deny overrides any allow. Inaddition, the deny statement is the only entry
+     * deny overrides any allow. In addition, the deny statement is the only entry
      * included in the result.</p>
      */
     inline void SetMatchedStatements(const Aws::Vector<Statement>& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements = value; }
@@ -201,7 +201,7 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this scenario. Remember that even if multiple statements allow the operation on
      * the resource, if only one statement denies that operation, then the explicit
-     * deny overrides any allow. Inaddition, the deny statement is the only entry
+     * deny overrides any allow. In addition, the deny statement is the only entry
      * included in the result.</p>
      */
     inline void SetMatchedStatements(Aws::Vector<Statement>&& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements = std::move(value); }
@@ -210,7 +210,7 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this scenario. Remember that even if multiple statements allow the operation on
      * the resource, if only one statement denies that operation, then the explicit
-     * deny overrides any allow. Inaddition, the deny statement is the only entry
+     * deny overrides any allow. In addition, the deny statement is the only entry
      * included in the result.</p>
      */
     inline EvaluationResult& WithMatchedStatements(const Aws::Vector<Statement>& value) { SetMatchedStatements(value); return *this;}
@@ -219,7 +219,7 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this scenario. Remember that even if multiple statements allow the operation on
      * the resource, if only one statement denies that operation, then the explicit
-     * deny overrides any allow. Inaddition, the deny statement is the only entry
+     * deny overrides any allow. In addition, the deny statement is the only entry
      * included in the result.</p>
      */
     inline EvaluationResult& WithMatchedStatements(Aws::Vector<Statement>&& value) { SetMatchedStatements(std::move(value)); return *this;}
@@ -228,7 +228,7 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this scenario. Remember that even if multiple statements allow the operation on
      * the resource, if only one statement denies that operation, then the explicit
-     * deny overrides any allow. Inaddition, the deny statement is the only entry
+     * deny overrides any allow. In addition, the deny statement is the only entry
      * included in the result.</p>
      */
     inline EvaluationResult& AddMatchedStatements(const Statement& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements.push_back(value); return *this; }
@@ -237,7 +237,7 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this scenario. Remember that even if multiple statements allow the operation on
      * the resource, if only one statement denies that operation, then the explicit
-     * deny overrides any allow. Inaddition, the deny statement is the only entry
+     * deny overrides any allow. In addition, the deny statement is the only entry
      * included in the result.</p>
      */
     inline EvaluationResult& AddMatchedStatements(Statement&& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements.push_back(std::move(value)); return *this; }
@@ -353,44 +353,44 @@ namespace Model
 
 
     /**
-     * <p>A structure that details how AWS Organizations and its service control
-     * policies affect the results of the simulation. Only applies if the simulated
-     * user's account is part of an organization.</p>
+     * <p>A structure that details how Organizations and its service control policies
+     * affect the results of the simulation. Only applies if the simulated user's
+     * account is part of an organization.</p>
      */
     inline const OrganizationsDecisionDetail& GetOrganizationsDecisionDetail() const{ return m_organizationsDecisionDetail; }
 
     /**
-     * <p>A structure that details how AWS Organizations and its service control
-     * policies affect the results of the simulation. Only applies if the simulated
-     * user's account is part of an organization.</p>
+     * <p>A structure that details how Organizations and its service control policies
+     * affect the results of the simulation. Only applies if the simulated user's
+     * account is part of an organization.</p>
      */
     inline bool OrganizationsDecisionDetailHasBeenSet() const { return m_organizationsDecisionDetailHasBeenSet; }
 
     /**
-     * <p>A structure that details how AWS Organizations and its service control
-     * policies affect the results of the simulation. Only applies if the simulated
-     * user's account is part of an organization.</p>
+     * <p>A structure that details how Organizations and its service control policies
+     * affect the results of the simulation. Only applies if the simulated user's
+     * account is part of an organization.</p>
      */
     inline void SetOrganizationsDecisionDetail(const OrganizationsDecisionDetail& value) { m_organizationsDecisionDetailHasBeenSet = true; m_organizationsDecisionDetail = value; }
 
     /**
-     * <p>A structure that details how AWS Organizations and its service control
-     * policies affect the results of the simulation. Only applies if the simulated
-     * user's account is part of an organization.</p>
+     * <p>A structure that details how Organizations and its service control policies
+     * affect the results of the simulation. Only applies if the simulated user's
+     * account is part of an organization.</p>
      */
     inline void SetOrganizationsDecisionDetail(OrganizationsDecisionDetail&& value) { m_organizationsDecisionDetailHasBeenSet = true; m_organizationsDecisionDetail = std::move(value); }
 
     /**
-     * <p>A structure that details how AWS Organizations and its service control
-     * policies affect the results of the simulation. Only applies if the simulated
-     * user's account is part of an organization.</p>
+     * <p>A structure that details how Organizations and its service control policies
+     * affect the results of the simulation. Only applies if the simulated user's
+     * account is part of an organization.</p>
      */
     inline EvaluationResult& WithOrganizationsDecisionDetail(const OrganizationsDecisionDetail& value) { SetOrganizationsDecisionDetail(value); return *this;}
 
     /**
-     * <p>A structure that details how AWS Organizations and its service control
-     * policies affect the results of the simulation. Only applies if the simulated
-     * user's account is part of an organization.</p>
+     * <p>A structure that details how Organizations and its service control policies
+     * affect the results of the simulation. Only applies if the simulated user's
+     * account is part of an organization.</p>
      */
     inline EvaluationResult& WithOrganizationsDecisionDetail(OrganizationsDecisionDetail&& value) { SetOrganizationsDecisionDetail(std::move(value)); return *this;}
 

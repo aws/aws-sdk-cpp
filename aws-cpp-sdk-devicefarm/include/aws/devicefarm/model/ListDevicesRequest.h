@@ -143,7 +143,7 @@ namespace Model
     /**
      * <p>Used to select a set of devices. A filter is made up of an attribute, an
      * operator, and one or more values.</p> <ul> <li> <p>Attribute: The aspect of a
-     * device such as platform or model used as the selction criteria in a device
+     * device such as platform or model used as the selection criteria in a device
      * filter.</p> <p>Allowed values include:</p> <ul> <li> <p>ARN: The Amazon Resource
      * Name (ARN) of the device. For example,
      * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> </li> <li> <p>PLATFORM:
@@ -179,7 +179,7 @@ namespace Model
     /**
      * <p>Used to select a set of devices. A filter is made up of an attribute, an
      * operator, and one or more values.</p> <ul> <li> <p>Attribute: The aspect of a
-     * device such as platform or model used as the selction criteria in a device
+     * device such as platform or model used as the selection criteria in a device
      * filter.</p> <p>Allowed values include:</p> <ul> <li> <p>ARN: The Amazon Resource
      * Name (ARN) of the device. For example,
      * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> </li> <li> <p>PLATFORM:
@@ -215,7 +215,7 @@ namespace Model
     /**
      * <p>Used to select a set of devices. A filter is made up of an attribute, an
      * operator, and one or more values.</p> <ul> <li> <p>Attribute: The aspect of a
-     * device such as platform or model used as the selction criteria in a device
+     * device such as platform or model used as the selection criteria in a device
      * filter.</p> <p>Allowed values include:</p> <ul> <li> <p>ARN: The Amazon Resource
      * Name (ARN) of the device. For example,
      * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> </li> <li> <p>PLATFORM:
@@ -251,7 +251,7 @@ namespace Model
     /**
      * <p>Used to select a set of devices. A filter is made up of an attribute, an
      * operator, and one or more values.</p> <ul> <li> <p>Attribute: The aspect of a
-     * device such as platform or model used as the selction criteria in a device
+     * device such as platform or model used as the selection criteria in a device
      * filter.</p> <p>Allowed values include:</p> <ul> <li> <p>ARN: The Amazon Resource
      * Name (ARN) of the device. For example,
      * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> </li> <li> <p>PLATFORM:
@@ -287,7 +287,7 @@ namespace Model
     /**
      * <p>Used to select a set of devices. A filter is made up of an attribute, an
      * operator, and one or more values.</p> <ul> <li> <p>Attribute: The aspect of a
-     * device such as platform or model used as the selction criteria in a device
+     * device such as platform or model used as the selection criteria in a device
      * filter.</p> <p>Allowed values include:</p> <ul> <li> <p>ARN: The Amazon Resource
      * Name (ARN) of the device. For example,
      * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> </li> <li> <p>PLATFORM:
@@ -323,7 +323,7 @@ namespace Model
     /**
      * <p>Used to select a set of devices. A filter is made up of an attribute, an
      * operator, and one or more values.</p> <ul> <li> <p>Attribute: The aspect of a
-     * device such as platform or model used as the selction criteria in a device
+     * device such as platform or model used as the selection criteria in a device
      * filter.</p> <p>Allowed values include:</p> <ul> <li> <p>ARN: The Amazon Resource
      * Name (ARN) of the device. For example,
      * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> </li> <li> <p>PLATFORM:
@@ -359,7 +359,7 @@ namespace Model
     /**
      * <p>Used to select a set of devices. A filter is made up of an attribute, an
      * operator, and one or more values.</p> <ul> <li> <p>Attribute: The aspect of a
-     * device such as platform or model used as the selction criteria in a device
+     * device such as platform or model used as the selection criteria in a device
      * filter.</p> <p>Allowed values include:</p> <ul> <li> <p>ARN: The Amazon Resource
      * Name (ARN) of the device. For example,
      * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> </li> <li> <p>PLATFORM:
@@ -395,7 +395,7 @@ namespace Model
     /**
      * <p>Used to select a set of devices. A filter is made up of an attribute, an
      * operator, and one or more values.</p> <ul> <li> <p>Attribute: The aspect of a
-     * device such as platform or model used as the selction criteria in a device
+     * device such as platform or model used as the selection criteria in a device
      * filter.</p> <p>Allowed values include:</p> <ul> <li> <p>ARN: The Amazon Resource
      * Name (ARN) of the device. For example,
      * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> </li> <li> <p>PLATFORM:

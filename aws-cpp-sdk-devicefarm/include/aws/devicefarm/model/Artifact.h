@@ -153,7 +153,7 @@ namespace Model
      * </li> <li> <p>EXPLORER_EVENT_LOG: The Explorer event log output type.</p> </li>
      * <li> <p>EXPLORER_SUMMARY_LOG: The Explorer summary log output type.</p> </li>
      * <li> <p>APPLICATION_CRASH_REPORT: The application crash report output type.</p>
-     * </li> <li> <p>XCTEST_LOG: The XCode test output type.</p> </li> <li> <p>VIDEO:
+     * </li> <li> <p>XCTEST_LOG: The Xcode test output type.</p> </li> <li> <p>VIDEO:
      * The Video output type.</p> </li> <li> <p>CUSTOMER_ARTIFACT:The Customer Artifact
      * output type.</p> </li> <li> <p>CUSTOMER_ARTIFACT_LOG: The Customer Artifact Log
      * output type.</p> </li> <li> <p>TESTSPEC_OUTPUT: The Test Spec Output type.</p>
@@ -183,7 +183,7 @@ namespace Model
      * </li> <li> <p>EXPLORER_EVENT_LOG: The Explorer event log output type.</p> </li>
      * <li> <p>EXPLORER_SUMMARY_LOG: The Explorer summary log output type.</p> </li>
      * <li> <p>APPLICATION_CRASH_REPORT: The application crash report output type.</p>
-     * </li> <li> <p>XCTEST_LOG: The XCode test output type.</p> </li> <li> <p>VIDEO:
+     * </li> <li> <p>XCTEST_LOG: The Xcode test output type.</p> </li> <li> <p>VIDEO:
      * The Video output type.</p> </li> <li> <p>CUSTOMER_ARTIFACT:The Customer Artifact
      * output type.</p> </li> <li> <p>CUSTOMER_ARTIFACT_LOG: The Customer Artifact Log
      * output type.</p> </li> <li> <p>TESTSPEC_OUTPUT: The Test Spec Output type.</p>
@@ -213,7 +213,7 @@ namespace Model
      * </li> <li> <p>EXPLORER_EVENT_LOG: The Explorer event log output type.</p> </li>
      * <li> <p>EXPLORER_SUMMARY_LOG: The Explorer summary log output type.</p> </li>
      * <li> <p>APPLICATION_CRASH_REPORT: The application crash report output type.</p>
-     * </li> <li> <p>XCTEST_LOG: The XCode test output type.</p> </li> <li> <p>VIDEO:
+     * </li> <li> <p>XCTEST_LOG: The Xcode test output type.</p> </li> <li> <p>VIDEO:
      * The Video output type.</p> </li> <li> <p>CUSTOMER_ARTIFACT:The Customer Artifact
      * output type.</p> </li> <li> <p>CUSTOMER_ARTIFACT_LOG: The Customer Artifact Log
      * output type.</p> </li> <li> <p>TESTSPEC_OUTPUT: The Test Spec Output type.</p>
@@ -243,7 +243,7 @@ namespace Model
      * </li> <li> <p>EXPLORER_EVENT_LOG: The Explorer event log output type.</p> </li>
      * <li> <p>EXPLORER_SUMMARY_LOG: The Explorer summary log output type.</p> </li>
      * <li> <p>APPLICATION_CRASH_REPORT: The application crash report output type.</p>
-     * </li> <li> <p>XCTEST_LOG: The XCode test output type.</p> </li> <li> <p>VIDEO:
+     * </li> <li> <p>XCTEST_LOG: The Xcode test output type.</p> </li> <li> <p>VIDEO:
      * The Video output type.</p> </li> <li> <p>CUSTOMER_ARTIFACT:The Customer Artifact
      * output type.</p> </li> <li> <p>CUSTOMER_ARTIFACT_LOG: The Customer Artifact Log
      * output type.</p> </li> <li> <p>TESTSPEC_OUTPUT: The Test Spec Output type.</p>
@@ -273,7 +273,7 @@ namespace Model
      * </li> <li> <p>EXPLORER_EVENT_LOG: The Explorer event log output type.</p> </li>
      * <li> <p>EXPLORER_SUMMARY_LOG: The Explorer summary log output type.</p> </li>
      * <li> <p>APPLICATION_CRASH_REPORT: The application crash report output type.</p>
-     * </li> <li> <p>XCTEST_LOG: The XCode test output type.</p> </li> <li> <p>VIDEO:
+     * </li> <li> <p>XCTEST_LOG: The Xcode test output type.</p> </li> <li> <p>VIDEO:
      * The Video output type.</p> </li> <li> <p>CUSTOMER_ARTIFACT:The Customer Artifact
      * output type.</p> </li> <li> <p>CUSTOMER_ARTIFACT_LOG: The Customer Artifact Log
      * output type.</p> </li> <li> <p>TESTSPEC_OUTPUT: The Test Spec Output type.</p>
@@ -303,7 +303,7 @@ namespace Model
      * </li> <li> <p>EXPLORER_EVENT_LOG: The Explorer event log output type.</p> </li>
      * <li> <p>EXPLORER_SUMMARY_LOG: The Explorer summary log output type.</p> </li>
      * <li> <p>APPLICATION_CRASH_REPORT: The application crash report output type.</p>
-     * </li> <li> <p>XCTEST_LOG: The XCode test output type.</p> </li> <li> <p>VIDEO:
+     * </li> <li> <p>XCTEST_LOG: The Xcode test output type.</p> </li> <li> <p>VIDEO:
      * The Video output type.</p> </li> <li> <p>CUSTOMER_ARTIFACT:The Customer Artifact
      * output type.</p> </li> <li> <p>CUSTOMER_ARTIFACT_LOG: The Customer Artifact Log
      * output type.</p> </li> <li> <p>TESTSPEC_OUTPUT: The Test Spec Output type.</p>

@@ -54,6 +54,7 @@ static const int MALFORMED_CERTIFICATE_HASH = HashingUtils::HashString("Malforme
 static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailure");
 static const int POLICY_EVALUATION_HASH = HashingUtils::HashString("PolicyEvaluation");
 static const int ENTITY_TEMPORARILY_UNMODIFIABLE_HASH = HashingUtils::HashString("EntityTemporarilyUnmodifiable");
+static const int REPORT_GENERATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ReportGenerationLimitExceeded");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -163,6 +164,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ENTITY_TEMPORARILY_UNMODIFIABLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::ENTITY_TEMPORARILY_UNMODIFIABLE), false);
+  }
+  else if (hashCode == REPORT_GENERATION_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::REPORT_GENERATION_LIMIT_EXCEEDED), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

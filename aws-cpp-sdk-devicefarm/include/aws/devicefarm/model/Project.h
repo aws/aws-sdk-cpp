@@ -133,25 +133,25 @@ namespace Model
 
     /**
      * <p>The default number of minutes (at the project level) a test run will execute
-     * before it times out. Default value is 60 minutes.</p>
+     * before it times out. The default value is 150 minutes.</p>
      */
     inline int GetDefaultJobTimeoutMinutes() const{ return m_defaultJobTimeoutMinutes; }
 
     /**
      * <p>The default number of minutes (at the project level) a test run will execute
-     * before it times out. Default value is 60 minutes.</p>
+     * before it times out. The default value is 150 minutes.</p>
      */
     inline bool DefaultJobTimeoutMinutesHasBeenSet() const { return m_defaultJobTimeoutMinutesHasBeenSet; }
 
     /**
      * <p>The default number of minutes (at the project level) a test run will execute
-     * before it times out. Default value is 60 minutes.</p>
+     * before it times out. The default value is 150 minutes.</p>
      */
     inline void SetDefaultJobTimeoutMinutes(int value) { m_defaultJobTimeoutMinutesHasBeenSet = true; m_defaultJobTimeoutMinutes = value; }
 
     /**
      * <p>The default number of minutes (at the project level) a test run will execute
-     * before it times out. Default value is 60 minutes.</p>
+     * before it times out. The default value is 150 minutes.</p>
      */
     inline Project& WithDefaultJobTimeoutMinutes(int value) { SetDefaultJobTimeoutMinutes(value); return *this;}
 

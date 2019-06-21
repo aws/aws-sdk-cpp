@@ -31,6 +31,9 @@ namespace Model
 HlsManifestCreateOrUpdateParameters::HlsManifestCreateOrUpdateParameters() : 
     m_adMarkers(AdMarkers::NOT_SET),
     m_adMarkersHasBeenSet(false),
+    m_adTriggersHasBeenSet(false),
+    m_adsOnDeliveryRestrictions(AdsOnDeliveryRestrictions::NOT_SET),
+    m_adsOnDeliveryRestrictionsHasBeenSet(false),
     m_idHasBeenSet(false),
     m_includeIframeOnlyStream(false),
     m_includeIframeOnlyStreamHasBeenSet(false),
@@ -47,6 +50,9 @@ HlsManifestCreateOrUpdateParameters::HlsManifestCreateOrUpdateParameters() :
 HlsManifestCreateOrUpdateParameters::HlsManifestCreateOrUpdateParameters(JsonView jsonValue) : 
     m_adMarkers(AdMarkers::NOT_SET),
     m_adMarkersHasBeenSet(false),
+    m_adTriggersHasBeenSet(false),
+    m_adsOnDeliveryRestrictions(AdsOnDeliveryRestrictions::NOT_SET),
+    m_adsOnDeliveryRestrictionsHasBeenSet(false),
     m_idHasBeenSet(false),
     m_includeIframeOnlyStream(false),
     m_includeIframeOnlyStreamHasBeenSet(false),
@@ -68,6 +74,23 @@ HlsManifestCreateOrUpdateParameters& HlsManifestCreateOrUpdateParameters::operat
     m_adMarkers = AdMarkersMapper::GetAdMarkersForName(jsonValue.GetString("adMarkers"));
 
     m_adMarkersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("adTriggers"))
+  {
+    Array<JsonView> adTriggersJsonList = jsonValue.GetArray("adTriggers");
+    for(unsigned adTriggersIndex = 0; adTriggersIndex < adTriggersJsonList.GetLength(); ++adTriggersIndex)
+    {
+      m_adTriggers.push_back(__AdTriggersElementMapper::Get__AdTriggersElementForName(adTriggersJsonList[adTriggersIndex].AsString()));
+    }
+    m_adTriggersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("adsOnDeliveryRestrictions"))
+  {
+    m_adsOnDeliveryRestrictions = AdsOnDeliveryRestrictionsMapper::GetAdsOnDeliveryRestrictionsForName(jsonValue.GetString("adsOnDeliveryRestrictions"));
+
+    m_adsOnDeliveryRestrictionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("id"))
@@ -122,6 +145,22 @@ JsonValue HlsManifestCreateOrUpdateParameters::Jsonize() const
   if(m_adMarkersHasBeenSet)
   {
    payload.WithString("adMarkers", AdMarkersMapper::GetNameForAdMarkers(m_adMarkers));
+  }
+
+  if(m_adTriggersHasBeenSet)
+  {
+   Array<JsonValue> adTriggersJsonList(m_adTriggers.size());
+   for(unsigned adTriggersIndex = 0; adTriggersIndex < adTriggersJsonList.GetLength(); ++adTriggersIndex)
+   {
+     adTriggersJsonList[adTriggersIndex].AsString(__AdTriggersElementMapper::GetNameFor__AdTriggersElement(m_adTriggers[adTriggersIndex]));
+   }
+   payload.WithArray("adTriggers", std::move(adTriggersJsonList));
+
+  }
+
+  if(m_adsOnDeliveryRestrictionsHasBeenSet)
+  {
+   payload.WithString("adsOnDeliveryRestrictions", AdsOnDeliveryRestrictionsMapper::GetNameForAdsOnDeliveryRestrictions(m_adsOnDeliveryRestrictions));
   }
 
   if(m_idHasBeenSet)

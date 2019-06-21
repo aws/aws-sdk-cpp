@@ -144,49 +144,49 @@ namespace Model
 
 
     /**
-     * <p>The descriptoin of the network profile about which you are returning
+     * <p>The description of the network profile about which you are returning
      * information.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The descriptoin of the network profile about which you are returning
+     * <p>The description of the network profile about which you are returning
      * information.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The descriptoin of the network profile about which you are returning
+     * <p>The description of the network profile about which you are returning
      * information.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The descriptoin of the network profile about which you are returning
+     * <p>The description of the network profile about which you are returning
      * information.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The descriptoin of the network profile about which you are returning
+     * <p>The description of the network profile about which you are returning
      * information.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The descriptoin of the network profile about which you are returning
+     * <p>The description of the network profile about which you are returning
      * information.</p>
      */
     inline UpdateNetworkProfileRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The descriptoin of the network profile about which you are returning
+     * <p>The description of the network profile about which you are returning
      * information.</p>
      */
     inline UpdateNetworkProfileRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The descriptoin of the network profile about which you are returning
+     * <p>The description of the network profile about which you are returning
      * information.</p>
      */
     inline UpdateNetworkProfileRequest& WithDescription(const char* value) { SetDescription(value); return *this;}

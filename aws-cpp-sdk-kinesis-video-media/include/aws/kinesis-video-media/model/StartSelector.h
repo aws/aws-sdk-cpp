@@ -63,16 +63,15 @@ namespace Model
      * <p>Identifies the fragment on the Kinesis video stream where you want to start
      * getting the data from.</p> <ul> <li> <p>NOW - Start with the latest chunk on the
      * stream.</p> </li> <li> <p>EARLIEST - Start with earliest available chunk on the
-     * stream.</p> </li> <li> <p>FRAGMENT_NUMBER - Start with the chunk containing the
-     * specific fragment. You must also specify the
-     * <code>StartFragmentNumber</code>.</p> </li> <li> <p>PRODUCER_TIMESTAMP or
-     * SERVER_TIMESTAMP - Start with the chunk containing a fragment with the specified
-     * producer or server timestamp. You specify the timestamp by adding
-     * <code>StartTimestamp</code>.</p> </li> <li> <p> CONTINUATION_TOKEN - Read using
-     * the specified continuation token. </p> </li> </ul> <note> <p>If you choose the
-     * NOW, EARLIEST, or CONTINUATION_TOKEN as the <code>startSelectorType</code>, you
-     * don't provide any additional information in the <code>startSelector</code>.</p>
-     * </note>
+     * stream.</p> </li> <li> <p>FRAGMENT_NUMBER - Start with the chunk after a
+     * specific fragment. You must also specify the <code>AfterFragmentNumber</code>
+     * parameter.</p> </li> <li> <p>PRODUCER_TIMESTAMP or SERVER_TIMESTAMP - Start with
+     * the chunk containing a fragment with the specified producer or server timestamp.
+     * You specify the timestamp by adding <code>StartTimestamp</code>.</p> </li> <li>
+     * <p> CONTINUATION_TOKEN - Read using the specified continuation token. </p> </li>
+     * </ul> <note> <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
+     * <code>startSelectorType</code>, you don't provide any additional information in
+     * the <code>startSelector</code>.</p> </note>
      */
     inline const StartSelectorType& GetStartSelectorType() const{ return m_startSelectorType; }
 
@@ -80,16 +79,15 @@ namespace Model
      * <p>Identifies the fragment on the Kinesis video stream where you want to start
      * getting the data from.</p> <ul> <li> <p>NOW - Start with the latest chunk on the
      * stream.</p> </li> <li> <p>EARLIEST - Start with earliest available chunk on the
-     * stream.</p> </li> <li> <p>FRAGMENT_NUMBER - Start with the chunk containing the
-     * specific fragment. You must also specify the
-     * <code>StartFragmentNumber</code>.</p> </li> <li> <p>PRODUCER_TIMESTAMP or
-     * SERVER_TIMESTAMP - Start with the chunk containing a fragment with the specified
-     * producer or server timestamp. You specify the timestamp by adding
-     * <code>StartTimestamp</code>.</p> </li> <li> <p> CONTINUATION_TOKEN - Read using
-     * the specified continuation token. </p> </li> </ul> <note> <p>If you choose the
-     * NOW, EARLIEST, or CONTINUATION_TOKEN as the <code>startSelectorType</code>, you
-     * don't provide any additional information in the <code>startSelector</code>.</p>
-     * </note>
+     * stream.</p> </li> <li> <p>FRAGMENT_NUMBER - Start with the chunk after a
+     * specific fragment. You must also specify the <code>AfterFragmentNumber</code>
+     * parameter.</p> </li> <li> <p>PRODUCER_TIMESTAMP or SERVER_TIMESTAMP - Start with
+     * the chunk containing a fragment with the specified producer or server timestamp.
+     * You specify the timestamp by adding <code>StartTimestamp</code>.</p> </li> <li>
+     * <p> CONTINUATION_TOKEN - Read using the specified continuation token. </p> </li>
+     * </ul> <note> <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
+     * <code>startSelectorType</code>, you don't provide any additional information in
+     * the <code>startSelector</code>.</p> </note>
      */
     inline bool StartSelectorTypeHasBeenSet() const { return m_startSelectorTypeHasBeenSet; }
 
@@ -97,16 +95,15 @@ namespace Model
      * <p>Identifies the fragment on the Kinesis video stream where you want to start
      * getting the data from.</p> <ul> <li> <p>NOW - Start with the latest chunk on the
      * stream.</p> </li> <li> <p>EARLIEST - Start with earliest available chunk on the
-     * stream.</p> </li> <li> <p>FRAGMENT_NUMBER - Start with the chunk containing the
-     * specific fragment. You must also specify the
-     * <code>StartFragmentNumber</code>.</p> </li> <li> <p>PRODUCER_TIMESTAMP or
-     * SERVER_TIMESTAMP - Start with the chunk containing a fragment with the specified
-     * producer or server timestamp. You specify the timestamp by adding
-     * <code>StartTimestamp</code>.</p> </li> <li> <p> CONTINUATION_TOKEN - Read using
-     * the specified continuation token. </p> </li> </ul> <note> <p>If you choose the
-     * NOW, EARLIEST, or CONTINUATION_TOKEN as the <code>startSelectorType</code>, you
-     * don't provide any additional information in the <code>startSelector</code>.</p>
-     * </note>
+     * stream.</p> </li> <li> <p>FRAGMENT_NUMBER - Start with the chunk after a
+     * specific fragment. You must also specify the <code>AfterFragmentNumber</code>
+     * parameter.</p> </li> <li> <p>PRODUCER_TIMESTAMP or SERVER_TIMESTAMP - Start with
+     * the chunk containing a fragment with the specified producer or server timestamp.
+     * You specify the timestamp by adding <code>StartTimestamp</code>.</p> </li> <li>
+     * <p> CONTINUATION_TOKEN - Read using the specified continuation token. </p> </li>
+     * </ul> <note> <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
+     * <code>startSelectorType</code>, you don't provide any additional information in
+     * the <code>startSelector</code>.</p> </note>
      */
     inline void SetStartSelectorType(const StartSelectorType& value) { m_startSelectorTypeHasBeenSet = true; m_startSelectorType = value; }
 
@@ -114,16 +111,15 @@ namespace Model
      * <p>Identifies the fragment on the Kinesis video stream where you want to start
      * getting the data from.</p> <ul> <li> <p>NOW - Start with the latest chunk on the
      * stream.</p> </li> <li> <p>EARLIEST - Start with earliest available chunk on the
-     * stream.</p> </li> <li> <p>FRAGMENT_NUMBER - Start with the chunk containing the
-     * specific fragment. You must also specify the
-     * <code>StartFragmentNumber</code>.</p> </li> <li> <p>PRODUCER_TIMESTAMP or
-     * SERVER_TIMESTAMP - Start with the chunk containing a fragment with the specified
-     * producer or server timestamp. You specify the timestamp by adding
-     * <code>StartTimestamp</code>.</p> </li> <li> <p> CONTINUATION_TOKEN - Read using
-     * the specified continuation token. </p> </li> </ul> <note> <p>If you choose the
-     * NOW, EARLIEST, or CONTINUATION_TOKEN as the <code>startSelectorType</code>, you
-     * don't provide any additional information in the <code>startSelector</code>.</p>
-     * </note>
+     * stream.</p> </li> <li> <p>FRAGMENT_NUMBER - Start with the chunk after a
+     * specific fragment. You must also specify the <code>AfterFragmentNumber</code>
+     * parameter.</p> </li> <li> <p>PRODUCER_TIMESTAMP or SERVER_TIMESTAMP - Start with
+     * the chunk containing a fragment with the specified producer or server timestamp.
+     * You specify the timestamp by adding <code>StartTimestamp</code>.</p> </li> <li>
+     * <p> CONTINUATION_TOKEN - Read using the specified continuation token. </p> </li>
+     * </ul> <note> <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
+     * <code>startSelectorType</code>, you don't provide any additional information in
+     * the <code>startSelector</code>.</p> </note>
      */
     inline void SetStartSelectorType(StartSelectorType&& value) { m_startSelectorTypeHasBeenSet = true; m_startSelectorType = std::move(value); }
 
@@ -131,16 +127,15 @@ namespace Model
      * <p>Identifies the fragment on the Kinesis video stream where you want to start
      * getting the data from.</p> <ul> <li> <p>NOW - Start with the latest chunk on the
      * stream.</p> </li> <li> <p>EARLIEST - Start with earliest available chunk on the
-     * stream.</p> </li> <li> <p>FRAGMENT_NUMBER - Start with the chunk containing the
-     * specific fragment. You must also specify the
-     * <code>StartFragmentNumber</code>.</p> </li> <li> <p>PRODUCER_TIMESTAMP or
-     * SERVER_TIMESTAMP - Start with the chunk containing a fragment with the specified
-     * producer or server timestamp. You specify the timestamp by adding
-     * <code>StartTimestamp</code>.</p> </li> <li> <p> CONTINUATION_TOKEN - Read using
-     * the specified continuation token. </p> </li> </ul> <note> <p>If you choose the
-     * NOW, EARLIEST, or CONTINUATION_TOKEN as the <code>startSelectorType</code>, you
-     * don't provide any additional information in the <code>startSelector</code>.</p>
-     * </note>
+     * stream.</p> </li> <li> <p>FRAGMENT_NUMBER - Start with the chunk after a
+     * specific fragment. You must also specify the <code>AfterFragmentNumber</code>
+     * parameter.</p> </li> <li> <p>PRODUCER_TIMESTAMP or SERVER_TIMESTAMP - Start with
+     * the chunk containing a fragment with the specified producer or server timestamp.
+     * You specify the timestamp by adding <code>StartTimestamp</code>.</p> </li> <li>
+     * <p> CONTINUATION_TOKEN - Read using the specified continuation token. </p> </li>
+     * </ul> <note> <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
+     * <code>startSelectorType</code>, you don't provide any additional information in
+     * the <code>startSelector</code>.</p> </note>
      */
     inline StartSelector& WithStartSelectorType(const StartSelectorType& value) { SetStartSelectorType(value); return *this;}
 
@@ -148,16 +143,15 @@ namespace Model
      * <p>Identifies the fragment on the Kinesis video stream where you want to start
      * getting the data from.</p> <ul> <li> <p>NOW - Start with the latest chunk on the
      * stream.</p> </li> <li> <p>EARLIEST - Start with earliest available chunk on the
-     * stream.</p> </li> <li> <p>FRAGMENT_NUMBER - Start with the chunk containing the
-     * specific fragment. You must also specify the
-     * <code>StartFragmentNumber</code>.</p> </li> <li> <p>PRODUCER_TIMESTAMP or
-     * SERVER_TIMESTAMP - Start with the chunk containing a fragment with the specified
-     * producer or server timestamp. You specify the timestamp by adding
-     * <code>StartTimestamp</code>.</p> </li> <li> <p> CONTINUATION_TOKEN - Read using
-     * the specified continuation token. </p> </li> </ul> <note> <p>If you choose the
-     * NOW, EARLIEST, or CONTINUATION_TOKEN as the <code>startSelectorType</code>, you
-     * don't provide any additional information in the <code>startSelector</code>.</p>
-     * </note>
+     * stream.</p> </li> <li> <p>FRAGMENT_NUMBER - Start with the chunk after a
+     * specific fragment. You must also specify the <code>AfterFragmentNumber</code>
+     * parameter.</p> </li> <li> <p>PRODUCER_TIMESTAMP or SERVER_TIMESTAMP - Start with
+     * the chunk containing a fragment with the specified producer or server timestamp.
+     * You specify the timestamp by adding <code>StartTimestamp</code>.</p> </li> <li>
+     * <p> CONTINUATION_TOKEN - Read using the specified continuation token. </p> </li>
+     * </ul> <note> <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
+     * <code>startSelectorType</code>, you don't provide any additional information in
+     * the <code>startSelector</code>.</p> </note>
      */
     inline StartSelector& WithStartSelectorType(StartSelectorType&& value) { SetStartSelectorType(std::move(value)); return *this;}
 

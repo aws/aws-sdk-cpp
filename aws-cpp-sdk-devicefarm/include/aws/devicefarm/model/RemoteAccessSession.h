@@ -738,37 +738,37 @@ namespace Model
 
 
     /**
-     * <p>The number of minutes a device is used in a remote access sesssion (including
+     * <p>The number of minutes a device is used in a remote access session (including
      * setup and teardown minutes).</p>
      */
     inline const DeviceMinutes& GetDeviceMinutes() const{ return m_deviceMinutes; }
 
     /**
-     * <p>The number of minutes a device is used in a remote access sesssion (including
+     * <p>The number of minutes a device is used in a remote access session (including
      * setup and teardown minutes).</p>
      */
     inline bool DeviceMinutesHasBeenSet() const { return m_deviceMinutesHasBeenSet; }
 
     /**
-     * <p>The number of minutes a device is used in a remote access sesssion (including
+     * <p>The number of minutes a device is used in a remote access session (including
      * setup and teardown minutes).</p>
      */
     inline void SetDeviceMinutes(const DeviceMinutes& value) { m_deviceMinutesHasBeenSet = true; m_deviceMinutes = value; }
 
     /**
-     * <p>The number of minutes a device is used in a remote access sesssion (including
+     * <p>The number of minutes a device is used in a remote access session (including
      * setup and teardown minutes).</p>
      */
     inline void SetDeviceMinutes(DeviceMinutes&& value) { m_deviceMinutesHasBeenSet = true; m_deviceMinutes = std::move(value); }
 
     /**
-     * <p>The number of minutes a device is used in a remote access sesssion (including
+     * <p>The number of minutes a device is used in a remote access session (including
      * setup and teardown minutes).</p>
      */
     inline RemoteAccessSession& WithDeviceMinutes(const DeviceMinutes& value) { SetDeviceMinutes(value); return *this;}
 
     /**
-     * <p>The number of minutes a device is used in a remote access sesssion (including
+     * <p>The number of minutes a device is used in a remote access session (including
      * setup and teardown minutes).</p>
      */
     inline RemoteAccessSession& WithDeviceMinutes(DeviceMinutes&& value) { SetDeviceMinutes(std::move(value)); return *this;}

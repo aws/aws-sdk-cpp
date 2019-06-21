@@ -26,6 +26,7 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/event/EventStream.h>
 
 #include <aws/kinesis/KinesisClient.h>
 #include <aws/kinesis/KinesisEndpoint.h>
@@ -56,6 +57,7 @@
 #include <aws/kinesis/model/SplitShardRequest.h>
 #include <aws/kinesis/model/StartStreamEncryptionRequest.h>
 #include <aws/kinesis/model/StopStreamEncryptionRequest.h>
+#include <aws/kinesis/model/SubscribeToShardRequest.h>
 #include <aws/kinesis/model/UpdateShardCountRequest.h>
 
 using namespace Aws;
@@ -1038,6 +1040,44 @@ void KinesisClient::StopStreamEncryptionAsync(const StopStreamEncryptionRequest&
 void KinesisClient::StopStreamEncryptionAsyncHelper(const StopStreamEncryptionRequest& request, const StopStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopStreamEncryption(request), context);
+}
+
+SubscribeToShardOutcome KinesisClient::SubscribeToShard(SubscribeToShardRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  request.SetResponseStreamFactory(
+      [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
+  );
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SubscribeToShardOutcome(NoResult());
+  }
+  else
+  {
+    return SubscribeToShardOutcome(outcome.GetError());
+  }
+}
+
+SubscribeToShardOutcomeCallable KinesisClient::SubscribeToShardCallable(SubscribeToShardRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SubscribeToShardOutcome() > >(ALLOCATION_TAG, [this, &request](){ return this->SubscribeToShard(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisClient::SubscribeToShardAsync(SubscribeToShardRequest& request, const SubscribeToShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, &request, handler, context](){ this->SubscribeToShardAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisClient::SubscribeToShardAsyncHelper(SubscribeToShardRequest& request, const SubscribeToShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SubscribeToShard(request), context);
 }
 
 UpdateShardCountOutcome KinesisClient::UpdateShardCount(const UpdateShardCountRequest& request) const

@@ -185,8 +185,8 @@ namespace Model
      * <p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.</p> </li> <li>
      * <p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.</p> </li> <li>
      * <p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.</p> </li> <li>
-     * <p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p> </li> <li>
-     * <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p> </li> <li>
+     * <p>XCTEST_TEST_PACKAGE: An Xcode test package upload.</p> </li> <li>
+     * <p>XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.</p> </li> <li>
      * <p>APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.</p> </li>
      * <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec
      * upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec
@@ -200,7 +200,7 @@ namespace Model
      * Appium Node.js test spec upload for a web app.</p> </li> <li>
      * <p>APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.</p>
      * </li> <li> <p>INSTRUMENTATION_TEST_SPEC: An instrumentation test spec
-     * upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.</p>
+     * upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.</p>
      * </li> </ul> <p> <b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.</p>
@@ -229,8 +229,8 @@ namespace Model
      * <p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.</p> </li> <li>
      * <p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.</p> </li> <li>
      * <p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.</p> </li> <li>
-     * <p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p> </li> <li>
-     * <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p> </li> <li>
+     * <p>XCTEST_TEST_PACKAGE: An Xcode test package upload.</p> </li> <li>
+     * <p>XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.</p> </li> <li>
      * <p>APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.</p> </li>
      * <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec
      * upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec
@@ -244,7 +244,7 @@ namespace Model
      * Appium Node.js test spec upload for a web app.</p> </li> <li>
      * <p>APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.</p>
      * </li> <li> <p>INSTRUMENTATION_TEST_SPEC: An instrumentation test spec
-     * upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.</p>
+     * upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.</p>
      * </li> </ul> <p> <b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.</p>
@@ -273,8 +273,8 @@ namespace Model
      * <p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.</p> </li> <li>
      * <p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.</p> </li> <li>
      * <p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.</p> </li> <li>
-     * <p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p> </li> <li>
-     * <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p> </li> <li>
+     * <p>XCTEST_TEST_PACKAGE: An Xcode test package upload.</p> </li> <li>
+     * <p>XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.</p> </li> <li>
      * <p>APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.</p> </li>
      * <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec
      * upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec
@@ -288,7 +288,7 @@ namespace Model
      * Appium Node.js test spec upload for a web app.</p> </li> <li>
      * <p>APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.</p>
      * </li> <li> <p>INSTRUMENTATION_TEST_SPEC: An instrumentation test spec
-     * upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.</p>
+     * upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.</p>
      * </li> </ul> <p> <b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.</p>
@@ -317,8 +317,8 @@ namespace Model
      * <p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.</p> </li> <li>
      * <p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.</p> </li> <li>
      * <p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.</p> </li> <li>
-     * <p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p> </li> <li>
-     * <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p> </li> <li>
+     * <p>XCTEST_TEST_PACKAGE: An Xcode test package upload.</p> </li> <li>
+     * <p>XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.</p> </li> <li>
      * <p>APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.</p> </li>
      * <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec
      * upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec
@@ -332,7 +332,7 @@ namespace Model
      * Appium Node.js test spec upload for a web app.</p> </li> <li>
      * <p>APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.</p>
      * </li> <li> <p>INSTRUMENTATION_TEST_SPEC: An instrumentation test spec
-     * upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.</p>
+     * upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.</p>
      * </li> </ul> <p> <b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.</p>
@@ -361,8 +361,8 @@ namespace Model
      * <p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.</p> </li> <li>
      * <p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.</p> </li> <li>
      * <p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.</p> </li> <li>
-     * <p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p> </li> <li>
-     * <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p> </li> <li>
+     * <p>XCTEST_TEST_PACKAGE: An Xcode test package upload.</p> </li> <li>
+     * <p>XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.</p> </li> <li>
      * <p>APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.</p> </li>
      * <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec
      * upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec
@@ -376,7 +376,7 @@ namespace Model
      * Appium Node.js test spec upload for a web app.</p> </li> <li>
      * <p>APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.</p>
      * </li> <li> <p>INSTRUMENTATION_TEST_SPEC: An instrumentation test spec
-     * upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.</p>
+     * upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.</p>
      * </li> </ul> <p> <b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.</p>
@@ -405,8 +405,8 @@ namespace Model
      * <p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.</p> </li> <li>
      * <p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.</p> </li> <li>
      * <p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.</p> </li> <li>
-     * <p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p> </li> <li>
-     * <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p> </li> <li>
+     * <p>XCTEST_TEST_PACKAGE: An Xcode test package upload.</p> </li> <li>
+     * <p>XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.</p> </li> <li>
      * <p>APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.</p> </li>
      * <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec
      * upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec
@@ -420,7 +420,7 @@ namespace Model
      * Appium Node.js test spec upload for a web app.</p> </li> <li>
      * <p>APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.</p>
      * </li> <li> <p>INSTRUMENTATION_TEST_SPEC: An instrumentation test spec
-     * upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.</p>
+     * upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.</p>
      * </li> </ul> <p> <b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.</p>

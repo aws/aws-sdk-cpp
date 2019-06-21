@@ -15,12 +15,14 @@
 
 #pragma once
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediapackage/model/AdsOnDeliveryRestrictions.h>
 #include <aws/mediapackage/model/DashEncryption.h>
 #include <aws/mediapackage/model/ManifestLayout.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediapackage/model/Profile.h>
 #include <aws/mediapackage/model/SegmentTemplateFormat.h>
 #include <aws/mediapackage/model/StreamSelection.h>
+#include <aws/mediapackage/model/__AdTriggersElement.h>
 #include <aws/mediapackage/model/__PeriodTriggersElement.h>
 #include <utility>
 
@@ -52,6 +54,50 @@ namespace Model
     DashPackage(Aws::Utils::Json::JsonView jsonValue);
     DashPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    
+    inline const Aws::Vector<__AdTriggersElement>& GetAdTriggers() const{ return m_adTriggers; }
+
+    
+    inline bool AdTriggersHasBeenSet() const { return m_adTriggersHasBeenSet; }
+
+    
+    inline void SetAdTriggers(const Aws::Vector<__AdTriggersElement>& value) { m_adTriggersHasBeenSet = true; m_adTriggers = value; }
+
+    
+    inline void SetAdTriggers(Aws::Vector<__AdTriggersElement>&& value) { m_adTriggersHasBeenSet = true; m_adTriggers = std::move(value); }
+
+    
+    inline DashPackage& WithAdTriggers(const Aws::Vector<__AdTriggersElement>& value) { SetAdTriggers(value); return *this;}
+
+    
+    inline DashPackage& WithAdTriggers(Aws::Vector<__AdTriggersElement>&& value) { SetAdTriggers(std::move(value)); return *this;}
+
+    
+    inline DashPackage& AddAdTriggers(const __AdTriggersElement& value) { m_adTriggersHasBeenSet = true; m_adTriggers.push_back(value); return *this; }
+
+    
+    inline DashPackage& AddAdTriggers(__AdTriggersElement&& value) { m_adTriggersHasBeenSet = true; m_adTriggers.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const AdsOnDeliveryRestrictions& GetAdsOnDeliveryRestrictions() const{ return m_adsOnDeliveryRestrictions; }
+
+    
+    inline bool AdsOnDeliveryRestrictionsHasBeenSet() const { return m_adsOnDeliveryRestrictionsHasBeenSet; }
+
+    
+    inline void SetAdsOnDeliveryRestrictions(const AdsOnDeliveryRestrictions& value) { m_adsOnDeliveryRestrictionsHasBeenSet = true; m_adsOnDeliveryRestrictions = value; }
+
+    
+    inline void SetAdsOnDeliveryRestrictions(AdsOnDeliveryRestrictions&& value) { m_adsOnDeliveryRestrictionsHasBeenSet = true; m_adsOnDeliveryRestrictions = std::move(value); }
+
+    
+    inline DashPackage& WithAdsOnDeliveryRestrictions(const AdsOnDeliveryRestrictions& value) { SetAdsOnDeliveryRestrictions(value); return *this;}
+
+    
+    inline DashPackage& WithAdsOnDeliveryRestrictions(AdsOnDeliveryRestrictions&& value) { SetAdsOnDeliveryRestrictions(std::move(value)); return *this;}
 
 
     
@@ -469,6 +515,12 @@ rounded to the
     inline DashPackage& WithSuggestedPresentationDelaySeconds(int value) { SetSuggestedPresentationDelaySeconds(value); return *this;}
 
   private:
+
+    Aws::Vector<__AdTriggersElement> m_adTriggers;
+    bool m_adTriggersHasBeenSet;
+
+    AdsOnDeliveryRestrictions m_adsOnDeliveryRestrictions;
+    bool m_adsOnDeliveryRestrictionsHasBeenSet;
 
     DashEncryption m_encryption;
     bool m_encryptionHasBeenSet;

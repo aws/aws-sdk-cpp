@@ -228,7 +228,7 @@ namespace Model
 
     /**
      * <p>The trust relationship policy document that grants an entity permission to
-     * assume the role.</p> <p>in IAM, you must provide a JSON policy that has been
+     * assume the role.</p> <p>In IAM, you must provide a JSON policy that has been
      * converted to a string. However, for AWS CloudFormation templates formatted in
      * YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
      * always converts a YAML policy to JSON format before submitting it to IAM.</p>
@@ -245,7 +245,7 @@ namespace Model
 
     /**
      * <p>The trust relationship policy document that grants an entity permission to
-     * assume the role.</p> <p>in IAM, you must provide a JSON policy that has been
+     * assume the role.</p> <p>In IAM, you must provide a JSON policy that has been
      * converted to a string. However, for AWS CloudFormation templates formatted in
      * YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
      * always converts a YAML policy to JSON format before submitting it to IAM.</p>
@@ -262,7 +262,7 @@ namespace Model
 
     /**
      * <p>The trust relationship policy document that grants an entity permission to
-     * assume the role.</p> <p>in IAM, you must provide a JSON policy that has been
+     * assume the role.</p> <p>In IAM, you must provide a JSON policy that has been
      * converted to a string. However, for AWS CloudFormation templates formatted in
      * YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
      * always converts a YAML policy to JSON format before submitting it to IAM.</p>
@@ -279,7 +279,7 @@ namespace Model
 
     /**
      * <p>The trust relationship policy document that grants an entity permission to
-     * assume the role.</p> <p>in IAM, you must provide a JSON policy that has been
+     * assume the role.</p> <p>In IAM, you must provide a JSON policy that has been
      * converted to a string. However, for AWS CloudFormation templates formatted in
      * YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
      * always converts a YAML policy to JSON format before submitting it to IAM.</p>
@@ -296,7 +296,7 @@ namespace Model
 
     /**
      * <p>The trust relationship policy document that grants an entity permission to
-     * assume the role.</p> <p>in IAM, you must provide a JSON policy that has been
+     * assume the role.</p> <p>In IAM, you must provide a JSON policy that has been
      * converted to a string. However, for AWS CloudFormation templates formatted in
      * YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
      * always converts a YAML policy to JSON format before submitting it to IAM.</p>
@@ -313,7 +313,7 @@ namespace Model
 
     /**
      * <p>The trust relationship policy document that grants an entity permission to
-     * assume the role.</p> <p>in IAM, you must provide a JSON policy that has been
+     * assume the role.</p> <p>In IAM, you must provide a JSON policy that has been
      * converted to a string. However, for AWS CloudFormation templates formatted in
      * YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
      * always converts a YAML policy to JSON format before submitting it to IAM.</p>
@@ -330,7 +330,7 @@ namespace Model
 
     /**
      * <p>The trust relationship policy document that grants an entity permission to
-     * assume the role.</p> <p>in IAM, you must provide a JSON policy that has been
+     * assume the role.</p> <p>In IAM, you must provide a JSON policy that has been
      * converted to a string. However, for AWS CloudFormation templates formatted in
      * YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
      * always converts a YAML policy to JSON format before submitting it to IAM.</p>
@@ -347,7 +347,7 @@ namespace Model
 
     /**
      * <p>The trust relationship policy document that grants an entity permission to
-     * assume the role.</p> <p>in IAM, you must provide a JSON policy that has been
+     * assume the role.</p> <p>In IAM, you must provide a JSON policy that has been
      * converted to a string. However, for AWS CloudFormation templates formatted in
      * YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
      * always converts a YAML policy to JSON format before submitting it to IAM.</p>

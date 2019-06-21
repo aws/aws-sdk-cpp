@@ -333,36 +333,36 @@ namespace Model
 
 
     /**
-     * <p>The total number of authenticated entities that have attempted to access the
-     * service.</p> <p>This field is null if no IAM entities attempted to access the
-     * service within the <a
+     * <p>The total number of authenticated principals (root user, IAM users, or IAM
+     * roles) that have attempted to access the service.</p> <p>This field is null if
+     * no principals attempted to access the service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
     inline int GetTotalAuthenticatedEntities() const{ return m_totalAuthenticatedEntities; }
 
     /**
-     * <p>The total number of authenticated entities that have attempted to access the
-     * service.</p> <p>This field is null if no IAM entities attempted to access the
-     * service within the <a
+     * <p>The total number of authenticated principals (root user, IAM users, or IAM
+     * roles) that have attempted to access the service.</p> <p>This field is null if
+     * no principals attempted to access the service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
     inline bool TotalAuthenticatedEntitiesHasBeenSet() const { return m_totalAuthenticatedEntitiesHasBeenSet; }
 
     /**
-     * <p>The total number of authenticated entities that have attempted to access the
-     * service.</p> <p>This field is null if no IAM entities attempted to access the
-     * service within the <a
+     * <p>The total number of authenticated principals (root user, IAM users, or IAM
+     * roles) that have attempted to access the service.</p> <p>This field is null if
+     * no principals attempted to access the service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
     inline void SetTotalAuthenticatedEntities(int value) { m_totalAuthenticatedEntitiesHasBeenSet = true; m_totalAuthenticatedEntities = value; }
 
     /**
-     * <p>The total number of authenticated entities that have attempted to access the
-     * service.</p> <p>This field is null if no IAM entities attempted to access the
-     * service within the <a
+     * <p>The total number of authenticated principals (root user, IAM users, or IAM
+     * roles) that have attempted to access the service.</p> <p>This field is null if
+     * no principals attempted to access the service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */

@@ -54,42 +54,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the region where the service-linked role is being used.</p>
+     * <p>The name of the Region where the service-linked role is being used.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The name of the region where the service-linked role is being used.</p>
+     * <p>The name of the Region where the service-linked role is being used.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The name of the region where the service-linked role is being used.</p>
+     * <p>The name of the Region where the service-linked role is being used.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The name of the region where the service-linked role is being used.</p>
+     * <p>The name of the Region where the service-linked role is being used.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The name of the region where the service-linked role is being used.</p>
+     * <p>The name of the Region where the service-linked role is being used.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The name of the region where the service-linked role is being used.</p>
+     * <p>The name of the Region where the service-linked role is being used.</p>
      */
     inline RoleUsageType& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The name of the region where the service-linked role is being used.</p>
+     * <p>The name of the Region where the service-linked role is being used.</p>
      */
     inline RoleUsageType& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the region where the service-linked role is being used.</p>
+     * <p>The name of the Region where the service-linked role is being used.</p>
      */
     inline RoleUsageType& WithRegion(const char* value) { SetRegion(value); return *this;}
 

@@ -877,56 +877,56 @@ namespace Model
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * Whenever a context key is evaluated in one of the simulated IAM permissions
      * policies, the corresponding value is supplied.</p>
      */
     inline const Aws::Vector<ContextEntry>& GetContextEntries() const{ return m_contextEntries; }
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * Whenever a context key is evaluated in one of the simulated IAM permissions
      * policies, the corresponding value is supplied.</p>
      */
     inline bool ContextEntriesHasBeenSet() const { return m_contextEntriesHasBeenSet; }
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * Whenever a context key is evaluated in one of the simulated IAM permissions
      * policies, the corresponding value is supplied.</p>
      */
     inline void SetContextEntries(const Aws::Vector<ContextEntry>& value) { m_contextEntriesHasBeenSet = true; m_contextEntries = value; }
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * Whenever a context key is evaluated in one of the simulated IAM permissions
      * policies, the corresponding value is supplied.</p>
      */
     inline void SetContextEntries(Aws::Vector<ContextEntry>&& value) { m_contextEntriesHasBeenSet = true; m_contextEntries = std::move(value); }
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * Whenever a context key is evaluated in one of the simulated IAM permissions
      * policies, the corresponding value is supplied.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithContextEntries(const Aws::Vector<ContextEntry>& value) { SetContextEntries(value); return *this;}
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * Whenever a context key is evaluated in one of the simulated IAM permissions
      * policies, the corresponding value is supplied.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithContextEntries(Aws::Vector<ContextEntry>&& value) { SetContextEntries(std::move(value)); return *this;}
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * Whenever a context key is evaluated in one of the simulated IAM permissions
      * policies, the corresponding value is supplied.</p>
      */
     inline SimulatePrincipalPolicyRequest& AddContextEntries(const ContextEntry& value) { m_contextEntriesHasBeenSet = true; m_contextEntries.push_back(value); return *this; }
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * Whenever a context key is evaluated in one of the simulated IAM permissions
      * policies, the corresponding value is supplied.</p>
      */
     inline SimulatePrincipalPolicyRequest& AddContextEntries(ContextEntry&& value) { m_contextEntriesHasBeenSet = true; m_contextEntries.push_back(std::move(value)); return *this; }

@@ -36,8 +36,8 @@ namespace Model
   /**
    * <p>Contains information about the reason that the operation failed.</p> <p>This
    * data type is used as a response element in the
-   * <a>GetServiceLastAccessedDetails</a> operation and the
-   * <a>GetServiceLastAccessedDetailsWithEntities</a> operation.</p><p><h3>See
+   * <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and
+   * <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ErrorDetails">AWS
    * API Reference</a></p>

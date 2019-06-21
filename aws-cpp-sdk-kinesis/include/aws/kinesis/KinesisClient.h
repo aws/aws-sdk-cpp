@@ -103,6 +103,7 @@ namespace Model
         class SplitShardRequest;
         class StartStreamEncryptionRequest;
         class StopStreamEncryptionRequest;
+        class SubscribeToShardRequest;
         class UpdateShardCountRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KinesisErrors>> AddTagsToStreamOutcome;
@@ -131,6 +132,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KinesisErrors>> SplitShardOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KinesisErrors>> StartStreamEncryptionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KinesisErrors>> StopStreamEncryptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KinesisErrors>> SubscribeToShardOutcome;
         typedef Aws::Utils::Outcome<UpdateShardCountResult, Aws::Client::AWSError<KinesisErrors>> UpdateShardCountOutcome;
 
         typedef std::future<AddTagsToStreamOutcome> AddTagsToStreamOutcomeCallable;
@@ -159,6 +161,7 @@ namespace Model
         typedef std::future<SplitShardOutcome> SplitShardOutcomeCallable;
         typedef std::future<StartStreamEncryptionOutcome> StartStreamEncryptionOutcomeCallable;
         typedef std::future<StopStreamEncryptionOutcome> StopStreamEncryptionOutcomeCallable;
+        typedef std::future<SubscribeToShardOutcome> SubscribeToShardOutcomeCallable;
         typedef std::future<UpdateShardCountOutcome> UpdateShardCountOutcomeCallable;
 } // namespace Model
 
@@ -190,6 +193,7 @@ namespace Model
     typedef std::function<void(const KinesisClient*, const Model::SplitShardRequest&, const Model::SplitShardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SplitShardResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::StartStreamEncryptionRequest&, const Model::StartStreamEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartStreamEncryptionResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::StopStreamEncryptionRequest&, const Model::StopStreamEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStreamEncryptionResponseReceivedHandler;
+    typedef std::function<void(const KinesisClient*, const Model::SubscribeToShardRequest&, const Model::SubscribeToShardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubscribeToShardResponseReceivedHandler;
     typedef std::function<void(const KinesisClient*, const Model::UpdateShardCountRequest&, const Model::UpdateShardCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateShardCountResponseReceivedHandler;
 
   /**
@@ -2119,6 +2123,64 @@ namespace Model
         virtual void StopStreamEncryptionAsync(const Model::StopStreamEncryptionRequest& request, const StopStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Call this operation from your consumer after you call
+         * <a>RegisterStreamConsumer</a> to register the consumer with Kinesis Data
+         * Streams. If the call succeeds, your consumer starts receiving events of type
+         * <a>SubscribeToShardEvent</a> for up to 5 minutes, after which time you need to
+         * call <code>SubscribeToShard</code> again to renew the subscription if you want
+         * to continue to receive records.</p> <p>You can make one call to
+         * <code>SubscribeToShard</code> per second per <code>ConsumerARN</code>. If your
+         * call succeeds, and then you call the operation again less than 5 seconds later,
+         * the second call generates a <a>ResourceInUseException</a>. If you call the
+         * operation a second time more than 5 seconds after the first call succeeds, the
+         * second call succeeds and the first connection gets shut down.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SubscribeToShard">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SubscribeToShardOutcome SubscribeToShard(Model::SubscribeToShardRequest& request) const;
+
+        /**
+         * <p>Call this operation from your consumer after you call
+         * <a>RegisterStreamConsumer</a> to register the consumer with Kinesis Data
+         * Streams. If the call succeeds, your consumer starts receiving events of type
+         * <a>SubscribeToShardEvent</a> for up to 5 minutes, after which time you need to
+         * call <code>SubscribeToShard</code> again to renew the subscription if you want
+         * to continue to receive records.</p> <p>You can make one call to
+         * <code>SubscribeToShard</code> per second per <code>ConsumerARN</code>. If your
+         * call succeeds, and then you call the operation again less than 5 seconds later,
+         * the second call generates a <a>ResourceInUseException</a>. If you call the
+         * operation a second time more than 5 seconds after the first call succeeds, the
+         * second call succeeds and the first connection gets shut down.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SubscribeToShard">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SubscribeToShardOutcomeCallable SubscribeToShardCallable(Model::SubscribeToShardRequest& request) const;
+
+        /**
+         * <p>Call this operation from your consumer after you call
+         * <a>RegisterStreamConsumer</a> to register the consumer with Kinesis Data
+         * Streams. If the call succeeds, your consumer starts receiving events of type
+         * <a>SubscribeToShardEvent</a> for up to 5 minutes, after which time you need to
+         * call <code>SubscribeToShard</code> again to renew the subscription if you want
+         * to continue to receive records.</p> <p>You can make one call to
+         * <code>SubscribeToShard</code> per second per <code>ConsumerARN</code>. If your
+         * call succeeds, and then you call the operation again less than 5 seconds later,
+         * the second call generates a <a>ResourceInUseException</a>. If you call the
+         * operation a second time more than 5 seconds after the first call succeeds, the
+         * second call succeeds and the first connection gets shut down.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SubscribeToShard">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SubscribeToShardAsync(Model::SubscribeToShardRequest& request, const SubscribeToShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the shard count of the specified stream to the specified number of
          * shards.</p> <p>Updating the shard count is an asynchronous operation. Upon
          * receiving the request, Kinesis Data Streams returns immediately and sets the
@@ -2248,6 +2310,7 @@ namespace Model
         void SplitShardAsyncHelper(const Model::SplitShardRequest& request, const SplitShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartStreamEncryptionAsyncHelper(const Model::StartStreamEncryptionRequest& request, const StartStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopStreamEncryptionAsyncHelper(const Model::StopStreamEncryptionRequest& request, const StopStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SubscribeToShardAsyncHelper(Model::SubscribeToShardRequest& request, const SubscribeToShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateShardCountAsyncHelper(const Model::UpdateShardCountRequest& request, const UpdateShardCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

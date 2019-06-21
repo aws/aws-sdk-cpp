@@ -151,40 +151,40 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the generated report job was completed or failed.</p>
-     * <p>This field is null if the job is still in progress, as indicated by a
-     * <code>JobStatus</code> value of <code>IN_PROGRESS</code>.</p>
+     * <p>This field is null if the job is still in progress, as indicated by a job
+     * status value of <code>IN_PROGRESS</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetJobCompletionDate() const{ return m_jobCompletionDate; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the generated report job was completed or failed.</p>
-     * <p>This field is null if the job is still in progress, as indicated by a
-     * <code>JobStatus</code> value of <code>IN_PROGRESS</code>.</p>
+     * <p>This field is null if the job is still in progress, as indicated by a job
+     * status value of <code>IN_PROGRESS</code>.</p>
      */
     inline void SetJobCompletionDate(const Aws::Utils::DateTime& value) { m_jobCompletionDate = value; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the generated report job was completed or failed.</p>
-     * <p>This field is null if the job is still in progress, as indicated by a
-     * <code>JobStatus</code> value of <code>IN_PROGRESS</code>.</p>
+     * <p>This field is null if the job is still in progress, as indicated by a job
+     * status value of <code>IN_PROGRESS</code>.</p>
      */
     inline void SetJobCompletionDate(Aws::Utils::DateTime&& value) { m_jobCompletionDate = std::move(value); }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the generated report job was completed or failed.</p>
-     * <p>This field is null if the job is still in progress, as indicated by a
-     * <code>JobStatus</code> value of <code>IN_PROGRESS</code>.</p>
+     * <p>This field is null if the job is still in progress, as indicated by a job
+     * status value of <code>IN_PROGRESS</code>.</p>
      */
     inline GetServiceLastAccessedDetailsResult& WithJobCompletionDate(const Aws::Utils::DateTime& value) { SetJobCompletionDate(value); return *this;}
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the generated report job was completed or failed.</p>
-     * <p>This field is null if the job is still in progress, as indicated by a
-     * <code>JobStatus</code> value of <code>IN_PROGRESS</code>.</p>
+     * <p>This field is null if the job is still in progress, as indicated by a job
+     * status value of <code>IN_PROGRESS</code>.</p>
      */
     inline GetServiceLastAccessedDetailsResult& WithJobCompletionDate(Aws::Utils::DateTime&& value) { SetJobCompletionDate(std::move(value)); return *this;}
 
