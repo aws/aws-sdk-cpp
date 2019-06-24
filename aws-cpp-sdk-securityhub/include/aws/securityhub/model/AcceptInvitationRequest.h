@@ -43,99 +43,91 @@ namespace Model
 
 
     /**
-     * <p>The account ID of the Security Hub master account whose invitation you're
-     * accepting.</p>
+     * <p>The account ID of the Security Hub master account that sent the
+     * invitation.</p>
      */
     inline const Aws::String& GetMasterId() const{ return m_masterId; }
 
     /**
-     * <p>The account ID of the Security Hub master account whose invitation you're
-     * accepting.</p>
+     * <p>The account ID of the Security Hub master account that sent the
+     * invitation.</p>
      */
     inline bool MasterIdHasBeenSet() const { return m_masterIdHasBeenSet; }
 
     /**
-     * <p>The account ID of the Security Hub master account whose invitation you're
-     * accepting.</p>
+     * <p>The account ID of the Security Hub master account that sent the
+     * invitation.</p>
      */
     inline void SetMasterId(const Aws::String& value) { m_masterIdHasBeenSet = true; m_masterId = value; }
 
     /**
-     * <p>The account ID of the Security Hub master account whose invitation you're
-     * accepting.</p>
+     * <p>The account ID of the Security Hub master account that sent the
+     * invitation.</p>
      */
     inline void SetMasterId(Aws::String&& value) { m_masterIdHasBeenSet = true; m_masterId = std::move(value); }
 
     /**
-     * <p>The account ID of the Security Hub master account whose invitation you're
-     * accepting.</p>
+     * <p>The account ID of the Security Hub master account that sent the
+     * invitation.</p>
      */
     inline void SetMasterId(const char* value) { m_masterIdHasBeenSet = true; m_masterId.assign(value); }
 
     /**
-     * <p>The account ID of the Security Hub master account whose invitation you're
-     * accepting.</p>
+     * <p>The account ID of the Security Hub master account that sent the
+     * invitation.</p>
      */
     inline AcceptInvitationRequest& WithMasterId(const Aws::String& value) { SetMasterId(value); return *this;}
 
     /**
-     * <p>The account ID of the Security Hub master account whose invitation you're
-     * accepting.</p>
+     * <p>The account ID of the Security Hub master account that sent the
+     * invitation.</p>
      */
     inline AcceptInvitationRequest& WithMasterId(Aws::String&& value) { SetMasterId(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID of the Security Hub master account whose invitation you're
-     * accepting.</p>
+     * <p>The account ID of the Security Hub master account that sent the
+     * invitation.</p>
      */
     inline AcceptInvitationRequest& WithMasterId(const char* value) { SetMasterId(value); return *this;}
 
 
     /**
-     * <p>The ID of the invitation that the Security Hub master account sends to the
-     * AWS account.</p>
+     * <p>The ID of the invitation sent from the Security Hub master account.</p>
      */
     inline const Aws::String& GetInvitationId() const{ return m_invitationId; }
 
     /**
-     * <p>The ID of the invitation that the Security Hub master account sends to the
-     * AWS account.</p>
+     * <p>The ID of the invitation sent from the Security Hub master account.</p>
      */
     inline bool InvitationIdHasBeenSet() const { return m_invitationIdHasBeenSet; }
 
     /**
-     * <p>The ID of the invitation that the Security Hub master account sends to the
-     * AWS account.</p>
+     * <p>The ID of the invitation sent from the Security Hub master account.</p>
      */
     inline void SetInvitationId(const Aws::String& value) { m_invitationIdHasBeenSet = true; m_invitationId = value; }
 
     /**
-     * <p>The ID of the invitation that the Security Hub master account sends to the
-     * AWS account.</p>
+     * <p>The ID of the invitation sent from the Security Hub master account.</p>
      */
     inline void SetInvitationId(Aws::String&& value) { m_invitationIdHasBeenSet = true; m_invitationId = std::move(value); }
 
     /**
-     * <p>The ID of the invitation that the Security Hub master account sends to the
-     * AWS account.</p>
+     * <p>The ID of the invitation sent from the Security Hub master account.</p>
      */
     inline void SetInvitationId(const char* value) { m_invitationIdHasBeenSet = true; m_invitationId.assign(value); }
 
     /**
-     * <p>The ID of the invitation that the Security Hub master account sends to the
-     * AWS account.</p>
+     * <p>The ID of the invitation sent from the Security Hub master account.</p>
      */
     inline AcceptInvitationRequest& WithInvitationId(const Aws::String& value) { SetInvitationId(value); return *this;}
 
     /**
-     * <p>The ID of the invitation that the Security Hub master account sends to the
-     * AWS account.</p>
+     * <p>The ID of the invitation sent from the Security Hub master account.</p>
      */
     inline AcceptInvitationRequest& WithInvitationId(Aws::String&& value) { SetInvitationId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the invitation that the Security Hub master account sends to the
-     * AWS account.</p>
+     * <p>The ID of the invitation sent from the Security Hub master account.</p>
      */
     inline AcceptInvitationRequest& WithInvitationId(const char* value) { SetInvitationId(value); return *this;}
 

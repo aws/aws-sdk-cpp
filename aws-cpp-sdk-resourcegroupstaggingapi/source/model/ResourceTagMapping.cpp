@@ -30,15 +30,13 @@ namespace Model
 
 ResourceTagMapping::ResourceTagMapping() : 
     m_resourceARNHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_complianceDetailsHasBeenSet(false)
+    m_tagsHasBeenSet(false)
 {
 }
 
 ResourceTagMapping::ResourceTagMapping(JsonView jsonValue) : 
     m_resourceARNHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_complianceDetailsHasBeenSet(false)
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,13 +60,6 @@ ResourceTagMapping& ResourceTagMapping::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("ComplianceDetails"))
-  {
-    m_complianceDetails = jsonValue.GetObject("ComplianceDetails");
-
-    m_complianceDetailsHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -90,12 +81,6 @@ JsonValue ResourceTagMapping::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
-
-  }
-
-  if(m_complianceDetailsHasBeenSet)
-  {
-   payload.WithObject("ComplianceDetails", m_complianceDetails.Jsonize());
 
   }
 

@@ -43,44 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of a resource that represents your subscription to the product that
-     * generates the findings that you want to import into Security Hub.</p>
+     * <p>The ARN of your subscription to the product to enable integrations for.</p>
      */
     inline const Aws::String& GetProductSubscriptionArn() const{ return m_productSubscriptionArn; }
 
     /**
-     * <p>The ARN of a resource that represents your subscription to the product that
-     * generates the findings that you want to import into Security Hub.</p>
+     * <p>The ARN of your subscription to the product to enable integrations for.</p>
      */
     inline void SetProductSubscriptionArn(const Aws::String& value) { m_productSubscriptionArn = value; }
 
     /**
-     * <p>The ARN of a resource that represents your subscription to the product that
-     * generates the findings that you want to import into Security Hub.</p>
+     * <p>The ARN of your subscription to the product to enable integrations for.</p>
      */
     inline void SetProductSubscriptionArn(Aws::String&& value) { m_productSubscriptionArn = std::move(value); }
 
     /**
-     * <p>The ARN of a resource that represents your subscription to the product that
-     * generates the findings that you want to import into Security Hub.</p>
+     * <p>The ARN of your subscription to the product to enable integrations for.</p>
      */
     inline void SetProductSubscriptionArn(const char* value) { m_productSubscriptionArn.assign(value); }
 
     /**
-     * <p>The ARN of a resource that represents your subscription to the product that
-     * generates the findings that you want to import into Security Hub.</p>
+     * <p>The ARN of your subscription to the product to enable integrations for.</p>
      */
     inline EnableImportFindingsForProductResult& WithProductSubscriptionArn(const Aws::String& value) { SetProductSubscriptionArn(value); return *this;}
 
     /**
-     * <p>The ARN of a resource that represents your subscription to the product that
-     * generates the findings that you want to import into Security Hub.</p>
+     * <p>The ARN of your subscription to the product to enable integrations for.</p>
      */
     inline EnableImportFindingsForProductResult& WithProductSubscriptionArn(Aws::String&& value) { SetProductSubscriptionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of a resource that represents your subscription to the product that
-     * generates the findings that you want to import into Security Hub.</p>
+     * <p>The ARN of your subscription to the product to enable integrations for.</p>
      */
     inline EnableImportFindingsForProductResult& WithProductSubscriptionArn(const char* value) { SetProductSubscriptionArn(value); return *this;}
 

@@ -135,83 +135,131 @@ namespace Model
 
 
     /**
-     * <p>The conditions.</p>
+     * <p>The conditions. Each rule can include zero or one of the following
+     * conditions: <code>http-request-method</code>, <code>host-header</code>,
+     * <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and
+     * <code>query-string</code>.</p>
      */
     inline const Aws::Vector<RuleCondition>& GetConditions() const{ return m_conditions; }
 
     /**
-     * <p>The conditions.</p>
+     * <p>The conditions. Each rule can include zero or one of the following
+     * conditions: <code>http-request-method</code>, <code>host-header</code>,
+     * <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and
+     * <code>query-string</code>.</p>
      */
     inline bool ConditionsHasBeenSet() const { return m_conditionsHasBeenSet; }
 
     /**
-     * <p>The conditions.</p>
+     * <p>The conditions. Each rule can include zero or one of the following
+     * conditions: <code>http-request-method</code>, <code>host-header</code>,
+     * <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and
+     * <code>query-string</code>.</p>
      */
     inline void SetConditions(const Aws::Vector<RuleCondition>& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
 
     /**
-     * <p>The conditions.</p>
+     * <p>The conditions. Each rule can include zero or one of the following
+     * conditions: <code>http-request-method</code>, <code>host-header</code>,
+     * <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and
+     * <code>query-string</code>.</p>
      */
     inline void SetConditions(Aws::Vector<RuleCondition>&& value) { m_conditionsHasBeenSet = true; m_conditions = std::move(value); }
 
     /**
-     * <p>The conditions.</p>
+     * <p>The conditions. Each rule can include zero or one of the following
+     * conditions: <code>http-request-method</code>, <code>host-header</code>,
+     * <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and
+     * <code>query-string</code>.</p>
      */
     inline Rule& WithConditions(const Aws::Vector<RuleCondition>& value) { SetConditions(value); return *this;}
 
     /**
-     * <p>The conditions.</p>
+     * <p>The conditions. Each rule can include zero or one of the following
+     * conditions: <code>http-request-method</code>, <code>host-header</code>,
+     * <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and
+     * <code>query-string</code>.</p>
      */
     inline Rule& WithConditions(Aws::Vector<RuleCondition>&& value) { SetConditions(std::move(value)); return *this;}
 
     /**
-     * <p>The conditions.</p>
+     * <p>The conditions. Each rule can include zero or one of the following
+     * conditions: <code>http-request-method</code>, <code>host-header</code>,
+     * <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and
+     * <code>query-string</code>.</p>
      */
     inline Rule& AddConditions(const RuleCondition& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(value); return *this; }
 
     /**
-     * <p>The conditions.</p>
+     * <p>The conditions. Each rule can include zero or one of the following
+     * conditions: <code>http-request-method</code>, <code>host-header</code>,
+     * <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and
+     * <code>query-string</code>.</p>
      */
     inline Rule& AddConditions(RuleCondition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The actions.</p>
+     * <p>The actions. Each rule must include exactly one of the following types of
+     * actions: <code>forward</code>, <code>redirect</code>, or
+     * <code>fixed-response</code>, and it must be the last action to be performed.</p>
      */
     inline const Aws::Vector<Action>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>The actions.</p>
+     * <p>The actions. Each rule must include exactly one of the following types of
+     * actions: <code>forward</code>, <code>redirect</code>, or
+     * <code>fixed-response</code>, and it must be the last action to be performed.</p>
      */
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
-     * <p>The actions.</p>
+     * <p>The actions. Each rule must include exactly one of the following types of
+     * actions: <code>forward</code>, <code>redirect</code>, or
+     * <code>fixed-response</code>, and it must be the last action to be performed.</p>
      */
     inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>The actions.</p>
+     * <p>The actions. Each rule must include exactly one of the following types of
+     * actions: <code>forward</code>, <code>redirect</code>, or
+     * <code>fixed-response</code>, and it must be the last action to be performed.</p>
      */
     inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>The actions.</p>
+     * <p>The actions. Each rule must include exactly one of the following types of
+     * actions: <code>forward</code>, <code>redirect</code>, or
+     * <code>fixed-response</code>, and it must be the last action to be performed.</p>
      */
     inline Rule& WithActions(const Aws::Vector<Action>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>The actions.</p>
+     * <p>The actions. Each rule must include exactly one of the following types of
+     * actions: <code>forward</code>, <code>redirect</code>, or
+     * <code>fixed-response</code>, and it must be the last action to be performed.</p>
      */
     inline Rule& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * <p>The actions.</p>
+     * <p>The actions. Each rule must include exactly one of the following types of
+     * actions: <code>forward</code>, <code>redirect</code>, or
+     * <code>fixed-response</code>, and it must be the last action to be performed.</p>
      */
     inline Rule& AddActions(const Action& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>The actions.</p>
+     * <p>The actions. Each rule must include exactly one of the following types of
+     * actions: <code>forward</code>, <code>redirect</code>, or
+     * <code>fixed-response</code>, and it must be the last action to be performed.</p>
      */
     inline Rule& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 

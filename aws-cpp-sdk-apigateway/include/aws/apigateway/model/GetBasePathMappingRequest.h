@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>[Required] The base path name that callers of the API must provide as part of
      * the URL after the domain name. This value must be unique for all of the mappings
-     * across a single API. Leave this blank if you do not want callers to specify any
+     * across a single API. Specify '(none)' if you do not want callers to specify any
      * base path name after the domain name.</p>
      */
     inline const Aws::String& GetBasePath() const{ return m_basePath; }
@@ -106,7 +106,7 @@ namespace Model
     /**
      * <p>[Required] The base path name that callers of the API must provide as part of
      * the URL after the domain name. This value must be unique for all of the mappings
-     * across a single API. Leave this blank if you do not want callers to specify any
+     * across a single API. Specify '(none)' if you do not want callers to specify any
      * base path name after the domain name.</p>
      */
     inline bool BasePathHasBeenSet() const { return m_basePathHasBeenSet; }
@@ -114,7 +114,7 @@ namespace Model
     /**
      * <p>[Required] The base path name that callers of the API must provide as part of
      * the URL after the domain name. This value must be unique for all of the mappings
-     * across a single API. Leave this blank if you do not want callers to specify any
+     * across a single API. Specify '(none)' if you do not want callers to specify any
      * base path name after the domain name.</p>
      */
     inline void SetBasePath(const Aws::String& value) { m_basePathHasBeenSet = true; m_basePath = value; }
@@ -122,7 +122,7 @@ namespace Model
     /**
      * <p>[Required] The base path name that callers of the API must provide as part of
      * the URL after the domain name. This value must be unique for all of the mappings
-     * across a single API. Leave this blank if you do not want callers to specify any
+     * across a single API. Specify '(none)' if you do not want callers to specify any
      * base path name after the domain name.</p>
      */
     inline void SetBasePath(Aws::String&& value) { m_basePathHasBeenSet = true; m_basePath = std::move(value); }
@@ -130,7 +130,7 @@ namespace Model
     /**
      * <p>[Required] The base path name that callers of the API must provide as part of
      * the URL after the domain name. This value must be unique for all of the mappings
-     * across a single API. Leave this blank if you do not want callers to specify any
+     * across a single API. Specify '(none)' if you do not want callers to specify any
      * base path name after the domain name.</p>
      */
     inline void SetBasePath(const char* value) { m_basePathHasBeenSet = true; m_basePath.assign(value); }
@@ -138,7 +138,7 @@ namespace Model
     /**
      * <p>[Required] The base path name that callers of the API must provide as part of
      * the URL after the domain name. This value must be unique for all of the mappings
-     * across a single API. Leave this blank if you do not want callers to specify any
+     * across a single API. Specify '(none)' if you do not want callers to specify any
      * base path name after the domain name.</p>
      */
     inline GetBasePathMappingRequest& WithBasePath(const Aws::String& value) { SetBasePath(value); return *this;}
@@ -146,7 +146,7 @@ namespace Model
     /**
      * <p>[Required] The base path name that callers of the API must provide as part of
      * the URL after the domain name. This value must be unique for all of the mappings
-     * across a single API. Leave this blank if you do not want callers to specify any
+     * across a single API. Specify '(none)' if you do not want callers to specify any
      * base path name after the domain name.</p>
      */
     inline GetBasePathMappingRequest& WithBasePath(Aws::String&& value) { SetBasePath(std::move(value)); return *this;}
@@ -154,7 +154,7 @@ namespace Model
     /**
      * <p>[Required] The base path name that callers of the API must provide as part of
      * the URL after the domain name. This value must be unique for all of the mappings
-     * across a single API. Leave this blank if you do not want callers to specify any
+     * across a single API. Specify '(none)' if you do not want callers to specify any
      * base path name after the domain name.</p>
      */
     inline GetBasePathMappingRequest& WithBasePath(const char* value) { SetBasePath(value); return *this;}

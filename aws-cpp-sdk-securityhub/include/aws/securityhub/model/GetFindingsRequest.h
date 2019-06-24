@@ -46,73 +46,79 @@ namespace Model
 
 
     /**
-     * <p>A collection of attributes that is used for querying findings.</p>
+     * <p>The findings attributes used to define a condition to filter the findings
+     * returned.</p>
      */
     inline const AwsSecurityFindingFilters& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>A collection of attributes that is used for querying findings.</p>
+     * <p>The findings attributes used to define a condition to filter the findings
+     * returned.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>A collection of attributes that is used for querying findings.</p>
+     * <p>The findings attributes used to define a condition to filter the findings
+     * returned.</p>
      */
     inline void SetFilters(const AwsSecurityFindingFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>A collection of attributes that is used for querying findings.</p>
+     * <p>The findings attributes used to define a condition to filter the findings
+     * returned.</p>
      */
     inline void SetFilters(AwsSecurityFindingFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>A collection of attributes that is used for querying findings.</p>
+     * <p>The findings attributes used to define a condition to filter the findings
+     * returned.</p>
      */
     inline GetFindingsRequest& WithFilters(const AwsSecurityFindingFilters& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>A collection of attributes that is used for querying findings.</p>
+     * <p>The findings attributes used to define a condition to filter the findings
+     * returned.</p>
      */
     inline GetFindingsRequest& WithFilters(AwsSecurityFindingFilters&& value) { SetFilters(std::move(value)); return *this;}
 
 
     /**
-     * <p>A collection of attributes used for sorting findings.</p>
+     * <p>Findings attributes used to sort the list of findings returned.</p>
      */
     inline const Aws::Vector<SortCriterion>& GetSortCriteria() const{ return m_sortCriteria; }
 
     /**
-     * <p>A collection of attributes used for sorting findings.</p>
+     * <p>Findings attributes used to sort the list of findings returned.</p>
      */
     inline bool SortCriteriaHasBeenSet() const { return m_sortCriteriaHasBeenSet; }
 
     /**
-     * <p>A collection of attributes used for sorting findings.</p>
+     * <p>Findings attributes used to sort the list of findings returned.</p>
      */
     inline void SetSortCriteria(const Aws::Vector<SortCriterion>& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = value; }
 
     /**
-     * <p>A collection of attributes used for sorting findings.</p>
+     * <p>Findings attributes used to sort the list of findings returned.</p>
      */
     inline void SetSortCriteria(Aws::Vector<SortCriterion>&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = std::move(value); }
 
     /**
-     * <p>A collection of attributes used for sorting findings.</p>
+     * <p>Findings attributes used to sort the list of findings returned.</p>
      */
     inline GetFindingsRequest& WithSortCriteria(const Aws::Vector<SortCriterion>& value) { SetSortCriteria(value); return *this;}
 
     /**
-     * <p>A collection of attributes used for sorting findings.</p>
+     * <p>Findings attributes used to sort the list of findings returned.</p>
      */
     inline GetFindingsRequest& WithSortCriteria(Aws::Vector<SortCriterion>&& value) { SetSortCriteria(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of attributes used for sorting findings.</p>
+     * <p>Findings attributes used to sort the list of findings returned.</p>
      */
     inline GetFindingsRequest& AddSortCriteria(const SortCriterion& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria.push_back(value); return *this; }
 
     /**
-     * <p>A collection of attributes used for sorting findings.</p>
+     * <p>Findings attributes used to sort the list of findings returned.</p>
      */
     inline GetFindingsRequest& AddSortCriteria(SortCriterion&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria.push_back(std::move(value)); return *this; }
 
@@ -191,22 +197,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates the maximum number of items that you want in the response.</p>
+     * <p>The maximum number of findings to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Indicates the maximum number of items that you want in the response.</p>
+     * <p>The maximum number of findings to return.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Indicates the maximum number of items that you want in the response.</p>
+     * <p>The maximum number of findings to return.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Indicates the maximum number of items that you want in the response.</p>
+     * <p>The maximum number of findings to return.</p>
      */
     inline GetFindingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

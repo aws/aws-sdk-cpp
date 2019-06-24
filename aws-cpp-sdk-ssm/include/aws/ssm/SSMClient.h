@@ -1044,13 +1044,13 @@ namespace Model
         /**
          * <p>Creates a new OpsItem. You must have permission in AWS Identity and Access
          * Management (IAM) to create a new OpsItem. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
-         * capability to view, investigate, and remediate operational issues impacting the
-         * performance and health of their AWS resources. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+         * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
+         * and remediate operational issues impacting the performance and health of their
+         * AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem">AWS
          * API Reference</a></p>
@@ -1060,13 +1060,13 @@ namespace Model
         /**
          * <p>Creates a new OpsItem. You must have permission in AWS Identity and Access
          * Management (IAM) to create a new OpsItem. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
-         * capability to view, investigate, and remediate operational issues impacting the
-         * performance and health of their AWS resources. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+         * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
+         * and remediate operational issues impacting the performance and health of their
+         * AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem">AWS
          * API Reference</a></p>
@@ -1078,13 +1078,13 @@ namespace Model
         /**
          * <p>Creates a new OpsItem. You must have permission in AWS Identity and Access
          * Management (IAM) to create a new OpsItem. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
-         * capability to view, investigate, and remediate operational issues impacting the
-         * performance and health of their AWS resources. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+         * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
+         * and remediate operational issues impacting the performance and health of their
+         * AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem">AWS
          * API Reference</a></p>
@@ -2330,13 +2330,13 @@ namespace Model
         /**
          * <p>Query a set of OpsItems. You must have permission in AWS Identity and Access
          * Management (IAM) to query a list of OpsItems. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
-         * capability to view, investigate, and remediate operational issues impacting the
-         * performance and health of their AWS resources. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+         * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
+         * and remediate operational issues impacting the performance and health of their
+         * AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeOpsItems">AWS
          * API Reference</a></p>
@@ -2346,13 +2346,13 @@ namespace Model
         /**
          * <p>Query a set of OpsItems. You must have permission in AWS Identity and Access
          * Management (IAM) to query a list of OpsItems. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
-         * capability to view, investigate, and remediate operational issues impacting the
-         * performance and health of their AWS resources. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+         * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
+         * and remediate operational issues impacting the performance and health of their
+         * AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeOpsItems">AWS
          * API Reference</a></p>
@@ -2364,13 +2364,13 @@ namespace Model
         /**
          * <p>Query a set of OpsItems. You must have permission in AWS Identity and Access
          * Management (IAM) to query a list of OpsItems. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
-         * capability to view, investigate, and remediate operational issues impacting the
-         * performance and health of their AWS resources. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+         * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
+         * and remediate operational issues impacting the performance and health of their
+         * AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeOpsItems">AWS
          * API Reference</a></p>
@@ -2984,13 +2984,13 @@ namespace Model
          * <p>Get information about an OpsItem by using the ID. You must have permission in
          * AWS Identity and Access Management (IAM) to view information about an OpsItem.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
-         * capability to view, investigate, and remediate operational issues impacting the
-         * performance and health of their AWS resources. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+         * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
+         * and remediate operational issues impacting the performance and health of their
+         * AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsItem">AWS API
          * Reference</a></p>
@@ -3001,13 +3001,13 @@ namespace Model
          * <p>Get information about an OpsItem by using the ID. You must have permission in
          * AWS Identity and Access Management (IAM) to view information about an OpsItem.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
-         * capability to view, investigate, and remediate operational issues impacting the
-         * performance and health of their AWS resources. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+         * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
+         * and remediate operational issues impacting the performance and health of their
+         * AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsItem">AWS API
          * Reference</a></p>
@@ -3020,13 +3020,13 @@ namespace Model
          * <p>Get information about an OpsItem by using the ID. You must have permission in
          * AWS Identity and Access Management (IAM) to view information about an OpsItem.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
-         * capability to view, investigate, and remediate operational issues impacting the
-         * performance and health of their AWS resources. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+         * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
+         * and remediate operational issues impacting the performance and health of their
+         * AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsItem">AWS API
          * Reference</a></p>
@@ -4684,13 +4684,13 @@ namespace Model
         /**
          * <p>Edit or change an OpsItem. You must have permission in AWS Identity and
          * Access Management (IAM) to update an OpsItem. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
-         * capability to view, investigate, and remediate operational issues impacting the
-         * performance and health of their AWS resources. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+         * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
+         * and remediate operational issues impacting the performance and health of their
+         * AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsItem">AWS
          * API Reference</a></p>
@@ -4700,13 +4700,13 @@ namespace Model
         /**
          * <p>Edit or change an OpsItem. You must have permission in AWS Identity and
          * Access Management (IAM) to update an OpsItem. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
-         * capability to view, investigate, and remediate operational issues impacting the
-         * performance and health of their AWS resources. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+         * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
+         * and remediate operational issues impacting the performance and health of their
+         * AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsItem">AWS
          * API Reference</a></p>
@@ -4718,13 +4718,13 @@ namespace Model
         /**
          * <p>Edit or change an OpsItem. You must have permission in AWS Identity and
          * Access Management (IAM) to update an OpsItem. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting
-         * Started with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use the Systems Manager OpsItems
-         * capability to view, investigate, and remediate operational issues impacting the
-         * performance and health of their AWS resources. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS
-         * Systems Manager OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+         * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
+         * and remediate operational issues impacting the performance and health of their
+         * AWS resources. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
+         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsItem">AWS
          * API Reference</a></p>

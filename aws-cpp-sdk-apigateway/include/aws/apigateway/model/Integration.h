@@ -1177,7 +1177,7 @@ namespace Model
      * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
      * property is not defined, the request payload will be passed through from the
      * method request to integration request without modification, provided that the
-     * <code>passthroughBehaviors</code> is configured to support payload
+     * <code>passthroughBehavior</code> is configured to support payload
      * pass-through.</p>
      */
     inline const ContentHandlingStrategy& GetContentHandling() const{ return m_contentHandling; }
@@ -1191,7 +1191,7 @@ namespace Model
      * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
      * property is not defined, the request payload will be passed through from the
      * method request to integration request without modification, provided that the
-     * <code>passthroughBehaviors</code> is configured to support payload
+     * <code>passthroughBehavior</code> is configured to support payload
      * pass-through.</p>
      */
     inline bool ContentHandlingHasBeenSet() const { return m_contentHandlingHasBeenSet; }
@@ -1205,7 +1205,7 @@ namespace Model
      * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
      * property is not defined, the request payload will be passed through from the
      * method request to integration request without modification, provided that the
-     * <code>passthroughBehaviors</code> is configured to support payload
+     * <code>passthroughBehavior</code> is configured to support payload
      * pass-through.</p>
      */
     inline void SetContentHandling(const ContentHandlingStrategy& value) { m_contentHandlingHasBeenSet = true; m_contentHandling = value; }
@@ -1219,7 +1219,7 @@ namespace Model
      * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
      * property is not defined, the request payload will be passed through from the
      * method request to integration request without modification, provided that the
-     * <code>passthroughBehaviors</code> is configured to support payload
+     * <code>passthroughBehavior</code> is configured to support payload
      * pass-through.</p>
      */
     inline void SetContentHandling(ContentHandlingStrategy&& value) { m_contentHandlingHasBeenSet = true; m_contentHandling = std::move(value); }
@@ -1233,7 +1233,7 @@ namespace Model
      * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
      * property is not defined, the request payload will be passed through from the
      * method request to integration request without modification, provided that the
-     * <code>passthroughBehaviors</code> is configured to support payload
+     * <code>passthroughBehavior</code> is configured to support payload
      * pass-through.</p>
      */
     inline Integration& WithContentHandling(const ContentHandlingStrategy& value) { SetContentHandling(value); return *this;}
@@ -1247,7 +1247,7 @@ namespace Model
      * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
      * property is not defined, the request payload will be passed through from the
      * method request to integration request without modification, provided that the
-     * <code>passthroughBehaviors</code> is configured to support payload
+     * <code>passthroughBehavior</code> is configured to support payload
      * pass-through.</p>
      */
     inline Integration& WithContentHandling(ContentHandlingStrategy&& value) { SetContentHandling(std::move(value)); return *this;}
@@ -1279,88 +1279,122 @@ namespace Model
 
 
     /**
-     * <p>Specifies the integration's cache namespace.</p>
+     * <p>An API-specific tag group of related cached parameters. To be valid values
+     * for <code>cacheKeyParameters</code>, these parameters must also be specified for
+     * <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline const Aws::String& GetCacheNamespace() const{ return m_cacheNamespace; }
 
     /**
-     * <p>Specifies the integration's cache namespace.</p>
+     * <p>An API-specific tag group of related cached parameters. To be valid values
+     * for <code>cacheKeyParameters</code>, these parameters must also be specified for
+     * <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline bool CacheNamespaceHasBeenSet() const { return m_cacheNamespaceHasBeenSet; }
 
     /**
-     * <p>Specifies the integration's cache namespace.</p>
+     * <p>An API-specific tag group of related cached parameters. To be valid values
+     * for <code>cacheKeyParameters</code>, these parameters must also be specified for
+     * <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline void SetCacheNamespace(const Aws::String& value) { m_cacheNamespaceHasBeenSet = true; m_cacheNamespace = value; }
 
     /**
-     * <p>Specifies the integration's cache namespace.</p>
+     * <p>An API-specific tag group of related cached parameters. To be valid values
+     * for <code>cacheKeyParameters</code>, these parameters must also be specified for
+     * <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline void SetCacheNamespace(Aws::String&& value) { m_cacheNamespaceHasBeenSet = true; m_cacheNamespace = std::move(value); }
 
     /**
-     * <p>Specifies the integration's cache namespace.</p>
+     * <p>An API-specific tag group of related cached parameters. To be valid values
+     * for <code>cacheKeyParameters</code>, these parameters must also be specified for
+     * <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline void SetCacheNamespace(const char* value) { m_cacheNamespaceHasBeenSet = true; m_cacheNamespace.assign(value); }
 
     /**
-     * <p>Specifies the integration's cache namespace.</p>
+     * <p>An API-specific tag group of related cached parameters. To be valid values
+     * for <code>cacheKeyParameters</code>, these parameters must also be specified for
+     * <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline Integration& WithCacheNamespace(const Aws::String& value) { SetCacheNamespace(value); return *this;}
 
     /**
-     * <p>Specifies the integration's cache namespace.</p>
+     * <p>An API-specific tag group of related cached parameters. To be valid values
+     * for <code>cacheKeyParameters</code>, these parameters must also be specified for
+     * <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline Integration& WithCacheNamespace(Aws::String&& value) { SetCacheNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the integration's cache namespace.</p>
+     * <p>An API-specific tag group of related cached parameters. To be valid values
+     * for <code>cacheKeyParameters</code>, these parameters must also be specified for
+     * <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline Integration& WithCacheNamespace(const char* value) { SetCacheNamespace(value); return *this;}
 
 
     /**
-     * <p>Specifies the integration's cache key parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCacheKeyParameters() const{ return m_cacheKeyParameters; }
 
     /**
-     * <p>Specifies the integration's cache key parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline bool CacheKeyParametersHasBeenSet() const { return m_cacheKeyParametersHasBeenSet; }
 
     /**
-     * <p>Specifies the integration's cache key parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline void SetCacheKeyParameters(const Aws::Vector<Aws::String>& value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters = value; }
 
     /**
-     * <p>Specifies the integration's cache key parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline void SetCacheKeyParameters(Aws::Vector<Aws::String>&& value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters = std::move(value); }
 
     /**
-     * <p>Specifies the integration's cache key parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline Integration& WithCacheKeyParameters(const Aws::Vector<Aws::String>& value) { SetCacheKeyParameters(value); return *this;}
 
     /**
-     * <p>Specifies the integration's cache key parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline Integration& WithCacheKeyParameters(Aws::Vector<Aws::String>&& value) { SetCacheKeyParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the integration's cache key parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline Integration& AddCacheKeyParameters(const Aws::String& value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the integration's cache key parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline Integration& AddCacheKeyParameters(Aws::String&& value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Specifies the integration's cache key parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline Integration& AddCacheKeyParameters(const char* value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters.push_back(value); return *this; }
 

@@ -134,38 +134,44 @@ namespace Model
 
 
     /**
-     * <p>The configuration for this Microsoft Windows file system. The only supported
-     * options are for backup and maintenance.</p>
+     * <p>The configuration update for this Microsoft Windows file system. The only
+     * supported options are for backup and maintenance and for self-managed Active
+     * Directory configuration.</p>
      */
     inline const UpdateFileSystemWindowsConfiguration& GetWindowsConfiguration() const{ return m_windowsConfiguration; }
 
     /**
-     * <p>The configuration for this Microsoft Windows file system. The only supported
-     * options are for backup and maintenance.</p>
+     * <p>The configuration update for this Microsoft Windows file system. The only
+     * supported options are for backup and maintenance and for self-managed Active
+     * Directory configuration.</p>
      */
     inline bool WindowsConfigurationHasBeenSet() const { return m_windowsConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration for this Microsoft Windows file system. The only supported
-     * options are for backup and maintenance.</p>
+     * <p>The configuration update for this Microsoft Windows file system. The only
+     * supported options are for backup and maintenance and for self-managed Active
+     * Directory configuration.</p>
      */
     inline void SetWindowsConfiguration(const UpdateFileSystemWindowsConfiguration& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = value; }
 
     /**
-     * <p>The configuration for this Microsoft Windows file system. The only supported
-     * options are for backup and maintenance.</p>
+     * <p>The configuration update for this Microsoft Windows file system. The only
+     * supported options are for backup and maintenance and for self-managed Active
+     * Directory configuration.</p>
      */
     inline void SetWindowsConfiguration(UpdateFileSystemWindowsConfiguration&& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration for this Microsoft Windows file system. The only supported
-     * options are for backup and maintenance.</p>
+     * <p>The configuration update for this Microsoft Windows file system. The only
+     * supported options are for backup and maintenance and for self-managed Active
+     * Directory configuration.</p>
      */
     inline UpdateFileSystemRequest& WithWindowsConfiguration(const UpdateFileSystemWindowsConfiguration& value) { SetWindowsConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration for this Microsoft Windows file system. The only supported
-     * options are for backup and maintenance.</p>
+     * <p>The configuration update for this Microsoft Windows file system. The only
+     * supported options are for backup and maintenance and for self-managed Active
+     * Directory configuration.</p>
      */
     inline UpdateFileSystemRequest& WithWindowsConfiguration(UpdateFileSystemWindowsConfiguration&& value) { SetWindowsConfiguration(std::move(value)); return *this;}
 

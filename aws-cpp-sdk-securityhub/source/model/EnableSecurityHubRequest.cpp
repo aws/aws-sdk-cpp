@@ -22,13 +22,27 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EnableSecurityHubRequest::EnableSecurityHubRequest()
+EnableSecurityHubRequest::EnableSecurityHubRequest() : 
+    m_tagsHasBeenSet(false)
 {
 }
 
 Aws::String EnableSecurityHubRequest::SerializePayload() const
 {
-  return {};
+  JsonValue payload;
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 

@@ -34,6 +34,11 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
+  /**
+   * <p>Information about a host header condition.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/HostHeaderConditionConfig">AWS
+   * API Reference</a></p>
+   */
   class AWS_ELASTICLOADBALANCINGV2_API HostHeaderConditionConfig
   {
   public:
@@ -45,31 +50,85 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
-    
+    /**
+     * <p>One or more host names. The maximum size of each name is 128 characters. The
+     * comparison is case insensitive. The following wildcard characters are supported:
+     * * (matches 0 or more characters) and ? (matches exactly 1 character).</p> <p>If
+     * you specify multiple strings, the condition is satisfied if one of the strings
+     * matches the host name.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
-    
+    /**
+     * <p>One or more host names. The maximum size of each name is 128 characters. The
+     * comparison is case insensitive. The following wildcard characters are supported:
+     * * (matches 0 or more characters) and ? (matches exactly 1 character).</p> <p>If
+     * you specify multiple strings, the condition is satisfied if one of the strings
+     * matches the host name.</p>
+     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
-    
+    /**
+     * <p>One or more host names. The maximum size of each name is 128 characters. The
+     * comparison is case insensitive. The following wildcard characters are supported:
+     * * (matches 0 or more characters) and ? (matches exactly 1 character).</p> <p>If
+     * you specify multiple strings, the condition is satisfied if one of the strings
+     * matches the host name.</p>
+     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
-    
+    /**
+     * <p>One or more host names. The maximum size of each name is 128 characters. The
+     * comparison is case insensitive. The following wildcard characters are supported:
+     * * (matches 0 or more characters) and ? (matches exactly 1 character).</p> <p>If
+     * you specify multiple strings, the condition is satisfied if one of the strings
+     * matches the host name.</p>
+     */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
-    
+    /**
+     * <p>One or more host names. The maximum size of each name is 128 characters. The
+     * comparison is case insensitive. The following wildcard characters are supported:
+     * * (matches 0 or more characters) and ? (matches exactly 1 character).</p> <p>If
+     * you specify multiple strings, the condition is satisfied if one of the strings
+     * matches the host name.</p>
+     */
     inline HostHeaderConditionConfig& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
-    
+    /**
+     * <p>One or more host names. The maximum size of each name is 128 characters. The
+     * comparison is case insensitive. The following wildcard characters are supported:
+     * * (matches 0 or more characters) and ? (matches exactly 1 character).</p> <p>If
+     * you specify multiple strings, the condition is satisfied if one of the strings
+     * matches the host name.</p>
+     */
     inline HostHeaderConditionConfig& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>One or more host names. The maximum size of each name is 128 characters. The
+     * comparison is case insensitive. The following wildcard characters are supported:
+     * * (matches 0 or more characters) and ? (matches exactly 1 character).</p> <p>If
+     * you specify multiple strings, the condition is satisfied if one of the strings
+     * matches the host name.</p>
+     */
     inline HostHeaderConditionConfig& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
-    
+    /**
+     * <p>One or more host names. The maximum size of each name is 128 characters. The
+     * comparison is case insensitive. The following wildcard characters are supported:
+     * * (matches 0 or more characters) and ? (matches exactly 1 character).</p> <p>If
+     * you specify multiple strings, the condition is satisfied if one of the strings
+     * matches the host name.</p>
+     */
     inline HostHeaderConditionConfig& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>One or more host names. The maximum size of each name is 128 characters. The
+     * comparison is case insensitive. The following wildcard characters are supported:
+     * * (matches 0 or more characters) and ? (matches exactly 1 character).</p> <p>If
+     * you specify multiple strings, the condition is satisfied if one of the strings
+     * matches the host name.</p>
+     */
     inline HostHeaderConditionConfig& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:

@@ -30,6 +30,7 @@ namespace Model
 
 CreateFileSystemWindowsConfiguration::CreateFileSystemWindowsConfiguration() : 
     m_activeDirectoryIdHasBeenSet(false),
+    m_selfManagedActiveDirectoryConfigurationHasBeenSet(false),
     m_throughputCapacity(0),
     m_throughputCapacityHasBeenSet(false),
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
@@ -43,6 +44,7 @@ CreateFileSystemWindowsConfiguration::CreateFileSystemWindowsConfiguration() :
 
 CreateFileSystemWindowsConfiguration::CreateFileSystemWindowsConfiguration(JsonView jsonValue) : 
     m_activeDirectoryIdHasBeenSet(false),
+    m_selfManagedActiveDirectoryConfigurationHasBeenSet(false),
     m_throughputCapacity(0),
     m_throughputCapacityHasBeenSet(false),
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
@@ -62,6 +64,13 @@ CreateFileSystemWindowsConfiguration& CreateFileSystemWindowsConfiguration::oper
     m_activeDirectoryId = jsonValue.GetString("ActiveDirectoryId");
 
     m_activeDirectoryIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SelfManagedActiveDirectoryConfiguration"))
+  {
+    m_selfManagedActiveDirectoryConfiguration = jsonValue.GetObject("SelfManagedActiveDirectoryConfiguration");
+
+    m_selfManagedActiveDirectoryConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ThroughputCapacity"))
@@ -109,6 +118,12 @@ JsonValue CreateFileSystemWindowsConfiguration::Jsonize() const
   if(m_activeDirectoryIdHasBeenSet)
   {
    payload.WithString("ActiveDirectoryId", m_activeDirectoryId);
+
+  }
+
+  if(m_selfManagedActiveDirectoryConfigurationHasBeenSet)
+  {
+   payload.WithObject("SelfManagedActiveDirectoryConfiguration", m_selfManagedActiveDirectoryConfiguration.Jsonize());
 
   }
 

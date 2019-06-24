@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteDocumentRequest::DeleteDocumentRequest() : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_documentVersionHasBeenSet(false),
+    m_versionNameHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,18 @@ Aws::String DeleteDocumentRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_documentVersionHasBeenSet)
+  {
+   payload.WithString("DocumentVersion", m_documentVersion);
+
+  }
+
+  if(m_versionNameHasBeenSet)
+  {
+   payload.WithString("VersionName", m_versionName);
 
   }
 

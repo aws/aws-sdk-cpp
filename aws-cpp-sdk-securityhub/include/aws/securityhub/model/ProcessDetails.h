@@ -214,42 +214,42 @@ namespace Model
 
 
     /**
-     * <p>The date/time that the process was terminated.</p>
+     * <p>The date and time when the process was terminated.</p>
      */
     inline const Aws::String& GetTerminatedAt() const{ return m_terminatedAt; }
 
     /**
-     * <p>The date/time that the process was terminated.</p>
+     * <p>The date and time when the process was terminated.</p>
      */
     inline bool TerminatedAtHasBeenSet() const { return m_terminatedAtHasBeenSet; }
 
     /**
-     * <p>The date/time that the process was terminated.</p>
+     * <p>The date and time when the process was terminated.</p>
      */
     inline void SetTerminatedAt(const Aws::String& value) { m_terminatedAtHasBeenSet = true; m_terminatedAt = value; }
 
     /**
-     * <p>The date/time that the process was terminated.</p>
+     * <p>The date and time when the process was terminated.</p>
      */
     inline void SetTerminatedAt(Aws::String&& value) { m_terminatedAtHasBeenSet = true; m_terminatedAt = std::move(value); }
 
     /**
-     * <p>The date/time that the process was terminated.</p>
+     * <p>The date and time when the process was terminated.</p>
      */
     inline void SetTerminatedAt(const char* value) { m_terminatedAtHasBeenSet = true; m_terminatedAt.assign(value); }
 
     /**
-     * <p>The date/time that the process was terminated.</p>
+     * <p>The date and time when the process was terminated.</p>
      */
     inline ProcessDetails& WithTerminatedAt(const Aws::String& value) { SetTerminatedAt(value); return *this;}
 
     /**
-     * <p>The date/time that the process was terminated.</p>
+     * <p>The date and time when the process was terminated.</p>
      */
     inline ProcessDetails& WithTerminatedAt(Aws::String&& value) { SetTerminatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>The date/time that the process was terminated.</p>
+     * <p>The date and time when the process was terminated.</p>
      */
     inline ProcessDetails& WithTerminatedAt(const char* value) { SetTerminatedAt(value); return *this;}
 

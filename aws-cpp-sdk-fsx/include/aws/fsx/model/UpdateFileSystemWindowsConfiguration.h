@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/model/SelfManagedActiveDirectoryConfigurationUpdates.h>
 #include <utility>
 
 namespace Aws
@@ -34,8 +35,10 @@ namespace Model
 {
 
   /**
-   * <p>The configuration object for the Microsoft Windows file system used in the
-   * <code>UpdateFileSystem</code> operation.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates the Microsoft Windows configuration for an existing Amazon FSx for
+   * Windows File Server file system. Amazon FSx overwrites existing properties with
+   * non-null values provided in the request. If you don't specify a non-null value
+   * for a property, that property is not updated.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystemWindowsConfiguration">AWS
    * API Reference</a></p>
    */
@@ -158,6 +161,43 @@ namespace Model
      */
     inline UpdateFileSystemWindowsConfiguration& WithAutomaticBackupRetentionDays(int value) { SetAutomaticBackupRetentionDays(value); return *this;}
 
+
+    /**
+     * <p>The configuration Amazon FSx uses to join the Windows File Server instance to
+     * the self-managed Microsoft AD directory.</p>
+     */
+    inline const SelfManagedActiveDirectoryConfigurationUpdates& GetSelfManagedActiveDirectoryConfiguration() const{ return m_selfManagedActiveDirectoryConfiguration; }
+
+    /**
+     * <p>The configuration Amazon FSx uses to join the Windows File Server instance to
+     * the self-managed Microsoft AD directory.</p>
+     */
+    inline bool SelfManagedActiveDirectoryConfigurationHasBeenSet() const { return m_selfManagedActiveDirectoryConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration Amazon FSx uses to join the Windows File Server instance to
+     * the self-managed Microsoft AD directory.</p>
+     */
+    inline void SetSelfManagedActiveDirectoryConfiguration(const SelfManagedActiveDirectoryConfigurationUpdates& value) { m_selfManagedActiveDirectoryConfigurationHasBeenSet = true; m_selfManagedActiveDirectoryConfiguration = value; }
+
+    /**
+     * <p>The configuration Amazon FSx uses to join the Windows File Server instance to
+     * the self-managed Microsoft AD directory.</p>
+     */
+    inline void SetSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationUpdates&& value) { m_selfManagedActiveDirectoryConfigurationHasBeenSet = true; m_selfManagedActiveDirectoryConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration Amazon FSx uses to join the Windows File Server instance to
+     * the self-managed Microsoft AD directory.</p>
+     */
+    inline UpdateFileSystemWindowsConfiguration& WithSelfManagedActiveDirectoryConfiguration(const SelfManagedActiveDirectoryConfigurationUpdates& value) { SetSelfManagedActiveDirectoryConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration Amazon FSx uses to join the Windows File Server instance to
+     * the self-managed Microsoft AD directory.</p>
+     */
+    inline UpdateFileSystemWindowsConfiguration& WithSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationUpdates&& value) { SetSelfManagedActiveDirectoryConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -168,6 +208,9 @@ namespace Model
 
     int m_automaticBackupRetentionDays;
     bool m_automaticBackupRetentionDaysHasBeenSet;
+
+    SelfManagedActiveDirectoryConfigurationUpdates m_selfManagedActiveDirectoryConfiguration;
+    bool m_selfManagedActiveDirectoryConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -100,163 +100,163 @@ namespace Model
 
 
     /**
-     * <p>The ARN of a standard.</p> <important> <p>In this release, Security Hub
-     * supports only the CIS AWS Foundations standard. </p> <p>Its ARN is
-     * arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>
-     * </important>
+     * <p>The ARN of a standard.</p> <p>In this release, Security Hub supports only the
+     * CIS AWS Foundations standard, which uses the following ARN:
+     * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</code>
+     * </p>
      */
     inline const Aws::String& GetStandardsArn() const{ return m_standardsArn; }
 
     /**
-     * <p>The ARN of a standard.</p> <important> <p>In this release, Security Hub
-     * supports only the CIS AWS Foundations standard. </p> <p>Its ARN is
-     * arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>
-     * </important>
+     * <p>The ARN of a standard.</p> <p>In this release, Security Hub supports only the
+     * CIS AWS Foundations standard, which uses the following ARN:
+     * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</code>
+     * </p>
      */
     inline bool StandardsArnHasBeenSet() const { return m_standardsArnHasBeenSet; }
 
     /**
-     * <p>The ARN of a standard.</p> <important> <p>In this release, Security Hub
-     * supports only the CIS AWS Foundations standard. </p> <p>Its ARN is
-     * arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>
-     * </important>
+     * <p>The ARN of a standard.</p> <p>In this release, Security Hub supports only the
+     * CIS AWS Foundations standard, which uses the following ARN:
+     * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</code>
+     * </p>
      */
     inline void SetStandardsArn(const Aws::String& value) { m_standardsArnHasBeenSet = true; m_standardsArn = value; }
 
     /**
-     * <p>The ARN of a standard.</p> <important> <p>In this release, Security Hub
-     * supports only the CIS AWS Foundations standard. </p> <p>Its ARN is
-     * arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>
-     * </important>
+     * <p>The ARN of a standard.</p> <p>In this release, Security Hub supports only the
+     * CIS AWS Foundations standard, which uses the following ARN:
+     * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</code>
+     * </p>
      */
     inline void SetStandardsArn(Aws::String&& value) { m_standardsArnHasBeenSet = true; m_standardsArn = std::move(value); }
 
     /**
-     * <p>The ARN of a standard.</p> <important> <p>In this release, Security Hub
-     * supports only the CIS AWS Foundations standard. </p> <p>Its ARN is
-     * arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>
-     * </important>
+     * <p>The ARN of a standard.</p> <p>In this release, Security Hub supports only the
+     * CIS AWS Foundations standard, which uses the following ARN:
+     * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</code>
+     * </p>
      */
     inline void SetStandardsArn(const char* value) { m_standardsArnHasBeenSet = true; m_standardsArn.assign(value); }
 
     /**
-     * <p>The ARN of a standard.</p> <important> <p>In this release, Security Hub
-     * supports only the CIS AWS Foundations standard. </p> <p>Its ARN is
-     * arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>
-     * </important>
+     * <p>The ARN of a standard.</p> <p>In this release, Security Hub supports only the
+     * CIS AWS Foundations standard, which uses the following ARN:
+     * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</code>
+     * </p>
      */
     inline StandardsSubscription& WithStandardsArn(const Aws::String& value) { SetStandardsArn(value); return *this;}
 
     /**
-     * <p>The ARN of a standard.</p> <important> <p>In this release, Security Hub
-     * supports only the CIS AWS Foundations standard. </p> <p>Its ARN is
-     * arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>
-     * </important>
+     * <p>The ARN of a standard.</p> <p>In this release, Security Hub supports only the
+     * CIS AWS Foundations standard, which uses the following ARN:
+     * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</code>
+     * </p>
      */
     inline StandardsSubscription& WithStandardsArn(Aws::String&& value) { SetStandardsArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of a standard.</p> <important> <p>In this release, Security Hub
-     * supports only the CIS AWS Foundations standard. </p> <p>Its ARN is
-     * arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</p>
-     * </important>
+     * <p>The ARN of a standard.</p> <p>In this release, Security Hub supports only the
+     * CIS AWS Foundations standard, which uses the following ARN:
+     * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0.</code>
+     * </p>
      */
     inline StandardsSubscription& WithStandardsArn(const char* value) { SetStandardsArn(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>A key-value pair of input for the standard.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStandardsInput() const{ return m_standardsInput; }
 
     /**
-     * <p/>
+     * <p>A key-value pair of input for the standard.</p>
      */
     inline bool StandardsInputHasBeenSet() const { return m_standardsInputHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>A key-value pair of input for the standard.</p>
      */
     inline void SetStandardsInput(const Aws::Map<Aws::String, Aws::String>& value) { m_standardsInputHasBeenSet = true; m_standardsInput = value; }
 
     /**
-     * <p/>
+     * <p>A key-value pair of input for the standard.</p>
      */
     inline void SetStandardsInput(Aws::Map<Aws::String, Aws::String>&& value) { m_standardsInputHasBeenSet = true; m_standardsInput = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A key-value pair of input for the standard.</p>
      */
     inline StandardsSubscription& WithStandardsInput(const Aws::Map<Aws::String, Aws::String>& value) { SetStandardsInput(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A key-value pair of input for the standard.</p>
      */
     inline StandardsSubscription& WithStandardsInput(Aws::Map<Aws::String, Aws::String>&& value) { SetStandardsInput(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>A key-value pair of input for the standard.</p>
      */
     inline StandardsSubscription& AddStandardsInput(const Aws::String& key, const Aws::String& value) { m_standardsInputHasBeenSet = true; m_standardsInput.emplace(key, value); return *this; }
 
     /**
-     * <p/>
+     * <p>A key-value pair of input for the standard.</p>
      */
     inline StandardsSubscription& AddStandardsInput(Aws::String&& key, const Aws::String& value) { m_standardsInputHasBeenSet = true; m_standardsInput.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p/>
+     * <p>A key-value pair of input for the standard.</p>
      */
     inline StandardsSubscription& AddStandardsInput(const Aws::String& key, Aws::String&& value) { m_standardsInputHasBeenSet = true; m_standardsInput.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>A key-value pair of input for the standard.</p>
      */
     inline StandardsSubscription& AddStandardsInput(Aws::String&& key, Aws::String&& value) { m_standardsInputHasBeenSet = true; m_standardsInput.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>A key-value pair of input for the standard.</p>
      */
     inline StandardsSubscription& AddStandardsInput(const char* key, Aws::String&& value) { m_standardsInputHasBeenSet = true; m_standardsInput.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>A key-value pair of input for the standard.</p>
      */
     inline StandardsSubscription& AddStandardsInput(Aws::String&& key, const char* value) { m_standardsInputHasBeenSet = true; m_standardsInput.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p/>
+     * <p>A key-value pair of input for the standard.</p>
      */
     inline StandardsSubscription& AddStandardsInput(const char* key, const char* value) { m_standardsInputHasBeenSet = true; m_standardsInput.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The standard's status.</p>
+     * <p>The status of the standards subscription.</p>
      */
     inline const StandardsStatus& GetStandardsStatus() const{ return m_standardsStatus; }
 
     /**
-     * <p>The standard's status.</p>
+     * <p>The status of the standards subscription.</p>
      */
     inline bool StandardsStatusHasBeenSet() const { return m_standardsStatusHasBeenSet; }
 
     /**
-     * <p>The standard's status.</p>
+     * <p>The status of the standards subscription.</p>
      */
     inline void SetStandardsStatus(const StandardsStatus& value) { m_standardsStatusHasBeenSet = true; m_standardsStatus = value; }
 
     /**
-     * <p>The standard's status.</p>
+     * <p>The status of the standards subscription.</p>
      */
     inline void SetStandardsStatus(StandardsStatus&& value) { m_standardsStatusHasBeenSet = true; m_standardsStatus = std::move(value); }
 
     /**
-     * <p>The standard's status.</p>
+     * <p>The status of the standards subscription.</p>
      */
     inline StandardsSubscription& WithStandardsStatus(const StandardsStatus& value) { SetStandardsStatus(value); return *this;}
 
     /**
-     * <p>The standard's status.</p>
+     * <p>The status of the standards subscription.</p>
      */
     inline StandardsSubscription& WithStandardsStatus(StandardsStatus&& value) { SetStandardsStatus(std::move(value)); return *this;}
 

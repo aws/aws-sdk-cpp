@@ -35,8 +35,8 @@ namespace FSx
 namespace Model
 {
   /**
-   * <p>The response object for the <code>CreateFileSystem</code>
-   * operation.</p><p><h3>See Also:</h3>   <a
+   * <p>The response object returned after the file system is created.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemResponse">AWS
    * API Reference</a></p>
    */
@@ -49,27 +49,27 @@ namespace Model
 
 
     /**
-     * <p>A description of the file system.</p>
+     * <p>The configuration of the file system that was created.</p>
      */
     inline const FileSystem& GetFileSystem() const{ return m_fileSystem; }
 
     /**
-     * <p>A description of the file system.</p>
+     * <p>The configuration of the file system that was created.</p>
      */
     inline void SetFileSystem(const FileSystem& value) { m_fileSystem = value; }
 
     /**
-     * <p>A description of the file system.</p>
+     * <p>The configuration of the file system that was created.</p>
      */
     inline void SetFileSystem(FileSystem&& value) { m_fileSystem = std::move(value); }
 
     /**
-     * <p>A description of the file system.</p>
+     * <p>The configuration of the file system that was created.</p>
      */
     inline CreateFileSystemResult& WithFileSystem(const FileSystem& value) { SetFileSystem(value); return *this;}
 
     /**
-     * <p>A description of the file system.</p>
+     * <p>The configuration of the file system that was created.</p>
      */
     inline CreateFileSystemResult& WithFileSystem(FileSystem&& value) { SetFileSystem(std::move(value)); return *this;}
 

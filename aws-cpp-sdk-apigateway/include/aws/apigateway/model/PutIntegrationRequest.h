@@ -1079,88 +1079,88 @@ namespace Model
 
 
     /**
-     * <p>Specifies a put integration input's cache namespace.</p>
+     * <p>A list of request parameters whose values are to be cached.</p>
      */
     inline const Aws::String& GetCacheNamespace() const{ return m_cacheNamespace; }
 
     /**
-     * <p>Specifies a put integration input's cache namespace.</p>
+     * <p>A list of request parameters whose values are to be cached.</p>
      */
     inline bool CacheNamespaceHasBeenSet() const { return m_cacheNamespaceHasBeenSet; }
 
     /**
-     * <p>Specifies a put integration input's cache namespace.</p>
+     * <p>A list of request parameters whose values are to be cached.</p>
      */
     inline void SetCacheNamespace(const Aws::String& value) { m_cacheNamespaceHasBeenSet = true; m_cacheNamespace = value; }
 
     /**
-     * <p>Specifies a put integration input's cache namespace.</p>
+     * <p>A list of request parameters whose values are to be cached.</p>
      */
     inline void SetCacheNamespace(Aws::String&& value) { m_cacheNamespaceHasBeenSet = true; m_cacheNamespace = std::move(value); }
 
     /**
-     * <p>Specifies a put integration input's cache namespace.</p>
+     * <p>A list of request parameters whose values are to be cached.</p>
      */
     inline void SetCacheNamespace(const char* value) { m_cacheNamespaceHasBeenSet = true; m_cacheNamespace.assign(value); }
 
     /**
-     * <p>Specifies a put integration input's cache namespace.</p>
+     * <p>A list of request parameters whose values are to be cached.</p>
      */
     inline PutIntegrationRequest& WithCacheNamespace(const Aws::String& value) { SetCacheNamespace(value); return *this;}
 
     /**
-     * <p>Specifies a put integration input's cache namespace.</p>
+     * <p>A list of request parameters whose values are to be cached.</p>
      */
     inline PutIntegrationRequest& WithCacheNamespace(Aws::String&& value) { SetCacheNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies a put integration input's cache namespace.</p>
+     * <p>A list of request parameters whose values are to be cached.</p>
      */
     inline PutIntegrationRequest& WithCacheNamespace(const char* value) { SetCacheNamespace(value); return *this;}
 
 
     /**
-     * <p>Specifies a put integration input's cache key parameters.</p>
+     * <p>An API-specific tag group of related cached parameters.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCacheKeyParameters() const{ return m_cacheKeyParameters; }
 
     /**
-     * <p>Specifies a put integration input's cache key parameters.</p>
+     * <p>An API-specific tag group of related cached parameters.</p>
      */
     inline bool CacheKeyParametersHasBeenSet() const { return m_cacheKeyParametersHasBeenSet; }
 
     /**
-     * <p>Specifies a put integration input's cache key parameters.</p>
+     * <p>An API-specific tag group of related cached parameters.</p>
      */
     inline void SetCacheKeyParameters(const Aws::Vector<Aws::String>& value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters = value; }
 
     /**
-     * <p>Specifies a put integration input's cache key parameters.</p>
+     * <p>An API-specific tag group of related cached parameters.</p>
      */
     inline void SetCacheKeyParameters(Aws::Vector<Aws::String>&& value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters = std::move(value); }
 
     /**
-     * <p>Specifies a put integration input's cache key parameters.</p>
+     * <p>An API-specific tag group of related cached parameters.</p>
      */
     inline PutIntegrationRequest& WithCacheKeyParameters(const Aws::Vector<Aws::String>& value) { SetCacheKeyParameters(value); return *this;}
 
     /**
-     * <p>Specifies a put integration input's cache key parameters.</p>
+     * <p>An API-specific tag group of related cached parameters.</p>
      */
     inline PutIntegrationRequest& WithCacheKeyParameters(Aws::Vector<Aws::String>&& value) { SetCacheKeyParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies a put integration input's cache key parameters.</p>
+     * <p>An API-specific tag group of related cached parameters.</p>
      */
     inline PutIntegrationRequest& AddCacheKeyParameters(const Aws::String& value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters.push_back(value); return *this; }
 
     /**
-     * <p>Specifies a put integration input's cache key parameters.</p>
+     * <p>An API-specific tag group of related cached parameters.</p>
      */
     inline PutIntegrationRequest& AddCacheKeyParameters(Aws::String&& value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Specifies a put integration input's cache key parameters.</p>
+     * <p>An API-specific tag group of related cached parameters.</p>
      */
     inline PutIntegrationRequest& AddCacheKeyParameters(const char* value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters.push_back(value); return *this; }
 
@@ -1174,7 +1174,7 @@ namespace Model
      * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
      * property is not defined, the request payload will be passed through from the
      * method request to integration request without modification, provided that the
-     * <code>passthroughBehaviors</code> is configured to support payload
+     * <code>passthroughBehavior</code> is configured to support payload
      * pass-through.</p>
      */
     inline const ContentHandlingStrategy& GetContentHandling() const{ return m_contentHandling; }
@@ -1188,7 +1188,7 @@ namespace Model
      * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
      * property is not defined, the request payload will be passed through from the
      * method request to integration request without modification, provided that the
-     * <code>passthroughBehaviors</code> is configured to support payload
+     * <code>passthroughBehavior</code> is configured to support payload
      * pass-through.</p>
      */
     inline bool ContentHandlingHasBeenSet() const { return m_contentHandlingHasBeenSet; }
@@ -1202,7 +1202,7 @@ namespace Model
      * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
      * property is not defined, the request payload will be passed through from the
      * method request to integration request without modification, provided that the
-     * <code>passthroughBehaviors</code> is configured to support payload
+     * <code>passthroughBehavior</code> is configured to support payload
      * pass-through.</p>
      */
     inline void SetContentHandling(const ContentHandlingStrategy& value) { m_contentHandlingHasBeenSet = true; m_contentHandling = value; }
@@ -1216,7 +1216,7 @@ namespace Model
      * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
      * property is not defined, the request payload will be passed through from the
      * method request to integration request without modification, provided that the
-     * <code>passthroughBehaviors</code> is configured to support payload
+     * <code>passthroughBehavior</code> is configured to support payload
      * pass-through.</p>
      */
     inline void SetContentHandling(ContentHandlingStrategy&& value) { m_contentHandlingHasBeenSet = true; m_contentHandling = std::move(value); }
@@ -1230,7 +1230,7 @@ namespace Model
      * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
      * property is not defined, the request payload will be passed through from the
      * method request to integration request without modification, provided that the
-     * <code>passthroughBehaviors</code> is configured to support payload
+     * <code>passthroughBehavior</code> is configured to support payload
      * pass-through.</p>
      */
     inline PutIntegrationRequest& WithContentHandling(const ContentHandlingStrategy& value) { SetContentHandling(value); return *this;}
@@ -1244,7 +1244,7 @@ namespace Model
      * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
      * property is not defined, the request payload will be passed through from the
      * method request to integration request without modification, provided that the
-     * <code>passthroughBehaviors</code> is configured to support payload
+     * <code>passthroughBehavior</code> is configured to support payload
      * pass-through.</p>
      */
     inline PutIntegrationRequest& WithContentHandling(ContentHandlingStrategy&& value) { SetContentHandling(std::move(value)); return *this;}

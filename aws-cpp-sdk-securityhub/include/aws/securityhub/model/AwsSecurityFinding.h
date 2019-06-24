@@ -50,12 +50,12 @@ namespace Model
 
   /**
    * <p>Provides consistent format for the contents of the Security Hub-aggregated
-   * findings. AwsSecurityFinding format enables you to share findings between AWS
-   * security services and third-party solutions, and compliance checks.</p> <note>
-   * <p>A finding is a potential security issue generated either by AWS services
-   * (Amazon GuardDuty, Amazon Inspector, and Amazon Macie) or by the integrated
-   * third-party solutions and compliance checks.</p> </note><p><h3>See Also:</h3>  
-   * <a
+   * findings. <code>AwsSecurityFinding</code> format enables you to share findings
+   * between AWS security services and third-party solutions, and compliance
+   * checks.</p> <note> <p>A finding is a potential security issue generated either
+   * by AWS services (Amazon GuardDuty, Amazon Inspector, and Amazon Macie) or by the
+   * integrated third-party solutions and compliance checks.</p> </note><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFinding">AWS
    * API Reference</a></p>
    */
@@ -656,29 +656,29 @@ namespace Model
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means the underlying resources have no criticality, and a
-     * score of 100 is reserved for the most critical resources.</p>
+     * finding. A score of 0 means that the underlying resources have no criticality,
+     * and a score of 100 is reserved for the most critical resources.</p>
      */
     inline int GetCriticality() const{ return m_criticality; }
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means the underlying resources have no criticality, and a
-     * score of 100 is reserved for the most critical resources.</p>
+     * finding. A score of 0 means that the underlying resources have no criticality,
+     * and a score of 100 is reserved for the most critical resources.</p>
      */
     inline bool CriticalityHasBeenSet() const { return m_criticalityHasBeenSet; }
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means the underlying resources have no criticality, and a
-     * score of 100 is reserved for the most critical resources.</p>
+     * finding. A score of 0 means that the underlying resources have no criticality,
+     * and a score of 100 is reserved for the most critical resources.</p>
      */
     inline void SetCriticality(int value) { m_criticalityHasBeenSet = true; m_criticality = value; }
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means the underlying resources have no criticality, and a
-     * score of 100 is reserved for the most critical resources.</p>
+     * finding. A score of 0 means that the underlying resources have no criticality,
+     * and a score of 100 is reserved for the most critical resources.</p>
      */
     inline AwsSecurityFinding& WithCriticality(int value) { SetCriticality(value); return *this;}
 
@@ -782,32 +782,32 @@ namespace Model
 
 
     /**
-     * <p>An data type that describes the remediation options for a finding.</p>
+     * <p>A data type that describes the remediation options for a finding.</p>
      */
     inline const Remediation& GetRemediation() const{ return m_remediation; }
 
     /**
-     * <p>An data type that describes the remediation options for a finding.</p>
+     * <p>A data type that describes the remediation options for a finding.</p>
      */
     inline bool RemediationHasBeenSet() const { return m_remediationHasBeenSet; }
 
     /**
-     * <p>An data type that describes the remediation options for a finding.</p>
+     * <p>A data type that describes the remediation options for a finding.</p>
      */
     inline void SetRemediation(const Remediation& value) { m_remediationHasBeenSet = true; m_remediation = value; }
 
     /**
-     * <p>An data type that describes the remediation options for a finding.</p>
+     * <p>A data type that describes the remediation options for a finding.</p>
      */
     inline void SetRemediation(Remediation&& value) { m_remediationHasBeenSet = true; m_remediation = std::move(value); }
 
     /**
-     * <p>An data type that describes the remediation options for a finding.</p>
+     * <p>A data type that describes the remediation options for a finding.</p>
      */
     inline AwsSecurityFinding& WithRemediation(const Remediation& value) { SetRemediation(value); return *this;}
 
     /**
-     * <p>An data type that describes the remediation options for a finding.</p>
+     * <p>A data type that describes the remediation options for a finding.</p>
      */
     inline AwsSecurityFinding& WithRemediation(Remediation&& value) { SetRemediation(std::move(value)); return *this;}
 
@@ -863,92 +863,92 @@ namespace Model
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetProductFields() const{ return m_productFields; }
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline bool ProductFieldsHasBeenSet() const { return m_productFieldsHasBeenSet; }
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline void SetProductFields(const Aws::Map<Aws::String, Aws::String>& value) { m_productFieldsHasBeenSet = true; m_productFields = value; }
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline void SetProductFields(Aws::Map<Aws::String, Aws::String>&& value) { m_productFieldsHasBeenSet = true; m_productFields = std::move(value); }
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFinding& WithProductFields(const Aws::Map<Aws::String, Aws::String>& value) { SetProductFields(value); return *this;}
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFinding& WithProductFields(Aws::Map<Aws::String, Aws::String>&& value) { SetProductFields(std::move(value)); return *this;}
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFinding& AddProductFields(const Aws::String& key, const Aws::String& value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(key, value); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFinding& AddProductFields(Aws::String&& key, const Aws::String& value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFinding& AddProductFields(const Aws::String& key, Aws::String&& value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFinding& AddProductFields(Aws::String&& key, Aws::String&& value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFinding& AddProductFields(const char* key, Aws::String&& value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFinding& AddProductFields(Aws::String&& key, const char* value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFinding& AddProductFields(const char* key, const char* value) { m_productFieldsHasBeenSet = true; m_productFields.emplace(key, value); return *this; }
 

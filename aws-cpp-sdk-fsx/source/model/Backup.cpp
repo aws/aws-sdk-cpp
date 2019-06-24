@@ -41,7 +41,8 @@ Backup::Backup() :
     m_kmsKeyIdHasBeenSet(false),
     m_resourceARNHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_fileSystemHasBeenSet(false)
+    m_fileSystemHasBeenSet(false),
+    m_directoryInformationHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ Backup::Backup(JsonView jsonValue) :
     m_kmsKeyIdHasBeenSet(false),
     m_resourceARNHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_fileSystemHasBeenSet(false)
+    m_fileSystemHasBeenSet(false),
+    m_directoryInformationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -138,6 +140,13 @@ Backup& Backup::operator =(JsonView jsonValue)
     m_fileSystemHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DirectoryInformation"))
+  {
+    m_directoryInformation = jsonValue.GetObject("DirectoryInformation");
+
+    m_directoryInformationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -204,6 +213,12 @@ JsonValue Backup::Jsonize() const
   if(m_fileSystemHasBeenSet)
   {
    payload.WithObject("FileSystem", m_fileSystem.Jsonize());
+
+  }
+
+  if(m_directoryInformationHasBeenSet)
+  {
+   payload.WithObject("DirectoryInformation", m_directoryInformation.Jsonize());
 
   }
 

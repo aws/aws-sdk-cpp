@@ -34,6 +34,8 @@ namespace Aws
         static const int HTTPS_HASH = HashingUtils::HashString("HTTPS");
         static const int TCP_HASH = HashingUtils::HashString("TCP");
         static const int TLS_HASH = HashingUtils::HashString("TLS");
+        static const int UDP_HASH = HashingUtils::HashString("UDP");
+        static const int TCP_UDP_HASH = HashingUtils::HashString("TCP_UDP");
 
 
         ProtocolEnum GetProtocolEnumForName(const Aws::String& name)
@@ -54,6 +56,14 @@ namespace Aws
           else if (hashCode == TLS_HASH)
           {
             return ProtocolEnum::TLS;
+          }
+          else if (hashCode == UDP_HASH)
+          {
+            return ProtocolEnum::UDP;
+          }
+          else if (hashCode == TCP_UDP_HASH)
+          {
+            return ProtocolEnum::TCP_UDP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +87,10 @@ namespace Aws
             return "TCP";
           case ProtocolEnum::TLS:
             return "TLS";
+          case ProtocolEnum::UDP:
+            return "UDP";
+          case ProtocolEnum::TCP_UDP:
+            return "TCP_UDP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

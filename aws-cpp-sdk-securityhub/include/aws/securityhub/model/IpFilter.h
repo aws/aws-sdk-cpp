@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>The IP filter for querying findings.&gt;</p><p><h3>See Also:</h3>   <a
+   * <p>The IP filter for querying findings.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/IpFilter">AWS
    * API Reference</a></p>
    */

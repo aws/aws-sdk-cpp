@@ -17,7 +17,6 @@
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/resourcegroupstaggingapi/model/ComplianceDetails.h>
 #include <aws/resourcegroupstaggingapi/model/Tag.h>
 #include <utility>
 
@@ -132,43 +131,6 @@ namespace Model
      */
     inline ResourceTagMapping& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
-
-    /**
-     * <p>Details on whether a resource is compliant with the effective tag policy,
-     * including information about any noncompliant tag keys.</p>
-     */
-    inline const ComplianceDetails& GetComplianceDetails() const{ return m_complianceDetails; }
-
-    /**
-     * <p>Details on whether a resource is compliant with the effective tag policy,
-     * including information about any noncompliant tag keys.</p>
-     */
-    inline bool ComplianceDetailsHasBeenSet() const { return m_complianceDetailsHasBeenSet; }
-
-    /**
-     * <p>Details on whether a resource is compliant with the effective tag policy,
-     * including information about any noncompliant tag keys.</p>
-     */
-    inline void SetComplianceDetails(const ComplianceDetails& value) { m_complianceDetailsHasBeenSet = true; m_complianceDetails = value; }
-
-    /**
-     * <p>Details on whether a resource is compliant with the effective tag policy,
-     * including information about any noncompliant tag keys.</p>
-     */
-    inline void SetComplianceDetails(ComplianceDetails&& value) { m_complianceDetailsHasBeenSet = true; m_complianceDetails = std::move(value); }
-
-    /**
-     * <p>Details on whether a resource is compliant with the effective tag policy,
-     * including information about any noncompliant tag keys.</p>
-     */
-    inline ResourceTagMapping& WithComplianceDetails(const ComplianceDetails& value) { SetComplianceDetails(value); return *this;}
-
-    /**
-     * <p>Details on whether a resource is compliant with the effective tag policy,
-     * including information about any noncompliant tag keys.</p>
-     */
-    inline ResourceTagMapping& WithComplianceDetails(ComplianceDetails&& value) { SetComplianceDetails(std::move(value)); return *this;}
-
   private:
 
     Aws::String m_resourceARN;
@@ -176,9 +138,6 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
-
-    ComplianceDetails m_complianceDetails;
-    bool m_complianceDetailsHasBeenSet;
   };
 
 } // namespace Model

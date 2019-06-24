@@ -360,72 +360,56 @@ namespace Model
     /**
      * <p>A human-friendly operation identifier for the method. For example, you can
      * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
-     * /pets</code> method in <a
-     * href="https://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
-     * example.</p>
+     * /pets</code> method in the <code>PetStore</code> example.</p>
      */
     inline const Aws::String& GetOperationName() const{ return m_operationName; }
 
     /**
      * <p>A human-friendly operation identifier for the method. For example, you can
      * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
-     * /pets</code> method in <a
-     * href="https://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
-     * example.</p>
+     * /pets</code> method in the <code>PetStore</code> example.</p>
      */
     inline bool OperationNameHasBeenSet() const { return m_operationNameHasBeenSet; }
 
     /**
      * <p>A human-friendly operation identifier for the method. For example, you can
      * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
-     * /pets</code> method in <a
-     * href="https://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
-     * example.</p>
+     * /pets</code> method in the <code>PetStore</code> example.</p>
      */
     inline void SetOperationName(const Aws::String& value) { m_operationNameHasBeenSet = true; m_operationName = value; }
 
     /**
      * <p>A human-friendly operation identifier for the method. For example, you can
      * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
-     * /pets</code> method in <a
-     * href="https://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
-     * example.</p>
+     * /pets</code> method in the <code>PetStore</code> example.</p>
      */
     inline void SetOperationName(Aws::String&& value) { m_operationNameHasBeenSet = true; m_operationName = std::move(value); }
 
     /**
      * <p>A human-friendly operation identifier for the method. For example, you can
      * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
-     * /pets</code> method in <a
-     * href="https://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
-     * example.</p>
+     * /pets</code> method in the <code>PetStore</code> example.</p>
      */
     inline void SetOperationName(const char* value) { m_operationNameHasBeenSet = true; m_operationName.assign(value); }
 
     /**
      * <p>A human-friendly operation identifier for the method. For example, you can
      * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
-     * /pets</code> method in <a
-     * href="https://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
-     * example.</p>
+     * /pets</code> method in the <code>PetStore</code> example.</p>
      */
     inline Method& WithOperationName(const Aws::String& value) { SetOperationName(value); return *this;}
 
     /**
      * <p>A human-friendly operation identifier for the method. For example, you can
      * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
-     * /pets</code> method in <a
-     * href="https://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
-     * example.</p>
+     * /pets</code> method in the <code>PetStore</code> example.</p>
      */
     inline Method& WithOperationName(Aws::String&& value) { SetOperationName(std::move(value)); return *this;}
 
     /**
      * <p>A human-friendly operation identifier for the method. For example, you can
      * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
-     * /pets</code> method in <a
-     * href="https://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
-     * example.</p>
+     * /pets</code> method in the <code>PetStore</code> example.</p>
      */
     inline Method& WithOperationName(const char* value) { SetOperationName(value); return *this;}
 

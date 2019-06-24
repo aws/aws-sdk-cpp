@@ -22,6 +22,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/FileSystem.h>
+#include <aws/fsx/model/ActiveDirectoryBackupAttributes.h>
 #include <aws/fsx/model/Tag.h>
 #include <utility>
 
@@ -401,6 +402,43 @@ namespace Model
      */
     inline Backup& WithFileSystem(FileSystem&& value) { SetFileSystem(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration of the self-managed Microsoft Active Directory (AD) to
+     * which the Windows File Server instance is joined.</p>
+     */
+    inline const ActiveDirectoryBackupAttributes& GetDirectoryInformation() const{ return m_directoryInformation; }
+
+    /**
+     * <p>The configuration of the self-managed Microsoft Active Directory (AD) to
+     * which the Windows File Server instance is joined.</p>
+     */
+    inline bool DirectoryInformationHasBeenSet() const { return m_directoryInformationHasBeenSet; }
+
+    /**
+     * <p>The configuration of the self-managed Microsoft Active Directory (AD) to
+     * which the Windows File Server instance is joined.</p>
+     */
+    inline void SetDirectoryInformation(const ActiveDirectoryBackupAttributes& value) { m_directoryInformationHasBeenSet = true; m_directoryInformation = value; }
+
+    /**
+     * <p>The configuration of the self-managed Microsoft Active Directory (AD) to
+     * which the Windows File Server instance is joined.</p>
+     */
+    inline void SetDirectoryInformation(ActiveDirectoryBackupAttributes&& value) { m_directoryInformationHasBeenSet = true; m_directoryInformation = std::move(value); }
+
+    /**
+     * <p>The configuration of the self-managed Microsoft Active Directory (AD) to
+     * which the Windows File Server instance is joined.</p>
+     */
+    inline Backup& WithDirectoryInformation(const ActiveDirectoryBackupAttributes& value) { SetDirectoryInformation(value); return *this;}
+
+    /**
+     * <p>The configuration of the self-managed Microsoft Active Directory (AD) to
+     * which the Windows File Server instance is joined.</p>
+     */
+    inline Backup& WithDirectoryInformation(ActiveDirectoryBackupAttributes&& value) { SetDirectoryInformation(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_backupId;
@@ -432,6 +470,9 @@ namespace Model
 
     FileSystem m_fileSystem;
     bool m_fileSystemHasBeenSet;
+
+    ActiveDirectoryBackupAttributes m_directoryInformation;
+    bool m_directoryInformationHasBeenSet;
   };
 
 } // namespace Model

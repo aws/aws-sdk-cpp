@@ -34,8 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>The configuration object for Lustre file systems used in the
-   * <code>CreateFileSystem</code> operation.</p><p><h3>See Also:</h3>   <a
+   * <p>The Lustre configuration for the file system being created. This value is
+   * required if <code>FileSystemType</code> is set to
+   * <code>LUSTRE</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemLustreConfiguration">AWS
    * API Reference</a></p>
    */

@@ -131,38 +131,38 @@ namespace Model
 
 
     /**
-     * <p>The condition to be applied to a key value when querying for findings with a
-     * map filter.</p>
+     * <p>The condition to apply to a key value when querying for findings with a map
+     * filter.</p>
      */
     inline const MapFilterComparison& GetComparison() const{ return m_comparison; }
 
     /**
-     * <p>The condition to be applied to a key value when querying for findings with a
-     * map filter.</p>
+     * <p>The condition to apply to a key value when querying for findings with a map
+     * filter.</p>
      */
     inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
 
     /**
-     * <p>The condition to be applied to a key value when querying for findings with a
-     * map filter.</p>
+     * <p>The condition to apply to a key value when querying for findings with a map
+     * filter.</p>
      */
     inline void SetComparison(const MapFilterComparison& value) { m_comparisonHasBeenSet = true; m_comparison = value; }
 
     /**
-     * <p>The condition to be applied to a key value when querying for findings with a
-     * map filter.</p>
+     * <p>The condition to apply to a key value when querying for findings with a map
+     * filter.</p>
      */
     inline void SetComparison(MapFilterComparison&& value) { m_comparisonHasBeenSet = true; m_comparison = std::move(value); }
 
     /**
-     * <p>The condition to be applied to a key value when querying for findings with a
-     * map filter.</p>
+     * <p>The condition to apply to a key value when querying for findings with a map
+     * filter.</p>
      */
     inline MapFilter& WithComparison(const MapFilterComparison& value) { SetComparison(value); return *this;}
 
     /**
-     * <p>The condition to be applied to a key value when querying for findings with a
-     * map filter.</p>
+     * <p>The condition to apply to a key value when querying for findings with a map
+     * filter.</p>
      */
     inline MapFilter& WithComparison(MapFilterComparison&& value) { SetComparison(std::move(value)); return *this;}
 

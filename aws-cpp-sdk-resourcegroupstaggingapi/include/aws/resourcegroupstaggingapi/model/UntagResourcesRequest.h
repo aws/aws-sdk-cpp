@@ -47,8 +47,8 @@ namespace Model
 
     /**
      * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
-     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag.
-     * For more information, see <a
+     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An
+     * ARN can be set to a maximum of 1600 characters. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -57,8 +57,8 @@ namespace Model
 
     /**
      * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
-     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag.
-     * For more information, see <a
+     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An
+     * ARN can be set to a maximum of 1600 characters. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -67,8 +67,8 @@ namespace Model
 
     /**
      * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
-     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag.
-     * For more information, see <a
+     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An
+     * ARN can be set to a maximum of 1600 characters. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -77,8 +77,8 @@ namespace Model
 
     /**
      * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
-     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag.
-     * For more information, see <a
+     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An
+     * ARN can be set to a maximum of 1600 characters. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -87,8 +87,8 @@ namespace Model
 
     /**
      * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
-     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag.
-     * For more information, see <a
+     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An
+     * ARN can be set to a maximum of 1600 characters. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -97,8 +97,8 @@ namespace Model
 
     /**
      * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
-     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag.
-     * For more information, see <a
+     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An
+     * ARN can be set to a maximum of 1600 characters. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -107,8 +107,8 @@ namespace Model
 
     /**
      * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
-     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag.
-     * For more information, see <a
+     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An
+     * ARN can be set to a maximum of 1600 characters. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -117,8 +117,8 @@ namespace Model
 
     /**
      * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
-     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag.
-     * For more information, see <a
+     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An
+     * ARN can be set to a maximum of 1600 characters. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -127,8 +127,8 @@ namespace Model
 
     /**
      * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
-     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag.
-     * For more information, see <a
+     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An
+     * ARN can be set to a maximum of 1600 characters. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>

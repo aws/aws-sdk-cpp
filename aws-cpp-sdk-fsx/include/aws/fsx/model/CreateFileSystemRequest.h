@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>The request object for the <code>CreateFileSystem</code>
-   * operation.</p><p><h3>See Also:</h3>   <a
+   * <p>The request object used to create a new Amazon FSx file system.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemRequest">AWS
    * API Reference</a></p>
    */
@@ -112,250 +112,242 @@ namespace Model
 
 
     /**
-     * <p>The type of file system.</p>
+     * <p>The type of Amazon FSx file system to create.</p>
      */
     inline const FileSystemType& GetFileSystemType() const{ return m_fileSystemType; }
 
     /**
-     * <p>The type of file system.</p>
+     * <p>The type of Amazon FSx file system to create.</p>
      */
     inline bool FileSystemTypeHasBeenSet() const { return m_fileSystemTypeHasBeenSet; }
 
     /**
-     * <p>The type of file system.</p>
+     * <p>The type of Amazon FSx file system to create.</p>
      */
     inline void SetFileSystemType(const FileSystemType& value) { m_fileSystemTypeHasBeenSet = true; m_fileSystemType = value; }
 
     /**
-     * <p>The type of file system.</p>
+     * <p>The type of Amazon FSx file system to create.</p>
      */
     inline void SetFileSystemType(FileSystemType&& value) { m_fileSystemTypeHasBeenSet = true; m_fileSystemType = std::move(value); }
 
     /**
-     * <p>The type of file system.</p>
+     * <p>The type of Amazon FSx file system to create.</p>
      */
     inline CreateFileSystemRequest& WithFileSystemType(const FileSystemType& value) { SetFileSystemType(value); return *this;}
 
     /**
-     * <p>The type of file system.</p>
+     * <p>The type of Amazon FSx file system to create.</p>
      */
     inline CreateFileSystemRequest& WithFileSystemType(FileSystemType&& value) { SetFileSystemType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The storage capacity of the file system.</p> <p>For Windows file systems, the
-     * storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.</p>
-     * <p>For Lustre file systems, the storage capacity has a minimum of 3,600 GiB.
-     * Storage capacity is provisioned in increments of 3,600 GiB.</p>
+     * <p>The storage capacity of the file system being created.</p> <p>For Windows
+     * file systems, the storage capacity has a minimum of 300 GiB, and a maximum of
+     * 65,536 GiB.</p> <p>For Lustre file systems, the storage capacity has a minimum
+     * of 3,600 GiB. Storage capacity is provisioned in increments of 3,600 GiB.</p>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
     /**
-     * <p>The storage capacity of the file system.</p> <p>For Windows file systems, the
-     * storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.</p>
-     * <p>For Lustre file systems, the storage capacity has a minimum of 3,600 GiB.
-     * Storage capacity is provisioned in increments of 3,600 GiB.</p>
+     * <p>The storage capacity of the file system being created.</p> <p>For Windows
+     * file systems, the storage capacity has a minimum of 300 GiB, and a maximum of
+     * 65,536 GiB.</p> <p>For Lustre file systems, the storage capacity has a minimum
+     * of 3,600 GiB. Storage capacity is provisioned in increments of 3,600 GiB.</p>
      */
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
 
     /**
-     * <p>The storage capacity of the file system.</p> <p>For Windows file systems, the
-     * storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.</p>
-     * <p>For Lustre file systems, the storage capacity has a minimum of 3,600 GiB.
-     * Storage capacity is provisioned in increments of 3,600 GiB.</p>
+     * <p>The storage capacity of the file system being created.</p> <p>For Windows
+     * file systems, the storage capacity has a minimum of 300 GiB, and a maximum of
+     * 65,536 GiB.</p> <p>For Lustre file systems, the storage capacity has a minimum
+     * of 3,600 GiB. Storage capacity is provisioned in increments of 3,600 GiB.</p>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
 
     /**
-     * <p>The storage capacity of the file system.</p> <p>For Windows file systems, the
-     * storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.</p>
-     * <p>For Lustre file systems, the storage capacity has a minimum of 3,600 GiB.
-     * Storage capacity is provisioned in increments of 3,600 GiB.</p>
+     * <p>The storage capacity of the file system being created.</p> <p>For Windows
+     * file systems, the storage capacity has a minimum of 300 GiB, and a maximum of
+     * 65,536 GiB.</p> <p>For Lustre file systems, the storage capacity has a minimum
+     * of 3,600 GiB. Storage capacity is provisioned in increments of 3,600 GiB.</p>
      */
     inline CreateFileSystemRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 
 
     /**
-     * <p>A list of IDs for the subnets that the file system will be accessible from.
-     * File systems support only one subnet. The file server is also launched in that
+     * <p>The IDs of the subnets that the file system will be accessible from. File
+     * systems support only one subnet. The file server is also launched in that
      * subnet's Availability Zone.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>A list of IDs for the subnets that the file system will be accessible from.
-     * File systems support only one subnet. The file server is also launched in that
+     * <p>The IDs of the subnets that the file system will be accessible from. File
+     * systems support only one subnet. The file server is also launched in that
      * subnet's Availability Zone.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>A list of IDs for the subnets that the file system will be accessible from.
-     * File systems support only one subnet. The file server is also launched in that
+     * <p>The IDs of the subnets that the file system will be accessible from. File
+     * systems support only one subnet. The file server is also launched in that
      * subnet's Availability Zone.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>A list of IDs for the subnets that the file system will be accessible from.
-     * File systems support only one subnet. The file server is also launched in that
+     * <p>The IDs of the subnets that the file system will be accessible from. File
+     * systems support only one subnet. The file server is also launched in that
      * subnet's Availability Zone.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>A list of IDs for the subnets that the file system will be accessible from.
-     * File systems support only one subnet. The file server is also launched in that
+     * <p>The IDs of the subnets that the file system will be accessible from. File
+     * systems support only one subnet. The file server is also launched in that
      * subnet's Availability Zone.</p>
      */
     inline CreateFileSystemRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>A list of IDs for the subnets that the file system will be accessible from.
-     * File systems support only one subnet. The file server is also launched in that
+     * <p>The IDs of the subnets that the file system will be accessible from. File
+     * systems support only one subnet. The file server is also launched in that
      * subnet's Availability Zone.</p>
      */
     inline CreateFileSystemRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of IDs for the subnets that the file system will be accessible from.
-     * File systems support only one subnet. The file server is also launched in that
+     * <p>The IDs of the subnets that the file system will be accessible from. File
+     * systems support only one subnet. The file server is also launched in that
      * subnet's Availability Zone.</p>
      */
     inline CreateFileSystemRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of IDs for the subnets that the file system will be accessible from.
-     * File systems support only one subnet. The file server is also launched in that
+     * <p>The IDs of the subnets that the file system will be accessible from. File
+     * systems support only one subnet. The file server is also launched in that
      * subnet's Availability Zone.</p>
      */
     inline CreateFileSystemRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of IDs for the subnets that the file system will be accessible from.
-     * File systems support only one subnet. The file server is also launched in that
+     * <p>The IDs of the subnets that the file system will be accessible from. File
+     * systems support only one subnet. The file server is also launched in that
      * subnet's Availability Zone.</p>
      */
     inline CreateFileSystemRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
 
     /**
-     * <p>A list of IDs for the security groups that apply to the specified network
-     * interfaces created for file system access. These security groups will apply to
-     * all network interfaces. This list isn't returned in later describe requests.</p>
+     * <p>A list of IDs specifying the security groups to apply to all network
+     * interfaces created for file system access. This list isn't returned in later
+     * requests to describe the file system.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
-     * <p>A list of IDs for the security groups that apply to the specified network
-     * interfaces created for file system access. These security groups will apply to
-     * all network interfaces. This list isn't returned in later describe requests.</p>
+     * <p>A list of IDs specifying the security groups to apply to all network
+     * interfaces created for file system access. This list isn't returned in later
+     * requests to describe the file system.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
-     * <p>A list of IDs for the security groups that apply to the specified network
-     * interfaces created for file system access. These security groups will apply to
-     * all network interfaces. This list isn't returned in later describe requests.</p>
+     * <p>A list of IDs specifying the security groups to apply to all network
+     * interfaces created for file system access. This list isn't returned in later
+     * requests to describe the file system.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
-     * <p>A list of IDs for the security groups that apply to the specified network
-     * interfaces created for file system access. These security groups will apply to
-     * all network interfaces. This list isn't returned in later describe requests.</p>
+     * <p>A list of IDs specifying the security groups to apply to all network
+     * interfaces created for file system access. This list isn't returned in later
+     * requests to describe the file system.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
-     * <p>A list of IDs for the security groups that apply to the specified network
-     * interfaces created for file system access. These security groups will apply to
-     * all network interfaces. This list isn't returned in later describe requests.</p>
+     * <p>A list of IDs specifying the security groups to apply to all network
+     * interfaces created for file system access. This list isn't returned in later
+     * requests to describe the file system.</p>
      */
     inline CreateFileSystemRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>A list of IDs for the security groups that apply to the specified network
-     * interfaces created for file system access. These security groups will apply to
-     * all network interfaces. This list isn't returned in later describe requests.</p>
+     * <p>A list of IDs specifying the security groups to apply to all network
+     * interfaces created for file system access. This list isn't returned in later
+     * requests to describe the file system.</p>
      */
     inline CreateFileSystemRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of IDs for the security groups that apply to the specified network
-     * interfaces created for file system access. These security groups will apply to
-     * all network interfaces. This list isn't returned in later describe requests.</p>
+     * <p>A list of IDs specifying the security groups to apply to all network
+     * interfaces created for file system access. This list isn't returned in later
+     * requests to describe the file system.</p>
      */
     inline CreateFileSystemRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of IDs for the security groups that apply to the specified network
-     * interfaces created for file system access. These security groups will apply to
-     * all network interfaces. This list isn't returned in later describe requests.</p>
+     * <p>A list of IDs specifying the security groups to apply to all network
+     * interfaces created for file system access. This list isn't returned in later
+     * requests to describe the file system.</p>
      */
     inline CreateFileSystemRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of IDs for the security groups that apply to the specified network
-     * interfaces created for file system access. These security groups will apply to
-     * all network interfaces. This list isn't returned in later describe requests.</p>
+     * <p>A list of IDs specifying the security groups to apply to all network
+     * interfaces created for file system access. This list isn't returned in later
+     * requests to describe the file system.</p>
      */
     inline CreateFileSystemRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The tags to be applied to the file system at file system creation. The key
-     * value of the <code>Name</code> tag appears in the console as the file system
-     * name.</p>
+     * <p>The tags to apply to the file system being created. The key value of the
+     * <code>Name</code> tag appears in the console as the file system name.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags to be applied to the file system at file system creation. The key
-     * value of the <code>Name</code> tag appears in the console as the file system
-     * name.</p>
+     * <p>The tags to apply to the file system being created. The key value of the
+     * <code>Name</code> tag appears in the console as the file system name.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags to be applied to the file system at file system creation. The key
-     * value of the <code>Name</code> tag appears in the console as the file system
-     * name.</p>
+     * <p>The tags to apply to the file system being created. The key value of the
+     * <code>Name</code> tag appears in the console as the file system name.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags to be applied to the file system at file system creation. The key
-     * value of the <code>Name</code> tag appears in the console as the file system
-     * name.</p>
+     * <p>The tags to apply to the file system being created. The key value of the
+     * <code>Name</code> tag appears in the console as the file system name.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags to be applied to the file system at file system creation. The key
-     * value of the <code>Name</code> tag appears in the console as the file system
-     * name.</p>
+     * <p>The tags to apply to the file system being created. The key value of the
+     * <code>Name</code> tag appears in the console as the file system name.</p>
      */
     inline CreateFileSystemRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags to be applied to the file system at file system creation. The key
-     * value of the <code>Name</code> tag appears in the console as the file system
-     * name.</p>
+     * <p>The tags to apply to the file system being created. The key value of the
+     * <code>Name</code> tag appears in the console as the file system name.</p>
      */
     inline CreateFileSystemRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to be applied to the file system at file system creation. The key
-     * value of the <code>Name</code> tag appears in the console as the file system
-     * name.</p>
+     * <p>The tags to apply to the file system being created. The key value of the
+     * <code>Name</code> tag appears in the console as the file system name.</p>
      */
     inline CreateFileSystemRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tags to be applied to the file system at file system creation. The key
-     * value of the <code>Name</code> tag appears in the console as the file system
-     * name.</p>
+     * <p>The tags to apply to the file system being created. The key value of the
+     * <code>Name</code> tag appears in the console as the file system name.</p>
      */
     inline CreateFileSystemRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -386,32 +378,44 @@ namespace Model
 
 
     /**
-     * <p>The configuration for this Microsoft Windows file system.</p>
+     * <p>The Microsoft Windows configuration for the file system being created. This
+     * value is required if <code>FileSystemType</code> is set to
+     * <code>WINDOWS</code>.</p>
      */
     inline const CreateFileSystemWindowsConfiguration& GetWindowsConfiguration() const{ return m_windowsConfiguration; }
 
     /**
-     * <p>The configuration for this Microsoft Windows file system.</p>
+     * <p>The Microsoft Windows configuration for the file system being created. This
+     * value is required if <code>FileSystemType</code> is set to
+     * <code>WINDOWS</code>.</p>
      */
     inline bool WindowsConfigurationHasBeenSet() const { return m_windowsConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration for this Microsoft Windows file system.</p>
+     * <p>The Microsoft Windows configuration for the file system being created. This
+     * value is required if <code>FileSystemType</code> is set to
+     * <code>WINDOWS</code>.</p>
      */
     inline void SetWindowsConfiguration(const CreateFileSystemWindowsConfiguration& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = value; }
 
     /**
-     * <p>The configuration for this Microsoft Windows file system.</p>
+     * <p>The Microsoft Windows configuration for the file system being created. This
+     * value is required if <code>FileSystemType</code> is set to
+     * <code>WINDOWS</code>.</p>
      */
     inline void SetWindowsConfiguration(CreateFileSystemWindowsConfiguration&& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration for this Microsoft Windows file system.</p>
+     * <p>The Microsoft Windows configuration for the file system being created. This
+     * value is required if <code>FileSystemType</code> is set to
+     * <code>WINDOWS</code>.</p>
      */
     inline CreateFileSystemRequest& WithWindowsConfiguration(const CreateFileSystemWindowsConfiguration& value) { SetWindowsConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration for this Microsoft Windows file system.</p>
+     * <p>The Microsoft Windows configuration for the file system being created. This
+     * value is required if <code>FileSystemType</code> is set to
+     * <code>WINDOWS</code>.</p>
      */
     inline CreateFileSystemRequest& WithWindowsConfiguration(CreateFileSystemWindowsConfiguration&& value) { SetWindowsConfiguration(std::move(value)); return *this;}
 

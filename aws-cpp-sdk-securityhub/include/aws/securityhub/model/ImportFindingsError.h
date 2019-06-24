@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Includes details of the list of the findings that can't be imported.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Includes details of the list of the findings that can't be
+   * imported.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ImportFindingsError">AWS
    * API Reference</a></p>
    */
@@ -99,98 +99,98 @@ namespace Model
 
     /**
      * <p>The code of the error made during the <code>BatchImportFindings</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
 
     /**
      * <p>The code of the error made during the <code>BatchImportFindings</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>The code of the error made during the <code>BatchImportFindings</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
      * <p>The code of the error made during the <code>BatchImportFindings</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
      * <p>The code of the error made during the <code>BatchImportFindings</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
 
     /**
      * <p>The code of the error made during the <code>BatchImportFindings</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline ImportFindingsError& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
 
     /**
      * <p>The code of the error made during the <code>BatchImportFindings</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline ImportFindingsError& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
      * <p>The code of the error made during the <code>BatchImportFindings</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline ImportFindingsError& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
 
     /**
      * <p>The message of the error made during the <code>BatchImportFindings</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
     /**
      * <p>The message of the error made during the <code>BatchImportFindings</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>The message of the error made during the <code>BatchImportFindings</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**
      * <p>The message of the error made during the <code>BatchImportFindings</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
      * <p>The message of the error made during the <code>BatchImportFindings</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
 
     /**
      * <p>The message of the error made during the <code>BatchImportFindings</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline ImportFindingsError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
     /**
      * <p>The message of the error made during the <code>BatchImportFindings</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline ImportFindingsError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
      * <p>The message of the error made during the <code>BatchImportFindings</code>
-     * operation. </p>
+     * operation.</p>
      */
     inline ImportFindingsError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 

@@ -40,8 +40,10 @@ namespace Model
    * <p>Represents an authorization layer for methods. If enabled on a method, API
    * Gateway will activate the authorizer when a client calls the method.</p> <div
    * class="seeAlso"> <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
-   * custom authorization</a> </div><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html">Use
+   * Lambda Function as Authorizer</a> <a
+   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html">Use
+   * Cognito User Pool as Authorizer</a> </div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Authorizer">AWS
    * API Reference</a></p>
    */
@@ -616,78 +618,85 @@ namespace Model
 
     /**
      * <p>A validation expression for the incoming identity token. For
-     * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
-     * will match the <code>aud</code> field of the incoming token from the client
-     * against the specified regular expression. It will invoke the authorizer's Lambda
-     * function when there is a match. Otherwise, it will return a 401 Unauthorized
-     * response without calling the Lambda function. The validation expression does not
-     * apply to the <code>REQUEST</code> authorizer.</p>
+     * <code>TOKEN</code> authorizers, this value is a regular expression. For
+     * <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the
+     * <code>aud</code> field of the incoming token from the client against the
+     * specified regular expression. It will invoke the authorizer's Lambda function
+     * when there is a match. Otherwise, it will return a 401 Unauthorized response
+     * without calling the Lambda function. The validation expression does not apply to
+     * the <code>REQUEST</code> authorizer.</p>
      */
     inline const Aws::String& GetIdentityValidationExpression() const{ return m_identityValidationExpression; }
 
     /**
      * <p>A validation expression for the incoming identity token. For
-     * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
-     * will match the <code>aud</code> field of the incoming token from the client
-     * against the specified regular expression. It will invoke the authorizer's Lambda
-     * function when there is a match. Otherwise, it will return a 401 Unauthorized
-     * response without calling the Lambda function. The validation expression does not
-     * apply to the <code>REQUEST</code> authorizer.</p>
+     * <code>TOKEN</code> authorizers, this value is a regular expression. For
+     * <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the
+     * <code>aud</code> field of the incoming token from the client against the
+     * specified regular expression. It will invoke the authorizer's Lambda function
+     * when there is a match. Otherwise, it will return a 401 Unauthorized response
+     * without calling the Lambda function. The validation expression does not apply to
+     * the <code>REQUEST</code> authorizer.</p>
      */
     inline void SetIdentityValidationExpression(const Aws::String& value) { m_identityValidationExpression = value; }
 
     /**
      * <p>A validation expression for the incoming identity token. For
-     * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
-     * will match the <code>aud</code> field of the incoming token from the client
-     * against the specified regular expression. It will invoke the authorizer's Lambda
-     * function when there is a match. Otherwise, it will return a 401 Unauthorized
-     * response without calling the Lambda function. The validation expression does not
-     * apply to the <code>REQUEST</code> authorizer.</p>
+     * <code>TOKEN</code> authorizers, this value is a regular expression. For
+     * <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the
+     * <code>aud</code> field of the incoming token from the client against the
+     * specified regular expression. It will invoke the authorizer's Lambda function
+     * when there is a match. Otherwise, it will return a 401 Unauthorized response
+     * without calling the Lambda function. The validation expression does not apply to
+     * the <code>REQUEST</code> authorizer.</p>
      */
     inline void SetIdentityValidationExpression(Aws::String&& value) { m_identityValidationExpression = std::move(value); }
 
     /**
      * <p>A validation expression for the incoming identity token. For
-     * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
-     * will match the <code>aud</code> field of the incoming token from the client
-     * against the specified regular expression. It will invoke the authorizer's Lambda
-     * function when there is a match. Otherwise, it will return a 401 Unauthorized
-     * response without calling the Lambda function. The validation expression does not
-     * apply to the <code>REQUEST</code> authorizer.</p>
+     * <code>TOKEN</code> authorizers, this value is a regular expression. For
+     * <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the
+     * <code>aud</code> field of the incoming token from the client against the
+     * specified regular expression. It will invoke the authorizer's Lambda function
+     * when there is a match. Otherwise, it will return a 401 Unauthorized response
+     * without calling the Lambda function. The validation expression does not apply to
+     * the <code>REQUEST</code> authorizer.</p>
      */
     inline void SetIdentityValidationExpression(const char* value) { m_identityValidationExpression.assign(value); }
 
     /**
      * <p>A validation expression for the incoming identity token. For
-     * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
-     * will match the <code>aud</code> field of the incoming token from the client
-     * against the specified regular expression. It will invoke the authorizer's Lambda
-     * function when there is a match. Otherwise, it will return a 401 Unauthorized
-     * response without calling the Lambda function. The validation expression does not
-     * apply to the <code>REQUEST</code> authorizer.</p>
+     * <code>TOKEN</code> authorizers, this value is a regular expression. For
+     * <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the
+     * <code>aud</code> field of the incoming token from the client against the
+     * specified regular expression. It will invoke the authorizer's Lambda function
+     * when there is a match. Otherwise, it will return a 401 Unauthorized response
+     * without calling the Lambda function. The validation expression does not apply to
+     * the <code>REQUEST</code> authorizer.</p>
      */
     inline GetAuthorizerResult& WithIdentityValidationExpression(const Aws::String& value) { SetIdentityValidationExpression(value); return *this;}
 
     /**
      * <p>A validation expression for the incoming identity token. For
-     * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
-     * will match the <code>aud</code> field of the incoming token from the client
-     * against the specified regular expression. It will invoke the authorizer's Lambda
-     * function when there is a match. Otherwise, it will return a 401 Unauthorized
-     * response without calling the Lambda function. The validation expression does not
-     * apply to the <code>REQUEST</code> authorizer.</p>
+     * <code>TOKEN</code> authorizers, this value is a regular expression. For
+     * <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the
+     * <code>aud</code> field of the incoming token from the client against the
+     * specified regular expression. It will invoke the authorizer's Lambda function
+     * when there is a match. Otherwise, it will return a 401 Unauthorized response
+     * without calling the Lambda function. The validation expression does not apply to
+     * the <code>REQUEST</code> authorizer.</p>
      */
     inline GetAuthorizerResult& WithIdentityValidationExpression(Aws::String&& value) { SetIdentityValidationExpression(std::move(value)); return *this;}
 
     /**
      * <p>A validation expression for the incoming identity token. For
-     * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
-     * will match the <code>aud</code> field of the incoming token from the client
-     * against the specified regular expression. It will invoke the authorizer's Lambda
-     * function when there is a match. Otherwise, it will return a 401 Unauthorized
-     * response without calling the Lambda function. The validation expression does not
-     * apply to the <code>REQUEST</code> authorizer.</p>
+     * <code>TOKEN</code> authorizers, this value is a regular expression. For
+     * <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the
+     * <code>aud</code> field of the incoming token from the client against the
+     * specified regular expression. It will invoke the authorizer's Lambda function
+     * when there is a match. Otherwise, it will return a 401 Unauthorized response
+     * without calling the Lambda function. The validation expression does not apply to
+     * the <code>REQUEST</code> authorizer.</p>
      */
     inline GetAuthorizerResult& WithIdentityValidationExpression(const char* value) { SetIdentityValidationExpression(value); return *this;}
 

@@ -39,7 +39,8 @@ namespace Model
 {
 
   /**
-   * <p>Additional details about the resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Additional details about a resource related to a finding.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ResourceDetails">AWS
    * API Reference</a></p>
    */
@@ -53,204 +54,191 @@ namespace Model
 
 
     /**
-     * <p>The details of an Amazon EC2 instance.</p>
+     * <p>Details about an Amazon EC2 instance related to a finding.</p>
      */
     inline const AwsEc2InstanceDetails& GetAwsEc2Instance() const{ return m_awsEc2Instance; }
 
     /**
-     * <p>The details of an Amazon EC2 instance.</p>
+     * <p>Details about an Amazon EC2 instance related to a finding.</p>
      */
     inline bool AwsEc2InstanceHasBeenSet() const { return m_awsEc2InstanceHasBeenSet; }
 
     /**
-     * <p>The details of an Amazon EC2 instance.</p>
+     * <p>Details about an Amazon EC2 instance related to a finding.</p>
      */
     inline void SetAwsEc2Instance(const AwsEc2InstanceDetails& value) { m_awsEc2InstanceHasBeenSet = true; m_awsEc2Instance = value; }
 
     /**
-     * <p>The details of an Amazon EC2 instance.</p>
+     * <p>Details about an Amazon EC2 instance related to a finding.</p>
      */
     inline void SetAwsEc2Instance(AwsEc2InstanceDetails&& value) { m_awsEc2InstanceHasBeenSet = true; m_awsEc2Instance = std::move(value); }
 
     /**
-     * <p>The details of an Amazon EC2 instance.</p>
+     * <p>Details about an Amazon EC2 instance related to a finding.</p>
      */
     inline ResourceDetails& WithAwsEc2Instance(const AwsEc2InstanceDetails& value) { SetAwsEc2Instance(value); return *this;}
 
     /**
-     * <p>The details of an Amazon EC2 instance.</p>
+     * <p>Details about an Amazon EC2 instance related to a finding.</p>
      */
     inline ResourceDetails& WithAwsEc2Instance(AwsEc2InstanceDetails&& value) { SetAwsEc2Instance(std::move(value)); return *this;}
 
 
     /**
-     * <p>The details of an Amazon S3 Bucket.</p>
+     * <p>Details about an Amazon S3 Bucket related to a finding.</p>
      */
     inline const AwsS3BucketDetails& GetAwsS3Bucket() const{ return m_awsS3Bucket; }
 
     /**
-     * <p>The details of an Amazon S3 Bucket.</p>
+     * <p>Details about an Amazon S3 Bucket related to a finding.</p>
      */
     inline bool AwsS3BucketHasBeenSet() const { return m_awsS3BucketHasBeenSet; }
 
     /**
-     * <p>The details of an Amazon S3 Bucket.</p>
+     * <p>Details about an Amazon S3 Bucket related to a finding.</p>
      */
     inline void SetAwsS3Bucket(const AwsS3BucketDetails& value) { m_awsS3BucketHasBeenSet = true; m_awsS3Bucket = value; }
 
     /**
-     * <p>The details of an Amazon S3 Bucket.</p>
+     * <p>Details about an Amazon S3 Bucket related to a finding.</p>
      */
     inline void SetAwsS3Bucket(AwsS3BucketDetails&& value) { m_awsS3BucketHasBeenSet = true; m_awsS3Bucket = std::move(value); }
 
     /**
-     * <p>The details of an Amazon S3 Bucket.</p>
+     * <p>Details about an Amazon S3 Bucket related to a finding.</p>
      */
     inline ResourceDetails& WithAwsS3Bucket(const AwsS3BucketDetails& value) { SetAwsS3Bucket(value); return *this;}
 
     /**
-     * <p>The details of an Amazon S3 Bucket.</p>
+     * <p>Details about an Amazon S3 Bucket related to a finding.</p>
      */
     inline ResourceDetails& WithAwsS3Bucket(AwsS3BucketDetails&& value) { SetAwsS3Bucket(std::move(value)); return *this;}
 
 
     /**
-     * <p>IAM access key details related to a finding.</p>
+     * <p>Details about an IAM access key related to a finding.</p>
      */
     inline const AwsIamAccessKeyDetails& GetAwsIamAccessKey() const{ return m_awsIamAccessKey; }
 
     /**
-     * <p>IAM access key details related to a finding.</p>
+     * <p>Details about an IAM access key related to a finding.</p>
      */
     inline bool AwsIamAccessKeyHasBeenSet() const { return m_awsIamAccessKeyHasBeenSet; }
 
     /**
-     * <p>IAM access key details related to a finding.</p>
+     * <p>Details about an IAM access key related to a finding.</p>
      */
     inline void SetAwsIamAccessKey(const AwsIamAccessKeyDetails& value) { m_awsIamAccessKeyHasBeenSet = true; m_awsIamAccessKey = value; }
 
     /**
-     * <p>IAM access key details related to a finding.</p>
+     * <p>Details about an IAM access key related to a finding.</p>
      */
     inline void SetAwsIamAccessKey(AwsIamAccessKeyDetails&& value) { m_awsIamAccessKeyHasBeenSet = true; m_awsIamAccessKey = std::move(value); }
 
     /**
-     * <p>IAM access key details related to a finding.</p>
+     * <p>Details about an IAM access key related to a finding.</p>
      */
     inline ResourceDetails& WithAwsIamAccessKey(const AwsIamAccessKeyDetails& value) { SetAwsIamAccessKey(value); return *this;}
 
     /**
-     * <p>IAM access key details related to a finding.</p>
+     * <p>Details about an IAM access key related to a finding.</p>
      */
     inline ResourceDetails& WithAwsIamAccessKey(AwsIamAccessKeyDetails&& value) { SetAwsIamAccessKey(std::move(value)); return *this;}
 
 
     /**
-     * <p>Container details related to a finding.</p>
+     * <p>Details about a container resource related to a finding.</p>
      */
     inline const ContainerDetails& GetContainer() const{ return m_container; }
 
     /**
-     * <p>Container details related to a finding.</p>
+     * <p>Details about a container resource related to a finding.</p>
      */
     inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
 
     /**
-     * <p>Container details related to a finding.</p>
+     * <p>Details about a container resource related to a finding.</p>
      */
     inline void SetContainer(const ContainerDetails& value) { m_containerHasBeenSet = true; m_container = value; }
 
     /**
-     * <p>Container details related to a finding.</p>
+     * <p>Details about a container resource related to a finding.</p>
      */
     inline void SetContainer(ContainerDetails&& value) { m_containerHasBeenSet = true; m_container = std::move(value); }
 
     /**
-     * <p>Container details related to a finding.</p>
+     * <p>Details about a container resource related to a finding.</p>
      */
     inline ResourceDetails& WithContainer(const ContainerDetails& value) { SetContainer(value); return *this;}
 
     /**
-     * <p>Container details related to a finding.</p>
+     * <p>Details about a container resource related to a finding.</p>
      */
     inline ResourceDetails& WithContainer(ContainerDetails&& value) { SetContainer(std::move(value)); return *this;}
 
 
     /**
-     * <p>The details of a resource that doesn't have a specific subfield for the
-     * resource type defined.</p>
+     * <p>Details about a resource that doesn't have a specific type defined.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetOther() const{ return m_other; }
 
     /**
-     * <p>The details of a resource that doesn't have a specific subfield for the
-     * resource type defined.</p>
+     * <p>Details about a resource that doesn't have a specific type defined.</p>
      */
     inline bool OtherHasBeenSet() const { return m_otherHasBeenSet; }
 
     /**
-     * <p>The details of a resource that doesn't have a specific subfield for the
-     * resource type defined.</p>
+     * <p>Details about a resource that doesn't have a specific type defined.</p>
      */
     inline void SetOther(const Aws::Map<Aws::String, Aws::String>& value) { m_otherHasBeenSet = true; m_other = value; }
 
     /**
-     * <p>The details of a resource that doesn't have a specific subfield for the
-     * resource type defined.</p>
+     * <p>Details about a resource that doesn't have a specific type defined.</p>
      */
     inline void SetOther(Aws::Map<Aws::String, Aws::String>&& value) { m_otherHasBeenSet = true; m_other = std::move(value); }
 
     /**
-     * <p>The details of a resource that doesn't have a specific subfield for the
-     * resource type defined.</p>
+     * <p>Details about a resource that doesn't have a specific type defined.</p>
      */
     inline ResourceDetails& WithOther(const Aws::Map<Aws::String, Aws::String>& value) { SetOther(value); return *this;}
 
     /**
-     * <p>The details of a resource that doesn't have a specific subfield for the
-     * resource type defined.</p>
+     * <p>Details about a resource that doesn't have a specific type defined.</p>
      */
     inline ResourceDetails& WithOther(Aws::Map<Aws::String, Aws::String>&& value) { SetOther(std::move(value)); return *this;}
 
     /**
-     * <p>The details of a resource that doesn't have a specific subfield for the
-     * resource type defined.</p>
+     * <p>Details about a resource that doesn't have a specific type defined.</p>
      */
     inline ResourceDetails& AddOther(const Aws::String& key, const Aws::String& value) { m_otherHasBeenSet = true; m_other.emplace(key, value); return *this; }
 
     /**
-     * <p>The details of a resource that doesn't have a specific subfield for the
-     * resource type defined.</p>
+     * <p>Details about a resource that doesn't have a specific type defined.</p>
      */
     inline ResourceDetails& AddOther(Aws::String&& key, const Aws::String& value) { m_otherHasBeenSet = true; m_other.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The details of a resource that doesn't have a specific subfield for the
-     * resource type defined.</p>
+     * <p>Details about a resource that doesn't have a specific type defined.</p>
      */
     inline ResourceDetails& AddOther(const Aws::String& key, Aws::String&& value) { m_otherHasBeenSet = true; m_other.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The details of a resource that doesn't have a specific subfield for the
-     * resource type defined.</p>
+     * <p>Details about a resource that doesn't have a specific type defined.</p>
      */
     inline ResourceDetails& AddOther(Aws::String&& key, Aws::String&& value) { m_otherHasBeenSet = true; m_other.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The details of a resource that doesn't have a specific subfield for the
-     * resource type defined.</p>
+     * <p>Details about a resource that doesn't have a specific type defined.</p>
      */
     inline ResourceDetails& AddOther(const char* key, Aws::String&& value) { m_otherHasBeenSet = true; m_other.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The details of a resource that doesn't have a specific subfield for the
-     * resource type defined.</p>
+     * <p>Details about a resource that doesn't have a specific type defined.</p>
      */
     inline ResourceDetails& AddOther(Aws::String&& key, const char* value) { m_otherHasBeenSet = true; m_other.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The details of a resource that doesn't have a specific subfield for the
-     * resource type defined.</p>
+     * <p>Details about a resource that doesn't have a specific type defined.</p>
      */
     inline ResourceDetails& AddOther(const char* key, const char* value) { m_otherHasBeenSet = true; m_other.emplace(key, value); return *this; }
 

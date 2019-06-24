@@ -18,6 +18,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/apigateway/model/EndpointConfiguration.h>
+#include <aws/apigateway/model/DomainNameStatus.h>
+#include <aws/apigateway/model/SecurityPolicy.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -714,6 +716,153 @@ namespace Model
 
 
     /**
+     * <p>The status of the <a>DomainName</a> migration. The valid values are
+     * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
+     * <code>UPDATING</code>, the domain cannot be modified further until the existing
+     * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
+     * updated.</p>
+     */
+    inline const DomainNameStatus& GetDomainNameStatus() const{ return m_domainNameStatus; }
+
+    /**
+     * <p>The status of the <a>DomainName</a> migration. The valid values are
+     * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
+     * <code>UPDATING</code>, the domain cannot be modified further until the existing
+     * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
+     * updated.</p>
+     */
+    inline bool DomainNameStatusHasBeenSet() const { return m_domainNameStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the <a>DomainName</a> migration. The valid values are
+     * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
+     * <code>UPDATING</code>, the domain cannot be modified further until the existing
+     * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
+     * updated.</p>
+     */
+    inline void SetDomainNameStatus(const DomainNameStatus& value) { m_domainNameStatusHasBeenSet = true; m_domainNameStatus = value; }
+
+    /**
+     * <p>The status of the <a>DomainName</a> migration. The valid values are
+     * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
+     * <code>UPDATING</code>, the domain cannot be modified further until the existing
+     * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
+     * updated.</p>
+     */
+    inline void SetDomainNameStatus(DomainNameStatus&& value) { m_domainNameStatusHasBeenSet = true; m_domainNameStatus = std::move(value); }
+
+    /**
+     * <p>The status of the <a>DomainName</a> migration. The valid values are
+     * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
+     * <code>UPDATING</code>, the domain cannot be modified further until the existing
+     * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
+     * updated.</p>
+     */
+    inline DomainName& WithDomainNameStatus(const DomainNameStatus& value) { SetDomainNameStatus(value); return *this;}
+
+    /**
+     * <p>The status of the <a>DomainName</a> migration. The valid values are
+     * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
+     * <code>UPDATING</code>, the domain cannot be modified further until the existing
+     * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
+     * updated.</p>
+     */
+    inline DomainName& WithDomainNameStatus(DomainNameStatus&& value) { SetDomainNameStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An optional text message containing detailed information about status of the
+     * <a>DomainName</a> migration.</p>
+     */
+    inline const Aws::String& GetDomainNameStatusMessage() const{ return m_domainNameStatusMessage; }
+
+    /**
+     * <p>An optional text message containing detailed information about status of the
+     * <a>DomainName</a> migration.</p>
+     */
+    inline bool DomainNameStatusMessageHasBeenSet() const { return m_domainNameStatusMessageHasBeenSet; }
+
+    /**
+     * <p>An optional text message containing detailed information about status of the
+     * <a>DomainName</a> migration.</p>
+     */
+    inline void SetDomainNameStatusMessage(const Aws::String& value) { m_domainNameStatusMessageHasBeenSet = true; m_domainNameStatusMessage = value; }
+
+    /**
+     * <p>An optional text message containing detailed information about status of the
+     * <a>DomainName</a> migration.</p>
+     */
+    inline void SetDomainNameStatusMessage(Aws::String&& value) { m_domainNameStatusMessageHasBeenSet = true; m_domainNameStatusMessage = std::move(value); }
+
+    /**
+     * <p>An optional text message containing detailed information about status of the
+     * <a>DomainName</a> migration.</p>
+     */
+    inline void SetDomainNameStatusMessage(const char* value) { m_domainNameStatusMessageHasBeenSet = true; m_domainNameStatusMessage.assign(value); }
+
+    /**
+     * <p>An optional text message containing detailed information about status of the
+     * <a>DomainName</a> migration.</p>
+     */
+    inline DomainName& WithDomainNameStatusMessage(const Aws::String& value) { SetDomainNameStatusMessage(value); return *this;}
+
+    /**
+     * <p>An optional text message containing detailed information about status of the
+     * <a>DomainName</a> migration.</p>
+     */
+    inline DomainName& WithDomainNameStatusMessage(Aws::String&& value) { SetDomainNameStatusMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional text message containing detailed information about status of the
+     * <a>DomainName</a> migration.</p>
+     */
+    inline DomainName& WithDomainNameStatusMessage(const char* value) { SetDomainNameStatusMessage(value); return *this;}
+
+
+    /**
+     * <p>The Transport Layer Security (TLS) version + cipher suite for this
+     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * <code>TLS_1_2</code>.</p>
+     */
+    inline const SecurityPolicy& GetSecurityPolicy() const{ return m_securityPolicy; }
+
+    /**
+     * <p>The Transport Layer Security (TLS) version + cipher suite for this
+     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * <code>TLS_1_2</code>.</p>
+     */
+    inline bool SecurityPolicyHasBeenSet() const { return m_securityPolicyHasBeenSet; }
+
+    /**
+     * <p>The Transport Layer Security (TLS) version + cipher suite for this
+     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * <code>TLS_1_2</code>.</p>
+     */
+    inline void SetSecurityPolicy(const SecurityPolicy& value) { m_securityPolicyHasBeenSet = true; m_securityPolicy = value; }
+
+    /**
+     * <p>The Transport Layer Security (TLS) version + cipher suite for this
+     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * <code>TLS_1_2</code>.</p>
+     */
+    inline void SetSecurityPolicy(SecurityPolicy&& value) { m_securityPolicyHasBeenSet = true; m_securityPolicy = std::move(value); }
+
+    /**
+     * <p>The Transport Layer Security (TLS) version + cipher suite for this
+     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * <code>TLS_1_2</code>.</p>
+     */
+    inline DomainName& WithSecurityPolicy(const SecurityPolicy& value) { SetSecurityPolicy(value); return *this;}
+
+    /**
+     * <p>The Transport Layer Security (TLS) version + cipher suite for this
+     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * <code>TLS_1_2</code>.</p>
+     */
+    inline DomainName& WithSecurityPolicy(SecurityPolicy&& value) { SetSecurityPolicy(std::move(value)); return *this;}
+
+
+    /**
      * <p>The collection of tags. Each tag element is associated with a given
      * resource.</p>
      */
@@ -825,6 +974,15 @@ namespace Model
 
     EndpointConfiguration m_endpointConfiguration;
     bool m_endpointConfigurationHasBeenSet;
+
+    DomainNameStatus m_domainNameStatus;
+    bool m_domainNameStatusHasBeenSet;
+
+    Aws::String m_domainNameStatusMessage;
+    bool m_domainNameStatusMessageHasBeenSet;
+
+    SecurityPolicy m_securityPolicy;
+    bool m_securityPolicyHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

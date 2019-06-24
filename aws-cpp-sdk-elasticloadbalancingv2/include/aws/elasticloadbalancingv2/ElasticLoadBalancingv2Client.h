@@ -317,24 +317,34 @@ namespace Model
 
 
         /**
-         * <p>Adds the specified certificate to the specified HTTPS listener.</p> <p>If the
-         * certificate was already added, the call is successful but the certificate is not
-         * added again.</p> <p>To list the certificates for your listener, use
-         * <a>DescribeListenerCertificates</a>. To remove certificates from your listener,
-         * use <a>RemoveListenerCertificates</a>. To specify the default SSL server
-         * certificate, use <a>ModifyListener</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds the specified SSL server certificate to the certificate list for the
+         * specified HTTPS listener.</p> <p>If the certificate in already in the
+         * certificate list, the call is successful but the certificate is not added
+         * again.</p> <p>To get the certificate list for a listener, use
+         * <a>DescribeListenerCertificates</a>. To remove certificates from the certificate
+         * list for a listener, use <a>RemoveListenerCertificates</a>. To replace the
+         * default certificate for a listener, use <a>ModifyListener</a>.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates">SSL
+         * Certificates</a> in the <i>Application Load Balancers Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates">AWS
          * API Reference</a></p>
          */
         virtual Model::AddListenerCertificatesOutcome AddListenerCertificates(const Model::AddListenerCertificatesRequest& request) const;
 
         /**
-         * <p>Adds the specified certificate to the specified HTTPS listener.</p> <p>If the
-         * certificate was already added, the call is successful but the certificate is not
-         * added again.</p> <p>To list the certificates for your listener, use
-         * <a>DescribeListenerCertificates</a>. To remove certificates from your listener,
-         * use <a>RemoveListenerCertificates</a>. To specify the default SSL server
-         * certificate, use <a>ModifyListener</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds the specified SSL server certificate to the certificate list for the
+         * specified HTTPS listener.</p> <p>If the certificate in already in the
+         * certificate list, the call is successful but the certificate is not added
+         * again.</p> <p>To get the certificate list for a listener, use
+         * <a>DescribeListenerCertificates</a>. To remove certificates from the certificate
+         * list for a listener, use <a>RemoveListenerCertificates</a>. To replace the
+         * default certificate for a listener, use <a>ModifyListener</a>.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates">SSL
+         * Certificates</a> in the <i>Application Load Balancers Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates">AWS
          * API Reference</a></p>
          *
@@ -343,12 +353,17 @@ namespace Model
         virtual Model::AddListenerCertificatesOutcomeCallable AddListenerCertificatesCallable(const Model::AddListenerCertificatesRequest& request) const;
 
         /**
-         * <p>Adds the specified certificate to the specified HTTPS listener.</p> <p>If the
-         * certificate was already added, the call is successful but the certificate is not
-         * added again.</p> <p>To list the certificates for your listener, use
-         * <a>DescribeListenerCertificates</a>. To remove certificates from your listener,
-         * use <a>RemoveListenerCertificates</a>. To specify the default SSL server
-         * certificate, use <a>ModifyListener</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds the specified SSL server certificate to the certificate list for the
+         * specified HTTPS listener.</p> <p>If the certificate in already in the
+         * certificate list, the call is successful but the certificate is not added
+         * again.</p> <p>To get the certificate list for a listener, use
+         * <a>DescribeListenerCertificates</a>. To remove certificates from the certificate
+         * list for a listener, use <a>RemoveListenerCertificates</a>. To replace the
+         * default certificate for a listener, use <a>ModifyListener</a>.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates">SSL
+         * Certificates</a> in the <i>Application Load Balancers Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates">AWS
          * API Reference</a></p>
          *
@@ -881,7 +896,13 @@ namespace Model
         virtual void DescribeAccountLimitsAsync(const Model::DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the certificates for the specified HTTPS listener.</p><p><h3>See
+         * <p>Describes the default certificate and the certificate list for the specified
+         * HTTPS listener.</p> <p>If the default certificate is also in the certificate
+         * list, it appears twice in the results (once with <code>IsDefault</code> set to
+         * true and once with <code>IsDefault</code> set to false).</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates">SSL
+         * Certificates</a> in the <i>Application Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerCertificates">AWS
          * API Reference</a></p>
@@ -889,7 +910,13 @@ namespace Model
         virtual Model::DescribeListenerCertificatesOutcome DescribeListenerCertificates(const Model::DescribeListenerCertificatesRequest& request) const;
 
         /**
-         * <p>Describes the certificates for the specified HTTPS listener.</p><p><h3>See
+         * <p>Describes the default certificate and the certificate list for the specified
+         * HTTPS listener.</p> <p>If the default certificate is also in the certificate
+         * list, it appears twice in the results (once with <code>IsDefault</code> set to
+         * true and once with <code>IsDefault</code> set to false).</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates">SSL
+         * Certificates</a> in the <i>Application Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerCertificates">AWS
          * API Reference</a></p>
@@ -899,7 +926,13 @@ namespace Model
         virtual Model::DescribeListenerCertificatesOutcomeCallable DescribeListenerCertificatesCallable(const Model::DescribeListenerCertificatesRequest& request) const;
 
         /**
-         * <p>Describes the certificates for the specified HTTPS listener.</p><p><h3>See
+         * <p>Describes the default certificate and the certificate list for the specified
+         * HTTPS listener.</p> <p>If the default certificate is also in the certificate
+         * list, it appears twice in the results (once with <code>IsDefault</code> set to
+         * true and once with <code>IsDefault</code> set to false).</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates">SSL
+         * Certificates</a> in the <i>Application Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerCertificates">AWS
          * API Reference</a></p>
@@ -911,7 +944,10 @@ namespace Model
         /**
          * <p>Describes the specified listeners or the listeners for the specified
          * Application Load Balancer or Network Load Balancer. You must specify either a
-         * load balancer or one or more listeners.</p><p><h3>See Also:</h3>   <a
+         * load balancer or one or more listeners.</p> <p>For an HTTPS or TLS listener, the
+         * output includes the default certificate for the listener. To describe the
+         * certificate list for the listener, use
+         * <a>DescribeListenerCertificates</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListeners">AWS
          * API Reference</a></p>
          */
@@ -920,7 +956,10 @@ namespace Model
         /**
          * <p>Describes the specified listeners or the listeners for the specified
          * Application Load Balancer or Network Load Balancer. You must specify either a
-         * load balancer or one or more listeners.</p><p><h3>See Also:</h3>   <a
+         * load balancer or one or more listeners.</p> <p>For an HTTPS or TLS listener, the
+         * output includes the default certificate for the listener. To describe the
+         * certificate list for the listener, use
+         * <a>DescribeListenerCertificates</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListeners">AWS
          * API Reference</a></p>
          *
@@ -931,7 +970,10 @@ namespace Model
         /**
          * <p>Describes the specified listeners or the listeners for the specified
          * Application Load Balancer or Network Load Balancer. You must specify either a
-         * load balancer or one or more listeners.</p><p><h3>See Also:</h3>   <a
+         * load balancer or one or more listeners.</p> <p>For an HTTPS or TLS listener, the
+         * output includes the default certificate for the listener. To describe the
+         * certificate list for the listener, use
+         * <a>DescribeListenerCertificates</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListeners">AWS
          * API Reference</a></p>
          *
@@ -1233,9 +1275,9 @@ namespace Model
          * <p>Modifies the specified properties of the specified listener.</p> <p>Any
          * properties that you do not specify retain their current values. However,
          * changing the protocol from HTTPS to HTTP, or from TLS to TCP, removes the
-         * security policy and server certificate properties. If you change the protocol
+         * security policy and default certificate properties. If you change the protocol
          * from HTTP to HTTPS, or from TCP to TLS, you must add the security policy and
-         * server certificate properties.</p><p><h3>See Also:</h3>   <a
+         * default certificate properties.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">AWS
          * API Reference</a></p>
          */
@@ -1245,9 +1287,9 @@ namespace Model
          * <p>Modifies the specified properties of the specified listener.</p> <p>Any
          * properties that you do not specify retain their current values. However,
          * changing the protocol from HTTPS to HTTP, or from TLS to TCP, removes the
-         * security policy and server certificate properties. If you change the protocol
+         * security policy and default certificate properties. If you change the protocol
          * from HTTP to HTTPS, or from TCP to TLS, you must add the security policy and
-         * server certificate properties.</p><p><h3>See Also:</h3>   <a
+         * default certificate properties.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">AWS
          * API Reference</a></p>
          *
@@ -1259,9 +1301,9 @@ namespace Model
          * <p>Modifies the specified properties of the specified listener.</p> <p>Any
          * properties that you do not specify retain their current values. However,
          * changing the protocol from HTTPS to HTTP, or from TLS to TCP, removes the
-         * security policy and server certificate properties. If you change the protocol
+         * security policy and default certificate properties. If you change the protocol
          * from HTTP to HTTPS, or from TCP to TLS, you must add the security policy and
-         * server certificate properties.</p><p><h3>See Also:</h3>   <a
+         * default certificate properties.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">AWS
          * API Reference</a></p>
          *
@@ -1449,22 +1491,22 @@ namespace Model
         virtual void RegisterTargetsAsync(const Model::RegisterTargetsRequest& request, const RegisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified certificate from the specified HTTPS listener.</p>
-         * <p>You can't remove the default certificate for a listener. To replace the
-         * default certificate, call <a>ModifyListener</a>.</p> <p>To list the certificates
-         * for your listener, use <a>DescribeListenerCertificates</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the specified certificate from the certificate list for the specified
+         * HTTPS listener.</p> <p>You can't remove the default certificate for a listener.
+         * To replace the default certificate, call <a>ModifyListener</a>.</p> <p>To list
+         * the certificates for your listener, use
+         * <a>DescribeListenerCertificates</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveListenerCertificates">AWS
          * API Reference</a></p>
          */
         virtual Model::RemoveListenerCertificatesOutcome RemoveListenerCertificates(const Model::RemoveListenerCertificatesRequest& request) const;
 
         /**
-         * <p>Removes the specified certificate from the specified HTTPS listener.</p>
-         * <p>You can't remove the default certificate for a listener. To replace the
-         * default certificate, call <a>ModifyListener</a>.</p> <p>To list the certificates
-         * for your listener, use <a>DescribeListenerCertificates</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the specified certificate from the certificate list for the specified
+         * HTTPS listener.</p> <p>You can't remove the default certificate for a listener.
+         * To replace the default certificate, call <a>ModifyListener</a>.</p> <p>To list
+         * the certificates for your listener, use
+         * <a>DescribeListenerCertificates</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveListenerCertificates">AWS
          * API Reference</a></p>
          *
@@ -1473,11 +1515,11 @@ namespace Model
         virtual Model::RemoveListenerCertificatesOutcomeCallable RemoveListenerCertificatesCallable(const Model::RemoveListenerCertificatesRequest& request) const;
 
         /**
-         * <p>Removes the specified certificate from the specified HTTPS listener.</p>
-         * <p>You can't remove the default certificate for a listener. To replace the
-         * default certificate, call <a>ModifyListener</a>.</p> <p>To list the certificates
-         * for your listener, use <a>DescribeListenerCertificates</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the specified certificate from the certificate list for the specified
+         * HTTPS listener.</p> <p>You can't remove the default certificate for a listener.
+         * To replace the default certificate, call <a>ModifyListener</a>.</p> <p>To list
+         * the certificates for your listener, use
+         * <a>DescribeListenerCertificates</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveListenerCertificates">AWS
          * API Reference</a></p>
          *
@@ -1518,8 +1560,8 @@ namespace Model
 
         /**
          * <p>Sets the type of IP addresses used by the subnets of the specified
-         * Application Load Balancer or Network Load Balancer.</p> <p>Network Load
-         * Balancers must use <code>ipv4</code>.</p><p><h3>See Also:</h3>   <a
+         * Application Load Balancer or Network Load Balancer.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">AWS
          * API Reference</a></p>
          */
@@ -1527,8 +1569,8 @@ namespace Model
 
         /**
          * <p>Sets the type of IP addresses used by the subnets of the specified
-         * Application Load Balancer or Network Load Balancer.</p> <p>Network Load
-         * Balancers must use <code>ipv4</code>.</p><p><h3>See Also:</h3>   <a
+         * Application Load Balancer or Network Load Balancer.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">AWS
          * API Reference</a></p>
          *
@@ -1538,8 +1580,8 @@ namespace Model
 
         /**
          * <p>Sets the type of IP addresses used by the subnets of the specified
-         * Application Load Balancer or Network Load Balancer.</p> <p>Network Load
-         * Balancers must use <code>ipv4</code>.</p><p><h3>See Also:</h3>   <a
+         * Application Load Balancer or Network Load Balancer.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">AWS
          * API Reference</a></p>
          *

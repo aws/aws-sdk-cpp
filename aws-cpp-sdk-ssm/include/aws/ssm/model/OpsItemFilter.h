@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an OpsCenter filter.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an OpsItem filter.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItemFilter">AWS
    * API Reference</a></p>
    */

@@ -32,7 +32,9 @@ CreateDomainNameRequest::CreateDomainNameRequest() :
     m_regionalCertificateNameHasBeenSet(false),
     m_regionalCertificateArnHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_securityPolicy(SecurityPolicy::NOT_SET),
+    m_securityPolicyHasBeenSet(false)
 {
 }
 
@@ -103,6 +105,11 @@ Aws::String CreateDomainNameRequest::SerializePayload() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_securityPolicyHasBeenSet)
+  {
+   payload.WithString("securityPolicy", SecurityPolicyMapper::GetNameForSecurityPolicy(m_securityPolicy));
   }
 
   return payload.View().WriteReadable();

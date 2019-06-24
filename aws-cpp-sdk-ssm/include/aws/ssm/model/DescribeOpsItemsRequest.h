@@ -54,12 +54,14 @@ namespace Model
      * Priority</p> <p>Operations: Equals</p> </li> <li> <p>Key: Source</p>
      * <p>Operations: Contains, Equals</p> </li> <li> <p>Key: Status</p> <p>Operations:
      * Equals</p> </li> <li> <p>Key: Title</p> <p>Operations: Contains</p> </li> <li>
-     * <p>Key: OperationalData</p> <p>Operations: Equals</p> </li> <li> <p>Key:
+     * <p>Key: OperationalData*</p> <p>Operations: Equals</p> </li> <li> <p>Key:
      * OperationalDataKey</p> <p>Operations: Equals</p> </li> <li> <p>Key:
      * OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li> <li> <p>Key:
      * OpsItemId</p> <p>Operations: Equals</p> </li> <li> <p>Key: ResourceId</p>
      * <p>Operations: Contains</p> </li> <li> <p>Key: AutomationId</p> <p>Operations:
-     * Equals</p> </li> </ul>
+     * Equals</p> </li> </ul> <p>*If you filter the response by using the
+     * OperationalData operator, specify a key-value pair by using the following JSON
+     * format: {"key":"key_name","value":"a_value"}</p>
      */
     inline const Aws::Vector<OpsItemFilter>& GetOpsItemFilters() const{ return m_opsItemFilters; }
 
@@ -71,12 +73,14 @@ namespace Model
      * Priority</p> <p>Operations: Equals</p> </li> <li> <p>Key: Source</p>
      * <p>Operations: Contains, Equals</p> </li> <li> <p>Key: Status</p> <p>Operations:
      * Equals</p> </li> <li> <p>Key: Title</p> <p>Operations: Contains</p> </li> <li>
-     * <p>Key: OperationalData</p> <p>Operations: Equals</p> </li> <li> <p>Key:
+     * <p>Key: OperationalData*</p> <p>Operations: Equals</p> </li> <li> <p>Key:
      * OperationalDataKey</p> <p>Operations: Equals</p> </li> <li> <p>Key:
      * OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li> <li> <p>Key:
      * OpsItemId</p> <p>Operations: Equals</p> </li> <li> <p>Key: ResourceId</p>
      * <p>Operations: Contains</p> </li> <li> <p>Key: AutomationId</p> <p>Operations:
-     * Equals</p> </li> </ul>
+     * Equals</p> </li> </ul> <p>*If you filter the response by using the
+     * OperationalData operator, specify a key-value pair by using the following JSON
+     * format: {"key":"key_name","value":"a_value"}</p>
      */
     inline bool OpsItemFiltersHasBeenSet() const { return m_opsItemFiltersHasBeenSet; }
 
@@ -88,12 +92,14 @@ namespace Model
      * Priority</p> <p>Operations: Equals</p> </li> <li> <p>Key: Source</p>
      * <p>Operations: Contains, Equals</p> </li> <li> <p>Key: Status</p> <p>Operations:
      * Equals</p> </li> <li> <p>Key: Title</p> <p>Operations: Contains</p> </li> <li>
-     * <p>Key: OperationalData</p> <p>Operations: Equals</p> </li> <li> <p>Key:
+     * <p>Key: OperationalData*</p> <p>Operations: Equals</p> </li> <li> <p>Key:
      * OperationalDataKey</p> <p>Operations: Equals</p> </li> <li> <p>Key:
      * OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li> <li> <p>Key:
      * OpsItemId</p> <p>Operations: Equals</p> </li> <li> <p>Key: ResourceId</p>
      * <p>Operations: Contains</p> </li> <li> <p>Key: AutomationId</p> <p>Operations:
-     * Equals</p> </li> </ul>
+     * Equals</p> </li> </ul> <p>*If you filter the response by using the
+     * OperationalData operator, specify a key-value pair by using the following JSON
+     * format: {"key":"key_name","value":"a_value"}</p>
      */
     inline void SetOpsItemFilters(const Aws::Vector<OpsItemFilter>& value) { m_opsItemFiltersHasBeenSet = true; m_opsItemFilters = value; }
 
@@ -105,12 +111,14 @@ namespace Model
      * Priority</p> <p>Operations: Equals</p> </li> <li> <p>Key: Source</p>
      * <p>Operations: Contains, Equals</p> </li> <li> <p>Key: Status</p> <p>Operations:
      * Equals</p> </li> <li> <p>Key: Title</p> <p>Operations: Contains</p> </li> <li>
-     * <p>Key: OperationalData</p> <p>Operations: Equals</p> </li> <li> <p>Key:
+     * <p>Key: OperationalData*</p> <p>Operations: Equals</p> </li> <li> <p>Key:
      * OperationalDataKey</p> <p>Operations: Equals</p> </li> <li> <p>Key:
      * OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li> <li> <p>Key:
      * OpsItemId</p> <p>Operations: Equals</p> </li> <li> <p>Key: ResourceId</p>
      * <p>Operations: Contains</p> </li> <li> <p>Key: AutomationId</p> <p>Operations:
-     * Equals</p> </li> </ul>
+     * Equals</p> </li> </ul> <p>*If you filter the response by using the
+     * OperationalData operator, specify a key-value pair by using the following JSON
+     * format: {"key":"key_name","value":"a_value"}</p>
      */
     inline void SetOpsItemFilters(Aws::Vector<OpsItemFilter>&& value) { m_opsItemFiltersHasBeenSet = true; m_opsItemFilters = std::move(value); }
 
@@ -122,12 +130,14 @@ namespace Model
      * Priority</p> <p>Operations: Equals</p> </li> <li> <p>Key: Source</p>
      * <p>Operations: Contains, Equals</p> </li> <li> <p>Key: Status</p> <p>Operations:
      * Equals</p> </li> <li> <p>Key: Title</p> <p>Operations: Contains</p> </li> <li>
-     * <p>Key: OperationalData</p> <p>Operations: Equals</p> </li> <li> <p>Key:
+     * <p>Key: OperationalData*</p> <p>Operations: Equals</p> </li> <li> <p>Key:
      * OperationalDataKey</p> <p>Operations: Equals</p> </li> <li> <p>Key:
      * OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li> <li> <p>Key:
      * OpsItemId</p> <p>Operations: Equals</p> </li> <li> <p>Key: ResourceId</p>
      * <p>Operations: Contains</p> </li> <li> <p>Key: AutomationId</p> <p>Operations:
-     * Equals</p> </li> </ul>
+     * Equals</p> </li> </ul> <p>*If you filter the response by using the
+     * OperationalData operator, specify a key-value pair by using the following JSON
+     * format: {"key":"key_name","value":"a_value"}</p>
      */
     inline DescribeOpsItemsRequest& WithOpsItemFilters(const Aws::Vector<OpsItemFilter>& value) { SetOpsItemFilters(value); return *this;}
 
@@ -139,12 +149,14 @@ namespace Model
      * Priority</p> <p>Operations: Equals</p> </li> <li> <p>Key: Source</p>
      * <p>Operations: Contains, Equals</p> </li> <li> <p>Key: Status</p> <p>Operations:
      * Equals</p> </li> <li> <p>Key: Title</p> <p>Operations: Contains</p> </li> <li>
-     * <p>Key: OperationalData</p> <p>Operations: Equals</p> </li> <li> <p>Key:
+     * <p>Key: OperationalData*</p> <p>Operations: Equals</p> </li> <li> <p>Key:
      * OperationalDataKey</p> <p>Operations: Equals</p> </li> <li> <p>Key:
      * OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li> <li> <p>Key:
      * OpsItemId</p> <p>Operations: Equals</p> </li> <li> <p>Key: ResourceId</p>
      * <p>Operations: Contains</p> </li> <li> <p>Key: AutomationId</p> <p>Operations:
-     * Equals</p> </li> </ul>
+     * Equals</p> </li> </ul> <p>*If you filter the response by using the
+     * OperationalData operator, specify a key-value pair by using the following JSON
+     * format: {"key":"key_name","value":"a_value"}</p>
      */
     inline DescribeOpsItemsRequest& WithOpsItemFilters(Aws::Vector<OpsItemFilter>&& value) { SetOpsItemFilters(std::move(value)); return *this;}
 
@@ -156,12 +168,14 @@ namespace Model
      * Priority</p> <p>Operations: Equals</p> </li> <li> <p>Key: Source</p>
      * <p>Operations: Contains, Equals</p> </li> <li> <p>Key: Status</p> <p>Operations:
      * Equals</p> </li> <li> <p>Key: Title</p> <p>Operations: Contains</p> </li> <li>
-     * <p>Key: OperationalData</p> <p>Operations: Equals</p> </li> <li> <p>Key:
+     * <p>Key: OperationalData*</p> <p>Operations: Equals</p> </li> <li> <p>Key:
      * OperationalDataKey</p> <p>Operations: Equals</p> </li> <li> <p>Key:
      * OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li> <li> <p>Key:
      * OpsItemId</p> <p>Operations: Equals</p> </li> <li> <p>Key: ResourceId</p>
      * <p>Operations: Contains</p> </li> <li> <p>Key: AutomationId</p> <p>Operations:
-     * Equals</p> </li> </ul>
+     * Equals</p> </li> </ul> <p>*If you filter the response by using the
+     * OperationalData operator, specify a key-value pair by using the following JSON
+     * format: {"key":"key_name","value":"a_value"}</p>
      */
     inline DescribeOpsItemsRequest& AddOpsItemFilters(const OpsItemFilter& value) { m_opsItemFiltersHasBeenSet = true; m_opsItemFilters.push_back(value); return *this; }
 
@@ -173,12 +187,14 @@ namespace Model
      * Priority</p> <p>Operations: Equals</p> </li> <li> <p>Key: Source</p>
      * <p>Operations: Contains, Equals</p> </li> <li> <p>Key: Status</p> <p>Operations:
      * Equals</p> </li> <li> <p>Key: Title</p> <p>Operations: Contains</p> </li> <li>
-     * <p>Key: OperationalData</p> <p>Operations: Equals</p> </li> <li> <p>Key:
+     * <p>Key: OperationalData*</p> <p>Operations: Equals</p> </li> <li> <p>Key:
      * OperationalDataKey</p> <p>Operations: Equals</p> </li> <li> <p>Key:
      * OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li> <li> <p>Key:
      * OpsItemId</p> <p>Operations: Equals</p> </li> <li> <p>Key: ResourceId</p>
      * <p>Operations: Contains</p> </li> <li> <p>Key: AutomationId</p> <p>Operations:
-     * Equals</p> </li> </ul>
+     * Equals</p> </li> </ul> <p>*If you filter the response by using the
+     * OperationalData operator, specify a key-value pair by using the following JSON
+     * format: {"key":"key_name","value":"a_value"}</p>
      */
     inline DescribeOpsItemsRequest& AddOpsItemFilters(OpsItemFilter&& value) { m_opsItemFiltersHasBeenSet = true; m_opsItemFilters.push_back(std::move(value)); return *this; }
 

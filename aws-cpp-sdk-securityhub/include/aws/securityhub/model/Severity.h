@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>A finding's severity.</p><p><h3>See Also:</h3>   <a
+   * <p>The severity of the finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Severity">AWS
    * API Reference</a></p>
    */
@@ -46,26 +46,26 @@ namespace Model
 
 
     /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
+     * <p>The native severity as defined by the AWS service or integrated partner
+     * product that generated the finding.</p>
      */
     inline double GetProduct() const{ return m_product; }
 
     /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
+     * <p>The native severity as defined by the AWS service or integrated partner
+     * product that generated the finding.</p>
      */
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
 
     /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
+     * <p>The native severity as defined by the AWS service or integrated partner
+     * product that generated the finding.</p>
      */
     inline void SetProduct(double value) { m_productHasBeenSet = true; m_product = value; }
 
     /**
-     * <p>The native severity as defined by the security-findings provider's solution
-     * that generated the finding.</p>
+     * <p>The native severity as defined by the AWS service or integrated partner
+     * product that generated the finding.</p>
      */
     inline Severity& WithProduct(double value) { SetProduct(value); return *this;}
 

@@ -34,12 +34,16 @@
 #include <aws/securityhub/model/BatchDisableStandardsRequest.h>
 #include <aws/securityhub/model/BatchEnableStandardsRequest.h>
 #include <aws/securityhub/model/BatchImportFindingsRequest.h>
+#include <aws/securityhub/model/CreateActionTargetRequest.h>
 #include <aws/securityhub/model/CreateInsightRequest.h>
 #include <aws/securityhub/model/CreateMembersRequest.h>
 #include <aws/securityhub/model/DeclineInvitationsRequest.h>
+#include <aws/securityhub/model/DeleteActionTargetRequest.h>
 #include <aws/securityhub/model/DeleteInsightRequest.h>
 #include <aws/securityhub/model/DeleteInvitationsRequest.h>
 #include <aws/securityhub/model/DeleteMembersRequest.h>
+#include <aws/securityhub/model/DescribeActionTargetsRequest.h>
+#include <aws/securityhub/model/DescribeHubRequest.h>
 #include <aws/securityhub/model/DescribeProductsRequest.h>
 #include <aws/securityhub/model/DisableImportFindingsForProductRequest.h>
 #include <aws/securityhub/model/DisableSecurityHubRequest.h>
@@ -58,7 +62,10 @@
 #include <aws/securityhub/model/ListEnabledProductsForImportRequest.h>
 #include <aws/securityhub/model/ListInvitationsRequest.h>
 #include <aws/securityhub/model/ListMembersRequest.h>
-#include <aws/securityhub/model/ListProductSubscribersRequest.h>
+#include <aws/securityhub/model/ListTagsForResourceRequest.h>
+#include <aws/securityhub/model/TagResourceRequest.h>
+#include <aws/securityhub/model/UntagResourceRequest.h>
+#include <aws/securityhub/model/UpdateActionTargetRequest.h>
 #include <aws/securityhub/model/UpdateFindingsRequest.h>
 #include <aws/securityhub/model/UpdateInsightRequest.h>
 
@@ -274,6 +281,41 @@ void SecurityHubClient::BatchImportFindingsAsyncHelper(const BatchImportFindings
   handler(this, request, BatchImportFindings(request), context);
 }
 
+CreateActionTargetOutcome SecurityHubClient::CreateActionTarget(const CreateActionTargetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/actionTargets";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateActionTargetOutcome(CreateActionTargetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateActionTargetOutcome(outcome.GetError());
+  }
+}
+
+CreateActionTargetOutcomeCallable SecurityHubClient::CreateActionTargetCallable(const CreateActionTargetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateActionTargetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateActionTarget(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::CreateActionTargetAsync(const CreateActionTargetRequest& request, const CreateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateActionTargetAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::CreateActionTargetAsyncHelper(const CreateActionTargetRequest& request, const CreateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateActionTarget(request), context);
+}
+
 CreateInsightOutcome SecurityHubClient::CreateInsight(const CreateInsightRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -377,6 +419,47 @@ void SecurityHubClient::DeclineInvitationsAsync(const DeclineInvitationsRequest&
 void SecurityHubClient::DeclineInvitationsAsyncHelper(const DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeclineInvitations(request), context);
+}
+
+DeleteActionTargetOutcome SecurityHubClient::DeleteActionTarget(const DeleteActionTargetRequest& request) const
+{
+  if (!request.ActionTargetArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteActionTarget", "Required field: ActionTargetArn, is not set");
+    return DeleteActionTargetOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ActionTargetArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/actionTargets/";
+  ss << request.GetActionTargetArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteActionTargetOutcome(DeleteActionTargetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteActionTargetOutcome(outcome.GetError());
+  }
+}
+
+DeleteActionTargetOutcomeCallable SecurityHubClient::DeleteActionTargetCallable(const DeleteActionTargetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteActionTargetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteActionTarget(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::DeleteActionTargetAsync(const DeleteActionTargetRequest& request, const DeleteActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteActionTargetAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::DeleteActionTargetAsyncHelper(const DeleteActionTargetRequest& request, const DeleteActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteActionTarget(request), context);
 }
 
 DeleteInsightOutcome SecurityHubClient::DeleteInsight(const DeleteInsightRequest& request) const
@@ -488,6 +571,76 @@ void SecurityHubClient::DeleteMembersAsync(const DeleteMembersRequest& request, 
 void SecurityHubClient::DeleteMembersAsyncHelper(const DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteMembers(request), context);
+}
+
+DescribeActionTargetsOutcome SecurityHubClient::DescribeActionTargets(const DescribeActionTargetsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/actionTargets/get";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeActionTargetsOutcome(DescribeActionTargetsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeActionTargetsOutcome(outcome.GetError());
+  }
+}
+
+DescribeActionTargetsOutcomeCallable SecurityHubClient::DescribeActionTargetsCallable(const DescribeActionTargetsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeActionTargetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeActionTargets(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::DescribeActionTargetsAsync(const DescribeActionTargetsRequest& request, const DescribeActionTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeActionTargetsAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::DescribeActionTargetsAsyncHelper(const DescribeActionTargetsRequest& request, const DescribeActionTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeActionTargets(request), context);
+}
+
+DescribeHubOutcome SecurityHubClient::DescribeHub(const DescribeHubRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeHubOutcome(DescribeHubResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeHubOutcome(outcome.GetError());
+  }
+}
+
+DescribeHubOutcomeCallable SecurityHubClient::DescribeHubCallable(const DescribeHubRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeHubOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeHub(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::DescribeHubAsync(const DescribeHubRequest& request, const DescribeHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeHubAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::DescribeHubAsyncHelper(const DescribeHubRequest& request, const DescribeHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeHub(request), context);
 }
 
 DescribeProductsOutcome SecurityHubClient::DescribeProducts(const DescribeProductsRequest& request) const
@@ -1132,39 +1285,173 @@ void SecurityHubClient::ListMembersAsyncHelper(const ListMembersRequest& request
   handler(this, request, ListMembers(request), context);
 }
 
-ListProductSubscribersOutcome SecurityHubClient::ListProductSubscribers(const ListProductSubscribersRequest& request) const
+ListTagsForResourceOutcome SecurityHubClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/productSubscribers/";
+  ss << "/tags/";
+  ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
-    return ListProductSubscribersOutcome(ListProductSubscribersResult(outcome.GetResult()));
+    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
   }
   else
   {
-    return ListProductSubscribersOutcome(outcome.GetError());
+    return ListTagsForResourceOutcome(outcome.GetError());
   }
 }
 
-ListProductSubscribersOutcomeCallable SecurityHubClient::ListProductSubscribersCallable(const ListProductSubscribersRequest& request) const
+ListTagsForResourceOutcomeCallable SecurityHubClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListProductSubscribersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProductSubscribers(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void SecurityHubClient::ListProductSubscribersAsync(const ListProductSubscribersRequest& request, const ListProductSubscribersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecurityHubClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListProductSubscribersAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
 }
 
-void SecurityHubClient::ListProductSubscribersAsyncHelper(const ListProductSubscribersRequest& request, const ListProductSubscribersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecurityHubClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListProductSubscribers(request), context);
+  handler(this, request, ListTagsForResource(request), context);
+}
+
+TagResourceOutcome SecurityHubClient::TagResource(const TagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
+    return TagResourceOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TagResourceOutcome(outcome.GetError());
+  }
+}
+
+TagResourceOutcomeCallable SecurityHubClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
+UntagResourceOutcome SecurityHubClient::UntagResource(const UntagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  if (!request.TagKeysHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UntagResourceOutcome(outcome.GetError());
+  }
+}
+
+UntagResourceOutcomeCallable SecurityHubClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
+}
+
+UpdateActionTargetOutcome SecurityHubClient::UpdateActionTarget(const UpdateActionTargetRequest& request) const
+{
+  if (!request.ActionTargetArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateActionTarget", "Required field: ActionTargetArn, is not set");
+    return UpdateActionTargetOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ActionTargetArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/actionTargets/";
+  ss << request.GetActionTargetArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateActionTargetOutcome(UpdateActionTargetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateActionTargetOutcome(outcome.GetError());
+  }
+}
+
+UpdateActionTargetOutcomeCallable SecurityHubClient::UpdateActionTargetCallable(const UpdateActionTargetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateActionTargetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateActionTarget(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::UpdateActionTargetAsync(const UpdateActionTargetRequest& request, const UpdateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateActionTargetAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::UpdateActionTargetAsyncHelper(const UpdateActionTargetRequest& request, const UpdateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateActionTarget(request), context);
 }
 
 UpdateFindingsOutcome SecurityHubClient::UpdateFindings(const UpdateFindingsRequest& request) const

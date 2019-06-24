@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Structure providing details of any failures that occur when creating the file
-   * system has failed.</p><p><h3>See Also:</h3>   <a
+   * <p>A structure providing details of any failures that occur when creating the
+   * file system has failed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/FileSystemFailureDetails">AWS
    * API Reference</a></p>
    */
@@ -49,49 +49,49 @@ namespace Model
 
 
     /**
-     * <p>Message describing the failures that occurred during file system
+     * <p>A message describing any failures that occurred during file system
      * creation.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>Message describing the failures that occurred during file system
+     * <p>A message describing any failures that occurred during file system
      * creation.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p>Message describing the failures that occurred during file system
+     * <p>A message describing any failures that occurred during file system
      * creation.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>Message describing the failures that occurred during file system
+     * <p>A message describing any failures that occurred during file system
      * creation.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p>Message describing the failures that occurred during file system
+     * <p>A message describing any failures that occurred during file system
      * creation.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>Message describing the failures that occurred during file system
+     * <p>A message describing any failures that occurred during file system
      * creation.</p>
      */
     inline FileSystemFailureDetails& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>Message describing the failures that occurred during file system
+     * <p>A message describing any failures that occurred during file system
      * creation.</p>
      */
     inline FileSystemFailureDetails& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>Message describing the failures that occurred during file system
+     * <p>A message describing any failures that occurred during file system
      * creation.</p>
      */
     inline FileSystemFailureDetails& WithMessage(const char* value) { SetMessage(value); return *this;}

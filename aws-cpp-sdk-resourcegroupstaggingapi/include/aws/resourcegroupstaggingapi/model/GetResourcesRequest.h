@@ -126,17 +126,16 @@ namespace Model
      * than one value for a key, the response returns resources that match any of the
      * specified values for that key.</p> </li> <li> <p>If you don't specify any values
      * for a key, the response returns resources that are tagged with that key
-     * irrespective of the value.</p> <p>For example, for filters: <code>filter1 =
-     * {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 =
-     * {key3}</code>:</p> <ul> <li> <p> <code>GetResources( {filter1} )</code> returns
-     * resources tagged with key1=value1</p> </li> <li> <p> <code>GetResources(
-     * {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or
-     * key2=value4</p> </li> <li> <p> <code>GetResources( {filter3} )</code> returns
-     * resources tagged with any tag containing key3 as its tag key, irrespective of
-     * its value</p> </li> <li> <p> <code>GetResources( {filter1,filter2,filter3}
-     * )</code> returns resources tagged with ( key1=value1) and ( key2=value2 or
-     * key2=value3 or key2=value4) and (key3, irrespective of the value)</p> </li>
-     * </ul> </li> </ul>
+     * irrespective of the value.</p> <p>For example, for filters: filter1 = {key1,
+     * {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}:</p> <ul>
+     * <li> <p>GetResources( {filter1} ) returns resources tagged with key1=value1</p>
+     * </li> <li> <p>GetResources( {filter2} ) returns resources tagged with
+     * key2=value2 or key2=value3 or key2=value4</p> </li> <li> <p>GetResources(
+     * {filter3} ) returns resources tagged with any tag containing key3 as its tag
+     * key, irrespective of its value</p> </li> <li> <p>GetResources(
+     * {filter1,filter2,filter3} ) returns resources tagged with ( key1=value1) and (
+     * key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the
+     * value)</p> </li> </ul> </li> </ul>
      */
     inline const Aws::Vector<TagFilter>& GetTagFilters() const{ return m_tagFilters; }
 
@@ -155,17 +154,16 @@ namespace Model
      * than one value for a key, the response returns resources that match any of the
      * specified values for that key.</p> </li> <li> <p>If you don't specify any values
      * for a key, the response returns resources that are tagged with that key
-     * irrespective of the value.</p> <p>For example, for filters: <code>filter1 =
-     * {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 =
-     * {key3}</code>:</p> <ul> <li> <p> <code>GetResources( {filter1} )</code> returns
-     * resources tagged with key1=value1</p> </li> <li> <p> <code>GetResources(
-     * {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or
-     * key2=value4</p> </li> <li> <p> <code>GetResources( {filter3} )</code> returns
-     * resources tagged with any tag containing key3 as its tag key, irrespective of
-     * its value</p> </li> <li> <p> <code>GetResources( {filter1,filter2,filter3}
-     * )</code> returns resources tagged with ( key1=value1) and ( key2=value2 or
-     * key2=value3 or key2=value4) and (key3, irrespective of the value)</p> </li>
-     * </ul> </li> </ul>
+     * irrespective of the value.</p> <p>For example, for filters: filter1 = {key1,
+     * {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}:</p> <ul>
+     * <li> <p>GetResources( {filter1} ) returns resources tagged with key1=value1</p>
+     * </li> <li> <p>GetResources( {filter2} ) returns resources tagged with
+     * key2=value2 or key2=value3 or key2=value4</p> </li> <li> <p>GetResources(
+     * {filter3} ) returns resources tagged with any tag containing key3 as its tag
+     * key, irrespective of its value</p> </li> <li> <p>GetResources(
+     * {filter1,filter2,filter3} ) returns resources tagged with ( key1=value1) and (
+     * key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the
+     * value)</p> </li> </ul> </li> </ul>
      */
     inline bool TagFiltersHasBeenSet() const { return m_tagFiltersHasBeenSet; }
 
@@ -184,17 +182,16 @@ namespace Model
      * than one value for a key, the response returns resources that match any of the
      * specified values for that key.</p> </li> <li> <p>If you don't specify any values
      * for a key, the response returns resources that are tagged with that key
-     * irrespective of the value.</p> <p>For example, for filters: <code>filter1 =
-     * {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 =
-     * {key3}</code>:</p> <ul> <li> <p> <code>GetResources( {filter1} )</code> returns
-     * resources tagged with key1=value1</p> </li> <li> <p> <code>GetResources(
-     * {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or
-     * key2=value4</p> </li> <li> <p> <code>GetResources( {filter3} )</code> returns
-     * resources tagged with any tag containing key3 as its tag key, irrespective of
-     * its value</p> </li> <li> <p> <code>GetResources( {filter1,filter2,filter3}
-     * )</code> returns resources tagged with ( key1=value1) and ( key2=value2 or
-     * key2=value3 or key2=value4) and (key3, irrespective of the value)</p> </li>
-     * </ul> </li> </ul>
+     * irrespective of the value.</p> <p>For example, for filters: filter1 = {key1,
+     * {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}:</p> <ul>
+     * <li> <p>GetResources( {filter1} ) returns resources tagged with key1=value1</p>
+     * </li> <li> <p>GetResources( {filter2} ) returns resources tagged with
+     * key2=value2 or key2=value3 or key2=value4</p> </li> <li> <p>GetResources(
+     * {filter3} ) returns resources tagged with any tag containing key3 as its tag
+     * key, irrespective of its value</p> </li> <li> <p>GetResources(
+     * {filter1,filter2,filter3} ) returns resources tagged with ( key1=value1) and (
+     * key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the
+     * value)</p> </li> </ul> </li> </ul>
      */
     inline void SetTagFilters(const Aws::Vector<TagFilter>& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = value; }
 
@@ -213,17 +210,16 @@ namespace Model
      * than one value for a key, the response returns resources that match any of the
      * specified values for that key.</p> </li> <li> <p>If you don't specify any values
      * for a key, the response returns resources that are tagged with that key
-     * irrespective of the value.</p> <p>For example, for filters: <code>filter1 =
-     * {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 =
-     * {key3}</code>:</p> <ul> <li> <p> <code>GetResources( {filter1} )</code> returns
-     * resources tagged with key1=value1</p> </li> <li> <p> <code>GetResources(
-     * {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or
-     * key2=value4</p> </li> <li> <p> <code>GetResources( {filter3} )</code> returns
-     * resources tagged with any tag containing key3 as its tag key, irrespective of
-     * its value</p> </li> <li> <p> <code>GetResources( {filter1,filter2,filter3}
-     * )</code> returns resources tagged with ( key1=value1) and ( key2=value2 or
-     * key2=value3 or key2=value4) and (key3, irrespective of the value)</p> </li>
-     * </ul> </li> </ul>
+     * irrespective of the value.</p> <p>For example, for filters: filter1 = {key1,
+     * {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}:</p> <ul>
+     * <li> <p>GetResources( {filter1} ) returns resources tagged with key1=value1</p>
+     * </li> <li> <p>GetResources( {filter2} ) returns resources tagged with
+     * key2=value2 or key2=value3 or key2=value4</p> </li> <li> <p>GetResources(
+     * {filter3} ) returns resources tagged with any tag containing key3 as its tag
+     * key, irrespective of its value</p> </li> <li> <p>GetResources(
+     * {filter1,filter2,filter3} ) returns resources tagged with ( key1=value1) and (
+     * key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the
+     * value)</p> </li> </ul> </li> </ul>
      */
     inline void SetTagFilters(Aws::Vector<TagFilter>&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = std::move(value); }
 
@@ -242,17 +238,16 @@ namespace Model
      * than one value for a key, the response returns resources that match any of the
      * specified values for that key.</p> </li> <li> <p>If you don't specify any values
      * for a key, the response returns resources that are tagged with that key
-     * irrespective of the value.</p> <p>For example, for filters: <code>filter1 =
-     * {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 =
-     * {key3}</code>:</p> <ul> <li> <p> <code>GetResources( {filter1} )</code> returns
-     * resources tagged with key1=value1</p> </li> <li> <p> <code>GetResources(
-     * {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or
-     * key2=value4</p> </li> <li> <p> <code>GetResources( {filter3} )</code> returns
-     * resources tagged with any tag containing key3 as its tag key, irrespective of
-     * its value</p> </li> <li> <p> <code>GetResources( {filter1,filter2,filter3}
-     * )</code> returns resources tagged with ( key1=value1) and ( key2=value2 or
-     * key2=value3 or key2=value4) and (key3, irrespective of the value)</p> </li>
-     * </ul> </li> </ul>
+     * irrespective of the value.</p> <p>For example, for filters: filter1 = {key1,
+     * {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}:</p> <ul>
+     * <li> <p>GetResources( {filter1} ) returns resources tagged with key1=value1</p>
+     * </li> <li> <p>GetResources( {filter2} ) returns resources tagged with
+     * key2=value2 or key2=value3 or key2=value4</p> </li> <li> <p>GetResources(
+     * {filter3} ) returns resources tagged with any tag containing key3 as its tag
+     * key, irrespective of its value</p> </li> <li> <p>GetResources(
+     * {filter1,filter2,filter3} ) returns resources tagged with ( key1=value1) and (
+     * key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the
+     * value)</p> </li> </ul> </li> </ul>
      */
     inline GetResourcesRequest& WithTagFilters(const Aws::Vector<TagFilter>& value) { SetTagFilters(value); return *this;}
 
@@ -271,17 +266,16 @@ namespace Model
      * than one value for a key, the response returns resources that match any of the
      * specified values for that key.</p> </li> <li> <p>If you don't specify any values
      * for a key, the response returns resources that are tagged with that key
-     * irrespective of the value.</p> <p>For example, for filters: <code>filter1 =
-     * {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 =
-     * {key3}</code>:</p> <ul> <li> <p> <code>GetResources( {filter1} )</code> returns
-     * resources tagged with key1=value1</p> </li> <li> <p> <code>GetResources(
-     * {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or
-     * key2=value4</p> </li> <li> <p> <code>GetResources( {filter3} )</code> returns
-     * resources tagged with any tag containing key3 as its tag key, irrespective of
-     * its value</p> </li> <li> <p> <code>GetResources( {filter1,filter2,filter3}
-     * )</code> returns resources tagged with ( key1=value1) and ( key2=value2 or
-     * key2=value3 or key2=value4) and (key3, irrespective of the value)</p> </li>
-     * </ul> </li> </ul>
+     * irrespective of the value.</p> <p>For example, for filters: filter1 = {key1,
+     * {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}:</p> <ul>
+     * <li> <p>GetResources( {filter1} ) returns resources tagged with key1=value1</p>
+     * </li> <li> <p>GetResources( {filter2} ) returns resources tagged with
+     * key2=value2 or key2=value3 or key2=value4</p> </li> <li> <p>GetResources(
+     * {filter3} ) returns resources tagged with any tag containing key3 as its tag
+     * key, irrespective of its value</p> </li> <li> <p>GetResources(
+     * {filter1,filter2,filter3} ) returns resources tagged with ( key1=value1) and (
+     * key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the
+     * value)</p> </li> </ul> </li> </ul>
      */
     inline GetResourcesRequest& WithTagFilters(Aws::Vector<TagFilter>&& value) { SetTagFilters(std::move(value)); return *this;}
 
@@ -300,17 +294,16 @@ namespace Model
      * than one value for a key, the response returns resources that match any of the
      * specified values for that key.</p> </li> <li> <p>If you don't specify any values
      * for a key, the response returns resources that are tagged with that key
-     * irrespective of the value.</p> <p>For example, for filters: <code>filter1 =
-     * {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 =
-     * {key3}</code>:</p> <ul> <li> <p> <code>GetResources( {filter1} )</code> returns
-     * resources tagged with key1=value1</p> </li> <li> <p> <code>GetResources(
-     * {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or
-     * key2=value4</p> </li> <li> <p> <code>GetResources( {filter3} )</code> returns
-     * resources tagged with any tag containing key3 as its tag key, irrespective of
-     * its value</p> </li> <li> <p> <code>GetResources( {filter1,filter2,filter3}
-     * )</code> returns resources tagged with ( key1=value1) and ( key2=value2 or
-     * key2=value3 or key2=value4) and (key3, irrespective of the value)</p> </li>
-     * </ul> </li> </ul>
+     * irrespective of the value.</p> <p>For example, for filters: filter1 = {key1,
+     * {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}:</p> <ul>
+     * <li> <p>GetResources( {filter1} ) returns resources tagged with key1=value1</p>
+     * </li> <li> <p>GetResources( {filter2} ) returns resources tagged with
+     * key2=value2 or key2=value3 or key2=value4</p> </li> <li> <p>GetResources(
+     * {filter3} ) returns resources tagged with any tag containing key3 as its tag
+     * key, irrespective of its value</p> </li> <li> <p>GetResources(
+     * {filter1,filter2,filter3} ) returns resources tagged with ( key1=value1) and (
+     * key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the
+     * value)</p> </li> </ul> </li> </ul>
      */
     inline GetResourcesRequest& AddTagFilters(const TagFilter& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(value); return *this; }
 
@@ -329,17 +322,16 @@ namespace Model
      * than one value for a key, the response returns resources that match any of the
      * specified values for that key.</p> </li> <li> <p>If you don't specify any values
      * for a key, the response returns resources that are tagged with that key
-     * irrespective of the value.</p> <p>For example, for filters: <code>filter1 =
-     * {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 =
-     * {key3}</code>:</p> <ul> <li> <p> <code>GetResources( {filter1} )</code> returns
-     * resources tagged with key1=value1</p> </li> <li> <p> <code>GetResources(
-     * {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or
-     * key2=value4</p> </li> <li> <p> <code>GetResources( {filter3} )</code> returns
-     * resources tagged with any tag containing key3 as its tag key, irrespective of
-     * its value</p> </li> <li> <p> <code>GetResources( {filter1,filter2,filter3}
-     * )</code> returns resources tagged with ( key1=value1) and ( key2=value2 or
-     * key2=value3 or key2=value4) and (key3, irrespective of the value)</p> </li>
-     * </ul> </li> </ul>
+     * irrespective of the value.</p> <p>For example, for filters: filter1 = {key1,
+     * {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}:</p> <ul>
+     * <li> <p>GetResources( {filter1} ) returns resources tagged with key1=value1</p>
+     * </li> <li> <p>GetResources( {filter2} ) returns resources tagged with
+     * key2=value2 or key2=value3 or key2=value4</p> </li> <li> <p>GetResources(
+     * {filter3} ) returns resources tagged with any tag containing key3 as its tag
+     * key, irrespective of its value</p> </li> <li> <p>GetResources(
+     * {filter1,filter2,filter3} ) returns resources tagged with ( key1=value1) and (
+     * key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the
+     * value)</p> </li> </ul> </li> </ul>
      */
     inline GetResourcesRequest& AddTagFilters(TagFilter&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(std::move(value)); return *this; }
 
@@ -639,153 +631,6 @@ namespace Model
      */
     inline GetResourcesRequest& AddResourceTypeFilters(const char* value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.push_back(value); return *this; }
 
-
-    /**
-     * <p>Specifies whether to include details regarding the compliance with the
-     * effective tag policy. Set this to <code>true</code> to determine whether
-     * resources are compliant with the tag policy and to get details.</p>
-     */
-    inline bool GetIncludeComplianceDetails() const{ return m_includeComplianceDetails; }
-
-    /**
-     * <p>Specifies whether to include details regarding the compliance with the
-     * effective tag policy. Set this to <code>true</code> to determine whether
-     * resources are compliant with the tag policy and to get details.</p>
-     */
-    inline bool IncludeComplianceDetailsHasBeenSet() const { return m_includeComplianceDetailsHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to include details regarding the compliance with the
-     * effective tag policy. Set this to <code>true</code> to determine whether
-     * resources are compliant with the tag policy and to get details.</p>
-     */
-    inline void SetIncludeComplianceDetails(bool value) { m_includeComplianceDetailsHasBeenSet = true; m_includeComplianceDetails = value; }
-
-    /**
-     * <p>Specifies whether to include details regarding the compliance with the
-     * effective tag policy. Set this to <code>true</code> to determine whether
-     * resources are compliant with the tag policy and to get details.</p>
-     */
-    inline GetResourcesRequest& WithIncludeComplianceDetails(bool value) { SetIncludeComplianceDetails(value); return *this;}
-
-
-    /**
-     * <p>Specifies whether to exclude resources that are compliant with the tag
-     * policy. Set this to <code>true</code> if you are interested in retrieving
-     * information on noncompliant resources only.</p> <p>You can use this parameter
-     * only if the <code>IncludeComplianceDetails</code> parameter is also set to
-     * <code>true</code>.</p>
-     */
-    inline bool GetExcludeCompliantResources() const{ return m_excludeCompliantResources; }
-
-    /**
-     * <p>Specifies whether to exclude resources that are compliant with the tag
-     * policy. Set this to <code>true</code> if you are interested in retrieving
-     * information on noncompliant resources only.</p> <p>You can use this parameter
-     * only if the <code>IncludeComplianceDetails</code> parameter is also set to
-     * <code>true</code>.</p>
-     */
-    inline bool ExcludeCompliantResourcesHasBeenSet() const { return m_excludeCompliantResourcesHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to exclude resources that are compliant with the tag
-     * policy. Set this to <code>true</code> if you are interested in retrieving
-     * information on noncompliant resources only.</p> <p>You can use this parameter
-     * only if the <code>IncludeComplianceDetails</code> parameter is also set to
-     * <code>true</code>.</p>
-     */
-    inline void SetExcludeCompliantResources(bool value) { m_excludeCompliantResourcesHasBeenSet = true; m_excludeCompliantResources = value; }
-
-    /**
-     * <p>Specifies whether to exclude resources that are compliant with the tag
-     * policy. Set this to <code>true</code> if you are interested in retrieving
-     * information on noncompliant resources only.</p> <p>You can use this parameter
-     * only if the <code>IncludeComplianceDetails</code> parameter is also set to
-     * <code>true</code>.</p>
-     */
-    inline GetResourcesRequest& WithExcludeCompliantResources(bool value) { SetExcludeCompliantResources(value); return *this;}
-
-
-    /**
-     * <p>The tag policy to check resources against for compliance. If supplied, the
-     * compliance check follows the specified tag policy instead of following the
-     * effective tag policy. Using this parameter to specify a tag policy is useful for
-     * testing new tag policies before attaching them to a target.</p> <p>You can only
-     * use this parameter if the <code>IncludeComplianceDetails</code> parameter is
-     * also set to <code>true</code>.</p>
-     */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p>The tag policy to check resources against for compliance. If supplied, the
-     * compliance check follows the specified tag policy instead of following the
-     * effective tag policy. Using this parameter to specify a tag policy is useful for
-     * testing new tag policies before attaching them to a target.</p> <p>You can only
-     * use this parameter if the <code>IncludeComplianceDetails</code> parameter is
-     * also set to <code>true</code>.</p>
-     */
-    inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-
-    /**
-     * <p>The tag policy to check resources against for compliance. If supplied, the
-     * compliance check follows the specified tag policy instead of following the
-     * effective tag policy. Using this parameter to specify a tag policy is useful for
-     * testing new tag policies before attaching them to a target.</p> <p>You can only
-     * use this parameter if the <code>IncludeComplianceDetails</code> parameter is
-     * also set to <code>true</code>.</p>
-     */
-    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-
-    /**
-     * <p>The tag policy to check resources against for compliance. If supplied, the
-     * compliance check follows the specified tag policy instead of following the
-     * effective tag policy. Using this parameter to specify a tag policy is useful for
-     * testing new tag policies before attaching them to a target.</p> <p>You can only
-     * use this parameter if the <code>IncludeComplianceDetails</code> parameter is
-     * also set to <code>true</code>.</p>
-     */
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-
-    /**
-     * <p>The tag policy to check resources against for compliance. If supplied, the
-     * compliance check follows the specified tag policy instead of following the
-     * effective tag policy. Using this parameter to specify a tag policy is useful for
-     * testing new tag policies before attaching them to a target.</p> <p>You can only
-     * use this parameter if the <code>IncludeComplianceDetails</code> parameter is
-     * also set to <code>true</code>.</p>
-     */
-    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-
-    /**
-     * <p>The tag policy to check resources against for compliance. If supplied, the
-     * compliance check follows the specified tag policy instead of following the
-     * effective tag policy. Using this parameter to specify a tag policy is useful for
-     * testing new tag policies before attaching them to a target.</p> <p>You can only
-     * use this parameter if the <code>IncludeComplianceDetails</code> parameter is
-     * also set to <code>true</code>.</p>
-     */
-    inline GetResourcesRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p>The tag policy to check resources against for compliance. If supplied, the
-     * compliance check follows the specified tag policy instead of following the
-     * effective tag policy. Using this parameter to specify a tag policy is useful for
-     * testing new tag policies before attaching them to a target.</p> <p>You can only
-     * use this parameter if the <code>IncludeComplianceDetails</code> parameter is
-     * also set to <code>true</code>.</p>
-     */
-    inline GetResourcesRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The tag policy to check resources against for compliance. If supplied, the
-     * compliance check follows the specified tag policy instead of following the
-     * effective tag policy. Using this parameter to specify a tag policy is useful for
-     * testing new tag policies before attaching them to a target.</p> <p>You can only
-     * use this parameter if the <code>IncludeComplianceDetails</code> parameter is
-     * also set to <code>true</code>.</p>
-     */
-    inline GetResourcesRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
-
   private:
 
     Aws::String m_paginationToken;
@@ -802,15 +647,6 @@ namespace Model
 
     Aws::Vector<Aws::String> m_resourceTypeFilters;
     bool m_resourceTypeFiltersHasBeenSet;
-
-    bool m_includeComplianceDetails;
-    bool m_includeComplianceDetailsHasBeenSet;
-
-    bool m_excludeCompliantResources;
-    bool m_excludeCompliantResourcesHasBeenSet;
-
-    Aws::String m_policy;
-    bool m_policyHasBeenSet;
   };
 
 } // namespace Model

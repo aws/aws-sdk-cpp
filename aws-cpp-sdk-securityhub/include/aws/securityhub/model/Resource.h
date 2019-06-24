@@ -37,8 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>A resource data type that describes a resource that the finding refers
-   * to.</p><p><h3>See Also:</h3>   <a
+   * <p>A resource related to a finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Resource">AWS
    * API Reference</a></p>
    */
@@ -285,32 +284,32 @@ namespace Model
 
 
     /**
-     * <p>Additional details about the resource.</p>
+     * <p>Additional details about the resource related to a finding.</p>
      */
     inline const ResourceDetails& GetDetails() const{ return m_details; }
 
     /**
-     * <p>Additional details about the resource.</p>
+     * <p>Additional details about the resource related to a finding.</p>
      */
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
-     * <p>Additional details about the resource.</p>
+     * <p>Additional details about the resource related to a finding.</p>
      */
     inline void SetDetails(const ResourceDetails& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
-     * <p>Additional details about the resource.</p>
+     * <p>Additional details about the resource related to a finding.</p>
      */
     inline void SetDetails(ResourceDetails&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
-     * <p>Additional details about the resource.</p>
+     * <p>Additional details about the resource related to a finding.</p>
      */
     inline Resource& WithDetails(const ResourceDetails& value) { SetDetails(value); return *this;}
 
     /**
-     * <p>Additional details about the resource.</p>
+     * <p>Additional details about the resource related to a finding.</p>
      */
     inline Resource& WithDetails(ResourceDetails&& value) { SetDetails(std::move(value)); return *this;}
 

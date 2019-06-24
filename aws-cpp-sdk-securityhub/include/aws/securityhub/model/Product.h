@@ -341,42 +341,42 @@ namespace Model
 
 
     /**
-     * <p>The resource policy asasociated with the product.</p>
+     * <p>The resource policy associated with the product.</p>
      */
     inline const Aws::String& GetProductSubscriptionResourcePolicy() const{ return m_productSubscriptionResourcePolicy; }
 
     /**
-     * <p>The resource policy asasociated with the product.</p>
+     * <p>The resource policy associated with the product.</p>
      */
     inline bool ProductSubscriptionResourcePolicyHasBeenSet() const { return m_productSubscriptionResourcePolicyHasBeenSet; }
 
     /**
-     * <p>The resource policy asasociated with the product.</p>
+     * <p>The resource policy associated with the product.</p>
      */
     inline void SetProductSubscriptionResourcePolicy(const Aws::String& value) { m_productSubscriptionResourcePolicyHasBeenSet = true; m_productSubscriptionResourcePolicy = value; }
 
     /**
-     * <p>The resource policy asasociated with the product.</p>
+     * <p>The resource policy associated with the product.</p>
      */
     inline void SetProductSubscriptionResourcePolicy(Aws::String&& value) { m_productSubscriptionResourcePolicyHasBeenSet = true; m_productSubscriptionResourcePolicy = std::move(value); }
 
     /**
-     * <p>The resource policy asasociated with the product.</p>
+     * <p>The resource policy associated with the product.</p>
      */
     inline void SetProductSubscriptionResourcePolicy(const char* value) { m_productSubscriptionResourcePolicyHasBeenSet = true; m_productSubscriptionResourcePolicy.assign(value); }
 
     /**
-     * <p>The resource policy asasociated with the product.</p>
+     * <p>The resource policy associated with the product.</p>
      */
     inline Product& WithProductSubscriptionResourcePolicy(const Aws::String& value) { SetProductSubscriptionResourcePolicy(value); return *this;}
 
     /**
-     * <p>The resource policy asasociated with the product.</p>
+     * <p>The resource policy associated with the product.</p>
      */
     inline Product& WithProductSubscriptionResourcePolicy(Aws::String&& value) { SetProductSubscriptionResourcePolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The resource policy asasociated with the product.</p>
+     * <p>The resource policy associated with the product.</p>
      */
     inline Product& WithProductSubscriptionResourcePolicy(const char* value) { SetProductSubscriptionResourcePolicy(value); return *this;}
 

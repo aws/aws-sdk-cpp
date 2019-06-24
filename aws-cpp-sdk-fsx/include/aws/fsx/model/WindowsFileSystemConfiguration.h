@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/model/SelfManagedActiveDirectoryAttributes.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/FileSystemMaintenanceOperation.h>
 #include <utility>
@@ -97,6 +98,25 @@ namespace Model
      * system should join when it's created.</p>
      */
     inline WindowsFileSystemConfiguration& WithActiveDirectoryId(const char* value) { SetActiveDirectoryId(value); return *this;}
+
+
+    
+    inline const SelfManagedActiveDirectoryAttributes& GetSelfManagedActiveDirectoryConfiguration() const{ return m_selfManagedActiveDirectoryConfiguration; }
+
+    
+    inline bool SelfManagedActiveDirectoryConfigurationHasBeenSet() const { return m_selfManagedActiveDirectoryConfigurationHasBeenSet; }
+
+    
+    inline void SetSelfManagedActiveDirectoryConfiguration(const SelfManagedActiveDirectoryAttributes& value) { m_selfManagedActiveDirectoryConfigurationHasBeenSet = true; m_selfManagedActiveDirectoryConfiguration = value; }
+
+    
+    inline void SetSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryAttributes&& value) { m_selfManagedActiveDirectoryConfigurationHasBeenSet = true; m_selfManagedActiveDirectoryConfiguration = std::move(value); }
+
+    
+    inline WindowsFileSystemConfiguration& WithSelfManagedActiveDirectoryConfiguration(const SelfManagedActiveDirectoryAttributes& value) { SetSelfManagedActiveDirectoryConfiguration(value); return *this;}
+
+    
+    inline WindowsFileSystemConfiguration& WithSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryAttributes&& value) { SetSelfManagedActiveDirectoryConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -316,6 +336,9 @@ namespace Model
 
     Aws::String m_activeDirectoryId;
     bool m_activeDirectoryIdHasBeenSet;
+
+    SelfManagedActiveDirectoryAttributes m_selfManagedActiveDirectoryConfiguration;
+    bool m_selfManagedActiveDirectoryConfigurationHasBeenSet;
 
     int m_throughputCapacity;
     bool m_throughputCapacityHasBeenSet;

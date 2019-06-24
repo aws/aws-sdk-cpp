@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Findings details returned by the operation.</p>
+     * <p>The findings that matched the filters specified in the request.</p>
      */
     inline const Aws::Vector<AwsSecurityFinding>& GetFindings() const{ return m_findings; }
 
     /**
-     * <p>Findings details returned by the operation.</p>
+     * <p>The findings that matched the filters specified in the request.</p>
      */
     inline void SetFindings(const Aws::Vector<AwsSecurityFinding>& value) { m_findings = value; }
 
     /**
-     * <p>Findings details returned by the operation.</p>
+     * <p>The findings that matched the filters specified in the request.</p>
      */
     inline void SetFindings(Aws::Vector<AwsSecurityFinding>&& value) { m_findings = std::move(value); }
 
     /**
-     * <p>Findings details returned by the operation.</p>
+     * <p>The findings that matched the filters specified in the request.</p>
      */
     inline GetFindingsResult& WithFindings(const Aws::Vector<AwsSecurityFinding>& value) { SetFindings(value); return *this;}
 
     /**
-     * <p>Findings details returned by the operation.</p>
+     * <p>The findings that matched the filters specified in the request.</p>
      */
     inline GetFindingsResult& WithFindings(Aws::Vector<AwsSecurityFinding>&& value) { SetFindings(std::move(value)); return *this;}
 
     /**
-     * <p>Findings details returned by the operation.</p>
+     * <p>The findings that matched the filters specified in the request.</p>
      */
     inline GetFindingsResult& AddFindings(const AwsSecurityFinding& value) { m_findings.push_back(value); return *this; }
 
     /**
-     * <p>Findings details returned by the operation.</p>
+     * <p>The findings that matched the filters specified in the request.</p>
      */
     inline GetFindingsResult& AddFindings(AwsSecurityFinding&& value) { m_findings.push_back(std::move(value)); return *this; }
 

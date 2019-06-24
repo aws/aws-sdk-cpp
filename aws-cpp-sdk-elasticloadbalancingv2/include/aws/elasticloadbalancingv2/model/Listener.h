@@ -188,99 +188,99 @@ namespace Model
 
 
     /**
-     * <p>The SSL server certificate. You must provide a certificate if the protocol is
-     * HTTPS or TLS.</p>
+     * <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
      */
     inline const Aws::Vector<Certificate>& GetCertificates() const{ return m_certificates; }
 
     /**
-     * <p>The SSL server certificate. You must provide a certificate if the protocol is
-     * HTTPS or TLS.</p>
+     * <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
      */
     inline bool CertificatesHasBeenSet() const { return m_certificatesHasBeenSet; }
 
     /**
-     * <p>The SSL server certificate. You must provide a certificate if the protocol is
-     * HTTPS or TLS.</p>
+     * <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
      */
     inline void SetCertificates(const Aws::Vector<Certificate>& value) { m_certificatesHasBeenSet = true; m_certificates = value; }
 
     /**
-     * <p>The SSL server certificate. You must provide a certificate if the protocol is
-     * HTTPS or TLS.</p>
+     * <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
      */
     inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificatesHasBeenSet = true; m_certificates = std::move(value); }
 
     /**
-     * <p>The SSL server certificate. You must provide a certificate if the protocol is
-     * HTTPS or TLS.</p>
+     * <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
      */
     inline Listener& WithCertificates(const Aws::Vector<Certificate>& value) { SetCertificates(value); return *this;}
 
     /**
-     * <p>The SSL server certificate. You must provide a certificate if the protocol is
-     * HTTPS or TLS.</p>
+     * <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
      */
     inline Listener& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(std::move(value)); return *this;}
 
     /**
-     * <p>The SSL server certificate. You must provide a certificate if the protocol is
-     * HTTPS or TLS.</p>
+     * <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
      */
     inline Listener& AddCertificates(const Certificate& value) { m_certificatesHasBeenSet = true; m_certificates.push_back(value); return *this; }
 
     /**
-     * <p>The SSL server certificate. You must provide a certificate if the protocol is
-     * HTTPS or TLS.</p>
+     * <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
      */
     inline Listener& AddCertificates(Certificate&& value) { m_certificatesHasBeenSet = true; m_certificates.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The security policy that defines which ciphers and protocols are supported.
-     * The default is the current predefined security policy.</p>
+     * <p>[HTTPS or TLS listener] The security policy that defines which ciphers and
+     * protocols are supported. The default is the current predefined security
+     * policy.</p>
      */
     inline const Aws::String& GetSslPolicy() const{ return m_sslPolicy; }
 
     /**
-     * <p>The security policy that defines which ciphers and protocols are supported.
-     * The default is the current predefined security policy.</p>
+     * <p>[HTTPS or TLS listener] The security policy that defines which ciphers and
+     * protocols are supported. The default is the current predefined security
+     * policy.</p>
      */
     inline bool SslPolicyHasBeenSet() const { return m_sslPolicyHasBeenSet; }
 
     /**
-     * <p>The security policy that defines which ciphers and protocols are supported.
-     * The default is the current predefined security policy.</p>
+     * <p>[HTTPS or TLS listener] The security policy that defines which ciphers and
+     * protocols are supported. The default is the current predefined security
+     * policy.</p>
      */
     inline void SetSslPolicy(const Aws::String& value) { m_sslPolicyHasBeenSet = true; m_sslPolicy = value; }
 
     /**
-     * <p>The security policy that defines which ciphers and protocols are supported.
-     * The default is the current predefined security policy.</p>
+     * <p>[HTTPS or TLS listener] The security policy that defines which ciphers and
+     * protocols are supported. The default is the current predefined security
+     * policy.</p>
      */
     inline void SetSslPolicy(Aws::String&& value) { m_sslPolicyHasBeenSet = true; m_sslPolicy = std::move(value); }
 
     /**
-     * <p>The security policy that defines which ciphers and protocols are supported.
-     * The default is the current predefined security policy.</p>
+     * <p>[HTTPS or TLS listener] The security policy that defines which ciphers and
+     * protocols are supported. The default is the current predefined security
+     * policy.</p>
      */
     inline void SetSslPolicy(const char* value) { m_sslPolicyHasBeenSet = true; m_sslPolicy.assign(value); }
 
     /**
-     * <p>The security policy that defines which ciphers and protocols are supported.
-     * The default is the current predefined security policy.</p>
+     * <p>[HTTPS or TLS listener] The security policy that defines which ciphers and
+     * protocols are supported. The default is the current predefined security
+     * policy.</p>
      */
     inline Listener& WithSslPolicy(const Aws::String& value) { SetSslPolicy(value); return *this;}
 
     /**
-     * <p>The security policy that defines which ciphers and protocols are supported.
-     * The default is the current predefined security policy.</p>
+     * <p>[HTTPS or TLS listener] The security policy that defines which ciphers and
+     * protocols are supported. The default is the current predefined security
+     * policy.</p>
      */
     inline Listener& WithSslPolicy(Aws::String&& value) { SetSslPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The security policy that defines which ciphers and protocols are supported.
-     * The default is the current predefined security policy.</p>
+     * <p>[HTTPS or TLS listener] The security policy that defines which ciphers and
+     * protocols are supported. The default is the current predefined security
+     * policy.</p>
      */
     inline Listener& WithSslPolicy(const char* value) { SetSslPolicy(value); return *this;}
 

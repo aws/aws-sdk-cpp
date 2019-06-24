@@ -44,56 +44,47 @@ namespace Model
 
 
     /**
-     * <p>The list of standards subscription ARNS that you want to list and
-     * describe.</p>
+     * <p>A list of the standards subscription ARNs for the standards to retrieve.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStandardsSubscriptionArns() const{ return m_standardsSubscriptionArns; }
 
     /**
-     * <p>The list of standards subscription ARNS that you want to list and
-     * describe.</p>
+     * <p>A list of the standards subscription ARNs for the standards to retrieve.</p>
      */
     inline bool StandardsSubscriptionArnsHasBeenSet() const { return m_standardsSubscriptionArnsHasBeenSet; }
 
     /**
-     * <p>The list of standards subscription ARNS that you want to list and
-     * describe.</p>
+     * <p>A list of the standards subscription ARNs for the standards to retrieve.</p>
      */
     inline void SetStandardsSubscriptionArns(const Aws::Vector<Aws::String>& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns = value; }
 
     /**
-     * <p>The list of standards subscription ARNS that you want to list and
-     * describe.</p>
+     * <p>A list of the standards subscription ARNs for the standards to retrieve.</p>
      */
     inline void SetStandardsSubscriptionArns(Aws::Vector<Aws::String>&& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns = std::move(value); }
 
     /**
-     * <p>The list of standards subscription ARNS that you want to list and
-     * describe.</p>
+     * <p>A list of the standards subscription ARNs for the standards to retrieve.</p>
      */
     inline GetEnabledStandardsRequest& WithStandardsSubscriptionArns(const Aws::Vector<Aws::String>& value) { SetStandardsSubscriptionArns(value); return *this;}
 
     /**
-     * <p>The list of standards subscription ARNS that you want to list and
-     * describe.</p>
+     * <p>A list of the standards subscription ARNs for the standards to retrieve.</p>
      */
     inline GetEnabledStandardsRequest& WithStandardsSubscriptionArns(Aws::Vector<Aws::String>&& value) { SetStandardsSubscriptionArns(std::move(value)); return *this;}
 
     /**
-     * <p>The list of standards subscription ARNS that you want to list and
-     * describe.</p>
+     * <p>A list of the standards subscription ARNs for the standards to retrieve.</p>
      */
     inline GetEnabledStandardsRequest& AddStandardsSubscriptionArns(const Aws::String& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns.push_back(value); return *this; }
 
     /**
-     * <p>The list of standards subscription ARNS that you want to list and
-     * describe.</p>
+     * <p>A list of the standards subscription ARNs for the standards to retrieve.</p>
      */
     inline GetEnabledStandardsRequest& AddStandardsSubscriptionArns(Aws::String&& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of standards subscription ARNS that you want to list and
-     * describe.</p>
+     * <p>A list of the standards subscription ARNs for the standards to retrieve.</p>
      */
     inline GetEnabledStandardsRequest& AddStandardsSubscriptionArns(const char* value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns.push_back(value); return *this; }
 
@@ -172,22 +163,22 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of items that you want in the response.</p>
+     * <p>The maximum number of results to return in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of items that you want in the response.</p>
+     * <p>The maximum number of results to return in the response.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of items that you want in the response.</p>
+     * <p>The maximum number of results to return in the response.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of items that you want in the response.</p>
+     * <p>The maximum number of results to return in the response.</p>
      */
     inline GetEnabledStandardsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -57,49 +57,57 @@ namespace Model
 
     /**
      * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the AWS account to which the IAM user belongs is the owner.</p>
+     * by an AWS Identity and Access Management (IAM) user, the AWS account to which
+     * the IAM user belongs is the owner.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
      * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the AWS account to which the IAM user belongs is the owner.</p>
+     * by an AWS Identity and Access Management (IAM) user, the AWS account to which
+     * the IAM user belongs is the owner.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
      * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the AWS account to which the IAM user belongs is the owner.</p>
+     * by an AWS Identity and Access Management (IAM) user, the AWS account to which
+     * the IAM user belongs is the owner.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
      * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the AWS account to which the IAM user belongs is the owner.</p>
+     * by an AWS Identity and Access Management (IAM) user, the AWS account to which
+     * the IAM user belongs is the owner.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
      * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the AWS account to which the IAM user belongs is the owner.</p>
+     * by an AWS Identity and Access Management (IAM) user, the AWS account to which
+     * the IAM user belongs is the owner.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
      * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the AWS account to which the IAM user belongs is the owner.</p>
+     * by an AWS Identity and Access Management (IAM) user, the AWS account to which
+     * the IAM user belongs is the owner.</p>
      */
     inline FileSystem& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
      * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the AWS account to which the IAM user belongs is the owner.</p>
+     * by an AWS Identity and Access Management (IAM) user, the AWS account to which
+     * the IAM user belongs is the owner.</p>
      */
     inline FileSystem& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account that created the file system. If the file system was created
-     * by an IAM user, the AWS account to which the IAM user belongs is the owner.</p>
+     * by an AWS Identity and Access Management (IAM) user, the AWS account to which
+     * the IAM user belongs is the owner.</p>
      */
     inline FileSystem& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
@@ -142,112 +150,164 @@ namespace Model
 
 
     /**
-     * <p>The eight-digit ID of the file system that was automatically assigned by
-     * Amazon FSx.</p>
+     * <p>The system-generated, unique 17-digit ID of the file system.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
 
     /**
-     * <p>The eight-digit ID of the file system that was automatically assigned by
-     * Amazon FSx.</p>
+     * <p>The system-generated, unique 17-digit ID of the file system.</p>
      */
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
 
     /**
-     * <p>The eight-digit ID of the file system that was automatically assigned by
-     * Amazon FSx.</p>
+     * <p>The system-generated, unique 17-digit ID of the file system.</p>
      */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
-     * <p>The eight-digit ID of the file system that was automatically assigned by
-     * Amazon FSx.</p>
+     * <p>The system-generated, unique 17-digit ID of the file system.</p>
      */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
 
     /**
-     * <p>The eight-digit ID of the file system that was automatically assigned by
-     * Amazon FSx.</p>
+     * <p>The system-generated, unique 17-digit ID of the file system.</p>
      */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
 
     /**
-     * <p>The eight-digit ID of the file system that was automatically assigned by
-     * Amazon FSx.</p>
+     * <p>The system-generated, unique 17-digit ID of the file system.</p>
      */
     inline FileSystem& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
 
     /**
-     * <p>The eight-digit ID of the file system that was automatically assigned by
-     * Amazon FSx.</p>
+     * <p>The system-generated, unique 17-digit ID of the file system.</p>
      */
     inline FileSystem& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
 
     /**
-     * <p>The eight-digit ID of the file system that was automatically assigned by
-     * Amazon FSx.</p>
+     * <p>The system-generated, unique 17-digit ID of the file system.</p>
      */
     inline FileSystem& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
 
 
     /**
-     * <p>Type of file system. Currently the only supported type is WINDOWS.</p>
+     * <p>The type of Amazon FSx file system, either <code>LUSTRE</code> or
+     * <code>WINDOWS</code>.</p>
      */
     inline const FileSystemType& GetFileSystemType() const{ return m_fileSystemType; }
 
     /**
-     * <p>Type of file system. Currently the only supported type is WINDOWS.</p>
+     * <p>The type of Amazon FSx file system, either <code>LUSTRE</code> or
+     * <code>WINDOWS</code>.</p>
      */
     inline bool FileSystemTypeHasBeenSet() const { return m_fileSystemTypeHasBeenSet; }
 
     /**
-     * <p>Type of file system. Currently the only supported type is WINDOWS.</p>
+     * <p>The type of Amazon FSx file system, either <code>LUSTRE</code> or
+     * <code>WINDOWS</code>.</p>
      */
     inline void SetFileSystemType(const FileSystemType& value) { m_fileSystemTypeHasBeenSet = true; m_fileSystemType = value; }
 
     /**
-     * <p>Type of file system. Currently the only supported type is WINDOWS.</p>
+     * <p>The type of Amazon FSx file system, either <code>LUSTRE</code> or
+     * <code>WINDOWS</code>.</p>
      */
     inline void SetFileSystemType(FileSystemType&& value) { m_fileSystemTypeHasBeenSet = true; m_fileSystemType = std::move(value); }
 
     /**
-     * <p>Type of file system. Currently the only supported type is WINDOWS.</p>
+     * <p>The type of Amazon FSx file system, either <code>LUSTRE</code> or
+     * <code>WINDOWS</code>.</p>
      */
     inline FileSystem& WithFileSystemType(const FileSystemType& value) { SetFileSystemType(value); return *this;}
 
     /**
-     * <p>Type of file system. Currently the only supported type is WINDOWS.</p>
+     * <p>The type of Amazon FSx file system, either <code>LUSTRE</code> or
+     * <code>WINDOWS</code>.</p>
      */
     inline FileSystem& WithFileSystemType(FileSystemType&& value) { SetFileSystemType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The lifecycle status of the file system.</p>
+     * <p>The lifecycle status of the file system:</p> <ul> <li> <p>
+     * <code>AVAILABLE</code> indicates that the file system is reachable and available
+     * for use.</p> </li> <li> <p> <code>CREATING</code> indicates that Amazon FSx is
+     * in the process of creating the new file system.</p> </li> <li> <p>
+     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting
+     * the file system.</p> </li> <li> <p> <code>FAILED</code> indicates that Amazon
+     * FSx was not able to create the file system.</p> </li> <li> <p>
+     * <code>MISCONFIGURED</code> indicates that the file system is in a failed but
+     * recoverable state.</p> </li> <li> <p> <code>UPDATING</code> indicates that the
+     * file system is undergoing a customer initiated update.</p> </li> </ul>
      */
     inline const FileSystemLifecycle& GetLifecycle() const{ return m_lifecycle; }
 
     /**
-     * <p>The lifecycle status of the file system.</p>
+     * <p>The lifecycle status of the file system:</p> <ul> <li> <p>
+     * <code>AVAILABLE</code> indicates that the file system is reachable and available
+     * for use.</p> </li> <li> <p> <code>CREATING</code> indicates that Amazon FSx is
+     * in the process of creating the new file system.</p> </li> <li> <p>
+     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting
+     * the file system.</p> </li> <li> <p> <code>FAILED</code> indicates that Amazon
+     * FSx was not able to create the file system.</p> </li> <li> <p>
+     * <code>MISCONFIGURED</code> indicates that the file system is in a failed but
+     * recoverable state.</p> </li> <li> <p> <code>UPDATING</code> indicates that the
+     * file system is undergoing a customer initiated update.</p> </li> </ul>
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
     /**
-     * <p>The lifecycle status of the file system.</p>
+     * <p>The lifecycle status of the file system:</p> <ul> <li> <p>
+     * <code>AVAILABLE</code> indicates that the file system is reachable and available
+     * for use.</p> </li> <li> <p> <code>CREATING</code> indicates that Amazon FSx is
+     * in the process of creating the new file system.</p> </li> <li> <p>
+     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting
+     * the file system.</p> </li> <li> <p> <code>FAILED</code> indicates that Amazon
+     * FSx was not able to create the file system.</p> </li> <li> <p>
+     * <code>MISCONFIGURED</code> indicates that the file system is in a failed but
+     * recoverable state.</p> </li> <li> <p> <code>UPDATING</code> indicates that the
+     * file system is undergoing a customer initiated update.</p> </li> </ul>
      */
     inline void SetLifecycle(const FileSystemLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
     /**
-     * <p>The lifecycle status of the file system.</p>
+     * <p>The lifecycle status of the file system:</p> <ul> <li> <p>
+     * <code>AVAILABLE</code> indicates that the file system is reachable and available
+     * for use.</p> </li> <li> <p> <code>CREATING</code> indicates that Amazon FSx is
+     * in the process of creating the new file system.</p> </li> <li> <p>
+     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting
+     * the file system.</p> </li> <li> <p> <code>FAILED</code> indicates that Amazon
+     * FSx was not able to create the file system.</p> </li> <li> <p>
+     * <code>MISCONFIGURED</code> indicates that the file system is in a failed but
+     * recoverable state.</p> </li> <li> <p> <code>UPDATING</code> indicates that the
+     * file system is undergoing a customer initiated update.</p> </li> </ul>
      */
     inline void SetLifecycle(FileSystemLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
 
     /**
-     * <p>The lifecycle status of the file system.</p>
+     * <p>The lifecycle status of the file system:</p> <ul> <li> <p>
+     * <code>AVAILABLE</code> indicates that the file system is reachable and available
+     * for use.</p> </li> <li> <p> <code>CREATING</code> indicates that Amazon FSx is
+     * in the process of creating the new file system.</p> </li> <li> <p>
+     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting
+     * the file system.</p> </li> <li> <p> <code>FAILED</code> indicates that Amazon
+     * FSx was not able to create the file system.</p> </li> <li> <p>
+     * <code>MISCONFIGURED</code> indicates that the file system is in a failed but
+     * recoverable state.</p> </li> <li> <p> <code>UPDATING</code> indicates that the
+     * file system is undergoing a customer initiated update.</p> </li> </ul>
      */
     inline FileSystem& WithLifecycle(const FileSystemLifecycle& value) { SetLifecycle(value); return *this;}
 
     /**
-     * <p>The lifecycle status of the file system.</p>
+     * <p>The lifecycle status of the file system:</p> <ul> <li> <p>
+     * <code>AVAILABLE</code> indicates that the file system is reachable and available
+     * for use.</p> </li> <li> <p> <code>CREATING</code> indicates that Amazon FSx is
+     * in the process of creating the new file system.</p> </li> <li> <p>
+     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting
+     * the file system.</p> </li> <li> <p> <code>FAILED</code> indicates that Amazon
+     * FSx was not able to create the file system.</p> </li> <li> <p>
+     * <code>MISCONFIGURED</code> indicates that the file system is in a failed but
+     * recoverable state.</p> </li> <li> <p> <code>UPDATING</code> indicates that the
+     * file system is undergoing a customer initiated update.</p> </li> </ul>
      */
     inline FileSystem& WithLifecycle(FileSystemLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 
@@ -272,22 +332,22 @@ namespace Model
 
 
     /**
-     * <p>The storage capacity of the file system in gigabytes.</p>
+     * <p>The storage capacity of the file system in gigabytes (GB).</p>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
     /**
-     * <p>The storage capacity of the file system in gigabytes.</p>
+     * <p>The storage capacity of the file system in gigabytes (GB).</p>
      */
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
 
     /**
-     * <p>The storage capacity of the file system in gigabytes.</p>
+     * <p>The storage capacity of the file system in gigabytes (GB).</p>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
 
     /**
-     * <p>The storage capacity of the file system in gigabytes.</p>
+     * <p>The storage capacity of the file system in gigabytes (GB).</p>
      */
     inline FileSystem& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 
@@ -334,63 +394,63 @@ namespace Model
 
 
     /**
-     * <p>The IDs of the subnets to contain the endpoint for the file system. One and
+     * <p>The ID of the subnet to contain the endpoint for the file system. One and
      * only one is supported. The file system is launched in the Availability Zone
      * associated with this subnet.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>The IDs of the subnets to contain the endpoint for the file system. One and
+     * <p>The ID of the subnet to contain the endpoint for the file system. One and
      * only one is supported. The file system is launched in the Availability Zone
      * associated with this subnet.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>The IDs of the subnets to contain the endpoint for the file system. One and
+     * <p>The ID of the subnet to contain the endpoint for the file system. One and
      * only one is supported. The file system is launched in the Availability Zone
      * associated with this subnet.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>The IDs of the subnets to contain the endpoint for the file system. One and
+     * <p>The ID of the subnet to contain the endpoint for the file system. One and
      * only one is supported. The file system is launched in the Availability Zone
      * associated with this subnet.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>The IDs of the subnets to contain the endpoint for the file system. One and
+     * <p>The ID of the subnet to contain the endpoint for the file system. One and
      * only one is supported. The file system is launched in the Availability Zone
      * associated with this subnet.</p>
      */
     inline FileSystem& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>The IDs of the subnets to contain the endpoint for the file system. One and
+     * <p>The ID of the subnet to contain the endpoint for the file system. One and
      * only one is supported. The file system is launched in the Availability Zone
      * associated with this subnet.</p>
      */
     inline FileSystem& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the subnets to contain the endpoint for the file system. One and
+     * <p>The ID of the subnet to contain the endpoint for the file system. One and
      * only one is supported. The file system is launched in the Availability Zone
      * associated with this subnet.</p>
      */
     inline FileSystem& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the subnets to contain the endpoint for the file system. One and
+     * <p>The ID of the subnet to contain the endpoint for the file system. One and
      * only one is supported. The file system is launched in the Availability Zone
      * associated with this subnet.</p>
      */
     inline FileSystem& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of the subnets to contain the endpoint for the file system. One and
+     * <p>The ID of the subnet to contain the endpoint for the file system. One and
      * only one is supported. The file system is launched in the Availability Zone
      * associated with this subnet.</p>
      */
@@ -404,7 +464,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
      * Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an
      * Amazon FSx for Windows File Server file system, you can have one network
-     * interface Id. For an Amazon FSx for Lustre file system, you can have more than
+     * interface ID. For an Amazon FSx for Lustre file system, you can have more than
      * one.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNetworkInterfaceIds() const{ return m_networkInterfaceIds; }
@@ -416,7 +476,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
      * Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an
      * Amazon FSx for Windows File Server file system, you can have one network
-     * interface Id. For an Amazon FSx for Lustre file system, you can have more than
+     * interface ID. For an Amazon FSx for Lustre file system, you can have more than
      * one.</p>
      */
     inline bool NetworkInterfaceIdsHasBeenSet() const { return m_networkInterfaceIdsHasBeenSet; }
@@ -428,7 +488,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
      * Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an
      * Amazon FSx for Windows File Server file system, you can have one network
-     * interface Id. For an Amazon FSx for Lustre file system, you can have more than
+     * interface ID. For an Amazon FSx for Lustre file system, you can have more than
      * one.</p>
      */
     inline void SetNetworkInterfaceIds(const Aws::Vector<Aws::String>& value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds = value; }
@@ -440,7 +500,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
      * Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an
      * Amazon FSx for Windows File Server file system, you can have one network
-     * interface Id. For an Amazon FSx for Lustre file system, you can have more than
+     * interface ID. For an Amazon FSx for Lustre file system, you can have more than
      * one.</p>
      */
     inline void SetNetworkInterfaceIds(Aws::Vector<Aws::String>&& value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds = std::move(value); }
@@ -452,7 +512,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
      * Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an
      * Amazon FSx for Windows File Server file system, you can have one network
-     * interface Id. For an Amazon FSx for Lustre file system, you can have more than
+     * interface ID. For an Amazon FSx for Lustre file system, you can have more than
      * one.</p>
      */
     inline FileSystem& WithNetworkInterfaceIds(const Aws::Vector<Aws::String>& value) { SetNetworkInterfaceIds(value); return *this;}
@@ -464,7 +524,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
      * Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an
      * Amazon FSx for Windows File Server file system, you can have one network
-     * interface Id. For an Amazon FSx for Lustre file system, you can have more than
+     * interface ID. For an Amazon FSx for Lustre file system, you can have more than
      * one.</p>
      */
     inline FileSystem& WithNetworkInterfaceIds(Aws::Vector<Aws::String>&& value) { SetNetworkInterfaceIds(std::move(value)); return *this;}
@@ -476,7 +536,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
      * Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an
      * Amazon FSx for Windows File Server file system, you can have one network
-     * interface Id. For an Amazon FSx for Lustre file system, you can have more than
+     * interface ID. For an Amazon FSx for Lustre file system, you can have more than
      * one.</p>
      */
     inline FileSystem& AddNetworkInterfaceIds(const Aws::String& value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds.push_back(value); return *this; }
@@ -488,7 +548,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
      * Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an
      * Amazon FSx for Windows File Server file system, you can have one network
-     * interface Id. For an Amazon FSx for Lustre file system, you can have more than
+     * interface ID. For an Amazon FSx for Lustre file system, you can have more than
      * one.</p>
      */
     inline FileSystem& AddNetworkInterfaceIds(Aws::String&& value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds.push_back(std::move(value)); return *this; }
@@ -500,7 +560,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
      * Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an
      * Amazon FSx for Windows File Server file system, you can have one network
-     * interface Id. For an Amazon FSx for Lustre file system, you can have more than
+     * interface ID. For an Amazon FSx for Lustre file system, you can have more than
      * one.</p>
      */
     inline FileSystem& AddNetworkInterfaceIds(const char* value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds.push_back(value); return *this; }
@@ -597,42 +657,42 @@ namespace Model
 
 
     /**
-     * <p>The resource ARN of the file system.</p>
+     * <p>The Amazon Resource Name (ARN) for the file system resource.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
 
     /**
-     * <p>The resource ARN of the file system.</p>
+     * <p>The Amazon Resource Name (ARN) for the file system resource.</p>
      */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
 
     /**
-     * <p>The resource ARN of the file system.</p>
+     * <p>The Amazon Resource Name (ARN) for the file system resource.</p>
      */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
-     * <p>The resource ARN of the file system.</p>
+     * <p>The Amazon Resource Name (ARN) for the file system resource.</p>
      */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
 
     /**
-     * <p>The resource ARN of the file system.</p>
+     * <p>The Amazon Resource Name (ARN) for the file system resource.</p>
      */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
 
     /**
-     * <p>The resource ARN of the file system.</p>
+     * <p>The Amazon Resource Name (ARN) for the file system resource.</p>
      */
     inline FileSystem& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
 
     /**
-     * <p>The resource ARN of the file system.</p>
+     * <p>The Amazon Resource Name (ARN) for the file system resource.</p>
      */
     inline FileSystem& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
-     * <p>The resource ARN of the file system.</p>
+     * <p>The Amazon Resource Name (ARN) for the file system resource.</p>
      */
     inline FileSystem& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
 

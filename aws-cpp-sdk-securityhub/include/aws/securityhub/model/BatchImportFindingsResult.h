@@ -60,17 +60,17 @@ namespace Model
 
 
     /**
-     * <p>The number of findings that were successfully imported</p>
+     * <p>The number of findings that were successfully imported.</p>
      */
     inline int GetSuccessCount() const{ return m_successCount; }
 
     /**
-     * <p>The number of findings that were successfully imported</p>
+     * <p>The number of findings that were successfully imported.</p>
      */
     inline void SetSuccessCount(int value) { m_successCount = value; }
 
     /**
-     * <p>The number of findings that were successfully imported</p>
+     * <p>The number of findings that were successfully imported.</p>
      */
     inline BatchImportFindingsResult& WithSuccessCount(int value) { SetSuccessCount(value); return *this;}
 

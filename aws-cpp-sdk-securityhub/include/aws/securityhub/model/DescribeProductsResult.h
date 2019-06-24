@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>A list of products.</p>
+     * <p>A list of products, including details for each product.</p>
      */
     inline const Aws::Vector<Product>& GetProducts() const{ return m_products; }
 
     /**
-     * <p>A list of products.</p>
+     * <p>A list of products, including details for each product.</p>
      */
     inline void SetProducts(const Aws::Vector<Product>& value) { m_products = value; }
 
     /**
-     * <p>A list of products.</p>
+     * <p>A list of products, including details for each product.</p>
      */
     inline void SetProducts(Aws::Vector<Product>&& value) { m_products = std::move(value); }
 
     /**
-     * <p>A list of products.</p>
+     * <p>A list of products, including details for each product.</p>
      */
     inline DescribeProductsResult& WithProducts(const Aws::Vector<Product>& value) { SetProducts(value); return *this;}
 
     /**
-     * <p>A list of products.</p>
+     * <p>A list of products, including details for each product.</p>
      */
     inline DescribeProductsResult& WithProducts(Aws::Vector<Product>&& value) { SetProducts(std::move(value)); return *this;}
 
     /**
-     * <p>A list of products.</p>
+     * <p>A list of products, including details for each product.</p>
      */
     inline DescribeProductsResult& AddProducts(const Product& value) { m_products.push_back(value); return *this; }
 
     /**
-     * <p>A list of products.</p>
+     * <p>A list of products, including details for each product.</p>
      */
     inline DescribeProductsResult& AddProducts(Product&& value) { m_products.push_back(std::move(value)); return *this; }
 

@@ -171,42 +171,42 @@ namespace Model
 
 
     /**
-     * <p>The date/time that the container was started.</p>
+     * <p>The date and time when the container started.</p>
      */
     inline const Aws::String& GetLaunchedAt() const{ return m_launchedAt; }
 
     /**
-     * <p>The date/time that the container was started.</p>
+     * <p>The date and time when the container started.</p>
      */
     inline bool LaunchedAtHasBeenSet() const { return m_launchedAtHasBeenSet; }
 
     /**
-     * <p>The date/time that the container was started.</p>
+     * <p>The date and time when the container started.</p>
      */
     inline void SetLaunchedAt(const Aws::String& value) { m_launchedAtHasBeenSet = true; m_launchedAt = value; }
 
     /**
-     * <p>The date/time that the container was started.</p>
+     * <p>The date and time when the container started.</p>
      */
     inline void SetLaunchedAt(Aws::String&& value) { m_launchedAtHasBeenSet = true; m_launchedAt = std::move(value); }
 
     /**
-     * <p>The date/time that the container was started.</p>
+     * <p>The date and time when the container started.</p>
      */
     inline void SetLaunchedAt(const char* value) { m_launchedAtHasBeenSet = true; m_launchedAt.assign(value); }
 
     /**
-     * <p>The date/time that the container was started.</p>
+     * <p>The date and time when the container started.</p>
      */
     inline ContainerDetails& WithLaunchedAt(const Aws::String& value) { SetLaunchedAt(value); return *this;}
 
     /**
-     * <p>The date/time that the container was started.</p>
+     * <p>The date and time when the container started.</p>
      */
     inline ContainerDetails& WithLaunchedAt(Aws::String&& value) { SetLaunchedAt(std::move(value)); return *this;}
 
     /**
-     * <p>The date/time that the container was started.</p>
+     * <p>The date and time when the container started.</p>
      */
     inline ContainerDetails& WithLaunchedAt(const char* value) { SetLaunchedAt(value); return *this;}
 

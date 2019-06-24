@@ -49,27 +49,27 @@ namespace Model
 
 
     /**
-     * <p>A description of the file system.</p>
+     * <p>A description of the file system that was updated.</p>
      */
     inline const FileSystem& GetFileSystem() const{ return m_fileSystem; }
 
     /**
-     * <p>A description of the file system.</p>
+     * <p>A description of the file system that was updated.</p>
      */
     inline void SetFileSystem(const FileSystem& value) { m_fileSystem = value; }
 
     /**
-     * <p>A description of the file system.</p>
+     * <p>A description of the file system that was updated.</p>
      */
     inline void SetFileSystem(FileSystem&& value) { m_fileSystem = std::move(value); }
 
     /**
-     * <p>A description of the file system.</p>
+     * <p>A description of the file system that was updated.</p>
      */
     inline UpdateFileSystemResult& WithFileSystem(const FileSystem& value) { SetFileSystem(value); return *this;}
 
     /**
-     * <p>A description of the file system.</p>
+     * <p>A description of the file system that was updated.</p>
      */
     inline UpdateFileSystemResult& WithFileSystem(FileSystem&& value) { SetFileSystem(std::move(value)); return *this;}
 

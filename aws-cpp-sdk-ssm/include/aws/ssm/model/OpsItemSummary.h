@@ -406,181 +406,73 @@ namespace Model
 
     /**
      * <p>Operational data is custom data that provides useful reference details about
-     * the OpsItem. For example, you can specify log files, error strings, license
-     * keys, troubleshooting tips, or other relevant data. You enter operational data
-     * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * the OpsItem. </p>
      */
     inline const Aws::Map<Aws::String, OpsItemDataValue>& GetOperationalData() const{ return m_operationalData; }
 
     /**
      * <p>Operational data is custom data that provides useful reference details about
-     * the OpsItem. For example, you can specify log files, error strings, license
-     * keys, troubleshooting tips, or other relevant data. You enter operational data
-     * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * the OpsItem. </p>
      */
     inline bool OperationalDataHasBeenSet() const { return m_operationalDataHasBeenSet; }
 
     /**
      * <p>Operational data is custom data that provides useful reference details about
-     * the OpsItem. For example, you can specify log files, error strings, license
-     * keys, troubleshooting tips, or other relevant data. You enter operational data
-     * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * the OpsItem. </p>
      */
     inline void SetOperationalData(const Aws::Map<Aws::String, OpsItemDataValue>& value) { m_operationalDataHasBeenSet = true; m_operationalData = value; }
 
     /**
      * <p>Operational data is custom data that provides useful reference details about
-     * the OpsItem. For example, you can specify log files, error strings, license
-     * keys, troubleshooting tips, or other relevant data. You enter operational data
-     * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * the OpsItem. </p>
      */
     inline void SetOperationalData(Aws::Map<Aws::String, OpsItemDataValue>&& value) { m_operationalDataHasBeenSet = true; m_operationalData = std::move(value); }
 
     /**
      * <p>Operational data is custom data that provides useful reference details about
-     * the OpsItem. For example, you can specify log files, error strings, license
-     * keys, troubleshooting tips, or other relevant data. You enter operational data
-     * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * the OpsItem. </p>
      */
     inline OpsItemSummary& WithOperationalData(const Aws::Map<Aws::String, OpsItemDataValue>& value) { SetOperationalData(value); return *this;}
 
     /**
      * <p>Operational data is custom data that provides useful reference details about
-     * the OpsItem. For example, you can specify log files, error strings, license
-     * keys, troubleshooting tips, or other relevant data. You enter operational data
-     * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * the OpsItem. </p>
      */
     inline OpsItemSummary& WithOperationalData(Aws::Map<Aws::String, OpsItemDataValue>&& value) { SetOperationalData(std::move(value)); return *this;}
 
     /**
      * <p>Operational data is custom data that provides useful reference details about
-     * the OpsItem. For example, you can specify log files, error strings, license
-     * keys, troubleshooting tips, or other relevant data. You enter operational data
-     * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * the OpsItem. </p>
      */
     inline OpsItemSummary& AddOperationalData(const Aws::String& key, const OpsItemDataValue& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, value); return *this; }
 
     /**
      * <p>Operational data is custom data that provides useful reference details about
-     * the OpsItem. For example, you can specify log files, error strings, license
-     * keys, troubleshooting tips, or other relevant data. You enter operational data
-     * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * the OpsItem. </p>
      */
     inline OpsItemSummary& AddOperationalData(Aws::String&& key, const OpsItemDataValue& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Operational data is custom data that provides useful reference details about
-     * the OpsItem. For example, you can specify log files, error strings, license
-     * keys, troubleshooting tips, or other relevant data. You enter operational data
-     * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * the OpsItem. </p>
      */
     inline OpsItemSummary& AddOperationalData(const Aws::String& key, OpsItemDataValue&& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Operational data is custom data that provides useful reference details about
-     * the OpsItem. For example, you can specify log files, error strings, license
-     * keys, troubleshooting tips, or other relevant data. You enter operational data
-     * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * the OpsItem. </p>
      */
     inline OpsItemSummary& AddOperationalData(Aws::String&& key, OpsItemDataValue&& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Operational data is custom data that provides useful reference details about
-     * the OpsItem. For example, you can specify log files, error strings, license
-     * keys, troubleshooting tips, or other relevant data. You enter operational data
-     * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * the OpsItem. </p>
      */
     inline OpsItemSummary& AddOperationalData(const char* key, OpsItemDataValue&& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Operational data is custom data that provides useful reference details about
-     * the OpsItem. For example, you can specify log files, error strings, license
-     * keys, troubleshooting tips, or other relevant data. You enter operational data
-     * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * the OpsItem. </p>
      */
     inline OpsItemSummary& AddOperationalData(const char* key, const OpsItemDataValue& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, value); return *this; }
 

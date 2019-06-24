@@ -99,49 +99,57 @@ namespace Model
 
     /**
      * <p>[Required] The base path of the <a>BasePathMapping</a> resource to
-     * change.</p>
+     * change.</p> <p>To specify an empty base path, set this parameter to
+     * <code>'(none)'</code>.</p>
      */
     inline const Aws::String& GetBasePath() const{ return m_basePath; }
 
     /**
      * <p>[Required] The base path of the <a>BasePathMapping</a> resource to
-     * change.</p>
+     * change.</p> <p>To specify an empty base path, set this parameter to
+     * <code>'(none)'</code>.</p>
      */
     inline bool BasePathHasBeenSet() const { return m_basePathHasBeenSet; }
 
     /**
      * <p>[Required] The base path of the <a>BasePathMapping</a> resource to
-     * change.</p>
+     * change.</p> <p>To specify an empty base path, set this parameter to
+     * <code>'(none)'</code>.</p>
      */
     inline void SetBasePath(const Aws::String& value) { m_basePathHasBeenSet = true; m_basePath = value; }
 
     /**
      * <p>[Required] The base path of the <a>BasePathMapping</a> resource to
-     * change.</p>
+     * change.</p> <p>To specify an empty base path, set this parameter to
+     * <code>'(none)'</code>.</p>
      */
     inline void SetBasePath(Aws::String&& value) { m_basePathHasBeenSet = true; m_basePath = std::move(value); }
 
     /**
      * <p>[Required] The base path of the <a>BasePathMapping</a> resource to
-     * change.</p>
+     * change.</p> <p>To specify an empty base path, set this parameter to
+     * <code>'(none)'</code>.</p>
      */
     inline void SetBasePath(const char* value) { m_basePathHasBeenSet = true; m_basePath.assign(value); }
 
     /**
      * <p>[Required] The base path of the <a>BasePathMapping</a> resource to
-     * change.</p>
+     * change.</p> <p>To specify an empty base path, set this parameter to
+     * <code>'(none)'</code>.</p>
      */
     inline UpdateBasePathMappingRequest& WithBasePath(const Aws::String& value) { SetBasePath(value); return *this;}
 
     /**
      * <p>[Required] The base path of the <a>BasePathMapping</a> resource to
-     * change.</p>
+     * change.</p> <p>To specify an empty base path, set this parameter to
+     * <code>'(none)'</code>.</p>
      */
     inline UpdateBasePathMappingRequest& WithBasePath(Aws::String&& value) { SetBasePath(std::move(value)); return *this;}
 
     /**
      * <p>[Required] The base path of the <a>BasePathMapping</a> resource to
-     * change.</p>
+     * change.</p> <p>To specify an empty base path, set this parameter to
+     * <code>'(none)'</code>.</p>
      */
     inline UpdateBasePathMappingRequest& WithBasePath(const char* value) { SetBasePath(value); return *this;}
 

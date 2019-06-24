@@ -32,7 +32,8 @@ UpdateFileSystemWindowsConfiguration::UpdateFileSystemWindowsConfiguration() :
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
     m_dailyAutomaticBackupStartTimeHasBeenSet(false),
     m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false)
+    m_automaticBackupRetentionDaysHasBeenSet(false),
+    m_selfManagedActiveDirectoryConfigurationHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ UpdateFileSystemWindowsConfiguration::UpdateFileSystemWindowsConfiguration(JsonV
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
     m_dailyAutomaticBackupStartTimeHasBeenSet(false),
     m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false)
+    m_automaticBackupRetentionDaysHasBeenSet(false),
+    m_selfManagedActiveDirectoryConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +70,13 @@ UpdateFileSystemWindowsConfiguration& UpdateFileSystemWindowsConfiguration::oper
     m_automaticBackupRetentionDaysHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SelfManagedActiveDirectoryConfiguration"))
+  {
+    m_selfManagedActiveDirectoryConfiguration = jsonValue.GetObject("SelfManagedActiveDirectoryConfiguration");
+
+    m_selfManagedActiveDirectoryConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -90,6 +99,12 @@ JsonValue UpdateFileSystemWindowsConfiguration::Jsonize() const
   if(m_automaticBackupRetentionDaysHasBeenSet)
   {
    payload.WithInteger("AutomaticBackupRetentionDays", m_automaticBackupRetentionDays);
+
+  }
+
+  if(m_selfManagedActiveDirectoryConfigurationHasBeenSet)
+  {
+   payload.WithObject("SelfManagedActiveDirectoryConfiguration", m_selfManagedActiveDirectoryConfiguration.Jsonize());
 
   }
 

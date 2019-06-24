@@ -82,44 +82,44 @@ namespace Model
 
 
     /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
+     * <p>If there are additional results, this is the marker for the next set of
+     * results. Otherwise, this is null.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
     /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
+     * <p>If there are additional results, this is the marker for the next set of
+     * results. Otherwise, this is null.</p>
      */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
 
     /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
+     * <p>If there are additional results, this is the marker for the next set of
+     * results. Otherwise, this is null.</p>
      */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
+     * <p>If there are additional results, this is the marker for the next set of
+     * results. Otherwise, this is null.</p>
      */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
 
     /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
+     * <p>If there are additional results, this is the marker for the next set of
+     * results. Otherwise, this is null.</p>
      */
     inline DescribeListenersResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
     /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
+     * <p>If there are additional results, this is the marker for the next set of
+     * results. Otherwise, this is null.</p>
      */
     inline DescribeListenersResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
+     * <p>If there are additional results, this is the marker for the next set of
+     * results. Otherwise, this is null.</p>
      */
     inline DescribeListenersResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 

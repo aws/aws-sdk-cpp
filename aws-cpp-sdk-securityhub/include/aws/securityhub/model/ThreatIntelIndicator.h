@@ -36,7 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>Threat intel details related to a finding.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about the threat intel related to a finding.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ThreatIntelIndicator">AWS
    * API Reference</a></p>
    */
@@ -153,124 +154,140 @@ namespace Model
 
 
     /**
-     * <p>The date/time of the last observation of a threat intel indicator.</p>
+     * <p>The date and time when the most recent instance of a threat intel indicator
+     * was observed.</p>
      */
     inline const Aws::String& GetLastObservedAt() const{ return m_lastObservedAt; }
 
     /**
-     * <p>The date/time of the last observation of a threat intel indicator.</p>
+     * <p>The date and time when the most recent instance of a threat intel indicator
+     * was observed.</p>
      */
     inline bool LastObservedAtHasBeenSet() const { return m_lastObservedAtHasBeenSet; }
 
     /**
-     * <p>The date/time of the last observation of a threat intel indicator.</p>
+     * <p>The date and time when the most recent instance of a threat intel indicator
+     * was observed.</p>
      */
     inline void SetLastObservedAt(const Aws::String& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = value; }
 
     /**
-     * <p>The date/time of the last observation of a threat intel indicator.</p>
+     * <p>The date and time when the most recent instance of a threat intel indicator
+     * was observed.</p>
      */
     inline void SetLastObservedAt(Aws::String&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = std::move(value); }
 
     /**
-     * <p>The date/time of the last observation of a threat intel indicator.</p>
+     * <p>The date and time when the most recent instance of a threat intel indicator
+     * was observed.</p>
      */
     inline void SetLastObservedAt(const char* value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt.assign(value); }
 
     /**
-     * <p>The date/time of the last observation of a threat intel indicator.</p>
+     * <p>The date and time when the most recent instance of a threat intel indicator
+     * was observed.</p>
      */
     inline ThreatIntelIndicator& WithLastObservedAt(const Aws::String& value) { SetLastObservedAt(value); return *this;}
 
     /**
-     * <p>The date/time of the last observation of a threat intel indicator.</p>
+     * <p>The date and time when the most recent instance of a threat intel indicator
+     * was observed.</p>
      */
     inline ThreatIntelIndicator& WithLastObservedAt(Aws::String&& value) { SetLastObservedAt(std::move(value)); return *this;}
 
     /**
-     * <p>The date/time of the last observation of a threat intel indicator.</p>
+     * <p>The date and time when the most recent instance of a threat intel indicator
+     * was observed.</p>
      */
     inline ThreatIntelIndicator& WithLastObservedAt(const char* value) { SetLastObservedAt(value); return *this;}
 
 
     /**
-     * <p>The source of the threat intel.</p>
+     * <p>The source of the threat intel indicator.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
-     * <p>The source of the threat intel.</p>
+     * <p>The source of the threat intel indicator.</p>
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
-     * <p>The source of the threat intel.</p>
+     * <p>The source of the threat intel indicator.</p>
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p>The source of the threat intel.</p>
+     * <p>The source of the threat intel indicator.</p>
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <p>The source of the threat intel.</p>
+     * <p>The source of the threat intel indicator.</p>
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
-     * <p>The source of the threat intel.</p>
+     * <p>The source of the threat intel indicator.</p>
      */
     inline ThreatIntelIndicator& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
-     * <p>The source of the threat intel.</p>
+     * <p>The source of the threat intel indicator.</p>
      */
     inline ThreatIntelIndicator& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
-     * <p>The source of the threat intel.</p>
+     * <p>The source of the threat intel indicator.</p>
      */
     inline ThreatIntelIndicator& WithSource(const char* value) { SetSource(value); return *this;}
 
 
     /**
-     * <p>The URL for more details from the source of the threat intel.</p>
+     * <p>The URL to the page or site where you can get more information about the
+     * threat intel indicator.</p>
      */
     inline const Aws::String& GetSourceUrl() const{ return m_sourceUrl; }
 
     /**
-     * <p>The URL for more details from the source of the threat intel.</p>
+     * <p>The URL to the page or site where you can get more information about the
+     * threat intel indicator.</p>
      */
     inline bool SourceUrlHasBeenSet() const { return m_sourceUrlHasBeenSet; }
 
     /**
-     * <p>The URL for more details from the source of the threat intel.</p>
+     * <p>The URL to the page or site where you can get more information about the
+     * threat intel indicator.</p>
      */
     inline void SetSourceUrl(const Aws::String& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl = value; }
 
     /**
-     * <p>The URL for more details from the source of the threat intel.</p>
+     * <p>The URL to the page or site where you can get more information about the
+     * threat intel indicator.</p>
      */
     inline void SetSourceUrl(Aws::String&& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl = std::move(value); }
 
     /**
-     * <p>The URL for more details from the source of the threat intel.</p>
+     * <p>The URL to the page or site where you can get more information about the
+     * threat intel indicator.</p>
      */
     inline void SetSourceUrl(const char* value) { m_sourceUrlHasBeenSet = true; m_sourceUrl.assign(value); }
 
     /**
-     * <p>The URL for more details from the source of the threat intel.</p>
+     * <p>The URL to the page or site where you can get more information about the
+     * threat intel indicator.</p>
      */
     inline ThreatIntelIndicator& WithSourceUrl(const Aws::String& value) { SetSourceUrl(value); return *this;}
 
     /**
-     * <p>The URL for more details from the source of the threat intel.</p>
+     * <p>The URL to the page or site where you can get more information about the
+     * threat intel indicator.</p>
      */
     inline ThreatIntelIndicator& WithSourceUrl(Aws::String&& value) { SetSourceUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL for more details from the source of the threat intel.</p>
+     * <p>The URL to the page or site where you can get more information about the
+     * threat intel indicator.</p>
      */
     inline ThreatIntelIndicator& WithSourceUrl(const char* value) { SetSourceUrl(value); return *this;}
 

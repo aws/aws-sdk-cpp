@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>The base path name that callers of the API must provide as part of the URL
      * after the domain name. This value must be unique for all of the mappings across
-     * a single API. Leave this blank if you do not want callers to specify a base path
+     * a single API. Specify '(none)' if you do not want callers to specify a base path
      * name after the domain name.</p>
      */
     inline const Aws::String& GetBasePath() const{ return m_basePath; }
@@ -106,7 +106,7 @@ namespace Model
     /**
      * <p>The base path name that callers of the API must provide as part of the URL
      * after the domain name. This value must be unique for all of the mappings across
-     * a single API. Leave this blank if you do not want callers to specify a base path
+     * a single API. Specify '(none)' if you do not want callers to specify a base path
      * name after the domain name.</p>
      */
     inline bool BasePathHasBeenSet() const { return m_basePathHasBeenSet; }
@@ -114,7 +114,7 @@ namespace Model
     /**
      * <p>The base path name that callers of the API must provide as part of the URL
      * after the domain name. This value must be unique for all of the mappings across
-     * a single API. Leave this blank if you do not want callers to specify a base path
+     * a single API. Specify '(none)' if you do not want callers to specify a base path
      * name after the domain name.</p>
      */
     inline void SetBasePath(const Aws::String& value) { m_basePathHasBeenSet = true; m_basePath = value; }
@@ -122,7 +122,7 @@ namespace Model
     /**
      * <p>The base path name that callers of the API must provide as part of the URL
      * after the domain name. This value must be unique for all of the mappings across
-     * a single API. Leave this blank if you do not want callers to specify a base path
+     * a single API. Specify '(none)' if you do not want callers to specify a base path
      * name after the domain name.</p>
      */
     inline void SetBasePath(Aws::String&& value) { m_basePathHasBeenSet = true; m_basePath = std::move(value); }
@@ -130,7 +130,7 @@ namespace Model
     /**
      * <p>The base path name that callers of the API must provide as part of the URL
      * after the domain name. This value must be unique for all of the mappings across
-     * a single API. Leave this blank if you do not want callers to specify a base path
+     * a single API. Specify '(none)' if you do not want callers to specify a base path
      * name after the domain name.</p>
      */
     inline void SetBasePath(const char* value) { m_basePathHasBeenSet = true; m_basePath.assign(value); }
@@ -138,7 +138,7 @@ namespace Model
     /**
      * <p>The base path name that callers of the API must provide as part of the URL
      * after the domain name. This value must be unique for all of the mappings across
-     * a single API. Leave this blank if you do not want callers to specify a base path
+     * a single API. Specify '(none)' if you do not want callers to specify a base path
      * name after the domain name.</p>
      */
     inline CreateBasePathMappingRequest& WithBasePath(const Aws::String& value) { SetBasePath(value); return *this;}
@@ -146,7 +146,7 @@ namespace Model
     /**
      * <p>The base path name that callers of the API must provide as part of the URL
      * after the domain name. This value must be unique for all of the mappings across
-     * a single API. Leave this blank if you do not want callers to specify a base path
+     * a single API. Specify '(none)' if you do not want callers to specify a base path
      * name after the domain name.</p>
      */
     inline CreateBasePathMappingRequest& WithBasePath(Aws::String&& value) { SetBasePath(std::move(value)); return *this;}
@@ -154,7 +154,7 @@ namespace Model
     /**
      * <p>The base path name that callers of the API must provide as part of the URL
      * after the domain name. This value must be unique for all of the mappings across
-     * a single API. Leave this blank if you do not want callers to specify a base path
+     * a single API. Specify '(none)' if you do not want callers to specify a base path
      * name after the domain name.</p>
      */
     inline CreateBasePathMappingRequest& WithBasePath(const char* value) { SetBasePath(value); return *this;}
@@ -202,58 +202,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the API's stage that you want to use for this mapping. Leave this
-     * blank if you do not want callers to explicitly specify the stage name after any
-     * base path name.</p>
+     * <p>The name of the API's stage that you want to use for this mapping. Specify
+     * '(none)' if you do not want callers to explicitly specify the stage name after
+     * any base path name.</p>
      */
     inline const Aws::String& GetStage() const{ return m_stage; }
 
     /**
-     * <p>The name of the API's stage that you want to use for this mapping. Leave this
-     * blank if you do not want callers to explicitly specify the stage name after any
-     * base path name.</p>
+     * <p>The name of the API's stage that you want to use for this mapping. Specify
+     * '(none)' if you do not want callers to explicitly specify the stage name after
+     * any base path name.</p>
      */
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
 
     /**
-     * <p>The name of the API's stage that you want to use for this mapping. Leave this
-     * blank if you do not want callers to explicitly specify the stage name after any
-     * base path name.</p>
+     * <p>The name of the API's stage that you want to use for this mapping. Specify
+     * '(none)' if you do not want callers to explicitly specify the stage name after
+     * any base path name.</p>
      */
     inline void SetStage(const Aws::String& value) { m_stageHasBeenSet = true; m_stage = value; }
 
     /**
-     * <p>The name of the API's stage that you want to use for this mapping. Leave this
-     * blank if you do not want callers to explicitly specify the stage name after any
-     * base path name.</p>
+     * <p>The name of the API's stage that you want to use for this mapping. Specify
+     * '(none)' if you do not want callers to explicitly specify the stage name after
+     * any base path name.</p>
      */
     inline void SetStage(Aws::String&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
 
     /**
-     * <p>The name of the API's stage that you want to use for this mapping. Leave this
-     * blank if you do not want callers to explicitly specify the stage name after any
-     * base path name.</p>
+     * <p>The name of the API's stage that you want to use for this mapping. Specify
+     * '(none)' if you do not want callers to explicitly specify the stage name after
+     * any base path name.</p>
      */
     inline void SetStage(const char* value) { m_stageHasBeenSet = true; m_stage.assign(value); }
 
     /**
-     * <p>The name of the API's stage that you want to use for this mapping. Leave this
-     * blank if you do not want callers to explicitly specify the stage name after any
-     * base path name.</p>
+     * <p>The name of the API's stage that you want to use for this mapping. Specify
+     * '(none)' if you do not want callers to explicitly specify the stage name after
+     * any base path name.</p>
      */
     inline CreateBasePathMappingRequest& WithStage(const Aws::String& value) { SetStage(value); return *this;}
 
     /**
-     * <p>The name of the API's stage that you want to use for this mapping. Leave this
-     * blank if you do not want callers to explicitly specify the stage name after any
-     * base path name.</p>
+     * <p>The name of the API's stage that you want to use for this mapping. Specify
+     * '(none)' if you do not want callers to explicitly specify the stage name after
+     * any base path name.</p>
      */
     inline CreateBasePathMappingRequest& WithStage(Aws::String&& value) { SetStage(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the API's stage that you want to use for this mapping. Leave this
-     * blank if you do not want callers to explicitly specify the stage name after any
-     * base path name.</p>
+     * <p>The name of the API's stage that you want to use for this mapping. Specify
+     * '(none)' if you do not want callers to explicitly specify the stage name after
+     * any base path name.</p>
      */
     inline CreateBasePathMappingRequest& WithStage(const char* value) { SetStage(value); return *this;}
 

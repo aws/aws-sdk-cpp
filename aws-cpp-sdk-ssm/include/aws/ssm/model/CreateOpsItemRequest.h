@@ -96,13 +96,20 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
+     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * other users in the account or you can restrict search access. Searchable data
+     * means that all users with access to the OpsItem Overview page (as provided by
+     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
+     * data. Operational data that is not searchable is only viewable by users who have
+     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
+     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
+     * related resource in the request. Use the <code>/aws/automations</code> key in
+     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
+     * CLI example commands that use these keys, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, OpsItemDataValue>& GetOperationalData() const{ return m_operationalData; }
 
@@ -111,13 +118,20 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
+     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * other users in the account or you can restrict search access. Searchable data
+     * means that all users with access to the OpsItem Overview page (as provided by
+     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
+     * data. Operational data that is not searchable is only viewable by users who have
+     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
+     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
+     * related resource in the request. Use the <code>/aws/automations</code> key in
+     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
+     * CLI example commands that use these keys, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline bool OperationalDataHasBeenSet() const { return m_operationalDataHasBeenSet; }
 
@@ -126,13 +140,20 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
+     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * other users in the account or you can restrict search access. Searchable data
+     * means that all users with access to the OpsItem Overview page (as provided by
+     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
+     * data. Operational data that is not searchable is only viewable by users who have
+     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
+     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
+     * related resource in the request. Use the <code>/aws/automations</code> key in
+     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
+     * CLI example commands that use these keys, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetOperationalData(const Aws::Map<Aws::String, OpsItemDataValue>& value) { m_operationalDataHasBeenSet = true; m_operationalData = value; }
 
@@ -141,13 +162,20 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
+     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * other users in the account or you can restrict search access. Searchable data
+     * means that all users with access to the OpsItem Overview page (as provided by
+     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
+     * data. Operational data that is not searchable is only viewable by users who have
+     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
+     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
+     * related resource in the request. Use the <code>/aws/automations</code> key in
+     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
+     * CLI example commands that use these keys, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetOperationalData(Aws::Map<Aws::String, OpsItemDataValue>&& value) { m_operationalDataHasBeenSet = true; m_operationalData = std::move(value); }
 
@@ -156,13 +184,20 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
+     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * other users in the account or you can restrict search access. Searchable data
+     * means that all users with access to the OpsItem Overview page (as provided by
+     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
+     * data. Operational data that is not searchable is only viewable by users who have
+     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
+     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
+     * related resource in the request. Use the <code>/aws/automations</code> key in
+     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
+     * CLI example commands that use these keys, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateOpsItemRequest& WithOperationalData(const Aws::Map<Aws::String, OpsItemDataValue>& value) { SetOperationalData(value); return *this;}
 
@@ -171,13 +206,20 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
+     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * other users in the account or you can restrict search access. Searchable data
+     * means that all users with access to the OpsItem Overview page (as provided by
+     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
+     * data. Operational data that is not searchable is only viewable by users who have
+     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
+     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
+     * related resource in the request. Use the <code>/aws/automations</code> key in
+     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
+     * CLI example commands that use these keys, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateOpsItemRequest& WithOperationalData(Aws::Map<Aws::String, OpsItemDataValue>&& value) { SetOperationalData(std::move(value)); return *this;}
 
@@ -186,13 +228,20 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
+     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * other users in the account or you can restrict search access. Searchable data
+     * means that all users with access to the OpsItem Overview page (as provided by
+     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
+     * data. Operational data that is not searchable is only viewable by users who have
+     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
+     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
+     * related resource in the request. Use the <code>/aws/automations</code> key in
+     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
+     * CLI example commands that use these keys, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateOpsItemRequest& AddOperationalData(const Aws::String& key, const OpsItemDataValue& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, value); return *this; }
 
@@ -201,13 +250,20 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
+     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * other users in the account or you can restrict search access. Searchable data
+     * means that all users with access to the OpsItem Overview page (as provided by
+     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
+     * data. Operational data that is not searchable is only viewable by users who have
+     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
+     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
+     * related resource in the request. Use the <code>/aws/automations</code> key in
+     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
+     * CLI example commands that use these keys, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateOpsItemRequest& AddOperationalData(Aws::String&& key, const OpsItemDataValue& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(std::move(key), value); return *this; }
 
@@ -216,13 +272,20 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
+     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * other users in the account or you can restrict search access. Searchable data
+     * means that all users with access to the OpsItem Overview page (as provided by
+     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
+     * data. Operational data that is not searchable is only viewable by users who have
+     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
+     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
+     * related resource in the request. Use the <code>/aws/automations</code> key in
+     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
+     * CLI example commands that use these keys, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateOpsItemRequest& AddOperationalData(const Aws::String& key, OpsItemDataValue&& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, std::move(value)); return *this; }
 
@@ -231,13 +294,20 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
+     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * other users in the account or you can restrict search access. Searchable data
+     * means that all users with access to the OpsItem Overview page (as provided by
+     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
+     * data. Operational data that is not searchable is only viewable by users who have
+     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
+     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
+     * related resource in the request. Use the <code>/aws/automations</code> key in
+     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
+     * CLI example commands that use these keys, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateOpsItemRequest& AddOperationalData(Aws::String&& key, OpsItemDataValue&& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -246,13 +316,20 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
+     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * other users in the account or you can restrict search access. Searchable data
+     * means that all users with access to the OpsItem Overview page (as provided by
+     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
+     * data. Operational data that is not searchable is only viewable by users who have
+     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
+     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
+     * related resource in the request. Use the <code>/aws/automations</code> key in
+     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
+     * CLI example commands that use these keys, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateOpsItemRequest& AddOperationalData(const char* key, OpsItemDataValue&& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, std::move(value)); return *this; }
 
@@ -261,13 +338,20 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <p>This custom data is searchable, but with
-     * restrictions. For the <code>Searchable operational data</code> feature, all
-     * users with access to the OpsItem Overview page (as provided by the
-     * <a>DescribeOpsItems</a> API action) can view and search on the specified data.
-     * For the <code>Private operational data</code> feature, the data is only viewable
-     * by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a>
-     * API action).</p>
+     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
+     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * other users in the account or you can restrict search access. Searchable data
+     * means that all users with access to the OpsItem Overview page (as provided by
+     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
+     * data. Operational data that is not searchable is only viewable by users who have
+     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
+     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
+     * related resource in the request. Use the <code>/aws/automations</code> key in
+     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
+     * CLI example commands that use these keys, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateOpsItemRequest& AddOperationalData(const char* key, const OpsItemDataValue& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, value); return *this; }
 
@@ -494,98 +578,98 @@ namespace Model
 
 
     /**
-     * <p>Optional metadata that you assign to a resource. Tags enable you to
-     * categorize a resource in different ways, such as by purpose, owner, or
-     * environment. For example, you might want to tag an OpsItem to identify the AWS
-     * resource or the type of issue. In this case, you could specify the following key
-     * name/value pairs:</p> <ul> <li> <p> <code>Key=source,Value=EC2-instance</code>
-     * </p> </li> <li> <p> <code>Key=status,Value=stopped</code> </p> </li> </ul>
-     * <note> <p>To add tags to an existing OpsItem, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * <p>Optional metadata that you assign to a resource. You can restrict access to
+     * OpsItems by using an inline IAM policy that specifies tags. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
+     * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * <p>Tags use a key-value pair. For example:</p> <p>
+     * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
+     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Optional metadata that you assign to a resource. Tags enable you to
-     * categorize a resource in different ways, such as by purpose, owner, or
-     * environment. For example, you might want to tag an OpsItem to identify the AWS
-     * resource or the type of issue. In this case, you could specify the following key
-     * name/value pairs:</p> <ul> <li> <p> <code>Key=source,Value=EC2-instance</code>
-     * </p> </li> <li> <p> <code>Key=status,Value=stopped</code> </p> </li> </ul>
-     * <note> <p>To add tags to an existing OpsItem, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * <p>Optional metadata that you assign to a resource. You can restrict access to
+     * OpsItems by using an inline IAM policy that specifies tags. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
+     * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * <p>Tags use a key-value pair. For example:</p> <p>
+     * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
+     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Optional metadata that you assign to a resource. Tags enable you to
-     * categorize a resource in different ways, such as by purpose, owner, or
-     * environment. For example, you might want to tag an OpsItem to identify the AWS
-     * resource or the type of issue. In this case, you could specify the following key
-     * name/value pairs:</p> <ul> <li> <p> <code>Key=source,Value=EC2-instance</code>
-     * </p> </li> <li> <p> <code>Key=status,Value=stopped</code> </p> </li> </ul>
-     * <note> <p>To add tags to an existing OpsItem, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * <p>Optional metadata that you assign to a resource. You can restrict access to
+     * OpsItems by using an inline IAM policy that specifies tags. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
+     * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * <p>Tags use a key-value pair. For example:</p> <p>
+     * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
+     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Optional metadata that you assign to a resource. Tags enable you to
-     * categorize a resource in different ways, such as by purpose, owner, or
-     * environment. For example, you might want to tag an OpsItem to identify the AWS
-     * resource or the type of issue. In this case, you could specify the following key
-     * name/value pairs:</p> <ul> <li> <p> <code>Key=source,Value=EC2-instance</code>
-     * </p> </li> <li> <p> <code>Key=status,Value=stopped</code> </p> </li> </ul>
-     * <note> <p>To add tags to an existing OpsItem, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * <p>Optional metadata that you assign to a resource. You can restrict access to
+     * OpsItems by using an inline IAM policy that specifies tags. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
+     * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * <p>Tags use a key-value pair. For example:</p> <p>
+     * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
+     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Optional metadata that you assign to a resource. Tags enable you to
-     * categorize a resource in different ways, such as by purpose, owner, or
-     * environment. For example, you might want to tag an OpsItem to identify the AWS
-     * resource or the type of issue. In this case, you could specify the following key
-     * name/value pairs:</p> <ul> <li> <p> <code>Key=source,Value=EC2-instance</code>
-     * </p> </li> <li> <p> <code>Key=status,Value=stopped</code> </p> </li> </ul>
-     * <note> <p>To add tags to an existing OpsItem, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * <p>Optional metadata that you assign to a resource. You can restrict access to
+     * OpsItems by using an inline IAM policy that specifies tags. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
+     * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * <p>Tags use a key-value pair. For example:</p> <p>
+     * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
+     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
      */
     inline CreateOpsItemRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Optional metadata that you assign to a resource. Tags enable you to
-     * categorize a resource in different ways, such as by purpose, owner, or
-     * environment. For example, you might want to tag an OpsItem to identify the AWS
-     * resource or the type of issue. In this case, you could specify the following key
-     * name/value pairs:</p> <ul> <li> <p> <code>Key=source,Value=EC2-instance</code>
-     * </p> </li> <li> <p> <code>Key=status,Value=stopped</code> </p> </li> </ul>
-     * <note> <p>To add tags to an existing OpsItem, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * <p>Optional metadata that you assign to a resource. You can restrict access to
+     * OpsItems by using an inline IAM policy that specifies tags. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
+     * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * <p>Tags use a key-value pair. For example:</p> <p>
+     * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
+     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
      */
     inline CreateOpsItemRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Optional metadata that you assign to a resource. Tags enable you to
-     * categorize a resource in different ways, such as by purpose, owner, or
-     * environment. For example, you might want to tag an OpsItem to identify the AWS
-     * resource or the type of issue. In this case, you could specify the following key
-     * name/value pairs:</p> <ul> <li> <p> <code>Key=source,Value=EC2-instance</code>
-     * </p> </li> <li> <p> <code>Key=status,Value=stopped</code> </p> </li> </ul>
-     * <note> <p>To add tags to an existing OpsItem, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * <p>Optional metadata that you assign to a resource. You can restrict access to
+     * OpsItems by using an inline IAM policy that specifies tags. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
+     * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * <p>Tags use a key-value pair. For example:</p> <p>
+     * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
+     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
      */
     inline CreateOpsItemRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Optional metadata that you assign to a resource. Tags enable you to
-     * categorize a resource in different ways, such as by purpose, owner, or
-     * environment. For example, you might want to tag an OpsItem to identify the AWS
-     * resource or the type of issue. In this case, you could specify the following key
-     * name/value pairs:</p> <ul> <li> <p> <code>Key=source,Value=EC2-instance</code>
-     * </p> </li> <li> <p> <code>Key=status,Value=stopped</code> </p> </li> </ul>
-     * <note> <p>To add tags to an existing OpsItem, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * <p>Optional metadata that you assign to a resource. You can restrict access to
+     * OpsItems by using an inline IAM policy that specifies tags. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
+     * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * <p>Tags use a key-value pair. For example:</p> <p>
+     * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
+     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
      */
     inline CreateOpsItemRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

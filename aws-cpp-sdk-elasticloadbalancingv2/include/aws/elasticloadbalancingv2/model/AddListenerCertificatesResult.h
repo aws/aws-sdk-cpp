@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Information about the certificates.</p>
+     * <p>Information about the certificates in the certificate list.</p>
      */
     inline const Aws::Vector<Certificate>& GetCertificates() const{ return m_certificates; }
 
     /**
-     * <p>Information about the certificates.</p>
+     * <p>Information about the certificates in the certificate list.</p>
      */
     inline void SetCertificates(const Aws::Vector<Certificate>& value) { m_certificates = value; }
 
     /**
-     * <p>Information about the certificates.</p>
+     * <p>Information about the certificates in the certificate list.</p>
      */
     inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificates = std::move(value); }
 
     /**
-     * <p>Information about the certificates.</p>
+     * <p>Information about the certificates in the certificate list.</p>
      */
     inline AddListenerCertificatesResult& WithCertificates(const Aws::Vector<Certificate>& value) { SetCertificates(value); return *this;}
 
     /**
-     * <p>Information about the certificates.</p>
+     * <p>Information about the certificates in the certificate list.</p>
      */
     inline AddListenerCertificatesResult& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the certificates.</p>
+     * <p>Information about the certificates in the certificate list.</p>
      */
     inline AddListenerCertificatesResult& AddCertificates(const Certificate& value) { m_certificates.push_back(value); return *this; }
 
     /**
-     * <p>Information about the certificates.</p>
+     * <p>Information about the certificates in the certificate list.</p>
      */
     inline AddListenerCertificatesResult& AddCertificates(Certificate&& value) { m_certificates.push_back(std::move(value)); return *this; }
 

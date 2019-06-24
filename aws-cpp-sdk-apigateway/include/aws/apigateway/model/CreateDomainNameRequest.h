@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/apigateway/model/EndpointConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/apigateway/model/SecurityPolicy.h>
 #include <utility>
 
 namespace Aws
@@ -623,6 +624,49 @@ namespace Model
      */
     inline CreateDomainNameRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The Transport Layer Security (TLS) version + cipher suite for this
+     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * <code>TLS_1_2</code>.</p>
+     */
+    inline const SecurityPolicy& GetSecurityPolicy() const{ return m_securityPolicy; }
+
+    /**
+     * <p>The Transport Layer Security (TLS) version + cipher suite for this
+     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * <code>TLS_1_2</code>.</p>
+     */
+    inline bool SecurityPolicyHasBeenSet() const { return m_securityPolicyHasBeenSet; }
+
+    /**
+     * <p>The Transport Layer Security (TLS) version + cipher suite for this
+     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * <code>TLS_1_2</code>.</p>
+     */
+    inline void SetSecurityPolicy(const SecurityPolicy& value) { m_securityPolicyHasBeenSet = true; m_securityPolicy = value; }
+
+    /**
+     * <p>The Transport Layer Security (TLS) version + cipher suite for this
+     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * <code>TLS_1_2</code>.</p>
+     */
+    inline void SetSecurityPolicy(SecurityPolicy&& value) { m_securityPolicyHasBeenSet = true; m_securityPolicy = std::move(value); }
+
+    /**
+     * <p>The Transport Layer Security (TLS) version + cipher suite for this
+     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * <code>TLS_1_2</code>.</p>
+     */
+    inline CreateDomainNameRequest& WithSecurityPolicy(const SecurityPolicy& value) { SetSecurityPolicy(value); return *this;}
+
+    /**
+     * <p>The Transport Layer Security (TLS) version + cipher suite for this
+     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * <code>TLS_1_2</code>.</p>
+     */
+    inline CreateDomainNameRequest& WithSecurityPolicy(SecurityPolicy&& value) { SetSecurityPolicy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -654,6 +698,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    SecurityPolicy m_securityPolicy;
+    bool m_securityPolicyHasBeenSet;
   };
 
 } // namespace Model

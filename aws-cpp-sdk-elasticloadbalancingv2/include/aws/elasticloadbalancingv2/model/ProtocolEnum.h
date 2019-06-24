@@ -29,7 +29,9 @@ namespace Model
     HTTP,
     HTTPS,
     TCP,
-    TLS
+    TLS,
+    UDP,
+    TCP_UDP
   };
 
 namespace ProtocolEnumMapper

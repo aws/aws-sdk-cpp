@@ -29,7 +29,9 @@ namespace Model
     AVAILABLE,
     CREATING,
     FAILED,
-    DELETING
+    DELETING,
+    MISCONFIGURED,
+    UPDATING
   };
 
 namespace FileSystemLifecycleMapper

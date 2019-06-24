@@ -44,72 +44,72 @@ namespace Model
 
 
     /**
-     * <p>The list of standards that you want to enable.</p> <important> <p>In this
-     * release, Security Hub supports only the CIS AWS Foundations standard.</p> <p>Its
-     * ARN is
+     * <p>The list of standards compliance checks to enable.</p> <important> <p>In this
+     * release, Security Hub supports only the CIS AWS Foundations standard.</p> <p>The
+     * ARN for the standard is
      * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.</p>
      * </important>
      */
     inline const Aws::Vector<StandardsSubscriptionRequest>& GetStandardsSubscriptionRequests() const{ return m_standardsSubscriptionRequests; }
 
     /**
-     * <p>The list of standards that you want to enable.</p> <important> <p>In this
-     * release, Security Hub supports only the CIS AWS Foundations standard.</p> <p>Its
-     * ARN is
+     * <p>The list of standards compliance checks to enable.</p> <important> <p>In this
+     * release, Security Hub supports only the CIS AWS Foundations standard.</p> <p>The
+     * ARN for the standard is
      * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.</p>
      * </important>
      */
     inline bool StandardsSubscriptionRequestsHasBeenSet() const { return m_standardsSubscriptionRequestsHasBeenSet; }
 
     /**
-     * <p>The list of standards that you want to enable.</p> <important> <p>In this
-     * release, Security Hub supports only the CIS AWS Foundations standard.</p> <p>Its
-     * ARN is
+     * <p>The list of standards compliance checks to enable.</p> <important> <p>In this
+     * release, Security Hub supports only the CIS AWS Foundations standard.</p> <p>The
+     * ARN for the standard is
      * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.</p>
      * </important>
      */
     inline void SetStandardsSubscriptionRequests(const Aws::Vector<StandardsSubscriptionRequest>& value) { m_standardsSubscriptionRequestsHasBeenSet = true; m_standardsSubscriptionRequests = value; }
 
     /**
-     * <p>The list of standards that you want to enable.</p> <important> <p>In this
-     * release, Security Hub supports only the CIS AWS Foundations standard.</p> <p>Its
-     * ARN is
+     * <p>The list of standards compliance checks to enable.</p> <important> <p>In this
+     * release, Security Hub supports only the CIS AWS Foundations standard.</p> <p>The
+     * ARN for the standard is
      * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.</p>
      * </important>
      */
     inline void SetStandardsSubscriptionRequests(Aws::Vector<StandardsSubscriptionRequest>&& value) { m_standardsSubscriptionRequestsHasBeenSet = true; m_standardsSubscriptionRequests = std::move(value); }
 
     /**
-     * <p>The list of standards that you want to enable.</p> <important> <p>In this
-     * release, Security Hub supports only the CIS AWS Foundations standard.</p> <p>Its
-     * ARN is
+     * <p>The list of standards compliance checks to enable.</p> <important> <p>In this
+     * release, Security Hub supports only the CIS AWS Foundations standard.</p> <p>The
+     * ARN for the standard is
      * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.</p>
      * </important>
      */
     inline BatchEnableStandardsRequest& WithStandardsSubscriptionRequests(const Aws::Vector<StandardsSubscriptionRequest>& value) { SetStandardsSubscriptionRequests(value); return *this;}
 
     /**
-     * <p>The list of standards that you want to enable.</p> <important> <p>In this
-     * release, Security Hub supports only the CIS AWS Foundations standard.</p> <p>Its
-     * ARN is
+     * <p>The list of standards compliance checks to enable.</p> <important> <p>In this
+     * release, Security Hub supports only the CIS AWS Foundations standard.</p> <p>The
+     * ARN for the standard is
      * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.</p>
      * </important>
      */
     inline BatchEnableStandardsRequest& WithStandardsSubscriptionRequests(Aws::Vector<StandardsSubscriptionRequest>&& value) { SetStandardsSubscriptionRequests(std::move(value)); return *this;}
 
     /**
-     * <p>The list of standards that you want to enable.</p> <important> <p>In this
-     * release, Security Hub supports only the CIS AWS Foundations standard.</p> <p>Its
-     * ARN is
+     * <p>The list of standards compliance checks to enable.</p> <important> <p>In this
+     * release, Security Hub supports only the CIS AWS Foundations standard.</p> <p>The
+     * ARN for the standard is
      * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.</p>
      * </important>
      */
     inline BatchEnableStandardsRequest& AddStandardsSubscriptionRequests(const StandardsSubscriptionRequest& value) { m_standardsSubscriptionRequestsHasBeenSet = true; m_standardsSubscriptionRequests.push_back(value); return *this; }
 
     /**
-     * <p>The list of standards that you want to enable.</p> <important> <p>In this
-     * release, Security Hub supports only the CIS AWS Foundations standard.</p> <p>Its
-     * ARN is
+     * <p>The list of standards compliance checks to enable.</p> <important> <p>In this
+     * release, Security Hub supports only the CIS AWS Foundations standard.</p> <p>The
+     * ARN for the standard is
      * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.</p>
      * </important>
      */

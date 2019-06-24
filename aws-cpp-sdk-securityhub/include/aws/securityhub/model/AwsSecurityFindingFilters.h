@@ -710,57 +710,57 @@ namespace Model
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means the underlying resources have no criticality, and a
-     * score of 100 is reserved for the most critical resources.</p>
+     * finding. A score of 0 means that the underlying resources have no criticality,
+     * and a score of 100 is reserved for the most critical resources.</p>
      */
     inline const Aws::Vector<NumberFilter>& GetCriticality() const{ return m_criticality; }
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means the underlying resources have no criticality, and a
-     * score of 100 is reserved for the most critical resources.</p>
+     * finding. A score of 0 means that the underlying resources have no criticality,
+     * and a score of 100 is reserved for the most critical resources.</p>
      */
     inline bool CriticalityHasBeenSet() const { return m_criticalityHasBeenSet; }
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means the underlying resources have no criticality, and a
-     * score of 100 is reserved for the most critical resources.</p>
+     * finding. A score of 0 means that the underlying resources have no criticality,
+     * and a score of 100 is reserved for the most critical resources.</p>
      */
     inline void SetCriticality(const Aws::Vector<NumberFilter>& value) { m_criticalityHasBeenSet = true; m_criticality = value; }
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means the underlying resources have no criticality, and a
-     * score of 100 is reserved for the most critical resources.</p>
+     * finding. A score of 0 means that the underlying resources have no criticality,
+     * and a score of 100 is reserved for the most critical resources.</p>
      */
     inline void SetCriticality(Aws::Vector<NumberFilter>&& value) { m_criticalityHasBeenSet = true; m_criticality = std::move(value); }
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means the underlying resources have no criticality, and a
-     * score of 100 is reserved for the most critical resources.</p>
+     * finding. A score of 0 means that the underlying resources have no criticality,
+     * and a score of 100 is reserved for the most critical resources.</p>
      */
     inline AwsSecurityFindingFilters& WithCriticality(const Aws::Vector<NumberFilter>& value) { SetCriticality(value); return *this;}
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means the underlying resources have no criticality, and a
-     * score of 100 is reserved for the most critical resources.</p>
+     * finding. A score of 0 means that the underlying resources have no criticality,
+     * and a score of 100 is reserved for the most critical resources.</p>
      */
     inline AwsSecurityFindingFilters& WithCriticality(Aws::Vector<NumberFilter>&& value) { SetCriticality(std::move(value)); return *this;}
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means the underlying resources have no criticality, and a
-     * score of 100 is reserved for the most critical resources.</p>
+     * finding. A score of 0 means that the underlying resources have no criticality,
+     * and a score of 100 is reserved for the most critical resources.</p>
      */
     inline AwsSecurityFindingFilters& AddCriticality(const NumberFilter& value) { m_criticalityHasBeenSet = true; m_criticality.push_back(value); return *this; }
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means the underlying resources have no criticality, and a
-     * score of 100 is reserved for the most critical resources.</p>
+     * finding. A score of 0 means that the underlying resources have no criticality,
+     * and a score of 100 is reserved for the most critical resources.</p>
      */
     inline AwsSecurityFindingFilters& AddCriticality(NumberFilter&& value) { m_criticalityHasBeenSet = true; m_criticality.push_back(std::move(value)); return *this; }
 
@@ -939,57 +939,57 @@ namespace Model
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline const Aws::Vector<MapFilter>& GetProductFields() const{ return m_productFields; }
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline bool ProductFieldsHasBeenSet() const { return m_productFieldsHasBeenSet; }
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline void SetProductFields(const Aws::Vector<MapFilter>& value) { m_productFieldsHasBeenSet = true; m_productFields = value; }
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline void SetProductFields(Aws::Vector<MapFilter>&& value) { m_productFieldsHasBeenSet = true; m_productFields = std::move(value); }
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFindingFilters& WithProductFields(const Aws::Vector<MapFilter>& value) { SetProductFields(value); return *this;}
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFindingFilters& WithProductFields(Aws::Vector<MapFilter>&& value) { SetProductFields(std::move(value)); return *this;}
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFindingFilters& AddProductFields(const MapFilter& value) { m_productFieldsHasBeenSet = true; m_productFields.push_back(value); return *this; }
 
     /**
      * <p>A data type where security-findings providers can include additional
-     * solution-specific details that aren't part of the defined AwsSecurityFinding
-     * format.</p>
+     * solution-specific details that aren't part of the defined
+     * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFindingFilters& AddProductFields(MapFilter&& value) { m_productFieldsHasBeenSet = true; m_productFields.push_back(std::move(value)); return *this; }
 
@@ -3322,42 +3322,42 @@ namespace Model
 
 
     /**
-     * <p>The veracity of a finding. </p>
+     * <p>The veracity of a finding.</p>
      */
     inline const Aws::Vector<StringFilter>& GetVerificationState() const{ return m_verificationState; }
 
     /**
-     * <p>The veracity of a finding. </p>
+     * <p>The veracity of a finding.</p>
      */
     inline bool VerificationStateHasBeenSet() const { return m_verificationStateHasBeenSet; }
 
     /**
-     * <p>The veracity of a finding. </p>
+     * <p>The veracity of a finding.</p>
      */
     inline void SetVerificationState(const Aws::Vector<StringFilter>& value) { m_verificationStateHasBeenSet = true; m_verificationState = value; }
 
     /**
-     * <p>The veracity of a finding. </p>
+     * <p>The veracity of a finding.</p>
      */
     inline void SetVerificationState(Aws::Vector<StringFilter>&& value) { m_verificationStateHasBeenSet = true; m_verificationState = std::move(value); }
 
     /**
-     * <p>The veracity of a finding. </p>
+     * <p>The veracity of a finding.</p>
      */
     inline AwsSecurityFindingFilters& WithVerificationState(const Aws::Vector<StringFilter>& value) { SetVerificationState(value); return *this;}
 
     /**
-     * <p>The veracity of a finding. </p>
+     * <p>The veracity of a finding.</p>
      */
     inline AwsSecurityFindingFilters& WithVerificationState(Aws::Vector<StringFilter>&& value) { SetVerificationState(std::move(value)); return *this;}
 
     /**
-     * <p>The veracity of a finding. </p>
+     * <p>The veracity of a finding.</p>
      */
     inline AwsSecurityFindingFilters& AddVerificationState(const StringFilter& value) { m_verificationStateHasBeenSet = true; m_verificationState.push_back(value); return *this; }
 
     /**
-     * <p>The veracity of a finding. </p>
+     * <p>The veracity of a finding.</p>
      */
     inline AwsSecurityFindingFilters& AddVerificationState(StringFilter&& value) { m_verificationStateHasBeenSet = true; m_verificationState.push_back(std::move(value)); return *this; }
 
