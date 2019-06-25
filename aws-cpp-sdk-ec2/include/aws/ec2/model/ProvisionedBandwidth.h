@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p>Reserved. If you need to sustain traffic greater than the <a
-   * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+   * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
    * limits</a>, contact us through the <a
    * href="https://console.aws.amazon.com/support/home?">Support
    * Center</a>.</p><p><h3>See Also:</h3>   <a
@@ -56,7 +56,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -64,7 +64,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -72,7 +72,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -80,7 +80,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -88,7 +88,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -96,7 +96,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -105,7 +105,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -113,7 +113,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -121,7 +121,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -129,7 +129,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -137,7 +137,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -145,7 +145,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -153,7 +153,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -161,7 +161,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -170,7 +170,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -178,7 +178,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -186,7 +186,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -194,7 +194,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -202,7 +202,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -210,7 +210,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -219,7 +219,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -227,7 +227,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -235,7 +235,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -243,7 +243,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -251,7 +251,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -259,7 +259,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -267,7 +267,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -275,7 +275,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -284,7 +284,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -292,7 +292,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -300,7 +300,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -308,7 +308,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -316,7 +316,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -324,7 +324,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -332,7 +332,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
@@ -340,7 +340,7 @@ namespace Model
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */

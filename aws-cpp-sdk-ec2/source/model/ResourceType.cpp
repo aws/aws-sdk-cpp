@@ -51,6 +51,9 @@ namespace Aws
         static const int snapshot_HASH = HashingUtils::HashString("snapshot");
         static const int spot_instances_request_HASH = HashingUtils::HashString("spot-instances-request");
         static const int subnet_HASH = HashingUtils::HashString("subnet");
+        static const int traffic_mirror_filter_HASH = HashingUtils::HashString("traffic-mirror-filter");
+        static const int traffic_mirror_session_HASH = HashingUtils::HashString("traffic-mirror-session");
+        static const int traffic_mirror_target_HASH = HashingUtils::HashString("traffic-mirror-target");
         static const int transit_gateway_HASH = HashingUtils::HashString("transit-gateway");
         static const int transit_gateway_attachment_HASH = HashingUtils::HashString("transit-gateway-attachment");
         static const int transit_gateway_route_table_HASH = HashingUtils::HashString("transit-gateway-route-table");
@@ -148,6 +151,18 @@ namespace Aws
           {
             return ResourceType::subnet;
           }
+          else if (hashCode == traffic_mirror_filter_HASH)
+          {
+            return ResourceType::traffic_mirror_filter;
+          }
+          else if (hashCode == traffic_mirror_session_HASH)
+          {
+            return ResourceType::traffic_mirror_session;
+          }
+          else if (hashCode == traffic_mirror_target_HASH)
+          {
+            return ResourceType::traffic_mirror_target;
+          }
           else if (hashCode == transit_gateway_HASH)
           {
             return ResourceType::transit_gateway;
@@ -236,6 +251,12 @@ namespace Aws
             return "spot-instances-request";
           case ResourceType::subnet:
             return "subnet";
+          case ResourceType::traffic_mirror_filter:
+            return "traffic-mirror-filter";
+          case ResourceType::traffic_mirror_session:
+            return "traffic-mirror-session";
+          case ResourceType::traffic_mirror_target:
+            return "traffic-mirror-target";
           case ResourceType::transit_gateway:
             return "transit-gateway";
           case ResourceType::transit_gateway_attachment:

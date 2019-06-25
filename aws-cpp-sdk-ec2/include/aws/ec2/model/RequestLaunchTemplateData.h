@@ -291,49 +291,49 @@ namespace Model
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify any security groups as part of the network interface.</p>
+     * specify any security groups and subnets as part of the network interface.</p>
      */
     inline const Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify any security groups as part of the network interface.</p>
+     * specify any security groups and subnets as part of the network interface.</p>
      */
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify any security groups as part of the network interface.</p>
+     * specify any security groups and subnets as part of the network interface.</p>
      */
     inline void SetNetworkInterfaces(const Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify any security groups as part of the network interface.</p>
+     * specify any security groups and subnets as part of the network interface.</p>
      */
     inline void SetNetworkInterfaces(Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify any security groups as part of the network interface.</p>
+     * specify any security groups and subnets as part of the network interface.</p>
      */
     inline RequestLaunchTemplateData& WithNetworkInterfaces(const Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify any security groups as part of the network interface.</p>
+     * specify any security groups and subnets as part of the network interface.</p>
      */
     inline RequestLaunchTemplateData& WithNetworkInterfaces(Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify any security groups as part of the network interface.</p>
+     * specify any security groups and subnets as part of the network interface.</p>
      */
     inline RequestLaunchTemplateData& AddNetworkInterfaces(const LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify any security groups as part of the network interface.</p>
+     * specify any security groups and subnets as part of the network interface.</p>
      */
     inline RequestLaunchTemplateData& AddNetworkInterfaces(LaunchTemplateInstanceNetworkInterfaceSpecificationRequest&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 

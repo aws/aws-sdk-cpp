@@ -888,50 +888,58 @@ namespace Model
 
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>You cannot
-     * specify this option and the network interfaces option in the same request.</p>
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>If you
+     * specify a network interface, you must specify any subnets as part of the network
+     * interface.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>You cannot
-     * specify this option and the network interfaces option in the same request.</p>
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>If you
+     * specify a network interface, you must specify any subnets as part of the network
+     * interface.</p>
      */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>You cannot
-     * specify this option and the network interfaces option in the same request.</p>
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>If you
+     * specify a network interface, you must specify any subnets as part of the network
+     * interface.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>You cannot
-     * specify this option and the network interfaces option in the same request.</p>
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>If you
+     * specify a network interface, you must specify any subnets as part of the network
+     * interface.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>You cannot
-     * specify this option and the network interfaces option in the same request.</p>
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>If you
+     * specify a network interface, you must specify any subnets as part of the network
+     * interface.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>You cannot
-     * specify this option and the network interfaces option in the same request.</p>
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>If you
+     * specify a network interface, you must specify any subnets as part of the network
+     * interface.</p>
      */
     inline RunInstancesRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>You cannot
-     * specify this option and the network interfaces option in the same request.</p>
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>If you
+     * specify a network interface, you must specify any subnets as part of the network
+     * interface.</p>
      */
     inline RunInstancesRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>You cannot
-     * specify this option and the network interfaces option in the same request.</p>
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>If you
+     * specify a network interface, you must specify any subnets as part of the network
+     * interface.</p>
      */
     inline RunInstancesRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
@@ -1326,57 +1334,57 @@ namespace Model
 
     /**
      * <p>The network interfaces to associate with the instance. If you specify a
-     * network interface, you must specify any security groups as part of the network
-     * interface.</p>
+     * network interface, you must specify any security groups and subnets as part of
+     * the network interface.</p>
      */
     inline const Aws::Vector<InstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
     /**
      * <p>The network interfaces to associate with the instance. If you specify a
-     * network interface, you must specify any security groups as part of the network
-     * interface.</p>
+     * network interface, you must specify any security groups and subnets as part of
+     * the network interface.</p>
      */
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
      * <p>The network interfaces to associate with the instance. If you specify a
-     * network interface, you must specify any security groups as part of the network
-     * interface.</p>
+     * network interface, you must specify any security groups and subnets as part of
+     * the network interface.</p>
      */
     inline void SetNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
 
     /**
      * <p>The network interfaces to associate with the instance. If you specify a
-     * network interface, you must specify any security groups as part of the network
-     * interface.</p>
+     * network interface, you must specify any security groups and subnets as part of
+     * the network interface.</p>
      */
     inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
 
     /**
      * <p>The network interfaces to associate with the instance. If you specify a
-     * network interface, you must specify any security groups as part of the network
-     * interface.</p>
+     * network interface, you must specify any security groups and subnets as part of
+     * the network interface.</p>
      */
     inline RunInstancesRequest& WithNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
      * <p>The network interfaces to associate with the instance. If you specify a
-     * network interface, you must specify any security groups as part of the network
-     * interface.</p>
+     * network interface, you must specify any security groups and subnets as part of
+     * the network interface.</p>
      */
     inline RunInstancesRequest& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
      * <p>The network interfaces to associate with the instance. If you specify a
-     * network interface, you must specify any security groups as part of the network
-     * interface.</p>
+     * network interface, you must specify any security groups and subnets as part of
+     * the network interface.</p>
      */
     inline RunInstancesRequest& AddNetworkInterfaces(const InstanceNetworkInterfaceSpecification& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
     /**
      * <p>The network interfaces to associate with the instance. If you specify a
-     * network interface, you must specify any security groups as part of the network
-     * interface.</p>
+     * network interface, you must specify any security groups and subnets as part of
+     * the network interface.</p>
      */
     inline RunInstancesRequest& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 

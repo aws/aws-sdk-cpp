@@ -366,32 +366,32 @@ namespace Model
 
 
     /**
-     * <p>The value is <code>Windows</code> for Windows AMIs; otherwise blank.</p>
+     * <p>This value is set for Windows AMIs; otherwise, it is blank.</p>
      */
     inline const PlatformValues& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p>The value is <code>Windows</code> for Windows AMIs; otherwise blank.</p>
+     * <p>This value is set for Windows AMIs; otherwise, it is blank.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p>The value is <code>Windows</code> for Windows AMIs; otherwise blank.</p>
+     * <p>This value is set for Windows AMIs; otherwise, it is blank.</p>
      */
     inline void SetPlatform(const PlatformValues& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p>The value is <code>Windows</code> for Windows AMIs; otherwise blank.</p>
+     * <p>This value is set for Windows AMIs; otherwise, it is blank.</p>
      */
     inline void SetPlatform(PlatformValues&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p>The value is <code>Windows</code> for Windows AMIs; otherwise blank.</p>
+     * <p>This value is set for Windows AMIs; otherwise, it is blank.</p>
      */
     inline Image& WithPlatform(const PlatformValues& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The value is <code>Windows</code> for Windows AMIs; otherwise blank.</p>
+     * <p>This value is set for Windows AMIs; otherwise, it is blank.</p>
      */
     inline Image& WithPlatform(PlatformValues&& value) { SetPlatform(std::move(value)); return *this;}
 
