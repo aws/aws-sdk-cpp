@@ -353,24 +353,24 @@ namespace Model
    * </li> <li> <p> <a>UpdateDefaultBranch</a>, which changes the default branch for
    * a repository.</p> </li> </ul> <p>Files, by calling the following:</p> <ul> <li>
    * <p> <a>DeleteFile</a>, which deletes the content of a specified file from a
-   * specified branch.</p> </li> <li> <p> <a>GetFile</a>, which returns the base-64
-   * encoded content of a specified file.</p> </li> <li> <p> <a>GetFolder</a>, which
-   * returns the contents of a specified folder or directory.</p> </li> <li> <p>
-   * <a>PutFile</a>, which adds or modifies a file in a specified repository and
-   * branch.</p> </li> </ul> <p>Information about committed code in a repository, by
-   * calling the following:</p> <ul> <li> <p> <a>CreateCommit</a>, which creates a
-   * commit for changes to a repository.</p> </li> <li> <p> <a>GetBlob</a>, which
-   * returns the base-64 encoded content of an individual Git blob object within a
-   * repository.</p> </li> <li> <p> <a>GetCommit</a>, which returns information about
-   * a commit, including commit messages and author and committer information.</p>
-   * </li> <li> <p> <a>GetDifferences</a>, which returns information about the
-   * differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID
-   * or other fully qualified reference).</p> </li> </ul> <p>Merges, by calling the
-   * following:</p> <ul> <li> <p> <a>BatchDescribeMergeConflicts</a>, which returns
-   * information about conflicts in a merge between commits in a repository.</p>
-   * </li> <li> <p> <a>CreateUnreferencedMergeCommit</a>, which creates an
-   * unreferenced commit between two branches or commits for the purpose of comparing
-   * them and identifying any potential conflicts.</p> </li> <li> <p>
+   * specified branch.</p> </li> <li> <p> <a>GetBlob</a>, which returns the base-64
+   * encoded content of an individual Git blob object within a repository.</p> </li>
+   * <li> <p> <a>GetFile</a>, which returns the base-64 encoded content of a
+   * specified file.</p> </li> <li> <p> <a>GetFolder</a>, which returns the contents
+   * of a specified folder or directory.</p> </li> <li> <p> <a>PutFile</a>, which
+   * adds or modifies a single file in a specified repository and branch.</p> </li>
+   * </ul> <p>Commits, by calling the following:</p> <ul> <li> <p>
+   * <a>CreateCommit</a>, which creates a commit for changes to a repository.</p>
+   * </li> <li> <p> <a>GetCommit</a>, which returns information about a commit,
+   * including commit messages and author and committer information.</p> </li> <li>
+   * <p> <a>GetDifferences</a>, which returns information about the differences in a
+   * valid commit specifier (such as a branch, tag, HEAD, commit ID or other fully
+   * qualified reference).</p> </li> </ul> <p>Merges, by calling the following:</p>
+   * <ul> <li> <p> <a>BatchDescribeMergeConflicts</a>, which returns information
+   * about conflicts in a merge between commits in a repository.</p> </li> <li> <p>
+   * <a>CreateUnreferencedMergeCommit</a>, which creates an unreferenced commit
+   * between two branches or commits for the purpose of comparing them and
+   * identifying any potential conflicts.</p> </li> <li> <p>
    * <a>DescribeMergeConflicts</a>, which returns information about merge conflicts
    * between the base, source, and destination versions of a file in a potential
    * merge.</p> </li> <li> <p> <a>GetMergeCommit</a>, which returns information about
@@ -404,8 +404,8 @@ namespace Model
    * <a>UpdatePullRequestDescription</a>, which updates the description of a pull
    * request.</p> </li> <li> <p> <a>UpdatePullRequestStatus</a>, which updates the
    * status of a pull request.</p> </li> <li> <p> <a>UpdatePullRequestTitle</a>,
-   * which updates the title of a pull request.</p> </li> </ul> <p>Information about
-   * comments in a repository, by calling the following:</p> <ul> <li> <p>
+   * which updates the title of a pull request.</p> </li> </ul> <p>Comments in a
+   * repository, by calling the following:</p> <ul> <li> <p>
    * <a>DeleteCommentContent</a>, which deletes the content of a comment on a commit
    * in a repository.</p> </li> <li> <p> <a>GetComment</a>, which returns information
    * about a comment on a commit.</p> </li> <li> <p>
@@ -651,24 +651,28 @@ namespace Model
         virtual void CreateRepositoryAsync(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an unerferenced commit that represents the result of merging two
+         * <p>Creates an unreferenced commit that represents the result of merging two
          * branches using a specified merge strategy. This can help you determine the
-         * outcome of a potential merge. </p> <note> <p>This unreferenced merge commit can
-         * only be accessed using the GetCommit API or through git commands such as git
-         * fetch. To retrieve this commit, you must specify its commit ID or otherwise
-         * reference it.</p> </note><p><h3>See Also:</h3>   <a
+         * outcome of a potential merge. This API cannot be used with the fast-forward
+         * merge strategy, as that strategy does not create a merge commit.</p> <note>
+         * <p>This unreferenced merge commit can only be accessed using the GetCommit API
+         * or through git commands such as git fetch. To retrieve this commit, you must
+         * specify its commit ID or otherwise reference it.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateUnreferencedMergeCommitOutcome CreateUnreferencedMergeCommit(const Model::CreateUnreferencedMergeCommitRequest& request) const;
 
         /**
-         * <p>Creates an unerferenced commit that represents the result of merging two
+         * <p>Creates an unreferenced commit that represents the result of merging two
          * branches using a specified merge strategy. This can help you determine the
-         * outcome of a potential merge. </p> <note> <p>This unreferenced merge commit can
-         * only be accessed using the GetCommit API or through git commands such as git
-         * fetch. To retrieve this commit, you must specify its commit ID or otherwise
-         * reference it.</p> </note><p><h3>See Also:</h3>   <a
+         * outcome of a potential merge. This API cannot be used with the fast-forward
+         * merge strategy, as that strategy does not create a merge commit.</p> <note>
+         * <p>This unreferenced merge commit can only be accessed using the GetCommit API
+         * or through git commands such as git fetch. To retrieve this commit, you must
+         * specify its commit ID or otherwise reference it.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit">AWS
          * API Reference</a></p>
          *
@@ -677,12 +681,14 @@ namespace Model
         virtual Model::CreateUnreferencedMergeCommitOutcomeCallable CreateUnreferencedMergeCommitCallable(const Model::CreateUnreferencedMergeCommitRequest& request) const;
 
         /**
-         * <p>Creates an unerferenced commit that represents the result of merging two
+         * <p>Creates an unreferenced commit that represents the result of merging two
          * branches using a specified merge strategy. This can help you determine the
-         * outcome of a potential merge. </p> <note> <p>This unreferenced merge commit can
-         * only be accessed using the GetCommit API or through git commands such as git
-         * fetch. To retrieve this commit, you must specify its commit ID or otherwise
-         * reference it.</p> </note><p><h3>See Also:</h3>   <a
+         * outcome of a potential merge. This API cannot be used with the fast-forward
+         * merge strategy, as that strategy does not create a merge commit.</p> <note>
+         * <p>This unreferenced merge commit can only be accessed using the GetCommit API
+         * or through git commands such as git fetch. To retrieve this commit, you must
+         * specify its commit ID or otherwise reference it.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit">AWS
          * API Reference</a></p>
          *
@@ -1526,20 +1532,20 @@ namespace Model
         virtual void MergeBranchesByThreeWayAsync(const Model::MergeBranchesByThreeWayRequest& request, const MergeBranchesByThreeWayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Closes a pull request and attempts to merge the source commit of a pull
-         * request into the specified destination branch for that pull request at the
-         * specified commit using the fast-forward merge strategy.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Attempts to merge the source commit of a pull request into the specified
+         * destination branch for that pull request at the specified commit using the
+         * fast-forward merge strategy. If the merge is successful, it closes the pull
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByFastForward">AWS
          * API Reference</a></p>
          */
         virtual Model::MergePullRequestByFastForwardOutcome MergePullRequestByFastForward(const Model::MergePullRequestByFastForwardRequest& request) const;
 
         /**
-         * <p>Closes a pull request and attempts to merge the source commit of a pull
-         * request into the specified destination branch for that pull request at the
-         * specified commit using the fast-forward merge strategy.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Attempts to merge the source commit of a pull request into the specified
+         * destination branch for that pull request at the specified commit using the
+         * fast-forward merge strategy. If the merge is successful, it closes the pull
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByFastForward">AWS
          * API Reference</a></p>
          *
@@ -1548,10 +1554,10 @@ namespace Model
         virtual Model::MergePullRequestByFastForwardOutcomeCallable MergePullRequestByFastForwardCallable(const Model::MergePullRequestByFastForwardRequest& request) const;
 
         /**
-         * <p>Closes a pull request and attempts to merge the source commit of a pull
-         * request into the specified destination branch for that pull request at the
-         * specified commit using the fast-forward merge strategy.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Attempts to merge the source commit of a pull request into the specified
+         * destination branch for that pull request at the specified commit using the
+         * fast-forward merge strategy. If the merge is successful, it closes the pull
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByFastForward">AWS
          * API Reference</a></p>
          *
@@ -1560,18 +1566,20 @@ namespace Model
         virtual void MergePullRequestByFastForwardAsync(const Model::MergePullRequestByFastForwardRequest& request, const MergePullRequestByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Closes a pull request and attempts to merge the source commit of a pull
-         * request into the specified destination branch for that pull request at the
-         * specified commit using the squash merge strategy.</p><p><h3>See Also:</h3>   <a
+         * <p>Attempts to merge the source commit of a pull request into the specified
+         * destination branch for that pull request at the specified commit using the
+         * squash merge strategy. If the merge is successful, it closes the pull
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestBySquash">AWS
          * API Reference</a></p>
          */
         virtual Model::MergePullRequestBySquashOutcome MergePullRequestBySquash(const Model::MergePullRequestBySquashRequest& request) const;
 
         /**
-         * <p>Closes a pull request and attempts to merge the source commit of a pull
-         * request into the specified destination branch for that pull request at the
-         * specified commit using the squash merge strategy.</p><p><h3>See Also:</h3>   <a
+         * <p>Attempts to merge the source commit of a pull request into the specified
+         * destination branch for that pull request at the specified commit using the
+         * squash merge strategy. If the merge is successful, it closes the pull
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestBySquash">AWS
          * API Reference</a></p>
          *
@@ -1580,9 +1588,10 @@ namespace Model
         virtual Model::MergePullRequestBySquashOutcomeCallable MergePullRequestBySquashCallable(const Model::MergePullRequestBySquashRequest& request) const;
 
         /**
-         * <p>Closes a pull request and attempts to merge the source commit of a pull
-         * request into the specified destination branch for that pull request at the
-         * specified commit using the squash merge strategy.</p><p><h3>See Also:</h3>   <a
+         * <p>Attempts to merge the source commit of a pull request into the specified
+         * destination branch for that pull request at the specified commit using the
+         * squash merge strategy. If the merge is successful, it closes the pull
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestBySquash">AWS
          * API Reference</a></p>
          *
@@ -1591,20 +1600,20 @@ namespace Model
         virtual void MergePullRequestBySquashAsync(const Model::MergePullRequestBySquashRequest& request, const MergePullRequestBySquashResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Closes a pull request and attempts to merge the source commit of a pull
-         * request into the specified destination branch for that pull request at the
-         * specified commit using the three-way merge strategy.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Attempts to merge the source commit of a pull request into the specified
+         * destination branch for that pull request at the specified commit using the
+         * three-way merge strategy. If the merge is successful, it closes the pull
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByThreeWay">AWS
          * API Reference</a></p>
          */
         virtual Model::MergePullRequestByThreeWayOutcome MergePullRequestByThreeWay(const Model::MergePullRequestByThreeWayRequest& request) const;
 
         /**
-         * <p>Closes a pull request and attempts to merge the source commit of a pull
-         * request into the specified destination branch for that pull request at the
-         * specified commit using the three-way merge strategy.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Attempts to merge the source commit of a pull request into the specified
+         * destination branch for that pull request at the specified commit using the
+         * three-way merge strategy. If the merge is successful, it closes the pull
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByThreeWay">AWS
          * API Reference</a></p>
          *
@@ -1613,10 +1622,10 @@ namespace Model
         virtual Model::MergePullRequestByThreeWayOutcomeCallable MergePullRequestByThreeWayCallable(const Model::MergePullRequestByThreeWayRequest& request) const;
 
         /**
-         * <p>Closes a pull request and attempts to merge the source commit of a pull
-         * request into the specified destination branch for that pull request at the
-         * specified commit using the three-way merge strategy.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Attempts to merge the source commit of a pull request into the specified
+         * destination branch for that pull request at the specified commit using the
+         * three-way merge strategy. If the merge is successful, it closes the pull
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByThreeWay">AWS
          * API Reference</a></p>
          *

@@ -31,14 +31,16 @@ namespace Model
 DomainName::DomainName() : 
     m_apiMappingSelectionExpressionHasBeenSet(false),
     m_domainNameHasBeenSet(false),
-    m_domainNameConfigurationsHasBeenSet(false)
+    m_domainNameConfigurationsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
 DomainName::DomainName(JsonView jsonValue) : 
     m_apiMappingSelectionExpressionHasBeenSet(false),
     m_domainNameHasBeenSet(false),
-    m_domainNameConfigurationsHasBeenSet(false)
+    m_domainNameConfigurationsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +71,16 @@ DomainName& DomainName::operator =(JsonView jsonValue)
     m_domainNameConfigurationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -96,6 +108,17 @@ JsonValue DomainName::Jsonize() const
      domainNameConfigurationsJsonList[domainNameConfigurationsIndex].AsObject(m_domainNameConfigurations[domainNameConfigurationsIndex].Jsonize());
    }
    payload.WithArray("domainNameConfigurations", std::move(domainNameConfigurationsJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

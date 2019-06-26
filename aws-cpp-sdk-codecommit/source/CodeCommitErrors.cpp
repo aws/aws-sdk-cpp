@@ -78,6 +78,7 @@ static const int COMMENT_DELETED_HASH = HashingUtils::HashString("CommentDeleted
 static const int COMMIT_ID_REQUIRED_HASH = HashingUtils::HashString("CommitIdRequiredException");
 static const int RESTRICTED_SOURCE_FILE_HASH = HashingUtils::HashString("RestrictedSourceFileException");
 static const int IDEMPOTENCY_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotencyParameterMismatchException");
+static const int MAXIMUM_ITEMS_TO_COMPARE_EXCEEDED_HASH = HashingUtils::HashString("MaximumItemsToCompareExceededException");
 static const int PARENT_COMMIT_ID_REQUIRED_HASH = HashingUtils::HashString("ParentCommitIdRequiredException");
 static const int INVALID_REPOSITORY_TRIGGER_DESTINATION_ARN_HASH = HashingUtils::HashString("InvalidRepositoryTriggerDestinationArnException");
 static const int INVALID_SORT_BY_HASH = HashingUtils::HashString("InvalidSortByException");
@@ -432,6 +433,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == IDEMPOTENCY_PARAMETER_MISMATCH_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::IDEMPOTENCY_PARAMETER_MISMATCH), false);
+    return true;
+  }
+  else if (hashCode == MAXIMUM_ITEMS_TO_COMPARE_EXCEEDED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::MAXIMUM_ITEMS_TO_COMPARE_EXCEEDED), false);
     return true;
   }
   else if (hashCode == PARENT_COMMIT_ID_REQUIRED_HASH)
@@ -789,17 +795,17 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_PULL_REQUEST_EVENT_TYPE), false);
     return true;
   }
-  else if (hashCode == REPOSITORY_LIMIT_EXCEEDED_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_LIMIT_EXCEEDED), false);
-    return true;
-  }
   return false;
 }
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 {
-  if (hashCode == INVALID_REPOSITORY_NAME_HASH)
+  if (hashCode == REPOSITORY_LIMIT_EXCEEDED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_LIMIT_EXCEEDED), false);
+    return true;
+  }
+  else if (hashCode == INVALID_REPOSITORY_NAME_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_NAME), false);
     return true;

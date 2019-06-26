@@ -97,49 +97,57 @@ namespace Model
 
     /**
      * <p>To establish the directionality of the comparison, the full commit ID of the
-     * 'before' commit.</p>
+     * 'before' commit.</p> <note> <p>This is required for commenting on any commit
+     * unless that commit is the initial commit.</p> </note>
      */
     inline const Aws::String& GetBeforeCommitId() const{ return m_beforeCommitId; }
 
     /**
      * <p>To establish the directionality of the comparison, the full commit ID of the
-     * 'before' commit.</p>
+     * 'before' commit.</p> <note> <p>This is required for commenting on any commit
+     * unless that commit is the initial commit.</p> </note>
      */
     inline bool BeforeCommitIdHasBeenSet() const { return m_beforeCommitIdHasBeenSet; }
 
     /**
      * <p>To establish the directionality of the comparison, the full commit ID of the
-     * 'before' commit.</p>
+     * 'before' commit.</p> <note> <p>This is required for commenting on any commit
+     * unless that commit is the initial commit.</p> </note>
      */
     inline void SetBeforeCommitId(const Aws::String& value) { m_beforeCommitIdHasBeenSet = true; m_beforeCommitId = value; }
 
     /**
      * <p>To establish the directionality of the comparison, the full commit ID of the
-     * 'before' commit.</p>
+     * 'before' commit.</p> <note> <p>This is required for commenting on any commit
+     * unless that commit is the initial commit.</p> </note>
      */
     inline void SetBeforeCommitId(Aws::String&& value) { m_beforeCommitIdHasBeenSet = true; m_beforeCommitId = std::move(value); }
 
     /**
      * <p>To establish the directionality of the comparison, the full commit ID of the
-     * 'before' commit.</p>
+     * 'before' commit.</p> <note> <p>This is required for commenting on any commit
+     * unless that commit is the initial commit.</p> </note>
      */
     inline void SetBeforeCommitId(const char* value) { m_beforeCommitIdHasBeenSet = true; m_beforeCommitId.assign(value); }
 
     /**
      * <p>To establish the directionality of the comparison, the full commit ID of the
-     * 'before' commit.</p>
+     * 'before' commit.</p> <note> <p>This is required for commenting on any commit
+     * unless that commit is the initial commit.</p> </note>
      */
     inline PostCommentForComparedCommitRequest& WithBeforeCommitId(const Aws::String& value) { SetBeforeCommitId(value); return *this;}
 
     /**
      * <p>To establish the directionality of the comparison, the full commit ID of the
-     * 'before' commit.</p>
+     * 'before' commit.</p> <note> <p>This is required for commenting on any commit
+     * unless that commit is the initial commit.</p> </note>
      */
     inline PostCommentForComparedCommitRequest& WithBeforeCommitId(Aws::String&& value) { SetBeforeCommitId(std::move(value)); return *this;}
 
     /**
      * <p>To establish the directionality of the comparison, the full commit ID of the
-     * 'before' commit.</p>
+     * 'before' commit.</p> <note> <p>This is required for commenting on any commit
+     * unless that commit is the initial commit.</p> </note>
      */
     inline PostCommentForComparedCommitRequest& WithBeforeCommitId(const char* value) { SetBeforeCommitId(value); return *this;}
 

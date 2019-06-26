@@ -312,26 +312,26 @@ namespace Model
 
 
     /**
-     * <p>A boolean value (true or false) indicating whether there are conflicts in the
-     * object type of a file.</p>
+     * <p>A boolean value (true or false) indicating whether there are conflicts
+     * between the branches in the object type of a file, folder, or submodule.</p>
      */
     inline bool GetObjectTypeConflict() const{ return m_objectTypeConflict; }
 
     /**
-     * <p>A boolean value (true or false) indicating whether there are conflicts in the
-     * object type of a file.</p>
+     * <p>A boolean value (true or false) indicating whether there are conflicts
+     * between the branches in the object type of a file, folder, or submodule.</p>
      */
     inline bool ObjectTypeConflictHasBeenSet() const { return m_objectTypeConflictHasBeenSet; }
 
     /**
-     * <p>A boolean value (true or false) indicating whether there are conflicts in the
-     * object type of a file.</p>
+     * <p>A boolean value (true or false) indicating whether there are conflicts
+     * between the branches in the object type of a file, folder, or submodule.</p>
      */
     inline void SetObjectTypeConflict(bool value) { m_objectTypeConflictHasBeenSet = true; m_objectTypeConflict = value; }
 
     /**
-     * <p>A boolean value (true or false) indicating whether there are conflicts in the
-     * object type of a file.</p>
+     * <p>A boolean value (true or false) indicating whether there are conflicts
+     * between the branches in the object type of a file, folder, or submodule.</p>
      */
     inline ConflictMetadata& WithObjectTypeConflict(bool value) { SetObjectTypeConflict(value); return *this;}
 

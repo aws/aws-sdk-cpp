@@ -31,7 +31,8 @@ CreateStageRequest::CreateStageRequest() :
     m_descriptionHasBeenSet(false),
     m_routeSettingsHasBeenSet(false),
     m_stageNameHasBeenSet(false),
-    m_stageVariablesHasBeenSet(false)
+    m_stageVariablesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,17 @@ Aws::String CreateStageRequest::SerializePayload() const
      stageVariablesJsonMap.WithString(stageVariablesItem.first, stageVariablesItem.second);
    }
    payload.WithObject("stageVariables", std::move(stageVariablesJsonMap));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

@@ -55,6 +55,8 @@
 #include <aws/apigatewayv2/model/GetRoutesResult.h>
 #include <aws/apigatewayv2/model/GetStageResult.h>
 #include <aws/apigatewayv2/model/GetStagesResult.h>
+#include <aws/apigatewayv2/model/GetTagsResult.h>
+#include <aws/apigatewayv2/model/TagResourceResult.h>
 #include <aws/apigatewayv2/model/UpdateApiResult.h>
 #include <aws/apigatewayv2/model/UpdateApiMappingResult.h>
 #include <aws/apigatewayv2/model/UpdateAuthorizerResult.h>
@@ -151,6 +153,9 @@ namespace Model
         class GetRoutesRequest;
         class GetStageRequest;
         class GetStagesRequest;
+        class GetTagsRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateApiRequest;
         class UpdateApiMappingRequest;
         class UpdateAuthorizerRequest;
@@ -208,6 +213,9 @@ namespace Model
         typedef Aws::Utils::Outcome<GetRoutesResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetRoutesOutcome;
         typedef Aws::Utils::Outcome<GetStageResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetStageOutcome;
         typedef Aws::Utils::Outcome<GetStagesResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetStagesOutcome;
+        typedef Aws::Utils::Outcome<GetTagsResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetTagsOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<ApiGatewayV2Errors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateApiResult, Aws::Client::AWSError<ApiGatewayV2Errors>> UpdateApiOutcome;
         typedef Aws::Utils::Outcome<UpdateApiMappingResult, Aws::Client::AWSError<ApiGatewayV2Errors>> UpdateApiMappingOutcome;
         typedef Aws::Utils::Outcome<UpdateAuthorizerResult, Aws::Client::AWSError<ApiGatewayV2Errors>> UpdateAuthorizerOutcome;
@@ -265,6 +273,9 @@ namespace Model
         typedef std::future<GetRoutesOutcome> GetRoutesOutcomeCallable;
         typedef std::future<GetStageOutcome> GetStageOutcomeCallable;
         typedef std::future<GetStagesOutcome> GetStagesOutcomeCallable;
+        typedef std::future<GetTagsOutcome> GetTagsOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateApiOutcome> UpdateApiOutcomeCallable;
         typedef std::future<UpdateApiMappingOutcome> UpdateApiMappingOutcomeCallable;
         typedef std::future<UpdateAuthorizerOutcome> UpdateAuthorizerOutcomeCallable;
@@ -325,6 +336,9 @@ namespace Model
     typedef std::function<void(const ApiGatewayV2Client*, const Model::GetRoutesRequest&, const Model::GetRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRoutesResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::GetStageRequest&, const Model::GetStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStageResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::GetStagesRequest&, const Model::GetStagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStagesResponseReceivedHandler;
+    typedef std::function<void(const ApiGatewayV2Client*, const Model::GetTagsRequest&, const Model::GetTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTagsResponseReceivedHandler;
+    typedef std::function<void(const ApiGatewayV2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const ApiGatewayV2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::UpdateApiRequest&, const Model::UpdateApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApiResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::UpdateApiMappingRequest&, const Model::UpdateApiMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApiMappingResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::UpdateAuthorizerRequest&, const Model::UpdateAuthorizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAuthorizerResponseReceivedHandler;
@@ -1498,6 +1512,81 @@ namespace Model
         virtual void GetStagesAsync(const Model::GetStagesRequest& request, const GetStagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the Tags for an API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetTags">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTagsOutcome GetTags(const Model::GetTagsRequest& request) const;
+
+        /**
+         * <p>Gets the Tags for an API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetTags">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetTagsOutcomeCallable GetTagsCallable(const Model::GetTagsRequest& request) const;
+
+        /**
+         * <p>Gets the Tags for an API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetTags">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetTagsAsync(const Model::GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Tag an APIGW resource</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Tag an APIGW resource</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Tag an APIGW resource</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Untag an APIGW resource</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Untag an APIGW resource</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Untag an APIGW resource</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an Api resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateApi">AWS
          * API Reference</a></p>
@@ -1821,6 +1910,9 @@ namespace Model
         void GetRoutesAsyncHelper(const Model::GetRoutesRequest& request, const GetRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetStageAsyncHelper(const Model::GetStageRequest& request, const GetStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetStagesAsyncHelper(const Model::GetStagesRequest& request, const GetStagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetTagsAsyncHelper(const Model::GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApiAsyncHelper(const Model::UpdateApiRequest& request, const UpdateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApiMappingAsyncHelper(const Model::UpdateApiMappingRequest& request, const UpdateApiMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAuthorizerAsyncHelper(const Model::UpdateAuthorizerRequest& request, const UpdateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

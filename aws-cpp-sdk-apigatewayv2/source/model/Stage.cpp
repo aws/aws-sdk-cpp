@@ -38,7 +38,8 @@ Stage::Stage() :
     m_lastUpdatedDateHasBeenSet(false),
     m_routeSettingsHasBeenSet(false),
     m_stageNameHasBeenSet(false),
-    m_stageVariablesHasBeenSet(false)
+    m_stageVariablesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ Stage::Stage(JsonView jsonValue) :
     m_lastUpdatedDateHasBeenSet(false),
     m_routeSettingsHasBeenSet(false),
     m_stageNameHasBeenSet(false),
-    m_stageVariablesHasBeenSet(false)
+    m_stageVariablesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -135,6 +137,16 @@ Stage& Stage::operator =(JsonView jsonValue)
     m_stageVariablesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -207,6 +219,17 @@ JsonValue Stage::Jsonize() const
      stageVariablesJsonMap.WithString(stageVariablesItem.first, stageVariablesItem.second);
    }
    payload.WithObject("stageVariables", std::move(stageVariablesJsonMap));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

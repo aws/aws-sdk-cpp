@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/apigatewayv2/model/CreateDomainNameRequest.h>
+#include <aws/apigatewayv2/model/TagResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,33 +22,15 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDomainNameRequest::CreateDomainNameRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_domainNameConfigurationsHasBeenSet(false),
+TagResourceRequest::TagResourceRequest() : 
+    m_resourceArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
-Aws::String CreateDomainNameRequest::SerializePayload() const
+Aws::String TagResourceRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("domainName", m_domainName);
-
-  }
-
-  if(m_domainNameConfigurationsHasBeenSet)
-  {
-   Array<JsonValue> domainNameConfigurationsJsonList(m_domainNameConfigurations.size());
-   for(unsigned domainNameConfigurationsIndex = 0; domainNameConfigurationsIndex < domainNameConfigurationsJsonList.GetLength(); ++domainNameConfigurationsIndex)
-   {
-     domainNameConfigurationsJsonList[domainNameConfigurationsIndex].AsObject(m_domainNameConfigurations[domainNameConfigurationsIndex].Jsonize());
-   }
-   payload.WithArray("domainNameConfigurations", std::move(domainNameConfigurationsJsonList));
-
-  }
 
   if(m_tagsHasBeenSet)
   {

@@ -52,42 +52,50 @@ namespace Model
 
 
     /**
-     * <p>Information about how a conflict in a merge will be resolved.</p>
+     * <p>Files that will have content replaced as part of the merge conflict
+     * resolution.</p>
      */
     inline const Aws::Vector<ReplaceContentEntry>& GetReplaceContents() const{ return m_replaceContents; }
 
     /**
-     * <p>Information about how a conflict in a merge will be resolved.</p>
+     * <p>Files that will have content replaced as part of the merge conflict
+     * resolution.</p>
      */
     inline bool ReplaceContentsHasBeenSet() const { return m_replaceContentsHasBeenSet; }
 
     /**
-     * <p>Information about how a conflict in a merge will be resolved.</p>
+     * <p>Files that will have content replaced as part of the merge conflict
+     * resolution.</p>
      */
     inline void SetReplaceContents(const Aws::Vector<ReplaceContentEntry>& value) { m_replaceContentsHasBeenSet = true; m_replaceContents = value; }
 
     /**
-     * <p>Information about how a conflict in a merge will be resolved.</p>
+     * <p>Files that will have content replaced as part of the merge conflict
+     * resolution.</p>
      */
     inline void SetReplaceContents(Aws::Vector<ReplaceContentEntry>&& value) { m_replaceContentsHasBeenSet = true; m_replaceContents = std::move(value); }
 
     /**
-     * <p>Information about how a conflict in a merge will be resolved.</p>
+     * <p>Files that will have content replaced as part of the merge conflict
+     * resolution.</p>
      */
     inline ConflictResolution& WithReplaceContents(const Aws::Vector<ReplaceContentEntry>& value) { SetReplaceContents(value); return *this;}
 
     /**
-     * <p>Information about how a conflict in a merge will be resolved.</p>
+     * <p>Files that will have content replaced as part of the merge conflict
+     * resolution.</p>
      */
     inline ConflictResolution& WithReplaceContents(Aws::Vector<ReplaceContentEntry>&& value) { SetReplaceContents(std::move(value)); return *this;}
 
     /**
-     * <p>Information about how a conflict in a merge will be resolved.</p>
+     * <p>Files that will have content replaced as part of the merge conflict
+     * resolution.</p>
      */
     inline ConflictResolution& AddReplaceContents(const ReplaceContentEntry& value) { m_replaceContentsHasBeenSet = true; m_replaceContents.push_back(value); return *this; }
 
     /**
-     * <p>Information about how a conflict in a merge will be resolved.</p>
+     * <p>Files that will have content replaced as part of the merge conflict
+     * resolution.</p>
      */
     inline ConflictResolution& AddReplaceContents(ReplaceContentEntry&& value) { m_replaceContentsHasBeenSet = true; m_replaceContents.push_back(std::move(value)); return *this; }
 

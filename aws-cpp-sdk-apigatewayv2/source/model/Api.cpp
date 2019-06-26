@@ -41,7 +41,8 @@ Api::Api() :
     m_protocolTypeHasBeenSet(false),
     m_routeSelectionExpressionHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_warningsHasBeenSet(false)
+    m_warningsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ Api::Api(JsonView jsonValue) :
     m_protocolTypeHasBeenSet(false),
     m_routeSelectionExpressionHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_warningsHasBeenSet(false)
+    m_warningsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -145,6 +147,16 @@ Api& Api::operator =(JsonView jsonValue)
     m_warningsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -218,6 +230,17 @@ JsonValue Api::Jsonize() const
      warningsJsonList[warningsIndex].AsString(m_warnings[warningsIndex]);
    }
    payload.WithArray("warnings", std::move(warningsJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 
