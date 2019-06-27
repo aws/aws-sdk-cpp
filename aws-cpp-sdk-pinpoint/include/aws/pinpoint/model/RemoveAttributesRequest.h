@@ -44,91 +44,155 @@ namespace Model
 
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline RemoveAttributesRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline RemoveAttributesRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline RemoveAttributesRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * Type of attribute. Can be endpoint-custom-attributes, endpoint-custom-metrics,
-     * endpoint-user-attributes.
+     * <p>The type of attribute or attributes to remove. Valid values are:</p>
+     * <ul><li><p>endpoint-custom-attributes - Custom attributes that describe
+     * endpoints, such as the date when an associated user opted in or out of receiving
+     * communications from you through a specific type of channel.</p></li>
+     * <li><p>endpoint-custom-metrics - Custom metrics that your app reports to Amazon
+     * Pinpoint for endpoints, such as the number of app sessions or the number of
+     * items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
+     * attributes that describe users, such as first name, last name, and
+     * age.</p></li></ul>
      */
     inline const Aws::String& GetAttributeType() const{ return m_attributeType; }
 
     /**
-     * Type of attribute. Can be endpoint-custom-attributes, endpoint-custom-metrics,
-     * endpoint-user-attributes.
+     * <p>The type of attribute or attributes to remove. Valid values are:</p>
+     * <ul><li><p>endpoint-custom-attributes - Custom attributes that describe
+     * endpoints, such as the date when an associated user opted in or out of receiving
+     * communications from you through a specific type of channel.</p></li>
+     * <li><p>endpoint-custom-metrics - Custom metrics that your app reports to Amazon
+     * Pinpoint for endpoints, such as the number of app sessions or the number of
+     * items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
+     * attributes that describe users, such as first name, last name, and
+     * age.</p></li></ul>
      */
     inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }
 
     /**
-     * Type of attribute. Can be endpoint-custom-attributes, endpoint-custom-metrics,
-     * endpoint-user-attributes.
+     * <p>The type of attribute or attributes to remove. Valid values are:</p>
+     * <ul><li><p>endpoint-custom-attributes - Custom attributes that describe
+     * endpoints, such as the date when an associated user opted in or out of receiving
+     * communications from you through a specific type of channel.</p></li>
+     * <li><p>endpoint-custom-metrics - Custom metrics that your app reports to Amazon
+     * Pinpoint for endpoints, such as the number of app sessions or the number of
+     * items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
+     * attributes that describe users, such as first name, last name, and
+     * age.</p></li></ul>
      */
     inline void SetAttributeType(const Aws::String& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
 
     /**
-     * Type of attribute. Can be endpoint-custom-attributes, endpoint-custom-metrics,
-     * endpoint-user-attributes.
+     * <p>The type of attribute or attributes to remove. Valid values are:</p>
+     * <ul><li><p>endpoint-custom-attributes - Custom attributes that describe
+     * endpoints, such as the date when an associated user opted in or out of receiving
+     * communications from you through a specific type of channel.</p></li>
+     * <li><p>endpoint-custom-metrics - Custom metrics that your app reports to Amazon
+     * Pinpoint for endpoints, such as the number of app sessions or the number of
+     * items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
+     * attributes that describe users, such as first name, last name, and
+     * age.</p></li></ul>
      */
     inline void SetAttributeType(Aws::String&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = std::move(value); }
 
     /**
-     * Type of attribute. Can be endpoint-custom-attributes, endpoint-custom-metrics,
-     * endpoint-user-attributes.
+     * <p>The type of attribute or attributes to remove. Valid values are:</p>
+     * <ul><li><p>endpoint-custom-attributes - Custom attributes that describe
+     * endpoints, such as the date when an associated user opted in or out of receiving
+     * communications from you through a specific type of channel.</p></li>
+     * <li><p>endpoint-custom-metrics - Custom metrics that your app reports to Amazon
+     * Pinpoint for endpoints, such as the number of app sessions or the number of
+     * items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
+     * attributes that describe users, such as first name, last name, and
+     * age.</p></li></ul>
      */
     inline void SetAttributeType(const char* value) { m_attributeTypeHasBeenSet = true; m_attributeType.assign(value); }
 
     /**
-     * Type of attribute. Can be endpoint-custom-attributes, endpoint-custom-metrics,
-     * endpoint-user-attributes.
+     * <p>The type of attribute or attributes to remove. Valid values are:</p>
+     * <ul><li><p>endpoint-custom-attributes - Custom attributes that describe
+     * endpoints, such as the date when an associated user opted in or out of receiving
+     * communications from you through a specific type of channel.</p></li>
+     * <li><p>endpoint-custom-metrics - Custom metrics that your app reports to Amazon
+     * Pinpoint for endpoints, such as the number of app sessions or the number of
+     * items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
+     * attributes that describe users, such as first name, last name, and
+     * age.</p></li></ul>
      */
     inline RemoveAttributesRequest& WithAttributeType(const Aws::String& value) { SetAttributeType(value); return *this;}
 
     /**
-     * Type of attribute. Can be endpoint-custom-attributes, endpoint-custom-metrics,
-     * endpoint-user-attributes.
+     * <p>The type of attribute or attributes to remove. Valid values are:</p>
+     * <ul><li><p>endpoint-custom-attributes - Custom attributes that describe
+     * endpoints, such as the date when an associated user opted in or out of receiving
+     * communications from you through a specific type of channel.</p></li>
+     * <li><p>endpoint-custom-metrics - Custom metrics that your app reports to Amazon
+     * Pinpoint for endpoints, such as the number of app sessions or the number of
+     * items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
+     * attributes that describe users, such as first name, last name, and
+     * age.</p></li></ul>
      */
     inline RemoveAttributesRequest& WithAttributeType(Aws::String&& value) { SetAttributeType(std::move(value)); return *this;}
 
     /**
-     * Type of attribute. Can be endpoint-custom-attributes, endpoint-custom-metrics,
-     * endpoint-user-attributes.
+     * <p>The type of attribute or attributes to remove. Valid values are:</p>
+     * <ul><li><p>endpoint-custom-attributes - Custom attributes that describe
+     * endpoints, such as the date when an associated user opted in or out of receiving
+     * communications from you through a specific type of channel.</p></li>
+     * <li><p>endpoint-custom-metrics - Custom metrics that your app reports to Amazon
+     * Pinpoint for endpoints, such as the number of app sessions or the number of
+     * items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
+     * attributes that describe users, such as first name, last name, and
+     * age.</p></li></ul>
      */
     inline RemoveAttributesRequest& WithAttributeType(const char* value) { SetAttributeType(value); return *this;}
 

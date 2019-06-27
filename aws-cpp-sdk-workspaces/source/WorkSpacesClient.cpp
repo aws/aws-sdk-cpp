@@ -32,6 +32,7 @@
 #include <aws/workspaces/WorkSpacesErrorMarshaller.h>
 #include <aws/workspaces/model/AssociateIpGroupsRequest.h>
 #include <aws/workspaces/model/AuthorizeIpRulesRequest.h>
+#include <aws/workspaces/model/CopyWorkspaceImageRequest.h>
 #include <aws/workspaces/model/CreateIpGroupRequest.h>
 #include <aws/workspaces/model/CreateTagsRequest.h>
 #include <aws/workspaces/model/CreateWorkspacesRequest.h>
@@ -46,6 +47,7 @@
 #include <aws/workspaces/model/DescribeWorkspaceBundlesRequest.h>
 #include <aws/workspaces/model/DescribeWorkspaceDirectoriesRequest.h>
 #include <aws/workspaces/model/DescribeWorkspaceImagesRequest.h>
+#include <aws/workspaces/model/DescribeWorkspaceSnapshotsRequest.h>
 #include <aws/workspaces/model/DescribeWorkspacesRequest.h>
 #include <aws/workspaces/model/DescribeWorkspacesConnectionStatusRequest.h>
 #include <aws/workspaces/model/DisassociateIpGroupsRequest.h>
@@ -57,6 +59,7 @@
 #include <aws/workspaces/model/ModifyWorkspaceStateRequest.h>
 #include <aws/workspaces/model/RebootWorkspacesRequest.h>
 #include <aws/workspaces/model/RebuildWorkspacesRequest.h>
+#include <aws/workspaces/model/RestoreWorkspaceRequest.h>
 #include <aws/workspaces/model/RevokeIpRulesRequest.h>
 #include <aws/workspaces/model/StartWorkspacesRequest.h>
 #include <aws/workspaces/model/StopWorkspacesRequest.h>
@@ -203,6 +206,41 @@ void WorkSpacesClient::AuthorizeIpRulesAsync(const AuthorizeIpRulesRequest& requ
 void WorkSpacesClient::AuthorizeIpRulesAsyncHelper(const AuthorizeIpRulesRequest& request, const AuthorizeIpRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AuthorizeIpRules(request), context);
+}
+
+CopyWorkspaceImageOutcome WorkSpacesClient::CopyWorkspaceImage(const CopyWorkspaceImageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CopyWorkspaceImageOutcome(CopyWorkspaceImageResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CopyWorkspaceImageOutcome(outcome.GetError());
+  }
+}
+
+CopyWorkspaceImageOutcomeCallable WorkSpacesClient::CopyWorkspaceImageCallable(const CopyWorkspaceImageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CopyWorkspaceImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CopyWorkspaceImage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::CopyWorkspaceImageAsync(const CopyWorkspaceImageRequest& request, const CopyWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CopyWorkspaceImageAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::CopyWorkspaceImageAsyncHelper(const CopyWorkspaceImageRequest& request, const CopyWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CopyWorkspaceImage(request), context);
 }
 
 CreateIpGroupOutcome WorkSpacesClient::CreateIpGroup(const CreateIpGroupRequest& request) const
@@ -695,6 +733,41 @@ void WorkSpacesClient::DescribeWorkspaceImagesAsyncHelper(const DescribeWorkspac
   handler(this, request, DescribeWorkspaceImages(request), context);
 }
 
+DescribeWorkspaceSnapshotsOutcome WorkSpacesClient::DescribeWorkspaceSnapshots(const DescribeWorkspaceSnapshotsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeWorkspaceSnapshotsOutcome(DescribeWorkspaceSnapshotsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeWorkspaceSnapshotsOutcome(outcome.GetError());
+  }
+}
+
+DescribeWorkspaceSnapshotsOutcomeCallable WorkSpacesClient::DescribeWorkspaceSnapshotsCallable(const DescribeWorkspaceSnapshotsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeWorkspaceSnapshotsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorkspaceSnapshots(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::DescribeWorkspaceSnapshotsAsync(const DescribeWorkspaceSnapshotsRequest& request, const DescribeWorkspaceSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkspaceSnapshotsAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::DescribeWorkspaceSnapshotsAsyncHelper(const DescribeWorkspaceSnapshotsRequest& request, const DescribeWorkspaceSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeWorkspaceSnapshots(request), context);
+}
+
 DescribeWorkspacesOutcome WorkSpacesClient::DescribeWorkspaces(const DescribeWorkspacesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1078,6 +1151,41 @@ void WorkSpacesClient::RebuildWorkspacesAsync(const RebuildWorkspacesRequest& re
 void WorkSpacesClient::RebuildWorkspacesAsyncHelper(const RebuildWorkspacesRequest& request, const RebuildWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RebuildWorkspaces(request), context);
+}
+
+RestoreWorkspaceOutcome WorkSpacesClient::RestoreWorkspace(const RestoreWorkspaceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RestoreWorkspaceOutcome(RestoreWorkspaceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RestoreWorkspaceOutcome(outcome.GetError());
+  }
+}
+
+RestoreWorkspaceOutcomeCallable WorkSpacesClient::RestoreWorkspaceCallable(const RestoreWorkspaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RestoreWorkspaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RestoreWorkspace(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::RestoreWorkspaceAsync(const RestoreWorkspaceRequest& request, const RestoreWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RestoreWorkspaceAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::RestoreWorkspaceAsyncHelper(const RestoreWorkspaceRequest& request, const RestoreWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RestoreWorkspace(request), context);
 }
 
 RevokeIpRulesOutcome WorkSpacesClient::RevokeIpRules(const RevokeIpRulesRequest& request) const

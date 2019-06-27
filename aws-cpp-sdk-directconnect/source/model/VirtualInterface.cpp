@@ -58,7 +58,8 @@ VirtualInterface::VirtualInterface() :
     m_routeFilterPrefixesHasBeenSet(false),
     m_bgpPeersHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_awsDeviceV2HasBeenSet(false)
+    m_awsDeviceV2HasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -92,7 +93,8 @@ VirtualInterface::VirtualInterface(JsonView jsonValue) :
     m_routeFilterPrefixesHasBeenSet(false),
     m_bgpPeersHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_awsDeviceV2HasBeenSet(false)
+    m_awsDeviceV2HasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -266,6 +268,16 @@ VirtualInterface& VirtualInterface::operator =(JsonView jsonValue)
     m_awsDeviceV2HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -416,6 +428,17 @@ JsonValue VirtualInterface::Jsonize() const
   if(m_awsDeviceV2HasBeenSet)
   {
    payload.WithString("awsDeviceV2", m_awsDeviceV2);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

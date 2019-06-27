@@ -36,7 +36,8 @@ namespace Model
 {
 
   /**
-   * Get Applications Result.<p><h3>See Also:</h3>   <a
+   * <p>Provides information about all of your applications.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ApplicationsResponse">AWS
    * API Reference</a></p>
    */
@@ -50,91 +51,91 @@ namespace Model
 
 
     /**
-     * List of applications returned in this page.
+     * <p>An array of responses, one for each application that was returned.</p>
      */
     inline const Aws::Vector<ApplicationResponse>& GetItem() const{ return m_item; }
 
     /**
-     * List of applications returned in this page.
+     * <p>An array of responses, one for each application that was returned.</p>
      */
     inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
 
     /**
-     * List of applications returned in this page.
+     * <p>An array of responses, one for each application that was returned.</p>
      */
     inline void SetItem(const Aws::Vector<ApplicationResponse>& value) { m_itemHasBeenSet = true; m_item = value; }
 
     /**
-     * List of applications returned in this page.
+     * <p>An array of responses, one for each application that was returned.</p>
      */
     inline void SetItem(Aws::Vector<ApplicationResponse>&& value) { m_itemHasBeenSet = true; m_item = std::move(value); }
 
     /**
-     * List of applications returned in this page.
+     * <p>An array of responses, one for each application that was returned.</p>
      */
     inline ApplicationsResponse& WithItem(const Aws::Vector<ApplicationResponse>& value) { SetItem(value); return *this;}
 
     /**
-     * List of applications returned in this page.
+     * <p>An array of responses, one for each application that was returned.</p>
      */
     inline ApplicationsResponse& WithItem(Aws::Vector<ApplicationResponse>&& value) { SetItem(std::move(value)); return *this;}
 
     /**
-     * List of applications returned in this page.
+     * <p>An array of responses, one for each application that was returned.</p>
      */
     inline ApplicationsResponse& AddItem(const ApplicationResponse& value) { m_itemHasBeenSet = true; m_item.push_back(value); return *this; }
 
     /**
-     * List of applications returned in this page.
+     * <p>An array of responses, one for each application that was returned.</p>
      */
     inline ApplicationsResponse& AddItem(ApplicationResponse&& value) { m_itemHasBeenSet = true; m_item.push_back(std::move(value)); return *this; }
 
 
     /**
-     * The string that you use in a subsequent request to get the next page of results
-     * in a paginated response.
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results
-     * in a paginated response.
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results
-     * in a paginated response.
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results
-     * in a paginated response.
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results
-     * in a paginated response.
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results
-     * in a paginated response.
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline ApplicationsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * The string that you use in a subsequent request to get the next page of results
-     * in a paginated response.
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline ApplicationsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * The string that you use in a subsequent request to get the next page of results
-     * in a paginated response.
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline ApplicationsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

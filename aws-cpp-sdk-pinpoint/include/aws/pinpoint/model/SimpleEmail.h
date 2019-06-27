@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * An email composed of a subject, a text part and a html part.<p><h3>See
-   * Also:</h3>   <a
+   * <p>Specifies the content of an email message, composed of a subject, a text
+   * part, and an HTML part.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SimpleEmail">AWS
    * API Reference</a></p>
    */
@@ -49,118 +49,118 @@ namespace Model
 
 
     /**
-     * The content of the message, in HTML format. Use this for email clients that can
-     * process HTML. You can include clickable links, formatted text, and much more in
-     * an HTML message.
+     * <p>The body of the email message, in HTML format. We recommend using an HTML
+     * part for email clients that support HTML. You can include links, formatted text,
+     * and more in an HTML message.</p>
      */
     inline const SimpleEmailPart& GetHtmlPart() const{ return m_htmlPart; }
 
     /**
-     * The content of the message, in HTML format. Use this for email clients that can
-     * process HTML. You can include clickable links, formatted text, and much more in
-     * an HTML message.
+     * <p>The body of the email message, in HTML format. We recommend using an HTML
+     * part for email clients that support HTML. You can include links, formatted text,
+     * and more in an HTML message.</p>
      */
     inline bool HtmlPartHasBeenSet() const { return m_htmlPartHasBeenSet; }
 
     /**
-     * The content of the message, in HTML format. Use this for email clients that can
-     * process HTML. You can include clickable links, formatted text, and much more in
-     * an HTML message.
+     * <p>The body of the email message, in HTML format. We recommend using an HTML
+     * part for email clients that support HTML. You can include links, formatted text,
+     * and more in an HTML message.</p>
      */
     inline void SetHtmlPart(const SimpleEmailPart& value) { m_htmlPartHasBeenSet = true; m_htmlPart = value; }
 
     /**
-     * The content of the message, in HTML format. Use this for email clients that can
-     * process HTML. You can include clickable links, formatted text, and much more in
-     * an HTML message.
+     * <p>The body of the email message, in HTML format. We recommend using an HTML
+     * part for email clients that support HTML. You can include links, formatted text,
+     * and more in an HTML message.</p>
      */
     inline void SetHtmlPart(SimpleEmailPart&& value) { m_htmlPartHasBeenSet = true; m_htmlPart = std::move(value); }
 
     /**
-     * The content of the message, in HTML format. Use this for email clients that can
-     * process HTML. You can include clickable links, formatted text, and much more in
-     * an HTML message.
+     * <p>The body of the email message, in HTML format. We recommend using an HTML
+     * part for email clients that support HTML. You can include links, formatted text,
+     * and more in an HTML message.</p>
      */
     inline SimpleEmail& WithHtmlPart(const SimpleEmailPart& value) { SetHtmlPart(value); return *this;}
 
     /**
-     * The content of the message, in HTML format. Use this for email clients that can
-     * process HTML. You can include clickable links, formatted text, and much more in
-     * an HTML message.
+     * <p>The body of the email message, in HTML format. We recommend using an HTML
+     * part for email clients that support HTML. You can include links, formatted text,
+     * and more in an HTML message.</p>
      */
     inline SimpleEmail& WithHtmlPart(SimpleEmailPart&& value) { SetHtmlPart(std::move(value)); return *this;}
 
 
     /**
-     * The subject of the message: A short summary of the content, which will appear in
-     * the recipient's inbox.
+     * <p>The subject line, or title, of the email.</p>
      */
     inline const SimpleEmailPart& GetSubject() const{ return m_subject; }
 
     /**
-     * The subject of the message: A short summary of the content, which will appear in
-     * the recipient's inbox.
+     * <p>The subject line, or title, of the email.</p>
      */
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
 
     /**
-     * The subject of the message: A short summary of the content, which will appear in
-     * the recipient's inbox.
+     * <p>The subject line, or title, of the email.</p>
      */
     inline void SetSubject(const SimpleEmailPart& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
     /**
-     * The subject of the message: A short summary of the content, which will appear in
-     * the recipient's inbox.
+     * <p>The subject line, or title, of the email.</p>
      */
     inline void SetSubject(SimpleEmailPart&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
 
     /**
-     * The subject of the message: A short summary of the content, which will appear in
-     * the recipient's inbox.
+     * <p>The subject line, or title, of the email.</p>
      */
     inline SimpleEmail& WithSubject(const SimpleEmailPart& value) { SetSubject(value); return *this;}
 
     /**
-     * The subject of the message: A short summary of the content, which will appear in
-     * the recipient's inbox.
+     * <p>The subject line, or title, of the email.</p>
      */
     inline SimpleEmail& WithSubject(SimpleEmailPart&& value) { SetSubject(std::move(value)); return *this;}
 
 
     /**
-     * The content of the message, in text format. Use this for text-based email
-     * clients, or clients on high-latency networks (such as mobile devices).
+     * <p>The body of the email message, in text format. We recommend using a text part
+     * for email clients that don't support HTML and clients that are connected to
+     * high-latency networks, such as mobile devices.</p>
      */
     inline const SimpleEmailPart& GetTextPart() const{ return m_textPart; }
 
     /**
-     * The content of the message, in text format. Use this for text-based email
-     * clients, or clients on high-latency networks (such as mobile devices).
+     * <p>The body of the email message, in text format. We recommend using a text part
+     * for email clients that don't support HTML and clients that are connected to
+     * high-latency networks, such as mobile devices.</p>
      */
     inline bool TextPartHasBeenSet() const { return m_textPartHasBeenSet; }
 
     /**
-     * The content of the message, in text format. Use this for text-based email
-     * clients, or clients on high-latency networks (such as mobile devices).
+     * <p>The body of the email message, in text format. We recommend using a text part
+     * for email clients that don't support HTML and clients that are connected to
+     * high-latency networks, such as mobile devices.</p>
      */
     inline void SetTextPart(const SimpleEmailPart& value) { m_textPartHasBeenSet = true; m_textPart = value; }
 
     /**
-     * The content of the message, in text format. Use this for text-based email
-     * clients, or clients on high-latency networks (such as mobile devices).
+     * <p>The body of the email message, in text format. We recommend using a text part
+     * for email clients that don't support HTML and clients that are connected to
+     * high-latency networks, such as mobile devices.</p>
      */
     inline void SetTextPart(SimpleEmailPart&& value) { m_textPartHasBeenSet = true; m_textPart = std::move(value); }
 
     /**
-     * The content of the message, in text format. Use this for text-based email
-     * clients, or clients on high-latency networks (such as mobile devices).
+     * <p>The body of the email message, in text format. We recommend using a text part
+     * for email clients that don't support HTML and clients that are connected to
+     * high-latency networks, such as mobile devices.</p>
      */
     inline SimpleEmail& WithTextPart(const SimpleEmailPart& value) { SetTextPart(value); return *this;}
 
     /**
-     * The content of the message, in text format. Use this for text-based email
-     * clients, or clients on high-latency networks (such as mobile devices).
+     * <p>The body of the email message, in text format. We recommend using a text part
+     * for email clients that don't support HTML and clients that are connected to
+     * high-latency networks, such as mobile devices.</p>
      */
     inline SimpleEmail& WithTextPart(SimpleEmailPart&& value) { SetTextPart(std::move(value)); return *this;}
 

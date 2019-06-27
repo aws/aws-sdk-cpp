@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * Define how a segment based on recency of use.<p><h3>See Also:</h3>   <a
+   * <p>Specifies criteria for including or excluding endpoints from a segment based
+   * on how recently an endpoint was active.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RecencyDimension">AWS
    * API Reference</a></p>
    */
@@ -49,117 +50,87 @@ namespace Model
 
 
     /**
-     * The length of time during which users have been active or inactive with your
-     * app.
-
-Valid values: HR_24, DAY_7, DAY_14, DAY_30
+     * <p>The duration to use when determining whether an endpoint is active or
+     * inactive.</p>
      */
     inline const Duration& GetDuration() const{ return m_duration; }
 
     /**
-     * The length of time during which users have been active or inactive with your
-     * app.
-
-Valid values: HR_24, DAY_7, DAY_14, DAY_30
+     * <p>The duration to use when determining whether an endpoint is active or
+     * inactive.</p>
      */
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
 
     /**
-     * The length of time during which users have been active or inactive with your
-     * app.
-
-Valid values: HR_24, DAY_7, DAY_14, DAY_30
+     * <p>The duration to use when determining whether an endpoint is active or
+     * inactive.</p>
      */
     inline void SetDuration(const Duration& value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
-     * The length of time during which users have been active or inactive with your
-     * app.
-
-Valid values: HR_24, DAY_7, DAY_14, DAY_30
+     * <p>The duration to use when determining whether an endpoint is active or
+     * inactive.</p>
      */
     inline void SetDuration(Duration&& value) { m_durationHasBeenSet = true; m_duration = std::move(value); }
 
     /**
-     * The length of time during which users have been active or inactive with your
-     * app.
-
-Valid values: HR_24, DAY_7, DAY_14, DAY_30
+     * <p>The duration to use when determining whether an endpoint is active or
+     * inactive.</p>
      */
     inline RecencyDimension& WithDuration(const Duration& value) { SetDuration(value); return *this;}
 
     /**
-     * The length of time during which users have been active or inactive with your
-     * app.
-
-Valid values: HR_24, DAY_7, DAY_14, DAY_30
+     * <p>The duration to use when determining whether an endpoint is active or
+     * inactive.</p>
      */
     inline RecencyDimension& WithDuration(Duration&& value) { SetDuration(std::move(value)); return *this;}
 
 
     /**
-     * The recency dimension type:
-
-ACTIVE - Users who have used your app within the
-     * specified duration are included in the segment.
-
-INACTIVE - Users who have not
-     * used your app within the specified duration are included in the segment.
+     * <p>The type of recency dimension to use for the segment. Valid values are:
+     * ACTIVE, endpoints that were active within the specified duration are included in
+     * the segment; and, INACTIVE, endpoints that weren't active within the specified
+     * duration are included in the segment.</p>
      */
     inline const RecencyType& GetRecencyType() const{ return m_recencyType; }
 
     /**
-     * The recency dimension type:
-
-ACTIVE - Users who have used your app within the
-     * specified duration are included in the segment.
-
-INACTIVE - Users who have not
-     * used your app within the specified duration are included in the segment.
+     * <p>The type of recency dimension to use for the segment. Valid values are:
+     * ACTIVE, endpoints that were active within the specified duration are included in
+     * the segment; and, INACTIVE, endpoints that weren't active within the specified
+     * duration are included in the segment.</p>
      */
     inline bool RecencyTypeHasBeenSet() const { return m_recencyTypeHasBeenSet; }
 
     /**
-     * The recency dimension type:
-
-ACTIVE - Users who have used your app within the
-     * specified duration are included in the segment.
-
-INACTIVE - Users who have not
-     * used your app within the specified duration are included in the segment.
+     * <p>The type of recency dimension to use for the segment. Valid values are:
+     * ACTIVE, endpoints that were active within the specified duration are included in
+     * the segment; and, INACTIVE, endpoints that weren't active within the specified
+     * duration are included in the segment.</p>
      */
     inline void SetRecencyType(const RecencyType& value) { m_recencyTypeHasBeenSet = true; m_recencyType = value; }
 
     /**
-     * The recency dimension type:
-
-ACTIVE - Users who have used your app within the
-     * specified duration are included in the segment.
-
-INACTIVE - Users who have not
-     * used your app within the specified duration are included in the segment.
+     * <p>The type of recency dimension to use for the segment. Valid values are:
+     * ACTIVE, endpoints that were active within the specified duration are included in
+     * the segment; and, INACTIVE, endpoints that weren't active within the specified
+     * duration are included in the segment.</p>
      */
     inline void SetRecencyType(RecencyType&& value) { m_recencyTypeHasBeenSet = true; m_recencyType = std::move(value); }
 
     /**
-     * The recency dimension type:
-
-ACTIVE - Users who have used your app within the
-     * specified duration are included in the segment.
-
-INACTIVE - Users who have not
-     * used your app within the specified duration are included in the segment.
+     * <p>The type of recency dimension to use for the segment. Valid values are:
+     * ACTIVE, endpoints that were active within the specified duration are included in
+     * the segment; and, INACTIVE, endpoints that weren't active within the specified
+     * duration are included in the segment.</p>
      */
     inline RecencyDimension& WithRecencyType(const RecencyType& value) { SetRecencyType(value); return *this;}
 
     /**
-     * The recency dimension type:
-
-ACTIVE - Users who have used your app within the
-     * specified duration are included in the segment.
-
-INACTIVE - Users who have not
-     * used your app within the specified duration are included in the segment.
+     * <p>The type of recency dimension to use for the segment. Valid values are:
+     * ACTIVE, endpoints that were active within the specified duration are included in
+     * the segment; and, INACTIVE, endpoints that weren't active within the specified
+     * duration are included in the segment.</p>
      */
     inline RecencyDimension& WithRecencyType(RecencyType&& value) { SetRecencyType(std::move(value)); return *this;}
 

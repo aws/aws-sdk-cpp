@@ -40,7 +40,7 @@ namespace Model
 {
 
   /**
-   * Segment dimensions<p><h3>See Also:</h3>   <a
+   * <p>Specifies the dimension settings for a segment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentDimensions">AWS
    * API Reference</a></p>
    */
@@ -54,277 +54,289 @@ namespace Model
 
 
     /**
-     * Custom segment attributes.
+     * <p>One or more custom attributes to use as criteria for the segment.</p>
      */
     inline const Aws::Map<Aws::String, AttributeDimension>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * Custom segment attributes.
+     * <p>One or more custom attributes to use as criteria for the segment.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
-     * Custom segment attributes.
+     * <p>One or more custom attributes to use as criteria for the segment.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, AttributeDimension>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * Custom segment attributes.
+     * <p>One or more custom attributes to use as criteria for the segment.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, AttributeDimension>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * Custom segment attributes.
+     * <p>One or more custom attributes to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& WithAttributes(const Aws::Map<Aws::String, AttributeDimension>& value) { SetAttributes(value); return *this;}
 
     /**
-     * Custom segment attributes.
+     * <p>One or more custom attributes to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& WithAttributes(Aws::Map<Aws::String, AttributeDimension>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * Custom segment attributes.
+     * <p>One or more custom attributes to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& AddAttributes(const Aws::String& key, const AttributeDimension& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
-     * Custom segment attributes.
+     * <p>One or more custom attributes to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& AddAttributes(Aws::String&& key, const AttributeDimension& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * Custom segment attributes.
+     * <p>One or more custom attributes to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& AddAttributes(const Aws::String& key, AttributeDimension&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Custom segment attributes.
+     * <p>One or more custom attributes to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& AddAttributes(Aws::String&& key, AttributeDimension&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Custom segment attributes.
+     * <p>One or more custom attributes to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& AddAttributes(const char* key, AttributeDimension&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Custom segment attributes.
+     * <p>One or more custom attributes to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& AddAttributes(const char* key, const AttributeDimension& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
 
     /**
-     * The segment behaviors attributes.
+     * <p>The behavior-based criteria, such as how recently users have used your app,
+     * for the segment.</p>
      */
     inline const SegmentBehaviors& GetBehavior() const{ return m_behavior; }
 
     /**
-     * The segment behaviors attributes.
+     * <p>The behavior-based criteria, such as how recently users have used your app,
+     * for the segment.</p>
      */
     inline bool BehaviorHasBeenSet() const { return m_behaviorHasBeenSet; }
 
     /**
-     * The segment behaviors attributes.
+     * <p>The behavior-based criteria, such as how recently users have used your app,
+     * for the segment.</p>
      */
     inline void SetBehavior(const SegmentBehaviors& value) { m_behaviorHasBeenSet = true; m_behavior = value; }
 
     /**
-     * The segment behaviors attributes.
+     * <p>The behavior-based criteria, such as how recently users have used your app,
+     * for the segment.</p>
      */
     inline void SetBehavior(SegmentBehaviors&& value) { m_behaviorHasBeenSet = true; m_behavior = std::move(value); }
 
     /**
-     * The segment behaviors attributes.
+     * <p>The behavior-based criteria, such as how recently users have used your app,
+     * for the segment.</p>
      */
     inline SegmentDimensions& WithBehavior(const SegmentBehaviors& value) { SetBehavior(value); return *this;}
 
     /**
-     * The segment behaviors attributes.
+     * <p>The behavior-based criteria, such as how recently users have used your app,
+     * for the segment.</p>
      */
     inline SegmentDimensions& WithBehavior(SegmentBehaviors&& value) { SetBehavior(std::move(value)); return *this;}
 
 
     /**
-     * The segment demographics attributes.
+     * <p>The demographic-based criteria, such as device platform, for the segment.</p>
      */
     inline const SegmentDemographics& GetDemographic() const{ return m_demographic; }
 
     /**
-     * The segment demographics attributes.
+     * <p>The demographic-based criteria, such as device platform, for the segment.</p>
      */
     inline bool DemographicHasBeenSet() const { return m_demographicHasBeenSet; }
 
     /**
-     * The segment demographics attributes.
+     * <p>The demographic-based criteria, such as device platform, for the segment.</p>
      */
     inline void SetDemographic(const SegmentDemographics& value) { m_demographicHasBeenSet = true; m_demographic = value; }
 
     /**
-     * The segment demographics attributes.
+     * <p>The demographic-based criteria, such as device platform, for the segment.</p>
      */
     inline void SetDemographic(SegmentDemographics&& value) { m_demographicHasBeenSet = true; m_demographic = std::move(value); }
 
     /**
-     * The segment demographics attributes.
+     * <p>The demographic-based criteria, such as device platform, for the segment.</p>
      */
     inline SegmentDimensions& WithDemographic(const SegmentDemographics& value) { SetDemographic(value); return *this;}
 
     /**
-     * The segment demographics attributes.
+     * <p>The demographic-based criteria, such as device platform, for the segment.</p>
      */
     inline SegmentDimensions& WithDemographic(SegmentDemographics&& value) { SetDemographic(std::move(value)); return *this;}
 
 
     /**
-     * The segment location attributes.
+     * <p>The location-based criteria, such as region or GPS coordinates, for the
+     * segment.</p>
      */
     inline const SegmentLocation& GetLocation() const{ return m_location; }
 
     /**
-     * The segment location attributes.
+     * <p>The location-based criteria, such as region or GPS coordinates, for the
+     * segment.</p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * The segment location attributes.
+     * <p>The location-based criteria, such as region or GPS coordinates, for the
+     * segment.</p>
      */
     inline void SetLocation(const SegmentLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * The segment location attributes.
+     * <p>The location-based criteria, such as region or GPS coordinates, for the
+     * segment.</p>
      */
     inline void SetLocation(SegmentLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * The segment location attributes.
+     * <p>The location-based criteria, such as region or GPS coordinates, for the
+     * segment.</p>
      */
     inline SegmentDimensions& WithLocation(const SegmentLocation& value) { SetLocation(value); return *this;}
 
     /**
-     * The segment location attributes.
+     * <p>The location-based criteria, such as region or GPS coordinates, for the
+     * segment.</p>
      */
     inline SegmentDimensions& WithLocation(SegmentLocation&& value) { SetLocation(std::move(value)); return *this;}
 
 
     /**
-     * Custom segment metrics.
+     * <p>One or more custom metrics to use as criteria for the segment.</p>
      */
     inline const Aws::Map<Aws::String, MetricDimension>& GetMetrics() const{ return m_metrics; }
 
     /**
-     * Custom segment metrics.
+     * <p>One or more custom metrics to use as criteria for the segment.</p>
      */
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
     /**
-     * Custom segment metrics.
+     * <p>One or more custom metrics to use as criteria for the segment.</p>
      */
     inline void SetMetrics(const Aws::Map<Aws::String, MetricDimension>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
     /**
-     * Custom segment metrics.
+     * <p>One or more custom metrics to use as criteria for the segment.</p>
      */
     inline void SetMetrics(Aws::Map<Aws::String, MetricDimension>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
     /**
-     * Custom segment metrics.
+     * <p>One or more custom metrics to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& WithMetrics(const Aws::Map<Aws::String, MetricDimension>& value) { SetMetrics(value); return *this;}
 
     /**
-     * Custom segment metrics.
+     * <p>One or more custom metrics to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& WithMetrics(Aws::Map<Aws::String, MetricDimension>&& value) { SetMetrics(std::move(value)); return *this;}
 
     /**
-     * Custom segment metrics.
+     * <p>One or more custom metrics to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& AddMetrics(const Aws::String& key, const MetricDimension& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }
 
     /**
-     * Custom segment metrics.
+     * <p>One or more custom metrics to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& AddMetrics(Aws::String&& key, const MetricDimension& value) { m_metricsHasBeenSet = true; m_metrics.emplace(std::move(key), value); return *this; }
 
     /**
-     * Custom segment metrics.
+     * <p>One or more custom metrics to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& AddMetrics(const Aws::String& key, MetricDimension&& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Custom segment metrics.
+     * <p>One or more custom metrics to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& AddMetrics(Aws::String&& key, MetricDimension&& value) { m_metricsHasBeenSet = true; m_metrics.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Custom segment metrics.
+     * <p>One or more custom metrics to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& AddMetrics(const char* key, MetricDimension&& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Custom segment metrics.
+     * <p>One or more custom metrics to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& AddMetrics(const char* key, const MetricDimension& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }
 
 
     /**
-     * Custom segment user attributes.
+     * <p>One or more custom user attributes to use as criteria for the segment.</p>
      */
     inline const Aws::Map<Aws::String, AttributeDimension>& GetUserAttributes() const{ return m_userAttributes; }
 
     /**
-     * Custom segment user attributes.
+     * <p>One or more custom user attributes to use as criteria for the segment.</p>
      */
     inline bool UserAttributesHasBeenSet() const { return m_userAttributesHasBeenSet; }
 
     /**
-     * Custom segment user attributes.
+     * <p>One or more custom user attributes to use as criteria for the segment.</p>
      */
     inline void SetUserAttributes(const Aws::Map<Aws::String, AttributeDimension>& value) { m_userAttributesHasBeenSet = true; m_userAttributes = value; }
 
     /**
-     * Custom segment user attributes.
+     * <p>One or more custom user attributes to use as criteria for the segment.</p>
      */
     inline void SetUserAttributes(Aws::Map<Aws::String, AttributeDimension>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = std::move(value); }
 
     /**
-     * Custom segment user attributes.
+     * <p>One or more custom user attributes to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& WithUserAttributes(const Aws::Map<Aws::String, AttributeDimension>& value) { SetUserAttributes(value); return *this;}
 
     /**
-     * Custom segment user attributes.
+     * <p>One or more custom user attributes to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& WithUserAttributes(Aws::Map<Aws::String, AttributeDimension>&& value) { SetUserAttributes(std::move(value)); return *this;}
 
     /**
-     * Custom segment user attributes.
+     * <p>One or more custom user attributes to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& AddUserAttributes(const Aws::String& key, const AttributeDimension& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(key, value); return *this; }
 
     /**
-     * Custom segment user attributes.
+     * <p>One or more custom user attributes to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& AddUserAttributes(Aws::String&& key, const AttributeDimension& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * Custom segment user attributes.
+     * <p>One or more custom user attributes to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& AddUserAttributes(const Aws::String& key, AttributeDimension&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Custom segment user attributes.
+     * <p>One or more custom user attributes to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& AddUserAttributes(Aws::String&& key, AttributeDimension&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Custom segment user attributes.
+     * <p>One or more custom user attributes to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& AddUserAttributes(const char* key, AttributeDimension&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Custom segment user attributes.
+     * <p>One or more custom user attributes to use as criteria for the segment.</p>
      */
     inline SegmentDimensions& AddUserAttributes(const char* key, const AttributeDimension& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(key, value); return *this; }
 

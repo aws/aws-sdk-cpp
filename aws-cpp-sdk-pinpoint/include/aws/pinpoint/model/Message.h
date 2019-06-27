@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * Message to send<p><h3>See Also:</h3>   <a
+   * <p>Specifies the content and settings for a push notification that's sent to
+   * recipients of a campaign.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/Message">AWS
    * API Reference</a></p>
    */
@@ -49,571 +50,567 @@ namespace Model
 
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the
-     * campaign:
-OPEN_APP - Your app launches, or it becomes the foreground app if it
-     * has been sent to the background. This is the default action.
-
-DEEP_LINK - Uses
-     * deep linking features in iOS and Android to open your app and display a
-     * designated user interface within the app.
-
-URL - The default mobile browser on
-     * the user's device launches and opens a web page at the URL you specify.
+     * <p>The action to occur if a recipient taps the push notification. Valid values
+     * are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app
+     * if it was sent to the background. This is the default action.</p></li>
+     * <li><p>DEEP_LINK - Your app opens and displays a designated user interface in
+     * the app. This setting uses the deep-linking features of iOS and
+     * Android.</p></li> <li><p>URL - The default mobile browser on the recipient's
+     * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
     inline const Action& GetAction() const{ return m_action; }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the
-     * campaign:
-OPEN_APP - Your app launches, or it becomes the foreground app if it
-     * has been sent to the background. This is the default action.
-
-DEEP_LINK - Uses
-     * deep linking features in iOS and Android to open your app and display a
-     * designated user interface within the app.
-
-URL - The default mobile browser on
-     * the user's device launches and opens a web page at the URL you specify.
+     * <p>The action to occur if a recipient taps the push notification. Valid values
+     * are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app
+     * if it was sent to the background. This is the default action.</p></li>
+     * <li><p>DEEP_LINK - Your app opens and displays a designated user interface in
+     * the app. This setting uses the deep-linking features of iOS and
+     * Android.</p></li> <li><p>URL - The default mobile browser on the recipient's
+     * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the
-     * campaign:
-OPEN_APP - Your app launches, or it becomes the foreground app if it
-     * has been sent to the background. This is the default action.
-
-DEEP_LINK - Uses
-     * deep linking features in iOS and Android to open your app and display a
-     * designated user interface within the app.
-
-URL - The default mobile browser on
-     * the user's device launches and opens a web page at the URL you specify.
+     * <p>The action to occur if a recipient taps the push notification. Valid values
+     * are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app
+     * if it was sent to the background. This is the default action.</p></li>
+     * <li><p>DEEP_LINK - Your app opens and displays a designated user interface in
+     * the app. This setting uses the deep-linking features of iOS and
+     * Android.</p></li> <li><p>URL - The default mobile browser on the recipient's
+     * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
     inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the
-     * campaign:
-OPEN_APP - Your app launches, or it becomes the foreground app if it
-     * has been sent to the background. This is the default action.
-
-DEEP_LINK - Uses
-     * deep linking features in iOS and Android to open your app and display a
-     * designated user interface within the app.
-
-URL - The default mobile browser on
-     * the user's device launches and opens a web page at the URL you specify.
+     * <p>The action to occur if a recipient taps the push notification. Valid values
+     * are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app
+     * if it was sent to the background. This is the default action.</p></li>
+     * <li><p>DEEP_LINK - Your app opens and displays a designated user interface in
+     * the app. This setting uses the deep-linking features of iOS and
+     * Android.</p></li> <li><p>URL - The default mobile browser on the recipient's
+     * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
     inline void SetAction(Action&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the
-     * campaign:
-OPEN_APP - Your app launches, or it becomes the foreground app if it
-     * has been sent to the background. This is the default action.
-
-DEEP_LINK - Uses
-     * deep linking features in iOS and Android to open your app and display a
-     * designated user interface within the app.
-
-URL - The default mobile browser on
-     * the user's device launches and opens a web page at the URL you specify.
+     * <p>The action to occur if a recipient taps the push notification. Valid values
+     * are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app
+     * if it was sent to the background. This is the default action.</p></li>
+     * <li><p>DEEP_LINK - Your app opens and displays a designated user interface in
+     * the app. This setting uses the deep-linking features of iOS and
+     * Android.</p></li> <li><p>URL - The default mobile browser on the recipient's
+     * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
     inline Message& WithAction(const Action& value) { SetAction(value); return *this;}
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the
-     * campaign:
-OPEN_APP - Your app launches, or it becomes the foreground app if it
-     * has been sent to the background. This is the default action.
-
-DEEP_LINK - Uses
-     * deep linking features in iOS and Android to open your app and display a
-     * designated user interface within the app.
-
-URL - The default mobile browser on
-     * the user's device launches and opens a web page at the URL you specify.
+     * <p>The action to occur if a recipient taps the push notification. Valid values
+     * are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app
+     * if it was sent to the background. This is the default action.</p></li>
+     * <li><p>DEEP_LINK - Your app opens and displays a designated user interface in
+     * the app. This setting uses the deep-linking features of iOS and
+     * Android.</p></li> <li><p>URL - The default mobile browser on the recipient's
+     * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
     inline Message& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
 
 
     /**
-     * The message body. Can include up to 140 characters.
+     * <p>The body of the notification message. The maximum number of characters is
+     * 200.</p>
      */
     inline const Aws::String& GetBody() const{ return m_body; }
 
     /**
-     * The message body. Can include up to 140 characters.
+     * <p>The body of the notification message. The maximum number of characters is
+     * 200.</p>
      */
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
 
     /**
-     * The message body. Can include up to 140 characters.
+     * <p>The body of the notification message. The maximum number of characters is
+     * 200.</p>
      */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
-     * The message body. Can include up to 140 characters.
+     * <p>The body of the notification message. The maximum number of characters is
+     * 200.</p>
      */
     inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
 
     /**
-     * The message body. Can include up to 140 characters.
+     * <p>The body of the notification message. The maximum number of characters is
+     * 200.</p>
      */
     inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
 
     /**
-     * The message body. Can include up to 140 characters.
+     * <p>The body of the notification message. The maximum number of characters is
+     * 200.</p>
      */
     inline Message& WithBody(const Aws::String& value) { SetBody(value); return *this;}
 
     /**
-     * The message body. Can include up to 140 characters.
+     * <p>The body of the notification message. The maximum number of characters is
+     * 200.</p>
      */
     inline Message& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
 
     /**
-     * The message body. Can include up to 140 characters.
+     * <p>The body of the notification message. The maximum number of characters is
+     * 200.</p>
      */
     inline Message& WithBody(const char* value) { SetBody(value); return *this;}
 
 
     /**
-     * The URL that points to the icon image for the push notification icon, for
-     * example, the app icon.
+     * <p>The URL of the image to display as the push-notification icon, such as the
+     * icon for the app.</p>
      */
     inline const Aws::String& GetImageIconUrl() const{ return m_imageIconUrl; }
 
     /**
-     * The URL that points to the icon image for the push notification icon, for
-     * example, the app icon.
+     * <p>The URL of the image to display as the push-notification icon, such as the
+     * icon for the app.</p>
      */
     inline bool ImageIconUrlHasBeenSet() const { return m_imageIconUrlHasBeenSet; }
 
     /**
-     * The URL that points to the icon image for the push notification icon, for
-     * example, the app icon.
+     * <p>The URL of the image to display as the push-notification icon, such as the
+     * icon for the app.</p>
      */
     inline void SetImageIconUrl(const Aws::String& value) { m_imageIconUrlHasBeenSet = true; m_imageIconUrl = value; }
 
     /**
-     * The URL that points to the icon image for the push notification icon, for
-     * example, the app icon.
+     * <p>The URL of the image to display as the push-notification icon, such as the
+     * icon for the app.</p>
      */
     inline void SetImageIconUrl(Aws::String&& value) { m_imageIconUrlHasBeenSet = true; m_imageIconUrl = std::move(value); }
 
     /**
-     * The URL that points to the icon image for the push notification icon, for
-     * example, the app icon.
+     * <p>The URL of the image to display as the push-notification icon, such as the
+     * icon for the app.</p>
      */
     inline void SetImageIconUrl(const char* value) { m_imageIconUrlHasBeenSet = true; m_imageIconUrl.assign(value); }
 
     /**
-     * The URL that points to the icon image for the push notification icon, for
-     * example, the app icon.
+     * <p>The URL of the image to display as the push-notification icon, such as the
+     * icon for the app.</p>
      */
     inline Message& WithImageIconUrl(const Aws::String& value) { SetImageIconUrl(value); return *this;}
 
     /**
-     * The URL that points to the icon image for the push notification icon, for
-     * example, the app icon.
+     * <p>The URL of the image to display as the push-notification icon, such as the
+     * icon for the app.</p>
      */
     inline Message& WithImageIconUrl(Aws::String&& value) { SetImageIconUrl(std::move(value)); return *this;}
 
     /**
-     * The URL that points to the icon image for the push notification icon, for
-     * example, the app icon.
+     * <p>The URL of the image to display as the push-notification icon, such as the
+     * icon for the app.</p>
      */
     inline Message& WithImageIconUrl(const char* value) { SetImageIconUrl(value); return *this;}
 
 
     /**
-     * The URL that points to the small icon image for the push notification icon, for
-     * example, the app icon.
+     * <p>The URL of the image to display as the small, push-notification icon, such as
+     * a small version of the icon for the app.</p>
      */
     inline const Aws::String& GetImageSmallIconUrl() const{ return m_imageSmallIconUrl; }
 
     /**
-     * The URL that points to the small icon image for the push notification icon, for
-     * example, the app icon.
+     * <p>The URL of the image to display as the small, push-notification icon, such as
+     * a small version of the icon for the app.</p>
      */
     inline bool ImageSmallIconUrlHasBeenSet() const { return m_imageSmallIconUrlHasBeenSet; }
 
     /**
-     * The URL that points to the small icon image for the push notification icon, for
-     * example, the app icon.
+     * <p>The URL of the image to display as the small, push-notification icon, such as
+     * a small version of the icon for the app.</p>
      */
     inline void SetImageSmallIconUrl(const Aws::String& value) { m_imageSmallIconUrlHasBeenSet = true; m_imageSmallIconUrl = value; }
 
     /**
-     * The URL that points to the small icon image for the push notification icon, for
-     * example, the app icon.
+     * <p>The URL of the image to display as the small, push-notification icon, such as
+     * a small version of the icon for the app.</p>
      */
     inline void SetImageSmallIconUrl(Aws::String&& value) { m_imageSmallIconUrlHasBeenSet = true; m_imageSmallIconUrl = std::move(value); }
 
     /**
-     * The URL that points to the small icon image for the push notification icon, for
-     * example, the app icon.
+     * <p>The URL of the image to display as the small, push-notification icon, such as
+     * a small version of the icon for the app.</p>
      */
     inline void SetImageSmallIconUrl(const char* value) { m_imageSmallIconUrlHasBeenSet = true; m_imageSmallIconUrl.assign(value); }
 
     /**
-     * The URL that points to the small icon image for the push notification icon, for
-     * example, the app icon.
+     * <p>The URL of the image to display as the small, push-notification icon, such as
+     * a small version of the icon for the app.</p>
      */
     inline Message& WithImageSmallIconUrl(const Aws::String& value) { SetImageSmallIconUrl(value); return *this;}
 
     /**
-     * The URL that points to the small icon image for the push notification icon, for
-     * example, the app icon.
+     * <p>The URL of the image to display as the small, push-notification icon, such as
+     * a small version of the icon for the app.</p>
      */
     inline Message& WithImageSmallIconUrl(Aws::String&& value) { SetImageSmallIconUrl(std::move(value)); return *this;}
 
     /**
-     * The URL that points to the small icon image for the push notification icon, for
-     * example, the app icon.
+     * <p>The URL of the image to display as the small, push-notification icon, such as
+     * a small version of the icon for the app.</p>
      */
     inline Message& WithImageSmallIconUrl(const char* value) { SetImageSmallIconUrl(value); return *this;}
 
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>The URL of an image to display in the push notification.</p>
      */
     inline const Aws::String& GetImageUrl() const{ return m_imageUrl; }
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>The URL of an image to display in the push notification.</p>
      */
     inline bool ImageUrlHasBeenSet() const { return m_imageUrlHasBeenSet; }
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>The URL of an image to display in the push notification.</p>
      */
     inline void SetImageUrl(const Aws::String& value) { m_imageUrlHasBeenSet = true; m_imageUrl = value; }
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>The URL of an image to display in the push notification.</p>
      */
     inline void SetImageUrl(Aws::String&& value) { m_imageUrlHasBeenSet = true; m_imageUrl = std::move(value); }
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>The URL of an image to display in the push notification.</p>
      */
     inline void SetImageUrl(const char* value) { m_imageUrlHasBeenSet = true; m_imageUrl.assign(value); }
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>The URL of an image to display in the push notification.</p>
      */
     inline Message& WithImageUrl(const Aws::String& value) { SetImageUrl(value); return *this;}
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>The URL of an image to display in the push notification.</p>
      */
     inline Message& WithImageUrl(Aws::String&& value) { SetImageUrl(std::move(value)); return *this;}
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>The URL of an image to display in the push notification.</p>
      */
     inline Message& WithImageUrl(const char* value) { SetImageUrl(value); return *this;}
 
 
     /**
-     * The JSON payload used for a silent push.
+     * <p>The JSON payload to use for a silent push notification.</p>
      */
     inline const Aws::String& GetJsonBody() const{ return m_jsonBody; }
 
     /**
-     * The JSON payload used for a silent push.
+     * <p>The JSON payload to use for a silent push notification.</p>
      */
     inline bool JsonBodyHasBeenSet() const { return m_jsonBodyHasBeenSet; }
 
     /**
-     * The JSON payload used for a silent push.
+     * <p>The JSON payload to use for a silent push notification.</p>
      */
     inline void SetJsonBody(const Aws::String& value) { m_jsonBodyHasBeenSet = true; m_jsonBody = value; }
 
     /**
-     * The JSON payload used for a silent push.
+     * <p>The JSON payload to use for a silent push notification.</p>
      */
     inline void SetJsonBody(Aws::String&& value) { m_jsonBodyHasBeenSet = true; m_jsonBody = std::move(value); }
 
     /**
-     * The JSON payload used for a silent push.
+     * <p>The JSON payload to use for a silent push notification.</p>
      */
     inline void SetJsonBody(const char* value) { m_jsonBodyHasBeenSet = true; m_jsonBody.assign(value); }
 
     /**
-     * The JSON payload used for a silent push.
+     * <p>The JSON payload to use for a silent push notification.</p>
      */
     inline Message& WithJsonBody(const Aws::String& value) { SetJsonBody(value); return *this;}
 
     /**
-     * The JSON payload used for a silent push.
+     * <p>The JSON payload to use for a silent push notification.</p>
      */
     inline Message& WithJsonBody(Aws::String&& value) { SetJsonBody(std::move(value)); return *this;}
 
     /**
-     * The JSON payload used for a silent push.
+     * <p>The JSON payload to use for a silent push notification.</p>
      */
     inline Message& WithJsonBody(const char* value) { SetJsonBody(value); return *this;}
 
 
     /**
-     * A URL that refers to the location of an image or video that you want to display
-     * in the push notification.
+     * <p>The URL of the image or video to display in the push notification.</p>
      */
     inline const Aws::String& GetMediaUrl() const{ return m_mediaUrl; }
 
     /**
-     * A URL that refers to the location of an image or video that you want to display
-     * in the push notification.
+     * <p>The URL of the image or video to display in the push notification.</p>
      */
     inline bool MediaUrlHasBeenSet() const { return m_mediaUrlHasBeenSet; }
 
     /**
-     * A URL that refers to the location of an image or video that you want to display
-     * in the push notification.
+     * <p>The URL of the image or video to display in the push notification.</p>
      */
     inline void SetMediaUrl(const Aws::String& value) { m_mediaUrlHasBeenSet = true; m_mediaUrl = value; }
 
     /**
-     * A URL that refers to the location of an image or video that you want to display
-     * in the push notification.
+     * <p>The URL of the image or video to display in the push notification.</p>
      */
     inline void SetMediaUrl(Aws::String&& value) { m_mediaUrlHasBeenSet = true; m_mediaUrl = std::move(value); }
 
     /**
-     * A URL that refers to the location of an image or video that you want to display
-     * in the push notification.
+     * <p>The URL of the image or video to display in the push notification.</p>
      */
     inline void SetMediaUrl(const char* value) { m_mediaUrlHasBeenSet = true; m_mediaUrl.assign(value); }
 
     /**
-     * A URL that refers to the location of an image or video that you want to display
-     * in the push notification.
+     * <p>The URL of the image or video to display in the push notification.</p>
      */
     inline Message& WithMediaUrl(const Aws::String& value) { SetMediaUrl(value); return *this;}
 
     /**
-     * A URL that refers to the location of an image or video that you want to display
-     * in the push notification.
+     * <p>The URL of the image or video to display in the push notification.</p>
      */
     inline Message& WithMediaUrl(Aws::String&& value) { SetMediaUrl(std::move(value)); return *this;}
 
     /**
-     * A URL that refers to the location of an image or video that you want to display
-     * in the push notification.
+     * <p>The URL of the image or video to display in the push notification.</p>
      */
     inline Message& WithMediaUrl(const char* value) { SetMediaUrl(value); return *this;}
 
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides other values for the message.</p>
      */
     inline const Aws::String& GetRawContent() const{ return m_rawContent; }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides other values for the message.</p>
      */
     inline bool RawContentHasBeenSet() const { return m_rawContentHasBeenSet; }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides other values for the message.</p>
      */
     inline void SetRawContent(const Aws::String& value) { m_rawContentHasBeenSet = true; m_rawContent = value; }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides other values for the message.</p>
      */
     inline void SetRawContent(Aws::String&& value) { m_rawContentHasBeenSet = true; m_rawContent = std::move(value); }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides other values for the message.</p>
      */
     inline void SetRawContent(const char* value) { m_rawContentHasBeenSet = true; m_rawContent.assign(value); }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides other values for the message.</p>
      */
     inline Message& WithRawContent(const Aws::String& value) { SetRawContent(value); return *this;}
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides other values for the message.</p>
      */
     inline Message& WithRawContent(Aws::String&& value) { SetRawContent(std::move(value)); return *this;}
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides other values for the message.</p>
      */
     inline Message& WithRawContent(const char* value) { SetRawContent(value); return *this;}
 
 
     /**
-     * Indicates if the message should display on the users device.
-
-Silent pushes can
-     * be used for Remote Configuration and Phone Home use cases. 
+     * <p>Specifies whether the notification is a silent push notification, which is a
+     * push notification that doesn't display on a recipient's device. Silent push
+     * notifications can be used for cases such as updating an app's configuration,
+     * displaying messages in an in-app message center, or supporting phone home
+     * functionality.</p>
      */
     inline bool GetSilentPush() const{ return m_silentPush; }
 
     /**
-     * Indicates if the message should display on the users device.
-
-Silent pushes can
-     * be used for Remote Configuration and Phone Home use cases. 
+     * <p>Specifies whether the notification is a silent push notification, which is a
+     * push notification that doesn't display on a recipient's device. Silent push
+     * notifications can be used for cases such as updating an app's configuration,
+     * displaying messages in an in-app message center, or supporting phone home
+     * functionality.</p>
      */
     inline bool SilentPushHasBeenSet() const { return m_silentPushHasBeenSet; }
 
     /**
-     * Indicates if the message should display on the users device.
-
-Silent pushes can
-     * be used for Remote Configuration and Phone Home use cases. 
+     * <p>Specifies whether the notification is a silent push notification, which is a
+     * push notification that doesn't display on a recipient's device. Silent push
+     * notifications can be used for cases such as updating an app's configuration,
+     * displaying messages in an in-app message center, or supporting phone home
+     * functionality.</p>
      */
     inline void SetSilentPush(bool value) { m_silentPushHasBeenSet = true; m_silentPush = value; }
 
     /**
-     * Indicates if the message should display on the users device.
-
-Silent pushes can
-     * be used for Remote Configuration and Phone Home use cases. 
+     * <p>Specifies whether the notification is a silent push notification, which is a
+     * push notification that doesn't display on a recipient's device. Silent push
+     * notifications can be used for cases such as updating an app's configuration,
+     * displaying messages in an in-app message center, or supporting phone home
+     * functionality.</p>
      */
     inline Message& WithSilentPush(bool value) { SetSilentPush(value); return *this;}
 
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept if the
-     * service is unable to deliver the notification the first time. If the value is 0,
-     * it treats the notification as if it expires immediately and does not store the
-     * notification or attempt to redeliver it. This value is converted to the
-     * expiration field when sent to the service. It only applies to APNs and GCM
+     * <p>The number of seconds that the push-notification service should keep the
+     * message, if the service is unable to deliver the notification the first time.
+     * This value is converted to an expiration value when it's sent to a
+     * push-notification service. If this value is 0, the service treats the
+     * notification as if it expires immediately and the service doesn't store or try
+     * to deliver the notification again.</p> <p>This value doesn't apply to messages
+     * that are sent through the Amazon Device Messaging (ADM) service.</p>
      */
     inline int GetTimeToLive() const{ return m_timeToLive; }
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept if the
-     * service is unable to deliver the notification the first time. If the value is 0,
-     * it treats the notification as if it expires immediately and does not store the
-     * notification or attempt to redeliver it. This value is converted to the
-     * expiration field when sent to the service. It only applies to APNs and GCM
+     * <p>The number of seconds that the push-notification service should keep the
+     * message, if the service is unable to deliver the notification the first time.
+     * This value is converted to an expiration value when it's sent to a
+     * push-notification service. If this value is 0, the service treats the
+     * notification as if it expires immediately and the service doesn't store or try
+     * to deliver the notification again.</p> <p>This value doesn't apply to messages
+     * that are sent through the Amazon Device Messaging (ADM) service.</p>
      */
     inline bool TimeToLiveHasBeenSet() const { return m_timeToLiveHasBeenSet; }
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept if the
-     * service is unable to deliver the notification the first time. If the value is 0,
-     * it treats the notification as if it expires immediately and does not store the
-     * notification or attempt to redeliver it. This value is converted to the
-     * expiration field when sent to the service. It only applies to APNs and GCM
+     * <p>The number of seconds that the push-notification service should keep the
+     * message, if the service is unable to deliver the notification the first time.
+     * This value is converted to an expiration value when it's sent to a
+     * push-notification service. If this value is 0, the service treats the
+     * notification as if it expires immediately and the service doesn't store or try
+     * to deliver the notification again.</p> <p>This value doesn't apply to messages
+     * that are sent through the Amazon Device Messaging (ADM) service.</p>
      */
     inline void SetTimeToLive(int value) { m_timeToLiveHasBeenSet = true; m_timeToLive = value; }
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept if the
-     * service is unable to deliver the notification the first time. If the value is 0,
-     * it treats the notification as if it expires immediately and does not store the
-     * notification or attempt to redeliver it. This value is converted to the
-     * expiration field when sent to the service. It only applies to APNs and GCM
+     * <p>The number of seconds that the push-notification service should keep the
+     * message, if the service is unable to deliver the notification the first time.
+     * This value is converted to an expiration value when it's sent to a
+     * push-notification service. If this value is 0, the service treats the
+     * notification as if it expires immediately and the service doesn't store or try
+     * to deliver the notification again.</p> <p>This value doesn't apply to messages
+     * that are sent through the Amazon Device Messaging (ADM) service.</p>
      */
     inline Message& WithTimeToLive(int value) { SetTimeToLive(value); return *this;}
 
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on a recipient's
+     * device.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on a recipient's
+     * device.</p>
      */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on a recipient's
+     * device.</p>
      */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on a recipient's
+     * device.</p>
      */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on a recipient's
+     * device.</p>
      */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on a recipient's
+     * device.</p>
      */
     inline Message& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on a recipient's
+     * device.</p>
      */
     inline Message& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on a recipient's
+     * device.</p>
      */
     inline Message& WithTitle(const char* value) { SetTitle(value); return *this;}
 
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in a recipient's default mobile browser, if a recipient taps
+     * the push notification and the value of the Action property is URL.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in a recipient's default mobile browser, if a recipient taps
+     * the push notification and the value of the Action property is URL.</p>
      */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in a recipient's default mobile browser, if a recipient taps
+     * the push notification and the value of the Action property is URL.</p>
      */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in a recipient's default mobile browser, if a recipient taps
+     * the push notification and the value of the Action property is URL.</p>
      */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in a recipient's default mobile browser, if a recipient taps
+     * the push notification and the value of the Action property is URL.</p>
      */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in a recipient's default mobile browser, if a recipient taps
+     * the push notification and the value of the Action property is URL.</p>
      */
     inline Message& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in a recipient's default mobile browser, if a recipient taps
+     * the push notification and the value of the Action property is URL.</p>
      */
     inline Message& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in a recipient's default mobile browser, if a recipient taps
+     * the push notification and the value of the Action property is URL.</p>
      */
     inline Message& WithUrl(const char* value) { SetUrl(value); return *this;}
 

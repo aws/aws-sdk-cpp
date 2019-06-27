@@ -37,7 +37,8 @@ namespace Model
 {
 
   /**
-   * A batch of PublicEndpoints and Events to process.<p><h3>See Also:</h3>   <a
+   * <p>Specifies a batch of endpoints and events to process.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventsBatch">AWS
    * API Reference</a></p>
    */
@@ -51,93 +52,93 @@ namespace Model
 
 
     /**
-     * The PublicEndpoint attached to the EndpointId from the request.
+     * <p>A set of properties and attributes that are associated with the endpoint.</p>
      */
     inline const PublicEndpoint& GetEndpoint() const{ return m_endpoint; }
 
     /**
-     * The PublicEndpoint attached to the EndpointId from the request.
+     * <p>A set of properties and attributes that are associated with the endpoint.</p>
      */
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
 
     /**
-     * The PublicEndpoint attached to the EndpointId from the request.
+     * <p>A set of properties and attributes that are associated with the endpoint.</p>
      */
     inline void SetEndpoint(const PublicEndpoint& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
-     * The PublicEndpoint attached to the EndpointId from the request.
+     * <p>A set of properties and attributes that are associated with the endpoint.</p>
      */
     inline void SetEndpoint(PublicEndpoint&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
-     * The PublicEndpoint attached to the EndpointId from the request.
+     * <p>A set of properties and attributes that are associated with the endpoint.</p>
      */
     inline EventsBatch& WithEndpoint(const PublicEndpoint& value) { SetEndpoint(value); return *this;}
 
     /**
-     * The PublicEndpoint attached to the EndpointId from the request.
+     * <p>A set of properties and attributes that are associated with the endpoint.</p>
      */
     inline EventsBatch& WithEndpoint(PublicEndpoint&& value) { SetEndpoint(std::move(value)); return *this;}
 
 
     /**
-     * An object that contains a set of events associated with the endpoint.
+     * <p>A set of properties that are associated with the event.</p>
      */
     inline const Aws::Map<Aws::String, Event>& GetEvents() const{ return m_events; }
 
     /**
-     * An object that contains a set of events associated with the endpoint.
+     * <p>A set of properties that are associated with the event.</p>
      */
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
-     * An object that contains a set of events associated with the endpoint.
+     * <p>A set of properties that are associated with the event.</p>
      */
     inline void SetEvents(const Aws::Map<Aws::String, Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
-     * An object that contains a set of events associated with the endpoint.
+     * <p>A set of properties that are associated with the event.</p>
      */
     inline void SetEvents(Aws::Map<Aws::String, Event>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     /**
-     * An object that contains a set of events associated with the endpoint.
+     * <p>A set of properties that are associated with the event.</p>
      */
     inline EventsBatch& WithEvents(const Aws::Map<Aws::String, Event>& value) { SetEvents(value); return *this;}
 
     /**
-     * An object that contains a set of events associated with the endpoint.
+     * <p>A set of properties that are associated with the event.</p>
      */
     inline EventsBatch& WithEvents(Aws::Map<Aws::String, Event>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
-     * An object that contains a set of events associated with the endpoint.
+     * <p>A set of properties that are associated with the event.</p>
      */
     inline EventsBatch& AddEvents(const Aws::String& key, const Event& value) { m_eventsHasBeenSet = true; m_events.emplace(key, value); return *this; }
 
     /**
-     * An object that contains a set of events associated with the endpoint.
+     * <p>A set of properties that are associated with the event.</p>
      */
     inline EventsBatch& AddEvents(Aws::String&& key, const Event& value) { m_eventsHasBeenSet = true; m_events.emplace(std::move(key), value); return *this; }
 
     /**
-     * An object that contains a set of events associated with the endpoint.
+     * <p>A set of properties that are associated with the event.</p>
      */
     inline EventsBatch& AddEvents(const Aws::String& key, Event&& value) { m_eventsHasBeenSet = true; m_events.emplace(key, std::move(value)); return *this; }
 
     /**
-     * An object that contains a set of events associated with the endpoint.
+     * <p>A set of properties that are associated with the event.</p>
      */
     inline EventsBatch& AddEvents(Aws::String&& key, Event&& value) { m_eventsHasBeenSet = true; m_events.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * An object that contains a set of events associated with the endpoint.
+     * <p>A set of properties that are associated with the event.</p>
      */
     inline EventsBatch& AddEvents(const char* key, Event&& value) { m_eventsHasBeenSet = true; m_events.emplace(key, std::move(value)); return *this; }
 
     /**
-     * An object that contains a set of events associated with the endpoint.
+     * <p>A set of properties that are associated with the event.</p>
      */
     inline EventsBatch& AddEvents(const char* key, const Event& value) { m_eventsHasBeenSet = true; m_events.emplace(key, value); return *this; }
 

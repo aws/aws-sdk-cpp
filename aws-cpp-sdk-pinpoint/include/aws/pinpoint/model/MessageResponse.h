@@ -37,7 +37,8 @@ namespace Model
 {
 
   /**
-   * Send message response.<p><h3>See Also:</h3>   <a
+   * <p>Provides information about the results of a request to send a message to an
+   * endpoint address.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/MessageResponse">AWS
    * API Reference</a></p>
    */
@@ -51,229 +52,269 @@ namespace Model
 
 
     /**
-     * Application id of the message.
+     * <p>The unique identifier for the application that was used to send the
+     * message.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * Application id of the message.
+     * <p>The unique identifier for the application that was used to send the
+     * message.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * Application id of the message.
+     * <p>The unique identifier for the application that was used to send the
+     * message.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * Application id of the message.
+     * <p>The unique identifier for the application that was used to send the
+     * message.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * Application id of the message.
+     * <p>The unique identifier for the application that was used to send the
+     * message.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * Application id of the message.
+     * <p>The unique identifier for the application that was used to send the
+     * message.</p>
      */
     inline MessageResponse& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * Application id of the message.
+     * <p>The unique identifier for the application that was used to send the
+     * message.</p>
      */
     inline MessageResponse& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * Application id of the message.
+     * <p>The unique identifier for the application that was used to send the
+     * message.</p>
      */
     inline MessageResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * A map containing a multi part response for each address, with the endpointId as
-     * the key and the result as the value.
+     * <p>A map that contains a multipart response for each address that the message
+     * was sent to. In the map, the endpoint ID is the key and the result is the
+     * value.</p>
      */
     inline const Aws::Map<Aws::String, EndpointMessageResult>& GetEndpointResult() const{ return m_endpointResult; }
 
     /**
-     * A map containing a multi part response for each address, with the endpointId as
-     * the key and the result as the value.
+     * <p>A map that contains a multipart response for each address that the message
+     * was sent to. In the map, the endpoint ID is the key and the result is the
+     * value.</p>
      */
     inline bool EndpointResultHasBeenSet() const { return m_endpointResultHasBeenSet; }
 
     /**
-     * A map containing a multi part response for each address, with the endpointId as
-     * the key and the result as the value.
+     * <p>A map that contains a multipart response for each address that the message
+     * was sent to. In the map, the endpoint ID is the key and the result is the
+     * value.</p>
      */
     inline void SetEndpointResult(const Aws::Map<Aws::String, EndpointMessageResult>& value) { m_endpointResultHasBeenSet = true; m_endpointResult = value; }
 
     /**
-     * A map containing a multi part response for each address, with the endpointId as
-     * the key and the result as the value.
+     * <p>A map that contains a multipart response for each address that the message
+     * was sent to. In the map, the endpoint ID is the key and the result is the
+     * value.</p>
      */
     inline void SetEndpointResult(Aws::Map<Aws::String, EndpointMessageResult>&& value) { m_endpointResultHasBeenSet = true; m_endpointResult = std::move(value); }
 
     /**
-     * A map containing a multi part response for each address, with the endpointId as
-     * the key and the result as the value.
+     * <p>A map that contains a multipart response for each address that the message
+     * was sent to. In the map, the endpoint ID is the key and the result is the
+     * value.</p>
      */
     inline MessageResponse& WithEndpointResult(const Aws::Map<Aws::String, EndpointMessageResult>& value) { SetEndpointResult(value); return *this;}
 
     /**
-     * A map containing a multi part response for each address, with the endpointId as
-     * the key and the result as the value.
+     * <p>A map that contains a multipart response for each address that the message
+     * was sent to. In the map, the endpoint ID is the key and the result is the
+     * value.</p>
      */
     inline MessageResponse& WithEndpointResult(Aws::Map<Aws::String, EndpointMessageResult>&& value) { SetEndpointResult(std::move(value)); return *this;}
 
     /**
-     * A map containing a multi part response for each address, with the endpointId as
-     * the key and the result as the value.
+     * <p>A map that contains a multipart response for each address that the message
+     * was sent to. In the map, the endpoint ID is the key and the result is the
+     * value.</p>
      */
     inline MessageResponse& AddEndpointResult(const Aws::String& key, const EndpointMessageResult& value) { m_endpointResultHasBeenSet = true; m_endpointResult.emplace(key, value); return *this; }
 
     /**
-     * A map containing a multi part response for each address, with the endpointId as
-     * the key and the result as the value.
+     * <p>A map that contains a multipart response for each address that the message
+     * was sent to. In the map, the endpoint ID is the key and the result is the
+     * value.</p>
      */
     inline MessageResponse& AddEndpointResult(Aws::String&& key, const EndpointMessageResult& value) { m_endpointResultHasBeenSet = true; m_endpointResult.emplace(std::move(key), value); return *this; }
 
     /**
-     * A map containing a multi part response for each address, with the endpointId as
-     * the key and the result as the value.
+     * <p>A map that contains a multipart response for each address that the message
+     * was sent to. In the map, the endpoint ID is the key and the result is the
+     * value.</p>
      */
     inline MessageResponse& AddEndpointResult(const Aws::String& key, EndpointMessageResult&& value) { m_endpointResultHasBeenSet = true; m_endpointResult.emplace(key, std::move(value)); return *this; }
 
     /**
-     * A map containing a multi part response for each address, with the endpointId as
-     * the key and the result as the value.
+     * <p>A map that contains a multipart response for each address that the message
+     * was sent to. In the map, the endpoint ID is the key and the result is the
+     * value.</p>
      */
     inline MessageResponse& AddEndpointResult(Aws::String&& key, EndpointMessageResult&& value) { m_endpointResultHasBeenSet = true; m_endpointResult.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * A map containing a multi part response for each address, with the endpointId as
-     * the key and the result as the value.
+     * <p>A map that contains a multipart response for each address that the message
+     * was sent to. In the map, the endpoint ID is the key and the result is the
+     * value.</p>
      */
     inline MessageResponse& AddEndpointResult(const char* key, EndpointMessageResult&& value) { m_endpointResultHasBeenSet = true; m_endpointResult.emplace(key, std::move(value)); return *this; }
 
     /**
-     * A map containing a multi part response for each address, with the endpointId as
-     * the key and the result as the value.
+     * <p>A map that contains a multipart response for each address that the message
+     * was sent to. In the map, the endpoint ID is the key and the result is the
+     * value.</p>
      */
     inline MessageResponse& AddEndpointResult(const char* key, const EndpointMessageResult& value) { m_endpointResultHasBeenSet = true; m_endpointResult.emplace(key, value); return *this; }
 
 
     /**
-     * Original request Id for which this message was delivered.
+     * <p>The identifier for the original request that the message was delivered
+     * for.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * Original request Id for which this message was delivered.
+     * <p>The identifier for the original request that the message was delivered
+     * for.</p>
      */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
     /**
-     * Original request Id for which this message was delivered.
+     * <p>The identifier for the original request that the message was delivered
+     * for.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     /**
-     * Original request Id for which this message was delivered.
+     * <p>The identifier for the original request that the message was delivered
+     * for.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
 
     /**
-     * Original request Id for which this message was delivered.
+     * <p>The identifier for the original request that the message was delivered
+     * for.</p>
      */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
 
     /**
-     * Original request Id for which this message was delivered.
+     * <p>The identifier for the original request that the message was delivered
+     * for.</p>
      */
     inline MessageResponse& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * Original request Id for which this message was delivered.
+     * <p>The identifier for the original request that the message was delivered
+     * for.</p>
      */
     inline MessageResponse& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * Original request Id for which this message was delivered.
+     * <p>The identifier for the original request that the message was delivered
+     * for.</p>
      */
     inline MessageResponse& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
 
     /**
-     * A map containing a multi part response for each address, with the address as the
-     * key(Email address, phone number or push token) and the result as the value.
+     * <p>A map that contains a multipart response for each address (email address,
+     * phone number, or push notification token) that the message was sent to. In the
+     * map, the address is the key and the result is the value.</p>
      */
     inline const Aws::Map<Aws::String, MessageResult>& GetResult() const{ return m_result; }
 
     /**
-     * A map containing a multi part response for each address, with the address as the
-     * key(Email address, phone number or push token) and the result as the value.
+     * <p>A map that contains a multipart response for each address (email address,
+     * phone number, or push notification token) that the message was sent to. In the
+     * map, the address is the key and the result is the value.</p>
      */
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
 
     /**
-     * A map containing a multi part response for each address, with the address as the
-     * key(Email address, phone number or push token) and the result as the value.
+     * <p>A map that contains a multipart response for each address (email address,
+     * phone number, or push notification token) that the message was sent to. In the
+     * map, the address is the key and the result is the value.</p>
      */
     inline void SetResult(const Aws::Map<Aws::String, MessageResult>& value) { m_resultHasBeenSet = true; m_result = value; }
 
     /**
-     * A map containing a multi part response for each address, with the address as the
-     * key(Email address, phone number or push token) and the result as the value.
+     * <p>A map that contains a multipart response for each address (email address,
+     * phone number, or push notification token) that the message was sent to. In the
+     * map, the address is the key and the result is the value.</p>
      */
     inline void SetResult(Aws::Map<Aws::String, MessageResult>&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
 
     /**
-     * A map containing a multi part response for each address, with the address as the
-     * key(Email address, phone number or push token) and the result as the value.
+     * <p>A map that contains a multipart response for each address (email address,
+     * phone number, or push notification token) that the message was sent to. In the
+     * map, the address is the key and the result is the value.</p>
      */
     inline MessageResponse& WithResult(const Aws::Map<Aws::String, MessageResult>& value) { SetResult(value); return *this;}
 
     /**
-     * A map containing a multi part response for each address, with the address as the
-     * key(Email address, phone number or push token) and the result as the value.
+     * <p>A map that contains a multipart response for each address (email address,
+     * phone number, or push notification token) that the message was sent to. In the
+     * map, the address is the key and the result is the value.</p>
      */
     inline MessageResponse& WithResult(Aws::Map<Aws::String, MessageResult>&& value) { SetResult(std::move(value)); return *this;}
 
     /**
-     * A map containing a multi part response for each address, with the address as the
-     * key(Email address, phone number or push token) and the result as the value.
+     * <p>A map that contains a multipart response for each address (email address,
+     * phone number, or push notification token) that the message was sent to. In the
+     * map, the address is the key and the result is the value.</p>
      */
     inline MessageResponse& AddResult(const Aws::String& key, const MessageResult& value) { m_resultHasBeenSet = true; m_result.emplace(key, value); return *this; }
 
     /**
-     * A map containing a multi part response for each address, with the address as the
-     * key(Email address, phone number or push token) and the result as the value.
+     * <p>A map that contains a multipart response for each address (email address,
+     * phone number, or push notification token) that the message was sent to. In the
+     * map, the address is the key and the result is the value.</p>
      */
     inline MessageResponse& AddResult(Aws::String&& key, const MessageResult& value) { m_resultHasBeenSet = true; m_result.emplace(std::move(key), value); return *this; }
 
     /**
-     * A map containing a multi part response for each address, with the address as the
-     * key(Email address, phone number or push token) and the result as the value.
+     * <p>A map that contains a multipart response for each address (email address,
+     * phone number, or push notification token) that the message was sent to. In the
+     * map, the address is the key and the result is the value.</p>
      */
     inline MessageResponse& AddResult(const Aws::String& key, MessageResult&& value) { m_resultHasBeenSet = true; m_result.emplace(key, std::move(value)); return *this; }
 
     /**
-     * A map containing a multi part response for each address, with the address as the
-     * key(Email address, phone number or push token) and the result as the value.
+     * <p>A map that contains a multipart response for each address (email address,
+     * phone number, or push notification token) that the message was sent to. In the
+     * map, the address is the key and the result is the value.</p>
      */
     inline MessageResponse& AddResult(Aws::String&& key, MessageResult&& value) { m_resultHasBeenSet = true; m_result.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * A map containing a multi part response for each address, with the address as the
-     * key(Email address, phone number or push token) and the result as the value.
+     * <p>A map that contains a multipart response for each address (email address,
+     * phone number, or push notification token) that the message was sent to. In the
+     * map, the address is the key and the result is the value.</p>
      */
     inline MessageResponse& AddResult(const char* key, MessageResult&& value) { m_resultHasBeenSet = true; m_result.emplace(key, std::move(value)); return *this; }
 
     /**
-     * A map containing a multi part response for each address, with the address as the
-     * key(Email address, phone number or push token) and the result as the value.
+     * <p>A map that contains a multipart response for each address (email address,
+     * phone number, or push notification token) that the message was sent to. In the
+     * map, the address is the key and the result is the value.</p>
      */
     inline MessageResponse& AddResult(const char* key, const MessageResult& value) { m_resultHasBeenSet = true; m_result.emplace(key, value); return *this; }
 

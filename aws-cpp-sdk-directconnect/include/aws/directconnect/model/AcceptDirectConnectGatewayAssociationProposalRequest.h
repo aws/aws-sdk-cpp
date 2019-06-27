@@ -178,50 +178,66 @@ namespace Model
 
 
     /**
-     * <p>Overrides the existing Amazon VPC prefixes advertised to the Direct Connect
-     * gateway.</p>
+     * <p>Overrides the Amazon VPC prefixes advertised to the Direct Connect
+     * gateway.</p> <p>For information about how to set the prefixes, see <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
+     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
      */
     inline const Aws::Vector<RouteFilterPrefix>& GetOverrideAllowedPrefixesToDirectConnectGateway() const{ return m_overrideAllowedPrefixesToDirectConnectGateway; }
 
     /**
-     * <p>Overrides the existing Amazon VPC prefixes advertised to the Direct Connect
-     * gateway.</p>
+     * <p>Overrides the Amazon VPC prefixes advertised to the Direct Connect
+     * gateway.</p> <p>For information about how to set the prefixes, see <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
+     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
      */
     inline bool OverrideAllowedPrefixesToDirectConnectGatewayHasBeenSet() const { return m_overrideAllowedPrefixesToDirectConnectGatewayHasBeenSet; }
 
     /**
-     * <p>Overrides the existing Amazon VPC prefixes advertised to the Direct Connect
-     * gateway.</p>
+     * <p>Overrides the Amazon VPC prefixes advertised to the Direct Connect
+     * gateway.</p> <p>For information about how to set the prefixes, see <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
+     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
      */
     inline void SetOverrideAllowedPrefixesToDirectConnectGateway(const Aws::Vector<RouteFilterPrefix>& value) { m_overrideAllowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_overrideAllowedPrefixesToDirectConnectGateway = value; }
 
     /**
-     * <p>Overrides the existing Amazon VPC prefixes advertised to the Direct Connect
-     * gateway.</p>
+     * <p>Overrides the Amazon VPC prefixes advertised to the Direct Connect
+     * gateway.</p> <p>For information about how to set the prefixes, see <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
+     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
      */
     inline void SetOverrideAllowedPrefixesToDirectConnectGateway(Aws::Vector<RouteFilterPrefix>&& value) { m_overrideAllowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_overrideAllowedPrefixesToDirectConnectGateway = std::move(value); }
 
     /**
-     * <p>Overrides the existing Amazon VPC prefixes advertised to the Direct Connect
-     * gateway.</p>
+     * <p>Overrides the Amazon VPC prefixes advertised to the Direct Connect
+     * gateway.</p> <p>For information about how to set the prefixes, see <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
+     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
      */
     inline AcceptDirectConnectGatewayAssociationProposalRequest& WithOverrideAllowedPrefixesToDirectConnectGateway(const Aws::Vector<RouteFilterPrefix>& value) { SetOverrideAllowedPrefixesToDirectConnectGateway(value); return *this;}
 
     /**
-     * <p>Overrides the existing Amazon VPC prefixes advertised to the Direct Connect
-     * gateway.</p>
+     * <p>Overrides the Amazon VPC prefixes advertised to the Direct Connect
+     * gateway.</p> <p>For information about how to set the prefixes, see <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
+     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
      */
     inline AcceptDirectConnectGatewayAssociationProposalRequest& WithOverrideAllowedPrefixesToDirectConnectGateway(Aws::Vector<RouteFilterPrefix>&& value) { SetOverrideAllowedPrefixesToDirectConnectGateway(std::move(value)); return *this;}
 
     /**
-     * <p>Overrides the existing Amazon VPC prefixes advertised to the Direct Connect
-     * gateway.</p>
+     * <p>Overrides the Amazon VPC prefixes advertised to the Direct Connect
+     * gateway.</p> <p>For information about how to set the prefixes, see <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
+     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
      */
     inline AcceptDirectConnectGatewayAssociationProposalRequest& AddOverrideAllowedPrefixesToDirectConnectGateway(const RouteFilterPrefix& value) { m_overrideAllowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_overrideAllowedPrefixesToDirectConnectGateway.push_back(value); return *this; }
 
     /**
-     * <p>Overrides the existing Amazon VPC prefixes advertised to the Direct Connect
-     * gateway.</p>
+     * <p>Overrides the Amazon VPC prefixes advertised to the Direct Connect
+     * gateway.</p> <p>For information about how to set the prefixes, see <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
+     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
      */
     inline AcceptDirectConnectGatewayAssociationProposalRequest& AddOverrideAllowedPrefixesToDirectConnectGateway(RouteFilterPrefix&& value) { m_overrideAllowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_overrideAllowedPrefixesToDirectConnectGateway.push_back(std::move(value)); return *this; }
 

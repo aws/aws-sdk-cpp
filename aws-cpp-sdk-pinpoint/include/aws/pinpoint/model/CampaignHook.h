@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * Campaign hook information.<p><h3>See Also:</h3>   <a
+   * <p>Specifies the AWS Lambda function to use as a code hook for a
+   * campaign.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignHook">AWS
    * API Reference</a></p>
    */
@@ -49,122 +50,130 @@ namespace Model
 
 
     /**
-     * Lambda function name or arn to be called for delivery
+     * <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon
+     * Pinpoint invokes to send messages for a campaign.</p>
      */
     inline const Aws::String& GetLambdaFunctionName() const{ return m_lambdaFunctionName; }
 
     /**
-     * Lambda function name or arn to be called for delivery
+     * <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon
+     * Pinpoint invokes to send messages for a campaign.</p>
      */
     inline bool LambdaFunctionNameHasBeenSet() const { return m_lambdaFunctionNameHasBeenSet; }
 
     /**
-     * Lambda function name or arn to be called for delivery
+     * <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon
+     * Pinpoint invokes to send messages for a campaign.</p>
      */
     inline void SetLambdaFunctionName(const Aws::String& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = value; }
 
     /**
-     * Lambda function name or arn to be called for delivery
+     * <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon
+     * Pinpoint invokes to send messages for a campaign.</p>
      */
     inline void SetLambdaFunctionName(Aws::String&& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = std::move(value); }
 
     /**
-     * Lambda function name or arn to be called for delivery
+     * <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon
+     * Pinpoint invokes to send messages for a campaign.</p>
      */
     inline void SetLambdaFunctionName(const char* value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName.assign(value); }
 
     /**
-     * Lambda function name or arn to be called for delivery
+     * <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon
+     * Pinpoint invokes to send messages for a campaign.</p>
      */
     inline CampaignHook& WithLambdaFunctionName(const Aws::String& value) { SetLambdaFunctionName(value); return *this;}
 
     /**
-     * Lambda function name or arn to be called for delivery
+     * <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon
+     * Pinpoint invokes to send messages for a campaign.</p>
      */
     inline CampaignHook& WithLambdaFunctionName(Aws::String&& value) { SetLambdaFunctionName(std::move(value)); return *this;}
 
     /**
-     * Lambda function name or arn to be called for delivery
+     * <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon
+     * Pinpoint invokes to send messages for a campaign.</p>
      */
     inline CampaignHook& WithLambdaFunctionName(const char* value) { SetLambdaFunctionName(value); return *this;}
 
 
     /**
-     * What mode Lambda should be invoked in.
+     * <p>Specifies which Lambda mode to use when invoking the AWS Lambda function.</p>
      */
     inline const Mode& GetMode() const{ return m_mode; }
 
     /**
-     * What mode Lambda should be invoked in.
+     * <p>Specifies which Lambda mode to use when invoking the AWS Lambda function.</p>
      */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     /**
-     * What mode Lambda should be invoked in.
+     * <p>Specifies which Lambda mode to use when invoking the AWS Lambda function.</p>
      */
     inline void SetMode(const Mode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
-     * What mode Lambda should be invoked in.
+     * <p>Specifies which Lambda mode to use when invoking the AWS Lambda function.</p>
      */
     inline void SetMode(Mode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
-     * What mode Lambda should be invoked in.
+     * <p>Specifies which Lambda mode to use when invoking the AWS Lambda function.</p>
      */
     inline CampaignHook& WithMode(const Mode& value) { SetMode(value); return *this;}
 
     /**
-     * What mode Lambda should be invoked in.
+     * <p>Specifies which Lambda mode to use when invoking the AWS Lambda function.</p>
      */
     inline CampaignHook& WithMode(Mode&& value) { SetMode(std::move(value)); return *this;}
 
 
     /**
-     * Web URL to call for hook. If the URL has authentication specified it will be
-     * added as authentication to the request
+     * <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over
+     * HTTPS.</p>
      */
     inline const Aws::String& GetWebUrl() const{ return m_webUrl; }
 
     /**
-     * Web URL to call for hook. If the URL has authentication specified it will be
-     * added as authentication to the request
+     * <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over
+     * HTTPS.</p>
      */
     inline bool WebUrlHasBeenSet() const { return m_webUrlHasBeenSet; }
 
     /**
-     * Web URL to call for hook. If the URL has authentication specified it will be
-     * added as authentication to the request
+     * <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over
+     * HTTPS.</p>
      */
     inline void SetWebUrl(const Aws::String& value) { m_webUrlHasBeenSet = true; m_webUrl = value; }
 
     /**
-     * Web URL to call for hook. If the URL has authentication specified it will be
-     * added as authentication to the request
+     * <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over
+     * HTTPS.</p>
      */
     inline void SetWebUrl(Aws::String&& value) { m_webUrlHasBeenSet = true; m_webUrl = std::move(value); }
 
     /**
-     * Web URL to call for hook. If the URL has authentication specified it will be
-     * added as authentication to the request
+     * <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over
+     * HTTPS.</p>
      */
     inline void SetWebUrl(const char* value) { m_webUrlHasBeenSet = true; m_webUrl.assign(value); }
 
     /**
-     * Web URL to call for hook. If the URL has authentication specified it will be
-     * added as authentication to the request
+     * <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over
+     * HTTPS.</p>
      */
     inline CampaignHook& WithWebUrl(const Aws::String& value) { SetWebUrl(value); return *this;}
 
     /**
-     * Web URL to call for hook. If the URL has authentication specified it will be
-     * added as authentication to the request
+     * <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over
+     * HTTPS.</p>
      */
     inline CampaignHook& WithWebUrl(Aws::String&& value) { SetWebUrl(std::move(value)); return *this;}
 
     /**
-     * Web URL to call for hook. If the URL has authentication specified it will be
-     * added as authentication to the request
+     * <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over
+     * HTTPS.</p>
      */
     inline CampaignHook& WithWebUrl(const char* value) { SetWebUrl(value); return *this;}
 

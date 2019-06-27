@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * Request to save an EventStream.<p><h3>See Also:</h3>   <a
+   * <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events
+   * to and the AWS Identity and Access Management (IAM) role to use when publishing
+   * those events.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/WriteEventStream">AWS
    * API Reference</a></p>
    */
@@ -48,131 +50,155 @@ namespace Model
 
 
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery
-     * stream to which you want to publish events.
- Firehose ARN:
-     * arn:aws:firehose:REGION:ACCOUNT_ID:deliverystream/STREAM_NAME
- Kinesis ARN:
-     * arn:aws:kinesis:REGION:ACCOUNT_ID:stream/STREAM_NAME
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon
+     * Kinesis Data Firehose delivery stream that you want to publish event data
+     * to.</p> <p>For a Kinesis data stream, the ARN format is:
+     * arn:aws:kinesis:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:stream/<replaceable>stream_name</replaceable>
+
+     * </p> <p>For a Kinesis Data Firehose delivery stream, the ARN format is:
+     * arn:aws:firehose:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:deliverystream/<replaceable>stream_name</replaceable>
+
+     *               </p>
      */
     inline const Aws::String& GetDestinationStreamArn() const{ return m_destinationStreamArn; }
 
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery
-     * stream to which you want to publish events.
- Firehose ARN:
-     * arn:aws:firehose:REGION:ACCOUNT_ID:deliverystream/STREAM_NAME
- Kinesis ARN:
-     * arn:aws:kinesis:REGION:ACCOUNT_ID:stream/STREAM_NAME
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon
+     * Kinesis Data Firehose delivery stream that you want to publish event data
+     * to.</p> <p>For a Kinesis data stream, the ARN format is:
+     * arn:aws:kinesis:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:stream/<replaceable>stream_name</replaceable>
+
+     * </p> <p>For a Kinesis Data Firehose delivery stream, the ARN format is:
+     * arn:aws:firehose:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:deliverystream/<replaceable>stream_name</replaceable>
+
+     *               </p>
      */
     inline bool DestinationStreamArnHasBeenSet() const { return m_destinationStreamArnHasBeenSet; }
 
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery
-     * stream to which you want to publish events.
- Firehose ARN:
-     * arn:aws:firehose:REGION:ACCOUNT_ID:deliverystream/STREAM_NAME
- Kinesis ARN:
-     * arn:aws:kinesis:REGION:ACCOUNT_ID:stream/STREAM_NAME
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon
+     * Kinesis Data Firehose delivery stream that you want to publish event data
+     * to.</p> <p>For a Kinesis data stream, the ARN format is:
+     * arn:aws:kinesis:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:stream/<replaceable>stream_name</replaceable>
+
+     * </p> <p>For a Kinesis Data Firehose delivery stream, the ARN format is:
+     * arn:aws:firehose:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:deliverystream/<replaceable>stream_name</replaceable>
+
+     *               </p>
      */
     inline void SetDestinationStreamArn(const Aws::String& value) { m_destinationStreamArnHasBeenSet = true; m_destinationStreamArn = value; }
 
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery
-     * stream to which you want to publish events.
- Firehose ARN:
-     * arn:aws:firehose:REGION:ACCOUNT_ID:deliverystream/STREAM_NAME
- Kinesis ARN:
-     * arn:aws:kinesis:REGION:ACCOUNT_ID:stream/STREAM_NAME
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon
+     * Kinesis Data Firehose delivery stream that you want to publish event data
+     * to.</p> <p>For a Kinesis data stream, the ARN format is:
+     * arn:aws:kinesis:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:stream/<replaceable>stream_name</replaceable>
+
+     * </p> <p>For a Kinesis Data Firehose delivery stream, the ARN format is:
+     * arn:aws:firehose:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:deliverystream/<replaceable>stream_name</replaceable>
+
+     *               </p>
      */
     inline void SetDestinationStreamArn(Aws::String&& value) { m_destinationStreamArnHasBeenSet = true; m_destinationStreamArn = std::move(value); }
 
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery
-     * stream to which you want to publish events.
- Firehose ARN:
-     * arn:aws:firehose:REGION:ACCOUNT_ID:deliverystream/STREAM_NAME
- Kinesis ARN:
-     * arn:aws:kinesis:REGION:ACCOUNT_ID:stream/STREAM_NAME
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon
+     * Kinesis Data Firehose delivery stream that you want to publish event data
+     * to.</p> <p>For a Kinesis data stream, the ARN format is:
+     * arn:aws:kinesis:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:stream/<replaceable>stream_name</replaceable>
+
+     * </p> <p>For a Kinesis Data Firehose delivery stream, the ARN format is:
+     * arn:aws:firehose:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:deliverystream/<replaceable>stream_name</replaceable>
+
+     *               </p>
      */
     inline void SetDestinationStreamArn(const char* value) { m_destinationStreamArnHasBeenSet = true; m_destinationStreamArn.assign(value); }
 
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery
-     * stream to which you want to publish events.
- Firehose ARN:
-     * arn:aws:firehose:REGION:ACCOUNT_ID:deliverystream/STREAM_NAME
- Kinesis ARN:
-     * arn:aws:kinesis:REGION:ACCOUNT_ID:stream/STREAM_NAME
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon
+     * Kinesis Data Firehose delivery stream that you want to publish event data
+     * to.</p> <p>For a Kinesis data stream, the ARN format is:
+     * arn:aws:kinesis:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:stream/<replaceable>stream_name</replaceable>
+
+     * </p> <p>For a Kinesis Data Firehose delivery stream, the ARN format is:
+     * arn:aws:firehose:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:deliverystream/<replaceable>stream_name</replaceable>
+
+     *               </p>
      */
     inline WriteEventStream& WithDestinationStreamArn(const Aws::String& value) { SetDestinationStreamArn(value); return *this;}
 
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery
-     * stream to which you want to publish events.
- Firehose ARN:
-     * arn:aws:firehose:REGION:ACCOUNT_ID:deliverystream/STREAM_NAME
- Kinesis ARN:
-     * arn:aws:kinesis:REGION:ACCOUNT_ID:stream/STREAM_NAME
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon
+     * Kinesis Data Firehose delivery stream that you want to publish event data
+     * to.</p> <p>For a Kinesis data stream, the ARN format is:
+     * arn:aws:kinesis:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:stream/<replaceable>stream_name</replaceable>
+
+     * </p> <p>For a Kinesis Data Firehose delivery stream, the ARN format is:
+     * arn:aws:firehose:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:deliverystream/<replaceable>stream_name</replaceable>
+
+     *               </p>
      */
     inline WriteEventStream& WithDestinationStreamArn(Aws::String&& value) { SetDestinationStreamArn(std::move(value)); return *this;}
 
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery
-     * stream to which you want to publish events.
- Firehose ARN:
-     * arn:aws:firehose:REGION:ACCOUNT_ID:deliverystream/STREAM_NAME
- Kinesis ARN:
-     * arn:aws:kinesis:REGION:ACCOUNT_ID:stream/STREAM_NAME
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon
+     * Kinesis Data Firehose delivery stream that you want to publish event data
+     * to.</p> <p>For a Kinesis data stream, the ARN format is:
+     * arn:aws:kinesis:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:stream/<replaceable>stream_name</replaceable>
+
+     * </p> <p>For a Kinesis Data Firehose delivery stream, the ARN format is:
+     * arn:aws:firehose:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:deliverystream/<replaceable>stream_name</replaceable>
+
+     *               </p>
      */
     inline WriteEventStream& WithDestinationStreamArn(const char* value) { SetDestinationStreamArn(value); return *this;}
 
 
     /**
-     * The IAM role that authorizes Amazon Pinpoint to publish events to the stream in
-     * your account.
+     * <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon
+     * Pinpoint to publish event data to the stream in your AWS account.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * The IAM role that authorizes Amazon Pinpoint to publish events to the stream in
-     * your account.
+     * <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon
+     * Pinpoint to publish event data to the stream in your AWS account.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * The IAM role that authorizes Amazon Pinpoint to publish events to the stream in
-     * your account.
+     * <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon
+     * Pinpoint to publish event data to the stream in your AWS account.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * The IAM role that authorizes Amazon Pinpoint to publish events to the stream in
-     * your account.
+     * <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon
+     * Pinpoint to publish event data to the stream in your AWS account.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * The IAM role that authorizes Amazon Pinpoint to publish events to the stream in
-     * your account.
+     * <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon
+     * Pinpoint to publish event data to the stream in your AWS account.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * The IAM role that authorizes Amazon Pinpoint to publish events to the stream in
-     * your account.
+     * <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon
+     * Pinpoint to publish event data to the stream in your AWS account.</p>
      */
     inline WriteEventStream& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * The IAM role that authorizes Amazon Pinpoint to publish events to the stream in
-     * your account.
+     * <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon
+     * Pinpoint to publish event data to the stream in your AWS account.</p>
      */
     inline WriteEventStream& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * The IAM role that authorizes Amazon Pinpoint to publish events to the stream in
-     * your account.
+     * <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon
+     * Pinpoint to publish event data to the stream in your AWS account.</p>
      */
     inline WriteEventStream& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

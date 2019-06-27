@@ -36,7 +36,8 @@ namespace Model
 {
 
   /**
-   * List of available campaigns.<p><h3>See Also:</h3>   <a
+   * <p>Provides information about the configuration and other settings for all the
+   * campaigns that are associated with an application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignsResponse">AWS
    * API Reference</a></p>
    */
@@ -50,91 +51,99 @@ namespace Model
 
 
     /**
-     * A list of campaigns.
+     * <p>An array of responses, one for each campaign that's associated with the
+     * application.</p>
      */
     inline const Aws::Vector<CampaignResponse>& GetItem() const{ return m_item; }
 
     /**
-     * A list of campaigns.
+     * <p>An array of responses, one for each campaign that's associated with the
+     * application.</p>
      */
     inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
 
     /**
-     * A list of campaigns.
+     * <p>An array of responses, one for each campaign that's associated with the
+     * application.</p>
      */
     inline void SetItem(const Aws::Vector<CampaignResponse>& value) { m_itemHasBeenSet = true; m_item = value; }
 
     /**
-     * A list of campaigns.
+     * <p>An array of responses, one for each campaign that's associated with the
+     * application.</p>
      */
     inline void SetItem(Aws::Vector<CampaignResponse>&& value) { m_itemHasBeenSet = true; m_item = std::move(value); }
 
     /**
-     * A list of campaigns.
+     * <p>An array of responses, one for each campaign that's associated with the
+     * application.</p>
      */
     inline CampaignsResponse& WithItem(const Aws::Vector<CampaignResponse>& value) { SetItem(value); return *this;}
 
     /**
-     * A list of campaigns.
+     * <p>An array of responses, one for each campaign that's associated with the
+     * application.</p>
      */
     inline CampaignsResponse& WithItem(Aws::Vector<CampaignResponse>&& value) { SetItem(std::move(value)); return *this;}
 
     /**
-     * A list of campaigns.
+     * <p>An array of responses, one for each campaign that's associated with the
+     * application.</p>
      */
     inline CampaignsResponse& AddItem(const CampaignResponse& value) { m_itemHasBeenSet = true; m_item.push_back(value); return *this; }
 
     /**
-     * A list of campaigns.
+     * <p>An array of responses, one for each campaign that's associated with the
+     * application.</p>
      */
     inline CampaignsResponse& AddItem(CampaignResponse&& value) { m_itemHasBeenSet = true; m_item.push_back(std::move(value)); return *this; }
 
 
     /**
-     * The string that you use in a subsequent request to get the next page of results
-     * in a paginated response.
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results
-     * in a paginated response.
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results
-     * in a paginated response.
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results
-     * in a paginated response.
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results
-     * in a paginated response.
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results
-     * in a paginated response.
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline CampaignsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * The string that you use in a subsequent request to get the next page of results
-     * in a paginated response.
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline CampaignsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * The string that you use in a subsequent request to get the next page of results
-     * in a paginated response.
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
      */
     inline CampaignsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

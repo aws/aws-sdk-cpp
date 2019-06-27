@@ -28,7 +28,8 @@ AllocateHostedConnectionRequest::AllocateHostedConnectionRequest() :
     m_bandwidthHasBeenSet(false),
     m_connectionNameHasBeenSet(false),
     m_vlan(0),
-    m_vlanHasBeenSet(false)
+    m_vlanHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,17 @@ Aws::String AllocateHostedConnectionRequest::SerializePayload() const
   if(m_vlanHasBeenSet)
   {
    payload.WithInteger("vlan", m_vlan);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

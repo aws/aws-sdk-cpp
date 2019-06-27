@@ -37,7 +37,11 @@ namespace Model
 {
 
   /**
-   * Export job response.<p><h3>See Also:</h3>   <a
+   * <p>Provides information about the status and settings of a job that exports
+   * endpoint definitions to a file. The file can be added directly to an Amazon
+   * Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or
+   * downloaded directly to a computer by using the Amazon Pinpoint
+   * console.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ExportJobResponse">AWS
    * API Reference</a></p>
    */
@@ -51,461 +55,470 @@ namespace Model
 
 
     /**
-     * The unique ID of the application associated with the export job.
+     * <p>The unique identifier for the application that's associated with the export
+     * job.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * The unique ID of the application associated with the export job.
+     * <p>The unique identifier for the application that's associated with the export
+     * job.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * The unique ID of the application associated with the export job.
+     * <p>The unique identifier for the application that's associated with the export
+     * job.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * The unique ID of the application associated with the export job.
+     * <p>The unique identifier for the application that's associated with the export
+     * job.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * The unique ID of the application associated with the export job.
+     * <p>The unique identifier for the application that's associated with the export
+     * job.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * The unique ID of the application associated with the export job.
+     * <p>The unique identifier for the application that's associated with the export
+     * job.</p>
      */
     inline ExportJobResponse& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * The unique ID of the application associated with the export job.
+     * <p>The unique identifier for the application that's associated with the export
+     * job.</p>
      */
     inline ExportJobResponse& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of the application associated with the export job.
+     * <p>The unique identifier for the application that's associated with the export
+     * job.</p>
      */
     inline ExportJobResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * The number of pieces that have successfully completed as of the time of the
-     * request.
+     * <p>The number of pieces that were processed successfully (completed) by the
+     * export job, as of the time of the request.</p>
      */
     inline int GetCompletedPieces() const{ return m_completedPieces; }
 
     /**
-     * The number of pieces that have successfully completed as of the time of the
-     * request.
+     * <p>The number of pieces that were processed successfully (completed) by the
+     * export job, as of the time of the request.</p>
      */
     inline bool CompletedPiecesHasBeenSet() const { return m_completedPiecesHasBeenSet; }
 
     /**
-     * The number of pieces that have successfully completed as of the time of the
-     * request.
+     * <p>The number of pieces that were processed successfully (completed) by the
+     * export job, as of the time of the request.</p>
      */
     inline void SetCompletedPieces(int value) { m_completedPiecesHasBeenSet = true; m_completedPieces = value; }
 
     /**
-     * The number of pieces that have successfully completed as of the time of the
-     * request.
+     * <p>The number of pieces that were processed successfully (completed) by the
+     * export job, as of the time of the request.</p>
      */
     inline ExportJobResponse& WithCompletedPieces(int value) { SetCompletedPieces(value); return *this;}
 
 
     /**
-     * The date the job completed in ISO 8601 format.
+     * <p>The date, in ISO 8601 format, when the export job was completed.</p>
      */
     inline const Aws::String& GetCompletionDate() const{ return m_completionDate; }
 
     /**
-     * The date the job completed in ISO 8601 format.
+     * <p>The date, in ISO 8601 format, when the export job was completed.</p>
      */
     inline bool CompletionDateHasBeenSet() const { return m_completionDateHasBeenSet; }
 
     /**
-     * The date the job completed in ISO 8601 format.
+     * <p>The date, in ISO 8601 format, when the export job was completed.</p>
      */
     inline void SetCompletionDate(const Aws::String& value) { m_completionDateHasBeenSet = true; m_completionDate = value; }
 
     /**
-     * The date the job completed in ISO 8601 format.
+     * <p>The date, in ISO 8601 format, when the export job was completed.</p>
      */
     inline void SetCompletionDate(Aws::String&& value) { m_completionDateHasBeenSet = true; m_completionDate = std::move(value); }
 
     /**
-     * The date the job completed in ISO 8601 format.
+     * <p>The date, in ISO 8601 format, when the export job was completed.</p>
      */
     inline void SetCompletionDate(const char* value) { m_completionDateHasBeenSet = true; m_completionDate.assign(value); }
 
     /**
-     * The date the job completed in ISO 8601 format.
+     * <p>The date, in ISO 8601 format, when the export job was completed.</p>
      */
     inline ExportJobResponse& WithCompletionDate(const Aws::String& value) { SetCompletionDate(value); return *this;}
 
     /**
-     * The date the job completed in ISO 8601 format.
+     * <p>The date, in ISO 8601 format, when the export job was completed.</p>
      */
     inline ExportJobResponse& WithCompletionDate(Aws::String&& value) { SetCompletionDate(std::move(value)); return *this;}
 
     /**
-     * The date the job completed in ISO 8601 format.
+     * <p>The date, in ISO 8601 format, when the export job was completed.</p>
      */
     inline ExportJobResponse& WithCompletionDate(const char* value) { SetCompletionDate(value); return *this;}
 
 
     /**
-     * The date the job was created in ISO 8601 format.
+     * <p>The date, in ISO 8601 format, when the export job was created.</p>
      */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * The date the job was created in ISO 8601 format.
+     * <p>The date, in ISO 8601 format, when the export job was created.</p>
      */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
-     * The date the job was created in ISO 8601 format.
+     * <p>The date, in ISO 8601 format, when the export job was created.</p>
      */
     inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * The date the job was created in ISO 8601 format.
+     * <p>The date, in ISO 8601 format, when the export job was created.</p>
      */
     inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * The date the job was created in ISO 8601 format.
+     * <p>The date, in ISO 8601 format, when the export job was created.</p>
      */
     inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
 
     /**
-     * The date the job was created in ISO 8601 format.
+     * <p>The date, in ISO 8601 format, when the export job was created.</p>
      */
     inline ExportJobResponse& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
 
     /**
-     * The date the job was created in ISO 8601 format.
+     * <p>The date, in ISO 8601 format, when the export job was created.</p>
      */
     inline ExportJobResponse& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
 
     /**
-     * The date the job was created in ISO 8601 format.
+     * <p>The date, in ISO 8601 format, when the export job was created.</p>
      */
     inline ExportJobResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
 
     /**
-     * The export job settings.
+     * <p>The resource settings that apply to the export job.</p>
      */
     inline const ExportJobResource& GetDefinition() const{ return m_definition; }
 
     /**
-     * The export job settings.
+     * <p>The resource settings that apply to the export job.</p>
      */
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
 
     /**
-     * The export job settings.
+     * <p>The resource settings that apply to the export job.</p>
      */
     inline void SetDefinition(const ExportJobResource& value) { m_definitionHasBeenSet = true; m_definition = value; }
 
     /**
-     * The export job settings.
+     * <p>The resource settings that apply to the export job.</p>
      */
     inline void SetDefinition(ExportJobResource&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
 
     /**
-     * The export job settings.
+     * <p>The resource settings that apply to the export job.</p>
      */
     inline ExportJobResponse& WithDefinition(const ExportJobResource& value) { SetDefinition(value); return *this;}
 
     /**
-     * The export job settings.
+     * <p>The resource settings that apply to the export job.</p>
      */
     inline ExportJobResponse& WithDefinition(ExportJobResource&& value) { SetDefinition(std::move(value)); return *this;}
 
 
     /**
-     * The number of pieces that failed to be processed as of the time of the request.
+     * <p>The number of pieces that weren't processed successfully (failed) by the
+     * export job, as of the time of the request.</p>
      */
     inline int GetFailedPieces() const{ return m_failedPieces; }
 
     /**
-     * The number of pieces that failed to be processed as of the time of the request.
+     * <p>The number of pieces that weren't processed successfully (failed) by the
+     * export job, as of the time of the request.</p>
      */
     inline bool FailedPiecesHasBeenSet() const { return m_failedPiecesHasBeenSet; }
 
     /**
-     * The number of pieces that failed to be processed as of the time of the request.
+     * <p>The number of pieces that weren't processed successfully (failed) by the
+     * export job, as of the time of the request.</p>
      */
     inline void SetFailedPieces(int value) { m_failedPiecesHasBeenSet = true; m_failedPieces = value; }
 
     /**
-     * The number of pieces that failed to be processed as of the time of the request.
+     * <p>The number of pieces that weren't processed successfully (failed) by the
+     * export job, as of the time of the request.</p>
      */
     inline ExportJobResponse& WithFailedPieces(int value) { SetFailedPieces(value); return *this;}
 
 
     /**
-     * Provides up to 100 of the first failed entries for the job, if any exist.
+     * <p>An array of entries, one for each of the first 100 entries that weren't
+     * processed successfully (failed) by the export job, if any.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFailures() const{ return m_failures; }
 
     /**
-     * Provides up to 100 of the first failed entries for the job, if any exist.
+     * <p>An array of entries, one for each of the first 100 entries that weren't
+     * processed successfully (failed) by the export job, if any.</p>
      */
     inline bool FailuresHasBeenSet() const { return m_failuresHasBeenSet; }
 
     /**
-     * Provides up to 100 of the first failed entries for the job, if any exist.
+     * <p>An array of entries, one for each of the first 100 entries that weren't
+     * processed successfully (failed) by the export job, if any.</p>
      */
     inline void SetFailures(const Aws::Vector<Aws::String>& value) { m_failuresHasBeenSet = true; m_failures = value; }
 
     /**
-     * Provides up to 100 of the first failed entries for the job, if any exist.
+     * <p>An array of entries, one for each of the first 100 entries that weren't
+     * processed successfully (failed) by the export job, if any.</p>
      */
     inline void SetFailures(Aws::Vector<Aws::String>&& value) { m_failuresHasBeenSet = true; m_failures = std::move(value); }
 
     /**
-     * Provides up to 100 of the first failed entries for the job, if any exist.
+     * <p>An array of entries, one for each of the first 100 entries that weren't
+     * processed successfully (failed) by the export job, if any.</p>
      */
     inline ExportJobResponse& WithFailures(const Aws::Vector<Aws::String>& value) { SetFailures(value); return *this;}
 
     /**
-     * Provides up to 100 of the first failed entries for the job, if any exist.
+     * <p>An array of entries, one for each of the first 100 entries that weren't
+     * processed successfully (failed) by the export job, if any.</p>
      */
     inline ExportJobResponse& WithFailures(Aws::Vector<Aws::String>&& value) { SetFailures(std::move(value)); return *this;}
 
     /**
-     * Provides up to 100 of the first failed entries for the job, if any exist.
+     * <p>An array of entries, one for each of the first 100 entries that weren't
+     * processed successfully (failed) by the export job, if any.</p>
      */
     inline ExportJobResponse& AddFailures(const Aws::String& value) { m_failuresHasBeenSet = true; m_failures.push_back(value); return *this; }
 
     /**
-     * Provides up to 100 of the first failed entries for the job, if any exist.
+     * <p>An array of entries, one for each of the first 100 entries that weren't
+     * processed successfully (failed) by the export job, if any.</p>
      */
     inline ExportJobResponse& AddFailures(Aws::String&& value) { m_failuresHasBeenSet = true; m_failures.push_back(std::move(value)); return *this; }
 
     /**
-     * Provides up to 100 of the first failed entries for the job, if any exist.
+     * <p>An array of entries, one for each of the first 100 entries that weren't
+     * processed successfully (failed) by the export job, if any.</p>
      */
     inline ExportJobResponse& AddFailures(const char* value) { m_failuresHasBeenSet = true; m_failures.push_back(value); return *this; }
 
 
     /**
-     * The unique ID of the job.
+     * <p>The unique identifier for the export job.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * The unique ID of the job.
+     * <p>The unique identifier for the export job.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * The unique ID of the job.
+     * <p>The unique identifier for the export job.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * The unique ID of the job.
+     * <p>The unique identifier for the export job.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * The unique ID of the job.
+     * <p>The unique identifier for the export job.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * The unique ID of the job.
+     * <p>The unique identifier for the export job.</p>
      */
     inline ExportJobResponse& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * The unique ID of the job.
+     * <p>The unique identifier for the export job.</p>
      */
     inline ExportJobResponse& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of the job.
+     * <p>The unique identifier for the export job.</p>
      */
     inline ExportJobResponse& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * The status of the job.
-Valid values: CREATED, INITIALIZING, PROCESSING,
-     * COMPLETING, COMPLETED, FAILING, FAILED
-
-The job status is FAILED if one or more
-     * pieces failed.
+     * <p>The status of the export job. The job status is FAILED if Amazon Pinpoint
+     * wasn't able to process one or more pieces in the job.</p>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
 
     /**
-     * The status of the job.
-Valid values: CREATED, INITIALIZING, PROCESSING,
-     * COMPLETING, COMPLETED, FAILING, FAILED
-
-The job status is FAILED if one or more
-     * pieces failed.
+     * <p>The status of the export job. The job status is FAILED if Amazon Pinpoint
+     * wasn't able to process one or more pieces in the job.</p>
      */
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
 
     /**
-     * The status of the job.
-Valid values: CREATED, INITIALIZING, PROCESSING,
-     * COMPLETING, COMPLETED, FAILING, FAILED
-
-The job status is FAILED if one or more
-     * pieces failed.
+     * <p>The status of the export job. The job status is FAILED if Amazon Pinpoint
+     * wasn't able to process one or more pieces in the job.</p>
      */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
 
     /**
-     * The status of the job.
-Valid values: CREATED, INITIALIZING, PROCESSING,
-     * COMPLETING, COMPLETED, FAILING, FAILED
-
-The job status is FAILED if one or more
-     * pieces failed.
+     * <p>The status of the export job. The job status is FAILED if Amazon Pinpoint
+     * wasn't able to process one or more pieces in the job.</p>
      */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
 
     /**
-     * The status of the job.
-Valid values: CREATED, INITIALIZING, PROCESSING,
-     * COMPLETING, COMPLETED, FAILING, FAILED
-
-The job status is FAILED if one or more
-     * pieces failed.
+     * <p>The status of the export job. The job status is FAILED if Amazon Pinpoint
+     * wasn't able to process one or more pieces in the job.</p>
      */
     inline ExportJobResponse& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
 
     /**
-     * The status of the job.
-Valid values: CREATED, INITIALIZING, PROCESSING,
-     * COMPLETING, COMPLETED, FAILING, FAILED
-
-The job status is FAILED if one or more
-     * pieces failed.
+     * <p>The status of the export job. The job status is FAILED if Amazon Pinpoint
+     * wasn't able to process one or more pieces in the job.</p>
      */
     inline ExportJobResponse& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
 
 
     /**
-     * The number of endpoints that were not processed; for example, because of syntax
-     * errors.
+     * <p>The total number of endpoint definitions that weren't processed successfully
+     * (failed) by the export job, typically because an error, such as a syntax error,
+     * occurred.</p>
      */
     inline int GetTotalFailures() const{ return m_totalFailures; }
 
     /**
-     * The number of endpoints that were not processed; for example, because of syntax
-     * errors.
+     * <p>The total number of endpoint definitions that weren't processed successfully
+     * (failed) by the export job, typically because an error, such as a syntax error,
+     * occurred.</p>
      */
     inline bool TotalFailuresHasBeenSet() const { return m_totalFailuresHasBeenSet; }
 
     /**
-     * The number of endpoints that were not processed; for example, because of syntax
-     * errors.
+     * <p>The total number of endpoint definitions that weren't processed successfully
+     * (failed) by the export job, typically because an error, such as a syntax error,
+     * occurred.</p>
      */
     inline void SetTotalFailures(int value) { m_totalFailuresHasBeenSet = true; m_totalFailures = value; }
 
     /**
-     * The number of endpoints that were not processed; for example, because of syntax
-     * errors.
+     * <p>The total number of endpoint definitions that weren't processed successfully
+     * (failed) by the export job, typically because an error, such as a syntax error,
+     * occurred.</p>
      */
     inline ExportJobResponse& WithTotalFailures(int value) { SetTotalFailures(value); return *this;}
 
 
     /**
-     * The total number of pieces that must be processed to finish the job. Each piece
-     * is an approximately equal portion of the endpoints.
+     * <p>The total number of pieces that must be processed to complete the export job.
+     * Each piece consists of an approximately equal portion of the endpoint
+     * definitions that are part of the export job.</p>
      */
     inline int GetTotalPieces() const{ return m_totalPieces; }
 
     /**
-     * The total number of pieces that must be processed to finish the job. Each piece
-     * is an approximately equal portion of the endpoints.
+     * <p>The total number of pieces that must be processed to complete the export job.
+     * Each piece consists of an approximately equal portion of the endpoint
+     * definitions that are part of the export job.</p>
      */
     inline bool TotalPiecesHasBeenSet() const { return m_totalPiecesHasBeenSet; }
 
     /**
-     * The total number of pieces that must be processed to finish the job. Each piece
-     * is an approximately equal portion of the endpoints.
+     * <p>The total number of pieces that must be processed to complete the export job.
+     * Each piece consists of an approximately equal portion of the endpoint
+     * definitions that are part of the export job.</p>
      */
     inline void SetTotalPieces(int value) { m_totalPiecesHasBeenSet = true; m_totalPieces = value; }
 
     /**
-     * The total number of pieces that must be processed to finish the job. Each piece
-     * is an approximately equal portion of the endpoints.
+     * <p>The total number of pieces that must be processed to complete the export job.
+     * Each piece consists of an approximately equal portion of the endpoint
+     * definitions that are part of the export job.</p>
      */
     inline ExportJobResponse& WithTotalPieces(int value) { SetTotalPieces(value); return *this;}
 
 
     /**
-     * The number of endpoints that were processed by the job.
+     * <p>The total number of endpoint definitions that were processed by the export
+     * job.</p>
      */
     inline int GetTotalProcessed() const{ return m_totalProcessed; }
 
     /**
-     * The number of endpoints that were processed by the job.
+     * <p>The total number of endpoint definitions that were processed by the export
+     * job.</p>
      */
     inline bool TotalProcessedHasBeenSet() const { return m_totalProcessedHasBeenSet; }
 
     /**
-     * The number of endpoints that were processed by the job.
+     * <p>The total number of endpoint definitions that were processed by the export
+     * job.</p>
      */
     inline void SetTotalProcessed(int value) { m_totalProcessedHasBeenSet = true; m_totalProcessed = value; }
 
     /**
-     * The number of endpoints that were processed by the job.
+     * <p>The total number of endpoint definitions that were processed by the export
+     * job.</p>
      */
     inline ExportJobResponse& WithTotalProcessed(int value) { SetTotalProcessed(value); return *this;}
 
 
     /**
-     * The job type. Will be 'EXPORT'.
+     * <p>The job type. This value is EXPORT for export jobs.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * The job type. Will be 'EXPORT'.
+     * <p>The job type. This value is EXPORT for export jobs.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * The job type. Will be 'EXPORT'.
+     * <p>The job type. This value is EXPORT for export jobs.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * The job type. Will be 'EXPORT'.
+     * <p>The job type. This value is EXPORT for export jobs.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * The job type. Will be 'EXPORT'.
+     * <p>The job type. This value is EXPORT for export jobs.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * The job type. Will be 'EXPORT'.
+     * <p>The job type. This value is EXPORT for export jobs.</p>
      */
     inline ExportJobResponse& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * The job type. Will be 'EXPORT'.
+     * <p>The job type. This value is EXPORT for export jobs.</p>
      */
     inline ExportJobResponse& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * The job type. Will be 'EXPORT'.
+     * <p>The job type. This value is EXPORT for export jobs.</p>
      */
     inline ExportJobResponse& WithType(const char* value) { SetType(value); return *this;}
 

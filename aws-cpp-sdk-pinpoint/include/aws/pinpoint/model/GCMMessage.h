@@ -37,7 +37,10 @@ namespace Model
 {
 
   /**
-   * GCM Message.<p><h3>See Also:</h3>   <a
+   * <p>Specifies the settings for a one-time message that's sent directly to an
+   * endpoint through the GCM channel. The GCM channel enables Amazon Pinpoint to
+   * send messages to the Firebase Cloud Messaging (FCM), formerly Google Cloud
+   * Messaging (GCM), service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GCMMessage">AWS
    * API Reference</a></p>
    */
@@ -51,978 +54,975 @@ namespace Model
 
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the
-     * campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it
-     * has been sent to the background. This is the default action. DEEP_LINK - Uses
-     * deep linking features in iOS and Android to open your app and display a
-     * designated user interface within the app. URL - The default mobile browser on
-     * the user's device launches and opens a web page at the URL you specify. Possible
-     * values include: OPEN_APP | DEEP_LINK | URL
+     * <p>The action to occur if the recipient taps the push notification. Valid values
+     * are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app
+     * if it was sent to the background. This is the default action.</p></li>
+     * <li><p>DEEP_LINK - Your app opens and displays a designated user interface in
+     * the app. This action uses the deep-linking features of the Android
+     * platform.</p></li> <li><p>URL - The default mobile browser on the recipient's
+     * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
     inline const Action& GetAction() const{ return m_action; }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the
-     * campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it
-     * has been sent to the background. This is the default action. DEEP_LINK - Uses
-     * deep linking features in iOS and Android to open your app and display a
-     * designated user interface within the app. URL - The default mobile browser on
-     * the user's device launches and opens a web page at the URL you specify. Possible
-     * values include: OPEN_APP | DEEP_LINK | URL
+     * <p>The action to occur if the recipient taps the push notification. Valid values
+     * are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app
+     * if it was sent to the background. This is the default action.</p></li>
+     * <li><p>DEEP_LINK - Your app opens and displays a designated user interface in
+     * the app. This action uses the deep-linking features of the Android
+     * platform.</p></li> <li><p>URL - The default mobile browser on the recipient's
+     * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the
-     * campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it
-     * has been sent to the background. This is the default action. DEEP_LINK - Uses
-     * deep linking features in iOS and Android to open your app and display a
-     * designated user interface within the app. URL - The default mobile browser on
-     * the user's device launches and opens a web page at the URL you specify. Possible
-     * values include: OPEN_APP | DEEP_LINK | URL
+     * <p>The action to occur if the recipient taps the push notification. Valid values
+     * are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app
+     * if it was sent to the background. This is the default action.</p></li>
+     * <li><p>DEEP_LINK - Your app opens and displays a designated user interface in
+     * the app. This action uses the deep-linking features of the Android
+     * platform.</p></li> <li><p>URL - The default mobile browser on the recipient's
+     * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
     inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the
-     * campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it
-     * has been sent to the background. This is the default action. DEEP_LINK - Uses
-     * deep linking features in iOS and Android to open your app and display a
-     * designated user interface within the app. URL - The default mobile browser on
-     * the user's device launches and opens a web page at the URL you specify. Possible
-     * values include: OPEN_APP | DEEP_LINK | URL
+     * <p>The action to occur if the recipient taps the push notification. Valid values
+     * are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app
+     * if it was sent to the background. This is the default action.</p></li>
+     * <li><p>DEEP_LINK - Your app opens and displays a designated user interface in
+     * the app. This action uses the deep-linking features of the Android
+     * platform.</p></li> <li><p>URL - The default mobile browser on the recipient's
+     * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
     inline void SetAction(Action&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the
-     * campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it
-     * has been sent to the background. This is the default action. DEEP_LINK - Uses
-     * deep linking features in iOS and Android to open your app and display a
-     * designated user interface within the app. URL - The default mobile browser on
-     * the user's device launches and opens a web page at the URL you specify. Possible
-     * values include: OPEN_APP | DEEP_LINK | URL
+     * <p>The action to occur if the recipient taps the push notification. Valid values
+     * are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app
+     * if it was sent to the background. This is the default action.</p></li>
+     * <li><p>DEEP_LINK - Your app opens and displays a designated user interface in
+     * the app. This action uses the deep-linking features of the Android
+     * platform.</p></li> <li><p>URL - The default mobile browser on the recipient's
+     * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
     inline GCMMessage& WithAction(const Action& value) { SetAction(value); return *this;}
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the
-     * campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it
-     * has been sent to the background. This is the default action. DEEP_LINK - Uses
-     * deep linking features in iOS and Android to open your app and display a
-     * designated user interface within the app. URL - The default mobile browser on
-     * the user's device launches and opens a web page at the URL you specify. Possible
-     * values include: OPEN_APP | DEEP_LINK | URL
+     * <p>The action to occur if the recipient taps the push notification. Valid values
+     * are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app
+     * if it was sent to the background. This is the default action.</p></li>
+     * <li><p>DEEP_LINK - Your app opens and displays a designated user interface in
+     * the app. This action uses the deep-linking features of the Android
+     * platform.</p></li> <li><p>URL - The default mobile browser on the recipient's
+     * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
     inline GCMMessage& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
 
 
     /**
-     * The message body of the notification.
+     * <p>The body of the notification message.</p>
      */
     inline const Aws::String& GetBody() const{ return m_body; }
 
     /**
-     * The message body of the notification.
+     * <p>The body of the notification message.</p>
      */
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
 
     /**
-     * The message body of the notification.
+     * <p>The body of the notification message.</p>
      */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
-     * The message body of the notification.
+     * <p>The body of the notification message.</p>
      */
     inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
 
     /**
-     * The message body of the notification.
+     * <p>The body of the notification message.</p>
      */
     inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
 
     /**
-     * The message body of the notification.
+     * <p>The body of the notification message.</p>
      */
     inline GCMMessage& WithBody(const Aws::String& value) { SetBody(value); return *this;}
 
     /**
-     * The message body of the notification.
+     * <p>The body of the notification message.</p>
      */
     inline GCMMessage& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
 
     /**
-     * The message body of the notification.
+     * <p>The body of the notification message.</p>
      */
     inline GCMMessage& WithBody(const char* value) { SetBody(value); return *this;}
 
 
     /**
-     * This parameter identifies a group of messages (e.g., with collapse_key: "Updates
-     * Available") that can be collapsed, so that only the last message gets sent when
-     * delivery can be resumed. This is intended to avoid sending too many of the same
-     * messages when the device comes back online or becomes active.
+     * <p>An arbitrary string that identifies a group of messages that can be collapsed
+     * to ensure that only the last message is sent when delivery can resume. This
+     * helps avoid sending too many instances of the same messages when the recipient's
+     * device comes online again or becomes active.</p> <p>Amazon Pinpoint specifies
+     * this value in the Firebase Cloud Messaging (FCM) collapse_key parameter when it
+     * sends the notification message to FCM.</p>
      */
     inline const Aws::String& GetCollapseKey() const{ return m_collapseKey; }
 
     /**
-     * This parameter identifies a group of messages (e.g., with collapse_key: "Updates
-     * Available") that can be collapsed, so that only the last message gets sent when
-     * delivery can be resumed. This is intended to avoid sending too many of the same
-     * messages when the device comes back online or becomes active.
+     * <p>An arbitrary string that identifies a group of messages that can be collapsed
+     * to ensure that only the last message is sent when delivery can resume. This
+     * helps avoid sending too many instances of the same messages when the recipient's
+     * device comes online again or becomes active.</p> <p>Amazon Pinpoint specifies
+     * this value in the Firebase Cloud Messaging (FCM) collapse_key parameter when it
+     * sends the notification message to FCM.</p>
      */
     inline bool CollapseKeyHasBeenSet() const { return m_collapseKeyHasBeenSet; }
 
     /**
-     * This parameter identifies a group of messages (e.g., with collapse_key: "Updates
-     * Available") that can be collapsed, so that only the last message gets sent when
-     * delivery can be resumed. This is intended to avoid sending too many of the same
-     * messages when the device comes back online or becomes active.
+     * <p>An arbitrary string that identifies a group of messages that can be collapsed
+     * to ensure that only the last message is sent when delivery can resume. This
+     * helps avoid sending too many instances of the same messages when the recipient's
+     * device comes online again or becomes active.</p> <p>Amazon Pinpoint specifies
+     * this value in the Firebase Cloud Messaging (FCM) collapse_key parameter when it
+     * sends the notification message to FCM.</p>
      */
     inline void SetCollapseKey(const Aws::String& value) { m_collapseKeyHasBeenSet = true; m_collapseKey = value; }
 
     /**
-     * This parameter identifies a group of messages (e.g., with collapse_key: "Updates
-     * Available") that can be collapsed, so that only the last message gets sent when
-     * delivery can be resumed. This is intended to avoid sending too many of the same
-     * messages when the device comes back online or becomes active.
+     * <p>An arbitrary string that identifies a group of messages that can be collapsed
+     * to ensure that only the last message is sent when delivery can resume. This
+     * helps avoid sending too many instances of the same messages when the recipient's
+     * device comes online again or becomes active.</p> <p>Amazon Pinpoint specifies
+     * this value in the Firebase Cloud Messaging (FCM) collapse_key parameter when it
+     * sends the notification message to FCM.</p>
      */
     inline void SetCollapseKey(Aws::String&& value) { m_collapseKeyHasBeenSet = true; m_collapseKey = std::move(value); }
 
     /**
-     * This parameter identifies a group of messages (e.g., with collapse_key: "Updates
-     * Available") that can be collapsed, so that only the last message gets sent when
-     * delivery can be resumed. This is intended to avoid sending too many of the same
-     * messages when the device comes back online or becomes active.
+     * <p>An arbitrary string that identifies a group of messages that can be collapsed
+     * to ensure that only the last message is sent when delivery can resume. This
+     * helps avoid sending too many instances of the same messages when the recipient's
+     * device comes online again or becomes active.</p> <p>Amazon Pinpoint specifies
+     * this value in the Firebase Cloud Messaging (FCM) collapse_key parameter when it
+     * sends the notification message to FCM.</p>
      */
     inline void SetCollapseKey(const char* value) { m_collapseKeyHasBeenSet = true; m_collapseKey.assign(value); }
 
     /**
-     * This parameter identifies a group of messages (e.g., with collapse_key: "Updates
-     * Available") that can be collapsed, so that only the last message gets sent when
-     * delivery can be resumed. This is intended to avoid sending too many of the same
-     * messages when the device comes back online or becomes active.
+     * <p>An arbitrary string that identifies a group of messages that can be collapsed
+     * to ensure that only the last message is sent when delivery can resume. This
+     * helps avoid sending too many instances of the same messages when the recipient's
+     * device comes online again or becomes active.</p> <p>Amazon Pinpoint specifies
+     * this value in the Firebase Cloud Messaging (FCM) collapse_key parameter when it
+     * sends the notification message to FCM.</p>
      */
     inline GCMMessage& WithCollapseKey(const Aws::String& value) { SetCollapseKey(value); return *this;}
 
     /**
-     * This parameter identifies a group of messages (e.g., with collapse_key: "Updates
-     * Available") that can be collapsed, so that only the last message gets sent when
-     * delivery can be resumed. This is intended to avoid sending too many of the same
-     * messages when the device comes back online or becomes active.
+     * <p>An arbitrary string that identifies a group of messages that can be collapsed
+     * to ensure that only the last message is sent when delivery can resume. This
+     * helps avoid sending too many instances of the same messages when the recipient's
+     * device comes online again or becomes active.</p> <p>Amazon Pinpoint specifies
+     * this value in the Firebase Cloud Messaging (FCM) collapse_key parameter when it
+     * sends the notification message to FCM.</p>
      */
     inline GCMMessage& WithCollapseKey(Aws::String&& value) { SetCollapseKey(std::move(value)); return *this;}
 
     /**
-     * This parameter identifies a group of messages (e.g., with collapse_key: "Updates
-     * Available") that can be collapsed, so that only the last message gets sent when
-     * delivery can be resumed. This is intended to avoid sending too many of the same
-     * messages when the device comes back online or becomes active.
+     * <p>An arbitrary string that identifies a group of messages that can be collapsed
+     * to ensure that only the last message is sent when delivery can resume. This
+     * helps avoid sending too many instances of the same messages when the recipient's
+     * device comes online again or becomes active.</p> <p>Amazon Pinpoint specifies
+     * this value in the Firebase Cloud Messaging (FCM) collapse_key parameter when it
+     * sends the notification message to FCM.</p>
      */
     inline GCMMessage& WithCollapseKey(const char* value) { SetCollapseKey(value); return *this;}
 
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON data payload to use for the push notification, if the notification
+     * is a silent push notification. This payload is added to the
+     * data.pinpoint.jsonBody object of the notification.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetData() const{ return m_data; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON data payload to use for the push notification, if the notification
+     * is a silent push notification. This payload is added to the
+     * data.pinpoint.jsonBody object of the notification.</p>
      */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON data payload to use for the push notification, if the notification
+     * is a silent push notification. This payload is added to the
+     * data.pinpoint.jsonBody object of the notification.</p>
      */
     inline void SetData(const Aws::Map<Aws::String, Aws::String>& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON data payload to use for the push notification, if the notification
+     * is a silent push notification. This payload is added to the
+     * data.pinpoint.jsonBody object of the notification.</p>
      */
     inline void SetData(Aws::Map<Aws::String, Aws::String>&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON data payload to use for the push notification, if the notification
+     * is a silent push notification. This payload is added to the
+     * data.pinpoint.jsonBody object of the notification.</p>
      */
     inline GCMMessage& WithData(const Aws::Map<Aws::String, Aws::String>& value) { SetData(value); return *this;}
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON data payload to use for the push notification, if the notification
+     * is a silent push notification. This payload is added to the
+     * data.pinpoint.jsonBody object of the notification.</p>
      */
     inline GCMMessage& WithData(Aws::Map<Aws::String, Aws::String>&& value) { SetData(std::move(value)); return *this;}
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON data payload to use for the push notification, if the notification
+     * is a silent push notification. This payload is added to the
+     * data.pinpoint.jsonBody object of the notification.</p>
      */
     inline GCMMessage& AddData(const Aws::String& key, const Aws::String& value) { m_dataHasBeenSet = true; m_data.emplace(key, value); return *this; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON data payload to use for the push notification, if the notification
+     * is a silent push notification. This payload is added to the
+     * data.pinpoint.jsonBody object of the notification.</p>
      */
     inline GCMMessage& AddData(Aws::String&& key, const Aws::String& value) { m_dataHasBeenSet = true; m_data.emplace(std::move(key), value); return *this; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON data payload to use for the push notification, if the notification
+     * is a silent push notification. This payload is added to the
+     * data.pinpoint.jsonBody object of the notification.</p>
      */
     inline GCMMessage& AddData(const Aws::String& key, Aws::String&& value) { m_dataHasBeenSet = true; m_data.emplace(key, std::move(value)); return *this; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON data payload to use for the push notification, if the notification
+     * is a silent push notification. This payload is added to the
+     * data.pinpoint.jsonBody object of the notification.</p>
      */
     inline GCMMessage& AddData(Aws::String&& key, Aws::String&& value) { m_dataHasBeenSet = true; m_data.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON data payload to use for the push notification, if the notification
+     * is a silent push notification. This payload is added to the
+     * data.pinpoint.jsonBody object of the notification.</p>
      */
     inline GCMMessage& AddData(const char* key, Aws::String&& value) { m_dataHasBeenSet = true; m_data.emplace(key, std::move(value)); return *this; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON data payload to use for the push notification, if the notification
+     * is a silent push notification. This payload is added to the
+     * data.pinpoint.jsonBody object of the notification.</p>
      */
     inline GCMMessage& AddData(Aws::String&& key, const char* value) { m_dataHasBeenSet = true; m_data.emplace(std::move(key), value); return *this; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON data payload to use for the push notification, if the notification
+     * is a silent push notification. This payload is added to the
+     * data.pinpoint.jsonBody object of the notification.</p>
      */
     inline GCMMessage& AddData(const char* key, const char* value) { m_dataHasBeenSet = true; m_data.emplace(key, value); return *this; }
 
 
     /**
-     * The icon image name of the asset saved in your application.
+     * <p>The icon image name of the asset saved in your app.</p>
      */
     inline const Aws::String& GetIconReference() const{ return m_iconReference; }
 
     /**
-     * The icon image name of the asset saved in your application.
+     * <p>The icon image name of the asset saved in your app.</p>
      */
     inline bool IconReferenceHasBeenSet() const { return m_iconReferenceHasBeenSet; }
 
     /**
-     * The icon image name of the asset saved in your application.
+     * <p>The icon image name of the asset saved in your app.</p>
      */
     inline void SetIconReference(const Aws::String& value) { m_iconReferenceHasBeenSet = true; m_iconReference = value; }
 
     /**
-     * The icon image name of the asset saved in your application.
+     * <p>The icon image name of the asset saved in your app.</p>
      */
     inline void SetIconReference(Aws::String&& value) { m_iconReferenceHasBeenSet = true; m_iconReference = std::move(value); }
 
     /**
-     * The icon image name of the asset saved in your application.
+     * <p>The icon image name of the asset saved in your app.</p>
      */
     inline void SetIconReference(const char* value) { m_iconReferenceHasBeenSet = true; m_iconReference.assign(value); }
 
     /**
-     * The icon image name of the asset saved in your application.
+     * <p>The icon image name of the asset saved in your app.</p>
      */
     inline GCMMessage& WithIconReference(const Aws::String& value) { SetIconReference(value); return *this;}
 
     /**
-     * The icon image name of the asset saved in your application.
+     * <p>The icon image name of the asset saved in your app.</p>
      */
     inline GCMMessage& WithIconReference(Aws::String&& value) { SetIconReference(std::move(value)); return *this;}
 
     /**
-     * The icon image name of the asset saved in your application.
+     * <p>The icon image name of the asset saved in your app.</p>
      */
     inline GCMMessage& WithIconReference(const char* value) { SetIconReference(value); return *this;}
 
 
     /**
-     * The URL that points to an image used as the large icon to the notification
-     * content view.
+     * <p>The URL of the large icon image to display in the content view of the push
+     * notification.</p>
      */
     inline const Aws::String& GetImageIconUrl() const{ return m_imageIconUrl; }
 
     /**
-     * The URL that points to an image used as the large icon to the notification
-     * content view.
+     * <p>The URL of the large icon image to display in the content view of the push
+     * notification.</p>
      */
     inline bool ImageIconUrlHasBeenSet() const { return m_imageIconUrlHasBeenSet; }
 
     /**
-     * The URL that points to an image used as the large icon to the notification
-     * content view.
+     * <p>The URL of the large icon image to display in the content view of the push
+     * notification.</p>
      */
     inline void SetImageIconUrl(const Aws::String& value) { m_imageIconUrlHasBeenSet = true; m_imageIconUrl = value; }
 
     /**
-     * The URL that points to an image used as the large icon to the notification
-     * content view.
+     * <p>The URL of the large icon image to display in the content view of the push
+     * notification.</p>
      */
     inline void SetImageIconUrl(Aws::String&& value) { m_imageIconUrlHasBeenSet = true; m_imageIconUrl = std::move(value); }
 
     /**
-     * The URL that points to an image used as the large icon to the notification
-     * content view.
+     * <p>The URL of the large icon image to display in the content view of the push
+     * notification.</p>
      */
     inline void SetImageIconUrl(const char* value) { m_imageIconUrlHasBeenSet = true; m_imageIconUrl.assign(value); }
 
     /**
-     * The URL that points to an image used as the large icon to the notification
-     * content view.
+     * <p>The URL of the large icon image to display in the content view of the push
+     * notification.</p>
      */
     inline GCMMessage& WithImageIconUrl(const Aws::String& value) { SetImageIconUrl(value); return *this;}
 
     /**
-     * The URL that points to an image used as the large icon to the notification
-     * content view.
+     * <p>The URL of the large icon image to display in the content view of the push
+     * notification.</p>
      */
     inline GCMMessage& WithImageIconUrl(Aws::String&& value) { SetImageIconUrl(std::move(value)); return *this;}
 
     /**
-     * The URL that points to an image used as the large icon to the notification
-     * content view.
+     * <p>The URL of the large icon image to display in the content view of the push
+     * notification.</p>
      */
     inline GCMMessage& WithImageIconUrl(const char* value) { SetImageIconUrl(value); return *this;}
 
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>The URL of an image to display in the push notification.</p>
      */
     inline const Aws::String& GetImageUrl() const{ return m_imageUrl; }
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>The URL of an image to display in the push notification.</p>
      */
     inline bool ImageUrlHasBeenSet() const { return m_imageUrlHasBeenSet; }
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>The URL of an image to display in the push notification.</p>
      */
     inline void SetImageUrl(const Aws::String& value) { m_imageUrlHasBeenSet = true; m_imageUrl = value; }
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>The URL of an image to display in the push notification.</p>
      */
     inline void SetImageUrl(Aws::String&& value) { m_imageUrlHasBeenSet = true; m_imageUrl = std::move(value); }
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>The URL of an image to display in the push notification.</p>
      */
     inline void SetImageUrl(const char* value) { m_imageUrlHasBeenSet = true; m_imageUrl.assign(value); }
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>The URL of an image to display in the push notification.</p>
      */
     inline GCMMessage& WithImageUrl(const Aws::String& value) { SetImageUrl(value); return *this;}
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>The URL of an image to display in the push notification.</p>
      */
     inline GCMMessage& WithImageUrl(Aws::String&& value) { SetImageUrl(std::move(value)); return *this;}
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>The URL of an image to display in the push notification.</p>
      */
     inline GCMMessage& WithImageUrl(const char* value) { SetImageUrl(value); return *this;}
 
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM
-     * priority parameter when it sends the message. Accepts the following
-     * values:
-
-"Normal" - Messages might be delayed. Delivery is optimized for battery
-     * usage on the receiving device. Use normal priority unless immediate delivery is
-     * required.
-
-"High" - Messages are sent immediately and might wake a sleeping
-     * device.
-
-The equivalent values for APNs messages are "5" and "10". Amazon
-     * Pinpoint accepts these values here and converts them.
-
-For more information, see
-     * About FCM Messages in the Firebase documentation.
+     * <p>para>normal - The notification might be delayed. Delivery is optimized for
+     * battery usage on the recipient's device. Use this value unless immediate
+     * delivery is required.</p>/listitem> <li><p>high - The notification is sent
+     * immediately and might wake a sleeping device.</p></li>/para> <p>Amazon Pinpoint
+     * specifies this value in the FCM priority parameter when it sends the
+     * notification message to FCM.</p> <p>The equivalent values for Apple Push
+     * Notification service (APNs) are 5, for normal, and 10, for high. If you specify
+     * an APNs value for this property, Amazon Pinpoint accepts and converts the value
+     * to the corresponding FCM value.</p>
      */
     inline const Aws::String& GetPriority() const{ return m_priority; }
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM
-     * priority parameter when it sends the message. Accepts the following
-     * values:
-
-"Normal" - Messages might be delayed. Delivery is optimized for battery
-     * usage on the receiving device. Use normal priority unless immediate delivery is
-     * required.
-
-"High" - Messages are sent immediately and might wake a sleeping
-     * device.
-
-The equivalent values for APNs messages are "5" and "10". Amazon
-     * Pinpoint accepts these values here and converts them.
-
-For more information, see
-     * About FCM Messages in the Firebase documentation.
+     * <p>para>normal - The notification might be delayed. Delivery is optimized for
+     * battery usage on the recipient's device. Use this value unless immediate
+     * delivery is required.</p>/listitem> <li><p>high - The notification is sent
+     * immediately and might wake a sleeping device.</p></li>/para> <p>Amazon Pinpoint
+     * specifies this value in the FCM priority parameter when it sends the
+     * notification message to FCM.</p> <p>The equivalent values for Apple Push
+     * Notification service (APNs) are 5, for normal, and 10, for high. If you specify
+     * an APNs value for this property, Amazon Pinpoint accepts and converts the value
+     * to the corresponding FCM value.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM
-     * priority parameter when it sends the message. Accepts the following
-     * values:
-
-"Normal" - Messages might be delayed. Delivery is optimized for battery
-     * usage on the receiving device. Use normal priority unless immediate delivery is
-     * required.
-
-"High" - Messages are sent immediately and might wake a sleeping
-     * device.
-
-The equivalent values for APNs messages are "5" and "10". Amazon
-     * Pinpoint accepts these values here and converts them.
-
-For more information, see
-     * About FCM Messages in the Firebase documentation.
+     * <p>para>normal - The notification might be delayed. Delivery is optimized for
+     * battery usage on the recipient's device. Use this value unless immediate
+     * delivery is required.</p>/listitem> <li><p>high - The notification is sent
+     * immediately and might wake a sleeping device.</p></li>/para> <p>Amazon Pinpoint
+     * specifies this value in the FCM priority parameter when it sends the
+     * notification message to FCM.</p> <p>The equivalent values for Apple Push
+     * Notification service (APNs) are 5, for normal, and 10, for high. If you specify
+     * an APNs value for this property, Amazon Pinpoint accepts and converts the value
+     * to the corresponding FCM value.</p>
      */
     inline void SetPriority(const Aws::String& value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM
-     * priority parameter when it sends the message. Accepts the following
-     * values:
-
-"Normal" - Messages might be delayed. Delivery is optimized for battery
-     * usage on the receiving device. Use normal priority unless immediate delivery is
-     * required.
-
-"High" - Messages are sent immediately and might wake a sleeping
-     * device.
-
-The equivalent values for APNs messages are "5" and "10". Amazon
-     * Pinpoint accepts these values here and converts them.
-
-For more information, see
-     * About FCM Messages in the Firebase documentation.
+     * <p>para>normal - The notification might be delayed. Delivery is optimized for
+     * battery usage on the recipient's device. Use this value unless immediate
+     * delivery is required.</p>/listitem> <li><p>high - The notification is sent
+     * immediately and might wake a sleeping device.</p></li>/para> <p>Amazon Pinpoint
+     * specifies this value in the FCM priority parameter when it sends the
+     * notification message to FCM.</p> <p>The equivalent values for Apple Push
+     * Notification service (APNs) are 5, for normal, and 10, for high. If you specify
+     * an APNs value for this property, Amazon Pinpoint accepts and converts the value
+     * to the corresponding FCM value.</p>
      */
     inline void SetPriority(Aws::String&& value) { m_priorityHasBeenSet = true; m_priority = std::move(value); }
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM
-     * priority parameter when it sends the message. Accepts the following
-     * values:
-
-"Normal" - Messages might be delayed. Delivery is optimized for battery
-     * usage on the receiving device. Use normal priority unless immediate delivery is
-     * required.
-
-"High" - Messages are sent immediately and might wake a sleeping
-     * device.
-
-The equivalent values for APNs messages are "5" and "10". Amazon
-     * Pinpoint accepts these values here and converts them.
-
-For more information, see
-     * About FCM Messages in the Firebase documentation.
+     * <p>para>normal - The notification might be delayed. Delivery is optimized for
+     * battery usage on the recipient's device. Use this value unless immediate
+     * delivery is required.</p>/listitem> <li><p>high - The notification is sent
+     * immediately and might wake a sleeping device.</p></li>/para> <p>Amazon Pinpoint
+     * specifies this value in the FCM priority parameter when it sends the
+     * notification message to FCM.</p> <p>The equivalent values for Apple Push
+     * Notification service (APNs) are 5, for normal, and 10, for high. If you specify
+     * an APNs value for this property, Amazon Pinpoint accepts and converts the value
+     * to the corresponding FCM value.</p>
      */
     inline void SetPriority(const char* value) { m_priorityHasBeenSet = true; m_priority.assign(value); }
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM
-     * priority parameter when it sends the message. Accepts the following
-     * values:
-
-"Normal" - Messages might be delayed. Delivery is optimized for battery
-     * usage on the receiving device. Use normal priority unless immediate delivery is
-     * required.
-
-"High" - Messages are sent immediately and might wake a sleeping
-     * device.
-
-The equivalent values for APNs messages are "5" and "10". Amazon
-     * Pinpoint accepts these values here and converts them.
-
-For more information, see
-     * About FCM Messages in the Firebase documentation.
+     * <p>para>normal - The notification might be delayed. Delivery is optimized for
+     * battery usage on the recipient's device. Use this value unless immediate
+     * delivery is required.</p>/listitem> <li><p>high - The notification is sent
+     * immediately and might wake a sleeping device.</p></li>/para> <p>Amazon Pinpoint
+     * specifies this value in the FCM priority parameter when it sends the
+     * notification message to FCM.</p> <p>The equivalent values for Apple Push
+     * Notification service (APNs) are 5, for normal, and 10, for high. If you specify
+     * an APNs value for this property, Amazon Pinpoint accepts and converts the value
+     * to the corresponding FCM value.</p>
      */
     inline GCMMessage& WithPriority(const Aws::String& value) { SetPriority(value); return *this;}
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM
-     * priority parameter when it sends the message. Accepts the following
-     * values:
-
-"Normal" - Messages might be delayed. Delivery is optimized for battery
-     * usage on the receiving device. Use normal priority unless immediate delivery is
-     * required.
-
-"High" - Messages are sent immediately and might wake a sleeping
-     * device.
-
-The equivalent values for APNs messages are "5" and "10". Amazon
-     * Pinpoint accepts these values here and converts them.
-
-For more information, see
-     * About FCM Messages in the Firebase documentation.
+     * <p>para>normal - The notification might be delayed. Delivery is optimized for
+     * battery usage on the recipient's device. Use this value unless immediate
+     * delivery is required.</p>/listitem> <li><p>high - The notification is sent
+     * immediately and might wake a sleeping device.</p></li>/para> <p>Amazon Pinpoint
+     * specifies this value in the FCM priority parameter when it sends the
+     * notification message to FCM.</p> <p>The equivalent values for Apple Push
+     * Notification service (APNs) are 5, for normal, and 10, for high. If you specify
+     * an APNs value for this property, Amazon Pinpoint accepts and converts the value
+     * to the corresponding FCM value.</p>
      */
     inline GCMMessage& WithPriority(Aws::String&& value) { SetPriority(std::move(value)); return *this;}
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM
-     * priority parameter when it sends the message. Accepts the following
-     * values:
-
-"Normal" - Messages might be delayed. Delivery is optimized for battery
-     * usage on the receiving device. Use normal priority unless immediate delivery is
-     * required.
-
-"High" - Messages are sent immediately and might wake a sleeping
-     * device.
-
-The equivalent values for APNs messages are "5" and "10". Amazon
-     * Pinpoint accepts these values here and converts them.
-
-For more information, see
-     * About FCM Messages in the Firebase documentation.
+     * <p>para>normal - The notification might be delayed. Delivery is optimized for
+     * battery usage on the recipient's device. Use this value unless immediate
+     * delivery is required.</p>/listitem> <li><p>high - The notification is sent
+     * immediately and might wake a sleeping device.</p></li>/para> <p>Amazon Pinpoint
+     * specifies this value in the FCM priority parameter when it sends the
+     * notification message to FCM.</p> <p>The equivalent values for Apple Push
+     * Notification service (APNs) are 5, for normal, and 10, for high. If you specify
+     * an APNs value for this property, Amazon Pinpoint accepts and converts the value
+     * to the corresponding FCM value.</p>
      */
     inline GCMMessage& WithPriority(const char* value) { SetPriority(value); return *this;}
 
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides the message.</p>
      */
     inline const Aws::String& GetRawContent() const{ return m_rawContent; }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides the message.</p>
      */
     inline bool RawContentHasBeenSet() const { return m_rawContentHasBeenSet; }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides the message.</p>
      */
     inline void SetRawContent(const Aws::String& value) { m_rawContentHasBeenSet = true; m_rawContent = value; }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides the message.</p>
      */
     inline void SetRawContent(Aws::String&& value) { m_rawContentHasBeenSet = true; m_rawContent = std::move(value); }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides the message.</p>
      */
     inline void SetRawContent(const char* value) { m_rawContentHasBeenSet = true; m_rawContent.assign(value); }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides the message.</p>
      */
     inline GCMMessage& WithRawContent(const Aws::String& value) { SetRawContent(value); return *this;}
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides the message.</p>
      */
     inline GCMMessage& WithRawContent(Aws::String&& value) { SetRawContent(std::move(value)); return *this;}
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides the message.</p>
      */
     inline GCMMessage& WithRawContent(const char* value) { SetRawContent(value); return *this;}
 
 
     /**
-     * This parameter specifies the package name of the application where the
-     * registration tokens must match in order to receive the message.
+     * <p>The package name of the application where registration tokens must match in
+     * order for the recipient to receive the message.</p>
      */
     inline const Aws::String& GetRestrictedPackageName() const{ return m_restrictedPackageName; }
 
     /**
-     * This parameter specifies the package name of the application where the
-     * registration tokens must match in order to receive the message.
+     * <p>The package name of the application where registration tokens must match in
+     * order for the recipient to receive the message.</p>
      */
     inline bool RestrictedPackageNameHasBeenSet() const { return m_restrictedPackageNameHasBeenSet; }
 
     /**
-     * This parameter specifies the package name of the application where the
-     * registration tokens must match in order to receive the message.
+     * <p>The package name of the application where registration tokens must match in
+     * order for the recipient to receive the message.</p>
      */
     inline void SetRestrictedPackageName(const Aws::String& value) { m_restrictedPackageNameHasBeenSet = true; m_restrictedPackageName = value; }
 
     /**
-     * This parameter specifies the package name of the application where the
-     * registration tokens must match in order to receive the message.
+     * <p>The package name of the application where registration tokens must match in
+     * order for the recipient to receive the message.</p>
      */
     inline void SetRestrictedPackageName(Aws::String&& value) { m_restrictedPackageNameHasBeenSet = true; m_restrictedPackageName = std::move(value); }
 
     /**
-     * This parameter specifies the package name of the application where the
-     * registration tokens must match in order to receive the message.
+     * <p>The package name of the application where registration tokens must match in
+     * order for the recipient to receive the message.</p>
      */
     inline void SetRestrictedPackageName(const char* value) { m_restrictedPackageNameHasBeenSet = true; m_restrictedPackageName.assign(value); }
 
     /**
-     * This parameter specifies the package name of the application where the
-     * registration tokens must match in order to receive the message.
+     * <p>The package name of the application where registration tokens must match in
+     * order for the recipient to receive the message.</p>
      */
     inline GCMMessage& WithRestrictedPackageName(const Aws::String& value) { SetRestrictedPackageName(value); return *this;}
 
     /**
-     * This parameter specifies the package name of the application where the
-     * registration tokens must match in order to receive the message.
+     * <p>The package name of the application where registration tokens must match in
+     * order for the recipient to receive the message.</p>
      */
     inline GCMMessage& WithRestrictedPackageName(Aws::String&& value) { SetRestrictedPackageName(std::move(value)); return *this;}
 
     /**
-     * This parameter specifies the package name of the application where the
-     * registration tokens must match in order to receive the message.
+     * <p>The package name of the application where registration tokens must match in
+     * order for the recipient to receive the message.</p>
      */
     inline GCMMessage& WithRestrictedPackageName(const char* value) { SetRestrictedPackageName(value); return *this;}
 
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can
-     * be used for Remote Configuration and Phone Home use cases.
+     * <p>Specifies whether the notification is a silent push notification, which is a
+     * push notification that doesn't display on a recipient's device. Silent push
+     * notifications can be used for cases such as updating an app's configuration or
+     * supporting phone home functionality.</p>
      */
     inline bool GetSilentPush() const{ return m_silentPush; }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can
-     * be used for Remote Configuration and Phone Home use cases.
+     * <p>Specifies whether the notification is a silent push notification, which is a
+     * push notification that doesn't display on a recipient's device. Silent push
+     * notifications can be used for cases such as updating an app's configuration or
+     * supporting phone home functionality.</p>
      */
     inline bool SilentPushHasBeenSet() const { return m_silentPushHasBeenSet; }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can
-     * be used for Remote Configuration and Phone Home use cases.
+     * <p>Specifies whether the notification is a silent push notification, which is a
+     * push notification that doesn't display on a recipient's device. Silent push
+     * notifications can be used for cases such as updating an app's configuration or
+     * supporting phone home functionality.</p>
      */
     inline void SetSilentPush(bool value) { m_silentPushHasBeenSet = true; m_silentPush = value; }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can
-     * be used for Remote Configuration and Phone Home use cases.
+     * <p>Specifies whether the notification is a silent push notification, which is a
+     * push notification that doesn't display on a recipient's device. Silent push
+     * notifications can be used for cases such as updating an app's configuration or
+     * supporting phone home functionality.</p>
      */
     inline GCMMessage& WithSilentPush(bool value) { SetSilentPush(value); return *this;}
 
 
     /**
-     * The URL that points to an image used as the small icon for the notification
-     * which will be used to represent the notification in the status bar and content
-     * view
+     * <p>The URL of the small icon image to display in the status bar and the content
+     * view of the push notification.</p>
      */
     inline const Aws::String& GetSmallImageIconUrl() const{ return m_smallImageIconUrl; }
 
     /**
-     * The URL that points to an image used as the small icon for the notification
-     * which will be used to represent the notification in the status bar and content
-     * view
+     * <p>The URL of the small icon image to display in the status bar and the content
+     * view of the push notification.</p>
      */
     inline bool SmallImageIconUrlHasBeenSet() const { return m_smallImageIconUrlHasBeenSet; }
 
     /**
-     * The URL that points to an image used as the small icon for the notification
-     * which will be used to represent the notification in the status bar and content
-     * view
+     * <p>The URL of the small icon image to display in the status bar and the content
+     * view of the push notification.</p>
      */
     inline void SetSmallImageIconUrl(const Aws::String& value) { m_smallImageIconUrlHasBeenSet = true; m_smallImageIconUrl = value; }
 
     /**
-     * The URL that points to an image used as the small icon for the notification
-     * which will be used to represent the notification in the status bar and content
-     * view
+     * <p>The URL of the small icon image to display in the status bar and the content
+     * view of the push notification.</p>
      */
     inline void SetSmallImageIconUrl(Aws::String&& value) { m_smallImageIconUrlHasBeenSet = true; m_smallImageIconUrl = std::move(value); }
 
     /**
-     * The URL that points to an image used as the small icon for the notification
-     * which will be used to represent the notification in the status bar and content
-     * view
+     * <p>The URL of the small icon image to display in the status bar and the content
+     * view of the push notification.</p>
      */
     inline void SetSmallImageIconUrl(const char* value) { m_smallImageIconUrlHasBeenSet = true; m_smallImageIconUrl.assign(value); }
 
     /**
-     * The URL that points to an image used as the small icon for the notification
-     * which will be used to represent the notification in the status bar and content
-     * view
+     * <p>The URL of the small icon image to display in the status bar and the content
+     * view of the push notification.</p>
      */
     inline GCMMessage& WithSmallImageIconUrl(const Aws::String& value) { SetSmallImageIconUrl(value); return *this;}
 
     /**
-     * The URL that points to an image used as the small icon for the notification
-     * which will be used to represent the notification in the status bar and content
-     * view
+     * <p>The URL of the small icon image to display in the status bar and the content
+     * view of the push notification.</p>
      */
     inline GCMMessage& WithSmallImageIconUrl(Aws::String&& value) { SetSmallImageIconUrl(std::move(value)); return *this;}
 
     /**
-     * The URL that points to an image used as the small icon for the notification
-     * which will be used to represent the notification in the status bar and content
-     * view
+     * <p>The URL of the small icon image to display in the status bar and the content
+     * view of the push notification.</p>
      */
     inline GCMMessage& WithSmallImageIconUrl(const char* value) { SetSmallImageIconUrl(value); return *this;}
 
 
     /**
-     * Indicates a sound to play when the device receives the notification. Supports
-     * default, or the filename of a sound resource bundled in the app. Android sound
-     * files must reside in /res/raw/
+     * <p>The sound to play when the recipient receives the push notification. You can
+     * use the default stream or specify the file name of a sound resource that's
+     * bundled in your app. On an Android platform, the sound file must reside in
+     * /res/raw/.</p>
      */
     inline const Aws::String& GetSound() const{ return m_sound; }
 
     /**
-     * Indicates a sound to play when the device receives the notification. Supports
-     * default, or the filename of a sound resource bundled in the app. Android sound
-     * files must reside in /res/raw/
+     * <p>The sound to play when the recipient receives the push notification. You can
+     * use the default stream or specify the file name of a sound resource that's
+     * bundled in your app. On an Android platform, the sound file must reside in
+     * /res/raw/.</p>
      */
     inline bool SoundHasBeenSet() const { return m_soundHasBeenSet; }
 
     /**
-     * Indicates a sound to play when the device receives the notification. Supports
-     * default, or the filename of a sound resource bundled in the app. Android sound
-     * files must reside in /res/raw/
+     * <p>The sound to play when the recipient receives the push notification. You can
+     * use the default stream or specify the file name of a sound resource that's
+     * bundled in your app. On an Android platform, the sound file must reside in
+     * /res/raw/.</p>
      */
     inline void SetSound(const Aws::String& value) { m_soundHasBeenSet = true; m_sound = value; }
 
     /**
-     * Indicates a sound to play when the device receives the notification. Supports
-     * default, or the filename of a sound resource bundled in the app. Android sound
-     * files must reside in /res/raw/
+     * <p>The sound to play when the recipient receives the push notification. You can
+     * use the default stream or specify the file name of a sound resource that's
+     * bundled in your app. On an Android platform, the sound file must reside in
+     * /res/raw/.</p>
      */
     inline void SetSound(Aws::String&& value) { m_soundHasBeenSet = true; m_sound = std::move(value); }
 
     /**
-     * Indicates a sound to play when the device receives the notification. Supports
-     * default, or the filename of a sound resource bundled in the app. Android sound
-     * files must reside in /res/raw/
+     * <p>The sound to play when the recipient receives the push notification. You can
+     * use the default stream or specify the file name of a sound resource that's
+     * bundled in your app. On an Android platform, the sound file must reside in
+     * /res/raw/.</p>
      */
     inline void SetSound(const char* value) { m_soundHasBeenSet = true; m_sound.assign(value); }
 
     /**
-     * Indicates a sound to play when the device receives the notification. Supports
-     * default, or the filename of a sound resource bundled in the app. Android sound
-     * files must reside in /res/raw/
+     * <p>The sound to play when the recipient receives the push notification. You can
+     * use the default stream or specify the file name of a sound resource that's
+     * bundled in your app. On an Android platform, the sound file must reside in
+     * /res/raw/.</p>
      */
     inline GCMMessage& WithSound(const Aws::String& value) { SetSound(value); return *this;}
 
     /**
-     * Indicates a sound to play when the device receives the notification. Supports
-     * default, or the filename of a sound resource bundled in the app. Android sound
-     * files must reside in /res/raw/
+     * <p>The sound to play when the recipient receives the push notification. You can
+     * use the default stream or specify the file name of a sound resource that's
+     * bundled in your app. On an Android platform, the sound file must reside in
+     * /res/raw/.</p>
      */
     inline GCMMessage& WithSound(Aws::String&& value) { SetSound(std::move(value)); return *this;}
 
     /**
-     * Indicates a sound to play when the device receives the notification. Supports
-     * default, or the filename of a sound resource bundled in the app. Android sound
-     * files must reside in /res/raw/
+     * <p>The sound to play when the recipient receives the push notification. You can
+     * use the default stream or specify the file name of a sound resource that's
+     * bundled in your app. On an Android platform, the sound file must reside in
+     * /res/raw/.</p>
      */
     inline GCMMessage& WithSound(const char* value) { SetSound(value); return *this;}
 
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override the default variables with individual address variables.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const{ return m_substitutions; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override the default variables with individual address variables.</p>
      */
     inline bool SubstitutionsHasBeenSet() const { return m_substitutionsHasBeenSet; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override the default variables with individual address variables.</p>
      */
     inline void SetSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_substitutionsHasBeenSet = true; m_substitutions = value; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override the default variables with individual address variables.</p>
      */
     inline void SetSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_substitutionsHasBeenSet = true; m_substitutions = std::move(value); }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override the default variables with individual address variables.</p>
      */
     inline GCMMessage& WithSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetSubstitutions(value); return *this;}
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override the default variables with individual address variables.</p>
      */
     inline GCMMessage& WithSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetSubstitutions(std::move(value)); return *this;}
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override the default variables with individual address variables.</p>
      */
     inline GCMMessage& AddSubstitutions(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override the default variables with individual address variables.</p>
      */
     inline GCMMessage& AddSubstitutions(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), value); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override the default variables with individual address variables.</p>
      */
     inline GCMMessage& AddSubstitutions(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override the default variables with individual address variables.</p>
      */
     inline GCMMessage& AddSubstitutions(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override the default variables with individual address variables.</p>
      */
     inline GCMMessage& AddSubstitutions(const char* key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override the default variables with individual address variables.</p>
      */
     inline GCMMessage& AddSubstitutions(const char* key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 
 
     /**
-     * The length of time (in seconds) that FCM or GCM stores and attempts to deliver
-     * the message. If unspecified, the value defaults to the maximum, which is
-     * 2,419,200 seconds (28 days). Amazon Pinpoint uses this value to set the FCM or
-     * GCM time_to_live parameter.
+     * <p>The amount of time, in seconds, that FCM should store and attempt to deliver
+     * the push notification, if the service is unable to deliver the notification the
+     * first time. If you don't specify this value, FCM defaults to the maximum value,
+     * which is 2,419,200 seconds (28 days).</p> <p>Amazon Pinpoint specifies this
+     * value in the FCM time_to_live parameter when it sends the notification message
+     * to FCM.</p>
      */
     inline int GetTimeToLive() const{ return m_timeToLive; }
 
     /**
-     * The length of time (in seconds) that FCM or GCM stores and attempts to deliver
-     * the message. If unspecified, the value defaults to the maximum, which is
-     * 2,419,200 seconds (28 days). Amazon Pinpoint uses this value to set the FCM or
-     * GCM time_to_live parameter.
+     * <p>The amount of time, in seconds, that FCM should store and attempt to deliver
+     * the push notification, if the service is unable to deliver the notification the
+     * first time. If you don't specify this value, FCM defaults to the maximum value,
+     * which is 2,419,200 seconds (28 days).</p> <p>Amazon Pinpoint specifies this
+     * value in the FCM time_to_live parameter when it sends the notification message
+     * to FCM.</p>
      */
     inline bool TimeToLiveHasBeenSet() const { return m_timeToLiveHasBeenSet; }
 
     /**
-     * The length of time (in seconds) that FCM or GCM stores and attempts to deliver
-     * the message. If unspecified, the value defaults to the maximum, which is
-     * 2,419,200 seconds (28 days). Amazon Pinpoint uses this value to set the FCM or
-     * GCM time_to_live parameter.
+     * <p>The amount of time, in seconds, that FCM should store and attempt to deliver
+     * the push notification, if the service is unable to deliver the notification the
+     * first time. If you don't specify this value, FCM defaults to the maximum value,
+     * which is 2,419,200 seconds (28 days).</p> <p>Amazon Pinpoint specifies this
+     * value in the FCM time_to_live parameter when it sends the notification message
+     * to FCM.</p>
      */
     inline void SetTimeToLive(int value) { m_timeToLiveHasBeenSet = true; m_timeToLive = value; }
 
     /**
-     * The length of time (in seconds) that FCM or GCM stores and attempts to deliver
-     * the message. If unspecified, the value defaults to the maximum, which is
-     * 2,419,200 seconds (28 days). Amazon Pinpoint uses this value to set the FCM or
-     * GCM time_to_live parameter.
+     * <p>The amount of time, in seconds, that FCM should store and attempt to deliver
+     * the push notification, if the service is unable to deliver the notification the
+     * first time. If you don't specify this value, FCM defaults to the maximum value,
+     * which is 2,419,200 seconds (28 days).</p> <p>Amazon Pinpoint specifies this
+     * value in the FCM time_to_live parameter when it sends the notification message
+     * to FCM.</p>
      */
     inline GCMMessage& WithTimeToLive(int value) { SetTimeToLive(value); return *this;}
 
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on the recipient's
+     * device.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on the recipient's
+     * device.</p>
      */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on the recipient's
+     * device.</p>
      */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on the recipient's
+     * device.</p>
      */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on the recipient's
+     * device.</p>
      */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on the recipient's
+     * device.</p>
      */
     inline GCMMessage& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on the recipient's
+     * device.</p>
      */
     inline GCMMessage& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on the recipient's
+     * device.</p>
      */
     inline GCMMessage& WithTitle(const char* value) { SetTitle(value); return *this;}
 
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in the recipient's default mobile browser, if a recipient
+     * taps the push notification and the value of the Action property is URL.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in the recipient's default mobile browser, if a recipient
+     * taps the push notification and the value of the Action property is URL.</p>
      */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in the recipient's default mobile browser, if a recipient
+     * taps the push notification and the value of the Action property is URL.</p>
      */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in the recipient's default mobile browser, if a recipient
+     * taps the push notification and the value of the Action property is URL.</p>
      */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in the recipient's default mobile browser, if a recipient
+     * taps the push notification and the value of the Action property is URL.</p>
      */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in the recipient's default mobile browser, if a recipient
+     * taps the push notification and the value of the Action property is URL.</p>
      */
     inline GCMMessage& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in the recipient's default mobile browser, if a recipient
+     * taps the push notification and the value of the Action property is URL.</p>
      */
     inline GCMMessage& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in the recipient's default mobile browser, if a recipient
+     * taps the push notification and the value of the Action property is URL.</p>
      */
     inline GCMMessage& WithUrl(const char* value) { SetUrl(value); return *this;}
 

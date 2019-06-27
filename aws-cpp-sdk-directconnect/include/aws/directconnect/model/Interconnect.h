@@ -19,6 +19,8 @@
 #include <aws/directconnect/model/InterconnectState.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/directconnect/model/HasLogicalRedundancy.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/directconnect/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -563,6 +565,47 @@ namespace Model
      */
     inline Interconnect& WithHasLogicalRedundancy(HasLogicalRedundancy&& value) { SetHasLogicalRedundancy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Any tags assigned to the interconnect.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the interconnect.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Any tags assigned to the interconnect.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Any tags assigned to the interconnect.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Any tags assigned to the interconnect.</p>
+     */
+    inline Interconnect& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Any tags assigned to the interconnect.</p>
+     */
+    inline Interconnect& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags assigned to the interconnect.</p>
+     */
+    inline Interconnect& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Any tags assigned to the interconnect.</p>
+     */
+    inline Interconnect& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_interconnectId;
@@ -600,6 +643,9 @@ namespace Model
 
     HasLogicalRedundancy m_hasLogicalRedundancy;
     bool m_hasLogicalRedundancyHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

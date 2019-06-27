@@ -38,7 +38,9 @@ namespace Model
 {
 
   /**
-   * Segment group definition.<p><h3>See Also:</h3>   <a
+   * <p>Specifies the base segments and dimensions for a segment, and the
+   * relationships between these base segments and dimensions.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentGroup">AWS
    * API Reference</a></p>
    */
@@ -52,239 +54,225 @@ namespace Model
 
 
     /**
-     * List of dimensions to include or exclude.
+     * <p>An array that defines the dimensions for the segment.</p>
      */
     inline const Aws::Vector<SegmentDimensions>& GetDimensions() const{ return m_dimensions; }
 
     /**
-     * List of dimensions to include or exclude.
+     * <p>An array that defines the dimensions for the segment.</p>
      */
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
 
     /**
-     * List of dimensions to include or exclude.
+     * <p>An array that defines the dimensions for the segment.</p>
      */
     inline void SetDimensions(const Aws::Vector<SegmentDimensions>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * List of dimensions to include or exclude.
+     * <p>An array that defines the dimensions for the segment.</p>
      */
     inline void SetDimensions(Aws::Vector<SegmentDimensions>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
 
     /**
-     * List of dimensions to include or exclude.
+     * <p>An array that defines the dimensions for the segment.</p>
      */
     inline SegmentGroup& WithDimensions(const Aws::Vector<SegmentDimensions>& value) { SetDimensions(value); return *this;}
 
     /**
-     * List of dimensions to include or exclude.
+     * <p>An array that defines the dimensions for the segment.</p>
      */
     inline SegmentGroup& WithDimensions(Aws::Vector<SegmentDimensions>&& value) { SetDimensions(std::move(value)); return *this;}
 
     /**
-     * List of dimensions to include or exclude.
+     * <p>An array that defines the dimensions for the segment.</p>
      */
     inline SegmentGroup& AddDimensions(const SegmentDimensions& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
     /**
-     * List of dimensions to include or exclude.
+     * <p>An array that defines the dimensions for the segment.</p>
      */
     inline SegmentGroup& AddDimensions(SegmentDimensions&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * The base segment that you build your segment on. The source segment defines the
-     * starting "universe" of endpoints. When you add dimensions to the segment, it
-     * filters the source segment based on the dimensions that you specify. You can
-     * specify more than one dimensional segment. You can only specify one imported
-     * segment.
-
-NOTE: If you specify an imported segment for this attribute, the
-     * segment size estimate that appears in the Amazon Pinpoint console shows the size
-     * of the imported segment, without any filters applied to it.
+     * <p>The base segment to build the segment on. A base segment, also referred to as
+     * a <i>source segment</i>, defines the initial population of endpoints for a
+     * segment. When you add dimensions to a segment, Amazon Pinpoint filters the base
+     * segment by using the dimensions that you specify.</p> <p>You can specify more
+     * than one dimensional segment or only one imported segment. If you specify an
+     * imported segment, the Amazon Pinpoint console displays a segment size estimate
+     * that indicates the size of the imported segment without any filters applied to
+     * it.</p>
      */
     inline const Aws::Vector<SegmentReference>& GetSourceSegments() const{ return m_sourceSegments; }
 
     /**
-     * The base segment that you build your segment on. The source segment defines the
-     * starting "universe" of endpoints. When you add dimensions to the segment, it
-     * filters the source segment based on the dimensions that you specify. You can
-     * specify more than one dimensional segment. You can only specify one imported
-     * segment.
-
-NOTE: If you specify an imported segment for this attribute, the
-     * segment size estimate that appears in the Amazon Pinpoint console shows the size
-     * of the imported segment, without any filters applied to it.
+     * <p>The base segment to build the segment on. A base segment, also referred to as
+     * a <i>source segment</i>, defines the initial population of endpoints for a
+     * segment. When you add dimensions to a segment, Amazon Pinpoint filters the base
+     * segment by using the dimensions that you specify.</p> <p>You can specify more
+     * than one dimensional segment or only one imported segment. If you specify an
+     * imported segment, the Amazon Pinpoint console displays a segment size estimate
+     * that indicates the size of the imported segment without any filters applied to
+     * it.</p>
      */
     inline bool SourceSegmentsHasBeenSet() const { return m_sourceSegmentsHasBeenSet; }
 
     /**
-     * The base segment that you build your segment on. The source segment defines the
-     * starting "universe" of endpoints. When you add dimensions to the segment, it
-     * filters the source segment based on the dimensions that you specify. You can
-     * specify more than one dimensional segment. You can only specify one imported
-     * segment.
-
-NOTE: If you specify an imported segment for this attribute, the
-     * segment size estimate that appears in the Amazon Pinpoint console shows the size
-     * of the imported segment, without any filters applied to it.
+     * <p>The base segment to build the segment on. A base segment, also referred to as
+     * a <i>source segment</i>, defines the initial population of endpoints for a
+     * segment. When you add dimensions to a segment, Amazon Pinpoint filters the base
+     * segment by using the dimensions that you specify.</p> <p>You can specify more
+     * than one dimensional segment or only one imported segment. If you specify an
+     * imported segment, the Amazon Pinpoint console displays a segment size estimate
+     * that indicates the size of the imported segment without any filters applied to
+     * it.</p>
      */
     inline void SetSourceSegments(const Aws::Vector<SegmentReference>& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments = value; }
 
     /**
-     * The base segment that you build your segment on. The source segment defines the
-     * starting "universe" of endpoints. When you add dimensions to the segment, it
-     * filters the source segment based on the dimensions that you specify. You can
-     * specify more than one dimensional segment. You can only specify one imported
-     * segment.
-
-NOTE: If you specify an imported segment for this attribute, the
-     * segment size estimate that appears in the Amazon Pinpoint console shows the size
-     * of the imported segment, without any filters applied to it.
+     * <p>The base segment to build the segment on. A base segment, also referred to as
+     * a <i>source segment</i>, defines the initial population of endpoints for a
+     * segment. When you add dimensions to a segment, Amazon Pinpoint filters the base
+     * segment by using the dimensions that you specify.</p> <p>You can specify more
+     * than one dimensional segment or only one imported segment. If you specify an
+     * imported segment, the Amazon Pinpoint console displays a segment size estimate
+     * that indicates the size of the imported segment without any filters applied to
+     * it.</p>
      */
     inline void SetSourceSegments(Aws::Vector<SegmentReference>&& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments = std::move(value); }
 
     /**
-     * The base segment that you build your segment on. The source segment defines the
-     * starting "universe" of endpoints. When you add dimensions to the segment, it
-     * filters the source segment based on the dimensions that you specify. You can
-     * specify more than one dimensional segment. You can only specify one imported
-     * segment.
-
-NOTE: If you specify an imported segment for this attribute, the
-     * segment size estimate that appears in the Amazon Pinpoint console shows the size
-     * of the imported segment, without any filters applied to it.
+     * <p>The base segment to build the segment on. A base segment, also referred to as
+     * a <i>source segment</i>, defines the initial population of endpoints for a
+     * segment. When you add dimensions to a segment, Amazon Pinpoint filters the base
+     * segment by using the dimensions that you specify.</p> <p>You can specify more
+     * than one dimensional segment or only one imported segment. If you specify an
+     * imported segment, the Amazon Pinpoint console displays a segment size estimate
+     * that indicates the size of the imported segment without any filters applied to
+     * it.</p>
      */
     inline SegmentGroup& WithSourceSegments(const Aws::Vector<SegmentReference>& value) { SetSourceSegments(value); return *this;}
 
     /**
-     * The base segment that you build your segment on. The source segment defines the
-     * starting "universe" of endpoints. When you add dimensions to the segment, it
-     * filters the source segment based on the dimensions that you specify. You can
-     * specify more than one dimensional segment. You can only specify one imported
-     * segment.
-
-NOTE: If you specify an imported segment for this attribute, the
-     * segment size estimate that appears in the Amazon Pinpoint console shows the size
-     * of the imported segment, without any filters applied to it.
+     * <p>The base segment to build the segment on. A base segment, also referred to as
+     * a <i>source segment</i>, defines the initial population of endpoints for a
+     * segment. When you add dimensions to a segment, Amazon Pinpoint filters the base
+     * segment by using the dimensions that you specify.</p> <p>You can specify more
+     * than one dimensional segment or only one imported segment. If you specify an
+     * imported segment, the Amazon Pinpoint console displays a segment size estimate
+     * that indicates the size of the imported segment without any filters applied to
+     * it.</p>
      */
     inline SegmentGroup& WithSourceSegments(Aws::Vector<SegmentReference>&& value) { SetSourceSegments(std::move(value)); return *this;}
 
     /**
-     * The base segment that you build your segment on. The source segment defines the
-     * starting "universe" of endpoints. When you add dimensions to the segment, it
-     * filters the source segment based on the dimensions that you specify. You can
-     * specify more than one dimensional segment. You can only specify one imported
-     * segment.
-
-NOTE: If you specify an imported segment for this attribute, the
-     * segment size estimate that appears in the Amazon Pinpoint console shows the size
-     * of the imported segment, without any filters applied to it.
+     * <p>The base segment to build the segment on. A base segment, also referred to as
+     * a <i>source segment</i>, defines the initial population of endpoints for a
+     * segment. When you add dimensions to a segment, Amazon Pinpoint filters the base
+     * segment by using the dimensions that you specify.</p> <p>You can specify more
+     * than one dimensional segment or only one imported segment. If you specify an
+     * imported segment, the Amazon Pinpoint console displays a segment size estimate
+     * that indicates the size of the imported segment without any filters applied to
+     * it.</p>
      */
     inline SegmentGroup& AddSourceSegments(const SegmentReference& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments.push_back(value); return *this; }
 
     /**
-     * The base segment that you build your segment on. The source segment defines the
-     * starting "universe" of endpoints. When you add dimensions to the segment, it
-     * filters the source segment based on the dimensions that you specify. You can
-     * specify more than one dimensional segment. You can only specify one imported
-     * segment.
-
-NOTE: If you specify an imported segment for this attribute, the
-     * segment size estimate that appears in the Amazon Pinpoint console shows the size
-     * of the imported segment, without any filters applied to it.
+     * <p>The base segment to build the segment on. A base segment, also referred to as
+     * a <i>source segment</i>, defines the initial population of endpoints for a
+     * segment. When you add dimensions to a segment, Amazon Pinpoint filters the base
+     * segment by using the dimensions that you specify.</p> <p>You can specify more
+     * than one dimensional segment or only one imported segment. If you specify an
+     * imported segment, the Amazon Pinpoint console displays a segment size estimate
+     * that indicates the size of the imported segment without any filters applied to
+     * it.</p>
      */
     inline SegmentGroup& AddSourceSegments(SegmentReference&& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments.push_back(std::move(value)); return *this; }
 
 
     /**
-     * Specify how to handle multiple source segments. For example, if you specify
-     * three source segments, should the resulting segment be based on any or all of
-     * the segments? Acceptable values: ANY or ALL.
+     * <p>Specifies how to handle multiple base segments for the segment. For example,
+     * if you specify three base segments for the segment, whether the resulting
+     * segment is based on all, any, or none of the base segments.</p>
      */
     inline const SourceType& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * Specify how to handle multiple source segments. For example, if you specify
-     * three source segments, should the resulting segment be based on any or all of
-     * the segments? Acceptable values: ANY or ALL.
+     * <p>Specifies how to handle multiple base segments for the segment. For example,
+     * if you specify three base segments for the segment, whether the resulting
+     * segment is based on all, any, or none of the base segments.</p>
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
     /**
-     * Specify how to handle multiple source segments. For example, if you specify
-     * three source segments, should the resulting segment be based on any or all of
-     * the segments? Acceptable values: ANY or ALL.
+     * <p>Specifies how to handle multiple base segments for the segment. For example,
+     * if you specify three base segments for the segment, whether the resulting
+     * segment is based on all, any, or none of the base segments.</p>
      */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * Specify how to handle multiple source segments. For example, if you specify
-     * three source segments, should the resulting segment be based on any or all of
-     * the segments? Acceptable values: ANY or ALL.
+     * <p>Specifies how to handle multiple base segments for the segment. For example,
+     * if you specify three base segments for the segment, whether the resulting
+     * segment is based on all, any, or none of the base segments.</p>
      */
     inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
-     * Specify how to handle multiple source segments. For example, if you specify
-     * three source segments, should the resulting segment be based on any or all of
-     * the segments? Acceptable values: ANY or ALL.
+     * <p>Specifies how to handle multiple base segments for the segment. For example,
+     * if you specify three base segments for the segment, whether the resulting
+     * segment is based on all, any, or none of the base segments.</p>
      */
     inline SegmentGroup& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
 
     /**
-     * Specify how to handle multiple source segments. For example, if you specify
-     * three source segments, should the resulting segment be based on any or all of
-     * the segments? Acceptable values: ANY or ALL.
+     * <p>Specifies how to handle multiple base segments for the segment. For example,
+     * if you specify three base segments for the segment, whether the resulting
+     * segment is based on all, any, or none of the base segments.</p>
      */
     inline SegmentGroup& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
 
 
     /**
-     * Specify how to handle multiple segment dimensions. For example, if you specify
-     * three dimensions, should the resulting segment include endpoints that are
-     * matched by all, any, or none of the dimensions? Acceptable values: ALL, ANY, or
-     * NONE.
+     * <p>Specifies how to handle multiple dimensions for the segment. For example, if
+     * you specify three dimensions for the segment, whether the resulting segment
+     * includes endpoints that match all, any, or none of the dimensions.</p>
      */
     inline const Type& GetType() const{ return m_type; }
 
     /**
-     * Specify how to handle multiple segment dimensions. For example, if you specify
-     * three dimensions, should the resulting segment include endpoints that are
-     * matched by all, any, or none of the dimensions? Acceptable values: ALL, ANY, or
-     * NONE.
+     * <p>Specifies how to handle multiple dimensions for the segment. For example, if
+     * you specify three dimensions for the segment, whether the resulting segment
+     * includes endpoints that match all, any, or none of the dimensions.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * Specify how to handle multiple segment dimensions. For example, if you specify
-     * three dimensions, should the resulting segment include endpoints that are
-     * matched by all, any, or none of the dimensions? Acceptable values: ALL, ANY, or
-     * NONE.
+     * <p>Specifies how to handle multiple dimensions for the segment. For example, if
+     * you specify three dimensions for the segment, whether the resulting segment
+     * includes endpoints that match all, any, or none of the dimensions.</p>
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * Specify how to handle multiple segment dimensions. For example, if you specify
-     * three dimensions, should the resulting segment include endpoints that are
-     * matched by all, any, or none of the dimensions? Acceptable values: ALL, ANY, or
-     * NONE.
+     * <p>Specifies how to handle multiple dimensions for the segment. For example, if
+     * you specify three dimensions for the segment, whether the resulting segment
+     * includes endpoints that match all, any, or none of the dimensions.</p>
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * Specify how to handle multiple segment dimensions. For example, if you specify
-     * three dimensions, should the resulting segment include endpoints that are
-     * matched by all, any, or none of the dimensions? Acceptable values: ALL, ANY, or
-     * NONE.
+     * <p>Specifies how to handle multiple dimensions for the segment. For example, if
+     * you specify three dimensions for the segment, whether the resulting segment
+     * includes endpoints that match all, any, or none of the dimensions.</p>
      */
     inline SegmentGroup& WithType(const Type& value) { SetType(value); return *this;}
 
     /**
-     * Specify how to handle multiple segment dimensions. For example, if you specify
-     * three dimensions, should the resulting segment include endpoints that are
-     * matched by all, any, or none of the dimensions? Acceptable values: ALL, ANY, or
-     * NONE.
+     * <p>Specifies how to handle multiple dimensions for the segment. For example, if
+     * you specify three dimensions for the segment, whether the resulting segment
+     * includes endpoints that match all, any, or none of the dimensions.</p>
      */
     inline SegmentGroup& WithType(Type&& value) { SetType(std::move(value)); return *this;}
 

@@ -37,7 +37,8 @@ namespace Model
 {
 
   /**
-   * SMS Message.<p><h3>See Also:</h3>   <a
+   * <p>Specifies the default settings for a one-time SMS message that's sent
+   * directly to an endpoint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SMSMessage">AWS
    * API Reference</a></p>
    */
@@ -51,309 +52,327 @@ namespace Model
 
 
     /**
-     * The body of the SMS message.
+     * <p>The body of the SMS message.</p>
      */
     inline const Aws::String& GetBody() const{ return m_body; }
 
     /**
-     * The body of the SMS message.
+     * <p>The body of the SMS message.</p>
      */
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
 
     /**
-     * The body of the SMS message.
+     * <p>The body of the SMS message.</p>
      */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
-     * The body of the SMS message.
+     * <p>The body of the SMS message.</p>
      */
     inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
 
     /**
-     * The body of the SMS message.
+     * <p>The body of the SMS message.</p>
      */
     inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
 
     /**
-     * The body of the SMS message.
+     * <p>The body of the SMS message.</p>
      */
     inline SMSMessage& WithBody(const Aws::String& value) { SetBody(value); return *this;}
 
     /**
-     * The body of the SMS message.
+     * <p>The body of the SMS message.</p>
      */
     inline SMSMessage& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
 
     /**
-     * The body of the SMS message.
+     * <p>The body of the SMS message.</p>
      */
     inline SMSMessage& WithBody(const char* value) { SetBody(value); return *this;}
 
 
     /**
-     * The SMS program name that you provided to AWS Support when you requested your
-     * dedicated number.
+     * <p>The SMS program name that you provided to AWS Support when you requested your
+     * dedicated number.</p>
      */
     inline const Aws::String& GetKeyword() const{ return m_keyword; }
 
     /**
-     * The SMS program name that you provided to AWS Support when you requested your
-     * dedicated number.
+     * <p>The SMS program name that you provided to AWS Support when you requested your
+     * dedicated number.</p>
      */
     inline bool KeywordHasBeenSet() const { return m_keywordHasBeenSet; }
 
     /**
-     * The SMS program name that you provided to AWS Support when you requested your
-     * dedicated number.
+     * <p>The SMS program name that you provided to AWS Support when you requested your
+     * dedicated number.</p>
      */
     inline void SetKeyword(const Aws::String& value) { m_keywordHasBeenSet = true; m_keyword = value; }
 
     /**
-     * The SMS program name that you provided to AWS Support when you requested your
-     * dedicated number.
+     * <p>The SMS program name that you provided to AWS Support when you requested your
+     * dedicated number.</p>
      */
     inline void SetKeyword(Aws::String&& value) { m_keywordHasBeenSet = true; m_keyword = std::move(value); }
 
     /**
-     * The SMS program name that you provided to AWS Support when you requested your
-     * dedicated number.
+     * <p>The SMS program name that you provided to AWS Support when you requested your
+     * dedicated number.</p>
      */
     inline void SetKeyword(const char* value) { m_keywordHasBeenSet = true; m_keyword.assign(value); }
 
     /**
-     * The SMS program name that you provided to AWS Support when you requested your
-     * dedicated number.
+     * <p>The SMS program name that you provided to AWS Support when you requested your
+     * dedicated number.</p>
      */
     inline SMSMessage& WithKeyword(const Aws::String& value) { SetKeyword(value); return *this;}
 
     /**
-     * The SMS program name that you provided to AWS Support when you requested your
-     * dedicated number.
+     * <p>The SMS program name that you provided to AWS Support when you requested your
+     * dedicated number.</p>
      */
     inline SMSMessage& WithKeyword(Aws::String&& value) { SetKeyword(std::move(value)); return *this;}
 
     /**
-     * The SMS program name that you provided to AWS Support when you requested your
-     * dedicated number.
+     * <p>The SMS program name that you provided to AWS Support when you requested your
+     * dedicated number.</p>
      */
     inline SMSMessage& WithKeyword(const char* value) { SetKeyword(value); return *this;}
 
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
+     * critical or time-sensitive, such as a one-time password that supports a customer
+     * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
+     * such as a marketing message.</p>
      */
     inline const MessageType& GetMessageType() const{ return m_messageType; }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
+     * critical or time-sensitive, such as a one-time password that supports a customer
+     * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
+     * such as a marketing message.</p>
      */
     inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
+     * critical or time-sensitive, such as a one-time password that supports a customer
+     * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
+     * such as a marketing message.</p>
      */
     inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
+     * critical or time-sensitive, such as a one-time password that supports a customer
+     * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
+     * such as a marketing message.</p>
      */
     inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
+     * critical or time-sensitive, such as a one-time password that supports a customer
+     * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
+     * such as a marketing message.</p>
      */
     inline SMSMessage& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
+     * critical or time-sensitive, such as a one-time password that supports a customer
+     * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
+     * such as a marketing message.</p>
      */
     inline SMSMessage& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
 
 
     /**
-     * The phone number that the SMS message originates from. Specify one of the
-     * dedicated long codes or short codes that you requested from AWS Support and that
-     * is assigned to your account. If this attribute is not specified, Amazon Pinpoint
-     * randomly assigns a long code.
+     * <p>The number that the SMS message originates from. This should be one of the
+     * dedicated long codes or short codes that you requested from AWS Support and is
+     * assigned to your AWS account. If you don't specify a long or short code, Amazon
+     * Pinpoint assigns a random long code to the SMS message.</p>
      */
     inline const Aws::String& GetOriginationNumber() const{ return m_originationNumber; }
 
     /**
-     * The phone number that the SMS message originates from. Specify one of the
-     * dedicated long codes or short codes that you requested from AWS Support and that
-     * is assigned to your account. If this attribute is not specified, Amazon Pinpoint
-     * randomly assigns a long code.
+     * <p>The number that the SMS message originates from. This should be one of the
+     * dedicated long codes or short codes that you requested from AWS Support and is
+     * assigned to your AWS account. If you don't specify a long or short code, Amazon
+     * Pinpoint assigns a random long code to the SMS message.</p>
      */
     inline bool OriginationNumberHasBeenSet() const { return m_originationNumberHasBeenSet; }
 
     /**
-     * The phone number that the SMS message originates from. Specify one of the
-     * dedicated long codes or short codes that you requested from AWS Support and that
-     * is assigned to your account. If this attribute is not specified, Amazon Pinpoint
-     * randomly assigns a long code.
+     * <p>The number that the SMS message originates from. This should be one of the
+     * dedicated long codes or short codes that you requested from AWS Support and is
+     * assigned to your AWS account. If you don't specify a long or short code, Amazon
+     * Pinpoint assigns a random long code to the SMS message.</p>
      */
     inline void SetOriginationNumber(const Aws::String& value) { m_originationNumberHasBeenSet = true; m_originationNumber = value; }
 
     /**
-     * The phone number that the SMS message originates from. Specify one of the
-     * dedicated long codes or short codes that you requested from AWS Support and that
-     * is assigned to your account. If this attribute is not specified, Amazon Pinpoint
-     * randomly assigns a long code.
+     * <p>The number that the SMS message originates from. This should be one of the
+     * dedicated long codes or short codes that you requested from AWS Support and is
+     * assigned to your AWS account. If you don't specify a long or short code, Amazon
+     * Pinpoint assigns a random long code to the SMS message.</p>
      */
     inline void SetOriginationNumber(Aws::String&& value) { m_originationNumberHasBeenSet = true; m_originationNumber = std::move(value); }
 
     /**
-     * The phone number that the SMS message originates from. Specify one of the
-     * dedicated long codes or short codes that you requested from AWS Support and that
-     * is assigned to your account. If this attribute is not specified, Amazon Pinpoint
-     * randomly assigns a long code.
+     * <p>The number that the SMS message originates from. This should be one of the
+     * dedicated long codes or short codes that you requested from AWS Support and is
+     * assigned to your AWS account. If you don't specify a long or short code, Amazon
+     * Pinpoint assigns a random long code to the SMS message.</p>
      */
     inline void SetOriginationNumber(const char* value) { m_originationNumberHasBeenSet = true; m_originationNumber.assign(value); }
 
     /**
-     * The phone number that the SMS message originates from. Specify one of the
-     * dedicated long codes or short codes that you requested from AWS Support and that
-     * is assigned to your account. If this attribute is not specified, Amazon Pinpoint
-     * randomly assigns a long code.
+     * <p>The number that the SMS message originates from. This should be one of the
+     * dedicated long codes or short codes that you requested from AWS Support and is
+     * assigned to your AWS account. If you don't specify a long or short code, Amazon
+     * Pinpoint assigns a random long code to the SMS message.</p>
      */
     inline SMSMessage& WithOriginationNumber(const Aws::String& value) { SetOriginationNumber(value); return *this;}
 
     /**
-     * The phone number that the SMS message originates from. Specify one of the
-     * dedicated long codes or short codes that you requested from AWS Support and that
-     * is assigned to your account. If this attribute is not specified, Amazon Pinpoint
-     * randomly assigns a long code.
+     * <p>The number that the SMS message originates from. This should be one of the
+     * dedicated long codes or short codes that you requested from AWS Support and is
+     * assigned to your AWS account. If you don't specify a long or short code, Amazon
+     * Pinpoint assigns a random long code to the SMS message.</p>
      */
     inline SMSMessage& WithOriginationNumber(Aws::String&& value) { SetOriginationNumber(std::move(value)); return *this;}
 
     /**
-     * The phone number that the SMS message originates from. Specify one of the
-     * dedicated long codes or short codes that you requested from AWS Support and that
-     * is assigned to your account. If this attribute is not specified, Amazon Pinpoint
-     * randomly assigns a long code.
+     * <p>The number that the SMS message originates from. This should be one of the
+     * dedicated long codes or short codes that you requested from AWS Support and is
+     * assigned to your AWS account. If you don't specify a long or short code, Amazon
+     * Pinpoint assigns a random long code to the SMS message.</p>
      */
     inline SMSMessage& WithOriginationNumber(const char* value) { SetOriginationNumber(value); return *this;}
 
 
     /**
-     * The sender ID that is shown as the message sender on the recipient's device.
-     * Support for sender IDs varies by country or region.
+     * <p>The sender ID to display as the sender of the message on a recipient's
+     * device. Support for sender IDs varies by country or region.</p>
      */
     inline const Aws::String& GetSenderId() const{ return m_senderId; }
 
     /**
-     * The sender ID that is shown as the message sender on the recipient's device.
-     * Support for sender IDs varies by country or region.
+     * <p>The sender ID to display as the sender of the message on a recipient's
+     * device. Support for sender IDs varies by country or region.</p>
      */
     inline bool SenderIdHasBeenSet() const { return m_senderIdHasBeenSet; }
 
     /**
-     * The sender ID that is shown as the message sender on the recipient's device.
-     * Support for sender IDs varies by country or region.
+     * <p>The sender ID to display as the sender of the message on a recipient's
+     * device. Support for sender IDs varies by country or region.</p>
      */
     inline void SetSenderId(const Aws::String& value) { m_senderIdHasBeenSet = true; m_senderId = value; }
 
     /**
-     * The sender ID that is shown as the message sender on the recipient's device.
-     * Support for sender IDs varies by country or region.
+     * <p>The sender ID to display as the sender of the message on a recipient's
+     * device. Support for sender IDs varies by country or region.</p>
      */
     inline void SetSenderId(Aws::String&& value) { m_senderIdHasBeenSet = true; m_senderId = std::move(value); }
 
     /**
-     * The sender ID that is shown as the message sender on the recipient's device.
-     * Support for sender IDs varies by country or region.
+     * <p>The sender ID to display as the sender of the message on a recipient's
+     * device. Support for sender IDs varies by country or region.</p>
      */
     inline void SetSenderId(const char* value) { m_senderIdHasBeenSet = true; m_senderId.assign(value); }
 
     /**
-     * The sender ID that is shown as the message sender on the recipient's device.
-     * Support for sender IDs varies by country or region.
+     * <p>The sender ID to display as the sender of the message on a recipient's
+     * device. Support for sender IDs varies by country or region.</p>
      */
     inline SMSMessage& WithSenderId(const Aws::String& value) { SetSenderId(value); return *this;}
 
     /**
-     * The sender ID that is shown as the message sender on the recipient's device.
-     * Support for sender IDs varies by country or region.
+     * <p>The sender ID to display as the sender of the message on a recipient's
+     * device. Support for sender IDs varies by country or region.</p>
      */
     inline SMSMessage& WithSenderId(Aws::String&& value) { SetSenderId(std::move(value)); return *this;}
 
     /**
-     * The sender ID that is shown as the message sender on the recipient's device.
-     * Support for sender IDs varies by country or region.
+     * <p>The sender ID to display as the sender of the message on a recipient's
+     * device. Support for sender IDs varies by country or region.</p>
      */
     inline SMSMessage& WithSenderId(const char* value) { SetSenderId(value); return *this;}
 
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The message variables to use in the SMS message. You can override the default
+     * variables with individual address variables.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const{ return m_substitutions; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The message variables to use in the SMS message. You can override the default
+     * variables with individual address variables.</p>
      */
     inline bool SubstitutionsHasBeenSet() const { return m_substitutionsHasBeenSet; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The message variables to use in the SMS message. You can override the default
+     * variables with individual address variables.</p>
      */
     inline void SetSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_substitutionsHasBeenSet = true; m_substitutions = value; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The message variables to use in the SMS message. You can override the default
+     * variables with individual address variables.</p>
      */
     inline void SetSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_substitutionsHasBeenSet = true; m_substitutions = std::move(value); }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The message variables to use in the SMS message. You can override the default
+     * variables with individual address variables.</p>
      */
     inline SMSMessage& WithSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetSubstitutions(value); return *this;}
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The message variables to use in the SMS message. You can override the default
+     * variables with individual address variables.</p>
      */
     inline SMSMessage& WithSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetSubstitutions(std::move(value)); return *this;}
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The message variables to use in the SMS message. You can override the default
+     * variables with individual address variables.</p>
      */
     inline SMSMessage& AddSubstitutions(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The message variables to use in the SMS message. You can override the default
+     * variables with individual address variables.</p>
      */
     inline SMSMessage& AddSubstitutions(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), value); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The message variables to use in the SMS message. You can override the default
+     * variables with individual address variables.</p>
      */
     inline SMSMessage& AddSubstitutions(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The message variables to use in the SMS message. You can override the default
+     * variables with individual address variables.</p>
      */
     inline SMSMessage& AddSubstitutions(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The message variables to use in the SMS message. You can override the default
+     * variables with individual address variables.</p>
      */
     inline SMSMessage& AddSubstitutions(const char* key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The message variables to use in the SMS message. You can override the default
+     * variables with individual address variables.</p>
      */
     inline SMSMessage& AddSubstitutions(const char* key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 

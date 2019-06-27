@@ -32,7 +32,8 @@ namespace Model
 {
 
   /**
-   * Voice Channel Request<p><h3>See Also:</h3>   <a
+   * <p>Specifies the status and settings of the voice channel for an
+   * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VoiceChannelRequest">AWS
    * API Reference</a></p>
    */
@@ -46,22 +47,22 @@ namespace Model
 
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>Specifies whether to enable the voice channel for the application.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>Specifies whether to enable the voice channel for the application.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>Specifies whether to enable the voice channel for the application.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>Specifies whether to enable the voice channel for the application.</p>
      */
     inline VoiceChannelRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

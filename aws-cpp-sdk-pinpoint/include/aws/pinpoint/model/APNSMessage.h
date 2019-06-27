@@ -37,7 +37,9 @@ namespace Model
 {
 
   /**
-   * APNS Message.<p><h3>See Also:</h3>   <a
+   * <p>Specifies the settings for a one-time message that's sent directly to an
+   * endpoint through the APNs (Apple Push Notification service)
+   * channel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/APNSMessage">AWS
    * API Reference</a></p>
    */
@@ -51,1022 +53,990 @@ namespace Model
 
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the
-     * campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it
-     * has been sent to the background. This is the default action. DEEP_LINK - Uses
-     * deep linking features in iOS and Android to open your app and display a
-     * designated user interface within the app. URL - The default mobile browser on
-     * the user's device launches and opens a web page at the URL you specify. Possible
-     * values include: OPEN_APP | DEEP_LINK | URL
+     * <p>The action to occur if the recipient taps the push notification. Valid values
+     * are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app
+     * if it was sent to the background. This is the default action.</p></li>
+     * <li><p>DEEP_LINK - Your app opens and displays a designated user interface in
+     * the app. This setting uses the deep-linking features of the iOS
+     * platform.</p></li> <li><p>URL - The default mobile browser on the recipient's
+     * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
     inline const Action& GetAction() const{ return m_action; }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the
-     * campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it
-     * has been sent to the background. This is the default action. DEEP_LINK - Uses
-     * deep linking features in iOS and Android to open your app and display a
-     * designated user interface within the app. URL - The default mobile browser on
-     * the user's device launches and opens a web page at the URL you specify. Possible
-     * values include: OPEN_APP | DEEP_LINK | URL
+     * <p>The action to occur if the recipient taps the push notification. Valid values
+     * are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app
+     * if it was sent to the background. This is the default action.</p></li>
+     * <li><p>DEEP_LINK - Your app opens and displays a designated user interface in
+     * the app. This setting uses the deep-linking features of the iOS
+     * platform.</p></li> <li><p>URL - The default mobile browser on the recipient's
+     * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the
-     * campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it
-     * has been sent to the background. This is the default action. DEEP_LINK - Uses
-     * deep linking features in iOS and Android to open your app and display a
-     * designated user interface within the app. URL - The default mobile browser on
-     * the user's device launches and opens a web page at the URL you specify. Possible
-     * values include: OPEN_APP | DEEP_LINK | URL
+     * <p>The action to occur if the recipient taps the push notification. Valid values
+     * are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app
+     * if it was sent to the background. This is the default action.</p></li>
+     * <li><p>DEEP_LINK - Your app opens and displays a designated user interface in
+     * the app. This setting uses the deep-linking features of the iOS
+     * platform.</p></li> <li><p>URL - The default mobile browser on the recipient's
+     * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
     inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the
-     * campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it
-     * has been sent to the background. This is the default action. DEEP_LINK - Uses
-     * deep linking features in iOS and Android to open your app and display a
-     * designated user interface within the app. URL - The default mobile browser on
-     * the user's device launches and opens a web page at the URL you specify. Possible
-     * values include: OPEN_APP | DEEP_LINK | URL
+     * <p>The action to occur if the recipient taps the push notification. Valid values
+     * are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app
+     * if it was sent to the background. This is the default action.</p></li>
+     * <li><p>DEEP_LINK - Your app opens and displays a designated user interface in
+     * the app. This setting uses the deep-linking features of the iOS
+     * platform.</p></li> <li><p>URL - The default mobile browser on the recipient's
+     * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
     inline void SetAction(Action&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the
-     * campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it
-     * has been sent to the background. This is the default action. DEEP_LINK - Uses
-     * deep linking features in iOS and Android to open your app and display a
-     * designated user interface within the app. URL - The default mobile browser on
-     * the user's device launches and opens a web page at the URL you specify. Possible
-     * values include: OPEN_APP | DEEP_LINK | URL
+     * <p>The action to occur if the recipient taps the push notification. Valid values
+     * are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app
+     * if it was sent to the background. This is the default action.</p></li>
+     * <li><p>DEEP_LINK - Your app opens and displays a designated user interface in
+     * the app. This setting uses the deep-linking features of the iOS
+     * platform.</p></li> <li><p>URL - The default mobile browser on the recipient's
+     * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
     inline APNSMessage& WithAction(const Action& value) { SetAction(value); return *this;}
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the
-     * campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it
-     * has been sent to the background. This is the default action. DEEP_LINK - Uses
-     * deep linking features in iOS and Android to open your app and display a
-     * designated user interface within the app. URL - The default mobile browser on
-     * the user's device launches and opens a web page at the URL you specify. Possible
-     * values include: OPEN_APP | DEEP_LINK | URL
+     * <p>The action to occur if the recipient taps the push notification. Valid values
+     * are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app
+     * if it was sent to the background. This is the default action.</p></li>
+     * <li><p>DEEP_LINK - Your app opens and displays a designated user interface in
+     * the app. This setting uses the deep-linking features of the iOS
+     * platform.</p></li> <li><p>URL - The default mobile browser on the recipient's
+     * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
     inline APNSMessage& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
 
 
     /**
-     * Include this key when you want the system to modify the badge of your app icon.
-     * If this key is not included in the dictionary, the badge is not changed. To
-     * remove the badge, set the value of this key to 0.
+     * <p>The key that indicates whether and how to modify the badge of your app's icon
+     * when the recipient receives the push notification. If this key isn't included in
+     * the dictionary, the badge doesn't change. To remove the badge, set this value to
+     * 0.</p>
      */
     inline int GetBadge() const{ return m_badge; }
 
     /**
-     * Include this key when you want the system to modify the badge of your app icon.
-     * If this key is not included in the dictionary, the badge is not changed. To
-     * remove the badge, set the value of this key to 0.
+     * <p>The key that indicates whether and how to modify the badge of your app's icon
+     * when the recipient receives the push notification. If this key isn't included in
+     * the dictionary, the badge doesn't change. To remove the badge, set this value to
+     * 0.</p>
      */
     inline bool BadgeHasBeenSet() const { return m_badgeHasBeenSet; }
 
     /**
-     * Include this key when you want the system to modify the badge of your app icon.
-     * If this key is not included in the dictionary, the badge is not changed. To
-     * remove the badge, set the value of this key to 0.
+     * <p>The key that indicates whether and how to modify the badge of your app's icon
+     * when the recipient receives the push notification. If this key isn't included in
+     * the dictionary, the badge doesn't change. To remove the badge, set this value to
+     * 0.</p>
      */
     inline void SetBadge(int value) { m_badgeHasBeenSet = true; m_badge = value; }
 
     /**
-     * Include this key when you want the system to modify the badge of your app icon.
-     * If this key is not included in the dictionary, the badge is not changed. To
-     * remove the badge, set the value of this key to 0.
+     * <p>The key that indicates whether and how to modify the badge of your app's icon
+     * when the recipient receives the push notification. If this key isn't included in
+     * the dictionary, the badge doesn't change. To remove the badge, set this value to
+     * 0.</p>
      */
     inline APNSMessage& WithBadge(int value) { SetBadge(value); return *this;}
 
 
     /**
-     * The message body of the notification.
+     * <p>The body of the notification message.</p>
      */
     inline const Aws::String& GetBody() const{ return m_body; }
 
     /**
-     * The message body of the notification.
+     * <p>The body of the notification message.</p>
      */
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
 
     /**
-     * The message body of the notification.
+     * <p>The body of the notification message.</p>
      */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
-     * The message body of the notification.
+     * <p>The body of the notification message.</p>
      */
     inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
 
     /**
-     * The message body of the notification.
+     * <p>The body of the notification message.</p>
      */
     inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
 
     /**
-     * The message body of the notification.
+     * <p>The body of the notification message.</p>
      */
     inline APNSMessage& WithBody(const Aws::String& value) { SetBody(value); return *this;}
 
     /**
-     * The message body of the notification.
+     * <p>The body of the notification message.</p>
      */
     inline APNSMessage& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
 
     /**
-     * The message body of the notification.
+     * <p>The body of the notification message.</p>
      */
     inline APNSMessage& WithBody(const char* value) { SetBody(value); return *this;}
 
 
     /**
-     * Provide this key with a string value that represents the notification's type.
-     * This value corresponds to the value in the identifier property of one of your
-     * app's registered categories.
+     * <p>The key that indicates the notification type for the push notification. This
+     * key is a value that's defined by the identifier property of one of your app's
+     * registered categories.</p>
      */
     inline const Aws::String& GetCategory() const{ return m_category; }
 
     /**
-     * Provide this key with a string value that represents the notification's type.
-     * This value corresponds to the value in the identifier property of one of your
-     * app's registered categories.
+     * <p>The key that indicates the notification type for the push notification. This
+     * key is a value that's defined by the identifier property of one of your app's
+     * registered categories.</p>
      */
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
 
     /**
-     * Provide this key with a string value that represents the notification's type.
-     * This value corresponds to the value in the identifier property of one of your
-     * app's registered categories.
+     * <p>The key that indicates the notification type for the push notification. This
+     * key is a value that's defined by the identifier property of one of your app's
+     * registered categories.</p>
      */
     inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
-     * Provide this key with a string value that represents the notification's type.
-     * This value corresponds to the value in the identifier property of one of your
-     * app's registered categories.
+     * <p>The key that indicates the notification type for the push notification. This
+     * key is a value that's defined by the identifier property of one of your app's
+     * registered categories.</p>
      */
     inline void SetCategory(Aws::String&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
 
     /**
-     * Provide this key with a string value that represents the notification's type.
-     * This value corresponds to the value in the identifier property of one of your
-     * app's registered categories.
+     * <p>The key that indicates the notification type for the push notification. This
+     * key is a value that's defined by the identifier property of one of your app's
+     * registered categories.</p>
      */
     inline void SetCategory(const char* value) { m_categoryHasBeenSet = true; m_category.assign(value); }
 
     /**
-     * Provide this key with a string value that represents the notification's type.
-     * This value corresponds to the value in the identifier property of one of your
-     * app's registered categories.
+     * <p>The key that indicates the notification type for the push notification. This
+     * key is a value that's defined by the identifier property of one of your app's
+     * registered categories.</p>
      */
     inline APNSMessage& WithCategory(const Aws::String& value) { SetCategory(value); return *this;}
 
     /**
-     * Provide this key with a string value that represents the notification's type.
-     * This value corresponds to the value in the identifier property of one of your
-     * app's registered categories.
+     * <p>The key that indicates the notification type for the push notification. This
+     * key is a value that's defined by the identifier property of one of your app's
+     * registered categories.</p>
      */
     inline APNSMessage& WithCategory(Aws::String&& value) { SetCategory(std::move(value)); return *this;}
 
     /**
-     * Provide this key with a string value that represents the notification's type.
-     * This value corresponds to the value in the identifier property of one of your
-     * app's registered categories.
+     * <p>The key that indicates the notification type for the push notification. This
+     * key is a value that's defined by the identifier property of one of your app's
+     * registered categories.</p>
      */
     inline APNSMessage& WithCategory(const char* value) { SetCategory(value); return *this;}
 
 
     /**
-     * An ID that, if assigned to multiple messages, causes APNs to coalesce the
-     * messages into a single push notification instead of delivering each message
-     * individually. The value must not exceed 64 bytes. Amazon Pinpoint uses this
-     * value to set the apns-collapse-id request header when it sends the message to
-     * APNs.
+     * <p>An arbitrary identifier that, if assigned to multiple messages, APNs uses to
+     * coalesce the messages into a single push notification instead of delivering each
+     * message individually. This value can't exceed 64 bytes.</p> <p>Amazon Pinpoint
+     * specifies this value in the apns-collapse-id request header when it sends the
+     * notification message to APNs.</p>
      */
     inline const Aws::String& GetCollapseId() const{ return m_collapseId; }
 
     /**
-     * An ID that, if assigned to multiple messages, causes APNs to coalesce the
-     * messages into a single push notification instead of delivering each message
-     * individually. The value must not exceed 64 bytes. Amazon Pinpoint uses this
-     * value to set the apns-collapse-id request header when it sends the message to
-     * APNs.
+     * <p>An arbitrary identifier that, if assigned to multiple messages, APNs uses to
+     * coalesce the messages into a single push notification instead of delivering each
+     * message individually. This value can't exceed 64 bytes.</p> <p>Amazon Pinpoint
+     * specifies this value in the apns-collapse-id request header when it sends the
+     * notification message to APNs.</p>
      */
     inline bool CollapseIdHasBeenSet() const { return m_collapseIdHasBeenSet; }
 
     /**
-     * An ID that, if assigned to multiple messages, causes APNs to coalesce the
-     * messages into a single push notification instead of delivering each message
-     * individually. The value must not exceed 64 bytes. Amazon Pinpoint uses this
-     * value to set the apns-collapse-id request header when it sends the message to
-     * APNs.
+     * <p>An arbitrary identifier that, if assigned to multiple messages, APNs uses to
+     * coalesce the messages into a single push notification instead of delivering each
+     * message individually. This value can't exceed 64 bytes.</p> <p>Amazon Pinpoint
+     * specifies this value in the apns-collapse-id request header when it sends the
+     * notification message to APNs.</p>
      */
     inline void SetCollapseId(const Aws::String& value) { m_collapseIdHasBeenSet = true; m_collapseId = value; }
 
     /**
-     * An ID that, if assigned to multiple messages, causes APNs to coalesce the
-     * messages into a single push notification instead of delivering each message
-     * individually. The value must not exceed 64 bytes. Amazon Pinpoint uses this
-     * value to set the apns-collapse-id request header when it sends the message to
-     * APNs.
+     * <p>An arbitrary identifier that, if assigned to multiple messages, APNs uses to
+     * coalesce the messages into a single push notification instead of delivering each
+     * message individually. This value can't exceed 64 bytes.</p> <p>Amazon Pinpoint
+     * specifies this value in the apns-collapse-id request header when it sends the
+     * notification message to APNs.</p>
      */
     inline void SetCollapseId(Aws::String&& value) { m_collapseIdHasBeenSet = true; m_collapseId = std::move(value); }
 
     /**
-     * An ID that, if assigned to multiple messages, causes APNs to coalesce the
-     * messages into a single push notification instead of delivering each message
-     * individually. The value must not exceed 64 bytes. Amazon Pinpoint uses this
-     * value to set the apns-collapse-id request header when it sends the message to
-     * APNs.
+     * <p>An arbitrary identifier that, if assigned to multiple messages, APNs uses to
+     * coalesce the messages into a single push notification instead of delivering each
+     * message individually. This value can't exceed 64 bytes.</p> <p>Amazon Pinpoint
+     * specifies this value in the apns-collapse-id request header when it sends the
+     * notification message to APNs.</p>
      */
     inline void SetCollapseId(const char* value) { m_collapseIdHasBeenSet = true; m_collapseId.assign(value); }
 
     /**
-     * An ID that, if assigned to multiple messages, causes APNs to coalesce the
-     * messages into a single push notification instead of delivering each message
-     * individually. The value must not exceed 64 bytes. Amazon Pinpoint uses this
-     * value to set the apns-collapse-id request header when it sends the message to
-     * APNs.
+     * <p>An arbitrary identifier that, if assigned to multiple messages, APNs uses to
+     * coalesce the messages into a single push notification instead of delivering each
+     * message individually. This value can't exceed 64 bytes.</p> <p>Amazon Pinpoint
+     * specifies this value in the apns-collapse-id request header when it sends the
+     * notification message to APNs.</p>
      */
     inline APNSMessage& WithCollapseId(const Aws::String& value) { SetCollapseId(value); return *this;}
 
     /**
-     * An ID that, if assigned to multiple messages, causes APNs to coalesce the
-     * messages into a single push notification instead of delivering each message
-     * individually. The value must not exceed 64 bytes. Amazon Pinpoint uses this
-     * value to set the apns-collapse-id request header when it sends the message to
-     * APNs.
+     * <p>An arbitrary identifier that, if assigned to multiple messages, APNs uses to
+     * coalesce the messages into a single push notification instead of delivering each
+     * message individually. This value can't exceed 64 bytes.</p> <p>Amazon Pinpoint
+     * specifies this value in the apns-collapse-id request header when it sends the
+     * notification message to APNs.</p>
      */
     inline APNSMessage& WithCollapseId(Aws::String&& value) { SetCollapseId(std::move(value)); return *this;}
 
     /**
-     * An ID that, if assigned to multiple messages, causes APNs to coalesce the
-     * messages into a single push notification instead of delivering each message
-     * individually. The value must not exceed 64 bytes. Amazon Pinpoint uses this
-     * value to set the apns-collapse-id request header when it sends the message to
-     * APNs.
+     * <p>An arbitrary identifier that, if assigned to multiple messages, APNs uses to
+     * coalesce the messages into a single push notification instead of delivering each
+     * message individually. This value can't exceed 64 bytes.</p> <p>Amazon Pinpoint
+     * specifies this value in the apns-collapse-id request header when it sends the
+     * notification message to APNs.</p>
      */
     inline APNSMessage& WithCollapseId(const char* value) { SetCollapseId(value); return *this;}
 
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON payload to use for a silent push notification. This payload is added
+     * to the data.pinpoint.jsonBody object of the notification.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetData() const{ return m_data; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON payload to use for a silent push notification. This payload is added
+     * to the data.pinpoint.jsonBody object of the notification.</p>
      */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON payload to use for a silent push notification. This payload is added
+     * to the data.pinpoint.jsonBody object of the notification.</p>
      */
     inline void SetData(const Aws::Map<Aws::String, Aws::String>& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON payload to use for a silent push notification. This payload is added
+     * to the data.pinpoint.jsonBody object of the notification.</p>
      */
     inline void SetData(Aws::Map<Aws::String, Aws::String>&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON payload to use for a silent push notification. This payload is added
+     * to the data.pinpoint.jsonBody object of the notification.</p>
      */
     inline APNSMessage& WithData(const Aws::Map<Aws::String, Aws::String>& value) { SetData(value); return *this;}
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON payload to use for a silent push notification. This payload is added
+     * to the data.pinpoint.jsonBody object of the notification.</p>
      */
     inline APNSMessage& WithData(Aws::Map<Aws::String, Aws::String>&& value) { SetData(std::move(value)); return *this;}
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON payload to use for a silent push notification. This payload is added
+     * to the data.pinpoint.jsonBody object of the notification.</p>
      */
     inline APNSMessage& AddData(const Aws::String& key, const Aws::String& value) { m_dataHasBeenSet = true; m_data.emplace(key, value); return *this; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON payload to use for a silent push notification. This payload is added
+     * to the data.pinpoint.jsonBody object of the notification.</p>
      */
     inline APNSMessage& AddData(Aws::String&& key, const Aws::String& value) { m_dataHasBeenSet = true; m_data.emplace(std::move(key), value); return *this; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON payload to use for a silent push notification. This payload is added
+     * to the data.pinpoint.jsonBody object of the notification.</p>
      */
     inline APNSMessage& AddData(const Aws::String& key, Aws::String&& value) { m_dataHasBeenSet = true; m_data.emplace(key, std::move(value)); return *this; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON payload to use for a silent push notification. This payload is added
+     * to the data.pinpoint.jsonBody object of the notification.</p>
      */
     inline APNSMessage& AddData(Aws::String&& key, Aws::String&& value) { m_dataHasBeenSet = true; m_data.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON payload to use for a silent push notification. This payload is added
+     * to the data.pinpoint.jsonBody object of the notification.</p>
      */
     inline APNSMessage& AddData(const char* key, Aws::String&& value) { m_dataHasBeenSet = true; m_data.emplace(key, std::move(value)); return *this; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON payload to use for a silent push notification. This payload is added
+     * to the data.pinpoint.jsonBody object of the notification.</p>
      */
     inline APNSMessage& AddData(Aws::String&& key, const char* value) { m_dataHasBeenSet = true; m_data.emplace(std::move(key), value); return *this; }
 
     /**
-     * The data payload used for a silent push. This payload is added to the
-     * notifications' data.pinpoint.jsonBody' object
+     * <p>The JSON payload to use for a silent push notification. This payload is added
+     * to the data.pinpoint.jsonBody object of the notification.</p>
      */
     inline APNSMessage& AddData(const char* key, const char* value) { m_dataHasBeenSet = true; m_data.emplace(key, value); return *this; }
 
 
     /**
-     * A URL that refers to the location of an image or video that you want to display
-     * in the push notification.
+     * <p>The URL of an image or video to display in the push notification.</p>
      */
     inline const Aws::String& GetMediaUrl() const{ return m_mediaUrl; }
 
     /**
-     * A URL that refers to the location of an image or video that you want to display
-     * in the push notification.
+     * <p>The URL of an image or video to display in the push notification.</p>
      */
     inline bool MediaUrlHasBeenSet() const { return m_mediaUrlHasBeenSet; }
 
     /**
-     * A URL that refers to the location of an image or video that you want to display
-     * in the push notification.
+     * <p>The URL of an image or video to display in the push notification.</p>
      */
     inline void SetMediaUrl(const Aws::String& value) { m_mediaUrlHasBeenSet = true; m_mediaUrl = value; }
 
     /**
-     * A URL that refers to the location of an image or video that you want to display
-     * in the push notification.
+     * <p>The URL of an image or video to display in the push notification.</p>
      */
     inline void SetMediaUrl(Aws::String&& value) { m_mediaUrlHasBeenSet = true; m_mediaUrl = std::move(value); }
 
     /**
-     * A URL that refers to the location of an image or video that you want to display
-     * in the push notification.
+     * <p>The URL of an image or video to display in the push notification.</p>
      */
     inline void SetMediaUrl(const char* value) { m_mediaUrlHasBeenSet = true; m_mediaUrl.assign(value); }
 
     /**
-     * A URL that refers to the location of an image or video that you want to display
-     * in the push notification.
+     * <p>The URL of an image or video to display in the push notification.</p>
      */
     inline APNSMessage& WithMediaUrl(const Aws::String& value) { SetMediaUrl(value); return *this;}
 
     /**
-     * A URL that refers to the location of an image or video that you want to display
-     * in the push notification.
+     * <p>The URL of an image or video to display in the push notification.</p>
      */
     inline APNSMessage& WithMediaUrl(Aws::String&& value) { SetMediaUrl(std::move(value)); return *this;}
 
     /**
-     * A URL that refers to the location of an image or video that you want to display
-     * in the push notification.
+     * <p>The URL of an image or video to display in the push notification.</p>
      */
     inline APNSMessage& WithMediaUrl(const char* value) { SetMediaUrl(value); return *this;}
 
 
     /**
-     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     * <p>The authentication method that you want Amazon Pinpoint to use when
+     * authenticating with Apple Push Notification service (APNs), CERTIFICATE or
+     * TOKEN.</p>
      */
     inline const Aws::String& GetPreferredAuthenticationMethod() const{ return m_preferredAuthenticationMethod; }
 
     /**
-     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     * <p>The authentication method that you want Amazon Pinpoint to use when
+     * authenticating with Apple Push Notification service (APNs), CERTIFICATE or
+     * TOKEN.</p>
      */
     inline bool PreferredAuthenticationMethodHasBeenSet() const { return m_preferredAuthenticationMethodHasBeenSet; }
 
     /**
-     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     * <p>The authentication method that you want Amazon Pinpoint to use when
+     * authenticating with Apple Push Notification service (APNs), CERTIFICATE or
+     * TOKEN.</p>
      */
     inline void SetPreferredAuthenticationMethod(const Aws::String& value) { m_preferredAuthenticationMethodHasBeenSet = true; m_preferredAuthenticationMethod = value; }
 
     /**
-     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     * <p>The authentication method that you want Amazon Pinpoint to use when
+     * authenticating with Apple Push Notification service (APNs), CERTIFICATE or
+     * TOKEN.</p>
      */
     inline void SetPreferredAuthenticationMethod(Aws::String&& value) { m_preferredAuthenticationMethodHasBeenSet = true; m_preferredAuthenticationMethod = std::move(value); }
 
     /**
-     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     * <p>The authentication method that you want Amazon Pinpoint to use when
+     * authenticating with Apple Push Notification service (APNs), CERTIFICATE or
+     * TOKEN.</p>
      */
     inline void SetPreferredAuthenticationMethod(const char* value) { m_preferredAuthenticationMethodHasBeenSet = true; m_preferredAuthenticationMethod.assign(value); }
 
     /**
-     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     * <p>The authentication method that you want Amazon Pinpoint to use when
+     * authenticating with Apple Push Notification service (APNs), CERTIFICATE or
+     * TOKEN.</p>
      */
     inline APNSMessage& WithPreferredAuthenticationMethod(const Aws::String& value) { SetPreferredAuthenticationMethod(value); return *this;}
 
     /**
-     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     * <p>The authentication method that you want Amazon Pinpoint to use when
+     * authenticating with Apple Push Notification service (APNs), CERTIFICATE or
+     * TOKEN.</p>
      */
     inline APNSMessage& WithPreferredAuthenticationMethod(Aws::String&& value) { SetPreferredAuthenticationMethod(std::move(value)); return *this;}
 
     /**
-     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     * <p>The authentication method that you want Amazon Pinpoint to use when
+     * authenticating with Apple Push Notification service (APNs), CERTIFICATE or
+     * TOKEN.</p>
      */
     inline APNSMessage& WithPreferredAuthenticationMethod(const char* value) { SetPreferredAuthenticationMethod(value); return *this;}
 
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the apns-priority
-     * request header when it sends the message to APNs. Accepts the following
-     * values:
-
-"5" - Low priority. Messages might be delayed, delivered in groups, and
-     * throttled.
-
-"10" - High priority. Messages are sent immediately. High priority
-     * messages must cause an alert, sound, or badge on the receiving device.
-
-The
-     * default value is "10".
-
-The equivalent values for FCM or GCM messages are
-     * "normal" and "high". Amazon Pinpoint accepts these values for APNs messages and
-     * converts them.
-
-For more information about the apns-priority parameter, see
-     * Communicating with APNs in the APNs Local and Remote Notification Programming
-     * Guide.
+     * <p>para>5 - Low priority, the notification might be delayed, delivered as part
+     * of a group, or throttled.</p>/listitem> <li><p>10 - High priority, the
+     * notification is sent immediately. This is the default value. A high priority
+     * notification should trigger an alert, play a sound, or badge your app's icon on
+     * the recipient's device.</p></li>/para> <p>Amazon Pinpoint specifies this value
+     * in the apns-priority request header when it sends the notification message to
+     * APNs.</p> <p>The equivalent values for Firebase Cloud Messaging (FCM), formerly
+     * Google Cloud Messaging (GCM), are normal, for 5, and high, for 10. If you
+     * specify an FCM value for this property, Amazon Pinpoint accepts and converts the
+     * value to the corresponding APNs value.</p>
      */
     inline const Aws::String& GetPriority() const{ return m_priority; }
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the apns-priority
-     * request header when it sends the message to APNs. Accepts the following
-     * values:
-
-"5" - Low priority. Messages might be delayed, delivered in groups, and
-     * throttled.
-
-"10" - High priority. Messages are sent immediately. High priority
-     * messages must cause an alert, sound, or badge on the receiving device.
-
-The
-     * default value is "10".
-
-The equivalent values for FCM or GCM messages are
-     * "normal" and "high". Amazon Pinpoint accepts these values for APNs messages and
-     * converts them.
-
-For more information about the apns-priority parameter, see
-     * Communicating with APNs in the APNs Local and Remote Notification Programming
-     * Guide.
+     * <p>para>5 - Low priority, the notification might be delayed, delivered as part
+     * of a group, or throttled.</p>/listitem> <li><p>10 - High priority, the
+     * notification is sent immediately. This is the default value. A high priority
+     * notification should trigger an alert, play a sound, or badge your app's icon on
+     * the recipient's device.</p></li>/para> <p>Amazon Pinpoint specifies this value
+     * in the apns-priority request header when it sends the notification message to
+     * APNs.</p> <p>The equivalent values for Firebase Cloud Messaging (FCM), formerly
+     * Google Cloud Messaging (GCM), are normal, for 5, and high, for 10. If you
+     * specify an FCM value for this property, Amazon Pinpoint accepts and converts the
+     * value to the corresponding APNs value.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the apns-priority
-     * request header when it sends the message to APNs. Accepts the following
-     * values:
-
-"5" - Low priority. Messages might be delayed, delivered in groups, and
-     * throttled.
-
-"10" - High priority. Messages are sent immediately. High priority
-     * messages must cause an alert, sound, or badge on the receiving device.
-
-The
-     * default value is "10".
-
-The equivalent values for FCM or GCM messages are
-     * "normal" and "high". Amazon Pinpoint accepts these values for APNs messages and
-     * converts them.
-
-For more information about the apns-priority parameter, see
-     * Communicating with APNs in the APNs Local and Remote Notification Programming
-     * Guide.
+     * <p>para>5 - Low priority, the notification might be delayed, delivered as part
+     * of a group, or throttled.</p>/listitem> <li><p>10 - High priority, the
+     * notification is sent immediately. This is the default value. A high priority
+     * notification should trigger an alert, play a sound, or badge your app's icon on
+     * the recipient's device.</p></li>/para> <p>Amazon Pinpoint specifies this value
+     * in the apns-priority request header when it sends the notification message to
+     * APNs.</p> <p>The equivalent values for Firebase Cloud Messaging (FCM), formerly
+     * Google Cloud Messaging (GCM), are normal, for 5, and high, for 10. If you
+     * specify an FCM value for this property, Amazon Pinpoint accepts and converts the
+     * value to the corresponding APNs value.</p>
      */
     inline void SetPriority(const Aws::String& value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the apns-priority
-     * request header when it sends the message to APNs. Accepts the following
-     * values:
-
-"5" - Low priority. Messages might be delayed, delivered in groups, and
-     * throttled.
-
-"10" - High priority. Messages are sent immediately. High priority
-     * messages must cause an alert, sound, or badge on the receiving device.
-
-The
-     * default value is "10".
-
-The equivalent values for FCM or GCM messages are
-     * "normal" and "high". Amazon Pinpoint accepts these values for APNs messages and
-     * converts them.
-
-For more information about the apns-priority parameter, see
-     * Communicating with APNs in the APNs Local and Remote Notification Programming
-     * Guide.
+     * <p>para>5 - Low priority, the notification might be delayed, delivered as part
+     * of a group, or throttled.</p>/listitem> <li><p>10 - High priority, the
+     * notification is sent immediately. This is the default value. A high priority
+     * notification should trigger an alert, play a sound, or badge your app's icon on
+     * the recipient's device.</p></li>/para> <p>Amazon Pinpoint specifies this value
+     * in the apns-priority request header when it sends the notification message to
+     * APNs.</p> <p>The equivalent values for Firebase Cloud Messaging (FCM), formerly
+     * Google Cloud Messaging (GCM), are normal, for 5, and high, for 10. If you
+     * specify an FCM value for this property, Amazon Pinpoint accepts and converts the
+     * value to the corresponding APNs value.</p>
      */
     inline void SetPriority(Aws::String&& value) { m_priorityHasBeenSet = true; m_priority = std::move(value); }
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the apns-priority
-     * request header when it sends the message to APNs. Accepts the following
-     * values:
-
-"5" - Low priority. Messages might be delayed, delivered in groups, and
-     * throttled.
-
-"10" - High priority. Messages are sent immediately. High priority
-     * messages must cause an alert, sound, or badge on the receiving device.
-
-The
-     * default value is "10".
-
-The equivalent values for FCM or GCM messages are
-     * "normal" and "high". Amazon Pinpoint accepts these values for APNs messages and
-     * converts them.
-
-For more information about the apns-priority parameter, see
-     * Communicating with APNs in the APNs Local and Remote Notification Programming
-     * Guide.
+     * <p>para>5 - Low priority, the notification might be delayed, delivered as part
+     * of a group, or throttled.</p>/listitem> <li><p>10 - High priority, the
+     * notification is sent immediately. This is the default value. A high priority
+     * notification should trigger an alert, play a sound, or badge your app's icon on
+     * the recipient's device.</p></li>/para> <p>Amazon Pinpoint specifies this value
+     * in the apns-priority request header when it sends the notification message to
+     * APNs.</p> <p>The equivalent values for Firebase Cloud Messaging (FCM), formerly
+     * Google Cloud Messaging (GCM), are normal, for 5, and high, for 10. If you
+     * specify an FCM value for this property, Amazon Pinpoint accepts and converts the
+     * value to the corresponding APNs value.</p>
      */
     inline void SetPriority(const char* value) { m_priorityHasBeenSet = true; m_priority.assign(value); }
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the apns-priority
-     * request header when it sends the message to APNs. Accepts the following
-     * values:
-
-"5" - Low priority. Messages might be delayed, delivered in groups, and
-     * throttled.
-
-"10" - High priority. Messages are sent immediately. High priority
-     * messages must cause an alert, sound, or badge on the receiving device.
-
-The
-     * default value is "10".
-
-The equivalent values for FCM or GCM messages are
-     * "normal" and "high". Amazon Pinpoint accepts these values for APNs messages and
-     * converts them.
-
-For more information about the apns-priority parameter, see
-     * Communicating with APNs in the APNs Local and Remote Notification Programming
-     * Guide.
+     * <p>para>5 - Low priority, the notification might be delayed, delivered as part
+     * of a group, or throttled.</p>/listitem> <li><p>10 - High priority, the
+     * notification is sent immediately. This is the default value. A high priority
+     * notification should trigger an alert, play a sound, or badge your app's icon on
+     * the recipient's device.</p></li>/para> <p>Amazon Pinpoint specifies this value
+     * in the apns-priority request header when it sends the notification message to
+     * APNs.</p> <p>The equivalent values for Firebase Cloud Messaging (FCM), formerly
+     * Google Cloud Messaging (GCM), are normal, for 5, and high, for 10. If you
+     * specify an FCM value for this property, Amazon Pinpoint accepts and converts the
+     * value to the corresponding APNs value.</p>
      */
     inline APNSMessage& WithPriority(const Aws::String& value) { SetPriority(value); return *this;}
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the apns-priority
-     * request header when it sends the message to APNs. Accepts the following
-     * values:
-
-"5" - Low priority. Messages might be delayed, delivered in groups, and
-     * throttled.
-
-"10" - High priority. Messages are sent immediately. High priority
-     * messages must cause an alert, sound, or badge on the receiving device.
-
-The
-     * default value is "10".
-
-The equivalent values for FCM or GCM messages are
-     * "normal" and "high". Amazon Pinpoint accepts these values for APNs messages and
-     * converts them.
-
-For more information about the apns-priority parameter, see
-     * Communicating with APNs in the APNs Local and Remote Notification Programming
-     * Guide.
+     * <p>para>5 - Low priority, the notification might be delayed, delivered as part
+     * of a group, or throttled.</p>/listitem> <li><p>10 - High priority, the
+     * notification is sent immediately. This is the default value. A high priority
+     * notification should trigger an alert, play a sound, or badge your app's icon on
+     * the recipient's device.</p></li>/para> <p>Amazon Pinpoint specifies this value
+     * in the apns-priority request header when it sends the notification message to
+     * APNs.</p> <p>The equivalent values for Firebase Cloud Messaging (FCM), formerly
+     * Google Cloud Messaging (GCM), are normal, for 5, and high, for 10. If you
+     * specify an FCM value for this property, Amazon Pinpoint accepts and converts the
+     * value to the corresponding APNs value.</p>
      */
     inline APNSMessage& WithPriority(Aws::String&& value) { SetPriority(std::move(value)); return *this;}
 
     /**
-     * The message priority. Amazon Pinpoint uses this value to set the apns-priority
-     * request header when it sends the message to APNs. Accepts the following
-     * values:
-
-"5" - Low priority. Messages might be delayed, delivered in groups, and
-     * throttled.
-
-"10" - High priority. Messages are sent immediately. High priority
-     * messages must cause an alert, sound, or badge on the receiving device.
-
-The
-     * default value is "10".
-
-The equivalent values for FCM or GCM messages are
-     * "normal" and "high". Amazon Pinpoint accepts these values for APNs messages and
-     * converts them.
-
-For more information about the apns-priority parameter, see
-     * Communicating with APNs in the APNs Local and Remote Notification Programming
-     * Guide.
+     * <p>para>5 - Low priority, the notification might be delayed, delivered as part
+     * of a group, or throttled.</p>/listitem> <li><p>10 - High priority, the
+     * notification is sent immediately. This is the default value. A high priority
+     * notification should trigger an alert, play a sound, or badge your app's icon on
+     * the recipient's device.</p></li>/para> <p>Amazon Pinpoint specifies this value
+     * in the apns-priority request header when it sends the notification message to
+     * APNs.</p> <p>The equivalent values for Firebase Cloud Messaging (FCM), formerly
+     * Google Cloud Messaging (GCM), are normal, for 5, and high, for 10. If you
+     * specify an FCM value for this property, Amazon Pinpoint accepts and converts the
+     * value to the corresponding APNs value.</p>
      */
     inline APNSMessage& WithPriority(const char* value) { SetPriority(value); return *this;}
 
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides the message.</p>
      */
     inline const Aws::String& GetRawContent() const{ return m_rawContent; }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides the message.</p>
      */
     inline bool RawContentHasBeenSet() const { return m_rawContentHasBeenSet; }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides the message.</p>
      */
     inline void SetRawContent(const Aws::String& value) { m_rawContentHasBeenSet = true; m_rawContent = value; }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides the message.</p>
      */
     inline void SetRawContent(Aws::String&& value) { m_rawContentHasBeenSet = true; m_rawContent = std::move(value); }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides the message.</p>
      */
     inline void SetRawContent(const char* value) { m_rawContentHasBeenSet = true; m_rawContent.assign(value); }
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides the message.</p>
      */
     inline APNSMessage& WithRawContent(const Aws::String& value) { SetRawContent(value); return *this;}
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides the message.</p>
      */
     inline APNSMessage& WithRawContent(Aws::String&& value) { SetRawContent(std::move(value)); return *this;}
 
     /**
-     * The Raw JSON formatted string to be used as the payload. This value overrides
-     * the message.
+     * <p>The raw, JSON-formatted string to use as the payload for the notification
+     * message. This value overrides the message.</p>
      */
     inline APNSMessage& WithRawContent(const char* value) { SetRawContent(value); return *this;}
 
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can
-     * be used for Remote Configuration and Phone Home use cases.
+     * <p>Specifies whether the notification is a silent push notification, which is a
+     * push notification that doesn't display on a recipient's device. Silent push
+     * notifications can be used for cases such as updating an app's configuration,
+     * displaying messages in an in-app message center, or supporting phone home
+     * functionality.</p>
      */
     inline bool GetSilentPush() const{ return m_silentPush; }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can
-     * be used for Remote Configuration and Phone Home use cases.
+     * <p>Specifies whether the notification is a silent push notification, which is a
+     * push notification that doesn't display on a recipient's device. Silent push
+     * notifications can be used for cases such as updating an app's configuration,
+     * displaying messages in an in-app message center, or supporting phone home
+     * functionality.</p>
      */
     inline bool SilentPushHasBeenSet() const { return m_silentPushHasBeenSet; }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can
-     * be used for Remote Configuration and Phone Home use cases.
+     * <p>Specifies whether the notification is a silent push notification, which is a
+     * push notification that doesn't display on a recipient's device. Silent push
+     * notifications can be used for cases such as updating an app's configuration,
+     * displaying messages in an in-app message center, or supporting phone home
+     * functionality.</p>
      */
     inline void SetSilentPush(bool value) { m_silentPushHasBeenSet = true; m_silentPush = value; }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can
-     * be used for Remote Configuration and Phone Home use cases.
+     * <p>Specifies whether the notification is a silent push notification, which is a
+     * push notification that doesn't display on a recipient's device. Silent push
+     * notifications can be used for cases such as updating an app's configuration,
+     * displaying messages in an in-app message center, or supporting phone home
+     * functionality.</p>
      */
     inline APNSMessage& WithSilentPush(bool value) { SetSilentPush(value); return *this;}
 
 
     /**
-     * Include this key when you want the system to play a sound. The value of this key
-     * is the name of a sound file in your app's main bundle or in the Library/Sounds
-     * folder of your app's data container. If the sound file cannot be found, or if
-     * you specify defaultfor the value, the system plays the default alert sound.
+     * <p>The key for the sound to play when the recipient receives the push
+     * notification. The value of this key is the name of a sound file in your app's
+     * main bundle or the Library/Sounds folder in your app's data container. If the
+     * sound file can't be found or you specify default for the value, the system plays
+     * the default alert sound.</p>
      */
     inline const Aws::String& GetSound() const{ return m_sound; }
 
     /**
-     * Include this key when you want the system to play a sound. The value of this key
-     * is the name of a sound file in your app's main bundle or in the Library/Sounds
-     * folder of your app's data container. If the sound file cannot be found, or if
-     * you specify defaultfor the value, the system plays the default alert sound.
+     * <p>The key for the sound to play when the recipient receives the push
+     * notification. The value of this key is the name of a sound file in your app's
+     * main bundle or the Library/Sounds folder in your app's data container. If the
+     * sound file can't be found or you specify default for the value, the system plays
+     * the default alert sound.</p>
      */
     inline bool SoundHasBeenSet() const { return m_soundHasBeenSet; }
 
     /**
-     * Include this key when you want the system to play a sound. The value of this key
-     * is the name of a sound file in your app's main bundle or in the Library/Sounds
-     * folder of your app's data container. If the sound file cannot be found, or if
-     * you specify defaultfor the value, the system plays the default alert sound.
+     * <p>The key for the sound to play when the recipient receives the push
+     * notification. The value of this key is the name of a sound file in your app's
+     * main bundle or the Library/Sounds folder in your app's data container. If the
+     * sound file can't be found or you specify default for the value, the system plays
+     * the default alert sound.</p>
      */
     inline void SetSound(const Aws::String& value) { m_soundHasBeenSet = true; m_sound = value; }
 
     /**
-     * Include this key when you want the system to play a sound. The value of this key
-     * is the name of a sound file in your app's main bundle or in the Library/Sounds
-     * folder of your app's data container. If the sound file cannot be found, or if
-     * you specify defaultfor the value, the system plays the default alert sound.
+     * <p>The key for the sound to play when the recipient receives the push
+     * notification. The value of this key is the name of a sound file in your app's
+     * main bundle or the Library/Sounds folder in your app's data container. If the
+     * sound file can't be found or you specify default for the value, the system plays
+     * the default alert sound.</p>
      */
     inline void SetSound(Aws::String&& value) { m_soundHasBeenSet = true; m_sound = std::move(value); }
 
     /**
-     * Include this key when you want the system to play a sound. The value of this key
-     * is the name of a sound file in your app's main bundle or in the Library/Sounds
-     * folder of your app's data container. If the sound file cannot be found, or if
-     * you specify defaultfor the value, the system plays the default alert sound.
+     * <p>The key for the sound to play when the recipient receives the push
+     * notification. The value of this key is the name of a sound file in your app's
+     * main bundle or the Library/Sounds folder in your app's data container. If the
+     * sound file can't be found or you specify default for the value, the system plays
+     * the default alert sound.</p>
      */
     inline void SetSound(const char* value) { m_soundHasBeenSet = true; m_sound.assign(value); }
 
     /**
-     * Include this key when you want the system to play a sound. The value of this key
-     * is the name of a sound file in your app's main bundle or in the Library/Sounds
-     * folder of your app's data container. If the sound file cannot be found, or if
-     * you specify defaultfor the value, the system plays the default alert sound.
+     * <p>The key for the sound to play when the recipient receives the push
+     * notification. The value of this key is the name of a sound file in your app's
+     * main bundle or the Library/Sounds folder in your app's data container. If the
+     * sound file can't be found or you specify default for the value, the system plays
+     * the default alert sound.</p>
      */
     inline APNSMessage& WithSound(const Aws::String& value) { SetSound(value); return *this;}
 
     /**
-     * Include this key when you want the system to play a sound. The value of this key
-     * is the name of a sound file in your app's main bundle or in the Library/Sounds
-     * folder of your app's data container. If the sound file cannot be found, or if
-     * you specify defaultfor the value, the system plays the default alert sound.
+     * <p>The key for the sound to play when the recipient receives the push
+     * notification. The value of this key is the name of a sound file in your app's
+     * main bundle or the Library/Sounds folder in your app's data container. If the
+     * sound file can't be found or you specify default for the value, the system plays
+     * the default alert sound.</p>
      */
     inline APNSMessage& WithSound(Aws::String&& value) { SetSound(std::move(value)); return *this;}
 
     /**
-     * Include this key when you want the system to play a sound. The value of this key
-     * is the name of a sound file in your app's main bundle or in the Library/Sounds
-     * folder of your app's data container. If the sound file cannot be found, or if
-     * you specify defaultfor the value, the system plays the default alert sound.
+     * <p>The key for the sound to play when the recipient receives the push
+     * notification. The value of this key is the name of a sound file in your app's
+     * main bundle or the Library/Sounds folder in your app's data container. If the
+     * sound file can't be found or you specify default for the value, the system plays
+     * the default alert sound.</p>
      */
     inline APNSMessage& WithSound(const char* value) { SetSound(value); return *this;}
 
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override these default variables with individual address variables.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const{ return m_substitutions; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override these default variables with individual address variables.</p>
      */
     inline bool SubstitutionsHasBeenSet() const { return m_substitutionsHasBeenSet; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override these default variables with individual address variables.</p>
      */
     inline void SetSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_substitutionsHasBeenSet = true; m_substitutions = value; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override these default variables with individual address variables.</p>
      */
     inline void SetSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_substitutionsHasBeenSet = true; m_substitutions = std::move(value); }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override these default variables with individual address variables.</p>
      */
     inline APNSMessage& WithSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetSubstitutions(value); return *this;}
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override these default variables with individual address variables.</p>
      */
     inline APNSMessage& WithSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetSubstitutions(std::move(value)); return *this;}
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override these default variables with individual address variables.</p>
      */
     inline APNSMessage& AddSubstitutions(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override these default variables with individual address variables.</p>
      */
     inline APNSMessage& AddSubstitutions(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), value); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override these default variables with individual address variables.</p>
      */
     inline APNSMessage& AddSubstitutions(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override these default variables with individual address variables.</p>
      */
     inline APNSMessage& AddSubstitutions(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override these default variables with individual address variables.</p>
      */
     inline APNSMessage& AddSubstitutions(const char* key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the notification message. You can
+     * override these default variables with individual address variables.</p>
      */
     inline APNSMessage& AddSubstitutions(const char* key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 
 
     /**
-     * Provide this key with a string value that represents the app-specific identifier
-     * for grouping notifications. If you provide a Notification Content app extension,
-     * you can use this value to group your notifications together.
+     * <p>The key that represents your app-specific identifier for grouping
+     * notifications. If you provide a Notification Content app extension, you can use
+     * this value to group your notifications together.</p>
      */
     inline const Aws::String& GetThreadId() const{ return m_threadId; }
 
     /**
-     * Provide this key with a string value that represents the app-specific identifier
-     * for grouping notifications. If you provide a Notification Content app extension,
-     * you can use this value to group your notifications together.
+     * <p>The key that represents your app-specific identifier for grouping
+     * notifications. If you provide a Notification Content app extension, you can use
+     * this value to group your notifications together.</p>
      */
     inline bool ThreadIdHasBeenSet() const { return m_threadIdHasBeenSet; }
 
     /**
-     * Provide this key with a string value that represents the app-specific identifier
-     * for grouping notifications. If you provide a Notification Content app extension,
-     * you can use this value to group your notifications together.
+     * <p>The key that represents your app-specific identifier for grouping
+     * notifications. If you provide a Notification Content app extension, you can use
+     * this value to group your notifications together.</p>
      */
     inline void SetThreadId(const Aws::String& value) { m_threadIdHasBeenSet = true; m_threadId = value; }
 
     /**
-     * Provide this key with a string value that represents the app-specific identifier
-     * for grouping notifications. If you provide a Notification Content app extension,
-     * you can use this value to group your notifications together.
+     * <p>The key that represents your app-specific identifier for grouping
+     * notifications. If you provide a Notification Content app extension, you can use
+     * this value to group your notifications together.</p>
      */
     inline void SetThreadId(Aws::String&& value) { m_threadIdHasBeenSet = true; m_threadId = std::move(value); }
 
     /**
-     * Provide this key with a string value that represents the app-specific identifier
-     * for grouping notifications. If you provide a Notification Content app extension,
-     * you can use this value to group your notifications together.
+     * <p>The key that represents your app-specific identifier for grouping
+     * notifications. If you provide a Notification Content app extension, you can use
+     * this value to group your notifications together.</p>
      */
     inline void SetThreadId(const char* value) { m_threadIdHasBeenSet = true; m_threadId.assign(value); }
 
     /**
-     * Provide this key with a string value that represents the app-specific identifier
-     * for grouping notifications. If you provide a Notification Content app extension,
-     * you can use this value to group your notifications together.
+     * <p>The key that represents your app-specific identifier for grouping
+     * notifications. If you provide a Notification Content app extension, you can use
+     * this value to group your notifications together.</p>
      */
     inline APNSMessage& WithThreadId(const Aws::String& value) { SetThreadId(value); return *this;}
 
     /**
-     * Provide this key with a string value that represents the app-specific identifier
-     * for grouping notifications. If you provide a Notification Content app extension,
-     * you can use this value to group your notifications together.
+     * <p>The key that represents your app-specific identifier for grouping
+     * notifications. If you provide a Notification Content app extension, you can use
+     * this value to group your notifications together.</p>
      */
     inline APNSMessage& WithThreadId(Aws::String&& value) { SetThreadId(std::move(value)); return *this;}
 
     /**
-     * Provide this key with a string value that represents the app-specific identifier
-     * for grouping notifications. If you provide a Notification Content app extension,
-     * you can use this value to group your notifications together.
+     * <p>The key that represents your app-specific identifier for grouping
+     * notifications. If you provide a Notification Content app extension, you can use
+     * this value to group your notifications together.</p>
      */
     inline APNSMessage& WithThreadId(const char* value) { SetThreadId(value); return *this;}
 
 
     /**
-     * The length of time (in seconds) that APNs stores and attempts to deliver the
-     * message. If the value is 0, APNs does not store the message or attempt to
-     * deliver it more than once. Amazon Pinpoint uses this value to set the
-     * apns-expiration request header when it sends the message to APNs.
+     * <p>The amount of time, in seconds, that APNs should store and attempt to deliver
+     * the push notification, if the service is unable to deliver the notification the
+     * first time. If this value is 0, APNs treats the notification as if it expires
+     * immediately and the service doesn't store or try to deliver the notification
+     * again.</p> <p>Amazon Pinpoint specifies this value in the apns-expiration
+     * request header when it sends the notification message to APNs.</p>
      */
     inline int GetTimeToLive() const{ return m_timeToLive; }
 
     /**
-     * The length of time (in seconds) that APNs stores and attempts to deliver the
-     * message. If the value is 0, APNs does not store the message or attempt to
-     * deliver it more than once. Amazon Pinpoint uses this value to set the
-     * apns-expiration request header when it sends the message to APNs.
+     * <p>The amount of time, in seconds, that APNs should store and attempt to deliver
+     * the push notification, if the service is unable to deliver the notification the
+     * first time. If this value is 0, APNs treats the notification as if it expires
+     * immediately and the service doesn't store or try to deliver the notification
+     * again.</p> <p>Amazon Pinpoint specifies this value in the apns-expiration
+     * request header when it sends the notification message to APNs.</p>
      */
     inline bool TimeToLiveHasBeenSet() const { return m_timeToLiveHasBeenSet; }
 
     /**
-     * The length of time (in seconds) that APNs stores and attempts to deliver the
-     * message. If the value is 0, APNs does not store the message or attempt to
-     * deliver it more than once. Amazon Pinpoint uses this value to set the
-     * apns-expiration request header when it sends the message to APNs.
+     * <p>The amount of time, in seconds, that APNs should store and attempt to deliver
+     * the push notification, if the service is unable to deliver the notification the
+     * first time. If this value is 0, APNs treats the notification as if it expires
+     * immediately and the service doesn't store or try to deliver the notification
+     * again.</p> <p>Amazon Pinpoint specifies this value in the apns-expiration
+     * request header when it sends the notification message to APNs.</p>
      */
     inline void SetTimeToLive(int value) { m_timeToLiveHasBeenSet = true; m_timeToLive = value; }
 
     /**
-     * The length of time (in seconds) that APNs stores and attempts to deliver the
-     * message. If the value is 0, APNs does not store the message or attempt to
-     * deliver it more than once. Amazon Pinpoint uses this value to set the
-     * apns-expiration request header when it sends the message to APNs.
+     * <p>The amount of time, in seconds, that APNs should store and attempt to deliver
+     * the push notification, if the service is unable to deliver the notification the
+     * first time. If this value is 0, APNs treats the notification as if it expires
+     * immediately and the service doesn't store or try to deliver the notification
+     * again.</p> <p>Amazon Pinpoint specifies this value in the apns-expiration
+     * request header when it sends the notification message to APNs.</p>
      */
     inline APNSMessage& WithTimeToLive(int value) { SetTimeToLive(value); return *this;}
 
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on the recipient's
+     * device.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on the recipient's
+     * device.</p>
      */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on the recipient's
+     * device.</p>
      */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on the recipient's
+     * device.</p>
      */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on the recipient's
+     * device.</p>
      */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on the recipient's
+     * device.</p>
      */
     inline APNSMessage& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on the recipient's
+     * device.</p>
      */
     inline APNSMessage& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>The title to display above the notification message on the recipient's
+     * device.</p>
      */
     inline APNSMessage& WithTitle(const char* value) { SetTitle(value); return *this;}
 
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in the recipient's default mobile browser, if a recipient
+     * taps the push notification and the value of the Action property is URL.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in the recipient's default mobile browser, if a recipient
+     * taps the push notification and the value of the Action property is URL.</p>
      */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in the recipient's default mobile browser, if a recipient
+     * taps the push notification and the value of the Action property is URL.</p>
      */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in the recipient's default mobile browser, if a recipient
+     * taps the push notification and the value of the Action property is URL.</p>
      */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in the recipient's default mobile browser, if a recipient
+     * taps the push notification and the value of the Action property is URL.</p>
      */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in the recipient's default mobile browser, if a recipient
+     * taps the push notification and the value of the Action property is URL.</p>
      */
     inline APNSMessage& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in the recipient's default mobile browser, if a recipient
+     * taps the push notification and the value of the Action property is URL.</p>
      */
     inline APNSMessage& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is
-     * URL.
+     * <p>The URL to open in the recipient's default mobile browser, if a recipient
+     * taps the push notification and the value of the Action property is URL.</p>
      */
     inline APNSMessage& WithUrl(const char* value) { SetUrl(value); return *this;}
 

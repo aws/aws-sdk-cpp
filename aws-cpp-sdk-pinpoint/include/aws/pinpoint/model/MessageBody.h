@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * Simple message object.<p><h3>See Also:</h3>   <a
+   * <p>Provides information about an API request or response.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/MessageBody">AWS
    * API Reference</a></p>
    */
@@ -48,83 +49,83 @@ namespace Model
 
 
     /**
-     * The error message that's returned from the API.
+     * <p>The message that's returned from the API.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * The error message that's returned from the API.
+     * <p>The message that's returned from the API.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * The error message that's returned from the API.
+     * <p>The message that's returned from the API.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * The error message that's returned from the API.
+     * <p>The message that's returned from the API.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * The error message that's returned from the API.
+     * <p>The message that's returned from the API.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * The error message that's returned from the API.
+     * <p>The message that's returned from the API.</p>
      */
     inline MessageBody& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * The error message that's returned from the API.
+     * <p>The message that's returned from the API.</p>
      */
     inline MessageBody& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * The error message that's returned from the API.
+     * <p>The message that's returned from the API.</p>
      */
     inline MessageBody& WithMessage(const char* value) { SetMessage(value); return *this;}
 
 
     /**
-     * The unique message body ID.
+     * <p>The unique identifier for the request or response.</p>
      */
     inline const Aws::String& GetRequestID() const{ return m_requestID; }
 
     /**
-     * The unique message body ID.
+     * <p>The unique identifier for the request or response.</p>
      */
     inline bool RequestIDHasBeenSet() const { return m_requestIDHasBeenSet; }
 
     /**
-     * The unique message body ID.
+     * <p>The unique identifier for the request or response.</p>
      */
     inline void SetRequestID(const Aws::String& value) { m_requestIDHasBeenSet = true; m_requestID = value; }
 
     /**
-     * The unique message body ID.
+     * <p>The unique identifier for the request or response.</p>
      */
     inline void SetRequestID(Aws::String&& value) { m_requestIDHasBeenSet = true; m_requestID = std::move(value); }
 
     /**
-     * The unique message body ID.
+     * <p>The unique identifier for the request or response.</p>
      */
     inline void SetRequestID(const char* value) { m_requestIDHasBeenSet = true; m_requestID.assign(value); }
 
     /**
-     * The unique message body ID.
+     * <p>The unique identifier for the request or response.</p>
      */
     inline MessageBody& WithRequestID(const Aws::String& value) { SetRequestID(value); return *this;}
 
     /**
-     * The unique message body ID.
+     * <p>The unique identifier for the request or response.</p>
      */
     inline MessageBody& WithRequestID(Aws::String&& value) { SetRequestID(std::move(value)); return *this;}
 
     /**
-     * The unique message body ID.
+     * <p>The unique identifier for the request or response.</p>
      */
     inline MessageBody& WithRequestID(const char* value) { SetRequestID(value); return *this;}
 

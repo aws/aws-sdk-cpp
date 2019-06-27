@@ -36,7 +36,8 @@ namespace Model
 {
 
   /**
-   * Segment group definition.<p><h3>See Also:</h3>   <a
+   * <p>Specifies the settings that define the relationships between segment groups
+   * for a segment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentGroupList">AWS
    * API Reference</a></p>
    */
@@ -50,91 +51,93 @@ namespace Model
 
 
     /**
-     * A set of segment criteria to evaluate.
+     * <p>An array that defines the set of segment criteria to evaluate when handling
+     * segment groups for the segment.</p>
      */
     inline const Aws::Vector<SegmentGroup>& GetGroups() const{ return m_groups; }
 
     /**
-     * A set of segment criteria to evaluate.
+     * <p>An array that defines the set of segment criteria to evaluate when handling
+     * segment groups for the segment.</p>
      */
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
-     * A set of segment criteria to evaluate.
+     * <p>An array that defines the set of segment criteria to evaluate when handling
+     * segment groups for the segment.</p>
      */
     inline void SetGroups(const Aws::Vector<SegmentGroup>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
-     * A set of segment criteria to evaluate.
+     * <p>An array that defines the set of segment criteria to evaluate when handling
+     * segment groups for the segment.</p>
      */
     inline void SetGroups(Aws::Vector<SegmentGroup>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
-     * A set of segment criteria to evaluate.
+     * <p>An array that defines the set of segment criteria to evaluate when handling
+     * segment groups for the segment.</p>
      */
     inline SegmentGroupList& WithGroups(const Aws::Vector<SegmentGroup>& value) { SetGroups(value); return *this;}
 
     /**
-     * A set of segment criteria to evaluate.
+     * <p>An array that defines the set of segment criteria to evaluate when handling
+     * segment groups for the segment.</p>
      */
     inline SegmentGroupList& WithGroups(Aws::Vector<SegmentGroup>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
-     * A set of segment criteria to evaluate.
+     * <p>An array that defines the set of segment criteria to evaluate when handling
+     * segment groups for the segment.</p>
      */
     inline SegmentGroupList& AddGroups(const SegmentGroup& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
     /**
-     * A set of segment criteria to evaluate.
+     * <p>An array that defines the set of segment criteria to evaluate when handling
+     * segment groups for the segment.</p>
      */
     inline SegmentGroupList& AddGroups(SegmentGroup&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 
 
     /**
-     * Specify how to handle multiple segment groups. For example, if the segment
-     * includes three segment groups, should the resulting segment include endpoints
-     * that are matched by all, any, or none of the segment groups you created.
-     * Acceptable values: ALL, ANY, or NONE.
+     * <p>Specifies how to handle multiple segment groups for the segment. For example,
+     * if the segment includes three segment groups, whether the resulting segment
+     * includes endpoints that match all, any, or none of the segment groups.</p>
      */
     inline const Include& GetInclude() const{ return m_include; }
 
     /**
-     * Specify how to handle multiple segment groups. For example, if the segment
-     * includes three segment groups, should the resulting segment include endpoints
-     * that are matched by all, any, or none of the segment groups you created.
-     * Acceptable values: ALL, ANY, or NONE.
+     * <p>Specifies how to handle multiple segment groups for the segment. For example,
+     * if the segment includes three segment groups, whether the resulting segment
+     * includes endpoints that match all, any, or none of the segment groups.</p>
      */
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
 
     /**
-     * Specify how to handle multiple segment groups. For example, if the segment
-     * includes three segment groups, should the resulting segment include endpoints
-     * that are matched by all, any, or none of the segment groups you created.
-     * Acceptable values: ALL, ANY, or NONE.
+     * <p>Specifies how to handle multiple segment groups for the segment. For example,
+     * if the segment includes three segment groups, whether the resulting segment
+     * includes endpoints that match all, any, or none of the segment groups.</p>
      */
     inline void SetInclude(const Include& value) { m_includeHasBeenSet = true; m_include = value; }
 
     /**
-     * Specify how to handle multiple segment groups. For example, if the segment
-     * includes three segment groups, should the resulting segment include endpoints
-     * that are matched by all, any, or none of the segment groups you created.
-     * Acceptable values: ALL, ANY, or NONE.
+     * <p>Specifies how to handle multiple segment groups for the segment. For example,
+     * if the segment includes three segment groups, whether the resulting segment
+     * includes endpoints that match all, any, or none of the segment groups.</p>
      */
     inline void SetInclude(Include&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
 
     /**
-     * Specify how to handle multiple segment groups. For example, if the segment
-     * includes three segment groups, should the resulting segment include endpoints
-     * that are matched by all, any, or none of the segment groups you created.
-     * Acceptable values: ALL, ANY, or NONE.
+     * <p>Specifies how to handle multiple segment groups for the segment. For example,
+     * if the segment includes three segment groups, whether the resulting segment
+     * includes endpoints that match all, any, or none of the segment groups.</p>
      */
     inline SegmentGroupList& WithInclude(const Include& value) { SetInclude(value); return *this;}
 
     /**
-     * Specify how to handle multiple segment groups. For example, if the segment
-     * includes three segment groups, should the resulting segment include endpoints
-     * that are matched by all, any, or none of the segment groups you created.
-     * Acceptable values: ALL, ANY, or NONE.
+     * <p>Specifies how to handle multiple segment groups for the segment. For example,
+     * if the segment includes three segment groups, whether the resulting segment
+     * includes endpoints that match all, any, or none of the segment groups.</p>
      */
     inline SegmentGroupList& WithInclude(Include&& value) { SetInclude(std::move(value)); return *this;}
 

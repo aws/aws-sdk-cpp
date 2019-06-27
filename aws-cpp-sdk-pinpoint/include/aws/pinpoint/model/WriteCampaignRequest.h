@@ -41,7 +41,8 @@ namespace Model
 {
 
   /**
-   * Used to create a campaign.<p><h3>See Also:</h3>   <a
+   * <p>Specifies the configuration and other settings for a campaign.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/WriteCampaignRequest">AWS
    * API Reference</a></p>
    */
@@ -55,508 +56,556 @@ namespace Model
 
 
     /**
-     * Treatments that are defined in addition to the default treatment.
+     * <p>An array of requests that defines additional treatments for the campaign, in
+     * addition to the default treatment for the campaign.</p>
      */
     inline const Aws::Vector<WriteTreatmentResource>& GetAdditionalTreatments() const{ return m_additionalTreatments; }
 
     /**
-     * Treatments that are defined in addition to the default treatment.
+     * <p>An array of requests that defines additional treatments for the campaign, in
+     * addition to the default treatment for the campaign.</p>
      */
     inline bool AdditionalTreatmentsHasBeenSet() const { return m_additionalTreatmentsHasBeenSet; }
 
     /**
-     * Treatments that are defined in addition to the default treatment.
+     * <p>An array of requests that defines additional treatments for the campaign, in
+     * addition to the default treatment for the campaign.</p>
      */
     inline void SetAdditionalTreatments(const Aws::Vector<WriteTreatmentResource>& value) { m_additionalTreatmentsHasBeenSet = true; m_additionalTreatments = value; }
 
     /**
-     * Treatments that are defined in addition to the default treatment.
+     * <p>An array of requests that defines additional treatments for the campaign, in
+     * addition to the default treatment for the campaign.</p>
      */
     inline void SetAdditionalTreatments(Aws::Vector<WriteTreatmentResource>&& value) { m_additionalTreatmentsHasBeenSet = true; m_additionalTreatments = std::move(value); }
 
     /**
-     * Treatments that are defined in addition to the default treatment.
+     * <p>An array of requests that defines additional treatments for the campaign, in
+     * addition to the default treatment for the campaign.</p>
      */
     inline WriteCampaignRequest& WithAdditionalTreatments(const Aws::Vector<WriteTreatmentResource>& value) { SetAdditionalTreatments(value); return *this;}
 
     /**
-     * Treatments that are defined in addition to the default treatment.
+     * <p>An array of requests that defines additional treatments for the campaign, in
+     * addition to the default treatment for the campaign.</p>
      */
     inline WriteCampaignRequest& WithAdditionalTreatments(Aws::Vector<WriteTreatmentResource>&& value) { SetAdditionalTreatments(std::move(value)); return *this;}
 
     /**
-     * Treatments that are defined in addition to the default treatment.
+     * <p>An array of requests that defines additional treatments for the campaign, in
+     * addition to the default treatment for the campaign.</p>
      */
     inline WriteCampaignRequest& AddAdditionalTreatments(const WriteTreatmentResource& value) { m_additionalTreatmentsHasBeenSet = true; m_additionalTreatments.push_back(value); return *this; }
 
     /**
-     * Treatments that are defined in addition to the default treatment.
+     * <p>An array of requests that defines additional treatments for the campaign, in
+     * addition to the default treatment for the campaign.</p>
      */
     inline WriteCampaignRequest& AddAdditionalTreatments(WriteTreatmentResource&& value) { m_additionalTreatmentsHasBeenSet = true; m_additionalTreatments.push_back(std::move(value)); return *this; }
 
 
     /**
-     * A description of the campaign.
+     * <p>The custom description of the campaign.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * A description of the campaign.
+     * <p>The custom description of the campaign.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * A description of the campaign.
+     * <p>The custom description of the campaign.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * A description of the campaign.
+     * <p>The custom description of the campaign.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * A description of the campaign.
+     * <p>The custom description of the campaign.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * A description of the campaign.
+     * <p>The custom description of the campaign.</p>
      */
     inline WriteCampaignRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * A description of the campaign.
+     * <p>The custom description of the campaign.</p>
      */
     inline WriteCampaignRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * A description of the campaign.
+     * <p>The custom description of the campaign.</p>
      */
     inline WriteCampaignRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * The allocated percentage of end users who will not receive messages from this
-     * campaign.
+     * <p>The allocated percentage of users (segment members) who shouldn't receive
+     * messages from the campaign.</p>
      */
     inline int GetHoldoutPercent() const{ return m_holdoutPercent; }
 
     /**
-     * The allocated percentage of end users who will not receive messages from this
-     * campaign.
+     * <p>The allocated percentage of users (segment members) who shouldn't receive
+     * messages from the campaign.</p>
      */
     inline bool HoldoutPercentHasBeenSet() const { return m_holdoutPercentHasBeenSet; }
 
     /**
-     * The allocated percentage of end users who will not receive messages from this
-     * campaign.
+     * <p>The allocated percentage of users (segment members) who shouldn't receive
+     * messages from the campaign.</p>
      */
     inline void SetHoldoutPercent(int value) { m_holdoutPercentHasBeenSet = true; m_holdoutPercent = value; }
 
     /**
-     * The allocated percentage of end users who will not receive messages from this
-     * campaign.
+     * <p>The allocated percentage of users (segment members) who shouldn't receive
+     * messages from the campaign.</p>
      */
     inline WriteCampaignRequest& WithHoldoutPercent(int value) { SetHoldoutPercent(value); return *this;}
 
 
     /**
-     * Campaign hook information.
+     * <p>The settings for the AWS Lambda function to use as a code hook for the
+     * campaign.</p>
      */
     inline const CampaignHook& GetHook() const{ return m_hook; }
 
     /**
-     * Campaign hook information.
+     * <p>The settings for the AWS Lambda function to use as a code hook for the
+     * campaign.</p>
      */
     inline bool HookHasBeenSet() const { return m_hookHasBeenSet; }
 
     /**
-     * Campaign hook information.
+     * <p>The settings for the AWS Lambda function to use as a code hook for the
+     * campaign.</p>
      */
     inline void SetHook(const CampaignHook& value) { m_hookHasBeenSet = true; m_hook = value; }
 
     /**
-     * Campaign hook information.
+     * <p>The settings for the AWS Lambda function to use as a code hook for the
+     * campaign.</p>
      */
     inline void SetHook(CampaignHook&& value) { m_hookHasBeenSet = true; m_hook = std::move(value); }
 
     /**
-     * Campaign hook information.
+     * <p>The settings for the AWS Lambda function to use as a code hook for the
+     * campaign.</p>
      */
     inline WriteCampaignRequest& WithHook(const CampaignHook& value) { SetHook(value); return *this;}
 
     /**
-     * Campaign hook information.
+     * <p>The settings for the AWS Lambda function to use as a code hook for the
+     * campaign.</p>
      */
     inline WriteCampaignRequest& WithHook(CampaignHook&& value) { SetHook(std::move(value)); return *this;}
 
 
     /**
-     * Indicates whether the campaign is paused. A paused campaign does not send
-     * messages unless you resume it by setting IsPaused to false.
+     * <p>Specifies whether to pause the campaign. A paused campaign doesn't run unless
+     * you resume it by setting this value to false.</p>
      */
     inline bool GetIsPaused() const{ return m_isPaused; }
 
     /**
-     * Indicates whether the campaign is paused. A paused campaign does not send
-     * messages unless you resume it by setting IsPaused to false.
+     * <p>Specifies whether to pause the campaign. A paused campaign doesn't run unless
+     * you resume it by setting this value to false.</p>
      */
     inline bool IsPausedHasBeenSet() const { return m_isPausedHasBeenSet; }
 
     /**
-     * Indicates whether the campaign is paused. A paused campaign does not send
-     * messages unless you resume it by setting IsPaused to false.
+     * <p>Specifies whether to pause the campaign. A paused campaign doesn't run unless
+     * you resume it by setting this value to false.</p>
      */
     inline void SetIsPaused(bool value) { m_isPausedHasBeenSet = true; m_isPaused = value; }
 
     /**
-     * Indicates whether the campaign is paused. A paused campaign does not send
-     * messages unless you resume it by setting IsPaused to false.
+     * <p>Specifies whether to pause the campaign. A paused campaign doesn't run unless
+     * you resume it by setting this value to false.</p>
      */
     inline WriteCampaignRequest& WithIsPaused(bool value) { SetIsPaused(value); return *this;}
 
 
     /**
-     * The campaign limits settings.
+     * <p>The messaging limits for the campaign.</p>
      */
     inline const CampaignLimits& GetLimits() const{ return m_limits; }
 
     /**
-     * The campaign limits settings.
+     * <p>The messaging limits for the campaign.</p>
      */
     inline bool LimitsHasBeenSet() const { return m_limitsHasBeenSet; }
 
     /**
-     * The campaign limits settings.
+     * <p>The messaging limits for the campaign.</p>
      */
     inline void SetLimits(const CampaignLimits& value) { m_limitsHasBeenSet = true; m_limits = value; }
 
     /**
-     * The campaign limits settings.
+     * <p>The messaging limits for the campaign.</p>
      */
     inline void SetLimits(CampaignLimits&& value) { m_limitsHasBeenSet = true; m_limits = std::move(value); }
 
     /**
-     * The campaign limits settings.
+     * <p>The messaging limits for the campaign.</p>
      */
     inline WriteCampaignRequest& WithLimits(const CampaignLimits& value) { SetLimits(value); return *this;}
 
     /**
-     * The campaign limits settings.
+     * <p>The messaging limits for the campaign.</p>
      */
     inline WriteCampaignRequest& WithLimits(CampaignLimits&& value) { SetLimits(std::move(value)); return *this;}
 
 
     /**
-     * The message configuration settings.
+     * <p>The message configuration settings for the campaign.</p>
      */
     inline const MessageConfiguration& GetMessageConfiguration() const{ return m_messageConfiguration; }
 
     /**
-     * The message configuration settings.
+     * <p>The message configuration settings for the campaign.</p>
      */
     inline bool MessageConfigurationHasBeenSet() const { return m_messageConfigurationHasBeenSet; }
 
     /**
-     * The message configuration settings.
+     * <p>The message configuration settings for the campaign.</p>
      */
     inline void SetMessageConfiguration(const MessageConfiguration& value) { m_messageConfigurationHasBeenSet = true; m_messageConfiguration = value; }
 
     /**
-     * The message configuration settings.
+     * <p>The message configuration settings for the campaign.</p>
      */
     inline void SetMessageConfiguration(MessageConfiguration&& value) { m_messageConfigurationHasBeenSet = true; m_messageConfiguration = std::move(value); }
 
     /**
-     * The message configuration settings.
+     * <p>The message configuration settings for the campaign.</p>
      */
     inline WriteCampaignRequest& WithMessageConfiguration(const MessageConfiguration& value) { SetMessageConfiguration(value); return *this;}
 
     /**
-     * The message configuration settings.
+     * <p>The message configuration settings for the campaign.</p>
      */
     inline WriteCampaignRequest& WithMessageConfiguration(MessageConfiguration&& value) { SetMessageConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * The custom name of the campaign.
+     * <p>The custom name of the campaign.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * The custom name of the campaign.
+     * <p>The custom name of the campaign.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * The custom name of the campaign.
+     * <p>The custom name of the campaign.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * The custom name of the campaign.
+     * <p>The custom name of the campaign.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * The custom name of the campaign.
+     * <p>The custom name of the campaign.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * The custom name of the campaign.
+     * <p>The custom name of the campaign.</p>
      */
     inline WriteCampaignRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * The custom name of the campaign.
+     * <p>The custom name of the campaign.</p>
      */
     inline WriteCampaignRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * The custom name of the campaign.
+     * <p>The custom name of the campaign.</p>
      */
     inline WriteCampaignRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * The campaign schedule.
+     * <p>The schedule settings for the campaign.</p>
      */
     inline const Schedule& GetSchedule() const{ return m_schedule; }
 
     /**
-     * The campaign schedule.
+     * <p>The schedule settings for the campaign.</p>
      */
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
     /**
-     * The campaign schedule.
+     * <p>The schedule settings for the campaign.</p>
      */
     inline void SetSchedule(const Schedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
     /**
-     * The campaign schedule.
+     * <p>The schedule settings for the campaign.</p>
      */
     inline void SetSchedule(Schedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
     /**
-     * The campaign schedule.
+     * <p>The schedule settings for the campaign.</p>
      */
     inline WriteCampaignRequest& WithSchedule(const Schedule& value) { SetSchedule(value); return *this;}
 
     /**
-     * The campaign schedule.
+     * <p>The schedule settings for the campaign.</p>
      */
     inline WriteCampaignRequest& WithSchedule(Schedule&& value) { SetSchedule(std::move(value)); return *this;}
 
 
     /**
-     * The ID of the segment to which the campaign sends messages.
+     * <p>The unique identifier for the segment to associate with the campaign.</p>
      */
     inline const Aws::String& GetSegmentId() const{ return m_segmentId; }
 
     /**
-     * The ID of the segment to which the campaign sends messages.
+     * <p>The unique identifier for the segment to associate with the campaign.</p>
      */
     inline bool SegmentIdHasBeenSet() const { return m_segmentIdHasBeenSet; }
 
     /**
-     * The ID of the segment to which the campaign sends messages.
+     * <p>The unique identifier for the segment to associate with the campaign.</p>
      */
     inline void SetSegmentId(const Aws::String& value) { m_segmentIdHasBeenSet = true; m_segmentId = value; }
 
     /**
-     * The ID of the segment to which the campaign sends messages.
+     * <p>The unique identifier for the segment to associate with the campaign.</p>
      */
     inline void SetSegmentId(Aws::String&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::move(value); }
 
     /**
-     * The ID of the segment to which the campaign sends messages.
+     * <p>The unique identifier for the segment to associate with the campaign.</p>
      */
     inline void SetSegmentId(const char* value) { m_segmentIdHasBeenSet = true; m_segmentId.assign(value); }
 
     /**
-     * The ID of the segment to which the campaign sends messages.
+     * <p>The unique identifier for the segment to associate with the campaign.</p>
      */
     inline WriteCampaignRequest& WithSegmentId(const Aws::String& value) { SetSegmentId(value); return *this;}
 
     /**
-     * The ID of the segment to which the campaign sends messages.
+     * <p>The unique identifier for the segment to associate with the campaign.</p>
      */
     inline WriteCampaignRequest& WithSegmentId(Aws::String&& value) { SetSegmentId(std::move(value)); return *this;}
 
     /**
-     * The ID of the segment to which the campaign sends messages.
+     * <p>The unique identifier for the segment to associate with the campaign.</p>
      */
     inline WriteCampaignRequest& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
 
 
     /**
-     * The version of the segment to which the campaign sends messages.
+     * <p>The version of the segment to associate with the campaign.</p>
      */
     inline int GetSegmentVersion() const{ return m_segmentVersion; }
 
     /**
-     * The version of the segment to which the campaign sends messages.
+     * <p>The version of the segment to associate with the campaign.</p>
      */
     inline bool SegmentVersionHasBeenSet() const { return m_segmentVersionHasBeenSet; }
 
     /**
-     * The version of the segment to which the campaign sends messages.
+     * <p>The version of the segment to associate with the campaign.</p>
      */
     inline void SetSegmentVersion(int value) { m_segmentVersionHasBeenSet = true; m_segmentVersion = value; }
 
     /**
-     * The version of the segment to which the campaign sends messages.
+     * <p>The version of the segment to associate with the campaign.</p>
      */
     inline WriteCampaignRequest& WithSegmentVersion(int value) { SetSegmentVersion(value); return *this;}
 
 
     /**
-     * The Tags for the campaign.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the campaign. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * The Tags for the campaign.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the campaign. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * The Tags for the campaign.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the campaign. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * The Tags for the campaign.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the campaign. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * The Tags for the campaign.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the campaign. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline WriteCampaignRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * The Tags for the campaign.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the campaign. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline WriteCampaignRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * The Tags for the campaign.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the campaign. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline WriteCampaignRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * The Tags for the campaign.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the campaign. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline WriteCampaignRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * The Tags for the campaign.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the campaign. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline WriteCampaignRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * The Tags for the campaign.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the campaign. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline WriteCampaignRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * The Tags for the campaign.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the campaign. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline WriteCampaignRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * The Tags for the campaign.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the campaign. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline WriteCampaignRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * The Tags for the campaign.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the campaign. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline WriteCampaignRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
 
     /**
-     * A custom description for the treatment.
+     * <p>The custom description of a variation of the campaign to use for A/B
+     * testing.</p>
      */
     inline const Aws::String& GetTreatmentDescription() const{ return m_treatmentDescription; }
 
     /**
-     * A custom description for the treatment.
+     * <p>The custom description of a variation of the campaign to use for A/B
+     * testing.</p>
      */
     inline bool TreatmentDescriptionHasBeenSet() const { return m_treatmentDescriptionHasBeenSet; }
 
     /**
-     * A custom description for the treatment.
+     * <p>The custom description of a variation of the campaign to use for A/B
+     * testing.</p>
      */
     inline void SetTreatmentDescription(const Aws::String& value) { m_treatmentDescriptionHasBeenSet = true; m_treatmentDescription = value; }
 
     /**
-     * A custom description for the treatment.
+     * <p>The custom description of a variation of the campaign to use for A/B
+     * testing.</p>
      */
     inline void SetTreatmentDescription(Aws::String&& value) { m_treatmentDescriptionHasBeenSet = true; m_treatmentDescription = std::move(value); }
 
     /**
-     * A custom description for the treatment.
+     * <p>The custom description of a variation of the campaign to use for A/B
+     * testing.</p>
      */
     inline void SetTreatmentDescription(const char* value) { m_treatmentDescriptionHasBeenSet = true; m_treatmentDescription.assign(value); }
 
     /**
-     * A custom description for the treatment.
+     * <p>The custom description of a variation of the campaign to use for A/B
+     * testing.</p>
      */
     inline WriteCampaignRequest& WithTreatmentDescription(const Aws::String& value) { SetTreatmentDescription(value); return *this;}
 
     /**
-     * A custom description for the treatment.
+     * <p>The custom description of a variation of the campaign to use for A/B
+     * testing.</p>
      */
     inline WriteCampaignRequest& WithTreatmentDescription(Aws::String&& value) { SetTreatmentDescription(std::move(value)); return *this;}
 
     /**
-     * A custom description for the treatment.
+     * <p>The custom description of a variation of the campaign to use for A/B
+     * testing.</p>
      */
     inline WriteCampaignRequest& WithTreatmentDescription(const char* value) { SetTreatmentDescription(value); return *this;}
 
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>The custom name of a variation of the campaign to use for A/B testing.</p>
      */
     inline const Aws::String& GetTreatmentName() const{ return m_treatmentName; }
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>The custom name of a variation of the campaign to use for A/B testing.</p>
      */
     inline bool TreatmentNameHasBeenSet() const { return m_treatmentNameHasBeenSet; }
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>The custom name of a variation of the campaign to use for A/B testing.</p>
      */
     inline void SetTreatmentName(const Aws::String& value) { m_treatmentNameHasBeenSet = true; m_treatmentName = value; }
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>The custom name of a variation of the campaign to use for A/B testing.</p>
      */
     inline void SetTreatmentName(Aws::String&& value) { m_treatmentNameHasBeenSet = true; m_treatmentName = std::move(value); }
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>The custom name of a variation of the campaign to use for A/B testing.</p>
      */
     inline void SetTreatmentName(const char* value) { m_treatmentNameHasBeenSet = true; m_treatmentName.assign(value); }
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>The custom name of a variation of the campaign to use for A/B testing.</p>
      */
     inline WriteCampaignRequest& WithTreatmentName(const Aws::String& value) { SetTreatmentName(value); return *this;}
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>The custom name of a variation of the campaign to use for A/B testing.</p>
      */
     inline WriteCampaignRequest& WithTreatmentName(Aws::String&& value) { SetTreatmentName(std::move(value)); return *this;}
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>The custom name of a variation of the campaign to use for A/B testing.</p>
      */
     inline WriteCampaignRequest& WithTreatmentName(const char* value) { SetTreatmentName(value); return *this;}
 

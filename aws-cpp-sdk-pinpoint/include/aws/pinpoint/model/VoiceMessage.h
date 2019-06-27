@@ -36,7 +36,8 @@ namespace Model
 {
 
   /**
-   * Voice Message.<p><h3>See Also:</h3>   <a
+   * <p>Specifies the settings for a one-time voice message that's sent directly to
+   * an endpoint through the voice channel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VoiceMessage">AWS
    * API Reference</a></p>
    */
@@ -50,238 +51,286 @@ namespace Model
 
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * <p>The text script for the voice message.</p>
      */
     inline const Aws::String& GetBody() const{ return m_body; }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * <p>The text script for the voice message.</p>
      */
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * <p>The text script for the voice message.</p>
      */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * <p>The text script for the voice message.</p>
      */
     inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * <p>The text script for the voice message.</p>
      */
     inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * <p>The text script for the voice message.</p>
      */
     inline VoiceMessage& WithBody(const Aws::String& value) { SetBody(value); return *this;}
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * <p>The text script for the voice message.</p>
      */
     inline VoiceMessage& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * <p>The text script for the voice message.</p>
      */
     inline VoiceMessage& WithBody(const char* value) { SetBody(value); return *this;}
 
 
     /**
-     * Language of sent message
+     * <p>The language to use when delivering the message. For a list of supported
+     * languages, see the <a href="AmazonPollyDG.html">Amazon Polly Developer
+     * Guide</a>.</p>
      */
     inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * Language of sent message
+     * <p>The language to use when delivering the message. For a list of supported
+     * languages, see the <a href="AmazonPollyDG.html">Amazon Polly Developer
+     * Guide</a>.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * Language of sent message
+     * <p>The language to use when delivering the message. For a list of supported
+     * languages, see the <a href="AmazonPollyDG.html">Amazon Polly Developer
+     * Guide</a>.</p>
      */
     inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * Language of sent message
+     * <p>The language to use when delivering the message. For a list of supported
+     * languages, see the <a href="AmazonPollyDG.html">Amazon Polly Developer
+     * Guide</a>.</p>
      */
     inline void SetLanguageCode(Aws::String&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * Language of sent message
+     * <p>The language to use when delivering the message. For a list of supported
+     * languages, see the <a href="AmazonPollyDG.html">Amazon Polly Developer
+     * Guide</a>.</p>
      */
     inline void SetLanguageCode(const char* value) { m_languageCodeHasBeenSet = true; m_languageCode.assign(value); }
 
     /**
-     * Language of sent message
+     * <p>The language to use when delivering the message. For a list of supported
+     * languages, see the <a href="AmazonPollyDG.html">Amazon Polly Developer
+     * Guide</a>.</p>
      */
     inline VoiceMessage& WithLanguageCode(const Aws::String& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * Language of sent message
+     * <p>The language to use when delivering the message. For a list of supported
+     * languages, see the <a href="AmazonPollyDG.html">Amazon Polly Developer
+     * Guide</a>.</p>
      */
     inline VoiceMessage& WithLanguageCode(Aws::String&& value) { SetLanguageCode(std::move(value)); return *this;}
 
     /**
-     * Language of sent message
+     * <p>The language to use when delivering the message. For a list of supported
+     * languages, see the <a href="AmazonPollyDG.html">Amazon Polly Developer
+     * Guide</a>.</p>
      */
     inline VoiceMessage& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
 
 
     /**
-     * Is the number from the pool or messaging service to send from.
+     * <p>The phone number from the pool or messaging service to send the message from.
+     * Although it isn't required, we recommend that you specify the phone number in
+     * E.164 format to ensure prompt and accurate delivery.</p>
      */
     inline const Aws::String& GetOriginationNumber() const{ return m_originationNumber; }
 
     /**
-     * Is the number from the pool or messaging service to send from.
+     * <p>The phone number from the pool or messaging service to send the message from.
+     * Although it isn't required, we recommend that you specify the phone number in
+     * E.164 format to ensure prompt and accurate delivery.</p>
      */
     inline bool OriginationNumberHasBeenSet() const { return m_originationNumberHasBeenSet; }
 
     /**
-     * Is the number from the pool or messaging service to send from.
+     * <p>The phone number from the pool or messaging service to send the message from.
+     * Although it isn't required, we recommend that you specify the phone number in
+     * E.164 format to ensure prompt and accurate delivery.</p>
      */
     inline void SetOriginationNumber(const Aws::String& value) { m_originationNumberHasBeenSet = true; m_originationNumber = value; }
 
     /**
-     * Is the number from the pool or messaging service to send from.
+     * <p>The phone number from the pool or messaging service to send the message from.
+     * Although it isn't required, we recommend that you specify the phone number in
+     * E.164 format to ensure prompt and accurate delivery.</p>
      */
     inline void SetOriginationNumber(Aws::String&& value) { m_originationNumberHasBeenSet = true; m_originationNumber = std::move(value); }
 
     /**
-     * Is the number from the pool or messaging service to send from.
+     * <p>The phone number from the pool or messaging service to send the message from.
+     * Although it isn't required, we recommend that you specify the phone number in
+     * E.164 format to ensure prompt and accurate delivery.</p>
      */
     inline void SetOriginationNumber(const char* value) { m_originationNumberHasBeenSet = true; m_originationNumber.assign(value); }
 
     /**
-     * Is the number from the pool or messaging service to send from.
+     * <p>The phone number from the pool or messaging service to send the message from.
+     * Although it isn't required, we recommend that you specify the phone number in
+     * E.164 format to ensure prompt and accurate delivery.</p>
      */
     inline VoiceMessage& WithOriginationNumber(const Aws::String& value) { SetOriginationNumber(value); return *this;}
 
     /**
-     * Is the number from the pool or messaging service to send from.
+     * <p>The phone number from the pool or messaging service to send the message from.
+     * Although it isn't required, we recommend that you specify the phone number in
+     * E.164 format to ensure prompt and accurate delivery.</p>
      */
     inline VoiceMessage& WithOriginationNumber(Aws::String&& value) { SetOriginationNumber(std::move(value)); return *this;}
 
     /**
-     * Is the number from the pool or messaging service to send from.
+     * <p>The phone number from the pool or messaging service to send the message from.
+     * Although it isn't required, we recommend that you specify the phone number in
+     * E.164 format to ensure prompt and accurate delivery.</p>
      */
     inline VoiceMessage& WithOriginationNumber(const char* value) { SetOriginationNumber(value); return *this;}
 
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the voice message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const{ return m_substitutions; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the voice message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline bool SubstitutionsHasBeenSet() const { return m_substitutionsHasBeenSet; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the voice message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline void SetSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_substitutionsHasBeenSet = true; m_substitutions = value; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the voice message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline void SetSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_substitutionsHasBeenSet = true; m_substitutions = std::move(value); }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the voice message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline VoiceMessage& WithSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetSubstitutions(value); return *this;}
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the voice message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline VoiceMessage& WithSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetSubstitutions(std::move(value)); return *this;}
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the voice message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline VoiceMessage& AddSubstitutions(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the voice message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline VoiceMessage& AddSubstitutions(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), value); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the voice message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline VoiceMessage& AddSubstitutions(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the voice message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline VoiceMessage& AddSubstitutions(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the voice message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline VoiceMessage& AddSubstitutions(const char* key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the voice message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline VoiceMessage& AddSubstitutions(const char* key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 
 
     /**
-     * Voice ID of sent message.
+     * <p>The name of the voice to use when delivering the message. For a list of
+     * supported voices, see the <a href="AmazonPollyDG.html">Amazon Polly Developer
+     * Guide</a>.</p>
      */
     inline const Aws::String& GetVoiceId() const{ return m_voiceId; }
 
     /**
-     * Voice ID of sent message.
+     * <p>The name of the voice to use when delivering the message. For a list of
+     * supported voices, see the <a href="AmazonPollyDG.html">Amazon Polly Developer
+     * Guide</a>.</p>
      */
     inline bool VoiceIdHasBeenSet() const { return m_voiceIdHasBeenSet; }
 
     /**
-     * Voice ID of sent message.
+     * <p>The name of the voice to use when delivering the message. For a list of
+     * supported voices, see the <a href="AmazonPollyDG.html">Amazon Polly Developer
+     * Guide</a>.</p>
      */
     inline void SetVoiceId(const Aws::String& value) { m_voiceIdHasBeenSet = true; m_voiceId = value; }
 
     /**
-     * Voice ID of sent message.
+     * <p>The name of the voice to use when delivering the message. For a list of
+     * supported voices, see the <a href="AmazonPollyDG.html">Amazon Polly Developer
+     * Guide</a>.</p>
      */
     inline void SetVoiceId(Aws::String&& value) { m_voiceIdHasBeenSet = true; m_voiceId = std::move(value); }
 
     /**
-     * Voice ID of sent message.
+     * <p>The name of the voice to use when delivering the message. For a list of
+     * supported voices, see the <a href="AmazonPollyDG.html">Amazon Polly Developer
+     * Guide</a>.</p>
      */
     inline void SetVoiceId(const char* value) { m_voiceIdHasBeenSet = true; m_voiceId.assign(value); }
 
     /**
-     * Voice ID of sent message.
+     * <p>The name of the voice to use when delivering the message. For a list of
+     * supported voices, see the <a href="AmazonPollyDG.html">Amazon Polly Developer
+     * Guide</a>.</p>
      */
     inline VoiceMessage& WithVoiceId(const Aws::String& value) { SetVoiceId(value); return *this;}
 
     /**
-     * Voice ID of sent message.
+     * <p>The name of the voice to use when delivering the message. For a list of
+     * supported voices, see the <a href="AmazonPollyDG.html">Amazon Polly Developer
+     * Guide</a>.</p>
      */
     inline VoiceMessage& WithVoiceId(Aws::String&& value) { SetVoiceId(std::move(value)); return *this;}
 
     /**
-     * Voice ID of sent message.
+     * <p>The name of the voice to use when delivering the message. For a list of
+     * supported voices, see the <a href="AmazonPollyDG.html">Amazon Polly Developer
+     * Guide</a>.</p>
      */
     inline VoiceMessage& WithVoiceId(const char* value) { SetVoiceId(value); return *this;}
 

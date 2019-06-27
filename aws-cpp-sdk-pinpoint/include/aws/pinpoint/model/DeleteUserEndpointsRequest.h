@@ -43,83 +43,91 @@ namespace Model
 
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline DeleteUserEndpointsRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline DeleteUserEndpointsRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline DeleteUserEndpointsRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * The unique ID of the user.
+     * <p>The unique identifier for the user.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * The unique ID of the user.
+     * <p>The unique identifier for the user.</p>
      */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
-     * The unique ID of the user.
+     * <p>The unique identifier for the user.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
-     * The unique ID of the user.
+     * <p>The unique identifier for the user.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
-     * The unique ID of the user.
+     * <p>The unique identifier for the user.</p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
     /**
-     * The unique ID of the user.
+     * <p>The unique identifier for the user.</p>
      */
     inline DeleteUserEndpointsRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * The unique ID of the user.
+     * <p>The unique identifier for the user.</p>
      */
     inline DeleteUserEndpointsRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of the user.
+     * <p>The unique identifier for the user.</p>
      */
     inline DeleteUserEndpointsRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
 

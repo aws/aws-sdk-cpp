@@ -34,7 +34,11 @@ namespace Model
 {
 
   /**
-   * Export job resource.<p><h3>See Also:</h3>   <a
+   * <p>Provides information about the resource settings for a job that exports
+   * endpoint definitions to a file. The file can be added directly to an Amazon
+   * Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or
+   * downloaded directly to a computer by using the Amazon Pinpoint
+   * console.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ExportJobResource">AWS
    * API Reference</a></p>
    */
@@ -48,217 +52,213 @@ namespace Model
 
 
     /**
-     * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access
-     * to the Amazon S3 location that endpoints will be exported to.
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location
+     * where the endpoint definitions were exported to.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access
-     * to the Amazon S3 location that endpoints will be exported to.
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location
+     * where the endpoint definitions were exported to.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access
-     * to the Amazon S3 location that endpoints will be exported to.
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location
+     * where the endpoint definitions were exported to.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access
-     * to the Amazon S3 location that endpoints will be exported to.
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location
+     * where the endpoint definitions were exported to.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access
-     * to the Amazon S3 location that endpoints will be exported to.
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location
+     * where the endpoint definitions were exported to.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access
-     * to the Amazon S3 location that endpoints will be exported to.
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location
+     * where the endpoint definitions were exported to.</p>
      */
     inline ExportJobResource& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access
-     * to the Amazon S3 location that endpoints will be exported to.
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location
+     * where the endpoint definitions were exported to.</p>
      */
     inline ExportJobResource& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access
-     * to the Amazon S3 location that endpoints will be exported to.
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location
+     * where the endpoint definitions were exported to.</p>
      */
     inline ExportJobResource& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
-     * A URL that points to the location within an Amazon S3 bucket that will receive
-     * the export. The location is typically a folder with multiple files.
-
-The URL
-     * should follow this format: s3://bucket-name/folder-name/
-
-Amazon Pinpoint will
-     * export endpoints to this location.
+     * <p>The URL of the location in an Amazon Simple Storage Service (Amazon S3)
+     * bucket where the endpoint definitions were exported to. This location is
+     * typically a folder that contains multiple files. The URL should be in the
+     * following format:
+     * s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.</p>
      */
     inline const Aws::String& GetS3UrlPrefix() const{ return m_s3UrlPrefix; }
 
     /**
-     * A URL that points to the location within an Amazon S3 bucket that will receive
-     * the export. The location is typically a folder with multiple files.
-
-The URL
-     * should follow this format: s3://bucket-name/folder-name/
-
-Amazon Pinpoint will
-     * export endpoints to this location.
+     * <p>The URL of the location in an Amazon Simple Storage Service (Amazon S3)
+     * bucket where the endpoint definitions were exported to. This location is
+     * typically a folder that contains multiple files. The URL should be in the
+     * following format:
+     * s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.</p>
      */
     inline bool S3UrlPrefixHasBeenSet() const { return m_s3UrlPrefixHasBeenSet; }
 
     /**
-     * A URL that points to the location within an Amazon S3 bucket that will receive
-     * the export. The location is typically a folder with multiple files.
-
-The URL
-     * should follow this format: s3://bucket-name/folder-name/
-
-Amazon Pinpoint will
-     * export endpoints to this location.
+     * <p>The URL of the location in an Amazon Simple Storage Service (Amazon S3)
+     * bucket where the endpoint definitions were exported to. This location is
+     * typically a folder that contains multiple files. The URL should be in the
+     * following format:
+     * s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.</p>
      */
     inline void SetS3UrlPrefix(const Aws::String& value) { m_s3UrlPrefixHasBeenSet = true; m_s3UrlPrefix = value; }
 
     /**
-     * A URL that points to the location within an Amazon S3 bucket that will receive
-     * the export. The location is typically a folder with multiple files.
-
-The URL
-     * should follow this format: s3://bucket-name/folder-name/
-
-Amazon Pinpoint will
-     * export endpoints to this location.
+     * <p>The URL of the location in an Amazon Simple Storage Service (Amazon S3)
+     * bucket where the endpoint definitions were exported to. This location is
+     * typically a folder that contains multiple files. The URL should be in the
+     * following format:
+     * s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.</p>
      */
     inline void SetS3UrlPrefix(Aws::String&& value) { m_s3UrlPrefixHasBeenSet = true; m_s3UrlPrefix = std::move(value); }
 
     /**
-     * A URL that points to the location within an Amazon S3 bucket that will receive
-     * the export. The location is typically a folder with multiple files.
-
-The URL
-     * should follow this format: s3://bucket-name/folder-name/
-
-Amazon Pinpoint will
-     * export endpoints to this location.
+     * <p>The URL of the location in an Amazon Simple Storage Service (Amazon S3)
+     * bucket where the endpoint definitions were exported to. This location is
+     * typically a folder that contains multiple files. The URL should be in the
+     * following format:
+     * s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.</p>
      */
     inline void SetS3UrlPrefix(const char* value) { m_s3UrlPrefixHasBeenSet = true; m_s3UrlPrefix.assign(value); }
 
     /**
-     * A URL that points to the location within an Amazon S3 bucket that will receive
-     * the export. The location is typically a folder with multiple files.
-
-The URL
-     * should follow this format: s3://bucket-name/folder-name/
-
-Amazon Pinpoint will
-     * export endpoints to this location.
+     * <p>The URL of the location in an Amazon Simple Storage Service (Amazon S3)
+     * bucket where the endpoint definitions were exported to. This location is
+     * typically a folder that contains multiple files. The URL should be in the
+     * following format:
+     * s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.</p>
      */
     inline ExportJobResource& WithS3UrlPrefix(const Aws::String& value) { SetS3UrlPrefix(value); return *this;}
 
     /**
-     * A URL that points to the location within an Amazon S3 bucket that will receive
-     * the export. The location is typically a folder with multiple files.
-
-The URL
-     * should follow this format: s3://bucket-name/folder-name/
-
-Amazon Pinpoint will
-     * export endpoints to this location.
+     * <p>The URL of the location in an Amazon Simple Storage Service (Amazon S3)
+     * bucket where the endpoint definitions were exported to. This location is
+     * typically a folder that contains multiple files. The URL should be in the
+     * following format:
+     * s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.</p>
      */
     inline ExportJobResource& WithS3UrlPrefix(Aws::String&& value) { SetS3UrlPrefix(std::move(value)); return *this;}
 
     /**
-     * A URL that points to the location within an Amazon S3 bucket that will receive
-     * the export. The location is typically a folder with multiple files.
-
-The URL
-     * should follow this format: s3://bucket-name/folder-name/
-
-Amazon Pinpoint will
-     * export endpoints to this location.
+     * <p>The URL of the location in an Amazon Simple Storage Service (Amazon S3)
+     * bucket where the endpoint definitions were exported to. This location is
+     * typically a folder that contains multiple files. The URL should be in the
+     * following format:
+     * s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.</p>
      */
     inline ExportJobResource& WithS3UrlPrefix(const char* value) { SetS3UrlPrefix(value); return *this;}
 
 
     /**
-     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint
-     * exports all of the endpoints that belong to the application.
+     * <p>The identifier for the segment that the endpoint definitions were exported
+     * from. If this value isn't present, Amazon Pinpoint exported definitions for all
+     * the endpoints that are associated with the application.</p>
      */
     inline const Aws::String& GetSegmentId() const{ return m_segmentId; }
 
     /**
-     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint
-     * exports all of the endpoints that belong to the application.
+     * <p>The identifier for the segment that the endpoint definitions were exported
+     * from. If this value isn't present, Amazon Pinpoint exported definitions for all
+     * the endpoints that are associated with the application.</p>
      */
     inline bool SegmentIdHasBeenSet() const { return m_segmentIdHasBeenSet; }
 
     /**
-     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint
-     * exports all of the endpoints that belong to the application.
+     * <p>The identifier for the segment that the endpoint definitions were exported
+     * from. If this value isn't present, Amazon Pinpoint exported definitions for all
+     * the endpoints that are associated with the application.</p>
      */
     inline void SetSegmentId(const Aws::String& value) { m_segmentIdHasBeenSet = true; m_segmentId = value; }
 
     /**
-     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint
-     * exports all of the endpoints that belong to the application.
+     * <p>The identifier for the segment that the endpoint definitions were exported
+     * from. If this value isn't present, Amazon Pinpoint exported definitions for all
+     * the endpoints that are associated with the application.</p>
      */
     inline void SetSegmentId(Aws::String&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::move(value); }
 
     /**
-     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint
-     * exports all of the endpoints that belong to the application.
+     * <p>The identifier for the segment that the endpoint definitions were exported
+     * from. If this value isn't present, Amazon Pinpoint exported definitions for all
+     * the endpoints that are associated with the application.</p>
      */
     inline void SetSegmentId(const char* value) { m_segmentIdHasBeenSet = true; m_segmentId.assign(value); }
 
     /**
-     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint
-     * exports all of the endpoints that belong to the application.
+     * <p>The identifier for the segment that the endpoint definitions were exported
+     * from. If this value isn't present, Amazon Pinpoint exported definitions for all
+     * the endpoints that are associated with the application.</p>
      */
     inline ExportJobResource& WithSegmentId(const Aws::String& value) { SetSegmentId(value); return *this;}
 
     /**
-     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint
-     * exports all of the endpoints that belong to the application.
+     * <p>The identifier for the segment that the endpoint definitions were exported
+     * from. If this value isn't present, Amazon Pinpoint exported definitions for all
+     * the endpoints that are associated with the application.</p>
      */
     inline ExportJobResource& WithSegmentId(Aws::String&& value) { SetSegmentId(std::move(value)); return *this;}
 
     /**
-     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint
-     * exports all of the endpoints that belong to the application.
+     * <p>The identifier for the segment that the endpoint definitions were exported
+     * from. If this value isn't present, Amazon Pinpoint exported definitions for all
+     * the endpoints that are associated with the application.</p>
      */
     inline ExportJobResource& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
 
 
     /**
-     * The version of the segment to export if specified.
+     * <p>The version of the segment that the endpoint definitions were exported
+     * from.</p>
      */
     inline int GetSegmentVersion() const{ return m_segmentVersion; }
 
     /**
-     * The version of the segment to export if specified.
+     * <p>The version of the segment that the endpoint definitions were exported
+     * from.</p>
      */
     inline bool SegmentVersionHasBeenSet() const { return m_segmentVersionHasBeenSet; }
 
     /**
-     * The version of the segment to export if specified.
+     * <p>The version of the segment that the endpoint definitions were exported
+     * from.</p>
      */
     inline void SetSegmentVersion(int value) { m_segmentVersionHasBeenSet = true; m_segmentVersion = value; }
 
     /**
-     * The version of the segment to export if specified.
+     * <p>The version of the segment that the endpoint definitions were exported
+     * from.</p>
      */
     inline ExportJobResource& WithSegmentVersion(int value) { SetSegmentVersion(value); return *this;}
 

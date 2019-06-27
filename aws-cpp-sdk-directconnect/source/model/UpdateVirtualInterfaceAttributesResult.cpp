@@ -196,6 +196,15 @@ UpdateVirtualInterfaceAttributesResult& UpdateVirtualInterfaceAttributesResult::
 
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

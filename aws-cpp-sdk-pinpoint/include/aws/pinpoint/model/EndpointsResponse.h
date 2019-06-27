@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * List of endpoints<p><h3>See Also:</h3>   <a
+   * <p>Provides information about all the endpoints that are associated with a user
+   * ID.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointsResponse">AWS
    * API Reference</a></p>
    */
@@ -49,42 +50,50 @@ namespace Model
 
 
     /**
-     * The list of endpoints.
+     * <p>An array of responses, one for each endpoint that's associated with the user
+     * ID.</p>
      */
     inline const Aws::Vector<EndpointResponse>& GetItem() const{ return m_item; }
 
     /**
-     * The list of endpoints.
+     * <p>An array of responses, one for each endpoint that's associated with the user
+     * ID.</p>
      */
     inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
 
     /**
-     * The list of endpoints.
+     * <p>An array of responses, one for each endpoint that's associated with the user
+     * ID.</p>
      */
     inline void SetItem(const Aws::Vector<EndpointResponse>& value) { m_itemHasBeenSet = true; m_item = value; }
 
     /**
-     * The list of endpoints.
+     * <p>An array of responses, one for each endpoint that's associated with the user
+     * ID.</p>
      */
     inline void SetItem(Aws::Vector<EndpointResponse>&& value) { m_itemHasBeenSet = true; m_item = std::move(value); }
 
     /**
-     * The list of endpoints.
+     * <p>An array of responses, one for each endpoint that's associated with the user
+     * ID.</p>
      */
     inline EndpointsResponse& WithItem(const Aws::Vector<EndpointResponse>& value) { SetItem(value); return *this;}
 
     /**
-     * The list of endpoints.
+     * <p>An array of responses, one for each endpoint that's associated with the user
+     * ID.</p>
      */
     inline EndpointsResponse& WithItem(Aws::Vector<EndpointResponse>&& value) { SetItem(std::move(value)); return *this;}
 
     /**
-     * The list of endpoints.
+     * <p>An array of responses, one for each endpoint that's associated with the user
+     * ID.</p>
      */
     inline EndpointsResponse& AddItem(const EndpointResponse& value) { m_itemHasBeenSet = true; m_item.push_back(value); return *this; }
 
     /**
-     * The list of endpoints.
+     * <p>An array of responses, one for each endpoint that's associated with the user
+     * ID.</p>
      */
     inline EndpointsResponse& AddItem(EndpointResponse&& value) { m_itemHasBeenSet = true; m_item.push_back(std::move(value)); return *this; }
 

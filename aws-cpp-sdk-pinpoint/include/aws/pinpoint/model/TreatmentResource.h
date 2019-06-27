@@ -37,7 +37,9 @@ namespace Model
 {
 
   /**
-   * Treatment resource<p><h3>See Also:</h3>   <a
+   * <p>Specifies the settings for a campaign treatment. A treatment is a variation
+   * of a campaign that's used for A/B testing of a campaign.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TreatmentResource">AWS
    * API Reference</a></p>
    */
@@ -51,238 +53,250 @@ namespace Model
 
 
     /**
-     * The unique treatment ID.
+     * <p>The unique identifier for the treatment.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * The unique treatment ID.
+     * <p>The unique identifier for the treatment.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * The unique treatment ID.
+     * <p>The unique identifier for the treatment.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * The unique treatment ID.
+     * <p>The unique identifier for the treatment.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * The unique treatment ID.
+     * <p>The unique identifier for the treatment.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * The unique treatment ID.
+     * <p>The unique identifier for the treatment.</p>
      */
     inline TreatmentResource& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * The unique treatment ID.
+     * <p>The unique identifier for the treatment.</p>
      */
     inline TreatmentResource& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * The unique treatment ID.
+     * <p>The unique identifier for the treatment.</p>
      */
     inline TreatmentResource& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * The message configuration settings.
+     * <p>The message configuration settings for the treatment.</p>
      */
     inline const MessageConfiguration& GetMessageConfiguration() const{ return m_messageConfiguration; }
 
     /**
-     * The message configuration settings.
+     * <p>The message configuration settings for the treatment.</p>
      */
     inline bool MessageConfigurationHasBeenSet() const { return m_messageConfigurationHasBeenSet; }
 
     /**
-     * The message configuration settings.
+     * <p>The message configuration settings for the treatment.</p>
      */
     inline void SetMessageConfiguration(const MessageConfiguration& value) { m_messageConfigurationHasBeenSet = true; m_messageConfiguration = value; }
 
     /**
-     * The message configuration settings.
+     * <p>The message configuration settings for the treatment.</p>
      */
     inline void SetMessageConfiguration(MessageConfiguration&& value) { m_messageConfigurationHasBeenSet = true; m_messageConfiguration = std::move(value); }
 
     /**
-     * The message configuration settings.
+     * <p>The message configuration settings for the treatment.</p>
      */
     inline TreatmentResource& WithMessageConfiguration(const MessageConfiguration& value) { SetMessageConfiguration(value); return *this;}
 
     /**
-     * The message configuration settings.
+     * <p>The message configuration settings for the treatment.</p>
      */
     inline TreatmentResource& WithMessageConfiguration(MessageConfiguration&& value) { SetMessageConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * The campaign schedule.
+     * <p>The schedule settings for the treatment.</p>
      */
     inline const Schedule& GetSchedule() const{ return m_schedule; }
 
     /**
-     * The campaign schedule.
+     * <p>The schedule settings for the treatment.</p>
      */
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
     /**
-     * The campaign schedule.
+     * <p>The schedule settings for the treatment.</p>
      */
     inline void SetSchedule(const Schedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
     /**
-     * The campaign schedule.
+     * <p>The schedule settings for the treatment.</p>
      */
     inline void SetSchedule(Schedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
     /**
-     * The campaign schedule.
+     * <p>The schedule settings for the treatment.</p>
      */
     inline TreatmentResource& WithSchedule(const Schedule& value) { SetSchedule(value); return *this;}
 
     /**
-     * The campaign schedule.
+     * <p>The schedule settings for the treatment.</p>
      */
     inline TreatmentResource& WithSchedule(Schedule&& value) { SetSchedule(std::move(value)); return *this;}
 
 
     /**
-     * The allocated percentage of users for this treatment.
+     * <p>The allocated percentage of users (segment members) that the treatment is
+     * sent to.</p>
      */
     inline int GetSizePercent() const{ return m_sizePercent; }
 
     /**
-     * The allocated percentage of users for this treatment.
+     * <p>The allocated percentage of users (segment members) that the treatment is
+     * sent to.</p>
      */
     inline bool SizePercentHasBeenSet() const { return m_sizePercentHasBeenSet; }
 
     /**
-     * The allocated percentage of users for this treatment.
+     * <p>The allocated percentage of users (segment members) that the treatment is
+     * sent to.</p>
      */
     inline void SetSizePercent(int value) { m_sizePercentHasBeenSet = true; m_sizePercent = value; }
 
     /**
-     * The allocated percentage of users for this treatment.
+     * <p>The allocated percentage of users (segment members) that the treatment is
+     * sent to.</p>
      */
     inline TreatmentResource& WithSizePercent(int value) { SetSizePercent(value); return *this;}
 
 
     /**
-     * The treatment status.
+     * <p>The status of the treatment.</p>
      */
     inline const CampaignState& GetState() const{ return m_state; }
 
     /**
-     * The treatment status.
+     * <p>The status of the treatment.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * The treatment status.
+     * <p>The status of the treatment.</p>
      */
     inline void SetState(const CampaignState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * The treatment status.
+     * <p>The status of the treatment.</p>
      */
     inline void SetState(CampaignState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * The treatment status.
+     * <p>The status of the treatment.</p>
      */
     inline TreatmentResource& WithState(const CampaignState& value) { SetState(value); return *this;}
 
     /**
-     * The treatment status.
+     * <p>The status of the treatment.</p>
      */
     inline TreatmentResource& WithState(CampaignState&& value) { SetState(std::move(value)); return *this;}
 
 
     /**
-     * A custom description for the treatment.
+     * <p>The custom description of the treatment.</p>
      */
     inline const Aws::String& GetTreatmentDescription() const{ return m_treatmentDescription; }
 
     /**
-     * A custom description for the treatment.
+     * <p>The custom description of the treatment.</p>
      */
     inline bool TreatmentDescriptionHasBeenSet() const { return m_treatmentDescriptionHasBeenSet; }
 
     /**
-     * A custom description for the treatment.
+     * <p>The custom description of the treatment.</p>
      */
     inline void SetTreatmentDescription(const Aws::String& value) { m_treatmentDescriptionHasBeenSet = true; m_treatmentDescription = value; }
 
     /**
-     * A custom description for the treatment.
+     * <p>The custom description of the treatment.</p>
      */
     inline void SetTreatmentDescription(Aws::String&& value) { m_treatmentDescriptionHasBeenSet = true; m_treatmentDescription = std::move(value); }
 
     /**
-     * A custom description for the treatment.
+     * <p>The custom description of the treatment.</p>
      */
     inline void SetTreatmentDescription(const char* value) { m_treatmentDescriptionHasBeenSet = true; m_treatmentDescription.assign(value); }
 
     /**
-     * A custom description for the treatment.
+     * <p>The custom description of the treatment.</p>
      */
     inline TreatmentResource& WithTreatmentDescription(const Aws::String& value) { SetTreatmentDescription(value); return *this;}
 
     /**
-     * A custom description for the treatment.
+     * <p>The custom description of the treatment.</p>
      */
     inline TreatmentResource& WithTreatmentDescription(Aws::String&& value) { SetTreatmentDescription(std::move(value)); return *this;}
 
     /**
-     * A custom description for the treatment.
+     * <p>The custom description of the treatment.</p>
      */
     inline TreatmentResource& WithTreatmentDescription(const char* value) { SetTreatmentDescription(value); return *this;}
 
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>The custom name of the treatment. A treatment is a variation of a campaign
+     * that's used for A/B testing of a campaign.</p>
      */
     inline const Aws::String& GetTreatmentName() const{ return m_treatmentName; }
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>The custom name of the treatment. A treatment is a variation of a campaign
+     * that's used for A/B testing of a campaign.</p>
      */
     inline bool TreatmentNameHasBeenSet() const { return m_treatmentNameHasBeenSet; }
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>The custom name of the treatment. A treatment is a variation of a campaign
+     * that's used for A/B testing of a campaign.</p>
      */
     inline void SetTreatmentName(const Aws::String& value) { m_treatmentNameHasBeenSet = true; m_treatmentName = value; }
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>The custom name of the treatment. A treatment is a variation of a campaign
+     * that's used for A/B testing of a campaign.</p>
      */
     inline void SetTreatmentName(Aws::String&& value) { m_treatmentNameHasBeenSet = true; m_treatmentName = std::move(value); }
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>The custom name of the treatment. A treatment is a variation of a campaign
+     * that's used for A/B testing of a campaign.</p>
      */
     inline void SetTreatmentName(const char* value) { m_treatmentNameHasBeenSet = true; m_treatmentName.assign(value); }
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>The custom name of the treatment. A treatment is a variation of a campaign
+     * that's used for A/B testing of a campaign.</p>
      */
     inline TreatmentResource& WithTreatmentName(const Aws::String& value) { SetTreatmentName(value); return *this;}
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>The custom name of the treatment. A treatment is a variation of a campaign
+     * that's used for A/B testing of a campaign.</p>
      */
     inline TreatmentResource& WithTreatmentName(Aws::String&& value) { SetTreatmentName(std::move(value)); return *this;}
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>The custom name of the treatment. A treatment is a variation of a campaign
+     * that's used for A/B testing of a campaign.</p>
      */
     inline TreatmentResource& WithTreatmentName(const char* value) { SetTreatmentName(value); return *this;}
 

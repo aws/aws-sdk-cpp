@@ -40,7 +40,8 @@ NewPrivateVirtualInterfaceAllocation::NewPrivateVirtualInterfaceAllocation() :
     m_amazonAddressHasBeenSet(false),
     m_addressFamily(AddressFamily::NOT_SET),
     m_addressFamilyHasBeenSet(false),
-    m_customerAddressHasBeenSet(false)
+    m_customerAddressHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ NewPrivateVirtualInterfaceAllocation::NewPrivateVirtualInterfaceAllocation(JsonV
     m_amazonAddressHasBeenSet(false),
     m_addressFamily(AddressFamily::NOT_SET),
     m_addressFamilyHasBeenSet(false),
-    m_customerAddressHasBeenSet(false)
+    m_customerAddressHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -119,6 +121,16 @@ NewPrivateVirtualInterfaceAllocation& NewPrivateVirtualInterfaceAllocation::oper
     m_customerAddressHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -170,6 +182,17 @@ JsonValue NewPrivateVirtualInterfaceAllocation::Jsonize() const
   if(m_customerAddressHasBeenSet)
   {
    payload.WithString("customerAddress", m_customerAddress);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

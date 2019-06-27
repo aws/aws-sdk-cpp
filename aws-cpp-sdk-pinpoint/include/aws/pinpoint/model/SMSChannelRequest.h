@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * SMS Channel Request<p><h3>See Also:</h3>   <a
+   * <p>Specifies the status and settings of the SMS channel for an
+   * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SMSChannelRequest">AWS
    * API Reference</a></p>
    */
@@ -48,104 +49,120 @@ namespace Model
 
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>Specifies whether to enable the SMS channel for the application.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>Specifies whether to enable the SMS channel for the application.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>Specifies whether to enable the SMS channel for the application.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>Specifies whether to enable the SMS channel for the application.</p>
      */
     inline SMSChannelRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
 
     /**
-     * Sender identifier of your messages.
+     * <p>The identity that you want to display on recipients' devices when they
+     * receive messages from the SMS channel.</p>
      */
     inline const Aws::String& GetSenderId() const{ return m_senderId; }
 
     /**
-     * Sender identifier of your messages.
+     * <p>The identity that you want to display on recipients' devices when they
+     * receive messages from the SMS channel.</p>
      */
     inline bool SenderIdHasBeenSet() const { return m_senderIdHasBeenSet; }
 
     /**
-     * Sender identifier of your messages.
+     * <p>The identity that you want to display on recipients' devices when they
+     * receive messages from the SMS channel.</p>
      */
     inline void SetSenderId(const Aws::String& value) { m_senderIdHasBeenSet = true; m_senderId = value; }
 
     /**
-     * Sender identifier of your messages.
+     * <p>The identity that you want to display on recipients' devices when they
+     * receive messages from the SMS channel.</p>
      */
     inline void SetSenderId(Aws::String&& value) { m_senderIdHasBeenSet = true; m_senderId = std::move(value); }
 
     /**
-     * Sender identifier of your messages.
+     * <p>The identity that you want to display on recipients' devices when they
+     * receive messages from the SMS channel.</p>
      */
     inline void SetSenderId(const char* value) { m_senderIdHasBeenSet = true; m_senderId.assign(value); }
 
     /**
-     * Sender identifier of your messages.
+     * <p>The identity that you want to display on recipients' devices when they
+     * receive messages from the SMS channel.</p>
      */
     inline SMSChannelRequest& WithSenderId(const Aws::String& value) { SetSenderId(value); return *this;}
 
     /**
-     * Sender identifier of your messages.
+     * <p>The identity that you want to display on recipients' devices when they
+     * receive messages from the SMS channel.</p>
      */
     inline SMSChannelRequest& WithSenderId(Aws::String&& value) { SetSenderId(std::move(value)); return *this;}
 
     /**
-     * Sender identifier of your messages.
+     * <p>The identity that you want to display on recipients' devices when they
+     * receive messages from the SMS channel.</p>
      */
     inline SMSChannelRequest& WithSenderId(const char* value) { SetSenderId(value); return *this;}
 
 
     /**
-     * ShortCode registered with phone provider.
+     * <p>The registered short code that you want to use when you send messages through
+     * the SMS channel.</p>
      */
     inline const Aws::String& GetShortCode() const{ return m_shortCode; }
 
     /**
-     * ShortCode registered with phone provider.
+     * <p>The registered short code that you want to use when you send messages through
+     * the SMS channel.</p>
      */
     inline bool ShortCodeHasBeenSet() const { return m_shortCodeHasBeenSet; }
 
     /**
-     * ShortCode registered with phone provider.
+     * <p>The registered short code that you want to use when you send messages through
+     * the SMS channel.</p>
      */
     inline void SetShortCode(const Aws::String& value) { m_shortCodeHasBeenSet = true; m_shortCode = value; }
 
     /**
-     * ShortCode registered with phone provider.
+     * <p>The registered short code that you want to use when you send messages through
+     * the SMS channel.</p>
      */
     inline void SetShortCode(Aws::String&& value) { m_shortCodeHasBeenSet = true; m_shortCode = std::move(value); }
 
     /**
-     * ShortCode registered with phone provider.
+     * <p>The registered short code that you want to use when you send messages through
+     * the SMS channel.</p>
      */
     inline void SetShortCode(const char* value) { m_shortCodeHasBeenSet = true; m_shortCode.assign(value); }
 
     /**
-     * ShortCode registered with phone provider.
+     * <p>The registered short code that you want to use when you send messages through
+     * the SMS channel.</p>
      */
     inline SMSChannelRequest& WithShortCode(const Aws::String& value) { SetShortCode(value); return *this;}
 
     /**
-     * ShortCode registered with phone provider.
+     * <p>The registered short code that you want to use when you send messages through
+     * the SMS channel.</p>
      */
     inline SMSChannelRequest& WithShortCode(Aws::String&& value) { SetShortCode(std::move(value)); return *this;}
 
     /**
-     * ShortCode registered with phone provider.
+     * <p>The registered short code that you want to use when you send messages through
+     * the SMS channel.</p>
      */
     inline SMSChannelRequest& WithShortCode(const char* value) { SetShortCode(value); return *this;}
 

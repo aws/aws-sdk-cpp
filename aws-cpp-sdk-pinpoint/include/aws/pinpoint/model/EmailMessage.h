@@ -38,7 +38,8 @@ namespace Model
 {
 
   /**
-   * Email Message.<p><h3>See Also:</h3>   <a
+   * <p>Specifies the default settings and content for a one-time email message
+   * that's sent directly to an endpoint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EmailMessage">AWS
    * API Reference</a></p>
    */
@@ -52,330 +53,330 @@ namespace Model
 
 
     /**
-     * The body of the email message.
+     * <p>The body of the email message.</p>
      */
     inline const Aws::String& GetBody() const{ return m_body; }
 
     /**
-     * The body of the email message.
+     * <p>The body of the email message.</p>
      */
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
 
     /**
-     * The body of the email message.
+     * <p>The body of the email message.</p>
      */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
-     * The body of the email message.
+     * <p>The body of the email message.</p>
      */
     inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
 
     /**
-     * The body of the email message.
+     * <p>The body of the email message.</p>
      */
     inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
 
     /**
-     * The body of the email message.
+     * <p>The body of the email message.</p>
      */
     inline EmailMessage& WithBody(const Aws::String& value) { SetBody(value); return *this;}
 
     /**
-     * The body of the email message.
+     * <p>The body of the email message.</p>
      */
     inline EmailMessage& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
 
     /**
-     * The body of the email message.
+     * <p>The body of the email message.</p>
      */
     inline EmailMessage& WithBody(const char* value) { SetBody(value); return *this;}
 
 
     /**
-     * The email address that bounces and complaints will be forwarded to when feedback
-     * forwarding is enabled.
+     * <p>The email address to forward bounces and complaints to, if feedback
+     * forwarding is enabled.</p>
      */
     inline const Aws::String& GetFeedbackForwardingAddress() const{ return m_feedbackForwardingAddress; }
 
     /**
-     * The email address that bounces and complaints will be forwarded to when feedback
-     * forwarding is enabled.
+     * <p>The email address to forward bounces and complaints to, if feedback
+     * forwarding is enabled.</p>
      */
     inline bool FeedbackForwardingAddressHasBeenSet() const { return m_feedbackForwardingAddressHasBeenSet; }
 
     /**
-     * The email address that bounces and complaints will be forwarded to when feedback
-     * forwarding is enabled.
+     * <p>The email address to forward bounces and complaints to, if feedback
+     * forwarding is enabled.</p>
      */
     inline void SetFeedbackForwardingAddress(const Aws::String& value) { m_feedbackForwardingAddressHasBeenSet = true; m_feedbackForwardingAddress = value; }
 
     /**
-     * The email address that bounces and complaints will be forwarded to when feedback
-     * forwarding is enabled.
+     * <p>The email address to forward bounces and complaints to, if feedback
+     * forwarding is enabled.</p>
      */
     inline void SetFeedbackForwardingAddress(Aws::String&& value) { m_feedbackForwardingAddressHasBeenSet = true; m_feedbackForwardingAddress = std::move(value); }
 
     /**
-     * The email address that bounces and complaints will be forwarded to when feedback
-     * forwarding is enabled.
+     * <p>The email address to forward bounces and complaints to, if feedback
+     * forwarding is enabled.</p>
      */
     inline void SetFeedbackForwardingAddress(const char* value) { m_feedbackForwardingAddressHasBeenSet = true; m_feedbackForwardingAddress.assign(value); }
 
     /**
-     * The email address that bounces and complaints will be forwarded to when feedback
-     * forwarding is enabled.
+     * <p>The email address to forward bounces and complaints to, if feedback
+     * forwarding is enabled.</p>
      */
     inline EmailMessage& WithFeedbackForwardingAddress(const Aws::String& value) { SetFeedbackForwardingAddress(value); return *this;}
 
     /**
-     * The email address that bounces and complaints will be forwarded to when feedback
-     * forwarding is enabled.
+     * <p>The email address to forward bounces and complaints to, if feedback
+     * forwarding is enabled.</p>
      */
     inline EmailMessage& WithFeedbackForwardingAddress(Aws::String&& value) { SetFeedbackForwardingAddress(std::move(value)); return *this;}
 
     /**
-     * The email address that bounces and complaints will be forwarded to when feedback
-     * forwarding is enabled.
+     * <p>The email address to forward bounces and complaints to, if feedback
+     * forwarding is enabled.</p>
      */
     inline EmailMessage& WithFeedbackForwardingAddress(const char* value) { SetFeedbackForwardingAddress(value); return *this;}
 
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress
-     * specified in the Email Channel.
+     * <p>The verified email address to send the email message from. The default value
+     * is the FromAddress specified for the email channel.</p>
      */
     inline const Aws::String& GetFromAddress() const{ return m_fromAddress; }
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress
-     * specified in the Email Channel.
+     * <p>The verified email address to send the email message from. The default value
+     * is the FromAddress specified for the email channel.</p>
      */
     inline bool FromAddressHasBeenSet() const { return m_fromAddressHasBeenSet; }
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress
-     * specified in the Email Channel.
+     * <p>The verified email address to send the email message from. The default value
+     * is the FromAddress specified for the email channel.</p>
      */
     inline void SetFromAddress(const Aws::String& value) { m_fromAddressHasBeenSet = true; m_fromAddress = value; }
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress
-     * specified in the Email Channel.
+     * <p>The verified email address to send the email message from. The default value
+     * is the FromAddress specified for the email channel.</p>
      */
     inline void SetFromAddress(Aws::String&& value) { m_fromAddressHasBeenSet = true; m_fromAddress = std::move(value); }
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress
-     * specified in the Email Channel.
+     * <p>The verified email address to send the email message from. The default value
+     * is the FromAddress specified for the email channel.</p>
      */
     inline void SetFromAddress(const char* value) { m_fromAddressHasBeenSet = true; m_fromAddress.assign(value); }
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress
-     * specified in the Email Channel.
+     * <p>The verified email address to send the email message from. The default value
+     * is the FromAddress specified for the email channel.</p>
      */
     inline EmailMessage& WithFromAddress(const Aws::String& value) { SetFromAddress(value); return *this;}
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress
-     * specified in the Email Channel.
+     * <p>The verified email address to send the email message from. The default value
+     * is the FromAddress specified for the email channel.</p>
      */
     inline EmailMessage& WithFromAddress(Aws::String&& value) { SetFromAddress(std::move(value)); return *this;}
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress
-     * specified in the Email Channel.
+     * <p>The verified email address to send the email message from. The default value
+     * is the FromAddress specified for the email channel.</p>
      */
     inline EmailMessage& WithFromAddress(const char* value) { SetFromAddress(value); return *this;}
 
 
     /**
-     * An email represented as a raw MIME message.
+     * <p>The email message, represented as a raw MIME message.</p>
      */
     inline const RawEmail& GetRawEmail() const{ return m_rawEmail; }
 
     /**
-     * An email represented as a raw MIME message.
+     * <p>The email message, represented as a raw MIME message.</p>
      */
     inline bool RawEmailHasBeenSet() const { return m_rawEmailHasBeenSet; }
 
     /**
-     * An email represented as a raw MIME message.
+     * <p>The email message, represented as a raw MIME message.</p>
      */
     inline void SetRawEmail(const RawEmail& value) { m_rawEmailHasBeenSet = true; m_rawEmail = value; }
 
     /**
-     * An email represented as a raw MIME message.
+     * <p>The email message, represented as a raw MIME message.</p>
      */
     inline void SetRawEmail(RawEmail&& value) { m_rawEmailHasBeenSet = true; m_rawEmail = std::move(value); }
 
     /**
-     * An email represented as a raw MIME message.
+     * <p>The email message, represented as a raw MIME message.</p>
      */
     inline EmailMessage& WithRawEmail(const RawEmail& value) { SetRawEmail(value); return *this;}
 
     /**
-     * An email represented as a raw MIME message.
+     * <p>The email message, represented as a raw MIME message.</p>
      */
     inline EmailMessage& WithRawEmail(RawEmail&& value) { SetRawEmail(std::move(value)); return *this;}
 
 
     /**
-     * The reply-to email address(es) for the email. If the recipient replies to the
-     * email, each reply-to address will receive the reply.
+     * <p>The reply-to email address(es) for the email message. If a recipient replies
+     * to the email, each reply-to address receives the reply.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReplyToAddresses() const{ return m_replyToAddresses; }
 
     /**
-     * The reply-to email address(es) for the email. If the recipient replies to the
-     * email, each reply-to address will receive the reply.
+     * <p>The reply-to email address(es) for the email message. If a recipient replies
+     * to the email, each reply-to address receives the reply.</p>
      */
     inline bool ReplyToAddressesHasBeenSet() const { return m_replyToAddressesHasBeenSet; }
 
     /**
-     * The reply-to email address(es) for the email. If the recipient replies to the
-     * email, each reply-to address will receive the reply.
+     * <p>The reply-to email address(es) for the email message. If a recipient replies
+     * to the email, each reply-to address receives the reply.</p>
      */
     inline void SetReplyToAddresses(const Aws::Vector<Aws::String>& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses = value; }
 
     /**
-     * The reply-to email address(es) for the email. If the recipient replies to the
-     * email, each reply-to address will receive the reply.
+     * <p>The reply-to email address(es) for the email message. If a recipient replies
+     * to the email, each reply-to address receives the reply.</p>
      */
     inline void SetReplyToAddresses(Aws::Vector<Aws::String>&& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses = std::move(value); }
 
     /**
-     * The reply-to email address(es) for the email. If the recipient replies to the
-     * email, each reply-to address will receive the reply.
+     * <p>The reply-to email address(es) for the email message. If a recipient replies
+     * to the email, each reply-to address receives the reply.</p>
      */
     inline EmailMessage& WithReplyToAddresses(const Aws::Vector<Aws::String>& value) { SetReplyToAddresses(value); return *this;}
 
     /**
-     * The reply-to email address(es) for the email. If the recipient replies to the
-     * email, each reply-to address will receive the reply.
+     * <p>The reply-to email address(es) for the email message. If a recipient replies
+     * to the email, each reply-to address receives the reply.</p>
      */
     inline EmailMessage& WithReplyToAddresses(Aws::Vector<Aws::String>&& value) { SetReplyToAddresses(std::move(value)); return *this;}
 
     /**
-     * The reply-to email address(es) for the email. If the recipient replies to the
-     * email, each reply-to address will receive the reply.
+     * <p>The reply-to email address(es) for the email message. If a recipient replies
+     * to the email, each reply-to address receives the reply.</p>
      */
     inline EmailMessage& AddReplyToAddresses(const Aws::String& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses.push_back(value); return *this; }
 
     /**
-     * The reply-to email address(es) for the email. If the recipient replies to the
-     * email, each reply-to address will receive the reply.
+     * <p>The reply-to email address(es) for the email message. If a recipient replies
+     * to the email, each reply-to address receives the reply.</p>
      */
     inline EmailMessage& AddReplyToAddresses(Aws::String&& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses.push_back(std::move(value)); return *this; }
 
     /**
-     * The reply-to email address(es) for the email. If the recipient replies to the
-     * email, each reply-to address will receive the reply.
+     * <p>The reply-to email address(es) for the email message. If a recipient replies
+     * to the email, each reply-to address receives the reply.</p>
      */
     inline EmailMessage& AddReplyToAddresses(const char* value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses.push_back(value); return *this; }
 
 
     /**
-     * An email composed of a subject, a text part and a html part.
+     * <p>The email message, composed of a subject, a text part, and an HTML part.</p>
      */
     inline const SimpleEmail& GetSimpleEmail() const{ return m_simpleEmail; }
 
     /**
-     * An email composed of a subject, a text part and a html part.
+     * <p>The email message, composed of a subject, a text part, and an HTML part.</p>
      */
     inline bool SimpleEmailHasBeenSet() const { return m_simpleEmailHasBeenSet; }
 
     /**
-     * An email composed of a subject, a text part and a html part.
+     * <p>The email message, composed of a subject, a text part, and an HTML part.</p>
      */
     inline void SetSimpleEmail(const SimpleEmail& value) { m_simpleEmailHasBeenSet = true; m_simpleEmail = value; }
 
     /**
-     * An email composed of a subject, a text part and a html part.
+     * <p>The email message, composed of a subject, a text part, and an HTML part.</p>
      */
     inline void SetSimpleEmail(SimpleEmail&& value) { m_simpleEmailHasBeenSet = true; m_simpleEmail = std::move(value); }
 
     /**
-     * An email composed of a subject, a text part and a html part.
+     * <p>The email message, composed of a subject, a text part, and an HTML part.</p>
      */
     inline EmailMessage& WithSimpleEmail(const SimpleEmail& value) { SetSimpleEmail(value); return *this;}
 
     /**
-     * An email composed of a subject, a text part and a html part.
+     * <p>The email message, composed of a subject, a text part, and an HTML part.</p>
      */
     inline EmailMessage& WithSimpleEmail(SimpleEmail&& value) { SetSimpleEmail(std::move(value)); return *this;}
 
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the email message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const{ return m_substitutions; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the email message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline bool SubstitutionsHasBeenSet() const { return m_substitutionsHasBeenSet; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the email message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline void SetSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_substitutionsHasBeenSet = true; m_substitutions = value; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the email message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline void SetSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_substitutionsHasBeenSet = true; m_substitutions = std::move(value); }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the email message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline EmailMessage& WithSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetSubstitutions(value); return *this;}
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the email message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline EmailMessage& WithSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetSubstitutions(std::move(value)); return *this;}
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the email message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline EmailMessage& AddSubstitutions(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the email message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline EmailMessage& AddSubstitutions(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), value); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the email message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline EmailMessage& AddSubstitutions(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the email message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline EmailMessage& AddSubstitutions(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the email message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline EmailMessage& AddSubstitutions(const char* key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Default message substitutions. Can be overridden by individual address
-     * substitutions.
+     * <p>The default message variables to use in the email message. You can override
+     * the default variables with individual address variables.</p>
      */
     inline EmailMessage& AddSubstitutions(const char* key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 

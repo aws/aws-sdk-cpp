@@ -1326,22 +1326,30 @@ namespace Model
         virtual void CreatePublicVirtualInterfaceAsync(const Model::CreatePublicVirtualInterfaceRequest& request, const CreatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a transit virtual interface. A transit virtual interface is a VLAN
-         * that transports traffic from a Direct Connect gateway to one or more transit
+         * <p>Creates a transit virtual interface. A transit virtual interface should be
+         * used to access one or more transit gateways associated with Direct Connect
          * gateways. A transit virtual interface enables the connection of multiple VPCs
-         * attached to a transit gateway to a Direct Connect gateway.</p><p><h3>See
-         * Also:</h3>   <a
+         * attached to a transit gateway to a Direct Connect gateway.</p> <important> <p>If
+         * you associate your transit gateway with one or more Direct Connect gateways, the
+         * Autonomous System Number (ASN) used by the transit gateway and the Direct
+         * Connect gateway must be different. For example, if you use the default ASN 64512
+         * for both your the transit gateway and Direct Connect gateway, the association
+         * request fails.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateTransitVirtualInterfaceOutcome CreateTransitVirtualInterface(const Model::CreateTransitVirtualInterfaceRequest& request) const;
 
         /**
-         * <p>Creates a transit virtual interface. A transit virtual interface is a VLAN
-         * that transports traffic from a Direct Connect gateway to one or more transit
+         * <p>Creates a transit virtual interface. A transit virtual interface should be
+         * used to access one or more transit gateways associated with Direct Connect
          * gateways. A transit virtual interface enables the connection of multiple VPCs
-         * attached to a transit gateway to a Direct Connect gateway.</p><p><h3>See
-         * Also:</h3>   <a
+         * attached to a transit gateway to a Direct Connect gateway.</p> <important> <p>If
+         * you associate your transit gateway with one or more Direct Connect gateways, the
+         * Autonomous System Number (ASN) used by the transit gateway and the Direct
+         * Connect gateway must be different. For example, if you use the default ASN 64512
+         * for both your the transit gateway and Direct Connect gateway, the association
+         * request fails.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -1350,11 +1358,15 @@ namespace Model
         virtual Model::CreateTransitVirtualInterfaceOutcomeCallable CreateTransitVirtualInterfaceCallable(const Model::CreateTransitVirtualInterfaceRequest& request) const;
 
         /**
-         * <p>Creates a transit virtual interface. A transit virtual interface is a VLAN
-         * that transports traffic from a Direct Connect gateway to one or more transit
+         * <p>Creates a transit virtual interface. A transit virtual interface should be
+         * used to access one or more transit gateways associated with Direct Connect
          * gateways. A transit virtual interface enables the connection of multiple VPCs
-         * attached to a transit gateway to a Direct Connect gateway.</p><p><h3>See
-         * Also:</h3>   <a
+         * attached to a transit gateway to a Direct Connect gateway.</p> <important> <p>If
+         * you associate your transit gateway with one or more Direct Connect gateways, the
+         * Autonomous System Number (ASN) used by the transit gateway and the Direct
+         * Connect gateway must be different. For example, if you use the default ASN 64512
+         * for both your the transit gateway and Direct Connect gateway, the association
+         * request fails.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">AWS
          * API Reference</a></p>
          *

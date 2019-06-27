@@ -294,32 +294,32 @@ namespace Model
 
 
     /**
-     * <p>The type of attachment.</p>
+     * <p>The interface type.</p>
      */
     inline const DirectConnectGatewayAttachmentType& GetAttachmentType() const{ return m_attachmentType; }
 
     /**
-     * <p>The type of attachment.</p>
+     * <p>The interface type.</p>
      */
     inline bool AttachmentTypeHasBeenSet() const { return m_attachmentTypeHasBeenSet; }
 
     /**
-     * <p>The type of attachment.</p>
+     * <p>The interface type.</p>
      */
     inline void SetAttachmentType(const DirectConnectGatewayAttachmentType& value) { m_attachmentTypeHasBeenSet = true; m_attachmentType = value; }
 
     /**
-     * <p>The type of attachment.</p>
+     * <p>The interface type.</p>
      */
     inline void SetAttachmentType(DirectConnectGatewayAttachmentType&& value) { m_attachmentTypeHasBeenSet = true; m_attachmentType = std::move(value); }
 
     /**
-     * <p>The type of attachment.</p>
+     * <p>The interface type.</p>
      */
     inline DirectConnectGatewayAttachment& WithAttachmentType(const DirectConnectGatewayAttachmentType& value) { SetAttachmentType(value); return *this;}
 
     /**
-     * <p>The type of attachment.</p>
+     * <p>The interface type.</p>
      */
     inline DirectConnectGatewayAttachment& WithAttachmentType(DirectConnectGatewayAttachmentType&& value) { SetAttachmentType(std::move(value)); return *this;}
 

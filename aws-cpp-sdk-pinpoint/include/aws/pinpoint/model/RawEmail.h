@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * An email represented as a raw MIME message.<p><h3>See Also:</h3>   <a
+   * <p>Specifies the contents of an email message, represented as a raw MIME
+   * message.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RawEmail">AWS
    * API Reference</a></p>
    */
@@ -48,32 +49,38 @@ namespace Model
 
 
     /**
-     * The raw email message itself. Then entire message must be base64-encoded.
+     * <p>The email message, represented as a raw MIME message. The entire message must
+     * be base64 encoded.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
 
     /**
-     * The raw email message itself. Then entire message must be base64-encoded.
+     * <p>The email message, represented as a raw MIME message. The entire message must
+     * be base64 encoded.</p>
      */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
-     * The raw email message itself. Then entire message must be base64-encoded.
+     * <p>The email message, represented as a raw MIME message. The entire message must
+     * be base64 encoded.</p>
      */
     inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
-     * The raw email message itself. Then entire message must be base64-encoded.
+     * <p>The email message, represented as a raw MIME message. The entire message must
+     * be base64 encoded.</p>
      */
     inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
-     * The raw email message itself. Then entire message must be base64-encoded.
+     * <p>The email message, represented as a raw MIME message. The entire message must
+     * be base64 encoded.</p>
      */
     inline RawEmail& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
 
     /**
-     * The raw email message itself. Then entire message must be base64-encoded.
+     * <p>The email message, represented as a raw MIME message. The entire message must
+     * be base64 encoded.</p>
      */
     inline RawEmail& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
 

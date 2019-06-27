@@ -17,6 +17,8 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/model/AddressFamily.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/directconnect/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -35,7 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about a transit virtual interface.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the transit virtual interface.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/NewTransitVirtualInterface">AWS
    * API Reference</a></p>
    */
@@ -137,25 +140,25 @@ namespace Model
 
     /**
      * <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500
-     * and 9001. The default value is 1500.</p>
+     * and 8500. The default value is 1500. </p>
      */
     inline int GetMtu() const{ return m_mtu; }
 
     /**
      * <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500
-     * and 9001. The default value is 1500.</p>
+     * and 8500. The default value is 1500. </p>
      */
     inline bool MtuHasBeenSet() const { return m_mtuHasBeenSet; }
 
     /**
      * <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500
-     * and 9001. The default value is 1500.</p>
+     * and 8500. The default value is 1500. </p>
      */
     inline void SetMtu(int value) { m_mtuHasBeenSet = true; m_mtu = value; }
 
     /**
      * <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500
-     * and 9001. The default value is 1500.</p>
+     * and 8500. The default value is 1500. </p>
      */
     inline NewTransitVirtualInterface& WithMtu(int value) { SetMtu(value); return *this;}
 
@@ -354,6 +357,47 @@ namespace Model
      */
     inline NewTransitVirtualInterface& WithDirectConnectGatewayId(const char* value) { SetDirectConnectGatewayId(value); return *this;}
 
+
+    /**
+     * <p>Any tags assigned to the transit virtual interface.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the transit virtual interface.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Any tags assigned to the transit virtual interface.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Any tags assigned to the transit virtual interface.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Any tags assigned to the transit virtual interface.</p>
+     */
+    inline NewTransitVirtualInterface& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Any tags assigned to the transit virtual interface.</p>
+     */
+    inline NewTransitVirtualInterface& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags assigned to the transit virtual interface.</p>
+     */
+    inline NewTransitVirtualInterface& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Any tags assigned to the transit virtual interface.</p>
+     */
+    inline NewTransitVirtualInterface& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_virtualInterfaceName;
@@ -382,6 +426,9 @@ namespace Model
 
     Aws::String m_directConnectGatewayId;
     bool m_directConnectGatewayIdHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

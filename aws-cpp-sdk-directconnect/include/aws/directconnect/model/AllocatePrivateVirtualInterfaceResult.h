@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/model/RouteFilterPrefix.h>
 #include <aws/directconnect/model/BGPPeer.h>
+#include <aws/directconnect/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -327,37 +328,44 @@ namespace Model
 
 
     /**
-     * <p>The authentication key for BGP configuration.</p>
+     * <p>The authentication key for BGP configuration. This string has a minimum
+     * length of 6 characters and and a maximun lenth of 80 characters.</p>
      */
     inline const Aws::String& GetAuthKey() const{ return m_authKey; }
 
     /**
-     * <p>The authentication key for BGP configuration.</p>
+     * <p>The authentication key for BGP configuration. This string has a minimum
+     * length of 6 characters and and a maximun lenth of 80 characters.</p>
      */
     inline void SetAuthKey(const Aws::String& value) { m_authKey = value; }
 
     /**
-     * <p>The authentication key for BGP configuration.</p>
+     * <p>The authentication key for BGP configuration. This string has a minimum
+     * length of 6 characters and and a maximun lenth of 80 characters.</p>
      */
     inline void SetAuthKey(Aws::String&& value) { m_authKey = std::move(value); }
 
     /**
-     * <p>The authentication key for BGP configuration.</p>
+     * <p>The authentication key for BGP configuration. This string has a minimum
+     * length of 6 characters and and a maximun lenth of 80 characters.</p>
      */
     inline void SetAuthKey(const char* value) { m_authKey.assign(value); }
 
     /**
-     * <p>The authentication key for BGP configuration.</p>
+     * <p>The authentication key for BGP configuration. This string has a minimum
+     * length of 6 characters and and a maximun lenth of 80 characters.</p>
      */
     inline AllocatePrivateVirtualInterfaceResult& WithAuthKey(const Aws::String& value) { SetAuthKey(value); return *this;}
 
     /**
-     * <p>The authentication key for BGP configuration.</p>
+     * <p>The authentication key for BGP configuration. This string has a minimum
+     * length of 6 characters and and a maximun lenth of 80 characters.</p>
      */
     inline AllocatePrivateVirtualInterfaceResult& WithAuthKey(Aws::String&& value) { SetAuthKey(std::move(value)); return *this;}
 
     /**
-     * <p>The authentication key for BGP configuration.</p>
+     * <p>The authentication key for BGP configuration. This string has a minimum
+     * length of 6 characters and and a maximun lenth of 80 characters.</p>
      */
     inline AllocatePrivateVirtualInterfaceResult& WithAuthKey(const char* value) { SetAuthKey(value); return *this;}
 
@@ -891,6 +899,42 @@ namespace Model
      */
     inline AllocatePrivateVirtualInterfaceResult& WithAwsDeviceV2(const char* value) { SetAwsDeviceV2(value); return *this;}
 
+
+    /**
+     * <p>Any tags assigned to the virtual interface.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the virtual interface.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+
+    /**
+     * <p>Any tags assigned to the virtual interface.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>Any tags assigned to the virtual interface.</p>
+     */
+    inline AllocatePrivateVirtualInterfaceResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Any tags assigned to the virtual interface.</p>
+     */
+    inline AllocatePrivateVirtualInterfaceResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags assigned to the virtual interface.</p>
+     */
+    inline AllocatePrivateVirtualInterfaceResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Any tags assigned to the virtual interface.</p>
+     */
+    inline AllocatePrivateVirtualInterfaceResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_ownerAccount;
@@ -938,6 +982,8 @@ namespace Model
     Aws::String m_region;
 
     Aws::String m_awsDeviceV2;
+
+    Aws::Vector<Tag> m_tags;
   };
 
 } // namespace Model

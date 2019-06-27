@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * Demographic information about the endpoint.<p><h3>See Also:</h3>   <a
+   * <p>Specifies demographic information about an endpoint, such as the applicable
+   * time zone and platform.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointDemographic">AWS
    * API Reference</a></p>
    */
@@ -48,353 +49,353 @@ namespace Model
 
 
     /**
-     * The version of the application associated with the endpoint.
+     * <p>The version of the app that's associated with the endpoint.</p>
      */
     inline const Aws::String& GetAppVersion() const{ return m_appVersion; }
 
     /**
-     * The version of the application associated with the endpoint.
+     * <p>The version of the app that's associated with the endpoint.</p>
      */
     inline bool AppVersionHasBeenSet() const { return m_appVersionHasBeenSet; }
 
     /**
-     * The version of the application associated with the endpoint.
+     * <p>The version of the app that's associated with the endpoint.</p>
      */
     inline void SetAppVersion(const Aws::String& value) { m_appVersionHasBeenSet = true; m_appVersion = value; }
 
     /**
-     * The version of the application associated with the endpoint.
+     * <p>The version of the app that's associated with the endpoint.</p>
      */
     inline void SetAppVersion(Aws::String&& value) { m_appVersionHasBeenSet = true; m_appVersion = std::move(value); }
 
     /**
-     * The version of the application associated with the endpoint.
+     * <p>The version of the app that's associated with the endpoint.</p>
      */
     inline void SetAppVersion(const char* value) { m_appVersionHasBeenSet = true; m_appVersion.assign(value); }
 
     /**
-     * The version of the application associated with the endpoint.
+     * <p>The version of the app that's associated with the endpoint.</p>
      */
     inline EndpointDemographic& WithAppVersion(const Aws::String& value) { SetAppVersion(value); return *this;}
 
     /**
-     * The version of the application associated with the endpoint.
+     * <p>The version of the app that's associated with the endpoint.</p>
      */
     inline EndpointDemographic& WithAppVersion(Aws::String&& value) { SetAppVersion(std::move(value)); return *this;}
 
     /**
-     * The version of the application associated with the endpoint.
+     * <p>The version of the app that's associated with the endpoint.</p>
      */
     inline EndpointDemographic& WithAppVersion(const char* value) { SetAppVersion(value); return *this;}
 
 
     /**
-     * The endpoint locale in the following format: The ISO 639-1 alpha-2 code,
-     * followed by an underscore, followed by an ISO 3166-1 alpha-2 value.
-
+     * <p>The locale of the endpoint, in the following format: the ISO 639-1 alpha-2
+     * code, followed by an underscore (_), followed by an ISO 3166-1 alpha-2
+     * value.</p>
      */
     inline const Aws::String& GetLocale() const{ return m_locale; }
 
     /**
-     * The endpoint locale in the following format: The ISO 639-1 alpha-2 code,
-     * followed by an underscore, followed by an ISO 3166-1 alpha-2 value.
-
+     * <p>The locale of the endpoint, in the following format: the ISO 639-1 alpha-2
+     * code, followed by an underscore (_), followed by an ISO 3166-1 alpha-2
+     * value.</p>
      */
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
 
     /**
-     * The endpoint locale in the following format: The ISO 639-1 alpha-2 code,
-     * followed by an underscore, followed by an ISO 3166-1 alpha-2 value.
-
+     * <p>The locale of the endpoint, in the following format: the ISO 639-1 alpha-2
+     * code, followed by an underscore (_), followed by an ISO 3166-1 alpha-2
+     * value.</p>
      */
     inline void SetLocale(const Aws::String& value) { m_localeHasBeenSet = true; m_locale = value; }
 
     /**
-     * The endpoint locale in the following format: The ISO 639-1 alpha-2 code,
-     * followed by an underscore, followed by an ISO 3166-1 alpha-2 value.
-
+     * <p>The locale of the endpoint, in the following format: the ISO 639-1 alpha-2
+     * code, followed by an underscore (_), followed by an ISO 3166-1 alpha-2
+     * value.</p>
      */
     inline void SetLocale(Aws::String&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
 
     /**
-     * The endpoint locale in the following format: The ISO 639-1 alpha-2 code,
-     * followed by an underscore, followed by an ISO 3166-1 alpha-2 value.
-
+     * <p>The locale of the endpoint, in the following format: the ISO 639-1 alpha-2
+     * code, followed by an underscore (_), followed by an ISO 3166-1 alpha-2
+     * value.</p>
      */
     inline void SetLocale(const char* value) { m_localeHasBeenSet = true; m_locale.assign(value); }
 
     /**
-     * The endpoint locale in the following format: The ISO 639-1 alpha-2 code,
-     * followed by an underscore, followed by an ISO 3166-1 alpha-2 value.
-
+     * <p>The locale of the endpoint, in the following format: the ISO 639-1 alpha-2
+     * code, followed by an underscore (_), followed by an ISO 3166-1 alpha-2
+     * value.</p>
      */
     inline EndpointDemographic& WithLocale(const Aws::String& value) { SetLocale(value); return *this;}
 
     /**
-     * The endpoint locale in the following format: The ISO 639-1 alpha-2 code,
-     * followed by an underscore, followed by an ISO 3166-1 alpha-2 value.
-
+     * <p>The locale of the endpoint, in the following format: the ISO 639-1 alpha-2
+     * code, followed by an underscore (_), followed by an ISO 3166-1 alpha-2
+     * value.</p>
      */
     inline EndpointDemographic& WithLocale(Aws::String&& value) { SetLocale(std::move(value)); return *this;}
 
     /**
-     * The endpoint locale in the following format: The ISO 639-1 alpha-2 code,
-     * followed by an underscore, followed by an ISO 3166-1 alpha-2 value.
-
+     * <p>The locale of the endpoint, in the following format: the ISO 639-1 alpha-2
+     * code, followed by an underscore (_), followed by an ISO 3166-1 alpha-2
+     * value.</p>
      */
     inline EndpointDemographic& WithLocale(const char* value) { SetLocale(value); return *this;}
 
 
     /**
-     * The manufacturer of the endpoint device, such as Apple or Samsung.
+     * <p>The manufacturer of the endpoint device, such as Apple or Samsung.</p>
      */
     inline const Aws::String& GetMake() const{ return m_make; }
 
     /**
-     * The manufacturer of the endpoint device, such as Apple or Samsung.
+     * <p>The manufacturer of the endpoint device, such as Apple or Samsung.</p>
      */
     inline bool MakeHasBeenSet() const { return m_makeHasBeenSet; }
 
     /**
-     * The manufacturer of the endpoint device, such as Apple or Samsung.
+     * <p>The manufacturer of the endpoint device, such as Apple or Samsung.</p>
      */
     inline void SetMake(const Aws::String& value) { m_makeHasBeenSet = true; m_make = value; }
 
     /**
-     * The manufacturer of the endpoint device, such as Apple or Samsung.
+     * <p>The manufacturer of the endpoint device, such as Apple or Samsung.</p>
      */
     inline void SetMake(Aws::String&& value) { m_makeHasBeenSet = true; m_make = std::move(value); }
 
     /**
-     * The manufacturer of the endpoint device, such as Apple or Samsung.
+     * <p>The manufacturer of the endpoint device, such as Apple or Samsung.</p>
      */
     inline void SetMake(const char* value) { m_makeHasBeenSet = true; m_make.assign(value); }
 
     /**
-     * The manufacturer of the endpoint device, such as Apple or Samsung.
+     * <p>The manufacturer of the endpoint device, such as Apple or Samsung.</p>
      */
     inline EndpointDemographic& WithMake(const Aws::String& value) { SetMake(value); return *this;}
 
     /**
-     * The manufacturer of the endpoint device, such as Apple or Samsung.
+     * <p>The manufacturer of the endpoint device, such as Apple or Samsung.</p>
      */
     inline EndpointDemographic& WithMake(Aws::String&& value) { SetMake(std::move(value)); return *this;}
 
     /**
-     * The manufacturer of the endpoint device, such as Apple or Samsung.
+     * <p>The manufacturer of the endpoint device, such as Apple or Samsung.</p>
      */
     inline EndpointDemographic& WithMake(const char* value) { SetMake(value); return *this;}
 
 
     /**
-     * The model name or number of the endpoint device, such as iPhone.
+     * <p>The model name or number of the endpoint device, such as iPhone.</p>
      */
     inline const Aws::String& GetModel() const{ return m_model; }
 
     /**
-     * The model name or number of the endpoint device, such as iPhone.
+     * <p>The model name or number of the endpoint device, such as iPhone.</p>
      */
     inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
 
     /**
-     * The model name or number of the endpoint device, such as iPhone.
+     * <p>The model name or number of the endpoint device, such as iPhone.</p>
      */
     inline void SetModel(const Aws::String& value) { m_modelHasBeenSet = true; m_model = value; }
 
     /**
-     * The model name or number of the endpoint device, such as iPhone.
+     * <p>The model name or number of the endpoint device, such as iPhone.</p>
      */
     inline void SetModel(Aws::String&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
 
     /**
-     * The model name or number of the endpoint device, such as iPhone.
+     * <p>The model name or number of the endpoint device, such as iPhone.</p>
      */
     inline void SetModel(const char* value) { m_modelHasBeenSet = true; m_model.assign(value); }
 
     /**
-     * The model name or number of the endpoint device, such as iPhone.
+     * <p>The model name or number of the endpoint device, such as iPhone.</p>
      */
     inline EndpointDemographic& WithModel(const Aws::String& value) { SetModel(value); return *this;}
 
     /**
-     * The model name or number of the endpoint device, such as iPhone.
+     * <p>The model name or number of the endpoint device, such as iPhone.</p>
      */
     inline EndpointDemographic& WithModel(Aws::String&& value) { SetModel(std::move(value)); return *this;}
 
     /**
-     * The model name or number of the endpoint device, such as iPhone.
+     * <p>The model name or number of the endpoint device, such as iPhone.</p>
      */
     inline EndpointDemographic& WithModel(const char* value) { SetModel(value); return *this;}
 
 
     /**
-     * The model version of the endpoint device.
+     * <p>The model version of the endpoint device.</p>
      */
     inline const Aws::String& GetModelVersion() const{ return m_modelVersion; }
 
     /**
-     * The model version of the endpoint device.
+     * <p>The model version of the endpoint device.</p>
      */
     inline bool ModelVersionHasBeenSet() const { return m_modelVersionHasBeenSet; }
 
     /**
-     * The model version of the endpoint device.
+     * <p>The model version of the endpoint device.</p>
      */
     inline void SetModelVersion(const Aws::String& value) { m_modelVersionHasBeenSet = true; m_modelVersion = value; }
 
     /**
-     * The model version of the endpoint device.
+     * <p>The model version of the endpoint device.</p>
      */
     inline void SetModelVersion(Aws::String&& value) { m_modelVersionHasBeenSet = true; m_modelVersion = std::move(value); }
 
     /**
-     * The model version of the endpoint device.
+     * <p>The model version of the endpoint device.</p>
      */
     inline void SetModelVersion(const char* value) { m_modelVersionHasBeenSet = true; m_modelVersion.assign(value); }
 
     /**
-     * The model version of the endpoint device.
+     * <p>The model version of the endpoint device.</p>
      */
     inline EndpointDemographic& WithModelVersion(const Aws::String& value) { SetModelVersion(value); return *this;}
 
     /**
-     * The model version of the endpoint device.
+     * <p>The model version of the endpoint device.</p>
      */
     inline EndpointDemographic& WithModelVersion(Aws::String&& value) { SetModelVersion(std::move(value)); return *this;}
 
     /**
-     * The model version of the endpoint device.
+     * <p>The model version of the endpoint device.</p>
      */
     inline EndpointDemographic& WithModelVersion(const char* value) { SetModelVersion(value); return *this;}
 
 
     /**
-     * The platform of the endpoint device, such as iOS or Android.
+     * <p>The platform of the endpoint device, such as iOS or Android.</p>
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
 
     /**
-     * The platform of the endpoint device, such as iOS or Android.
+     * <p>The platform of the endpoint device, such as iOS or Android.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * The platform of the endpoint device, such as iOS or Android.
+     * <p>The platform of the endpoint device, such as iOS or Android.</p>
      */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * The platform of the endpoint device, such as iOS or Android.
+     * <p>The platform of the endpoint device, such as iOS or Android.</p>
      */
     inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * The platform of the endpoint device, such as iOS or Android.
+     * <p>The platform of the endpoint device, such as iOS or Android.</p>
      */
     inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
 
     /**
-     * The platform of the endpoint device, such as iOS or Android.
+     * <p>The platform of the endpoint device, such as iOS or Android.</p>
      */
     inline EndpointDemographic& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
 
     /**
-     * The platform of the endpoint device, such as iOS or Android.
+     * <p>The platform of the endpoint device, such as iOS or Android.</p>
      */
     inline EndpointDemographic& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
-     * The platform of the endpoint device, such as iOS or Android.
+     * <p>The platform of the endpoint device, such as iOS or Android.</p>
      */
     inline EndpointDemographic& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
 
     /**
-     * The platform version of the endpoint device.
+     * <p>The platform version of the endpoint device.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * The platform version of the endpoint device.
+     * <p>The platform version of the endpoint device.</p>
      */
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
-     * The platform version of the endpoint device.
+     * <p>The platform version of the endpoint device.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * The platform version of the endpoint device.
+     * <p>The platform version of the endpoint device.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * The platform version of the endpoint device.
+     * <p>The platform version of the endpoint device.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * The platform version of the endpoint device.
+     * <p>The platform version of the endpoint device.</p>
      */
     inline EndpointDemographic& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * The platform version of the endpoint device.
+     * <p>The platform version of the endpoint device.</p>
      */
     inline EndpointDemographic& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * The platform version of the endpoint device.
+     * <p>The platform version of the endpoint device.</p>
      */
     inline EndpointDemographic& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 
 
     /**
-     * The timezone of the endpoint. Specified as a tz database value, such as
-     * Americas/Los_Angeles.
+     * <p>The time zone of the endpoint, specified as a tz database name value, such as
+     * America/Los_Angeles.</p>
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
 
     /**
-     * The timezone of the endpoint. Specified as a tz database value, such as
-     * Americas/Los_Angeles.
+     * <p>The time zone of the endpoint, specified as a tz database name value, such as
+     * America/Los_Angeles.</p>
      */
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
 
     /**
-     * The timezone of the endpoint. Specified as a tz database value, such as
-     * Americas/Los_Angeles.
+     * <p>The time zone of the endpoint, specified as a tz database name value, such as
+     * America/Los_Angeles.</p>
      */
     inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
 
     /**
-     * The timezone of the endpoint. Specified as a tz database value, such as
-     * Americas/Los_Angeles.
+     * <p>The time zone of the endpoint, specified as a tz database name value, such as
+     * America/Los_Angeles.</p>
      */
     inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
 
     /**
-     * The timezone of the endpoint. Specified as a tz database value, such as
-     * Americas/Los_Angeles.
+     * <p>The time zone of the endpoint, specified as a tz database name value, such as
+     * America/Los_Angeles.</p>
      */
     inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
 
     /**
-     * The timezone of the endpoint. Specified as a tz database value, such as
-     * Americas/Los_Angeles.
+     * <p>The time zone of the endpoint, specified as a tz database name value, such as
+     * America/Los_Angeles.</p>
      */
     inline EndpointDemographic& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
 
     /**
-     * The timezone of the endpoint. Specified as a tz database value, such as
-     * Americas/Los_Angeles.
+     * <p>The time zone of the endpoint, specified as a tz database name value, such as
+     * America/Los_Angeles.</p>
      */
     inline EndpointDemographic& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
 
     /**
-     * The timezone of the endpoint. Specified as a tz database value, such as
-     * Americas/Los_Angeles.
+     * <p>The time zone of the endpoint, specified as a tz database name value, such as
+     * America/Los_Angeles.</p>
      */
     inline EndpointDemographic& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 

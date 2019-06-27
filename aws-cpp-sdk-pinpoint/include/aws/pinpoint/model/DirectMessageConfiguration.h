@@ -42,8 +42,8 @@ namespace Model
 {
 
   /**
-   * Message definitions for the default message and any messages that are tailored
-   * for specific channels.<p><h3>See Also:</h3>   <a
+   * <p>Specifies the settings and content for the default message and any default
+   * messages that you tailored for specific channels.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DirectMessageConfiguration">AWS
    * API Reference</a></p>
    */
@@ -57,286 +57,352 @@ namespace Model
 
 
     /**
-     * The message to ADM channels. Overrides the default push notification message.
+     * <p>The default push notification message for the ADM (Amazon Device Messaging)
+     * channel. This message overrides the default push notification message
+     * (DefaultPushNotificationMessage).</p>
      */
     inline const ADMMessage& GetADMMessage() const{ return m_aDMMessage; }
 
     /**
-     * The message to ADM channels. Overrides the default push notification message.
+     * <p>The default push notification message for the ADM (Amazon Device Messaging)
+     * channel. This message overrides the default push notification message
+     * (DefaultPushNotificationMessage).</p>
      */
     inline bool ADMMessageHasBeenSet() const { return m_aDMMessageHasBeenSet; }
 
     /**
-     * The message to ADM channels. Overrides the default push notification message.
+     * <p>The default push notification message for the ADM (Amazon Device Messaging)
+     * channel. This message overrides the default push notification message
+     * (DefaultPushNotificationMessage).</p>
      */
     inline void SetADMMessage(const ADMMessage& value) { m_aDMMessageHasBeenSet = true; m_aDMMessage = value; }
 
     /**
-     * The message to ADM channels. Overrides the default push notification message.
+     * <p>The default push notification message for the ADM (Amazon Device Messaging)
+     * channel. This message overrides the default push notification message
+     * (DefaultPushNotificationMessage).</p>
      */
     inline void SetADMMessage(ADMMessage&& value) { m_aDMMessageHasBeenSet = true; m_aDMMessage = std::move(value); }
 
     /**
-     * The message to ADM channels. Overrides the default push notification message.
+     * <p>The default push notification message for the ADM (Amazon Device Messaging)
+     * channel. This message overrides the default push notification message
+     * (DefaultPushNotificationMessage).</p>
      */
     inline DirectMessageConfiguration& WithADMMessage(const ADMMessage& value) { SetADMMessage(value); return *this;}
 
     /**
-     * The message to ADM channels. Overrides the default push notification message.
+     * <p>The default push notification message for the ADM (Amazon Device Messaging)
+     * channel. This message overrides the default push notification message
+     * (DefaultPushNotificationMessage).</p>
      */
     inline DirectMessageConfiguration& WithADMMessage(ADMMessage&& value) { SetADMMessage(std::move(value)); return *this;}
 
 
     /**
-     * The message to APNS channels. Overrides the default push notification message.
+     * <p>The default push notification message for the APNs (Apple Push Notification
+     * service) channel. This message overrides the default push notification message
+     * (DefaultPushNotificationMessage).</p>
      */
     inline const APNSMessage& GetAPNSMessage() const{ return m_aPNSMessage; }
 
     /**
-     * The message to APNS channels. Overrides the default push notification message.
+     * <p>The default push notification message for the APNs (Apple Push Notification
+     * service) channel. This message overrides the default push notification message
+     * (DefaultPushNotificationMessage).</p>
      */
     inline bool APNSMessageHasBeenSet() const { return m_aPNSMessageHasBeenSet; }
 
     /**
-     * The message to APNS channels. Overrides the default push notification message.
+     * <p>The default push notification message for the APNs (Apple Push Notification
+     * service) channel. This message overrides the default push notification message
+     * (DefaultPushNotificationMessage).</p>
      */
     inline void SetAPNSMessage(const APNSMessage& value) { m_aPNSMessageHasBeenSet = true; m_aPNSMessage = value; }
 
     /**
-     * The message to APNS channels. Overrides the default push notification message.
+     * <p>The default push notification message for the APNs (Apple Push Notification
+     * service) channel. This message overrides the default push notification message
+     * (DefaultPushNotificationMessage).</p>
      */
     inline void SetAPNSMessage(APNSMessage&& value) { m_aPNSMessageHasBeenSet = true; m_aPNSMessage = std::move(value); }
 
     /**
-     * The message to APNS channels. Overrides the default push notification message.
+     * <p>The default push notification message for the APNs (Apple Push Notification
+     * service) channel. This message overrides the default push notification message
+     * (DefaultPushNotificationMessage).</p>
      */
     inline DirectMessageConfiguration& WithAPNSMessage(const APNSMessage& value) { SetAPNSMessage(value); return *this;}
 
     /**
-     * The message to APNS channels. Overrides the default push notification message.
+     * <p>The default push notification message for the APNs (Apple Push Notification
+     * service) channel. This message overrides the default push notification message
+     * (DefaultPushNotificationMessage).</p>
      */
     inline DirectMessageConfiguration& WithAPNSMessage(APNSMessage&& value) { SetAPNSMessage(std::move(value)); return *this;}
 
 
     /**
-     * The message to Baidu GCM channels. Overrides the default push notification
-     * message.
+     * <p>The default push notification message for the Baidu (Baidu Cloud Push)
+     * channel. This message overrides the default push notification message
+     * (DefaultPushNotificationMessage).</p>
      */
     inline const BaiduMessage& GetBaiduMessage() const{ return m_baiduMessage; }
 
     /**
-     * The message to Baidu GCM channels. Overrides the default push notification
-     * message.
+     * <p>The default push notification message for the Baidu (Baidu Cloud Push)
+     * channel. This message overrides the default push notification message
+     * (DefaultPushNotificationMessage).</p>
      */
     inline bool BaiduMessageHasBeenSet() const { return m_baiduMessageHasBeenSet; }
 
     /**
-     * The message to Baidu GCM channels. Overrides the default push notification
-     * message.
+     * <p>The default push notification message for the Baidu (Baidu Cloud Push)
+     * channel. This message overrides the default push notification message
+     * (DefaultPushNotificationMessage).</p>
      */
     inline void SetBaiduMessage(const BaiduMessage& value) { m_baiduMessageHasBeenSet = true; m_baiduMessage = value; }
 
     /**
-     * The message to Baidu GCM channels. Overrides the default push notification
-     * message.
+     * <p>The default push notification message for the Baidu (Baidu Cloud Push)
+     * channel. This message overrides the default push notification message
+     * (DefaultPushNotificationMessage).</p>
      */
     inline void SetBaiduMessage(BaiduMessage&& value) { m_baiduMessageHasBeenSet = true; m_baiduMessage = std::move(value); }
 
     /**
-     * The message to Baidu GCM channels. Overrides the default push notification
-     * message.
+     * <p>The default push notification message for the Baidu (Baidu Cloud Push)
+     * channel. This message overrides the default push notification message
+     * (DefaultPushNotificationMessage).</p>
      */
     inline DirectMessageConfiguration& WithBaiduMessage(const BaiduMessage& value) { SetBaiduMessage(value); return *this;}
 
     /**
-     * The message to Baidu GCM channels. Overrides the default push notification
-     * message.
+     * <p>The default push notification message for the Baidu (Baidu Cloud Push)
+     * channel. This message overrides the default push notification message
+     * (DefaultPushNotificationMessage).</p>
      */
     inline DirectMessageConfiguration& WithBaiduMessage(BaiduMessage&& value) { SetBaiduMessage(std::move(value)); return *this;}
 
 
     /**
-     * The default message for all channels.
+     * <p>The default message body for all channels.</p>
      */
     inline const DefaultMessage& GetDefaultMessage() const{ return m_defaultMessage; }
 
     /**
-     * The default message for all channels.
+     * <p>The default message body for all channels.</p>
      */
     inline bool DefaultMessageHasBeenSet() const { return m_defaultMessageHasBeenSet; }
 
     /**
-     * The default message for all channels.
+     * <p>The default message body for all channels.</p>
      */
     inline void SetDefaultMessage(const DefaultMessage& value) { m_defaultMessageHasBeenSet = true; m_defaultMessage = value; }
 
     /**
-     * The default message for all channels.
+     * <p>The default message body for all channels.</p>
      */
     inline void SetDefaultMessage(DefaultMessage&& value) { m_defaultMessageHasBeenSet = true; m_defaultMessage = std::move(value); }
 
     /**
-     * The default message for all channels.
+     * <p>The default message body for all channels.</p>
      */
     inline DirectMessageConfiguration& WithDefaultMessage(const DefaultMessage& value) { SetDefaultMessage(value); return *this;}
 
     /**
-     * The default message for all channels.
+     * <p>The default message body for all channels.</p>
      */
     inline DirectMessageConfiguration& WithDefaultMessage(DefaultMessage&& value) { SetDefaultMessage(std::move(value)); return *this;}
 
 
     /**
-     * The default push notification message for all push channels.
+     * <p>The default push notification message for all push channels.</p>
      */
     inline const DefaultPushNotificationMessage& GetDefaultPushNotificationMessage() const{ return m_defaultPushNotificationMessage; }
 
     /**
-     * The default push notification message for all push channels.
+     * <p>The default push notification message for all push channels.</p>
      */
     inline bool DefaultPushNotificationMessageHasBeenSet() const { return m_defaultPushNotificationMessageHasBeenSet; }
 
     /**
-     * The default push notification message for all push channels.
+     * <p>The default push notification message for all push channels.</p>
      */
     inline void SetDefaultPushNotificationMessage(const DefaultPushNotificationMessage& value) { m_defaultPushNotificationMessageHasBeenSet = true; m_defaultPushNotificationMessage = value; }
 
     /**
-     * The default push notification message for all push channels.
+     * <p>The default push notification message for all push channels.</p>
      */
     inline void SetDefaultPushNotificationMessage(DefaultPushNotificationMessage&& value) { m_defaultPushNotificationMessageHasBeenSet = true; m_defaultPushNotificationMessage = std::move(value); }
 
     /**
-     * The default push notification message for all push channels.
+     * <p>The default push notification message for all push channels.</p>
      */
     inline DirectMessageConfiguration& WithDefaultPushNotificationMessage(const DefaultPushNotificationMessage& value) { SetDefaultPushNotificationMessage(value); return *this;}
 
     /**
-     * The default push notification message for all push channels.
+     * <p>The default push notification message for all push channels.</p>
      */
     inline DirectMessageConfiguration& WithDefaultPushNotificationMessage(DefaultPushNotificationMessage&& value) { SetDefaultPushNotificationMessage(std::move(value)); return *this;}
 
 
     /**
-     * The message to Email channels. Overrides the default message.
+     * <p>The default message for the email channel. This message overrides the default
+     * message (DefaultMessage).</p>
      */
     inline const EmailMessage& GetEmailMessage() const{ return m_emailMessage; }
 
     /**
-     * The message to Email channels. Overrides the default message.
+     * <p>The default message for the email channel. This message overrides the default
+     * message (DefaultMessage).</p>
      */
     inline bool EmailMessageHasBeenSet() const { return m_emailMessageHasBeenSet; }
 
     /**
-     * The message to Email channels. Overrides the default message.
+     * <p>The default message for the email channel. This message overrides the default
+     * message (DefaultMessage).</p>
      */
     inline void SetEmailMessage(const EmailMessage& value) { m_emailMessageHasBeenSet = true; m_emailMessage = value; }
 
     /**
-     * The message to Email channels. Overrides the default message.
+     * <p>The default message for the email channel. This message overrides the default
+     * message (DefaultMessage).</p>
      */
     inline void SetEmailMessage(EmailMessage&& value) { m_emailMessageHasBeenSet = true; m_emailMessage = std::move(value); }
 
     /**
-     * The message to Email channels. Overrides the default message.
+     * <p>The default message for the email channel. This message overrides the default
+     * message (DefaultMessage).</p>
      */
     inline DirectMessageConfiguration& WithEmailMessage(const EmailMessage& value) { SetEmailMessage(value); return *this;}
 
     /**
-     * The message to Email channels. Overrides the default message.
+     * <p>The default message for the email channel. This message overrides the default
+     * message (DefaultMessage).</p>
      */
     inline DirectMessageConfiguration& WithEmailMessage(EmailMessage&& value) { SetEmailMessage(std::move(value)); return *this;}
 
 
     /**
-     * The message to GCM channels. Overrides the default push notification message.
+     * <p>The default push notification message for the GCM channel, which is used to
+     * send notifications through the Firebase Cloud Messaging (FCM), formerly Google
+     * Cloud Messaging (GCM), service. This message overrides the default push
+     * notification message (DefaultPushNotificationMessage).</p>
      */
     inline const GCMMessage& GetGCMMessage() const{ return m_gCMMessage; }
 
     /**
-     * The message to GCM channels. Overrides the default push notification message.
+     * <p>The default push notification message for the GCM channel, which is used to
+     * send notifications through the Firebase Cloud Messaging (FCM), formerly Google
+     * Cloud Messaging (GCM), service. This message overrides the default push
+     * notification message (DefaultPushNotificationMessage).</p>
      */
     inline bool GCMMessageHasBeenSet() const { return m_gCMMessageHasBeenSet; }
 
     /**
-     * The message to GCM channels. Overrides the default push notification message.
+     * <p>The default push notification message for the GCM channel, which is used to
+     * send notifications through the Firebase Cloud Messaging (FCM), formerly Google
+     * Cloud Messaging (GCM), service. This message overrides the default push
+     * notification message (DefaultPushNotificationMessage).</p>
      */
     inline void SetGCMMessage(const GCMMessage& value) { m_gCMMessageHasBeenSet = true; m_gCMMessage = value; }
 
     /**
-     * The message to GCM channels. Overrides the default push notification message.
+     * <p>The default push notification message for the GCM channel, which is used to
+     * send notifications through the Firebase Cloud Messaging (FCM), formerly Google
+     * Cloud Messaging (GCM), service. This message overrides the default push
+     * notification message (DefaultPushNotificationMessage).</p>
      */
     inline void SetGCMMessage(GCMMessage&& value) { m_gCMMessageHasBeenSet = true; m_gCMMessage = std::move(value); }
 
     /**
-     * The message to GCM channels. Overrides the default push notification message.
+     * <p>The default push notification message for the GCM channel, which is used to
+     * send notifications through the Firebase Cloud Messaging (FCM), formerly Google
+     * Cloud Messaging (GCM), service. This message overrides the default push
+     * notification message (DefaultPushNotificationMessage).</p>
      */
     inline DirectMessageConfiguration& WithGCMMessage(const GCMMessage& value) { SetGCMMessage(value); return *this;}
 
     /**
-     * The message to GCM channels. Overrides the default push notification message.
+     * <p>The default push notification message for the GCM channel, which is used to
+     * send notifications through the Firebase Cloud Messaging (FCM), formerly Google
+     * Cloud Messaging (GCM), service. This message overrides the default push
+     * notification message (DefaultPushNotificationMessage).</p>
      */
     inline DirectMessageConfiguration& WithGCMMessage(GCMMessage&& value) { SetGCMMessage(std::move(value)); return *this;}
 
 
     /**
-     * The message to SMS channels. Overrides the default message.
+     * <p>The default message for the SMS channel. This message overrides the default
+     * message (DefaultMessage).</p>
      */
     inline const SMSMessage& GetSMSMessage() const{ return m_sMSMessage; }
 
     /**
-     * The message to SMS channels. Overrides the default message.
+     * <p>The default message for the SMS channel. This message overrides the default
+     * message (DefaultMessage).</p>
      */
     inline bool SMSMessageHasBeenSet() const { return m_sMSMessageHasBeenSet; }
 
     /**
-     * The message to SMS channels. Overrides the default message.
+     * <p>The default message for the SMS channel. This message overrides the default
+     * message (DefaultMessage).</p>
      */
     inline void SetSMSMessage(const SMSMessage& value) { m_sMSMessageHasBeenSet = true; m_sMSMessage = value; }
 
     /**
-     * The message to SMS channels. Overrides the default message.
+     * <p>The default message for the SMS channel. This message overrides the default
+     * message (DefaultMessage).</p>
      */
     inline void SetSMSMessage(SMSMessage&& value) { m_sMSMessageHasBeenSet = true; m_sMSMessage = std::move(value); }
 
     /**
-     * The message to SMS channels. Overrides the default message.
+     * <p>The default message for the SMS channel. This message overrides the default
+     * message (DefaultMessage).</p>
      */
     inline DirectMessageConfiguration& WithSMSMessage(const SMSMessage& value) { SetSMSMessage(value); return *this;}
 
     /**
-     * The message to SMS channels. Overrides the default message.
+     * <p>The default message for the SMS channel. This message overrides the default
+     * message (DefaultMessage).</p>
      */
     inline DirectMessageConfiguration& WithSMSMessage(SMSMessage&& value) { SetSMSMessage(std::move(value)); return *this;}
 
 
     /**
-     * The message to Voice channels. Overrides the default message.
+     * <p>The default message for the voice channel. This message overrides the default
+     * message (DefaultMessage).</p>
      */
     inline const VoiceMessage& GetVoiceMessage() const{ return m_voiceMessage; }
 
     /**
-     * The message to Voice channels. Overrides the default message.
+     * <p>The default message for the voice channel. This message overrides the default
+     * message (DefaultMessage).</p>
      */
     inline bool VoiceMessageHasBeenSet() const { return m_voiceMessageHasBeenSet; }
 
     /**
-     * The message to Voice channels. Overrides the default message.
+     * <p>The default message for the voice channel. This message overrides the default
+     * message (DefaultMessage).</p>
      */
     inline void SetVoiceMessage(const VoiceMessage& value) { m_voiceMessageHasBeenSet = true; m_voiceMessage = value; }
 
     /**
-     * The message to Voice channels. Overrides the default message.
+     * <p>The default message for the voice channel. This message overrides the default
+     * message (DefaultMessage).</p>
      */
     inline void SetVoiceMessage(VoiceMessage&& value) { m_voiceMessageHasBeenSet = true; m_voiceMessage = std::move(value); }
 
     /**
-     * The message to Voice channels. Overrides the default message.
+     * <p>The default message for the voice channel. This message overrides the default
+     * message (DefaultMessage).</p>
      */
     inline DirectMessageConfiguration& WithVoiceMessage(const VoiceMessage& value) { SetVoiceMessage(value); return *this;}
 
     /**
-     * The message to Voice channels. Overrides the default message.
+     * <p>The default message for the voice channel. This message overrides the default
+     * message (DefaultMessage).</p>
      */
     inline DirectMessageConfiguration& WithVoiceMessage(VoiceMessage&& value) { SetVoiceMessage(std::move(value)); return *this;}
 

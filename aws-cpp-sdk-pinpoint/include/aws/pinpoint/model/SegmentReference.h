@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * Segment reference.<p><h3>See Also:</h3>   <a
+   * <p>Specifies the segment identifier and version of a segment.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentReference">AWS
    * API Reference</a></p>
    */
@@ -48,63 +49,63 @@ namespace Model
 
 
     /**
-     * A unique identifier for the segment.
+     * <p>The unique identifier for the segment.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * A unique identifier for the segment.
+     * <p>The unique identifier for the segment.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * A unique identifier for the segment.
+     * <p>The unique identifier for the segment.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * A unique identifier for the segment.
+     * <p>The unique identifier for the segment.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * A unique identifier for the segment.
+     * <p>The unique identifier for the segment.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * A unique identifier for the segment.
+     * <p>The unique identifier for the segment.</p>
      */
     inline SegmentReference& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * A unique identifier for the segment.
+     * <p>The unique identifier for the segment.</p>
      */
     inline SegmentReference& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * A unique identifier for the segment.
+     * <p>The unique identifier for the segment.</p>
      */
     inline SegmentReference& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * If specified contains a specific version of the segment included.
+     * <p>The version number of the segment.</p>
      */
     inline int GetVersion() const{ return m_version; }
 
     /**
-     * If specified contains a specific version of the segment included.
+     * <p>The version number of the segment.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * If specified contains a specific version of the segment included.
+     * <p>The version number of the segment.</p>
      */
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * If specified contains a specific version of the segment included.
+     * <p>The version number of the segment.</p>
      */
     inline SegmentReference& WithVersion(int value) { SetVersion(value); return *this;}
 

@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * The email message configuration.<p><h3>See Also:</h3>   <a
+   * <p>Specifies the content and "From" address for an email message that's sent to
+   * recipients of a campaign.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignEmailMessage">AWS
    * API Reference</a></p>
    */
@@ -48,173 +49,189 @@ namespace Model
 
 
     /**
-     * The email text body.
+     * <p>The body of the email for recipients whose email clients don't support HTML
+     * content.</p>
      */
     inline const Aws::String& GetBody() const{ return m_body; }
 
     /**
-     * The email text body.
+     * <p>The body of the email for recipients whose email clients don't support HTML
+     * content.</p>
      */
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
 
     /**
-     * The email text body.
+     * <p>The body of the email for recipients whose email clients don't support HTML
+     * content.</p>
      */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
-     * The email text body.
+     * <p>The body of the email for recipients whose email clients don't support HTML
+     * content.</p>
      */
     inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
 
     /**
-     * The email text body.
+     * <p>The body of the email for recipients whose email clients don't support HTML
+     * content.</p>
      */
     inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
 
     /**
-     * The email text body.
+     * <p>The body of the email for recipients whose email clients don't support HTML
+     * content.</p>
      */
     inline CampaignEmailMessage& WithBody(const Aws::String& value) { SetBody(value); return *this;}
 
     /**
-     * The email text body.
+     * <p>The body of the email for recipients whose email clients don't support HTML
+     * content.</p>
      */
     inline CampaignEmailMessage& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
 
     /**
-     * The email text body.
+     * <p>The body of the email for recipients whose email clients don't support HTML
+     * content.</p>
      */
     inline CampaignEmailMessage& WithBody(const char* value) { SetBody(value); return *this;}
 
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress
-     * specified in the Email Channel.
+     * <p>The verified email address to send the email from. The default address is the
+     * FromAddress specified for the email channel for the application.</p>
      */
     inline const Aws::String& GetFromAddress() const{ return m_fromAddress; }
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress
-     * specified in the Email Channel.
+     * <p>The verified email address to send the email from. The default address is the
+     * FromAddress specified for the email channel for the application.</p>
      */
     inline bool FromAddressHasBeenSet() const { return m_fromAddressHasBeenSet; }
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress
-     * specified in the Email Channel.
+     * <p>The verified email address to send the email from. The default address is the
+     * FromAddress specified for the email channel for the application.</p>
      */
     inline void SetFromAddress(const Aws::String& value) { m_fromAddressHasBeenSet = true; m_fromAddress = value; }
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress
-     * specified in the Email Channel.
+     * <p>The verified email address to send the email from. The default address is the
+     * FromAddress specified for the email channel for the application.</p>
      */
     inline void SetFromAddress(Aws::String&& value) { m_fromAddressHasBeenSet = true; m_fromAddress = std::move(value); }
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress
-     * specified in the Email Channel.
+     * <p>The verified email address to send the email from. The default address is the
+     * FromAddress specified for the email channel for the application.</p>
      */
     inline void SetFromAddress(const char* value) { m_fromAddressHasBeenSet = true; m_fromAddress.assign(value); }
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress
-     * specified in the Email Channel.
+     * <p>The verified email address to send the email from. The default address is the
+     * FromAddress specified for the email channel for the application.</p>
      */
     inline CampaignEmailMessage& WithFromAddress(const Aws::String& value) { SetFromAddress(value); return *this;}
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress
-     * specified in the Email Channel.
+     * <p>The verified email address to send the email from. The default address is the
+     * FromAddress specified for the email channel for the application.</p>
      */
     inline CampaignEmailMessage& WithFromAddress(Aws::String&& value) { SetFromAddress(std::move(value)); return *this;}
 
     /**
-     * The email address used to send the email from. Defaults to use FromAddress
-     * specified in the Email Channel.
+     * <p>The verified email address to send the email from. The default address is the
+     * FromAddress specified for the email channel for the application.</p>
      */
     inline CampaignEmailMessage& WithFromAddress(const char* value) { SetFromAddress(value); return *this;}
 
 
     /**
-     * The email html body.
+     * <p>The body of the email, in HTML format, for recipients whose email clients
+     * support HTML content.</p>
      */
     inline const Aws::String& GetHtmlBody() const{ return m_htmlBody; }
 
     /**
-     * The email html body.
+     * <p>The body of the email, in HTML format, for recipients whose email clients
+     * support HTML content.</p>
      */
     inline bool HtmlBodyHasBeenSet() const { return m_htmlBodyHasBeenSet; }
 
     /**
-     * The email html body.
+     * <p>The body of the email, in HTML format, for recipients whose email clients
+     * support HTML content.</p>
      */
     inline void SetHtmlBody(const Aws::String& value) { m_htmlBodyHasBeenSet = true; m_htmlBody = value; }
 
     /**
-     * The email html body.
+     * <p>The body of the email, in HTML format, for recipients whose email clients
+     * support HTML content.</p>
      */
     inline void SetHtmlBody(Aws::String&& value) { m_htmlBodyHasBeenSet = true; m_htmlBody = std::move(value); }
 
     /**
-     * The email html body.
+     * <p>The body of the email, in HTML format, for recipients whose email clients
+     * support HTML content.</p>
      */
     inline void SetHtmlBody(const char* value) { m_htmlBodyHasBeenSet = true; m_htmlBody.assign(value); }
 
     /**
-     * The email html body.
+     * <p>The body of the email, in HTML format, for recipients whose email clients
+     * support HTML content.</p>
      */
     inline CampaignEmailMessage& WithHtmlBody(const Aws::String& value) { SetHtmlBody(value); return *this;}
 
     /**
-     * The email html body.
+     * <p>The body of the email, in HTML format, for recipients whose email clients
+     * support HTML content.</p>
      */
     inline CampaignEmailMessage& WithHtmlBody(Aws::String&& value) { SetHtmlBody(std::move(value)); return *this;}
 
     /**
-     * The email html body.
+     * <p>The body of the email, in HTML format, for recipients whose email clients
+     * support HTML content.</p>
      */
     inline CampaignEmailMessage& WithHtmlBody(const char* value) { SetHtmlBody(value); return *this;}
 
 
     /**
-     * The email title (Or subject).
+     * <p>The subject line, or title, of the email.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * The email title (Or subject).
+     * <p>The subject line, or title, of the email.</p>
      */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
-     * The email title (Or subject).
+     * <p>The subject line, or title, of the email.</p>
      */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
-     * The email title (Or subject).
+     * <p>The subject line, or title, of the email.</p>
      */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
-     * The email title (Or subject).
+     * <p>The subject line, or title, of the email.</p>
      */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
-     * The email title (Or subject).
+     * <p>The subject line, or title, of the email.</p>
      */
     inline CampaignEmailMessage& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * The email title (Or subject).
+     * <p>The subject line, or title, of the email.</p>
      */
     inline CampaignEmailMessage& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
-     * The email title (Or subject).
+     * <p>The subject line, or title, of the email.</p>
      */
     inline CampaignEmailMessage& WithTitle(const char* value) { SetTitle(value); return *this;}
 

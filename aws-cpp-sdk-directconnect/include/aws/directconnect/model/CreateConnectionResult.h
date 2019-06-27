@@ -19,6 +19,8 @@
 #include <aws/directconnect/model/ConnectionState.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/directconnect/model/HasLogicalRedundancy.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/directconnect/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -612,6 +614,42 @@ namespace Model
      */
     inline CreateConnectionResult& WithHasLogicalRedundancy(HasLogicalRedundancy&& value) { SetHasLogicalRedundancy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Any tags assigned to the connection.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the connection.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+
+    /**
+     * <p>Any tags assigned to the connection.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>Any tags assigned to the connection.</p>
+     */
+    inline CreateConnectionResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Any tags assigned to the connection.</p>
+     */
+    inline CreateConnectionResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags assigned to the connection.</p>
+     */
+    inline CreateConnectionResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Any tags assigned to the connection.</p>
+     */
+    inline CreateConnectionResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_ownerAccount;
@@ -643,6 +681,8 @@ namespace Model
     Aws::String m_awsDeviceV2;
 
     HasLogicalRedundancy m_hasLogicalRedundancy;
+
+    Aws::Vector<Tag> m_tags;
   };
 
 } // namespace Model

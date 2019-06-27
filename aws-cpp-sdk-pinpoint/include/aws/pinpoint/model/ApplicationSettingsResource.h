@@ -37,7 +37,8 @@ namespace Model
 {
 
   /**
-   * Application settings.<p><h3>See Also:</h3>   <a
+   * <p>Provides information about an application, including the default settings for
+   * an application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ApplicationSettingsResource">AWS
    * API Reference</a></p>
    */
@@ -51,314 +52,264 @@ namespace Model
 
 
     /**
-     * The unique ID for the application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * The unique ID for the application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * The unique ID for the application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * The unique ID for the application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * The unique ID for the application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * The unique ID for the application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline ApplicationSettingsResource& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * The unique ID for the application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline ApplicationSettingsResource& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * The unique ID for the application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline ApplicationSettingsResource& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * Default campaign hook.
+     * <p>The settings for the AWS Lambda function to use by default as a code hook for
+     * campaigns in the application.</p>
      */
     inline const CampaignHook& GetCampaignHook() const{ return m_campaignHook; }
 
     /**
-     * Default campaign hook.
+     * <p>The settings for the AWS Lambda function to use by default as a code hook for
+     * campaigns in the application.</p>
      */
     inline bool CampaignHookHasBeenSet() const { return m_campaignHookHasBeenSet; }
 
     /**
-     * Default campaign hook.
+     * <p>The settings for the AWS Lambda function to use by default as a code hook for
+     * campaigns in the application.</p>
      */
     inline void SetCampaignHook(const CampaignHook& value) { m_campaignHookHasBeenSet = true; m_campaignHook = value; }
 
     /**
-     * Default campaign hook.
+     * <p>The settings for the AWS Lambda function to use by default as a code hook for
+     * campaigns in the application.</p>
      */
     inline void SetCampaignHook(CampaignHook&& value) { m_campaignHookHasBeenSet = true; m_campaignHook = std::move(value); }
 
     /**
-     * Default campaign hook.
+     * <p>The settings for the AWS Lambda function to use by default as a code hook for
+     * campaigns in the application.</p>
      */
     inline ApplicationSettingsResource& WithCampaignHook(const CampaignHook& value) { SetCampaignHook(value); return *this;}
 
     /**
-     * Default campaign hook.
+     * <p>The settings for the AWS Lambda function to use by default as a code hook for
+     * campaigns in the application.</p>
      */
     inline ApplicationSettingsResource& WithCampaignHook(CampaignHook&& value) { SetCampaignHook(std::move(value)); return *this;}
 
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the application's settings were
+     * last modified.</p>
      */
     inline const Aws::String& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the application's settings were
+     * last modified.</p>
      */
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the application's settings were
+     * last modified.</p>
      */
     inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the application's settings were
+     * last modified.</p>
      */
     inline void SetLastModifiedDate(Aws::String&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the application's settings were
+     * last modified.</p>
      */
     inline void SetLastModifiedDate(const char* value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate.assign(value); }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the application's settings were
+     * last modified.</p>
      */
     inline ApplicationSettingsResource& WithLastModifiedDate(const Aws::String& value) { SetLastModifiedDate(value); return *this;}
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the application's settings were
+     * last modified.</p>
      */
     inline ApplicationSettingsResource& WithLastModifiedDate(Aws::String&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the application's settings were
+     * last modified.</p>
      */
     inline ApplicationSettingsResource& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
 
 
     /**
-     * The default campaign limits for the app. These limits apply to each campaign for
-     * the app, unless the campaign overrides the default with limits of its own.
+     * <p>The default sending limits for campaigns in the application.</p>
      */
     inline const CampaignLimits& GetLimits() const{ return m_limits; }
 
     /**
-     * The default campaign limits for the app. These limits apply to each campaign for
-     * the app, unless the campaign overrides the default with limits of its own.
+     * <p>The default sending limits for campaigns in the application.</p>
      */
     inline bool LimitsHasBeenSet() const { return m_limitsHasBeenSet; }
 
     /**
-     * The default campaign limits for the app. These limits apply to each campaign for
-     * the app, unless the campaign overrides the default with limits of its own.
+     * <p>The default sending limits for campaigns in the application.</p>
      */
     inline void SetLimits(const CampaignLimits& value) { m_limitsHasBeenSet = true; m_limits = value; }
 
     /**
-     * The default campaign limits for the app. These limits apply to each campaign for
-     * the app, unless the campaign overrides the default with limits of its own.
+     * <p>The default sending limits for campaigns in the application.</p>
      */
     inline void SetLimits(CampaignLimits&& value) { m_limitsHasBeenSet = true; m_limits = std::move(value); }
 
     /**
-     * The default campaign limits for the app. These limits apply to each campaign for
-     * the app, unless the campaign overrides the default with limits of its own.
+     * <p>The default sending limits for campaigns in the application.</p>
      */
     inline ApplicationSettingsResource& WithLimits(const CampaignLimits& value) { SetLimits(value); return *this;}
 
     /**
-     * The default campaign limits for the app. These limits apply to each campaign for
-     * the app, unless the campaign overrides the default with limits of its own.
+     * <p>The default sending limits for campaigns in the application.</p>
      */
     inline ApplicationSettingsResource& WithLimits(CampaignLimits&& value) { SetLimits(std::move(value)); return *this;}
 
 
     /**
-     * The default quiet time for the app. Campaigns in the app don't send messages to
-     * endpoints during the quiet time.
-
-Note: Make sure that your endpoints include
-     * the Demographics.Timezone attribute if you plan to enable a quiet time for your
-     * app. If your endpoints don't include this attribute, they'll receive the
-     * messages that you send them, even if quiet time is enabled.
-
-When you set up an
-     * app to use quiet time, campaigns in that app don't send messages during the time
-     * range you specified, as long as all of the following are true:
-- The endpoint
-     * includes a valid Demographic.Timezone attribute.
-- The current time in the
-     * endpoint's time zone is later than or equal to the time specified in the
-     * QuietTime.Start attribute for the app (or campaign, if applicable).
-- The
-     * current time in the endpoint's time zone is earlier than or equal to the time
-     * specified in the QuietTime.End attribute for the app (or campaign, if
-     * applicable).
-
-Individual campaigns within the app can have their own quiet time
-     * settings, which override the quiet time settings at the app level.
+     * <p>The default quiet time for campaigns in the application. Quiet time is a
+     * specific time range when campaigns don't send messages to endpoints, if all the
+     * following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone
+     * property of the endpoint is set to a valid value.</p></li> <li><p>The current
+     * time in the endpoint's time zone is later than or equal to the time specified by
+     * the QuietTime.Start property for the application (or a campaign that has custom
+     * quiet time settings).</p></li> <li><p>The current time in the endpoint's time
+     * zone is earlier than or equal to the time specified by the QuietTime.End
+     * property for the application (or a campaign that has custom quiet time
+     * settings).</p></li></ul> <p>If any of the preceding conditions isn't met, the
+     * endpoint will receive messages from a campaign, even if quiet time is
+     * enabled.</p>
      */
     inline const QuietTime& GetQuietTime() const{ return m_quietTime; }
 
     /**
-     * The default quiet time for the app. Campaigns in the app don't send messages to
-     * endpoints during the quiet time.
-
-Note: Make sure that your endpoints include
-     * the Demographics.Timezone attribute if you plan to enable a quiet time for your
-     * app. If your endpoints don't include this attribute, they'll receive the
-     * messages that you send them, even if quiet time is enabled.
-
-When you set up an
-     * app to use quiet time, campaigns in that app don't send messages during the time
-     * range you specified, as long as all of the following are true:
-- The endpoint
-     * includes a valid Demographic.Timezone attribute.
-- The current time in the
-     * endpoint's time zone is later than or equal to the time specified in the
-     * QuietTime.Start attribute for the app (or campaign, if applicable).
-- The
-     * current time in the endpoint's time zone is earlier than or equal to the time
-     * specified in the QuietTime.End attribute for the app (or campaign, if
-     * applicable).
-
-Individual campaigns within the app can have their own quiet time
-     * settings, which override the quiet time settings at the app level.
+     * <p>The default quiet time for campaigns in the application. Quiet time is a
+     * specific time range when campaigns don't send messages to endpoints, if all the
+     * following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone
+     * property of the endpoint is set to a valid value.</p></li> <li><p>The current
+     * time in the endpoint's time zone is later than or equal to the time specified by
+     * the QuietTime.Start property for the application (or a campaign that has custom
+     * quiet time settings).</p></li> <li><p>The current time in the endpoint's time
+     * zone is earlier than or equal to the time specified by the QuietTime.End
+     * property for the application (or a campaign that has custom quiet time
+     * settings).</p></li></ul> <p>If any of the preceding conditions isn't met, the
+     * endpoint will receive messages from a campaign, even if quiet time is
+     * enabled.</p>
      */
     inline bool QuietTimeHasBeenSet() const { return m_quietTimeHasBeenSet; }
 
     /**
-     * The default quiet time for the app. Campaigns in the app don't send messages to
-     * endpoints during the quiet time.
-
-Note: Make sure that your endpoints include
-     * the Demographics.Timezone attribute if you plan to enable a quiet time for your
-     * app. If your endpoints don't include this attribute, they'll receive the
-     * messages that you send them, even if quiet time is enabled.
-
-When you set up an
-     * app to use quiet time, campaigns in that app don't send messages during the time
-     * range you specified, as long as all of the following are true:
-- The endpoint
-     * includes a valid Demographic.Timezone attribute.
-- The current time in the
-     * endpoint's time zone is later than or equal to the time specified in the
-     * QuietTime.Start attribute for the app (or campaign, if applicable).
-- The
-     * current time in the endpoint's time zone is earlier than or equal to the time
-     * specified in the QuietTime.End attribute for the app (or campaign, if
-     * applicable).
-
-Individual campaigns within the app can have their own quiet time
-     * settings, which override the quiet time settings at the app level.
+     * <p>The default quiet time for campaigns in the application. Quiet time is a
+     * specific time range when campaigns don't send messages to endpoints, if all the
+     * following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone
+     * property of the endpoint is set to a valid value.</p></li> <li><p>The current
+     * time in the endpoint's time zone is later than or equal to the time specified by
+     * the QuietTime.Start property for the application (or a campaign that has custom
+     * quiet time settings).</p></li> <li><p>The current time in the endpoint's time
+     * zone is earlier than or equal to the time specified by the QuietTime.End
+     * property for the application (or a campaign that has custom quiet time
+     * settings).</p></li></ul> <p>If any of the preceding conditions isn't met, the
+     * endpoint will receive messages from a campaign, even if quiet time is
+     * enabled.</p>
      */
     inline void SetQuietTime(const QuietTime& value) { m_quietTimeHasBeenSet = true; m_quietTime = value; }
 
     /**
-     * The default quiet time for the app. Campaigns in the app don't send messages to
-     * endpoints during the quiet time.
-
-Note: Make sure that your endpoints include
-     * the Demographics.Timezone attribute if you plan to enable a quiet time for your
-     * app. If your endpoints don't include this attribute, they'll receive the
-     * messages that you send them, even if quiet time is enabled.
-
-When you set up an
-     * app to use quiet time, campaigns in that app don't send messages during the time
-     * range you specified, as long as all of the following are true:
-- The endpoint
-     * includes a valid Demographic.Timezone attribute.
-- The current time in the
-     * endpoint's time zone is later than or equal to the time specified in the
-     * QuietTime.Start attribute for the app (or campaign, if applicable).
-- The
-     * current time in the endpoint's time zone is earlier than or equal to the time
-     * specified in the QuietTime.End attribute for the app (or campaign, if
-     * applicable).
-
-Individual campaigns within the app can have their own quiet time
-     * settings, which override the quiet time settings at the app level.
+     * <p>The default quiet time for campaigns in the application. Quiet time is a
+     * specific time range when campaigns don't send messages to endpoints, if all the
+     * following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone
+     * property of the endpoint is set to a valid value.</p></li> <li><p>The current
+     * time in the endpoint's time zone is later than or equal to the time specified by
+     * the QuietTime.Start property for the application (or a campaign that has custom
+     * quiet time settings).</p></li> <li><p>The current time in the endpoint's time
+     * zone is earlier than or equal to the time specified by the QuietTime.End
+     * property for the application (or a campaign that has custom quiet time
+     * settings).</p></li></ul> <p>If any of the preceding conditions isn't met, the
+     * endpoint will receive messages from a campaign, even if quiet time is
+     * enabled.</p>
      */
     inline void SetQuietTime(QuietTime&& value) { m_quietTimeHasBeenSet = true; m_quietTime = std::move(value); }
 
     /**
-     * The default quiet time for the app. Campaigns in the app don't send messages to
-     * endpoints during the quiet time.
-
-Note: Make sure that your endpoints include
-     * the Demographics.Timezone attribute if you plan to enable a quiet time for your
-     * app. If your endpoints don't include this attribute, they'll receive the
-     * messages that you send them, even if quiet time is enabled.
-
-When you set up an
-     * app to use quiet time, campaigns in that app don't send messages during the time
-     * range you specified, as long as all of the following are true:
-- The endpoint
-     * includes a valid Demographic.Timezone attribute.
-- The current time in the
-     * endpoint's time zone is later than or equal to the time specified in the
-     * QuietTime.Start attribute for the app (or campaign, if applicable).
-- The
-     * current time in the endpoint's time zone is earlier than or equal to the time
-     * specified in the QuietTime.End attribute for the app (or campaign, if
-     * applicable).
-
-Individual campaigns within the app can have their own quiet time
-     * settings, which override the quiet time settings at the app level.
+     * <p>The default quiet time for campaigns in the application. Quiet time is a
+     * specific time range when campaigns don't send messages to endpoints, if all the
+     * following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone
+     * property of the endpoint is set to a valid value.</p></li> <li><p>The current
+     * time in the endpoint's time zone is later than or equal to the time specified by
+     * the QuietTime.Start property for the application (or a campaign that has custom
+     * quiet time settings).</p></li> <li><p>The current time in the endpoint's time
+     * zone is earlier than or equal to the time specified by the QuietTime.End
+     * property for the application (or a campaign that has custom quiet time
+     * settings).</p></li></ul> <p>If any of the preceding conditions isn't met, the
+     * endpoint will receive messages from a campaign, even if quiet time is
+     * enabled.</p>
      */
     inline ApplicationSettingsResource& WithQuietTime(const QuietTime& value) { SetQuietTime(value); return *this;}
 
     /**
-     * The default quiet time for the app. Campaigns in the app don't send messages to
-     * endpoints during the quiet time.
-
-Note: Make sure that your endpoints include
-     * the Demographics.Timezone attribute if you plan to enable a quiet time for your
-     * app. If your endpoints don't include this attribute, they'll receive the
-     * messages that you send them, even if quiet time is enabled.
-
-When you set up an
-     * app to use quiet time, campaigns in that app don't send messages during the time
-     * range you specified, as long as all of the following are true:
-- The endpoint
-     * includes a valid Demographic.Timezone attribute.
-- The current time in the
-     * endpoint's time zone is later than or equal to the time specified in the
-     * QuietTime.Start attribute for the app (or campaign, if applicable).
-- The
-     * current time in the endpoint's time zone is earlier than or equal to the time
-     * specified in the QuietTime.End attribute for the app (or campaign, if
-     * applicable).
-
-Individual campaigns within the app can have their own quiet time
-     * settings, which override the quiet time settings at the app level.
+     * <p>The default quiet time for campaigns in the application. Quiet time is a
+     * specific time range when campaigns don't send messages to endpoints, if all the
+     * following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone
+     * property of the endpoint is set to a valid value.</p></li> <li><p>The current
+     * time in the endpoint's time zone is later than or equal to the time specified by
+     * the QuietTime.Start property for the application (or a campaign that has custom
+     * quiet time settings).</p></li> <li><p>The current time in the endpoint's time
+     * zone is earlier than or equal to the time specified by the QuietTime.End
+     * property for the application (or a campaign that has custom quiet time
+     * settings).</p></li></ul> <p>If any of the preceding conditions isn't met, the
+     * endpoint will receive messages from a campaign, even if quiet time is
+     * enabled.</p>
      */
     inline ApplicationSettingsResource& WithQuietTime(QuietTime&& value) { SetQuietTime(std::move(value)); return *this;}
 

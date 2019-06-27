@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * A complex object that holds the status code and message as a result of
-   * processing an endpoint.<p><h3>See Also:</h3>   <a
+   * <p>Provides the status code and message that result from processing data for an
+   * endpoint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointItemResponse">AWS
    * API Reference</a></p>
    */
@@ -49,75 +49,75 @@ namespace Model
 
 
     /**
-     * A custom message associated with the registration of an endpoint when issuing a
-     * response.
+     * <p>The custom message that's returned in the response as a result of processing
+     * the endpoint data.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * A custom message associated with the registration of an endpoint when issuing a
-     * response.
+     * <p>The custom message that's returned in the response as a result of processing
+     * the endpoint data.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * A custom message associated with the registration of an endpoint when issuing a
-     * response.
+     * <p>The custom message that's returned in the response as a result of processing
+     * the endpoint data.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * A custom message associated with the registration of an endpoint when issuing a
-     * response.
+     * <p>The custom message that's returned in the response as a result of processing
+     * the endpoint data.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * A custom message associated with the registration of an endpoint when issuing a
-     * response.
+     * <p>The custom message that's returned in the response as a result of processing
+     * the endpoint data.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * A custom message associated with the registration of an endpoint when issuing a
-     * response.
+     * <p>The custom message that's returned in the response as a result of processing
+     * the endpoint data.</p>
      */
     inline EndpointItemResponse& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * A custom message associated with the registration of an endpoint when issuing a
-     * response.
+     * <p>The custom message that's returned in the response as a result of processing
+     * the endpoint data.</p>
      */
     inline EndpointItemResponse& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * A custom message associated with the registration of an endpoint when issuing a
-     * response.
+     * <p>The custom message that's returned in the response as a result of processing
+     * the endpoint data.</p>
      */
     inline EndpointItemResponse& WithMessage(const char* value) { SetMessage(value); return *this;}
 
 
     /**
-     * The status code associated with the merging of an endpoint when issuing a
-     * response.
+     * <p>The status code that's returned in the response as a result of processing the
+     * endpoint data.</p>
      */
     inline int GetStatusCode() const{ return m_statusCode; }
 
     /**
-     * The status code associated with the merging of an endpoint when issuing a
-     * response.
+     * <p>The status code that's returned in the response as a result of processing the
+     * endpoint data.</p>
      */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
-     * The status code associated with the merging of an endpoint when issuing a
-     * response.
+     * <p>The status code that's returned in the response as a result of processing the
+     * endpoint data.</p>
      */
     inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
     /**
-     * The status code associated with the merging of an endpoint when issuing a
-     * response.
+     * <p>The status code that's returned in the response as a result of processing the
+     * endpoint data.</p>
      */
     inline EndpointItemResponse& WithStatusCode(int value) { SetStatusCode(value); return *this;}
 

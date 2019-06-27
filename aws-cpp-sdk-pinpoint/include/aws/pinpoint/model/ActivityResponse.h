@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * Activity definition<p><h3>See Also:</h3>   <a
+   * <p>Provides information about an activity that was performed by a
+   * campaign.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ActivityResponse">AWS
    * API Reference</a></p>
    */
@@ -48,510 +49,506 @@ namespace Model
 
 
     /**
-     * The ID of the application to which the campaign applies.
+     * <p>The unique identifier for the application that the campaign applies to.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * The ID of the application to which the campaign applies.
+     * <p>The unique identifier for the application that the campaign applies to.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * The ID of the application to which the campaign applies.
+     * <p>The unique identifier for the application that the campaign applies to.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * The ID of the application to which the campaign applies.
+     * <p>The unique identifier for the application that the campaign applies to.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * The ID of the application to which the campaign applies.
+     * <p>The unique identifier for the application that the campaign applies to.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * The ID of the application to which the campaign applies.
+     * <p>The unique identifier for the application that the campaign applies to.</p>
      */
     inline ActivityResponse& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * The ID of the application to which the campaign applies.
+     * <p>The unique identifier for the application that the campaign applies to.</p>
      */
     inline ActivityResponse& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * The ID of the application to which the campaign applies.
+     * <p>The unique identifier for the application that the campaign applies to.</p>
      */
     inline ActivityResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * The ID of the campaign to which the activity applies.
+     * <p>The unique identifier for the campaign that the activity applies to.</p>
      */
     inline const Aws::String& GetCampaignId() const{ return m_campaignId; }
 
     /**
-     * The ID of the campaign to which the activity applies.
+     * <p>The unique identifier for the campaign that the activity applies to.</p>
      */
     inline bool CampaignIdHasBeenSet() const { return m_campaignIdHasBeenSet; }
 
     /**
-     * The ID of the campaign to which the activity applies.
+     * <p>The unique identifier for the campaign that the activity applies to.</p>
      */
     inline void SetCampaignId(const Aws::String& value) { m_campaignIdHasBeenSet = true; m_campaignId = value; }
 
     /**
-     * The ID of the campaign to which the activity applies.
+     * <p>The unique identifier for the campaign that the activity applies to.</p>
      */
     inline void SetCampaignId(Aws::String&& value) { m_campaignIdHasBeenSet = true; m_campaignId = std::move(value); }
 
     /**
-     * The ID of the campaign to which the activity applies.
+     * <p>The unique identifier for the campaign that the activity applies to.</p>
      */
     inline void SetCampaignId(const char* value) { m_campaignIdHasBeenSet = true; m_campaignId.assign(value); }
 
     /**
-     * The ID of the campaign to which the activity applies.
+     * <p>The unique identifier for the campaign that the activity applies to.</p>
      */
     inline ActivityResponse& WithCampaignId(const Aws::String& value) { SetCampaignId(value); return *this;}
 
     /**
-     * The ID of the campaign to which the activity applies.
+     * <p>The unique identifier for the campaign that the activity applies to.</p>
      */
     inline ActivityResponse& WithCampaignId(Aws::String&& value) { SetCampaignId(std::move(value)); return *this;}
 
     /**
-     * The ID of the campaign to which the activity applies.
+     * <p>The unique identifier for the campaign that the activity applies to.</p>
      */
     inline ActivityResponse& WithCampaignId(const char* value) { SetCampaignId(value); return *this;}
 
 
     /**
-     * The actual time the activity was marked CANCELLED or COMPLETED. Provided in ISO
-     * 8601 format.
+     * <p>The actual time, in ISO 8601 format, when the activity was marked CANCELLED
+     * or COMPLETED.</p>
      */
     inline const Aws::String& GetEnd() const{ return m_end; }
 
     /**
-     * The actual time the activity was marked CANCELLED or COMPLETED. Provided in ISO
-     * 8601 format.
+     * <p>The actual time, in ISO 8601 format, when the activity was marked CANCELLED
+     * or COMPLETED.</p>
      */
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
 
     /**
-     * The actual time the activity was marked CANCELLED or COMPLETED. Provided in ISO
-     * 8601 format.
+     * <p>The actual time, in ISO 8601 format, when the activity was marked CANCELLED
+     * or COMPLETED.</p>
      */
     inline void SetEnd(const Aws::String& value) { m_endHasBeenSet = true; m_end = value; }
 
     /**
-     * The actual time the activity was marked CANCELLED or COMPLETED. Provided in ISO
-     * 8601 format.
+     * <p>The actual time, in ISO 8601 format, when the activity was marked CANCELLED
+     * or COMPLETED.</p>
      */
     inline void SetEnd(Aws::String&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
 
     /**
-     * The actual time the activity was marked CANCELLED or COMPLETED. Provided in ISO
-     * 8601 format.
+     * <p>The actual time, in ISO 8601 format, when the activity was marked CANCELLED
+     * or COMPLETED.</p>
      */
     inline void SetEnd(const char* value) { m_endHasBeenSet = true; m_end.assign(value); }
 
     /**
-     * The actual time the activity was marked CANCELLED or COMPLETED. Provided in ISO
-     * 8601 format.
+     * <p>The actual time, in ISO 8601 format, when the activity was marked CANCELLED
+     * or COMPLETED.</p>
      */
     inline ActivityResponse& WithEnd(const Aws::String& value) { SetEnd(value); return *this;}
 
     /**
-     * The actual time the activity was marked CANCELLED or COMPLETED. Provided in ISO
-     * 8601 format.
+     * <p>The actual time, in ISO 8601 format, when the activity was marked CANCELLED
+     * or COMPLETED.</p>
      */
     inline ActivityResponse& WithEnd(Aws::String&& value) { SetEnd(std::move(value)); return *this;}
 
     /**
-     * The actual time the activity was marked CANCELLED or COMPLETED. Provided in ISO
-     * 8601 format.
+     * <p>The actual time, in ISO 8601 format, when the activity was marked CANCELLED
+     * or COMPLETED.</p>
      */
     inline ActivityResponse& WithEnd(const char* value) { SetEnd(value); return *this;}
 
 
     /**
-     * The unique activity ID.
+     * <p>The unique identifier for the activity.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * The unique activity ID.
+     * <p>The unique identifier for the activity.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * The unique activity ID.
+     * <p>The unique identifier for the activity.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * The unique activity ID.
+     * <p>The unique identifier for the activity.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * The unique activity ID.
+     * <p>The unique identifier for the activity.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * The unique activity ID.
+     * <p>The unique identifier for the activity.</p>
      */
     inline ActivityResponse& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * The unique activity ID.
+     * <p>The unique identifier for the activity.</p>
      */
     inline ActivityResponse& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * The unique activity ID.
+     * <p>The unique identifier for the activity.</p>
      */
     inline ActivityResponse& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * Indicates whether the activity succeeded.
-
-Valid values: SUCCESS, FAIL
+     * <p>Specifies whether the activity succeeded. Possible values are SUCCESS and
+     * FAIL.</p>
      */
     inline const Aws::String& GetResult() const{ return m_result; }
 
     /**
-     * Indicates whether the activity succeeded.
-
-Valid values: SUCCESS, FAIL
+     * <p>Specifies whether the activity succeeded. Possible values are SUCCESS and
+     * FAIL.</p>
      */
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
 
     /**
-     * Indicates whether the activity succeeded.
-
-Valid values: SUCCESS, FAIL
+     * <p>Specifies whether the activity succeeded. Possible values are SUCCESS and
+     * FAIL.</p>
      */
     inline void SetResult(const Aws::String& value) { m_resultHasBeenSet = true; m_result = value; }
 
     /**
-     * Indicates whether the activity succeeded.
-
-Valid values: SUCCESS, FAIL
+     * <p>Specifies whether the activity succeeded. Possible values are SUCCESS and
+     * FAIL.</p>
      */
     inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
 
     /**
-     * Indicates whether the activity succeeded.
-
-Valid values: SUCCESS, FAIL
+     * <p>Specifies whether the activity succeeded. Possible values are SUCCESS and
+     * FAIL.</p>
      */
     inline void SetResult(const char* value) { m_resultHasBeenSet = true; m_result.assign(value); }
 
     /**
-     * Indicates whether the activity succeeded.
-
-Valid values: SUCCESS, FAIL
+     * <p>Specifies whether the activity succeeded. Possible values are SUCCESS and
+     * FAIL.</p>
      */
     inline ActivityResponse& WithResult(const Aws::String& value) { SetResult(value); return *this;}
 
     /**
-     * Indicates whether the activity succeeded.
-
-Valid values: SUCCESS, FAIL
+     * <p>Specifies whether the activity succeeded. Possible values are SUCCESS and
+     * FAIL.</p>
      */
     inline ActivityResponse& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
 
     /**
-     * Indicates whether the activity succeeded.
-
-Valid values: SUCCESS, FAIL
+     * <p>Specifies whether the activity succeeded. Possible values are SUCCESS and
+     * FAIL.</p>
      */
     inline ActivityResponse& WithResult(const char* value) { SetResult(value); return *this;}
 
 
     /**
-     * The scheduled start time for the activity in ISO 8601 format.
+     * <p>The scheduled start time, in ISO 8601 format, for the activity.</p>
      */
     inline const Aws::String& GetScheduledStart() const{ return m_scheduledStart; }
 
     /**
-     * The scheduled start time for the activity in ISO 8601 format.
+     * <p>The scheduled start time, in ISO 8601 format, for the activity.</p>
      */
     inline bool ScheduledStartHasBeenSet() const { return m_scheduledStartHasBeenSet; }
 
     /**
-     * The scheduled start time for the activity in ISO 8601 format.
+     * <p>The scheduled start time, in ISO 8601 format, for the activity.</p>
      */
     inline void SetScheduledStart(const Aws::String& value) { m_scheduledStartHasBeenSet = true; m_scheduledStart = value; }
 
     /**
-     * The scheduled start time for the activity in ISO 8601 format.
+     * <p>The scheduled start time, in ISO 8601 format, for the activity.</p>
      */
     inline void SetScheduledStart(Aws::String&& value) { m_scheduledStartHasBeenSet = true; m_scheduledStart = std::move(value); }
 
     /**
-     * The scheduled start time for the activity in ISO 8601 format.
+     * <p>The scheduled start time, in ISO 8601 format, for the activity.</p>
      */
     inline void SetScheduledStart(const char* value) { m_scheduledStartHasBeenSet = true; m_scheduledStart.assign(value); }
 
     /**
-     * The scheduled start time for the activity in ISO 8601 format.
+     * <p>The scheduled start time, in ISO 8601 format, for the activity.</p>
      */
     inline ActivityResponse& WithScheduledStart(const Aws::String& value) { SetScheduledStart(value); return *this;}
 
     /**
-     * The scheduled start time for the activity in ISO 8601 format.
+     * <p>The scheduled start time, in ISO 8601 format, for the activity.</p>
      */
     inline ActivityResponse& WithScheduledStart(Aws::String&& value) { SetScheduledStart(std::move(value)); return *this;}
 
     /**
-     * The scheduled start time for the activity in ISO 8601 format.
+     * <p>The scheduled start time, in ISO 8601 format, for the activity.</p>
      */
     inline ActivityResponse& WithScheduledStart(const char* value) { SetScheduledStart(value); return *this;}
 
 
     /**
-     * The actual start time of the activity in ISO 8601 format.
+     * <p>The actual start time, in ISO 8601 format, of the activity.</p>
      */
     inline const Aws::String& GetStart() const{ return m_start; }
 
     /**
-     * The actual start time of the activity in ISO 8601 format.
+     * <p>The actual start time, in ISO 8601 format, of the activity.</p>
      */
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
 
     /**
-     * The actual start time of the activity in ISO 8601 format.
+     * <p>The actual start time, in ISO 8601 format, of the activity.</p>
      */
     inline void SetStart(const Aws::String& value) { m_startHasBeenSet = true; m_start = value; }
 
     /**
-     * The actual start time of the activity in ISO 8601 format.
+     * <p>The actual start time, in ISO 8601 format, of the activity.</p>
      */
     inline void SetStart(Aws::String&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
 
     /**
-     * The actual start time of the activity in ISO 8601 format.
+     * <p>The actual start time, in ISO 8601 format, of the activity.</p>
      */
     inline void SetStart(const char* value) { m_startHasBeenSet = true; m_start.assign(value); }
 
     /**
-     * The actual start time of the activity in ISO 8601 format.
+     * <p>The actual start time, in ISO 8601 format, of the activity.</p>
      */
     inline ActivityResponse& WithStart(const Aws::String& value) { SetStart(value); return *this;}
 
     /**
-     * The actual start time of the activity in ISO 8601 format.
+     * <p>The actual start time, in ISO 8601 format, of the activity.</p>
      */
     inline ActivityResponse& WithStart(Aws::String&& value) { SetStart(std::move(value)); return *this;}
 
     /**
-     * The actual start time of the activity in ISO 8601 format.
+     * <p>The actual start time, in ISO 8601 format, of the activity.</p>
      */
     inline ActivityResponse& WithStart(const char* value) { SetStart(value); return *this;}
 
 
     /**
-     * The state of the activity.
-
-Valid values: PENDING, INITIALIZING, RUNNING,
-     * PAUSED, CANCELLED, COMPLETED
+     * <p>The state of the activity. Possible values are: PENDING, INITIALIZING,
+     * RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
 
     /**
-     * The state of the activity.
-
-Valid values: PENDING, INITIALIZING, RUNNING,
-     * PAUSED, CANCELLED, COMPLETED
+     * <p>The state of the activity. Possible values are: PENDING, INITIALIZING,
+     * RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * The state of the activity.
-
-Valid values: PENDING, INITIALIZING, RUNNING,
-     * PAUSED, CANCELLED, COMPLETED
+     * <p>The state of the activity. Possible values are: PENDING, INITIALIZING,
+     * RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
      */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * The state of the activity.
-
-Valid values: PENDING, INITIALIZING, RUNNING,
-     * PAUSED, CANCELLED, COMPLETED
+     * <p>The state of the activity. Possible values are: PENDING, INITIALIZING,
+     * RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
      */
     inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * The state of the activity.
-
-Valid values: PENDING, INITIALIZING, RUNNING,
-     * PAUSED, CANCELLED, COMPLETED
+     * <p>The state of the activity. Possible values are: PENDING, INITIALIZING,
+     * RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
      */
     inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
 
     /**
-     * The state of the activity.
-
-Valid values: PENDING, INITIALIZING, RUNNING,
-     * PAUSED, CANCELLED, COMPLETED
+     * <p>The state of the activity. Possible values are: PENDING, INITIALIZING,
+     * RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
      */
     inline ActivityResponse& WithState(const Aws::String& value) { SetState(value); return *this;}
 
     /**
-     * The state of the activity.
-
-Valid values: PENDING, INITIALIZING, RUNNING,
-     * PAUSED, CANCELLED, COMPLETED
+     * <p>The state of the activity. Possible values are: PENDING, INITIALIZING,
+     * RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
      */
     inline ActivityResponse& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
 
     /**
-     * The state of the activity.
-
-Valid values: PENDING, INITIALIZING, RUNNING,
-     * PAUSED, CANCELLED, COMPLETED
+     * <p>The state of the activity. Possible values are: PENDING, INITIALIZING,
+     * RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
      */
     inline ActivityResponse& WithState(const char* value) { SetState(value); return *this;}
 
 
     /**
-     * The total number of endpoints to which the campaign successfully delivered
-     * messages.
+     * <p>The total number of endpoints that the campaign successfully delivered
+     * messages to.</p>
      */
     inline int GetSuccessfulEndpointCount() const{ return m_successfulEndpointCount; }
 
     /**
-     * The total number of endpoints to which the campaign successfully delivered
-     * messages.
+     * <p>The total number of endpoints that the campaign successfully delivered
+     * messages to.</p>
      */
     inline bool SuccessfulEndpointCountHasBeenSet() const { return m_successfulEndpointCountHasBeenSet; }
 
     /**
-     * The total number of endpoints to which the campaign successfully delivered
-     * messages.
+     * <p>The total number of endpoints that the campaign successfully delivered
+     * messages to.</p>
      */
     inline void SetSuccessfulEndpointCount(int value) { m_successfulEndpointCountHasBeenSet = true; m_successfulEndpointCount = value; }
 
     /**
-     * The total number of endpoints to which the campaign successfully delivered
-     * messages.
+     * <p>The total number of endpoints that the campaign successfully delivered
+     * messages to.</p>
      */
     inline ActivityResponse& WithSuccessfulEndpointCount(int value) { SetSuccessfulEndpointCount(value); return *this;}
 
 
     /**
-     * The total number of timezones completed.
+     * <p>The total number of time zones that were completed.</p>
      */
     inline int GetTimezonesCompletedCount() const{ return m_timezonesCompletedCount; }
 
     /**
-     * The total number of timezones completed.
+     * <p>The total number of time zones that were completed.</p>
      */
     inline bool TimezonesCompletedCountHasBeenSet() const { return m_timezonesCompletedCountHasBeenSet; }
 
     /**
-     * The total number of timezones completed.
+     * <p>The total number of time zones that were completed.</p>
      */
     inline void SetTimezonesCompletedCount(int value) { m_timezonesCompletedCountHasBeenSet = true; m_timezonesCompletedCount = value; }
 
     /**
-     * The total number of timezones completed.
+     * <p>The total number of time zones that were completed.</p>
      */
     inline ActivityResponse& WithTimezonesCompletedCount(int value) { SetTimezonesCompletedCount(value); return *this;}
 
 
     /**
-     * The total number of unique timezones present in the segment.
+     * <p>The total number of unique time zones that are in the segment for the
+     * campaign.</p>
      */
     inline int GetTimezonesTotalCount() const{ return m_timezonesTotalCount; }
 
     /**
-     * The total number of unique timezones present in the segment.
+     * <p>The total number of unique time zones that are in the segment for the
+     * campaign.</p>
      */
     inline bool TimezonesTotalCountHasBeenSet() const { return m_timezonesTotalCountHasBeenSet; }
 
     /**
-     * The total number of unique timezones present in the segment.
+     * <p>The total number of unique time zones that are in the segment for the
+     * campaign.</p>
      */
     inline void SetTimezonesTotalCount(int value) { m_timezonesTotalCountHasBeenSet = true; m_timezonesTotalCount = value; }
 
     /**
-     * The total number of unique timezones present in the segment.
+     * <p>The total number of unique time zones that are in the segment for the
+     * campaign.</p>
      */
     inline ActivityResponse& WithTimezonesTotalCount(int value) { SetTimezonesTotalCount(value); return *this;}
 
 
     /**
-     * The total number of endpoints to which the campaign attempts to deliver
-     * messages.
+     * <p>The total number of endpoints that the campaign attempted to deliver messages
+     * to.</p>
      */
     inline int GetTotalEndpointCount() const{ return m_totalEndpointCount; }
 
     /**
-     * The total number of endpoints to which the campaign attempts to deliver
-     * messages.
+     * <p>The total number of endpoints that the campaign attempted to deliver messages
+     * to.</p>
      */
     inline bool TotalEndpointCountHasBeenSet() const { return m_totalEndpointCountHasBeenSet; }
 
     /**
-     * The total number of endpoints to which the campaign attempts to deliver
-     * messages.
+     * <p>The total number of endpoints that the campaign attempted to deliver messages
+     * to.</p>
      */
     inline void SetTotalEndpointCount(int value) { m_totalEndpointCountHasBeenSet = true; m_totalEndpointCount = value; }
 
     /**
-     * The total number of endpoints to which the campaign attempts to deliver
-     * messages.
+     * <p>The total number of endpoints that the campaign attempted to deliver messages
+     * to.</p>
      */
     inline ActivityResponse& WithTotalEndpointCount(int value) { SetTotalEndpointCount(value); return *this;}
 
 
     /**
-     * The ID of a variation of the campaign used for A/B testing.
+     * <p>The unique identifier for the campaign treatment that the activity applies
+     * to. A treatment is a variation of a campaign that's used for A/B testing of a
+     * campaign.</p>
      */
     inline const Aws::String& GetTreatmentId() const{ return m_treatmentId; }
 
     /**
-     * The ID of a variation of the campaign used for A/B testing.
+     * <p>The unique identifier for the campaign treatment that the activity applies
+     * to. A treatment is a variation of a campaign that's used for A/B testing of a
+     * campaign.</p>
      */
     inline bool TreatmentIdHasBeenSet() const { return m_treatmentIdHasBeenSet; }
 
     /**
-     * The ID of a variation of the campaign used for A/B testing.
+     * <p>The unique identifier for the campaign treatment that the activity applies
+     * to. A treatment is a variation of a campaign that's used for A/B testing of a
+     * campaign.</p>
      */
     inline void SetTreatmentId(const Aws::String& value) { m_treatmentIdHasBeenSet = true; m_treatmentId = value; }
 
     /**
-     * The ID of a variation of the campaign used for A/B testing.
+     * <p>The unique identifier for the campaign treatment that the activity applies
+     * to. A treatment is a variation of a campaign that's used for A/B testing of a
+     * campaign.</p>
      */
     inline void SetTreatmentId(Aws::String&& value) { m_treatmentIdHasBeenSet = true; m_treatmentId = std::move(value); }
 
     /**
-     * The ID of a variation of the campaign used for A/B testing.
+     * <p>The unique identifier for the campaign treatment that the activity applies
+     * to. A treatment is a variation of a campaign that's used for A/B testing of a
+     * campaign.</p>
      */
     inline void SetTreatmentId(const char* value) { m_treatmentIdHasBeenSet = true; m_treatmentId.assign(value); }
 
     /**
-     * The ID of a variation of the campaign used for A/B testing.
+     * <p>The unique identifier for the campaign treatment that the activity applies
+     * to. A treatment is a variation of a campaign that's used for A/B testing of a
+     * campaign.</p>
      */
     inline ActivityResponse& WithTreatmentId(const Aws::String& value) { SetTreatmentId(value); return *this;}
 
     /**
-     * The ID of a variation of the campaign used for A/B testing.
+     * <p>The unique identifier for the campaign treatment that the activity applies
+     * to. A treatment is a variation of a campaign that's used for A/B testing of a
+     * campaign.</p>
      */
     inline ActivityResponse& WithTreatmentId(Aws::String&& value) { SetTreatmentId(std::move(value)); return *this;}
 
     /**
-     * The ID of a variation of the campaign used for A/B testing.
+     * <p>The unique identifier for the campaign treatment that the activity applies
+     * to. A treatment is a variation of a campaign that's used for A/B testing of a
+     * campaign.</p>
      */
     inline ActivityResponse& WithTreatmentId(const char* value) { SetTreatmentId(value); return *this;}
 

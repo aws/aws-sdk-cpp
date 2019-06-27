@@ -26,7 +26,8 @@ CreateConnectionRequest::CreateConnectionRequest() :
     m_locationHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
     m_connectionNameHasBeenSet(false),
-    m_lagIdHasBeenSet(false)
+    m_lagIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,17 @@ Aws::String CreateConnectionRequest::SerializePayload() const
   if(m_lagIdHasBeenSet)
   {
    payload.WithString("lagId", m_lagId);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/model/HasLogicalRedundancy.h>
 #include <aws/directconnect/model/Connection.h>
+#include <aws/directconnect/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -554,6 +555,42 @@ namespace Model
      */
     inline DeleteLagResult& WithHasLogicalRedundancy(HasLogicalRedundancy&& value) { SetHasLogicalRedundancy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Any tags assigned to link aggregation group (LAG).</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to link aggregation group (LAG).</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+
+    /**
+     * <p>Any tags assigned to link aggregation group (LAG).</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>Any tags assigned to link aggregation group (LAG).</p>
+     */
+    inline DeleteLagResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Any tags assigned to link aggregation group (LAG).</p>
+     */
+    inline DeleteLagResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags assigned to link aggregation group (LAG).</p>
+     */
+    inline DeleteLagResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Any tags assigned to link aggregation group (LAG).</p>
+     */
+    inline DeleteLagResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_connectionsBandwidth;
@@ -585,6 +622,8 @@ namespace Model
     bool m_jumboFrameCapable;
 
     HasLogicalRedundancy m_hasLogicalRedundancy;
+
+    Aws::Vector<Tag> m_tags;
   };
 
 } // namespace Model

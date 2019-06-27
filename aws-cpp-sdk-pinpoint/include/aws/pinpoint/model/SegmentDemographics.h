@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * Segment demographic dimensions<p><h3>See Also:</h3>   <a
+   * <p>Specifies demographic-based dimension settings for including or excluding
+   * endpoints from a segment. These settings derive from characteristics of endpoint
+   * devices, such as platform, make, and model.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentDemographics">AWS
    * API Reference</a></p>
    */
@@ -48,187 +50,187 @@ namespace Model
 
 
     /**
-     * The app version criteria for the segment.
+     * <p>The app version criteria for the segment.</p>
      */
     inline const SetDimension& GetAppVersion() const{ return m_appVersion; }
 
     /**
-     * The app version criteria for the segment.
+     * <p>The app version criteria for the segment.</p>
      */
     inline bool AppVersionHasBeenSet() const { return m_appVersionHasBeenSet; }
 
     /**
-     * The app version criteria for the segment.
+     * <p>The app version criteria for the segment.</p>
      */
     inline void SetAppVersion(const SetDimension& value) { m_appVersionHasBeenSet = true; m_appVersion = value; }
 
     /**
-     * The app version criteria for the segment.
+     * <p>The app version criteria for the segment.</p>
      */
     inline void SetAppVersion(SetDimension&& value) { m_appVersionHasBeenSet = true; m_appVersion = std::move(value); }
 
     /**
-     * The app version criteria for the segment.
+     * <p>The app version criteria for the segment.</p>
      */
     inline SegmentDemographics& WithAppVersion(const SetDimension& value) { SetAppVersion(value); return *this;}
 
     /**
-     * The app version criteria for the segment.
+     * <p>The app version criteria for the segment.</p>
      */
     inline SegmentDemographics& WithAppVersion(SetDimension&& value) { SetAppVersion(std::move(value)); return *this;}
 
 
     /**
-     * The channel criteria for the segment.
+     * <p>The channel criteria for the segment.</p>
      */
     inline const SetDimension& GetChannel() const{ return m_channel; }
 
     /**
-     * The channel criteria for the segment.
+     * <p>The channel criteria for the segment.</p>
      */
     inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
 
     /**
-     * The channel criteria for the segment.
+     * <p>The channel criteria for the segment.</p>
      */
     inline void SetChannel(const SetDimension& value) { m_channelHasBeenSet = true; m_channel = value; }
 
     /**
-     * The channel criteria for the segment.
+     * <p>The channel criteria for the segment.</p>
      */
     inline void SetChannel(SetDimension&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
 
     /**
-     * The channel criteria for the segment.
+     * <p>The channel criteria for the segment.</p>
      */
     inline SegmentDemographics& WithChannel(const SetDimension& value) { SetChannel(value); return *this;}
 
     /**
-     * The channel criteria for the segment.
+     * <p>The channel criteria for the segment.</p>
      */
     inline SegmentDemographics& WithChannel(SetDimension&& value) { SetChannel(std::move(value)); return *this;}
 
 
     /**
-     * The device type criteria for the segment.
+     * <p>The device type criteria for the segment.</p>
      */
     inline const SetDimension& GetDeviceType() const{ return m_deviceType; }
 
     /**
-     * The device type criteria for the segment.
+     * <p>The device type criteria for the segment.</p>
      */
     inline bool DeviceTypeHasBeenSet() const { return m_deviceTypeHasBeenSet; }
 
     /**
-     * The device type criteria for the segment.
+     * <p>The device type criteria for the segment.</p>
      */
     inline void SetDeviceType(const SetDimension& value) { m_deviceTypeHasBeenSet = true; m_deviceType = value; }
 
     /**
-     * The device type criteria for the segment.
+     * <p>The device type criteria for the segment.</p>
      */
     inline void SetDeviceType(SetDimension&& value) { m_deviceTypeHasBeenSet = true; m_deviceType = std::move(value); }
 
     /**
-     * The device type criteria for the segment.
+     * <p>The device type criteria for the segment.</p>
      */
     inline SegmentDemographics& WithDeviceType(const SetDimension& value) { SetDeviceType(value); return *this;}
 
     /**
-     * The device type criteria for the segment.
+     * <p>The device type criteria for the segment.</p>
      */
     inline SegmentDemographics& WithDeviceType(SetDimension&& value) { SetDeviceType(std::move(value)); return *this;}
 
 
     /**
-     * The device make criteria for the segment.
+     * <p>The device make criteria for the segment.</p>
      */
     inline const SetDimension& GetMake() const{ return m_make; }
 
     /**
-     * The device make criteria for the segment.
+     * <p>The device make criteria for the segment.</p>
      */
     inline bool MakeHasBeenSet() const { return m_makeHasBeenSet; }
 
     /**
-     * The device make criteria for the segment.
+     * <p>The device make criteria for the segment.</p>
      */
     inline void SetMake(const SetDimension& value) { m_makeHasBeenSet = true; m_make = value; }
 
     /**
-     * The device make criteria for the segment.
+     * <p>The device make criteria for the segment.</p>
      */
     inline void SetMake(SetDimension&& value) { m_makeHasBeenSet = true; m_make = std::move(value); }
 
     /**
-     * The device make criteria for the segment.
+     * <p>The device make criteria for the segment.</p>
      */
     inline SegmentDemographics& WithMake(const SetDimension& value) { SetMake(value); return *this;}
 
     /**
-     * The device make criteria for the segment.
+     * <p>The device make criteria for the segment.</p>
      */
     inline SegmentDemographics& WithMake(SetDimension&& value) { SetMake(std::move(value)); return *this;}
 
 
     /**
-     * The device model criteria for the segment.
+     * <p>The device model criteria for the segment.</p>
      */
     inline const SetDimension& GetModel() const{ return m_model; }
 
     /**
-     * The device model criteria for the segment.
+     * <p>The device model criteria for the segment.</p>
      */
     inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
 
     /**
-     * The device model criteria for the segment.
+     * <p>The device model criteria for the segment.</p>
      */
     inline void SetModel(const SetDimension& value) { m_modelHasBeenSet = true; m_model = value; }
 
     /**
-     * The device model criteria for the segment.
+     * <p>The device model criteria for the segment.</p>
      */
     inline void SetModel(SetDimension&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
 
     /**
-     * The device model criteria for the segment.
+     * <p>The device model criteria for the segment.</p>
      */
     inline SegmentDemographics& WithModel(const SetDimension& value) { SetModel(value); return *this;}
 
     /**
-     * The device model criteria for the segment.
+     * <p>The device model criteria for the segment.</p>
      */
     inline SegmentDemographics& WithModel(SetDimension&& value) { SetModel(std::move(value)); return *this;}
 
 
     /**
-     * The device platform criteria for the segment.
+     * <p>The device platform criteria for the segment.</p>
      */
     inline const SetDimension& GetPlatform() const{ return m_platform; }
 
     /**
-     * The device platform criteria for the segment.
+     * <p>The device platform criteria for the segment.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * The device platform criteria for the segment.
+     * <p>The device platform criteria for the segment.</p>
      */
     inline void SetPlatform(const SetDimension& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * The device platform criteria for the segment.
+     * <p>The device platform criteria for the segment.</p>
      */
     inline void SetPlatform(SetDimension&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * The device platform criteria for the segment.
+     * <p>The device platform criteria for the segment.</p>
      */
     inline SegmentDemographics& WithPlatform(const SetDimension& value) { SetPlatform(value); return *this;}
 
     /**
-     * The device platform criteria for the segment.
+     * <p>The device platform criteria for the segment.</p>
      */
     inline SegmentDemographics& WithPlatform(SetDimension&& value) { SetPlatform(std::move(value)); return *this;}
 

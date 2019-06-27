@@ -47,7 +47,8 @@ Connection::Connection() :
     m_jumboFrameCapableHasBeenSet(false),
     m_awsDeviceV2HasBeenSet(false),
     m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
-    m_hasLogicalRedundancyHasBeenSet(false)
+    m_hasLogicalRedundancyHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ Connection::Connection(JsonView jsonValue) :
     m_jumboFrameCapableHasBeenSet(false),
     m_awsDeviceV2HasBeenSet(false),
     m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
-    m_hasLogicalRedundancyHasBeenSet(false)
+    m_hasLogicalRedundancyHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -182,6 +184,16 @@ Connection& Connection::operator =(JsonView jsonValue)
     m_hasLogicalRedundancyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -274,6 +286,17 @@ JsonValue Connection::Jsonize() const
   if(m_hasLogicalRedundancyHasBeenSet)
   {
    payload.WithString("hasLogicalRedundancy", HasLogicalRedundancyMapper::GetNameForHasLogicalRedundancy(m_hasLogicalRedundancy));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
   }
 
   return payload;

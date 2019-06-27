@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * Voice Channel Response.<p><h3>See Also:</h3>   <a
+   * <p>Provides information about the status and settings of the voice channel for
+   * an application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VoiceChannelResponse">AWS
    * API Reference</a></p>
    */
@@ -48,323 +49,371 @@ namespace Model
 
 
     /**
-     * Application id
+     * <p>The unique identifier for the application that the voice channel applies
+     * to.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * Application id
+     * <p>The unique identifier for the application that the voice channel applies
+     * to.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * Application id
+     * <p>The unique identifier for the application that the voice channel applies
+     * to.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * Application id
+     * <p>The unique identifier for the application that the voice channel applies
+     * to.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * Application id
+     * <p>The unique identifier for the application that the voice channel applies
+     * to.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * Application id
+     * <p>The unique identifier for the application that the voice channel applies
+     * to.</p>
      */
     inline VoiceChannelResponse& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * Application id
+     * <p>The unique identifier for the application that the voice channel applies
+     * to.</p>
      */
     inline VoiceChannelResponse& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * Application id
+     * <p>The unique identifier for the application that the voice channel applies
+     * to.</p>
      */
     inline VoiceChannelResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the voice channel was
+     * enabled.</p>
      */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the voice channel was
+     * enabled.</p>
      */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the voice channel was
+     * enabled.</p>
      */
     inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the voice channel was
+     * enabled.</p>
      */
     inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the voice channel was
+     * enabled.</p>
      */
     inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the voice channel was
+     * enabled.</p>
      */
     inline VoiceChannelResponse& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the voice channel was
+     * enabled.</p>
      */
     inline VoiceChannelResponse& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the voice channel was
+     * enabled.</p>
      */
     inline VoiceChannelResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>Specifies whether the voice channel is enabled for the application.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>Specifies whether the voice channel is enabled for the application.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>Specifies whether the voice channel is enabled for the application.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>Specifies whether the voice channel is enabled for the application.</p>
      */
     inline VoiceChannelResponse& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
 
-    
+    /**
+     * <p>(Not used) This property is retained only for backward compatibility.</p>
+     */
     inline bool GetHasCredential() const{ return m_hasCredential; }
 
-    
+    /**
+     * <p>(Not used) This property is retained only for backward compatibility.</p>
+     */
     inline bool HasCredentialHasBeenSet() const { return m_hasCredentialHasBeenSet; }
 
-    
+    /**
+     * <p>(Not used) This property is retained only for backward compatibility.</p>
+     */
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
 
-    
+    /**
+     * <p>(Not used) This property is retained only for backward compatibility.</p>
+     */
     inline VoiceChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
 
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>(Deprecated) An identifier for the voice channel. This property is retained
+     * only for backward compatibility.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>(Deprecated) An identifier for the voice channel. This property is retained
+     * only for backward compatibility.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>(Deprecated) An identifier for the voice channel. This property is retained
+     * only for backward compatibility.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>(Deprecated) An identifier for the voice channel. This property is retained
+     * only for backward compatibility.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>(Deprecated) An identifier for the voice channel. This property is retained
+     * only for backward compatibility.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>(Deprecated) An identifier for the voice channel. This property is retained
+     * only for backward compatibility.</p>
      */
     inline VoiceChannelResponse& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>(Deprecated) An identifier for the voice channel. This property is retained
+     * only for backward compatibility.</p>
      */
     inline VoiceChannelResponse& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>(Deprecated) An identifier for the voice channel. This property is retained
+     * only for backward compatibility.</p>
      */
     inline VoiceChannelResponse& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * Is this channel archived
+     * <p>Specifies whether the voice channel is archived.</p>
      */
     inline bool GetIsArchived() const{ return m_isArchived; }
 
     /**
-     * Is this channel archived
+     * <p>Specifies whether the voice channel is archived.</p>
      */
     inline bool IsArchivedHasBeenSet() const { return m_isArchivedHasBeenSet; }
 
     /**
-     * Is this channel archived
+     * <p>Specifies whether the voice channel is archived.</p>
      */
     inline void SetIsArchived(bool value) { m_isArchivedHasBeenSet = true; m_isArchived = value; }
 
     /**
-     * Is this channel archived
+     * <p>Specifies whether the voice channel is archived.</p>
      */
     inline VoiceChannelResponse& WithIsArchived(bool value) { SetIsArchived(value); return *this;}
 
 
     /**
-     * Who made the last change
+     * <p>The user who last modified the voice channel.</p>
      */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
 
     /**
-     * Who made the last change
+     * <p>The user who last modified the voice channel.</p>
      */
     inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
 
     /**
-     * Who made the last change
+     * <p>The user who last modified the voice channel.</p>
      */
     inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
 
     /**
-     * Who made the last change
+     * <p>The user who last modified the voice channel.</p>
      */
     inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
 
     /**
-     * Who made the last change
+     * <p>The user who last modified the voice channel.</p>
      */
     inline void SetLastModifiedBy(const char* value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy.assign(value); }
 
     /**
-     * Who made the last change
+     * <p>The user who last modified the voice channel.</p>
      */
     inline VoiceChannelResponse& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
 
     /**
-     * Who made the last change
+     * <p>The user who last modified the voice channel.</p>
      */
     inline VoiceChannelResponse& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(std::move(value)); return *this;}
 
     /**
-     * Who made the last change
+     * <p>The user who last modified the voice channel.</p>
      */
     inline VoiceChannelResponse& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
 
 
     /**
-     * Last date this was updated
+     * <p>The date and time, in ISO 8601 format, when the voice channel was last
+     * modified.</p>
      */
     inline const Aws::String& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
-     * Last date this was updated
+     * <p>The date and time, in ISO 8601 format, when the voice channel was last
+     * modified.</p>
      */
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
 
     /**
-     * Last date this was updated
+     * <p>The date and time, in ISO 8601 format, when the voice channel was last
+     * modified.</p>
      */
     inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
-     * Last date this was updated
+     * <p>The date and time, in ISO 8601 format, when the voice channel was last
+     * modified.</p>
      */
     inline void SetLastModifiedDate(Aws::String&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
 
     /**
-     * Last date this was updated
+     * <p>The date and time, in ISO 8601 format, when the voice channel was last
+     * modified.</p>
      */
     inline void SetLastModifiedDate(const char* value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate.assign(value); }
 
     /**
-     * Last date this was updated
+     * <p>The date and time, in ISO 8601 format, when the voice channel was last
+     * modified.</p>
      */
     inline VoiceChannelResponse& WithLastModifiedDate(const Aws::String& value) { SetLastModifiedDate(value); return *this;}
 
     /**
-     * Last date this was updated
+     * <p>The date and time, in ISO 8601 format, when the voice channel was last
+     * modified.</p>
      */
     inline VoiceChannelResponse& WithLastModifiedDate(Aws::String&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
     /**
-     * Last date this was updated
+     * <p>The date and time, in ISO 8601 format, when the voice channel was last
+     * modified.</p>
      */
     inline VoiceChannelResponse& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
 
 
     /**
-     * Platform type. Will be "Voice"
+     * <p>The type of messaging or notification platform for the channel. For the voice
+     * channel, this value is VOICE.</p>
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
 
     /**
-     * Platform type. Will be "Voice"
+     * <p>The type of messaging or notification platform for the channel. For the voice
+     * channel, this value is VOICE.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * Platform type. Will be "Voice"
+     * <p>The type of messaging or notification platform for the channel. For the voice
+     * channel, this value is VOICE.</p>
      */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * Platform type. Will be "Voice"
+     * <p>The type of messaging or notification platform for the channel. For the voice
+     * channel, this value is VOICE.</p>
      */
     inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * Platform type. Will be "Voice"
+     * <p>The type of messaging or notification platform for the channel. For the voice
+     * channel, this value is VOICE.</p>
      */
     inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
 
     /**
-     * Platform type. Will be "Voice"
+     * <p>The type of messaging or notification platform for the channel. For the voice
+     * channel, this value is VOICE.</p>
      */
     inline VoiceChannelResponse& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
 
     /**
-     * Platform type. Will be "Voice"
+     * <p>The type of messaging or notification platform for the channel. For the voice
+     * channel, this value is VOICE.</p>
      */
     inline VoiceChannelResponse& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
-     * Platform type. Will be "Voice"
+     * <p>The type of messaging or notification platform for the channel. For the voice
+     * channel, this value is VOICE.</p>
      */
     inline VoiceChannelResponse& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
 
     /**
-     * Version of channel
+     * <p>The current version of the voice channel.</p>
      */
     inline int GetVersion() const{ return m_version; }
 
     /**
-     * Version of channel
+     * <p>The current version of the voice channel.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * Version of channel
+     * <p>The current version of the voice channel.</p>
      */
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * Version of channel
+     * <p>The current version of the voice channel.</p>
      */
     inline VoiceChannelResponse& WithVersion(int value) { SetVersion(value); return *this;}
 

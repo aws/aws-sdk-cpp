@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * Endpoint batch update request.<p><h3>See Also:</h3>   <a
+   * <p>Specifies a batch of endpoints to create or update and the settings and
+   * attributes to set or change for each endpoint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointBatchRequest">AWS
    * API Reference</a></p>
    */
@@ -49,42 +50,58 @@ namespace Model
 
 
     /**
-     * List of items to update. Maximum 100 items
+     * <p>An array that defines the endpoints to create or update and, for each
+     * endpoint, the property values to set or change. An array can contain a maximum
+     * of 100 items.</p>
      */
     inline const Aws::Vector<EndpointBatchItem>& GetItem() const{ return m_item; }
 
     /**
-     * List of items to update. Maximum 100 items
+     * <p>An array that defines the endpoints to create or update and, for each
+     * endpoint, the property values to set or change. An array can contain a maximum
+     * of 100 items.</p>
      */
     inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
 
     /**
-     * List of items to update. Maximum 100 items
+     * <p>An array that defines the endpoints to create or update and, for each
+     * endpoint, the property values to set or change. An array can contain a maximum
+     * of 100 items.</p>
      */
     inline void SetItem(const Aws::Vector<EndpointBatchItem>& value) { m_itemHasBeenSet = true; m_item = value; }
 
     /**
-     * List of items to update. Maximum 100 items
+     * <p>An array that defines the endpoints to create or update and, for each
+     * endpoint, the property values to set or change. An array can contain a maximum
+     * of 100 items.</p>
      */
     inline void SetItem(Aws::Vector<EndpointBatchItem>&& value) { m_itemHasBeenSet = true; m_item = std::move(value); }
 
     /**
-     * List of items to update. Maximum 100 items
+     * <p>An array that defines the endpoints to create or update and, for each
+     * endpoint, the property values to set or change. An array can contain a maximum
+     * of 100 items.</p>
      */
     inline EndpointBatchRequest& WithItem(const Aws::Vector<EndpointBatchItem>& value) { SetItem(value); return *this;}
 
     /**
-     * List of items to update. Maximum 100 items
+     * <p>An array that defines the endpoints to create or update and, for each
+     * endpoint, the property values to set or change. An array can contain a maximum
+     * of 100 items.</p>
      */
     inline EndpointBatchRequest& WithItem(Aws::Vector<EndpointBatchItem>&& value) { SetItem(std::move(value)); return *this;}
 
     /**
-     * List of items to update. Maximum 100 items
+     * <p>An array that defines the endpoints to create or update and, for each
+     * endpoint, the property values to set or change. An array can contain a maximum
+     * of 100 items.</p>
      */
     inline EndpointBatchRequest& AddItem(const EndpointBatchItem& value) { m_itemHasBeenSet = true; m_item.push_back(value); return *this; }
 
     /**
-     * List of items to update. Maximum 100 items
+     * <p>An array that defines the endpoints to create or update and, for each
+     * endpoint, the property values to set or change. An array can contain a maximum
+     * of 100 items.</p>
      */
     inline EndpointBatchRequest& AddItem(EndpointBatchItem&& value) { m_itemHasBeenSet = true; m_item.push_back(std::move(value)); return *this; }
 

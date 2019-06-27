@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * SMS Channel Response.<p><h3>See Also:</h3>   <a
+   * <p>Provides information about the status and settings of the SMS channel for an
+   * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SMSChannelResponse">AWS
    * API Reference</a></p>
    */
@@ -48,455 +49,511 @@ namespace Model
 
 
     /**
-     * The unique ID of the application to which the SMS channel belongs.
+     * <p>The unique identifier for the application that the SMS channel applies
+     * to.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * The unique ID of the application to which the SMS channel belongs.
+     * <p>The unique identifier for the application that the SMS channel applies
+     * to.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * The unique ID of the application to which the SMS channel belongs.
+     * <p>The unique identifier for the application that the SMS channel applies
+     * to.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * The unique ID of the application to which the SMS channel belongs.
+     * <p>The unique identifier for the application that the SMS channel applies
+     * to.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * The unique ID of the application to which the SMS channel belongs.
+     * <p>The unique identifier for the application that the SMS channel applies
+     * to.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * The unique ID of the application to which the SMS channel belongs.
+     * <p>The unique identifier for the application that the SMS channel applies
+     * to.</p>
      */
     inline SMSChannelResponse& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * The unique ID of the application to which the SMS channel belongs.
+     * <p>The unique identifier for the application that the SMS channel applies
+     * to.</p>
      */
     inline SMSChannelResponse& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of the application to which the SMS channel belongs.
+     * <p>The unique identifier for the application that the SMS channel applies
+     * to.</p>
      */
     inline SMSChannelResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the SMS channel was enabled.</p>
      */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the SMS channel was enabled.</p>
      */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the SMS channel was enabled.</p>
      */
     inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the SMS channel was enabled.</p>
      */
     inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the SMS channel was enabled.</p>
      */
     inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the SMS channel was enabled.</p>
      */
     inline SMSChannelResponse& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the SMS channel was enabled.</p>
      */
     inline SMSChannelResponse& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
 
     /**
-     * The date that the settings were last updated in ISO 8601 format.
+     * <p>The date and time, in ISO 8601 format, when the SMS channel was enabled.</p>
      */
     inline SMSChannelResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>Specifies whether the SMS channel is enabled for the application.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>Specifies whether the SMS channel is enabled for the application.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>Specifies whether the SMS channel is enabled for the application.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * If the channel is enabled for sending messages.
+     * <p>Specifies whether the SMS channel is enabled for the application.</p>
      */
     inline SMSChannelResponse& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>(Not used) This property is retained only for backward compatibility.</p>
      */
     inline bool GetHasCredential() const{ return m_hasCredential; }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>(Not used) This property is retained only for backward compatibility.</p>
      */
     inline bool HasCredentialHasBeenSet() const { return m_hasCredentialHasBeenSet; }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>(Not used) This property is retained only for backward compatibility.</p>
      */
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
 
     /**
-     * Not used. Retained for backwards compatibility.
+     * <p>(Not used) This property is retained only for backward compatibility.</p>
      */
     inline SMSChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
 
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>(Deprecated) An identifier for the SMS channel. This property is retained
+     * only for backward compatibility.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>(Deprecated) An identifier for the SMS channel. This property is retained
+     * only for backward compatibility.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>(Deprecated) An identifier for the SMS channel. This property is retained
+     * only for backward compatibility.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>(Deprecated) An identifier for the SMS channel. This property is retained
+     * only for backward compatibility.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>(Deprecated) An identifier for the SMS channel. This property is retained
+     * only for backward compatibility.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>(Deprecated) An identifier for the SMS channel. This property is retained
+     * only for backward compatibility.</p>
      */
     inline SMSChannelResponse& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>(Deprecated) An identifier for the SMS channel. This property is retained
+     * only for backward compatibility.</p>
      */
     inline SMSChannelResponse& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * <p>(Deprecated) An identifier for the SMS channel. This property is retained
+     * only for backward compatibility.</p>
      */
     inline SMSChannelResponse& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * Is this channel archived
+     * <p>Specifies whether the SMS channel is archived.</p>
      */
     inline bool GetIsArchived() const{ return m_isArchived; }
 
     /**
-     * Is this channel archived
+     * <p>Specifies whether the SMS channel is archived.</p>
      */
     inline bool IsArchivedHasBeenSet() const { return m_isArchivedHasBeenSet; }
 
     /**
-     * Is this channel archived
+     * <p>Specifies whether the SMS channel is archived.</p>
      */
     inline void SetIsArchived(bool value) { m_isArchivedHasBeenSet = true; m_isArchived = value; }
 
     /**
-     * Is this channel archived
+     * <p>Specifies whether the SMS channel is archived.</p>
      */
     inline SMSChannelResponse& WithIsArchived(bool value) { SetIsArchived(value); return *this;}
 
 
     /**
-     * Who last updated this entry
+     * <p>The user who last modified the SMS channel.</p>
      */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
 
     /**
-     * Who last updated this entry
+     * <p>The user who last modified the SMS channel.</p>
      */
     inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
 
     /**
-     * Who last updated this entry
+     * <p>The user who last modified the SMS channel.</p>
      */
     inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
 
     /**
-     * Who last updated this entry
+     * <p>The user who last modified the SMS channel.</p>
      */
     inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
 
     /**
-     * Who last updated this entry
+     * <p>The user who last modified the SMS channel.</p>
      */
     inline void SetLastModifiedBy(const char* value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy.assign(value); }
 
     /**
-     * Who last updated this entry
+     * <p>The user who last modified the SMS channel.</p>
      */
     inline SMSChannelResponse& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
 
     /**
-     * Who last updated this entry
+     * <p>The user who last modified the SMS channel.</p>
      */
     inline SMSChannelResponse& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(std::move(value)); return *this;}
 
     /**
-     * Who last updated this entry
+     * <p>The user who last modified the SMS channel.</p>
      */
     inline SMSChannelResponse& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
 
 
     /**
-     * Last date this was updated
+     * <p>The date and time, in ISO 8601 format, when the SMS channel was last
+     * modified.</p>
      */
     inline const Aws::String& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
-     * Last date this was updated
+     * <p>The date and time, in ISO 8601 format, when the SMS channel was last
+     * modified.</p>
      */
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
 
     /**
-     * Last date this was updated
+     * <p>The date and time, in ISO 8601 format, when the SMS channel was last
+     * modified.</p>
      */
     inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
-     * Last date this was updated
+     * <p>The date and time, in ISO 8601 format, when the SMS channel was last
+     * modified.</p>
      */
     inline void SetLastModifiedDate(Aws::String&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
 
     /**
-     * Last date this was updated
+     * <p>The date and time, in ISO 8601 format, when the SMS channel was last
+     * modified.</p>
      */
     inline void SetLastModifiedDate(const char* value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate.assign(value); }
 
     /**
-     * Last date this was updated
+     * <p>The date and time, in ISO 8601 format, when the SMS channel was last
+     * modified.</p>
      */
     inline SMSChannelResponse& WithLastModifiedDate(const Aws::String& value) { SetLastModifiedDate(value); return *this;}
 
     /**
-     * Last date this was updated
+     * <p>The date and time, in ISO 8601 format, when the SMS channel was last
+     * modified.</p>
      */
     inline SMSChannelResponse& WithLastModifiedDate(Aws::String&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
     /**
-     * Last date this was updated
+     * <p>The date and time, in ISO 8601 format, when the SMS channel was last
+     * modified.</p>
      */
     inline SMSChannelResponse& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
 
 
     /**
-     * Platform type. Will be "SMS"
+     * <p>The type of messaging or notification platform for the channel. For the SMS
+     * channel, this value is SMS.</p>
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
 
     /**
-     * Platform type. Will be "SMS"
+     * <p>The type of messaging or notification platform for the channel. For the SMS
+     * channel, this value is SMS.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * Platform type. Will be "SMS"
+     * <p>The type of messaging or notification platform for the channel. For the SMS
+     * channel, this value is SMS.</p>
      */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * Platform type. Will be "SMS"
+     * <p>The type of messaging or notification platform for the channel. For the SMS
+     * channel, this value is SMS.</p>
      */
     inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * Platform type. Will be "SMS"
+     * <p>The type of messaging or notification platform for the channel. For the SMS
+     * channel, this value is SMS.</p>
      */
     inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
 
     /**
-     * Platform type. Will be "SMS"
+     * <p>The type of messaging or notification platform for the channel. For the SMS
+     * channel, this value is SMS.</p>
      */
     inline SMSChannelResponse& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
 
     /**
-     * Platform type. Will be "SMS"
+     * <p>The type of messaging or notification platform for the channel. For the SMS
+     * channel, this value is SMS.</p>
      */
     inline SMSChannelResponse& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
-     * Platform type. Will be "SMS"
+     * <p>The type of messaging or notification platform for the channel. For the SMS
+     * channel, this value is SMS.</p>
      */
     inline SMSChannelResponse& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
 
     /**
-     * Promotional messages per second that can be sent
+     * <p>The maximum number of promotional messages that you can send through the SMS
+     * channel each second.</p>
      */
     inline int GetPromotionalMessagesPerSecond() const{ return m_promotionalMessagesPerSecond; }
 
     /**
-     * Promotional messages per second that can be sent
+     * <p>The maximum number of promotional messages that you can send through the SMS
+     * channel each second.</p>
      */
     inline bool PromotionalMessagesPerSecondHasBeenSet() const { return m_promotionalMessagesPerSecondHasBeenSet; }
 
     /**
-     * Promotional messages per second that can be sent
+     * <p>The maximum number of promotional messages that you can send through the SMS
+     * channel each second.</p>
      */
     inline void SetPromotionalMessagesPerSecond(int value) { m_promotionalMessagesPerSecondHasBeenSet = true; m_promotionalMessagesPerSecond = value; }
 
     /**
-     * Promotional messages per second that can be sent
+     * <p>The maximum number of promotional messages that you can send through the SMS
+     * channel each second.</p>
      */
     inline SMSChannelResponse& WithPromotionalMessagesPerSecond(int value) { SetPromotionalMessagesPerSecond(value); return *this;}
 
 
     /**
-     * Sender identifier of your messages.
+     * <p>The identity that displays on recipients' devices when they receive messages
+     * from the SMS channel.</p>
      */
     inline const Aws::String& GetSenderId() const{ return m_senderId; }
 
     /**
-     * Sender identifier of your messages.
+     * <p>The identity that displays on recipients' devices when they receive messages
+     * from the SMS channel.</p>
      */
     inline bool SenderIdHasBeenSet() const { return m_senderIdHasBeenSet; }
 
     /**
-     * Sender identifier of your messages.
+     * <p>The identity that displays on recipients' devices when they receive messages
+     * from the SMS channel.</p>
      */
     inline void SetSenderId(const Aws::String& value) { m_senderIdHasBeenSet = true; m_senderId = value; }
 
     /**
-     * Sender identifier of your messages.
+     * <p>The identity that displays on recipients' devices when they receive messages
+     * from the SMS channel.</p>
      */
     inline void SetSenderId(Aws::String&& value) { m_senderIdHasBeenSet = true; m_senderId = std::move(value); }
 
     /**
-     * Sender identifier of your messages.
+     * <p>The identity that displays on recipients' devices when they receive messages
+     * from the SMS channel.</p>
      */
     inline void SetSenderId(const char* value) { m_senderIdHasBeenSet = true; m_senderId.assign(value); }
 
     /**
-     * Sender identifier of your messages.
+     * <p>The identity that displays on recipients' devices when they receive messages
+     * from the SMS channel.</p>
      */
     inline SMSChannelResponse& WithSenderId(const Aws::String& value) { SetSenderId(value); return *this;}
 
     /**
-     * Sender identifier of your messages.
+     * <p>The identity that displays on recipients' devices when they receive messages
+     * from the SMS channel.</p>
      */
     inline SMSChannelResponse& WithSenderId(Aws::String&& value) { SetSenderId(std::move(value)); return *this;}
 
     /**
-     * Sender identifier of your messages.
+     * <p>The identity that displays on recipients' devices when they receive messages
+     * from the SMS channel.</p>
      */
     inline SMSChannelResponse& WithSenderId(const char* value) { SetSenderId(value); return *this;}
 
 
     /**
-     * The short code registered with the phone provider.
+     * <p>The registered short code to use when you send messages through the SMS
+     * channel.</p>
      */
     inline const Aws::String& GetShortCode() const{ return m_shortCode; }
 
     /**
-     * The short code registered with the phone provider.
+     * <p>The registered short code to use when you send messages through the SMS
+     * channel.</p>
      */
     inline bool ShortCodeHasBeenSet() const { return m_shortCodeHasBeenSet; }
 
     /**
-     * The short code registered with the phone provider.
+     * <p>The registered short code to use when you send messages through the SMS
+     * channel.</p>
      */
     inline void SetShortCode(const Aws::String& value) { m_shortCodeHasBeenSet = true; m_shortCode = value; }
 
     /**
-     * The short code registered with the phone provider.
+     * <p>The registered short code to use when you send messages through the SMS
+     * channel.</p>
      */
     inline void SetShortCode(Aws::String&& value) { m_shortCodeHasBeenSet = true; m_shortCode = std::move(value); }
 
     /**
-     * The short code registered with the phone provider.
+     * <p>The registered short code to use when you send messages through the SMS
+     * channel.</p>
      */
     inline void SetShortCode(const char* value) { m_shortCodeHasBeenSet = true; m_shortCode.assign(value); }
 
     /**
-     * The short code registered with the phone provider.
+     * <p>The registered short code to use when you send messages through the SMS
+     * channel.</p>
      */
     inline SMSChannelResponse& WithShortCode(const Aws::String& value) { SetShortCode(value); return *this;}
 
     /**
-     * The short code registered with the phone provider.
+     * <p>The registered short code to use when you send messages through the SMS
+     * channel.</p>
      */
     inline SMSChannelResponse& WithShortCode(Aws::String&& value) { SetShortCode(std::move(value)); return *this;}
 
     /**
-     * The short code registered with the phone provider.
+     * <p>The registered short code to use when you send messages through the SMS
+     * channel.</p>
      */
     inline SMSChannelResponse& WithShortCode(const char* value) { SetShortCode(value); return *this;}
 
 
     /**
-     * Transactional messages per second that can be sent
+     * <p>The maximum number of transactional messages that you can send through the
+     * SMS channel each second.</p>
      */
     inline int GetTransactionalMessagesPerSecond() const{ return m_transactionalMessagesPerSecond; }
 
     /**
-     * Transactional messages per second that can be sent
+     * <p>The maximum number of transactional messages that you can send through the
+     * SMS channel each second.</p>
      */
     inline bool TransactionalMessagesPerSecondHasBeenSet() const { return m_transactionalMessagesPerSecondHasBeenSet; }
 
     /**
-     * Transactional messages per second that can be sent
+     * <p>The maximum number of transactional messages that you can send through the
+     * SMS channel each second.</p>
      */
     inline void SetTransactionalMessagesPerSecond(int value) { m_transactionalMessagesPerSecondHasBeenSet = true; m_transactionalMessagesPerSecond = value; }
 
     /**
-     * Transactional messages per second that can be sent
+     * <p>The maximum number of transactional messages that you can send through the
+     * SMS channel each second.</p>
      */
     inline SMSChannelResponse& WithTransactionalMessagesPerSecond(int value) { SetTransactionalMessagesPerSecond(value); return *this;}
 
 
     /**
-     * Version of channel
+     * <p>The current version of the SMS channel.</p>
      */
     inline int GetVersion() const{ return m_version; }
 
     /**
-     * Version of channel
+     * <p>The current version of the SMS channel.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * Version of channel
+     * <p>The current version of the SMS channel.</p>
      */
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * Version of channel
+     * <p>The current version of the SMS channel.</p>
      */
     inline SMSChannelResponse& WithVersion(int value) { SetVersion(value); return *this;}
 

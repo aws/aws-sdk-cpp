@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * The result from sending a message to an address.<p><h3>See Also:</h3>   <a
+   * <p>Provides information about the results of sending a message directly to an
+   * endpoint address.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/MessageResult">AWS
    * API Reference</a></p>
    */
@@ -49,398 +50,268 @@ namespace Model
 
 
     /**
-     * The delivery status of the message. Possible values:
-
-SUCCESS - The message was
-     * successfully delivered to the endpoint.
-
-TRANSIENT_FAILURE - A temporary error
-     * occurred. Amazon Pinpoint will attempt to deliver the message again
-     * later.
-
-FAILURE_PERMANENT - An error occurred when delivering the message to the
-     * endpoint. Amazon Pinpoint won't attempt to send the message again.
-
-TIMEOUT -
-     * The message couldn't be sent within the timeout period.
-
-QUIET_TIME - The local
-     * time for the endpoint was within the QuietTime for the campaign or
-     * app.
-
-DAILY_CAP - The endpoint has received the maximum number of messages it
-     * can receive within a 24-hour period.
-
-HOLDOUT - The endpoint was in a hold out
-     * treatment for the campaign.
-
-THROTTLED - Amazon Pinpoint throttled sending to
-     * this endpoint.
-
-EXPIRED - The endpoint address is expired.
-
-CAMPAIGN_CAP - The
-     * endpoint received the maximum number of messages allowed by the
-     * campaign.
-
-SERVICE_FAILURE - A service-level failure prevented Amazon Pinpoint
-     * from delivering the message.
-
-UNKNOWN - An unknown error occurred.
+     * <p>The delivery status of the message. Possible values are:</p> <ul>
+     * <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint
+     * address. Amazon Pinpoint won't attempt to send the message again.</p></li>  
+     * <li><p>OPT_OUT - The user who's associated with the endpoint address has opted
+     * out of receiving messages from you. Amazon Pinpoint won't attempt to send the
+     * message again.</p></li> <li><p>PERMANENT_FAILURE - An error occurred when
+     * delivering the message to the endpoint address. Amazon Pinpoint won't attempt to
+     * send the message again.</p></li>   <li><p>SUCCESSFUL - The message was
+     * successfully delivered to the endpoint address.</p></li>
+     * <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint will
+     * attempt to deliver the message again later.</p></li> <li><p>THROTTLED - Amazon
+     * Pinpoint throttled the operation to send the message to the endpoint
+     * address.</p></li> <li><p>TIMEOUT - The message couldn't be sent within the
+     * timeout period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error
+     * occurred.</p></li></ul>
      */
     inline const DeliveryStatus& GetDeliveryStatus() const{ return m_deliveryStatus; }
 
     /**
-     * The delivery status of the message. Possible values:
-
-SUCCESS - The message was
-     * successfully delivered to the endpoint.
-
-TRANSIENT_FAILURE - A temporary error
-     * occurred. Amazon Pinpoint will attempt to deliver the message again
-     * later.
-
-FAILURE_PERMANENT - An error occurred when delivering the message to the
-     * endpoint. Amazon Pinpoint won't attempt to send the message again.
-
-TIMEOUT -
-     * The message couldn't be sent within the timeout period.
-
-QUIET_TIME - The local
-     * time for the endpoint was within the QuietTime for the campaign or
-     * app.
-
-DAILY_CAP - The endpoint has received the maximum number of messages it
-     * can receive within a 24-hour period.
-
-HOLDOUT - The endpoint was in a hold out
-     * treatment for the campaign.
-
-THROTTLED - Amazon Pinpoint throttled sending to
-     * this endpoint.
-
-EXPIRED - The endpoint address is expired.
-
-CAMPAIGN_CAP - The
-     * endpoint received the maximum number of messages allowed by the
-     * campaign.
-
-SERVICE_FAILURE - A service-level failure prevented Amazon Pinpoint
-     * from delivering the message.
-
-UNKNOWN - An unknown error occurred.
+     * <p>The delivery status of the message. Possible values are:</p> <ul>
+     * <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint
+     * address. Amazon Pinpoint won't attempt to send the message again.</p></li>  
+     * <li><p>OPT_OUT - The user who's associated with the endpoint address has opted
+     * out of receiving messages from you. Amazon Pinpoint won't attempt to send the
+     * message again.</p></li> <li><p>PERMANENT_FAILURE - An error occurred when
+     * delivering the message to the endpoint address. Amazon Pinpoint won't attempt to
+     * send the message again.</p></li>   <li><p>SUCCESSFUL - The message was
+     * successfully delivered to the endpoint address.</p></li>
+     * <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint will
+     * attempt to deliver the message again later.</p></li> <li><p>THROTTLED - Amazon
+     * Pinpoint throttled the operation to send the message to the endpoint
+     * address.</p></li> <li><p>TIMEOUT - The message couldn't be sent within the
+     * timeout period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error
+     * occurred.</p></li></ul>
      */
     inline bool DeliveryStatusHasBeenSet() const { return m_deliveryStatusHasBeenSet; }
 
     /**
-     * The delivery status of the message. Possible values:
-
-SUCCESS - The message was
-     * successfully delivered to the endpoint.
-
-TRANSIENT_FAILURE - A temporary error
-     * occurred. Amazon Pinpoint will attempt to deliver the message again
-     * later.
-
-FAILURE_PERMANENT - An error occurred when delivering the message to the
-     * endpoint. Amazon Pinpoint won't attempt to send the message again.
-
-TIMEOUT -
-     * The message couldn't be sent within the timeout period.
-
-QUIET_TIME - The local
-     * time for the endpoint was within the QuietTime for the campaign or
-     * app.
-
-DAILY_CAP - The endpoint has received the maximum number of messages it
-     * can receive within a 24-hour period.
-
-HOLDOUT - The endpoint was in a hold out
-     * treatment for the campaign.
-
-THROTTLED - Amazon Pinpoint throttled sending to
-     * this endpoint.
-
-EXPIRED - The endpoint address is expired.
-
-CAMPAIGN_CAP - The
-     * endpoint received the maximum number of messages allowed by the
-     * campaign.
-
-SERVICE_FAILURE - A service-level failure prevented Amazon Pinpoint
-     * from delivering the message.
-
-UNKNOWN - An unknown error occurred.
+     * <p>The delivery status of the message. Possible values are:</p> <ul>
+     * <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint
+     * address. Amazon Pinpoint won't attempt to send the message again.</p></li>  
+     * <li><p>OPT_OUT - The user who's associated with the endpoint address has opted
+     * out of receiving messages from you. Amazon Pinpoint won't attempt to send the
+     * message again.</p></li> <li><p>PERMANENT_FAILURE - An error occurred when
+     * delivering the message to the endpoint address. Amazon Pinpoint won't attempt to
+     * send the message again.</p></li>   <li><p>SUCCESSFUL - The message was
+     * successfully delivered to the endpoint address.</p></li>
+     * <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint will
+     * attempt to deliver the message again later.</p></li> <li><p>THROTTLED - Amazon
+     * Pinpoint throttled the operation to send the message to the endpoint
+     * address.</p></li> <li><p>TIMEOUT - The message couldn't be sent within the
+     * timeout period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error
+     * occurred.</p></li></ul>
      */
     inline void SetDeliveryStatus(const DeliveryStatus& value) { m_deliveryStatusHasBeenSet = true; m_deliveryStatus = value; }
 
     /**
-     * The delivery status of the message. Possible values:
-
-SUCCESS - The message was
-     * successfully delivered to the endpoint.
-
-TRANSIENT_FAILURE - A temporary error
-     * occurred. Amazon Pinpoint will attempt to deliver the message again
-     * later.
-
-FAILURE_PERMANENT - An error occurred when delivering the message to the
-     * endpoint. Amazon Pinpoint won't attempt to send the message again.
-
-TIMEOUT -
-     * The message couldn't be sent within the timeout period.
-
-QUIET_TIME - The local
-     * time for the endpoint was within the QuietTime for the campaign or
-     * app.
-
-DAILY_CAP - The endpoint has received the maximum number of messages it
-     * can receive within a 24-hour period.
-
-HOLDOUT - The endpoint was in a hold out
-     * treatment for the campaign.
-
-THROTTLED - Amazon Pinpoint throttled sending to
-     * this endpoint.
-
-EXPIRED - The endpoint address is expired.
-
-CAMPAIGN_CAP - The
-     * endpoint received the maximum number of messages allowed by the
-     * campaign.
-
-SERVICE_FAILURE - A service-level failure prevented Amazon Pinpoint
-     * from delivering the message.
-
-UNKNOWN - An unknown error occurred.
+     * <p>The delivery status of the message. Possible values are:</p> <ul>
+     * <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint
+     * address. Amazon Pinpoint won't attempt to send the message again.</p></li>  
+     * <li><p>OPT_OUT - The user who's associated with the endpoint address has opted
+     * out of receiving messages from you. Amazon Pinpoint won't attempt to send the
+     * message again.</p></li> <li><p>PERMANENT_FAILURE - An error occurred when
+     * delivering the message to the endpoint address. Amazon Pinpoint won't attempt to
+     * send the message again.</p></li>   <li><p>SUCCESSFUL - The message was
+     * successfully delivered to the endpoint address.</p></li>
+     * <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint will
+     * attempt to deliver the message again later.</p></li> <li><p>THROTTLED - Amazon
+     * Pinpoint throttled the operation to send the message to the endpoint
+     * address.</p></li> <li><p>TIMEOUT - The message couldn't be sent within the
+     * timeout period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error
+     * occurred.</p></li></ul>
      */
     inline void SetDeliveryStatus(DeliveryStatus&& value) { m_deliveryStatusHasBeenSet = true; m_deliveryStatus = std::move(value); }
 
     /**
-     * The delivery status of the message. Possible values:
-
-SUCCESS - The message was
-     * successfully delivered to the endpoint.
-
-TRANSIENT_FAILURE - A temporary error
-     * occurred. Amazon Pinpoint will attempt to deliver the message again
-     * later.
-
-FAILURE_PERMANENT - An error occurred when delivering the message to the
-     * endpoint. Amazon Pinpoint won't attempt to send the message again.
-
-TIMEOUT -
-     * The message couldn't be sent within the timeout period.
-
-QUIET_TIME - The local
-     * time for the endpoint was within the QuietTime for the campaign or
-     * app.
-
-DAILY_CAP - The endpoint has received the maximum number of messages it
-     * can receive within a 24-hour period.
-
-HOLDOUT - The endpoint was in a hold out
-     * treatment for the campaign.
-
-THROTTLED - Amazon Pinpoint throttled sending to
-     * this endpoint.
-
-EXPIRED - The endpoint address is expired.
-
-CAMPAIGN_CAP - The
-     * endpoint received the maximum number of messages allowed by the
-     * campaign.
-
-SERVICE_FAILURE - A service-level failure prevented Amazon Pinpoint
-     * from delivering the message.
-
-UNKNOWN - An unknown error occurred.
+     * <p>The delivery status of the message. Possible values are:</p> <ul>
+     * <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint
+     * address. Amazon Pinpoint won't attempt to send the message again.</p></li>  
+     * <li><p>OPT_OUT - The user who's associated with the endpoint address has opted
+     * out of receiving messages from you. Amazon Pinpoint won't attempt to send the
+     * message again.</p></li> <li><p>PERMANENT_FAILURE - An error occurred when
+     * delivering the message to the endpoint address. Amazon Pinpoint won't attempt to
+     * send the message again.</p></li>   <li><p>SUCCESSFUL - The message was
+     * successfully delivered to the endpoint address.</p></li>
+     * <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint will
+     * attempt to deliver the message again later.</p></li> <li><p>THROTTLED - Amazon
+     * Pinpoint throttled the operation to send the message to the endpoint
+     * address.</p></li> <li><p>TIMEOUT - The message couldn't be sent within the
+     * timeout period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error
+     * occurred.</p></li></ul>
      */
     inline MessageResult& WithDeliveryStatus(const DeliveryStatus& value) { SetDeliveryStatus(value); return *this;}
 
     /**
-     * The delivery status of the message. Possible values:
-
-SUCCESS - The message was
-     * successfully delivered to the endpoint.
-
-TRANSIENT_FAILURE - A temporary error
-     * occurred. Amazon Pinpoint will attempt to deliver the message again
-     * later.
-
-FAILURE_PERMANENT - An error occurred when delivering the message to the
-     * endpoint. Amazon Pinpoint won't attempt to send the message again.
-
-TIMEOUT -
-     * The message couldn't be sent within the timeout period.
-
-QUIET_TIME - The local
-     * time for the endpoint was within the QuietTime for the campaign or
-     * app.
-
-DAILY_CAP - The endpoint has received the maximum number of messages it
-     * can receive within a 24-hour period.
-
-HOLDOUT - The endpoint was in a hold out
-     * treatment for the campaign.
-
-THROTTLED - Amazon Pinpoint throttled sending to
-     * this endpoint.
-
-EXPIRED - The endpoint address is expired.
-
-CAMPAIGN_CAP - The
-     * endpoint received the maximum number of messages allowed by the
-     * campaign.
-
-SERVICE_FAILURE - A service-level failure prevented Amazon Pinpoint
-     * from delivering the message.
-
-UNKNOWN - An unknown error occurred.
+     * <p>The delivery status of the message. Possible values are:</p> <ul>
+     * <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint
+     * address. Amazon Pinpoint won't attempt to send the message again.</p></li>  
+     * <li><p>OPT_OUT - The user who's associated with the endpoint address has opted
+     * out of receiving messages from you. Amazon Pinpoint won't attempt to send the
+     * message again.</p></li> <li><p>PERMANENT_FAILURE - An error occurred when
+     * delivering the message to the endpoint address. Amazon Pinpoint won't attempt to
+     * send the message again.</p></li>   <li><p>SUCCESSFUL - The message was
+     * successfully delivered to the endpoint address.</p></li>
+     * <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint will
+     * attempt to deliver the message again later.</p></li> <li><p>THROTTLED - Amazon
+     * Pinpoint throttled the operation to send the message to the endpoint
+     * address.</p></li> <li><p>TIMEOUT - The message couldn't be sent within the
+     * timeout period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error
+     * occurred.</p></li></ul>
      */
     inline MessageResult& WithDeliveryStatus(DeliveryStatus&& value) { SetDeliveryStatus(std::move(value)); return *this;}
 
 
     /**
-     * Unique message identifier associated with the message that was sent.
+     * <p>The unique identifier for the message that was sent.</p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
     /**
-     * Unique message identifier associated with the message that was sent.
+     * <p>The unique identifier for the message that was sent.</p>
      */
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
 
     /**
-     * Unique message identifier associated with the message that was sent.
+     * <p>The unique identifier for the message that was sent.</p>
      */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
 
     /**
-     * Unique message identifier associated with the message that was sent.
+     * <p>The unique identifier for the message that was sent.</p>
      */
     inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
 
     /**
-     * Unique message identifier associated with the message that was sent.
+     * <p>The unique identifier for the message that was sent.</p>
      */
     inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
 
     /**
-     * Unique message identifier associated with the message that was sent.
+     * <p>The unique identifier for the message that was sent.</p>
      */
     inline MessageResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
     /**
-     * Unique message identifier associated with the message that was sent.
+     * <p>The unique identifier for the message that was sent.</p>
      */
     inline MessageResult& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
 
     /**
-     * Unique message identifier associated with the message that was sent.
+     * <p>The unique identifier for the message that was sent.</p>
      */
     inline MessageResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 
 
     /**
-     * Downstream service status code.
+     * <p>The downstream service status code for delivering the message.</p>
      */
     inline int GetStatusCode() const{ return m_statusCode; }
 
     /**
-     * Downstream service status code.
+     * <p>The downstream service status code for delivering the message.</p>
      */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
-     * Downstream service status code.
+     * <p>The downstream service status code for delivering the message.</p>
      */
     inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
     /**
-     * Downstream service status code.
+     * <p>The downstream service status code for delivering the message.</p>
      */
     inline MessageResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
 
 
     /**
-     * Status message for message delivery.
+     * <p>The status message for delivering the message.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
     /**
-     * Status message for message delivery.
+     * <p>The status message for delivering the message.</p>
      */
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
-     * Status message for message delivery.
+     * <p>The status message for delivering the message.</p>
      */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
 
     /**
-     * Status message for message delivery.
+     * <p>The status message for delivering the message.</p>
      */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
 
     /**
-     * Status message for message delivery.
+     * <p>The status message for delivering the message.</p>
      */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
 
     /**
-     * Status message for message delivery.
+     * <p>The status message for delivering the message.</p>
      */
     inline MessageResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
     /**
-     * Status message for message delivery.
+     * <p>The status message for delivering the message.</p>
      */
     inline MessageResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
-     * Status message for message delivery.
+     * <p>The status message for delivering the message.</p>
      */
     inline MessageResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
 
     /**
-     * If token was updated as part of delivery. (This is GCM Specific)
+     * <p>For push notifications that are sent through the GCM channel, specifies
+     * whether the token was updated as part of delivering the message.</p>
      */
     inline const Aws::String& GetUpdatedToken() const{ return m_updatedToken; }
 
     /**
-     * If token was updated as part of delivery. (This is GCM Specific)
+     * <p>For push notifications that are sent through the GCM channel, specifies
+     * whether the token was updated as part of delivering the message.</p>
      */
     inline bool UpdatedTokenHasBeenSet() const { return m_updatedTokenHasBeenSet; }
 
     /**
-     * If token was updated as part of delivery. (This is GCM Specific)
+     * <p>For push notifications that are sent through the GCM channel, specifies
+     * whether the token was updated as part of delivering the message.</p>
      */
     inline void SetUpdatedToken(const Aws::String& value) { m_updatedTokenHasBeenSet = true; m_updatedToken = value; }
 
     /**
-     * If token was updated as part of delivery. (This is GCM Specific)
+     * <p>For push notifications that are sent through the GCM channel, specifies
+     * whether the token was updated as part of delivering the message.</p>
      */
     inline void SetUpdatedToken(Aws::String&& value) { m_updatedTokenHasBeenSet = true; m_updatedToken = std::move(value); }
 
     /**
-     * If token was updated as part of delivery. (This is GCM Specific)
+     * <p>For push notifications that are sent through the GCM channel, specifies
+     * whether the token was updated as part of delivering the message.</p>
      */
     inline void SetUpdatedToken(const char* value) { m_updatedTokenHasBeenSet = true; m_updatedToken.assign(value); }
 
     /**
-     * If token was updated as part of delivery. (This is GCM Specific)
+     * <p>For push notifications that are sent through the GCM channel, specifies
+     * whether the token was updated as part of delivering the message.</p>
      */
     inline MessageResult& WithUpdatedToken(const Aws::String& value) { SetUpdatedToken(value); return *this;}
 
     /**
-     * If token was updated as part of delivery. (This is GCM Specific)
+     * <p>For push notifications that are sent through the GCM channel, specifies
+     * whether the token was updated as part of delivering the message.</p>
      */
     inline MessageResult& WithUpdatedToken(Aws::String&& value) { SetUpdatedToken(std::move(value)); return *this;}
 
     /**
-     * If token was updated as part of delivery. (This is GCM Specific)
+     * <p>For push notifications that are sent through the GCM channel, specifies
+     * whether the token was updated as part of delivering the message.</p>
      */
     inline MessageResult& WithUpdatedToken(const char* value) { SetUpdatedToken(value); return *this;}
 

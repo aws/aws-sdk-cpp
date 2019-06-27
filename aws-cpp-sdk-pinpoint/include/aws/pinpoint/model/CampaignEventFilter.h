@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * An object that defines the events that cause the campaign to be sent.<p><h3>See
-   * Also:</h3>   <a
+   * <p>Specifies the settings for events that cause a campaign to be
+   * sent.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignEventFilter">AWS
    * API Reference</a></p>
    */
@@ -50,105 +50,81 @@ namespace Model
 
 
     /**
-     * An object that defines the dimensions for the event filter.
+     * <p>The dimension settings of the event filter for the campaign.</p>
      */
     inline const EventDimensions& GetDimensions() const{ return m_dimensions; }
 
     /**
-     * An object that defines the dimensions for the event filter.
+     * <p>The dimension settings of the event filter for the campaign.</p>
      */
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
 
     /**
-     * An object that defines the dimensions for the event filter.
+     * <p>The dimension settings of the event filter for the campaign.</p>
      */
     inline void SetDimensions(const EventDimensions& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * An object that defines the dimensions for the event filter.
+     * <p>The dimension settings of the event filter for the campaign.</p>
      */
     inline void SetDimensions(EventDimensions&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
 
     /**
-     * An object that defines the dimensions for the event filter.
+     * <p>The dimension settings of the event filter for the campaign.</p>
      */
     inline CampaignEventFilter& WithDimensions(const EventDimensions& value) { SetDimensions(value); return *this;}
 
     /**
-     * An object that defines the dimensions for the event filter.
+     * <p>The dimension settings of the event filter for the campaign.</p>
      */
     inline CampaignEventFilter& WithDimensions(EventDimensions&& value) { SetDimensions(std::move(value)); return *this;}
 
 
     /**
-     * The type of event that causes the campaign to be sent. Possible values:
-
-SYSTEM
-     * - Send the campaign when a system event occurs. See the System resource for more
-     * information.
-
-ENDPOINT - Send the campaign when an endpoint event occurs. See
-     * the Event resource for more information.
+     * <p>The type of event that causes the campaign to be sent. Valid values are:
+     * SYSTEM, sends the campaign when a system event occurs; and, ENDPOINT, sends the
+     * campaign when an endpoint event (<link 
+     * linkend="apps-application-id-events">Events</link> resource) occurs.</p>
      */
     inline const FilterType& GetFilterType() const{ return m_filterType; }
 
     /**
-     * The type of event that causes the campaign to be sent. Possible values:
-
-SYSTEM
-     * - Send the campaign when a system event occurs. See the System resource for more
-     * information.
-
-ENDPOINT - Send the campaign when an endpoint event occurs. See
-     * the Event resource for more information.
+     * <p>The type of event that causes the campaign to be sent. Valid values are:
+     * SYSTEM, sends the campaign when a system event occurs; and, ENDPOINT, sends the
+     * campaign when an endpoint event (<link 
+     * linkend="apps-application-id-events">Events</link> resource) occurs.</p>
      */
     inline bool FilterTypeHasBeenSet() const { return m_filterTypeHasBeenSet; }
 
     /**
-     * The type of event that causes the campaign to be sent. Possible values:
-
-SYSTEM
-     * - Send the campaign when a system event occurs. See the System resource for more
-     * information.
-
-ENDPOINT - Send the campaign when an endpoint event occurs. See
-     * the Event resource for more information.
+     * <p>The type of event that causes the campaign to be sent. Valid values are:
+     * SYSTEM, sends the campaign when a system event occurs; and, ENDPOINT, sends the
+     * campaign when an endpoint event (<link 
+     * linkend="apps-application-id-events">Events</link> resource) occurs.</p>
      */
     inline void SetFilterType(const FilterType& value) { m_filterTypeHasBeenSet = true; m_filterType = value; }
 
     /**
-     * The type of event that causes the campaign to be sent. Possible values:
-
-SYSTEM
-     * - Send the campaign when a system event occurs. See the System resource for more
-     * information.
-
-ENDPOINT - Send the campaign when an endpoint event occurs. See
-     * the Event resource for more information.
+     * <p>The type of event that causes the campaign to be sent. Valid values are:
+     * SYSTEM, sends the campaign when a system event occurs; and, ENDPOINT, sends the
+     * campaign when an endpoint event (<link 
+     * linkend="apps-application-id-events">Events</link> resource) occurs.</p>
      */
     inline void SetFilterType(FilterType&& value) { m_filterTypeHasBeenSet = true; m_filterType = std::move(value); }
 
     /**
-     * The type of event that causes the campaign to be sent. Possible values:
-
-SYSTEM
-     * - Send the campaign when a system event occurs. See the System resource for more
-     * information.
-
-ENDPOINT - Send the campaign when an endpoint event occurs. See
-     * the Event resource for more information.
+     * <p>The type of event that causes the campaign to be sent. Valid values are:
+     * SYSTEM, sends the campaign when a system event occurs; and, ENDPOINT, sends the
+     * campaign when an endpoint event (<link 
+     * linkend="apps-application-id-events">Events</link> resource) occurs.</p>
      */
     inline CampaignEventFilter& WithFilterType(const FilterType& value) { SetFilterType(value); return *this;}
 
     /**
-     * The type of event that causes the campaign to be sent. Possible values:
-
-SYSTEM
-     * - Send the campaign when a system event occurs. See the System resource for more
-     * information.
-
-ENDPOINT - Send the campaign when an endpoint event occurs. See
-     * the Event resource for more information.
+     * <p>The type of event that causes the campaign to be sent. Valid values are:
+     * SYSTEM, sends the campaign when a system event occurs; and, ENDPOINT, sends the
+     * campaign when an endpoint event (<link 
+     * linkend="apps-application-id-events">Events</link> resource) occurs.</p>
      */
     inline CampaignEventFilter& WithFilterType(FilterType&& value) { SetFilterType(std::move(value)); return *this;}
 

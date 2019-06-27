@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * Attributes.<p><h3>See Also:</h3>   <a
+   * <p>Provides information about the type and the names of attributes that were
+   * removed from all the endpoints that are associated with an
+   * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/AttributesResource">AWS
    * API Reference</a></p>
    */
@@ -49,129 +51,178 @@ namespace Model
 
 
     /**
-     * The unique ID for the application.
+     * <p>The unique identifier for the application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * The unique ID for the application.
+     * <p>The unique identifier for the application.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * The unique ID for the application.
+     * <p>The unique identifier for the application.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * The unique ID for the application.
+     * <p>The unique identifier for the application.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * The unique ID for the application.
+     * <p>The unique identifier for the application.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * The unique ID for the application.
+     * <p>The unique identifier for the application.</p>
      */
     inline AttributesResource& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * The unique ID for the application.
+     * <p>The unique identifier for the application.</p>
      */
     inline AttributesResource& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * The unique ID for the application.
+     * <p>The unique identifier for the application.</p>
      */
     inline AttributesResource& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * The attribute type for the application.
+     * <p>The type of attribute or attributes that were removed from the endpoints.
+     * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
+     * that describe endpoints</p></li> <li><p>endpoint-custom-metrics - Custom metrics
+     * that your app reports to Amazon Pinpoint for endpoints</p></li>
+     * <li><p>endpoint-user-attributes - Custom attributes that describe
+     * users</p></li></ul>
      */
     inline const Aws::String& GetAttributeType() const{ return m_attributeType; }
 
     /**
-     * The attribute type for the application.
+     * <p>The type of attribute or attributes that were removed from the endpoints.
+     * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
+     * that describe endpoints</p></li> <li><p>endpoint-custom-metrics - Custom metrics
+     * that your app reports to Amazon Pinpoint for endpoints</p></li>
+     * <li><p>endpoint-user-attributes - Custom attributes that describe
+     * users</p></li></ul>
      */
     inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }
 
     /**
-     * The attribute type for the application.
+     * <p>The type of attribute or attributes that were removed from the endpoints.
+     * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
+     * that describe endpoints</p></li> <li><p>endpoint-custom-metrics - Custom metrics
+     * that your app reports to Amazon Pinpoint for endpoints</p></li>
+     * <li><p>endpoint-user-attributes - Custom attributes that describe
+     * users</p></li></ul>
      */
     inline void SetAttributeType(const Aws::String& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
 
     /**
-     * The attribute type for the application.
+     * <p>The type of attribute or attributes that were removed from the endpoints.
+     * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
+     * that describe endpoints</p></li> <li><p>endpoint-custom-metrics - Custom metrics
+     * that your app reports to Amazon Pinpoint for endpoints</p></li>
+     * <li><p>endpoint-user-attributes - Custom attributes that describe
+     * users</p></li></ul>
      */
     inline void SetAttributeType(Aws::String&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = std::move(value); }
 
     /**
-     * The attribute type for the application.
+     * <p>The type of attribute or attributes that were removed from the endpoints.
+     * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
+     * that describe endpoints</p></li> <li><p>endpoint-custom-metrics - Custom metrics
+     * that your app reports to Amazon Pinpoint for endpoints</p></li>
+     * <li><p>endpoint-user-attributes - Custom attributes that describe
+     * users</p></li></ul>
      */
     inline void SetAttributeType(const char* value) { m_attributeTypeHasBeenSet = true; m_attributeType.assign(value); }
 
     /**
-     * The attribute type for the application.
+     * <p>The type of attribute or attributes that were removed from the endpoints.
+     * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
+     * that describe endpoints</p></li> <li><p>endpoint-custom-metrics - Custom metrics
+     * that your app reports to Amazon Pinpoint for endpoints</p></li>
+     * <li><p>endpoint-user-attributes - Custom attributes that describe
+     * users</p></li></ul>
      */
     inline AttributesResource& WithAttributeType(const Aws::String& value) { SetAttributeType(value); return *this;}
 
     /**
-     * The attribute type for the application.
+     * <p>The type of attribute or attributes that were removed from the endpoints.
+     * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
+     * that describe endpoints</p></li> <li><p>endpoint-custom-metrics - Custom metrics
+     * that your app reports to Amazon Pinpoint for endpoints</p></li>
+     * <li><p>endpoint-user-attributes - Custom attributes that describe
+     * users</p></li></ul>
      */
     inline AttributesResource& WithAttributeType(Aws::String&& value) { SetAttributeType(std::move(value)); return *this;}
 
     /**
-     * The attribute type for the application.
+     * <p>The type of attribute or attributes that were removed from the endpoints.
+     * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
+     * that describe endpoints</p></li> <li><p>endpoint-custom-metrics - Custom metrics
+     * that your app reports to Amazon Pinpoint for endpoints</p></li>
+     * <li><p>endpoint-user-attributes - Custom attributes that describe
+     * users</p></li></ul>
      */
     inline AttributesResource& WithAttributeType(const char* value) { SetAttributeType(value); return *this;}
 
 
     /**
-     * The attributes for the application.
+     * <p>An array that specifies the names of the attributes that were removed from
+     * the endpoints.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * The attributes for the application.
+     * <p>An array that specifies the names of the attributes that were removed from
+     * the endpoints.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
-     * The attributes for the application.
+     * <p>An array that specifies the names of the attributes that were removed from
+     * the endpoints.</p>
      */
     inline void SetAttributes(const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * The attributes for the application.
+     * <p>An array that specifies the names of the attributes that were removed from
+     * the endpoints.</p>
      */
     inline void SetAttributes(Aws::Vector<Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * The attributes for the application.
+     * <p>An array that specifies the names of the attributes that were removed from
+     * the endpoints.</p>
      */
     inline AttributesResource& WithAttributes(const Aws::Vector<Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
-     * The attributes for the application.
+     * <p>An array that specifies the names of the attributes that were removed from
+     * the endpoints.</p>
      */
     inline AttributesResource& WithAttributes(Aws::Vector<Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * The attributes for the application.
+     * <p>An array that specifies the names of the attributes that were removed from
+     * the endpoints.</p>
      */
     inline AttributesResource& AddAttributes(const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     /**
-     * The attributes for the application.
+     * <p>An array that specifies the names of the attributes that were removed from
+     * the endpoints.</p>
      */
     inline AttributesResource& AddAttributes(Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
     /**
-     * The attributes for the application.
+     * <p>An array that specifies the names of the attributes that were removed from
+     * the endpoints.</p>
      */
     inline AttributesResource& AddAttributes(const char* value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 

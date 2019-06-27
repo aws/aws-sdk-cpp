@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Information about a session.<p><h3>See Also:</h3>   <a
+   * <p>Provides information about a session.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/Session">AWS
    * API Reference</a></p>
    */
@@ -48,145 +48,145 @@ namespace Model
 
 
     /**
-     * The duration of the session, in milliseconds.
+     * <p>The duration of the session, in milliseconds.</p>
      */
     inline int GetDuration() const{ return m_duration; }
 
     /**
-     * The duration of the session, in milliseconds.
+     * <p>The duration of the session, in milliseconds.</p>
      */
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
 
     /**
-     * The duration of the session, in milliseconds.
+     * <p>The duration of the session, in milliseconds.</p>
      */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
-     * The duration of the session, in milliseconds.
+     * <p>The duration of the session, in milliseconds.</p>
      */
     inline Session& WithDuration(int value) { SetDuration(value); return *this;}
 
 
     /**
-     * A unique identifier for the session.
+     * <p>The unique identifier for the session.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * A unique identifier for the session.
+     * <p>The unique identifier for the session.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * A unique identifier for the session.
+     * <p>The unique identifier for the session.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * A unique identifier for the session.
+     * <p>The unique identifier for the session.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * A unique identifier for the session.
+     * <p>The unique identifier for the session.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * A unique identifier for the session.
+     * <p>The unique identifier for the session.</p>
      */
     inline Session& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * A unique identifier for the session.
+     * <p>The unique identifier for the session.</p>
      */
     inline Session& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * A unique identifier for the session.
+     * <p>The unique identifier for the session.</p>
      */
     inline Session& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * The date and time when the session began.
+     * <p>The date and time when the session began.</p>
      */
     inline const Aws::String& GetStartTimestamp() const{ return m_startTimestamp; }
 
     /**
-     * The date and time when the session began.
+     * <p>The date and time when the session began.</p>
      */
     inline bool StartTimestampHasBeenSet() const { return m_startTimestampHasBeenSet; }
 
     /**
-     * The date and time when the session began.
+     * <p>The date and time when the session began.</p>
      */
     inline void SetStartTimestamp(const Aws::String& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
 
     /**
-     * The date and time when the session began.
+     * <p>The date and time when the session began.</p>
      */
     inline void SetStartTimestamp(Aws::String&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = std::move(value); }
 
     /**
-     * The date and time when the session began.
+     * <p>The date and time when the session began.</p>
      */
     inline void SetStartTimestamp(const char* value) { m_startTimestampHasBeenSet = true; m_startTimestamp.assign(value); }
 
     /**
-     * The date and time when the session began.
+     * <p>The date and time when the session began.</p>
      */
     inline Session& WithStartTimestamp(const Aws::String& value) { SetStartTimestamp(value); return *this;}
 
     /**
-     * The date and time when the session began.
+     * <p>The date and time when the session began.</p>
      */
     inline Session& WithStartTimestamp(Aws::String&& value) { SetStartTimestamp(std::move(value)); return *this;}
 
     /**
-     * The date and time when the session began.
+     * <p>The date and time when the session began.</p>
      */
     inline Session& WithStartTimestamp(const char* value) { SetStartTimestamp(value); return *this;}
 
 
     /**
-     * The date and time when the session ended.
+     * <p>The date and time when the session ended.</p>
      */
     inline const Aws::String& GetStopTimestamp() const{ return m_stopTimestamp; }
 
     /**
-     * The date and time when the session ended.
+     * <p>The date and time when the session ended.</p>
      */
     inline bool StopTimestampHasBeenSet() const { return m_stopTimestampHasBeenSet; }
 
     /**
-     * The date and time when the session ended.
+     * <p>The date and time when the session ended.</p>
      */
     inline void SetStopTimestamp(const Aws::String& value) { m_stopTimestampHasBeenSet = true; m_stopTimestamp = value; }
 
     /**
-     * The date and time when the session ended.
+     * <p>The date and time when the session ended.</p>
      */
     inline void SetStopTimestamp(Aws::String&& value) { m_stopTimestampHasBeenSet = true; m_stopTimestamp = std::move(value); }
 
     /**
-     * The date and time when the session ended.
+     * <p>The date and time when the session ended.</p>
      */
     inline void SetStopTimestamp(const char* value) { m_stopTimestampHasBeenSet = true; m_stopTimestamp.assign(value); }
 
     /**
-     * The date and time when the session ended.
+     * <p>The date and time when the session ended.</p>
      */
     inline Session& WithStopTimestamp(const Aws::String& value) { SetStopTimestamp(value); return *this;}
 
     /**
-     * The date and time when the session ended.
+     * <p>The date and time when the session ended.</p>
      */
     inline Session& WithStopTimestamp(Aws::String&& value) { SetStopTimestamp(std::move(value)); return *this;}
 
     /**
-     * The date and time when the session ended.
+     * <p>The date and time when the session ended.</p>
      */
     inline Session& WithStopTimestamp(const char* value) { SetStopTimestamp(value); return *this;}
 

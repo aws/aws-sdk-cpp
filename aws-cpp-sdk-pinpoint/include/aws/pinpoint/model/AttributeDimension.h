@@ -36,7 +36,8 @@ namespace Model
 {
 
   /**
-   * Custom attibute dimension<p><h3>See Also:</h3>   <a
+   * <p>Specifies attribute-based criteria for including or excluding endpoints from
+   * a segment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/AttributeDimension">AWS
    * API Reference</a></p>
    */
@@ -50,132 +51,108 @@ namespace Model
 
 
     /**
-     * The type of dimension:
-
-INCLUSIVE - Endpoints that match the criteria are
-     * included in the segment.
-
-EXCLUSIVE - Endpoints that match the criteria are
-     * excluded from the segment.
+     * <p>The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints
+     * that match the criteria are included in the segment; and, EXCLUSIVE, endpoints
+     * that match the criteria are excluded from the segment.</p>
      */
     inline const AttributeType& GetAttributeType() const{ return m_attributeType; }
 
     /**
-     * The type of dimension:
-
-INCLUSIVE - Endpoints that match the criteria are
-     * included in the segment.
-
-EXCLUSIVE - Endpoints that match the criteria are
-     * excluded from the segment.
+     * <p>The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints
+     * that match the criteria are included in the segment; and, EXCLUSIVE, endpoints
+     * that match the criteria are excluded from the segment.</p>
      */
     inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }
 
     /**
-     * The type of dimension:
-
-INCLUSIVE - Endpoints that match the criteria are
-     * included in the segment.
-
-EXCLUSIVE - Endpoints that match the criteria are
-     * excluded from the segment.
+     * <p>The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints
+     * that match the criteria are included in the segment; and, EXCLUSIVE, endpoints
+     * that match the criteria are excluded from the segment.</p>
      */
     inline void SetAttributeType(const AttributeType& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
 
     /**
-     * The type of dimension:
-
-INCLUSIVE - Endpoints that match the criteria are
-     * included in the segment.
-
-EXCLUSIVE - Endpoints that match the criteria are
-     * excluded from the segment.
+     * <p>The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints
+     * that match the criteria are included in the segment; and, EXCLUSIVE, endpoints
+     * that match the criteria are excluded from the segment.</p>
      */
     inline void SetAttributeType(AttributeType&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = std::move(value); }
 
     /**
-     * The type of dimension:
-
-INCLUSIVE - Endpoints that match the criteria are
-     * included in the segment.
-
-EXCLUSIVE - Endpoints that match the criteria are
-     * excluded from the segment.
+     * <p>The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints
+     * that match the criteria are included in the segment; and, EXCLUSIVE, endpoints
+     * that match the criteria are excluded from the segment.</p>
      */
     inline AttributeDimension& WithAttributeType(const AttributeType& value) { SetAttributeType(value); return *this;}
 
     /**
-     * The type of dimension:
-
-INCLUSIVE - Endpoints that match the criteria are
-     * included in the segment.
-
-EXCLUSIVE - Endpoints that match the criteria are
-     * excluded from the segment.
+     * <p>The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints
+     * that match the criteria are included in the segment; and, EXCLUSIVE, endpoints
+     * that match the criteria are excluded from the segment.</p>
      */
     inline AttributeDimension& WithAttributeType(AttributeType&& value) { SetAttributeType(std::move(value)); return *this;}
 
 
     /**
-     * The criteria values for the segment dimension. Endpoints with matching attribute
-     * values are included or excluded from the segment, depending on the setting for
-     * Type.
+     * <p>The criteria values to use for the segment dimension. Depending on the value
+     * of the AttributeType property, endpoints are included or excluded from the
+     * segment if their attribute values match the criteria values.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
-     * The criteria values for the segment dimension. Endpoints with matching attribute
-     * values are included or excluded from the segment, depending on the setting for
-     * Type.
+     * <p>The criteria values to use for the segment dimension. Depending on the value
+     * of the AttributeType property, endpoints are included or excluded from the
+     * segment if their attribute values match the criteria values.</p>
      */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
-     * The criteria values for the segment dimension. Endpoints with matching attribute
-     * values are included or excluded from the segment, depending on the setting for
-     * Type.
+     * <p>The criteria values to use for the segment dimension. Depending on the value
+     * of the AttributeType property, endpoints are included or excluded from the
+     * segment if their attribute values match the criteria values.</p>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * The criteria values for the segment dimension. Endpoints with matching attribute
-     * values are included or excluded from the segment, depending on the setting for
-     * Type.
+     * <p>The criteria values to use for the segment dimension. Depending on the value
+     * of the AttributeType property, endpoints are included or excluded from the
+     * segment if their attribute values match the criteria values.</p>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
-     * The criteria values for the segment dimension. Endpoints with matching attribute
-     * values are included or excluded from the segment, depending on the setting for
-     * Type.
+     * <p>The criteria values to use for the segment dimension. Depending on the value
+     * of the AttributeType property, endpoints are included or excluded from the
+     * segment if their attribute values match the criteria values.</p>
      */
     inline AttributeDimension& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
-     * The criteria values for the segment dimension. Endpoints with matching attribute
-     * values are included or excluded from the segment, depending on the setting for
-     * Type.
+     * <p>The criteria values to use for the segment dimension. Depending on the value
+     * of the AttributeType property, endpoints are included or excluded from the
+     * segment if their attribute values match the criteria values.</p>
      */
     inline AttributeDimension& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
-     * The criteria values for the segment dimension. Endpoints with matching attribute
-     * values are included or excluded from the segment, depending on the setting for
-     * Type.
+     * <p>The criteria values to use for the segment dimension. Depending on the value
+     * of the AttributeType property, endpoints are included or excluded from the
+     * segment if their attribute values match the criteria values.</p>
      */
     inline AttributeDimension& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * The criteria values for the segment dimension. Endpoints with matching attribute
-     * values are included or excluded from the segment, depending on the setting for
-     * Type.
+     * <p>The criteria values to use for the segment dimension. Depending on the value
+     * of the AttributeType property, endpoints are included or excluded from the
+     * segment if their attribute values match the criteria values.</p>
      */
     inline AttributeDimension& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
-     * The criteria values for the segment dimension. Endpoints with matching attribute
-     * values are included or excluded from the segment, depending on the setting for
-     * Type.
+     * <p>The criteria values to use for the segment dimension. Depending on the value
+     * of the AttributeType property, endpoints are included or excluded from the
+     * segment if their attribute values match the criteria values.</p>
      */
     inline AttributeDimension& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 

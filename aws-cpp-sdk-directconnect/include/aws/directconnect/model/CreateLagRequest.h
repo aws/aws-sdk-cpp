@@ -17,6 +17,8 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/directconnect/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -248,6 +250,112 @@ namespace Model
      */
     inline CreateLagRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
 
+
+    /**
+     * <p>The tags to assign to the link aggregation group (LAG).</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to assign to the link aggregation group (LAG).</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags to assign to the link aggregation group (LAG).</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags to assign to the link aggregation group (LAG).</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags to assign to the link aggregation group (LAG).</p>
+     */
+    inline CreateLagRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags to assign to the link aggregation group (LAG).</p>
+     */
+    inline CreateLagRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to assign to the link aggregation group (LAG).</p>
+     */
+    inline CreateLagRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to assign to the link aggregation group (LAG).</p>
+     */
+    inline CreateLagRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The tags to assign to the child connections of the LAG. Only newly created
+     * child connections as the result of creating a LAG connection are assigned the
+     * provided tags. The tags are not assigned to an existing connection that is
+     * provided via the “connectionId” parameter that will be migrated to the LAG.</p>
+     */
+    inline const Aws::Vector<Tag>& GetChildConnectionTags() const{ return m_childConnectionTags; }
+
+    /**
+     * <p>The tags to assign to the child connections of the LAG. Only newly created
+     * child connections as the result of creating a LAG connection are assigned the
+     * provided tags. The tags are not assigned to an existing connection that is
+     * provided via the “connectionId” parameter that will be migrated to the LAG.</p>
+     */
+    inline bool ChildConnectionTagsHasBeenSet() const { return m_childConnectionTagsHasBeenSet; }
+
+    /**
+     * <p>The tags to assign to the child connections of the LAG. Only newly created
+     * child connections as the result of creating a LAG connection are assigned the
+     * provided tags. The tags are not assigned to an existing connection that is
+     * provided via the “connectionId” parameter that will be migrated to the LAG.</p>
+     */
+    inline void SetChildConnectionTags(const Aws::Vector<Tag>& value) { m_childConnectionTagsHasBeenSet = true; m_childConnectionTags = value; }
+
+    /**
+     * <p>The tags to assign to the child connections of the LAG. Only newly created
+     * child connections as the result of creating a LAG connection are assigned the
+     * provided tags. The tags are not assigned to an existing connection that is
+     * provided via the “connectionId” parameter that will be migrated to the LAG.</p>
+     */
+    inline void SetChildConnectionTags(Aws::Vector<Tag>&& value) { m_childConnectionTagsHasBeenSet = true; m_childConnectionTags = std::move(value); }
+
+    /**
+     * <p>The tags to assign to the child connections of the LAG. Only newly created
+     * child connections as the result of creating a LAG connection are assigned the
+     * provided tags. The tags are not assigned to an existing connection that is
+     * provided via the “connectionId” parameter that will be migrated to the LAG.</p>
+     */
+    inline CreateLagRequest& WithChildConnectionTags(const Aws::Vector<Tag>& value) { SetChildConnectionTags(value); return *this;}
+
+    /**
+     * <p>The tags to assign to the child connections of the LAG. Only newly created
+     * child connections as the result of creating a LAG connection are assigned the
+     * provided tags. The tags are not assigned to an existing connection that is
+     * provided via the “connectionId” parameter that will be migrated to the LAG.</p>
+     */
+    inline CreateLagRequest& WithChildConnectionTags(Aws::Vector<Tag>&& value) { SetChildConnectionTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to assign to the child connections of the LAG. Only newly created
+     * child connections as the result of creating a LAG connection are assigned the
+     * provided tags. The tags are not assigned to an existing connection that is
+     * provided via the “connectionId” parameter that will be migrated to the LAG.</p>
+     */
+    inline CreateLagRequest& AddChildConnectionTags(const Tag& value) { m_childConnectionTagsHasBeenSet = true; m_childConnectionTags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to assign to the child connections of the LAG. Only newly created
+     * child connections as the result of creating a LAG connection are assigned the
+     * provided tags. The tags are not assigned to an existing connection that is
+     * provided via the “connectionId” parameter that will be migrated to the LAG.</p>
+     */
+    inline CreateLagRequest& AddChildConnectionTags(Tag&& value) { m_childConnectionTagsHasBeenSet = true; m_childConnectionTags.push_back(std::move(value)); return *this; }
+
   private:
 
     int m_numberOfConnections;
@@ -264,6 +372,12 @@ namespace Model
 
     Aws::String m_connectionId;
     bool m_connectionIdHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
+
+    Aws::Vector<Tag> m_childConnectionTags;
+    bool m_childConnectionTagsHasBeenSet;
   };
 
 } // namespace Model

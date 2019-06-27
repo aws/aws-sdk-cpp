@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * Phone Number Validate request.<p><h3>See Also:</h3>   <a
+   * <p>Specifies a phone number to validate and retrieve information
+   * about.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/NumberValidateRequest">AWS
    * API Reference</a></p>
    */
@@ -48,107 +49,107 @@ namespace Model
 
 
     /**
-     * (Optional) The two-character ISO country code for the country or region where
-     * the phone number was originally registered.
+     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
+     * region where the phone number was originally registered.</p>
      */
     inline const Aws::String& GetIsoCountryCode() const{ return m_isoCountryCode; }
 
     /**
-     * (Optional) The two-character ISO country code for the country or region where
-     * the phone number was originally registered.
+     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
+     * region where the phone number was originally registered.</p>
      */
     inline bool IsoCountryCodeHasBeenSet() const { return m_isoCountryCodeHasBeenSet; }
 
     /**
-     * (Optional) The two-character ISO country code for the country or region where
-     * the phone number was originally registered.
+     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
+     * region where the phone number was originally registered.</p>
      */
     inline void SetIsoCountryCode(const Aws::String& value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode = value; }
 
     /**
-     * (Optional) The two-character ISO country code for the country or region where
-     * the phone number was originally registered.
+     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
+     * region where the phone number was originally registered.</p>
      */
     inline void SetIsoCountryCode(Aws::String&& value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode = std::move(value); }
 
     /**
-     * (Optional) The two-character ISO country code for the country or region where
-     * the phone number was originally registered.
+     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
+     * region where the phone number was originally registered.</p>
      */
     inline void SetIsoCountryCode(const char* value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode.assign(value); }
 
     /**
-     * (Optional) The two-character ISO country code for the country or region where
-     * the phone number was originally registered.
+     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
+     * region where the phone number was originally registered.</p>
      */
     inline NumberValidateRequest& WithIsoCountryCode(const Aws::String& value) { SetIsoCountryCode(value); return *this;}
 
     /**
-     * (Optional) The two-character ISO country code for the country or region where
-     * the phone number was originally registered.
+     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
+     * region where the phone number was originally registered.</p>
      */
     inline NumberValidateRequest& WithIsoCountryCode(Aws::String&& value) { SetIsoCountryCode(std::move(value)); return *this;}
 
     /**
-     * (Optional) The two-character ISO country code for the country or region where
-     * the phone number was originally registered.
+     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
+     * region where the phone number was originally registered.</p>
      */
     inline NumberValidateRequest& WithIsoCountryCode(const char* value) { SetIsoCountryCode(value); return *this;}
 
 
     /**
-     * The phone number to get information about. The phone number that you provide
-     * should include a country code. If the number doesn't include a valid country
-     * code, the operation might result in an error.
+     * <p>The phone number to retrieve information about. The phone number that you
+     * provide should include a valid numeric country code. Otherwise, the operation
+     * might result in an error.</p>
      */
     inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
 
     /**
-     * The phone number to get information about. The phone number that you provide
-     * should include a country code. If the number doesn't include a valid country
-     * code, the operation might result in an error.
+     * <p>The phone number to retrieve information about. The phone number that you
+     * provide should include a valid numeric country code. Otherwise, the operation
+     * might result in an error.</p>
      */
     inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
 
     /**
-     * The phone number to get information about. The phone number that you provide
-     * should include a country code. If the number doesn't include a valid country
-     * code, the operation might result in an error.
+     * <p>The phone number to retrieve information about. The phone number that you
+     * provide should include a valid numeric country code. Otherwise, the operation
+     * might result in an error.</p>
      */
     inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
 
     /**
-     * The phone number to get information about. The phone number that you provide
-     * should include a country code. If the number doesn't include a valid country
-     * code, the operation might result in an error.
+     * <p>The phone number to retrieve information about. The phone number that you
+     * provide should include a valid numeric country code. Otherwise, the operation
+     * might result in an error.</p>
      */
     inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::move(value); }
 
     /**
-     * The phone number to get information about. The phone number that you provide
-     * should include a country code. If the number doesn't include a valid country
-     * code, the operation might result in an error.
+     * <p>The phone number to retrieve information about. The phone number that you
+     * provide should include a valid numeric country code. Otherwise, the operation
+     * might result in an error.</p>
      */
     inline void SetPhoneNumber(const char* value) { m_phoneNumberHasBeenSet = true; m_phoneNumber.assign(value); }
 
     /**
-     * The phone number to get information about. The phone number that you provide
-     * should include a country code. If the number doesn't include a valid country
-     * code, the operation might result in an error.
+     * <p>The phone number to retrieve information about. The phone number that you
+     * provide should include a valid numeric country code. Otherwise, the operation
+     * might result in an error.</p>
      */
     inline NumberValidateRequest& WithPhoneNumber(const Aws::String& value) { SetPhoneNumber(value); return *this;}
 
     /**
-     * The phone number to get information about. The phone number that you provide
-     * should include a country code. If the number doesn't include a valid country
-     * code, the operation might result in an error.
+     * <p>The phone number to retrieve information about. The phone number that you
+     * provide should include a valid numeric country code. Otherwise, the operation
+     * might result in an error.</p>
      */
     inline NumberValidateRequest& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(std::move(value)); return *this;}
 
     /**
-     * The phone number to get information about. The phone number that you provide
-     * should include a country code. If the number doesn't include a valid country
-     * code, the operation might result in an error.
+     * <p>The phone number to retrieve information about. The phone number that you
+     * provide should include a valid numeric country code. Otherwise, the operation
+     * might result in an error.</p>
      */
     inline NumberValidateRequest& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
 

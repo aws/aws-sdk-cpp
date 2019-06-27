@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * Campaign Limits are used to limit the number of messages that can be sent to a
-   * single endpoint.<p><h3>See Also:</h3>   <a
+   * <p>Specifies limits on the messages that a campaign can send.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignLimits">AWS
    * API Reference</a></p>
    */
@@ -47,105 +47,105 @@ namespace Model
 
 
     /**
-     * The maximum number of messages that each campaign can send to a single endpoint
-     * in a 24-hour period.
+     * <p>The maximum number of messages that a campaign can send to a single endpoint
+     * during a 24-hour period. The maximum value is 100.</p>
      */
     inline int GetDaily() const{ return m_daily; }
 
     /**
-     * The maximum number of messages that each campaign can send to a single endpoint
-     * in a 24-hour period.
+     * <p>The maximum number of messages that a campaign can send to a single endpoint
+     * during a 24-hour period. The maximum value is 100.</p>
      */
     inline bool DailyHasBeenSet() const { return m_dailyHasBeenSet; }
 
     /**
-     * The maximum number of messages that each campaign can send to a single endpoint
-     * in a 24-hour period.
+     * <p>The maximum number of messages that a campaign can send to a single endpoint
+     * during a 24-hour period. The maximum value is 100.</p>
      */
     inline void SetDaily(int value) { m_dailyHasBeenSet = true; m_daily = value; }
 
     /**
-     * The maximum number of messages that each campaign can send to a single endpoint
-     * in a 24-hour period.
+     * <p>The maximum number of messages that a campaign can send to a single endpoint
+     * during a 24-hour period. The maximum value is 100.</p>
      */
     inline CampaignLimits& WithDaily(int value) { SetDaily(value); return *this;}
 
 
     /**
-     * The length of time (in seconds) that the campaign can run before it ends and
-     * message deliveries stop. This duration begins at the scheduled start time for
-     * the campaign. The minimum value is 60.
+     * <p>The maximum amount of time, in seconds, that a campaign can attempt to
+     * deliver a message after the scheduled start time for the campaign. The minimum
+     * value is 60 seconds.</p>
      */
     inline int GetMaximumDuration() const{ return m_maximumDuration; }
 
     /**
-     * The length of time (in seconds) that the campaign can run before it ends and
-     * message deliveries stop. This duration begins at the scheduled start time for
-     * the campaign. The minimum value is 60.
+     * <p>The maximum amount of time, in seconds, that a campaign can attempt to
+     * deliver a message after the scheduled start time for the campaign. The minimum
+     * value is 60 seconds.</p>
      */
     inline bool MaximumDurationHasBeenSet() const { return m_maximumDurationHasBeenSet; }
 
     /**
-     * The length of time (in seconds) that the campaign can run before it ends and
-     * message deliveries stop. This duration begins at the scheduled start time for
-     * the campaign. The minimum value is 60.
+     * <p>The maximum amount of time, in seconds, that a campaign can attempt to
+     * deliver a message after the scheduled start time for the campaign. The minimum
+     * value is 60 seconds.</p>
      */
     inline void SetMaximumDuration(int value) { m_maximumDurationHasBeenSet = true; m_maximumDuration = value; }
 
     /**
-     * The length of time (in seconds) that the campaign can run before it ends and
-     * message deliveries stop. This duration begins at the scheduled start time for
-     * the campaign. The minimum value is 60.
+     * <p>The maximum amount of time, in seconds, that a campaign can attempt to
+     * deliver a message after the scheduled start time for the campaign. The minimum
+     * value is 60 seconds.</p>
      */
     inline CampaignLimits& WithMaximumDuration(int value) { SetMaximumDuration(value); return *this;}
 
 
     /**
-     * The number of messages that the campaign can send per second. The minimum value
-     * is 50, and the maximum is 20000.
+     * <p>The maximum number of messages that a campaign can send each second. The
+     * minimum value is 50. The maximum value is 20,000.</p>
      */
     inline int GetMessagesPerSecond() const{ return m_messagesPerSecond; }
 
     /**
-     * The number of messages that the campaign can send per second. The minimum value
-     * is 50, and the maximum is 20000.
+     * <p>The maximum number of messages that a campaign can send each second. The
+     * minimum value is 50. The maximum value is 20,000.</p>
      */
     inline bool MessagesPerSecondHasBeenSet() const { return m_messagesPerSecondHasBeenSet; }
 
     /**
-     * The number of messages that the campaign can send per second. The minimum value
-     * is 50, and the maximum is 20000.
+     * <p>The maximum number of messages that a campaign can send each second. The
+     * minimum value is 50. The maximum value is 20,000.</p>
      */
     inline void SetMessagesPerSecond(int value) { m_messagesPerSecondHasBeenSet = true; m_messagesPerSecond = value; }
 
     /**
-     * The number of messages that the campaign can send per second. The minimum value
-     * is 50, and the maximum is 20000.
+     * <p>The maximum number of messages that a campaign can send each second. The
+     * minimum value is 50. The maximum value is 20,000.</p>
      */
     inline CampaignLimits& WithMessagesPerSecond(int value) { SetMessagesPerSecond(value); return *this;}
 
 
     /**
-     * The maximum number of messages that an individual campaign can send to a single
-     * endpoint over the course of the campaign.
+     * <p>The maximum number of messages that a campaign can send to a single endpoint
+     * during the course of the campaign. The maximum value is 100.</p>
      */
     inline int GetTotal() const{ return m_total; }
 
     /**
-     * The maximum number of messages that an individual campaign can send to a single
-     * endpoint over the course of the campaign.
+     * <p>The maximum number of messages that a campaign can send to a single endpoint
+     * during the course of the campaign. The maximum value is 100.</p>
      */
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
 
     /**
-     * The maximum number of messages that an individual campaign can send to a single
-     * endpoint over the course of the campaign.
+     * <p>The maximum number of messages that a campaign can send to a single endpoint
+     * during the course of the campaign. The maximum value is 100.</p>
      */
     inline void SetTotal(int value) { m_totalHasBeenSet = true; m_total = value; }
 
     /**
-     * The maximum number of messages that an individual campaign can send to a single
-     * endpoint over the course of the campaign.
+     * <p>The maximum number of messages that a campaign can send to a single endpoint
+     * during the course of the campaign. The maximum value is 100.</p>
      */
     inline CampaignLimits& WithTotal(int value) { SetTotal(value); return *this;}
 

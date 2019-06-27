@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * GPS coordinates<p><h3>See Also:</h3>   <a
+   * <p>Specifies the GPS coordinates of a location.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GPSCoordinates">AWS
    * API Reference</a></p>
    */
@@ -46,43 +46,43 @@ namespace Model
 
 
     /**
-     * Latitude
+     * <p>The latitude coordinate of the location.</p>
      */
     inline double GetLatitude() const{ return m_latitude; }
 
     /**
-     * Latitude
+     * <p>The latitude coordinate of the location.</p>
      */
     inline bool LatitudeHasBeenSet() const { return m_latitudeHasBeenSet; }
 
     /**
-     * Latitude
+     * <p>The latitude coordinate of the location.</p>
      */
     inline void SetLatitude(double value) { m_latitudeHasBeenSet = true; m_latitude = value; }
 
     /**
-     * Latitude
+     * <p>The latitude coordinate of the location.</p>
      */
     inline GPSCoordinates& WithLatitude(double value) { SetLatitude(value); return *this;}
 
 
     /**
-     * Longitude
+     * <p>The longitude coordinate of the location.</p>
      */
     inline double GetLongitude() const{ return m_longitude; }
 
     /**
-     * Longitude
+     * <p>The longitude coordinate of the location.</p>
      */
     inline bool LongitudeHasBeenSet() const { return m_longitudeHasBeenSet; }
 
     /**
-     * Longitude
+     * <p>The longitude coordinate of the location.</p>
      */
     inline void SetLongitude(double value) { m_longitudeHasBeenSet = true; m_longitude = value; }
 
     /**
-     * Longitude
+     * <p>The longitude coordinate of the location.</p>
      */
     inline GPSCoordinates& WithLongitude(double value) { SetLongitude(value); return *this;}
 

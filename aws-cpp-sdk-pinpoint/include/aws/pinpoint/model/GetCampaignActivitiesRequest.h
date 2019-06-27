@@ -49,173 +49,189 @@ namespace Model
 
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline GetCampaignActivitiesRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline GetCampaignActivitiesRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of your Amazon Pinpoint application.
+     * <p>The unique identifier for the application. This identifier is displayed as
+     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline GetCampaignActivitiesRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * The unique ID of the campaign.
+     * <p>The unique identifier for the campaign.</p>
      */
     inline const Aws::String& GetCampaignId() const{ return m_campaignId; }
 
     /**
-     * The unique ID of the campaign.
+     * <p>The unique identifier for the campaign.</p>
      */
     inline bool CampaignIdHasBeenSet() const { return m_campaignIdHasBeenSet; }
 
     /**
-     * The unique ID of the campaign.
+     * <p>The unique identifier for the campaign.</p>
      */
     inline void SetCampaignId(const Aws::String& value) { m_campaignIdHasBeenSet = true; m_campaignId = value; }
 
     /**
-     * The unique ID of the campaign.
+     * <p>The unique identifier for the campaign.</p>
      */
     inline void SetCampaignId(Aws::String&& value) { m_campaignIdHasBeenSet = true; m_campaignId = std::move(value); }
 
     /**
-     * The unique ID of the campaign.
+     * <p>The unique identifier for the campaign.</p>
      */
     inline void SetCampaignId(const char* value) { m_campaignIdHasBeenSet = true; m_campaignId.assign(value); }
 
     /**
-     * The unique ID of the campaign.
+     * <p>The unique identifier for the campaign.</p>
      */
     inline GetCampaignActivitiesRequest& WithCampaignId(const Aws::String& value) { SetCampaignId(value); return *this;}
 
     /**
-     * The unique ID of the campaign.
+     * <p>The unique identifier for the campaign.</p>
      */
     inline GetCampaignActivitiesRequest& WithCampaignId(Aws::String&& value) { SetCampaignId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of the campaign.
+     * <p>The unique identifier for the campaign.</p>
      */
     inline GetCampaignActivitiesRequest& WithCampaignId(const char* value) { SetCampaignId(value); return *this;}
 
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>The maximum number of items to include on each page in a paginated
+     * response.</p>
      */
     inline const Aws::String& GetPageSize() const{ return m_pageSize; }
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>The maximum number of items to include on each page in a paginated
+     * response.</p>
      */
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>The maximum number of items to include on each page in a paginated
+     * response.</p>
      */
     inline void SetPageSize(const Aws::String& value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>The maximum number of items to include on each page in a paginated
+     * response.</p>
      */
     inline void SetPageSize(Aws::String&& value) { m_pageSizeHasBeenSet = true; m_pageSize = std::move(value); }
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>The maximum number of items to include on each page in a paginated
+     * response.</p>
      */
     inline void SetPageSize(const char* value) { m_pageSizeHasBeenSet = true; m_pageSize.assign(value); }
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>The maximum number of items to include on each page in a paginated
+     * response.</p>
      */
     inline GetCampaignActivitiesRequest& WithPageSize(const Aws::String& value) { SetPageSize(value); return *this;}
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>The maximum number of items to include on each page in a paginated
+     * response.</p>
      */
     inline GetCampaignActivitiesRequest& WithPageSize(Aws::String&& value) { SetPageSize(std::move(value)); return *this;}
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>The maximum number of items to include on each page in a paginated
+     * response.</p>
      */
     inline GetCampaignActivitiesRequest& WithPageSize(const char* value) { SetPageSize(value); return *this;}
 
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next
-     * page of results in a paginated response.
+     * <p>The NextToken string that specifies which page of results to return in a
+     * paginated response.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next
-     * page of results in a paginated response.
+     * <p>The NextToken string that specifies which page of results to return in a
+     * paginated response.</p>
      */
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next
-     * page of results in a paginated response.
+     * <p>The NextToken string that specifies which page of results to return in a
+     * paginated response.</p>
      */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next
-     * page of results in a paginated response.
+     * <p>The NextToken string that specifies which page of results to return in a
+     * paginated response.</p>
      */
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next
-     * page of results in a paginated response.
+     * <p>The NextToken string that specifies which page of results to return in a
+     * paginated response.</p>
      */
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next
-     * page of results in a paginated response.
+     * <p>The NextToken string that specifies which page of results to return in a
+     * paginated response.</p>
      */
     inline GetCampaignActivitiesRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next
-     * page of results in a paginated response.
+     * <p>The NextToken string that specifies which page of results to return in a
+     * paginated response.</p>
      */
     inline GetCampaignActivitiesRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next
-     * page of results in a paginated response.
+     * <p>The NextToken string that specifies which page of results to return in a
+     * paginated response.</p>
      */
     inline GetCampaignActivitiesRequest& WithToken(const char* value) { SetToken(value); return *this;}
 

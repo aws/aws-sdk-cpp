@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * Application Request.<p><h3>See Also:</h3>   <a
+   * <p>Specifies the display name of an application and the tags to associate with
+   * the application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateApplicationRequest">AWS
    * API Reference</a></p>
    */
@@ -49,108 +50,142 @@ namespace Model
 
 
     /**
-     * The display name of the application. Used in the Amazon Pinpoint console.
+     * <p>The display name of the application. This name is displayed as the <b>Project
+     * name</b> on the Amazon Pinpoint console.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * The display name of the application. Used in the Amazon Pinpoint console.
+     * <p>The display name of the application. This name is displayed as the <b>Project
+     * name</b> on the Amazon Pinpoint console.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * The display name of the application. Used in the Amazon Pinpoint console.
+     * <p>The display name of the application. This name is displayed as the <b>Project
+     * name</b> on the Amazon Pinpoint console.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * The display name of the application. Used in the Amazon Pinpoint console.
+     * <p>The display name of the application. This name is displayed as the <b>Project
+     * name</b> on the Amazon Pinpoint console.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * The display name of the application. Used in the Amazon Pinpoint console.
+     * <p>The display name of the application. This name is displayed as the <b>Project
+     * name</b> on the Amazon Pinpoint console.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * The display name of the application. Used in the Amazon Pinpoint console.
+     * <p>The display name of the application. This name is displayed as the <b>Project
+     * name</b> on the Amazon Pinpoint console.</p>
      */
     inline CreateApplicationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * The display name of the application. Used in the Amazon Pinpoint console.
+     * <p>The display name of the application. This name is displayed as the <b>Project
+     * name</b> on the Amazon Pinpoint console.</p>
      */
     inline CreateApplicationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * The display name of the application. Used in the Amazon Pinpoint console.
+     * <p>The display name of the application. This name is displayed as the <b>Project
+     * name</b> on the Amazon Pinpoint console.</p>
      */
     inline CreateApplicationRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * The Tags for the app.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the application. Each tag consists of a required tag key and an associated
+     * tag value.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * The Tags for the app.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the application. Each tag consists of a required tag key and an associated
+     * tag value.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * The Tags for the app.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the application. Each tag consists of a required tag key and an associated
+     * tag value.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * The Tags for the app.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the application. Each tag consists of a required tag key and an associated
+     * tag value.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * The Tags for the app.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the application. Each tag consists of a required tag key and an associated
+     * tag value.</p>
      */
     inline CreateApplicationRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * The Tags for the app.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the application. Each tag consists of a required tag key and an associated
+     * tag value.</p>
      */
     inline CreateApplicationRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * The Tags for the app.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the application. Each tag consists of a required tag key and an associated
+     * tag value.</p>
      */
     inline CreateApplicationRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * The Tags for the app.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the application. Each tag consists of a required tag key and an associated
+     * tag value.</p>
      */
     inline CreateApplicationRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * The Tags for the app.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the application. Each tag consists of a required tag key and an associated
+     * tag value.</p>
      */
     inline CreateApplicationRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * The Tags for the app.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the application. Each tag consists of a required tag key and an associated
+     * tag value.</p>
      */
     inline CreateApplicationRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * The Tags for the app.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the application. Each tag consists of a required tag key and an associated
+     * tag value.</p>
      */
     inline CreateApplicationRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * The Tags for the app.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the application. Each tag consists of a required tag key and an associated
+     * tag value.</p>
      */
     inline CreateApplicationRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * The Tags for the app.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the application. Each tag consists of a required tag key and an associated
+     * tag value.</p>
      */
     inline CreateApplicationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

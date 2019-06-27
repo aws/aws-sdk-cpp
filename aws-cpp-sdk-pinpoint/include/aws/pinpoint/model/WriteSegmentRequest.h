@@ -37,7 +37,9 @@ namespace Model
 {
 
   /**
-   * Segment definition.<p><h3>See Also:</h3>   <a
+   * <p>Specifies the configuration, dimension, and other settings for a segment. A
+   * WriteSegmentRequest object can include a Dimensions object or a SegmentGroups
+   * object, but not both.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/WriteSegmentRequest">AWS
    * API Reference</a></p>
    */
@@ -51,188 +53,208 @@ namespace Model
 
 
     /**
-     * The segment dimensions attributes.
+     * <p>The criteria that define the dimensions for the segment.</p>
      */
     inline const SegmentDimensions& GetDimensions() const{ return m_dimensions; }
 
     /**
-     * The segment dimensions attributes.
+     * <p>The criteria that define the dimensions for the segment.</p>
      */
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
 
     /**
-     * The segment dimensions attributes.
+     * <p>The criteria that define the dimensions for the segment.</p>
      */
     inline void SetDimensions(const SegmentDimensions& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * The segment dimensions attributes.
+     * <p>The criteria that define the dimensions for the segment.</p>
      */
     inline void SetDimensions(SegmentDimensions&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
 
     /**
-     * The segment dimensions attributes.
+     * <p>The criteria that define the dimensions for the segment.</p>
      */
     inline WriteSegmentRequest& WithDimensions(const SegmentDimensions& value) { SetDimensions(value); return *this;}
 
     /**
-     * The segment dimensions attributes.
+     * <p>The criteria that define the dimensions for the segment.</p>
      */
     inline WriteSegmentRequest& WithDimensions(SegmentDimensions&& value) { SetDimensions(std::move(value)); return *this;}
 
 
     /**
-     * The name of segment
+     * <p>The name of the segment.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * The name of segment
+     * <p>The name of the segment.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * The name of segment
+     * <p>The name of the segment.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * The name of segment
+     * <p>The name of the segment.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * The name of segment
+     * <p>The name of the segment.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * The name of segment
+     * <p>The name of the segment.</p>
      */
     inline WriteSegmentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * The name of segment
+     * <p>The name of the segment.</p>
      */
     inline WriteSegmentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * The name of segment
+     * <p>The name of the segment.</p>
      */
     inline WriteSegmentRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * A segment group, which consists of zero or more source segments, plus dimensions
-     * that are applied to those source segments. Your request can only include one
-     * segment group. Your request can include either a SegmentGroups object or a
-     * Dimensions object, but not both.
+     * <p>The segment group to use and the dimensions to apply to the group's base
+     * segments in order to build the segment. A segment group can consist of zero or
+     * more base segments. Your request can include only one segment group.</p>
      */
     inline const SegmentGroupList& GetSegmentGroups() const{ return m_segmentGroups; }
 
     /**
-     * A segment group, which consists of zero or more source segments, plus dimensions
-     * that are applied to those source segments. Your request can only include one
-     * segment group. Your request can include either a SegmentGroups object or a
-     * Dimensions object, but not both.
+     * <p>The segment group to use and the dimensions to apply to the group's base
+     * segments in order to build the segment. A segment group can consist of zero or
+     * more base segments. Your request can include only one segment group.</p>
      */
     inline bool SegmentGroupsHasBeenSet() const { return m_segmentGroupsHasBeenSet; }
 
     /**
-     * A segment group, which consists of zero or more source segments, plus dimensions
-     * that are applied to those source segments. Your request can only include one
-     * segment group. Your request can include either a SegmentGroups object or a
-     * Dimensions object, but not both.
+     * <p>The segment group to use and the dimensions to apply to the group's base
+     * segments in order to build the segment. A segment group can consist of zero or
+     * more base segments. Your request can include only one segment group.</p>
      */
     inline void SetSegmentGroups(const SegmentGroupList& value) { m_segmentGroupsHasBeenSet = true; m_segmentGroups = value; }
 
     /**
-     * A segment group, which consists of zero or more source segments, plus dimensions
-     * that are applied to those source segments. Your request can only include one
-     * segment group. Your request can include either a SegmentGroups object or a
-     * Dimensions object, but not both.
+     * <p>The segment group to use and the dimensions to apply to the group's base
+     * segments in order to build the segment. A segment group can consist of zero or
+     * more base segments. Your request can include only one segment group.</p>
      */
     inline void SetSegmentGroups(SegmentGroupList&& value) { m_segmentGroupsHasBeenSet = true; m_segmentGroups = std::move(value); }
 
     /**
-     * A segment group, which consists of zero or more source segments, plus dimensions
-     * that are applied to those source segments. Your request can only include one
-     * segment group. Your request can include either a SegmentGroups object or a
-     * Dimensions object, but not both.
+     * <p>The segment group to use and the dimensions to apply to the group's base
+     * segments in order to build the segment. A segment group can consist of zero or
+     * more base segments. Your request can include only one segment group.</p>
      */
     inline WriteSegmentRequest& WithSegmentGroups(const SegmentGroupList& value) { SetSegmentGroups(value); return *this;}
 
     /**
-     * A segment group, which consists of zero or more source segments, plus dimensions
-     * that are applied to those source segments. Your request can only include one
-     * segment group. Your request can include either a SegmentGroups object or a
-     * Dimensions object, but not both.
+     * <p>The segment group to use and the dimensions to apply to the group's base
+     * segments in order to build the segment. A segment group can consist of zero or
+     * more base segments. Your request can include only one segment group.</p>
      */
     inline WriteSegmentRequest& WithSegmentGroups(SegmentGroupList&& value) { SetSegmentGroups(std::move(value)); return *this;}
 
 
     /**
-     * The Tags for the segments.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the segment. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * The Tags for the segments.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the segment. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * The Tags for the segments.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the segment. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * The Tags for the segments.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the segment. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * The Tags for the segments.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the segment. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline WriteSegmentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * The Tags for the segments.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the segment. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline WriteSegmentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * The Tags for the segments.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the segment. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline WriteSegmentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * The Tags for the segments.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the segment. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline WriteSegmentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * The Tags for the segments.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the segment. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline WriteSegmentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * The Tags for the segments.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the segment. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline WriteSegmentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * The Tags for the segments.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the segment. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline WriteSegmentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * The Tags for the segments.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the segment. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline WriteSegmentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * The Tags for the segments.
+     * <p>A string-to-string map of key-value pairs that defines the tags to associate
+     * with the segment. Each tag consists of a required tag key and an associated tag
+     * value.</p>
      */
     inline WriteSegmentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * Segment location dimensions<p><h3>See Also:</h3>   <a
+   * <p>Specifies geographical dimension settings for a segment.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentLocation">AWS
    * API Reference</a></p>
    */
@@ -49,63 +50,69 @@ namespace Model
 
 
     /**
-     * The country or region, in ISO 3166-1 alpha-2 format.
+     * <p>The country or region code, in ISO 3166-1 alpha-2 format, for the
+     * segment.</p>
      */
     inline const SetDimension& GetCountry() const{ return m_country; }
 
     /**
-     * The country or region, in ISO 3166-1 alpha-2 format.
+     * <p>The country or region code, in ISO 3166-1 alpha-2 format, for the
+     * segment.</p>
      */
     inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
 
     /**
-     * The country or region, in ISO 3166-1 alpha-2 format.
+     * <p>The country or region code, in ISO 3166-1 alpha-2 format, for the
+     * segment.</p>
      */
     inline void SetCountry(const SetDimension& value) { m_countryHasBeenSet = true; m_country = value; }
 
     /**
-     * The country or region, in ISO 3166-1 alpha-2 format.
+     * <p>The country or region code, in ISO 3166-1 alpha-2 format, for the
+     * segment.</p>
      */
     inline void SetCountry(SetDimension&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
 
     /**
-     * The country or region, in ISO 3166-1 alpha-2 format.
+     * <p>The country or region code, in ISO 3166-1 alpha-2 format, for the
+     * segment.</p>
      */
     inline SegmentLocation& WithCountry(const SetDimension& value) { SetCountry(value); return *this;}
 
     /**
-     * The country or region, in ISO 3166-1 alpha-2 format.
+     * <p>The country or region code, in ISO 3166-1 alpha-2 format, for the
+     * segment.</p>
      */
     inline SegmentLocation& WithCountry(SetDimension&& value) { SetCountry(std::move(value)); return *this;}
 
 
     /**
-     * The GPS Point dimension.
+     * <p>The GPS location and range for the segment.</p>
      */
     inline const GPSPointDimension& GetGPSPoint() const{ return m_gPSPoint; }
 
     /**
-     * The GPS Point dimension.
+     * <p>The GPS location and range for the segment.</p>
      */
     inline bool GPSPointHasBeenSet() const { return m_gPSPointHasBeenSet; }
 
     /**
-     * The GPS Point dimension.
+     * <p>The GPS location and range for the segment.</p>
      */
     inline void SetGPSPoint(const GPSPointDimension& value) { m_gPSPointHasBeenSet = true; m_gPSPoint = value; }
 
     /**
-     * The GPS Point dimension.
+     * <p>The GPS location and range for the segment.</p>
      */
     inline void SetGPSPoint(GPSPointDimension&& value) { m_gPSPointHasBeenSet = true; m_gPSPoint = std::move(value); }
 
     /**
-     * The GPS Point dimension.
+     * <p>The GPS location and range for the segment.</p>
      */
     inline SegmentLocation& WithGPSPoint(const GPSPointDimension& value) { SetGPSPoint(value); return *this;}
 
     /**
-     * The GPS Point dimension.
+     * <p>The GPS location and range for the segment.</p>
      */
     inline SegmentLocation& WithGPSPoint(GPSPointDimension&& value) { SetGPSPoint(std::move(value)); return *this;}
 

@@ -49,91 +49,99 @@ namespace Model
 
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>The maximum number of items to include on each page in a paginated
+     * response.</p>
      */
     inline const Aws::String& GetPageSize() const{ return m_pageSize; }
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>The maximum number of items to include on each page in a paginated
+     * response.</p>
      */
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>The maximum number of items to include on each page in a paginated
+     * response.</p>
      */
     inline void SetPageSize(const Aws::String& value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>The maximum number of items to include on each page in a paginated
+     * response.</p>
      */
     inline void SetPageSize(Aws::String&& value) { m_pageSizeHasBeenSet = true; m_pageSize = std::move(value); }
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>The maximum number of items to include on each page in a paginated
+     * response.</p>
      */
     inline void SetPageSize(const char* value) { m_pageSizeHasBeenSet = true; m_pageSize.assign(value); }
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>The maximum number of items to include on each page in a paginated
+     * response.</p>
      */
     inline GetAppsRequest& WithPageSize(const Aws::String& value) { SetPageSize(value); return *this;}
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>The maximum number of items to include on each page in a paginated
+     * response.</p>
      */
     inline GetAppsRequest& WithPageSize(Aws::String&& value) { SetPageSize(std::move(value)); return *this;}
 
     /**
-     * The number of entries you want on each page in the response.
+     * <p>The maximum number of items to include on each page in a paginated
+     * response.</p>
      */
     inline GetAppsRequest& WithPageSize(const char* value) { SetPageSize(value); return *this;}
 
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next
-     * page of results in a paginated response.
+     * <p>The NextToken string that specifies which page of results to return in a
+     * paginated response.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next
-     * page of results in a paginated response.
+     * <p>The NextToken string that specifies which page of results to return in a
+     * paginated response.</p>
      */
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next
-     * page of results in a paginated response.
+     * <p>The NextToken string that specifies which page of results to return in a
+     * paginated response.</p>
      */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next
-     * page of results in a paginated response.
+     * <p>The NextToken string that specifies which page of results to return in a
+     * paginated response.</p>
      */
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next
-     * page of results in a paginated response.
+     * <p>The NextToken string that specifies which page of results to return in a
+     * paginated response.</p>
      */
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next
-     * page of results in a paginated response.
+     * <p>The NextToken string that specifies which page of results to return in a
+     * paginated response.</p>
      */
     inline GetAppsRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next
-     * page of results in a paginated response.
+     * <p>The NextToken string that specifies which page of results to return in a
+     * paginated response.</p>
      */
     inline GetAppsRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
 
     /**
-     * The NextToken string returned on a previous page that you use to get the next
-     * page of results in a paginated response.
+     * <p>The NextToken string that specifies which page of results to return in a
+     * paginated response.</p>
      */
     inline GetAppsRequest& WithToken(const char* value) { SetToken(value); return *this;}
 
