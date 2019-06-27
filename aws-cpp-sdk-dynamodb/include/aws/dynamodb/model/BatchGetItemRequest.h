@@ -79,7 +79,7 @@ namespace Model
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
+     * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
@@ -91,8 +91,8 @@ namespace Model
      * more attributes to retrieve from the table. These attributes can include
      * scalars, sets, or elements of a JSON document. The attributes in the expression
      * must be separated by commas.</p> <p>If no attribute names are specified, then
-     * all attributes will be returned. If any of the requested attributes are not
-     * found, they will not appear in the result.</p> <p>For more information, see <a
+     * all attributes are returned. If any of the requested attributes are not found,
+     * they do not appear in the result.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
@@ -130,7 +130,7 @@ namespace Model
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
+     * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
@@ -142,8 +142,8 @@ namespace Model
      * more attributes to retrieve from the table. These attributes can include
      * scalars, sets, or elements of a JSON document. The attributes in the expression
      * must be separated by commas.</p> <p>If no attribute names are specified, then
-     * all attributes will be returned. If any of the requested attributes are not
-     * found, they will not appear in the result.</p> <p>For more information, see <a
+     * all attributes are returned. If any of the requested attributes are not found,
+     * they do not appear in the result.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
@@ -181,7 +181,7 @@ namespace Model
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
+     * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
@@ -193,8 +193,8 @@ namespace Model
      * more attributes to retrieve from the table. These attributes can include
      * scalars, sets, or elements of a JSON document. The attributes in the expression
      * must be separated by commas.</p> <p>If no attribute names are specified, then
-     * all attributes will be returned. If any of the requested attributes are not
-     * found, they will not appear in the result.</p> <p>For more information, see <a
+     * all attributes are returned. If any of the requested attributes are not found,
+     * they do not appear in the result.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
@@ -232,7 +232,7 @@ namespace Model
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
+     * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
@@ -244,8 +244,8 @@ namespace Model
      * more attributes to retrieve from the table. These attributes can include
      * scalars, sets, or elements of a JSON document. The attributes in the expression
      * must be separated by commas.</p> <p>If no attribute names are specified, then
-     * all attributes will be returned. If any of the requested attributes are not
-     * found, they will not appear in the result.</p> <p>For more information, see <a
+     * all attributes are returned. If any of the requested attributes are not found,
+     * they do not appear in the result.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
@@ -283,7 +283,7 @@ namespace Model
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
+     * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
@@ -295,8 +295,8 @@ namespace Model
      * more attributes to retrieve from the table. These attributes can include
      * scalars, sets, or elements of a JSON document. The attributes in the expression
      * must be separated by commas.</p> <p>If no attribute names are specified, then
-     * all attributes will be returned. If any of the requested attributes are not
-     * found, they will not appear in the result.</p> <p>For more information, see <a
+     * all attributes are returned. If any of the requested attributes are not found,
+     * they do not appear in the result.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
@@ -334,7 +334,7 @@ namespace Model
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
+     * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
@@ -346,8 +346,8 @@ namespace Model
      * more attributes to retrieve from the table. These attributes can include
      * scalars, sets, or elements of a JSON document. The attributes in the expression
      * must be separated by commas.</p> <p>If no attribute names are specified, then
-     * all attributes will be returned. If any of the requested attributes are not
-     * found, they will not appear in the result.</p> <p>For more information, see <a
+     * all attributes are returned. If any of the requested attributes are not found,
+     * they do not appear in the result.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
@@ -385,7 +385,7 @@ namespace Model
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
+     * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
@@ -397,8 +397,8 @@ namespace Model
      * more attributes to retrieve from the table. These attributes can include
      * scalars, sets, or elements of a JSON document. The attributes in the expression
      * must be separated by commas.</p> <p>If no attribute names are specified, then
-     * all attributes will be returned. If any of the requested attributes are not
-     * found, they will not appear in the result.</p> <p>For more information, see <a
+     * all attributes are returned. If any of the requested attributes are not found,
+     * they do not appear in the result.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
@@ -436,7 +436,7 @@ namespace Model
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
+     * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
@@ -448,8 +448,8 @@ namespace Model
      * more attributes to retrieve from the table. These attributes can include
      * scalars, sets, or elements of a JSON document. The attributes in the expression
      * must be separated by commas.</p> <p>If no attribute names are specified, then
-     * all attributes will be returned. If any of the requested attributes are not
-     * found, they will not appear in the result.</p> <p>For more information, see <a
+     * all attributes are returned. If any of the requested attributes are not found,
+     * they do not appear in the result.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
@@ -487,7 +487,7 @@ namespace Model
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
+     * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
@@ -499,8 +499,8 @@ namespace Model
      * more attributes to retrieve from the table. These attributes can include
      * scalars, sets, or elements of a JSON document. The attributes in the expression
      * must be separated by commas.</p> <p>If no attribute names are specified, then
-     * all attributes will be returned. If any of the requested attributes are not
-     * found, they will not appear in the result.</p> <p>For more information, see <a
+     * all attributes are returned. If any of the requested attributes are not found,
+     * they do not appear in the result.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
@@ -538,7 +538,7 @@ namespace Model
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
+     * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
@@ -550,8 +550,8 @@ namespace Model
      * more attributes to retrieve from the table. These attributes can include
      * scalars, sets, or elements of a JSON document. The attributes in the expression
      * must be separated by commas.</p> <p>If no attribute names are specified, then
-     * all attributes will be returned. If any of the requested attributes are not
-     * found, they will not appear in the result.</p> <p>For more information, see <a
+     * all attributes are returned. If any of the requested attributes are not found,
+     * they do not appear in the result.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
@@ -589,7 +589,7 @@ namespace Model
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
+     * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
@@ -601,8 +601,8 @@ namespace Model
      * more attributes to retrieve from the table. These attributes can include
      * scalars, sets, or elements of a JSON document. The attributes in the expression
      * must be separated by commas.</p> <p>If no attribute names are specified, then
-     * all attributes will be returned. If any of the requested attributes are not
-     * found, they will not appear in the result.</p> <p>For more information, see <a
+     * all attributes are returned. If any of the requested attributes are not found,
+     * they do not appear in the result.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use
@@ -640,7 +640,7 @@ namespace Model
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
+     * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>Keys</code> - An array of primary key attribute values that
@@ -652,8 +652,8 @@ namespace Model
      * more attributes to retrieve from the table. These attributes can include
      * scalars, sets, or elements of a JSON document. The attributes in the expression
      * must be separated by commas.</p> <p>If no attribute names are specified, then
-     * all attributes will be returned. If any of the requested attributes are not
-     * found, they will not appear in the result.</p> <p>For more information, see <a
+     * all attributes are returned. If any of the requested attributes are not found,
+     * they do not appear in the result.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <code>AttributesToGet</code> - This is a legacy parameter. Use

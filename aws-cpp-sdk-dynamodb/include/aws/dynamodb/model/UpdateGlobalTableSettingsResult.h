@@ -81,37 +81,37 @@ namespace Model
 
 
     /**
-     * <p>The region specific settings for the global table.</p>
+     * <p>The Region-specific settings for the global table.</p>
      */
     inline const Aws::Vector<ReplicaSettingsDescription>& GetReplicaSettings() const{ return m_replicaSettings; }
 
     /**
-     * <p>The region specific settings for the global table.</p>
+     * <p>The Region-specific settings for the global table.</p>
      */
     inline void SetReplicaSettings(const Aws::Vector<ReplicaSettingsDescription>& value) { m_replicaSettings = value; }
 
     /**
-     * <p>The region specific settings for the global table.</p>
+     * <p>The Region-specific settings for the global table.</p>
      */
     inline void SetReplicaSettings(Aws::Vector<ReplicaSettingsDescription>&& value) { m_replicaSettings = std::move(value); }
 
     /**
-     * <p>The region specific settings for the global table.</p>
+     * <p>The Region-specific settings for the global table.</p>
      */
     inline UpdateGlobalTableSettingsResult& WithReplicaSettings(const Aws::Vector<ReplicaSettingsDescription>& value) { SetReplicaSettings(value); return *this;}
 
     /**
-     * <p>The region specific settings for the global table.</p>
+     * <p>The Region-specific settings for the global table.</p>
      */
     inline UpdateGlobalTableSettingsResult& WithReplicaSettings(Aws::Vector<ReplicaSettingsDescription>&& value) { SetReplicaSettings(std::move(value)); return *this;}
 
     /**
-     * <p>The region specific settings for the global table.</p>
+     * <p>The Region-specific settings for the global table.</p>
      */
     inline UpdateGlobalTableSettingsResult& AddReplicaSettings(const ReplicaSettingsDescription& value) { m_replicaSettings.push_back(value); return *this; }
 
     /**
-     * <p>The region specific settings for the global table.</p>
+     * <p>The Region-specific settings for the global table.</p>
      */
     inline UpdateGlobalTableSettingsResult& AddReplicaSettings(ReplicaSettingsDescription&& value) { m_replicaSettings.push_back(std::move(value)); return *this; }
 

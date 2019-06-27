@@ -160,7 +160,7 @@ namespace Model
      * <li> <p> <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code>
      * - sort key</p> </li> </ul> </li> </ul> <note> <p>The partition key of an item is
      * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items
+     * the DynamoDB usage of an internal hash function to evenly distribute data items
      * across partitions, based on their partition key values.</p> <p>The sort key of
      * an item is also known as its <i>range attribute</i>. The term "range attribute"
      * derives from the way DynamoDB stores items with the same partition key
@@ -171,8 +171,8 @@ namespace Model
      * in this order: The first element must have a <code>KeyType</code> of
      * <code>HASH</code>, and the second element must have a <code>KeyType</code> of
      * <code>RANGE</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
-     * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working
+     * with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const{ return m_keySchema; }
 
@@ -188,7 +188,7 @@ namespace Model
      * <li> <p> <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code>
      * - sort key</p> </li> </ul> </li> </ul> <note> <p>The partition key of an item is
      * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items
+     * the DynamoDB usage of an internal hash function to evenly distribute data items
      * across partitions, based on their partition key values.</p> <p>The sort key of
      * an item is also known as its <i>range attribute</i>. The term "range attribute"
      * derives from the way DynamoDB stores items with the same partition key
@@ -199,8 +199,8 @@ namespace Model
      * in this order: The first element must have a <code>KeyType</code> of
      * <code>HASH</code>, and the second element must have a <code>KeyType</code> of
      * <code>RANGE</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
-     * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working
+     * with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool KeySchemaHasBeenSet() const { return m_keySchemaHasBeenSet; }
 
@@ -216,7 +216,7 @@ namespace Model
      * <li> <p> <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code>
      * - sort key</p> </li> </ul> </li> </ul> <note> <p>The partition key of an item is
      * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items
+     * the DynamoDB usage of an internal hash function to evenly distribute data items
      * across partitions, based on their partition key values.</p> <p>The sort key of
      * an item is also known as its <i>range attribute</i>. The term "range attribute"
      * derives from the way DynamoDB stores items with the same partition key
@@ -227,8 +227,8 @@ namespace Model
      * in this order: The first element must have a <code>KeyType</code> of
      * <code>HASH</code>, and the second element must have a <code>KeyType</code> of
      * <code>RANGE</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
-     * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working
+     * with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetKeySchema(const Aws::Vector<KeySchemaElement>& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
 
@@ -244,7 +244,7 @@ namespace Model
      * <li> <p> <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code>
      * - sort key</p> </li> </ul> </li> </ul> <note> <p>The partition key of an item is
      * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items
+     * the DynamoDB usage of an internal hash function to evenly distribute data items
      * across partitions, based on their partition key values.</p> <p>The sort key of
      * an item is also known as its <i>range attribute</i>. The term "range attribute"
      * derives from the way DynamoDB stores items with the same partition key
@@ -255,8 +255,8 @@ namespace Model
      * in this order: The first element must have a <code>KeyType</code> of
      * <code>HASH</code>, and the second element must have a <code>KeyType</code> of
      * <code>RANGE</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
-     * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working
+     * with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetKeySchema(Aws::Vector<KeySchemaElement>&& value) { m_keySchemaHasBeenSet = true; m_keySchema = std::move(value); }
 
@@ -272,7 +272,7 @@ namespace Model
      * <li> <p> <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code>
      * - sort key</p> </li> </ul> </li> </ul> <note> <p>The partition key of an item is
      * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items
+     * the DynamoDB usage of an internal hash function to evenly distribute data items
      * across partitions, based on their partition key values.</p> <p>The sort key of
      * an item is also known as its <i>range attribute</i>. The term "range attribute"
      * derives from the way DynamoDB stores items with the same partition key
@@ -283,8 +283,8 @@ namespace Model
      * in this order: The first element must have a <code>KeyType</code> of
      * <code>HASH</code>, and the second element must have a <code>KeyType</code> of
      * <code>RANGE</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
-     * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working
+     * with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline CreateTableRequest& WithKeySchema(const Aws::Vector<KeySchemaElement>& value) { SetKeySchema(value); return *this;}
 
@@ -300,7 +300,7 @@ namespace Model
      * <li> <p> <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code>
      * - sort key</p> </li> </ul> </li> </ul> <note> <p>The partition key of an item is
      * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items
+     * the DynamoDB usage of an internal hash function to evenly distribute data items
      * across partitions, based on their partition key values.</p> <p>The sort key of
      * an item is also known as its <i>range attribute</i>. The term "range attribute"
      * derives from the way DynamoDB stores items with the same partition key
@@ -311,8 +311,8 @@ namespace Model
      * in this order: The first element must have a <code>KeyType</code> of
      * <code>HASH</code>, and the second element must have a <code>KeyType</code> of
      * <code>RANGE</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
-     * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working
+     * with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline CreateTableRequest& WithKeySchema(Aws::Vector<KeySchemaElement>&& value) { SetKeySchema(std::move(value)); return *this;}
 
@@ -328,7 +328,7 @@ namespace Model
      * <li> <p> <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code>
      * - sort key</p> </li> </ul> </li> </ul> <note> <p>The partition key of an item is
      * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items
+     * the DynamoDB usage of an internal hash function to evenly distribute data items
      * across partitions, based on their partition key values.</p> <p>The sort key of
      * an item is also known as its <i>range attribute</i>. The term "range attribute"
      * derives from the way DynamoDB stores items with the same partition key
@@ -339,8 +339,8 @@ namespace Model
      * in this order: The first element must have a <code>KeyType</code> of
      * <code>HASH</code>, and the second element must have a <code>KeyType</code> of
      * <code>RANGE</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
-     * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working
+     * with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline CreateTableRequest& AddKeySchema(const KeySchemaElement& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
 
@@ -356,7 +356,7 @@ namespace Model
      * <li> <p> <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code>
      * - sort key</p> </li> </ul> </li> </ul> <note> <p>The partition key of an item is
      * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items
+     * the DynamoDB usage of an internal hash function to evenly distribute data items
      * across partitions, based on their partition key values.</p> <p>The sort key of
      * an item is also known as its <i>range attribute</i>. The term "range attribute"
      * derives from the way DynamoDB stores items with the same partition key
@@ -367,8 +367,8 @@ namespace Model
      * in this order: The first element must have a <code>KeyType</code> of
      * <code>HASH</code>, and the second element must have a <code>KeyType</code> of
      * <code>RANGE</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
-     * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working
+     * with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline CreateTableRequest& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(std::move(value)); return *this; }
 
@@ -389,7 +389,7 @@ namespace Model
      * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * attributes are projected into the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -417,7 +417,7 @@ namespace Model
      * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * attributes are projected into the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -445,7 +445,7 @@ namespace Model
      * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * attributes are projected into the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -473,7 +473,7 @@ namespace Model
      * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * attributes are projected into the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -501,7 +501,7 @@ namespace Model
      * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * attributes are projected into the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -529,7 +529,7 @@ namespace Model
      * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * attributes are projected into the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -557,7 +557,7 @@ namespace Model
      * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * attributes are projected into the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -585,7 +585,7 @@ namespace Model
      * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * attributes are projected into the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -611,7 +611,7 @@ namespace Model
      * One of the following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index
      * and primary keys are projected into the index.</p> </li> <li> <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into
-     * the index. The list of projected attributes are in
+     * the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -638,7 +638,7 @@ namespace Model
      * One of the following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index
      * and primary keys are projected into the index.</p> </li> <li> <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into
-     * the index. The list of projected attributes are in
+     * the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -665,7 +665,7 @@ namespace Model
      * One of the following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index
      * and primary keys are projected into the index.</p> </li> <li> <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into
-     * the index. The list of projected attributes are in
+     * the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -692,7 +692,7 @@ namespace Model
      * One of the following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index
      * and primary keys are projected into the index.</p> </li> <li> <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into
-     * the index. The list of projected attributes are in
+     * the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -719,7 +719,7 @@ namespace Model
      * One of the following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index
      * and primary keys are projected into the index.</p> </li> <li> <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into
-     * the index. The list of projected attributes are in
+     * the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -746,7 +746,7 @@ namespace Model
      * One of the following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index
      * and primary keys are projected into the index.</p> </li> <li> <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into
-     * the index. The list of projected attributes are in
+     * the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -773,7 +773,7 @@ namespace Model
      * One of the following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index
      * and primary keys are projected into the index.</p> </li> <li> <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into
-     * the index. The list of projected attributes are in
+     * the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -800,7 +800,7 @@ namespace Model
      * One of the following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index
      * and primary keys are projected into the index.</p> </li> <li> <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into
-     * the index. The list of projected attributes are in
+     * the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -957,8 +957,8 @@ namespace Model
 
     /**
      * <p>The settings for DynamoDB Streams on the table. These settings consist
-     * of:</p> <ul> <li> <p> <code>StreamEnabled</code> - Indicates whether Streams is
-     * to be enabled (true) or disabled (false).</p> </li> <li> <p>
+     * of:</p> <ul> <li> <p> <code>StreamEnabled</code> - Indicates whether DynamoDB
+     * Streams is to be enabled (true) or disabled (false).</p> </li> <li> <p>
      * <code>StreamViewType</code> - When an item in the table is modified,
      * <code>StreamViewType</code> determines what information is written to the
      * table's stream. Valid values for <code>StreamViewType</code> are:</p> <ul> <li>
@@ -974,8 +974,8 @@ namespace Model
 
     /**
      * <p>The settings for DynamoDB Streams on the table. These settings consist
-     * of:</p> <ul> <li> <p> <code>StreamEnabled</code> - Indicates whether Streams is
-     * to be enabled (true) or disabled (false).</p> </li> <li> <p>
+     * of:</p> <ul> <li> <p> <code>StreamEnabled</code> - Indicates whether DynamoDB
+     * Streams is to be enabled (true) or disabled (false).</p> </li> <li> <p>
      * <code>StreamViewType</code> - When an item in the table is modified,
      * <code>StreamViewType</code> determines what information is written to the
      * table's stream. Valid values for <code>StreamViewType</code> are:</p> <ul> <li>
@@ -991,8 +991,8 @@ namespace Model
 
     /**
      * <p>The settings for DynamoDB Streams on the table. These settings consist
-     * of:</p> <ul> <li> <p> <code>StreamEnabled</code> - Indicates whether Streams is
-     * to be enabled (true) or disabled (false).</p> </li> <li> <p>
+     * of:</p> <ul> <li> <p> <code>StreamEnabled</code> - Indicates whether DynamoDB
+     * Streams is to be enabled (true) or disabled (false).</p> </li> <li> <p>
      * <code>StreamViewType</code> - When an item in the table is modified,
      * <code>StreamViewType</code> determines what information is written to the
      * table's stream. Valid values for <code>StreamViewType</code> are:</p> <ul> <li>
@@ -1008,8 +1008,8 @@ namespace Model
 
     /**
      * <p>The settings for DynamoDB Streams on the table. These settings consist
-     * of:</p> <ul> <li> <p> <code>StreamEnabled</code> - Indicates whether Streams is
-     * to be enabled (true) or disabled (false).</p> </li> <li> <p>
+     * of:</p> <ul> <li> <p> <code>StreamEnabled</code> - Indicates whether DynamoDB
+     * Streams is to be enabled (true) or disabled (false).</p> </li> <li> <p>
      * <code>StreamViewType</code> - When an item in the table is modified,
      * <code>StreamViewType</code> determines what information is written to the
      * table's stream. Valid values for <code>StreamViewType</code> are:</p> <ul> <li>
@@ -1025,8 +1025,8 @@ namespace Model
 
     /**
      * <p>The settings for DynamoDB Streams on the table. These settings consist
-     * of:</p> <ul> <li> <p> <code>StreamEnabled</code> - Indicates whether Streams is
-     * to be enabled (true) or disabled (false).</p> </li> <li> <p>
+     * of:</p> <ul> <li> <p> <code>StreamEnabled</code> - Indicates whether DynamoDB
+     * Streams is to be enabled (true) or disabled (false).</p> </li> <li> <p>
      * <code>StreamViewType</code> - When an item in the table is modified,
      * <code>StreamViewType</code> determines what information is written to the
      * table's stream. Valid values for <code>StreamViewType</code> are:</p> <ul> <li>
@@ -1042,8 +1042,8 @@ namespace Model
 
     /**
      * <p>The settings for DynamoDB Streams on the table. These settings consist
-     * of:</p> <ul> <li> <p> <code>StreamEnabled</code> - Indicates whether Streams is
-     * to be enabled (true) or disabled (false).</p> </li> <li> <p>
+     * of:</p> <ul> <li> <p> <code>StreamEnabled</code> - Indicates whether DynamoDB
+     * Streams is to be enabled (true) or disabled (false).</p> </li> <li> <p>
      * <code>StreamViewType</code> - When an item in the table is modified,
      * <code>StreamViewType</code> determines what information is written to the
      * table's stream. Valid values for <code>StreamViewType</code> are:</p> <ul> <li>

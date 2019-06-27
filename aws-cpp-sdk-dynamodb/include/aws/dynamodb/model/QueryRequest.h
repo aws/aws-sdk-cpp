@@ -167,7 +167,7 @@ namespace Model
      * case of an index, some or all of the attributes projected into the index.</p>
      * <ul> <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
      * from the specified table or index. If you query a local secondary index, then
-     * for each matching item in the index DynamoDB will fetch the entire item from the
+     * for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then
      * all of the data can be obtained from the local secondary index, and no fetching
      * is required.</p> </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
@@ -182,7 +182,7 @@ namespace Model
      * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
      * request only attributes that are projected into that index, the operation will
      * read only the index and not the table. If any of the requested attributes are
-     * not projected into the local secondary index, DynamoDB will fetch each of these
+     * not projected into the local secondary index, DynamoDB fetches each of these
      * attributes from the parent table. This extra fetching incurs additional
      * throughput cost and latency.</p> <p>If you query or scan a global secondary
      * index, you can only request attributes that are projected into the index. Global
@@ -206,7 +206,7 @@ namespace Model
      * case of an index, some or all of the attributes projected into the index.</p>
      * <ul> <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
      * from the specified table or index. If you query a local secondary index, then
-     * for each matching item in the index DynamoDB will fetch the entire item from the
+     * for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then
      * all of the data can be obtained from the local secondary index, and no fetching
      * is required.</p> </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
@@ -221,7 +221,7 @@ namespace Model
      * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
      * request only attributes that are projected into that index, the operation will
      * read only the index and not the table. If any of the requested attributes are
-     * not projected into the local secondary index, DynamoDB will fetch each of these
+     * not projected into the local secondary index, DynamoDB fetches each of these
      * attributes from the parent table. This extra fetching incurs additional
      * throughput cost and latency.</p> <p>If you query or scan a global secondary
      * index, you can only request attributes that are projected into the index. Global
@@ -245,7 +245,7 @@ namespace Model
      * case of an index, some or all of the attributes projected into the index.</p>
      * <ul> <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
      * from the specified table or index. If you query a local secondary index, then
-     * for each matching item in the index DynamoDB will fetch the entire item from the
+     * for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then
      * all of the data can be obtained from the local secondary index, and no fetching
      * is required.</p> </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
@@ -260,7 +260,7 @@ namespace Model
      * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
      * request only attributes that are projected into that index, the operation will
      * read only the index and not the table. If any of the requested attributes are
-     * not projected into the local secondary index, DynamoDB will fetch each of these
+     * not projected into the local secondary index, DynamoDB fetches each of these
      * attributes from the parent table. This extra fetching incurs additional
      * throughput cost and latency.</p> <p>If you query or scan a global secondary
      * index, you can only request attributes that are projected into the index. Global
@@ -284,7 +284,7 @@ namespace Model
      * case of an index, some or all of the attributes projected into the index.</p>
      * <ul> <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
      * from the specified table or index. If you query a local secondary index, then
-     * for each matching item in the index DynamoDB will fetch the entire item from the
+     * for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then
      * all of the data can be obtained from the local secondary index, and no fetching
      * is required.</p> </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
@@ -299,7 +299,7 @@ namespace Model
      * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
      * request only attributes that are projected into that index, the operation will
      * read only the index and not the table. If any of the requested attributes are
-     * not projected into the local secondary index, DynamoDB will fetch each of these
+     * not projected into the local secondary index, DynamoDB fetches each of these
      * attributes from the parent table. This extra fetching incurs additional
      * throughput cost and latency.</p> <p>If you query or scan a global secondary
      * index, you can only request attributes that are projected into the index. Global
@@ -323,7 +323,7 @@ namespace Model
      * case of an index, some or all of the attributes projected into the index.</p>
      * <ul> <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
      * from the specified table or index. If you query a local secondary index, then
-     * for each matching item in the index DynamoDB will fetch the entire item from the
+     * for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then
      * all of the data can be obtained from the local secondary index, and no fetching
      * is required.</p> </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
@@ -338,7 +338,7 @@ namespace Model
      * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
      * request only attributes that are projected into that index, the operation will
      * read only the index and not the table. If any of the requested attributes are
-     * not projected into the local secondary index, DynamoDB will fetch each of these
+     * not projected into the local secondary index, DynamoDB fetches each of these
      * attributes from the parent table. This extra fetching incurs additional
      * throughput cost and latency.</p> <p>If you query or scan a global secondary
      * index, you can only request attributes that are projected into the index. Global
@@ -362,7 +362,7 @@ namespace Model
      * case of an index, some or all of the attributes projected into the index.</p>
      * <ul> <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
      * from the specified table or index. If you query a local secondary index, then
-     * for each matching item in the index DynamoDB will fetch the entire item from the
+     * for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then
      * all of the data can be obtained from the local secondary index, and no fetching
      * is required.</p> </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
@@ -377,7 +377,7 @@ namespace Model
      * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
      * request only attributes that are projected into that index, the operation will
      * read only the index and not the table. If any of the requested attributes are
-     * not projected into the local secondary index, DynamoDB will fetch each of these
+     * not projected into the local secondary index, DynamoDB fetches each of these
      * attributes from the parent table. This extra fetching incurs additional
      * throughput cost and latency.</p> <p>If you query or scan a global secondary
      * index, you can only request attributes that are projected into the index. Global
@@ -475,10 +475,10 @@ namespace Model
      * processing the results, it stops the operation and returns the matching values
      * up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a
      * subsequent operation, so that you can pick up where you left off. Also, if the
-     * processed data set size exceeds 1 MB before DynamoDB reaches this limit, it
-     * stops the operation and returns the matching values up to the limit, and a key
-     * in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue
-     * the operation. For more information, see <a
+     * processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops
+     * the operation and returns the matching values up to the limit, and a key in
+     * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the
+     * operation. For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -490,10 +490,10 @@ namespace Model
      * processing the results, it stops the operation and returns the matching values
      * up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a
      * subsequent operation, so that you can pick up where you left off. Also, if the
-     * processed data set size exceeds 1 MB before DynamoDB reaches this limit, it
-     * stops the operation and returns the matching values up to the limit, and a key
-     * in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue
-     * the operation. For more information, see <a
+     * processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops
+     * the operation and returns the matching values up to the limit, and a key in
+     * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the
+     * operation. For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -505,10 +505,10 @@ namespace Model
      * processing the results, it stops the operation and returns the matching values
      * up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a
      * subsequent operation, so that you can pick up where you left off. Also, if the
-     * processed data set size exceeds 1 MB before DynamoDB reaches this limit, it
-     * stops the operation and returns the matching values up to the limit, and a key
-     * in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue
-     * the operation. For more information, see <a
+     * processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops
+     * the operation and returns the matching values up to the limit, and a key in
+     * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the
+     * operation. For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -520,10 +520,10 @@ namespace Model
      * processing the results, it stops the operation and returns the matching values
      * up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a
      * subsequent operation, so that you can pick up where you left off. Also, if the
-     * processed data set size exceeds 1 MB before DynamoDB reaches this limit, it
-     * stops the operation and returns the matching values up to the limit, and a key
-     * in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue
-     * the operation. For more information, see <a
+     * processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops
+     * the operation and returns the matching values up to the limit, and a key in
+     * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the
+     * operation. For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -883,7 +883,7 @@ namespace Model
      * <p>The primary key of the first item that this operation will evaluate. Use the
      * value that was returned for <code>LastEvaluatedKey</code> in the previous
      * operation.</p> <p>The data type for <code>ExclusiveStartKey</code> must be
-     * String, Number or Binary. No set data types are allowed.</p>
+     * String, Number, or Binary. No set data types are allowed.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetExclusiveStartKey() const{ return m_exclusiveStartKey; }
 
@@ -891,7 +891,7 @@ namespace Model
      * <p>The primary key of the first item that this operation will evaluate. Use the
      * value that was returned for <code>LastEvaluatedKey</code> in the previous
      * operation.</p> <p>The data type for <code>ExclusiveStartKey</code> must be
-     * String, Number or Binary. No set data types are allowed.</p>
+     * String, Number, or Binary. No set data types are allowed.</p>
      */
     inline bool ExclusiveStartKeyHasBeenSet() const { return m_exclusiveStartKeyHasBeenSet; }
 
@@ -899,7 +899,7 @@ namespace Model
      * <p>The primary key of the first item that this operation will evaluate. Use the
      * value that was returned for <code>LastEvaluatedKey</code> in the previous
      * operation.</p> <p>The data type for <code>ExclusiveStartKey</code> must be
-     * String, Number or Binary. No set data types are allowed.</p>
+     * String, Number, or Binary. No set data types are allowed.</p>
      */
     inline void SetExclusiveStartKey(const Aws::Map<Aws::String, AttributeValue>& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey = value; }
 
@@ -907,7 +907,7 @@ namespace Model
      * <p>The primary key of the first item that this operation will evaluate. Use the
      * value that was returned for <code>LastEvaluatedKey</code> in the previous
      * operation.</p> <p>The data type for <code>ExclusiveStartKey</code> must be
-     * String, Number or Binary. No set data types are allowed.</p>
+     * String, Number, or Binary. No set data types are allowed.</p>
      */
     inline void SetExclusiveStartKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey = std::move(value); }
 
@@ -915,7 +915,7 @@ namespace Model
      * <p>The primary key of the first item that this operation will evaluate. Use the
      * value that was returned for <code>LastEvaluatedKey</code> in the previous
      * operation.</p> <p>The data type for <code>ExclusiveStartKey</code> must be
-     * String, Number or Binary. No set data types are allowed.</p>
+     * String, Number, or Binary. No set data types are allowed.</p>
      */
     inline QueryRequest& WithExclusiveStartKey(const Aws::Map<Aws::String, AttributeValue>& value) { SetExclusiveStartKey(value); return *this;}
 
@@ -923,7 +923,7 @@ namespace Model
      * <p>The primary key of the first item that this operation will evaluate. Use the
      * value that was returned for <code>LastEvaluatedKey</code> in the previous
      * operation.</p> <p>The data type for <code>ExclusiveStartKey</code> must be
-     * String, Number or Binary. No set data types are allowed.</p>
+     * String, Number, or Binary. No set data types are allowed.</p>
      */
     inline QueryRequest& WithExclusiveStartKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetExclusiveStartKey(std::move(value)); return *this;}
 
@@ -931,7 +931,7 @@ namespace Model
      * <p>The primary key of the first item that this operation will evaluate. Use the
      * value that was returned for <code>LastEvaluatedKey</code> in the previous
      * operation.</p> <p>The data type for <code>ExclusiveStartKey</code> must be
-     * String, Number or Binary. No set data types are allowed.</p>
+     * String, Number, or Binary. No set data types are allowed.</p>
      */
     inline QueryRequest& AddExclusiveStartKey(const Aws::String& key, const AttributeValue& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey.emplace(key, value); return *this; }
 
@@ -939,7 +939,7 @@ namespace Model
      * <p>The primary key of the first item that this operation will evaluate. Use the
      * value that was returned for <code>LastEvaluatedKey</code> in the previous
      * operation.</p> <p>The data type for <code>ExclusiveStartKey</code> must be
-     * String, Number or Binary. No set data types are allowed.</p>
+     * String, Number, or Binary. No set data types are allowed.</p>
      */
     inline QueryRequest& AddExclusiveStartKey(Aws::String&& key, const AttributeValue& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey.emplace(std::move(key), value); return *this; }
 
@@ -947,7 +947,7 @@ namespace Model
      * <p>The primary key of the first item that this operation will evaluate. Use the
      * value that was returned for <code>LastEvaluatedKey</code> in the previous
      * operation.</p> <p>The data type for <code>ExclusiveStartKey</code> must be
-     * String, Number or Binary. No set data types are allowed.</p>
+     * String, Number, or Binary. No set data types are allowed.</p>
      */
     inline QueryRequest& AddExclusiveStartKey(const Aws::String& key, AttributeValue&& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey.emplace(key, std::move(value)); return *this; }
 
@@ -955,7 +955,7 @@ namespace Model
      * <p>The primary key of the first item that this operation will evaluate. Use the
      * value that was returned for <code>LastEvaluatedKey</code> in the previous
      * operation.</p> <p>The data type for <code>ExclusiveStartKey</code> must be
-     * String, Number or Binary. No set data types are allowed.</p>
+     * String, Number, or Binary. No set data types are allowed.</p>
      */
     inline QueryRequest& AddExclusiveStartKey(Aws::String&& key, AttributeValue&& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -963,7 +963,7 @@ namespace Model
      * <p>The primary key of the first item that this operation will evaluate. Use the
      * value that was returned for <code>LastEvaluatedKey</code> in the previous
      * operation.</p> <p>The data type for <code>ExclusiveStartKey</code> must be
-     * String, Number or Binary. No set data types are allowed.</p>
+     * String, Number, or Binary. No set data types are allowed.</p>
      */
     inline QueryRequest& AddExclusiveStartKey(const char* key, AttributeValue&& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey.emplace(key, std::move(value)); return *this; }
 
@@ -971,7 +971,7 @@ namespace Model
      * <p>The primary key of the first item that this operation will evaluate. Use the
      * value that was returned for <code>LastEvaluatedKey</code> in the previous
      * operation.</p> <p>The data type for <code>ExclusiveStartKey</code> must be
-     * String, Number or Binary. No set data types are allowed.</p>
+     * String, Number, or Binary. No set data types are allowed.</p>
      */
     inline QueryRequest& AddExclusiveStartKey(const char* key, const AttributeValue& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey.emplace(key, value); return *this; }
 
@@ -1206,10 +1206,10 @@ namespace Model
 
 
     /**
-     * <p>The condition that specifies the key value(s) for items to be retrieved by
-     * the <code>Query</code> action.</p> <p>The condition must perform an equality
-     * test on a single partition key value.</p> <p>The condition can optionally
-     * perform one of several comparison tests on a single sort key value. This allows
+     * <p>The condition that specifies the key values for items to be retrieved by the
+     * <code>Query</code> action.</p> <p>The condition must perform an equality test on
+     * a single partition key value.</p> <p>The condition can optionally perform one of
+     * several comparison tests on a single sort key value. This allows
      * <code>Query</code> to retrieve one item with a given partition key value and
      * sort key value, or several items that have the same partition key value but
      * different sort key values.</p> <p>The partition key equality test is required,
@@ -1264,10 +1264,10 @@ namespace Model
     inline const Aws::String& GetKeyConditionExpression() const{ return m_keyConditionExpression; }
 
     /**
-     * <p>The condition that specifies the key value(s) for items to be retrieved by
-     * the <code>Query</code> action.</p> <p>The condition must perform an equality
-     * test on a single partition key value.</p> <p>The condition can optionally
-     * perform one of several comparison tests on a single sort key value. This allows
+     * <p>The condition that specifies the key values for items to be retrieved by the
+     * <code>Query</code> action.</p> <p>The condition must perform an equality test on
+     * a single partition key value.</p> <p>The condition can optionally perform one of
+     * several comparison tests on a single sort key value. This allows
      * <code>Query</code> to retrieve one item with a given partition key value and
      * sort key value, or several items that have the same partition key value but
      * different sort key values.</p> <p>The partition key equality test is required,
@@ -1322,10 +1322,10 @@ namespace Model
     inline bool KeyConditionExpressionHasBeenSet() const { return m_keyConditionExpressionHasBeenSet; }
 
     /**
-     * <p>The condition that specifies the key value(s) for items to be retrieved by
-     * the <code>Query</code> action.</p> <p>The condition must perform an equality
-     * test on a single partition key value.</p> <p>The condition can optionally
-     * perform one of several comparison tests on a single sort key value. This allows
+     * <p>The condition that specifies the key values for items to be retrieved by the
+     * <code>Query</code> action.</p> <p>The condition must perform an equality test on
+     * a single partition key value.</p> <p>The condition can optionally perform one of
+     * several comparison tests on a single sort key value. This allows
      * <code>Query</code> to retrieve one item with a given partition key value and
      * sort key value, or several items that have the same partition key value but
      * different sort key values.</p> <p>The partition key equality test is required,
@@ -1380,10 +1380,10 @@ namespace Model
     inline void SetKeyConditionExpression(const Aws::String& value) { m_keyConditionExpressionHasBeenSet = true; m_keyConditionExpression = value; }
 
     /**
-     * <p>The condition that specifies the key value(s) for items to be retrieved by
-     * the <code>Query</code> action.</p> <p>The condition must perform an equality
-     * test on a single partition key value.</p> <p>The condition can optionally
-     * perform one of several comparison tests on a single sort key value. This allows
+     * <p>The condition that specifies the key values for items to be retrieved by the
+     * <code>Query</code> action.</p> <p>The condition must perform an equality test on
+     * a single partition key value.</p> <p>The condition can optionally perform one of
+     * several comparison tests on a single sort key value. This allows
      * <code>Query</code> to retrieve one item with a given partition key value and
      * sort key value, or several items that have the same partition key value but
      * different sort key values.</p> <p>The partition key equality test is required,
@@ -1438,10 +1438,10 @@ namespace Model
     inline void SetKeyConditionExpression(Aws::String&& value) { m_keyConditionExpressionHasBeenSet = true; m_keyConditionExpression = std::move(value); }
 
     /**
-     * <p>The condition that specifies the key value(s) for items to be retrieved by
-     * the <code>Query</code> action.</p> <p>The condition must perform an equality
-     * test on a single partition key value.</p> <p>The condition can optionally
-     * perform one of several comparison tests on a single sort key value. This allows
+     * <p>The condition that specifies the key values for items to be retrieved by the
+     * <code>Query</code> action.</p> <p>The condition must perform an equality test on
+     * a single partition key value.</p> <p>The condition can optionally perform one of
+     * several comparison tests on a single sort key value. This allows
      * <code>Query</code> to retrieve one item with a given partition key value and
      * sort key value, or several items that have the same partition key value but
      * different sort key values.</p> <p>The partition key equality test is required,
@@ -1496,10 +1496,10 @@ namespace Model
     inline void SetKeyConditionExpression(const char* value) { m_keyConditionExpressionHasBeenSet = true; m_keyConditionExpression.assign(value); }
 
     /**
-     * <p>The condition that specifies the key value(s) for items to be retrieved by
-     * the <code>Query</code> action.</p> <p>The condition must perform an equality
-     * test on a single partition key value.</p> <p>The condition can optionally
-     * perform one of several comparison tests on a single sort key value. This allows
+     * <p>The condition that specifies the key values for items to be retrieved by the
+     * <code>Query</code> action.</p> <p>The condition must perform an equality test on
+     * a single partition key value.</p> <p>The condition can optionally perform one of
+     * several comparison tests on a single sort key value. This allows
      * <code>Query</code> to retrieve one item with a given partition key value and
      * sort key value, or several items that have the same partition key value but
      * different sort key values.</p> <p>The partition key equality test is required,
@@ -1554,10 +1554,10 @@ namespace Model
     inline QueryRequest& WithKeyConditionExpression(const Aws::String& value) { SetKeyConditionExpression(value); return *this;}
 
     /**
-     * <p>The condition that specifies the key value(s) for items to be retrieved by
-     * the <code>Query</code> action.</p> <p>The condition must perform an equality
-     * test on a single partition key value.</p> <p>The condition can optionally
-     * perform one of several comparison tests on a single sort key value. This allows
+     * <p>The condition that specifies the key values for items to be retrieved by the
+     * <code>Query</code> action.</p> <p>The condition must perform an equality test on
+     * a single partition key value.</p> <p>The condition can optionally perform one of
+     * several comparison tests on a single sort key value. This allows
      * <code>Query</code> to retrieve one item with a given partition key value and
      * sort key value, or several items that have the same partition key value but
      * different sort key values.</p> <p>The partition key equality test is required,
@@ -1612,10 +1612,10 @@ namespace Model
     inline QueryRequest& WithKeyConditionExpression(Aws::String&& value) { SetKeyConditionExpression(std::move(value)); return *this;}
 
     /**
-     * <p>The condition that specifies the key value(s) for items to be retrieved by
-     * the <code>Query</code> action.</p> <p>The condition must perform an equality
-     * test on a single partition key value.</p> <p>The condition can optionally
-     * perform one of several comparison tests on a single sort key value. This allows
+     * <p>The condition that specifies the key values for items to be retrieved by the
+     * <code>Query</code> action.</p> <p>The condition must perform an equality test on
+     * a single partition key value.</p> <p>The condition can optionally perform one of
+     * several comparison tests on a single sort key value. This allows
      * <code>Query</code> to retrieve one item with a given partition key value and
      * sort key value, or several items that have the same partition key value but
      * different sort key values.</p> <p>The partition key equality test is required,
@@ -1692,7 +1692,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetExpressionAttributeNames() const{ return m_expressionAttributeNames; }
@@ -1719,7 +1719,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ExpressionAttributeNamesHasBeenSet() const { return m_expressionAttributeNamesHasBeenSet; }
@@ -1746,7 +1746,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeNames(const Aws::Map<Aws::String, Aws::String>& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = value; }
@@ -1773,7 +1773,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = std::move(value); }
@@ -1800,7 +1800,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithExpressionAttributeNames(const Aws::Map<Aws::String, Aws::String>& value) { SetExpressionAttributeNames(value); return *this;}
@@ -1827,7 +1827,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { SetExpressionAttributeNames(std::move(value)); return *this;}
@@ -1854,7 +1854,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeNames(const Aws::String& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
@@ -1881,7 +1881,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeNames(Aws::String&& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
@@ -1908,7 +1908,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeNames(const Aws::String& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
@@ -1935,7 +1935,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeNames(Aws::String&& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), std::move(value)); return *this; }
@@ -1962,7 +1962,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeNames(const char* key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
@@ -1989,7 +1989,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeNames(Aws::String&& key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
@@ -2016,7 +2016,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& AddExpressionAttributeNames(const char* key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }

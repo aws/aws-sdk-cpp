@@ -86,42 +86,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN associated with the backup.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the backup.</p>
      */
     inline const Aws::String& GetBackupArn() const{ return m_backupArn; }
 
     /**
-     * <p>The ARN associated with the backup.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the backup.</p>
      */
     inline bool BackupArnHasBeenSet() const { return m_backupArnHasBeenSet; }
 
     /**
-     * <p>The ARN associated with the backup.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the backup.</p>
      */
     inline void SetBackupArn(const Aws::String& value) { m_backupArnHasBeenSet = true; m_backupArn = value; }
 
     /**
-     * <p>The ARN associated with the backup.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the backup.</p>
      */
     inline void SetBackupArn(Aws::String&& value) { m_backupArnHasBeenSet = true; m_backupArn = std::move(value); }
 
     /**
-     * <p>The ARN associated with the backup.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the backup.</p>
      */
     inline void SetBackupArn(const char* value) { m_backupArnHasBeenSet = true; m_backupArn.assign(value); }
 
     /**
-     * <p>The ARN associated with the backup.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the backup.</p>
      */
     inline RestoreTableFromBackupRequest& WithBackupArn(const Aws::String& value) { SetBackupArn(value); return *this;}
 
     /**
-     * <p>The ARN associated with the backup.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the backup.</p>
      */
     inline RestoreTableFromBackupRequest& WithBackupArn(Aws::String&& value) { SetBackupArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN associated with the backup.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the backup.</p>
      */
     inline RestoreTableFromBackupRequest& WithBackupArn(const char* value) { SetBackupArn(value); return *this;}
 

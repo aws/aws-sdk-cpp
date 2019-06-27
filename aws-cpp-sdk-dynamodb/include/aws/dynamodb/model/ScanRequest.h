@@ -240,12 +240,12 @@ namespace Model
      * processing the results, it stops the operation and returns the matching values
      * up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a
      * subsequent operation, so that you can pick up where you left off. Also, if the
-     * processed data set size exceeds 1 MB before DynamoDB reaches this limit, it
-     * stops the operation and returns the matching values up to the limit, and a key
-     * in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue
-     * the operation. For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops
+     * the operation and returns the matching values up to the limit, and a key in
+     * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the
+     * operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working
+     * with Queries</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
@@ -255,12 +255,12 @@ namespace Model
      * processing the results, it stops the operation and returns the matching values
      * up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a
      * subsequent operation, so that you can pick up where you left off. Also, if the
-     * processed data set size exceeds 1 MB before DynamoDB reaches this limit, it
-     * stops the operation and returns the matching values up to the limit, and a key
-     * in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue
-     * the operation. For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops
+     * the operation and returns the matching values up to the limit, and a key in
+     * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the
+     * operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working
+     * with Queries</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
@@ -270,12 +270,12 @@ namespace Model
      * processing the results, it stops the operation and returns the matching values
      * up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a
      * subsequent operation, so that you can pick up where you left off. Also, if the
-     * processed data set size exceeds 1 MB before DynamoDB reaches this limit, it
-     * stops the operation and returns the matching values up to the limit, and a key
-     * in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue
-     * the operation. For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops
+     * the operation and returns the matching values up to the limit, and a key in
+     * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the
+     * operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working
+     * with Queries</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
@@ -285,12 +285,12 @@ namespace Model
      * processing the results, it stops the operation and returns the matching values
      * up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a
      * subsequent operation, so that you can pick up where you left off. Also, if the
-     * processed data set size exceeds 1 MB before DynamoDB reaches this limit, it
-     * stops the operation and returns the matching values up to the limit, and a key
-     * in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue
-     * the operation. For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops
+     * the operation and returns the matching values up to the limit, and a key in
+     * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the
+     * operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working
+     * with Queries</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
@@ -301,7 +301,7 @@ namespace Model
      * case of an index, some or all of the attributes projected into the index.</p>
      * <ul> <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
      * from the specified table or index. If you query a local secondary index, then
-     * for each matching item in the index DynamoDB will fetch the entire item from the
+     * for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then
      * all of the data can be obtained from the local secondary index, and no fetching
      * is required.</p> </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
@@ -314,9 +314,9 @@ namespace Model
      * <code>AttributesToGet</code>. This return value is equivalent to specifying
      * <code>AttributesToGet</code> without specifying any value for
      * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
-     * request only attributes that are projected into that index, the operation will
-     * read only the index and not the table. If any of the requested attributes are
-     * not projected into the local secondary index, DynamoDB will fetch each of these
+     * request only attributes that are projected into that index, the operation reads
+     * only the index and not the table. If any of the requested attributes are not
+     * projected into the local secondary index, DynamoDB fetches each of these
      * attributes from the parent table. This extra fetching incurs additional
      * throughput cost and latency.</p> <p>If you query or scan a global secondary
      * index, you can only request attributes that are projected into the index. Global
@@ -340,7 +340,7 @@ namespace Model
      * case of an index, some or all of the attributes projected into the index.</p>
      * <ul> <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
      * from the specified table or index. If you query a local secondary index, then
-     * for each matching item in the index DynamoDB will fetch the entire item from the
+     * for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then
      * all of the data can be obtained from the local secondary index, and no fetching
      * is required.</p> </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
@@ -353,9 +353,9 @@ namespace Model
      * <code>AttributesToGet</code>. This return value is equivalent to specifying
      * <code>AttributesToGet</code> without specifying any value for
      * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
-     * request only attributes that are projected into that index, the operation will
-     * read only the index and not the table. If any of the requested attributes are
-     * not projected into the local secondary index, DynamoDB will fetch each of these
+     * request only attributes that are projected into that index, the operation reads
+     * only the index and not the table. If any of the requested attributes are not
+     * projected into the local secondary index, DynamoDB fetches each of these
      * attributes from the parent table. This extra fetching incurs additional
      * throughput cost and latency.</p> <p>If you query or scan a global secondary
      * index, you can only request attributes that are projected into the index. Global
@@ -379,7 +379,7 @@ namespace Model
      * case of an index, some or all of the attributes projected into the index.</p>
      * <ul> <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
      * from the specified table or index. If you query a local secondary index, then
-     * for each matching item in the index DynamoDB will fetch the entire item from the
+     * for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then
      * all of the data can be obtained from the local secondary index, and no fetching
      * is required.</p> </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
@@ -392,9 +392,9 @@ namespace Model
      * <code>AttributesToGet</code>. This return value is equivalent to specifying
      * <code>AttributesToGet</code> without specifying any value for
      * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
-     * request only attributes that are projected into that index, the operation will
-     * read only the index and not the table. If any of the requested attributes are
-     * not projected into the local secondary index, DynamoDB will fetch each of these
+     * request only attributes that are projected into that index, the operation reads
+     * only the index and not the table. If any of the requested attributes are not
+     * projected into the local secondary index, DynamoDB fetches each of these
      * attributes from the parent table. This extra fetching incurs additional
      * throughput cost and latency.</p> <p>If you query or scan a global secondary
      * index, you can only request attributes that are projected into the index. Global
@@ -418,7 +418,7 @@ namespace Model
      * case of an index, some or all of the attributes projected into the index.</p>
      * <ul> <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
      * from the specified table or index. If you query a local secondary index, then
-     * for each matching item in the index DynamoDB will fetch the entire item from the
+     * for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then
      * all of the data can be obtained from the local secondary index, and no fetching
      * is required.</p> </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
@@ -431,9 +431,9 @@ namespace Model
      * <code>AttributesToGet</code>. This return value is equivalent to specifying
      * <code>AttributesToGet</code> without specifying any value for
      * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
-     * request only attributes that are projected into that index, the operation will
-     * read only the index and not the table. If any of the requested attributes are
-     * not projected into the local secondary index, DynamoDB will fetch each of these
+     * request only attributes that are projected into that index, the operation reads
+     * only the index and not the table. If any of the requested attributes are not
+     * projected into the local secondary index, DynamoDB fetches each of these
      * attributes from the parent table. This extra fetching incurs additional
      * throughput cost and latency.</p> <p>If you query or scan a global secondary
      * index, you can only request attributes that are projected into the index. Global
@@ -457,7 +457,7 @@ namespace Model
      * case of an index, some or all of the attributes projected into the index.</p>
      * <ul> <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
      * from the specified table or index. If you query a local secondary index, then
-     * for each matching item in the index DynamoDB will fetch the entire item from the
+     * for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then
      * all of the data can be obtained from the local secondary index, and no fetching
      * is required.</p> </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
@@ -470,9 +470,9 @@ namespace Model
      * <code>AttributesToGet</code>. This return value is equivalent to specifying
      * <code>AttributesToGet</code> without specifying any value for
      * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
-     * request only attributes that are projected into that index, the operation will
-     * read only the index and not the table. If any of the requested attributes are
-     * not projected into the local secondary index, DynamoDB will fetch each of these
+     * request only attributes that are projected into that index, the operation reads
+     * only the index and not the table. If any of the requested attributes are not
+     * projected into the local secondary index, DynamoDB fetches each of these
      * attributes from the parent table. This extra fetching incurs additional
      * throughput cost and latency.</p> <p>If you query or scan a global secondary
      * index, you can only request attributes that are projected into the index. Global
@@ -496,7 +496,7 @@ namespace Model
      * case of an index, some or all of the attributes projected into the index.</p>
      * <ul> <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
      * from the specified table or index. If you query a local secondary index, then
-     * for each matching item in the index DynamoDB will fetch the entire item from the
+     * for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then
      * all of the data can be obtained from the local secondary index, and no fetching
      * is required.</p> </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
@@ -509,9 +509,9 @@ namespace Model
      * <code>AttributesToGet</code>. This return value is equivalent to specifying
      * <code>AttributesToGet</code> without specifying any value for
      * <code>Select</code>.</p> <p>If you query or scan a local secondary index and
-     * request only attributes that are projected into that index, the operation will
-     * read only the index and not the table. If any of the requested attributes are
-     * not projected into the local secondary index, DynamoDB will fetch each of these
+     * request only attributes that are projected into that index, the operation reads
+     * only the index and not the table. If any of the requested attributes are not
+     * projected into the local secondary index, DynamoDB fetches each of these
      * attributes from the parent table. This extra fetching incurs additional
      * throughput cost and latency.</p> <p>If you query or scan a global secondary
      * index, you can only request attributes that are projected into the index. Global
@@ -961,7 +961,7 @@ namespace Model
      * by commas.</p> <p>If no attribute names are specified, then all attributes will
      * be returned. If any of the requested attributes are not found, they will not
      * appear in the result.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::String& GetProjectionExpression() const{ return m_projectionExpression; }
@@ -973,7 +973,7 @@ namespace Model
      * by commas.</p> <p>If no attribute names are specified, then all attributes will
      * be returned. If any of the requested attributes are not found, they will not
      * appear in the result.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ProjectionExpressionHasBeenSet() const { return m_projectionExpressionHasBeenSet; }
@@ -985,7 +985,7 @@ namespace Model
      * by commas.</p> <p>If no attribute names are specified, then all attributes will
      * be returned. If any of the requested attributes are not found, they will not
      * appear in the result.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProjectionExpression(const Aws::String& value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression = value; }
@@ -997,7 +997,7 @@ namespace Model
      * by commas.</p> <p>If no attribute names are specified, then all attributes will
      * be returned. If any of the requested attributes are not found, they will not
      * appear in the result.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProjectionExpression(Aws::String&& value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression = std::move(value); }
@@ -1009,7 +1009,7 @@ namespace Model
      * by commas.</p> <p>If no attribute names are specified, then all attributes will
      * be returned. If any of the requested attributes are not found, they will not
      * appear in the result.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProjectionExpression(const char* value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression.assign(value); }
@@ -1021,7 +1021,7 @@ namespace Model
      * by commas.</p> <p>If no attribute names are specified, then all attributes will
      * be returned. If any of the requested attributes are not found, they will not
      * appear in the result.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& WithProjectionExpression(const Aws::String& value) { SetProjectionExpression(value); return *this;}
@@ -1033,7 +1033,7 @@ namespace Model
      * by commas.</p> <p>If no attribute names are specified, then all attributes will
      * be returned. If any of the requested attributes are not found, they will not
      * appear in the result.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& WithProjectionExpression(Aws::String&& value) { SetProjectionExpression(std::move(value)); return *this;}
@@ -1045,7 +1045,7 @@ namespace Model
      * by commas.</p> <p>If no attribute names are specified, then all attributes will
      * be returned. If any of the requested attributes are not found, they will not
      * appear in the result.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& WithProjectionExpression(const char* value) { SetProjectionExpression(value); return *this;}
@@ -1170,7 +1170,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetExpressionAttributeNames() const{ return m_expressionAttributeNames; }
@@ -1197,7 +1197,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ExpressionAttributeNamesHasBeenSet() const { return m_expressionAttributeNamesHasBeenSet; }
@@ -1224,7 +1224,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeNames(const Aws::Map<Aws::String, Aws::String>& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = value; }
@@ -1251,7 +1251,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = std::move(value); }
@@ -1278,7 +1278,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& WithExpressionAttributeNames(const Aws::Map<Aws::String, Aws::String>& value) { SetExpressionAttributeNames(value); return *this;}
@@ -1305,7 +1305,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& WithExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { SetExpressionAttributeNames(std::move(value)); return *this;}
@@ -1332,7 +1332,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& AddExpressionAttributeNames(const Aws::String& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
@@ -1359,7 +1359,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& AddExpressionAttributeNames(Aws::String&& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
@@ -1386,7 +1386,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& AddExpressionAttributeNames(const Aws::String& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
@@ -1413,7 +1413,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& AddExpressionAttributeNames(Aws::String&& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), std::move(value)); return *this; }
@@ -1440,7 +1440,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& AddExpressionAttributeNames(const char* key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
@@ -1467,7 +1467,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& AddExpressionAttributeNames(Aws::String&& key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
@@ -1494,7 +1494,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& AddExpressionAttributeNames(const char* key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
@@ -1504,7 +1504,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1512,8 +1512,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetExpressionAttributeValues() const{ return m_expressionAttributeValues; }
 
@@ -1521,7 +1521,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1529,8 +1529,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ExpressionAttributeValuesHasBeenSet() const { return m_expressionAttributeValuesHasBeenSet; }
 
@@ -1538,7 +1538,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1546,8 +1546,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeValues(const Aws::Map<Aws::String, AttributeValue>& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues = value; }
 
@@ -1555,7 +1555,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1563,8 +1563,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeValues(Aws::Map<Aws::String, AttributeValue>&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues = std::move(value); }
 
@@ -1572,7 +1572,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1580,8 +1580,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& WithExpressionAttributeValues(const Aws::Map<Aws::String, AttributeValue>& value) { SetExpressionAttributeValues(value); return *this;}
 
@@ -1589,7 +1589,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1597,8 +1597,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& WithExpressionAttributeValues(Aws::Map<Aws::String, AttributeValue>&& value) { SetExpressionAttributeValues(std::move(value)); return *this;}
 
@@ -1606,7 +1606,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1614,8 +1614,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& AddExpressionAttributeValues(const Aws::String& key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }
 
@@ -1623,7 +1623,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1631,8 +1631,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& AddExpressionAttributeValues(Aws::String&& key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(std::move(key), value); return *this; }
 
@@ -1640,7 +1640,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1648,8 +1648,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& AddExpressionAttributeValues(const Aws::String& key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, std::move(value)); return *this; }
 
@@ -1657,7 +1657,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1665,8 +1665,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& AddExpressionAttributeValues(Aws::String&& key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -1674,7 +1674,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1682,8 +1682,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& AddExpressionAttributeValues(const char* key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, std::move(value)); return *this; }
 
@@ -1691,7 +1691,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1699,8 +1699,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& AddExpressionAttributeValues(const char* key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }
 
@@ -1709,15 +1709,15 @@ namespace Model
      * <p>A Boolean value that determines the read consistency model during the
      * scan:</p> <ul> <li> <p>If <code>ConsistentRead</code> is <code>false</code>,
      * then the data returned from <code>Scan</code> might not contain the results from
-     * other recently completed write operations (PutItem, UpdateItem or
-     * DeleteItem).</p> </li> <li> <p>If <code>ConsistentRead</code> is
-     * <code>true</code>, then all of the write operations that completed before the
-     * <code>Scan</code> began are guaranteed to be contained in the <code>Scan</code>
-     * response.</p> </li> </ul> <p>The default setting for <code>ConsistentRead</code>
-     * is <code>false</code>.</p> <p>The <code>ConsistentRead</code> parameter is not
-     * supported on global secondary indexes. If you scan a global secondary index with
-     * <code>ConsistentRead</code> set to true, you will receive a
-     * <code>ValidationException</code>.</p>
+     * other recently completed write operations (<code>PutItem</code>,
+     * <code>UpdateItem</code>, or <code>DeleteItem</code>).</p> </li> <li> <p>If
+     * <code>ConsistentRead</code> is <code>true</code>, then all of the write
+     * operations that completed before the <code>Scan</code> began are guaranteed to
+     * be contained in the <code>Scan</code> response.</p> </li> </ul> <p>The default
+     * setting for <code>ConsistentRead</code> is <code>false</code>.</p> <p>The
+     * <code>ConsistentRead</code> parameter is not supported on global secondary
+     * indexes. If you scan a global secondary index with <code>ConsistentRead</code>
+     * set to true, you will receive a <code>ValidationException</code>.</p>
      */
     inline bool GetConsistentRead() const{ return m_consistentRead; }
 
@@ -1725,15 +1725,15 @@ namespace Model
      * <p>A Boolean value that determines the read consistency model during the
      * scan:</p> <ul> <li> <p>If <code>ConsistentRead</code> is <code>false</code>,
      * then the data returned from <code>Scan</code> might not contain the results from
-     * other recently completed write operations (PutItem, UpdateItem or
-     * DeleteItem).</p> </li> <li> <p>If <code>ConsistentRead</code> is
-     * <code>true</code>, then all of the write operations that completed before the
-     * <code>Scan</code> began are guaranteed to be contained in the <code>Scan</code>
-     * response.</p> </li> </ul> <p>The default setting for <code>ConsistentRead</code>
-     * is <code>false</code>.</p> <p>The <code>ConsistentRead</code> parameter is not
-     * supported on global secondary indexes. If you scan a global secondary index with
-     * <code>ConsistentRead</code> set to true, you will receive a
-     * <code>ValidationException</code>.</p>
+     * other recently completed write operations (<code>PutItem</code>,
+     * <code>UpdateItem</code>, or <code>DeleteItem</code>).</p> </li> <li> <p>If
+     * <code>ConsistentRead</code> is <code>true</code>, then all of the write
+     * operations that completed before the <code>Scan</code> began are guaranteed to
+     * be contained in the <code>Scan</code> response.</p> </li> </ul> <p>The default
+     * setting for <code>ConsistentRead</code> is <code>false</code>.</p> <p>The
+     * <code>ConsistentRead</code> parameter is not supported on global secondary
+     * indexes. If you scan a global secondary index with <code>ConsistentRead</code>
+     * set to true, you will receive a <code>ValidationException</code>.</p>
      */
     inline bool ConsistentReadHasBeenSet() const { return m_consistentReadHasBeenSet; }
 
@@ -1741,15 +1741,15 @@ namespace Model
      * <p>A Boolean value that determines the read consistency model during the
      * scan:</p> <ul> <li> <p>If <code>ConsistentRead</code> is <code>false</code>,
      * then the data returned from <code>Scan</code> might not contain the results from
-     * other recently completed write operations (PutItem, UpdateItem or
-     * DeleteItem).</p> </li> <li> <p>If <code>ConsistentRead</code> is
-     * <code>true</code>, then all of the write operations that completed before the
-     * <code>Scan</code> began are guaranteed to be contained in the <code>Scan</code>
-     * response.</p> </li> </ul> <p>The default setting for <code>ConsistentRead</code>
-     * is <code>false</code>.</p> <p>The <code>ConsistentRead</code> parameter is not
-     * supported on global secondary indexes. If you scan a global secondary index with
-     * <code>ConsistentRead</code> set to true, you will receive a
-     * <code>ValidationException</code>.</p>
+     * other recently completed write operations (<code>PutItem</code>,
+     * <code>UpdateItem</code>, or <code>DeleteItem</code>).</p> </li> <li> <p>If
+     * <code>ConsistentRead</code> is <code>true</code>, then all of the write
+     * operations that completed before the <code>Scan</code> began are guaranteed to
+     * be contained in the <code>Scan</code> response.</p> </li> </ul> <p>The default
+     * setting for <code>ConsistentRead</code> is <code>false</code>.</p> <p>The
+     * <code>ConsistentRead</code> parameter is not supported on global secondary
+     * indexes. If you scan a global secondary index with <code>ConsistentRead</code>
+     * set to true, you will receive a <code>ValidationException</code>.</p>
      */
     inline void SetConsistentRead(bool value) { m_consistentReadHasBeenSet = true; m_consistentRead = value; }
 
@@ -1757,15 +1757,15 @@ namespace Model
      * <p>A Boolean value that determines the read consistency model during the
      * scan:</p> <ul> <li> <p>If <code>ConsistentRead</code> is <code>false</code>,
      * then the data returned from <code>Scan</code> might not contain the results from
-     * other recently completed write operations (PutItem, UpdateItem or
-     * DeleteItem).</p> </li> <li> <p>If <code>ConsistentRead</code> is
-     * <code>true</code>, then all of the write operations that completed before the
-     * <code>Scan</code> began are guaranteed to be contained in the <code>Scan</code>
-     * response.</p> </li> </ul> <p>The default setting for <code>ConsistentRead</code>
-     * is <code>false</code>.</p> <p>The <code>ConsistentRead</code> parameter is not
-     * supported on global secondary indexes. If you scan a global secondary index with
-     * <code>ConsistentRead</code> set to true, you will receive a
-     * <code>ValidationException</code>.</p>
+     * other recently completed write operations (<code>PutItem</code>,
+     * <code>UpdateItem</code>, or <code>DeleteItem</code>).</p> </li> <li> <p>If
+     * <code>ConsistentRead</code> is <code>true</code>, then all of the write
+     * operations that completed before the <code>Scan</code> began are guaranteed to
+     * be contained in the <code>Scan</code> response.</p> </li> </ul> <p>The default
+     * setting for <code>ConsistentRead</code> is <code>false</code>.</p> <p>The
+     * <code>ConsistentRead</code> parameter is not supported on global secondary
+     * indexes. If you scan a global secondary index with <code>ConsistentRead</code>
+     * set to true, you will receive a <code>ValidationException</code>.</p>
      */
     inline ScanRequest& WithConsistentRead(bool value) { SetConsistentRead(value); return *this;}
 

@@ -72,9 +72,9 @@ namespace Model
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
      * and set type attributes must not be empty. Requests that contain empty values
-     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
-     * you specify any attributes that are part of an index key, then the data types
-     * for those attributes must match those of the schema in the table's attribute
+     * are rejected with a <code>ValidationException</code> exception.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& GetRequestItems() const{ return m_requestItems; }
@@ -98,9 +98,9 @@ namespace Model
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
      * and set type attributes must not be empty. Requests that contain empty values
-     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
-     * you specify any attributes that are part of an index key, then the data types
-     * for those attributes must match those of the schema in the table's attribute
+     * are rejected with a <code>ValidationException</code> exception.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline bool RequestItemsHasBeenSet() const { return m_requestItemsHasBeenSet; }
@@ -124,9 +124,9 @@ namespace Model
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
      * and set type attributes must not be empty. Requests that contain empty values
-     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
-     * you specify any attributes that are part of an index key, then the data types
-     * for those attributes must match those of the schema in the table's attribute
+     * are rejected with a <code>ValidationException</code> exception.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline void SetRequestItems(const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& value) { m_requestItemsHasBeenSet = true; m_requestItems = value; }
@@ -150,9 +150,9 @@ namespace Model
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
      * and set type attributes must not be empty. Requests that contain empty values
-     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
-     * you specify any attributes that are part of an index key, then the data types
-     * for those attributes must match those of the schema in the table's attribute
+     * are rejected with a <code>ValidationException</code> exception.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline void SetRequestItems(Aws::Map<Aws::String, Aws::Vector<WriteRequest>>&& value) { m_requestItemsHasBeenSet = true; m_requestItems = std::move(value); }
@@ -176,9 +176,9 @@ namespace Model
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
      * and set type attributes must not be empty. Requests that contain empty values
-     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
-     * you specify any attributes that are part of an index key, then the data types
-     * for those attributes must match those of the schema in the table's attribute
+     * are rejected with a <code>ValidationException</code> exception.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline BatchWriteItemRequest& WithRequestItems(const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& value) { SetRequestItems(value); return *this;}
@@ -202,9 +202,9 @@ namespace Model
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
      * and set type attributes must not be empty. Requests that contain empty values
-     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
-     * you specify any attributes that are part of an index key, then the data types
-     * for those attributes must match those of the schema in the table's attribute
+     * are rejected with a <code>ValidationException</code> exception.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline BatchWriteItemRequest& WithRequestItems(Aws::Map<Aws::String, Aws::Vector<WriteRequest>>&& value) { SetRequestItems(std::move(value)); return *this;}
@@ -228,9 +228,9 @@ namespace Model
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
      * and set type attributes must not be empty. Requests that contain empty values
-     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
-     * you specify any attributes that are part of an index key, then the data types
-     * for those attributes must match those of the schema in the table's attribute
+     * are rejected with a <code>ValidationException</code> exception.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline BatchWriteItemRequest& AddRequestItems(const Aws::String& key, const Aws::Vector<WriteRequest>& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, value); return *this; }
@@ -254,9 +254,9 @@ namespace Model
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
      * and set type attributes must not be empty. Requests that contain empty values
-     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
-     * you specify any attributes that are part of an index key, then the data types
-     * for those attributes must match those of the schema in the table's attribute
+     * are rejected with a <code>ValidationException</code> exception.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline BatchWriteItemRequest& AddRequestItems(Aws::String&& key, const Aws::Vector<WriteRequest>& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(std::move(key), value); return *this; }
@@ -280,9 +280,9 @@ namespace Model
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
      * and set type attributes must not be empty. Requests that contain empty values
-     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
-     * you specify any attributes that are part of an index key, then the data types
-     * for those attributes must match those of the schema in the table's attribute
+     * are rejected with a <code>ValidationException</code> exception.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline BatchWriteItemRequest& AddRequestItems(const Aws::String& key, Aws::Vector<WriteRequest>&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, std::move(value)); return *this; }
@@ -306,9 +306,9 @@ namespace Model
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
      * and set type attributes must not be empty. Requests that contain empty values
-     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
-     * you specify any attributes that are part of an index key, then the data types
-     * for those attributes must match those of the schema in the table's attribute
+     * are rejected with a <code>ValidationException</code> exception.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline BatchWriteItemRequest& AddRequestItems(Aws::String&& key, Aws::Vector<WriteRequest>&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(std::move(key), std::move(value)); return *this; }
@@ -332,9 +332,9 @@ namespace Model
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
      * and set type attributes must not be empty. Requests that contain empty values
-     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
-     * you specify any attributes that are part of an index key, then the data types
-     * for those attributes must match those of the schema in the table's attribute
+     * are rejected with a <code>ValidationException</code> exception.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline BatchWriteItemRequest& AddRequestItems(const char* key, Aws::Vector<WriteRequest>&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, std::move(value)); return *this; }
@@ -358,9 +358,9 @@ namespace Model
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
      * and set type attributes must not be empty. Requests that contain empty values
-     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
-     * you specify any attributes that are part of an index key, then the data types
-     * for those attributes must match those of the schema in the table's attribute
+     * are rejected with a <code>ValidationException</code> exception.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline BatchWriteItemRequest& AddRequestItems(const char* key, const Aws::Vector<WriteRequest>& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, value); return *this; }

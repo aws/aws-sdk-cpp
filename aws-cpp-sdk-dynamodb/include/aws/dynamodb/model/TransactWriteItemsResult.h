@@ -99,7 +99,7 @@ namespace Model
     /**
      * <p>A list of tables that were processed by <code>TransactWriteItems</code> and,
      * for each table, information about any item collections that were affected by
-     * individual <code>UpdateItem</code>, <code>PutItem</code> or
+     * individual <code>UpdateItem</code>, <code>PutItem</code>, or
      * <code>DeleteItem</code> operations. </p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>& GetItemCollectionMetrics() const{ return m_itemCollectionMetrics; }
@@ -107,7 +107,7 @@ namespace Model
     /**
      * <p>A list of tables that were processed by <code>TransactWriteItems</code> and,
      * for each table, information about any item collections that were affected by
-     * individual <code>UpdateItem</code>, <code>PutItem</code> or
+     * individual <code>UpdateItem</code>, <code>PutItem</code>, or
      * <code>DeleteItem</code> operations. </p>
      */
     inline void SetItemCollectionMetrics(const Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>& value) { m_itemCollectionMetrics = value; }
@@ -115,7 +115,7 @@ namespace Model
     /**
      * <p>A list of tables that were processed by <code>TransactWriteItems</code> and,
      * for each table, information about any item collections that were affected by
-     * individual <code>UpdateItem</code>, <code>PutItem</code> or
+     * individual <code>UpdateItem</code>, <code>PutItem</code>, or
      * <code>DeleteItem</code> operations. </p>
      */
     inline void SetItemCollectionMetrics(Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>&& value) { m_itemCollectionMetrics = std::move(value); }
@@ -123,7 +123,7 @@ namespace Model
     /**
      * <p>A list of tables that were processed by <code>TransactWriteItems</code> and,
      * for each table, information about any item collections that were affected by
-     * individual <code>UpdateItem</code>, <code>PutItem</code> or
+     * individual <code>UpdateItem</code>, <code>PutItem</code>, or
      * <code>DeleteItem</code> operations. </p>
      */
     inline TransactWriteItemsResult& WithItemCollectionMetrics(const Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>& value) { SetItemCollectionMetrics(value); return *this;}
@@ -131,7 +131,7 @@ namespace Model
     /**
      * <p>A list of tables that were processed by <code>TransactWriteItems</code> and,
      * for each table, information about any item collections that were affected by
-     * individual <code>UpdateItem</code>, <code>PutItem</code> or
+     * individual <code>UpdateItem</code>, <code>PutItem</code>, or
      * <code>DeleteItem</code> operations. </p>
      */
     inline TransactWriteItemsResult& WithItemCollectionMetrics(Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>&& value) { SetItemCollectionMetrics(std::move(value)); return *this;}
@@ -139,7 +139,7 @@ namespace Model
     /**
      * <p>A list of tables that were processed by <code>TransactWriteItems</code> and,
      * for each table, information about any item collections that were affected by
-     * individual <code>UpdateItem</code>, <code>PutItem</code> or
+     * individual <code>UpdateItem</code>, <code>PutItem</code>, or
      * <code>DeleteItem</code> operations. </p>
      */
     inline TransactWriteItemsResult& AddItemCollectionMetrics(const Aws::String& key, const Aws::Vector<ItemCollectionMetrics>& value) { m_itemCollectionMetrics.emplace(key, value); return *this; }
@@ -147,7 +147,7 @@ namespace Model
     /**
      * <p>A list of tables that were processed by <code>TransactWriteItems</code> and,
      * for each table, information about any item collections that were affected by
-     * individual <code>UpdateItem</code>, <code>PutItem</code> or
+     * individual <code>UpdateItem</code>, <code>PutItem</code>, or
      * <code>DeleteItem</code> operations. </p>
      */
     inline TransactWriteItemsResult& AddItemCollectionMetrics(Aws::String&& key, const Aws::Vector<ItemCollectionMetrics>& value) { m_itemCollectionMetrics.emplace(std::move(key), value); return *this; }
@@ -155,7 +155,7 @@ namespace Model
     /**
      * <p>A list of tables that were processed by <code>TransactWriteItems</code> and,
      * for each table, information about any item collections that were affected by
-     * individual <code>UpdateItem</code>, <code>PutItem</code> or
+     * individual <code>UpdateItem</code>, <code>PutItem</code>, or
      * <code>DeleteItem</code> operations. </p>
      */
     inline TransactWriteItemsResult& AddItemCollectionMetrics(const Aws::String& key, Aws::Vector<ItemCollectionMetrics>&& value) { m_itemCollectionMetrics.emplace(key, std::move(value)); return *this; }
@@ -163,7 +163,7 @@ namespace Model
     /**
      * <p>A list of tables that were processed by <code>TransactWriteItems</code> and,
      * for each table, information about any item collections that were affected by
-     * individual <code>UpdateItem</code>, <code>PutItem</code> or
+     * individual <code>UpdateItem</code>, <code>PutItem</code>, or
      * <code>DeleteItem</code> operations. </p>
      */
     inline TransactWriteItemsResult& AddItemCollectionMetrics(Aws::String&& key, Aws::Vector<ItemCollectionMetrics>&& value) { m_itemCollectionMetrics.emplace(std::move(key), std::move(value)); return *this; }
@@ -171,7 +171,7 @@ namespace Model
     /**
      * <p>A list of tables that were processed by <code>TransactWriteItems</code> and,
      * for each table, information about any item collections that were affected by
-     * individual <code>UpdateItem</code>, <code>PutItem</code> or
+     * individual <code>UpdateItem</code>, <code>PutItem</code>, or
      * <code>DeleteItem</code> operations. </p>
      */
     inline TransactWriteItemsResult& AddItemCollectionMetrics(const char* key, Aws::Vector<ItemCollectionMetrics>&& value) { m_itemCollectionMetrics.emplace(key, std::move(value)); return *this; }
@@ -179,7 +179,7 @@ namespace Model
     /**
      * <p>A list of tables that were processed by <code>TransactWriteItems</code> and,
      * for each table, information about any item collections that were affected by
-     * individual <code>UpdateItem</code>, <code>PutItem</code> or
+     * individual <code>UpdateItem</code>, <code>PutItem</code>, or
      * <code>DeleteItem</code> operations. </p>
      */
     inline TransactWriteItemsResult& AddItemCollectionMetrics(const char* key, const Aws::Vector<ItemCollectionMetrics>& value) { m_itemCollectionMetrics.emplace(key, value); return *this; }

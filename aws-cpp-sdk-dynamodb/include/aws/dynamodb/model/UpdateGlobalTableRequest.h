@@ -88,42 +88,42 @@ namespace Model
 
 
     /**
-     * <p>A list of regions that should be added or removed from the global table.</p>
+     * <p>A list of Regions that should be added or removed from the global table.</p>
      */
     inline const Aws::Vector<ReplicaUpdate>& GetReplicaUpdates() const{ return m_replicaUpdates; }
 
     /**
-     * <p>A list of regions that should be added or removed from the global table.</p>
+     * <p>A list of Regions that should be added or removed from the global table.</p>
      */
     inline bool ReplicaUpdatesHasBeenSet() const { return m_replicaUpdatesHasBeenSet; }
 
     /**
-     * <p>A list of regions that should be added or removed from the global table.</p>
+     * <p>A list of Regions that should be added or removed from the global table.</p>
      */
     inline void SetReplicaUpdates(const Aws::Vector<ReplicaUpdate>& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates = value; }
 
     /**
-     * <p>A list of regions that should be added or removed from the global table.</p>
+     * <p>A list of Regions that should be added or removed from the global table.</p>
      */
     inline void SetReplicaUpdates(Aws::Vector<ReplicaUpdate>&& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates = std::move(value); }
 
     /**
-     * <p>A list of regions that should be added or removed from the global table.</p>
+     * <p>A list of Regions that should be added or removed from the global table.</p>
      */
     inline UpdateGlobalTableRequest& WithReplicaUpdates(const Aws::Vector<ReplicaUpdate>& value) { SetReplicaUpdates(value); return *this;}
 
     /**
-     * <p>A list of regions that should be added or removed from the global table.</p>
+     * <p>A list of Regions that should be added or removed from the global table.</p>
      */
     inline UpdateGlobalTableRequest& WithReplicaUpdates(Aws::Vector<ReplicaUpdate>&& value) { SetReplicaUpdates(std::move(value)); return *this;}
 
     /**
-     * <p>A list of regions that should be added or removed from the global table.</p>
+     * <p>A list of Regions that should be added or removed from the global table.</p>
      */
     inline UpdateGlobalTableRequest& AddReplicaUpdates(const ReplicaUpdate& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates.push_back(value); return *this; }
 
     /**
-     * <p>A list of regions that should be added or removed from the global table.</p>
+     * <p>A list of Regions that should be added or removed from the global table.</p>
      */
     inline UpdateGlobalTableRequest& AddReplicaUpdates(ReplicaUpdate&& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates.push_back(std::move(value)); return *this; }
 

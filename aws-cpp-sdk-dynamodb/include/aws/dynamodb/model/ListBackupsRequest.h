@@ -191,74 +191,74 @@ namespace Model
 
 
     /**
-     * <p> <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated
-     * when the current page of results was returned, inclusive of the current page of
-     * results. This value may be specified as the <code>ExclusiveStartBackupArn</code>
-     * of a new <code>ListBackups</code> operation in order to fetch the next page of
-     * results. </p>
+     * <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the
+     * backup last evaluated when the current page of results was returned, inclusive
+     * of the current page of results. This value may be specified as the
+     * <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation
+     * in order to fetch the next page of results. </p>
      */
     inline const Aws::String& GetExclusiveStartBackupArn() const{ return m_exclusiveStartBackupArn; }
 
     /**
-     * <p> <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated
-     * when the current page of results was returned, inclusive of the current page of
-     * results. This value may be specified as the <code>ExclusiveStartBackupArn</code>
-     * of a new <code>ListBackups</code> operation in order to fetch the next page of
-     * results. </p>
+     * <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the
+     * backup last evaluated when the current page of results was returned, inclusive
+     * of the current page of results. This value may be specified as the
+     * <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation
+     * in order to fetch the next page of results. </p>
      */
     inline bool ExclusiveStartBackupArnHasBeenSet() const { return m_exclusiveStartBackupArnHasBeenSet; }
 
     /**
-     * <p> <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated
-     * when the current page of results was returned, inclusive of the current page of
-     * results. This value may be specified as the <code>ExclusiveStartBackupArn</code>
-     * of a new <code>ListBackups</code> operation in order to fetch the next page of
-     * results. </p>
+     * <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the
+     * backup last evaluated when the current page of results was returned, inclusive
+     * of the current page of results. This value may be specified as the
+     * <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation
+     * in order to fetch the next page of results. </p>
      */
     inline void SetExclusiveStartBackupArn(const Aws::String& value) { m_exclusiveStartBackupArnHasBeenSet = true; m_exclusiveStartBackupArn = value; }
 
     /**
-     * <p> <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated
-     * when the current page of results was returned, inclusive of the current page of
-     * results. This value may be specified as the <code>ExclusiveStartBackupArn</code>
-     * of a new <code>ListBackups</code> operation in order to fetch the next page of
-     * results. </p>
+     * <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the
+     * backup last evaluated when the current page of results was returned, inclusive
+     * of the current page of results. This value may be specified as the
+     * <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation
+     * in order to fetch the next page of results. </p>
      */
     inline void SetExclusiveStartBackupArn(Aws::String&& value) { m_exclusiveStartBackupArnHasBeenSet = true; m_exclusiveStartBackupArn = std::move(value); }
 
     /**
-     * <p> <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated
-     * when the current page of results was returned, inclusive of the current page of
-     * results. This value may be specified as the <code>ExclusiveStartBackupArn</code>
-     * of a new <code>ListBackups</code> operation in order to fetch the next page of
-     * results. </p>
+     * <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the
+     * backup last evaluated when the current page of results was returned, inclusive
+     * of the current page of results. This value may be specified as the
+     * <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation
+     * in order to fetch the next page of results. </p>
      */
     inline void SetExclusiveStartBackupArn(const char* value) { m_exclusiveStartBackupArnHasBeenSet = true; m_exclusiveStartBackupArn.assign(value); }
 
     /**
-     * <p> <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated
-     * when the current page of results was returned, inclusive of the current page of
-     * results. This value may be specified as the <code>ExclusiveStartBackupArn</code>
-     * of a new <code>ListBackups</code> operation in order to fetch the next page of
-     * results. </p>
+     * <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the
+     * backup last evaluated when the current page of results was returned, inclusive
+     * of the current page of results. This value may be specified as the
+     * <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation
+     * in order to fetch the next page of results. </p>
      */
     inline ListBackupsRequest& WithExclusiveStartBackupArn(const Aws::String& value) { SetExclusiveStartBackupArn(value); return *this;}
 
     /**
-     * <p> <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated
-     * when the current page of results was returned, inclusive of the current page of
-     * results. This value may be specified as the <code>ExclusiveStartBackupArn</code>
-     * of a new <code>ListBackups</code> operation in order to fetch the next page of
-     * results. </p>
+     * <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the
+     * backup last evaluated when the current page of results was returned, inclusive
+     * of the current page of results. This value may be specified as the
+     * <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation
+     * in order to fetch the next page of results. </p>
      */
     inline ListBackupsRequest& WithExclusiveStartBackupArn(Aws::String&& value) { SetExclusiveStartBackupArn(std::move(value)); return *this;}
 
     /**
-     * <p> <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated
-     * when the current page of results was returned, inclusive of the current page of
-     * results. This value may be specified as the <code>ExclusiveStartBackupArn</code>
-     * of a new <code>ListBackups</code> operation in order to fetch the next page of
-     * results. </p>
+     * <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the
+     * backup last evaluated when the current page of results was returned, inclusive
+     * of the current page of results. This value may be specified as the
+     * <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation
+     * in order to fetch the next page of results. </p>
      */
     inline ListBackupsRequest& WithExclusiveStartBackupArn(const char* value) { SetExclusiveStartBackupArn(value); return *this;}
 

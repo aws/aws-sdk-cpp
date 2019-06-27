@@ -50,73 +50,73 @@ namespace Model
 
 
     /**
-     * <p> The Time to Live status for the table.</p>
+     * <p> The TTL status for the table.</p>
      */
     inline const TimeToLiveStatus& GetTimeToLiveStatus() const{ return m_timeToLiveStatus; }
 
     /**
-     * <p> The Time to Live status for the table.</p>
+     * <p> The TTL status for the table.</p>
      */
     inline bool TimeToLiveStatusHasBeenSet() const { return m_timeToLiveStatusHasBeenSet; }
 
     /**
-     * <p> The Time to Live status for the table.</p>
+     * <p> The TTL status for the table.</p>
      */
     inline void SetTimeToLiveStatus(const TimeToLiveStatus& value) { m_timeToLiveStatusHasBeenSet = true; m_timeToLiveStatus = value; }
 
     /**
-     * <p> The Time to Live status for the table.</p>
+     * <p> The TTL status for the table.</p>
      */
     inline void SetTimeToLiveStatus(TimeToLiveStatus&& value) { m_timeToLiveStatusHasBeenSet = true; m_timeToLiveStatus = std::move(value); }
 
     /**
-     * <p> The Time to Live status for the table.</p>
+     * <p> The TTL status for the table.</p>
      */
     inline TimeToLiveDescription& WithTimeToLiveStatus(const TimeToLiveStatus& value) { SetTimeToLiveStatus(value); return *this;}
 
     /**
-     * <p> The Time to Live status for the table.</p>
+     * <p> The TTL status for the table.</p>
      */
     inline TimeToLiveDescription& WithTimeToLiveStatus(TimeToLiveStatus&& value) { SetTimeToLiveStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p> The name of the Time to Live attribute for items in the table.</p>
+     * <p> The name of the TTL attribute for items in the table.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
     /**
-     * <p> The name of the Time to Live attribute for items in the table.</p>
+     * <p> The name of the TTL attribute for items in the table.</p>
      */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
-     * <p> The name of the Time to Live attribute for items in the table.</p>
+     * <p> The name of the TTL attribute for items in the table.</p>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
-     * <p> The name of the Time to Live attribute for items in the table.</p>
+     * <p> The name of the TTL attribute for items in the table.</p>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
-     * <p> The name of the Time to Live attribute for items in the table.</p>
+     * <p> The name of the TTL attribute for items in the table.</p>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /**
-     * <p> The name of the Time to Live attribute for items in the table.</p>
+     * <p> The name of the TTL attribute for items in the table.</p>
      */
     inline TimeToLiveDescription& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
     /**
-     * <p> The name of the Time to Live attribute for items in the table.</p>
+     * <p> The name of the TTL attribute for items in the table.</p>
      */
     inline TimeToLiveDescription& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the Time to Live attribute for items in the table.</p>
+     * <p> The name of the TTL attribute for items in the table.</p>
      */
     inline TimeToLiveDescription& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 

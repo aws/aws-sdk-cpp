@@ -48,59 +48,59 @@ namespace Model
 
     /**
      * <p>The maximum total read capacity units that your account allows you to
-     * provision across all of your tables in this region.</p>
+     * provision across all of your tables in this Region.</p>
      */
     inline long long GetAccountMaxReadCapacityUnits() const{ return m_accountMaxReadCapacityUnits; }
 
     /**
      * <p>The maximum total read capacity units that your account allows you to
-     * provision across all of your tables in this region.</p>
+     * provision across all of your tables in this Region.</p>
      */
     inline void SetAccountMaxReadCapacityUnits(long long value) { m_accountMaxReadCapacityUnits = value; }
 
     /**
      * <p>The maximum total read capacity units that your account allows you to
-     * provision across all of your tables in this region.</p>
+     * provision across all of your tables in this Region.</p>
      */
     inline DescribeLimitsResult& WithAccountMaxReadCapacityUnits(long long value) { SetAccountMaxReadCapacityUnits(value); return *this;}
 
 
     /**
      * <p>The maximum total write capacity units that your account allows you to
-     * provision across all of your tables in this region.</p>
+     * provision across all of your tables in this Region.</p>
      */
     inline long long GetAccountMaxWriteCapacityUnits() const{ return m_accountMaxWriteCapacityUnits; }
 
     /**
      * <p>The maximum total write capacity units that your account allows you to
-     * provision across all of your tables in this region.</p>
+     * provision across all of your tables in this Region.</p>
      */
     inline void SetAccountMaxWriteCapacityUnits(long long value) { m_accountMaxWriteCapacityUnits = value; }
 
     /**
      * <p>The maximum total write capacity units that your account allows you to
-     * provision across all of your tables in this region.</p>
+     * provision across all of your tables in this Region.</p>
      */
     inline DescribeLimitsResult& WithAccountMaxWriteCapacityUnits(long long value) { SetAccountMaxWriteCapacityUnits(value); return *this;}
 
 
     /**
      * <p>The maximum read capacity units that your account allows you to provision for
-     * a new table that you are creating in this region, including the read capacity
+     * a new table that you are creating in this Region, including the read capacity
      * units provisioned for its global secondary indexes (GSIs).</p>
      */
     inline long long GetTableMaxReadCapacityUnits() const{ return m_tableMaxReadCapacityUnits; }
 
     /**
      * <p>The maximum read capacity units that your account allows you to provision for
-     * a new table that you are creating in this region, including the read capacity
+     * a new table that you are creating in this Region, including the read capacity
      * units provisioned for its global secondary indexes (GSIs).</p>
      */
     inline void SetTableMaxReadCapacityUnits(long long value) { m_tableMaxReadCapacityUnits = value; }
 
     /**
      * <p>The maximum read capacity units that your account allows you to provision for
-     * a new table that you are creating in this region, including the read capacity
+     * a new table that you are creating in this Region, including the read capacity
      * units provisioned for its global secondary indexes (GSIs).</p>
      */
     inline DescribeLimitsResult& WithTableMaxReadCapacityUnits(long long value) { SetTableMaxReadCapacityUnits(value); return *this;}
@@ -108,21 +108,21 @@ namespace Model
 
     /**
      * <p>The maximum write capacity units that your account allows you to provision
-     * for a new table that you are creating in this region, including the write
+     * for a new table that you are creating in this Region, including the write
      * capacity units provisioned for its global secondary indexes (GSIs).</p>
      */
     inline long long GetTableMaxWriteCapacityUnits() const{ return m_tableMaxWriteCapacityUnits; }
 
     /**
      * <p>The maximum write capacity units that your account allows you to provision
-     * for a new table that you are creating in this region, including the write
+     * for a new table that you are creating in this Region, including the write
      * capacity units provisioned for its global secondary indexes (GSIs).</p>
      */
     inline void SetTableMaxWriteCapacityUnits(long long value) { m_tableMaxWriteCapacityUnits = value; }
 
     /**
      * <p>The maximum write capacity units that your account allows you to provision
-     * for a new table that you are creating in this region, including the write
+     * for a new table that you are creating in this Region, including the write
      * capacity units provisioned for its global secondary indexes (GSIs).</p>
      */
     inline DescribeLimitsResult& WithTableMaxWriteCapacityUnits(long long value) { SetTableMaxWriteCapacityUnits(value); return *this;}

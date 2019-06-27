@@ -506,9 +506,9 @@ namespace Model
      * </p> <p>These function names are case-sensitive.</p> </li> <li> <p>Comparison
      * operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN
      * </code> </p> </li> <li> <p> Logical operators: <code>AND | OR | NOT</code> </p>
-     * </li> </ul> <p>For more information on condition expressions, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * </li> </ul> <p>For more information about condition expressions, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::String& GetConditionExpression() const{ return m_conditionExpression; }
 
@@ -520,9 +520,9 @@ namespace Model
      * </p> <p>These function names are case-sensitive.</p> </li> <li> <p>Comparison
      * operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN
      * </code> </p> </li> <li> <p> Logical operators: <code>AND | OR | NOT</code> </p>
-     * </li> </ul> <p>For more information on condition expressions, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * </li> </ul> <p>For more information about condition expressions, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ConditionExpressionHasBeenSet() const { return m_conditionExpressionHasBeenSet; }
 
@@ -534,9 +534,9 @@ namespace Model
      * </p> <p>These function names are case-sensitive.</p> </li> <li> <p>Comparison
      * operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN
      * </code> </p> </li> <li> <p> Logical operators: <code>AND | OR | NOT</code> </p>
-     * </li> </ul> <p>For more information on condition expressions, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * </li> </ul> <p>For more information about condition expressions, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetConditionExpression(const Aws::String& value) { m_conditionExpressionHasBeenSet = true; m_conditionExpression = value; }
 
@@ -548,9 +548,9 @@ namespace Model
      * </p> <p>These function names are case-sensitive.</p> </li> <li> <p>Comparison
      * operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN
      * </code> </p> </li> <li> <p> Logical operators: <code>AND | OR | NOT</code> </p>
-     * </li> </ul> <p>For more information on condition expressions, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * </li> </ul> <p>For more information about condition expressions, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetConditionExpression(Aws::String&& value) { m_conditionExpressionHasBeenSet = true; m_conditionExpression = std::move(value); }
 
@@ -562,9 +562,9 @@ namespace Model
      * </p> <p>These function names are case-sensitive.</p> </li> <li> <p>Comparison
      * operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN
      * </code> </p> </li> <li> <p> Logical operators: <code>AND | OR | NOT</code> </p>
-     * </li> </ul> <p>For more information on condition expressions, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * </li> </ul> <p>For more information about condition expressions, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetConditionExpression(const char* value) { m_conditionExpressionHasBeenSet = true; m_conditionExpression.assign(value); }
 
@@ -576,9 +576,9 @@ namespace Model
      * </p> <p>These function names are case-sensitive.</p> </li> <li> <p>Comparison
      * operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN
      * </code> </p> </li> <li> <p> Logical operators: <code>AND | OR | NOT</code> </p>
-     * </li> </ul> <p>For more information on condition expressions, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * </li> </ul> <p>For more information about condition expressions, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& WithConditionExpression(const Aws::String& value) { SetConditionExpression(value); return *this;}
 
@@ -590,9 +590,9 @@ namespace Model
      * </p> <p>These function names are case-sensitive.</p> </li> <li> <p>Comparison
      * operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN
      * </code> </p> </li> <li> <p> Logical operators: <code>AND | OR | NOT</code> </p>
-     * </li> </ul> <p>For more information on condition expressions, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * </li> </ul> <p>For more information about condition expressions, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& WithConditionExpression(Aws::String&& value) { SetConditionExpression(std::move(value)); return *this;}
 
@@ -604,9 +604,9 @@ namespace Model
      * </p> <p>These function names are case-sensitive.</p> </li> <li> <p>Comparison
      * operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN
      * </code> </p> </li> <li> <p> Logical operators: <code>AND | OR | NOT</code> </p>
-     * </li> </ul> <p>For more information on condition expressions, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * </li> </ul> <p>For more information about condition expressions, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& WithConditionExpression(const char* value) { SetConditionExpression(value); return *this;}
 
@@ -633,7 +633,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetExpressionAttributeNames() const{ return m_expressionAttributeNames; }
@@ -660,7 +660,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ExpressionAttributeNamesHasBeenSet() const { return m_expressionAttributeNamesHasBeenSet; }
@@ -687,7 +687,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeNames(const Aws::Map<Aws::String, Aws::String>& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = value; }
@@ -714,7 +714,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = std::move(value); }
@@ -741,7 +741,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& WithExpressionAttributeNames(const Aws::Map<Aws::String, Aws::String>& value) { SetExpressionAttributeNames(value); return *this;}
@@ -768,7 +768,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& WithExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { SetExpressionAttributeNames(std::move(value)); return *this;}
@@ -795,7 +795,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& AddExpressionAttributeNames(const Aws::String& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
@@ -822,7 +822,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& AddExpressionAttributeNames(Aws::String&& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
@@ -849,7 +849,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& AddExpressionAttributeNames(const Aws::String& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
@@ -876,7 +876,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& AddExpressionAttributeNames(Aws::String&& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), std::move(value)); return *this; }
@@ -903,7 +903,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& AddExpressionAttributeNames(const char* key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
@@ -930,7 +930,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& AddExpressionAttributeNames(Aws::String&& key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
@@ -957,7 +957,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& AddExpressionAttributeNames(const char* key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
@@ -975,8 +975,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetExpressionAttributeValues() const{ return m_expressionAttributeValues; }
 
@@ -992,8 +992,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ExpressionAttributeValuesHasBeenSet() const { return m_expressionAttributeValuesHasBeenSet; }
 
@@ -1009,8 +1009,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeValues(const Aws::Map<Aws::String, AttributeValue>& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues = value; }
 
@@ -1026,8 +1026,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeValues(Aws::Map<Aws::String, AttributeValue>&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues = std::move(value); }
 
@@ -1043,8 +1043,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& WithExpressionAttributeValues(const Aws::Map<Aws::String, AttributeValue>& value) { SetExpressionAttributeValues(value); return *this;}
 
@@ -1060,8 +1060,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& WithExpressionAttributeValues(Aws::Map<Aws::String, AttributeValue>&& value) { SetExpressionAttributeValues(std::move(value)); return *this;}
 
@@ -1077,8 +1077,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& AddExpressionAttributeValues(const Aws::String& key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }
 
@@ -1094,8 +1094,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& AddExpressionAttributeValues(Aws::String&& key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(std::move(key), value); return *this; }
 
@@ -1111,8 +1111,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& AddExpressionAttributeValues(const Aws::String& key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, std::move(value)); return *this; }
 
@@ -1128,8 +1128,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& AddExpressionAttributeValues(Aws::String&& key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -1145,8 +1145,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& AddExpressionAttributeValues(const char* key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, std::move(value)); return *this; }
 
@@ -1162,8 +1162,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemRequest& AddExpressionAttributeValues(const char* key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }
 

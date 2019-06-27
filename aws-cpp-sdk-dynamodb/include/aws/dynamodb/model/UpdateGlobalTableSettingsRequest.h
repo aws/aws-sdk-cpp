@@ -159,37 +159,37 @@ namespace Model
 
 
     /**
-     * <p>AutoScaling settings for managing provisioned write capacity for the global
+     * <p>Auto scaling settings for managing provisioned write capacity for the global
      * table.</p>
      */
     inline const AutoScalingSettingsUpdate& GetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate() const{ return m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate; }
 
     /**
-     * <p>AutoScaling settings for managing provisioned write capacity for the global
+     * <p>Auto scaling settings for managing provisioned write capacity for the global
      * table.</p>
      */
     inline bool GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet() const { return m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet; }
 
     /**
-     * <p>AutoScaling settings for managing provisioned write capacity for the global
+     * <p>Auto scaling settings for managing provisioned write capacity for the global
      * table.</p>
      */
     inline void SetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate = value; }
 
     /**
-     * <p>AutoScaling settings for managing provisioned write capacity for the global
+     * <p>Auto scaling settings for managing provisioned write capacity for the global
      * table.</p>
      */
     inline void SetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate = std::move(value); }
 
     /**
-     * <p>AutoScaling settings for managing provisioned write capacity for the global
+     * <p>Auto scaling settings for managing provisioned write capacity for the global
      * table.</p>
      */
     inline UpdateGlobalTableSettingsRequest& WithGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { SetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(value); return *this;}
 
     /**
-     * <p>AutoScaling settings for managing provisioned write capacity for the global
+     * <p>Auto scaling settings for managing provisioned write capacity for the global
      * table.</p>
      */
     inline UpdateGlobalTableSettingsRequest& WithGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { SetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(std::move(value)); return *this;}
@@ -245,49 +245,49 @@ namespace Model
 
 
     /**
-     * <p>Represents the settings for a global table in a region that will be
+     * <p>Represents the settings for a global table in a Region that will be
      * modified.</p>
      */
     inline const Aws::Vector<ReplicaSettingsUpdate>& GetReplicaSettingsUpdate() const{ return m_replicaSettingsUpdate; }
 
     /**
-     * <p>Represents the settings for a global table in a region that will be
+     * <p>Represents the settings for a global table in a Region that will be
      * modified.</p>
      */
     inline bool ReplicaSettingsUpdateHasBeenSet() const { return m_replicaSettingsUpdateHasBeenSet; }
 
     /**
-     * <p>Represents the settings for a global table in a region that will be
+     * <p>Represents the settings for a global table in a Region that will be
      * modified.</p>
      */
     inline void SetReplicaSettingsUpdate(const Aws::Vector<ReplicaSettingsUpdate>& value) { m_replicaSettingsUpdateHasBeenSet = true; m_replicaSettingsUpdate = value; }
 
     /**
-     * <p>Represents the settings for a global table in a region that will be
+     * <p>Represents the settings for a global table in a Region that will be
      * modified.</p>
      */
     inline void SetReplicaSettingsUpdate(Aws::Vector<ReplicaSettingsUpdate>&& value) { m_replicaSettingsUpdateHasBeenSet = true; m_replicaSettingsUpdate = std::move(value); }
 
     /**
-     * <p>Represents the settings for a global table in a region that will be
+     * <p>Represents the settings for a global table in a Region that will be
      * modified.</p>
      */
     inline UpdateGlobalTableSettingsRequest& WithReplicaSettingsUpdate(const Aws::Vector<ReplicaSettingsUpdate>& value) { SetReplicaSettingsUpdate(value); return *this;}
 
     /**
-     * <p>Represents the settings for a global table in a region that will be
+     * <p>Represents the settings for a global table in a Region that will be
      * modified.</p>
      */
     inline UpdateGlobalTableSettingsRequest& WithReplicaSettingsUpdate(Aws::Vector<ReplicaSettingsUpdate>&& value) { SetReplicaSettingsUpdate(std::move(value)); return *this;}
 
     /**
-     * <p>Represents the settings for a global table in a region that will be
+     * <p>Represents the settings for a global table in a Region that will be
      * modified.</p>
      */
     inline UpdateGlobalTableSettingsRequest& AddReplicaSettingsUpdate(const ReplicaSettingsUpdate& value) { m_replicaSettingsUpdateHasBeenSet = true; m_replicaSettingsUpdate.push_back(value); return *this; }
 
     /**
-     * <p>Represents the settings for a global table in a region that will be
+     * <p>Represents the settings for a global table in a Region that will be
      * modified.</p>
      */
     inline UpdateGlobalTableSettingsRequest& AddReplicaSettingsUpdate(ReplicaSettingsUpdate&& value) { m_replicaSettingsUpdateHasBeenSet = true; m_replicaSettingsUpdate.push_back(std::move(value)); return *this; }

@@ -327,10 +327,10 @@ namespace Model
      * <p>A string that identifies one or more attributes to retrieve from the table.
      * These attributes can include scalars, sets, or elements of a JSON document. The
      * attributes in the expression must be separated by commas.</p> <p>If no attribute
-     * names are specified, then all attributes will be returned. If any of the
-     * requested attributes are not found, they will not appear in the result.</p>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * names are specified, then all attributes are returned. If any of the requested
+     * attributes are not found, they do not appear in the result.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::String& GetProjectionExpression() const{ return m_projectionExpression; }
@@ -339,10 +339,10 @@ namespace Model
      * <p>A string that identifies one or more attributes to retrieve from the table.
      * These attributes can include scalars, sets, or elements of a JSON document. The
      * attributes in the expression must be separated by commas.</p> <p>If no attribute
-     * names are specified, then all attributes will be returned. If any of the
-     * requested attributes are not found, they will not appear in the result.</p>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * names are specified, then all attributes are returned. If any of the requested
+     * attributes are not found, they do not appear in the result.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ProjectionExpressionHasBeenSet() const { return m_projectionExpressionHasBeenSet; }
@@ -351,10 +351,10 @@ namespace Model
      * <p>A string that identifies one or more attributes to retrieve from the table.
      * These attributes can include scalars, sets, or elements of a JSON document. The
      * attributes in the expression must be separated by commas.</p> <p>If no attribute
-     * names are specified, then all attributes will be returned. If any of the
-     * requested attributes are not found, they will not appear in the result.</p>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * names are specified, then all attributes are returned. If any of the requested
+     * attributes are not found, they do not appear in the result.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProjectionExpression(const Aws::String& value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression = value; }
@@ -363,10 +363,10 @@ namespace Model
      * <p>A string that identifies one or more attributes to retrieve from the table.
      * These attributes can include scalars, sets, or elements of a JSON document. The
      * attributes in the expression must be separated by commas.</p> <p>If no attribute
-     * names are specified, then all attributes will be returned. If any of the
-     * requested attributes are not found, they will not appear in the result.</p>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * names are specified, then all attributes are returned. If any of the requested
+     * attributes are not found, they do not appear in the result.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProjectionExpression(Aws::String&& value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression = std::move(value); }
@@ -375,10 +375,10 @@ namespace Model
      * <p>A string that identifies one or more attributes to retrieve from the table.
      * These attributes can include scalars, sets, or elements of a JSON document. The
      * attributes in the expression must be separated by commas.</p> <p>If no attribute
-     * names are specified, then all attributes will be returned. If any of the
-     * requested attributes are not found, they will not appear in the result.</p>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * names are specified, then all attributes are returned. If any of the requested
+     * attributes are not found, they do not appear in the result.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetProjectionExpression(const char* value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression.assign(value); }
@@ -387,10 +387,10 @@ namespace Model
      * <p>A string that identifies one or more attributes to retrieve from the table.
      * These attributes can include scalars, sets, or elements of a JSON document. The
      * attributes in the expression must be separated by commas.</p> <p>If no attribute
-     * names are specified, then all attributes will be returned. If any of the
-     * requested attributes are not found, they will not appear in the result.</p>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * names are specified, then all attributes are returned. If any of the requested
+     * attributes are not found, they do not appear in the result.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline GetItemRequest& WithProjectionExpression(const Aws::String& value) { SetProjectionExpression(value); return *this;}
@@ -399,10 +399,10 @@ namespace Model
      * <p>A string that identifies one or more attributes to retrieve from the table.
      * These attributes can include scalars, sets, or elements of a JSON document. The
      * attributes in the expression must be separated by commas.</p> <p>If no attribute
-     * names are specified, then all attributes will be returned. If any of the
-     * requested attributes are not found, they will not appear in the result.</p>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * names are specified, then all attributes are returned. If any of the requested
+     * attributes are not found, they do not appear in the result.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline GetItemRequest& WithProjectionExpression(Aws::String&& value) { SetProjectionExpression(std::move(value)); return *this;}
@@ -411,10 +411,10 @@ namespace Model
      * <p>A string that identifies one or more attributes to retrieve from the table.
      * These attributes can include scalars, sets, or elements of a JSON document. The
      * attributes in the expression must be separated by commas.</p> <p>If no attribute
-     * names are specified, then all attributes will be returned. If any of the
-     * requested attributes are not found, they will not appear in the result.</p>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * names are specified, then all attributes are returned. If any of the requested
+     * attributes are not found, they do not appear in the result.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline GetItemRequest& WithProjectionExpression(const char* value) { SetProjectionExpression(value); return *this;}
@@ -442,7 +442,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetExpressionAttributeNames() const{ return m_expressionAttributeNames; }
@@ -469,7 +469,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ExpressionAttributeNamesHasBeenSet() const { return m_expressionAttributeNamesHasBeenSet; }
@@ -496,7 +496,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeNames(const Aws::Map<Aws::String, Aws::String>& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = value; }
@@ -523,7 +523,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = std::move(value); }
@@ -550,7 +550,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline GetItemRequest& WithExpressionAttributeNames(const Aws::Map<Aws::String, Aws::String>& value) { SetExpressionAttributeNames(value); return *this;}
@@ -577,7 +577,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline GetItemRequest& WithExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { SetExpressionAttributeNames(std::move(value)); return *this;}
@@ -604,7 +604,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline GetItemRequest& AddExpressionAttributeNames(const Aws::String& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
@@ -631,7 +631,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline GetItemRequest& AddExpressionAttributeNames(Aws::String&& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
@@ -658,7 +658,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline GetItemRequest& AddExpressionAttributeNames(const Aws::String& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
@@ -685,7 +685,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline GetItemRequest& AddExpressionAttributeNames(Aws::String&& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), std::move(value)); return *this; }
@@ -712,7 +712,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline GetItemRequest& AddExpressionAttributeNames(const char* key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
@@ -739,7 +739,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline GetItemRequest& AddExpressionAttributeNames(Aws::String&& key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
@@ -766,7 +766,7 @@ namespace Model
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
      * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline GetItemRequest& AddExpressionAttributeNames(const char* key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }

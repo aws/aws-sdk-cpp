@@ -640,11 +640,11 @@ namespace Model
 
     /**
      * <p>An expression that defines one or more attributes to be updated, the action
-     * to be performed on them, and new value(s) for them.</p> <p>The following action
+     * to be performed on them, and new values for them.</p> <p>The following action
      * values are available for <code>UpdateExpression</code>.</p> <ul> <li> <p>
      * <code>SET</code> - Adds one or more attributes and values to an item. If any of
-     * these attribute already exist, they are replaced by the new values. You can also
-     * use <code>SET</code> to add or subtract from an attribute that is of type
+     * these attributes already exist, they are replaced by the new values. You can
+     * also use <code>SET</code> to add or subtract from an attribute that is of type
      * Number. For example: <code>SET myNum = myNum + :val</code> </p> <p>
      * <code>SET</code> supports the following functions:</p> <ul> <li> <p>
      * <code>if_not_exists (path, operand)</code> - if the item does not contain an
@@ -668,10 +668,11 @@ namespace Model
      * item to increment or decrement an attribute value that doesn't exist before the
      * update, DynamoDB uses <code>0</code> as the initial value. For example, suppose
      * that the item you want to update doesn't have an attribute named
-     * <i>itemcount</i>, but you decide to <code>ADD</code> the number <code>3</code>
-     * to this attribute anyway. DynamoDB will create the <i>itemcount</i> attribute,
-     * set its initial value to <code>0</code>, and finally add <code>3</code> to it.
-     * The result will be a new <i>itemcount</i> attribute in the item, with a value of
+     * <code>itemcount</code>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and
+     * finally add <code>3</code> to it. The result will be a new
+     * <code>itemcount</code> attribute in the item, with a value of
      * <code>3</code>.</p> </note> </li> <li> <p>If the existing data type is a set and
      * if <code>Value</code> is also a set, then <code>Value</code> is added to the
      * existing set. For example, if the attribute value is the set <code>[1,2]</code>,
@@ -701,11 +702,11 @@ namespace Model
 
     /**
      * <p>An expression that defines one or more attributes to be updated, the action
-     * to be performed on them, and new value(s) for them.</p> <p>The following action
+     * to be performed on them, and new values for them.</p> <p>The following action
      * values are available for <code>UpdateExpression</code>.</p> <ul> <li> <p>
      * <code>SET</code> - Adds one or more attributes and values to an item. If any of
-     * these attribute already exist, they are replaced by the new values. You can also
-     * use <code>SET</code> to add or subtract from an attribute that is of type
+     * these attributes already exist, they are replaced by the new values. You can
+     * also use <code>SET</code> to add or subtract from an attribute that is of type
      * Number. For example: <code>SET myNum = myNum + :val</code> </p> <p>
      * <code>SET</code> supports the following functions:</p> <ul> <li> <p>
      * <code>if_not_exists (path, operand)</code> - if the item does not contain an
@@ -729,10 +730,11 @@ namespace Model
      * item to increment or decrement an attribute value that doesn't exist before the
      * update, DynamoDB uses <code>0</code> as the initial value. For example, suppose
      * that the item you want to update doesn't have an attribute named
-     * <i>itemcount</i>, but you decide to <code>ADD</code> the number <code>3</code>
-     * to this attribute anyway. DynamoDB will create the <i>itemcount</i> attribute,
-     * set its initial value to <code>0</code>, and finally add <code>3</code> to it.
-     * The result will be a new <i>itemcount</i> attribute in the item, with a value of
+     * <code>itemcount</code>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and
+     * finally add <code>3</code> to it. The result will be a new
+     * <code>itemcount</code> attribute in the item, with a value of
      * <code>3</code>.</p> </note> </li> <li> <p>If the existing data type is a set and
      * if <code>Value</code> is also a set, then <code>Value</code> is added to the
      * existing set. For example, if the attribute value is the set <code>[1,2]</code>,
@@ -762,11 +764,11 @@ namespace Model
 
     /**
      * <p>An expression that defines one or more attributes to be updated, the action
-     * to be performed on them, and new value(s) for them.</p> <p>The following action
+     * to be performed on them, and new values for them.</p> <p>The following action
      * values are available for <code>UpdateExpression</code>.</p> <ul> <li> <p>
      * <code>SET</code> - Adds one or more attributes and values to an item. If any of
-     * these attribute already exist, they are replaced by the new values. You can also
-     * use <code>SET</code> to add or subtract from an attribute that is of type
+     * these attributes already exist, they are replaced by the new values. You can
+     * also use <code>SET</code> to add or subtract from an attribute that is of type
      * Number. For example: <code>SET myNum = myNum + :val</code> </p> <p>
      * <code>SET</code> supports the following functions:</p> <ul> <li> <p>
      * <code>if_not_exists (path, operand)</code> - if the item does not contain an
@@ -790,10 +792,11 @@ namespace Model
      * item to increment or decrement an attribute value that doesn't exist before the
      * update, DynamoDB uses <code>0</code> as the initial value. For example, suppose
      * that the item you want to update doesn't have an attribute named
-     * <i>itemcount</i>, but you decide to <code>ADD</code> the number <code>3</code>
-     * to this attribute anyway. DynamoDB will create the <i>itemcount</i> attribute,
-     * set its initial value to <code>0</code>, and finally add <code>3</code> to it.
-     * The result will be a new <i>itemcount</i> attribute in the item, with a value of
+     * <code>itemcount</code>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and
+     * finally add <code>3</code> to it. The result will be a new
+     * <code>itemcount</code> attribute in the item, with a value of
      * <code>3</code>.</p> </note> </li> <li> <p>If the existing data type is a set and
      * if <code>Value</code> is also a set, then <code>Value</code> is added to the
      * existing set. For example, if the attribute value is the set <code>[1,2]</code>,
@@ -823,11 +826,11 @@ namespace Model
 
     /**
      * <p>An expression that defines one or more attributes to be updated, the action
-     * to be performed on them, and new value(s) for them.</p> <p>The following action
+     * to be performed on them, and new values for them.</p> <p>The following action
      * values are available for <code>UpdateExpression</code>.</p> <ul> <li> <p>
      * <code>SET</code> - Adds one or more attributes and values to an item. If any of
-     * these attribute already exist, they are replaced by the new values. You can also
-     * use <code>SET</code> to add or subtract from an attribute that is of type
+     * these attributes already exist, they are replaced by the new values. You can
+     * also use <code>SET</code> to add or subtract from an attribute that is of type
      * Number. For example: <code>SET myNum = myNum + :val</code> </p> <p>
      * <code>SET</code> supports the following functions:</p> <ul> <li> <p>
      * <code>if_not_exists (path, operand)</code> - if the item does not contain an
@@ -851,10 +854,11 @@ namespace Model
      * item to increment or decrement an attribute value that doesn't exist before the
      * update, DynamoDB uses <code>0</code> as the initial value. For example, suppose
      * that the item you want to update doesn't have an attribute named
-     * <i>itemcount</i>, but you decide to <code>ADD</code> the number <code>3</code>
-     * to this attribute anyway. DynamoDB will create the <i>itemcount</i> attribute,
-     * set its initial value to <code>0</code>, and finally add <code>3</code> to it.
-     * The result will be a new <i>itemcount</i> attribute in the item, with a value of
+     * <code>itemcount</code>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and
+     * finally add <code>3</code> to it. The result will be a new
+     * <code>itemcount</code> attribute in the item, with a value of
      * <code>3</code>.</p> </note> </li> <li> <p>If the existing data type is a set and
      * if <code>Value</code> is also a set, then <code>Value</code> is added to the
      * existing set. For example, if the attribute value is the set <code>[1,2]</code>,
@@ -884,11 +888,11 @@ namespace Model
 
     /**
      * <p>An expression that defines one or more attributes to be updated, the action
-     * to be performed on them, and new value(s) for them.</p> <p>The following action
+     * to be performed on them, and new values for them.</p> <p>The following action
      * values are available for <code>UpdateExpression</code>.</p> <ul> <li> <p>
      * <code>SET</code> - Adds one or more attributes and values to an item. If any of
-     * these attribute already exist, they are replaced by the new values. You can also
-     * use <code>SET</code> to add or subtract from an attribute that is of type
+     * these attributes already exist, they are replaced by the new values. You can
+     * also use <code>SET</code> to add or subtract from an attribute that is of type
      * Number. For example: <code>SET myNum = myNum + :val</code> </p> <p>
      * <code>SET</code> supports the following functions:</p> <ul> <li> <p>
      * <code>if_not_exists (path, operand)</code> - if the item does not contain an
@@ -912,10 +916,11 @@ namespace Model
      * item to increment or decrement an attribute value that doesn't exist before the
      * update, DynamoDB uses <code>0</code> as the initial value. For example, suppose
      * that the item you want to update doesn't have an attribute named
-     * <i>itemcount</i>, but you decide to <code>ADD</code> the number <code>3</code>
-     * to this attribute anyway. DynamoDB will create the <i>itemcount</i> attribute,
-     * set its initial value to <code>0</code>, and finally add <code>3</code> to it.
-     * The result will be a new <i>itemcount</i> attribute in the item, with a value of
+     * <code>itemcount</code>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and
+     * finally add <code>3</code> to it. The result will be a new
+     * <code>itemcount</code> attribute in the item, with a value of
      * <code>3</code>.</p> </note> </li> <li> <p>If the existing data type is a set and
      * if <code>Value</code> is also a set, then <code>Value</code> is added to the
      * existing set. For example, if the attribute value is the set <code>[1,2]</code>,
@@ -945,11 +950,11 @@ namespace Model
 
     /**
      * <p>An expression that defines one or more attributes to be updated, the action
-     * to be performed on them, and new value(s) for them.</p> <p>The following action
+     * to be performed on them, and new values for them.</p> <p>The following action
      * values are available for <code>UpdateExpression</code>.</p> <ul> <li> <p>
      * <code>SET</code> - Adds one or more attributes and values to an item. If any of
-     * these attribute already exist, they are replaced by the new values. You can also
-     * use <code>SET</code> to add or subtract from an attribute that is of type
+     * these attributes already exist, they are replaced by the new values. You can
+     * also use <code>SET</code> to add or subtract from an attribute that is of type
      * Number. For example: <code>SET myNum = myNum + :val</code> </p> <p>
      * <code>SET</code> supports the following functions:</p> <ul> <li> <p>
      * <code>if_not_exists (path, operand)</code> - if the item does not contain an
@@ -973,10 +978,11 @@ namespace Model
      * item to increment or decrement an attribute value that doesn't exist before the
      * update, DynamoDB uses <code>0</code> as the initial value. For example, suppose
      * that the item you want to update doesn't have an attribute named
-     * <i>itemcount</i>, but you decide to <code>ADD</code> the number <code>3</code>
-     * to this attribute anyway. DynamoDB will create the <i>itemcount</i> attribute,
-     * set its initial value to <code>0</code>, and finally add <code>3</code> to it.
-     * The result will be a new <i>itemcount</i> attribute in the item, with a value of
+     * <code>itemcount</code>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and
+     * finally add <code>3</code> to it. The result will be a new
+     * <code>itemcount</code> attribute in the item, with a value of
      * <code>3</code>.</p> </note> </li> <li> <p>If the existing data type is a set and
      * if <code>Value</code> is also a set, then <code>Value</code> is added to the
      * existing set. For example, if the attribute value is the set <code>[1,2]</code>,
@@ -1006,11 +1012,11 @@ namespace Model
 
     /**
      * <p>An expression that defines one or more attributes to be updated, the action
-     * to be performed on them, and new value(s) for them.</p> <p>The following action
+     * to be performed on them, and new values for them.</p> <p>The following action
      * values are available for <code>UpdateExpression</code>.</p> <ul> <li> <p>
      * <code>SET</code> - Adds one or more attributes and values to an item. If any of
-     * these attribute already exist, they are replaced by the new values. You can also
-     * use <code>SET</code> to add or subtract from an attribute that is of type
+     * these attributes already exist, they are replaced by the new values. You can
+     * also use <code>SET</code> to add or subtract from an attribute that is of type
      * Number. For example: <code>SET myNum = myNum + :val</code> </p> <p>
      * <code>SET</code> supports the following functions:</p> <ul> <li> <p>
      * <code>if_not_exists (path, operand)</code> - if the item does not contain an
@@ -1034,10 +1040,11 @@ namespace Model
      * item to increment or decrement an attribute value that doesn't exist before the
      * update, DynamoDB uses <code>0</code> as the initial value. For example, suppose
      * that the item you want to update doesn't have an attribute named
-     * <i>itemcount</i>, but you decide to <code>ADD</code> the number <code>3</code>
-     * to this attribute anyway. DynamoDB will create the <i>itemcount</i> attribute,
-     * set its initial value to <code>0</code>, and finally add <code>3</code> to it.
-     * The result will be a new <i>itemcount</i> attribute in the item, with a value of
+     * <code>itemcount</code>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and
+     * finally add <code>3</code> to it. The result will be a new
+     * <code>itemcount</code> attribute in the item, with a value of
      * <code>3</code>.</p> </note> </li> <li> <p>If the existing data type is a set and
      * if <code>Value</code> is also a set, then <code>Value</code> is added to the
      * existing set. For example, if the attribute value is the set <code>[1,2]</code>,
@@ -1067,11 +1074,11 @@ namespace Model
 
     /**
      * <p>An expression that defines one or more attributes to be updated, the action
-     * to be performed on them, and new value(s) for them.</p> <p>The following action
+     * to be performed on them, and new values for them.</p> <p>The following action
      * values are available for <code>UpdateExpression</code>.</p> <ul> <li> <p>
      * <code>SET</code> - Adds one or more attributes and values to an item. If any of
-     * these attribute already exist, they are replaced by the new values. You can also
-     * use <code>SET</code> to add or subtract from an attribute that is of type
+     * these attributes already exist, they are replaced by the new values. You can
+     * also use <code>SET</code> to add or subtract from an attribute that is of type
      * Number. For example: <code>SET myNum = myNum + :val</code> </p> <p>
      * <code>SET</code> supports the following functions:</p> <ul> <li> <p>
      * <code>if_not_exists (path, operand)</code> - if the item does not contain an
@@ -1095,10 +1102,11 @@ namespace Model
      * item to increment or decrement an attribute value that doesn't exist before the
      * update, DynamoDB uses <code>0</code> as the initial value. For example, suppose
      * that the item you want to update doesn't have an attribute named
-     * <i>itemcount</i>, but you decide to <code>ADD</code> the number <code>3</code>
-     * to this attribute anyway. DynamoDB will create the <i>itemcount</i> attribute,
-     * set its initial value to <code>0</code>, and finally add <code>3</code> to it.
-     * The result will be a new <i>itemcount</i> attribute in the item, with a value of
+     * <code>itemcount</code>, but you decide to <code>ADD</code> the number
+     * <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and
+     * finally add <code>3</code> to it. The result will be a new
+     * <code>itemcount</code> attribute in the item, with a value of
      * <code>3</code>.</p> </note> </li> <li> <p>If the existing data type is a set and
      * if <code>Value</code> is also a set, then <code>Value</code> is added to the
      * existing set. For example, if the attribute value is the set <code>[1,2]</code>,
@@ -1135,7 +1143,7 @@ namespace Model
      * case-sensitive.</p> </li> <li> <p>Comparison operators: <code>= | &lt;&gt; |
      * &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li> <li> <p> Logical
      * operators: <code>AND | OR | NOT</code> </p> </li> </ul> <p>For more information
-     * on condition expressions, see <a
+     * about condition expressions, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1149,7 +1157,7 @@ namespace Model
      * case-sensitive.</p> </li> <li> <p>Comparison operators: <code>= | &lt;&gt; |
      * &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li> <li> <p> Logical
      * operators: <code>AND | OR | NOT</code> </p> </li> </ul> <p>For more information
-     * on condition expressions, see <a
+     * about condition expressions, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1163,7 +1171,7 @@ namespace Model
      * case-sensitive.</p> </li> <li> <p>Comparison operators: <code>= | &lt;&gt; |
      * &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li> <li> <p> Logical
      * operators: <code>AND | OR | NOT</code> </p> </li> </ul> <p>For more information
-     * on condition expressions, see <a
+     * about condition expressions, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1177,7 +1185,7 @@ namespace Model
      * case-sensitive.</p> </li> <li> <p>Comparison operators: <code>= | &lt;&gt; |
      * &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li> <li> <p> Logical
      * operators: <code>AND | OR | NOT</code> </p> </li> </ul> <p>For more information
-     * on condition expressions, see <a
+     * about condition expressions, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1191,7 +1199,7 @@ namespace Model
      * case-sensitive.</p> </li> <li> <p>Comparison operators: <code>= | &lt;&gt; |
      * &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li> <li> <p> Logical
      * operators: <code>AND | OR | NOT</code> </p> </li> </ul> <p>For more information
-     * on condition expressions, see <a
+     * about condition expressions, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1205,7 +1213,7 @@ namespace Model
      * case-sensitive.</p> </li> <li> <p>Comparison operators: <code>= | &lt;&gt; |
      * &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li> <li> <p> Logical
      * operators: <code>AND | OR | NOT</code> </p> </li> </ul> <p>For more information
-     * on condition expressions, see <a
+     * about condition expressions, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1219,7 +1227,7 @@ namespace Model
      * case-sensitive.</p> </li> <li> <p>Comparison operators: <code>= | &lt;&gt; |
      * &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li> <li> <p> Logical
      * operators: <code>AND | OR | NOT</code> </p> </li> </ul> <p>For more information
-     * on condition expressions, see <a
+     * about condition expressions, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1233,7 +1241,7 @@ namespace Model
      * case-sensitive.</p> </li> <li> <p>Comparison operators: <code>= | &lt;&gt; |
      * &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code> </p> </li> <li> <p> Logical
      * operators: <code>AND | OR | NOT</code> </p> </li> </ul> <p>For more information
-     * on condition expressions, see <a
+     * about condition expressions, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1254,15 +1262,15 @@ namespace Model
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * information about expression attribute names, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetExpressionAttributeNames() const{ return m_expressionAttributeNames; }
@@ -1281,15 +1289,15 @@ namespace Model
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * information about expression attribute names, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ExpressionAttributeNamesHasBeenSet() const { return m_expressionAttributeNamesHasBeenSet; }
@@ -1308,15 +1316,15 @@ namespace Model
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * information about expression attribute names, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeNames(const Aws::Map<Aws::String, Aws::String>& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = value; }
@@ -1335,15 +1343,15 @@ namespace Model
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * information about expression attribute names, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = std::move(value); }
@@ -1362,15 +1370,15 @@ namespace Model
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * information about expression attribute names, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& WithExpressionAttributeNames(const Aws::Map<Aws::String, Aws::String>& value) { SetExpressionAttributeNames(value); return *this;}
@@ -1389,15 +1397,15 @@ namespace Model
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * information about expression attribute names, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& WithExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { SetExpressionAttributeNames(std::move(value)); return *this;}
@@ -1416,15 +1424,15 @@ namespace Model
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * information about expression attribute names, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddExpressionAttributeNames(const Aws::String& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
@@ -1443,15 +1451,15 @@ namespace Model
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * information about expression attribute names, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddExpressionAttributeNames(Aws::String&& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
@@ -1470,15 +1478,15 @@ namespace Model
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * information about expression attribute names, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddExpressionAttributeNames(const Aws::String& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
@@ -1497,15 +1505,15 @@ namespace Model
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * information about expression attribute names, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddExpressionAttributeNames(Aws::String&& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), std::move(value)); return *this; }
@@ -1524,15 +1532,15 @@ namespace Model
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * information about expression attribute names, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddExpressionAttributeNames(const char* key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
@@ -1551,15 +1559,15 @@ namespace Model
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * information about expression attribute names, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddExpressionAttributeNames(Aws::String&& key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
@@ -1578,15 +1586,15 @@ namespace Model
      * so it cannot be used directly in an expression. (For the complete list of
      * reserved words, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
+     * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this,
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
      * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
      * placeholders for the actual value at runtime.</p> </note> <p>For more
-     * information on expression attribute names, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
+     * information about expression attribute names, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddExpressionAttributeNames(const char* key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
@@ -1596,7 +1604,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1604,8 +1612,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetExpressionAttributeValues() const{ return m_expressionAttributeValues; }
 
@@ -1613,7 +1621,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1621,8 +1629,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline bool ExpressionAttributeValuesHasBeenSet() const { return m_expressionAttributeValuesHasBeenSet; }
 
@@ -1630,7 +1638,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1638,8 +1646,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeValues(const Aws::Map<Aws::String, AttributeValue>& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues = value; }
 
@@ -1647,7 +1655,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1655,8 +1663,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetExpressionAttributeValues(Aws::Map<Aws::String, AttributeValue>&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues = std::move(value); }
 
@@ -1664,7 +1672,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1672,8 +1680,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& WithExpressionAttributeValues(const Aws::Map<Aws::String, AttributeValue>& value) { SetExpressionAttributeValues(value); return *this;}
 
@@ -1681,7 +1689,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1689,8 +1697,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& WithExpressionAttributeValues(Aws::Map<Aws::String, AttributeValue>&& value) { SetExpressionAttributeValues(std::move(value)); return *this;}
 
@@ -1698,7 +1706,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1706,8 +1714,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddExpressionAttributeValues(const Aws::String& key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }
 
@@ -1715,7 +1723,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1723,8 +1731,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddExpressionAttributeValues(Aws::String&& key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(std::move(key), value); return *this; }
 
@@ -1732,7 +1740,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1740,8 +1748,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddExpressionAttributeValues(const Aws::String& key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, std::move(value)); return *this; }
 
@@ -1749,7 +1757,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1757,8 +1765,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddExpressionAttributeValues(Aws::String&& key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -1766,7 +1774,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1774,8 +1782,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddExpressionAttributeValues(const char* key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, std::move(value)); return *this; }
 
@@ -1783,7 +1791,7 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>ProductStatus</code> attribute was one of the following: </p> <p>
      * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
      * to specify <code>ExpressionAttributeValues</code> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
@@ -1791,8 +1799,8 @@ namespace Model
      * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
      * :disc)</code> </p> <p>For more information on expression attribute values, see
      * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
-     * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline UpdateItemRequest& AddExpressionAttributeValues(const char* key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }
 
