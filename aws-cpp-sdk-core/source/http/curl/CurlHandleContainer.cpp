@@ -118,7 +118,7 @@ void CurlHandleContainer::SetDefaultOptionsOnHandle(CURL* handle)
     curl_easy_setopt(handle, CURLOPT_TIMEOUT_MS, 0L);
     curl_easy_setopt(handle, CURLOPT_CONNECTTIMEOUT_MS, m_connectTimeout);
     curl_easy_setopt(handle, CURLOPT_LOW_SPEED_LIMIT, m_lowSpeedLimit);
-    curl_easy_setopt(handle, CURLOPT_LOW_SPEED_TIME, m_requestTimeout < 1000 ? 1 : m_requestTimeout / 1000);
+    curl_easy_setopt(handle, CURLOPT_LOW_SPEED_TIME, m_requestTimeout < 1000 ? (m_requestTimeout == 0 ? 0 : 1) : m_requestTimeout / 1000);
     curl_easy_setopt(handle, CURLOPT_TCP_KEEPALIVE, m_enableTcpKeepAlive ? 1L : 0L);
     curl_easy_setopt(handle, CURLOPT_TCP_KEEPINTVL, m_tcpKeepAliveIntervalMs);
     curl_easy_setopt(handle, CURLOPT_TCP_KEEPIDLE, m_tcpKeepAliveIntervalMs);
