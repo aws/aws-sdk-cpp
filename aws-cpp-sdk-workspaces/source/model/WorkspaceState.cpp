@@ -37,7 +37,6 @@ namespace Aws
         static const int REBOOTING_HASH = HashingUtils::HashString("REBOOTING");
         static const int STARTING_HASH = HashingUtils::HashString("STARTING");
         static const int REBUILDING_HASH = HashingUtils::HashString("REBUILDING");
-        static const int RESTORING_HASH = HashingUtils::HashString("RESTORING");
         static const int MAINTENANCE_HASH = HashingUtils::HashString("MAINTENANCE");
         static const int ADMIN_MAINTENANCE_HASH = HashingUtils::HashString("ADMIN_MAINTENANCE");
         static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
@@ -79,10 +78,6 @@ namespace Aws
           else if (hashCode == REBUILDING_HASH)
           {
             return WorkspaceState::REBUILDING;
-          }
-          else if (hashCode == RESTORING_HASH)
-          {
-            return WorkspaceState::RESTORING;
           }
           else if (hashCode == MAINTENANCE_HASH)
           {
@@ -148,8 +143,6 @@ namespace Aws
             return "STARTING";
           case WorkspaceState::REBUILDING:
             return "REBUILDING";
-          case WorkspaceState::RESTORING:
-            return "RESTORING";
           case WorkspaceState::MAINTENANCE:
             return "MAINTENANCE";
           case WorkspaceState::ADMIN_MAINTENANCE:

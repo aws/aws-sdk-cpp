@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/workspaces/model/Snapshot.h>
+#include <aws/alexaforbusiness/model/SipAddress.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -23,46 +23,63 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-namespace WorkSpaces
+namespace AlexaForBusiness
 {
 namespace Model
 {
 
-Snapshot::Snapshot() : 
-    m_snapshotTimeHasBeenSet(false)
+SipAddress::SipAddress() : 
+    m_uriHasBeenSet(false),
+    m_type(SipType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
-Snapshot::Snapshot(JsonView jsonValue) : 
-    m_snapshotTimeHasBeenSet(false)
+SipAddress::SipAddress(JsonView jsonValue) : 
+    m_uriHasBeenSet(false),
+    m_type(SipType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Snapshot& Snapshot::operator =(JsonView jsonValue)
+SipAddress& SipAddress::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("SnapshotTime"))
+  if(jsonValue.ValueExists("Uri"))
   {
-    m_snapshotTime = jsonValue.GetDouble("SnapshotTime");
+    m_uri = jsonValue.GetString("Uri");
 
-    m_snapshotTimeHasBeenSet = true;
+    m_uriHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Type"))
+  {
+    m_type = SipTypeMapper::GetSipTypeForName(jsonValue.GetString("Type"));
+
+    m_typeHasBeenSet = true;
   }
 
   return *this;
 }
 
-JsonValue Snapshot::Jsonize() const
+JsonValue SipAddress::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_snapshotTimeHasBeenSet)
+  if(m_uriHasBeenSet)
   {
-   payload.WithDouble("SnapshotTime", m_snapshotTime.SecondsWithMSPrecision());
+   payload.WithString("Uri", m_uri);
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", SipTypeMapper::GetNameForSipType(m_type));
   }
 
   return payload;
 }
 
 } // namespace Model
-} // namespace WorkSpaces
+} // namespace AlexaForBusiness
 } // namespace Aws

@@ -27,7 +27,9 @@ UpdateContactRequest::UpdateContactRequest() :
     m_displayNameHasBeenSet(false),
     m_firstNameHasBeenSet(false),
     m_lastNameHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false)
+    m_phoneNumberHasBeenSet(false),
+    m_phoneNumbersHasBeenSet(false),
+    m_sipAddressesHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,28 @@ Aws::String UpdateContactRequest::SerializePayload() const
   if(m_phoneNumberHasBeenSet)
   {
    payload.WithString("PhoneNumber", m_phoneNumber);
+
+  }
+
+  if(m_phoneNumbersHasBeenSet)
+  {
+   Array<JsonValue> phoneNumbersJsonList(m_phoneNumbers.size());
+   for(unsigned phoneNumbersIndex = 0; phoneNumbersIndex < phoneNumbersJsonList.GetLength(); ++phoneNumbersIndex)
+   {
+     phoneNumbersJsonList[phoneNumbersIndex].AsObject(m_phoneNumbers[phoneNumbersIndex].Jsonize());
+   }
+   payload.WithArray("PhoneNumbers", std::move(phoneNumbersJsonList));
+
+  }
+
+  if(m_sipAddressesHasBeenSet)
+  {
+   Array<JsonValue> sipAddressesJsonList(m_sipAddresses.size());
+   for(unsigned sipAddressesIndex = 0; sipAddressesIndex < sipAddressesJsonList.GetLength(); ++sipAddressesIndex)
+   {
+     sipAddressesJsonList[sipAddressesIndex].AsObject(m_sipAddresses[sipAddressesIndex].Jsonize());
+   }
+   payload.WithArray("SipAddresses", std::move(sipAddressesJsonList));
 
   }
 

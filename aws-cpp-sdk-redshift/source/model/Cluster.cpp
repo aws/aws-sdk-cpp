@@ -34,6 +34,7 @@ Cluster::Cluster() :
     m_clusterIdentifierHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
     m_clusterStatusHasBeenSet(false),
+    m_clusterAvailabilityStatusHasBeenSet(false),
     m_modifyStatusHasBeenSet(false),
     m_masterUsernameHasBeenSet(false),
     m_dBNameHasBeenSet(false),
@@ -88,6 +89,7 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_clusterIdentifierHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
     m_clusterStatusHasBeenSet(false),
+    m_clusterAvailabilityStatusHasBeenSet(false),
     m_modifyStatusHasBeenSet(false),
     m_masterUsernameHasBeenSet(false),
     m_dBNameHasBeenSet(false),
@@ -162,6 +164,12 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
     {
       m_clusterStatus = StringUtils::Trim(clusterStatusNode.GetText().c_str());
       m_clusterStatusHasBeenSet = true;
+    }
+    XmlNode clusterAvailabilityStatusNode = resultNode.FirstChild("ClusterAvailabilityStatus");
+    if(!clusterAvailabilityStatusNode.IsNull())
+    {
+      m_clusterAvailabilityStatus = StringUtils::Trim(clusterAvailabilityStatusNode.GetText().c_str());
+      m_clusterAvailabilityStatusHasBeenSet = true;
     }
     XmlNode modifyStatusNode = resultNode.FirstChild("ModifyStatus");
     if(!modifyStatusNode.IsNull())
@@ -467,6 +475,11 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".ClusterStatus=" << StringUtils::URLEncode(m_clusterStatus.c_str()) << "&";
   }
 
+  if(m_clusterAvailabilityStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ClusterAvailabilityStatus=" << StringUtils::URLEncode(m_clusterAvailabilityStatus.c_str()) << "&";
+  }
+
   if(m_modifyStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".ModifyStatus=" << StringUtils::URLEncode(m_modifyStatus.c_str()) << "&";
@@ -739,6 +752,10 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_clusterStatusHasBeenSet)
   {
       oStream << location << ".ClusterStatus=" << StringUtils::URLEncode(m_clusterStatus.c_str()) << "&";
+  }
+  if(m_clusterAvailabilityStatusHasBeenSet)
+  {
+      oStream << location << ".ClusterAvailabilityStatus=" << StringUtils::URLEncode(m_clusterAvailabilityStatus.c_str()) << "&";
   }
   if(m_modifyStatusHasBeenSet)
   {

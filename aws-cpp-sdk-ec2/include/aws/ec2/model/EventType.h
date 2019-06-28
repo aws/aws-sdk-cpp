@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     instanceChange,
     fleetRequestChange,
-    error
+    error,
+    information
   };
 
 namespace EventTypeMapper

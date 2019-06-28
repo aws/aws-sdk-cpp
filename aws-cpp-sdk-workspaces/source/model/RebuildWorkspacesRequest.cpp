@@ -23,8 +23,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 RebuildWorkspacesRequest::RebuildWorkspacesRequest() : 
-    m_rebuildWorkspaceRequestsHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false)
+    m_rebuildWorkspaceRequestsHasBeenSet(false)
 {
 }
 
@@ -40,12 +39,6 @@ Aws::String RebuildWorkspacesRequest::SerializePayload() const
      rebuildWorkspaceRequestsJsonList[rebuildWorkspaceRequestsIndex].AsObject(m_rebuildWorkspaceRequests[rebuildWorkspaceRequestsIndex].Jsonize());
    }
    payload.WithArray("RebuildWorkspaceRequests", std::move(rebuildWorkspaceRequestsJsonList));
-
-  }
-
-  if(m_additionalInfoHasBeenSet)
-  {
-   payload.WithString("AdditionalInfo", m_additionalInfo);
 
   }
 

@@ -14,42 +14,29 @@
 */
 
 #pragma once
-#include <aws/workspaces/WorkSpaces_EXPORTS.h>
+#include <aws/alexaforbusiness/AlexaForBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace WorkSpaces
+namespace AlexaForBusiness
 {
 namespace Model
 {
-  enum class WorkspaceState
+  enum class PhoneNumberType
   {
     NOT_SET,
-    PENDING,
-    AVAILABLE,
-    IMPAIRED,
-    UNHEALTHY,
-    REBOOTING,
-    STARTING,
-    REBUILDING,
-    MAINTENANCE,
-    ADMIN_MAINTENANCE,
-    TERMINATING,
-    TERMINATED,
-    SUSPENDED,
-    UPDATING,
-    STOPPING,
-    STOPPED,
-    ERROR_
+    MOBILE,
+    WORK,
+    HOME
   };
 
-namespace WorkspaceStateMapper
+namespace PhoneNumberTypeMapper
 {
-AWS_WORKSPACES_API WorkspaceState GetWorkspaceStateForName(const Aws::String& name);
+AWS_ALEXAFORBUSINESS_API PhoneNumberType GetPhoneNumberTypeForName(const Aws::String& name);
 
-AWS_WORKSPACES_API Aws::String GetNameForWorkspaceState(WorkspaceState value);
-} // namespace WorkspaceStateMapper
+AWS_ALEXAFORBUSINESS_API Aws::String GetNameForPhoneNumberType(PhoneNumberType value);
+} // namespace PhoneNumberTypeMapper
 } // namespace Model
-} // namespace WorkSpaces
+} // namespace AlexaForBusiness
 } // namespace Aws

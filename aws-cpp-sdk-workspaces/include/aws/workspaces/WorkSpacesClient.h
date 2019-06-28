@@ -38,7 +38,6 @@
 #include <aws/workspaces/model/DescribeWorkspaceBundlesResult.h>
 #include <aws/workspaces/model/DescribeWorkspaceDirectoriesResult.h>
 #include <aws/workspaces/model/DescribeWorkspaceImagesResult.h>
-#include <aws/workspaces/model/DescribeWorkspaceSnapshotsResult.h>
 #include <aws/workspaces/model/DescribeWorkspacesResult.h>
 #include <aws/workspaces/model/DescribeWorkspacesConnectionStatusResult.h>
 #include <aws/workspaces/model/DisassociateIpGroupsResult.h>
@@ -50,7 +49,6 @@
 #include <aws/workspaces/model/ModifyWorkspaceStateResult.h>
 #include <aws/workspaces/model/RebootWorkspacesResult.h>
 #include <aws/workspaces/model/RebuildWorkspacesResult.h>
-#include <aws/workspaces/model/RestoreWorkspaceResult.h>
 #include <aws/workspaces/model/RevokeIpRulesResult.h>
 #include <aws/workspaces/model/StartWorkspacesResult.h>
 #include <aws/workspaces/model/StopWorkspacesResult.h>
@@ -112,7 +110,6 @@ namespace Model
         class DescribeWorkspaceBundlesRequest;
         class DescribeWorkspaceDirectoriesRequest;
         class DescribeWorkspaceImagesRequest;
-        class DescribeWorkspaceSnapshotsRequest;
         class DescribeWorkspacesRequest;
         class DescribeWorkspacesConnectionStatusRequest;
         class DisassociateIpGroupsRequest;
@@ -124,7 +121,6 @@ namespace Model
         class ModifyWorkspaceStateRequest;
         class RebootWorkspacesRequest;
         class RebuildWorkspacesRequest;
-        class RestoreWorkspaceRequest;
         class RevokeIpRulesRequest;
         class StartWorkspacesRequest;
         class StopWorkspacesRequest;
@@ -148,7 +144,6 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeWorkspaceBundlesResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeWorkspaceBundlesOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkspaceDirectoriesResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeWorkspaceDirectoriesOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkspaceImagesResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeWorkspaceImagesOutcome;
-        typedef Aws::Utils::Outcome<DescribeWorkspaceSnapshotsResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeWorkspaceSnapshotsOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkspacesResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeWorkspacesOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkspacesConnectionStatusResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeWorkspacesConnectionStatusOutcome;
         typedef Aws::Utils::Outcome<DisassociateIpGroupsResult, Aws::Client::AWSError<WorkSpacesErrors>> DisassociateIpGroupsOutcome;
@@ -160,7 +155,6 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyWorkspaceStateResult, Aws::Client::AWSError<WorkSpacesErrors>> ModifyWorkspaceStateOutcome;
         typedef Aws::Utils::Outcome<RebootWorkspacesResult, Aws::Client::AWSError<WorkSpacesErrors>> RebootWorkspacesOutcome;
         typedef Aws::Utils::Outcome<RebuildWorkspacesResult, Aws::Client::AWSError<WorkSpacesErrors>> RebuildWorkspacesOutcome;
-        typedef Aws::Utils::Outcome<RestoreWorkspaceResult, Aws::Client::AWSError<WorkSpacesErrors>> RestoreWorkspaceOutcome;
         typedef Aws::Utils::Outcome<RevokeIpRulesResult, Aws::Client::AWSError<WorkSpacesErrors>> RevokeIpRulesOutcome;
         typedef Aws::Utils::Outcome<StartWorkspacesResult, Aws::Client::AWSError<WorkSpacesErrors>> StartWorkspacesOutcome;
         typedef Aws::Utils::Outcome<StopWorkspacesResult, Aws::Client::AWSError<WorkSpacesErrors>> StopWorkspacesOutcome;
@@ -184,7 +178,6 @@ namespace Model
         typedef std::future<DescribeWorkspaceBundlesOutcome> DescribeWorkspaceBundlesOutcomeCallable;
         typedef std::future<DescribeWorkspaceDirectoriesOutcome> DescribeWorkspaceDirectoriesOutcomeCallable;
         typedef std::future<DescribeWorkspaceImagesOutcome> DescribeWorkspaceImagesOutcomeCallable;
-        typedef std::future<DescribeWorkspaceSnapshotsOutcome> DescribeWorkspaceSnapshotsOutcomeCallable;
         typedef std::future<DescribeWorkspacesOutcome> DescribeWorkspacesOutcomeCallable;
         typedef std::future<DescribeWorkspacesConnectionStatusOutcome> DescribeWorkspacesConnectionStatusOutcomeCallable;
         typedef std::future<DisassociateIpGroupsOutcome> DisassociateIpGroupsOutcomeCallable;
@@ -196,7 +189,6 @@ namespace Model
         typedef std::future<ModifyWorkspaceStateOutcome> ModifyWorkspaceStateOutcomeCallable;
         typedef std::future<RebootWorkspacesOutcome> RebootWorkspacesOutcomeCallable;
         typedef std::future<RebuildWorkspacesOutcome> RebuildWorkspacesOutcomeCallable;
-        typedef std::future<RestoreWorkspaceOutcome> RestoreWorkspaceOutcomeCallable;
         typedef std::future<RevokeIpRulesOutcome> RevokeIpRulesOutcomeCallable;
         typedef std::future<StartWorkspacesOutcome> StartWorkspacesOutcomeCallable;
         typedef std::future<StopWorkspacesOutcome> StopWorkspacesOutcomeCallable;
@@ -223,7 +215,6 @@ namespace Model
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspaceBundlesRequest&, const Model::DescribeWorkspaceBundlesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceBundlesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspaceDirectoriesRequest&, const Model::DescribeWorkspaceDirectoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceDirectoriesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspaceImagesRequest&, const Model::DescribeWorkspaceImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceImagesResponseReceivedHandler;
-    typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspaceSnapshotsRequest&, const Model::DescribeWorkspaceSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceSnapshotsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspacesRequest&, const Model::DescribeWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspacesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspacesConnectionStatusRequest&, const Model::DescribeWorkspacesConnectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspacesConnectionStatusResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DisassociateIpGroupsRequest&, const Model::DisassociateIpGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateIpGroupsResponseReceivedHandler;
@@ -235,7 +226,6 @@ namespace Model
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyWorkspaceStateRequest&, const Model::ModifyWorkspaceStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyWorkspaceStateResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::RebootWorkspacesRequest&, const Model::RebootWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootWorkspacesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::RebuildWorkspacesRequest&, const Model::RebuildWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebuildWorkspacesResponseReceivedHandler;
-    typedef std::function<void(const WorkSpacesClient*, const Model::RestoreWorkspaceRequest&, const Model::RestoreWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreWorkspaceResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::RevokeIpRulesRequest&, const Model::RevokeIpRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeIpRulesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::StartWorkspacesRequest&, const Model::StartWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartWorkspacesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::StopWorkspacesRequest&, const Model::StopWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopWorkspacesResponseReceivedHandler;
@@ -795,34 +785,6 @@ namespace Model
         virtual void DescribeWorkspaceImagesAsync(const Model::DescribeWorkspaceImagesRequest& request, const DescribeWorkspaceImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the snapshots for the specified WorkSpace.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceSnapshots">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::DescribeWorkspaceSnapshotsOutcome DescribeWorkspaceSnapshots(const Model::DescribeWorkspaceSnapshotsRequest& request) const;
-
-        /**
-         * <p>Describes the snapshots for the specified WorkSpace.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceSnapshots">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeWorkspaceSnapshotsOutcomeCallable DescribeWorkspaceSnapshotsCallable(const Model::DescribeWorkspaceSnapshotsRequest& request) const;
-
-        /**
-         * <p>Describes the snapshots for the specified WorkSpace.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceSnapshots">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeWorkspaceSnapshotsAsync(const Model::DescribeWorkspaceSnapshotsRequest& request, const DescribeWorkspaceSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
          * <p>Describes the specified WorkSpaces.</p> <p>You can filter the results by
          * using the bundle identifier, directory identifier, or owner, but you can specify
          * only one filter at a time.</p><p><h3>See Also:</h3>   <a
@@ -1185,52 +1147,6 @@ namespace Model
         virtual void RebuildWorkspacesAsync(const Model::RebuildWorkspacesRequest& request, const RebuildWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Restores the specified WorkSpace to its last known healthy state.</p> <p>You
-         * cannot restore a WorkSpace unless its state is <code> AVAILABLE</code>,
-         * <code>ERROR</code>, or <code>UNHEALTHY</code>.</p> <p>Restoring a WorkSpace is a
-         * potentially destructive action that can result in the loss of data. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/restore-workspace.html">Restore
-         * a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the
-         * WorkSpace is completely restored.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RestoreWorkspace">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::RestoreWorkspaceOutcome RestoreWorkspace(const Model::RestoreWorkspaceRequest& request) const;
-
-        /**
-         * <p>Restores the specified WorkSpace to its last known healthy state.</p> <p>You
-         * cannot restore a WorkSpace unless its state is <code> AVAILABLE</code>,
-         * <code>ERROR</code>, or <code>UNHEALTHY</code>.</p> <p>Restoring a WorkSpace is a
-         * potentially destructive action that can result in the loss of data. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/restore-workspace.html">Restore
-         * a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the
-         * WorkSpace is completely restored.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RestoreWorkspace">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreWorkspaceOutcomeCallable RestoreWorkspaceCallable(const Model::RestoreWorkspaceRequest& request) const;
-
-        /**
-         * <p>Restores the specified WorkSpace to its last known healthy state.</p> <p>You
-         * cannot restore a WorkSpace unless its state is <code> AVAILABLE</code>,
-         * <code>ERROR</code>, or <code>UNHEALTHY</code>.</p> <p>Restoring a WorkSpace is a
-         * potentially destructive action that can result in the loss of data. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/restore-workspace.html">Restore
-         * a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the
-         * WorkSpace is completely restored.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RestoreWorkspace">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreWorkspaceAsync(const Model::RestoreWorkspaceRequest& request, const RestoreWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
          * <p>Removes one or more rules from the specified IP access control
          * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RevokeIpRules">AWS
@@ -1412,7 +1328,6 @@ namespace Model
         void DescribeWorkspaceBundlesAsyncHelper(const Model::DescribeWorkspaceBundlesRequest& request, const DescribeWorkspaceBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkspaceDirectoriesAsyncHelper(const Model::DescribeWorkspaceDirectoriesRequest& request, const DescribeWorkspaceDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkspaceImagesAsyncHelper(const Model::DescribeWorkspaceImagesRequest& request, const DescribeWorkspaceImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeWorkspaceSnapshotsAsyncHelper(const Model::DescribeWorkspaceSnapshotsRequest& request, const DescribeWorkspaceSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkspacesAsyncHelper(const Model::DescribeWorkspacesRequest& request, const DescribeWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkspacesConnectionStatusAsyncHelper(const Model::DescribeWorkspacesConnectionStatusRequest& request, const DescribeWorkspacesConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateIpGroupsAsyncHelper(const Model::DisassociateIpGroupsRequest& request, const DisassociateIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1424,7 +1339,6 @@ namespace Model
         void ModifyWorkspaceStateAsyncHelper(const Model::ModifyWorkspaceStateRequest& request, const ModifyWorkspaceStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootWorkspacesAsyncHelper(const Model::RebootWorkspacesRequest& request, const RebootWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebuildWorkspacesAsyncHelper(const Model::RebuildWorkspacesRequest& request, const RebuildWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RestoreWorkspaceAsyncHelper(const Model::RestoreWorkspaceRequest& request, const RestoreWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RevokeIpRulesAsyncHelper(const Model::RevokeIpRulesRequest& request, const RevokeIpRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartWorkspacesAsyncHelper(const Model::StartWorkspacesRequest& request, const StartWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopWorkspacesAsyncHelper(const Model::StopWorkspacesRequest& request, const StopWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

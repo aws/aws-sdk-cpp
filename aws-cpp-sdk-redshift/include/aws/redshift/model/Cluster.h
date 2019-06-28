@@ -295,6 +295,103 @@ namespace Model
 
 
     /**
+     * <p>The availability status of the cluster for queries. Possible values are the
+     * following:</p> <ul> <li> <p>Available - The cluster is available for queries.
+     * </p> </li> <li> <p>Unavailable - The cluster is not available for queries.</p>
+     * </li> <li> <p>Maintenance - The cluster is intermittently available for queries
+     * due to maintenance activities.</p> </li> <li> <p>Modifying - The cluster is
+     * intermittently available for queries due to changes that modify the cluster.</p>
+     * </li> <li> <p>Failed - The cluster failed and is not available for queries.</p>
+     * </li> </ul>
+     */
+    inline const Aws::String& GetClusterAvailabilityStatus() const{ return m_clusterAvailabilityStatus; }
+
+    /**
+     * <p>The availability status of the cluster for queries. Possible values are the
+     * following:</p> <ul> <li> <p>Available - The cluster is available for queries.
+     * </p> </li> <li> <p>Unavailable - The cluster is not available for queries.</p>
+     * </li> <li> <p>Maintenance - The cluster is intermittently available for queries
+     * due to maintenance activities.</p> </li> <li> <p>Modifying - The cluster is
+     * intermittently available for queries due to changes that modify the cluster.</p>
+     * </li> <li> <p>Failed - The cluster failed and is not available for queries.</p>
+     * </li> </ul>
+     */
+    inline bool ClusterAvailabilityStatusHasBeenSet() const { return m_clusterAvailabilityStatusHasBeenSet; }
+
+    /**
+     * <p>The availability status of the cluster for queries. Possible values are the
+     * following:</p> <ul> <li> <p>Available - The cluster is available for queries.
+     * </p> </li> <li> <p>Unavailable - The cluster is not available for queries.</p>
+     * </li> <li> <p>Maintenance - The cluster is intermittently available for queries
+     * due to maintenance activities.</p> </li> <li> <p>Modifying - The cluster is
+     * intermittently available for queries due to changes that modify the cluster.</p>
+     * </li> <li> <p>Failed - The cluster failed and is not available for queries.</p>
+     * </li> </ul>
+     */
+    inline void SetClusterAvailabilityStatus(const Aws::String& value) { m_clusterAvailabilityStatusHasBeenSet = true; m_clusterAvailabilityStatus = value; }
+
+    /**
+     * <p>The availability status of the cluster for queries. Possible values are the
+     * following:</p> <ul> <li> <p>Available - The cluster is available for queries.
+     * </p> </li> <li> <p>Unavailable - The cluster is not available for queries.</p>
+     * </li> <li> <p>Maintenance - The cluster is intermittently available for queries
+     * due to maintenance activities.</p> </li> <li> <p>Modifying - The cluster is
+     * intermittently available for queries due to changes that modify the cluster.</p>
+     * </li> <li> <p>Failed - The cluster failed and is not available for queries.</p>
+     * </li> </ul>
+     */
+    inline void SetClusterAvailabilityStatus(Aws::String&& value) { m_clusterAvailabilityStatusHasBeenSet = true; m_clusterAvailabilityStatus = std::move(value); }
+
+    /**
+     * <p>The availability status of the cluster for queries. Possible values are the
+     * following:</p> <ul> <li> <p>Available - The cluster is available for queries.
+     * </p> </li> <li> <p>Unavailable - The cluster is not available for queries.</p>
+     * </li> <li> <p>Maintenance - The cluster is intermittently available for queries
+     * due to maintenance activities.</p> </li> <li> <p>Modifying - The cluster is
+     * intermittently available for queries due to changes that modify the cluster.</p>
+     * </li> <li> <p>Failed - The cluster failed and is not available for queries.</p>
+     * </li> </ul>
+     */
+    inline void SetClusterAvailabilityStatus(const char* value) { m_clusterAvailabilityStatusHasBeenSet = true; m_clusterAvailabilityStatus.assign(value); }
+
+    /**
+     * <p>The availability status of the cluster for queries. Possible values are the
+     * following:</p> <ul> <li> <p>Available - The cluster is available for queries.
+     * </p> </li> <li> <p>Unavailable - The cluster is not available for queries.</p>
+     * </li> <li> <p>Maintenance - The cluster is intermittently available for queries
+     * due to maintenance activities.</p> </li> <li> <p>Modifying - The cluster is
+     * intermittently available for queries due to changes that modify the cluster.</p>
+     * </li> <li> <p>Failed - The cluster failed and is not available for queries.</p>
+     * </li> </ul>
+     */
+    inline Cluster& WithClusterAvailabilityStatus(const Aws::String& value) { SetClusterAvailabilityStatus(value); return *this;}
+
+    /**
+     * <p>The availability status of the cluster for queries. Possible values are the
+     * following:</p> <ul> <li> <p>Available - The cluster is available for queries.
+     * </p> </li> <li> <p>Unavailable - The cluster is not available for queries.</p>
+     * </li> <li> <p>Maintenance - The cluster is intermittently available for queries
+     * due to maintenance activities.</p> </li> <li> <p>Modifying - The cluster is
+     * intermittently available for queries due to changes that modify the cluster.</p>
+     * </li> <li> <p>Failed - The cluster failed and is not available for queries.</p>
+     * </li> </ul>
+     */
+    inline Cluster& WithClusterAvailabilityStatus(Aws::String&& value) { SetClusterAvailabilityStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>The availability status of the cluster for queries. Possible values are the
+     * following:</p> <ul> <li> <p>Available - The cluster is available for queries.
+     * </p> </li> <li> <p>Unavailable - The cluster is not available for queries.</p>
+     * </li> <li> <p>Maintenance - The cluster is intermittently available for queries
+     * due to maintenance activities.</p> </li> <li> <p>Modifying - The cluster is
+     * intermittently available for queries due to changes that modify the cluster.</p>
+     * </li> <li> <p>Failed - The cluster failed and is not available for queries.</p>
+     * </li> </ul>
+     */
+    inline Cluster& WithClusterAvailabilityStatus(const char* value) { SetClusterAvailabilityStatus(value); return *this;}
+
+
+    /**
      * <p>The status of a modify operation, if any, initiated for the cluster.</p>
      */
     inline const Aws::String& GetModifyStatus() const{ return m_modifyStatus; }
@@ -1913,6 +2010,9 @@ namespace Model
 
     Aws::String m_clusterStatus;
     bool m_clusterStatusHasBeenSet;
+
+    Aws::String m_clusterAvailabilityStatus;
+    bool m_clusterAvailabilityStatusHasBeenSet;
 
     Aws::String m_modifyStatus;
     bool m_modifyStatusHasBeenSet;

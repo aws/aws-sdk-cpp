@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/ec2/model/EventType.h>
+#include <aws/alexaforbusiness/model/PhoneNumberType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -23,60 +23,53 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace EC2
+  namespace AlexaForBusiness
   {
     namespace Model
     {
-      namespace EventTypeMapper
+      namespace PhoneNumberTypeMapper
       {
 
-        static const int instanceChange_HASH = HashingUtils::HashString("instanceChange");
-        static const int fleetRequestChange_HASH = HashingUtils::HashString("fleetRequestChange");
-        static const int error_HASH = HashingUtils::HashString("error");
-        static const int information_HASH = HashingUtils::HashString("information");
+        static const int MOBILE_HASH = HashingUtils::HashString("MOBILE");
+        static const int WORK_HASH = HashingUtils::HashString("WORK");
+        static const int HOME_HASH = HashingUtils::HashString("HOME");
 
 
-        EventType GetEventTypeForName(const Aws::String& name)
+        PhoneNumberType GetPhoneNumberTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == instanceChange_HASH)
+          if (hashCode == MOBILE_HASH)
           {
-            return EventType::instanceChange;
+            return PhoneNumberType::MOBILE;
           }
-          else if (hashCode == fleetRequestChange_HASH)
+          else if (hashCode == WORK_HASH)
           {
-            return EventType::fleetRequestChange;
+            return PhoneNumberType::WORK;
           }
-          else if (hashCode == error_HASH)
+          else if (hashCode == HOME_HASH)
           {
-            return EventType::error;
-          }
-          else if (hashCode == information_HASH)
-          {
-            return EventType::information;
+            return PhoneNumberType::HOME;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<EventType>(hashCode);
+            return static_cast<PhoneNumberType>(hashCode);
           }
 
-          return EventType::NOT_SET;
+          return PhoneNumberType::NOT_SET;
         }
 
-        Aws::String GetNameForEventType(EventType enumValue)
+        Aws::String GetNameForPhoneNumberType(PhoneNumberType enumValue)
         {
           switch(enumValue)
           {
-          case EventType::instanceChange:
-            return "instanceChange";
-          case EventType::fleetRequestChange:
-            return "fleetRequestChange";
-          case EventType::error:
-            return "error";
-          case EventType::information:
-            return "information";
+          case PhoneNumberType::MOBILE:
+            return "MOBILE";
+          case PhoneNumberType::WORK:
+            return "WORK";
+          case PhoneNumberType::HOME:
+            return "HOME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -88,7 +81,7 @@ namespace Aws
           }
         }
 
-      } // namespace EventTypeMapper
+      } // namespace PhoneNumberTypeMapper
     } // namespace Model
-  } // namespace EC2
+  } // namespace AlexaForBusiness
 } // namespace Aws

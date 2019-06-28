@@ -16,6 +16,9 @@
 #pragma once
 #include <aws/alexaforbusiness/AlexaForBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/alexaforbusiness/model/PhoneNumber.h>
+#include <aws/alexaforbusiness/model/SipAddress.h>
 #include <utility>
 
 namespace Aws
@@ -212,44 +215,150 @@ namespace Model
 
 
     /**
-     * <p>The phone number of the contact.</p>
+     * <p>The phone number of the contact. The phone number type defaults to WORK. You
+     * can either specify PhoneNumber or PhoneNumbers. We recommend that you use
+     * PhoneNumbers, which lets you specify the phone number type and multiple
+     * numbers.</p>
      */
     inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
 
     /**
-     * <p>The phone number of the contact.</p>
+     * <p>The phone number of the contact. The phone number type defaults to WORK. You
+     * can either specify PhoneNumber or PhoneNumbers. We recommend that you use
+     * PhoneNumbers, which lets you specify the phone number type and multiple
+     * numbers.</p>
      */
     inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
 
     /**
-     * <p>The phone number of the contact.</p>
+     * <p>The phone number of the contact. The phone number type defaults to WORK. You
+     * can either specify PhoneNumber or PhoneNumbers. We recommend that you use
+     * PhoneNumbers, which lets you specify the phone number type and multiple
+     * numbers.</p>
      */
     inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
 
     /**
-     * <p>The phone number of the contact.</p>
+     * <p>The phone number of the contact. The phone number type defaults to WORK. You
+     * can either specify PhoneNumber or PhoneNumbers. We recommend that you use
+     * PhoneNumbers, which lets you specify the phone number type and multiple
+     * numbers.</p>
      */
     inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::move(value); }
 
     /**
-     * <p>The phone number of the contact.</p>
+     * <p>The phone number of the contact. The phone number type defaults to WORK. You
+     * can either specify PhoneNumber or PhoneNumbers. We recommend that you use
+     * PhoneNumbers, which lets you specify the phone number type and multiple
+     * numbers.</p>
      */
     inline void SetPhoneNumber(const char* value) { m_phoneNumberHasBeenSet = true; m_phoneNumber.assign(value); }
 
     /**
-     * <p>The phone number of the contact.</p>
+     * <p>The phone number of the contact. The phone number type defaults to WORK. You
+     * can either specify PhoneNumber or PhoneNumbers. We recommend that you use
+     * PhoneNumbers, which lets you specify the phone number type and multiple
+     * numbers.</p>
      */
     inline Contact& WithPhoneNumber(const Aws::String& value) { SetPhoneNumber(value); return *this;}
 
     /**
-     * <p>The phone number of the contact.</p>
+     * <p>The phone number of the contact. The phone number type defaults to WORK. You
+     * can either specify PhoneNumber or PhoneNumbers. We recommend that you use
+     * PhoneNumbers, which lets you specify the phone number type and multiple
+     * numbers.</p>
      */
     inline Contact& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(std::move(value)); return *this;}
 
     /**
-     * <p>The phone number of the contact.</p>
+     * <p>The phone number of the contact. The phone number type defaults to WORK. You
+     * can either specify PhoneNumber or PhoneNumbers. We recommend that you use
+     * PhoneNumbers, which lets you specify the phone number type and multiple
+     * numbers.</p>
      */
     inline Contact& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
+
+
+    /**
+     * <p>The list of phone numbers for the contact.</p>
+     */
+    inline const Aws::Vector<PhoneNumber>& GetPhoneNumbers() const{ return m_phoneNumbers; }
+
+    /**
+     * <p>The list of phone numbers for the contact.</p>
+     */
+    inline bool PhoneNumbersHasBeenSet() const { return m_phoneNumbersHasBeenSet; }
+
+    /**
+     * <p>The list of phone numbers for the contact.</p>
+     */
+    inline void SetPhoneNumbers(const Aws::Vector<PhoneNumber>& value) { m_phoneNumbersHasBeenSet = true; m_phoneNumbers = value; }
+
+    /**
+     * <p>The list of phone numbers for the contact.</p>
+     */
+    inline void SetPhoneNumbers(Aws::Vector<PhoneNumber>&& value) { m_phoneNumbersHasBeenSet = true; m_phoneNumbers = std::move(value); }
+
+    /**
+     * <p>The list of phone numbers for the contact.</p>
+     */
+    inline Contact& WithPhoneNumbers(const Aws::Vector<PhoneNumber>& value) { SetPhoneNumbers(value); return *this;}
+
+    /**
+     * <p>The list of phone numbers for the contact.</p>
+     */
+    inline Contact& WithPhoneNumbers(Aws::Vector<PhoneNumber>&& value) { SetPhoneNumbers(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of phone numbers for the contact.</p>
+     */
+    inline Contact& AddPhoneNumbers(const PhoneNumber& value) { m_phoneNumbersHasBeenSet = true; m_phoneNumbers.push_back(value); return *this; }
+
+    /**
+     * <p>The list of phone numbers for the contact.</p>
+     */
+    inline Contact& AddPhoneNumbers(PhoneNumber&& value) { m_phoneNumbersHasBeenSet = true; m_phoneNumbers.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The list of SIP addresses for the contact.</p>
+     */
+    inline const Aws::Vector<SipAddress>& GetSipAddresses() const{ return m_sipAddresses; }
+
+    /**
+     * <p>The list of SIP addresses for the contact.</p>
+     */
+    inline bool SipAddressesHasBeenSet() const { return m_sipAddressesHasBeenSet; }
+
+    /**
+     * <p>The list of SIP addresses for the contact.</p>
+     */
+    inline void SetSipAddresses(const Aws::Vector<SipAddress>& value) { m_sipAddressesHasBeenSet = true; m_sipAddresses = value; }
+
+    /**
+     * <p>The list of SIP addresses for the contact.</p>
+     */
+    inline void SetSipAddresses(Aws::Vector<SipAddress>&& value) { m_sipAddressesHasBeenSet = true; m_sipAddresses = std::move(value); }
+
+    /**
+     * <p>The list of SIP addresses for the contact.</p>
+     */
+    inline Contact& WithSipAddresses(const Aws::Vector<SipAddress>& value) { SetSipAddresses(value); return *this;}
+
+    /**
+     * <p>The list of SIP addresses for the contact.</p>
+     */
+    inline Contact& WithSipAddresses(Aws::Vector<SipAddress>&& value) { SetSipAddresses(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of SIP addresses for the contact.</p>
+     */
+    inline Contact& AddSipAddresses(const SipAddress& value) { m_sipAddressesHasBeenSet = true; m_sipAddresses.push_back(value); return *this; }
+
+    /**
+     * <p>The list of SIP addresses for the contact.</p>
+     */
+    inline Contact& AddSipAddresses(SipAddress&& value) { m_sipAddressesHasBeenSet = true; m_sipAddresses.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -267,6 +376,12 @@ namespace Model
 
     Aws::String m_phoneNumber;
     bool m_phoneNumberHasBeenSet;
+
+    Aws::Vector<PhoneNumber> m_phoneNumbers;
+    bool m_phoneNumbersHasBeenSet;
+
+    Aws::Vector<SipAddress> m_sipAddresses;
+    bool m_sipAddressesHasBeenSet;
   };
 
 } // namespace Model

@@ -14,33 +14,27 @@
 */
 
 #pragma once
-#include <aws/workspaces/WorkSpaces_EXPORTS.h>
+#include <aws/alexaforbusiness/AlexaForBusiness_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-template<typename RESULT_TYPE>
-class AmazonWebServiceResult;
-
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace WorkSpaces
+namespace AlexaForBusiness
 {
 namespace Model
 {
-  class AWS_WORKSPACES_API RestoreWorkspaceResult
+  enum class SipType
   {
-  public:
-    RestoreWorkspaceResult();
-    RestoreWorkspaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RestoreWorkspaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
+    NOT_SET,
+    WORK
   };
 
+namespace SipTypeMapper
+{
+AWS_ALEXAFORBUSINESS_API SipType GetSipTypeForName(const Aws::String& name);
+
+AWS_ALEXAFORBUSINESS_API Aws::String GetNameForSipType(SipType value);
+} // namespace SipTypeMapper
 } // namespace Model
-} // namespace WorkSpaces
+} // namespace AlexaForBusiness
 } // namespace Aws

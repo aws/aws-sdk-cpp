@@ -33,7 +33,9 @@ ContactData::ContactData() :
     m_displayNameHasBeenSet(false),
     m_firstNameHasBeenSet(false),
     m_lastNameHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false)
+    m_phoneNumberHasBeenSet(false),
+    m_phoneNumbersHasBeenSet(false),
+    m_sipAddressesHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ ContactData::ContactData(JsonView jsonValue) :
     m_displayNameHasBeenSet(false),
     m_firstNameHasBeenSet(false),
     m_lastNameHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false)
+    m_phoneNumberHasBeenSet(false),
+    m_phoneNumbersHasBeenSet(false),
+    m_sipAddressesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,6 +88,26 @@ ContactData& ContactData::operator =(JsonView jsonValue)
     m_phoneNumberHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PhoneNumbers"))
+  {
+    Array<JsonView> phoneNumbersJsonList = jsonValue.GetArray("PhoneNumbers");
+    for(unsigned phoneNumbersIndex = 0; phoneNumbersIndex < phoneNumbersJsonList.GetLength(); ++phoneNumbersIndex)
+    {
+      m_phoneNumbers.push_back(phoneNumbersJsonList[phoneNumbersIndex].AsObject());
+    }
+    m_phoneNumbersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SipAddresses"))
+  {
+    Array<JsonView> sipAddressesJsonList = jsonValue.GetArray("SipAddresses");
+    for(unsigned sipAddressesIndex = 0; sipAddressesIndex < sipAddressesJsonList.GetLength(); ++sipAddressesIndex)
+    {
+      m_sipAddresses.push_back(sipAddressesJsonList[sipAddressesIndex].AsObject());
+    }
+    m_sipAddressesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -118,6 +142,28 @@ JsonValue ContactData::Jsonize() const
   if(m_phoneNumberHasBeenSet)
   {
    payload.WithString("PhoneNumber", m_phoneNumber);
+
+  }
+
+  if(m_phoneNumbersHasBeenSet)
+  {
+   Array<JsonValue> phoneNumbersJsonList(m_phoneNumbers.size());
+   for(unsigned phoneNumbersIndex = 0; phoneNumbersIndex < phoneNumbersJsonList.GetLength(); ++phoneNumbersIndex)
+   {
+     phoneNumbersJsonList[phoneNumbersIndex].AsObject(m_phoneNumbers[phoneNumbersIndex].Jsonize());
+   }
+   payload.WithArray("PhoneNumbers", std::move(phoneNumbersJsonList));
+
+  }
+
+  if(m_sipAddressesHasBeenSet)
+  {
+   Array<JsonValue> sipAddressesJsonList(m_sipAddresses.size());
+   for(unsigned sipAddressesIndex = 0; sipAddressesIndex < sipAddressesJsonList.GetLength(); ++sipAddressesIndex)
+   {
+     sipAddressesJsonList[sipAddressesIndex].AsObject(m_sipAddresses[sipAddressesIndex].Jsonize());
+   }
+   payload.WithArray("SipAddresses", std::move(sipAddressesJsonList));
 
   }
 

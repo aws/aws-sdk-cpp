@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/ec2/model/EventType.h>
+#include <aws/alexaforbusiness/model/SipType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -23,60 +23,39 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace EC2
+  namespace AlexaForBusiness
   {
     namespace Model
     {
-      namespace EventTypeMapper
+      namespace SipTypeMapper
       {
 
-        static const int instanceChange_HASH = HashingUtils::HashString("instanceChange");
-        static const int fleetRequestChange_HASH = HashingUtils::HashString("fleetRequestChange");
-        static const int error_HASH = HashingUtils::HashString("error");
-        static const int information_HASH = HashingUtils::HashString("information");
+        static const int WORK_HASH = HashingUtils::HashString("WORK");
 
 
-        EventType GetEventTypeForName(const Aws::String& name)
+        SipType GetSipTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == instanceChange_HASH)
+          if (hashCode == WORK_HASH)
           {
-            return EventType::instanceChange;
-          }
-          else if (hashCode == fleetRequestChange_HASH)
-          {
-            return EventType::fleetRequestChange;
-          }
-          else if (hashCode == error_HASH)
-          {
-            return EventType::error;
-          }
-          else if (hashCode == information_HASH)
-          {
-            return EventType::information;
+            return SipType::WORK;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<EventType>(hashCode);
+            return static_cast<SipType>(hashCode);
           }
 
-          return EventType::NOT_SET;
+          return SipType::NOT_SET;
         }
 
-        Aws::String GetNameForEventType(EventType enumValue)
+        Aws::String GetNameForSipType(SipType enumValue)
         {
           switch(enumValue)
           {
-          case EventType::instanceChange:
-            return "instanceChange";
-          case EventType::fleetRequestChange:
-            return "fleetRequestChange";
-          case EventType::error:
-            return "error";
-          case EventType::information:
-            return "information";
+          case SipType::WORK:
+            return "WORK";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -88,7 +67,7 @@ namespace Aws
           }
         }
 
-      } // namespace EventTypeMapper
+      } // namespace SipTypeMapper
     } // namespace Model
-  } // namespace EC2
+  } // namespace AlexaForBusiness
 } // namespace Aws
