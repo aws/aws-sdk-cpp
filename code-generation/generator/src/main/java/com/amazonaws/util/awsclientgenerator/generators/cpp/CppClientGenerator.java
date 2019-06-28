@@ -282,7 +282,9 @@ public abstract class CppClientGenerator implements ClientGenerator {
     }
 
     protected Set<String> getRetryableErrors() {
-        return new HashSet<>();
+        HashSet<String> exceptions = new HashSet<>();
+        exceptions.add("ProvisionedThroughputExceededException");
+        return exceptions;
     }
 
     protected SdkFileEntry generateErrorMarshallingSourceFile(final ServiceModel serviceModel) throws Exception {
