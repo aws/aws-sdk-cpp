@@ -41,6 +41,9 @@ ModifyDBClusterRequest::ModifyDBClusterRequest() :
     m_backtrackWindowHasBeenSet(false),
     m_cloudwatchLogsExportConfigurationHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
+    m_allowMajorVersionUpgrade(false),
+    m_allowMajorVersionUpgradeHasBeenSet(false),
+    m_dBInstanceParameterGroupNameHasBeenSet(false),
     m_scalingConfigurationHasBeenSet(false),
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
@@ -134,6 +137,16 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
   if(m_engineVersionHasBeenSet)
   {
     ss << "EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
+  }
+
+  if(m_allowMajorVersionUpgradeHasBeenSet)
+  {
+    ss << "AllowMajorVersionUpgrade=" << std::boolalpha << m_allowMajorVersionUpgrade << "&";
+  }
+
+  if(m_dBInstanceParameterGroupNameHasBeenSet)
+  {
+    ss << "DBInstanceParameterGroupName=" << StringUtils::URLEncode(m_dBInstanceParameterGroupName.c_str()) << "&";
   }
 
   if(m_scalingConfigurationHasBeenSet)

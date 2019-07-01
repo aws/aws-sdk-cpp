@@ -54,57 +54,57 @@ namespace Model
 
     /**
      * <p>The DB cluster identifier for the cluster being modified. This parameter is
-     * not case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
-     * identifier of an existing DBCluster.</p> </li> </ul>
+     * not case-sensitive.</p> <p>Constraints: This identifier must match the
+     * identifier of an existing DB cluster.</p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
      * <p>The DB cluster identifier for the cluster being modified. This parameter is
-     * not case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
-     * identifier of an existing DBCluster.</p> </li> </ul>
+     * not case-sensitive.</p> <p>Constraints: This identifier must match the
+     * identifier of an existing DB cluster.</p>
      */
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
      * <p>The DB cluster identifier for the cluster being modified. This parameter is
-     * not case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
-     * identifier of an existing DBCluster.</p> </li> </ul>
+     * not case-sensitive.</p> <p>Constraints: This identifier must match the
+     * identifier of an existing DB cluster.</p>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
      * <p>The DB cluster identifier for the cluster being modified. This parameter is
-     * not case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
-     * identifier of an existing DBCluster.</p> </li> </ul>
+     * not case-sensitive.</p> <p>Constraints: This identifier must match the
+     * identifier of an existing DB cluster.</p>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
      * <p>The DB cluster identifier for the cluster being modified. This parameter is
-     * not case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
-     * identifier of an existing DBCluster.</p> </li> </ul>
+     * not case-sensitive.</p> <p>Constraints: This identifier must match the
+     * identifier of an existing DB cluster.</p>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
      * <p>The DB cluster identifier for the cluster being modified. This parameter is
-     * not case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
-     * identifier of an existing DBCluster.</p> </li> </ul>
+     * not case-sensitive.</p> <p>Constraints: This identifier must match the
+     * identifier of an existing DB cluster.</p>
      */
     inline ModifyDBClusterRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
      * <p>The DB cluster identifier for the cluster being modified. This parameter is
-     * not case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
-     * identifier of an existing DBCluster.</p> </li> </ul>
+     * not case-sensitive.</p> <p>Constraints: This identifier must match the
+     * identifier of an existing DB cluster.</p>
      */
     inline ModifyDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The DB cluster identifier for the cluster being modified. This parameter is
-     * not case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
-     * identifier of an existing DBCluster.</p> </li> </ul>
+     * not case-sensitive.</p> <p>Constraints: This identifier must match the
+     * identifier of an existing DB cluster.</p>
      */
     inline ModifyDBClusterRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
@@ -953,6 +953,152 @@ namespace Model
 
 
     /**
+     * <p>A value that indicates whether major version upgrades are allowed.</p>
+     * <p>Constraints: You must allow major version upgrades when specifying a value
+     * for the <code>EngineVersion</code> parameter that is a different major version
+     * than the DB cluster's current version.</p>
+     */
+    inline bool GetAllowMajorVersionUpgrade() const{ return m_allowMajorVersionUpgrade; }
+
+    /**
+     * <p>A value that indicates whether major version upgrades are allowed.</p>
+     * <p>Constraints: You must allow major version upgrades when specifying a value
+     * for the <code>EngineVersion</code> parameter that is a different major version
+     * than the DB cluster's current version.</p>
+     */
+    inline bool AllowMajorVersionUpgradeHasBeenSet() const { return m_allowMajorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether major version upgrades are allowed.</p>
+     * <p>Constraints: You must allow major version upgrades when specifying a value
+     * for the <code>EngineVersion</code> parameter that is a different major version
+     * than the DB cluster's current version.</p>
+     */
+    inline void SetAllowMajorVersionUpgrade(bool value) { m_allowMajorVersionUpgradeHasBeenSet = true; m_allowMajorVersionUpgrade = value; }
+
+    /**
+     * <p>A value that indicates whether major version upgrades are allowed.</p>
+     * <p>Constraints: You must allow major version upgrades when specifying a value
+     * for the <code>EngineVersion</code> parameter that is a different major version
+     * than the DB cluster's current version.</p>
+     */
+    inline ModifyDBClusterRequest& WithAllowMajorVersionUpgrade(bool value) { SetAllowMajorVersionUpgrade(value); return *this;}
+
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
+     * rebooted automatically. Also, parameter changes aren't applied during the next
+     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
+     * group must be in the same DB parameter group family as this DB cluster.</p>
+     * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
+     * valid in combination with the <code>AllowMajorVersionUpgrade</code>
+     * parameter.</p> </li> </ul>
+     */
+    inline const Aws::String& GetDBInstanceParameterGroupName() const{ return m_dBInstanceParameterGroupName; }
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
+     * rebooted automatically. Also, parameter changes aren't applied during the next
+     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
+     * group must be in the same DB parameter group family as this DB cluster.</p>
+     * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
+     * valid in combination with the <code>AllowMajorVersionUpgrade</code>
+     * parameter.</p> </li> </ul>
+     */
+    inline bool DBInstanceParameterGroupNameHasBeenSet() const { return m_dBInstanceParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
+     * rebooted automatically. Also, parameter changes aren't applied during the next
+     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
+     * group must be in the same DB parameter group family as this DB cluster.</p>
+     * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
+     * valid in combination with the <code>AllowMajorVersionUpgrade</code>
+     * parameter.</p> </li> </ul>
+     */
+    inline void SetDBInstanceParameterGroupName(const Aws::String& value) { m_dBInstanceParameterGroupNameHasBeenSet = true; m_dBInstanceParameterGroupName = value; }
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
+     * rebooted automatically. Also, parameter changes aren't applied during the next
+     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
+     * group must be in the same DB parameter group family as this DB cluster.</p>
+     * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
+     * valid in combination with the <code>AllowMajorVersionUpgrade</code>
+     * parameter.</p> </li> </ul>
+     */
+    inline void SetDBInstanceParameterGroupName(Aws::String&& value) { m_dBInstanceParameterGroupNameHasBeenSet = true; m_dBInstanceParameterGroupName = std::move(value); }
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
+     * rebooted automatically. Also, parameter changes aren't applied during the next
+     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
+     * group must be in the same DB parameter group family as this DB cluster.</p>
+     * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
+     * valid in combination with the <code>AllowMajorVersionUpgrade</code>
+     * parameter.</p> </li> </ul>
+     */
+    inline void SetDBInstanceParameterGroupName(const char* value) { m_dBInstanceParameterGroupNameHasBeenSet = true; m_dBInstanceParameterGroupName.assign(value); }
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
+     * rebooted automatically. Also, parameter changes aren't applied during the next
+     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
+     * group must be in the same DB parameter group family as this DB cluster.</p>
+     * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
+     * valid in combination with the <code>AllowMajorVersionUpgrade</code>
+     * parameter.</p> </li> </ul>
+     */
+    inline ModifyDBClusterRequest& WithDBInstanceParameterGroupName(const Aws::String& value) { SetDBInstanceParameterGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
+     * rebooted automatically. Also, parameter changes aren't applied during the next
+     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
+     * group must be in the same DB parameter group family as this DB cluster.</p>
+     * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
+     * valid in combination with the <code>AllowMajorVersionUpgrade</code>
+     * parameter.</p> </li> </ul>
+     */
+    inline ModifyDBClusterRequest& WithDBInstanceParameterGroupName(Aws::String&& value) { SetDBInstanceParameterGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
+     * rebooted automatically. Also, parameter changes aren't applied during the next
+     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
+     * group must be in the same DB parameter group family as this DB cluster.</p>
+     * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
+     * valid in combination with the <code>AllowMajorVersionUpgrade</code>
+     * parameter.</p> </li> </ul>
+     */
+    inline ModifyDBClusterRequest& WithDBInstanceParameterGroupName(const char* value) { SetDBInstanceParameterGroupName(value); return *this;}
+
+
+    /**
      * <p>The scaling properties of the DB cluster. You can only modify scaling
      * properties for DB clusters in <code>serverless</code> DB engine mode.</p>
      */
@@ -1141,6 +1287,12 @@ namespace Model
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
+    bool m_allowMajorVersionUpgrade;
+    bool m_allowMajorVersionUpgradeHasBeenSet;
+
+    Aws::String m_dBInstanceParameterGroupName;
+    bool m_dBInstanceParameterGroupNameHasBeenSet;
 
     ScalingConfiguration m_scalingConfiguration;
     bool m_scalingConfigurationHasBeenSet;

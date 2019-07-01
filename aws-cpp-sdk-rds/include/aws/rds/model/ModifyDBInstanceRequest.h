@@ -786,8 +786,8 @@ namespace Model
      * <p>The name of the DB parameter group to apply to the DB instance. Changing this
      * setting doesn't result in an outage. The parameter group name itself is changed
      * immediately, but the actual parameter changes are not applied until you reboot
-     * the instance without failover. The DB instance will NOT be rebooted
-     * automatically and the parameter changes will NOT be applied during the next
+     * the instance without failover. In this case, the DB instance isn't rebooted
+     * automatically and the parameter changes isn't applied during the next
      * maintenance window.</p> <p>Default: Uses existing setting</p> <p>Constraints:
      * The DB parameter group must be in the same DB parameter group family as this DB
      * instance.</p>
@@ -798,8 +798,8 @@ namespace Model
      * <p>The name of the DB parameter group to apply to the DB instance. Changing this
      * setting doesn't result in an outage. The parameter group name itself is changed
      * immediately, but the actual parameter changes are not applied until you reboot
-     * the instance without failover. The DB instance will NOT be rebooted
-     * automatically and the parameter changes will NOT be applied during the next
+     * the instance without failover. In this case, the DB instance isn't rebooted
+     * automatically and the parameter changes isn't applied during the next
      * maintenance window.</p> <p>Default: Uses existing setting</p> <p>Constraints:
      * The DB parameter group must be in the same DB parameter group family as this DB
      * instance.</p>
@@ -810,8 +810,8 @@ namespace Model
      * <p>The name of the DB parameter group to apply to the DB instance. Changing this
      * setting doesn't result in an outage. The parameter group name itself is changed
      * immediately, but the actual parameter changes are not applied until you reboot
-     * the instance without failover. The DB instance will NOT be rebooted
-     * automatically and the parameter changes will NOT be applied during the next
+     * the instance without failover. In this case, the DB instance isn't rebooted
+     * automatically and the parameter changes isn't applied during the next
      * maintenance window.</p> <p>Default: Uses existing setting</p> <p>Constraints:
      * The DB parameter group must be in the same DB parameter group family as this DB
      * instance.</p>
@@ -822,8 +822,8 @@ namespace Model
      * <p>The name of the DB parameter group to apply to the DB instance. Changing this
      * setting doesn't result in an outage. The parameter group name itself is changed
      * immediately, but the actual parameter changes are not applied until you reboot
-     * the instance without failover. The DB instance will NOT be rebooted
-     * automatically and the parameter changes will NOT be applied during the next
+     * the instance without failover. In this case, the DB instance isn't rebooted
+     * automatically and the parameter changes isn't applied during the next
      * maintenance window.</p> <p>Default: Uses existing setting</p> <p>Constraints:
      * The DB parameter group must be in the same DB parameter group family as this DB
      * instance.</p>
@@ -834,8 +834,8 @@ namespace Model
      * <p>The name of the DB parameter group to apply to the DB instance. Changing this
      * setting doesn't result in an outage. The parameter group name itself is changed
      * immediately, but the actual parameter changes are not applied until you reboot
-     * the instance without failover. The DB instance will NOT be rebooted
-     * automatically and the parameter changes will NOT be applied during the next
+     * the instance without failover. In this case, the DB instance isn't rebooted
+     * automatically and the parameter changes isn't applied during the next
      * maintenance window.</p> <p>Default: Uses existing setting</p> <p>Constraints:
      * The DB parameter group must be in the same DB parameter group family as this DB
      * instance.</p>
@@ -846,8 +846,8 @@ namespace Model
      * <p>The name of the DB parameter group to apply to the DB instance. Changing this
      * setting doesn't result in an outage. The parameter group name itself is changed
      * immediately, but the actual parameter changes are not applied until you reboot
-     * the instance without failover. The DB instance will NOT be rebooted
-     * automatically and the parameter changes will NOT be applied during the next
+     * the instance without failover. In this case, the DB instance isn't rebooted
+     * automatically and the parameter changes isn't applied during the next
      * maintenance window.</p> <p>Default: Uses existing setting</p> <p>Constraints:
      * The DB parameter group must be in the same DB parameter group family as this DB
      * instance.</p>
@@ -858,8 +858,8 @@ namespace Model
      * <p>The name of the DB parameter group to apply to the DB instance. Changing this
      * setting doesn't result in an outage. The parameter group name itself is changed
      * immediately, but the actual parameter changes are not applied until you reboot
-     * the instance without failover. The DB instance will NOT be rebooted
-     * automatically and the parameter changes will NOT be applied during the next
+     * the instance without failover. In this case, the DB instance isn't rebooted
+     * automatically and the parameter changes isn't applied during the next
      * maintenance window.</p> <p>Default: Uses existing setting</p> <p>Constraints:
      * The DB parameter group must be in the same DB parameter group family as this DB
      * instance.</p>
@@ -870,8 +870,8 @@ namespace Model
      * <p>The name of the DB parameter group to apply to the DB instance. Changing this
      * setting doesn't result in an outage. The parameter group name itself is changed
      * immediately, but the actual parameter changes are not applied until you reboot
-     * the instance without failover. The DB instance will NOT be rebooted
-     * automatically and the parameter changes will NOT be applied during the next
+     * the instance without failover. In this case, the DB instance isn't rebooted
+     * automatically and the parameter changes isn't applied during the next
      * maintenance window.</p> <p>Default: Uses existing setting</p> <p>Constraints:
      * The DB parameter group must be in the same DB parameter group family as this DB
      * instance.</p>

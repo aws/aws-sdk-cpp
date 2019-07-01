@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/SpotAllocationStrategy.h>
 #include <aws/ec2/model/SpotInstanceInterruptionBehavior.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -232,6 +233,55 @@ namespace Model
      */
     inline SpotOptions& WithMinTargetCapacity(int value) { SetMinTargetCapacity(value); return *this;}
 
+
+    /**
+     * <p>The maximum amount per hour for Spot Instances that you're willing to
+     * pay.</p>
+     */
+    inline const Aws::String& GetMaxTotalPrice() const{ return m_maxTotalPrice; }
+
+    /**
+     * <p>The maximum amount per hour for Spot Instances that you're willing to
+     * pay.</p>
+     */
+    inline bool MaxTotalPriceHasBeenSet() const { return m_maxTotalPriceHasBeenSet; }
+
+    /**
+     * <p>The maximum amount per hour for Spot Instances that you're willing to
+     * pay.</p>
+     */
+    inline void SetMaxTotalPrice(const Aws::String& value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice = value; }
+
+    /**
+     * <p>The maximum amount per hour for Spot Instances that you're willing to
+     * pay.</p>
+     */
+    inline void SetMaxTotalPrice(Aws::String&& value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice = std::move(value); }
+
+    /**
+     * <p>The maximum amount per hour for Spot Instances that you're willing to
+     * pay.</p>
+     */
+    inline void SetMaxTotalPrice(const char* value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice.assign(value); }
+
+    /**
+     * <p>The maximum amount per hour for Spot Instances that you're willing to
+     * pay.</p>
+     */
+    inline SpotOptions& WithMaxTotalPrice(const Aws::String& value) { SetMaxTotalPrice(value); return *this;}
+
+    /**
+     * <p>The maximum amount per hour for Spot Instances that you're willing to
+     * pay.</p>
+     */
+    inline SpotOptions& WithMaxTotalPrice(Aws::String&& value) { SetMaxTotalPrice(std::move(value)); return *this;}
+
+    /**
+     * <p>The maximum amount per hour for Spot Instances that you're willing to
+     * pay.</p>
+     */
+    inline SpotOptions& WithMaxTotalPrice(const char* value) { SetMaxTotalPrice(value); return *this;}
+
   private:
 
     SpotAllocationStrategy m_allocationStrategy;
@@ -251,6 +301,9 @@ namespace Model
 
     int m_minTargetCapacity;
     bool m_minTargetCapacityHasBeenSet;
+
+    Aws::String m_maxTotalPrice;
+    bool m_maxTotalPriceHasBeenSet;
   };
 
 } // namespace Model

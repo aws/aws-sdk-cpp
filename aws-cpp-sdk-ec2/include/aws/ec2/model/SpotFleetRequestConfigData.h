@@ -675,6 +675,200 @@ namespace Model
 
 
     /**
+     * <p>The maximum amount per hour for On-Demand Instances that you're willing to
+     * pay. You can use the <code>onDemandMaxTotalPrice</code> parameter, the
+     * <code>spotMaxTotalPrice</code> parameter, or both parameters to ensure that your
+     * fleet cost does not exceed your budget. If you set a maximum price per hour for
+     * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
+     * launch instances until it reaches the maximum amount you're willing to pay. When
+     * the maximum amount you're willing to pay is reached, the fleet stops launching
+     * instances even if it hasn’t met the target capacity.</p>
+     */
+    inline const Aws::String& GetOnDemandMaxTotalPrice() const{ return m_onDemandMaxTotalPrice; }
+
+    /**
+     * <p>The maximum amount per hour for On-Demand Instances that you're willing to
+     * pay. You can use the <code>onDemandMaxTotalPrice</code> parameter, the
+     * <code>spotMaxTotalPrice</code> parameter, or both parameters to ensure that your
+     * fleet cost does not exceed your budget. If you set a maximum price per hour for
+     * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
+     * launch instances until it reaches the maximum amount you're willing to pay. When
+     * the maximum amount you're willing to pay is reached, the fleet stops launching
+     * instances even if it hasn’t met the target capacity.</p>
+     */
+    inline bool OnDemandMaxTotalPriceHasBeenSet() const { return m_onDemandMaxTotalPriceHasBeenSet; }
+
+    /**
+     * <p>The maximum amount per hour for On-Demand Instances that you're willing to
+     * pay. You can use the <code>onDemandMaxTotalPrice</code> parameter, the
+     * <code>spotMaxTotalPrice</code> parameter, or both parameters to ensure that your
+     * fleet cost does not exceed your budget. If you set a maximum price per hour for
+     * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
+     * launch instances until it reaches the maximum amount you're willing to pay. When
+     * the maximum amount you're willing to pay is reached, the fleet stops launching
+     * instances even if it hasn’t met the target capacity.</p>
+     */
+    inline void SetOnDemandMaxTotalPrice(const Aws::String& value) { m_onDemandMaxTotalPriceHasBeenSet = true; m_onDemandMaxTotalPrice = value; }
+
+    /**
+     * <p>The maximum amount per hour for On-Demand Instances that you're willing to
+     * pay. You can use the <code>onDemandMaxTotalPrice</code> parameter, the
+     * <code>spotMaxTotalPrice</code> parameter, or both parameters to ensure that your
+     * fleet cost does not exceed your budget. If you set a maximum price per hour for
+     * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
+     * launch instances until it reaches the maximum amount you're willing to pay. When
+     * the maximum amount you're willing to pay is reached, the fleet stops launching
+     * instances even if it hasn’t met the target capacity.</p>
+     */
+    inline void SetOnDemandMaxTotalPrice(Aws::String&& value) { m_onDemandMaxTotalPriceHasBeenSet = true; m_onDemandMaxTotalPrice = std::move(value); }
+
+    /**
+     * <p>The maximum amount per hour for On-Demand Instances that you're willing to
+     * pay. You can use the <code>onDemandMaxTotalPrice</code> parameter, the
+     * <code>spotMaxTotalPrice</code> parameter, or both parameters to ensure that your
+     * fleet cost does not exceed your budget. If you set a maximum price per hour for
+     * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
+     * launch instances until it reaches the maximum amount you're willing to pay. When
+     * the maximum amount you're willing to pay is reached, the fleet stops launching
+     * instances even if it hasn’t met the target capacity.</p>
+     */
+    inline void SetOnDemandMaxTotalPrice(const char* value) { m_onDemandMaxTotalPriceHasBeenSet = true; m_onDemandMaxTotalPrice.assign(value); }
+
+    /**
+     * <p>The maximum amount per hour for On-Demand Instances that you're willing to
+     * pay. You can use the <code>onDemandMaxTotalPrice</code> parameter, the
+     * <code>spotMaxTotalPrice</code> parameter, or both parameters to ensure that your
+     * fleet cost does not exceed your budget. If you set a maximum price per hour for
+     * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
+     * launch instances until it reaches the maximum amount you're willing to pay. When
+     * the maximum amount you're willing to pay is reached, the fleet stops launching
+     * instances even if it hasn’t met the target capacity.</p>
+     */
+    inline SpotFleetRequestConfigData& WithOnDemandMaxTotalPrice(const Aws::String& value) { SetOnDemandMaxTotalPrice(value); return *this;}
+
+    /**
+     * <p>The maximum amount per hour for On-Demand Instances that you're willing to
+     * pay. You can use the <code>onDemandMaxTotalPrice</code> parameter, the
+     * <code>spotMaxTotalPrice</code> parameter, or both parameters to ensure that your
+     * fleet cost does not exceed your budget. If you set a maximum price per hour for
+     * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
+     * launch instances until it reaches the maximum amount you're willing to pay. When
+     * the maximum amount you're willing to pay is reached, the fleet stops launching
+     * instances even if it hasn’t met the target capacity.</p>
+     */
+    inline SpotFleetRequestConfigData& WithOnDemandMaxTotalPrice(Aws::String&& value) { SetOnDemandMaxTotalPrice(std::move(value)); return *this;}
+
+    /**
+     * <p>The maximum amount per hour for On-Demand Instances that you're willing to
+     * pay. You can use the <code>onDemandMaxTotalPrice</code> parameter, the
+     * <code>spotMaxTotalPrice</code> parameter, or both parameters to ensure that your
+     * fleet cost does not exceed your budget. If you set a maximum price per hour for
+     * the On-Demand Instances and Spot Instances in your request, Spot Fleet will
+     * launch instances until it reaches the maximum amount you're willing to pay. When
+     * the maximum amount you're willing to pay is reached, the fleet stops launching
+     * instances even if it hasn’t met the target capacity.</p>
+     */
+    inline SpotFleetRequestConfigData& WithOnDemandMaxTotalPrice(const char* value) { SetOnDemandMaxTotalPrice(value); return *this;}
+
+
+    /**
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay.
+     * You can use the <code>spotdMaxTotalPrice</code> parameter, the
+     * <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that
+     * your fleet cost does not exceed your budget. If you set a maximum price per hour
+     * for the On-Demand Instances and Spot Instances in your request, Spot Fleet will
+     * launch instances until it reaches the maximum amount you're willing to pay. When
+     * the maximum amount you're willing to pay is reached, the fleet stops launching
+     * instances even if it hasn’t met the target capacity.</p>
+     */
+    inline const Aws::String& GetSpotMaxTotalPrice() const{ return m_spotMaxTotalPrice; }
+
+    /**
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay.
+     * You can use the <code>spotdMaxTotalPrice</code> parameter, the
+     * <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that
+     * your fleet cost does not exceed your budget. If you set a maximum price per hour
+     * for the On-Demand Instances and Spot Instances in your request, Spot Fleet will
+     * launch instances until it reaches the maximum amount you're willing to pay. When
+     * the maximum amount you're willing to pay is reached, the fleet stops launching
+     * instances even if it hasn’t met the target capacity.</p>
+     */
+    inline bool SpotMaxTotalPriceHasBeenSet() const { return m_spotMaxTotalPriceHasBeenSet; }
+
+    /**
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay.
+     * You can use the <code>spotdMaxTotalPrice</code> parameter, the
+     * <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that
+     * your fleet cost does not exceed your budget. If you set a maximum price per hour
+     * for the On-Demand Instances and Spot Instances in your request, Spot Fleet will
+     * launch instances until it reaches the maximum amount you're willing to pay. When
+     * the maximum amount you're willing to pay is reached, the fleet stops launching
+     * instances even if it hasn’t met the target capacity.</p>
+     */
+    inline void SetSpotMaxTotalPrice(const Aws::String& value) { m_spotMaxTotalPriceHasBeenSet = true; m_spotMaxTotalPrice = value; }
+
+    /**
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay.
+     * You can use the <code>spotdMaxTotalPrice</code> parameter, the
+     * <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that
+     * your fleet cost does not exceed your budget. If you set a maximum price per hour
+     * for the On-Demand Instances and Spot Instances in your request, Spot Fleet will
+     * launch instances until it reaches the maximum amount you're willing to pay. When
+     * the maximum amount you're willing to pay is reached, the fleet stops launching
+     * instances even if it hasn’t met the target capacity.</p>
+     */
+    inline void SetSpotMaxTotalPrice(Aws::String&& value) { m_spotMaxTotalPriceHasBeenSet = true; m_spotMaxTotalPrice = std::move(value); }
+
+    /**
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay.
+     * You can use the <code>spotdMaxTotalPrice</code> parameter, the
+     * <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that
+     * your fleet cost does not exceed your budget. If you set a maximum price per hour
+     * for the On-Demand Instances and Spot Instances in your request, Spot Fleet will
+     * launch instances until it reaches the maximum amount you're willing to pay. When
+     * the maximum amount you're willing to pay is reached, the fleet stops launching
+     * instances even if it hasn’t met the target capacity.</p>
+     */
+    inline void SetSpotMaxTotalPrice(const char* value) { m_spotMaxTotalPriceHasBeenSet = true; m_spotMaxTotalPrice.assign(value); }
+
+    /**
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay.
+     * You can use the <code>spotdMaxTotalPrice</code> parameter, the
+     * <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that
+     * your fleet cost does not exceed your budget. If you set a maximum price per hour
+     * for the On-Demand Instances and Spot Instances in your request, Spot Fleet will
+     * launch instances until it reaches the maximum amount you're willing to pay. When
+     * the maximum amount you're willing to pay is reached, the fleet stops launching
+     * instances even if it hasn’t met the target capacity.</p>
+     */
+    inline SpotFleetRequestConfigData& WithSpotMaxTotalPrice(const Aws::String& value) { SetSpotMaxTotalPrice(value); return *this;}
+
+    /**
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay.
+     * You can use the <code>spotdMaxTotalPrice</code> parameter, the
+     * <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that
+     * your fleet cost does not exceed your budget. If you set a maximum price per hour
+     * for the On-Demand Instances and Spot Instances in your request, Spot Fleet will
+     * launch instances until it reaches the maximum amount you're willing to pay. When
+     * the maximum amount you're willing to pay is reached, the fleet stops launching
+     * instances even if it hasn’t met the target capacity.</p>
+     */
+    inline SpotFleetRequestConfigData& WithSpotMaxTotalPrice(Aws::String&& value) { SetSpotMaxTotalPrice(std::move(value)); return *this;}
+
+    /**
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay.
+     * You can use the <code>spotdMaxTotalPrice</code> parameter, the
+     * <code>onDemandMaxTotalPrice</code> parameter, or both parameters to ensure that
+     * your fleet cost does not exceed your budget. If you set a maximum price per hour
+     * for the On-Demand Instances and Spot Instances in your request, Spot Fleet will
+     * launch instances until it reaches the maximum amount you're willing to pay. When
+     * the maximum amount you're willing to pay is reached, the fleet stops launching
+     * instances even if it hasn’t met the target capacity.</p>
+     */
+    inline SpotFleetRequestConfigData& WithSpotMaxTotalPrice(const char* value) { SetSpotMaxTotalPrice(value); return *this;}
+
+
+    /**
      * <p>Indicates whether running Spot Instances are terminated when the Spot Fleet
      * request expires.</p>
      */
@@ -1074,6 +1268,12 @@ namespace Model
 
     int m_onDemandTargetCapacity;
     bool m_onDemandTargetCapacityHasBeenSet;
+
+    Aws::String m_onDemandMaxTotalPrice;
+    bool m_onDemandMaxTotalPriceHasBeenSet;
+
+    Aws::String m_spotMaxTotalPrice;
+    bool m_spotMaxTotalPriceHasBeenSet;
 
     bool m_terminateInstancesWithExpiration;
     bool m_terminateInstancesWithExpirationHasBeenSet;

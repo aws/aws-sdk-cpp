@@ -42,7 +42,8 @@ SpotOptions::SpotOptions() :
     m_singleAvailabilityZone(false),
     m_singleAvailabilityZoneHasBeenSet(false),
     m_minTargetCapacity(0),
-    m_minTargetCapacityHasBeenSet(false)
+    m_minTargetCapacityHasBeenSet(false),
+    m_maxTotalPriceHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ SpotOptions::SpotOptions(const XmlNode& xmlNode) :
     m_singleAvailabilityZone(false),
     m_singleAvailabilityZoneHasBeenSet(false),
     m_minTargetCapacity(0),
-    m_minTargetCapacityHasBeenSet(false)
+    m_minTargetCapacityHasBeenSet(false),
+    m_maxTotalPriceHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -105,6 +107,12 @@ SpotOptions& SpotOptions::operator =(const XmlNode& xmlNode)
       m_minTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(minTargetCapacityNode.GetText().c_str()).c_str());
       m_minTargetCapacityHasBeenSet = true;
     }
+    XmlNode maxTotalPriceNode = resultNode.FirstChild("maxTotalPrice");
+    if(!maxTotalPriceNode.IsNull())
+    {
+      m_maxTotalPrice = StringUtils::Trim(maxTotalPriceNode.GetText().c_str());
+      m_maxTotalPriceHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -142,6 +150,11 @@ void SpotOptions::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".MinTargetCapacity=" << m_minTargetCapacity << "&";
   }
 
+  if(m_maxTotalPriceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MaxTotalPrice=" << StringUtils::URLEncode(m_maxTotalPrice.c_str()) << "&";
+  }
+
 }
 
 void SpotOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -169,6 +182,10 @@ void SpotOptions::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_minTargetCapacityHasBeenSet)
   {
       oStream << location << ".MinTargetCapacity=" << m_minTargetCapacity << "&";
+  }
+  if(m_maxTotalPriceHasBeenSet)
+  {
+      oStream << location << ".MaxTotalPrice=" << StringUtils::URLEncode(m_maxTotalPrice.c_str()) << "&";
   }
 }
 

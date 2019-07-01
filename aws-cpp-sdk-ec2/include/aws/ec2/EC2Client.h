@@ -9225,36 +9225,36 @@ namespace Model
         virtual void DescribeInstanceStatusAsync(const Model::DescribeInstanceStatusRequest& request, const DescribeInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified instances or all of your instances.</p> <p>If you
-         * specify one or more instance IDs, Amazon EC2 returns information for those
-         * instances. If you do not specify instance IDs, Amazon EC2 returns information
-         * for all relevant instances. If you specify an instance ID that is not valid, an
-         * error is returned. If you specify an instance that you do not own, it is not
-         * included in the returned results.</p> <p>Recently terminated instances might
-         * appear in the returned results. This interval is usually less than one hour.</p>
-         * <p>If you describe instances in the rare case where an Availability Zone is
-         * experiencing a service disruption and you specify instance IDs that are in the
-         * affected zone, or do not specify any instance IDs at all, the call fails. If you
-         * describe instances and specify only instance IDs that are in an unaffected zone,
-         * the call works normally.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified instances or all of AWS account's instances.</p>
+         * <p>If you specify one or more instance IDs, Amazon EC2 returns information for
+         * those instances. If you do not specify instance IDs, Amazon EC2 returns
+         * information for all relevant instances. If you specify an instance ID that is
+         * not valid, an error is returned. If you specify an instance that you do not own,
+         * it is not included in the returned results.</p> <p>Recently terminated instances
+         * might appear in the returned results. This interval is usually less than one
+         * hour.</p> <p>If you describe instances in the rare case where an Availability
+         * Zone is experiencing a service disruption and you specify instance IDs that are
+         * in the affected zone, or do not specify any instance IDs at all, the call fails.
+         * If you describe instances and specify only instance IDs that are in an
+         * unaffected zone, the call works normally.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest& request) const;
 
         /**
-         * <p>Describes the specified instances or all of your instances.</p> <p>If you
-         * specify one or more instance IDs, Amazon EC2 returns information for those
-         * instances. If you do not specify instance IDs, Amazon EC2 returns information
-         * for all relevant instances. If you specify an instance ID that is not valid, an
-         * error is returned. If you specify an instance that you do not own, it is not
-         * included in the returned results.</p> <p>Recently terminated instances might
-         * appear in the returned results. This interval is usually less than one hour.</p>
-         * <p>If you describe instances in the rare case where an Availability Zone is
-         * experiencing a service disruption and you specify instance IDs that are in the
-         * affected zone, or do not specify any instance IDs at all, the call fails. If you
-         * describe instances and specify only instance IDs that are in an unaffected zone,
-         * the call works normally.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified instances or all of AWS account's instances.</p>
+         * <p>If you specify one or more instance IDs, Amazon EC2 returns information for
+         * those instances. If you do not specify instance IDs, Amazon EC2 returns
+         * information for all relevant instances. If you specify an instance ID that is
+         * not valid, an error is returned. If you specify an instance that you do not own,
+         * it is not included in the returned results.</p> <p>Recently terminated instances
+         * might appear in the returned results. This interval is usually less than one
+         * hour.</p> <p>If you describe instances in the rare case where an Availability
+         * Zone is experiencing a service disruption and you specify instance IDs that are
+         * in the affected zone, or do not specify any instance IDs at all, the call fails.
+         * If you describe instances and specify only instance IDs that are in an
+         * unaffected zone, the call works normally.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">AWS
          * API Reference</a></p>
          *
@@ -9263,18 +9263,18 @@ namespace Model
         virtual Model::DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request) const;
 
         /**
-         * <p>Describes the specified instances or all of your instances.</p> <p>If you
-         * specify one or more instance IDs, Amazon EC2 returns information for those
-         * instances. If you do not specify instance IDs, Amazon EC2 returns information
-         * for all relevant instances. If you specify an instance ID that is not valid, an
-         * error is returned. If you specify an instance that you do not own, it is not
-         * included in the returned results.</p> <p>Recently terminated instances might
-         * appear in the returned results. This interval is usually less than one hour.</p>
-         * <p>If you describe instances in the rare case where an Availability Zone is
-         * experiencing a service disruption and you specify instance IDs that are in the
-         * affected zone, or do not specify any instance IDs at all, the call fails. If you
-         * describe instances and specify only instance IDs that are in an unaffected zone,
-         * the call works normally.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified instances or all of AWS account's instances.</p>
+         * <p>If you specify one or more instance IDs, Amazon EC2 returns information for
+         * those instances. If you do not specify instance IDs, Amazon EC2 returns
+         * information for all relevant instances. If you specify an instance ID that is
+         * not valid, an error is returned. If you specify an instance that you do not own,
+         * it is not included in the returned results.</p> <p>Recently terminated instances
+         * might appear in the returned results. This interval is usually less than one
+         * hour.</p> <p>If you describe instances in the rare case where an Availability
+         * Zone is experiencing a service disruption and you specify instance IDs that are
+         * in the affected zone, or do not specify any instance IDs at all, the call fails.
+         * If you describe instances and specify only instance IDs that are in an
+         * unaffected zone, the call works normally.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">AWS
          * API Reference</a></p>
          *

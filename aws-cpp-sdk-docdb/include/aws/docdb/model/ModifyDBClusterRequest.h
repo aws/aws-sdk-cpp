@@ -409,58 +409,58 @@ namespace Model
 
 
     /**
-     * <p>The new password for the master database user. This password can contain any
-     * printable ASCII character except "<code>/</code>", "<code>"</code>", or
-     * "<code>@</code>".</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p>The password for the master database user. This password can contain any
+     * printable ASCII character except forward slash (/), double quote ("), or the
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>The new password for the master database user. This password can contain any
-     * printable ASCII character except "<code>/</code>", "<code>"</code>", or
-     * "<code>@</code>".</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p>The password for the master database user. This password can contain any
+     * printable ASCII character except forward slash (/), double quote ("), or the
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
-     * <p>The new password for the master database user. This password can contain any
-     * printable ASCII character except "<code>/</code>", "<code>"</code>", or
-     * "<code>@</code>".</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p>The password for the master database user. This password can contain any
+     * printable ASCII character except forward slash (/), double quote ("), or the
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>The new password for the master database user. This password can contain any
-     * printable ASCII character except "<code>/</code>", "<code>"</code>", or
-     * "<code>@</code>".</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p>The password for the master database user. This password can contain any
+     * printable ASCII character except forward slash (/), double quote ("), or the
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>The new password for the master database user. This password can contain any
-     * printable ASCII character except "<code>/</code>", "<code>"</code>", or
-     * "<code>@</code>".</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p>The password for the master database user. This password can contain any
+     * printable ASCII character except forward slash (/), double quote ("), or the
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>The new password for the master database user. This password can contain any
-     * printable ASCII character except "<code>/</code>", "<code>"</code>", or
-     * "<code>@</code>".</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p>The password for the master database user. This password can contain any
+     * printable ASCII character except forward slash (/), double quote ("), or the
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
      */
     inline ModifyDBClusterRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>The new password for the master database user. This password can contain any
-     * printable ASCII character except "<code>/</code>", "<code>"</code>", or
-     * "<code>@</code>".</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p>The password for the master database user. This password can contain any
+     * printable ASCII character except forward slash (/), double quote ("), or the
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
      */
     inline ModifyDBClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The new password for the master database user. This password can contain any
-     * printable ASCII character except "<code>/</code>", "<code>"</code>", or
-     * "<code>@</code>".</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p>The password for the master database user. This password can contain any
+     * printable ASCII character except forward slash (/), double quote ("), or the
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
      */
     inline ModifyDBClusterRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -756,6 +756,43 @@ namespace Model
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether this cluster can be deleted. If
+     * <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless
+     * it is modified and <code>DeletionProtection</code> is disabled.
+     * <code>DeletionProtection</code> protects clusters from being accidentally
+     * deleted.</p>
+     */
+    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+
+    /**
+     * <p>Specifies whether this cluster can be deleted. If
+     * <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless
+     * it is modified and <code>DeletionProtection</code> is disabled.
+     * <code>DeletionProtection</code> protects clusters from being accidentally
+     * deleted.</p>
+     */
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+
+    /**
+     * <p>Specifies whether this cluster can be deleted. If
+     * <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless
+     * it is modified and <code>DeletionProtection</code> is disabled.
+     * <code>DeletionProtection</code> protects clusters from being accidentally
+     * deleted.</p>
+     */
+    inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
+
+    /**
+     * <p>Specifies whether this cluster can be deleted. If
+     * <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless
+     * it is modified and <code>DeletionProtection</code> is disabled.
+     * <code>DeletionProtection</code> protects clusters from being accidentally
+     * deleted.</p>
+     */
+    inline ModifyDBClusterRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -793,6 +830,9 @@ namespace Model
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
+    bool m_deletionProtection;
+    bool m_deletionProtectionHasBeenSet;
   };
 
 } // namespace Model

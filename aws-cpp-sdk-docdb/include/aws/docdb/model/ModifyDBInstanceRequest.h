@@ -109,7 +109,7 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance; for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * <code>db.r5.large</code>. Not all DB instance classes are available in all AWS
      * Regions. </p> <p>If you modify the DB instance class, an outage occurs during
      * the change. The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
@@ -119,7 +119,7 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance; for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * <code>db.r5.large</code>. Not all DB instance classes are available in all AWS
      * Regions. </p> <p>If you modify the DB instance class, an outage occurs during
      * the change. The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
@@ -129,7 +129,7 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance; for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * <code>db.r5.large</code>. Not all DB instance classes are available in all AWS
      * Regions. </p> <p>If you modify the DB instance class, an outage occurs during
      * the change. The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
@@ -139,7 +139,7 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance; for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * <code>db.r5.large</code>. Not all DB instance classes are available in all AWS
      * Regions. </p> <p>If you modify the DB instance class, an outage occurs during
      * the change. The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
@@ -149,7 +149,7 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance; for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * <code>db.r5.large</code>. Not all DB instance classes are available in all AWS
      * Regions. </p> <p>If you modify the DB instance class, an outage occurs during
      * the change. The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
@@ -159,7 +159,7 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance; for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * <code>db.r5.large</code>. Not all DB instance classes are available in all AWS
      * Regions. </p> <p>If you modify the DB instance class, an outage occurs during
      * the change. The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
@@ -169,7 +169,7 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance; for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * <code>db.r5.large</code>. Not all DB instance classes are available in all AWS
      * Regions. </p> <p>If you modify the DB instance class, an outage occurs during
      * the change. The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
@@ -179,7 +179,7 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance; for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * <code>db.r5.large</code>. Not all DB instance classes are available in all AWS
      * Regions. </p> <p>If you modify the DB instance class, an outage occurs during
      * the change. The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this

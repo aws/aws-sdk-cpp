@@ -69,6 +69,8 @@
 #include <aws/docdb/model/ResetDBClusterParameterGroupRequest.h>
 #include <aws/docdb/model/RestoreDBClusterFromSnapshotRequest.h>
 #include <aws/docdb/model/RestoreDBClusterToPointInTimeRequest.h>
+#include <aws/docdb/model/StartDBClusterRequest.h>
+#include <aws/docdb/model/StopDBClusterRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -1516,6 +1518,76 @@ void DocDBClient::RestoreDBClusterToPointInTimeAsync(const RestoreDBClusterToPoi
 void DocDBClient::RestoreDBClusterToPointInTimeAsyncHelper(const RestoreDBClusterToPointInTimeRequest& request, const RestoreDBClusterToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RestoreDBClusterToPointInTime(request), context);
+}
+
+StartDBClusterOutcome DocDBClient::StartDBCluster(const StartDBClusterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StartDBClusterOutcome(StartDBClusterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartDBClusterOutcome(outcome.GetError());
+  }
+}
+
+StartDBClusterOutcomeCallable DocDBClient::StartDBClusterCallable(const StartDBClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartDBClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDBCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DocDBClient::StartDBClusterAsync(const StartDBClusterRequest& request, const StartDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartDBClusterAsyncHelper( request, handler, context ); } );
+}
+
+void DocDBClient::StartDBClusterAsyncHelper(const StartDBClusterRequest& request, const StartDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartDBCluster(request), context);
+}
+
+StopDBClusterOutcome DocDBClient::StopDBCluster(const StopDBClusterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StopDBClusterOutcome(StopDBClusterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopDBClusterOutcome(outcome.GetError());
+  }
+}
+
+StopDBClusterOutcomeCallable DocDBClient::StopDBClusterCallable(const StopDBClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopDBClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopDBCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DocDBClient::StopDBClusterAsync(const StopDBClusterRequest& request, const StopDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopDBClusterAsyncHelper( request, handler, context ); } );
+}
+
+void DocDBClient::StopDBClusterAsyncHelper(const StopDBClusterRequest& request, const StopDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopDBCluster(request), context);
 }
 
 

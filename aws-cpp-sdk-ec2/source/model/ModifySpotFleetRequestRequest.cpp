@@ -25,7 +25,9 @@ ModifySpotFleetRequestRequest::ModifySpotFleetRequestRequest() :
     m_excessCapacityTerminationPolicyHasBeenSet(false),
     m_spotFleetRequestIdHasBeenSet(false),
     m_targetCapacity(0),
-    m_targetCapacityHasBeenSet(false)
+    m_targetCapacityHasBeenSet(false),
+    m_onDemandTargetCapacity(0),
+    m_onDemandTargetCapacityHasBeenSet(false)
 {
 }
 
@@ -46,6 +48,11 @@ Aws::String ModifySpotFleetRequestRequest::SerializePayload() const
   if(m_targetCapacityHasBeenSet)
   {
     ss << "TargetCapacity=" << m_targetCapacity << "&";
+  }
+
+  if(m_onDemandTargetCapacityHasBeenSet)
+  {
+    ss << "OnDemandTargetCapacity=" << m_onDemandTargetCapacity << "&";
   }
 
   ss << "Version=2016-11-15";

@@ -736,6 +736,43 @@ namespace Model
      */
     inline RestoreDBClusterFromSnapshotRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
+
+    /**
+     * <p>Specifies whether this cluster can be deleted. If
+     * <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless
+     * it is modified and <code>DeletionProtection</code> is disabled.
+     * <code>DeletionProtection</code> protects clusters from being accidentally
+     * deleted.</p>
+     */
+    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+
+    /**
+     * <p>Specifies whether this cluster can be deleted. If
+     * <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless
+     * it is modified and <code>DeletionProtection</code> is disabled.
+     * <code>DeletionProtection</code> protects clusters from being accidentally
+     * deleted.</p>
+     */
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+
+    /**
+     * <p>Specifies whether this cluster can be deleted. If
+     * <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless
+     * it is modified and <code>DeletionProtection</code> is disabled.
+     * <code>DeletionProtection</code> protects clusters from being accidentally
+     * deleted.</p>
+     */
+    inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
+
+    /**
+     * <p>Specifies whether this cluster can be deleted. If
+     * <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless
+     * it is modified and <code>DeletionProtection</code> is disabled.
+     * <code>DeletionProtection</code> protects clusters from being accidentally
+     * deleted.</p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -770,6 +807,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
     bool m_enableCloudwatchLogsExportsHasBeenSet;
+
+    bool m_deletionProtection;
+    bool m_deletionProtectionHasBeenSet;
   };
 
 } // namespace Model

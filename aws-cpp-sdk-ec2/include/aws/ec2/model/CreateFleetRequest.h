@@ -185,32 +185,32 @@ namespace Model
 
 
     /**
-     * <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
+     * <p>Describes the configuration of On-Demand Instances in an EC2 Fleet.</p>
      */
     inline const OnDemandOptionsRequest& GetOnDemandOptions() const{ return m_onDemandOptions; }
 
     /**
-     * <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
+     * <p>Describes the configuration of On-Demand Instances in an EC2 Fleet.</p>
      */
     inline bool OnDemandOptionsHasBeenSet() const { return m_onDemandOptionsHasBeenSet; }
 
     /**
-     * <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
+     * <p>Describes the configuration of On-Demand Instances in an EC2 Fleet.</p>
      */
     inline void SetOnDemandOptions(const OnDemandOptionsRequest& value) { m_onDemandOptionsHasBeenSet = true; m_onDemandOptions = value; }
 
     /**
-     * <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
+     * <p>Describes the configuration of On-Demand Instances in an EC2 Fleet.</p>
      */
     inline void SetOnDemandOptions(OnDemandOptionsRequest&& value) { m_onDemandOptionsHasBeenSet = true; m_onDemandOptions = std::move(value); }
 
     /**
-     * <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
+     * <p>Describes the configuration of On-Demand Instances in an EC2 Fleet.</p>
      */
     inline CreateFleetRequest& WithOnDemandOptions(const OnDemandOptionsRequest& value) { SetOnDemandOptions(value); return *this;}
 
     /**
-     * <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
+     * <p>Describes the configuration of On-Demand Instances in an EC2 Fleet.</p>
      */
     inline CreateFleetRequest& WithOnDemandOptions(OnDemandOptionsRequest&& value) { SetOnDemandOptions(std::move(value)); return *this;}
 
@@ -300,44 +300,32 @@ namespace Model
 
 
     /**
-     * <p>The <code>TotalTargetCapacity</code>, <code>OnDemandTargetCapacity</code>,
-     * <code>SpotTargetCapacity</code>, and <code>DefaultCapacityType</code>
-     * structure.</p>
+     * <p>The number of units to request.</p>
      */
     inline const TargetCapacitySpecificationRequest& GetTargetCapacitySpecification() const{ return m_targetCapacitySpecification; }
 
     /**
-     * <p>The <code>TotalTargetCapacity</code>, <code>OnDemandTargetCapacity</code>,
-     * <code>SpotTargetCapacity</code>, and <code>DefaultCapacityType</code>
-     * structure.</p>
+     * <p>The number of units to request.</p>
      */
     inline bool TargetCapacitySpecificationHasBeenSet() const { return m_targetCapacitySpecificationHasBeenSet; }
 
     /**
-     * <p>The <code>TotalTargetCapacity</code>, <code>OnDemandTargetCapacity</code>,
-     * <code>SpotTargetCapacity</code>, and <code>DefaultCapacityType</code>
-     * structure.</p>
+     * <p>The number of units to request.</p>
      */
     inline void SetTargetCapacitySpecification(const TargetCapacitySpecificationRequest& value) { m_targetCapacitySpecificationHasBeenSet = true; m_targetCapacitySpecification = value; }
 
     /**
-     * <p>The <code>TotalTargetCapacity</code>, <code>OnDemandTargetCapacity</code>,
-     * <code>SpotTargetCapacity</code>, and <code>DefaultCapacityType</code>
-     * structure.</p>
+     * <p>The number of units to request.</p>
      */
     inline void SetTargetCapacitySpecification(TargetCapacitySpecificationRequest&& value) { m_targetCapacitySpecificationHasBeenSet = true; m_targetCapacitySpecification = std::move(value); }
 
     /**
-     * <p>The <code>TotalTargetCapacity</code>, <code>OnDemandTargetCapacity</code>,
-     * <code>SpotTargetCapacity</code>, and <code>DefaultCapacityType</code>
-     * structure.</p>
+     * <p>The number of units to request.</p>
      */
     inline CreateFleetRequest& WithTargetCapacitySpecification(const TargetCapacitySpecificationRequest& value) { SetTargetCapacitySpecification(value); return *this;}
 
     /**
-     * <p>The <code>TotalTargetCapacity</code>, <code>OnDemandTargetCapacity</code>,
-     * <code>SpotTargetCapacity</code>, and <code>DefaultCapacityType</code>
-     * structure.</p>
+     * <p>The number of units to request.</p>
      */
     inline CreateFleetRequest& WithTargetCapacitySpecification(TargetCapacitySpecificationRequest&& value) { SetTargetCapacitySpecification(std::move(value)); return *this;}
 

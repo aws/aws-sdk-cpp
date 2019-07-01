@@ -88,42 +88,58 @@ namespace Model
 
 
     /**
-     * <p>The tag to add to the specified resource.</p>
+     * <p>The tag to add to the specified resource. Specifying the tag key is required.
+     * You can set the value of a tag to an empty string, but you can't set the value
+     * of a tag to null.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tag to add to the specified resource.</p>
+     * <p>The tag to add to the specified resource. Specifying the tag key is required.
+     * You can set the value of a tag to an empty string, but you can't set the value
+     * of a tag to null.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tag to add to the specified resource.</p>
+     * <p>The tag to add to the specified resource. Specifying the tag key is required.
+     * You can set the value of a tag to an empty string, but you can't set the value
+     * of a tag to null.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tag to add to the specified resource.</p>
+     * <p>The tag to add to the specified resource. Specifying the tag key is required.
+     * You can set the value of a tag to an empty string, but you can't set the value
+     * of a tag to null.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tag to add to the specified resource.</p>
+     * <p>The tag to add to the specified resource. Specifying the tag key is required.
+     * You can set the value of a tag to an empty string, but you can't set the value
+     * of a tag to null.</p>
      */
     inline TagResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tag to add to the specified resource.</p>
+     * <p>The tag to add to the specified resource. Specifying the tag key is required.
+     * You can set the value of a tag to an empty string, but you can't set the value
+     * of a tag to null.</p>
      */
     inline TagResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tag to add to the specified resource.</p>
+     * <p>The tag to add to the specified resource. Specifying the tag key is required.
+     * You can set the value of a tag to an empty string, but you can't set the value
+     * of a tag to null.</p>
      */
     inline TagResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tag to add to the specified resource.</p>
+     * <p>The tag to add to the specified resource. Specifying the tag key is required.
+     * You can set the value of a tag to an empty string, but you can't set the value
+     * of a tag to null.</p>
      */
     inline TagResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
