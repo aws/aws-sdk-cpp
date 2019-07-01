@@ -79,8 +79,14 @@ namespace Aws
              * Socket read timeouts for HTTP clients on Windows. Default 3000 ms. This should be more than adequate for most services. However, if you are transfering large amounts of data
              * or are worried about higher latencies, you should set to something that makes more sense for your use case.
              * For Curl, it's the low speed time, which contains the time in number milliseconds that transfer speed should be below "lowSpeedLimit" for the library to consider it too slow and abort.
+             * Note that for Curl this config is converted to seconds by rounding down to the nearest whole second except when the value is greater than 0 and less than 1000. In this case it is set to one second.
              */
             long requestTimeoutMs;
+            /**
+             * Since "requestTimeoutMs" was used to set the low speed time for Curl, this configuration is used to set maximum time a Curl request is allowed to take.
+             * The resolution of this config is milliseconds. If set to 0, a request timeout for Curl is disabled.
+             */
+            long curlRequestTimeoutMs;
             /**
              * Socket connect timeout. Default 1000 ms. Unless you are very far away from your the data center you are talking to. 1000ms is more than sufficient.
              */

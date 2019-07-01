@@ -428,7 +428,7 @@ int CurlDebugCallback(CURL *handle, curl_infotype type, char *data, size_t size,
 
 CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     Base(),   
-    m_curlHandleContainer(clientConfig.maxConnections, clientConfig.requestTimeoutMs, clientConfig.connectTimeoutMs,
+    m_curlHandleContainer(clientConfig.maxConnections, clientConfig.requestTimeoutMs, clientConfig.curlRequestTimeoutMs, clientConfig.connectTimeoutMs,
                           clientConfig.enableTcpKeepAlive, clientConfig.tcpKeepAliveIntervalMs, clientConfig.lowSpeedLimit),
     m_isUsingProxy(!clientConfig.proxyHost.empty()), m_proxyUserName(clientConfig.proxyUserName),
     m_proxyPassword(clientConfig.proxyPassword), m_proxyScheme(SchemeMapper::ToString(clientConfig.proxyScheme)), m_proxyHost(clientConfig.proxyHost),
@@ -436,7 +436,7 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     m_proxySSLKeyPath(clientConfig.proxySSLKeyPath), m_proxySSLKeyType(clientConfig.proxySSLKeyType),
     m_proxyKeyPasswd(clientConfig.proxySSLKeyPassword),
     m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_caPath(clientConfig.caPath),
-    m_caFile(clientConfig.caFile), 
+    m_caFile(clientConfig.caFile),
     m_disableExpectHeader(clientConfig.disableExpectHeader),
     m_allowRedirects(clientConfig.followRedirects)
 {

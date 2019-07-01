@@ -38,7 +38,7 @@ public:
       * Initializes an empty stack of CURL handles. If you are only making synchronous calls via your http client
       * then a small size is best. For async support, a good value would be 6 * number of Processors.   *
       */
-    CurlHandleContainer(unsigned maxSize = 50, long requestTimeout = 3000, long connectTimeout = 1000,
+    CurlHandleContainer(unsigned maxSize = 50, long lowSpeedTimeout = 3000, long requestTimeout = 0, long connectTimeout = 1000,
                         bool tcpKeepAlive = true, unsigned long tcpKeepAliveIntervalMs = 30000, unsigned long lowSpeedLimit = 1);
     ~CurlHandleContainer();
 
@@ -63,6 +63,7 @@ private:
 
     Aws::Utils::ExclusiveOwnershipResourceManager<CURL*> m_handleContainer;
     unsigned m_maxPoolSize;
+    unsigned long m_lowSpeedTimeout;
     unsigned long m_requestTimeout;
     unsigned long m_connectTimeout;
     bool m_enableTcpKeepAlive;
