@@ -51,63 +51,63 @@ namespace Model
 
     /**
      * <p>The identifiers of the subnets to which a network interface is attached from
-     * the fleet instance or image builder instance. Fleet instances use one or two
+     * the fleet instance or image builder instance. Fleet instances use one or more
      * subnets. Image builder instances use one subnet.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
      * <p>The identifiers of the subnets to which a network interface is attached from
-     * the fleet instance or image builder instance. Fleet instances use one or two
+     * the fleet instance or image builder instance. Fleet instances use one or more
      * subnets. Image builder instances use one subnet.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>The identifiers of the subnets to which a network interface is attached from
-     * the fleet instance or image builder instance. Fleet instances use one or two
+     * the fleet instance or image builder instance. Fleet instances use one or more
      * subnets. Image builder instances use one subnet.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
      * <p>The identifiers of the subnets to which a network interface is attached from
-     * the fleet instance or image builder instance. Fleet instances use one or two
+     * the fleet instance or image builder instance. Fleet instances use one or more
      * subnets. Image builder instances use one subnet.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
      * <p>The identifiers of the subnets to which a network interface is attached from
-     * the fleet instance or image builder instance. Fleet instances use one or two
+     * the fleet instance or image builder instance. Fleet instances use one or more
      * subnets. Image builder instances use one subnet.</p>
      */
     inline VpcConfig& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
      * <p>The identifiers of the subnets to which a network interface is attached from
-     * the fleet instance or image builder instance. Fleet instances use one or two
+     * the fleet instance or image builder instance. Fleet instances use one or more
      * subnets. Image builder instances use one subnet.</p>
      */
     inline VpcConfig& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
      * <p>The identifiers of the subnets to which a network interface is attached from
-     * the fleet instance or image builder instance. Fleet instances use one or two
+     * the fleet instance or image builder instance. Fleet instances use one or more
      * subnets. Image builder instances use one subnet.</p>
      */
     inline VpcConfig& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
      * <p>The identifiers of the subnets to which a network interface is attached from
-     * the fleet instance or image builder instance. Fleet instances use one or two
+     * the fleet instance or image builder instance. Fleet instances use one or more
      * subnets. Image builder instances use one subnet.</p>
      */
     inline VpcConfig& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The identifiers of the subnets to which a network interface is attached from
-     * the fleet instance or image builder instance. Fleet instances use one or two
+     * the fleet instance or image builder instance. Fleet instances use one or more
      * subnets. Image builder instances use one subnet.</p>
      */
     inline VpcConfig& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }

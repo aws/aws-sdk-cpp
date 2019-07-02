@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/mediastore/model/CreateContainerRequest.h>
+#include <aws/mediastore/model/UntagResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,40 +22,40 @@ using namespace Aws::MediaStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateContainerRequest::CreateContainerRequest() : 
-    m_containerNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+UntagResourceRequest::UntagResourceRequest() : 
+    m_resourceHasBeenSet(false),
+    m_tagKeysHasBeenSet(false)
 {
 }
 
-Aws::String CreateContainerRequest::SerializePayload() const
+Aws::String UntagResourceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_containerNameHasBeenSet)
+  if(m_resourceHasBeenSet)
   {
-   payload.WithString("ContainerName", m_containerName);
+   payload.WithString("Resource", m_resource);
 
   }
 
-  if(m_tagsHasBeenSet)
+  if(m_tagKeysHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
+   for(unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex)
    {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+     tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
    }
-   payload.WithArray("Tags", std::move(tagsJsonList));
+   payload.WithArray("TagKeys", std::move(tagKeysJsonList));
 
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateContainerRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection UntagResourceRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "MediaStore_20170901.CreateContainer"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "MediaStore_20170901.UntagResource"));
   return headers;
 
 }

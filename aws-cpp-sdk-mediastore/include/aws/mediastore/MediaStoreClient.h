@@ -31,11 +31,14 @@
 #include <aws/mediastore/model/GetCorsPolicyResult.h>
 #include <aws/mediastore/model/GetLifecyclePolicyResult.h>
 #include <aws/mediastore/model/ListContainersResult.h>
+#include <aws/mediastore/model/ListTagsForResourceResult.h>
 #include <aws/mediastore/model/PutContainerPolicyResult.h>
 #include <aws/mediastore/model/PutCorsPolicyResult.h>
 #include <aws/mediastore/model/PutLifecyclePolicyResult.h>
 #include <aws/mediastore/model/StartAccessLoggingResult.h>
 #include <aws/mediastore/model/StopAccessLoggingResult.h>
+#include <aws/mediastore/model/TagResourceResult.h>
+#include <aws/mediastore/model/UntagResourceResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -85,11 +88,14 @@ namespace Model
         class GetCorsPolicyRequest;
         class GetLifecyclePolicyRequest;
         class ListContainersRequest;
+        class ListTagsForResourceRequest;
         class PutContainerPolicyRequest;
         class PutCorsPolicyRequest;
         class PutLifecyclePolicyRequest;
         class StartAccessLoggingRequest;
         class StopAccessLoggingRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
 
         typedef Aws::Utils::Outcome<CreateContainerResult, Aws::Client::AWSError<MediaStoreErrors>> CreateContainerOutcome;
         typedef Aws::Utils::Outcome<DeleteContainerResult, Aws::Client::AWSError<MediaStoreErrors>> DeleteContainerOutcome;
@@ -101,11 +107,14 @@ namespace Model
         typedef Aws::Utils::Outcome<GetCorsPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> GetCorsPolicyOutcome;
         typedef Aws::Utils::Outcome<GetLifecyclePolicyResult, Aws::Client::AWSError<MediaStoreErrors>> GetLifecyclePolicyOutcome;
         typedef Aws::Utils::Outcome<ListContainersResult, Aws::Client::AWSError<MediaStoreErrors>> ListContainersOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<MediaStoreErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutContainerPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> PutContainerPolicyOutcome;
         typedef Aws::Utils::Outcome<PutCorsPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> PutCorsPolicyOutcome;
         typedef Aws::Utils::Outcome<PutLifecyclePolicyResult, Aws::Client::AWSError<MediaStoreErrors>> PutLifecyclePolicyOutcome;
         typedef Aws::Utils::Outcome<StartAccessLoggingResult, Aws::Client::AWSError<MediaStoreErrors>> StartAccessLoggingOutcome;
         typedef Aws::Utils::Outcome<StopAccessLoggingResult, Aws::Client::AWSError<MediaStoreErrors>> StopAccessLoggingOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<MediaStoreErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<MediaStoreErrors>> UntagResourceOutcome;
 
         typedef std::future<CreateContainerOutcome> CreateContainerOutcomeCallable;
         typedef std::future<DeleteContainerOutcome> DeleteContainerOutcomeCallable;
@@ -117,11 +126,14 @@ namespace Model
         typedef std::future<GetCorsPolicyOutcome> GetCorsPolicyOutcomeCallable;
         typedef std::future<GetLifecyclePolicyOutcome> GetLifecyclePolicyOutcomeCallable;
         typedef std::future<ListContainersOutcome> ListContainersOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutContainerPolicyOutcome> PutContainerPolicyOutcomeCallable;
         typedef std::future<PutCorsPolicyOutcome> PutCorsPolicyOutcomeCallable;
         typedef std::future<PutLifecyclePolicyOutcome> PutLifecyclePolicyOutcomeCallable;
         typedef std::future<StartAccessLoggingOutcome> StartAccessLoggingOutcomeCallable;
         typedef std::future<StopAccessLoggingOutcome> StopAccessLoggingOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 } // namespace Model
 
   class MediaStoreClient;
@@ -136,11 +148,14 @@ namespace Model
     typedef std::function<void(const MediaStoreClient*, const Model::GetCorsPolicyRequest&, const Model::GetCorsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCorsPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::GetLifecyclePolicyRequest&, const Model::GetLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLifecyclePolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::ListContainersRequest&, const Model::ListContainersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContainersResponseReceivedHandler;
+    typedef std::function<void(const MediaStoreClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::PutContainerPolicyRequest&, const Model::PutContainerPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutContainerPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::PutCorsPolicyRequest&, const Model::PutCorsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutCorsPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::PutLifecyclePolicyRequest&, const Model::PutLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLifecyclePolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::StartAccessLoggingRequest&, const Model::StartAccessLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAccessLoggingResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::StopAccessLoggingRequest&, const Model::StopAccessLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopAccessLoggingResponseReceivedHandler;
+    typedef std::function<void(const MediaStoreClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const MediaStoreClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
    * <p>An AWS Elemental MediaStore container is a namespace that holds folders and
@@ -525,6 +540,34 @@ namespace Model
         virtual void ListContainersAsync(const Model::ListContainersRequest& request, const ListContainersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of the tags assigned to the specified container.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Returns a list of the tags assigned to the specified container.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Returns a list of the tags assigned to the specified container.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an access policy for the specified container to restrict the users
          * and clients that can access it. For information about the data that is included
          * in an access policy, see the <a
@@ -736,6 +779,80 @@ namespace Model
          */
         virtual void StopAccessLoggingAsync(const Model::StopAccessLoggingRequest& request, const StopAccessLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Adds tags to the specified AWS Elemental MediaStore container. Tags are
+         * key:value pairs that you can associate with AWS resources. For example, the tag
+         * key might be "customer" and the tag value might be "companyA." You can specify
+         * one or more tags to add to each container. You can add up to 50 tags to each
+         * container. For more information about tagging, including naming and usage
+         * conventions, see <a
+         * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources
+         * in MediaStore</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds tags to the specified AWS Elemental MediaStore container. Tags are
+         * key:value pairs that you can associate with AWS resources. For example, the tag
+         * key might be "customer" and the tag value might be "companyA." You can specify
+         * one or more tags to add to each container. You can add up to 50 tags to each
+         * container. For more information about tagging, including naming and usage
+         * conventions, see <a
+         * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources
+         * in MediaStore</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds tags to the specified AWS Elemental MediaStore container. Tags are
+         * key:value pairs that you can associate with AWS resources. For example, the tag
+         * key might be "customer" and the tag value might be "companyA." You can specify
+         * one or more tags to add to each container. You can add up to 50 tags to each
+         * container. For more information about tagging, including naming and usage
+         * conventions, see <a
+         * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources
+         * in MediaStore</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes tags from the specified container. You can specify one or more tags
+         * to remove. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from the specified container. You can specify one or more tags
+         * to remove. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from the specified container. You can specify one or more tags
+         * to remove. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -750,11 +867,14 @@ namespace Model
         void GetCorsPolicyAsyncHelper(const Model::GetCorsPolicyRequest& request, const GetCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLifecyclePolicyAsyncHelper(const Model::GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListContainersAsyncHelper(const Model::ListContainersRequest& request, const ListContainersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutContainerPolicyAsyncHelper(const Model::PutContainerPolicyRequest& request, const PutContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutCorsPolicyAsyncHelper(const Model::PutCorsPolicyRequest& request, const PutCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLifecyclePolicyAsyncHelper(const Model::PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartAccessLoggingAsyncHelper(const Model::StartAccessLoggingRequest& request, const StartAccessLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopAccessLoggingAsyncHelper(const Model::StopAccessLoggingRequest& request, const StopAccessLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

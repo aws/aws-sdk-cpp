@@ -315,6 +315,55 @@ namespace Model
 
 
     /**
+     * <p>The name of the image builder that was used to create the private image. If
+     * the image is shared, this value is null.</p>
+     */
+    inline const Aws::String& GetImageBuilderName() const{ return m_imageBuilderName; }
+
+    /**
+     * <p>The name of the image builder that was used to create the private image. If
+     * the image is shared, this value is null.</p>
+     */
+    inline bool ImageBuilderNameHasBeenSet() const { return m_imageBuilderNameHasBeenSet; }
+
+    /**
+     * <p>The name of the image builder that was used to create the private image. If
+     * the image is shared, this value is null.</p>
+     */
+    inline void SetImageBuilderName(const Aws::String& value) { m_imageBuilderNameHasBeenSet = true; m_imageBuilderName = value; }
+
+    /**
+     * <p>The name of the image builder that was used to create the private image. If
+     * the image is shared, this value is null.</p>
+     */
+    inline void SetImageBuilderName(Aws::String&& value) { m_imageBuilderNameHasBeenSet = true; m_imageBuilderName = std::move(value); }
+
+    /**
+     * <p>The name of the image builder that was used to create the private image. If
+     * the image is shared, this value is null.</p>
+     */
+    inline void SetImageBuilderName(const char* value) { m_imageBuilderNameHasBeenSet = true; m_imageBuilderName.assign(value); }
+
+    /**
+     * <p>The name of the image builder that was used to create the private image. If
+     * the image is shared, this value is null.</p>
+     */
+    inline Image& WithImageBuilderName(const Aws::String& value) { SetImageBuilderName(value); return *this;}
+
+    /**
+     * <p>The name of the image builder that was used to create the private image. If
+     * the image is shared, this value is null.</p>
+     */
+    inline Image& WithImageBuilderName(Aws::String&& value) { SetImageBuilderName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the image builder that was used to create the private image. If
+     * the image is shared, this value is null.</p>
+     */
+    inline Image& WithImageBuilderName(const char* value) { SetImageBuilderName(value); return *this;}
+
+
+    /**
      * <p>The operating system platform of the image.</p>
      */
     inline const PlatformType& GetPlatform() const{ return m_platform; }
@@ -633,6 +682,9 @@ namespace Model
 
     bool m_imageBuilderSupported;
     bool m_imageBuilderSupportedHasBeenSet;
+
+    Aws::String m_imageBuilderName;
+    bool m_imageBuilderNameHasBeenSet;
 
     PlatformType m_platform;
     bool m_platformHasBeenSet;

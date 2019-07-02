@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/mediastore/model/CreateContainerRequest.h>
+#include <aws/mediastore/model/TagResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,19 +22,19 @@ using namespace Aws::MediaStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateContainerRequest::CreateContainerRequest() : 
-    m_containerNameHasBeenSet(false),
+TagResourceRequest::TagResourceRequest() : 
+    m_resourceHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
-Aws::String CreateContainerRequest::SerializePayload() const
+Aws::String TagResourceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_containerNameHasBeenSet)
+  if(m_resourceHasBeenSet)
   {
-   payload.WithString("ContainerName", m_containerName);
+   payload.WithString("Resource", m_resource);
 
   }
 
@@ -52,10 +52,10 @@ Aws::String CreateContainerRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateContainerRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection TagResourceRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "MediaStore_20170901.CreateContainer"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "MediaStore_20170901.TagResource"));
   return headers;
 
 }

@@ -623,7 +623,7 @@ namespace Model
      * <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
      * <p>To prevent users from being disconnected due to inactivity, specify a value
      * of 0. Otherwise, specify a value between 60 and 3600. The default value is
-     * 900.</p> <note> <p>If you enable this feature, we recommend that you specify a
+     * 0.</p> <note> <p>If you enable this feature, we recommend that you specify a
      * value that corresponds exactly to a whole number of minutes (for example, 60,
      * 120, and 180). If you don't do this, the value is rounded to the nearest minute.
      * For example, if you specify a value of 70, users are disconnected after 1 minute
@@ -647,7 +647,7 @@ namespace Model
      * <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
      * <p>To prevent users from being disconnected due to inactivity, specify a value
      * of 0. Otherwise, specify a value between 60 and 3600. The default value is
-     * 900.</p> <note> <p>If you enable this feature, we recommend that you specify a
+     * 0.</p> <note> <p>If you enable this feature, we recommend that you specify a
      * value that corresponds exactly to a whole number of minutes (for example, 60,
      * 120, and 180). If you don't do this, the value is rounded to the nearest minute.
      * For example, if you specify a value of 70, users are disconnected after 1 minute
@@ -671,7 +671,7 @@ namespace Model
      * <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
      * <p>To prevent users from being disconnected due to inactivity, specify a value
      * of 0. Otherwise, specify a value between 60 and 3600. The default value is
-     * 900.</p> <note> <p>If you enable this feature, we recommend that you specify a
+     * 0.</p> <note> <p>If you enable this feature, we recommend that you specify a
      * value that corresponds exactly to a whole number of minutes (for example, 60,
      * 120, and 180). If you don't do this, the value is rounded to the nearest minute.
      * For example, if you specify a value of 70, users are disconnected after 1 minute
@@ -695,7 +695,7 @@ namespace Model
      * <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
      * <p>To prevent users from being disconnected due to inactivity, specify a value
      * of 0. Otherwise, specify a value between 60 and 3600. The default value is
-     * 900.</p> <note> <p>If you enable this feature, we recommend that you specify a
+     * 0.</p> <note> <p>If you enable this feature, we recommend that you specify a
      * value that corresponds exactly to a whole number of minutes (for example, 60,
      * 120, and 180). If you don't do this, the value is rounded to the nearest minute.
      * For example, if you specify a value of 70, users are disconnected after 1 minute

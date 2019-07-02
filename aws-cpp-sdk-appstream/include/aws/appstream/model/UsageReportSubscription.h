@@ -53,66 +53,90 @@ namespace Model
 
 
     /**
-     * <p>The Amazon S3 bucket where generated reports are stored. When a usage report
-     * subscription is enabled for the first time for an account in an AWS Region, an
-     * S3 bucket is created. The bucket is unique to the AWS account and the
-     * Region.</p>
+     * <p>The Amazon S3 bucket where generated reports are stored.</p> <p>If you
+     * enabled on-instance session scripts and Amazon S3 logging for your session
+     * script configuration, AppStream 2.0 created an S3 bucket to store the script
+     * output. The bucket is unique to your account and Region. When you enable usage
+     * reporting in this case, AppStream 2.0 uses the same bucket to store your usage
+     * reports. If you haven't already enabled on-instance session scripts, when you
+     * enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
 
     /**
-     * <p>The Amazon S3 bucket where generated reports are stored. When a usage report
-     * subscription is enabled for the first time for an account in an AWS Region, an
-     * S3 bucket is created. The bucket is unique to the AWS account and the
-     * Region.</p>
+     * <p>The Amazon S3 bucket where generated reports are stored.</p> <p>If you
+     * enabled on-instance session scripts and Amazon S3 logging for your session
+     * script configuration, AppStream 2.0 created an S3 bucket to store the script
+     * output. The bucket is unique to your account and Region. When you enable usage
+     * reporting in this case, AppStream 2.0 uses the same bucket to store your usage
+     * reports. If you haven't already enabled on-instance session scripts, when you
+     * enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
      */
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 bucket where generated reports are stored. When a usage report
-     * subscription is enabled for the first time for an account in an AWS Region, an
-     * S3 bucket is created. The bucket is unique to the AWS account and the
-     * Region.</p>
+     * <p>The Amazon S3 bucket where generated reports are stored.</p> <p>If you
+     * enabled on-instance session scripts and Amazon S3 logging for your session
+     * script configuration, AppStream 2.0 created an S3 bucket to store the script
+     * output. The bucket is unique to your account and Region. When you enable usage
+     * reporting in this case, AppStream 2.0 uses the same bucket to store your usage
+     * reports. If you haven't already enabled on-instance session scripts, when you
+     * enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
      */
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
 
     /**
-     * <p>The Amazon S3 bucket where generated reports are stored. When a usage report
-     * subscription is enabled for the first time for an account in an AWS Region, an
-     * S3 bucket is created. The bucket is unique to the AWS account and the
-     * Region.</p>
+     * <p>The Amazon S3 bucket where generated reports are stored.</p> <p>If you
+     * enabled on-instance session scripts and Amazon S3 logging for your session
+     * script configuration, AppStream 2.0 created an S3 bucket to store the script
+     * output. The bucket is unique to your account and Region. When you enable usage
+     * reporting in this case, AppStream 2.0 uses the same bucket to store your usage
+     * reports. If you haven't already enabled on-instance session scripts, when you
+     * enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
      */
     inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
 
     /**
-     * <p>The Amazon S3 bucket where generated reports are stored. When a usage report
-     * subscription is enabled for the first time for an account in an AWS Region, an
-     * S3 bucket is created. The bucket is unique to the AWS account and the
-     * Region.</p>
+     * <p>The Amazon S3 bucket where generated reports are stored.</p> <p>If you
+     * enabled on-instance session scripts and Amazon S3 logging for your session
+     * script configuration, AppStream 2.0 created an S3 bucket to store the script
+     * output. The bucket is unique to your account and Region. When you enable usage
+     * reporting in this case, AppStream 2.0 uses the same bucket to store your usage
+     * reports. If you haven't already enabled on-instance session scripts, when you
+     * enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
      */
     inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
 
     /**
-     * <p>The Amazon S3 bucket where generated reports are stored. When a usage report
-     * subscription is enabled for the first time for an account in an AWS Region, an
-     * S3 bucket is created. The bucket is unique to the AWS account and the
-     * Region.</p>
+     * <p>The Amazon S3 bucket where generated reports are stored.</p> <p>If you
+     * enabled on-instance session scripts and Amazon S3 logging for your session
+     * script configuration, AppStream 2.0 created an S3 bucket to store the script
+     * output. The bucket is unique to your account and Region. When you enable usage
+     * reporting in this case, AppStream 2.0 uses the same bucket to store your usage
+     * reports. If you haven't already enabled on-instance session scripts, when you
+     * enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
      */
     inline UsageReportSubscription& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket where generated reports are stored. When a usage report
-     * subscription is enabled for the first time for an account in an AWS Region, an
-     * S3 bucket is created. The bucket is unique to the AWS account and the
-     * Region.</p>
+     * <p>The Amazon S3 bucket where generated reports are stored.</p> <p>If you
+     * enabled on-instance session scripts and Amazon S3 logging for your session
+     * script configuration, AppStream 2.0 created an S3 bucket to store the script
+     * output. The bucket is unique to your account and Region. When you enable usage
+     * reporting in this case, AppStream 2.0 uses the same bucket to store your usage
+     * reports. If you haven't already enabled on-instance session scripts, when you
+     * enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
      */
     inline UsageReportSubscription& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket where generated reports are stored. When a usage report
-     * subscription is enabled for the first time for an account in an AWS Region, an
-     * S3 bucket is created. The bucket is unique to the AWS account and the
-     * Region.</p>
+     * <p>The Amazon S3 bucket where generated reports are stored.</p> <p>If you
+     * enabled on-instance session scripts and Amazon S3 logging for your session
+     * script configuration, AppStream 2.0 created an S3 bucket to store the script
+     * output. The bucket is unique to your account and Region. When you enable usage
+     * reporting in this case, AppStream 2.0 uses the same bucket to store your usage
+     * reports. If you haven't already enabled on-instance session scripts, when you
+     * enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
      */
     inline UsageReportSubscription& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
 
@@ -180,42 +204,42 @@ namespace Model
 
 
     /**
-     * <p>The errors that are returned when usage reports can't be generated.</p>
+     * <p>The errors that were returned if usage reports couldn't be generated.</p>
      */
     inline const Aws::Vector<LastReportGenerationExecutionError>& GetSubscriptionErrors() const{ return m_subscriptionErrors; }
 
     /**
-     * <p>The errors that are returned when usage reports can't be generated.</p>
+     * <p>The errors that were returned if usage reports couldn't be generated.</p>
      */
     inline bool SubscriptionErrorsHasBeenSet() const { return m_subscriptionErrorsHasBeenSet; }
 
     /**
-     * <p>The errors that are returned when usage reports can't be generated.</p>
+     * <p>The errors that were returned if usage reports couldn't be generated.</p>
      */
     inline void SetSubscriptionErrors(const Aws::Vector<LastReportGenerationExecutionError>& value) { m_subscriptionErrorsHasBeenSet = true; m_subscriptionErrors = value; }
 
     /**
-     * <p>The errors that are returned when usage reports can't be generated.</p>
+     * <p>The errors that were returned if usage reports couldn't be generated.</p>
      */
     inline void SetSubscriptionErrors(Aws::Vector<LastReportGenerationExecutionError>&& value) { m_subscriptionErrorsHasBeenSet = true; m_subscriptionErrors = std::move(value); }
 
     /**
-     * <p>The errors that are returned when usage reports can't be generated.</p>
+     * <p>The errors that were returned if usage reports couldn't be generated.</p>
      */
     inline UsageReportSubscription& WithSubscriptionErrors(const Aws::Vector<LastReportGenerationExecutionError>& value) { SetSubscriptionErrors(value); return *this;}
 
     /**
-     * <p>The errors that are returned when usage reports can't be generated.</p>
+     * <p>The errors that were returned if usage reports couldn't be generated.</p>
      */
     inline UsageReportSubscription& WithSubscriptionErrors(Aws::Vector<LastReportGenerationExecutionError>&& value) { SetSubscriptionErrors(std::move(value)); return *this;}
 
     /**
-     * <p>The errors that are returned when usage reports can't be generated.</p>
+     * <p>The errors that were returned if usage reports couldn't be generated.</p>
      */
     inline UsageReportSubscription& AddSubscriptionErrors(const LastReportGenerationExecutionError& value) { m_subscriptionErrorsHasBeenSet = true; m_subscriptionErrors.push_back(value); return *this; }
 
     /**
-     * <p>The errors that are returned when usage reports can't be generated.</p>
+     * <p>The errors that were returned if usage reports couldn't be generated.</p>
      */
     inline UsageReportSubscription& AddSubscriptionErrors(LastReportGenerationExecutionError&& value) { m_subscriptionErrorsHasBeenSet = true; m_subscriptionErrors.push_back(std::move(value)); return *this; }
 

@@ -22,6 +22,7 @@
 #include <aws/appstream/model/ImageBuilderStateChangeReason.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/appstream/model/DomainJoinInfo.h>
+#include <aws/appstream/model/NetworkAccessConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appstream/model/ResourceError.h>
 #include <utility>
@@ -515,6 +516,25 @@ namespace Model
     inline ImageBuilder& WithDomainJoinInfo(DomainJoinInfo&& value) { SetDomainJoinInfo(std::move(value)); return *this;}
 
 
+    
+    inline const NetworkAccessConfiguration& GetNetworkAccessConfiguration() const{ return m_networkAccessConfiguration; }
+
+    
+    inline bool NetworkAccessConfigurationHasBeenSet() const { return m_networkAccessConfigurationHasBeenSet; }
+
+    
+    inline void SetNetworkAccessConfiguration(const NetworkAccessConfiguration& value) { m_networkAccessConfigurationHasBeenSet = true; m_networkAccessConfiguration = value; }
+
+    
+    inline void SetNetworkAccessConfiguration(NetworkAccessConfiguration&& value) { m_networkAccessConfigurationHasBeenSet = true; m_networkAccessConfiguration = std::move(value); }
+
+    
+    inline ImageBuilder& WithNetworkAccessConfiguration(const NetworkAccessConfiguration& value) { SetNetworkAccessConfiguration(value); return *this;}
+
+    
+    inline ImageBuilder& WithNetworkAccessConfiguration(NetworkAccessConfiguration&& value) { SetNetworkAccessConfiguration(std::move(value)); return *this;}
+
+
     /**
      * <p>The image builder errors.</p>
      */
@@ -644,6 +664,9 @@ namespace Model
 
     DomainJoinInfo m_domainJoinInfo;
     bool m_domainJoinInfoHasBeenSet;
+
+    NetworkAccessConfiguration m_networkAccessConfiguration;
+    bool m_networkAccessConfigurationHasBeenSet;
 
     Aws::Vector<ResourceError> m_imageBuilderErrors;
     bool m_imageBuilderErrorsHasBeenSet;

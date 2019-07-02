@@ -44,58 +44,79 @@ namespace Model
 
 
     /**
-     * <p>The Amazon S3 bucket where generated reports are stored. When a usage report
-     * subscription is enabled for the first time for an account in an AWS Region, an
-     * S3 bucket is created. The bucket is unique to the AWS account and the Region.
-     * </p>
+     * <p>The Amazon S3 bucket where generated reports are stored.</p> <p>If you
+     * enabled on-instance session scripts and Amazon S3 logging for your session
+     * script configuration, AppStream 2.0 created an S3 bucket to store the script
+     * output. The bucket is unique to your account and Region. When you enable usage
+     * reporting in this case, AppStream 2.0 uses the same bucket to store your usage
+     * reports. If you haven't already enabled on-instance session scripts, when you
+     * enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
 
     /**
-     * <p>The Amazon S3 bucket where generated reports are stored. When a usage report
-     * subscription is enabled for the first time for an account in an AWS Region, an
-     * S3 bucket is created. The bucket is unique to the AWS account and the Region.
-     * </p>
+     * <p>The Amazon S3 bucket where generated reports are stored.</p> <p>If you
+     * enabled on-instance session scripts and Amazon S3 logging for your session
+     * script configuration, AppStream 2.0 created an S3 bucket to store the script
+     * output. The bucket is unique to your account and Region. When you enable usage
+     * reporting in this case, AppStream 2.0 uses the same bucket to store your usage
+     * reports. If you haven't already enabled on-instance session scripts, when you
+     * enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
      */
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketName = value; }
 
     /**
-     * <p>The Amazon S3 bucket where generated reports are stored. When a usage report
-     * subscription is enabled for the first time for an account in an AWS Region, an
-     * S3 bucket is created. The bucket is unique to the AWS account and the Region.
-     * </p>
+     * <p>The Amazon S3 bucket where generated reports are stored.</p> <p>If you
+     * enabled on-instance session scripts and Amazon S3 logging for your session
+     * script configuration, AppStream 2.0 created an S3 bucket to store the script
+     * output. The bucket is unique to your account and Region. When you enable usage
+     * reporting in this case, AppStream 2.0 uses the same bucket to store your usage
+     * reports. If you haven't already enabled on-instance session scripts, when you
+     * enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
      */
     inline void SetS3BucketName(Aws::String&& value) { m_s3BucketName = std::move(value); }
 
     /**
-     * <p>The Amazon S3 bucket where generated reports are stored. When a usage report
-     * subscription is enabled for the first time for an account in an AWS Region, an
-     * S3 bucket is created. The bucket is unique to the AWS account and the Region.
-     * </p>
+     * <p>The Amazon S3 bucket where generated reports are stored.</p> <p>If you
+     * enabled on-instance session scripts and Amazon S3 logging for your session
+     * script configuration, AppStream 2.0 created an S3 bucket to store the script
+     * output. The bucket is unique to your account and Region. When you enable usage
+     * reporting in this case, AppStream 2.0 uses the same bucket to store your usage
+     * reports. If you haven't already enabled on-instance session scripts, when you
+     * enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
      */
     inline void SetS3BucketName(const char* value) { m_s3BucketName.assign(value); }
 
     /**
-     * <p>The Amazon S3 bucket where generated reports are stored. When a usage report
-     * subscription is enabled for the first time for an account in an AWS Region, an
-     * S3 bucket is created. The bucket is unique to the AWS account and the Region.
-     * </p>
+     * <p>The Amazon S3 bucket where generated reports are stored.</p> <p>If you
+     * enabled on-instance session scripts and Amazon S3 logging for your session
+     * script configuration, AppStream 2.0 created an S3 bucket to store the script
+     * output. The bucket is unique to your account and Region. When you enable usage
+     * reporting in this case, AppStream 2.0 uses the same bucket to store your usage
+     * reports. If you haven't already enabled on-instance session scripts, when you
+     * enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
      */
     inline CreateUsageReportSubscriptionResult& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket where generated reports are stored. When a usage report
-     * subscription is enabled for the first time for an account in an AWS Region, an
-     * S3 bucket is created. The bucket is unique to the AWS account and the Region.
-     * </p>
+     * <p>The Amazon S3 bucket where generated reports are stored.</p> <p>If you
+     * enabled on-instance session scripts and Amazon S3 logging for your session
+     * script configuration, AppStream 2.0 created an S3 bucket to store the script
+     * output. The bucket is unique to your account and Region. When you enable usage
+     * reporting in this case, AppStream 2.0 uses the same bucket to store your usage
+     * reports. If you haven't already enabled on-instance session scripts, when you
+     * enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
      */
     inline CreateUsageReportSubscriptionResult& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket where generated reports are stored. When a usage report
-     * subscription is enabled for the first time for an account in an AWS Region, an
-     * S3 bucket is created. The bucket is unique to the AWS account and the Region.
-     * </p>
+     * <p>The Amazon S3 bucket where generated reports are stored.</p> <p>If you
+     * enabled on-instance session scripts and Amazon S3 logging for your session
+     * script configuration, AppStream 2.0 created an S3 bucket to store the script
+     * output. The bucket is unique to your account and Region. When you enable usage
+     * reporting in this case, AppStream 2.0 uses the same bucket to store your usage
+     * reports. If you haven't already enabled on-instance session scripts, when you
+     * enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
      */
     inline CreateUsageReportSubscriptionResult& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
 

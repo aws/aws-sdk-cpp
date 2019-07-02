@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the network details of the fleet instance for the streaming
-   * session.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the network details of the fleet or image builder
+   * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/NetworkAccessConfiguration">AWS
    * API Reference</a></p>
    */

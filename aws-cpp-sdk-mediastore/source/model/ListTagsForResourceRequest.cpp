@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/mediastore/model/CreateContainerRequest.h>
+#include <aws/mediastore/model/ListTagsForResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,40 +22,28 @@ using namespace Aws::MediaStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateContainerRequest::CreateContainerRequest() : 
-    m_containerNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ListTagsForResourceRequest::ListTagsForResourceRequest() : 
+    m_resourceHasBeenSet(false)
 {
 }
 
-Aws::String CreateContainerRequest::SerializePayload() const
+Aws::String ListTagsForResourceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_containerNameHasBeenSet)
+  if(m_resourceHasBeenSet)
   {
-   payload.WithString("ContainerName", m_containerName);
-
-  }
-
-  if(m_tagsHasBeenSet)
-  {
-   Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
+   payload.WithString("Resource", m_resource);
 
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateContainerRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection ListTagsForResourceRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "MediaStore_20170901.CreateContainer"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "MediaStore_20170901.ListTagsForResource"));
   return headers;
 
 }

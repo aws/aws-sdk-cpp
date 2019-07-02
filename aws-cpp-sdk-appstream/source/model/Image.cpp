@@ -39,6 +39,7 @@ Image::Image() :
     m_visibilityHasBeenSet(false),
     m_imageBuilderSupported(false),
     m_imageBuilderSupportedHasBeenSet(false),
+    m_imageBuilderNameHasBeenSet(false),
     m_platform(PlatformType::NOT_SET),
     m_platformHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -62,6 +63,7 @@ Image::Image(JsonView jsonValue) :
     m_visibilityHasBeenSet(false),
     m_imageBuilderSupported(false),
     m_imageBuilderSupportedHasBeenSet(false),
+    m_imageBuilderNameHasBeenSet(false),
     m_platform(PlatformType::NOT_SET),
     m_platformHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -124,6 +126,13 @@ Image& Image::operator =(JsonView jsonValue)
     m_imageBuilderSupported = jsonValue.GetBool("ImageBuilderSupported");
 
     m_imageBuilderSupportedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ImageBuilderName"))
+  {
+    m_imageBuilderName = jsonValue.GetString("ImageBuilderName");
+
+    m_imageBuilderNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Platform"))
@@ -229,6 +238,12 @@ JsonValue Image::Jsonize() const
   if(m_imageBuilderSupportedHasBeenSet)
   {
    payload.WithBool("ImageBuilderSupported", m_imageBuilderSupported);
+
+  }
+
+  if(m_imageBuilderNameHasBeenSet)
+  {
+   payload.WithString("ImageBuilderName", m_imageBuilderName);
 
   }
 

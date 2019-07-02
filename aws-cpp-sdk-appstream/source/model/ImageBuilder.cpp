@@ -45,6 +45,7 @@ ImageBuilder::ImageBuilder() :
     m_enableDefaultInternetAccess(false),
     m_enableDefaultInternetAccessHasBeenSet(false),
     m_domainJoinInfoHasBeenSet(false),
+    m_networkAccessConfigurationHasBeenSet(false),
     m_imageBuilderErrorsHasBeenSet(false),
     m_appstreamAgentVersionHasBeenSet(false)
 {
@@ -67,6 +68,7 @@ ImageBuilder::ImageBuilder(JsonView jsonValue) :
     m_enableDefaultInternetAccess(false),
     m_enableDefaultInternetAccessHasBeenSet(false),
     m_domainJoinInfoHasBeenSet(false),
+    m_networkAccessConfigurationHasBeenSet(false),
     m_imageBuilderErrorsHasBeenSet(false),
     m_appstreamAgentVersionHasBeenSet(false)
 {
@@ -166,6 +168,13 @@ ImageBuilder& ImageBuilder::operator =(JsonView jsonValue)
     m_domainJoinInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NetworkAccessConfiguration"))
+  {
+    m_networkAccessConfiguration = jsonValue.GetObject("NetworkAccessConfiguration");
+
+    m_networkAccessConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ImageBuilderErrors"))
   {
     Array<JsonView> imageBuilderErrorsJsonList = jsonValue.GetArray("ImageBuilderErrors");
@@ -262,6 +271,12 @@ JsonValue ImageBuilder::Jsonize() const
   if(m_domainJoinInfoHasBeenSet)
   {
    payload.WithObject("DomainJoinInfo", m_domainJoinInfo.Jsonize());
+
+  }
+
+  if(m_networkAccessConfigurationHasBeenSet)
+  {
+   payload.WithObject("NetworkAccessConfiguration", m_networkAccessConfiguration.Jsonize());
 
   }
 
