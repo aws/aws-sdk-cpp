@@ -49,6 +49,7 @@ ClientConfiguration::ClientConfiguration() :
     region(Region::US_EAST_1),
     useDualStack(false),
     maxConnections(25),
+    httpRequestTimeoutMs(0),
     requestTimeoutMs(3000),
     connectTimeoutMs(1000),
     enableTcpKeepAlive(true),
