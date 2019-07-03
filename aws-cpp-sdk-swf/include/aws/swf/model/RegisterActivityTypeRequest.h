@@ -91,7 +91,7 @@ namespace Model
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not contain the literal string <code>arn</code>.</p>
+     * must not <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -100,7 +100,7 @@ namespace Model
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not contain the literal string <code>arn</code>.</p>
+     * must not <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -109,7 +109,7 @@ namespace Model
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not contain the literal string <code>arn</code>.</p>
+     * must not <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -118,7 +118,7 @@ namespace Model
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not contain the literal string <code>arn</code>.</p>
+     * must not <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -127,7 +127,7 @@ namespace Model
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not contain the literal string <code>arn</code>.</p>
+     * must not <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -136,7 +136,7 @@ namespace Model
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not contain the literal string <code>arn</code>.</p>
+     * must not <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -145,7 +145,7 @@ namespace Model
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not contain the literal string <code>arn</code>.</p>
+     * must not <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -154,7 +154,7 @@ namespace Model
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not contain the literal string <code>arn</code>.</p>
+     * must not <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -166,7 +166,7 @@ namespace Model
      * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
@@ -177,7 +177,7 @@ namespace Model
      * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
@@ -188,7 +188,7 @@ namespace Model
      * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
@@ -199,7 +199,7 @@ namespace Model
      * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
@@ -210,7 +210,7 @@ namespace Model
      * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
@@ -221,7 +221,7 @@ namespace Model
      * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
@@ -232,7 +232,7 @@ namespace Model
      * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
@@ -243,7 +243,7 @@ namespace Model
      * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -546,7 +546,7 @@ namespace Model
      * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
      * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
      * information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
      */
     inline const Aws::String& GetDefaultTaskPriority() const{ return m_defaultTaskPriority; }
@@ -557,7 +557,7 @@ namespace Model
      * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
      * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
      * information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
      */
     inline bool DefaultTaskPriorityHasBeenSet() const { return m_defaultTaskPriorityHasBeenSet; }
@@ -568,7 +568,7 @@ namespace Model
      * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
      * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
      * information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
      */
     inline void SetDefaultTaskPriority(const Aws::String& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = value; }
@@ -579,7 +579,7 @@ namespace Model
      * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
      * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
      * information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
      */
     inline void SetDefaultTaskPriority(Aws::String&& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = std::move(value); }
@@ -590,7 +590,7 @@ namespace Model
      * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
      * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
      * information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
      */
     inline void SetDefaultTaskPriority(const char* value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority.assign(value); }
@@ -601,7 +601,7 @@ namespace Model
      * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
      * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
      * information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskPriority(const Aws::String& value) { SetDefaultTaskPriority(value); return *this;}
@@ -612,7 +612,7 @@ namespace Model
      * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
      * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
      * information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskPriority(Aws::String&& value) { SetDefaultTaskPriority(std::move(value)); return *this;}
@@ -623,7 +623,7 @@ namespace Model
      * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
      * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
      * information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
      */
     inline RegisterActivityTypeRequest& WithDefaultTaskPriority(const char* value) { SetDefaultTaskPriority(value); return *this;}

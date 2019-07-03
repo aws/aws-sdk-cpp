@@ -91,6 +91,12 @@ PutObjectResult& PutObjectResult::operator =(const Aws::AmazonWebServiceResult<X
     m_sSEKMSKeyId = sSEKMSKeyIdIter->second;
   }
 
+  const auto& sSEKMSEncryptionContextIter = headers.find("x-amz-server-side-encryption-context");
+  if(sSEKMSEncryptionContextIter != headers.end())
+  {
+    m_sSEKMSEncryptionContext = sSEKMSEncryptionContextIter->second;
+  }
+
   const auto& requestChargedIter = headers.find("x-amz-request-charged");
   if(requestChargedIter != headers.end())
   {

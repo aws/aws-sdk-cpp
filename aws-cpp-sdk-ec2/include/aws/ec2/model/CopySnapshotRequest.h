@@ -188,36 +188,44 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the destination snapshot should be encrypted. You can
-     * encrypt a copy of an unencrypted snapshot, but you cannot use it to create an
-     * unencrypted copy of an encrypted snapshot. For more information, see <a
+     * <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not
+     * enabled, enable encryption using this parameter. Otherwise, omit this parameter.
+     * Encrypted snapshots are encrypted, even if you omit this parameter and
+     * encryption by default is not enabled. You cannot set this parameter to false.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
-     * <p>Specifies whether the destination snapshot should be encrypted. You can
-     * encrypt a copy of an unencrypted snapshot, but you cannot use it to create an
-     * unencrypted copy of an encrypted snapshot. For more information, see <a
+     * <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not
+     * enabled, enable encryption using this parameter. Otherwise, omit this parameter.
+     * Encrypted snapshots are encrypted, even if you omit this parameter and
+     * encryption by default is not enabled. You cannot set this parameter to false.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
     /**
-     * <p>Specifies whether the destination snapshot should be encrypted. You can
-     * encrypt a copy of an unencrypted snapshot, but you cannot use it to create an
-     * unencrypted copy of an encrypted snapshot. For more information, see <a
+     * <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not
+     * enabled, enable encryption using this parameter. Otherwise, omit this parameter.
+     * Encrypted snapshots are encrypted, even if you omit this parameter and
+     * encryption by default is not enabled. You cannot set this parameter to false.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
-     * <p>Specifies whether the destination snapshot should be encrypted. You can
-     * encrypt a copy of an unencrypted snapshot, but you cannot use it to create an
-     * unencrypted copy of an encrypted snapshot. For more information, see <a
+     * <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not
+     * enabled, enable encryption using this parameter. Otherwise, omit this parameter.
+     * Encrypted snapshots are encrypted, even if you omit this parameter and
+     * encryption by default is not enabled. You cannot set this parameter to false.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */

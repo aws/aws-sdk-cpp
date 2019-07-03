@@ -34,6 +34,7 @@
 #include <aws/swf/model/ListClosedWorkflowExecutionsResult.h>
 #include <aws/swf/model/ListDomainsResult.h>
 #include <aws/swf/model/ListOpenWorkflowExecutionsResult.h>
+#include <aws/swf/model/ListTagsForResourceResult.h>
 #include <aws/swf/model/ListWorkflowTypesResult.h>
 #include <aws/swf/model/PollForActivityTaskResult.h>
 #include <aws/swf/model/PollForDecisionTaskResult.h>
@@ -95,6 +96,7 @@ namespace Model
         class ListClosedWorkflowExecutionsRequest;
         class ListDomainsRequest;
         class ListOpenWorkflowExecutionsRequest;
+        class ListTagsForResourceRequest;
         class ListWorkflowTypesRequest;
         class PollForActivityTaskRequest;
         class PollForDecisionTaskRequest;
@@ -109,7 +111,12 @@ namespace Model
         class RespondDecisionTaskCompletedRequest;
         class SignalWorkflowExecutionRequest;
         class StartWorkflowExecutionRequest;
+        class TagResourceRequest;
         class TerminateWorkflowExecutionRequest;
+        class UndeprecateActivityTypeRequest;
+        class UndeprecateDomainRequest;
+        class UndeprecateWorkflowTypeRequest;
+        class UntagResourceRequest;
 
         typedef Aws::Utils::Outcome<CountClosedWorkflowExecutionsResult, Aws::Client::AWSError<SWFErrors>> CountClosedWorkflowExecutionsOutcome;
         typedef Aws::Utils::Outcome<CountOpenWorkflowExecutionsResult, Aws::Client::AWSError<SWFErrors>> CountOpenWorkflowExecutionsOutcome;
@@ -127,6 +134,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListClosedWorkflowExecutionsResult, Aws::Client::AWSError<SWFErrors>> ListClosedWorkflowExecutionsOutcome;
         typedef Aws::Utils::Outcome<ListDomainsResult, Aws::Client::AWSError<SWFErrors>> ListDomainsOutcome;
         typedef Aws::Utils::Outcome<ListOpenWorkflowExecutionsResult, Aws::Client::AWSError<SWFErrors>> ListOpenWorkflowExecutionsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<SWFErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListWorkflowTypesResult, Aws::Client::AWSError<SWFErrors>> ListWorkflowTypesOutcome;
         typedef Aws::Utils::Outcome<PollForActivityTaskResult, Aws::Client::AWSError<SWFErrors>> PollForActivityTaskOutcome;
         typedef Aws::Utils::Outcome<PollForDecisionTaskResult, Aws::Client::AWSError<SWFErrors>> PollForDecisionTaskOutcome;
@@ -141,7 +149,12 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> RespondDecisionTaskCompletedOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> SignalWorkflowExecutionOutcome;
         typedef Aws::Utils::Outcome<StartWorkflowExecutionResult, Aws::Client::AWSError<SWFErrors>> StartWorkflowExecutionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> TerminateWorkflowExecutionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> UndeprecateActivityTypeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> UndeprecateDomainOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> UndeprecateWorkflowTypeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> UntagResourceOutcome;
 
         typedef std::future<CountClosedWorkflowExecutionsOutcome> CountClosedWorkflowExecutionsOutcomeCallable;
         typedef std::future<CountOpenWorkflowExecutionsOutcome> CountOpenWorkflowExecutionsOutcomeCallable;
@@ -159,6 +172,7 @@ namespace Model
         typedef std::future<ListClosedWorkflowExecutionsOutcome> ListClosedWorkflowExecutionsOutcomeCallable;
         typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
         typedef std::future<ListOpenWorkflowExecutionsOutcome> ListOpenWorkflowExecutionsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListWorkflowTypesOutcome> ListWorkflowTypesOutcomeCallable;
         typedef std::future<PollForActivityTaskOutcome> PollForActivityTaskOutcomeCallable;
         typedef std::future<PollForDecisionTaskOutcome> PollForDecisionTaskOutcomeCallable;
@@ -173,7 +187,12 @@ namespace Model
         typedef std::future<RespondDecisionTaskCompletedOutcome> RespondDecisionTaskCompletedOutcomeCallable;
         typedef std::future<SignalWorkflowExecutionOutcome> SignalWorkflowExecutionOutcomeCallable;
         typedef std::future<StartWorkflowExecutionOutcome> StartWorkflowExecutionOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<TerminateWorkflowExecutionOutcome> TerminateWorkflowExecutionOutcomeCallable;
+        typedef std::future<UndeprecateActivityTypeOutcome> UndeprecateActivityTypeOutcomeCallable;
+        typedef std::future<UndeprecateDomainOutcome> UndeprecateDomainOutcomeCallable;
+        typedef std::future<UndeprecateWorkflowTypeOutcome> UndeprecateWorkflowTypeOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 } // namespace Model
 
   class SWFClient;
@@ -194,6 +213,7 @@ namespace Model
     typedef std::function<void(const SWFClient*, const Model::ListClosedWorkflowExecutionsRequest&, const Model::ListClosedWorkflowExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClosedWorkflowExecutionsResponseReceivedHandler;
     typedef std::function<void(const SWFClient*, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsResponseReceivedHandler;
     typedef std::function<void(const SWFClient*, const Model::ListOpenWorkflowExecutionsRequest&, const Model::ListOpenWorkflowExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOpenWorkflowExecutionsResponseReceivedHandler;
+    typedef std::function<void(const SWFClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const SWFClient*, const Model::ListWorkflowTypesRequest&, const Model::ListWorkflowTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkflowTypesResponseReceivedHandler;
     typedef std::function<void(const SWFClient*, const Model::PollForActivityTaskRequest&, const Model::PollForActivityTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PollForActivityTaskResponseReceivedHandler;
     typedef std::function<void(const SWFClient*, const Model::PollForDecisionTaskRequest&, const Model::PollForDecisionTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PollForDecisionTaskResponseReceivedHandler;
@@ -208,7 +228,12 @@ namespace Model
     typedef std::function<void(const SWFClient*, const Model::RespondDecisionTaskCompletedRequest&, const Model::RespondDecisionTaskCompletedOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RespondDecisionTaskCompletedResponseReceivedHandler;
     typedef std::function<void(const SWFClient*, const Model::SignalWorkflowExecutionRequest&, const Model::SignalWorkflowExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SignalWorkflowExecutionResponseReceivedHandler;
     typedef std::function<void(const SWFClient*, const Model::StartWorkflowExecutionRequest&, const Model::StartWorkflowExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartWorkflowExecutionResponseReceivedHandler;
+    typedef std::function<void(const SWFClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const SWFClient*, const Model::TerminateWorkflowExecutionRequest&, const Model::TerminateWorkflowExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateWorkflowExecutionResponseReceivedHandler;
+    typedef std::function<void(const SWFClient*, const Model::UndeprecateActivityTypeRequest&, const Model::UndeprecateActivityTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UndeprecateActivityTypeResponseReceivedHandler;
+    typedef std::function<void(const SWFClient*, const Model::UndeprecateDomainRequest&, const Model::UndeprecateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UndeprecateDomainResponseReceivedHandler;
+    typedef std::function<void(const SWFClient*, const Model::UndeprecateWorkflowTypeRequest&, const Model::UndeprecateWorkflowTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UndeprecateWorkflowTypeResponseReceivedHandler;
+    typedef std::function<void(const SWFClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
    * <fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple
@@ -222,7 +247,7 @@ namespace Model
    * as tracking their progress and maintaining their state.</p> <p>This
    * documentation serves as reference only. For a broader overview of the Amazon SWF
    * programming model, see the <i> <a
-   * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF
+   * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF
    * Developer Guide</a> </i>.</p>
    */
   class AWS_SWF_API SWFClient : public Aws::Client::AWSJsonClient
@@ -251,7 +276,7 @@ namespace Model
 
         virtual ~SWFClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "swf"; }
+        inline virtual const char* GetServiceClientName() const override { return "SWF"; }
 
 
         /**
@@ -275,7 +300,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountClosedWorkflowExecutions">AWS
@@ -304,7 +329,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountClosedWorkflowExecutions">AWS
@@ -335,7 +360,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountClosedWorkflowExecutions">AWS
@@ -366,7 +391,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions">AWS
@@ -395,7 +420,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions">AWS
@@ -426,7 +451,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions">AWS
@@ -453,7 +478,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingActivityTasks">AWS
@@ -478,7 +503,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingActivityTasks">AWS
@@ -505,7 +530,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingActivityTasks">AWS
@@ -532,7 +557,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingDecisionTasks">AWS
@@ -557,7 +582,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingDecisionTasks">AWS
@@ -584,7 +609,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingDecisionTasks">AWS
@@ -615,7 +640,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateActivityType">AWS
@@ -644,7 +669,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateActivityType">AWS
@@ -675,7 +700,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateActivityType">AWS
@@ -704,7 +729,7 @@ namespace Model
          * attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateDomain">AWS
@@ -731,7 +756,7 @@ namespace Model
          * attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateDomain">AWS
@@ -760,7 +785,7 @@ namespace Model
          * attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateDomain">AWS
@@ -792,7 +817,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateWorkflowType">AWS
@@ -822,7 +847,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateWorkflowType">AWS
@@ -854,7 +879,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateWorkflowType">AWS
@@ -883,7 +908,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeActivityType">AWS
@@ -910,7 +935,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeActivityType">AWS
@@ -939,7 +964,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeActivityType">AWS
@@ -962,7 +987,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeDomain">AWS
@@ -983,7 +1008,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeDomain">AWS
@@ -1006,7 +1031,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeDomain">AWS
@@ -1031,7 +1056,7 @@ namespace Model
          * The associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowExecution">AWS
@@ -1054,7 +1079,7 @@ namespace Model
          * The associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowExecution">AWS
@@ -1079,7 +1104,7 @@ namespace Model
          * The associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowExecution">AWS
@@ -1108,7 +1133,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowType">AWS
@@ -1135,7 +1160,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowType">AWS
@@ -1164,7 +1189,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowType">AWS
@@ -1191,7 +1216,7 @@ namespace Model
          * attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/GetWorkflowExecutionHistory">AWS
@@ -1216,7 +1241,7 @@ namespace Model
          * attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/GetWorkflowExecutionHistory">AWS
@@ -1243,7 +1268,7 @@ namespace Model
          * attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/GetWorkflowExecutionHistory">AWS
@@ -1270,7 +1295,7 @@ namespace Model
          * event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes">AWS
@@ -1295,7 +1320,7 @@ namespace Model
          * event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes">AWS
@@ -1322,7 +1347,7 @@ namespace Model
          * event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes">AWS
@@ -1355,7 +1380,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions">AWS
@@ -1386,7 +1411,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions">AWS
@@ -1419,7 +1444,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions">AWS
@@ -1447,7 +1472,7 @@ namespace Model
          * constraints, the action fails. The associated event attribute's
          * <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For
          * details and example IAM policies, see <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains">AWS API
@@ -1473,7 +1498,7 @@ namespace Model
          * constraints, the action fails. The associated event attribute's
          * <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For
          * details and example IAM policies, see <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains">AWS API
@@ -1501,7 +1526,7 @@ namespace Model
          * constraints, the action fails. The associated event attribute's
          * <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For
          * details and example IAM policies, see <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains">AWS API
@@ -1534,7 +1559,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListOpenWorkflowExecutions">AWS
@@ -1565,7 +1590,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListOpenWorkflowExecutions">AWS
@@ -1598,7 +1623,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListOpenWorkflowExecutions">AWS
@@ -1607,6 +1632,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListOpenWorkflowExecutionsAsync(const Model::ListOpenWorkflowExecutionsRequest& request, const ListOpenWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List tags for a given domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>List tags for a given domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>List tags for a given domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about workflow types in the specified domain. The results
@@ -1622,7 +1672,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListWorkflowTypes">AWS
@@ -1644,7 +1694,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListWorkflowTypes">AWS
@@ -1668,7 +1718,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListWorkflowTypes">AWS
@@ -1702,7 +1752,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask">AWS
@@ -1734,7 +1784,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask">AWS
@@ -1768,7 +1818,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask">AWS
@@ -1810,7 +1860,7 @@ namespace Model
          * specified constraints, the action fails. The associated event attribute's
          * <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For
          * details and example IAM policies, see <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask">AWS
@@ -1850,7 +1900,7 @@ namespace Model
          * specified constraints, the action fails. The associated event attribute's
          * <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For
          * details and example IAM policies, see <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask">AWS
@@ -1892,7 +1942,7 @@ namespace Model
          * specified constraints, the action fails. The associated event attribute's
          * <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For
          * details and example IAM policies, see <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask">AWS
@@ -1938,7 +1988,7 @@ namespace Model
          * constraints, the action fails. The associated event attribute's
          * <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For
          * details and example IAM policies, see <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordActivityTaskHeartbeat">AWS
@@ -1982,7 +2032,7 @@ namespace Model
          * constraints, the action fails. The associated event attribute's
          * <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For
          * details and example IAM policies, see <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordActivityTaskHeartbeat">AWS
@@ -2028,7 +2078,7 @@ namespace Model
          * constraints, the action fails. The associated event attribute's
          * <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For
          * details and example IAM policies, see <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordActivityTaskHeartbeat">AWS
@@ -2060,7 +2110,7 @@ namespace Model
          * attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType">AWS
@@ -2090,7 +2140,7 @@ namespace Model
          * attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType">AWS
@@ -2122,7 +2172,7 @@ namespace Model
          * attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType">AWS
@@ -2145,7 +2195,7 @@ namespace Model
          * event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain">AWS
@@ -2166,7 +2216,7 @@ namespace Model
          * event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain">AWS
@@ -2189,7 +2239,7 @@ namespace Model
          * event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain">AWS
@@ -2222,7 +2272,7 @@ namespace Model
          * attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterWorkflowType">AWS
@@ -2253,7 +2303,7 @@ namespace Model
          * attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterWorkflowType">AWS
@@ -2286,7 +2336,7 @@ namespace Model
          * attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterWorkflowType">AWS
@@ -2318,7 +2368,7 @@ namespace Model
          * attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelWorkflowExecution">AWS
@@ -2348,7 +2398,7 @@ namespace Model
          * attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelWorkflowExecution">AWS
@@ -2380,7 +2430,7 @@ namespace Model
          * attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelWorkflowExecution">AWS
@@ -2404,7 +2454,7 @@ namespace Model
          * after it has been specified in a call to <a>RespondActivityTaskCompleted</a>,
          * RespondActivityTaskCanceled, <a>RespondActivityTaskFailed</a>, or the task has
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
          * out</a>.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to
          * control this action's access to Amazon SWF resources as follows:</p> <ul> <li>
          * <p>Use a <code>Resource</code> element with the domain name to limit the action
@@ -2416,7 +2466,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCanceled">AWS
@@ -2438,7 +2488,7 @@ namespace Model
          * after it has been specified in a call to <a>RespondActivityTaskCompleted</a>,
          * RespondActivityTaskCanceled, <a>RespondActivityTaskFailed</a>, or the task has
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
          * out</a>.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to
          * control this action's access to Amazon SWF resources as follows:</p> <ul> <li>
          * <p>Use a <code>Resource</code> element with the domain name to limit the action
@@ -2450,7 +2500,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCanceled">AWS
@@ -2474,7 +2524,7 @@ namespace Model
          * after it has been specified in a call to <a>RespondActivityTaskCompleted</a>,
          * RespondActivityTaskCanceled, <a>RespondActivityTaskFailed</a>, or the task has
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
          * out</a>.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to
          * control this action's access to Amazon SWF resources as follows:</p> <ul> <li>
          * <p>Use a <code>Resource</code> element with the domain name to limit the action
@@ -2486,7 +2536,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCanceled">AWS
@@ -2511,7 +2561,7 @@ namespace Model
          * after it has been specified in a call to RespondActivityTaskCompleted,
          * <a>RespondActivityTaskCanceled</a>, <a>RespondActivityTaskFailed</a>, or the
          * task has <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
          * out</a>.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to
          * control this action's access to Amazon SWF resources as follows:</p> <ul> <li>
          * <p>Use a <code>Resource</code> element with the domain name to limit the action
@@ -2523,7 +2573,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCompleted">AWS
@@ -2546,7 +2596,7 @@ namespace Model
          * after it has been specified in a call to RespondActivityTaskCompleted,
          * <a>RespondActivityTaskCanceled</a>, <a>RespondActivityTaskFailed</a>, or the
          * task has <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
          * out</a>.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to
          * control this action's access to Amazon SWF resources as follows:</p> <ul> <li>
          * <p>Use a <code>Resource</code> element with the domain name to limit the action
@@ -2558,7 +2608,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCompleted">AWS
@@ -2583,7 +2633,7 @@ namespace Model
          * after it has been specified in a call to RespondActivityTaskCompleted,
          * <a>RespondActivityTaskCanceled</a>, <a>RespondActivityTaskFailed</a>, or the
          * task has <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
          * out</a>.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to
          * control this action's access to Amazon SWF resources as follows:</p> <ul> <li>
          * <p>Use a <code>Resource</code> element with the domain name to limit the action
@@ -2595,7 +2645,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCompleted">AWS
@@ -2615,7 +2665,7 @@ namespace Model
          * closed after it has been specified in a call to
          * <a>RespondActivityTaskCompleted</a>, <a>RespondActivityTaskCanceled</a>,
          * RespondActivityTaskFailed, or the task has <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
          * out</a>.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to
          * control this action's access to Amazon SWF resources as follows:</p> <ul> <li>
          * <p>Use a <code>Resource</code> element with the domain name to limit the action
@@ -2627,7 +2677,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskFailed">AWS
@@ -2645,7 +2695,7 @@ namespace Model
          * closed after it has been specified in a call to
          * <a>RespondActivityTaskCompleted</a>, <a>RespondActivityTaskCanceled</a>,
          * RespondActivityTaskFailed, or the task has <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
          * out</a>.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to
          * control this action's access to Amazon SWF resources as follows:</p> <ul> <li>
          * <p>Use a <code>Resource</code> element with the domain name to limit the action
@@ -2657,7 +2707,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskFailed">AWS
@@ -2677,7 +2727,7 @@ namespace Model
          * closed after it has been specified in a call to
          * <a>RespondActivityTaskCompleted</a>, <a>RespondActivityTaskCanceled</a>,
          * RespondActivityTaskFailed, or the task has <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed
          * out</a>.</p> <p> <b>Access Control</b> </p> <p>You can use IAM policies to
          * control this action's access to Amazon SWF resources as follows:</p> <ul> <li>
          * <p>Use a <code>Resource</code> element with the domain name to limit the action
@@ -2689,7 +2739,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskFailed">AWS
@@ -2713,7 +2763,7 @@ namespace Model
          * to be as readable as possible, you can express permissions on decisions as if
          * they were actual API calls, including applying conditions to some parameters.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompleted">AWS
@@ -2735,7 +2785,7 @@ namespace Model
          * to be as readable as possible, you can express permissions on decisions as if
          * they were actual API calls, including applying conditions to some parameters.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompleted">AWS
@@ -2759,7 +2809,7 @@ namespace Model
          * to be as readable as possible, you can express permissions on decisions as if
          * they were actual API calls, including applying conditions to some parameters.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompleted">AWS
@@ -2789,7 +2839,7 @@ namespace Model
          * event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalWorkflowExecution">AWS
@@ -2817,7 +2867,7 @@ namespace Model
          * event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalWorkflowExecution">AWS
@@ -2847,7 +2897,7 @@ namespace Model
          * event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalWorkflowExecution">AWS
@@ -2885,7 +2935,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartWorkflowExecution">AWS
@@ -2921,7 +2971,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartWorkflowExecution">AWS
@@ -2959,7 +3009,7 @@ namespace Model
          * associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartWorkflowExecution">AWS
@@ -2968,6 +3018,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartWorkflowExecutionAsync(const Model::StartWorkflowExecutionRequest& request, const StartWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Add a tag to a Amazon SWF domain.</p> <note> <p>Amazon SWF supports a maximum
+         * of 50 tags per resource.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TagResource">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Add a tag to a Amazon SWF domain.</p> <note> <p>Amazon SWF supports a maximum
+         * of 50 tags per resource.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TagResource">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Add a tag to a Amazon SWF domain.</p> <note> <p>Amazon SWF supports a maximum
+         * of 50 tags per resource.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TagResource">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Records a <code>WorkflowExecutionTerminated</code> event and forces closure
@@ -2992,7 +3070,7 @@ namespace Model
          * The associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution">AWS
@@ -3023,7 +3101,7 @@ namespace Model
          * The associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution">AWS
@@ -3056,7 +3134,7 @@ namespace Model
          * The associated event attribute's <code>cause</code> parameter is set to
          * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
          * <a
-         * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
          * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution">AWS
@@ -3065,6 +3143,283 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TerminateWorkflowExecutionAsync(const Model::TerminateWorkflowExecutionRequest& request, const TerminateWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Undeprecates a previously deprecated <i>activity type</i>. After an activity
+         * type has been undeprecated, you can create new tasks of that activity type.</p>
+         * <note> <p>This operation is eventually consistent. The results are best effort
+         * and may not exactly reflect recent updates and changes.</p> </note> <p>
+         * <b>Access Control</b> </p> <p>You can use IAM policies to control this action's
+         * access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a
+         * <code>Resource</code> element with the domain name to limit the action to only
+         * specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow
+         * or deny permission to call this action.</p> </li> <li> <p>Constrain the
+         * following parameters by using a <code>Condition</code> element with the
+         * appropriate keys.</p> <ul> <li> <p> <code>activityType.name</code>: String
+         * constraint. The key is <code>swf:activityType.name</code>.</p> </li> <li> <p>
+         * <code>activityType.version</code>: String constraint. The key is
+         * <code>swf:activityType.version</code>.</p> </li> </ul> </li> </ul> <p>If the
+         * caller doesn't have sufficient permissions to invoke the action, or the
+         * parameter values fall outside the specified constraints, the action fails. The
+         * associated event attribute's <code>cause</code> parameter is set to
+         * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
+         * <a
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateActivityType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UndeprecateActivityTypeOutcome UndeprecateActivityType(const Model::UndeprecateActivityTypeRequest& request) const;
+
+        /**
+         * <p>Undeprecates a previously deprecated <i>activity type</i>. After an activity
+         * type has been undeprecated, you can create new tasks of that activity type.</p>
+         * <note> <p>This operation is eventually consistent. The results are best effort
+         * and may not exactly reflect recent updates and changes.</p> </note> <p>
+         * <b>Access Control</b> </p> <p>You can use IAM policies to control this action's
+         * access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a
+         * <code>Resource</code> element with the domain name to limit the action to only
+         * specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow
+         * or deny permission to call this action.</p> </li> <li> <p>Constrain the
+         * following parameters by using a <code>Condition</code> element with the
+         * appropriate keys.</p> <ul> <li> <p> <code>activityType.name</code>: String
+         * constraint. The key is <code>swf:activityType.name</code>.</p> </li> <li> <p>
+         * <code>activityType.version</code>: String constraint. The key is
+         * <code>swf:activityType.version</code>.</p> </li> </ul> </li> </ul> <p>If the
+         * caller doesn't have sufficient permissions to invoke the action, or the
+         * parameter values fall outside the specified constraints, the action fails. The
+         * associated event attribute's <code>cause</code> parameter is set to
+         * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
+         * <a
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateActivityType">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UndeprecateActivityTypeOutcomeCallable UndeprecateActivityTypeCallable(const Model::UndeprecateActivityTypeRequest& request) const;
+
+        /**
+         * <p>Undeprecates a previously deprecated <i>activity type</i>. After an activity
+         * type has been undeprecated, you can create new tasks of that activity type.</p>
+         * <note> <p>This operation is eventually consistent. The results are best effort
+         * and may not exactly reflect recent updates and changes.</p> </note> <p>
+         * <b>Access Control</b> </p> <p>You can use IAM policies to control this action's
+         * access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a
+         * <code>Resource</code> element with the domain name to limit the action to only
+         * specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow
+         * or deny permission to call this action.</p> </li> <li> <p>Constrain the
+         * following parameters by using a <code>Condition</code> element with the
+         * appropriate keys.</p> <ul> <li> <p> <code>activityType.name</code>: String
+         * constraint. The key is <code>swf:activityType.name</code>.</p> </li> <li> <p>
+         * <code>activityType.version</code>: String constraint. The key is
+         * <code>swf:activityType.version</code>.</p> </li> </ul> </li> </ul> <p>If the
+         * caller doesn't have sufficient permissions to invoke the action, or the
+         * parameter values fall outside the specified constraints, the action fails. The
+         * associated event attribute's <code>cause</code> parameter is set to
+         * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
+         * <a
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateActivityType">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UndeprecateActivityTypeAsync(const Model::UndeprecateActivityTypeRequest& request, const UndeprecateActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Undeprecates a previously deprecated domain. After a domain has been
+         * undeprecated it can be used to create new workflow executions or register new
+         * types.</p> <note> <p>This operation is eventually consistent. The results are
+         * best effort and may not exactly reflect recent updates and changes.</p> </note>
+         * <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this
+         * action's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a
+         * <code>Resource</code> element with the domain name to limit the action to only
+         * specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow
+         * or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM
+         * policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller
+         * doesn't have sufficient permissions to invoke the action, or the parameter
+         * values fall outside the specified constraints, the action fails. The associated
+         * event attribute's <code>cause</code> parameter is set to
+         * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
+         * <a
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UndeprecateDomainOutcome UndeprecateDomain(const Model::UndeprecateDomainRequest& request) const;
+
+        /**
+         * <p>Undeprecates a previously deprecated domain. After a domain has been
+         * undeprecated it can be used to create new workflow executions or register new
+         * types.</p> <note> <p>This operation is eventually consistent. The results are
+         * best effort and may not exactly reflect recent updates and changes.</p> </note>
+         * <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this
+         * action's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a
+         * <code>Resource</code> element with the domain name to limit the action to only
+         * specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow
+         * or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM
+         * policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller
+         * doesn't have sufficient permissions to invoke the action, or the parameter
+         * values fall outside the specified constraints, the action fails. The associated
+         * event attribute's <code>cause</code> parameter is set to
+         * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
+         * <a
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateDomain">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UndeprecateDomainOutcomeCallable UndeprecateDomainCallable(const Model::UndeprecateDomainRequest& request) const;
+
+        /**
+         * <p>Undeprecates a previously deprecated domain. After a domain has been
+         * undeprecated it can be used to create new workflow executions or register new
+         * types.</p> <note> <p>This operation is eventually consistent. The results are
+         * best effort and may not exactly reflect recent updates and changes.</p> </note>
+         * <p> <b>Access Control</b> </p> <p>You can use IAM policies to control this
+         * action's access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a
+         * <code>Resource</code> element with the domain name to limit the action to only
+         * specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow
+         * or deny permission to call this action.</p> </li> <li> <p>You cannot use an IAM
+         * policy to constrain this action's parameters.</p> </li> </ul> <p>If the caller
+         * doesn't have sufficient permissions to invoke the action, or the parameter
+         * values fall outside the specified constraints, the action fails. The associated
+         * event attribute's <code>cause</code> parameter is set to
+         * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
+         * <a
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateDomain">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UndeprecateDomainAsync(const Model::UndeprecateDomainRequest& request, const UndeprecateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Undeprecates a previously deprecated <i>workflow type</i>. After a workflow
+         * type has been undeprecated, you can create new executions of that type. </p>
+         * <note> <p>This operation is eventually consistent. The results are best effort
+         * and may not exactly reflect recent updates and changes.</p> </note> <p>
+         * <b>Access Control</b> </p> <p>You can use IAM policies to control this action's
+         * access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a
+         * <code>Resource</code> element with the domain name to limit the action to only
+         * specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow
+         * or deny permission to call this action.</p> </li> <li> <p>Constrain the
+         * following parameters by using a <code>Condition</code> element with the
+         * appropriate keys.</p> <ul> <li> <p> <code>workflowType.name</code>: String
+         * constraint. The key is <code>swf:workflowType.name</code>.</p> </li> <li> <p>
+         * <code>workflowType.version</code>: String constraint. The key is
+         * <code>swf:workflowType.version</code>.</p> </li> </ul> </li> </ul> <p>If the
+         * caller doesn't have sufficient permissions to invoke the action, or the
+         * parameter values fall outside the specified constraints, the action fails. The
+         * associated event attribute's <code>cause</code> parameter is set to
+         * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
+         * <a
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateWorkflowType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UndeprecateWorkflowTypeOutcome UndeprecateWorkflowType(const Model::UndeprecateWorkflowTypeRequest& request) const;
+
+        /**
+         * <p>Undeprecates a previously deprecated <i>workflow type</i>. After a workflow
+         * type has been undeprecated, you can create new executions of that type. </p>
+         * <note> <p>This operation is eventually consistent. The results are best effort
+         * and may not exactly reflect recent updates and changes.</p> </note> <p>
+         * <b>Access Control</b> </p> <p>You can use IAM policies to control this action's
+         * access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a
+         * <code>Resource</code> element with the domain name to limit the action to only
+         * specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow
+         * or deny permission to call this action.</p> </li> <li> <p>Constrain the
+         * following parameters by using a <code>Condition</code> element with the
+         * appropriate keys.</p> <ul> <li> <p> <code>workflowType.name</code>: String
+         * constraint. The key is <code>swf:workflowType.name</code>.</p> </li> <li> <p>
+         * <code>workflowType.version</code>: String constraint. The key is
+         * <code>swf:workflowType.version</code>.</p> </li> </ul> </li> </ul> <p>If the
+         * caller doesn't have sufficient permissions to invoke the action, or the
+         * parameter values fall outside the specified constraints, the action fails. The
+         * associated event attribute's <code>cause</code> parameter is set to
+         * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
+         * <a
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateWorkflowType">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UndeprecateWorkflowTypeOutcomeCallable UndeprecateWorkflowTypeCallable(const Model::UndeprecateWorkflowTypeRequest& request) const;
+
+        /**
+         * <p>Undeprecates a previously deprecated <i>workflow type</i>. After a workflow
+         * type has been undeprecated, you can create new executions of that type. </p>
+         * <note> <p>This operation is eventually consistent. The results are best effort
+         * and may not exactly reflect recent updates and changes.</p> </note> <p>
+         * <b>Access Control</b> </p> <p>You can use IAM policies to control this action's
+         * access to Amazon SWF resources as follows:</p> <ul> <li> <p>Use a
+         * <code>Resource</code> element with the domain name to limit the action to only
+         * specified domains.</p> </li> <li> <p>Use an <code>Action</code> element to allow
+         * or deny permission to call this action.</p> </li> <li> <p>Constrain the
+         * following parameters by using a <code>Condition</code> element with the
+         * appropriate keys.</p> <ul> <li> <p> <code>workflowType.name</code>: String
+         * constraint. The key is <code>swf:workflowType.name</code>.</p> </li> <li> <p>
+         * <code>workflowType.version</code>: String constraint. The key is
+         * <code>swf:workflowType.version</code>.</p> </li> </ul> </li> </ul> <p>If the
+         * caller doesn't have sufficient permissions to invoke the action, or the
+         * parameter values fall outside the specified constraints, the action fails. The
+         * associated event attribute's <code>cause</code> parameter is set to
+         * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
+         * <a
+         * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+         * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateWorkflowType">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UndeprecateWorkflowTypeAsync(const Model::UndeprecateWorkflowTypeRequest& request, const UndeprecateWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Remove a tag from a Amazon SWF domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Remove a tag from a Amazon SWF domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Remove a tag from a Amazon SWF domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
@@ -3086,6 +3441,7 @@ namespace Model
         void ListClosedWorkflowExecutionsAsyncHelper(const Model::ListClosedWorkflowExecutionsRequest& request, const ListClosedWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDomainsAsyncHelper(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOpenWorkflowExecutionsAsyncHelper(const Model::ListOpenWorkflowExecutionsRequest& request, const ListOpenWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWorkflowTypesAsyncHelper(const Model::ListWorkflowTypesRequest& request, const ListWorkflowTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PollForActivityTaskAsyncHelper(const Model::PollForActivityTaskRequest& request, const PollForActivityTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PollForDecisionTaskAsyncHelper(const Model::PollForDecisionTaskRequest& request, const PollForDecisionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3100,7 +3456,12 @@ namespace Model
         void RespondDecisionTaskCompletedAsyncHelper(const Model::RespondDecisionTaskCompletedRequest& request, const RespondDecisionTaskCompletedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SignalWorkflowExecutionAsyncHelper(const Model::SignalWorkflowExecutionRequest& request, const SignalWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartWorkflowExecutionAsyncHelper(const Model::StartWorkflowExecutionRequest& request, const StartWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TerminateWorkflowExecutionAsyncHelper(const Model::TerminateWorkflowExecutionRequest& request, const TerminateWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UndeprecateActivityTypeAsyncHelper(const Model::UndeprecateActivityTypeRequest& request, const UndeprecateActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UndeprecateDomainAsyncHelper(const Model::UndeprecateDomainRequest& request, const UndeprecateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UndeprecateWorkflowTypeAsyncHelper(const Model::UndeprecateWorkflowTypeRequest& request, const UndeprecateWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

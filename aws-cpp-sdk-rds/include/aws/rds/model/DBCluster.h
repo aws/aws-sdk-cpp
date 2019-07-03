@@ -2200,6 +2200,31 @@ namespace Model
      */
     inline DBCluster& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether the DB cluster is a clone of a DB cluster owned by a
+     * different AWS account.</p>
+     */
+    inline bool GetCrossAccountClone() const{ return m_crossAccountClone; }
+
+    /**
+     * <p>Specifies whether the DB cluster is a clone of a DB cluster owned by a
+     * different AWS account.</p>
+     */
+    inline bool CrossAccountCloneHasBeenSet() const { return m_crossAccountCloneHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the DB cluster is a clone of a DB cluster owned by a
+     * different AWS account.</p>
+     */
+    inline void SetCrossAccountClone(bool value) { m_crossAccountCloneHasBeenSet = true; m_crossAccountClone = value; }
+
+    /**
+     * <p>Specifies whether the DB cluster is a clone of a DB cluster owned by a
+     * different AWS account.</p>
+     */
+    inline DBCluster& WithCrossAccountClone(bool value) { SetCrossAccountClone(value); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -2351,6 +2376,9 @@ namespace Model
 
     bool m_copyTagsToSnapshot;
     bool m_copyTagsToSnapshotHasBeenSet;
+
+    bool m_crossAccountClone;
+    bool m_crossAccountCloneHasBeenSet;
   };
 
 } // namespace Model

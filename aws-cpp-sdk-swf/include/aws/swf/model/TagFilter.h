@@ -50,49 +50,57 @@ namespace Model
 
     /**
      * <p> Specifies the tag that must be associated with the execution for it to meet
-     * the filter criteria.</p>
+     * the filter criteria.</p> <p>Tags may only contain unicode letters, digits,
+     * whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
      */
     inline const Aws::String& GetTag() const{ return m_tag; }
 
     /**
      * <p> Specifies the tag that must be associated with the execution for it to meet
-     * the filter criteria.</p>
+     * the filter criteria.</p> <p>Tags may only contain unicode letters, digits,
+     * whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
      */
     inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }
 
     /**
      * <p> Specifies the tag that must be associated with the execution for it to meet
-     * the filter criteria.</p>
+     * the filter criteria.</p> <p>Tags may only contain unicode letters, digits,
+     * whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
      */
     inline void SetTag(const Aws::String& value) { m_tagHasBeenSet = true; m_tag = value; }
 
     /**
      * <p> Specifies the tag that must be associated with the execution for it to meet
-     * the filter criteria.</p>
+     * the filter criteria.</p> <p>Tags may only contain unicode letters, digits,
+     * whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
      */
     inline void SetTag(Aws::String&& value) { m_tagHasBeenSet = true; m_tag = std::move(value); }
 
     /**
      * <p> Specifies the tag that must be associated with the execution for it to meet
-     * the filter criteria.</p>
+     * the filter criteria.</p> <p>Tags may only contain unicode letters, digits,
+     * whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
      */
     inline void SetTag(const char* value) { m_tagHasBeenSet = true; m_tag.assign(value); }
 
     /**
      * <p> Specifies the tag that must be associated with the execution for it to meet
-     * the filter criteria.</p>
+     * the filter criteria.</p> <p>Tags may only contain unicode letters, digits,
+     * whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
      */
     inline TagFilter& WithTag(const Aws::String& value) { SetTag(value); return *this;}
 
     /**
      * <p> Specifies the tag that must be associated with the execution for it to meet
-     * the filter criteria.</p>
+     * the filter criteria.</p> <p>Tags may only contain unicode letters, digits,
+     * whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
      */
     inline TagFilter& WithTag(Aws::String&& value) { SetTag(std::move(value)); return *this;}
 
     /**
      * <p> Specifies the tag that must be associated with the execution for it to meet
-     * the filter criteria.</p>
+     * the filter criteria.</p> <p>Tags may only contain unicode letters, digits,
+     * whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
      */
     inline TagFilter& WithTag(const char* value) { SetTag(value); return *this;}
 

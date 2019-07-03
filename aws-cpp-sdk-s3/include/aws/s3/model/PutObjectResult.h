@@ -333,6 +333,56 @@ namespace Model
     inline PutObjectResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
 
+    /**
+     * <p>If present, specifies the AWS KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
+     */
+    inline const Aws::String& GetSSEKMSEncryptionContext() const{ return m_sSEKMSEncryptionContext; }
+
+    /**
+     * <p>If present, specifies the AWS KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
+     */
+    inline void SetSSEKMSEncryptionContext(const Aws::String& value) { m_sSEKMSEncryptionContext = value; }
+
+    /**
+     * <p>If present, specifies the AWS KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
+     */
+    inline void SetSSEKMSEncryptionContext(Aws::String&& value) { m_sSEKMSEncryptionContext = std::move(value); }
+
+    /**
+     * <p>If present, specifies the AWS KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
+     */
+    inline void SetSSEKMSEncryptionContext(const char* value) { m_sSEKMSEncryptionContext.assign(value); }
+
+    /**
+     * <p>If present, specifies the AWS KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
+     */
+    inline PutObjectResult& WithSSEKMSEncryptionContext(const Aws::String& value) { SetSSEKMSEncryptionContext(value); return *this;}
+
+    /**
+     * <p>If present, specifies the AWS KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
+     */
+    inline PutObjectResult& WithSSEKMSEncryptionContext(Aws::String&& value) { SetSSEKMSEncryptionContext(std::move(value)); return *this;}
+
+    /**
+     * <p>If present, specifies the AWS KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
+     */
+    inline PutObjectResult& WithSSEKMSEncryptionContext(const char* value) { SetSSEKMSEncryptionContext(value); return *this;}
+
+
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
 
@@ -363,6 +413,8 @@ namespace Model
     Aws::String m_sSECustomerKeyMD5;
 
     Aws::String m_sSEKMSKeyId;
+
+    Aws::String m_sSEKMSEncryptionContext;
 
     RequestCharged m_requestCharged;
   };

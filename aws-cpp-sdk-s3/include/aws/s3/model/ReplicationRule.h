@@ -102,8 +102,8 @@ namespace Model
      * example:</p> <ul> <li> <p>Same object quality prefix based filter criteria If
      * prefixes you specified in multiple rules overlap </p> </li> <li> <p>Same object
      * qualify tag based filter criteria specified in multiple rules</p> </li> </ul>
-     * <p>For more information, see <a href="
-     * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
      * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline int GetPriority() const{ return m_priority; }
@@ -116,8 +116,8 @@ namespace Model
      * example:</p> <ul> <li> <p>Same object quality prefix based filter criteria If
      * prefixes you specified in multiple rules overlap </p> </li> <li> <p>Same object
      * qualify tag based filter criteria specified in multiple rules</p> </li> </ul>
-     * <p>For more information, see <a href="
-     * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
      * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
@@ -130,8 +130,8 @@ namespace Model
      * example:</p> <ul> <li> <p>Same object quality prefix based filter criteria If
      * prefixes you specified in multiple rules overlap </p> </li> <li> <p>Same object
      * qualify tag based filter criteria specified in multiple rules</p> </li> </ul>
-     * <p>For more information, see <a href="
-     * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
      * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
@@ -144,8 +144,8 @@ namespace Model
      * example:</p> <ul> <li> <p>Same object quality prefix based filter criteria If
      * prefixes you specified in multiple rules overlap </p> </li> <li> <p>Same object
      * qualify tag based filter criteria specified in multiple rules</p> </li> </ul>
-     * <p>For more information, see <a href="
-     * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
      * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline ReplicationRule& WithPriority(int value) { SetPriority(value); return *this;}

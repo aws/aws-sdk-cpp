@@ -444,8 +444,6 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p>
      */
     inline const NetworkInterfaceCreationType& GetInterfaceType() const{ return m_interfaceType; }
 
@@ -454,8 +452,6 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p>
      */
     inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }
 
@@ -464,8 +460,6 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p>
      */
     inline void SetInterfaceType(const NetworkInterfaceCreationType& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
 
@@ -474,8 +468,6 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p>
      */
     inline void SetInterfaceType(NetworkInterfaceCreationType&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = std::move(value); }
 
@@ -484,8 +476,6 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p>
      */
     inline CreateNetworkInterfaceRequest& WithInterfaceType(const NetworkInterfaceCreationType& value) { SetInterfaceType(value); return *this;}
 
@@ -494,8 +484,6 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p>
      */
     inline CreateNetworkInterfaceRequest& WithInterfaceType(NetworkInterfaceCreationType&& value) { SetInterfaceType(std::move(value)); return *this;}
 

@@ -893,8 +893,8 @@ namespace Aws
 
         /**
          * <p> Deletes the replication configuration from the bucket. For information about
-         * replication configuration, see <a href="
-         * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+         * replication configuration, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
          * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">AWS
@@ -904,8 +904,8 @@ namespace Aws
 
         /**
          * <p> Deletes the replication configuration from the bucket. For information about
-         * replication configuration, see <a href="
-         * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+         * replication configuration, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
          * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">AWS
@@ -917,8 +917,8 @@ namespace Aws
 
         /**
          * <p> Deletes the replication configuration from the bucket. For information about
-         * replication configuration, see <a href="
-         * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+         * replication configuration, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
          * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">AWS

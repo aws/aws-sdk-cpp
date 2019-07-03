@@ -31,6 +31,7 @@
 #include <aws/ec2/model/AllocateHostsResponse.h>
 #include <aws/ec2/model/ApplySecurityGroupsToClientVpnTargetNetworkResponse.h>
 #include <aws/ec2/model/AssignIpv6AddressesResponse.h>
+#include <aws/ec2/model/AssignPrivateIpAddressesResponse.h>
 #include <aws/ec2/model/AssociateAddressResponse.h>
 #include <aws/ec2/model/AssociateClientVpnTargetNetworkResponse.h>
 #include <aws/ec2/model/AssociateIamInstanceProfileResponse.h>
@@ -721,7 +722,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AllocateHostsResponse, Aws::Client::AWSError<EC2Errors>> AllocateHostsOutcome;
         typedef Aws::Utils::Outcome<ApplySecurityGroupsToClientVpnTargetNetworkResponse, Aws::Client::AWSError<EC2Errors>> ApplySecurityGroupsToClientVpnTargetNetworkOutcome;
         typedef Aws::Utils::Outcome<AssignIpv6AddressesResponse, Aws::Client::AWSError<EC2Errors>> AssignIpv6AddressesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> AssignPrivateIpAddressesOutcome;
+        typedef Aws::Utils::Outcome<AssignPrivateIpAddressesResponse, Aws::Client::AWSError<EC2Errors>> AssignPrivateIpAddressesOutcome;
         typedef Aws::Utils::Outcome<AssociateAddressResponse, Aws::Client::AWSError<EC2Errors>> AssociateAddressOutcome;
         typedef Aws::Utils::Outcome<AssociateClientVpnTargetNetworkResponse, Aws::Client::AWSError<EC2Errors>> AssociateClientVpnTargetNetworkOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> AssociateDhcpOptionsOutcome;

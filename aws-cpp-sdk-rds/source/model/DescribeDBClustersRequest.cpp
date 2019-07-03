@@ -25,7 +25,9 @@ DescribeDBClustersRequest::DescribeDBClustersRequest() :
     m_filtersHasBeenSet(false),
     m_maxRecords(0),
     m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
+    m_markerHasBeenSet(false),
+    m_includeShared(false),
+    m_includeSharedHasBeenSet(false)
 {
 }
 
@@ -56,6 +58,11 @@ Aws::String DescribeDBClustersRequest::SerializePayload() const
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
+  }
+
+  if(m_includeSharedHasBeenSet)
+  {
+    ss << "IncludeShared=" << std::boolalpha << m_includeShared << "&";
   }
 
   ss << "Version=2014-10-31";

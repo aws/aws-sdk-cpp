@@ -35,6 +35,7 @@ static const int TYPE_DEPRECATED_FAULT_HASH = HashingUtils::HashString("TypeDepr
 static const int DEFAULT_UNDEFINED_FAULT_HASH = HashingUtils::HashString("DefaultUndefinedFault");
 static const int DOMAIN_DEPRECATED_FAULT_HASH = HashingUtils::HashString("DomainDeprecatedFault");
 static const int TYPE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("TypeAlreadyExistsFault");
+static const int TOO_MANY_TAGS_FAULT_HASH = HashingUtils::HashString("TooManyTagsFault");
 static const int DOMAIN_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DomainAlreadyExistsFault");
 static const int WORKFLOW_EXECUTION_ALREADY_STARTED_FAULT_HASH = HashingUtils::HashString("WorkflowExecutionAlreadyStartedFault");
 
@@ -70,6 +71,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TYPE_ALREADY_EXISTS_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::TYPE_ALREADY_EXISTS_FAULT), false);
+  }
+  else if (hashCode == TOO_MANY_TAGS_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::TOO_MANY_TAGS_FAULT), false);
   }
   else if (hashCode == DOMAIN_ALREADY_EXISTS_FAULT_HASH)
   {

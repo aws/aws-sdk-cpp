@@ -286,6 +286,31 @@ namespace Model
      */
     inline DescribeDBClustersRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
+    /**
+     * <p>Optional Boolean parameter that specifies whether the output includes
+     * information about clusters shared from other AWS accounts.</p>
+     */
+    inline bool GetIncludeShared() const{ return m_includeShared; }
+
+    /**
+     * <p>Optional Boolean parameter that specifies whether the output includes
+     * information about clusters shared from other AWS accounts.</p>
+     */
+    inline bool IncludeSharedHasBeenSet() const { return m_includeSharedHasBeenSet; }
+
+    /**
+     * <p>Optional Boolean parameter that specifies whether the output includes
+     * information about clusters shared from other AWS accounts.</p>
+     */
+    inline void SetIncludeShared(bool value) { m_includeSharedHasBeenSet = true; m_includeShared = value; }
+
+    /**
+     * <p>Optional Boolean parameter that specifies whether the output includes
+     * information about clusters shared from other AWS accounts.</p>
+     */
+    inline DescribeDBClustersRequest& WithIncludeShared(bool value) { SetIncludeShared(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -299,6 +324,9 @@ namespace Model
 
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
+    bool m_includeShared;
+    bool m_includeSharedHasBeenSet;
   };
 
 } // namespace Model

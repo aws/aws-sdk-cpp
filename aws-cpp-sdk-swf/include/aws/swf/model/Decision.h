@@ -89,7 +89,7 @@ namespace Model
    * were members of the API. Treating decisions as a pseudo API maintains a uniform
    * conceptual model and helps keep policies readable. For details and example IAM
    * policies, see <a
-   * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+   * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
    * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
    * Guide</i>.</p> <p> <b>Decision Failure</b> </p> <p>Decisions can fail for
    * several reasons</p> <ul> <li> <p>The ordering of decisions should follow a
@@ -101,7 +101,7 @@ namespace Model
    * parameter indicates the cause. If <code>cause</code> is set to
    * <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked
    * sufficient permissions. For details and example IAM policies, see <a
-   * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+   * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
    * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
    * Guide</i>.</p> <ul> <li> <p> <code>ScheduleActivityTaskFailed</code> – A
    * <code>ScheduleActivityTask</code> decision failed. This could happen if the

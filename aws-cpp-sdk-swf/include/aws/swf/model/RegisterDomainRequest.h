@@ -17,6 +17,8 @@
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/swf/SWFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/swf/model/ResourceTag.h>
 #include <utility>
 
 namespace Aws
@@ -50,7 +52,7 @@ namespace Model
      * with whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -60,7 +62,7 @@ namespace Model
      * with whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -70,7 +72,7 @@ namespace Model
      * with whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -80,7 +82,7 @@ namespace Model
      * with whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -90,7 +92,7 @@ namespace Model
      * with whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -100,7 +102,7 @@ namespace Model
      * with whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline RegisterDomainRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -110,7 +112,7 @@ namespace Model
      * with whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline RegisterDomainRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -120,7 +122,7 @@ namespace Model
      * with whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline RegisterDomainRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -175,7 +177,7 @@ namespace Model
      * the execution record and its history are deleted.</p> <p>The maximum workflow
      * execution retention period is 90 days. For more information about Amazon SWF
      * service limits, see: <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
      * SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline const Aws::String& GetWorkflowExecutionRetentionPeriodInDays() const{ return m_workflowExecutionRetentionPeriodInDays; }
@@ -189,7 +191,7 @@ namespace Model
      * the execution record and its history are deleted.</p> <p>The maximum workflow
      * execution retention period is 90 days. For more information about Amazon SWF
      * service limits, see: <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
      * SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline bool WorkflowExecutionRetentionPeriodInDaysHasBeenSet() const { return m_workflowExecutionRetentionPeriodInDaysHasBeenSet; }
@@ -203,7 +205,7 @@ namespace Model
      * the execution record and its history are deleted.</p> <p>The maximum workflow
      * execution retention period is 90 days. For more information about Amazon SWF
      * service limits, see: <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
      * SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetWorkflowExecutionRetentionPeriodInDays(const Aws::String& value) { m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true; m_workflowExecutionRetentionPeriodInDays = value; }
@@ -217,7 +219,7 @@ namespace Model
      * the execution record and its history are deleted.</p> <p>The maximum workflow
      * execution retention period is 90 days. For more information about Amazon SWF
      * service limits, see: <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
      * SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetWorkflowExecutionRetentionPeriodInDays(Aws::String&& value) { m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true; m_workflowExecutionRetentionPeriodInDays = std::move(value); }
@@ -231,7 +233,7 @@ namespace Model
      * the execution record and its history are deleted.</p> <p>The maximum workflow
      * execution retention period is 90 days. For more information about Amazon SWF
      * service limits, see: <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
      * SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetWorkflowExecutionRetentionPeriodInDays(const char* value) { m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true; m_workflowExecutionRetentionPeriodInDays.assign(value); }
@@ -245,7 +247,7 @@ namespace Model
      * the execution record and its history are deleted.</p> <p>The maximum workflow
      * execution retention period is 90 days. For more information about Amazon SWF
      * service limits, see: <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
      * SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline RegisterDomainRequest& WithWorkflowExecutionRetentionPeriodInDays(const Aws::String& value) { SetWorkflowExecutionRetentionPeriodInDays(value); return *this;}
@@ -259,7 +261,7 @@ namespace Model
      * the execution record and its history are deleted.</p> <p>The maximum workflow
      * execution retention period is 90 days. For more information about Amazon SWF
      * service limits, see: <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
      * SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline RegisterDomainRequest& WithWorkflowExecutionRetentionPeriodInDays(Aws::String&& value) { SetWorkflowExecutionRetentionPeriodInDays(std::move(value)); return *this;}
@@ -273,10 +275,67 @@ namespace Model
      * the execution record and its history are deleted.</p> <p>The maximum workflow
      * execution retention period is 90 days. For more information about Amazon SWF
      * service limits, see: <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
      * SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline RegisterDomainRequest& WithWorkflowExecutionRetentionPeriodInDays(const char* value) { SetWorkflowExecutionRetentionPeriodInDays(value); return *this;}
+
+
+    /**
+     * <p>Tags to be added when registering a domain.</p> <p>Tags may only contain
+     * unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + -
+     * @</code>.</p>
+     */
+    inline const Aws::Vector<ResourceTag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Tags to be added when registering a domain.</p> <p>Tags may only contain
+     * unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + -
+     * @</code>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Tags to be added when registering a domain.</p> <p>Tags may only contain
+     * unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + -
+     * @</code>.</p>
+     */
+    inline void SetTags(const Aws::Vector<ResourceTag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Tags to be added when registering a domain.</p> <p>Tags may only contain
+     * unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + -
+     * @</code>.</p>
+     */
+    inline void SetTags(Aws::Vector<ResourceTag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Tags to be added when registering a domain.</p> <p>Tags may only contain
+     * unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + -
+     * @</code>.</p>
+     */
+    inline RegisterDomainRequest& WithTags(const Aws::Vector<ResourceTag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Tags to be added when registering a domain.</p> <p>Tags may only contain
+     * unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + -
+     * @</code>.</p>
+     */
+    inline RegisterDomainRequest& WithTags(Aws::Vector<ResourceTag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Tags to be added when registering a domain.</p> <p>Tags may only contain
+     * unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + -
+     * @</code>.</p>
+     */
+    inline RegisterDomainRequest& AddTags(const ResourceTag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Tags to be added when registering a domain.</p> <p>Tags may only contain
+     * unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + -
+     * @</code>.</p>
+     */
+    inline RegisterDomainRequest& AddTags(ResourceTag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -288,6 +347,9 @@ namespace Model
 
     Aws::String m_workflowExecutionRetentionPeriodInDays;
     bool m_workflowExecutionRetentionPeriodInDaysHasBeenSet;
+
+    Aws::Vector<ResourceTag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

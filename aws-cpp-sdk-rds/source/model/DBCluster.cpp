@@ -94,7 +94,9 @@ DBCluster::DBCluster() :
     m_activityStreamKmsKeyIdHasBeenSet(false),
     m_activityStreamKinesisStreamNameHasBeenSet(false),
     m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false)
+    m_copyTagsToSnapshotHasBeenSet(false),
+    m_crossAccountClone(false),
+    m_crossAccountCloneHasBeenSet(false)
 {
 }
 
@@ -162,7 +164,9 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_activityStreamKmsKeyIdHasBeenSet(false),
     m_activityStreamKinesisStreamNameHasBeenSet(false),
     m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false)
+    m_copyTagsToSnapshotHasBeenSet(false),
+    m_crossAccountClone(false),
+    m_crossAccountCloneHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -521,6 +525,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_copyTagsToSnapshot = StringUtils::ConvertToBool(StringUtils::Trim(copyTagsToSnapshotNode.GetText().c_str()).c_str());
       m_copyTagsToSnapshotHasBeenSet = true;
     }
+    XmlNode crossAccountCloneNode = resultNode.FirstChild("CrossAccountClone");
+    if(!crossAccountCloneNode.IsNull())
+    {
+      m_crossAccountClone = StringUtils::ConvertToBool(StringUtils::Trim(crossAccountCloneNode.GetText().c_str()).c_str());
+      m_crossAccountCloneHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -820,6 +830,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
   }
 
+  if(m_crossAccountCloneHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CrossAccountClone=" << std::boolalpha << m_crossAccountClone << "&";
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1065,6 +1080,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_copyTagsToSnapshotHasBeenSet)
   {
       oStream << location << ".CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
+  }
+  if(m_crossAccountCloneHasBeenSet)
+  {
+      oStream << location << ".CrossAccountClone=" << std::boolalpha << m_crossAccountClone << "&";
   }
 }
 

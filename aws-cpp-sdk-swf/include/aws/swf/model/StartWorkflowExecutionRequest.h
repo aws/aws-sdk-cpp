@@ -94,12 +94,12 @@ namespace Model
      * use this to associate a custom identifier with the workflow execution. You may
      * specify the same identifier if a workflow execution is logically a
      * <i>restart</i> of a previous execution. You cannot have two open workflow
-     * executions with the same <code>workflowId</code> at the same time.</p> <p>The
-     * specified string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * executions with the same <code>workflowId</code> at the same time within the
+     * same domain.</p> <p>The specified string must not start or end with whitespace.
+     * It must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
 
@@ -108,12 +108,12 @@ namespace Model
      * use this to associate a custom identifier with the workflow execution. You may
      * specify the same identifier if a workflow execution is logically a
      * <i>restart</i> of a previous execution. You cannot have two open workflow
-     * executions with the same <code>workflowId</code> at the same time.</p> <p>The
-     * specified string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * executions with the same <code>workflowId</code> at the same time within the
+     * same domain.</p> <p>The specified string must not start or end with whitespace.
+     * It must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
 
@@ -122,12 +122,12 @@ namespace Model
      * use this to associate a custom identifier with the workflow execution. You may
      * specify the same identifier if a workflow execution is logically a
      * <i>restart</i> of a previous execution. You cannot have two open workflow
-     * executions with the same <code>workflowId</code> at the same time.</p> <p>The
-     * specified string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * executions with the same <code>workflowId</code> at the same time within the
+     * same domain.</p> <p>The specified string must not start or end with whitespace.
+     * It must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
 
@@ -136,12 +136,12 @@ namespace Model
      * use this to associate a custom identifier with the workflow execution. You may
      * specify the same identifier if a workflow execution is logically a
      * <i>restart</i> of a previous execution. You cannot have two open workflow
-     * executions with the same <code>workflowId</code> at the same time.</p> <p>The
-     * specified string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * executions with the same <code>workflowId</code> at the same time within the
+     * same domain.</p> <p>The specified string must not start or end with whitespace.
+     * It must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
 
@@ -150,12 +150,12 @@ namespace Model
      * use this to associate a custom identifier with the workflow execution. You may
      * specify the same identifier if a workflow execution is logically a
      * <i>restart</i> of a previous execution. You cannot have two open workflow
-     * executions with the same <code>workflowId</code> at the same time.</p> <p>The
-     * specified string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * executions with the same <code>workflowId</code> at the same time within the
+     * same domain.</p> <p>The specified string must not start or end with whitespace.
+     * It must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
 
@@ -164,12 +164,12 @@ namespace Model
      * use this to associate a custom identifier with the workflow execution. You may
      * specify the same identifier if a workflow execution is logically a
      * <i>restart</i> of a previous execution. You cannot have two open workflow
-     * executions with the same <code>workflowId</code> at the same time.</p> <p>The
-     * specified string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * executions with the same <code>workflowId</code> at the same time within the
+     * same domain.</p> <p>The specified string must not start or end with whitespace.
+     * It must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline StartWorkflowExecutionRequest& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
 
@@ -178,12 +178,12 @@ namespace Model
      * use this to associate a custom identifier with the workflow execution. You may
      * specify the same identifier if a workflow execution is logically a
      * <i>restart</i> of a previous execution. You cannot have two open workflow
-     * executions with the same <code>workflowId</code> at the same time.</p> <p>The
-     * specified string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * executions with the same <code>workflowId</code> at the same time within the
+     * same domain.</p> <p>The specified string must not start or end with whitespace.
+     * It must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline StartWorkflowExecutionRequest& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
 
@@ -192,12 +192,12 @@ namespace Model
      * use this to associate a custom identifier with the workflow execution. You may
      * specify the same identifier if a workflow execution is logically a
      * <i>restart</i> of a previous execution. You cannot have two open workflow
-     * executions with the same <code>workflowId</code> at the same time.</p> <p>The
-     * specified string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * executions with the same <code>workflowId</code> at the same time within the
+     * same domain.</p> <p>The specified string must not start or end with whitespace.
+     * It must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
+     * <i>be</i> the literal string <code>arn</code>.</p>
      */
     inline StartWorkflowExecutionRequest& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
 
@@ -243,7 +243,7 @@ namespace Model
      * specified string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
      * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      * <code>arn</code>.</p>
      */
     inline const TaskList& GetTaskList() const{ return m_taskList; }
@@ -258,7 +258,7 @@ namespace Model
      * specified string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
      * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      * <code>arn</code>.</p>
      */
     inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
@@ -273,7 +273,7 @@ namespace Model
      * specified string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
      * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      * <code>arn</code>.</p>
      */
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
@@ -288,7 +288,7 @@ namespace Model
      * specified string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
      * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      * <code>arn</code>.</p>
      */
     inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
@@ -303,7 +303,7 @@ namespace Model
      * specified string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
      * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      * <code>arn</code>.</p>
      */
     inline StartWorkflowExecutionRequest& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
@@ -318,7 +318,7 @@ namespace Model
      * specified string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
      * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      * <code>arn</code>.</p>
      */
     inline StartWorkflowExecutionRequest& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
@@ -331,7 +331,7 @@ namespace Model
      * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
      * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline const Aws::String& GetTaskPriority() const{ return m_taskPriority; }
@@ -343,7 +343,7 @@ namespace Model
      * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
      * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline bool TaskPriorityHasBeenSet() const { return m_taskPriorityHasBeenSet; }
@@ -355,7 +355,7 @@ namespace Model
      * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
      * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetTaskPriority(const Aws::String& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = value; }
@@ -367,7 +367,7 @@ namespace Model
      * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
      * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetTaskPriority(Aws::String&& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = std::move(value); }
@@ -379,7 +379,7 @@ namespace Model
      * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
      * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetTaskPriority(const char* value) { m_taskPriorityHasBeenSet = true; m_taskPriority.assign(value); }
@@ -391,7 +391,7 @@ namespace Model
      * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
      * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline StartWorkflowExecutionRequest& WithTaskPriority(const Aws::String& value) { SetTaskPriority(value); return *this;}
@@ -403,7 +403,7 @@ namespace Model
      * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
      * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline StartWorkflowExecutionRequest& WithTaskPriority(Aws::String&& value) { SetTaskPriority(std::move(value)); return *this;}
@@ -415,7 +415,7 @@ namespace Model
      * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
      * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline StartWorkflowExecutionRequest& WithTaskPriority(const char* value) { SetTaskPriority(value); return *this;}
@@ -920,7 +920,7 @@ namespace Model
      * attach an IAM role, any attempt to schedule a Lambda task fails. This results in
      * a <code>ScheduleLambdaFunctionFailed</code> history event. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
      * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
      */
     inline const Aws::String& GetLambdaRole() const{ return m_lambdaRole; }
@@ -931,7 +931,7 @@ namespace Model
      * attach an IAM role, any attempt to schedule a Lambda task fails. This results in
      * a <code>ScheduleLambdaFunctionFailed</code> history event. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
      * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
      */
     inline bool LambdaRoleHasBeenSet() const { return m_lambdaRoleHasBeenSet; }
@@ -942,7 +942,7 @@ namespace Model
      * attach an IAM role, any attempt to schedule a Lambda task fails. This results in
      * a <code>ScheduleLambdaFunctionFailed</code> history event. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
      * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
      */
     inline void SetLambdaRole(const Aws::String& value) { m_lambdaRoleHasBeenSet = true; m_lambdaRole = value; }
@@ -953,7 +953,7 @@ namespace Model
      * attach an IAM role, any attempt to schedule a Lambda task fails. This results in
      * a <code>ScheduleLambdaFunctionFailed</code> history event. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
      * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
      */
     inline void SetLambdaRole(Aws::String&& value) { m_lambdaRoleHasBeenSet = true; m_lambdaRole = std::move(value); }
@@ -964,7 +964,7 @@ namespace Model
      * attach an IAM role, any attempt to schedule a Lambda task fails. This results in
      * a <code>ScheduleLambdaFunctionFailed</code> history event. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
      * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
      */
     inline void SetLambdaRole(const char* value) { m_lambdaRoleHasBeenSet = true; m_lambdaRole.assign(value); }
@@ -975,7 +975,7 @@ namespace Model
      * attach an IAM role, any attempt to schedule a Lambda task fails. This results in
      * a <code>ScheduleLambdaFunctionFailed</code> history event. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
      * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
      */
     inline StartWorkflowExecutionRequest& WithLambdaRole(const Aws::String& value) { SetLambdaRole(value); return *this;}
@@ -986,7 +986,7 @@ namespace Model
      * attach an IAM role, any attempt to schedule a Lambda task fails. This results in
      * a <code>ScheduleLambdaFunctionFailed</code> history event. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
      * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
      */
     inline StartWorkflowExecutionRequest& WithLambdaRole(Aws::String&& value) { SetLambdaRole(std::move(value)); return *this;}
@@ -997,7 +997,7 @@ namespace Model
      * attach an IAM role, any attempt to schedule a Lambda task fails. This results in
      * a <code>ScheduleLambdaFunctionFailed</code> history event. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
      * in the <i>Amazon SWF Developer Guide</i>.</p> </note>
      */
     inline StartWorkflowExecutionRequest& WithLambdaRole(const char* value) { SetLambdaRole(value); return *this;}

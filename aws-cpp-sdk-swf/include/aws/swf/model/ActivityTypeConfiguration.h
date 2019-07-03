@@ -306,7 +306,7 @@ namespace Model
      * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers
      * indicate higher priority.</p> <p>For more information about setting task
      * priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline const Aws::String& GetDefaultTaskPriority() const{ return m_defaultTaskPriority; }
@@ -319,7 +319,7 @@ namespace Model
      * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers
      * indicate higher priority.</p> <p>For more information about setting task
      * priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline bool DefaultTaskPriorityHasBeenSet() const { return m_defaultTaskPriorityHasBeenSet; }
@@ -332,7 +332,7 @@ namespace Model
      * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers
      * indicate higher priority.</p> <p>For more information about setting task
      * priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetDefaultTaskPriority(const Aws::String& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = value; }
@@ -345,7 +345,7 @@ namespace Model
      * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers
      * indicate higher priority.</p> <p>For more information about setting task
      * priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetDefaultTaskPriority(Aws::String&& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = std::move(value); }
@@ -358,7 +358,7 @@ namespace Model
      * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers
      * indicate higher priority.</p> <p>For more information about setting task
      * priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetDefaultTaskPriority(const char* value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority.assign(value); }
@@ -371,7 +371,7 @@ namespace Model
      * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers
      * indicate higher priority.</p> <p>For more information about setting task
      * priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline ActivityTypeConfiguration& WithDefaultTaskPriority(const Aws::String& value) { SetDefaultTaskPriority(value); return *this;}
@@ -384,7 +384,7 @@ namespace Model
      * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers
      * indicate higher priority.</p> <p>For more information about setting task
      * priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline ActivityTypeConfiguration& WithDefaultTaskPriority(Aws::String&& value) { SetDefaultTaskPriority(std::move(value)); return *this;}
@@ -397,7 +397,7 @@ namespace Model
      * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers
      * indicate higher priority.</p> <p>For more information about setting task
      * priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline ActivityTypeConfiguration& WithDefaultTaskPriority(const char* value) { SetDefaultTaskPriority(value); return *this;}

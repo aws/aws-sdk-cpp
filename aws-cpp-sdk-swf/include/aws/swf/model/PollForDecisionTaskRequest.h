@@ -91,7 +91,7 @@ namespace Model
      * string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
      * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      * <code>arn</code>.</p>
      */
     inline const TaskList& GetTaskList() const{ return m_taskList; }
@@ -101,7 +101,7 @@ namespace Model
      * string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
      * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      * <code>arn</code>.</p>
      */
     inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
@@ -111,7 +111,7 @@ namespace Model
      * string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
      * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      * <code>arn</code>.</p>
      */
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
@@ -121,7 +121,7 @@ namespace Model
      * string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
      * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      * <code>arn</code>.</p>
      */
     inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
@@ -131,7 +131,7 @@ namespace Model
      * string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
      * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      * <code>arn</code>.</p>
      */
     inline PollForDecisionTaskRequest& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
@@ -141,7 +141,7 @@ namespace Model
      * string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
      * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
      * <code>arn</code>.</p>
      */
     inline PollForDecisionTaskRequest& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
@@ -205,163 +205,171 @@ namespace Model
 
 
     /**
-     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
-     * more results available. To retrieve the next page of results, make the call
-     * again using the returned token in <code>nextPageToken</code>. Keep all other
-     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
-     * determines how many results can be returned in a single call.</p> <note> <p>The
-     * <code>nextPageToken</code> returned by this action cannot be used with
-     * <a>GetWorkflowExecutionHistory</a> to get the next page. You must call
-     * <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to
-     * retrieve the next page of history records. Calling <a>PollForDecisionTask</a>
-     * with a <code>nextPageToken</code> doesn't return a new decision task.</p>
-     * </note>
+     * <p>If <code>NextPageToken</code> is returned there are more results available.
+     * The value of <code>NextPageToken</code> is a unique pagination token for each
+     * page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error:
+     * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
+     * configured <code>maximumPageSize</code> determines how many results can be
+     * returned in a single call. </p> <note> <p>The <code>nextPageToken</code>
+     * returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a>
+     * to get the next page. You must call <a>PollForDecisionTask</a> again (with the
+     * <code>nextPageToken</code>) to retrieve the next page of history records.
+     * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't
+     * return a new decision task.</p> </note>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
-     * more results available. To retrieve the next page of results, make the call
-     * again using the returned token in <code>nextPageToken</code>. Keep all other
-     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
-     * determines how many results can be returned in a single call.</p> <note> <p>The
-     * <code>nextPageToken</code> returned by this action cannot be used with
-     * <a>GetWorkflowExecutionHistory</a> to get the next page. You must call
-     * <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to
-     * retrieve the next page of history records. Calling <a>PollForDecisionTask</a>
-     * with a <code>nextPageToken</code> doesn't return a new decision task.</p>
-     * </note>
+     * <p>If <code>NextPageToken</code> is returned there are more results available.
+     * The value of <code>NextPageToken</code> is a unique pagination token for each
+     * page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error:
+     * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
+     * configured <code>maximumPageSize</code> determines how many results can be
+     * returned in a single call. </p> <note> <p>The <code>nextPageToken</code>
+     * returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a>
+     * to get the next page. You must call <a>PollForDecisionTask</a> again (with the
+     * <code>nextPageToken</code>) to retrieve the next page of history records.
+     * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't
+     * return a new decision task.</p> </note>
      */
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
 
     /**
-     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
-     * more results available. To retrieve the next page of results, make the call
-     * again using the returned token in <code>nextPageToken</code>. Keep all other
-     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
-     * determines how many results can be returned in a single call.</p> <note> <p>The
-     * <code>nextPageToken</code> returned by this action cannot be used with
-     * <a>GetWorkflowExecutionHistory</a> to get the next page. You must call
-     * <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to
-     * retrieve the next page of history records. Calling <a>PollForDecisionTask</a>
-     * with a <code>nextPageToken</code> doesn't return a new decision task.</p>
-     * </note>
+     * <p>If <code>NextPageToken</code> is returned there are more results available.
+     * The value of <code>NextPageToken</code> is a unique pagination token for each
+     * page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error:
+     * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
+     * configured <code>maximumPageSize</code> determines how many results can be
+     * returned in a single call. </p> <note> <p>The <code>nextPageToken</code>
+     * returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a>
+     * to get the next page. You must call <a>PollForDecisionTask</a> again (with the
+     * <code>nextPageToken</code>) to retrieve the next page of history records.
+     * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't
+     * return a new decision task.</p> </note>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
 
     /**
-     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
-     * more results available. To retrieve the next page of results, make the call
-     * again using the returned token in <code>nextPageToken</code>. Keep all other
-     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
-     * determines how many results can be returned in a single call.</p> <note> <p>The
-     * <code>nextPageToken</code> returned by this action cannot be used with
-     * <a>GetWorkflowExecutionHistory</a> to get the next page. You must call
-     * <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to
-     * retrieve the next page of history records. Calling <a>PollForDecisionTask</a>
-     * with a <code>nextPageToken</code> doesn't return a new decision task.</p>
-     * </note>
+     * <p>If <code>NextPageToken</code> is returned there are more results available.
+     * The value of <code>NextPageToken</code> is a unique pagination token for each
+     * page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error:
+     * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
+     * configured <code>maximumPageSize</code> determines how many results can be
+     * returned in a single call. </p> <note> <p>The <code>nextPageToken</code>
+     * returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a>
+     * to get the next page. You must call <a>PollForDecisionTask</a> again (with the
+     * <code>nextPageToken</code>) to retrieve the next page of history records.
+     * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't
+     * return a new decision task.</p> </note>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
 
     /**
-     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
-     * more results available. To retrieve the next page of results, make the call
-     * again using the returned token in <code>nextPageToken</code>. Keep all other
-     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
-     * determines how many results can be returned in a single call.</p> <note> <p>The
-     * <code>nextPageToken</code> returned by this action cannot be used with
-     * <a>GetWorkflowExecutionHistory</a> to get the next page. You must call
-     * <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to
-     * retrieve the next page of history records. Calling <a>PollForDecisionTask</a>
-     * with a <code>nextPageToken</code> doesn't return a new decision task.</p>
-     * </note>
+     * <p>If <code>NextPageToken</code> is returned there are more results available.
+     * The value of <code>NextPageToken</code> is a unique pagination token for each
+     * page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error:
+     * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
+     * configured <code>maximumPageSize</code> determines how many results can be
+     * returned in a single call. </p> <note> <p>The <code>nextPageToken</code>
+     * returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a>
+     * to get the next page. You must call <a>PollForDecisionTask</a> again (with the
+     * <code>nextPageToken</code>) to retrieve the next page of history records.
+     * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't
+     * return a new decision task.</p> </note>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
 
     /**
-     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
-     * more results available. To retrieve the next page of results, make the call
-     * again using the returned token in <code>nextPageToken</code>. Keep all other
-     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
-     * determines how many results can be returned in a single call.</p> <note> <p>The
-     * <code>nextPageToken</code> returned by this action cannot be used with
-     * <a>GetWorkflowExecutionHistory</a> to get the next page. You must call
-     * <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to
-     * retrieve the next page of history records. Calling <a>PollForDecisionTask</a>
-     * with a <code>nextPageToken</code> doesn't return a new decision task.</p>
-     * </note>
+     * <p>If <code>NextPageToken</code> is returned there are more results available.
+     * The value of <code>NextPageToken</code> is a unique pagination token for each
+     * page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error:
+     * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
+     * configured <code>maximumPageSize</code> determines how many results can be
+     * returned in a single call. </p> <note> <p>The <code>nextPageToken</code>
+     * returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a>
+     * to get the next page. You must call <a>PollForDecisionTask</a> again (with the
+     * <code>nextPageToken</code>) to retrieve the next page of history records.
+     * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't
+     * return a new decision task.</p> </note>
      */
     inline PollForDecisionTaskRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
-     * more results available. To retrieve the next page of results, make the call
-     * again using the returned token in <code>nextPageToken</code>. Keep all other
-     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
-     * determines how many results can be returned in a single call.</p> <note> <p>The
-     * <code>nextPageToken</code> returned by this action cannot be used with
-     * <a>GetWorkflowExecutionHistory</a> to get the next page. You must call
-     * <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to
-     * retrieve the next page of history records. Calling <a>PollForDecisionTask</a>
-     * with a <code>nextPageToken</code> doesn't return a new decision task.</p>
-     * </note>
+     * <p>If <code>NextPageToken</code> is returned there are more results available.
+     * The value of <code>NextPageToken</code> is a unique pagination token for each
+     * page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error:
+     * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
+     * configured <code>maximumPageSize</code> determines how many results can be
+     * returned in a single call. </p> <note> <p>The <code>nextPageToken</code>
+     * returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a>
+     * to get the next page. You must call <a>PollForDecisionTask</a> again (with the
+     * <code>nextPageToken</code>) to retrieve the next page of history records.
+     * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't
+     * return a new decision task.</p> </note>
      */
     inline PollForDecisionTaskRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
-     * more results available. To retrieve the next page of results, make the call
-     * again using the returned token in <code>nextPageToken</code>. Keep all other
-     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
-     * determines how many results can be returned in a single call.</p> <note> <p>The
-     * <code>nextPageToken</code> returned by this action cannot be used with
-     * <a>GetWorkflowExecutionHistory</a> to get the next page. You must call
-     * <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to
-     * retrieve the next page of history records. Calling <a>PollForDecisionTask</a>
-     * with a <code>nextPageToken</code> doesn't return a new decision task.</p>
-     * </note>
+     * <p>If <code>NextPageToken</code> is returned there are more results available.
+     * The value of <code>NextPageToken</code> is a unique pagination token for each
+     * page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error:
+     * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
+     * configured <code>maximumPageSize</code> determines how many results can be
+     * returned in a single call. </p> <note> <p>The <code>nextPageToken</code>
+     * returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a>
+     * to get the next page. You must call <a>PollForDecisionTask</a> again (with the
+     * <code>nextPageToken</code>) to retrieve the next page of history records.
+     * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't
+     * return a new decision task.</p> </note>
      */
     inline PollForDecisionTaskRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
 
     /**
-     * <p>The maximum number of results that are returned per call.
-     * <code>nextPageToken</code> can be used to obtain futher pages of results. The
-     * default is 1000, which is the maximum allowed page size. You can, however,
-     * specify a page size <i>smaller</i> than the maximum.</p> <p>This is an upper
-     * limit only; the actual number of results returned per call may be fewer than the
-     * specified maximum.</p>
+     * <p>The maximum number of results that are returned per call. Use
+     * <code>nextPageToken</code> to obtain further pages of results. </p> <p>This is
+     * an upper limit only; the actual number of results returned per call may be fewer
+     * than the specified maximum.</p>
      */
     inline int GetMaximumPageSize() const{ return m_maximumPageSize; }
 
     /**
-     * <p>The maximum number of results that are returned per call.
-     * <code>nextPageToken</code> can be used to obtain futher pages of results. The
-     * default is 1000, which is the maximum allowed page size. You can, however,
-     * specify a page size <i>smaller</i> than the maximum.</p> <p>This is an upper
-     * limit only; the actual number of results returned per call may be fewer than the
-     * specified maximum.</p>
+     * <p>The maximum number of results that are returned per call. Use
+     * <code>nextPageToken</code> to obtain further pages of results. </p> <p>This is
+     * an upper limit only; the actual number of results returned per call may be fewer
+     * than the specified maximum.</p>
      */
     inline bool MaximumPageSizeHasBeenSet() const { return m_maximumPageSizeHasBeenSet; }
 
     /**
-     * <p>The maximum number of results that are returned per call.
-     * <code>nextPageToken</code> can be used to obtain futher pages of results. The
-     * default is 1000, which is the maximum allowed page size. You can, however,
-     * specify a page size <i>smaller</i> than the maximum.</p> <p>This is an upper
-     * limit only; the actual number of results returned per call may be fewer than the
-     * specified maximum.</p>
+     * <p>The maximum number of results that are returned per call. Use
+     * <code>nextPageToken</code> to obtain further pages of results. </p> <p>This is
+     * an upper limit only; the actual number of results returned per call may be fewer
+     * than the specified maximum.</p>
      */
     inline void SetMaximumPageSize(int value) { m_maximumPageSizeHasBeenSet = true; m_maximumPageSize = value; }
 
     /**
-     * <p>The maximum number of results that are returned per call.
-     * <code>nextPageToken</code> can be used to obtain futher pages of results. The
-     * default is 1000, which is the maximum allowed page size. You can, however,
-     * specify a page size <i>smaller</i> than the maximum.</p> <p>This is an upper
-     * limit only; the actual number of results returned per call may be fewer than the
-     * specified maximum.</p>
+     * <p>The maximum number of results that are returned per call. Use
+     * <code>nextPageToken</code> to obtain further pages of results. </p> <p>This is
+     * an upper limit only; the actual number of results returned per call may be fewer
+     * than the specified maximum.</p>
      */
     inline PollForDecisionTaskRequest& WithMaximumPageSize(int value) { SetMaximumPageSize(value); return *this;}
 

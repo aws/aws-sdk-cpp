@@ -780,7 +780,7 @@ AssignPrivateIpAddressesOutcome EC2Client::AssignPrivateIpAddresses(const Assign
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return AssignPrivateIpAddressesOutcome(NoResult());
+    return AssignPrivateIpAddressesOutcome(AssignPrivateIpAddressesResponse(outcome.GetResult()));
   }
   else
   {

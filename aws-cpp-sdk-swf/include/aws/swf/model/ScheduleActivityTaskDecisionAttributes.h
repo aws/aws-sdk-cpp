@@ -53,7 +53,7 @@ namespace Model
    * action fails. The associated event attribute's <code>cause</code> parameter is
    * set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM
    * policies, see <a
-   * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+   * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
    * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ScheduleActivityTaskDecisionAttributes">AWS
@@ -451,7 +451,7 @@ namespace Model
      * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
      * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline const Aws::String& GetTaskPriority() const{ return m_taskPriority; }
@@ -463,7 +463,7 @@ namespace Model
      * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
      * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline bool TaskPriorityHasBeenSet() const { return m_taskPriorityHasBeenSet; }
@@ -475,7 +475,7 @@ namespace Model
      * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
      * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetTaskPriority(const Aws::String& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = value; }
@@ -487,7 +487,7 @@ namespace Model
      * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
      * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetTaskPriority(Aws::String&& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = std::move(value); }
@@ -499,7 +499,7 @@ namespace Model
      * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
      * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline void SetTaskPriority(const char* value) { m_taskPriorityHasBeenSet = true; m_taskPriority.assign(value); }
@@ -511,7 +511,7 @@ namespace Model
      * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
      * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline ScheduleActivityTaskDecisionAttributes& WithTaskPriority(const Aws::String& value) { SetTaskPriority(value); return *this;}
@@ -523,7 +523,7 @@ namespace Model
      * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
      * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline ScheduleActivityTaskDecisionAttributes& WithTaskPriority(Aws::String&& value) { SetTaskPriority(std::move(value)); return *this;}
@@ -535,7 +535,7 @@ namespace Model
      * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
      * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
      * priority.</p> <p>For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline ScheduleActivityTaskDecisionAttributes& WithTaskPriority(const char* value) { SetTaskPriority(value); return *this;}

@@ -84,7 +84,7 @@ namespace Model
      * <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision
      * failed because the IAM role attached to the execution lacked sufficient
      * permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda
      * Tasks</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
      */
     inline const StartLambdaFunctionFailedCause& GetCause() const{ return m_cause; }
@@ -95,7 +95,7 @@ namespace Model
      * <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision
      * failed because the IAM role attached to the execution lacked sufficient
      * permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda
      * Tasks</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
      */
     inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
@@ -106,7 +106,7 @@ namespace Model
      * <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision
      * failed because the IAM role attached to the execution lacked sufficient
      * permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda
      * Tasks</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
      */
     inline void SetCause(const StartLambdaFunctionFailedCause& value) { m_causeHasBeenSet = true; m_cause = value; }
@@ -117,7 +117,7 @@ namespace Model
      * <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision
      * failed because the IAM role attached to the execution lacked sufficient
      * permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda
      * Tasks</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
      */
     inline void SetCause(StartLambdaFunctionFailedCause&& value) { m_causeHasBeenSet = true; m_cause = std::move(value); }
@@ -128,7 +128,7 @@ namespace Model
      * <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision
      * failed because the IAM role attached to the execution lacked sufficient
      * permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda
      * Tasks</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
      */
     inline StartLambdaFunctionFailedEventAttributes& WithCause(const StartLambdaFunctionFailedCause& value) { SetCause(value); return *this;}
@@ -139,7 +139,7 @@ namespace Model
      * <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision
      * failed because the IAM role attached to the execution lacked sufficient
      * permissions. For details and example IAM policies, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda
      * Tasks</a> in the <i>Amazon SWF Developer Guide</i>.</p> </note>
      */
     inline StartLambdaFunctionFailedEventAttributes& WithCause(StartLambdaFunctionFailedCause&& value) { SetCause(std::move(value)); return *this;}

@@ -1316,6 +1316,63 @@ namespace Model
 
 
     /**
+     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
+     * value of this header is a base64-encoded UTF-8 string holding JSON with the
+     * encryption context key-value pairs.</p>
+     */
+    inline const Aws::String& GetSSEKMSEncryptionContext() const{ return m_sSEKMSEncryptionContext; }
+
+    /**
+     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
+     * value of this header is a base64-encoded UTF-8 string holding JSON with the
+     * encryption context key-value pairs.</p>
+     */
+    inline bool SSEKMSEncryptionContextHasBeenSet() const { return m_sSEKMSEncryptionContextHasBeenSet; }
+
+    /**
+     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
+     * value of this header is a base64-encoded UTF-8 string holding JSON with the
+     * encryption context key-value pairs.</p>
+     */
+    inline void SetSSEKMSEncryptionContext(const Aws::String& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = value; }
+
+    /**
+     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
+     * value of this header is a base64-encoded UTF-8 string holding JSON with the
+     * encryption context key-value pairs.</p>
+     */
+    inline void SetSSEKMSEncryptionContext(Aws::String&& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = std::move(value); }
+
+    /**
+     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
+     * value of this header is a base64-encoded UTF-8 string holding JSON with the
+     * encryption context key-value pairs.</p>
+     */
+    inline void SetSSEKMSEncryptionContext(const char* value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext.assign(value); }
+
+    /**
+     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
+     * value of this header is a base64-encoded UTF-8 string holding JSON with the
+     * encryption context key-value pairs.</p>
+     */
+    inline CopyObjectRequest& WithSSEKMSEncryptionContext(const Aws::String& value) { SetSSEKMSEncryptionContext(value); return *this;}
+
+    /**
+     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
+     * value of this header is a base64-encoded UTF-8 string holding JSON with the
+     * encryption context key-value pairs.</p>
+     */
+    inline CopyObjectRequest& WithSSEKMSEncryptionContext(Aws::String&& value) { SetSSEKMSEncryptionContext(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
+     * value of this header is a base64-encoded UTF-8 string holding JSON with the
+     * encryption context key-value pairs.</p>
+     */
+    inline CopyObjectRequest& WithSSEKMSEncryptionContext(const char* value) { SetSSEKMSEncryptionContext(value); return *this;}
+
+
+    /**
      * <p>Specifies the algorithm to use when decrypting the source object (e.g.,
      * AES256).</p>
      */
@@ -1777,6 +1834,9 @@ namespace Model
 
     Aws::String m_sSEKMSKeyId;
     bool m_sSEKMSKeyIdHasBeenSet;
+
+    Aws::String m_sSEKMSEncryptionContext;
+    bool m_sSEKMSEncryptionContextHasBeenSet;
 
     Aws::String m_copySourceSSECustomerAlgorithm;
     bool m_copySourceSSECustomerAlgorithmHasBeenSet;
