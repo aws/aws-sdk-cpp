@@ -44,6 +44,8 @@ CurlHandleContainer::~CurlHandleContainer()
 
 CURL* CurlHandleContainer::AcquireCurlHandle()
 {
+    static std::mutex m_acquireHandleLock;
+    std::lock_guard<std::mutex> locker(m_acquireHandleLock);
     AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Attempting to acquire curl connection.");
 
     if(!m_handleContainer.HasResourcesAvailable())
