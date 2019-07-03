@@ -21,93 +21,75 @@ namespace Aws
 {
     namespace Net
     {
-        SimpleUDP::SimpleUDP(int addressFamily, size_t sendBufSize, size_t receiveBufSize, bool nonBlocking):
-            m_addressFamily(addressFamily), m_connected(false)
+        SimpleUDP::SimpleUDP(int, size_t, size_t, bool)
         {
-            CreateSocket(addressFamily, sendBufSize, receiveBufSize, nonBlocking);
         }
 
-        SimpleUDP::SimpleUDP(bool IPV4, size_t sendBufSize, size_t receiveBufSize, bool nonBlocking) :
-            m_addressFamily(IPV4 ? 2 : 10), m_connected(false)
+        SimpleUDP::SimpleUDP(bool, size_t, size_t, bool)
         {
-            CreateSocket(m_addressFamily, sendBufSize, receiveBufSize, nonBlocking);
+        }
+
+        SimpleUDP::SimpleUDP(const char*, unsigned short, size_t, size_t, bool)
+        {
+            //prevent compiler warning for unused private variables
+            m_port = 0;
         }
 
         SimpleUDP::~SimpleUDP()
         {
         }
 
-        void SimpleUDP::CreateSocket(int addressFamily, size_t sendBufSize, size_t receiveBufSize, bool nonBlocking)
+        void SimpleUDP::CreateSocket(int, size_t, size_t, bool)
         {
-            AWS_UNREFERENCED_PARAM(addressFamily);
-            AWS_UNREFERENCED_PARAM(sendBufSize);
-            AWS_UNREFERENCED_PARAM(receiveBufSize);
-            AWS_UNREFERENCED_PARAM(nonBlocking);
         }
 
-        int SimpleUDP::Connect(const sockaddr* address, size_t addressLength)
+        int SimpleUDP::Connect(const sockaddr*, size_t)
         {
-            AWS_UNREFERENCED_PARAM(address);
-            AWS_UNREFERENCED_PARAM(addressLength);
             return -1;
         }
 
-        int SimpleUDP::ConnectToLocalHost(unsigned short port)
+        int SimpleUDP::ConnectToHost(const char*, unsigned short) const
         {
-            AWS_UNREFERENCED_PARAM(port);
             return -1;
         }
 
-        int SimpleUDP::Bind(const sockaddr* address, size_t addressLength) const
+        int SimpleUDP::ConnectToLocalHost(unsigned short) const
         {
-            AWS_UNREFERENCED_PARAM(address);
-            AWS_UNREFERENCED_PARAM(addressLength);
             return -1;
         }
 
-        int SimpleUDP::BindToLocalHost(unsigned short port) const
+        int SimpleUDP::Bind(const sockaddr*, size_t) const
         {
-            AWS_UNREFERENCED_PARAM(port);
             return -1;
         }
 
-        int SimpleUDP::SendData(const uint8_t* data, size_t dataLen) const
+        int SimpleUDP::BindToLocalHost(unsigned short) const
         {
-            AWS_UNREFERENCED_PARAM(data);
-            AWS_UNREFERENCED_PARAM(dataLen);
             return -1;
         }
 
-        int SimpleUDP::SendDataTo(const sockaddr* address, size_t addressLength, const uint8_t* data, size_t dataLen) const
+        int SimpleUDP::SendData(const uint8_t*, size_t) const
         {
-            AWS_UNREFERENCED_PARAM(address);
-            AWS_UNREFERENCED_PARAM(addressLength);
-            AWS_UNREFERENCED_PARAM(data);
-            AWS_UNREFERENCED_PARAM(dataLen);
             return -1;
         }
 
-        int SimpleUDP::SendDataToLocalHost(const uint8_t* data, size_t dataLen, unsigned short port) const
+        int SimpleUDP::SendDataTo(const sockaddr*, size_t, const uint8_t*, size_t) const
         {
-            AWS_UNREFERENCED_PARAM(data);
-            AWS_UNREFERENCED_PARAM(dataLen);
-            AWS_UNREFERENCED_PARAM(port);
             return -1;
         }
 
-        int SimpleUDP::ReceiveData(uint8_t* buffer, size_t bufferLen) const
+        int SimpleUDP::SendDataToLocalHost(const uint8_t*, size_t, unsigned short) const
         {
-            AWS_UNREFERENCED_PARAM(buffer);
-            AWS_UNREFERENCED_PARAM(bufferLen);
             return -1;
         }
 
-        int SimpleUDP::ReceiveDataFrom(sockaddr* address, size_t* addressLength, uint8_t* buffer, size_t bufferLen) const
+        int SimpleUDP::ReceiveData(uint8_t*, size_t) const
         {
-            AWS_UNREFERENCED_PARAM(address);
-            AWS_UNREFERENCED_PARAM(addressLength);
-            AWS_UNREFERENCED_PARAM(buffer);
-            AWS_UNREFERENCED_PARAM(bufferLen);
+            return -1;
+        }
+
+        int SimpleUDP::ReceiveDataFrom(sockaddr*, size_t*, uint8_t*, size_t) const
+        {
             return -1;
         }
     }

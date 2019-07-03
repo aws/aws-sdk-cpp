@@ -102,6 +102,7 @@ protected:
     Aws::UniquePtr<MockServiceClient> mockClient;
     Aws::String originalEnabled;
     Aws::String originalClientId;
+    Aws::String originalHost;
     unsigned short originalPort;
 
     void SetUp()
@@ -113,10 +114,12 @@ protected:
 
         originalEnabled = Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_ENABLED);
         originalClientId = Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_CLIENT_ID);
+        originalHost = Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_HOST);
         originalPort = static_cast<short>(StringUtils::ConvertToInt32(Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_PORT).c_str()));
 
         Aws::Environment::SetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_ENABLED, "true", 1);
         Aws::Environment::SetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_CLIENT_ID, "CppCSMTest", 1);
+        Aws::Environment::SetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_HOST, "127.0.0.1", 1);
         Aws::Environment::SetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_PORT, "6666", 1);
         
         Aws::Monitoring::CleanupMonitoring();
@@ -128,6 +131,7 @@ protected:
     {
         Aws::Environment::SetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_ENABLED, originalEnabled.c_str(), 1);
         Aws::Environment::SetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_CLIENT_ID, originalClientId.c_str(), 1);
+        Aws::Environment::SetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_HOST, originalHost.c_str(), 1);
         Aws::Environment::SetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_PORT, StringUtils::to_string(originalPort).c_str(), 1);
 
         mockClient = nullptr;

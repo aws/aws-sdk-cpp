@@ -259,6 +259,9 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestNotSetup)
     Aws::Environment::UnSetEnv("AWS_ACCESS_KEY_ID");
     Aws::Environment::UnSetEnv("AWS_SECRET_ACCESS_KEY");
     Aws::Environment::UnSetEnv("AWS_SHARED_CREDENTIALS_FILE");
+    //On windows we don't redirect the home directory
+    //This is to prevent when user actually sets .aws/credentials with Keys, this test would fail.
+    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "SomeUnknownProfileThatDoesNotExist", 1);
 
     ProfileConfigFileAWSCredentialsProvider provider;
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());

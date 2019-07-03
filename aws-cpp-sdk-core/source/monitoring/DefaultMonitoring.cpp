@@ -35,15 +35,18 @@ namespace Aws
         static const int ERROR_MESSAGE_LENGTH_LIMIT = 512;
 
         const char DEFAULT_MONITORING_CLIENT_ID[] = ""; // default to empty;
+        const char DEFAULT_MONITORING_HOST[] = "127.0.0.1"; // default to loopback ip address instead of "localhost" based on design specification. 
         unsigned short DEFAULT_MONITORING_PORT = 31000; //default to 31000;
         bool DEFAULT_MONITORING_ENABLE = false; //default to false;
 
         const int DefaultMonitoring::DEFAULT_MONITORING_VERSION = 1;
         const char DefaultMonitoring::DEFAULT_CSM_CONFIG_ENABLED[] = "csm_enabled";
         const char DefaultMonitoring::DEFAULT_CSM_CONFIG_CLIENT_ID[] = "csm_client_id";
+        const char DefaultMonitoring::DEFAULT_CSM_CONFIG_HOST[] = "csm_host";
         const char DefaultMonitoring::DEFAULT_CSM_CONFIG_PORT[] = "csm_port";
         const char DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_ENABLED[] = "AWS_CSM_ENABLED";
         const char DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_CLIENT_ID[] = "AWS_CSM_CLIENT_ID";
+        const char DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_HOST[] = "AWS_CSM_HOST";
         const char DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_PORT[] = "AWS_CSM_PORT";
 
 
@@ -196,10 +199,9 @@ namespace Aws
             ExportHttpMetricsToJson(json, metricsFromCore.httpClientMetrics, HttpClientMetricsType::TcpLatency);
         }
 
-        DefaultMonitoring::DefaultMonitoring(const Aws::String& clientId, unsigned short port):
-            m_clientId(clientId), m_port(port)
+        DefaultMonitoring::DefaultMonitoring(const Aws::String& clientId, const Aws::String& host, unsigned short port):
+            m_udp(host.c_str(), port), m_clientId(clientId)
         {
-            m_udp.ConnectToLocalHost(port);
         }
 
         void* DefaultMonitoring::OnRequestStarted(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request) const
@@ -252,7 +254,7 @@ namespace Aws
             FillRequiredApiCallFieldsToJson(json, defaultContext->retryCount + 1, (DateTime::Now() - defaultContext->apiCallStartTime).count(), (!defaultContext->lastAttemptSucceeded && defaultContext->lastErrorRetriable));
             FillOptionalApiCallFieldsToJson(json, request.get(), *(defaultContext->outcome));
             Aws::String compactData = json.View().WriteCompact();
-            m_udp.SendDataToLocalHost(reinterpret_cast<const uint8_t*>(compactData.c_str()), static_cast<int>(compactData.size()), m_port);
+            m_udp.SendData(reinterpret_cast<const uint8_t*>(compactData.c_str()), static_cast<int>(compactData.size()));
             AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Send API Metrics: \n" << json.View().WriteReadable());
             Aws::Delete(defaultContext);
         }
@@ -271,12 +273,13 @@ namespace Aws
             FillOptionalApiAttemptFieldsToJson(json, request.get(), outcome, metricsFromCore);
             Aws::String compactData = json.View().WriteCompact();
             AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Send Attempt Metrics: \n" << json.View().WriteReadable());
-            m_udp.SendDataToLocalHost(reinterpret_cast<const uint8_t*>(compactData.c_str()), static_cast<int>(compactData.size()), m_port);
+            m_udp.SendData(reinterpret_cast<const uint8_t*>(compactData.c_str()), static_cast<int>(compactData.size()));
         }
 
         Aws::UniquePtr<MonitoringInterface> DefaultMonitoringFactory::CreateMonitoringInstance() const
         {   
             Aws::String clientId(DEFAULT_MONITORING_CLIENT_ID); // default to empty
+            Aws::String host(DEFAULT_MONITORING_HOST); // default to 127.0.0.1
             unsigned short port = DEFAULT_MONITORING_PORT; // default to 31000
             bool enable = DEFAULT_MONITORING_ENABLE; //default to false;
 
@@ -292,6 +295,7 @@ namespace Aws
                 {
                     Aws::String tmpEnable = iter.second.GetValue(DefaultMonitoring::DEFAULT_CSM_CONFIG_ENABLED);
                     Aws::String tmpClientId = iter.second.GetValue(DefaultMonitoring::DEFAULT_CSM_CONFIG_CLIENT_ID);
+                    Aws::String tmpHost = iter.second.GetValue(DefaultMonitoring::DEFAULT_CSM_CONFIG_HOST);
                     Aws::String tmpPort = iter.second.GetValue(DefaultMonitoring::DEFAULT_CSM_CONFIG_PORT);
 
                     if (!tmpEnable.empty())
@@ -304,6 +308,13 @@ namespace Aws
                         clientId = tmpClientId;
                         AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Resolved csm_client_id from profile_config to be " << clientId);
                     }
+
+                    if (!tmpHost.empty())
+                    {
+                        host = tmpHost;
+                        AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Resolved csm_host from profile_config to be " << host);
+                    }
+
                     if (!tmpPort.empty())
                     {
                         port = static_cast<short>(StringUtils::ConvertToInt32(tmpPort.c_str()));
@@ -315,6 +326,7 @@ namespace Aws
             // check environment variables
             Aws::String tmpEnable = Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_ENABLED);
             Aws::String tmpClientId = Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_CLIENT_ID);
+            Aws::String tmpHost = Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_HOST);
             Aws::String tmpPort = Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_PORT);
             if (!tmpEnable.empty())
             {
@@ -327,6 +339,11 @@ namespace Aws
                 AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Resolved AWS_CSM_CLIENT_ID from Environment variable to be " << clientId);
 
             }
+            if (!tmpHost.empty())
+            {
+                host = tmpHost;
+                AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Resolved AWS_CSM_HOST from Environment variable to be " << host);
+            }
             if (!tmpPort.empty())
             {
                 port = static_cast<unsigned short>(StringUtils::ConvertToInt32(tmpPort.c_str()));
@@ -337,7 +354,7 @@ namespace Aws
             {
                 return nullptr;
             }
-            return Aws::MakeUnique<DefaultMonitoring>(DEFAULT_MONITORING_ALLOC_TAG, clientId, port);
+            return Aws::MakeUnique<DefaultMonitoring>(DEFAULT_MONITORING_ALLOC_TAG, clientId, host, port);
         }
 
     }
