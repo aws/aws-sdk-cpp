@@ -28,6 +28,7 @@
 #include <aws/ce/model/GetReservationPurchaseRecommendationResult.h>
 #include <aws/ce/model/GetReservationUtilizationResult.h>
 #include <aws/ce/model/GetTagsResult.h>
+#include <aws/ce/model/GetUsageForecastResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -74,6 +75,7 @@ namespace Model
         class GetReservationPurchaseRecommendationRequest;
         class GetReservationUtilizationRequest;
         class GetTagsRequest;
+        class GetUsageForecastRequest;
 
         typedef Aws::Utils::Outcome<GetCostAndUsageResult, Aws::Client::AWSError<CostExplorerErrors>> GetCostAndUsageOutcome;
         typedef Aws::Utils::Outcome<GetCostForecastResult, Aws::Client::AWSError<CostExplorerErrors>> GetCostForecastOutcome;
@@ -82,6 +84,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetReservationPurchaseRecommendationResult, Aws::Client::AWSError<CostExplorerErrors>> GetReservationPurchaseRecommendationOutcome;
         typedef Aws::Utils::Outcome<GetReservationUtilizationResult, Aws::Client::AWSError<CostExplorerErrors>> GetReservationUtilizationOutcome;
         typedef Aws::Utils::Outcome<GetTagsResult, Aws::Client::AWSError<CostExplorerErrors>> GetTagsOutcome;
+        typedef Aws::Utils::Outcome<GetUsageForecastResult, Aws::Client::AWSError<CostExplorerErrors>> GetUsageForecastOutcome;
 
         typedef std::future<GetCostAndUsageOutcome> GetCostAndUsageOutcomeCallable;
         typedef std::future<GetCostForecastOutcome> GetCostForecastOutcomeCallable;
@@ -90,6 +93,7 @@ namespace Model
         typedef std::future<GetReservationPurchaseRecommendationOutcome> GetReservationPurchaseRecommendationOutcomeCallable;
         typedef std::future<GetReservationUtilizationOutcome> GetReservationUtilizationOutcomeCallable;
         typedef std::future<GetTagsOutcome> GetTagsOutcomeCallable;
+        typedef std::future<GetUsageForecastOutcome> GetUsageForecastOutcomeCallable;
 } // namespace Model
 
   class CostExplorerClient;
@@ -101,6 +105,7 @@ namespace Model
     typedef std::function<void(const CostExplorerClient*, const Model::GetReservationPurchaseRecommendationRequest&, const Model::GetReservationPurchaseRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservationPurchaseRecommendationResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetReservationUtilizationRequest&, const Model::GetReservationUtilizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservationUtilizationResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetTagsRequest&, const Model::GetTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTagsResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::GetUsageForecastRequest&, const Model::GetUsageForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageForecastResponseReceivedHandler;
 
   /**
    * <p>The Cost Explorer API enables you to programmatically query your cost and
@@ -453,6 +458,37 @@ namespace Model
          */
         virtual void GetTagsAsync(const Model::GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Retrieves a forecast for how much Amazon Web Services predicts that you will
+         * use over the forecast time period that you select, based on your past usage.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetUsageForecast">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetUsageForecastOutcome GetUsageForecast(const Model::GetUsageForecastRequest& request) const;
+
+        /**
+         * <p>Retrieves a forecast for how much Amazon Web Services predicts that you will
+         * use over the forecast time period that you select, based on your past usage.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetUsageForecast">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetUsageForecastOutcomeCallable GetUsageForecastCallable(const Model::GetUsageForecastRequest& request) const;
+
+        /**
+         * <p>Retrieves a forecast for how much Amazon Web Services predicts that you will
+         * use over the forecast time period that you select, based on your past usage.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetUsageForecast">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetUsageForecastAsync(const Model::GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -464,6 +500,7 @@ namespace Model
         void GetReservationPurchaseRecommendationAsyncHelper(const Model::GetReservationPurchaseRecommendationRequest& request, const GetReservationPurchaseRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReservationUtilizationAsyncHelper(const Model::GetReservationUtilizationRequest& request, const GetReservationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTagsAsyncHelper(const Model::GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetUsageForecastAsyncHelper(const Model::GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

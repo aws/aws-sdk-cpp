@@ -37,6 +37,7 @@
 #include <aws/ce/model/GetReservationPurchaseRecommendationRequest.h>
 #include <aws/ce/model/GetReservationUtilizationRequest.h>
 #include <aws/ce/model/GetTagsRequest.h>
+#include <aws/ce/model/GetUsageForecastRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -353,5 +354,40 @@ void CostExplorerClient::GetTagsAsync(const GetTagsRequest& request, const GetTa
 void CostExplorerClient::GetTagsAsyncHelper(const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetTags(request), context);
+}
+
+GetUsageForecastOutcome CostExplorerClient::GetUsageForecast(const GetUsageForecastRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetUsageForecastOutcome(GetUsageForecastResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetUsageForecastOutcome(outcome.GetError());
+  }
+}
+
+GetUsageForecastOutcomeCallable CostExplorerClient::GetUsageForecastCallable(const GetUsageForecastRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetUsageForecastOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUsageForecast(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CostExplorerClient::GetUsageForecastAsync(const GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetUsageForecastAsyncHelper( request, handler, context ); } );
+}
+
+void CostExplorerClient::GetUsageForecastAsyncHelper(const GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetUsageForecast(request), context);
 }
 

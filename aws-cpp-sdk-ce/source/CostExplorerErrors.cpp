@@ -29,6 +29,7 @@ namespace CostExplorerErrorMapper
 {
 
 static const int REQUEST_CHANGED_HASH = HashingUtils::HashString("RequestChangedException");
+static const int UNRESOLVABLE_USAGE_UNIT_HASH = HashingUtils::HashString("UnresolvableUsageUnitException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int BILL_EXPIRATION_HASH = HashingUtils::HashString("BillExpirationException");
 static const int DATA_UNAVAILABLE_HASH = HashingUtils::HashString("DataUnavailableException");
@@ -42,6 +43,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == REQUEST_CHANGED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::REQUEST_CHANGED), false);
+  }
+  else if (hashCode == UNRESOLVABLE_USAGE_UNIT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::UNRESOLVABLE_USAGE_UNIT), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {

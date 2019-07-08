@@ -31,16 +31,16 @@ namespace Model
 
   /**
    */
-  class AWS_COSTEXPLORER_API GetCostForecastRequest : public CostExplorerRequest
+  class AWS_COSTEXPLORER_API GetUsageForecastRequest : public CostExplorerRequest
   {
   public:
-    GetCostForecastRequest();
+    GetUsageForecastRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
     // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetCostForecast"; }
+    inline virtual const char* GetServiceRequestName() const override { return "GetUsageForecast"; }
 
     Aws::String SerializePayload() const override;
 
@@ -48,113 +48,113 @@ namespace Model
 
 
     /**
-     * <p>The period of time that you want the forecast to cover.</p>
+     * <p>The start and end dates of the period that you want to retrieve usage
+     * forecast for. The start date is inclusive, but the end date is exclusive. For
+     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
+     * including <code>2017-05-01</code>.</p>
      */
     inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
 
     /**
-     * <p>The period of time that you want the forecast to cover.</p>
+     * <p>The start and end dates of the period that you want to retrieve usage
+     * forecast for. The start date is inclusive, but the end date is exclusive. For
+     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
+     * including <code>2017-05-01</code>.</p>
      */
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
 
     /**
-     * <p>The period of time that you want the forecast to cover.</p>
+     * <p>The start and end dates of the period that you want to retrieve usage
+     * forecast for. The start date is inclusive, but the end date is exclusive. For
+     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
+     * including <code>2017-05-01</code>.</p>
      */
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
     /**
-     * <p>The period of time that you want the forecast to cover.</p>
+     * <p>The start and end dates of the period that you want to retrieve usage
+     * forecast for. The start date is inclusive, but the end date is exclusive. For
+     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
+     * including <code>2017-05-01</code>.</p>
      */
     inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
 
     /**
-     * <p>The period of time that you want the forecast to cover.</p>
+     * <p>The start and end dates of the period that you want to retrieve usage
+     * forecast for. The start date is inclusive, but the end date is exclusive. For
+     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
+     * including <code>2017-05-01</code>.</p>
      */
-    inline GetCostForecastRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
+    inline GetUsageForecastRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
 
     /**
-     * <p>The period of time that you want the forecast to cover.</p>
+     * <p>The start and end dates of the period that you want to retrieve usage
+     * forecast for. The start date is inclusive, but the end date is exclusive. For
+     * example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+     * is <code>2017-05-01</code>, then the cost and usage data is retrieved from
+     * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
+     * including <code>2017-05-01</code>.</p>
      */
-    inline GetCostForecastRequest& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
+    inline GetUsageForecastRequest& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
 
 
     /**
-     * <p>Which metric Cost Explorer uses to create your forecast. For more information
-     * about blended and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
-     * does the "blended" annotation appear on some line items in my bill?</a>. </p>
-     * <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
-     * <ul> <li> <p>AMORTIZED_COST</p> </li> <li> <p>BLENDED_COST</p> </li> <li>
-     * <p>NET_AMORTIZED_COST</p> </li> <li> <p>NET_UNBLENDED_COST</p> </li> <li>
-     * <p>UNBLENDED_COST</p> </li> </ul>
+     * <p>Which metric Cost Explorer uses to create your forecast.</p> <p>Valid values
+     * for a <code>GetUsageForecast</code> call are the following:</p> <ul> <li>
+     * <p>USAGE_QUANTITY</p> </li> <li> <p>NORMALIZED_USAGE_AMOUNT</p> </li> </ul>
      */
     inline const Metric& GetMetric() const{ return m_metric; }
 
     /**
-     * <p>Which metric Cost Explorer uses to create your forecast. For more information
-     * about blended and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
-     * does the "blended" annotation appear on some line items in my bill?</a>. </p>
-     * <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
-     * <ul> <li> <p>AMORTIZED_COST</p> </li> <li> <p>BLENDED_COST</p> </li> <li>
-     * <p>NET_AMORTIZED_COST</p> </li> <li> <p>NET_UNBLENDED_COST</p> </li> <li>
-     * <p>UNBLENDED_COST</p> </li> </ul>
+     * <p>Which metric Cost Explorer uses to create your forecast.</p> <p>Valid values
+     * for a <code>GetUsageForecast</code> call are the following:</p> <ul> <li>
+     * <p>USAGE_QUANTITY</p> </li> <li> <p>NORMALIZED_USAGE_AMOUNT</p> </li> </ul>
      */
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
 
     /**
-     * <p>Which metric Cost Explorer uses to create your forecast. For more information
-     * about blended and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
-     * does the "blended" annotation appear on some line items in my bill?</a>. </p>
-     * <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
-     * <ul> <li> <p>AMORTIZED_COST</p> </li> <li> <p>BLENDED_COST</p> </li> <li>
-     * <p>NET_AMORTIZED_COST</p> </li> <li> <p>NET_UNBLENDED_COST</p> </li> <li>
-     * <p>UNBLENDED_COST</p> </li> </ul>
+     * <p>Which metric Cost Explorer uses to create your forecast.</p> <p>Valid values
+     * for a <code>GetUsageForecast</code> call are the following:</p> <ul> <li>
+     * <p>USAGE_QUANTITY</p> </li> <li> <p>NORMALIZED_USAGE_AMOUNT</p> </li> </ul>
      */
     inline void SetMetric(const Metric& value) { m_metricHasBeenSet = true; m_metric = value; }
 
     /**
-     * <p>Which metric Cost Explorer uses to create your forecast. For more information
-     * about blended and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
-     * does the "blended" annotation appear on some line items in my bill?</a>. </p>
-     * <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
-     * <ul> <li> <p>AMORTIZED_COST</p> </li> <li> <p>BLENDED_COST</p> </li> <li>
-     * <p>NET_AMORTIZED_COST</p> </li> <li> <p>NET_UNBLENDED_COST</p> </li> <li>
-     * <p>UNBLENDED_COST</p> </li> </ul>
+     * <p>Which metric Cost Explorer uses to create your forecast.</p> <p>Valid values
+     * for a <code>GetUsageForecast</code> call are the following:</p> <ul> <li>
+     * <p>USAGE_QUANTITY</p> </li> <li> <p>NORMALIZED_USAGE_AMOUNT</p> </li> </ul>
      */
     inline void SetMetric(Metric&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
 
     /**
-     * <p>Which metric Cost Explorer uses to create your forecast. For more information
-     * about blended and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
-     * does the "blended" annotation appear on some line items in my bill?</a>. </p>
-     * <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
-     * <ul> <li> <p>AMORTIZED_COST</p> </li> <li> <p>BLENDED_COST</p> </li> <li>
-     * <p>NET_AMORTIZED_COST</p> </li> <li> <p>NET_UNBLENDED_COST</p> </li> <li>
-     * <p>UNBLENDED_COST</p> </li> </ul>
+     * <p>Which metric Cost Explorer uses to create your forecast.</p> <p>Valid values
+     * for a <code>GetUsageForecast</code> call are the following:</p> <ul> <li>
+     * <p>USAGE_QUANTITY</p> </li> <li> <p>NORMALIZED_USAGE_AMOUNT</p> </li> </ul>
      */
-    inline GetCostForecastRequest& WithMetric(const Metric& value) { SetMetric(value); return *this;}
+    inline GetUsageForecastRequest& WithMetric(const Metric& value) { SetMetric(value); return *this;}
 
     /**
-     * <p>Which metric Cost Explorer uses to create your forecast. For more information
-     * about blended and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
-     * does the "blended" annotation appear on some line items in my bill?</a>. </p>
-     * <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
-     * <ul> <li> <p>AMORTIZED_COST</p> </li> <li> <p>BLENDED_COST</p> </li> <li>
-     * <p>NET_AMORTIZED_COST</p> </li> <li> <p>NET_UNBLENDED_COST</p> </li> <li>
-     * <p>UNBLENDED_COST</p> </li> </ul>
+     * <p>Which metric Cost Explorer uses to create your forecast.</p> <p>Valid values
+     * for a <code>GetUsageForecast</code> call are the following:</p> <ul> <li>
+     * <p>USAGE_QUANTITY</p> </li> <li> <p>NORMALIZED_USAGE_AMOUNT</p> </li> </ul>
      */
-    inline GetCostForecastRequest& WithMetric(Metric&& value) { SetMetric(std::move(value)); return *this;}
+    inline GetUsageForecastRequest& WithMetric(Metric&& value) { SetMetric(std::move(value)); return *this;}
 
 
     /**
      * <p>How granular you want the forecast to be. You can get 3 months of
      * <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
-     * <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code>
+     * <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code>
      * and <code>MONTHLY</code> granularities.</p>
      */
     inline const Granularity& GetGranularity() const{ return m_granularity; }
@@ -162,7 +162,7 @@ namespace Model
     /**
      * <p>How granular you want the forecast to be. You can get 3 months of
      * <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
-     * <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code>
+     * <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code>
      * and <code>MONTHLY</code> granularities.</p>
      */
     inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
@@ -170,7 +170,7 @@ namespace Model
     /**
      * <p>How granular you want the forecast to be. You can get 3 months of
      * <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
-     * <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code>
+     * <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code>
      * and <code>MONTHLY</code> granularities.</p>
      */
     inline void SetGranularity(const Granularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
@@ -178,7 +178,7 @@ namespace Model
     /**
      * <p>How granular you want the forecast to be. You can get 3 months of
      * <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
-     * <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code>
+     * <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code>
      * and <code>MONTHLY</code> granularities.</p>
      */
     inline void SetGranularity(Granularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
@@ -186,18 +186,18 @@ namespace Model
     /**
      * <p>How granular you want the forecast to be. You can get 3 months of
      * <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
-     * <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code>
+     * <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code>
      * and <code>MONTHLY</code> granularities.</p>
      */
-    inline GetCostForecastRequest& WithGranularity(const Granularity& value) { SetGranularity(value); return *this;}
+    inline GetUsageForecastRequest& WithGranularity(const Granularity& value) { SetGranularity(value); return *this;}
 
     /**
      * <p>How granular you want the forecast to be. You can get 3 months of
      * <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
-     * <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code>
+     * <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code>
      * and <code>MONTHLY</code> granularities.</p>
      */
-    inline GetCostForecastRequest& WithGranularity(Granularity&& value) { SetGranularity(std::move(value)); return *this;}
+    inline GetUsageForecastRequest& WithGranularity(Granularity&& value) { SetGranularity(std::move(value)); return *this;}
 
 
     /**
@@ -228,13 +228,13 @@ namespace Model
      * <p>The filters that you want to use to filter your forecast. Cost Explorer API
      * supports all of the Cost Explorer filters.</p>
      */
-    inline GetCostForecastRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
+    inline GetUsageForecastRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
 
     /**
      * <p>The filters that you want to use to filter your forecast. Cost Explorer API
      * supports all of the Cost Explorer filters.</p>
      */
-    inline GetCostForecastRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
+    inline GetUsageForecastRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 
 
     /**
@@ -271,7 +271,7 @@ namespace Model
      * actual value falling in the prediction interval. Higher confidence levels result
      * in wider prediction intervals.</p>
      */
-    inline GetCostForecastRequest& WithPredictionIntervalLevel(int value) { SetPredictionIntervalLevel(value); return *this;}
+    inline GetUsageForecastRequest& WithPredictionIntervalLevel(int value) { SetPredictionIntervalLevel(value); return *this;}
 
   private:
 

@@ -60,7 +60,8 @@ enum class CostExplorerErrors
   DATA_UNAVAILABLE,
   INVALID_NEXT_TOKEN,
   LIMIT_EXCEEDED,
-  REQUEST_CHANGED
+  REQUEST_CHANGED,
+  UNRESOLVABLE_USAGE_UNIT
 };
 namespace CostExplorerErrorMapper
 {
